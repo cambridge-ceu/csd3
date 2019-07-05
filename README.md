@@ -25,9 +25,7 @@ Latest version of rsync (3.1.3) that doesn’t give this error :
 
 ## R package reinstallation
 
-A version of R package reinstallation by Scott, [reinstall_r_pkgs.R](reinstall_r_pkgs.R).
-
-Conceptually,
+Conceptually, this is possible with R:
 
 ```r
 # obtain R package list from Cardio /home/$USER/R and resintall to /rds/user/$USER/hpc-work/R at CSD3
@@ -47,6 +45,7 @@ Conceptually,
   to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
 ```
+A version of R package reinstallation by Scott, [reinstall_r_pkgs.R](reinstall_r_pkgs.R).
 
 ## Training
 
