@@ -8,7 +8,7 @@ Additional informationi will be made available in due course.
 
 ## CSD3 training slides
 
-https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf
+[https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
 
 ## R
 
