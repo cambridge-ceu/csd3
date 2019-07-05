@@ -49,7 +49,7 @@ A version by Dr Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](
 
 ## Training
 
-**Wednesday, 10th July between 10am – 12pm** at the Thomas and Dorothy Seminar Room.
+**Wednesday, 10th July** between **10am – 12pm** at the Thomas and Dorothy Seminar Room.
 
 Handouts are available from the following location,
 
