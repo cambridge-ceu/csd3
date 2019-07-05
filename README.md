@@ -1,4 +1,15 @@
-This repository contains information on software at CSD3 for the Cardiovascular Epidemiology Unit (CEU).
+The Cambridge Service for Data Driven Discovery (CSD3) for the Cardiovascular Epidemiology Unit (CEU).
+
+## Table of contents
+
+* [Documentation](https://docs.hpc.cam.ac.uk/hpc/)
+* [Software wish-list](https://github.com/cambridge-ceu/csd3#software-wish-list)
+* [rsync](https://github.com/cambridge-ceu/csd3#rsync)
+* [R package reinstallation](https://github.com/cambridge-ceu/csd3#r-package-reinstallation)
+* [Training](https://github.com/cambridge-ceu/csd3#training)
+* [Contact information](https://github.com/cambridge-ceu/csd3#contact-information)
+
+---
 
 ## software wish-list
 
