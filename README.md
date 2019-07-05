@@ -2,7 +2,7 @@ This repository contains information on software at CSD3 for the Cardiovascular 
 
 ## software wish-list
 
-There is a software wish-list, [csd3-software-list.tsv](csd3-software-list.tsv) based on this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
+There is a software wish-list, [csd3-software-list.tsv](csd3-software-list.tsv), based on this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
 
 Additional informationi will be made available in due course.
 
@@ -57,8 +57,8 @@ Handouts are available from the following location,
 
 ## Contact information
 
-A CSD3 account can be created via  https://www.hpc.cam.ac.uk/rcs-application
+A CSD3 account can be created via [https://www.hpc.cam.ac.uk/rcs-application](https://www.hpc.cam.ac.uk/rcs-application).
 
-HPC support can be reached via <support@hpc.cam.ac.uk> with the title “cardio migration".
+HPC support can be reached via email to <support@hpc.cam.ac.uk> with the title “cardio migration".
 
 CEU contacts are Joanna Howson (<jmmh2@medschl.cam.ac.uk>) and Ank Michielsen (<am2710@medschl.cam.ac.uk>).
