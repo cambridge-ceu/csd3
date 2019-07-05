@@ -2,7 +2,7 @@ This repository contains information on software at CSD3 for the Cardiovascular 
 
 ## software wish list
 
-[HPC-software-list.tsv](HPC-software-list.tsv); based on this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
+[csd3-software-list.tsv](csd3-software-list.tsv); based on this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
 
 Additional informationi will be made available in due course.
 
