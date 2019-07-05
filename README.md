@@ -40,7 +40,7 @@ Conceptually, this is possible with R:
 ## On CSD3
 # load("pkgs.rda"))
 # screen copy this and paste into an R object when written permission is disabled
-# pkgs <- screen-copy-of-packages above inclusive of c( )
+# pkgs <- screen-copy-of-packages above inclusive of c( ), pasted with shift+Ins
   user <- Sys.getenv("USER")
   to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
