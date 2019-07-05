@@ -17,16 +17,18 @@ A version of R package reinstallation by Scott, [reinstall_r_pkgs.R](reinstall_r
 Conceptually,
 
 ```r
-# 
-  user <- Sys.getenv("USER")
-  location <- paste0(user,"/R")
-  pkgs <- unname(installed.packages(lib.loc = location)[, "Package"])
-# save the list and upload it to hpc
+# obtain R package list from Cardio /home/$USER/R and resintall to /rds/user/$USER/R at CSD3
+  home <- Sys.getenv("HOME")
+  from <- paste0(user,"/R")
+  pkgs <- unname(installed.packages(lib.loc = from)[, "Package"])
+# save the list and upload it to CSD3
 # save(pkgs, file="pkgs.rda")
 # load("pkgs.rda"))
 # screen copy this and paste into an R object when written permission is disabled
   pkgs
-  install.packages(pkgs, lib=location, repos="https://cran.r-project.org")
+  user <- Sys.getenv("USER")
+  to <- paste0("/rds/",user,"/hpc-work/R")
+  install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
 ```
 
 ## Training sessions
