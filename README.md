@@ -16,7 +16,7 @@ The [Cambridge Service for Data Driven Discovery (CSD3)](https://docs.hpc.cam.ac
 
 There is a software wish-list, [csd3-software-list.tsv](csd3-software-list.tsv), based on this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
 
-Additional informationi will be made available in due course.
+Additional information will be made available in due course.
 
 ## rsync
 
