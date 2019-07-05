@@ -16,8 +16,7 @@ A version of R package reinstallation by Scott, [reinstall_r_pkgs.R](reinstall_r
 
 Conceptually,
 
-```bash
-R --no-save <<END
+```r
 # 
   user <- Sys.getenv("USER")
   location <- paste0(user,"/R")
@@ -28,7 +27,6 @@ R --no-save <<END
 # screen copy this and paste into an R object when written permission is disabled
   pkgs
   install.packages(pkgs, lib=location, repos="https://cran.r-project.org")
-END
 ```
 
 ## Training sessions
