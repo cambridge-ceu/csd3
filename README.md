@@ -1,4 +1,4 @@
-This repository contains information on software at HPC for the Cardiovascular Epidemiology Unit (CEU).
+This repository contains information on software at CSD3 for the Cardiovascular Epidemiology Unit (CEU).
 
 ## software wish list
 
