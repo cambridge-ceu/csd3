@@ -33,14 +33,14 @@ Conceptually, this is possible with R:
   home <- Sys.getenv("HOME")
   from <- paste0(home,"/R")
   pkgs <- unname(installed.packages(lib.loc = from)[, "Package"])
-# generate screen copy of packages
-  pkgs
+# generate screen copy of packages, mark the packages and use :q! to quit the view
+  edit(pkgs)
 # save the list and upload it to CSD3
 # save(pkgs, file="pkgs.rda")
 ## On CSD3
 # load("pkgs.rda"))
 # screen copy this and paste into an R object when written permission is disabled
-  pkgs <- c(screen-copy-of-packages)
+# pkgs <- screen-copy-of-packages above inclusive of c( )
   user <- Sys.getenv("USER")
   to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
