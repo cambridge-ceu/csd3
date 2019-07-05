@@ -45,7 +45,7 @@ Conceptually, this is possible with R:
   to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
 ```
-A version of R package reinstallation by Scott is here, [reinstall_r_pkgs.R](reinstall_r_pkgs.R).
+A version by Dr Scott Ritchie <sr827@medschl.cam.ac.uk> is here, [reinstall_r_pkgs.R](reinstall_r_pkgs.R).
 
 ## Training
 
