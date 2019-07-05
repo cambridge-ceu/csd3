@@ -4,7 +4,7 @@ The Cambridge Service for Data Driven Discovery (CSD3) for the Cardiovascular Ep
 
 ---
 
-* [CSD3 documentation](https://docs.hpc.cam.ac.uk/hpc/)
+* [CSD3 HPC documentation](https://docs.hpc.cam.ac.uk/hpc/)
 * [Software wish-list](https://github.com/cambridge-ceu/csd3#software-wish-list)
 * [rsync](https://github.com/cambridge-ceu/csd3#rsync)
 * [R package reinstallation](https://github.com/cambridge-ceu/csd3#r-package-reinstallation)
