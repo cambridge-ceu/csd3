@@ -34,7 +34,7 @@ A version of R package reinstallation by Scott, [reinstall_r_pkgs.R](reinstall_r
 Conceptually,
 
 ```r
-# obtain R package list from Cardio /home/$USER/R and resintall to /rds/user/$USER/R at CSD3
+# obtain R package list from Cardio /home/$USER/R and resintall to /rds/user/$USER/hpc-work/R at CSD3
   home <- Sys.getenv("HOME")
   from <- paste0(user,"/R")
   pkgs <- unname(installed.packages(lib.loc = from)[, "Package"])
@@ -44,7 +44,7 @@ Conceptually,
 # screen copy this and paste into an R object when written permission is disabled
   pkgs
   user <- Sys.getenv("USER")
-  to <- paste0("/rds/",user,"/hpc-work/R")
+  to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
 ```
 
