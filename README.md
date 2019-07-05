@@ -4,6 +4,7 @@ The Cambridge Service for Data Driven Discovery (CSD3) for the Cardiovascular Ep
 
 ## Table of contents
 
+<img src="https://www.phpc.cam.ac.uk/ceu/files/2016/09/heart-and-heartbeat-symbol-on-reflective-surface_Gk9Lktju_L-885x432.jpg" width="220" height="80" align="right">
 ---
 
 * [CSD3 HPC documentation](https://docs.hpc.cam.ac.uk/hpc/)
@@ -13,7 +14,6 @@ The Cambridge Service for Data Driven Discovery (CSD3) for the Cardiovascular Ep
 * [Training](https://github.com/cambridge-ceu/csd3#training)
 * [Contact information](https://github.com/cambridge-ceu/csd3#contact-information)
 
-<img src="https://www.phpc.cam.ac.uk/ceu/files/2016/09/heart-and-heartbeat-symbol-on-reflective-surface_Gk9Lktju_L-885x432.jpg" width="220" height="80" align="right">
 ---
 
 ## software wish-list
