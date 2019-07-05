@@ -45,7 +45,7 @@ Conceptually, this is possible with R:
   to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
 ```
-A version by Dr Scott Ritchie <sr827@medschl.cam.ac.uk> is here, [reinstall_r_pkgs.R](reinstall_r_pkgs.R).
+A version by Dr Scott Ritchie (<sr827@medschl.cam.ac.uk>) is here, [reinstall_r_pkgs.R](reinstall_r_pkgs.R).
 
 ## Training
 
@@ -61,4 +61,4 @@ A CSD3 account can be created via  https://www.hpc.cam.ac.uk/rcs-application
 
 HPC support can be reached via <support@hpc.cam.ac.uk> with the title “cardio migration".
 
-CEU contacts are Joanna Howson <jmmh2@medschl.cam.ac.uk> and Ank Michielsen <am2710@medschl.cam.ac.uk>.
+CEU contacts are Joanna Howson (<jmmh2@medschl.cam.ac.uk>) and Ank Michielsen (<am2710@medschl.cam.ac.uk>).
