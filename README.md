@@ -47,7 +47,7 @@ Conceptually, this is possible with R:
 ```
 A version by Dr Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](reinstall_r_pkgs.R), also touches upon Bioconductor, see [https://bioconductor.org/install/](https://bioconductor.org/install/) on package installations and updates.
 
-For R older than R 3.5.0, one can use the following utilities
+For R older than R 3.5.0, one can use the following utility
 ```r
 source("https://bioconductor.org/biocLite.R")
 biocLite("packagename")
