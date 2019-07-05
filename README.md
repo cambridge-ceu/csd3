@@ -39,4 +39,4 @@ Wednesday, 10th July from 10am – 12pm at the Thomas and Dorothy Seminar Room, 
 
 Joanna Howson <jmmh2@medschl.cam.ac.uk> and Ank Michielsen <am2710@medschl.cam.ac.uk>.
 
-support@hpc.cam.ac.uk
+HPC support <support@hpc.cam.ac.uk>
