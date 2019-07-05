@@ -1,0 +1,71 @@
+name of tool/library	version if present on HPC	latest version	link	any other versions, if required	description/purpose																																																																					
+annovar		2018Apr16	http://annovar.openbioinformatics.org/en/latest/user-guide/download/		functional annotation of genetic variants																																																																					
+aspera connect		3.9.5	https://downloads.asperasoft.com/connect2/		secure file transfer program (used for some EGA downloads)																																																																					
+atlas		2016-07-28	http://math-atlas.sourceforge.net/		fast linear algebra routines																																																																					
+bcftools	1.4.1	1.9	http://www.htslib.org/download/		manipulate VCF/BCF files																																																																					
+bedtools	2.26	2.28	https://github.com/arq5x/bedtools2/releases		toolset for genome arithmetic																																																																					wine
+bgenix			https://bitbucket.org/gavinband/bgen/downloads/		indexing and retrieval of data from bgen files																																																																					
+boltlmm		2.3.2	https://data.broadinstitute.org/alkesgroup/BOLT-LMM/downloads/		mixed model association testing																																																																					
+CAVIAR			https://github.com/fhormoz/caviar		CAusal Variants Identication in Associated Regions																																																																					
+circos		0.69-8	http://circos.ca/software/download/		visualising data in a circular layout																																																																					
+crossmap		0.3.4	http://crossmap.sourceforge.net/		lifting over positions between genome builds																																																																					
+Cytoscape		3.7.1	https://cytoscape.org/		software platform for visualizing complex networks and integrating these with any type of attribute data																																																																					
+CAVIARBF			https://bitbucket.org/Wenan/caviarbf/src/default/		A fine mapping tool using marginal test statistics and correlations among variants																																																																					
+DEPICT		1.194	https://data.broadinstitute.org/mpg/depict/depict_download/bundles/DEPICT_v1_rel194.tar.gz		Data-Driven Expression Prioritized Integration for Complex Traits																																																																					
+egacryptor			https://www.ebi.ac.uk/ega/submission/tools/EGA_webin_data_uploader#Download_client		enables submitters to produce EGA compliant files																																																																					
+EPACTS			https://github.com/statgen/EPACTS		Efficient and Parallelizable Association Container Toolbox																																																																					
+fgwas			https://github.com/joepickrell/fgwas		Functional genomics and genome-wide association studies																																																																					
+FINEMAP		1.3.1	http://www.christianbenner.com/		identifying causal SNPs, estimating their effect sizes and heritability contribution																																																																					
+flashpca2			https://github.com/gabraham/flashpca		PCA of biobank-scale data																																																																					
+FUSION			http://gusevlab.org/projects/fusion/		Functional Summary-based Imputation																																																																					
+GCTA		1.26.0	https://cnsgenomics.com/software/gcta/gcta_1.26.0_src.zip		a tool for Genome-wide Complex Trait Analysis																																																																					
+GCTA		1.92.2beta	https://cnsgenomics.com/software/gcta/gcta_1.92.2beta.zip		a tool for Genome-wide Complex Trait Analysis																																																																					
+gemma			https://github.com/genetics-statistics/GEMMA		application of LMMs and related models to GWAS and large-scale data																																																																					
+gtool		0.7.5	https://www.well.ox.ac.uk/~cfreeman/software/gwas/gtool.html		transforming genotype datasets for use with SNPTEST																																																																					
+gwas-pw			https://github.com/joepickrell/gwas-pw		joint pairwise analysis of GWAS																																																																					
+HESS			https://huwenboshi.github.io/hess-0.5/#hess		Heritability Estimation from Summary Statistics																																																																					
+htslib	1.4	1.9	http://www.htslib.org/download/		(samtools) C library for high-throughput sequencing data formats																																																																					
+hpg variant			https://github.com/opencb/hpg-variant		suite of tools to work with genomic variation data from VCF tools to variant profiling or genomic statistics																																																																					
+impute		4, but liink provided points to v2 as v4 link not active.	https://mathgen.stats.ox.ac.uk/impute/impute_v2.html#download		genotype imputation and haplotype phasing																																																																					
+JAGS		4.3.0	https://sourceforge.net/projects/mcmc-jags/files/latest/download		program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation 																																																																					
+KING		2.2.2	http://people.virginia.edu/~wc9c/KING/Download.htm		relaionship inference using SNP data																																																																					
+ldetect			https://bitbucket.org/nygcresearch/ldetect		approximately independent LD blocks																																																																					
+			https://bitbucket.org/nygcresearch/ldetect-data																																																																							
+LDpred			https://github.com/bvilhjal/ldpred		a Python based software package that adjusts GWAS summary statistics for the effects of linkage disequilibrium																																																																					
+ldsc			https://github.com/bulik/ldsc		a command line tool for estimating heritability and genetic correlation from GWAS summary statistics																																																																					
+LDStore		1.1	http://www.christianbenner.com/#		LD calculation from imputed data																																																																					
+LocusZoom		1.4	https://github.com/statgen/locuszoom-standalone		viewing of local association results together with locus information																																																																					
+MAGENTA			https://software.broadinstitute.org/mpg/magenta/		Meta-Analysis Gene-set Enrichment of variaNT Associations																																																																					
+MAGMA			https://ctg.cncr.nl/software/magma		Multi-marker Analysis of GenoMic Annotation																																																																					
+METAL		2011	http://csg.sph.umich.edu/abecasis/Metal/download/		tool for meta-analysis genomewide association scans																																																																					
+METAL		2018	https://github.com/statgen/METAL/releases/tag/2018-08-28		See above																																																																					
+mgtools			https://github.com/jrvalverde/MGtools		metagenomics tools																																																																					
+mxm		1.4.4	https://cran.r-project.org/web/packages/MXM/		R package: methods for Feature Selection (Including Multiple Solutions) and Bayesian Networks																																																																					
+mysql					database																																																																					
+mysqlimport					provides a command-line interface to the LOAD DATA SQL statemen																																																																					
+paraview		5.6	https://www.paraview.org/download/		large data visualisation																																																																					
+PASCAL			http://www2.unil.ch/cbg/images/3/3d/PASCAL.zip		PAthway SCoring ALgorithm																																																																					
+pgplot					device-independent graphics subroutine																																																																					
+phenoscanner																																																																										
+plink		1.9	https://www.cog-genomics.org/plink2	2	Whole genome data analysis toolset																																																																					
+plinkseq		0.1	https://atgu.mgh.harvard.edu/plinkseq/download.shtml		open-source C/C++ library for working with human genetic variation data																																																																					
+PLplot		5.15.0	http://plplot.sourceforge.net/downloads.php		cross-platform scientific plotting																																																																					
+pymol		2.3	https://pymol.org/2/		molecular visualisation																																																																					
+qctool2		2	https://www.well.ox.ac.uk/~gav/qctool_v2/documentation/download.html		manipulation and QC of GWAS/genetic data																																																																					
+qt					open-source widget toolkit for creating graphical user interfaces as well as cross-platform applications that run on various software and hardware platforms																																																																					
+quicktest		1.2	https://wp.unil.ch/sgg/quicktest/		statistical methods for association testing using uncertain (imputed) genotypes																																																																					
+rareMETALS		6.8	https://genome.sph.umich.edu/w/images/b/b2/RareMETALS_6.8.tar.gz		R package:single or gene-level tests for detecting rare variant associations																																																																					
+RAREMETALWORKER			https://github.com/statgen/Raremetal		tool for single variant analysis, generating summary statistics for gene level meta analyses in RAREMETAL																																																																					
+rvtests			http://zhanxw.github.io/rvtests/#download		rare variant tests																																																																					
+samtools	yes,1.4	1.9	http://www.htslib.org/download/																																																																							
+shapeit		2.12	https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html#download		phasing from genotype/sequencing data																																																																					
+skat		1.3.2.1	https://cran.r-project.org/web/packages/SKAT/		Test for association between a set of rare (and common) variants and continuous/dichotomous phenotypes using kernel machine methods																																																																					
+snptest		2.5.2	https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html#download		program for the analysis of single SNP association in genome-wide studies																																																																					
+tabix			http://www.htslib.org/download/		Generic indexer for TAB-delimited genome position files (comes with htslib)																																																																					
+vcftools			https://github.com/vcftools/vcftools		manipulation of vcf files																																																																					
+vep			https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html		predicts effects of variants																																																																					
+HAIL			https://github.com/hail-is/hail		open-source, general-purpose, Python-based data analysis tool with additional data types and methods for working with genomic data.																																																																					
+SAIGE		0.35.8.1	https://github.com/weizhouUMICH/SAIGE		R package: genetic association tests in large datasets, accounting for sample relatedness																																																																					
+stata	14				Stata statistical software package. NB, 'module load stata' loads the module but 'xstata' (or 'stata') do nothing. May be a licensing issue. Needed for primary care data work (contact David Stevens / Matt Arnold)																																																																					
+VEGASv2			https://vegas2.qimrberghofer.edu.au/		Versatile Gene-based Association Study																																																																					
+Visual Studio Code			https://code.visualstudio.com/		a code editor																																																																					
