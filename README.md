@@ -36,7 +36,7 @@ Conceptually,
 ```r
 # obtain R package list from Cardio /home/$USER/R and resintall to /rds/user/$USER/hpc-work/R at CSD3
   home <- Sys.getenv("HOME")
-  from <- paste0(user,"/R")
+  from <- paste0(home,"/R")
   pkgs <- unname(installed.packages(lib.loc = from)[, "Package"])
 # generate screen copy of packages
   pkgs
