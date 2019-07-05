@@ -35,6 +35,7 @@ Conceptually,
 
 ```r
 # obtain R package list from Cardio /home/$USER/R and resintall to /rds/user/$USER/hpc-work/R at CSD3
+## on Cardio
   home <- Sys.getenv("HOME")
   from <- paste0(home,"/R")
   pkgs <- unname(installed.packages(lib.loc = from)[, "Package"])
@@ -42,6 +43,7 @@ Conceptually,
   pkgs
 # save the list and upload it to CSD3
 # save(pkgs, file="pkgs.rda")
+## On CSD3
 # load("pkgs.rda"))
 # screen copy this and paste into an R object when written permission is disabled
   pkgs <- c(screen-copy-of-packages)
