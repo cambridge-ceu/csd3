@@ -38,12 +38,13 @@ Conceptually,
   home <- Sys.getenv("HOME")
   from <- paste0(user,"/R")
   pkgs <- unname(installed.packages(lib.loc = from)[, "Package"])
+# generate screen copy of packages
   pkgs
 # save the list and upload it to CSD3
 # save(pkgs, file="pkgs.rda")
 # load("pkgs.rda"))
 # screen copy this and paste into an R object when written permission is disabled
-  pkgs <- c(screen-copies)
+  pkgs <- c(screen-copy-of-packages)
   user <- Sys.getenv("USER")
   to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
