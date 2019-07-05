@@ -6,14 +6,6 @@ This repository contains information on software at CSD3 for the Cardiovascular 
 
 Additional informationi will be made available in due course.
 
-## Training
-
-Wednesday, 10th July from 10am – 12pm at the Thomas and Dorothy Seminar Room.
-
-PDF slides are available from the following location,
-
-[https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
-
 ## rsync
 
 Old version on cardio, rsync 3.0.6, gives errors,
@@ -55,6 +47,14 @@ Conceptually,
   to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
 ```
+
+## Training
+
+Wednesday, 10th July from 10am – 12pm at the Thomas and Dorothy Seminar Room.
+
+PDF slides are available from the following location,
+
+[https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
 
 ## Contact information
 
