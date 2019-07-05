@@ -12,6 +12,8 @@ Additional informationi will be made available in due course.
 
 ## rsync
 
+Old version number on cardio : rsync 3.0.6 gives errors,
+
 ```bash
 rsync -av --partial mydir/ bp406@login-cpu.hpc.cam.ac.uk:/rds/user/bp406/hpc-work/mydir
 
@@ -22,7 +24,8 @@ rsync error: error in rsync protocol data stream (code 12) at io.c(600) [sender=
 ```
 
 Latest version of rsync (3.1.3) that doesn’t give this error :
-RSYNC=/scratch/bp406/apps/software/data_manipulation/rsync-3.1.3/rsync
+
+/scratch/bp406/apps/software/data_manipulation/rsync-3.1.3/rsync
 
 ## R package reinstallation
 
