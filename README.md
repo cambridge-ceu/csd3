@@ -1,5 +1,8 @@
 The Cambridge Service for Data Driven Discovery (CSD3) for the Cardiovascular Epidemiology Unit (CEU).
 
+<img src="https://docs.hpc.cam.ac.uk/hpc/#" width="560" height="250" align="right">
+<img src="https://www.phpc.cam.ac.uk/ceu/files/2016/09/heart-and-heartbeat-symbol-on-reflective-surface_Gk9Lktju_L-885x432.jpg" width="560" height="250" align="right">
+
 ## Table of contents
 
 ---
