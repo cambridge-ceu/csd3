@@ -12,7 +12,7 @@ Additional informationi will be made available in due course.
 
 ## rsync
 
-Old version number on cardio : rsync 3.0.6 gives errors,
+Old version number on cardio, rsync 3.0.6, gives errors,
 
 ```bash
 rsync -av --partial mydir/ bp406@login-cpu.hpc.cam.ac.uk:/rds/user/bp406/hpc-work/mydir
