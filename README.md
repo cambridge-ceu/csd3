@@ -50,9 +50,9 @@ Conceptually,
 
 ## Training
 
-Wednesday, 10th July from 10am – 12pm at the Thomas and Dorothy Seminar Room.
+**Wednesday, 10th July during 10am – 12pm** at the Thomas and Dorothy Seminar Room.
 
-PDF slides are available from the following location,
+Handouts are available from the following location,
 
 [https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
 
@@ -60,4 +60,6 @@ PDF slides are available from the following location,
 
 Joanna Howson <jmmh2@medschl.cam.ac.uk> and Ank Michielsen <am2710@medschl.cam.ac.uk>.
 
-HPC support <support@hpc.cam.ac.uk>
+A CSD3 account can be created via  https://www.hpc.cam.ac.uk/rcs-application
+
+HPC support can be reached via <support@hpc.cam.ac.uk> with the title “cardio migration".
