@@ -56,7 +56,7 @@ Conceptually, this is possible with R, e.g., obtain R package list from Cardio /
   to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
 ```
-A version by Dr Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](reinstall_r_pkgs.R), also touches upon Bioconductor, see [https://bioconductor.org/install/](https://bioconductor.org/install/) on package installations and updates.
+A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](reinstall_r_pkgs.R), also touches upon Bioconductor, see [https://bioconductor.org/install/](https://bioconductor.org/install/) on package installations and updates.
 
 For R versions older than 3.5.0, one can use the following utility
 ```r
