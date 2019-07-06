@@ -37,10 +37,9 @@ Latest version of rsync (3.1.3) that doesn’t give this error:
 
 ## R package reinstallation
 
-Conceptually, this is possible with R:
+Conceptually, this is possible with R, e.g., obtain R package list from Cardio /home/$USER/R and resintall to /rds/user/$USER/hpc-work/R at CSD3.
 
 ```r
-# obtain R package list from Cardio /home/$USER/R and resintall to /rds/user/$USER/hpc-work/R at CSD3
 ## on Cardio
   home <- Sys.getenv("HOME")
   from <- paste0(home,"/R")
