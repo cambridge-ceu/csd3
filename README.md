@@ -45,10 +45,10 @@ Conceptually, this is possible with R:
   home <- Sys.getenv("HOME")
   from <- paste0(home,"/R")
   pkgs <- unname(installed.packages(lib.loc = from)[, "Package"])
-# generate screen copy of packages, mark the packages within c() and use :q! to quit the view
-  edit(pkgs)
 # save the list and upload it to CSD3
 # save(pkgs, file="pkgs.rda")
+# generate screen copy of packages, mark the packages within c() and use :q! to quit the view
+  edit(pkgs)
 ## On CSD3
 # load("pkgs.rda"))
 # shift+ins to paste the screen copy above into an R object as written permission is disabled
