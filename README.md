@@ -45,7 +45,7 @@ Conceptually, this is possible with R:
   home <- Sys.getenv("HOME")
   from <- paste0(home,"/R")
   pkgs <- unname(installed.packages(lib.loc = from)[, "Package"])
-# generate screen copy of packages, mark the packages and use :q! to quit the view
+# generate screen copy of packages, mark the packages within c() and use :q! to quit the view
   edit(pkgs)
 # save the list and upload it to CSD3
 # save(pkgs, file="pkgs.rda")
