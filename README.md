@@ -50,7 +50,7 @@ Conceptually, this is possible with R:
 # generate screen copy of packages, mark the packages within c() and use :q! to quit the view
   edit(pkgs)
 ## On CSD3
-# load("pkgs.rda"))
+# load("pkgs.rda")
 # shift+ins to paste the screen copy above into an R object as written permission is disabled
   pkgs <- c(...)
   user <- Sys.getenv("USER")
