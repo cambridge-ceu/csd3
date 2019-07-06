@@ -61,7 +61,7 @@ A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](rei
 source("https://bioconductor.org/biocLite.R")
 biocLite("packagename")
 ```
-see [https://bioconductor.org/install/](https://bioconductor.org/install/) on package installations and updates.
+See [https://bioconductor.org/install/](https://bioconductor.org/install/) for the latest information on package installations and updates.
 
 ## Training
 
