@@ -20,7 +20,7 @@ Additional information will be made available in due course.
 
 ## rsync
 
-Old version on cardio, rsync 3.0.6, gives errors,
+Old version on Cardio, rsync 3.0.6, gives errors,
 
 ```bash
 rsync -av --partial mydir/ bp406@login-cpu.hpc.cam.ac.uk:/rds/user/bp406/hpc-work/mydir
@@ -31,7 +31,7 @@ rsync: connection unexpectedly closed (604 bytes received so far) [sender]
 rsync error: error in rsync protocol data stream (code 12) at io.c(600) [sender=3.0.6]
 ```
 
-Latest version of rsync (3.1.3) that doesn’t give this error :
+Latest version of rsync (3.1.3) that doesn’t give this error:
 
 /scratch/bp406/apps/software/data_manipulation/rsync-3.1.3/rsync
 
@@ -51,8 +51,8 @@ Conceptually, this is possible with R:
 # save(pkgs, file="pkgs.rda")
 ## On CSD3
 # load("pkgs.rda"))
-# screen copy this and paste into an R object when written permission is disabled
-# pkgs <- screen-copy-of-packages above inclusive of c( ), pasted with shift+Ins
+# shift+ins to paste the screen copy above into an R object as written permission is disabled
+  pkgs <- c(...)
   user <- Sys.getenv("USER")
   to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
