@@ -42,7 +42,7 @@ Bram Prinns has the latest version (3.1.3) that doesn’t give this error here:
 
 ## R package reinstallation
 
-Official website [https://cran.r-project.org/](https://cran.r-project.org/).
+Official website [https://www.r-project.org/](https://www.r-project.org/).
 
 Conceptually, this is possible with R, e.g., obtain R package list from Cardio /home/$USER/R and resintall to /rds/user/$USER/hpc-work/R at CSD3.
 
