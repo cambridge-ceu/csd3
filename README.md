@@ -1,4 +1,4 @@
-The [Cambridge Service for Data Driven Discovery (CSD3)](https://docs.hpc.cam.ac.uk/hpc/) for the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/).
+On HPC for Cardio users: The [Cambridge Service for Data Driven Discovery (CSD3)](https://docs.hpc.cam.ac.uk/hpc/) for the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/).
 
 ## Table of contents
 
@@ -16,7 +16,7 @@ The [Cambridge Service for Data Driven Discovery (CSD3)](https://docs.hpc.cam.ac
 
 There is a software wish-list, [csd3-software-list.tsv](csd3-software-list.tsv), based on this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
 
-Additional information will be made available in due course.
+Please amend the list when appropriate, so they can be installed/maintained at the HPC. If necessary, additional information will be made available in due course.
 
 ## rsync
 
