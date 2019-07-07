@@ -23,6 +23,8 @@ Please amend the list when appropriate, so they can be installed/maintained at t
 
 ## rsync
 
+Official website: [https://rsync.samba.org/](https://rsync.samba.org/).
+
 Old version on Cardio, rsync 3.0.6, gives errors,
 
 ```bash
@@ -39,6 +41,8 @@ Latest version of rsync (3.1.3) that doesn’t give this error:
 /scratch/bp406/apps/software/data_manipulation/rsync-3.1.3/rsync
 
 ## R package reinstallation
+
+Official website [https://cran.r-project.org/](https://cran.r-project.org/).
 
 Conceptually, this is possible with R, e.g., obtain R package list from Cardio /home/$USER/R and resintall to /rds/user/$USER/hpc-work/R at CSD3.
 
