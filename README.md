@@ -1,4 +1,7 @@
-On HPC for Cardio users: The [Cambridge Service for Data Driven Discovery (CSD3)](https://docs.hpc.cam.ac.uk/hpc/) for the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/).
+## Introduction
+
+The repository contains some informaiton for users at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/) of the HPC facility (Cardio) regarding transition to CSD3 HPC.
+The Cambridge Service for Data Driven Discovery (CSD3) is hosted by [Research Computing Service](https://www.hpc.cam.ac.uk/) and documented [here](https://docs.hpc.cam.ac.uk/hpc/) 
 
 ## Table of contents
 
