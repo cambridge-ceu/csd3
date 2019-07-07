@@ -43,7 +43,7 @@ Bram Prins (<bp406@medschl.cam.ac.uk>) has the latest version (3.1.3) that doesn
 
 Official website: [https://www.r-project.org/](https://www.r-project.org/).
 
-Conceptually, this is possible with R, e.g., obtain R package list from Cardio /home/$USER/R and resintall to /rds/user/$USER/hpc-work/R at CSD3.
+Conceptually, this is possible with R, e.g., obtain R package list from /home/$USER/R at Cardio and resintall to /rds/user/$USER/hpc-work/R at CSD3.
 
 ```r
 ## on Cardio
