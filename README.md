@@ -1,4 +1,4 @@
-The repository contains some information for users of the HPC facility (Cardio) at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/) regarding transition to the Univeristy HPC, or the
+The repository collects information for users of the HPC facility (Cardio) at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/) regarding transition to the Univeristy HPC, or the
 Cambridge Service for Data Driven Discovery (CSD3) hosted by [Research Computing Services](https://www.csd3.cam.ac.uk/) as documented [here](https://docs.hpc.cam.ac.uk/hpc/).
 
 ## Contents
@@ -65,7 +65,7 @@ A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](rei
 source("https://bioconductor.org/biocLite.R")
 biocLite("packagename")
 ```
-See [https://bioconductor.org/install/](https://bioconductor.org/install/) for the latest information on package installations and updates.
+See [https://bioconductor.org/install/](https://bioconductor.org/install/) for the latest instructions for package installations and updates.
 
 ## Training
 
