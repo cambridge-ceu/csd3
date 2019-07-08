@@ -69,11 +69,9 @@ See [https://bioconductor.org/install/](https://bioconductor.org/install/) for t
 
 ## Training
 
-**Wednesday, 10th July** between **10am – 12pm** at the Thomas and Dorothy Seminar Room.
-
-Handouts are available from the following location,
-
-[https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
+* **Date**: Wednesday, 10th July** between **10am – 12pm
+* **Venue**: Thomas and Dorothy Seminar Room.
+* **Handouts**: [https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
 
 ## Contact information
 
