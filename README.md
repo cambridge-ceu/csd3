@@ -15,7 +15,7 @@ Cambridge Service for Data Driven Discovery (CSD3) hosted by [Research Computing
 
 ## software wish list
 
-There is a software wish-list, [csd3-software-list.tsv](csd3-software-list.tsv), based on this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
+There is a software wish list, [csd3-software-list.tsv](csd3-software-list.tsv), based on this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
 
 Amendment is welcome. If necessary, additional information can be made available in due course.
 
