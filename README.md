@@ -37,7 +37,7 @@ Bram Prins (<bp406@medschl.cam.ac.uk>) has the latest version (3.1.3) that doesn
 
 /scratch/bp406/apps/software/data_manipulation/rsync-3.1.3/rsync
 
-Note /scratch/$USER at Cardio is now /DO-NOT-MODIFY-SCRATCH/$USER
+Note **/scratch/$USER** at Cardio is now **/DO-NOT-MODIFY-SCRATCH/$USER**
 
 ## R package reinstallation
 
