@@ -82,4 +82,4 @@ See [https://bioconductor.org/install/](https://bioconductor.org/install/) for t
 * **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/).
 * **HPC support**: <support@hpc.cam.ac.uk> with the title “cardio migration".
 * **CEU contacts**: Joanna Howson (<jmmh2@medschl.cam.ac.uk>) and Ank Michielsen (<am2710@medschl.cam.ac.uk>).
-* **Request for write access**: Savita Karthikeyan (sk752@medschl.cam.ac.uk) and Charlotte van Coeverden (crv26@medschl.cam.ac.uk).
+* **Request for write access**: Savita Karthikeyan (<sk752@medschl.cam.ac.uk>) and Charlotte van Coeverden (<crv26@medschl.cam.ac.uk>).
