@@ -67,12 +67,16 @@ whose package installations and updates are described at [https://bioconductor.o
 
 Here is an example for WGCNA.
 ```r
-install.packages(c("matrixStats", "Hmisc", "splines", "foreach", "doParallel", "fastcluster", "dynamicTreeCut", "survival"))
+# from CRAN
+dependecies <- c("matrixStats", "Hmisc", "splines", "foreach", "doParallel", "fastcluster", "dynamicTreeCut", "survival")
+install.packages(dependencies)
 source("http://bioconductor.org/biocLite.R")
+# from Bioconductor
 biocLite(c("GO.db", "preprocessCore", "impute"))
 install.packages("BiocManager")
 BiocManager::install("WGCNA")
 ```
+where BiocManager is appropriate for R 3.5.0 or later.
 
 ## Training
 
