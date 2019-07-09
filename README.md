@@ -62,7 +62,8 @@ This is illustrated with R below for building R package list from ***/home/$USER
   to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
 ```
-A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](reinstall_r_pkgs.R), also touches upon Bioconductor, The latest instructions for package installations and updates are described at [https://bioconductor.org/install/](https://bioconductor.org/install/). 
+A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](reinstall_r_pkgs.R), also touches upon Bioconductor,
+whose package installations and updates are described at [https://bioconductor.org/install/](https://bioconductor.org/install/). 
 
 Here is an example for WGCNA.
 ```r
