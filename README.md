@@ -68,8 +68,8 @@ whose package installations and updates are described at [https://bioconductor.o
 Here is an example for WGCNA.
 ```r
 # from CRAN
-dependecies <- c("matrixStats", "Hmisc", "splines", "foreach", "doParallel",
-                 "fastcluster", "dynamicTreeCut", "survival")
+dependencies <- c("matrixStats", "Hmisc", "splines", "foreach", "doParallel",
+                  "fastcluster", "dynamicTreeCut", "survival")
 install.packages(dependencies)
 # from Bioconductor
 source("http://bioconductor.org/biocLite.R")
