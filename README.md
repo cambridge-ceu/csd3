@@ -70,8 +70,8 @@ Here is an example for WGCNA.
 # from CRAN
 dependecies <- c("matrixStats", "Hmisc", "splines", "foreach", "doParallel", "fastcluster", "dynamicTreeCut", "survival")
 install.packages(dependencies)
-source("http://bioconductor.org/biocLite.R")
 # from Bioconductor
+source("http://bioconductor.org/biocLite.R")
 biocLite(c("GO.db", "preprocessCore", "impute"))
 install.packages("BiocManager")
 BiocManager::install("WGCNA")
