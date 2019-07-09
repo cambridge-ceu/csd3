@@ -76,7 +76,7 @@ source("http://bioconductor.org/biocLite.R")
 biocLite(c("GO.db", "preprocessCore", "impute"))
 install.packages("BiocManager")
 BiocManager::install("WGCNA")
-```.
+```
 
 ## Training
 
