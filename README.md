@@ -67,8 +67,13 @@ A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](rei
 source("https://bioconductor.org/biocLite.R")
 biocLite("packagename")
 ```
-The latest instructions for package installations and updates are described at [https://bioconductor.org/install/](https://bioconductor.org/install/), e.g., 
+The latest instructions for package installations and updates are described at [https://bioconductor.org/install/](https://bioconductor.org/install/). 
+
+Here is an example for WGCNA.
 ```r
+install.packages(c("matrixStats", "Hmisc", "splines", "foreach", "doParallel", "fastcluster", "dynamicTreeCut", "survival"))
+source("http://bioconductor.org/biocLite.R")
+biocLite(c("GO.db", "preprocessCore", "impute"))
 install.packages("BiocManager")
 BiocManager::install("WGCNA")
 ```.
