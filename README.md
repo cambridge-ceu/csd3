@@ -67,7 +67,11 @@ A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](rei
 source("https://bioconductor.org/biocLite.R")
 biocLite("packagename")
 ```
-See [https://bioconductor.org/install/](https://bioconductor.org/install/) for the latest instructions for package installations and updates.
+The latest instructions for package installations and updates are described at [https://bioconductor.org/install/](https://bioconductor.org/install/), e.g., 
+```r
+install.packages("BiocManager")
+BiocManager::install("WGCNA")
+```.
 
 ## Training
 
