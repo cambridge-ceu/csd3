@@ -8,7 +8,7 @@ Cambridge Service for Data Driven Discovery (CSD3) hosted by [Research Computing
 * [Software wish list](https://github.com/cambridge-ceu/csd3#software-wish-list)
 * [rsync](https://github.com/cambridge-ceu/csd3#rsync)
 * [R package reinstallation](https://github.com/cambridge-ceu/csd3#r-package-reinstallation)
-* [Training](https://github.com/cambridge-ceu/csd3#training)
+* [Training materials](https://github.com/cambridge-ceu/csd3#training-materials)
 * [Contact information](https://github.com/cambridge-ceu/csd3#contact-information)
 
 ---
@@ -79,12 +79,13 @@ BiocManager::install("WGCNA")
 ```
 where BiocManager is appropriate for R 3.5.0 or later.
 
-## Training
+## Training materials
 
 * **Date**: Wednesday, 10th July
 * **Time**: 10am – 12pm
 * **Venue**: Thomas and Dorothy Seminar Room.
 * **Handouts**: [https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
+* **Google document**: [Presentation](https://tinyurl.com/y3l6jssg) by Praveen Surendran (<ps629@medschl.cam.ac.uk>).
 
 ## Contact information
 
