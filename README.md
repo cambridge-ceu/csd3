@@ -85,7 +85,7 @@ where BiocManager is appropriate for R 3.5.0 or later.
 * **Time**: 10am – 12pm
 * **Venue**: Thomas and Dorothy Seminar Room.
 * **Handouts**: [https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
-* **Google document**: [Presentation](https://tinyurl.com/y3l6jssg) by Praveen Surendran (<ps629@medschl.cam.ac.uk>).
+* **Presentation**: [Google document](https://tinyurl.com/y3l6jssg) by Praveen Surendran (<ps629@medschl.cam.ac.uk>).
 
 ## Contact information
 
