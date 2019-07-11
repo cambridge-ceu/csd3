@@ -43,6 +43,12 @@ Note **/scratch/$USER** at Cardio is now **/DO-NOT-MODIFY-SCRATCH/$USER**.
 
 Official website: [https://www.r-project.org/](https://www.r-project.org/).
 
+Under HPC, choose the desired version of R from
+```bash
+module avail r
+```
+e.g., `module load r-3.6.0-gcc-5.4.0-bzuuksv`.
+
 This is illustrated with R below for building R package list from ***/home/$USER/R*** at Cardio to be resintalled to ***/rds/user/$USER/hpc-work/R*** at CSD3.
 
 ```r
