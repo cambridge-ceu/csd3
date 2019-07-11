@@ -15,7 +15,7 @@ Cambridge Service for Data Driven Discovery (CSD3) hosted by [Research Computing
 
 ## software
 
-There is a software wish list in this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing). Direct contact can also be made to Savita Karthikeyan (<sk752@medschl.cam.ac.uk>).
+There is a software wish list in this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
 
 Amendment is welcome. If necessary, additional information can be made available, e.g., [usage.md](usage.md).
 
@@ -94,3 +94,4 @@ where BiocManager is appropriate for R 3.5.0 or later.
 * **HPC support**: <support@hpc.cam.ac.uk> with the title “cardio migration".
 * **CEU contacts**: Joanna Howson (<jmmh2@medschl.cam.ac.uk>) and Ank Michielsen (<am2710@medschl.cam.ac.uk>).
 * **Request for write access**: Savita Karthikeyan (<sk752@medschl.cam.ac.uk>) and Charlotte van Coeverden (<crv26@medschl.cam.ac.uk>).
+* **Request for software**: Savita Karthikeyan (<sk752@medschl.cam.ac.uk>).
