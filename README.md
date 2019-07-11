@@ -5,7 +5,7 @@ Cambridge Service for Data Driven Discovery (CSD3) hosted by [Research Computing
 
 ---
 
-* [Software wish list](https://github.com/cambridge-ceu/csd3#software-wish-list)
+* [Software](https://github.com/cambridge-ceu/csd3#software)
 * [rsync](https://github.com/cambridge-ceu/csd3#rsync)
 * [R package reinstallation](https://github.com/cambridge-ceu/csd3#r-package-reinstallation)
 * [Training materials](https://github.com/cambridge-ceu/csd3#training-materials)
@@ -13,7 +13,7 @@ Cambridge Service for Data Driven Discovery (CSD3) hosted by [Research Computing
 
 ---
 
-## software wish list
+## software
 
 There is a software wish list in this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing). Direct contact can also be made to Savita Karthikeyan (<sk752@medschl.cam.ac.uk>).
 
