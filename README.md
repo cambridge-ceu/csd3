@@ -49,7 +49,7 @@ module avail r
 # if you would also like to use RStudio
 module avail rstudio
 ```
-e.g., `module load r-3.6.0-gcc-5.4.0-bzuuksv`.
+e.g., `module load r-3.6.0-gcc-5.4.0-bzuuksv rstudio/1.1.383`.
 
 Package redeployment is illustrated with R below for building R package list from ***/home/$USER/R*** at Cardio to be resintalled to ***/rds/user/$USER/hpc-work/R*** at CSD3.
 
