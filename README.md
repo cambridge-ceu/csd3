@@ -27,7 +27,7 @@ Official website: [https://rsync.samba.org/](https://rsync.samba.org/).
 Old version on Cardio, rsync 3.0.6, gives errors,
 
 ```bash
-rsync -av --partial mydir/ bp406@login-cpu.hpc.cam.ac.uk:/rds/user/bp406/hpc-work/mydir
+rsync -av --partial mydir/ login-cpu.hpc.cam.ac.uk:/rds/user/$USER/hpc-work/mydir
 
 Errors after successfully sending a number of files : 
 rsync: writefd_unbuffered failed to write 4 bytes to socket [sender]: Broken pipe (32)
