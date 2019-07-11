@@ -96,7 +96,7 @@ Issue
 ```bash
 mybalance
 ```
-to see your account.
+to see your account information.
 
 ## Training
 
