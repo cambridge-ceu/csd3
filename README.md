@@ -96,7 +96,7 @@ Issue
 ```bash
 mybalance
 ```
-to see your account information.
+from HPC console to see your account information for SLURM jobs.
 
 ## Training
 
