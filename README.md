@@ -15,7 +15,7 @@ Cambridge Service for Data Driven Discovery (CSD3) hosted by [Research Computing
 
 ## software wish list
 
-There is a software wish list, [csd3-software-list.tsv](csd3-software-list.tsv), based on this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing). Direct contact can also be made to Savita Karthikeyan (<sk752@medschl.cam.ac.uk>).
+There is a software wish list in this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing). Direct contact can also be made to Savita Karthikeyan (<sk752@medschl.cam.ac.uk>).
 
 Amendment is welcome. If necessary, additional information can be made available, e.g., [usage.md](usage.md).
 
