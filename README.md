@@ -85,7 +85,7 @@ biocLite(c("GO.db", "preprocessCore", "impute"))
 install.packages("BiocManager")
 BiocManager::install("WGCNA")
 ```
-where BiocManager is appropriate for R 3.5.0 or later.
+where `BiocManager` is appropriate for R 3.5.0 or later.
 
 ## Training
 
