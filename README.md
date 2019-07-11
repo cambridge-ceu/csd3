@@ -7,9 +7,9 @@ Cambridge Service for Data Driven Discovery (CSD3) hosted by [Research Computing
 
 * [Software](https://github.com/cambridge-ceu/csd3#software)
 * [rsync](https://github.com/cambridge-ceu/csd3#rsync)
-* [R package reinstallation](https://github.com/cambridge-ceu/csd3#r-package-reinstallation)
-* [Training materials](https://github.com/cambridge-ceu/csd3#training-materials)
-* [Contact information](https://github.com/cambridge-ceu/csd3#contact-information)
+* [R](https://github.com/cambridge-ceu/csd3#r)
+* [Training](https://github.com/cambridge-ceu/csd3#training)
+* [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
 
 ---
 
@@ -39,7 +39,7 @@ Bram Prins (<bp406@medschl.cam.ac.uk>) has the latest version (3.1.3) that doesn
 
 Note **/scratch/$USER** at Cardio is now **/DO-NOT-MODIFY-SCRATCH/$USER**.
 
-## R package reinstallation
+## R
 
 Official website: [https://www.r-project.org/](https://www.r-project.org/).
 
@@ -79,7 +79,7 @@ BiocManager::install("WGCNA")
 ```
 where BiocManager is appropriate for R 3.5.0 or later.
 
-## Training materials
+## Training
 
 * **Date**: Wednesday, 10th July
 * **Time**: 10am – 12pm
@@ -87,7 +87,7 @@ where BiocManager is appropriate for R 3.5.0 or later.
 * **Handouts**: [https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
 * **Presentation**: [Google document](https://tinyurl.com/y3l6jssg) by Praveen Surendran (<ps629@medschl.cam.ac.uk>).
 
-## Contact information
+## Contacts
 
 * **CSD3 account**: [https://www.hpc.cam.ac.uk/rcs-application](https://www.hpc.cam.ac.uk/rcs-application).
 * **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/).
