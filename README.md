@@ -25,6 +25,8 @@ Official website: [https://rsync.samba.org/](https://rsync.samba.org/).
 
 Old version on Cardio, rsync 3.0.6, gives errors,
 
+Note **/scratch/$USER** at Cardio is now **/DO-NOT-MODIFY-SCRATCH/$USER**.
+
 ```bash
 rsync -av --partial mydir/ bp406@login-cpu.hpc.cam.ac.uk:/rds/user/bp406/hpc-work/mydir
 
@@ -35,9 +37,7 @@ rsync error: error in rsync protocol data stream (code 12) at io.c(600) [sender=
 ```
 Bram Prins (<bp406@medschl.cam.ac.uk>) has the latest version (3.1.3) that doesn’t give this error here:
 
-/scratch/bp406/apps/software/data_manipulation/rsync-3.1.3/rsync
-
-Note **/scratch/$USER** at Cardio is now **/DO-NOT-MODIFY-SCRATCH/$USER**.
+/DO-NOT-MODIFY-SCRATCH/bp406/apps/software/data_manipulation/rsync-3.1.3/rsync
 
 ## R
 
