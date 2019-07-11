@@ -43,7 +43,7 @@ Note **/scratch/$USER** at Cardio is now **/DO-NOT-MODIFY-SCRATCH/$USER**.
 
 Official website: [https://www.r-project.org/](https://www.r-project.org/).
 
-Under HPC, choose the desired version of R from
+Under HPC, the default version is 3.3.3 with /usr/bin/R; alternatively choose the desired version of R from
 ```bash
 module avail r
 ```
