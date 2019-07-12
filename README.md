@@ -112,7 +112,7 @@ or `sintr` then check with `sacct`. The directory `/usr/local/software/slurm/cur
 
 ## Contacts
 
-* **CSD3 account**: [https://www.hpc.cam.ac.uk/rcs-application](https://www.hpc.cam.ac.uk/rcs-application).
+* **CSD3 account**: [https://www.hpc.cam.ac.uk/rcs-application](https://www.hpc.cam.ac.uk/rcs-application) as part of [Applications for Access to Research Computing Services](https://www.hpc.cam.ac.uk/applications-access-research-computing-services). 
 * **HPC support**: <support@hpc.cam.ac.uk> with the title “cardio migration".
 * **CEU contacts**: Joanna Howson (<jmmh2@medschl.cam.ac.uk>) and Ank Michielsen (<am2710@medschl.cam.ac.uk>).
 * **Request for software**: Savita Karthikeyan (<sk752@medschl.cam.ac.uk>).
