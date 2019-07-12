@@ -100,7 +100,7 @@ from HPC console to see your account information for SLURM jobs. For an interaci
 ```bash
 srun -N1 -n1 -c6 -p skylake -t 12:0:0 --pty bash -i
 ```
-or `sintr` then check with `sacct`. The collection os SLURM commands can be seen from [/usr/local/software/slurm/current/bin/](/usr/local/software/slurm/current/bin/).
+or `sintr` then check with `sacct`. The collection of SLURM commands can be seen from [/usr/local/software/slurm/current/bin/](/usr/local/software/slurm/current/bin/).
 
 ## Training
 
