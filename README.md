@@ -90,6 +90,8 @@ where `BiocManager` is appropriate for R 3.5.0 or later.
 
 ## Access
 
+### directories
+
 Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
 ```
 hpc-work -> /rds/user/$USER/hpc-work/
@@ -100,6 +102,8 @@ rds-jmmh2-projects -> /rds/project/jmmh2/rds-jmmh2-projects/
 rds-jmmh2-public_databases -> /rds/project/jmmh2/rds-jmmh2-public_databases/
 ```
 alternatively this can be created with `ln -s` command.
+
+### SLURM
 
 Issue
 ```bash
