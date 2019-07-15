@@ -113,7 +113,7 @@ from HPC console to see your account information. For an interacive job, we coul
 ```bash
 srun -N1 -n1 -c6 -p skylake -t 12:0:0 --pty bash -i
 ```
-or `sintr` then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `/usr/local/software/slurm/current/bin/` contains all SLURM executables.
+or `sintr` then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `/usr/local/software/slurm/current/bin/` contains all the executables.
 
 ## Training
 
