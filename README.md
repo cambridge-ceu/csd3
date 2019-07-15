@@ -92,7 +92,7 @@ where `BiocManager` is appropriate for R 3.5.0 or later.
 
 Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
 ```
-hpc-work -> /rds/user/jhz22/hpc-work/
+hpc-work -> /rds/user/$USER/hpc-work/
 rds-jmmh2-genetics_resources -> /rds/project/jmmh2/rds-jmmh2-genetics_resources/
 rds-jmmh2-legacy_projects -> /rds/project/jmmh2/rds-jmmh2-legacy_projects/
 rds-jmmh2-pre_qc_data -> /rds/project/jmmh2/rds-jmmh2-pre_qc_data/
