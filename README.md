@@ -109,7 +109,7 @@ Issue
 ```bash
 mybalance
 ```
-from HPC console to see your account information for SLURM jobs. For an interacive job, we could for instance start with
+from HPC console to see your account information. For an interacive job, we could for instance start with
 ```bash
 srun -N1 -n1 -c6 -p skylake -t 12:0:0 --pty bash -i
 ```
