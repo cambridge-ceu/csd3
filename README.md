@@ -100,6 +100,7 @@ rds-jmmh2-legacy_projects -> /rds/project/jmmh2/rds-jmmh2-legacy_projects/
 rds-jmmh2-pre_qc_data -> /rds/project/jmmh2/rds-jmmh2-pre_qc_data/
 rds-jmmh2-projects -> /rds/project/jmmh2/rds-jmmh2-projects/
 rds-jmmh2-public_databases -> /rds/project/jmmh2/rds-jmmh2-public_databases/
+rds-jmmh2-results -> /rds/project/jmmh2/rds-jmmh2-results
 ```
 alternatively this can be created with `ln -s` command.
 
