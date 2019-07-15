@@ -38,7 +38,7 @@ Bram Prins (<bp406@medschl.cam.ac.uk>) has the latest version (3.1.3) that doesn
 
 /DO-NOT-MODIFY-SCRATCH/bp406/apps/software/data_manipulation/rsync-3.1.3/rsync
 
-Note **/scratch/$USER** at Cardio is now **/DO-NOT-MODIFY-SCRATCH/$USER**.
+Note **/scratch** at Cardio is now **/DO-NOT-MODIFY-SCRATCH**.
 
 ## R
 
@@ -90,7 +90,16 @@ where `BiocManager` is appropriate for R 3.5.0 or later.
 
 ## Access
 
-Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions.
+Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
+```
+hpc-work -> /rds/user/jhz22/hpc-work/
+rds-jmmh2-genetics_resources -> /rds/project/jmmh2/rds-jmmh2-genetics_resources/
+rds-jmmh2-legacy_projects -> /rds/project/jmmh2/rds-jmmh2-legacy_projects/
+rds-jmmh2-pre_qc_data -> /rds/project/jmmh2/rds-jmmh2-pre_qc_data/
+rds-jmmh2-projects -> /rds/project/jmmh2/rds-jmmh2-projects/
+rds-jmmh2-public_databases -> /rds/project/jmmh2/rds-jmmh2-public_databases/
+```
+alternatively this can be created with `ln -s` command.
 
 Issue
 ```bash
