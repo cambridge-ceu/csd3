@@ -106,7 +106,7 @@ alternatively this can be created with
 ```bash
 mkdir $HOME/rds
 export rt=/rds/project/jmmh2
-for d in $(ls $rt | xargs -l basename); do ln -s $rt/$d $HOME/rds; done
+for d in $(ls $rt | xargs -l basename); do ln -sf $rt/$d $HOME/rds; done
 ```
 
 ### SLURM
