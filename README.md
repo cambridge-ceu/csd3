@@ -1,4 +1,4 @@
-The repository collects information for users of the HPC facility (Cardio) at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/) regarding migration to the Univeristy HPC, or the
+wThe repository collects information for users of the HPC facility (Cardio) at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/) regarding migration to the Univeristy HPC, or the
 Cambridge Service for Data Driven Discovery (CSD3) hosted by [Research Computing Services](https://www.csd3.cam.ac.uk/) as documented [here](https://docs.hpc.cam.ac.uk/hpc/).
 
 ## Contents
@@ -74,7 +74,7 @@ Package redeployment is illustrated with R below for building R package list fro
 A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](reinstall_r_pkgs.R), also touches upon Bioconductor,
 whose package installations and updates are described at [https://bioconductor.org/install/](https://bioconductor.org/install/). 
 
-Here is an example for WGCNA.
+Here is an example for [WGCNA](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/).
 ```r
 # from CRAN
 dependencies <- c("matrixStats", "Hmisc", "splines", "foreach", "doParallel",
