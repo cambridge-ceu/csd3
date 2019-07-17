@@ -102,11 +102,12 @@ rds-jmmh2-projects -> /rds/project/jmmh2/rds-jmmh2-projects/
 rds-jmmh2-public_databases -> /rds/project/jmmh2/rds-jmmh2-public_databases/
 rds-jmmh2-results -> /rds/project/jmmh2/rds-jmmh2-results
 ```
-alternatively this can be created with
+This can be created equivalently with
 ```bash
-mkdir $HOME/rds
+mkdir /home/$USER/rds
+ln -sf /rds/user/$USER/hpc-work /home/$USER/rds/hpc-work
 export rt=/rds/project/jmmh2
-for d in $(ls $rt | xargs -l basename); do ln -sf $rt/$d $HOME/rds/$d; done
+for d in $(ls $rt | xargs -l basename); do ln -sf $rt/$d /home/$USER/rds/$d; done
 ```
 
 ### SLURM
