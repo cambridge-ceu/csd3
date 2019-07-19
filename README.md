@@ -112,11 +112,11 @@ for d in $(ls $rt | xargs -l basename); do ln -sf $rt/$d /home/$USER/rds/$d; don
 
 ### SLURM
 
-Issue
+Accout details can be seen with
 ```bash
 mybalance
 ```
-from HPC console to see your account information. For an interacive job, we could for instance start with
+For an interacive job, we could for instance start with
 ```bash
 srun -N1 -n1 -c4 -p skylake-himem -t 12:0:0 --pty bash -i
 ```
