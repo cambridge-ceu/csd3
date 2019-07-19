@@ -109,7 +109,7 @@ ln -sf /rds/user/$USER/hpc-work /home/$USER/rds/hpc-work
 export rt=/rds/project/jmmh2
 for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rds-jmmh2-$d /home/$USER/rds/$d; done
 ```
-if you prefer the familiar names under Cardio. Note to list the directories you need postfix them with '/'.
+if you prefer the familiar names (no rds-jmmh2- prefix) under Cardio. Note to list the directories you need postfix them with '/'.
 
 ### SLURM
 
