@@ -124,8 +124,8 @@ or `sintr` then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The 
 
 ## Training
 
-* **Date**: Wednesday, 10th July
-* **Time**: 10am – 12pm
+* **First training**: Wednesday, 10th July from 10am – 12pm.
+* **Second training**: Wednesday, 31st July from 9:30 am – 4pm.
 * **Venue**: Thomas and Dorothy Seminar Room.
 * **Handouts**: [https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
 * **Presentation**: [Google document](https://tinyurl.com/y3l6jssg) by Praveen Surendran (<ps629@medschl.cam.ac.uk>).
