@@ -1,5 +1,5 @@
-Migration and related issues from HPC facility (Cardio) at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/) 
-to the Cambridge Service for Data Driven Discovery (CSD3) hosted by [Research Computing Services](https://www.csd3.cam.ac.uk/) as 
+HPC facility (Cardio) at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/)
+ --> the Cambridge Service for Data Driven Discovery (CSD3) hosted by [Research Computing Services](https://www.csd3.cam.ac.uk/) as 
 documented [here](https://docs.hpc.cam.ac.uk/hpc/).
 
 ## Contents
