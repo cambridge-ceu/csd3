@@ -1,5 +1,7 @@
-# 11-7-2019 JHZ
+# 20-7-2019 JHZ
 
+git add files
+git commit -m "copies of files"
 git add README.md
 git commit -m "README"
 git remote add origin git@github.com:cambridge-ceu/csd3.git
