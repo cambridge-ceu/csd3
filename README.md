@@ -71,7 +71,7 @@ Alternatively, we can use screen copy of package list from Cardio since users do
   edit(pkgs)
 ```
 **On CSD3**
-``r
+```r
   pkgs <- "mark and copy the list as given in c() above with Shift+Ins"
   user <- Sys.getenv("USER")
   to <- paste0("/rds/user/",user,"/hpc-work/R")
