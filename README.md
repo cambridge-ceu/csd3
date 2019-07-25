@@ -63,7 +63,7 @@ install.packages(pkgs, lib=location, repos="https://cran.r-project.org")
 ```
 Alternatively, we can use screen copy of package list from Cardio since users do not have write permission.
 
-**on Cardio**
+**On Cardio**
 ```r
   home <- Sys.getenv("HOME")
   from <- paste0(home,"/R")
