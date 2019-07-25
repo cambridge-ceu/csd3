@@ -54,13 +54,12 @@ e.g., `module load r-3.6.0-gcc-5.4.0-bzuuksv rstudio/1.1.383`.
 
 Package redeployment is illustrated with R below for building R package list from ***/home/$USER/R*** at Cardio to be resintalled to ***/rds/user/$USER/hpc-work/R*** at CSD3.
 
-One can use `rsync` to transfer installed packages directly and then reinstall them.
+One can use `rsync` to transfer the installed packages directly to the CSD3 location and then reinstall them as follows.
 ```r
-## CSD3
-  user <- Sys.getenv("USER")
-  location <- paste0("/rds/user/",user,"/hpc-work/R")
-  pkgs <- unname(installed.packages(lib.loc = location)[, "Package"])
-  install.packages(pkgs, lib=location, repos="https://cran.r-project.org")
+user <- Sys.getenv("USER")
+location <- paste0("/rds/user/",user,"/hpc-work/R")
+pkgs <- unname(installed.packages(lib.loc = location)[, "Package"])
+install.packages(pkgs, lib=location, repos="https://cran.r-project.org")
 ```
 Alternatively, we can use screen copy of package list from Cardio since users do not have write permission.
 ```r
@@ -70,7 +69,7 @@ Alternatively, we can use screen copy of package list from Cardio since users do
   pkgs <- unname(installed.packages(lib.loc = from)[, "Package"])
   edit(pkgs)
 ## On CSD3
-  pkgs <- c(...)
+  pkgs <- "mark and copy the list as given in c() above with Shift+Ins"
   user <- Sys.getenv("USER")
   to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
