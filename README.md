@@ -62,13 +62,16 @@ pkgs <- unname(installed.packages(lib.loc = location)[, "Package"])
 install.packages(pkgs, lib=location, repos="https://cran.r-project.org")
 ```
 Alternatively, we can use screen copy of package list from Cardio since users do not have write permission.
+
+**on Cardio**
 ```r
-## on Cardio
   home <- Sys.getenv("HOME")
   from <- paste0(home,"/R")
   pkgs <- unname(installed.packages(lib.loc = from)[, "Package"])
   edit(pkgs)
-## On CSD3
+```
+**On CSD3**
+``r
   pkgs <- "mark and copy the list as given in c() above with Shift+Ins"
   user <- Sys.getenv("USER")
   to <- paste0("/rds/user/",user,"/hpc-work/R")
