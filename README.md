@@ -96,7 +96,9 @@ where `BiocManager` is appropriate for R 3.5.0 or later.
 
 ## Access
 
-### directories
+All information about procedures and access requests can be found here: W:\Administration\CSD3 Data Users.
+
+### CSD3 directories
 
 Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
 ```
@@ -144,3 +146,4 @@ or `sintr` then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The 
 * **CEU contacts**: Joanna Howson (<jmmh2@medschl.cam.ac.uk>) and Ank Michielsen (<am2710@medschl.cam.ac.uk>).
 * **Request for software**: Savita Karthikeyan (<sk752@medschl.cam.ac.uk>).
 * **Request for write access**: Savita Karthikeyan (<sk752@medschl.cam.ac.uk>) and Charlotte van Coeverden (<crv26@medschl.cam.ac.uk>).
+* **Contacts for data access**. CSD3datamanager@medschl.cam.ac.uk.
