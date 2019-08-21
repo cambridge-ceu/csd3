@@ -94,6 +94,11 @@ BiocManager::install("WGCNA")
 ```
 where `BiocManager` is appropriate for R 3.5.0 or later.
 
+A good alternative is to use `devtools` package, e.g.,
+```r
+devtools::install_bioc("snpStats")
+```
+
 ## Access
 
 All information about procedures and access requests can be found here: W:\Administration\CSD3 Data Users.
