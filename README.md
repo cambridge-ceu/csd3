@@ -156,7 +156,7 @@ parallel -C' ' '
 ```
 This is equivalent to 
 ```bash
-#!/bin/bash
+#!/usr/bin/bash
 
 #SBATCH --ntasks=1
 #SBATCH --job-name=pdftopng
