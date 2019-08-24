@@ -126,6 +126,10 @@ to have the shorter (without rds-jmmh2- prefix) names on Cardio. Note to list th
 
 ### SLURM
 
+As with Cardio, it is helpful to set a temporary directory, e.g.,
+```bash
+export TMPDIR=/rds/user/$USER/hpc-work/
+```
 Accout details can be seen with
 ```bash
 mybalance
