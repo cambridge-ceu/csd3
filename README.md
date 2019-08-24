@@ -103,7 +103,7 @@ devtools::install_bioc("snpStats")
 
 All information about procedures and access requests can be found here: W:\Administration\CSD3 Data Users.
 
-### CSD3 directories
+**CSD3 directories**
 
 Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
 ```
@@ -124,7 +124,7 @@ for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rd
 ```
 to have the shorter (without rds-jmmh2- prefix) names on Cardio. Note to list the directories you need postfix them with '/'.
 
-### SLURM
+**SLURM**
 
 As with Cardio, it is helpful to set a temporary directory, e.g.,
 ```bash
