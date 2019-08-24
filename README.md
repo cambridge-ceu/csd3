@@ -154,6 +154,29 @@ parallel -C' ' '
   mv {}-000001.png INTERVAL.{}.png
 '
 ```
+This is equivalent to 
+```bash
+#!/bin/bash
+
+#SBATCH --ntasks=1
+#SBATCH --job-name=pdftopng
+#SBATCH --time=6:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --partition=skylake
+#SBATCH --array=1-50%10
+#SBATCH --output=pdftopng_%A_%a.out
+#SBATCH --error=pdftopng_%A_%a.err
+#SBATCH --export ALL
+
+export p=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' INTERVAL.list)
+export TMPDIR=/rds/user/$USER/hpc-work/
+
+echo ${p}
+pdftopng -r 300 INTERVAL.${p}.manhattan.pdf ${p}
+mv ${p}-000001.png INTERVAL.${p}.png
+```
+invoked by `sbatch`.
+
 ## Training
 
 * **First training**: Wednesday, 10th July from 10am – 12pm.
