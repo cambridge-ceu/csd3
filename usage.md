@@ -1,4 +1,6 @@
 ## HESS
+This section is extracted from https://github.com/jinghuazhao/software-notes, which sets up for analysis of height.
+
 HESS (Heritability Estimation from Summary Statistics) is now available from https://github.com/huwenboshi/hess and has a web page at
 
 https://huwenboshi.github.io/hess-0.5/#hess
@@ -7,7 +9,6 @@ To prepare for the software, one can proceeds with
 ```bash
 python -m pip install pysnptools --user
 ```
-The following scruot is extracted from https://github.com/jinghuazhao/software-notes, which sets up for analysis of height
 ```bash
 #!/bin/bash
 
