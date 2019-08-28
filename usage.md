@@ -5,3 +5,46 @@ module load boost-1.58.0-gcc-5.4.0-onpiqcr
 module load gcc-5.4.0-gcc-4.8.5-fis24gg
 ```
 then one can use `library(SAIGE)` inside R.
+
+## HESS
+To prepare for the software, one can proceeds with
+```bash
+python -m pip install pysnptools --user
+```
+whereas `miniconda` associates with faster libraries.
+```bash
+module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
+conda install pandas
+```
+The following scruot is extracted from https://github.com/jinghuazhao/software-notes, which sets up for analysis of height
+```bash
+#!/bin/bash
+
+export HEIGHT=https://portals.broadinstitute.org/collaboration/giant/images/0/01/GIANT_HEIGHT_Wood_et_al_2014_publicrelease_HapMapCeuFreq.txt.gz
+
+wget -qO- $HEIGHT | \
+awk 'NR>1' | \
+sort -k1,1 | \
+join -13 -21 snp150.txt - | \
+awk '($9!="X" && $9!="Y" && $9!="Un"){if(NR==1) print "SNP CHR BP A1 A2 Z N"; else print $1,$2,$3,$4,$5,$7/$8,$10}' > height.tsv.gz
+
+#  SNP - rs ID of the SNP (e.g. rs62442).
+#  CHR - Chromosome number of the SNP. This should be a number between 1 and 22.
+#  BP - Base pair position of the SNP.
+#  A1 - Effect allele of the SNP. The sign of the Z-score is with respect to this allele.
+#  A2 - The other allele of the SNP.
+#  Z - The Z-score of the SNP.
+#  N - Sample size of the SNP.
+```
+```python
+for chrom in $(seq 22)
+do
+    python hess.py \
+        --local-hsqg height \
+        --chrom $chrom \
+        --bfile 1kg_eur_1pct/1kg_eur_1pct_chr${chrom} \
+        --partition nygcresearch-ldetect-data-ac125e47bf7f/EUR/fourier_ls-chr${chrom}.bed \
+        --out step1
+done
+python hess.py --prefix step1 --out step2
+```
