@@ -11,11 +11,6 @@ To prepare for the software, one can proceeds with
 ```bash
 python -m pip install pysnptools --user
 ```
-whereas `miniconda` associates with faster libraries.
-```bash
-module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
-conda install pandas
-```
 The following scruot is extracted from https://github.com/jinghuazhao/software-notes, which sets up for analysis of height
 ```bash
 #!/bin/bash
@@ -37,7 +32,7 @@ awk '($9!="X" && $9!="Y" && $9!="Un"){if(NR==1) print "SNP CHR BP A1 A2 Z N"; el
 #  N - Sample size of the SNP.
 ```
 where snp150.txt from UCSC is described at the SUMSTATS repository, [https://github.com/jinghuazhao/SUMSTATS](https://github.com/jinghuazhao/SUMSTATS).
-```python
+```bash
 for chrom in $(seq 22)
 do
     python hess.py \
@@ -48,4 +43,9 @@ do
         --out step1
 done
 python hess.py --prefix step1 --out step2
+```
+It is preferable to use `miniconda` since it associates with faster libraries.
+```bash
+module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
+conda install pandas
 ```
