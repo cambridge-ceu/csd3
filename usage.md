@@ -40,7 +40,7 @@ do
         --partition nygcresearch-ldetect-data-ac125e47bf7f/EUR/fourier_ls-chr${chrom}.bed \
         --out step1
 done
-python hess.py --prefix step1 --out step2
+python hess.py --prefix step1 --reinflate-lambda-gc 1 --tot-hsqg 0.8 0.2 --out step2
 ```
 It is preferable to use `miniconda` since it associates with faster libraries.
 ```bash
