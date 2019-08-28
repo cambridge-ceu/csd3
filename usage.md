@@ -36,6 +36,7 @@ awk '($9!="X" && $9!="Y" && $9!="Un"){if(NR==1) print "SNP CHR BP A1 A2 Z N"; el
 #  Z - The Z-score of the SNP.
 #  N - Sample size of the SNP.
 ```
+where snp150.txt from UCSC is described at the SUMSTATS repository, [https://github.com/jinghuazhao/SUMSTATS](https://github.com/jinghuazhao/SUMSTATS).
 ```python
 for chrom in $(seq 22)
 do
