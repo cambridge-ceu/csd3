@@ -42,7 +42,7 @@ Note **/scratch** at Cardio is now **/DO-NOT-MODIFY-SCRATCH**.
 
 ## R
 
-Official website: [https://www.r-project.org/](https://www.r-project.org/).
+Official website: [https://www.r-project.org/](https://www.r-project.org/) and also [https://bioconductor.org/](https://bioconductor.org/).
 
 Under HPC, the default version is 3.3.3 with /usr/bin/R; alternatively choose the desired version of R from
 ```bash
