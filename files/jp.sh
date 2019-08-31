@@ -1,4 +1,9 @@
-# 30-8-2019 JHZ
+# 31-8-2019 JHZ
+
+# at CSD3
+
+cd /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/
+mkdir -p /scratch/curated_genetic_data/phenotypes/interval/high_dimensional_data jp549
 
 # from Cardio
 
