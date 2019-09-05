@@ -22,7 +22,7 @@ Amendment is welcome. If necessary, additional information can be made available
 
 ## sftp and rsync
 
-The utility `sftp` could be used for file transfer in the usual way.
+The utility `sftp` could be used for file transfer in the usual way. More generally, it is preferable to use `rsync`.
 
 Official website for rsync: [https://rsync.samba.org/](https://rsync.samba.org/).
 
