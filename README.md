@@ -20,9 +20,11 @@ There is a software wish list in this [Google spreadsheet](https://docs.google.c
 
 Amendment is welcome. If necessary, additional information can be made available, e.g., [usage.md](usage.md).
 
-## rsync
+## sftp and rsync
 
-Official website: [https://rsync.samba.org/](https://rsync.samba.org/).
+The utility `sftp` could be used for file transfer in the usual way.
+
+Official website for rsync: [https://rsync.samba.org/](https://rsync.samba.org/).
 
 Old version on Cardio, rsync 3.0.6, gives errors,
 
