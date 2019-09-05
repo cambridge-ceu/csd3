@@ -20,9 +20,9 @@ There is a software wish list in this [Google spreadsheet](https://docs.google.c
 
 Amendment is welcome. If necessary, additional information can be made available, e.g., [usage.md](usage.md).
 
-## sftp and rsync
+## scp, sftp and rsync
 
-The utility `sftp` could be used for file transfer in the usual way. More generally, it is preferable to use `rsync`.
+The utilities `scp` and `sftp` could be used for file transfer in the usual way. More generally, it is preferable to use `rsync`.
 
 Official website for rsync: [https://rsync.samba.org/](https://rsync.samba.org/).
 
