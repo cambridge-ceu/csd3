@@ -6,7 +6,7 @@ Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.u
 ---
 
 * [Software](https://github.com/cambridge-ceu/csd3#software)
-* [rsync](https://github.com/cambridge-ceu/csd3#rsync)
+* [scp, sftp and rsync](https://github.com/cambridge-ceu/csd3#scp-sftp-and-rsync)
 * [R](https://github.com/cambridge-ceu/csd3#r)
 * [Access](https://github.com/cambridge-ceu/csd3#access)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
