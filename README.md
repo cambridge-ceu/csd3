@@ -6,7 +6,7 @@ Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.u
 ---
 
 * [Software](https://github.com/cambridge-ceu/csd3#software)
-* [scp, sftp and rsync](https://github.com/cambridge-ceu/csd3#scp-sftp-and-rsync)
+* [scp, sftp and rsync](https://github.com/cambridge-ceu/csd3#file-transfer)
 * [R](https://github.com/cambridge-ceu/csd3#r)
 * [Access](https://github.com/cambridge-ceu/csd3#access)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
@@ -14,13 +14,13 @@ Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.u
 
 ---
 
-## software
+## Software
 
 There is a software wish list in this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
 
 Amendment is welcome. If necessary, additional information can be made available, e.g., [usage.md](usage.md).
 
-## scp, sftp and rsync
+## File transfer
 
 The utilities `scp` and `sftp` could be used for file transfer in the usual way. More generally, it is preferable to use `rsync`.
 
