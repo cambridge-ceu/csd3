@@ -135,14 +135,10 @@ srun -N1 -n1 -c4 -p skylake-himem -t 12:0:0 --pty bash -i
 ```
 or `sintr` then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `/usr/local/software/slurm/current/bin/` contains all the executables.
 
-Here is an example to convert a large number of PDF files (INTERVAL.*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list,
+Here is an example to convert a large number of PDF files (INTERVAL.*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list,and pipe into ``parallel`.
 ```bash
 ls *pdf | \
-sed 's/INTERVAL.//g;s/.manhattan.pdf//g' > INTERVAL.list
-```
-We do this with GNU parallel as follows,
-```bash
-cat INTERVAL.list | \
+sed 's/INTERVAL.//g;s/.manhattan.pdf//g' | \
 parallel -C' ' '
   echo {}
   pdftopng -r 300 INTERVAL.{}.manhattan.pdf
