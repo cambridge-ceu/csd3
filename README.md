@@ -15,7 +15,7 @@ The Cambridge Service for Data Driven Discovery by [Research Computing Services]
 
 ## Cardio
 
-File migration from Cardio, the HPC facility at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/) can be done with
+File migration from Cardio, the HPC facility at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/), can be done with
 utilities `scp` and `sftp`. However more generally, it is preferable to use `rsync`.
 
 Official website for rsync: [https://rsync.samba.org/](https://rsync.samba.org/).
