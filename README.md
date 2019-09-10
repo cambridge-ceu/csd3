@@ -145,7 +145,7 @@ parallel -C' ' '
   mv {}-000001.png INTERVAL.{}.png
 '
 ```
-This is equivalent to 
+which is equivalent to 
 ```bash
 #!/usr/bin/bash
 
