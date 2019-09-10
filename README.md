@@ -4,7 +4,7 @@ The Cambridge Service for Data Driven Discovery by [Research Computing Services]
 
 ---
 
-* [Migration](https://github.com/cambridge-ceu/csd3#cardio)
+* [Cardio](https://github.com/cambridge-ceu/csd3#cardio)
 * [R](https://github.com/cambridge-ceu/csd3#r)
 * [Use](https://github.com/cambridge-ceu/csd3#use)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
