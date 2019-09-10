@@ -6,9 +6,9 @@ Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.u
 ---
 
 * [Software](https://github.com/cambridge-ceu/csd3#software)
-* [File transfer](https://github.com/cambridge-ceu/csd3#file-transfer)
+* [Migration](https://github.com/cambridge-ceu/csd3#migration)
 * [R](https://github.com/cambridge-ceu/csd3#r)
-* [Access](https://github.com/cambridge-ceu/csd3#access)
+* [Use](https://github.com/cambridge-ceu/csd3#use)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
 * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
 
@@ -20,7 +20,7 @@ There is a software wish list in this [Google spreadsheet](https://docs.google.c
 
 Amendment is welcome. If necessary, additional information can be made available, e.g., [usage.md](usage.md).
 
-## File transfer
+## Migration
 
 The utilities `scp` and `sftp` could be used for file transfer in the usual way. More generally, it is preferable to use `rsync`.
 
@@ -101,7 +101,7 @@ A good alternative is to use `devtools` package, e.g.,
 devtools::install_bioc("snpStats")
 ```
 
-## Access
+## Use
 
 All information about procedures and access requests can be found here: W:\Administration\CSD3 Data Users.
 
