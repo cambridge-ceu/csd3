@@ -1,5 +1,4 @@
- HPC facility at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/), Cardio, &rarr;&rarr;&rarr; the Cambridge Service for 
-Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.uk/) ([Documentation](https://docs.hpc.cam.ac.uk/hpc/)).
+The Cambridge Service for Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.uk/) ([Documentation](https://docs.hpc.cam.ac.uk/hpc/)).
 
 ## Contents
 
@@ -15,6 +14,8 @@ Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.u
 ---
 
 ## Migration
+
+HPC facility at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/), Cardio, &rarr;&rarr;&rarr; CSD3.
 
 The utilities `scp` and `sftp` could be used for file transfer in the usual way. More generally, it is preferable to use `rsync`.
 
