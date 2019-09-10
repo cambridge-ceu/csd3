@@ -4,7 +4,7 @@ The Cambridge Service for Data Driven Discovery by [Research Computing Services]
 
 ---
 
-* [Migration](https://github.com/cambridge-ceu/csd3#migration)
+* [Migration](https://github.com/cambridge-ceu/csd3#cardio)
 * [R](https://github.com/cambridge-ceu/csd3#r)
 * [Use](https://github.com/cambridge-ceu/csd3#use)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
@@ -13,11 +13,10 @@ The Cambridge Service for Data Driven Discovery by [Research Computing Services]
 
 ---
 
-## Migration
+## Cardio
 
-HPC facility at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/), Cardio, &rarr;&rarr;&rarr; CSD3.
-
-The utilities `scp` and `sftp` could be used for file transfer in the usual way. More generally, it is preferable to use `rsync`.
+File migration from Cardio, the HPC facility at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/) can be done with
+utilities `scp` and `sftp`. However more generally, it is preferable to use `rsync`.
 
 Official website for rsync: [https://rsync.samba.org/](https://rsync.samba.org/).
 
