@@ -6,7 +6,6 @@ The Cambridge Service for Data Driven Discovery by [Research Computing Services]
 
 * [Cardio](https://github.com/cambridge-ceu/csd3#cardio)
 * [Use](https://github.com/cambridge-ceu/csd3#use)
-* [Software](https://github.com/cambridge-ceu/csd3#software)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
 * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
 
@@ -168,7 +167,7 @@ mv ${p}-000001.png INTERVAL.${p}.png
 ```
 invoked by `sbatch`.
 
-## Software
+**Software**
 
 There is a software wish list in this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
 
