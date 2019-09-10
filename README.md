@@ -5,7 +5,6 @@ The Cambridge Service for Data Driven Discovery by [Research Computing Services]
 ---
 
 * [Cardio](https://github.com/cambridge-ceu/csd3#cardio)
-* [R](https://github.com/cambridge-ceu/csd3#r)
 * [Use](https://github.com/cambridge-ceu/csd3#use)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
@@ -36,7 +35,7 @@ Bram Prins (<bp406@medschl.cam.ac.uk>) has the latest version (3.1.3) that doesn
 
 Note **/scratch** at Cardio is now **/DO-NOT-MODIFY-SCRATCH** -- an example is [jp.sh](files/jp.sh).
 
-## R
+**R**
 
 Official website: [https://www.r-project.org/](https://www.r-project.org/) and also [https://bioconductor.org/](https://bioconductor.org/).
 
