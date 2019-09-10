@@ -5,20 +5,14 @@ Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.u
 
 ---
 
-* [Software](https://github.com/cambridge-ceu/csd3#software)
 * [Migration](https://github.com/cambridge-ceu/csd3#migration)
 * [R](https://github.com/cambridge-ceu/csd3#r)
 * [Use](https://github.com/cambridge-ceu/csd3#use)
+* [Software](https://github.com/cambridge-ceu/csd3#software)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
 * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
 
 ---
-
-## Software
-
-There is a software wish list in this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
-
-Amendment is welcome. If necessary, additional information can be made available, e.g., [usage.md](usage.md).
 
 ## Migration
 
@@ -178,6 +172,12 @@ pdftopng -r 300 INTERVAL.${p}.manhattan.pdf ${p}
 mv ${p}-000001.png INTERVAL.${p}.png
 ```
 invoked by `sbatch`.
+
+## Software
+
+There is a software wish list in this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
+
+Amendment is welcome. If necessary, additional information can be made available, e.g., [usage.md](usage.md).
 
 ## Training
 
