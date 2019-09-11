@@ -158,7 +158,7 @@ invoked by `sbatch`.
 
 ### login
 
-Automatic login through ssh/sftp can can be enabled with
+Automatic login via ssh/sftp can can be enabled with
 ```bash
 ssh-copy-id login.hpc.cam.ac.uk`
 ```
