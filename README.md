@@ -23,7 +23,7 @@ Bram Prins (<bp406@medschl.cam.ac.uk>) has the latest version (3.1.3) that doesn
 
 Note **/scratch** at Cardio is now **/DO-NOT-MODIFY-SCRATCH** -- an example is [jp.sh](files/jp.sh).
 
-**R**
+### R
 
 Official website: [https://www.r-project.org/](https://www.r-project.org/) and also [https://bioconductor.org/](https://bioconductor.org/).
 
@@ -86,7 +86,7 @@ devtools::install_bioc("snpStats")
 
 All information about procedures and access requests can be found here: W:\Administration\CSD3 Data Users.
 
-**CSD3 directories**
+### CSD3 directories
 
 Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
 ```
@@ -107,7 +107,7 @@ for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rd
 ```
 to have the shorter (without rds-jmmh2- prefix) names on Cardio. Note to list the directories you need postfix them with '/'.
 
-**SLURM**
+### SLURM
 
 As with Cardio, it is helpful to set a temporary directory, e.g.,
 ```bash
@@ -156,12 +156,12 @@ mv ${p}-000001.png INTERVAL.${p}.png
 ```
 invoked by `sbatch`.
 
-**Software**
+### Software
 
 A software wish list in a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing)
 can be amended. Additional information can be made available, e.g., [usage.md](usage.md).
 
-**Training**
+### Training
 
 * **First training**: Wednesday, 10th July from 10am – 12pm.
 * **Second training**: Wednesday, 31st July from 9:30am – 4pm.
@@ -169,7 +169,7 @@ can be amended. Additional information can be made available, e.g., [usage.md](u
 * **Handouts**: [https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
 * **Presentation**: [Google document](https://tinyurl.com/y3l6jssg) by Praveen Surendran (<ps629@medschl.cam.ac.uk>).
 
-**Contacts**
+### Contacts
 
 * **CSD3 account**: [https://www.hpc.cam.ac.uk/rcs-application](https://www.hpc.cam.ac.uk/rcs-application) as in [Applications for Access to Research Computing Services](https://www.hpc.cam.ac.uk/applications-access-research-computing-services). 
 * **HPC support**: <support@hpc.cam.ac.uk> with the title “cardio migration".
