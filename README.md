@@ -1,16 +1,5 @@
 The Cambridge Service for Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.uk/) ([Documentation](https://docs.hpc.cam.ac.uk/hpc/)).
 
-## Contents
-
----
-
-* [Cardio](https://github.com/cambridge-ceu/csd3#cardio)
-* [Use](https://github.com/cambridge-ceu/csd3#use)
-* [Training](https://github.com/cambridge-ceu/csd3#training)
-* [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
-
----
-
 ## Cardio
 
 File migration from Cardio, the HPC facility at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/), can be done with
@@ -173,7 +162,7 @@ There is a software wish list in this [Google spreadsheet](https://docs.google.c
 
 Amendment is welcome. If necessary, additional information can be made available, e.g., [usage.md](usage.md).
 
-## Training
+**Training**
 
 * **First training**: Wednesday, 10th July from 10am – 12pm.
 * **Second training**: Wednesday, 31st July from 9:30am – 4pm.
@@ -181,7 +170,7 @@ Amendment is welcome. If necessary, additional information can be made available
 * **Handouts**: [https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
 * **Presentation**: [Google document](https://tinyurl.com/y3l6jssg) by Praveen Surendran (<ps629@medschl.cam.ac.uk>).
 
-## Contacts
+**Contacts**
 
 * **CSD3 account**: [https://www.hpc.cam.ac.uk/rcs-application](https://www.hpc.cam.ac.uk/rcs-application) as in [Applications for Access to Research Computing Services](https://www.hpc.cam.ac.uk/applications-access-research-computing-services). 
 * **HPC support**: <support@hpc.cam.ac.uk> with the title “cardio migration".
