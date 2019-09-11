@@ -156,6 +156,10 @@ mv ${p}-000001.png INTERVAL.${p}.png
 ```
 invoked by `sbatch`.
 
+### ssh automation
+
+This can be enabled, e.g., `ssh-copy-id login.hpc.cam.ac.uk`.
+
 ### Software
 
 A software wish list in a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing)
