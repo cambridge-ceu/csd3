@@ -156,12 +156,13 @@ mv ${p}-000001.png INTERVAL.${p}.png
 ```
 invoked by `sbatch`.
 
-### ssh
+### ssh/sftp
 
-It can can be enabled on a Bash console with
+Automatic login can can be enabled with
 ```bash
 ssh-copy-id login.hpc.cam.ac.uk`
 ```
+from a Bash console after one login.
 
 ### Software
 
