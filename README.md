@@ -158,9 +158,8 @@ invoked by `sbatch`.
 
 **Software**
 
-There is a software wish list in this [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing).
-
-Amendment is welcome. If necessary, additional information can be made available, e.g., [usage.md](usage.md).
+A software wish list in a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing)
+can be amended. Additional information can be made available, e.g., [usage.md](usage.md).
 
 **Training**
 
