@@ -95,6 +95,14 @@ devtools::install_bioc("snpStats")
 
 All information about procedures and access requests can be found here: W:\Administration\CSD3 Data Users.
 
+### login
+
+Automatic login via ssh/sftp can be enabled with
+```bash
+ssh-copy-id login.hpc.cam.ac.uk`
+```
+from a Bash console after one login.
+
 ### CSD3 directories
 
 Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
@@ -164,14 +172,6 @@ pdftopng -r 300 INTERVAL.${p}.manhattan.pdf ${p}
 mv ${p}-000001.png INTERVAL.${p}.png
 ```
 invoked by `sbatch`.
-
-### login
-
-Automatic login via ssh/sftp can be enabled with
-```bash
-ssh-copy-id login.hpc.cam.ac.uk`
-```
-from a Bash console after one login.
 
 ### Software
 
