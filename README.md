@@ -126,10 +126,6 @@ to have the shorter (without rds-jmmh2- prefix) names on Cardio. Note to list th
 
 ### SLURM
 
-As with Cardio, it is helpful to set a temporary directory, e.g.,
-```bash
-export TMPDIR=/rds/user/$USER/hpc-work/
-```
 Accout details can be seen with
 ```bash
 mybalance
@@ -171,7 +167,10 @@ echo ${p}
 pdftopng -r 300 INTERVAL.${p}.manhattan.pdf ${p}
 mv ${p}-000001.png INTERVAL.${p}.png
 ```
-invoked by `sbatch`.
+invoked by `sbatch`. As with Cardio, it is helpful to set a temporary directory, i.e.,
+```bash
+export TMPDIR=/rds/user/$USER/hpc-work/
+```
 
 ### Software
 
