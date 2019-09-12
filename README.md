@@ -103,7 +103,7 @@ ssh-copy-id login.hpc.cam.ac.uk`
 ```
 from a Bash console after one login.
 
-### CSD3 directories
+### Directories
 
 Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
 ```
