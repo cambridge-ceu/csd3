@@ -14,9 +14,7 @@ It is possible to fetch `my-file-on-Cardio` with
 ```bash
 scp cardio-login.hpc.cam.ac.uk:/home/$USER/my-file-on-Cardio .
 ```
-as with `sftp`. More generally, it is preferable to use `rsync`.
-
-Official website for rsync: [https://rsync.samba.org/](https://rsync.samba.org/).
+as with `sftp`. More generally, it is preferable to use `rsync`, [https://rsync.samba.org/](https://rsync.samba.org/).
 
 Old version on Cardio, rsync 3.0.6, gives errors,
 
