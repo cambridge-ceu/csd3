@@ -2,8 +2,19 @@ The Cambridge Service for Data Driven Discovery by [Research Computing Services]
 
 ## Cardio
 
-File migration from Cardio, the HPC facility at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/), can be done with
-utilities `scp` and `sftp`. However more generally, it is preferable to use `rsync`.
+Cardio is the HPC facility at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/).
+
+### login
+
+Automatic login can be enabled with `ssh-copy-id cardio-login.hpc.cam.ac.uk`.
+
+### Migration
+
+It is possible to fetch `my-file-on-Cardio` with
+```bash
+scp cardio-login.hpc.cam.ac.uk:/home/$USER/my-file-on-Cardio .
+```
+as with `sftp`. More generally, it is preferable to use `rsync`.
 
 Official website for rsync: [https://rsync.samba.org/](https://rsync.samba.org/).
 
@@ -158,7 +169,7 @@ invoked by `sbatch`.
 
 ### login
 
-Automatic login via ssh/sftp can can be enabled with
+Automatic login via ssh/sftp can be enabled with
 ```bash
 ssh-copy-id login.hpc.cam.ac.uk`
 ```
