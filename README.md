@@ -1,7 +1,5 @@
 The Cambridge Service for Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.uk/) ([Documentation](https://docs.hpc.cam.ac.uk/hpc/)).
 
-## Use
-
 All information about procedures and access requests can be found here: W:\Administration\CSD3 Data Users.
 
 ### login
@@ -88,7 +86,7 @@ can be amended. Additional information can be made available, e.g., [usage.md](u
 
 ---
 
-## Cardio
+## Information on Cardio
 
 Cardio is the HPC facility at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/).
 
