@@ -1,5 +1,93 @@
 The Cambridge Service for Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.uk/) ([Documentation](https://docs.hpc.cam.ac.uk/hpc/)).
 
+## Use
+
+All information about procedures and access requests can be found here: W:\Administration\CSD3 Data Users.
+
+### login
+
+Automatic login via ssh/sftp can be enabled with
+```bash
+ssh-copy-id login.hpc.cam.ac.uk`
+```
+from a Bash console after one login.
+
+### Directories
+
+Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
+```
+hpc-work -> /rds/user/$USER/hpc-work/
+rds-jmmh2-genetics_resources -> /rds/project/jmmh2/rds-jmmh2-genetics_resources/
+rds-jmmh2-legacy_projects -> /rds/project/jmmh2/rds-jmmh2-legacy_projects/
+rds-jmmh2-pre_qc_data -> /rds/project/jmmh2/rds-jmmh2-pre_qc_data/
+rds-jmmh2-projects -> /rds/project/jmmh2/rds-jmmh2-projects/
+rds-jmmh2-public_databases -> /rds/project/jmmh2/rds-jmmh2-public_databases/
+rds-jmmh2-results -> /rds/project/jmmh2/rds-jmmh2-results
+```
+This can be created equivalently with
+```bash
+mkdir /home/$USER/rds
+ln -sf /rds/user/$USER/hpc-work /home/$USER/rds/hpc-work
+export rt=/rds/project/jmmh2
+for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rds-jmmh2-$d /home/$USER/rds/$d; done
+```
+to have the shorter (without rds-jmmh2- prefix) names on Cardio. Note to list the directories you need postfix them with '/'.
+
+### SLURM
+
+Accout details can be seen with
+```bash
+mybalance
+```
+For an interacive job, we could for instance start with
+```bash
+srun -N1 -n1 -c4 -p skylake-himem -t 12:0:0 --pty bash -i
+```
+or `sintr` then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `/usr/local/software/slurm/current/bin/` contains all the executables.
+
+Here is an example to convert a large number of PDF files (INTERVAL.*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list,and pipe into ``parallel`.
+```bash
+ls *pdf | \
+sed 's/INTERVAL.//g;s/.manhattan.pdf//g' | \
+parallel -C' ' '
+  echo {}
+  pdftopng -r 300 INTERVAL.{}.manhattan.pdf
+  mv {}-000001.png INTERVAL.{}.png
+'
+```
+which is equivalent to 
+```bash
+#!/usr/bin/bash
+
+#SBATCH --ntasks=1
+#SBATCH --job-name=pdftopng
+#SBATCH --time=6:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --partition=skylake
+#SBATCH --array=1-50%10
+#SBATCH --output=pdftopng_%A_%a.out
+#SBATCH --error=pdftopng_%A_%a.err
+#SBATCH --export ALL
+
+export p=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' INTERVAL.list)
+export TMPDIR=/rds/user/$USER/hpc-work/
+
+echo ${p}
+pdftopng -r 300 INTERVAL.${p}.manhattan.pdf ${p}
+mv ${p}-000001.png INTERVAL.${p}.png
+```
+invoked by `sbatch`. As with Cardio, it is helpful to set a temporary directory, i.e.,
+```bash
+export TMPDIR=/rds/user/$USER/hpc-work/
+```
+
+### Software
+
+A software wish list in a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing)
+can be amended. Additional information can be made available, e.g., [usage.md](usage.md).
+
+---
+
 ## Cardio
 
 Cardio is the HPC facility at the [Cardiovascular Epidemiology Unit (CEU)](https://www.phpc.cam.ac.uk/ceu/).
@@ -90,92 +178,6 @@ A good alternative is to use `devtools` package, e.g.,
 ```r
 devtools::install_bioc("snpStats")
 ```
-
-## Use
-
-All information about procedures and access requests can be found here: W:\Administration\CSD3 Data Users.
-
-### login
-
-Automatic login via ssh/sftp can be enabled with
-```bash
-ssh-copy-id login.hpc.cam.ac.uk`
-```
-from a Bash console after one login.
-
-### Directories
-
-Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
-```
-hpc-work -> /rds/user/$USER/hpc-work/
-rds-jmmh2-genetics_resources -> /rds/project/jmmh2/rds-jmmh2-genetics_resources/
-rds-jmmh2-legacy_projects -> /rds/project/jmmh2/rds-jmmh2-legacy_projects/
-rds-jmmh2-pre_qc_data -> /rds/project/jmmh2/rds-jmmh2-pre_qc_data/
-rds-jmmh2-projects -> /rds/project/jmmh2/rds-jmmh2-projects/
-rds-jmmh2-public_databases -> /rds/project/jmmh2/rds-jmmh2-public_databases/
-rds-jmmh2-results -> /rds/project/jmmh2/rds-jmmh2-results
-```
-This can be created equivalently with
-```bash
-mkdir /home/$USER/rds
-ln -sf /rds/user/$USER/hpc-work /home/$USER/rds/hpc-work
-export rt=/rds/project/jmmh2
-for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rds-jmmh2-$d /home/$USER/rds/$d; done
-```
-to have the shorter (without rds-jmmh2- prefix) names on Cardio. Note to list the directories you need postfix them with '/'.
-
-### SLURM
-
-Accout details can be seen with
-```bash
-mybalance
-```
-For an interacive job, we could for instance start with
-```bash
-srun -N1 -n1 -c4 -p skylake-himem -t 12:0:0 --pty bash -i
-```
-or `sintr` then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `/usr/local/software/slurm/current/bin/` contains all the executables.
-
-Here is an example to convert a large number of PDF files (INTERVAL.*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list,and pipe into ``parallel`.
-```bash
-ls *pdf | \
-sed 's/INTERVAL.//g;s/.manhattan.pdf//g' | \
-parallel -C' ' '
-  echo {}
-  pdftopng -r 300 INTERVAL.{}.manhattan.pdf
-  mv {}-000001.png INTERVAL.{}.png
-'
-```
-which is equivalent to 
-```bash
-#!/usr/bin/bash
-
-#SBATCH --ntasks=1
-#SBATCH --job-name=pdftopng
-#SBATCH --time=6:00:00
-#SBATCH --cpus-per-task=8
-#SBATCH --partition=skylake
-#SBATCH --array=1-50%10
-#SBATCH --output=pdftopng_%A_%a.out
-#SBATCH --error=pdftopng_%A_%a.err
-#SBATCH --export ALL
-
-export p=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' INTERVAL.list)
-export TMPDIR=/rds/user/$USER/hpc-work/
-
-echo ${p}
-pdftopng -r 300 INTERVAL.${p}.manhattan.pdf ${p}
-mv ${p}-000001.png INTERVAL.${p}.png
-```
-invoked by `sbatch`. As with Cardio, it is helpful to set a temporary directory, i.e.,
-```bash
-export TMPDIR=/rds/user/$USER/hpc-work/
-```
-
-### Software
-
-A software wish list in a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing)
-can be amended. Additional information can be made available, e.g., [usage.md](usage.md).
 
 ### Training
 
