@@ -29,7 +29,7 @@ ln -sf /rds/user/$USER/hpc-work /home/$USER/rds/hpc-work
 export rt=/rds/project/jmmh2
 for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rds-jmmh2-$d /home/$USER/rds/$d; done
 ```
-to have the shorter (without rds-jmmh2- prefix) names on Cardio. Note to list the directories you need postfex them with '/'.
+to have the shorter (without rds-jmmh2- prefix) names on Cardio. Note to list the directories you need postfix them with '/'.
 
 ### SLURM
 
