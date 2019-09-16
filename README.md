@@ -16,7 +16,7 @@ ssh-keygen
 # Enter same passphrase again: 
 # Your identification has been saved in mykey.
 # Your public key has been saved in mykey.pub.
-T he key fingerprint is:
+The key fingerprint is:
 ssh-copy-id -i ~/.ssh/mykey login.hpc.cam.ac.uk
 ```
 as in [https://www.ssh.com/ssh/copy-id](https://www.ssh.com/ssh/copy-id).
