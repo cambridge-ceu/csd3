@@ -8,7 +8,17 @@ Automatic login via ssh/sftp can be enabled with
 ```bash
 ssh-copy-id login.hpc.cam.ac.uk`
 ```
-from a Bash console after one login.
+from a Bash console after one login. If this has not set up, follow these steps,
+```bash
+ssh-keygen
+# Enter file in which to save the key (/home/ylo/.ssh/id_rsa): mykey
+# Enter passphrase (empty for no passphrase): 
+# Enter same passphrase again: 
+# Your identification has been saved in mykey.
+# Your public key has been saved in mykey.pub.
+T he key fingerprint is:
+ssh-copy-id -i ~/.ssh/mykey login.hpc.cam.ac.uk
+```
 
 ### Directories
 
