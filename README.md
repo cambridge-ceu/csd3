@@ -19,6 +19,7 @@ ssh-keygen
 T he key fingerprint is:
 ssh-copy-id -i ~/.ssh/mykey login.hpc.cam.ac.uk
 ```
+as in [https://www.ssh.com/ssh/copy-id](https://www.ssh.com/ssh/copy-id).
 
 ### Directories
 
