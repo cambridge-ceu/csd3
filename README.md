@@ -33,14 +33,14 @@ rds-jmmh2-projects -> /rds/project/jmmh2/rds-jmmh2-projects/
 rds-jmmh2-public_databases -> /rds/project/jmmh2/rds-jmmh2-public_databases/
 rds-jmmh2-results -> /rds/project/jmmh2/rds-jmmh2-results
 ```
-This can be created equivalently with
+Short shorter (without rds-jmmh2- prefix) names as on Cardio can be created equivalently with
 ```bash
 mkdir /home/$USER/rds
 ln -sf /rds/user/$USER/hpc-work /home/$USER/rds/hpc-work
 export rt=/rds/project/jmmh2
 for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rds-jmmh2-$d /home/$USER/rds/$d; done
 ```
-to have the shorter (without rds-jmmh2- prefix) names on Cardio. Note to list the directories you need postfix them with '/'.
+ Note to list the directories you need postfix them with '/'.
 
 ### SLURM
 
