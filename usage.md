@@ -48,7 +48,7 @@ module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
 conda install pandas
 ```
 
-## phenoscanner
+## PhenoScanner
 
 The installation can be made and documentation example run as follows, 
 ```bash
