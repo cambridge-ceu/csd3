@@ -2,6 +2,19 @@ The Cambridge Service for Data Driven Discovery by [Research Computing Services]
 
 All information about procedures and access requests can be found here: W:\Administration\CSD3 Data Users.
 
+## Contents
+
+* [login](https://github.com/cambridge-ceu/csd3#login)
+* [Directories](https://github.com/cambridge-ceu/csd3#directories)
+* [SLURM](https://github.com/cambridge-ceu/csd3#slurm)
+* [Software](https://github.com/cambridge-ceu/csd3#software)
+* [Information on Cardio](https://github.com/cambridge-ceu/csd3#information-on-cardio)
+  * [login](https://github.com/cambridge-ceu/csd3#login-1)
+  * [Migration](https://github.com/cambridge-ceu/csd3#migration)
+  * [R](https://github.com/cambridge-ceu/csd3#r)
+  * [Training](https://github.com/cambridge-ceu/csd3#training)
+  * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
+
 ### login
 
 Automatic login via ssh/sftp can be enabled with
