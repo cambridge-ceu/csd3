@@ -48,6 +48,17 @@ module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
 conda install pandas
 ```
 
+## phenoscanner
+
+The installation can be made and documentation example run as follows, 
+```bash
+install.packages("devtools")
+library(devtools)
+install_github("phenoscanner/phenoscanner")
+library(phenoscanner)
+example(phenoscanner)
+```
+
 ## SAIGE 0.35.8.2
 
 ```bash
