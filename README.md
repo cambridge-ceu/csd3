@@ -8,6 +8,9 @@ All information about procedures and access requests can be found here: **W:\Adm
 * [Directories](https://github.com/cambridge-ceu/csd3#directories)
 * [SLURM](https://github.com/cambridge-ceu/csd3#slurm)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
+  * [software to-do list]()
+  * [R]()
+  * [Additional information]()
 * [Information on Cardio](https://github.com/cambridge-ceu/csd3#information-on-cardio)
   * [login](https://github.com/cambridge-ceu/csd3#login-1)
   * [Migration](https://github.com/cambridge-ceu/csd3#migration)
@@ -105,8 +108,44 @@ export TMPDIR=/rds/user/$USER/hpc-work/
 
 ### Software
 
-A software wish list in a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing)
-can be amended. Additional information can be made available, e.g., [usage.md](usage.md).
+**software to-do list**
+
+This is a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing). 
+
+**R**
+
+Official website: [https://www.r-project.org/](https://www.r-project.org/) and also [https://bioconductor.org/](https://bioconductor.org/).
+
+Under HPC, the default version is 3.3.3 with /usr/bin/R; alternatively choose the desired version of R from
+```bash
+module avail r
+# if you would also like to use RStudio
+module avail rstudio
+```
+e.g., `module load r-3.6.0-gcc-5.4.0-bzuuksv rstudio/1.1.383`.
+
+The following code installs package for weighted correlation network analysis ([WGCNA](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/)).
+```r
+# from CRAN
+dependencies <- c("matrixStats", "Hmisc", "splines", "foreach", "doParallel",
+                  "fastcluster", "dynamicTreeCut", "survival")
+install.packages(dependencies)
+# from Bioconductor
+source("http://bioconductor.org/biocLite.R")
+biocLite(c("GO.db", "preprocessCore", "impute"))
+install.packages("BiocManager")
+BiocManager::install("WGCNA")
+```
+where `BiocManager` is appropriate for R 3.5.0 or later.
+
+A good alternative is to use `devtools` package, e.g.,
+```r
+devtools::install_bioc("snpStats")
+```
+
+**Additional information**
+
+This can be made available, e.g., [usage.md](usage.md).
 
 ---
 
@@ -144,16 +183,6 @@ Note **/scratch** at Cardio is now **/DO-NOT-MODIFY-SCRATCH** -- an example is [
 
 ### R
 
-Official website: [https://www.r-project.org/](https://www.r-project.org/) and also [https://bioconductor.org/](https://bioconductor.org/).
-
-Under HPC, the default version is 3.3.3 with /usr/bin/R; alternatively choose the desired version of R from
-```bash
-module avail r
-# if you would also like to use RStudio
-module avail rstudio
-```
-e.g., `module load r-3.6.0-gcc-5.4.0-bzuuksv rstudio/1.1.383`.
-
 Package redeployment is illustrated with R below for building R package list from ***/home/$USER/R*** at Cardio to be resintalled to ***/rds/user/$USER/hpc-work/R*** at CSD3.
 
 One can use `rsync` to transfer the installed packages directly to the CSD3 location and then reinstall them as follows.
@@ -181,25 +210,6 @@ Alternatively, we can use screen copy of package list from Cardio since users do
 ```
 A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](reinstall_r_pkgs.R), also touches upon Bioconductor,
 whose package installations and updates are described at [https://bioconductor.org/install/](https://bioconductor.org/install/). 
-
-The following code installs package for weighted correlation network analysis ([WGCNA](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/)).
-```r
-# from CRAN
-dependencies <- c("matrixStats", "Hmisc", "splines", "foreach", "doParallel",
-                  "fastcluster", "dynamicTreeCut", "survival")
-install.packages(dependencies)
-# from Bioconductor
-source("http://bioconductor.org/biocLite.R")
-biocLite(c("GO.db", "preprocessCore", "impute"))
-install.packages("BiocManager")
-BiocManager::install("WGCNA")
-```
-where `BiocManager` is appropriate for R 3.5.0 or later.
-
-A good alternative is to use `devtools` package, e.g.,
-```r
-devtools::install_bioc("snpStats")
-```
 
 ### Training
 
