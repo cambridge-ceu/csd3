@@ -14,7 +14,7 @@ All information about procedures and access requests can be found here: **W:\Adm
 * [Information on Cardio](https://github.com/cambridge-ceu/csd3#information-on-cardio)
   * [login](https://github.com/cambridge-ceu/csd3#login-1)
   * [Migration](https://github.com/cambridge-ceu/csd3#migration)
-  * [R package reinstallations](https://github.com/cambridge-ceu/csd3#r-package-resinstallations)
+  * [R package reinstallations](https://github.com/cambridge-ceu/csd3#r-package-reinstallations)
   * [Training](https://github.com/cambridge-ceu/csd3#training)
   * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
 
