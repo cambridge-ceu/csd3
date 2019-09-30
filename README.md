@@ -8,9 +8,9 @@ All information about procedures and access requests can be found here: **W:\Adm
 * [Directories](https://github.com/cambridge-ceu/csd3#directories)
 * [SLURM](https://github.com/cambridge-ceu/csd3#slurm)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
-  * [software to-do list]()
-  * [R]()
-  * [Additional information]()
+  * [software to-do list](https://github.com/cambridge-ceu/csd3#software-to-do-list)
+  * [R](https://github.com/cambridge-ceu/csd3#r)
+  * [Additional information](https://github.com/cambridge-ceu/csd3#additional-information)
 * [Information on Cardio](https://github.com/cambridge-ceu/csd3#information-on-cardio)
   * [login](https://github.com/cambridge-ceu/csd3#login-1)
   * [Migration](https://github.com/cambridge-ceu/csd3#migration)
@@ -112,7 +112,7 @@ export TMPDIR=/rds/user/$USER/hpc-work/
 
 This is a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing). 
 
-**R**
+#### R
 
 Official website: [https://www.r-project.org/](https://www.r-project.org/) and also [https://bioconductor.org/](https://bioconductor.org/).
 
@@ -143,7 +143,7 @@ A good alternative is to use `devtools` package, e.g.,
 devtools::install_bioc("snpStats")
 ```
 
-**Additional information**
+#### Additional information
 
 This can be made available, e.g., [usage.md](usage.md).
 
