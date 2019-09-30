@@ -14,7 +14,7 @@ All information about procedures and access requests can be found here: **W:\Adm
 * [Information on Cardio](https://github.com/cambridge-ceu/csd3#information-on-cardio)
   * [login](https://github.com/cambridge-ceu/csd3#login-1)
   * [Migration](https://github.com/cambridge-ceu/csd3#migration)
-  * [R package reinstallation](https://github.com/cambridge-ceu/csd3#r-package-resinstalltion)
+  * [R package reinstallations](https://github.com/cambridge-ceu/csd3#r-package-resinstallations)
   * [Training](https://github.com/cambridge-ceu/csd3#training)
   * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
 
@@ -181,7 +181,7 @@ Bram Prins (<bp406@medschl.cam.ac.uk>) has the latest version (3.1.3) that doesn
 
 Note **/scratch** at Cardio is now **/DO-NOT-MODIFY-SCRATCH** -- an example is [jp.sh](files/jp.sh).
 
-### R package reinstallation
+### R package reinstallations
 
 Package redeployment is illustrated with R below for building R package list from ***/home/$USER/R*** at Cardio to be resintalled to ***/rds/user/$USER/hpc-work/R*** at CSD3.
 
