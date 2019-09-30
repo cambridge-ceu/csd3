@@ -201,7 +201,7 @@ We can use screen copy of package list from Cardio since users do not have write
   to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
 ```
-If a package is already built one can reinstall them as follows.
+If a package list is already built one can reinstall them as follows.
 ```r
 user <- Sys.getenv("USER")
 location <- paste0("/rds/user/",user,"/hpc-work/R")
