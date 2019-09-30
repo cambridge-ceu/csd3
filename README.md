@@ -201,9 +201,6 @@ We can use screen copy of package list from Cardio since users do not have write
   to <- paste0("/rds/user/",user,"/hpc-work/R")
   install.packages(pkgs, lib=to, repos="https://cran.r-project.org")
 ```
-A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](reinstall_r_pkgs.R), also touches upon Bioconductor,
-whose package installations and updates are described at [https://bioconductor.org/install/](https://bioconductor.org/install/). 
-
 If a package is already built one can reinstall them as follows.
 ```r
 user <- Sys.getenv("USER")
@@ -211,6 +208,8 @@ location <- paste0("/rds/user/",user,"/hpc-work/R")
 pkgs <- unname(installed.packages(lib.loc = location)[, "Package"])
 install.packages(pkgs, lib=location, repos="https://cran.r-project.org")
 ```
+A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](reinstall_r_pkgs.R), also touches upon Bioconductor,
+whose package installations and updates are described at [https://bioconductor.org/install/](https://bioconductor.org/install/). 
 
 ### Training
 
