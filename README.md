@@ -185,14 +185,7 @@ Note **/scratch** at Cardio is now **/DO-NOT-MODIFY-SCRATCH** -- an example is [
 
 Package redeployment is illustrated with R below for building R package list from ***/home/$USER/R*** at Cardio to be resintalled to ***/rds/user/$USER/hpc-work/R*** at CSD3.
 
-One can use `rsync` to transfer the installed packages directly to the CSD3 location and then reinstall them as follows.
-```r
-user <- Sys.getenv("USER")
-location <- paste0("/rds/user/",user,"/hpc-work/R")
-pkgs <- unname(installed.packages(lib.loc = location)[, "Package"])
-install.packages(pkgs, lib=location, repos="https://cran.r-project.org")
-```
-Alternatively, we can use screen copy of package list from Cardio since users do not have write permission.
+We can use screen copy of package list from Cardio since users do not have write permission.
 
 **On Cardio**
 ```r
@@ -210,6 +203,14 @@ Alternatively, we can use screen copy of package list from Cardio since users do
 ```
 A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](reinstall_r_pkgs.R), also touches upon Bioconductor,
 whose package installations and updates are described at [https://bioconductor.org/install/](https://bioconductor.org/install/). 
+
+If a package is already built one can reinstall them as follows.
+```r
+user <- Sys.getenv("USER")
+location <- paste0("/rds/user/",user,"/hpc-work/R")
+pkgs <- unname(installed.packages(lib.loc = location)[, "Package"])
+install.packages(pkgs, lib=location, repos="https://cran.r-project.org")
+```
 
 ### Training
 
