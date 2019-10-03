@@ -67,11 +67,11 @@ cd qctool_v2.0.1-CentOS6.8-x86_64/
 ./qctool
 ```
 we received messages,
-<p style="color:red;">
+```
 ./qctool: /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.20' not found (required by ./qctool)
 ./qctool: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by ./qctool)
 ./qctool: /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by ./qctool)
-</p>
+```
 which could be fixed with
 ```bash
 module load gcc/5
