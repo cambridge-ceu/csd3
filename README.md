@@ -6,6 +6,7 @@ All information about procedures and access requests can be found here: **W:\Adm
 
 * [login](https://github.com/cambridge-ceu/csd3#login)
 * [Directories](https://github.com/cambridge-ceu/csd3#directories)
+* [modules](https://github.com/cambridge-ceu/csd3#modules)
 * [SLURM](https://github.com/cambridge-ceu/csd3#slurm)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
   * [software to-do list](https://github.com/cambridge-ceu/csd3#software-to-do-list)
