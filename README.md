@@ -1,4 +1,4 @@
-The Cambridge Service for Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.uk/) ([Documentation](https://docs.hpc.cam.ac.uk/hpc/)).
+CSD3 represent the Cambridge Service for Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.uk/), which provies an excellent [Documentation](https://docs.hpc.cam.ac.uk/hpc/).
 
 All information about procedures and access requests can be found here: **W:\Administration\CSD3 Data Users**.
 
