@@ -51,7 +51,7 @@ rds-jmmh2-results -> /rds/project/jmmh2/rds-jmmh2-results
 ```
 Short shorter (without rds-jmmh2- prefix) names as on Cardio can be created equivalently with
 ```bash
-mkdir /home/$USER/rds
+if [ ! -d /home/$USER/rds ]; then mkdir /home/$USER/rds; fi
 ln -sf /rds/user/$USER/hpc-work /home/$USER/rds/hpc-work
 export rt=/rds/project/jmmh2
 for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rds-jmmh2-$d /home/$USER/rds/$d; done
