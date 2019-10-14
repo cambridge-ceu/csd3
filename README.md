@@ -15,8 +15,8 @@ Here some aspects are highlighted from the perspectives of the [Cardiovascular E
   * [login](https://github.com/cambridge-ceu/csd3#login-1)
   * [Migration](https://github.com/cambridge-ceu/csd3#migration)
   * [R package reinstallations](https://github.com/cambridge-ceu/csd3#r-package-reinstallations)
-  * [Training](https://github.com/cambridge-ceu/csd3#training)
-  * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
+* [Training](https://github.com/cambridge-ceu/csd3#training)
+* [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
 
 ### login
 
