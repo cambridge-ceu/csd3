@@ -235,7 +235,7 @@ whose package installations and updates are described at [https://bioconductor.o
 
 * **First training**: Wednesday, 10th July from 10am – 12pm.
 * **Second training**: Wednesday, 31st July from 9:30am – 4pm.
-* **Venue**: Thomas and Dorothy Seminar Room.
+* **UCS**: [https://training.cam.ac.uk/ucs/](https://training.cam.ac.uk/ucs/).
 * **Handouts**: [https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
 * **Presentation**: [Google document](https://tinyurl.com/y3l6jssg) by Praveen Surendran (<ps629@medschl.cam.ac.uk>).
 
