@@ -11,12 +11,12 @@ Here some aspects are highlighted from the perspectives of the [Cardiovascular E
   * [software to-do list](https://github.com/cambridge-ceu/csd3#software-to-do-list)
   * [R](https://github.com/cambridge-ceu/csd3#r)
   * [Additional information](https://github.com/cambridge-ceu/csd3#additional-information)
+* [Training](https://github.com/cambridge-ceu/csd3#training)
+* [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
 * [Information on Cardio](https://github.com/cambridge-ceu/csd3#information-on-cardio)
   * [login](https://github.com/cambridge-ceu/csd3#login-1)
   * [Migration](https://github.com/cambridge-ceu/csd3#migration)
   * [R package reinstallations](https://github.com/cambridge-ceu/csd3#r-package-reinstallations)
-* [Training](https://github.com/cambridge-ceu/csd3#training)
-* [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
 
 ### login
 
@@ -167,6 +167,22 @@ devtools::install_bioc("snpStats")
 
 This can be made available, e.g., [usage.md](usage.md).
 
+### Training
+
+* **First training**: Wednesday, 10th July from 10am – 12pm.
+* **Second training**: Wednesday, 31st July from 9:30am – 4pm.
+* **UCS**: [https://training.cam.ac.uk/ucs/](https://training.cam.ac.uk/ucs/).
+* **Handouts**: [https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
+* **Presentation**: [Google document](https://tinyurl.com/y3l6jssg) by Praveen Surendran (<ps629@medschl.cam.ac.uk>).
+
+### Contacts
+
+* **CSD3 account**: [https://www.hpc.cam.ac.uk/rcs-application](https://www.hpc.cam.ac.uk/rcs-application) as in [Applications for Access to Research Computing Services](https://www.hpc.cam.ac.uk/applications-access-research-computing-services). 
+* **HPC support**: <support@hpc.cam.ac.uk> with the title “cardio migration".
+* **CEU contacts**: Ank Michielsen (<am2710@medschl.cam.ac.uk>) and Niko Ovenden (<nao26@medschl.cam.ac.uk>).
+* **Request for software**: Savita Karthikeyan (<sk752@medschl.cam.ac.uk>).
+* **Contacts for data access**. CSD3datamanager@medschl.cam.ac.uk.
+
 ---
 
 ## Information on Cardio
@@ -230,19 +246,3 @@ install.packages(pkgs, lib=location, repos="https://cran.r-project.org")
 ```
 A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](reinstall_r_pkgs.R), also touches upon Bioconductor,
 whose package installations and updates are described at [https://bioconductor.org/install/](https://bioconductor.org/install/). 
-
-### Training
-
-* **First training**: Wednesday, 10th July from 10am – 12pm.
-* **Second training**: Wednesday, 31st July from 9:30am – 4pm.
-* **UCS**: [https://training.cam.ac.uk/ucs/](https://training.cam.ac.uk/ucs/).
-* **Handouts**: [https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
-* **Presentation**: [Google document](https://tinyurl.com/y3l6jssg) by Praveen Surendran (<ps629@medschl.cam.ac.uk>).
-
-### Contacts
-
-* **CSD3 account**: [https://www.hpc.cam.ac.uk/rcs-application](https://www.hpc.cam.ac.uk/rcs-application) as in [Applications for Access to Research Computing Services](https://www.hpc.cam.ac.uk/applications-access-research-computing-services). 
-* **HPC support**: <support@hpc.cam.ac.uk> with the title “cardio migration".
-* **CEU contacts**: Ank Michielsen (<am2710@medschl.cam.ac.uk>) and Niko Ovenden (<nao26@medschl.cam.ac.uk>).
-* **Request for software**: Savita Karthikeyan (<sk752@medschl.cam.ac.uk>).
-* **Contacts for data access**. CSD3datamanager@medschl.cam.ac.uk.
