@@ -13,7 +13,7 @@ Here some aspects are highlighted from the perspectives of the [Cardiovascular E
   * [Additional information](https://github.com/cambridge-ceu/csd3#additional-information)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
 * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
-* [Information on Cardio](https://github.com/cambridge-ceu/csd3#information-on-cardio)
+* [*Information on Cardio*](https://github.com/cambridge-ceu/csd3#information-on-cardio)
   * [login](https://github.com/cambridge-ceu/csd3#login-1)
   * [Migration](https://github.com/cambridge-ceu/csd3#migration)
   * [R package reinstallations](https://github.com/cambridge-ceu/csd3#r-package-reinstallations)
@@ -185,7 +185,7 @@ This can be made available, e.g., [usage.md](usage.md).
 
 ---
 
-## Information on Cardio
+## *Information on Cardio*
 
 Cardio is the HPC facility at the CEU..
 
