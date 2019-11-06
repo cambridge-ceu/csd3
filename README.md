@@ -166,11 +166,11 @@ devtools::install_bioc("snpStats")
 
 #### Stata
 
-As a CEU member the following modules are available,
+As a CEU member the following is possible,
 ```
 module load ceuadmin/stata/14
-module load ceuadmin/stata/15
 ```
+as with `ceuadmin/stata/15`.
 
 #### Additional information
 
