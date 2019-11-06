@@ -129,6 +129,19 @@ export TMPDIR=/rds/user/$USER/hpc-work/
 
 ### Software
 
+The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of November 2019, the list is
+```
+bgenix/                       interval/          plink_1.90_beta/              raremetal_4.13/    Raremetal_linux_executables/        source/
+biobank/                      JAGS/              plink_bgi_Dev/                raremetal_4.13.3/  Raremetal_linux_executables.tgz     stata/
+boltlmm/                      LDstore/           plink-bgi_linux_x86_64_may/   raremetal_4.13.4/  raremetal.log                       tabix/
+boltlmm_2.2/                  magma/             plink_linux_x86_64_beta2a/    raremetal_4.13.5/  samtools_1.2/                       temp/
+exomeplus/                    MAGMA_Celltyping/  plink_linux_x86_64_beta3.32/  raremetal_4.13.7/  shapeit.v2.r790.RHELS_5.4.dynamic/  vcftools/
+gcta/                         metabolomics/      plinkseq-0.08-x86_64/         raremetal_4.13.8/  snptest/                            vcftools_ps629/
+gtool_v0.7.5_x86_64/          metal/             plinkseq-0.10/                raremetal_4.14.0/  snptest_2.5.2/
+hpg/                          metal_updated/     qctool_v1.4-linux-x86_64/     raremetal_4.14.1/  snptest_2.5.4_beta3/
+impute_v2.3.2_x86_64_static/  plink/             R/                            raremetal_BPGen/   snptest_new/
+```
+
 #### software to-do list
 
 This is a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing). 
