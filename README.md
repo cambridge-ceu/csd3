@@ -10,6 +10,7 @@ Here some aspects are highlighted from the perspectives of the [Cardiovascular E
 * [Software](https://github.com/cambridge-ceu/csd3#software)
   * [software to-do list](https://github.com/cambridge-ceu/csd3#software-to-do-list)
   * [R](https://github.com/cambridge-ceu/csd3#r)
+  * [matlab](https://github.com/cambridge-ceu/csd3#matlab)
   * [Stata](https://github.com/cambridge-ceu/csd3#stata)
   * [Additional information](https://github.com/cambridge-ceu/csd3#additional-information)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
@@ -164,6 +165,14 @@ A good alternative is to use `devtools` package, e.g.,
 ```r
 devtools::install_bioc("snpStats")
 ```
+
+#### matlab
+
+```
+module avail matlab
+module load matlab/r2019b
+```
+followed by `matlab`.
 
 #### Stata
 
