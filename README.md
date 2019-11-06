@@ -61,23 +61,11 @@ for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rd
 
 ### modules
 
-CSD3 uses modules, e.g., with `qctool` v2.0.1,
+CSD3 uses modules, e.g., with `qctool` v2.0.5,
 ```bash
-cd qctool_v2.0.1-CentOS6.8-x86_64/
-./qctool
+module load qctool/v2.0.5
 ```
-we received messages,
-```diff
-./qctool: /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.20' not found (required by ./qctool)
-./qctool: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by ./qctool)
-./qctool: /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by ./qctool)
-```
-which could be fixed with
-```bash
-module load gcc/5
-./qctool
-```
-where `qctool` is loaded smoothly.
+followed by `qctool -help`.
 
 ### SLURM
 
