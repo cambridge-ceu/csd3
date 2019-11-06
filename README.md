@@ -10,6 +10,7 @@ Here some aspects are highlighted from the perspectives of the [Cardiovascular E
 * [Software](https://github.com/cambridge-ceu/csd3#software)
   * [software to-do list](https://github.com/cambridge-ceu/csd3#software-to-do-list)
   * [R](https://github.com/cambridge-ceu/csd3#r)
+  * [Stata](https://github.com/cambridge-ceu/csd3#stata)
   * [Additional information](https://github.com/cambridge-ceu/csd3#additional-information)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
 * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
@@ -161,6 +162,14 @@ where `BiocManager` is appropriate for R 3.5.0 or later.
 A good alternative is to use `devtools` package, e.g.,
 ```r
 devtools::install_bioc("snpStats")
+```
+
+#### Stata
+
+As a CEU member the following modules are available,
+```
+module load ceuadmin/stata/14
+module load ceuadmin/stata/15
 ```
 
 #### Additional information
