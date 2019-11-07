@@ -1,7 +1,7 @@
 ## Contents
 
-* [OS](https://github.com/cambridge-ceu/csd3#os)
-* [login](https://github.com/cambridge-ceu/csd3#login)
+* [System](https://github.com/cambridge-ceu/csd3#system)
+* [Login](https://github.com/cambridge-ceu/csd3#login)
 * [Directories](https://github.com/cambridge-ceu/csd3#directories)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
   * [ceuadmin](https://github.com/cambridge-ceu/csd3#ceuadmin)
@@ -19,7 +19,7 @@
   * [Migration](https://github.com/cambridge-ceu/csd3#migration)
   * [R package reinstallations](https://github.com/cambridge-ceu/csd3#r-package-reinstallations)
 
-### OS
+### System
 
 CSD3 stands for the Cambridge Service for Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.uk/), which provies an excellent [documentation](https://docs.hpc.cam.ac.uk/hpc/).
 Here some aspects are highlighted from the perspectives of the [Cardiovascular Epidemiology Unit](https://www.phpc.cam.ac.uk/ceu/) (CEU), where all information about procedures and access requests can be found from **W:\Administration\CSD3 Data Users**.
@@ -37,7 +37,7 @@ Codename:       Nitrogen
 ```
 so the system is Scientific Linux 7 (SL7), see [http://www.scientificlinux.org/](http://www.scientificlinux.org/), also /usr/share/doc/HTML/en-US/index.html,
 
-### login
+### Login
 
 Automatic login via ssh/sftp can be enabled with
 ```bash
