@@ -86,7 +86,7 @@ module load qctool/v2.0.5
 ```
 followed by `qctool -help`.
 
-It is often the case that advanced versions of GNU C-related libraries are required, e.g., from R
+When advanced versions of GNU C-related libraries are required, e.g., from R
 ```
 library(plotly)
 ```
