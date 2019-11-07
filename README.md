@@ -68,6 +68,16 @@ module load qctool/v2.0.5
 ```
 followed by `qctool -help`.
 
+It is often the case that advanced versions of GNU C-related libraries are required, e.g., from R
+```
+library(plotly)
+```
+we received an error message
+```
+/usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.20' not found
+```
+which would go away should we issue `module load gcc/5` ahead of R.
+
 ### SLURM
 
 Accout details can be seen with
