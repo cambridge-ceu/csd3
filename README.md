@@ -6,6 +6,7 @@ Here some aspects are highlighted from the perspectives of the [Cardiovascular E
 * [login](https://github.com/cambridge-ceu/csd3#login)
 * [Directories](https://github.com/cambridge-ceu/csd3#directories)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
+  * [ceuadmin](https://github.com/cambridge-ceu/csd3#ceuadmin)
   * [modules](https://github.com/cambridge-ceu/csd3#modules)
   * [SLURM](https://github.com/cambridge-ceu/csd3#slurm)
   * [R](https://github.com/cambridge-ceu/csd3#r)
@@ -61,6 +62,8 @@ for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rd
  Note to list the directories you need postfix them with '/'.
 
 ### Software
+
+### ceuadmin
 
 The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of November 2019, the list is
 ```
