@@ -6,12 +6,12 @@ Here some aspects are highlighted from the perspectives of the [Cardiovascular E
 * [login](https://github.com/cambridge-ceu/csd3#login)
 * [Directories](https://github.com/cambridge-ceu/csd3#directories)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
-  * [software to-do list](https://github.com/cambridge-ceu/csd3#software-to-do-list)
   * [modules](https://github.com/cambridge-ceu/csd3#modules)
   * [SLURM](https://github.com/cambridge-ceu/csd3#slurm)
   * [R](https://github.com/cambridge-ceu/csd3#r)
   * [matlab](https://github.com/cambridge-ceu/csd3#matlab)
   * [Stata](https://github.com/cambridge-ceu/csd3#stata)
+  * [software to-do list](https://github.com/cambridge-ceu/csd3#software-to-do-list)
   * [Additional information](https://github.com/cambridge-ceu/csd3#additional-information)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
 * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
@@ -74,10 +74,6 @@ gtool_v0.7.5_x86_64/          metal/             plinkseq-0.10/                r
 hpg/                          metal_updated/     qctool_v1.4-linux-x86_64/     raremetal_4.14.1/  snptest_2.5.4_beta3/
 impute_v2.3.2_x86_64_static/  plink/             R/                            raremetal_BPGen/   snptest_new/
 ```
-
-#### software to-do list
-
-This is a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing). 
 
 #### modules
 
@@ -191,6 +187,10 @@ As a CEU member the following is possible,
 module load ceuadmin/stata/14
 ```
 as with `ceuadmin/stata/15`.
+
+#### software to-do list
+
+This is a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing). 
 
 #### Additional information
 
