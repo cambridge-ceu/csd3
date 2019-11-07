@@ -5,10 +5,10 @@ Here some aspects are highlighted from the perspectives of the [Cardiovascular E
 
 * [login](https://github.com/cambridge-ceu/csd3#login)
 * [Directories](https://github.com/cambridge-ceu/csd3#directories)
-* [modules](https://github.com/cambridge-ceu/csd3#modules)
-* [SLURM](https://github.com/cambridge-ceu/csd3#slurm)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
   * [software to-do list](https://github.com/cambridge-ceu/csd3#software-to-do-list)
+  * [modules](https://github.com/cambridge-ceu/csd3#modules)
+  * [SLURM](https://github.com/cambridge-ceu/csd3#slurm)
   * [R](https://github.com/cambridge-ceu/csd3#r)
   * [matlab](https://github.com/cambridge-ceu/csd3#matlab)
   * [Stata](https://github.com/cambridge-ceu/csd3#stata)
@@ -60,7 +60,26 @@ for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rd
 ```
  Note to list the directories you need postfix them with '/'.
 
-### modules
+### Software
+
+The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of November 2019, the list is
+```
+bgenix/                       interval/          plink_1.90_beta/              raremetal_4.13/    Raremetal_linux_executables/        source/
+biobank/                      JAGS/              plink_bgi_Dev/                raremetal_4.13.3/  Raremetal_linux_executables.tgz     stata/
+boltlmm/                      LDstore/           plink-bgi_linux_x86_64_may/   raremetal_4.13.4/  raremetal.log                       tabix/
+boltlmm_2.2/                  magma/             plink_linux_x86_64_beta2a/    raremetal_4.13.5/  samtools_1.2/                       temp/
+exomeplus/                    MAGMA_Celltyping/  plink_linux_x86_64_beta3.32/  raremetal_4.13.7/  shapeit.v2.r790.RHELS_5.4.dynamic/  vcftools/
+gcta/                         metabolomics/      plinkseq-0.08-x86_64/         raremetal_4.13.8/  snptest/                            vcftools_ps629/
+gtool_v0.7.5_x86_64/          metal/             plinkseq-0.10/                raremetal_4.14.0/  snptest_2.5.2/
+hpg/                          metal_updated/     qctool_v1.4-linux-x86_64/     raremetal_4.14.1/  snptest_2.5.4_beta3/
+impute_v2.3.2_x86_64_static/  plink/             R/                            raremetal_BPGen/   snptest_new/
+```
+
+#### software to-do list
+
+This is a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing). 
+
+#### modules
 
 CSD3 uses modules, e.g., with `qctool` v2.0.5,
 ```bash
@@ -78,7 +97,7 @@ we received an error message
 ```
 which would go away should we issue `module load gcc/5` ahead of R.
 
-### SLURM
+#### SLURM
 
 Accout details can be seen with
 ```bash
@@ -125,25 +144,6 @@ invoked by `sbatch`. As with Cardio, it is helpful to set a temporary directory,
 ```bash
 export TMPDIR=/rds/user/$USER/hpc-work/
 ```
-
-### Software
-
-The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of November 2019, the list is
-```
-bgenix/                       interval/          plink_1.90_beta/              raremetal_4.13/    Raremetal_linux_executables/        source/
-biobank/                      JAGS/              plink_bgi_Dev/                raremetal_4.13.3/  Raremetal_linux_executables.tgz     stata/
-boltlmm/                      LDstore/           plink-bgi_linux_x86_64_may/   raremetal_4.13.4/  raremetal.log                       tabix/
-boltlmm_2.2/                  magma/             plink_linux_x86_64_beta2a/    raremetal_4.13.5/  samtools_1.2/                       temp/
-exomeplus/                    MAGMA_Celltyping/  plink_linux_x86_64_beta3.32/  raremetal_4.13.7/  shapeit.v2.r790.RHELS_5.4.dynamic/  vcftools/
-gcta/                         metabolomics/      plinkseq-0.08-x86_64/         raremetal_4.13.8/  snptest/                            vcftools_ps629/
-gtool_v0.7.5_x86_64/          metal/             plinkseq-0.10/                raremetal_4.14.0/  snptest_2.5.2/
-hpg/                          metal_updated/     qctool_v1.4-linux-x86_64/     raremetal_4.14.1/  snptest_2.5.4_beta3/
-impute_v2.3.2_x86_64_static/  plink/             R/                            raremetal_BPGen/   snptest_new/
-```
-
-#### software to-do list
-
-This is a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing). 
 
 #### R
 
