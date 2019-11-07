@@ -24,7 +24,6 @@
 CSD3 stands for the Cambridge Service for Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.uk/), which provies an excellent [documentation](https://docs.hpc.cam.ac.uk/hpc/).
 Here some aspects are highlighted from the perspectives of the [Cardiovascular Epidemiology Unit](https://www.phpc.cam.ac.uk/ceu/) (CEU), where all information about procedures and access requests can be found from **W:\Administration\CSD3 Data Users**.
 
-The system is Scientific Linux 7 (SL7), see [http://www.scientificlinux.org/](http://www.scientificlinux.org/), also /usr/share/doc/HTML/en-US/index.html,
 ```bash
 lsb_release -a
 ```
@@ -35,6 +34,7 @@ Description:    Scientific Linux release 7.7 (Nitrogen)
 Release:        7.7
 Codename:       Nitrogen
 ```
+so the system is Scientific Linux 7 (SL7), see [http://www.scientificlinux.org/](http://www.scientificlinux.org/), also /usr/share/doc/HTML/en-US/index.html,
 
 ### login
 
