@@ -1,4 +1,4 @@
----
+***
 
 ## Contents
 
@@ -21,7 +21,7 @@
   * [Migration](https://github.com/cambridge-ceu/csd3#migration)
   * [R package reinstallations](https://github.com/cambridge-ceu/csd3#r-package-reinstallations)
 
----
+***
 
 ### System
 
