@@ -56,6 +56,8 @@ ssh-copy-id -i ~/.ssh/mykey login.hpc.cam.ac.uk
 ```
 as in [https://www.ssh.com/ssh/copy-id](https://www.ssh.com/ssh/copy-id).
 
+Possible login nodes are: login.hpc, login-cpu.hpc, login-gpu.hpc, login-gfx.hpc, login-e-N.hpc.
+
 ### Directories
 
 Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
