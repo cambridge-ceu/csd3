@@ -39,6 +39,8 @@ so the system is Scientific Linux 7 (SL7), see [http://www.scientificlinux.org/]
 
 ### Login
 
+Possible login nodes are: login.hpc, login-cpu.hpc, login-gpu.hpc, login-gfx.hpc, login-e-N.hpc.
+
 Automatic login via ssh/sftp can be enabled with
 ```bash
 ssh-copy-id login.hpc.cam.ac.uk`
@@ -55,8 +57,6 @@ The key fingerprint is:
 ssh-copy-id -i ~/.ssh/mykey login.hpc.cam.ac.uk
 ```
 as in [https://www.ssh.com/ssh/copy-id](https://www.ssh.com/ssh/copy-id).
-
-Possible login nodes are: login.hpc, login-cpu.hpc, login-gpu.hpc, login-gfx.hpc, login-e-N.hpc.
 
 ### Directories
 
