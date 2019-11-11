@@ -66,3 +66,37 @@ module load boost-1.58.0-gcc-5.4.0-onpiqcr
 module load gcc-5.4.0-gcc-4.8.5-fis24gg
 ```
 then one can use `library(SAIGE)` inside R.
+
+## rjags
+
+It is known for sometime for its difficulty to install; here is what was done
+```bash
+
+# Cardio
+export PKG_CONFIG_PATH=/scratch/jhz22/lib/pkgconfig
+
+R CMD INSTALL rjags_4-6.tar.gz --configure-args='CPPFLAGS="-fPIC" LDFLAGS="-L/scratch/jhz22/lib -ljags"
+--with-jags-prefix=/scratch/jhz22
+--with-jags-libdir=/scratch/jhz22/lib
+--with-jags-includedir=/scratch/jhz22/include'
+
+# csd3
+export hpcwork=/rds-d4/user/jhz22/hpc-work
+export PKG_CONFIG_PATH=${hpcwork}/lib/pkgconfig
+
+wget https://cran.r-project.org/src/contrib/rjags_4-10.tar.gz
+R CMD INSTALL rjags_4-10.tar.gz --configure-args='CPPFLAGS="-fPIC" LDFLAGS="-L${hpcwork}/lib -ljags"
+--with-jags-prefix=${hpcwork}
+--with-jags-libdir=${hpcwork}/lib
+--with-jags-includedir=${hpcwork}/include'
+```
+
+## rstan
+
+It is necessary to have `¬/.R/Makevars` the following lines,
+```
+CXX14 = g++ -std=c++1y -fPIC
+```
+to do away with the error message ``C++14 standard requested but CXX14 is not defined`.
+
+In case `ggplot2` installed with `gcc 5.2.0` it is also necessary to preceed with `module load gcc/5`.
