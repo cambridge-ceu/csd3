@@ -1,3 +1,16 @@
+## DosageConverter
+
+```bash
+git clone https://github.com/Santy-8128/DosageConvertor
+cd DosageConverter
+pip install cget --user
+module load cmake-3.8.1-gcc-4.8.5-zz55m7x
+./install.sh
+## assuming you have hpc-work/bin/
+cd /rds/user/$USER/hpc-work/bin/
+ln -s /rds/user/$USER/hpc-work/DosageConvertor/release-build/DosageConvertor
+```
+
 ## HESS
 This section is extracted from https://github.com/jinghuazhao/software-notes.
 
