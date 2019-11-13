@@ -24,7 +24,7 @@ DosageConvertor  --vcfDose  test/TestDataImputedVCF.dose.vcf.gz \
 
 gunzip -c test.plink.dosage.gz | wc -l
 ```
-so the MaCH dosage file is individual x genotype whereas PLINK dosage file is the genotype x individual.
+so the MaCH dosage file is individual x genotype whereas PLINK dosage file is genotype x individual.
 
 ## HESS
 This section is extracted from https://github.com/jinghuazhao/software-notes.
