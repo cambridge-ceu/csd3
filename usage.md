@@ -9,7 +9,22 @@ module load cmake-3.8.1-gcc-4.8.5-zz55m7x
 ## assuming you have hpc-work/bin/
 cd /rds/user/$USER/hpc-work/bin/
 ln -s /rds/user/$USER/hpc-work/DosageConvertor/release-build/DosageConvertor
+## testing
+DosageConvertor  --vcfDose  test/TestDataImputedVCF.dose.vcf.gz \
+                 --info     test/TestDataImputedVCF.info \
+                 --prefix   test \
+                 --type     mach
+
+gunzip -c test.mach.dose.gz | wc -l
+
+DosageConvertor  --vcfDose  test/TestDataImputedVCF.dose.vcf.gz \
+                 --info     test/TestDataImputedVCF.info \
+                 --prefix   test \
+                 --type     plink
+
+gunzip -c test.plink.dosage.gz | wc -l
 ```
+so the MaCH dosage file is individual x genotype whereas PLINK dosage file is the genotype x individual.
 
 ## HESS
 This section is extracted from https://github.com/jinghuazhao/software-notes.
