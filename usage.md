@@ -1,6 +1,7 @@
 ## DosageConverter
 
 ```bash
+cd /rds/user/$USER/hpc-work/
 git clone https://github.com/Santy-8128/DosageConvertor
 cd DosageConverter
 pip install cget --user
