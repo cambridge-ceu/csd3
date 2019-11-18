@@ -179,7 +179,7 @@ then download the data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecu
 tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial).
 
 The Jupyter notebooks is described here, https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html. 
-See also https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. The will script
+See also https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. The script
 ```bash
 pip install jupyter --user
 ```
