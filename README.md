@@ -175,9 +175,8 @@ export TMPDIR=/rds/user/$USER/hpc-work/
 
 Official website: [https://www.python.org/](https://www.python.org/).
 
-This can be invoked from a CSD3 console via `python` and `python3`. Packages can be installed via `pip` and `pip3`, e.g., the script
+This can be invoked from a CSD3 console via `python` and `python3`. Packages can be installed via `pip` and `pip3` (or equivalently `python -m pip install` and `python3 -m pip install`), e.g., the script
 ```bash
-pip install jupyter --user
 pip install mygene --user
 pip install tensorflow --user
 ```
@@ -201,6 +200,11 @@ The Jupyter notebooks is described here,
 * https://jupyter.org/
 * https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. 
 * https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html. 
+
+```bash
+pip install jupyter --user
+$HOME/.local/bin/jupyter notebook --ip=127.0.0.1
+```
 
 #### R
 
