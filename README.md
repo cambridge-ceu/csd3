@@ -171,6 +171,12 @@ export TMPDIR=/rds/user/$USER/hpc-work/
 
 #### Python
 
+This can be invoked from a CSD3 console via `python` and `python3`. Packages can be installed via `pip`, e.g., the script
+```bash
+pip install jupyter --user
+```
+installs Jupyter notebooks at `$HOME/.local`.
+
 It is often necessary to use Anaconda, e.g., https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python
 ```bash
 module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
@@ -184,11 +190,7 @@ conda create -n py27 python=2.7 ipykernel
 source activate py27
 ```
 to `/home/$USER/.conda/envs/py27`, and similarly for `conda create -n py35 python=3.5 ipykernel`.
-See also https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook.  In contrast, the script
-```bash
-pip install jupyter --user
-```
-install Jupyter notebooks at `$HOME/.local`.
+See also https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. 
 
 #### R
 
