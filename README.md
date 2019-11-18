@@ -179,6 +179,7 @@ This can be invoked from a CSD3 console via `python` and `python3`. Packages can
 ```bash
 pip install jupyter --user
 pip install mygene --user
+pip install tensorflow --user
 ```
 installs packages at `$HOME/.local`.
 
@@ -187,7 +188,7 @@ It is often necessary to use Anaconda, e.g., https://docs.hpc.cam.ac.uk/hpc/soft
 module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
 ```
 then download the data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/) and follow the [Autoencoder in Keras 
-tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial). Keras uses TensorFlow which can be installed with `pip`, e.g.,
+tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial). Keras uses TensorFlow`.
 
 The Jupyter notebooks is described here, https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html. 
 ```bash
