@@ -177,11 +177,6 @@ module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
 ```
 then download the data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/) and follow the [Autoencoder in Keras 
 tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial). Keras uses TensorFlow which can be installed with `pip`, e.g.,
-The script
-```bash
-pip install jupyter --user
-```
-install Jupyter notebooks at `$HOME/.local`.
 
 The Jupyter notebooks is described here, https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html. 
 ```bash
@@ -189,7 +184,11 @@ conda create -n py27 python=2.7 ipykernel
 source activate py27
 ```
 to `/home/$USER/.conda/envs/py27`, and similarly for `conda create -n py35 python=3.5 ipykernel`.
-See also https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. 
+See also https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook.  In contrast, the script
+```bash
+pip install jupyter --user
+```
+install Jupyter notebooks at `$HOME/.local`.
 
 #### R
 
