@@ -171,19 +171,20 @@ export TMPDIR=/rds/user/$USER/hpc-work/
 
 #### Python
 
-The csd3 documentation is very useful, e.g., https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python
+It is often necessary to use Anaconda, e.g., https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python
 ```bash
 module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
 ```
 then download the data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/) and follow the [Autoencoder in Keras 
-tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial).
-
-The Jupyter notebooks is described here, https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html. 
-See also https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. The script
+tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial). Keras uses TensorFlow which can be installed with `pip`, e.g.,
+The script
 ```bash
 pip install jupyter --user
 ```
-has default working directory as `$HOME/.local`.
+install Jupyter notebooks at `$HOME/.local`.
+
+The Jupyter notebooks is described here, https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html. 
+See also https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. 
 
 #### R
 
