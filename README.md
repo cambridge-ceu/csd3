@@ -169,7 +169,6 @@ export TMPDIR=/rds/user/$USER/hpc-work/
 
 #### Python
 
-
 The csd3 documentation is very useful, e.g., https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python
 ```bash
 module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
@@ -213,6 +212,10 @@ where `BiocManager` is appropriate for R 3.5.0 or later.
 A good alternative is to use `devtools` package, e.g.,
 ```r
 devtools::install_bioc("snpStats")
+```
+The package installation directory can be spefied explicitly with R_LIBS, e.g.,
+```bash
+/rds-d4/user/$USER/hpc-work/R:/rds-d4/user/$USER/hpc-work/R-3.6.1/library
 ```
 
 #### matlab
