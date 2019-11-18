@@ -178,8 +178,9 @@ Official website: [https://www.python.org/](https://www.python.org/).
 This can be invoked from a CSD3 console via `python` and `python3`. Packages can be installed via `pip` and `pip3`, e.g., the script
 ```bash
 pip install jupyter --user
+pip install mygene --user
 ```
-installs Jupyter notebooks at `$HOME/.local`.
+installs packagess at `$HOME/.local`.
 
 It is often necessary to use Anaconda, e.g., https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python
 ```bash
