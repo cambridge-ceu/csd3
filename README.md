@@ -63,6 +63,8 @@ ssh-copy-id -i ~/.ssh/mykey login.hpc.cam.ac.uk
 ```
 as in [https://www.ssh.com/ssh/copy-id](https://www.ssh.com/ssh/copy-id).
 
+Environmental variables can be set with `~/.bashrc`.
+
 ### Directories
 
 Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
@@ -213,9 +215,9 @@ A good alternative is to use `devtools` package, e.g.,
 ```r
 devtools::install_bioc("snpStats")
 ```
-The package installation directory can be spefied explicitly with R_LIBS, e.g.,
+The package installation directory can be spefied explicitly with R_LIBS, i.e.,
 ```bash
-/rds-d4/user/$USER/hpc-work/R:/rds-d4/user/$USER/hpc-work/R-3.6.1/library
+export R_LIBS=/rds-d4/user/$USER/hpc-work/R:/rds-d4/user/$USER/hpc-work/R-3.6.1/library
 ```
 
 #### matlab
