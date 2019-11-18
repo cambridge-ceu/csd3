@@ -181,7 +181,6 @@ The Jupyter notebooks is described here, https://docs.hpc.cam.ac.uk/hpc/software
 See also https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. The will script
 ```bash
 pip install jupyter --user
-jupyter-console
 ```
 has default working directory as `$HOME/.local`.
 
