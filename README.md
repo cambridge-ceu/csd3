@@ -198,7 +198,7 @@ to `/home/$USER/.conda/envs/py27`, and similarly for `conda create -n py35 pytho
 
 The Jupyter notebooks is described here, 
 
-* https://jupyter.org/
+* https://jupyter.org/.
 * https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. 
 * https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html. 
 
