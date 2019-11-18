@@ -202,6 +202,7 @@ The Jupyter notebooks is described here,
 * https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. 
 * https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html. 
 
+and can be installed with
 ```bash
 pip install jupyter --user
 $HOME/.local/bin/jupyter notebook --ip=127.0.0.1
