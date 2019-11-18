@@ -174,7 +174,7 @@ The csd3 documentation is very useful, e.g., https://docs.hpc.cam.ac.uk/hpc/soft
 ```bash
 module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
 ```
-to download the data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/) and follow the [Autoencoder in Keras 
+then download the data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/) and follow the [Autoencoder in Keras 
 tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial).
 
 The Jupyter notebooks is described here, https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html. 
