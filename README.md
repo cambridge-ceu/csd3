@@ -63,7 +63,7 @@ ssh-copy-id -i ~/.ssh/mykey login.hpc.cam.ac.uk
 ```
 as in [https://www.ssh.com/ssh/copy-id](https://www.ssh.com/ssh/copy-id).
 
-Environmental variables can be set with `~/.bashrc`.
+Environmental variables can be set inside `~/.bashrc`.
 
 ### Directories
 
