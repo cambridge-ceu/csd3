@@ -183,7 +183,7 @@ pip install tensorflow --user
 ```
 installs packages at `$HOME/.local`.
 
-It is often necessary to use Anaconda, e.g., https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python
+It is often necessary to use Anaconda, as described by https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python
 ```bash
 module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
 ```
