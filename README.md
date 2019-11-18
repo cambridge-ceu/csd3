@@ -184,6 +184,13 @@ pip install jupyter --user
 install Jupyter notebooks at `$HOME/.local`.
 
 The Jupyter notebooks is described here, https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html. 
+```bash
+conda create -n py27 python=2.7 ipykernel
+source activate py27
+source deactivate
+ipython kernel install --user
+```
+to `/home/$USER/.conda/envs/py27`, and similarly for `conda create -n py35 python=3.5 ipykernel`.
 See also https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. 
 
 #### R
