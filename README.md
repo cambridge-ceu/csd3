@@ -195,6 +195,7 @@ conda create -n py27 python=2.7 ipykernel
 source activate py27
 ```
 to `/home/$USER/.conda/envs/py27`, and similarly for `conda create -n py35 python=3.5 ipykernel`.
+
 The Jupyter notebooks is described here, 
 
 * https://jupyter.org/
@@ -205,6 +206,7 @@ The Jupyter notebooks is described here,
 pip install jupyter --user
 $HOME/.local/bin/jupyter notebook --ip=127.0.0.1
 ```
+An `hello world` example is [hello.ipynb](files/hello.ipynb) from which [hello.html](files/hello.html) and [hello.pdf](files/hello.pdf) were generated with `jupyter nbconvert --to html|pdf hello.ipynb`..
 
 #### R
 
