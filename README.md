@@ -171,6 +171,8 @@ export TMPDIR=/rds/user/$USER/hpc-work/
 
 #### Python
 
+Official website: [https://www.python.org/](https://www.python.org/).
+
 This can be invoked from a CSD3 console via `python` and `python3`. Packages can be installed via `pip` and `pip3`, e.g., the script
 ```bash
 pip install jupyter --user
@@ -236,6 +238,8 @@ module load matlab/r2019b
 followed by `matlab`.
 
 #### Stata
+
+Official website: [https://www.stata.com/](https://www.stata.com/).
 
 As a CEU member the following is possible,
 ```
