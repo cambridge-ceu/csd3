@@ -171,7 +171,7 @@ export TMPDIR=/rds/user/$USER/hpc-work/
 
 #### Python
 
-This can be invoked from a CSD3 console via `python` and `python3`. Packages can be installed via `pip`, e.g., the script
+This can be invoked from a CSD3 console via `python` and `python3`. Packages can be installed via `pip` and `pip3`, e.g., the script
 ```bash
 pip install jupyter --user
 ```
