@@ -123,6 +123,8 @@ which would go away should we issue `module load gcc/5` ahead of R.
 
 #### SLURM
 
+Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
+
 Accout details can be seen with
 ```bash
 mybalance
@@ -230,6 +232,8 @@ export R_LIBS=/rds-d4/user/$USER/hpc-work/R:/rds-d4/user/$USER/hpc-work/R-3.6.1/
 ```
 
 #### matlab
+
+Official website: [https://www.mathworks.com/products/matlab.html](https://www.mathworks.com/products/matlab.html).
 
 ```
 module avail matlab
