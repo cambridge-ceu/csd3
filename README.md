@@ -196,8 +196,11 @@ conda create -n py27 python=2.7 ipykernel
 source activate py27
 ```
 to `/home/$USER/.conda/envs/py27`, and similarly for `conda create -n py35 python=3.5 ipykernel`.
-The Jupyter notebooks is described here, https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. 
-and https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html. 
+The Jupyter notebooks is described here, 
+
+* https://jupyter.org/
+* https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. 
+* https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html. 
 
 #### R
 
