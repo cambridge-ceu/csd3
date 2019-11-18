@@ -9,6 +9,7 @@
   * [ceuadmin](https://github.com/cambridge-ceu/csd3#ceuadmin)
   * [modules](https://github.com/cambridge-ceu/csd3#modules)
   * [SLURM](https://github.com/cambridge-ceu/csd3#slurm)
+  * [Python](https://github.com/cambridge-ceu/csd3#python)
   * [R](https://github.com/cambridge-ceu/csd3#r)
   * [matlab](https://github.com/cambridge-ceu/csd3#matlab)
   * [Stata](https://github.com/cambridge-ceu/csd3#stata)
@@ -165,6 +166,15 @@ invoked by `sbatch`. As with Cardio, it is helpful to set a temporary directory,
 ```bash
 export TMPDIR=/rds/user/$USER/hpc-work/
 ```
+
+#### Python
+
+The csd3 documentation is very useful, e.g., 
+```bash
+module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
+```
+to download the data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/) and follow the [Autoencoder in Keras 
+tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial).
 
 #### R
 
