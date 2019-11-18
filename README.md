@@ -187,6 +187,7 @@ The Jupyter notebooks is described here, https://docs.hpc.cam.ac.uk/hpc/software
 ```bash
 conda create -n py27 python=2.7 ipykernel
 source activate py27
+conda install -c r r-essentials
 source deactivate
 ipython kernel install --user
 ```
