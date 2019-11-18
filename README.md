@@ -180,7 +180,7 @@ This can be invoked from a CSD3 console via `python` and `python3`. Packages can
 pip install jupyter --user
 pip install mygene --user
 ```
-installs packagess at `$HOME/.local`.
+installs packages at `$HOME/.local`.
 
 It is often necessary to use Anaconda, e.g., https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python
 ```bash
