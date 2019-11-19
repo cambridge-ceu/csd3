@@ -139,7 +139,7 @@ Here is an example to convert a large number of PDF files (INTERVAL.*.manhattn.p
 ```bash
 ls *pdf | \
 sed 's/INTERVAL.//g;s/.manhattan.pdf//g' | \
-parallel -C' ' '
+parallel -j8 -C' ' '
   echo {}
   pdftopng -r 300 INTERVAL.{}.manhattan.pdf
   mv {}-000001.png INTERVAL.{}.png
