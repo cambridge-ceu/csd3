@@ -208,9 +208,9 @@ The Jupyter notebooks is described here,
 and can be installed with
 ```bash
 pip install jupyter --user
-$HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --no-browser --port 8081
+$HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --no-browser
 # assuming port 8088 is assigned
-ssh -4 -L 8081:127.0.0.1:8081 -fN `hostname`
+ssh -4 -L 8088:127.0.0.1:8088 -fN `hostname`
 ```
 An `hello world` example is [hello.ipynb](files/hello.ipynb) from which [hello.html](files/hello.html) and [hello.pdf](files/hello.pdf) were generated with `jupyter nbconvert --to html|pdf hello.ipynb`..
 
