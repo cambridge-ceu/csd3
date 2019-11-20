@@ -208,7 +208,7 @@ The Jupyter notebooks is described here,
 and can be installed with
 ```bash
 pip install jupyter --user
-$HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --port 8081
+$HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --no-browser --port 8081
 # assuming port 8088 is assigned
 ssh -4 -L 8081:127.0.0.1:8081 -fN `hostname`
 ```
