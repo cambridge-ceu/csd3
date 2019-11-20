@@ -119,7 +119,10 @@ we received an error message
 ```
 /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.20' not found
 ```
-which would go away should we issue `module load gcc/5` ahead of R.
+which would go away should we issue `module load gcc/5` ahead of R. In case of failure after `srun`, enforce lookup by
+```bash
+export LD_LIBRARY_PATH=/usr/local/software/master/gcc/5/lib64:/usr/local/software/master/gcc/5/lib::$LD_LIBRARY_PATH
+```
 
 #### SLURM
 
