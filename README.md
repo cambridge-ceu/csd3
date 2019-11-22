@@ -188,7 +188,10 @@ installs packages at `$HOME/.local`.
 
 Anaconda ([https://www.anaconda.com/](https://www.anaconda.com/)) and Jupyter notebook ([https://jupyter.org/](https://jupyter.org/)) are useful tools 
 and described at https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python and https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html.
+
+To see available modules and start Anaconda,
 ```bash
+module avail miniconda
 module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
 ```
 e.g., with data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/) one can follow the [Autoencoder in Keras 
