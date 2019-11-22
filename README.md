@@ -210,7 +210,7 @@ $HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --no-browser --port 8081
 hostname
 ssh -4 -L 8081:127.0.0.1:8081 -fN <hostname>.hpc.cam.ac.uk
 ```
-If it fails to assign the port number let the system choose (by dropping the `--port` option). The process which use the port can be shown with `lsof 
+If it fails to assign the port number, let the system choose (by dropping the `--port` option). The process which use the port can be shown with `lsof 
 -i:8081` or stopped by `lsof -ti:8081 | xargs kill -9`. The command `hostname` gives the name of the node. Once the port number is assigned, it is 
 used by another ssh session *elsewhere* and the URL generated openable from a browser.
 
