@@ -182,6 +182,7 @@ This can be invoked from a CSD3 console via `python` and `python3`. Packages can
 ```bash
 pip install mygene --user
 pip install tensorflow --user
+pip install jupyter --user
 ```
 installs packages at `$HOME/.local`.
 
@@ -199,20 +200,23 @@ source activate py27
 ```
 to `/home/$USER/.conda/envs/py27`, and similarly for `conda create -n py35 python=3.5 ipykernel`.
 
-The Jupyter notebooks is described here, 
+The Jupyter notebooks is often useful, and can be started as follows,
+```bash
+$HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --no-browser --port 8081
+# show hostname.
+hostname
+# Note the port number assigned, issue another ssh session elsewhere and open the URL generated from a browser.
+ssh -4 -L 8081:127.0.0.1:8081 -fN hostname.hpc.cam.ac.uk
+```
+If it fails to assign the port number use another one or stop it by `lsof -ti:8081 | xargs kill -9`.
+
+An `hello world` example is [hello.ipynb](files/hello.ipynb) from which [hello.html](files/hello.html) and [hello.pdf](files/hello.pdf) were generated with `jupyter nbconvert --to html|pdf hello.ipynb`..
+
+Further information is available from
 
 * https://jupyter.org/.
 * https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. 
 * https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html. 
-
-and can be installed with
-```bash
-pip install jupyter --user
-$HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --no-browser
-# assuming port 8088 is assigned
-ssh -4 -L 8088:127.0.0.1:8088 -fN `hostname`
-```
-An `hello world` example is [hello.ipynb](files/hello.ipynb) from which [hello.html](files/hello.html) and [hello.pdf](files/hello.pdf) were generated with `jupyter nbconvert --to html|pdf hello.ipynb`..
 
 #### R
 
