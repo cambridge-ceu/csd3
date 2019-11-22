@@ -121,7 +121,7 @@ we received an error message
 ```
 which would go away should we issue `module load gcc/5` ahead of R. In case of failure after `srun` (see below), enforce lookup by
 ```bash
-export LD_LIBRARY_PATH=/usr/local/software/master/gcc/5/lib64:/usr/local/software/master/gcc/5/lib::$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/software/master/gcc/5/lib64:/usr/local/software/master/gcc/5/lib:$LD_LIBRARY_PATH
 ```
 
 #### SLURM
