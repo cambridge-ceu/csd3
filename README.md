@@ -186,39 +186,32 @@ pip install jupyter --user
 ```
 installs packages at `$HOME/.local`.
 
-It is often necessary to use Anaconda, 
+Anaconda ([https://www.anaconda.com/](https://www.anaconda.com/)) and Jupyter notebook ([https://jupyter.org/](https://jupyter.org/)) are useful tools 
+and described at https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python and https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html.
 ```bash
 module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
 ```
 e.g., with data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/) one can follow the [Autoencoder in Keras 
 tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial). `Keras` uses `TensorFlow`.
 
-The Anaconda enables switch between Python 2.7 and 3.5, i.e.,
+The switch between Python 2.7 and 3.5 is possible, i.e.,
 ```bash
 conda create -n py27 python=2.7 ipykernel
 source activate py27
 ```
 to `/home/$USER/.conda/envs/py27`, and similarly for `conda create -n py35 python=3.5 ipykernel`.
 
-Another tool is the Jupyter notebook, which can be started as follows,
+The Jupyter notebook can be started as follows,
 ```bash
 $HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --no-browser --port 8081
 hostname
 ssh -4 -L 8081:127.0.0.1:8081 -fN hostname.hpc.cam.ac.uk
 ```
-If it fails to assign the port number let the system choose (dropping the `--port` option). The process which use the port can be shown with `lsof 
+If it fails to assign the port number let the system choose (by dropping the `--port` option). The process which use the port can be shown with `lsof 
 -i:8081` or stopped by `lsof -ti:8081 | xargs kill -9`. The command `hostname` gives the name of the node. Once the port number is assigned, it is 
 used by another ssh session elsewhere and the URL generated openable from a browser.
 
 An `hello world` example is [hello.ipynb](files/hello.ipynb) from which [hello.html](files/hello.html) and [hello.pdf](files/hello.pdf) were generated with `jupyter nbconvert --to html|pdf hello.ipynb`..
-
-Further information is available from
-
-* https://jupyter.org/.
-* https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook. 
-
-Anaconda and Jupyter notebook are described at CSD£ documentation https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python
-and https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html.
 
 #### R
 
