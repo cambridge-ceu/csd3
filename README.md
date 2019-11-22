@@ -200,7 +200,7 @@ source activate py27
 ```
 to `/home/$USER/.conda/envs/py27`, and similarly for `conda create -n py35 python=3.5 ipykernel`.
 
-Another tool is the Jupyter notebooks, which can be started as follows,
+Another tool is the Jupyter notebook, which can be started as follows,
 ```bash
 $HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --no-browser --port 8081
 # show hostname.
