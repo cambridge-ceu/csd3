@@ -208,11 +208,11 @@ The Jupyter notebook can be started as follows,
 ```bash
 $HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --no-browser --port 8081
 hostname
-ssh -4 -L 8081:127.0.0.1:8081 -fN hostname.hpc.cam.ac.uk
+ssh -4 -L 8081:127.0.0.1:8081 -fN <hostname>.hpc.cam.ac.uk
 ```
 If it fails to assign the port number let the system choose (by dropping the `--port` option). The process which use the port can be shown with `lsof 
 -i:8081` or stopped by `lsof -ti:8081 | xargs kill -9`. The command `hostname` gives the name of the node. Once the port number is assigned, it is 
-used by another ssh session elsewhere and the URL generated openable from a browser.
+used by another ssh session *elsewhere* and the URL generated openable from a browser.
 
 An `hello world` example is [hello.ipynb](files/hello.ipynb) from which [hello.html](files/hello.html) and [hello.pdf](files/hello.pdf) were generated with `jupyter nbconvert --to html|pdf hello.ipynb`..
 
