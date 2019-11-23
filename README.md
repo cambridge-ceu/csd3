@@ -1,7 +1,5 @@
 <img src="https://www.top500.org/static//images/Top500_logo.png">
 
-***
-
 ## Contents
 
 * [System](https://github.com/cambridge-ceu/csd3#system)
