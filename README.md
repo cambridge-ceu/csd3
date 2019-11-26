@@ -180,14 +180,14 @@ export TMPDIR=/rds/user/$USER/hpc-work/
 
 Official website: [https://www.python.org/](https://www.python.org/).
 
-This can be invoked from a CSD3 console via `python` and `python3`. Packages can be installed via `pip` and `pip3` (or equivalently `python -m pip install` and `python3 -m pip install`), e.g., the script
+This can be invoked from a CSD3 console via `python` and `python3`. Libraries can be installed via `pip` and `pip3` (or equivalently `python -m pip install` and `python3 -m pip install`), e.g., the script
 ```bash
 pip install mygene --user
 pip install tensorflow --user
 pip install keras --user
 pip install jupyter --user
 ```
-installs packages at `$HOME/.local`.
+installs libraries at `$HOME/.local`.
 
 Anaconda ([https://www.anaconda.com/](https://www.anaconda.com/)) and Jupyter notebook ([https://jupyter.org/](https://jupyter.org/)) are useful tools 
 and described at https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python and https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html.
