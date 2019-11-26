@@ -184,6 +184,7 @@ This can be invoked from a CSD3 console via `python` and `python3`. Packages can
 ```bash
 pip install mygene --user
 pip install tensorflow --user
+pip install keras --user
 pip install jupyter --user
 ```
 installs packages at `$HOME/.local`.
