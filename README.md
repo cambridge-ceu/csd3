@@ -152,7 +152,7 @@ parallel -j8 -C' ' '
   mv {}-000001.png INTERVAL.{}.png
 '
 ```
-which is equivalent to 
+which is equivalent to SLURM implementation using array jobs (https://slurm.schedmd.com/job_array.html).
 ```bash
 #!/usr/bin/bash
 
