@@ -19,7 +19,7 @@
   * [Additional software](usage.md)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
 * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
-* [*Information on Cardio*](https://github.com/cambridge-ceu/csd3#information-on-cardio)
+* [*Cardio*](https://github.com/cambridge-ceu/csd3#cardio)
   * [login](https://github.com/cambridge-ceu/csd3#login-1)
   * [Migration](https://github.com/cambridge-ceu/csd3#migration)
   * [R package reinstallations](https://github.com/cambridge-ceu/csd3#r-package-reinstallations)
@@ -298,7 +298,7 @@ This is a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0x
 
 ---
 
-## *Information on Cardio*
+## *Cardio*
 
 Cardio is the HPC facility at the CEU..
 
