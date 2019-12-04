@@ -99,7 +99,7 @@ Note that `module load phenoscanner` is enabled from ~/.bashrc:
 ```
 export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
 ```
-followed by `source ~/.bashrc`.
+via `source ~/.bashrc` or a new login.
 
 ## SAIGE 0.35.8.2
 
