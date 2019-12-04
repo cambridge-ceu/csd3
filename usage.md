@@ -79,7 +79,7 @@ conda install pandas
 
 ## PhenoScanner
 
-PhenoScanner v2 is now available on CSD3.
+PhenoScanner v2 command-line interface (CLI) starts with
 ```bash
 module load ceuadmin/phenoscanner
 phenoscanner --snp=rs123 -c All -x EUR -r 0.8
