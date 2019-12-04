@@ -81,7 +81,7 @@ conda install pandas
 
 ## PhenoScanner
 
-Command-line interface (CLI) loading example,
+Here is a command-line interface (CLI) loading example,
 ```bash
 module load ceuadmin/phenoscanner
 phenoscanner --snp=rs123 -c All -x EUR -r 0.8
