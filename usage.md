@@ -79,13 +79,24 @@ conda install pandas
 
 ## PhenoScanner
 
-The installation can be made and documentation example run as follows, 
+PhenoScanner v2 is now available on CSD3.
+```bash
+module load ceuadmin/phenoscanner
+phenoscanner --snp=rs123 -c All -x EUR -r 0.8
+phenoscanner –s T –i input_file.txt -c All -x EUR -r 0
+```
+The R package installation can be made and documentation example run as follows, 
 ```bash
 install.packages("devtools")
 library(devtools)
 install_github("phenoscanner/phenoscanner")
 library(phenoscanner)
 example(phenoscanner)
+```
+Note that `module load phenoscanner` is possible once the following line is added to the end of the ~/.bashrc file:
+```
+MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
+source ~/.bashrc
 ```
 
 ## SAIGE 0.35.8.2
