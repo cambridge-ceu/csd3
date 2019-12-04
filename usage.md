@@ -81,13 +81,13 @@ conda install pandas
 
 ## PhenoScanner
 
-Here is a command-line interface (CLI) loading example,
+Here are examples loading command-line interface (CLI),
 ```bash
 module load ceuadmin/phenoscanner
 phenoscanner --snp=rs123 -c All -x EUR -r 0.8
 phenoscanner –s T –i input_file.txt -c All -x EUR -r 0
 ```
-and R package loading example,
+and R package,
 ```bash
 install.packages("devtools")
 library(devtools)
@@ -98,8 +98,8 @@ example(phenoscanner)
 Note that `module load phenoscanner` is enabled from ~/.bashrc:
 ```
 export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
-source ~/.bashrc
 ```
+followed by `source ~/.bashrc`.
 
 ## SAIGE 0.35.8.2
 
