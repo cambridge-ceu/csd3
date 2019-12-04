@@ -79,13 +79,13 @@ conda install pandas
 
 ## PhenoScanner
 
-PhenoScanner v2 command-line interface (CLI) starts with
+PhenoScanner v2 command-line interface (CLI) can be loaded and run as follows,
 ```bash
 module load ceuadmin/phenoscanner
 phenoscanner --snp=rs123 -c All -x EUR -r 0.8
 phenoscanner –s T –i input_file.txt -c All -x EUR -r 0
 ```
-The R package installation can be made and documentation example run as follows, 
+The R package can be installed to run the documentation example as follows, 
 ```bash
 install.packages("devtools")
 library(devtools)
