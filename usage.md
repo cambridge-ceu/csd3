@@ -81,7 +81,7 @@ conda install pandas
 
 ## PhenoScanner
 
-PhenoScanner v2 command-line interface (CLI) loading example,
+Command-line interface (CLI) loading example,
 ```bash
 module load ceuadmin/phenoscanner
 phenoscanner --snp=rs123 -c All -x EUR -r 0.8
@@ -95,9 +95,9 @@ install_github("phenoscanner/phenoscanner")
 library(phenoscanner)
 example(phenoscanner)
 ```
-Note that `module load phenoscanner` is possible once the following line is added to the end of the ~/.bashrc file:
+Note that `module load phenoscanner` is enabled from ~/.bashrc:
 ```
-MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
+export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
 source ~/.bashrc
 ```
 
