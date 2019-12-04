@@ -16,7 +16,7 @@
   * [matlab](https://github.com/cambridge-ceu/csd3#matlab)
   * [Stata](https://github.com/cambridge-ceu/csd3#stata)
   * [software to-do list](https://github.com/cambridge-ceu/csd3#software-to-do-list)
-  * [Additional information](https://github.com/cambridge-ceu/csd3#additional-information)
+  * [Additional information](https://github.com/cambridge-ceu/csd3/usage.md)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
 * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
 * [*Information on Cardio*](https://github.com/cambridge-ceu/csd3#information-on-cardio)
@@ -279,10 +279,6 @@ as with `ceuadmin/stata/15`.
 #### software to-do list
 
 This is a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing). 
-
-#### Additional information
-
-This can be made available, e.g., [usage.md](usage.md).
 
 ### Training
 
