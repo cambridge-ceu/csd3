@@ -84,8 +84,9 @@ conda install pandas
 Here are examples loading command-line interface (CLI),
 ```bash
 module load ceuadmin/phenoscanner
+phenoscanner --help
 phenoscanner --snp=rs123 -c All -x EUR -r 0.8
-phenoscanner –s T –i input_file.txt -c All -x EUR -r 0
+phenoscanner -s T -c All -x EUR -p 0.0000001 --r2 0.6 -i INF1.merge.snp -o INF1
 ```
 and R package,
 ```bash
