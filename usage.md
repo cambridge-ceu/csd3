@@ -102,6 +102,16 @@ export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
 ```
 via `source ~/.bashrc` or a new login.
 
+## R
+
+To compile all the PDF documentations, load texlive.
+```bash
+module load texlive
+./configure --prefix=/rds-d4/$HOME/hpc-work \
+            --enable-R-shlib CPPFLAGS=-I/rds-d4/$HOME/hpc-work/include LDFLAGS=-L/rds-d4/$HOME/hpc-work/lib
+```
+Package reinstallation could be done with `update.packages(checkBuilt = TRUE, ask = FALSE).
+
 ## SAIGE 0.35.8.2
 
 ```bash
