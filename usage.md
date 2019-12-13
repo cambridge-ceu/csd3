@@ -1,5 +1,7 @@
 # Additional software
 
+This document contains information for the following software: DosageConverter, HESS, PhenoScanner, R, rjags, rstan, SAIGE,
+
 ## DosageConverter
 
 ```bash
@@ -30,6 +32,7 @@ gunzip -c test.plink.dosage.gz | wc -l
 so the MaCH dosage file is individual x genotype whereas PLINK dosage file is genotype x individual.
 
 ## HESS
+
 This section is extracted from https://github.com/jinghuazhao/software-notes.
 
 HESS (Heritability Estimation from Summary Statistics) is now available from https://github.com/huwenboshi/hess and has a web page at
@@ -112,14 +115,6 @@ module load texlive
 ```
 Package reinstallation could be done with `update.packages(checkBuilt = TRUE, ask = FALSE)`.
 
-## SAIGE 0.35.8.2
-
-```bash
-module load boost-1.58.0-gcc-5.4.0-onpiqcr
-module load gcc-5.4.0-gcc-4.8.5-fis24gg
-```
-then one can use `library(SAIGE)` inside R.
-
 ## rjags
 
 It is known for sometime for its difficulty to install; here is what was done
@@ -153,3 +148,11 @@ CXX14 = g++ -std=c++1y -fPIC
 to do away with the error message ``C++14 standard requested but CXX14 is not defined`.
 
 In case `ggplot2` installed with `gcc 5.2.0` it is also necessary to preceed with `module load gcc/5`.
+
+## SAIGE 0.35.8.2
+
+```bash
+module load boost-1.58.0-gcc-5.4.0-onpiqcr
+module load gcc-5.4.0-gcc-4.8.5-fis24gg
+```
+then one can use `library(SAIGE)` inside R.
