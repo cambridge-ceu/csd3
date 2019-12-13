@@ -110,8 +110,11 @@ via `source ~/.bashrc` or a new login.
 To compile all the PDF documentations, load texlive.
 ```bash
 module load texlive
+cd R-3.6.2
 ./configure --prefix=/rds-d4/user/$USER/hpc-work \
             --enable-R-shlib CPPFLAGS=-I/rds-d4/user/$USER/hpc-work/include LDFLAGS=-L/rds-d4/user/$USER/hpc-work/lib
+make
+make install
 ```
 Package reinstallation could be done with `update.packages(checkBuilt = TRUE, ask = FALSE)`.
 
