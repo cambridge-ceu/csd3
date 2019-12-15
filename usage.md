@@ -111,8 +111,9 @@ To compile all the PDF documentations, load texlive.
 ```bash
 module load texlive
 cd R-3.6.2
-./configure --prefix=/rds-d4/user/$USER/hpc-work \
-            --enable-R-shlib CPPFLAGS=-I/rds-d4/user/$USER/hpc-work/include LDFLAGS=-L/rds-d4/user/$USER/hpc-work/lib
+export prefix=/rds-d4/user/$USER/hpc-work
+./configure --prefix={prefix} \
+            --enable-R-shlib CPPFLAGS=-I${prefix}/include LDFLAGS=-L${prefix}/lib
 make
 make install
 ```
