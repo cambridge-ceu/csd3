@@ -113,7 +113,7 @@ Official page: [https://www.gnu.org/software/pspp/](https://www.gnu.org/software
 module load pspp/1.2.0
 pspp example.sps
 ```
-Where [example.sps](files/example.sps) is the documentation example. Nevertheless `psppire` is not yet functioning.
+where [example.sps](files/example.sps) is the documentation example. Nevertheless `psppire` is not yet functioning.
 
 ## R
 
