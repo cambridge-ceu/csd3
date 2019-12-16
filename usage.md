@@ -107,7 +107,7 @@ via `source ~/.bashrc` or a new login.
 
 ## pspp
 
-Official page [https://www.gnu.org/software/pspp/](https://www.gnu.org/software/pspp/).
+Official page: [https://www.gnu.org/software/pspp/](https://www.gnu.org/software/pspp/).
 
 ```bash
 module load pspp/1.2.0
