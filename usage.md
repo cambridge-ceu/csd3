@@ -1,6 +1,6 @@
 # Additional software
 
-This document contains information for the following software: DosageConverter, HESS, PhenoScanner, R, rjags, rstan, SAIGE,
+This document contains information for the following software: DosageConverter, HESS, PhenoScanner, pspp, R, rjags, rstan, SAIGE,
 
 ## DosageConverter
 
@@ -104,6 +104,16 @@ Note that `module load phenoscanner` is enabled from ~/.bashrc:
 export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
 ```
 via `source ~/.bashrc` or a new login.
+
+## pspp
+
+Official page [https://www.gnu.org/software/pspp/](https://www.gnu.org/software/pspp/).
+
+```bash
+module load pspp/1.2.0
+pspp example.sps
+```
+Where [example.sps](files/example.sps) is the documentation example. Nevertheless `psppire` is not yet functioning.
 
 ## R
 
