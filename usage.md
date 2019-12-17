@@ -129,6 +129,7 @@ export GTKSOURCEVIEW_LIBS="-L${PREFIX}/lib -lgtksourceview-4"
 ./configure --prefix=${PREFIX}
 make
 ```
+note that it is necessary to mask the MinGW call and to remove PREFIX= in the Perl part of compiling.
 
 ## R
 
