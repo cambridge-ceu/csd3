@@ -131,6 +131,11 @@ make
 ```
 note that it is necessary to mask the MinGW call and to remove PREFIX= in the Perl part of compiling.
 
+Now we can execute [plot.sps](files/plot.sps)
+```bash
+psppire plot.ps &
+```
+
 ## R
 
 To compile all the PDF documentations, load texlive.
