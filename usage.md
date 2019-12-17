@@ -115,6 +115,21 @@ pspp example.sps
 ```
 where [example.sps](files/example.sps) is the documentation example. Nevertheless `psppire` is not yet functioning.
 
+However, it is possible to compile it directly:
+
+* use gtksourceview 4.0.3 (4.4.0 is more demanding with Python 3.5, meson, Vala, etc.) and use PKG_CONFIG_PATH when appropriate
+* use spread-sheet-widget-0.3
+* use fribidi-1.0.8
+* use GTKSOURVIEW_CFLAGS and GTKSOURVIEW_LIBS in the configuration.
+
+```bash
+export PREFIX=/rds/user/$USER/hpc-work
+export GTKSOURCEVIEW_CFLAGS=-I${PREFIX}/includegtksourceview-4
+export GTKSOURCEVIEW_LIBS="-L${PREFIX}/lib -lgtksourceview-4"
+./configure --prefix=${PREFIX}
+make
+```
+
 ## R
 
 To compile all the PDF documentations, load texlive.
