@@ -128,8 +128,14 @@ export GTKSOURCEVIEW_CFLAGS=-I${PREFIX}/includegtksourceview-4
 export GTKSOURCEVIEW_LIBS="-L${PREFIX}/lib -lgtksourceview-4"
 ./configure --prefix=${PREFIX}
 make
+make install
 ```
-note that it is necessary to mask the MinGW call and to remove PREFIX= in the Perl part of compiling.
+note that it is necessary to comment on the statement `kludge = gtk_source_view_get_type ();` from `src/ui/gui/widgets.c`
+and to remove the `PREFIX= speficiation` in the Perl part of compiling, i.e,
+```
+cd perl-module
+/usr/bin/perl Makefile.PL PREFIX=/rds/user/$USER/hpc-work OPTIMIZE="-g -O2 -I/rds-d4/user/$USER/hpc-work/include/fribidi -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng15 -I/usr/include/uuid -I/usr/include/libdrm -I/usr/include/pango-1.0 -I/usr/include/harfbuzz  "
+```
 
 Now we can execute [plot.sps](files/plot.sps)
 ```bash
@@ -156,15 +162,15 @@ It is known for sometime for its difficulty to install; here is what was done
 ```bash
 
 # Cardio
-export PKG_CONFIG_PATH=/scratch/jhz22/lib/pkgconfig
+export PKG_CONFIG_PATH=/scratch/$USER/lib/pkgconfig
 
-R CMD INSTALL rjags_4-6.tar.gz --configure-args='CPPFLAGS="-fPIC" LDFLAGS="-L/scratch/jhz22/lib -ljags"
---with-jags-prefix=/scratch/jhz22
---with-jags-libdir=/scratch/jhz22/lib
---with-jags-includedir=/scratch/jhz22/include'
+R CMD INSTALL rjags_4-6.tar.gz --configure-args='CPPFLAGS="-fPIC" LDFLAGS="-L/scratch/$USER/lib -ljags"
+--with-jags-prefix=/scratch/$USER
+--with-jags-libdir=/scratch/$USER/lib
+--with-jags-includedir=/scratch/$USER/include'
 
 # csd3
-export hpcwork=/rds-d4/user/jhz22/hpc-work
+export hpcwork=/rds-d4/user/$USER/hpc-work
 export PKG_CONFIG_PATH=${hpcwork}/lib/pkgconfig
 
 wget https://cran.r-project.org/src/contrib/rjags_4-10.tar.gz
