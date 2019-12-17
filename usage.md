@@ -142,6 +142,8 @@ Now we can execute [plot.sps](files/plot.sps)
 psppire plot.ps &
 ```
 
+More documentation examples are in the [examples](files/examples) directory.
+
 ## R
 
 To compile all the PDF documentations, load texlive.
