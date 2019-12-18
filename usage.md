@@ -218,7 +218,8 @@ there is considerable difficulty without the `--NO_HTSLIB` option, e.g. https://
 The following script can set up symbolic links to the executables
 ```bash
 export HPC_WORK=/rds/user/$USER/hpc-work
-for f in convert_cache.pl filter_vep haplo variant_recoder vep; do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
+for f in convert_cache.pl filter_vep haplo variant_recoder vep; 
+do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
 ```
 
 ### R
