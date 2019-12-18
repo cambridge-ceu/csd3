@@ -1,6 +1,6 @@
 # Additional software
 
-This document contains information for the following software: DosageConverter, HESS, PhenoScanner, pspp, R, rjags, rstan, SAIGE,
+This document contains information for the following software: DosageConverter, HESS, PhenoScanner, pspp, R, rjags, rstan, SAIGE, VEP,
 
 ## DosageConverter
 
@@ -199,3 +199,24 @@ module load boost-1.58.0-gcc-5.4.0-onpiqcr
 module load gcc-5.4.0-gcc-4.8.5-fis24gg
 ```
 then one can use `library(SAIGE)` inside R.
+
+## VEP
+
+There are two sources to install under csd3: GitHub and R.
+
+### GitHub
+
+Office page: [https://www.ensembl.org/info/docs/tools/vep/index.html](https://www.ensembl.org/info/docs/tools/vep/index.html).
+
+```bash
+git clone https://github.com/Ensembl/ensembl-vep.git
+cd ensembl-vep
+perl INSTALL.pl --NO_HTSLIB
+```
+there is considerable difficulty if dropping the `--NO_HTSLIB` option but `htslib/` needs to be in LD_LIBRARY_PATH.
+
+### R
+
+```r
+BiocManager::install("ensemblVEP")
+```
