@@ -202,7 +202,7 @@ then one can use `library(SAIGE)` inside R.
 
 ## VEP
 
-There are two sources to install under csd3: GitHub and R.
+There are several sources to install under csd3: GitHub and R.
 
 ### GitHub
 
@@ -213,10 +213,14 @@ git clone https://github.com/Ensembl/ensembl-vep.git
 cd ensembl-vep
 perl INSTALL.pl --NO_HTSLIB
 ```
-there is considerable difficulty if dropping the `--NO_HTSLIB` option but `htslib/` needs to be in LD_LIBRARY_PATH.
+there is considerable difficulty if dropping the `--NO_HTSLIB` option even though HTSLIB_DIR and LD_LIBRARY_PATH are set.
 
 ### R
 
 ```r
 BiocManager::install("ensemblVEP")
 ```
+
+### docker
+
+See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/Ensembl/ensembl-vep.
