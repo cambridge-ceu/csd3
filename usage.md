@@ -224,3 +224,8 @@ BiocManager::install("ensemblVEP")
 ### docker
 
 See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/Ensembl/ensembl-vep.
+
+The following script can set up symbolic links to the executables
+```bash
+for f in convert_cache.pl filter_vep haplo variant_recoder vep; do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
+```
