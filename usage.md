@@ -213,7 +213,7 @@ git clone https://github.com/Ensembl/ensembl-vep.git
 cd ensembl-vep
 perl INSTALL.pl --NO_HTSLIB
 ```
-there is considerable difficulty if dropping the `--NO_HTSLIB` option even though HTSLIB_DIR and LD_LIBRARY_PATH are set.
+there is considerable difficulty without the `--NO_HTSLIB` option, e.g. https://www.biostars.org/p/366401/, even though HTSLIB_DIR and LD_LIBRARY_PATH are set.
 
 ### R
 
