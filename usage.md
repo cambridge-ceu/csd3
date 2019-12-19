@@ -231,8 +231,8 @@ module installed", e.g. https://www.biostars.org/p/366401/; however attempts cou
 https://github.com/Ensembl/Bio-DB-HTS. It is necessary to change the `Makefile` of htslib to install to a desired directory and relevant
 parameters are reflected in Build.PL as with the command line options.
 
-The FASTA file should be automatically detected by the VEP when using --cache or --offline.
-If it is not, use "--fasta $HOME/.vep/homo_sapiens/98_GRCh37/Homo_sapiens.GRCh37.75.dna.primary_assembly.fa"
+> The FASTA file should be automatically detected by the VEP when using --cache or --offline.
+> If it is not, use "--fasta $HOME/.vep/homo_sapiens/98_GRCh37/Homo_sapiens.GRCh37.75.dna.primary_assembly.fa"
 
 ### R
 
