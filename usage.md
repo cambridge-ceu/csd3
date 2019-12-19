@@ -218,8 +218,8 @@ ln -sf $HPC_WORK/ensembl-vep/.vep $HOME/.vep
 perl INSTALL.pl --NO_HTSLIB
 ./vep -i examples/homo_sapiens_GRCh37.vcf -o homo_sapiens_GRC37.txt --offline
 ```
-Note in particular that by default, the cache will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user, and as
-before the destination was redirected. The installation also interactively asks for cache files, FASTA files and plugins.
+Note in particular that by default, the cache files will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user, 
+and as before the destination was redirected. The installation also interactively asks for cache files, FASTA files and plugins.
 
 The following script can set up symbolic links to the executables
 ```bash
