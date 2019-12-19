@@ -209,21 +209,27 @@ There are several sources to install under csd3: GitHub and R.
 Office page: [https://www.ensembl.org/info/docs/tools/vep/index.html](https://www.ensembl.org/info/docs/tools/vep/index.html).
 
 ```bash
+export HPC_WORK=/rds/user/$USER/hpc-work
+cd $HPC_WORK
 git clone https://github.com/Ensembl/ensembl-vep.git
 cd ensembl-vep
+mkdir .vep
+ln -sf $HPC_WORK/ensembl-vep/.vep $HOME/.vep
 perl INSTALL.pl --NO_HTSLIB
 ./vep -i examples/homo_sapiens_GRCh37.vcf -o homo_sapiens_GRC37.txt --offline
 ```
-there is considerable difficulty without the `--NO_HTSLIB` option which indicates "Cannot use format gff without Bio::DB::HTS::Tabix 
-module installed", e.g. https://www.biostars.org/p/366401/; however it seems sensible
-to set HTSLIB_DIR and LD_LIBRARY_PATH and then run `perl INSTALL.pl` from `biodbhts`.
+Note in particular that by default, the cache will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user, and as
+before the destination was redirected.
 
 The following script can set up symbolic links to the executables
 ```bash
-export HPC_WORK=/rds/user/$USER/hpc-work
 for f in convert_cache.pl filter_vep haplo variant_recoder vep; 
 do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
 ```
+
+Note also there is considerable difficulty without the `--NO_HTSLIB` option which indicates "Cannot use format gff without Bio::DB::HTS::Tabix 
+module installed", e.g. https://www.biostars.org/p/366401/; however attempts could be made by install Bio::DB:HTS separately from GitHub,.
+https://github.com/Ensembl/Bio-DB-HTS.
 
 ### R
 
