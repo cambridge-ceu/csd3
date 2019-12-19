@@ -212,7 +212,7 @@ Office page: [https://www.ensembl.org/info/docs/tools/vep/index.html](https://ww
 git clone https://github.com/Ensembl/ensembl-vep.git
 cd ensembl-vep
 perl INSTALL.pl --NO_HTSLIB
-./vep -i examples/homo_sapiens_GRCh37.vcf -o homo_sapiens_GRC37.txt --database
+./vep -i examples/homo_sapiens_GRCh37.vcf -o homo_sapiens_GRC37.txt --offline
 ```
 there is considerable difficulty without the `--NO_HTSLIB` option which indicates "Cannot use format gff without Bio::DB::HTS::Tabix 
 module installed", e.g. https://www.biostars.org/p/366401/; however it seems sensible
