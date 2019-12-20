@@ -202,7 +202,7 @@ then one can use `library(SAIGE)` inside R.
 
 ## VEP
 
-There are several sources to install under csd3: GitHub and R.
+There are several sources to install under csd3: GitHub, R and docker.
 
 ### GitHub
 
