@@ -231,8 +231,8 @@ for f in convert_cache.pl filter_vep haplo variant_recoder vep;
 do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
 ```
 Without the htslib/1.4 module, the `--NO_HTSLIB` option is needed but "Cannot use format gff without Bio::DB::HTS::Tabix module installed". 
-Bio::DB:HTS is in https://github.com/Ensembl/Bio-DB-HTS and change can be made to the `Makefile` of htlibs for a desired location, to be
-used by `Build.PL` via its command line options.
+Bio::DB:HTS is in https://github.com/Ensembl/Bio-DB-HTS and change can be made to the `Makefile` of htslibs for a desired location, to be
+used by `Build.PL` via its command line parameters.
 
 ### R
 
