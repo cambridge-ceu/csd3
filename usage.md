@@ -115,12 +115,12 @@ pspp example.sps
 ```
 where [example.sps](files/example.sps) is the documentation example. Nevertheless `psppire` is not yet functioning.
 
-However, it is possible to compile it directly:
+However, it is possible to compile it directly by using
 
-* use gtksourceview 4.0.3 (4.4.0 is more demanding with Python 3.5, meson, Vala, etc.) and use PKG_CONFIG_PATH when appropriate
-* use spread-sheet-widget-0.3
-* use fribidi-1.0.8
-* use GTKSOURVIEW_CFLAGS and GTKSOURVIEW_LIBS in the configuration.
+* gtksourceview 4.0.3 (4.4.0 is more demanding with Python 3.5, meson, Vala, etc.) and use PKG_CONFIG_PATH when appropriate
+* spread-sheet-widget-0.3
+* fribidi-1.0.8
+* GTKSOURVIEW_CFLAGS and GTKSOURVIEW_LIBS in the configuration.
 
 ```bash
 export PREFIX=/rds/user/$USER/hpc-work
