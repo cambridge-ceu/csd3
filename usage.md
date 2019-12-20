@@ -230,7 +230,7 @@ for f in convert_cache.pl filter_vep haplo variant_recoder vep;
 do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
 ```
 Note also there is considerable difficulty without the `--NO_HTSLIB` option which indicates "Cannot use format gff without Bio::DB::HTS::Tabix 
-module installed", e.g. https://www.biostars.org/p/366401/; however attempts could be made by install Bio::DB:HTS separately from GitHub,.
+module installed", e.g. https://www.biostars.org/p/366401/; however attempts could be made by installing Bio::DB:HTS separately from GitHub,.
 https://github.com/Ensembl/Bio-DB-HTS. It is necessary to change the `Makefile` of htslib to install to a desired directory and relevant
 parameters are reflected in Build.PL as with the command line options.
 
