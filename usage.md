@@ -215,7 +215,8 @@ git clone https://github.com/Ensembl/ensembl-vep.git
 cd ensembl-vep
 mkdir .vep
 ln -sf $HPC_WORK/ensembl-vep/.vep $HOME/.vep
-perl INSTALL.pl --NO_HTSLIB
+module load htslib/1.4
+perl INSTALL.pl
 ./vep -i examples/homo_sapiens_GRCh37.vcf -o homo_sapiens_GRC37.txt --offline
 ```
 Note in particular that by default, the cache files will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user, 
@@ -229,10 +230,10 @@ The following script can set up symbolic links to the executables
 for f in convert_cache.pl filter_vep haplo variant_recoder vep; 
 do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
 ```
-Note also there is considerable difficulty without the `--NO_HTSLIB` option which indicates "Cannot use format gff without Bio::DB::HTS::Tabix 
-module installed", e.g. https://www.biostars.org/p/366401/; however attempts could be made by installing Bio::DB:HTS separately from GitHub,.
-https://github.com/Ensembl/Bio-DB-HTS. It is necessary to change the `Makefile` of htslib to install to a desired directory and relevant
-parameters are reflected in Build.PL as with the command line options.
+Note also without the htslib/1.4 module it is nessary to add the `--NO_HTSLIB` option which also indicates "Cannot use format gff without 
+Bio::DB::HTS::Tabix module installed", e.g. https://www.biostars.org/p/366401/ and Bio::DB:HTS is itself a repository from GitHub,
+ https://github.com/Ensembl/Bio-DB-HTS and it is suggested to change the `Makefile` of htslib to install to a desired directory and relevant 
+parameters are reflected in Build.PL through its command line options.
 
 ### R
 
