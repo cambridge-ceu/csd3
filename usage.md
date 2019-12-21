@@ -2,7 +2,7 @@
 
 This document contains information for the following software: DosageConverter, HESS, PhenoScanner, PRSice, pspp, R, rjags, rstan, SAIGE, VEP,
 
-Whenever appropriate, it is assumed that you have `export HPC_WORK=/rds/user/$USER/hpc-work` in your .bashrc.
+Whenever appropriate, it is assumed that there is `export HPC_WORK=/rds/user/$USER/hpc-work` in .bashrc.
 
 ## DosageConverter
 
@@ -227,7 +227,6 @@ There are several sources to install under csd3: GitHub, R and docker.
 Office page: [https://www.ensembl.org/info/docs/tools/vep/index.html](https://www.ensembl.org/info/docs/tools/vep/index.html).
 
 ```bash
-export HPC_WORK=/rds/user/$USER/hpc-work
 cd $HPC_WORK
 git clone https://github.com/Ensembl/ensembl-vep.git
 cd ensembl-vep
