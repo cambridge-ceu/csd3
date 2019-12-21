@@ -109,7 +109,7 @@ via `source ~/.bashrc` or a new login.
 
 ## PRSice
 
-Office page: https://github.com/choishingwan/PRSice
+Web page: https://github.com/choishingwan/PRSice and http://www.prsice.info/.
 
 ```bash
 cd $HPC_WORK
