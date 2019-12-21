@@ -1,6 +1,6 @@
 # Additional software
 
-This document contains information for the following software: DosageConverter, HESS, PhenoScanner, pspp, R, rjags, rstan, SAIGE, VEP,
+This document contains information for the following software: DosageConverter, HESS, PhenoScanner, PRSice, pspp, R, rjags, rstan, SAIGE, VEP,
 
 ## DosageConverter
 
@@ -104,6 +104,23 @@ Note that `module load phenoscanner` is enabled from ~/.bashrc:
 export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
 ```
 via `source ~/.bashrc` or a new login.
+
+## PRSice
+
+Office page: https://github.com/choishingwan/PRSice
+
+```bash
+cd $HPC_WORK
+git clone https://github.com/choishingwan/PRSice
+cd PRSice
+mkdir build
+cd build
+module load cmake/3.9
+cmake ..
+make
+ln -sf $HPC_WORK/PRSice/bin/PRSice $HPC_WORK/bin/PRSice
+```
+where HPC_WORK is defined as `/rds/user/$USER/hpc-work`.
 
 ## pspp
 
