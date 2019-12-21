@@ -2,6 +2,8 @@
 
 This document contains information for the following software: DosageConverter, HESS, PhenoScanner, PRSice, pspp, R, rjags, rstan, SAIGE, VEP,
 
+Whenever appropriate, it is assumed that you have `export HPC_WORK=/rds/user/$USER/hpc-work` in your .bashrc.
+
 ## DosageConverter
 
 ```bash
@@ -120,7 +122,6 @@ cmake ..
 make
 ln -sf $HPC_WORK/PRSice/bin/PRSice $HPC_WORK/bin/PRSice
 ```
-where HPC_WORK is defined as `/rds/user/$USER/hpc-work`.
 
 ## pspp
 
