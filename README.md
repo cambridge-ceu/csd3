@@ -211,8 +211,8 @@ to `/home/$USER/.conda/envs/py27`, and similarly for `conda create -n py35 pytho
 
 The Jupyter notebook can be started as follows,
 ```bash
-$HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --no-browser --port 8081
 hostname
+$HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --no-browser --port 8081
 ssh -4 -L 8081:127.0.0.1:8081 -fN <hostname>.hpc.cam.ac.uk
 ```
 If it fails to assign the port number, let the system choose (by dropping the `--port` option). The process which use the port can be shown with `lsof 
