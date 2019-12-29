@@ -210,7 +210,7 @@ source activate py35
 and follow [Autoencoder in Keras tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial) on
 data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/) 
 
-We can also start the Jupyter notebook,
+The Jupyter notebook can be started as follows,
 ```bash
 hostname
 $HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --no-browser --port 8081
