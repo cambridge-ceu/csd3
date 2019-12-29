@@ -202,7 +202,7 @@ conda create -n py35 python=3.5 ipykernel
 ```
 for Python 2.7 and 3.5 at `/home/$USER/.conda/envs/py27` and `/home/$USER/.conda/envs/py35, respectively. These are only required once.
 
-We now load Anaconda and activate Python 3.5,
+We can then load Anaconda and activate Python 3.5,
 ```bash
 module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
 source activate py35
