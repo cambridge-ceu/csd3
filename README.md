@@ -193,22 +193,24 @@ installs libraries at `$HOME/.local`.
 
 Anaconda ([https://www.anaconda.com/](https://www.anaconda.com/)) and Jupyter notebook ([https://jupyter.org/](https://jupyter.org/)) are useful tools. 
 
-To see available modules and start Anaconda,
+We first load Anaconda and create virtual environments,
 ```bash
 module avail miniconda
 module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
-```
-e.g., with data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/) one can follow the [Autoencoder in Keras 
-tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial). `Keras` uses `TensorFlow`.
-
-The switch between Python 2.7 and 3.5 is possible, i.e.,
-```bash
 conda create -n py27 python=2.7 ipykernel
-source activate py27
+conda create -n py35 python=3.5 ipykernel
 ```
-to `/home/$USER/.conda/envs/py27`, and similarly for `conda create -n py35 python=3.5 ipykernel`.
+for Python 2.7 and 3.5 at `/home/$USER/.conda/envs/py27` and `/home/$USER/.conda/envs/py35, respectively. These are only required once.
 
-The Jupyter notebook can be started as follows,
+We now load Anaconda and activate Python 3.5,
+```bash
+module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
+source activate py35
+```
+and follow [Autoencoder in Keras tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial) on
+data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/) 
+
+We can also start the Jupyter notebook,
 ```bash
 hostname
 $HOME/.local/bin/jupyter notebook --ip=127.0.0.1 --no-browser --port 8081
@@ -220,6 +222,7 @@ used by another ssh session *elsewhere* and the URL generated openable from a br
 ssh -4 -L 8081:127.0.0.1:8081 -fN <hostname>.hpc.cam.ac.uk
 firefox <URL> &
 ```
+paying attention to the port number as it may change.
 
 An `hello world` example is [hello.ipynb](files/hello.ipynb) from which [hello.html](files/hello.html) and [hello.pdf](files/hello.pdf) were generated with `jupyter nbconvert --to html|pdf hello.ipynb`.
 
