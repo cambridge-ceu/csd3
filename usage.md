@@ -222,7 +222,7 @@ then one can use `library(SAIGE)` inside R.
 
 There are several sources to install under csd3: GitHub, R and docker.
 
-### GitHub
+### --- GitHub ---
 
 Office page: [https://www.ensembl.org/info/docs/tools/vep/index.html](https://www.ensembl.org/info/docs/tools/vep/index.html).
 
@@ -251,12 +251,12 @@ Without the htslib/1.4 module, the `--NO_HTSLIB` option is needed but "Cannot us
 Bio::DB:HTS is in https://github.com/Ensembl/Bio-DB-HTS and change can be made to the `Makefile` of htslibs for a desired location, to be
 used by `Build.PL` via its command line parameters.
 
-### R
+### --- R ---
 
 ```r
 BiocManager::install("ensemblVEP")
 ```
 
-### docker
+### --- docker ---
 
 See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/Ensembl/ensembl-vep.
