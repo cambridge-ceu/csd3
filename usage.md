@@ -138,7 +138,7 @@ cd poppler-0.84.0
 mkdir build
 cd build
 module load gcc/5
-module load  openjpeg-2.1-gcc-5.4.0-myd2p3o
+module load openjpeg-2.1-gcc-5.4.0-myd2p3o
 cmake ..
 make
 make install
