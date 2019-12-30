@@ -2,7 +2,7 @@
 
 This document contains information on software noted from work (analogous to https://github.com/jinghuazhao/software-notes):
 
-DosageConverter, HESS, PhenoScanner, PRSice, pspp, R, rjags, rstan, SAIGE, VEP,
+DosageConverter, HESS, PhenoScanner, PRSice, poppler, pspp, R, rjags, rstan, SAIGE, VEP,
 
 Whenever appropriate, it is assumed that there is `export HPC_WORK=/rds/user/$USER/hpc-work` in .bashrc.
 
@@ -124,6 +124,33 @@ cmake ..
 make
 ln -sf $HPC_WORK/PRSice/bin/PRSice $HPC_WORK/bin/PRSice
 ```
+
+## poppler
+
+Official page: [https://poppler.freedesktop.org/](https://poppler.freedesktop.org/).
+
+We work on the latest version, 0.84.
+```bash
+module load xz/5.2.2
+wget https://poppler.freedesktop.org/poppler-0.84.0.tar.xz
+tar xf poppler-0.84.0.tar.xz
+cd poppler-0.84.0
+mkdir build
+cd build
+module load gcc/5
+module load  openjpeg-2.1-gcc-5.4.0-myd2p3o
+cmake ..
+make
+make install
+```
+Note it is necessary to change prefix, cc and c++ to gcc and g++ in line with gcc/5, e.g.,
+```
+CMAKE_INSTALL_PREFIX:PATH=/rds/user/$USER/hpc-work
+CMAKE_C_COMPILER:FILEPATH=/usr/local/software/master/gcc/5/bin/gcc
+CMAKE_CXX_COMPILER:FILEPATH=/usr/local/software/master/gcc/5/bin/g++
+```
+which could be done by editing CMakeCache.txt and/or calling `ccmake .`. After these we have 
+a number of utilties such as `pdftotext`, `pdfimages` and various libraries.
 
 ## pspp
 
