@@ -1,6 +1,8 @@
-# Additional software
+# Software notes
 
-This document contains information for the following software: DosageConverter, HESS, PhenoScanner, PRSice, pspp, R, rjags, rstan, SAIGE, VEP,
+This document contains information on software noted from work (analogous to https://github.com/jinghuazhao/software-notes):
+
+DosageConverter, HESS, PhenoScanner, PRSice, pspp, R, rjags, rstan, SAIGE, VEP,
 
 Whenever appropriate, it is assumed that there is `export HPC_WORK=/rds/user/$USER/hpc-work` in .bashrc.
 
