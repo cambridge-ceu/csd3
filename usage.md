@@ -113,7 +113,7 @@ via `source ~/.bashrc` or a new login.
 
 Official page: [https://poppler.freedesktop.org/](https://poppler.freedesktop.org/).
 
-We work on the latest version, 0.84.
+We work on the latest version, 0.84.0.
 ```bash
 module load xz/5.2.2
 wget https://poppler.freedesktop.org/poppler-0.84.0.tar.xz
