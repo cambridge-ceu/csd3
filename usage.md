@@ -134,7 +134,11 @@ CMAKE_C_COMPILER:FILEPATH=/usr/local/software/master/gcc/5/bin/gcc
 CMAKE_CXX_COMPILER:FILEPATH=/usr/local/software/master/gcc/5/bin/g++
 ```
 which could be done by editing CMakeCache.txt and/or calling `ccmake .`. After these we have 
-a number of utilties such as `pdftotext`, `pdfimages` and various libraries.
+the followihg utilties:
+
+pdfattach, pdfdetach,  pdffonts,  pdfimages,  pdfinfo,  pdfseparate,  pdftocairo,  pdftohtml,  pdftoppm,  pdftops,  pdftotext,  pdfunite,
+
+and following libraries: libpoppler.so, libpoppler-cpp.so, libpoppler-glibc.so, libpoppler-qt5.so.
 
 ## PRSice
 
