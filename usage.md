@@ -2,7 +2,7 @@
 
 This document contains information on software noted from work (analogous to https://github.com/jinghuazhao/software-notes):
 
-DosageConverter, HESS, PhenoScanner, PRSice, poppler, pspp, R, rjags, rstan, SAIGE, VEP,
+DosageConverter, HESS, PhenoScanner, poppler, PRSice, pspp, R, rjags, rstan, SAIGE, VEP,
 
 Whenever appropriate, it is assumed that there is `export HPC_WORK=/rds/user/$USER/hpc-work` in .bashrc.
 
@@ -109,22 +109,6 @@ export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
 ```
 via `source ~/.bashrc` or a new login.
 
-## PRSice
-
-Web page: https://github.com/choishingwan/PRSice, https://choishingwan.github.io/PRS-Tutorial/ and http://www.prsice.info/.
-
-```bash
-cd $HPC_WORK
-git clone https://github.com/choishingwan/PRSice
-cd PRSice
-mkdir build
-cd build
-module load cmake/3.9
-cmake ..
-make
-ln -sf $HPC_WORK/PRSice/bin/PRSice $HPC_WORK/bin/PRSice
-```
-
 ## poppler
 
 Official page: [https://poppler.freedesktop.org/](https://poppler.freedesktop.org/).
@@ -151,6 +135,22 @@ CMAKE_CXX_COMPILER:FILEPATH=/usr/local/software/master/gcc/5/bin/g++
 ```
 which could be done by editing CMakeCache.txt and/or calling `ccmake .`. After these we have 
 a number of utilties such as `pdftotext`, `pdfimages` and various libraries.
+
+## PRSice
+
+Web page: https://github.com/choishingwan/PRSice, https://choishingwan.github.io/PRS-Tutorial/ and http://www.prsice.info/.
+
+```bash
+cd $HPC_WORK
+git clone https://github.com/choishingwan/PRSice
+cd PRSice
+mkdir build
+cd build
+module load cmake/3.9
+cmake ..
+make
+ln -sf $HPC_WORK/PRSice/bin/PRSice $HPC_WORK/bin/PRSice
+```
 
 ## pspp
 
