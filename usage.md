@@ -264,7 +264,7 @@ mkdir .vep
 ln -sf $HPC_WORK/ensembl-vep/.vep $HOME/.vep
 module load htslib/1.4
 perl INSTALL.pl
-./vep -i examples/homo_sapiens_GRCh37.vcf -o homo_sapiens_GRC37.txt --force_overwrite --offline
+./vep -i examples/homo_sapiens_GRCh37.vcf -o examples/homo_sapiens_GRC37.txt --force_overwrite --offline
 ```
 Note in particular that by default, the cache files will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user, 
 and as before the destination was redirected. The installation also interactively asks for cache files, FASTA files and plugins.
@@ -290,3 +290,9 @@ BiocManager::install("ensemblVEP")
 ### --- docker ---
 
 See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/Ensembl/ensembl-vep.
+
+### --- Virtual Machine ---
+
+See http://www.ensembl.org/info/data/virtual_machine.html which we would not pursue here.
+
+Detailed instructions are available from here, http://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#installer.
