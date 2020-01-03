@@ -251,6 +251,8 @@ R CMD INSTALL rjags_4-10.tar.gz --configure-args='CPPFLAGS="-fPIC" LDFLAGS="-L${
 
 ## rstan
 
+Official page: [https://mc-stan.org/users/interfaces/rstan](https://mc-stan.org/users/interfaces/rstan) and also [https://cran.r-project.org/package=rstan](https://cran.r-project.org/package=rstan).
+
 It is necessary to have `¬/.R/Makevars` the following lines,
 ```
 CXX14 = g++ -std=c++1y -fPIC
@@ -261,6 +263,8 @@ In case `ggplot2` installed with `gcc 5.2.0` it is also necessary to preceed wit
 
 ## SAIGE 0.35.8.2
 
+GitHub page: [https://github.com/weizhouUMICH/SAIGE](https://github.com/weizhouUMICH/SAIGE).
+
 ```bash
 module load boost-1.58.0-gcc-5.4.0-onpiqcr
 ```
@@ -268,11 +272,13 @@ then one can use `library(SAIGE)` inside R.
 
 ## VEP
 
+Official page: [https://www.ensembl.org/info/docs/tools/vep/index.html](https://www.ensembl.org/info/docs/tools/vep/index.html).
+
 There are several sources to install under csd3: GitHub, R and docker.
 
 ### --- GitHub ---
 
-Office page: [https://www.ensembl.org/info/docs/tools/vep/index.html](https://www.ensembl.org/info/docs/tools/vep/index.html).
+GitHub Page: [https://github.com/Ensembl/ensembl-vep](https://github.com/Ensembl/ensembl-vep).
 
 ```bash
 cd $HPC_WORK
