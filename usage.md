@@ -8,7 +8,9 @@ Whenever appropriate, it is assumed that there is `export HPC_WORK=/rds/user/$US
 
 ## ANNOVAR
 
-THis is registered with the following information,
+Web page: http://annovar.openbioinformatics.org/en/latest/
+
+Registered [here](http://download.openbioinformatics.org/annovar_download_form.php) with the following information,
 ```
 User Name: Jing Hua Zhao
 User Email: jhz22@medschl.cam.ac.uk
