@@ -20,6 +20,7 @@ User Host: global-185-49.nat-2.net.cam.ac.uk
 ```
 then
 ```bash
+cd ${HPC_WORK}
 wget http://www.openbioinformatics.org/annovar/download/0wgxR2rIVP/annovar.latest.tar.gz
 tar xvfz annovar.latest.tar.gz
 ls *pl | sed 's/*//g' | parallel -C' ' 'ln -sf ${HPC_WORK}/annovar/{} ${HPC_WORK}/bin/{}'
