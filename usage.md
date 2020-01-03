@@ -2,9 +2,25 @@
 
 This document contains information on software noted from work (analogous to https://github.com/jinghuazhao/software-notes):
 
-DosageConverter, HESS, PhenoScanner, poppler, PRSice, pspp, R, rjags, rstan, SAIGE, VEP,
+ANNOVAR, DosageConverter, HESS, PhenoScanner, poppler, PRSice, pspp, R, rjags, rstan, SAIGE, VEP,
 
 Whenever appropriate, it is assumed that there is `export HPC_WORK=/rds/user/$USER/hpc-work` in .bashrc.
+
+## ANNOVAR
+
+THis is registered with the following information,
+```
+User Name: Jing Hua Zhao
+User Email: jhz22@medschl.cam.ac.uk
+User Institution: University of Cambridge
+User IP: 131.111.185.49
+User Host: global-185-49.nat-2.net.cam.ac.uk
+```
+
+```bash
+wget http://www.openbioinformatics.org/annovar/download/0wgxR2rIVP/annovar.latest.tar.gz
+tar xvfz annovar.latest.tar.gz
+```
 
 ## DosageConverter
 
