@@ -227,6 +227,8 @@ Package reinstallation could be done with `update.packages(checkBuilt = TRUE, as
 
 ## rjags
 
+Web page: [https://sourceforge.net/projects/mcmc-jags/files/rjags/](https://sourceforge.net/projects/mcmc-jags/files/rjags/).
+
 It is known for sometime for its difficulty to install; here is what was done
 ```bash
 
