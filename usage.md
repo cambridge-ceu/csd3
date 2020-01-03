@@ -10,18 +10,16 @@ Whenever appropriate, it is assumed that there is `export HPC_WORK=/rds/user/$US
 
 Web page: http://annovar.openbioinformatics.org/en/latest/
 
-Registered [here](http://download.openbioinformatics.org/annovar_download_form.php) with the following information,
+Registered from http://download.openbioinformatics.org/annovar_download_form.php with the following information,
 ```
-User Name: Jing Hua Zhao
-User Email: jhz22@medschl.cam.ac.uk
+User Name: 
+User Email: 
 User Institution: University of Cambridge
-User IP: 131.111.185.49
-User Host: global-185-49.nat-2.net.cam.ac.uk
 ```
-then
+then copy the link received and issue commands from csd3,
 ```bash
 cd ${HPC_WORK}
-wget http://www.openbioinformatics.org/annovar/download/0wgxR2rIVP/annovar.latest.tar.gz
+wget http://www.openbioinformatics.org/annovar/download/.../annovar.latest.tar.gz
 tar xvfz annovar.latest.tar.gz
 ls *pl | sed 's/*//g' | parallel -C' ' 'ln -sf ${HPC_WORK}/annovar/{} ${HPC_WORK}/bin/{}'
 ```
