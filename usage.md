@@ -16,7 +16,7 @@ User Name:
 User Email: 
 User Institution: University of Cambridge
 ```
-then copy the link received and issue commands from csd3,
+then copy the link received from email and issue commands from csd3,
 ```bash
 cd ${HPC_WORK}
 wget http://www.openbioinformatics.org/annovar/download/.../annovar.latest.tar.gz
