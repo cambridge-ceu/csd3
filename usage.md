@@ -18,7 +18,7 @@ User Institution: University of Cambridge
 User IP: 131.111.185.49
 User Host: global-185-49.nat-2.net.cam.ac.uk
 ```
-
+then
 ```bash
 wget http://www.openbioinformatics.org/annovar/download/0wgxR2rIVP/annovar.latest.tar.gz
 tar xvfz annovar.latest.tar.gz
