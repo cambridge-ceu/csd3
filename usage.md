@@ -24,10 +24,11 @@ wget http://www.openbioinformatics.org/annovar/download/.../annovar.latest.tar.g
 tar xvfz annovar.latest.tar.gz
 ls *pl | sed 's/*//g' | parallel -C' ' 'ln -sf ${HPC_WORK}/annovar/{} ${HPC_WORK}/bin/{}'
 ```
-Additionally, one can download the Ensembl-synonyms translation (hg19) file and
+Additionally, one can download the ENSEMBL gene, Ensembl-synonyms translation (hg19) file and
 whole-genome FASTA files to humandb/hg19_seq for CCDS/GENCODE annotation.
 ```bash
 cd annovar
+annotate_variation.pl -buildver hg19 -downdb -webfrom annovar ensGene
 wget http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/ensemblToGeneName.txt.gz
 annotate_variation.pl -downdb -build hg19 seq humandb/hg19_seq/
 annotate_variation.pl -downdb -build hg19 ccdsGene humandb
@@ -48,7 +49,7 @@ annotate_variation.pl -regionanno -build hg19 -out ex1 -dbtype tfbsConsSites exa
 # Cytogenetic band
 annotate_variation.pl -build hg19 -downdb cytoBand humandb/
 annotate_variation.pl -regionanno -build hg19 -out ex1 -dbtype cytoBand example/ex1.avinput humandb/
-# micoRNA, snoRNA
+# microRNA, snoRNA
 annotate_variation.pl -build hg19 -downdb wgRna humandb/
 annotate_variation.pl -regionanno -build hg19 -out ex1 -dbtype wgRna example/ex1.avinput humandb/
 # previously reported structural variants
