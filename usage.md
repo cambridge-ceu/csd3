@@ -1,10 +1,11 @@
 # Software notes
 
-This document contains information on software noted from work (analogous to https://github.com/jinghuazhao/software-notes):
+This document contains software information noted at work:
 
 ANNOVAR, DosageConverter, HESS, PhenoScanner, poppler, PRSice, pspp, R, rjags, rstan, SAIGE, VEP,
 
-Whenever appropriate, it is assumed that there is `export HPC_WORK=/rds/user/$USER/hpc-work` in .bashrc.
+Whenever appropriate, it is assumed that the destination of software installation is ${HPC_WORK}, e.g., 
+via `export HPC_WORK=/rds/user/$USER/hpc-work` in .bashrc.
 
 ## ANNOVAR
 
