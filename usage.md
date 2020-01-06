@@ -23,7 +23,10 @@ cd ${HPC_WORK}
 wget http://www.openbioinformatics.org/annovar/download/.../annovar.latest.tar.gz
 tar xvfz annovar.latest.tar.gz
 ls *pl | sed 's/*//g' | parallel -C' ' 'ln -sf ${HPC_WORK}/annovar/{} ${HPC_WORK}/bin/{}'
+cd annovar
+wget http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/ensemblToGeneName.txt.gz
 ```
+Note that the last command downloads the two-column Ensembl-synonums translation (hg19) file.
 
 ## DosageConverter
 
