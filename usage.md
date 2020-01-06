@@ -63,7 +63,7 @@ annotate_variation.pl -regionanno -build hg19 -out ex1 -dbtype gwasCatalog examp
 ```
 Finally, here is a more sophisticated example contrasting `table_annovar.pl` with `annotate_variation.pl`,
 ```bash
-if [ ! -d test]; then mkdir test; fi
+if [ ! -d test ]; then mkdir test; fi
 annotate_variation.pl -buildver hg19 -downdb -webfrom annovar refGene test/
 annotate_variation.pl -buildver hg19 -downdb cytoBand test/
 annotate_variation.pl -buildver hg19 -downdb -webfrom annovar exac03 test/
