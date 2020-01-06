@@ -36,6 +36,28 @@ annotate_variation.pl -downdb wgEncodeGencodeBasicV19 humandb/ -build hg19
 retrieve_seq_from_fasta.pl -format genericGene -seqdir humandb/hg19_seq/ -outfile humandb/hg19_wgEncodeGencodeBasicV19Mrna.fa humandb/hg19_wgEncodeGencodeBasicV19.txt
 annotate_variation.pl -build hg19 -out ex1 -dbtype wgEncodeGencodeBasicV19 example/ex1.avinput humandb/
 ```
+We can have region-based annotation as in http://annovar.openbioinformatics.org/en/latest/user-guide/region/,
+```bash
+# Conserved genomic elements
+annotate_variation.pl -build hg19 -downdb phastConsElements46way humandb/
+annotate_variation.pl -regionanno -build hg19 -out ex1 -dbtype phastConsElements46way example/ex1.avinput humandb/
+annotate_variation.pl -regionanno -build hg19 -out ex1 -dbtype phastConsElements46way example/ex1.avinput humandb/ -normscore_threshold 400
+# Transcription factor binding sites
+annotate_variation.pl -build hg19 -downdb tfbsConsSites humandb/
+annotate_variation.pl -regionanno -build hg19 -out ex1 -dbtype tfbsConsSites example/ex1.avinput humandb/
+# Cytogenetic band
+annotate_variation.pl -build hg19 -downdb cytoBand humandb/
+annotate_variation.pl -regionanno -build hg19 -out ex1 -dbtype cytoBand example/ex1.avinput humandb/
+# micoRNA, snoRNA
+annotate_variation.pl -build hg19 -downdb wgRna humandb/
+annotate_variation.pl -regionanno -build hg19 -out ex1 -dbtype wgRna example/ex1.avinput humandb/
+# previously reported structural variants
+annotate_variation.pl -build hg19 -downdb dgvMerged humandb/
+annotate_variation.pl -regionanno -build hg19 -out ex1 -dbtype dgvMerged example/ex1.avinput humandb/
+# published GWAS
+annotate_variation.pl -build hg19 -downdb gwasCatalog humandb/
+annotate_variation.pl -regionanno -build hg19 -out ex1 -dbtype gwasCatalog example/ex1.avinput humandb/
+```
 
 ## DosageConverter
 
