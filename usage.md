@@ -380,7 +380,10 @@ mkdir .vep
 ln -sf $HPC_WORK/ensembl-vep/.vep $HOME/.vep
 module load htslib/1.4
 perl INSTALL.pl
-./vep -i examples/homo_sapiens_GRCh37.vcf -o examples/homo_sapiens_GRC37.txt --force_overwrite --offline --symbol
+# set up symbolic links to the executables
+for f in convert_cache.pl filter_vep haplo variant_recoder vep; 
+    do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
+vep -i examples/homo_sapiens_GRCh37.vcf -o examples/homo_sapiens_GRC37.txt --force_overwrite --offline --symbol
 ```
 Note in particular that by default, the cache files will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user, 
 and as before the destination was redirected. The setup above facilitates storage of cache files, FASTA files and plugins.
@@ -388,11 +391,6 @@ and as before the destination was redirected. The setup above facilitates storag
 > The FASTA file should be automatically detected by the VEP when using --cache or --offline.
 > If it is not, use "--fasta $HOME/.vep/homo_sapiens/98_GRCh37/Homo_sapiens.GRCh37.75.dna.primary_assembly.fa"
 
-The following script can set up symbolic links to the executables
-```bash
-for f in convert_cache.pl filter_vep haplo variant_recoder vep; 
-do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
-```
 Without the htslib/1.4 module, the `--NO_HTSLIB` option is needed but "Cannot use format gff without Bio::DB::HTS::Tabix module installed". 
 Bio::DB:HTS is in https://github.com/Ensembl/Bio-DB-HTS and change can be made to the `Makefile` of htslibs for a desired location, to be
 used by `Build.PL` via its command line parameters.
