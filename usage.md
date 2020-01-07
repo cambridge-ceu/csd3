@@ -353,6 +353,21 @@ module load htslib/1.4
 perl INSTALL.pl
 ./vep -i examples/homo_sapiens_GRCh37.vcf -o examples/homo_sapiens_GRC37.txt --force_overwrite --offline
 ```
+Note in particular that by default, the cache files will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user, 
+and as before the destination was redirected. The installation also interactively asks for cache files, FASTA files and plugins.
+
+> The FASTA file should be automatically detected by the VEP when using --cache or --offline.
+> If it is not, use "--fasta $HOME/.vep/homo_sapiens/98_GRCh37/Homo_sapiens.GRCh37.75.dna.primary_assembly.fa"
+
+The following script can set up symbolic links to the executables
+```bash
+for f in convert_cache.pl filter_vep haplo variant_recoder vep; 
+do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
+```
+Without the htslib/1.4 module, the `--NO_HTSLIB` option is needed but "Cannot use format gff without Bio::DB::HTS::Tabix module installed". 
+Bio::DB:HTS is in https://github.com/Ensembl/Bio-DB-HTS and change can be made to the `Makefile` of htslibs for a desired location, to be
+used by `Build.PL` via its command line parameters.
+
 The ENSEMBL-synonym translation noted at the ANNOVAR section is useful to check for the feature types -- in the case of 
 ENSG00000160712 (IL6R) we found ENST00000368485	and ENST00000515190, we do
 ```bash
@@ -371,21 +386,6 @@ attr <- listAttributes(ensembl)
 filter <- listFilters(ensembl)
 gene <- getBM(attributes = c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol'), mart = ensembl)
 ```
-
-Note in particular that by default, the cache files will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user, 
-and as before the destination was redirected. The installation also interactively asks for cache files, FASTA files and plugins.
-
-> The FASTA file should be automatically detected by the VEP when using --cache or --offline.
-> If it is not, use "--fasta $HOME/.vep/homo_sapiens/98_GRCh37/Homo_sapiens.GRCh37.75.dna.primary_assembly.fa"
-
-The following script can set up symbolic links to the executables
-```bash
-for f in convert_cache.pl filter_vep haplo variant_recoder vep; 
-do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
-```
-Without the htslib/1.4 module, the `--NO_HTSLIB` option is needed but "Cannot use format gff without Bio::DB::HTS::Tabix module installed". 
-Bio::DB:HTS is in https://github.com/Ensembl/Bio-DB-HTS and change can be made to the `Makefile` of htslibs for a desired location, to be
-used by `Build.PL` via its command line parameters.
 
 ### --- R ---
 
