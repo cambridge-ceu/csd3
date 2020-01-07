@@ -30,6 +30,7 @@ whole-genome FASTA files to humandb/hg19_seq for CCDS/GENCODE annotation.
 cd annovar
 # ENSEMBL genes
 annotate_variation.pl -buildver hg19 -downdb -webfrom annovar ensGene
+annotate_variation.pl -build hg19 -out ex1 -dbtype ensGene example/ex1.avinput humandb/
 # ENSEMBL-synonym translation
 wget http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/ensemblToGeneName.txt.gz
 # reference genome in FASTA
