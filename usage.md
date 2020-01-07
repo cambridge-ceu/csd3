@@ -363,7 +363,7 @@ perl INSTALL.pl
 ./vep -i examples/homo_sapiens_GRCh37.vcf -o examples/homo_sapiens_GRC37.txt --force_overwrite --offline
 ```
 Note in particular that by default, the cache files will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user, 
-and as before the destination was redirected. The installation also interactively asks for cache files, FASTA files and plugins.
+and as before the destination was redirected. The setup above facilitates storage of cache files, FASTA files and plugins.
 
 > The FASTA file should be automatically detected by the VEP when using --cache or --offline.
 > If it is not, use "--fasta $HOME/.vep/homo_sapiens/98_GRCh37/Homo_sapiens.GRCh37.75.dna.primary_assembly.fa"
