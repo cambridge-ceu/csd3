@@ -28,12 +28,17 @@ Additionally, one can download the ENSEMBL gene, ENESMBL-synonym translation (hg
 whole-genome FASTA files to humandb/hg19_seq for CCDS/GENCODE annotation.
 ```bash
 cd annovar
+# ENSEMBL genes
 annotate_variation.pl -buildver hg19 -downdb -webfrom annovar ensGene
+# ENSEMBL-synonym translation
 wget http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/ensemblToGeneName.txt.gz
+# reference genome in FASTA
 annotate_variation.pl -downdb -build hg19 seq humandb/hg19_seq/
+# CCDS genes
 annotate_variation.pl -downdb -build hg19 ccdsGene humandb
 retrieve_seq_from_fasta.pl humandb/hg19_ccdsGene.txt -seqdir humandb/hg19_seq -format refGene \
                            -outfile humandb/hg19_ccdsGeneMrna.fa
+# GENCODE genes
 annotate_variation.pl -downdb wgEncodeGencodeBasicV19 humandb/ -build hg19
 retrieve_seq_from_fasta.pl -format genericGene -seqdir humandb/hg19_seq/ \
                            -outfile humandb/hg19_wgEncodeGencodeBasicV19Mrna.fa humandb/hg19_wgEncodeGencodeBasicV19.txt
