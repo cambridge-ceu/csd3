@@ -337,7 +337,7 @@ then one can use `library(SAIGE)` inside R.
 
 Official page: [https://www.ensembl.org/info/docs/tools/vep/index.html](https://www.ensembl.org/info/docs/tools/vep/index.html).
 
-Detailed instructions are available from here, http://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#installer. There are several sources to install under csd3: GitHub, R and docker.
+Detailed instructions for installation are available from here, http://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#installer. There are several sources to install under csd3: GitHub, R and docker.
 
 ### --- GitHub ---
 
