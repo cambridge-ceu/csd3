@@ -383,8 +383,9 @@ though this could also be furnished with R/biomaRt as follows,
 library(biomaRt)
 ensembl <- useMart("ensembl", dataset="hsapiens_gene_ensembl", host="grch37.ensembl.org", path="/biomart/martservice")
 attr <- listAttributes(ensembl)
-filter <- listFilters(ensembl)
-gene <- getBM(attributes = c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol'), mart = ensembl)
+g <- c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol')
+t <- c('ensembl_transcript_id', 'transcription_start_site', 'transcript_start', 'transcript_end')
+gt <- getBM(attributes = c(g,t), mart = ensembl)
 ```
 
 ### --- R ---
