@@ -399,6 +399,6 @@ See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/
 
 ### --- Virtual Machine ---
 
-See http://www.ensembl.org/info/data/virtual_machine.html which is possibly best for Windows and we would not pursue here.
+See http://www.ensembl.org/info/data/virtual_machine.html which is possibly best for MicroSoft Windows and is not pursued here.
 
 Detailed instructions are available from here, http://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#installer.
