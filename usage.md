@@ -397,7 +397,7 @@ BiocManager::install("ensemblVEP")
 
 See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/Ensembl/ensembl-vep.
 
-### --- Virtual Machine ---
+### --- Virtual machine ---
 
 See http://www.ensembl.org/info/data/virtual_machine.html which is possibly best for MicroSoft Windows and is not pursued here.
 
