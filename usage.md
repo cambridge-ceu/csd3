@@ -353,6 +353,25 @@ module load htslib/1.4
 perl INSTALL.pl
 ./vep -i examples/homo_sapiens_GRCh37.vcf -o examples/homo_sapiens_GRC37.txt --force_overwrite --offline
 ```
+The ENSEMBL-synonym translation noted at the ANNOVAR section is useful to check for the feature types -- in the case of 
+ENSG00000160712 (IL6R) we found ENST00000368485	and ENST00000515190, we do
+```bash
+zgrep -e ENST00000368485 -e ENST00000515190 ensemblToGeneName.txt.gz
+```
+giving
+```
+ENST00000368485 IL6R
+ENST00000515190 IL6R
+```
+though this could also be furnished with R/biomaRt as follows,
+```r
+library(biomaRt)
+ensembl <- useMart("ensembl", dataset="hsapiens_gene_ensembl", host="grch37.ensembl.org", path="/biomart/martservice")
+attr <- listAttributes(ensembl)
+filter <- listFilters(ensembl)
+gene <- getBM(attributes = c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol'), mart = ensembl)
+```
+
 Note in particular that by default, the cache files will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user, 
 and as before the destination was redirected. The installation also interactively asks for cache files, FASTA files and plugins.
 
