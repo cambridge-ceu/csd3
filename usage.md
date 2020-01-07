@@ -24,7 +24,7 @@ wget http://www.openbioinformatics.org/annovar/download/.../annovar.latest.tar.g
 tar xvfz annovar.latest.tar.gz
 ls *pl | sed 's/*//g' | parallel -C' ' 'ln -sf ${HPC_WORK}/annovar/{} ${HPC_WORK}/bin/{}'
 ```
-Additionally, one can download the ENSEMBL gene, ENESMBL-synonym translation (hg19) file and
+Additionally, one can download the ENSEMBL genes, ENESMBL-synonym translation (hg19) file and
 whole-genome FASTA files to humandb/hg19_seq for CCDS/GENCODE annotation.
 ```bash
 cd annovar
@@ -38,6 +38,7 @@ annotate_variation.pl -downdb -build hg19 seq humandb/hg19_seq/
 annotate_variation.pl -downdb -build hg19 ccdsGene humandb
 retrieve_seq_from_fasta.pl humandb/hg19_ccdsGene.txt -seqdir humandb/hg19_seq -format refGene \
                            -outfile humandb/hg19_ccdsGeneMrna.fa
+annotate_variation.pl -build hg19 -out ex1 -dbtype ccdsGene example/ex1.avinput humandb/
 # GENCODE genes
 annotate_variation.pl -downdb wgEncodeGencodeBasicV19 humandb/ -build hg19
 retrieve_seq_from_fasta.pl -format genericGene -seqdir humandb/hg19_seq/ \
