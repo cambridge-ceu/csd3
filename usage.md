@@ -337,7 +337,7 @@ then one can use `library(SAIGE)` inside R.
 
 Official page: [https://www.ensembl.org/info/docs/tools/vep/index.html](https://www.ensembl.org/info/docs/tools/vep/index.html).
 
-There are several sources to install under csd3: GitHub, R and docker.
+Detailed instructions are available from here, http://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#installer. There are several sources to install under csd3: GitHub, R and docker.
 
 ### --- GitHub ---
 
@@ -401,5 +401,3 @@ See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/
 ### --- Virtual machine ---
 
 See http://www.ensembl.org/info/data/virtual_machine.html which is possibly best for MicroSoft Windows and is not pursued here.
-
-Detailed instructions are available from here, http://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#installer.
