@@ -24,7 +24,7 @@ wget http://www.openbioinformatics.org/annovar/download/.../annovar.latest.tar.g
 tar xvfz annovar.latest.tar.gz
 ls *pl | sed 's/*//g' | parallel -C' ' 'ln -sf ${HPC_WORK}/annovar/{} ${HPC_WORK}/bin/{}'
 ```
-Additionally, one can download the ENSEMBL genes, ENESMBL-synonym translation (hg19) file and
+Additionally, one can download the ENSEMBL genes, ENSEMBL-synonym translation (hg19) file and
 whole-genome FASTA files to humandb/hg19_seq for CCDS/GENCODE annotation.
 ```bash
 cd annovar
