@@ -46,6 +46,25 @@ retrieve_seq_from_fasta.pl -format genericGene -seqdir humandb/hg19_seq/ \
                            -outfile humandb/hg19_wgEncodeGencodeBasicV19Mrna.fa humandb/hg19_wgEncodeGencodeBasicV19.txt
 annotate_variation.pl -build hg19 -out ex1 -dbtype wgEncodeGencodeBasicV19 example/ex1.avinput humandb/
 ```
+The ENSEMBL-synonym translation noted at the ANNOVAR section is useful to check for the feature types -- in the case of 
+ENSG00000160712 (IL6R) we found ENST00000368485	and ENST00000515190, we do
+```bash
+zgrep -e ENST00000368485 -e ENST00000515190 ensemblToGeneName.txt.gz
+```
+giving
+```
+ENST00000368485 IL6R
+ENST00000515190 IL6R
+```
+though this could also be furnished with R/biomaRt as follows,
+```r
+library(biomaRt)
+ensembl <- useMart("ensembl", dataset="hsapiens_gene_ensembl", host="grch37.ensembl.org", path="/biomart/martservice")
+attr <- listAttributes(ensembl)
+g <- c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol')
+t <- c('ensembl_transcript_id', 'transcription_start_site', 'transcript_start', 'transcript_end')
+gt <- getBM(attributes = c(g,t), mart = ensembl)
+```
 We can have region-based annotation as in http://annovar.openbioinformatics.org/en/latest/user-guide/region/,
 ```bash
 # Conserved genomic elements
@@ -361,7 +380,7 @@ mkdir .vep
 ln -sf $HPC_WORK/ensembl-vep/.vep $HOME/.vep
 module load htslib/1.4
 perl INSTALL.pl
-./vep -i examples/homo_sapiens_GRCh37.vcf -o examples/homo_sapiens_GRC37.txt --force_overwrite --offline
+./vep -i examples/homo_sapiens_GRCh37.vcf -o examples/homo_sapiens_GRC37.txt --force_overwrite --offline --symbol
 ```
 Note in particular that by default, the cache files will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user, 
 and as before the destination was redirected. The setup above facilitates storage of cache files, FASTA files and plugins.
@@ -377,26 +396,6 @@ do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
 Without the htslib/1.4 module, the `--NO_HTSLIB` option is needed but "Cannot use format gff without Bio::DB::HTS::Tabix module installed". 
 Bio::DB:HTS is in https://github.com/Ensembl/Bio-DB-HTS and change can be made to the `Makefile` of htslibs for a desired location, to be
 used by `Build.PL` via its command line parameters.
-
-The ENSEMBL-synonym translation noted at the ANNOVAR section is useful to check for the feature types -- in the case of 
-ENSG00000160712 (IL6R) we found ENST00000368485	and ENST00000515190, we do
-```bash
-zgrep -e ENST00000368485 -e ENST00000515190 ensemblToGeneName.txt.gz
-```
-giving
-```
-ENST00000368485 IL6R
-ENST00000515190 IL6R
-```
-though this could also be furnished with R/biomaRt as follows,
-```r
-library(biomaRt)
-ensembl <- useMart("ensembl", dataset="hsapiens_gene_ensembl", host="grch37.ensembl.org", path="/biomart/martservice")
-attr <- listAttributes(ensembl)
-g <- c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol')
-t <- c('ensembl_transcript_id', 'transcription_start_site', 'transcript_start', 'transcript_end')
-gt <- getBM(attributes = c(g,t), mart = ensembl)
-```
 
 ### --- R ---
 
