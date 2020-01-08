@@ -454,7 +454,9 @@ to have
 
 ```r
 BiocManager::install("ensemblVEP")
+vignette("ensemblVEP")
 ```
+It is likely to be slow compared to the `--offline` mode above.
 
 ### --- docker ---
 
