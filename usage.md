@@ -456,7 +456,7 @@ to have
 BiocManager::install("ensemblVEP")
 vignette("ensemblVEP")
 ```
-It is likely to be slow compared to the `--offline` mode above.
+It is likely to be slow compared to the `--offline` mode above, but the facility to parse the CSQ column of a VCF object could be useful.
 
 ### --- docker ---
 
