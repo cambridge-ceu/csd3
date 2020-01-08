@@ -65,6 +65,19 @@ g <- c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', '
 t <- c('ensembl_transcript_id', 'transcription_start_site', 'transcript_start', 'transcript_end')
 gt <- getBM(attributes = c(g,t), mart = ensembl)
 ```
+For ENSEMBL genes, R/grex is likely to work though it was developed for other purpose, i.e.,
+```bash
+R --no-save -q -e "grex::grex("ENSG00000160712")"
+```
+giving
+```
+> grex::grex("ENSG00000160712")
+       ensembl_id entrez_id hgnc_symbol              hgnc_name cyto_loc
+1 ENSG00000160712      3570        IL6R interleukin 6 receptor   1q21.3
+  uniprot_id   gene_biotype
+1     A0N0L5 protein_coding
+>
+```
 We can have region-based annotation as in http://annovar.openbioinformatics.org/en/latest/user-guide/region/,
 ```bash
 # Conserved genomic elements
