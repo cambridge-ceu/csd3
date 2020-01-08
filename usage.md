@@ -396,7 +396,8 @@ perl INSTALL.pl
 # set up symbolic links to the executables
 for f in convert_cache.pl filter_vep haplo variant_recoder vep; 
     do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
-vep -i examples/homo_sapiens_GRCh37.vcf -o examples/homo_sapiens_GRC37.txt --force_overwrite --offline --symbol
+vep -i examples/homo_sapiens_GRCh37.vcf -o examples/homo_sapiens_GRCh37.txt \
+    --force_overwrite --offline --pick --symbol
 ```
 Note in particular that by default, the cache files will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user, 
 and as before the destination was redirected. The setup above facilitates storage of cache files, FASTA files and plugins.
