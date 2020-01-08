@@ -417,6 +417,38 @@ R --no-save -q <<END
   head(vo)
 END
 ```
+to have
+```
+  X.Uploaded_variation    Location Allele            Gene         Feature
+1          rs116645811 21:26960070      A ENSG00000154719 ENST00000307301
+2            rs1135638 21:26965148      A ENSG00000154719 ENST00000307301
+3              rs10576 21:26965172      C ENSG00000154719 ENST00000307301
+4            rs1057885 21:26965205      C ENSG00000154719 ENST00000307301
+5          rs116331755 21:26976144      G ENSG00000154719 ENST00000307301
+6            rs7278168 21:26976222      T ENSG00000154719 ENST00000307301
+  Feature_type        Consequence cDNA_position CDS_position Protein_position
+1   Transcript   missense_variant          1043         1001              334
+2   Transcript synonymous_variant           939          897              299
+3   Transcript synonymous_variant           915          873              291
+4   Transcript synonymous_variant           882          840              280
+5   Transcript synonymous_variant           426          384              128
+6   Transcript synonymous_variant           348          306              102
+  Amino_acids  Codons Existing_variation
+1         T/M aCg/aTg                  -
+2           G ggC/ggT                  -
+3           P ccA/ccG                  -
+4           V gtA/gtG                  -
+5           L ctT/ctC                  -
+6           K aaG/aaA                  -
+                                                                     Extra
+1 IMPACT=MODERATE;STRAND=-1;SYMBOL=MRPL39;SYMBOL_SOURCE=HGNC;HGNC_ID=14027
+2      IMPACT=LOW;STRAND=-1;SYMBOL=MRPL39;SYMBOL_SOURCE=HGNC;HGNC_ID=14027
+3      IMPACT=LOW;STRAND=-1;SYMBOL=MRPL39;SYMBOL_SOURCE=HGNC;HGNC_ID=14027
+4      IMPACT=LOW;STRAND=-1;SYMBOL=MRPL39;SYMBOL_SOURCE=HGNC;HGNC_ID=14027
+5      IMPACT=LOW;STRAND=-1;SYMBOL=MRPL39;SYMBOL_SOURCE=HGNC;HGNC_ID=14027
+6      IMPACT=LOW;STRAND=-1;SYMBOL=MRPL39;SYMBOL_SOURCE=HGNC;HGNC_ID=14027
+>
+```
 
 ### --- R ---
 
