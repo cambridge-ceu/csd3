@@ -315,6 +315,7 @@ More documentation examples are in the [examples](files/examples) directory.
 Web page: https://sourceforge.net/projects/qpdf/.
 
 ```bash
+cd $HPC_WORK
 wget https://sourceforge.net/projects/qpdf/files/qpdf/9.1.0/qpdf-9.1.0.tar.gz
 tar xvfz qpdf-9.1.0.tar.gz
 cd qpdf-9.1.0
