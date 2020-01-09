@@ -49,7 +49,7 @@ annotate_variation.pl -build hg19 -out ex1 -dbtype wgEncodeGencodeBasicV19 examp
 The ENSEMBL-synonym translation noted at the ANNOVAR section is useful to check for the feature types -- in the case of 
 ENSG00000160712 (IL6R) we found ENST00000368485	and ENST00000515190, we do
 ```bash
-zgrep -q -e ENST00000368485 -e ENST00000515190 ensemblToGeneName.txt.gz
+zgrep -e ENST00000368485 -e ENST00000515190 ensemblToGeneName.txt.gz
 ```
 giving
 ```
@@ -67,7 +67,7 @@ gt <- getBM(attributes = c(g,t), mart = ensembl)
 ```
 For ENSEMBL genes, R/grex is likely to work though it was developed for other purpose, i.e.,
 ```bash
-R -e "grex::grex(\"ENSG00000160712\")"
+R -q -e "grex::grex(\"ENSG00000160712\")"
 ```
 giving
 ```
