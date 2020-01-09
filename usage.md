@@ -67,7 +67,7 @@ gt <- getBM(attributes = c(g,t), mart = ensembl)
 ```
 For ENSEMBL genes, R/grex is likely to work though it was developed for other purpose, i.e.,
 ```bash
-R --no-save -q -e "grex::grex(\"ENSG00000160712\")"
+R -e "grex::grex(\"ENSG00000160712\")"
 ```
 giving
 ```
