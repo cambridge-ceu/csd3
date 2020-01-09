@@ -2,7 +2,7 @@
 
 This document contains software information noted at work:
 
-ANNOVAR, DosageConverter, HESS, PhenoScanner, poppler, PRSice, pspp, R, rjags, rstan, SAIGE, VEP,
+ANNOVAR, DosageConverter, HESS, PhenoScanner, poppler, PRSice, pspp, qpdf, R, rjags, rstan, SAIGE, VEP,
 
 Whenever appropriate, it is assumed that the destination of software installation is ${HPC_WORK}, e.g., 
 via `export HPC_WORK=/rds/user/$USER/hpc-work` in .bashrc.
@@ -309,6 +309,17 @@ psppire plot.ps &
 ```
 
 More documentation examples are in the [examples](files/examples) directory.
+
+## qpdf
+
+```bash
+wget https://sourceforge.net/projects/qpdf/files/qpdf/9.1.0/qpdf-9.1.0.tar.gz
+tar xvfz qpdf-9.1.0.tar.gz
+cd qpdf-9.1.0
+./configure --prefix=$HPC_WORK
+make
+make install
+```
 
 ## R
 
