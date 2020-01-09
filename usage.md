@@ -312,6 +312,8 @@ More documentation examples are in the [examples](files/examples) directory.
 
 ## qpdf
 
+Web page: https://sourceforge.net/projects/qpdf/.
+
 ```bash
 wget https://sourceforge.net/projects/qpdf/files/qpdf/9.1.0/qpdf-9.1.0.tar.gz
 tar xvfz qpdf-9.1.0.tar.gz
