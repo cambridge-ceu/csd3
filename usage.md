@@ -71,12 +71,10 @@ R -q -e "grex::grex(\"ENSG00000160712\")"
 ```
 giving
 ```
-> grex::grex("ENSG00000160712")
        ensembl_id entrez_id hgnc_symbol              hgnc_name cyto_loc
 1 ENSG00000160712      3570        IL6R interleukin 6 receptor   1q21.3
   uniprot_id   gene_biotype
 1     A0N0L5 protein_coding
->
 ```
 We can have region-based annotation as in http://annovar.openbioinformatics.org/en/latest/user-guide/region/,
 ```bash
