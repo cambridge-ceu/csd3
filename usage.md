@@ -46,8 +46,8 @@ retrieve_seq_from_fasta.pl -format genericGene -seqdir humandb/hg19_seq/ \
                            -outfile humandb/hg19_wgEncodeGencodeBasicV19Mrna.fa humandb/hg19_wgEncodeGencodeBasicV19.txt
 annotate_variation.pl -build hg19 -out ex1 -dbtype wgEncodeGencodeBasicV19 example/ex1.avinput humandb/
 ```
-The ENSEMBL-synonym translation noted at the ANNOVAR section is useful to check for the feature types -- in the case of 
-ENSG00000160712 (IL6R) we found ENST00000368485	and ENST00000515190, we do
+The ENSEMBL-synonym translation is useful to check for the feature types -- in the case of ENSG00000160712 (IL6R)
+we found ENST00000368485 and ENST00000515190, we do
 ```bash
 zgrep -e ENST00000368485 -e ENST00000515190 ensemblToGeneName.txt.gz
 ```
