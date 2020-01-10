@@ -134,7 +134,7 @@ export LD_LIBRARY_PATH=/usr/local/software/master/gcc/5/lib64:/usr/local/softwar
 
 Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
 
-Accout details can be seen with
+Account details can be seen with
 ```bash
 mybalance
 ```
