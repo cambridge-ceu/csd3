@@ -470,7 +470,7 @@ g <- c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', '
 t <- c('ensembl_transcript_id', 'transcription_start_site', 'transcript_start', 'transcript_end')
 gt <- getBM(attributes = c(g,t), mart = ensembl)
 ```
-For ENSEMBL genes, R/grex is likely to work though it was developed for other purpose, i.e.,
+For ENSEMBL genes, R/grex is likely to work though it was developed for other purpose, e.g.,
 ```bash
 R -q -e "grex::grex(\"ENSG00000160712\")"
 ```
