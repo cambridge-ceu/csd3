@@ -1,6 +1,6 @@
 # Software notes
 
-This document contains software information noted at work:
+This document contains information for the following software:
 
 ANNOVAR, DosageConverter, HESS, PhenoScanner, poppler, PRSice, pspp, qpdf, R, rjags, rstan, SAIGE, VEP,
 
@@ -24,15 +24,13 @@ wget http://www.openbioinformatics.org/annovar/download/.../annovar.latest.tar.g
 tar xvfz annovar.latest.tar.gz
 ls *pl | sed 's/*//g' | parallel -C' ' 'ln -sf ${HPC_WORK}/annovar/{} ${HPC_WORK}/bin/{}'
 ```
-Additionally, one can download the ENSEMBL genes, ENSEMBL-synonym translation (hg19) file and
-whole-genome FASTA files to humandb/hg19_seq for CCDS/GENCODE annotation.
+Additionally, one can download the ENSEMBL genes and whole-genome FASTA files to 
+humandb/hg19_seq for CCDS/GENCODE annotation.
 ```bash
 cd annovar
 # ENSEMBL genes
 annotate_variation.pl -buildver hg19 -downdb -webfrom annovar ensGene
 annotate_variation.pl -build hg19 -out ex1 -dbtype ensGene example/ex1.avinput humandb/
-# ENSEMBL-synonym translation
-wget http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/ensemblToGeneName.txt.gz
 # reference genome in FASTA
 annotate_variation.pl -downdb -build hg19 seq humandb/hg19_seq/
 # CCDS genes
@@ -45,36 +43,6 @@ annotate_variation.pl -downdb wgEncodeGencodeBasicV19 humandb/ -build hg19
 retrieve_seq_from_fasta.pl -format genericGene -seqdir humandb/hg19_seq/ \
                            -outfile humandb/hg19_wgEncodeGencodeBasicV19Mrna.fa humandb/hg19_wgEncodeGencodeBasicV19.txt
 annotate_variation.pl -build hg19 -out ex1 -dbtype wgEncodeGencodeBasicV19 example/ex1.avinput humandb/
-```
-The ENSEMBL-synonym translation is useful to check for the feature types -- in the case of ENSG00000160712 (IL6R)
-we found ENST00000368485 and ENST00000515190, we do
-```bash
-zgrep -e ENST00000368485 -e ENST00000515190 ensemblToGeneName.txt.gz
-```
-giving
-```
-ENST00000368485 IL6R
-ENST00000515190 IL6R
-```
-though this could also be furnished with R/biomaRt as follows,
-```r
-library(biomaRt)
-ensembl <- useMart("ensembl", dataset="hsapiens_gene_ensembl", host="grch37.ensembl.org", path="/biomart/martservice")
-attr <- listAttributes(ensembl)
-g <- c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol')
-t <- c('ensembl_transcript_id', 'transcription_start_site', 'transcript_start', 'transcript_end')
-gt <- getBM(attributes = c(g,t), mart = ensembl)
-```
-For ENSEMBL genes, R/grex is likely to work though it was developed for other purpose, i.e.,
-```bash
-R -q -e "grex::grex(\"ENSG00000160712\")"
-```
-giving
-```
-       ensembl_id entrez_id hgnc_symbol              hgnc_name cyto_loc
-1 ENSG00000160712      3570        IL6R interleukin 6 receptor   1q21.3
-  uniprot_id   gene_biotype
-1     A0N0L5 protein_coding
 ```
 We can have region-based annotation as in http://annovar.openbioinformatics.org/en/latest/user-guide/region/,
 ```bash
@@ -477,3 +445,39 @@ See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/
 ### --- Virtual machine ---
 
 See http://www.ensembl.org/info/data/virtual_machine.html which is possibly best for MicroSoft Windows and is not pursued here.
+
+ENSEMBL-synonym translation (hg19) file
+
+### --- ENSEMBL-synonym translation ---
+
+The ENSEMBL-synonym translation is useful to check for the feature types -- in the case of ENSG00000160712 (IL6R)
+we found ENST00000368485 and ENST00000515190, we do
+```bash
+wget http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/ensemblToGeneName.txt.gz
+zgrep -e ENST00000368485 -e ENST00000515190 ensemblToGeneName.txt.gz
+```
+giving
+```
+ENST00000368485 IL6R
+ENST00000515190 IL6R
+```
+though this could also be furnished with R/biomaRt as follows,
+```r
+library(biomaRt)
+ensembl <- useMart("ensembl", dataset="hsapiens_gene_ensembl", host="grch37.ensembl.org", path="/biomart/martservice")
+attr <- listAttributes(ensembl)
+g <- c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol')
+t <- c('ensembl_transcript_id', 'transcription_start_site', 'transcript_start', 'transcript_end')
+gt <- getBM(attributes = c(g,t), mart = ensembl)
+```
+For ENSEMBL genes, R/grex is likely to work though it was developed for other purpose, i.e.,
+```bash
+R -q -e "grex::grex(\"ENSG00000160712\")"
+```
+giving
+```
+       ensembl_id entrez_id hgnc_symbol              hgnc_name cyto_loc
+1 ENSG00000160712      3570        IL6R interleukin 6 receptor   1q21.3
+  uniprot_id   gene_biotype
+1     A0N0L5 protein_coding
+```
