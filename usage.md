@@ -397,7 +397,7 @@ R --no-save -q <<END
   head(vo)
 END
 ```
-aloowing for automatic definition of number of lines under various command-line options to be skipped to have
+aloowing for variable number of lines given various command-line options to be skipped to have
 ```
   X.Uploaded_variation    Location Allele            Gene         Feature
 1          rs116645811 21:26960070      A ENSG00000154719 ENST00000307301
