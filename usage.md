@@ -389,7 +389,7 @@ Without the htslib/1.4 module, the `--NO_HTSLIB` option is needed but "Cannot us
 Bio::DB:HTS is in https://github.com/Ensembl/Bio-DB-HTS and change can be made to the `Makefile` of htslibs for a desired location, to be
 used by `Build.PL` via its command line parameters.
 
-One may wish to skipped the comments in processing of the output, e.g., in R,
+One may wish to skipped the comments (lines started with ##) in processing of the output, e.g., in R,
 ```bash
 export skips=$(grep '##' examples/homo_sapiens_GRCh37.txt | wc -l)
 R --no-save -q <<END
@@ -397,7 +397,7 @@ R --no-save -q <<END
   head(vo)
 END
 ```
-to have
+aloowing for automatic definition of number of lines under various command-line options to be skipped to have
 ```
   X.Uploaded_variation    Location Allele            Gene         Feature
 1          rs116645811 21:26960070      A ENSG00000154719 ENST00000307301
