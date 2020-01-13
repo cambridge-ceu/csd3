@@ -235,6 +235,9 @@ module load cmake/3.9
 cmake ..
 make
 ln -sf $HPC_WORK/PRSice/bin/PRSice $HPC_WORK/bin/PRSice
+# also the documentation example
+wget https://github.com/choishingwan/PRS-Tutorial/raw/master/resources/GIANT.height.gz
+wget https://github.com/choishingwan/PRS-Tutorial/raw/master/resources/EUR.zip
 ```
 
 ## pspp
