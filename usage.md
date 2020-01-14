@@ -223,7 +223,7 @@ and following libraries: libpoppler.so, libpoppler-cpp.so, libpoppler-glibc.so, 
 
 ## PRSice
 
-Web page: https://github.com/choishingwan/PRSice, https://choishingwan.github.io/PRS-Tutorial/ and http://www.prsice.info/.
+Web page: https://github.com/choishingwan/PRSice and http://www.prsice.info/.
 
 ```bash
 cd $HPC_WORK
@@ -238,7 +238,7 @@ ln -sf $HPC_WORK/PRSice/bin/PRSice $HPC_WORK/bin/PRSice
 wget https://github.com/choishingwan/PRS-Tutorial/raw/master/resources/GIANT.height.gz
 wget -qO- https://github.com/choishingwan/PRS-Tutorial/raw/master/resources/EUR.zip | jar xv
 ```
-The last two commands download/unpack the documentation example.
+The last two commands download/unpack the documentation example, which is described here, https://choishingwan.github.io/PRS-Tutorial/.
 
 ## pspp
 
