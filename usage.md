@@ -2,7 +2,20 @@
 
 This document contains information for the following software:
 
-ANNOVAR, DosageConverter, HESS, PhenoScanner, polyphen-2, poppler, PRSice, pspp, qpdf, R, rjags, rstan, SAIGE, VEP,
+[ANNOVAR](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#annovar), 
+[DosageConverter](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#dosageconverter), 
+[HESS](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#hess), 
+[PhenoScanner](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#phenoscanner), 
+[polyphen-2](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#phenoscanncer), 
+[poppler](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#poppler), 
+[PRSice](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#prsice), 
+[pspp](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#pspp), 
+[qpdf](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#qpdf), 
+[R](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#r), 
+[rjags](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rjags), 
+[rstan](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rstan), 
+[SAIGE](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#saige-03582), 
+[VEP](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#vep),
 
 Whenever appropriate, it is assumed that the destination of software installation is ${HPC_WORK}, e.g., 
 via `export HPC_WORK=/rds/user/$USER/hpc-work` in .bashrc.
