@@ -2,7 +2,7 @@
 
 This document contains information for the following software:
 
-ANNOVAR, DosageConverter, HESS, PhenoScanner, poppler, PRSice, pspp, qpdf, R, rjags, rstan, SAIGE, VEP,
+ANNOVAR, DosageConverter, HESS, PhenoScanner, polyphen-2, poppler, PRSice, pspp, qpdf, R, rjags, rstan, SAIGE, VEP,
 
 Whenever appropriate, it is assumed that the destination of software installation is ${HPC_WORK}, e.g., 
 via `export HPC_WORK=/rds/user/$USER/hpc-work` in .bashrc.
@@ -191,6 +191,20 @@ Note that `module load phenoscanner` is enabled from ~/.bashrc:
 export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
 ```
 via `source ~/.bashrc` or a new login.
+
+## polyphen-2
+
+Official page: [http://genetics.bwh.harvard.edu/pph2/dokuwiki/start](http://genetics.bwh.harvard.edu/pph2/dokuwiki/start).
+
+The setup can be furnished as follows,
+```bash
+cd $HPC_WORK
+wget -qO- http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/polyphen-2.2.2r405c.tar.gz | tar xfz
+wget ftp://genetics.bwh.harvard.edu/pph2/bundled/polyphen-2.2.2-databases-2011_12.tar.bz2 | tar xjf
+ls  | sed 's/\*//g' | parallel -C' ' 'ln -sf $HPC_WORK/polyphen-2.2.2/bin/{} $HPC_WORK/bin/{}'
+wget http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/hg0720.pdf
+```
+The last line obtains the documentation.
 
 ## poppler
 
