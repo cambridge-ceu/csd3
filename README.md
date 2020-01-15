@@ -46,9 +46,11 @@ so the system is Scientific Linux 7 (SL7), see [http://www.scientificlinux.org/]
 
 ### Login
 
+Possible login nodes on csd3 are: login.hpc, login-cpu.hpc, login-gpu.hpc, login-gfx.hpc, login-e-N.hpc.
+
 To reset Raven password, follow https://password.csx.cam.ac.uk/.
 
-Possible login nodes on csd3 are: login.hpc, login-cpu.hpc, login-gpu.hpc, login-gfx.hpc, login-e-N.hpc.
+The CSD3 hostkeys are described here, https://docs.hpc.cam.ac.uk/hpc/user-guide/hostkeys.html.
 
 Automatic login via ssh/sftp can be enabled with
 ```bash
