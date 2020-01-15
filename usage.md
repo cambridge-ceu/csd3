@@ -200,7 +200,7 @@ The setup can be furnished as follows,
 ```bash
 cd $HPC_WORK
 wget -qO- http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/polyphen-2.2.2r405c.tar.gz | tar xfz
-wget ftp://genetics.bwh.harvard.edu/pph2/bundled/polyphen-2.2.2-databases-2011_12.tar.bz2 | tar xjf
+wget -qO- ftp://genetics.bwh.harvard.edu/pph2/bundled/polyphen-2.2.2-databases-2011_12.tar.bz2 | tar xjf
 ls  | sed 's/\*//g' | parallel -C' ' 'ln -sf $HPC_WORK/polyphen-2.2.2/bin/{} $HPC_WORK/bin/{}'
 wget http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/hg0720.pdf
 ```
