@@ -6,7 +6,7 @@ This document contains information for the following software:
 [DosageConverter](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#dosageconverter), 
 [HESS](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#hess), 
 [PhenoScanner](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#phenoscanner), 
-[polyphen-2](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#phenpolyphen-2), 
+[polyphen-2](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#polyphen-2), 
 [poppler](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#poppler), 
 [PRSice](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#prsice), 
 [pspp](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#pspp), 
