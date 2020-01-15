@@ -215,12 +215,35 @@ cd $HPC_WORK
 wget -qO- http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/polyphen-2.2.2r405c.tar.gz | tar xfz
 wget -qO- ftp://genetics.bwh.harvard.edu/pph2/bundled/polyphen-2.2.2-databases-2011_12.tar.bz2 | tar xjf
 ls  | sed 's/\*//g' | parallel -C' ' 'ln -sf $HPC_WORK/polyphen-2.2.2/bin/{} $HPC_WORK/bin/{}'
+cd polyphen-2.2.2
 cd src
 make
 configure
 wget http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/hg0720.pdf
 ```
 The command `configure` creates files at config/ which can be changed maunaually. The last line obtains the documentation.
+
+We next set up blast as well as nrdb,
+```bash
+rmdir blast
+ln -sf /usr/local/Cluster-Apps/blast/2.4.0 blast
+cd nrdb
+wget -qO- ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/uniref/uniref100/uniref100.fasta.gz | \
+gunzip -c > uniref100.fasta
+../update/format_defline.pl uniref100.fasta >uniref100-formatted.fasta
+../blast/bin/makeblastdb -in uniref100-formatted.fasta -dbtype prot -out uniref100 -parse_seqids
+rm -f uniref100.fasta uniref100-formatted.fasta
+```
+and perform our test,
+```bash
+cd $HPC_WORK/polyphen-2.2.2
+run_pph.pl sets/test.input 1>test.pph.output 2>test.pph.log
+run_weka.pl test.pph.output >test.humdiv.output
+run_weka.pl -l models/HumVar.UniRef100.NBd.f11.model test.pph.output >test.humvar.output
+
+sdiff test.humdiv.output sets/test.humdiv.output
+sdiff test.humvar.output sets/test.humvar.output
+```
 
 ## poppler
 
