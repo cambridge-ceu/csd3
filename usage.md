@@ -8,7 +8,7 @@ This document contains information for the following software:
 [PhenoScanner](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#phenoscanner), 
 [polyphen-2](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#phenoscanncer), 
 [poppler](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#poppler), 
-[PRSice](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#prsice), 
+[PRSice](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#polyphen-2), 
 [pspp](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#pspp), 
 [qpdf](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#qpdf), 
 [R](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#r), 
