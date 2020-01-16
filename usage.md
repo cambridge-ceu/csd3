@@ -222,6 +222,7 @@ make install
 cd -
 cd bin
 rsync -aP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/linux.x86_64/ ./
+cd -
 configure
 ```
 The command `configure` creates files at config/ which can be changed maunaually. The is also
