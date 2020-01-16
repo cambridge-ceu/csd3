@@ -218,10 +218,12 @@ ls  | sed 's/\*//g' | parallel -C' ' 'ln -sf $HPC_WORK/polyphen-2.2.2/bin/{} $HP
 cd polyphen-2.2.2
 cd src
 make
+make install
+cd -
 configure
-wget http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/hg0720.pdf
 ```
-The command `configure` creates files at config/ which can be changed maunaually. The last line obtains the documentation.
+The command `configure` creates files at config/ which can be changed maunaually. The is also
+[documentation](http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/hg0720.pdf).
 
 We next set up blast as well as nrdb,
 ```bash
