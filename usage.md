@@ -537,3 +537,36 @@ giving
   uniprot_id   gene_biotype
 1     A0N0L5 protein_coding
 ```
+
+### --- Further examples ---
+
+The local installation enables considerable flexibilty, and the following example is based on 
+[https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options](https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options).
+
+```bash
+# An example on GRCh37 assembly:
+
+# Compressed VCF file
+curl ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz -o clinvar_GRCh37.vcf.gz
+# Index file
+curl ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz.tbi -o clinvar_GRCh37.vcf.gz.tbi
+
+## Where the selected ClinVar INFO fields (from the ClinVar VCF file) are:
+# - CLNSIG:     Clinical significance for this single variant
+# - CLNREVSTAT: ClinVar review status for the Variation ID
+# - CLNDN:      ClinVar's preferred disease name for the concept specified by disease identifiers in CLNDISDB
+# Or the INFO fields you want in the ClinVar VCF file
+
+vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145.txt --cache --offline --force_overwrite \
+    --assembly GRCh37 --custom clinvar_GRCh37.vcf.gz,ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN
+```
+which gives
+```
+#Uploaded_variation	Location	Allele	Gene	Feature	Feature_type	Consequence	cDNA_position	CDS_position	Protein_position	Amino_acids	Codons	Existing_variation	Extra
+1_154426970_A/C	1:154426970	C	ENSG00000160712	ENST00000344086	Transcript	intron_variant	-	-	-	-	-	-	IMPACT=MODIFIER;STRAND=1;ClinVar=14660;ClinVar_CLNDN=Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus;ClinVar_CLNREVSTAT=no_assertion_criteria_provided;ClinVar_CLNSIG=association;ClinVar_FILTER=.
+1_154426970_A/C	1:154426970	C	ENSG00000160712	ENST00000368485	Transcript	missense_variant	1510	1073	358	D/A	gAt/gCt	-	IMPACT=MODERATE;STRAND=1;ClinVar=14660;ClinVar_CLNDN=Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus;ClinVar_CLNREVSTAT=no_assertion_criteria_provided;ClinVar_CLNSIG=association;ClinVar_FILTER=.
+1_154426970_A/C	1:154426970	C	ENSG00000160712	ENST00000476006	Transcript	downstream_gene_variant	-	-	-	-	-	-	IMPACT=MODIFIER;DISTANCE=4515;STRAND=1;FLAGS=cds_start_NF,cds_end_NF;ClinVar=14660;ClinVar_CLNDN=Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus;ClinVar_CLNREVSTAT=no_assertion_criteria_provided;ClinVar_CLNSIG=association;ClinVar_FILTER=.
+1_154426970_A/C	1:154426970	C	ENSG00000160712	ENST00000502679	Transcript	non_coding_transcript_exon_variant	386	-	-	-	-	-	IMPACT=MODIFIER;STRAND=1;ClinVar=14660;ClinVar_CLNDN=Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus;ClinVar_CLNREVSTAT=no_assertion_criteria_provided;ClinVar_CLNSIG=association;ClinVar_FILTER=.
+1_154426970_A/C	1:154426970	C	ENSG00000160712	ENST00000507256	Transcript	non_coding_transcript_exon_variant	271	-	-	-	-	-	IMPACT=MODIFIER;STRAND=1;ClinVar=14660;ClinVar_CLNDN=Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus;ClinVar_CLNREVSTAT=no_assertion_criteria_provided;ClinVar_CLNSIG=association;ClinVar_FILTER=.
+1_154426970_A/C	1:154426970	C	ENSG00000160712	ENST00000515190	Transcript	missense_variant	481	482	161	D/A	gAt/gCt	-	IMPACT=MODERATE;STRAND=1;FLAGS=cds_start_NF,cds_end_NF;ClinVar=14660;ClinVar_CLNDN=Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus;ClinVar_CLNREVSTAT=no_assertion_criteria_provided;ClinVar_CLNSIG=association;ClinVar_FILTER=.
+``
