@@ -221,13 +221,13 @@ cd src
 make
 make install
 cd -
+configure
 cd bin
 rsync -aP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/linux.x86_64/ ./
 cd -
-configure
 ```
-The command `configure` creates files at config/ which can be changed maunaually. The is also
-[documentation](http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/hg0720.pdf). The last line obtains
+The command `configure` creates files at config/ which can be changed maunaually. There is also
+[user's guide](http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/hg0720.pdf). The line `rsync` obtains
 programs such as `twoBitToFa` as required by the example below.
 
 BLAST and nrdb can be set up as follows,
