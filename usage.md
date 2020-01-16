@@ -216,6 +216,7 @@ wget -qO- http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/polyphen-2.2.2r40
 wget -qO- ftp://genetics.bwh.harvard.edu/pph2/bundled/polyphen-2.2.2-databases-2011_12.tar.bz2 | tar xjf
 ls  | sed 's/\*//g' | parallel -C' ' 'ln -sf $HPC_WORK/polyphen-2.2.2/bin/{} $HPC_WORK/bin/{}'
 cd polyphen-2.2.2
+# set up BLAST/nrdb/PDB as decribed below
 cd src
 make
 make install
@@ -229,7 +230,7 @@ The command `configure` creates files at config/ which can be changed maunaually
 [documentation](http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/hg0720.pdf). The last line obtains
 programs such as `twoBitToFa` as required by the example below.
 
-We next set up blast as well as nrdb,
+BLAST and nrdb can be set up as follows,
 ```bash
 rmdir blast
 ln -sf /usr/local/Cluster-Apps/blast/2.4.0 blast
@@ -240,7 +241,14 @@ gunzip -c > uniref100.fasta
 ../blast/bin/makeblastdb -in uniref100-formatted.fasta -dbtype prot -out uniref100 -parse_seqids
 rm -f uniref100.fasta uniref100-formatted.fasta
 ```
-and perform our test,
+and for PDB
+```bash
+rsync -rltv --delete-after --port=33444 \
+      rsync.wwpdb.org::ftp/data/structures/divided/pdb/ wwpdb/divided/pdb/
+rsync -rltv --delete-after --port=33444 \
+      rsync.wwpdb.org::ftp/data/structures/all/pdb/ wwpdb/all/pdb/
+```
+Our test is then,
 ```bash
 cd $HPC_WORK/polyphen-2.2.2
 run_pph.pl sets/test.input 1>test.pph.output 2>test.pph.log
@@ -250,8 +258,6 @@ run_weka.pl -l models/HumVar.UniRef100.NBd.f11.model test.pph.output >test.humva
 sdiff test.humdiv.output sets/test.humdiv.output
 sdiff test.humvar.output sets/test.humvar.output
 ```
-
-
 
 ## poppler
 
