@@ -563,7 +563,7 @@ curl ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz.tbi -o cli
 # - CLNDN:      ClinVar's preferred disease name for the concept specified by disease identifiers in CLNDISDB
 # Or the INFO fields you want in the ClinVar VCF file
 
-vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145.txt --cache --offline --force_overwrite \
+vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145 --cache --offline --force_overwrite \
     --assembly GRCh37 --custom clinvar_GRCh37.vcf.gz,ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN
 ```
 which gives
@@ -576,4 +576,4 @@ which gives
 1_154426970_A/C	1:154426970	C	ENSG00000160712	ENST00000507256	Transcript	non_coding_transcript_exon_variant	271	-	-	-	-	-	IMPACT=MODIFIER;STRAND=1;ClinVar=14660;ClinVar_CLNDN=Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus;ClinVar_CLNREVSTAT=no_assertion_criteria_provided;ClinVar_CLNSIG=association;ClinVar_FILTER=.
 1_154426970_A/C	1:154426970	C	ENSG00000160712	ENST00000515190	Transcript	missense_variant	481	482	161	D/A	gAt/gCt	-	IMPACT=MODERATE;STRAND=1;FLAGS=cds_start_NF,cds_end_NF;ClinVar=14660;ClinVar_CLNDN=Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus;ClinVar_CLNREVSTAT=no_assertion_criteria_provided;ClinVar_CLNSIG=association;ClinVar_FILTER=.
 ```
-A [HTML summary](files/rs2228145.txt_summary.html) (somehow the web browser may not display the embedded figures) is also available. 
+A [HTML summary](files/rs2228145_summary.html) (somehow the web browser may not display the embedded figures) is also available. 
