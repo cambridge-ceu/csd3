@@ -220,10 +220,13 @@ cd src
 make
 make install
 cd -
+cd bin
+rsync -aP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/linux.x86_64/ ./
 configure
 ```
 The command `configure` creates files at config/ which can be changed maunaually. The is also
-[documentation](http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/hg0720.pdf).
+[documentation](http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/hg0720.pdf). The last line obtains
+programs such as `twoBitToFa` as required by the example below.
 
 We next set up blast as well as nrdb,
 ```bash
@@ -246,6 +249,8 @@ run_weka.pl -l models/HumVar.UniRef100.NBd.f11.model test.pph.output >test.humva
 sdiff test.humdiv.output sets/test.humdiv.output
 sdiff test.humvar.output sets/test.humvar.output
 ```
+
+
 
 ## poppler
 
