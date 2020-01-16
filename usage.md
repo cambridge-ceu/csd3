@@ -540,12 +540,10 @@ giving
 
 ### --- Further examples ---
 
-The local installation enables considerable flexibilty, and the following example is based on 
+The local installation enables considerable flexibilty, and the following example, using GRCh37 assembly, is based on 
 [https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options](https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options).
 
 ```bash
-# An example on GRCh37 assembly:
-
 # Compressed VCF file
 curl ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz -o clinvar_GRCh37.vcf.gz
 # Index file
