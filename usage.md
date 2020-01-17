@@ -214,6 +214,8 @@ The setup can be furnished as follows,
 cd $HPC_WORK
 wget -qO- http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/polyphen-2.2.2r405c.tar.gz | tar xfz
 wget -qO- ftp://genetics.bwh.harvard.edu/pph2/bundled/polyphen-2.2.2-databases-2011_12.tar.bz2 | tar xjf
+wget -qO- ftp://genetics.bwh.harvard.edu/pph2/bundled/polyphen-2.2.2-alignments-mlc-2011_12.tar.bz2 | tar xjf
+wget -qO- ftp://genetics.bwh.harvard.edu/pph2/bundled/polyphen-2.2.2-alignments-multiz-2009_10.tar.bz2 | tar xjf
 ls  | sed 's/\*//g' | parallel -C' ' 'ln -sf $HPC_WORK/polyphen-2.2.2/bin/{} $HPC_WORK/bin/{}'
 cd polyphen-2.2.2
 # set up BLAST/nrdb/PDB as decribed below
