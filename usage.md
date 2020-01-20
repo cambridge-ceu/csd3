@@ -269,6 +269,18 @@ sdiff test.humvar.output sets/test.humvar.output
 ```
 The availability of MLC/MULTIZ databases make the annotation considerably faster.
 
+Now we turn to an genomic SNPs query examples with snps.list containing the following line,
+
+> chr1:154426970 A/C
+
+to be called by `mapsnps.pl` and others.
+```bash
+mapsnps.pl -g hg19 -m -U -y snps.input snps.list 1>snps.features 2>snps.log
+run_pph.pl snps.input 1>snps.pph.output 2>snps.pph.log
+run_weka.pl snps.pph.output >snps.humdiv.output
+run_weka.pl -l models/HumVar.UniRef100.NBd.f11.model snps.pph.output >snps.humvar.output
+```
+
 ## poppler
 
 Official page: [https://poppler.freedesktop.org/](https://poppler.freedesktop.org/).
