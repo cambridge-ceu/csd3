@@ -228,8 +228,8 @@ cd bin
 rsync -aP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/linux.x86_64/ ./
 cd -
 ```
-The MLC/MULTIZ databases needed to extracted to $HOME and symbolically linked if the number of files exceed 1 million.
-The command `configure` creates files at config/ which can be changed maunaually. There is also
+The MLC/MULTIZ databases needed to extracted to $HOME and symbolically linked if the number of files exceed 1 million
+(limit on RDS). The command `configure` creates files at config/ which can be changed maunaually. There is also
 [user's guide](http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/hg0720.pdf). The line `rsync` obtains
 programs such as `twoBitToFa` as required by the example below.
 
