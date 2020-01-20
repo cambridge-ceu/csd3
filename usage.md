@@ -280,6 +280,7 @@ run_pph.pl snps.input 1>snps.pph.output 2>snps.pph.log
 run_weka.pl snps.pph.output >snps.humdiv.output
 run_weka.pl -l models/HumVar.UniRef100.NBd.f11.model snps.pph.output >snps.humvar.output
 ```
+for [.pph.output](files/snps.pph.output), [.humvar.output](files/snps.humvar.output) and [.humdiv.output](files/snps.humdiv.output).
 
 ## poppler
 
