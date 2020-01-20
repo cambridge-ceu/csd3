@@ -276,7 +276,7 @@ Now we turn to an genomic SNPs query examples with snps.pph.list containing the 
 to be called by `mapsnps.pl` and others.
 ```bash
 mapsnps.pl -g hg19 -m -U -y snps.pph.input snps.pph.list 1>snps.pph.features 2>snps.log
-run_pph.pl snps.input 1>snps.pph.output 2>snps.pph.log
+run_pph.pl snps.pph.input 1>snps.pph.output 2>snps.pph.log
 run_weka.pl snps.pph.output >snps.humdiv.output
 run_weka.pl -l models/HumVar.UniRef100.NBd.f11.model snps.pph.output >snps.humvar.output
 ```
