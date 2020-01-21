@@ -95,7 +95,13 @@ annotate_variation.pl -filter -dbtype exac03 -buildver hg19 example/ex1.avinput 
 table_annovar.pl example/ex1.avinput test/ -buildver hg19 -out myanno \
      -remove -protocol refGene,cytoBand,exac03,avsnp147,dbnsfp30a -operation g,r,f,f,f \
      -nastring . -csvout -polish -xref example/gene_xref.txt
+table_annovar.pl example/ex1.avinput test/ -buildver hg19 --outfile ex1 \
+     -protocol ensGene,refGene,ccdsGene,wgEncodeGencodeBasicV19,cytoBand,exac03,avsnp147,dbnsfp30a \
+     -operation g,g,g,g,r,f,f,f \
+     -csvout -polish -remove -nastring .
 ```
+The second `table_annovar.pl` above works after symbolic links were created at test/.
+
 It is handy to create a VCF file to be used by VEP (see below),
 ```bash
 convert2annovar.pl -format annovar2vcf example/ex1.avinput > ex1.vcf
