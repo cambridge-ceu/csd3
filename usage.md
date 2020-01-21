@@ -235,6 +235,8 @@ cd $HPC_WORK/polyphen-2.2.2
 ln -s $HOME/polyphen-2.2.2/precompiled
 ln -s $HOME/polyphen-2.2.2/ucsc/hg19/multiz/precomputed
 ```
+The availability of MLC/MULTIZ databases make the annotation considerably faster.
+
 The command `configure` creates files at config/ which can be changed maunaually. There is also
 [user's guide](http://genetics.bwh.harvard.edu/pph2/dokuwiki/_media/hg0720.pdf). The line `rsync` obtains
 programs such as `twoBitToFa` as required by the example below.
@@ -267,8 +269,6 @@ run_weka.pl -l models/HumVar.UniRef100.NBd.f11.model test.pph.output >test.humva
 sdiff test.humdiv.output sets/test.humdiv.output
 sdiff test.humvar.output sets/test.humvar.output
 ```
-The availability of MLC/MULTIZ databases make the annotation considerably faster.
-
 Now we turn to an genomic SNPs query examples with snps.pph.list containing the following line,
 
 > chr1:154426970 A/C
