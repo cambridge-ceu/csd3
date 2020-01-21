@@ -575,6 +575,14 @@ giving
 1     A0N0L5 protein_coding
 ```
 
+### --- dbNSFP ---
+
+Web page: [https://sites.google.com/site/jpopgen/dbNSFP](https://sites.google.com/site/jpopgen/dbNSFP).
+```bash
+wget ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.0c.zip
+```
+and follow https://www.ensembl.org/info/docs/tools/vep/script/vep_example.html.
+
 ### --- clinvar ---
 
 The local installation enables considerable flexibilty, and the following example, using GRCh37 assembly, is based on 
