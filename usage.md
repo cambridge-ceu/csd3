@@ -88,13 +88,13 @@ annotate_variation.pl -buildver hg19 -downdb -webfrom annovar exac03 test/
 annotate_variation.pl -buildver hg19 -downdb -webfrom annovar avsnp147 test/
 annotate_variation.pl -buildver hg19 -downdb -webfrom annovar dbnsfp30a test/
 
-table_annovar.pl example/ex1.avinput test/ -buildver hg19 -out myanno \
-     -remove -protocol refGene,cytoBand,exac03,avsnp147,dbnsfp30a -operation gx,r,f,f,f \
-     -nastring . -csvout -polish -xref example/gene_xref.txt
-
 annotate_variation.pl -geneanno -dbtype refGene -buildver hg19 example/ex1.avinput test/
 annotate_variation.pl -regionanno -dbtype cytoBand -buildver hg19 example/ex1.avinput test/
 annotate_variation.pl -filter -dbtype exac03 -buildver hg19 example/ex1.avinput test/
+
+table_annovar.pl example/ex1.avinput test/ -buildver hg19 -out myanno \
+     -remove -protocol refGene,cytoBand,exac03,avsnp147,dbnsfp30a -operation g,r,f,f,f \
+     -nastring . -csvout -polish -xref example/gene_xref.txt
 ```
 It is handy to create a VCF file to be used by VEP (see below),
 ```bash
