@@ -100,7 +100,7 @@ table_annovar.pl example/ex1.avinput test/ -buildver hg19 --outfile ex1 \
      -operation g,g,g,g,r,f,f,f \
      -csvout -polish -remove -nastring .
 ```
-The second `table_annovar.pl` above works after symbolic links were created at test/.
+The second `table_annovar.pl` above works after symbolic links to relevant databases at humandb/ were created at test/.
 
 It is handy to create a VCF file to be used by VEP (see below),
 ```bash
