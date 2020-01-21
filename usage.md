@@ -586,8 +586,14 @@ giving
 Web page: [https://sites.google.com/site/jpopgen/dbNSFP](https://sites.google.com/site/jpopgen/dbNSFP).
 ```bash
 wget ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.0c.zip
+(
+  gunzip -c dbNSFP4.0c_variant.chr1.gz | head -1
+  zcat dbNSFP4.0c_variant.chr* | grep -v "#"
+) > dbNSFP4.0c.txt
+bgzip dbNSFP4.0c.txt
+tabix -s 1 -b 2 -e 2 dbNSFP4.0c.txt.gz
+vep --cache --force --plugin dbNSFP,dbNSFP4.0c.txt.gz
 ```
-and follow https://www.ensembl.org/info/docs/tools/vep/script/vep_example.html.
 
 ### --- clinvar ---
 
