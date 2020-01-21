@@ -529,25 +529,7 @@ aloowing for variable number of lines given various command-line options to be s
 >
 ```
 
-### --- R ---
-
-```r
-BiocManager::install("ensemblVEP")
-vignette("ensemblVEP")
-```
-It is likely to be slow compared to the `--offline` mode above, but the facility to parse the CSQ column of a VCF object could be useful.
-
-### --- docker ---
-
-See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/Ensembl/ensembl-vep.
-
-### --- Virtual machine ---
-
-See http://www.ensembl.org/info/data/virtual_machine.html which is possibly best for MicroSoft Windows and is not pursued here.
-
-ENSEMBL-synonym translation (hg19) file
-
-### --- ENSEMBL-synonym translation ---
+### **ENSEMBL-synonym translation**
 
 The ENSEMBL-synonym translation is useful to check for the feature types -- in the case of ENSG00000160712 (IL6R)
 we found ENST00000368485 and ENST00000515190, we do
@@ -581,7 +563,7 @@ giving
 1     A0N0L5 protein_coding
 ```
 
-### --- dbNSFP ---
+### **dbNSFP**
 
 Web page: [https://sites.google.com/site/jpopgen/dbNSFP](https://sites.google.com/site/jpopgen/dbNSFP).
 ```bash
@@ -596,7 +578,7 @@ vep --cache --force --plugin dbNSFP,dbNSFP4.0a.txt.gz,LRT_score,FATHM_score,Muta
 ```
 Note this release is frozen on Ensembl 94's transcript set.
 
-### --- clinvar ---
+### **clinvar**
 
 The local installation enables considerable flexibilty, and the following example, using GRCh37 assembly, is based on 
 [https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options](https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options).
@@ -627,3 +609,21 @@ which gives
 1_154426970_A/C	1:154426970	C	ENSG00000160712	ENST00000515190	Transcript	missense_variant	481	482	161	D/A	gAt/gCt	-	IMPACT=MODERATE;STRAND=1;FLAGS=cds_start_NF,cds_end_NF;ClinVar=14660;ClinVar_CLNDN=Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus;ClinVar_CLNREVSTAT=no_assertion_criteria_provided;ClinVar_CLNSIG=association;ClinVar_FILTER=.
 ```
 A [HTML summary](files/rs2228145_summary.html) (somehow the web browser may not display the embedded figures) is also available. 
+
+### --- R ---
+
+```r
+BiocManager::install("ensemblVEP")
+vignette("ensemblVEP")
+```
+It is likely to be slow compared to the `--offline` mode above, but the facility to parse the CSQ column of a VCF object could be useful.
+
+### --- docker ---
+
+See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/Ensembl/ensembl-vep.
+
+### --- Virtual machine ---
+
+See http://www.ensembl.org/info/data/virtual_machine.html which is possibly best for MicroSoft Windows and is not pursued here.
+
+ENSEMBL-synonym translation (hg19) file
