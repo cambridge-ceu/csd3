@@ -585,14 +585,14 @@ giving
 
 Web page: [https://sites.google.com/site/jpopgen/dbNSFP](https://sites.google.com/site/jpopgen/dbNSFP).
 ```bash
-wget ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.0c.zip
+wget ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.0a.zip
 (
-  gunzip -c dbNSFP4.0c_variant.chr1.gz | head -1
-  zcat dbNSFP4.0c_variant.chr* | grep -v "#"
-) > dbNSFP4.0c.txt
-bgzip dbNSFP4.0c.txt
-tabix -s 1 -b 2 -e 2 dbNSFP4.0c.txt.gz
-vep --cache --force --plugin dbNSFP,dbNSFP4.0c.txt.gz,LRT_score,FATHM_score,MutationTaster_score
+  gunzip -c dbNSFP4.0a_variant.chr1.gz | head -1
+  zcat dbNSFP4.0a_variant.chr* | grep -v "#"
+) > dbNSFP4.0a.txt
+bgzip dbNSFP4.0a.txt
+tabix -s 1 -b 2 -e 2 dbNSFP4.0a.txt.gz
+vep --cache --force --plugin dbNSFP,dbNSFP4.0a.txt.gz,LRT_score,FATHM_score,MutationTaster_score
 ```
 Note this release is frozen on a particular Ensembl 84's transcript set.
 
