@@ -592,7 +592,7 @@ wget ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.0c.zip
 ) > dbNSFP4.0c.txt
 bgzip dbNSFP4.0c.txt
 tabix -s 1 -b 2 -e 2 dbNSFP4.0c.txt.gz
-vep --cache --force --plugin dbNSFP,dbNSFP4.0c.txt.gz
+vep --cache --force --plugin dbNSFP,dbNSFP4.0c.txt.gz,LRT_score,FATHM_score,MutationTaster_score
 ```
 
 ### --- clinvar ---
