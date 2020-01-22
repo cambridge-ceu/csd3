@@ -568,6 +568,8 @@ giving
 Web page: [https://sites.google.com/site/jpopgen/dbNSFP](https://sites.google.com/site/jpopgen/dbNSFP).
 ```bash
 wget ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.0a.zip
+unzip dbNSFP4.0a.zip -d dbNSFP4.0a
+cd dbNSFP4.0a
 (
   gunzip -c dbNSFP4.0a_variant.chr1.gz | head -1
   zcat dbNSFP4.0a_variant.chr* | grep -v "#"
@@ -576,7 +578,7 @@ bgzip dbNSFP4.0a.txt
 tabix -s 1 -b 2 -e 2 dbNSFP4.0a.txt.gz
 vep --cache --force --plugin dbNSFP,dbNSFP4.0a.txt.gz,LRT_score,FATHM_score,MutationTaster_score
 ```
-Note this release is frozen on Ensembl 94's transcript set.
+Note this release is frozen on Ensembl 94's transcript set -- one may prefer to use it independently via the Java programs.
 
 ### **clinvar**
 
