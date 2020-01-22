@@ -93,11 +93,11 @@ annotate_variation.pl -regionanno -dbtype cytoBand -buildver hg19 example/ex1.av
 annotate_variation.pl -filter -dbtype exac03 -buildver hg19 example/ex1.avinput test/
 
 table_annovar.pl example/ex1.avinput test/ -buildver hg19 -out myanno \
-     -remove -protocol refGene,cytoBand,exac03,avsnp147,dbnsfp30a -operation g,r,f,f,f \
+     -remove -protocol refGene,cytoBand,exac03,avsnp147,dbnsfp30a,gwasCatalog -operation g,r,f,f,f,r \
      -nastring . -csvout -polish -xref example/gene_xref.txt
 table_annovar.pl example/ex1.avinput test/ -buildver hg19 --outfile ex1 \
-     -protocol ensGene,refGene,ccdsGene,wgEncodeGencodeBasicV19,cytoBand,exac03,avsnp147,dbnsfp30a \
-     -operation g,g,g,g,r,f,f,f \
+     -protocol ensGene,refGene,ccdsGene,wgEncodeGencodeBasicV19,cytoBand,exac03,avsnp147,dbnsfp30a,gwasCatalog \
+     -operation g,g,g,g,r,f,f,f,r \
      -csvout -polish -remove -nastring .
 ```
 The second `table_annovar.pl` above works after symbolic links to relevant databases at humandb/ were created at test/.
