@@ -567,7 +567,7 @@ giving
 
 Web page: [https://sites.google.com/site/jpopgen/dbNSFP](https://sites.google.com/site/jpopgen/dbNSFP).
 
-The GRCh38 version is set up as follows,
+This is set up as follows,
 ```bash
 wget ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.0a.zip
 unzip dbNSFP4.0a.zip -d dbNSFP4.0a
@@ -576,7 +576,7 @@ zcat dbNSFP4.0a_variant.chr1.gz | head -n1 > h
 zgrep -h -v ^#chr dbNSFP4.0a_variant.chr* | sort -k1,1 -k2,2n - | cat h - | bgzip -c > dbNSFP4.0a.gz
 tabix -s 1 -b 2 -e 2 dbNSFP4.0a.gz
 cd -
-vep -i examples/homo_sapiens_GRCh38.vcf -o test --assembly GRCh38 --cache --force --offline \
+vep -i examples/homo_sapiens_GRCh37.vcf -o test --cache --force --offline \
     --plugin dbNSFP,dbNSFP4.0a/dbNSFP4.0a.gz,LRT_score,FATHMM_score,MutationTaster_score
 ```
 Since this release is frozen on Ensembl 94's transcript set, one may prefer to use it independently via its Java programs.
