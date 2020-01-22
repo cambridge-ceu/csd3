@@ -89,7 +89,6 @@ annotate_variation.pl -buildver hg19 -downdb -webfrom annovar avsnp147 test/
 annotate_variation.pl -buildver hg19 -downdb -webfrom annovar dbnsfp30a test/
 
 annotate_variation.pl -geneanno -dbtype refGene -buildver hg19 example/ex1.avinput test/
-annotate_variation.pl -regionanno -dbtype cytoBand -buildver hg19 example/ex1.avinput test/
 annotate_variation.pl -filter -dbtype exac03 -buildver hg19 example/ex1.avinput test/
 
 table_annovar.pl example/ex1.avinput test/ -buildver hg19 -out myanno \
