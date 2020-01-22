@@ -578,7 +578,7 @@ bgzip dbNSFP4.0a.txt
 tabix -s 1 -b 2 -e 2 dbNSFP4.0a.txt.gz
 vep --cache --force --plugin dbNSFP,dbNSFP4.0a.txt.gz,LRT_score,FATHM_score,MutationTaster_score
 ```
-Note this release is frozen on Ensembl 94's transcript set -- one may prefer to use it independently via the Java programs.
+Since this release is frozen on Ensembl 94's transcript set -- one may prefer to use it independently via its Java programs.
 
 ### **clinvar**
 
