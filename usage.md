@@ -450,7 +450,8 @@ then one can use `library(SAIGE)` inside R.
 
 ## VEP
 
-Official page: [https://www.ensembl.org/info/docs/tools/vep/index.html](https://www.ensembl.org/info/docs/tools/vep/index.html).
+Official page: [https://www.ensembl.org/info/docs/tools/vep/index.html](https://www.ensembl.org/info/docs/tools/vep/index.html)
+ ([web interface](https://www.ensembl.org/Tools/VEP)).
 
 Detailed instructions for installation are available from here, 
 
