@@ -83,7 +83,6 @@ Here is a more sophisticated example contrasting `table_annovar.pl` with `annota
 ```bash
 if [ ! -d test ]; then mkdir test; fi
 annotate_variation.pl -buildver hg19 -downdb -webfrom annovar refGene test/
-annotate_variation.pl -buildver hg19 -downdb cytoBand test/
 annotate_variation.pl -buildver hg19 -downdb -webfrom annovar exac03 test/
 annotate_variation.pl -buildver hg19 -downdb -webfrom annovar avsnp147 test/
 annotate_variation.pl -buildver hg19 -downdb -webfrom annovar dbnsfp30a test/
