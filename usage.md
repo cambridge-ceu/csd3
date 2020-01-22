@@ -583,7 +583,7 @@ Since this release is frozen on Ensembl 94's transcript set, one may prefer to u
 ```bash
 java -jar search_dbNSFP40a.jar -i tryhg19.in -o tryhg19.out -v hg19
 java -jar search_dbNSFP40a.jar -i tryhg38.in -o tryhg38.out
-```.
+```
 
 ### **clinvar**
 
