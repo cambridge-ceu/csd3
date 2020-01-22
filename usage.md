@@ -463,6 +463,8 @@ There are several possible ways to install under csd3: GitHub, R and docker.
 
 GitHub Page: [https://github.com/Ensembl/ensembl-vep](https://github.com/Ensembl/ensembl-vep).
 
+The ease with this option lies with GitHub in that updates can simply be made with `git pull` to an exisiting release.
+
 ```bash
 cd $HPC_WORK
 git clone https://github.com/Ensembl/ensembl-vep.git
