@@ -620,11 +620,20 @@ A [HTML summary](files/rs2228145_summary.html) (somehow the web browser may not 
 
 ### --- R ---
 
+Expected to be slower than the `--offline` mode above, the facility to parse the CSQ column of a VCF object could be useful as shown
+below by the documentation example.
 ```r
 BiocManager::install("ensemblVEP")
 vignette("ensemblVEP")
+file <- "INF1.merge.trans.vcf"
+vep <- ensemblVEP(file, param=VEPFlags(flags=list(vcf=TRUE, host="useastdb.ensembl.org")))
+# The returned 'CSQ' data are unparsed.
+info(vep)$CSQ
+# Parse into a GRanges and include the 'VCFRowID' column.
+vcf <- readVcf(file, "hg19")
+csq <- parseCSQToGRanges(vep, VCFRowID=rownames(vcf))
+csq[1:4]
 ```
-It is likely to be slow compared to the `--offline` mode above, but the facility to parse the CSQ column of a VCF object could be useful.
 
 ### --- docker ---
 
