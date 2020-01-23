@@ -625,6 +625,7 @@ below by the documentation example.
 ```r
 BiocManager::install("ensemblVEP")
 vignette("ensemblVEP")
+# VCF output from VEP web interface
 file <- "INF1.merge.trans.vcf"
 vep <- ensemblVEP(file, param=VEPFlags(flags=list(vcf=TRUE, host="useastdb.ensembl.org")))
 # The returned 'CSQ' data are unparsed.
