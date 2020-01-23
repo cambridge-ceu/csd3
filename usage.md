@@ -625,7 +625,7 @@ relatively easy to set up,
 ```r
 BiocManager::install("ensemblVEP")
 vignette("ensemblVEP")
-ile <- system.file("extdata", "ex2.vcf", package="VariantAnnotation")
+file <- system.file("extdata", "ex2.vcf", package="VariantAnnotation")
 vep <- ensemblVEP(file, param=VEPFlags(flags=list(vcf=TRUE, host="useastdb.ensembl.org")))
 info(vep)$CSQ
 ```
@@ -639,6 +639,21 @@ vep <- "INF1.merge.trans.vcf"
 vcf <- readVcf(vep, "hg19")
 csq <- parseCSQToGRanges(vep, VCFRowID=rownames(vcf))
 write.table(mcols(csq),file="INF1.merge.trans.txt", quote=FALSE, sep="\t")
+```
+The dbNSFP counterpart is also possible
+```r
+BiocManager::install("myvariant")
+library(VariantAnnotation)
+file <- system.file("extdata", "dbsnp_mini.vcf", package="myvariant")
+vcf <- readVcf(file, genome="hg19")
+rowRanges(vcf)
+library(myvariant)
+hgvs <- formatHgvs(vcf, variant_type="snp")
+head(hgvs)
+getVariants(hgvs)
+rsids <- paste("rs", info(vcf)$RS, sep="")
+head(rsids)
+res <- queryVariants(q=rsids, scopes="dbsnp.rsid", fields="all")
 ```
 
 ### --- docker ---
