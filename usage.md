@@ -577,7 +577,7 @@ zcat dbNSFP4.0a_variant.chr1.gz | head -n1 > h
 zgrep -h -v ^#chr dbNSFP4.0a_variant.chr* | sort -k1,1 -k2,2n - | cat h - | bgzip -c > dbNSFP4.0a.gz
 tabix -s 1 -b 2 -e 2 dbNSFP4.0a.gz
 cd -
-vep -i examples/homo_sapiens_GRCh37.vcf -o test --cache --force --offline \
+vep -i examples/homo_sapiens_GRCh37.vcf -o test --cache --force_overwrite --offline \
     --plugin dbNSFP,dbNSFP4.0a/dbNSFP4.0a.gz,LRT_score,FATHMM_score,MutationTaster_score
 ```
 Since this release is frozen on Ensembl 94's transcript set, one may prefer to use it independently via its Java programs, e.g.,
