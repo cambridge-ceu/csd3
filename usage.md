@@ -620,20 +620,24 @@ A [HTML summary](files/rs2228145_summary.html) (somehow the web browser may not 
 
 ### --- R ---
 
-Expected to be slower than the `--offline` mode above, the facility to parse the CSQ column of a VCF object could be useful as shown
-below by the documentation example.
+Expected to be slower than the `--offline` mode above, it is relatively easy to set up,
 ```r
 BiocManager::install("ensemblVEP")
 vignette("ensemblVEP")
-# The annotation returns data with unparsed 'CSQ'.
-# vep <- ensemblVEP(file, param=VEPFlags(flags=list(vcf=TRUE, host="useastdb.ensembl.org")))
-# info(vep)$CSQ
-# VCF output from VEP web interface
-file <- "INF1.merge.trans.vcf"
+ile <- system.file("extdata", "ex2.vcf", package="VariantAnnotation")
+vep <- ensemblVEP(file, param=VEPFlags(flags=list(vcf=TRUE, host="useastdb.ensembl.org")))
+info(vep)$CSQ
+```
+Annotation is made to a VCF file, and returns data with unparsed 'CSQ'.
+
+The facility to parse the CSQ column of a VCF object could be useful as shown below by the documentation example.
+```r
+# VCF output from the VEP web interface or the call above
+vep <- "INF1.merge.trans.vcf"
 # Parse into a GRanges and include the 'VCFRowID' column.
-vcf <- readVcf(file, "hg19")
+vcf <- readVcf(vep, "hg19")
 csq <- parseCSQToGRanges(vep, VCFRowID=rownames(vcf))
-csq[1:4]
+write.table( mcols(csq),file="INF1.merge.trans.weboutput", quote=FALSE, sep="\t")
 ```
 
 ### --- docker ---
