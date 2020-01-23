@@ -637,7 +637,7 @@ vep <- "INF1.merge.trans.vcf"
 # Parse into a GRanges and include the 'VCFRowID' column.
 vcf <- readVcf(vep, "hg19")
 csq <- parseCSQToGRanges(vep, VCFRowID=rownames(vcf))
-write.table( mcols(csq),file="INF1.merge.trans.weboutput", quote=FALSE, sep="\t")
+write.table( mcols(csq),file="INF1.merge.trans.txt", quote=FALSE, sep="\t")
 ```
 
 ### --- docker ---
