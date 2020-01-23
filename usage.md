@@ -625,11 +625,11 @@ below by the documentation example.
 ```r
 BiocManager::install("ensemblVEP")
 vignette("ensemblVEP")
+# The annotation returns data with unparsed 'CSQ'.
+# vep <- ensemblVEP(file, param=VEPFlags(flags=list(vcf=TRUE, host="useastdb.ensembl.org")))
+# info(vep)$CSQ
 # VCF output from VEP web interface
 file <- "INF1.merge.trans.vcf"
-vep <- ensemblVEP(file, param=VEPFlags(flags=list(vcf=TRUE, host="useastdb.ensembl.org")))
-# The returned 'CSQ' data are unparsed.
-info(vep)$CSQ
 # Parse into a GRanges and include the 'VCFRowID' column.
 vcf <- readVcf(file, "hg19")
 csq <- parseCSQToGRanges(vep, VCFRowID=rownames(vcf))
