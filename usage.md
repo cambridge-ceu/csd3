@@ -654,9 +654,9 @@ getVariants(hgvs)
 rsids <- paste("rs", info(vcf)$RS, sep="")
 head(rsids)
 res <- queryVariants(q=rsids, scopes="dbsnp.rsid", fields="all")
-vars <- names(res)
-cadd <- grep('cadd',vars)
-res[vars[cadd]]
+fields <- names(res)
+cadd <- grep('cadd',fields)
+res[fields[cadd]]
 ```
 
 ### --- docker ---
