@@ -591,6 +591,33 @@ java -jar search_dbNSFP40a.jar -i tryhg38.in -o tryhg38.out
 The local installation enables considerable flexibilty, and the following example, using GRCh37 assembly, is based on 
 [https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options](https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options).
 
+Information is gathered from the header of the VCF file,
+
+ClinVar Variation ID | Description
+---------------------|-----------------------------------------------------------------------------------------------------------
+AF_ESP | "allele frequencies from GO-ESP"
+AF_EXAC | "allele frequencies from ExAC"
+AF_TGP | "allele frequencies from TGP"
+ALLELEID | "the ClinVar Allele ID"
+CLNDN | "ClinVar's preferred disease name for the concept specified by disease identifiers in CLNDISDB"
+CLNDNINCL | "For included Variant : ClinVar's preferred disease name for the concept specified by disease identifiers in CLNDISDB"
+CLNDISDB | "Tag-value pairs of disease database name and identifier, e.g. OMIM:NNNNNN"
+CLNDISDBINCL | "For included Variant: Tag-value pairs of disease database name and identifier, e.g. OMIM:NNNNNN"
+CLNHGVS | "Top-level (primary assembly, alt, or patch) HGVS expression."
+CLNREVSTAT | "ClinVar review status for the Variation ID"
+CLNSIG | "Clinical significance for this single variant"
+CLNSIGCONF | "Conflicting clinical significance for this single variant"
+CLNSIGINCL | "Clinical significance for a haplotype or genotype that includes this variant. Reported as pairs of VariationID:clinical significance."
+CLNVC | "Variant type"
+CLNVCSO | "Sequence Ontology id for variant type"
+CLNVI | "the variant's clinical sources reported as tag-value pairs of database and variant identifier"
+DBVARID | "nsv accessions from dbVar for the variant"
+GENEINFO | "Gene(s) for the variant reported as gene symbol:gene id. The gene symbol and id are delimited by a colon (:) and each pair is delimited by a vertical bar (|)"
+MC | "comma separated list of molecular consequence in the form of Sequence Ontology ID|molecular_consequence"
+ORIGIN | "Allele origin. One or more of the following values may be added: 0 - unknown; 1 - germline; 2 - somatic ; 4 - inherited; 8 - paternal; 16 - maternal; 32 - de-novo; 64 - biparental; 128 - uniparental; 256 - not-tested; 512 - tested-inconclusive; 1073741824 - other"
+RS | "dbSNP ID (i.e. rs number)"
+SSR | "Variant Suspect Reason Codes. One or more of the following values may be added: 0 - unspecified, 1 - Paralog, 2 - byEST, 4 - oldAlign, 8 - Para_EST, 16 - 1kg_failed, 1024 - other"
+
 ```bash
 # Compressed VCF file
 curl ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz -o clinvar_GRCh37.vcf.gz
