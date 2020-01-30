@@ -238,6 +238,7 @@ The MLC/MULTIZ databases need to be extracted to $HOME and symbolically linked i
 ```bash
 cd $HPC_WORK/polyphen-2.2.2
 ln -s $HOME/polyphen-2.2.2/precompiled
+cd ucsc/hg19/multiz
 ln -s $HOME/polyphen-2.2.2/ucsc/hg19/multiz/precomputed
 ```
 The availability of MLC/MULTIZ databases make the annotation considerably faster.
