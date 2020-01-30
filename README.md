@@ -126,6 +126,10 @@ library(plotly)
 we received an error message
 ```
 /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.20' not found
+
+library(UniProt.ws)
+Error: package or namespace load failed for ‘UniProt.ws’ in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]):
+ namespace ‘rlang’ 0.4.2 is already loaded, but >= 0.4.3 is required
 ```
 which would go away should we issue `module load gcc/5` ahead of R. In case of failure after `srun` (see below), enforce lookup by
 ```bash
