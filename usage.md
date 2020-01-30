@@ -591,6 +591,13 @@ java -jar search_dbNSFP40a.jar -i tryhg38.in -o tryhg38.out
 The local installation enables considerable flexibilty, and the following example, using GRCh37 assembly, is based on 
 [https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options](https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options).
 
+```bash
+# Compressed VCF file
+curl ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz -o clinvar_GRCh37.vcf.gz
+# Index file
+curl ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz.tbi -o clinvar_GRCh37.vcf.gz.tbi
+```
+
 Information is gathered from the header of the VCF file,
 
 ClinVar Variation ID | Description
@@ -618,20 +625,15 @@ ORIGIN | "Allele origin. One or more of the following values may be added: 0 - u
 RS | "dbSNP ID (i.e. rs number)"
 SSR | "Variant Suspect Reason Codes. One or more of the following values may be added: 0 - unspecified, 1 - Paralog, 2 - byEST, 4 - oldAlign, 8 - Para_EST, 16 - 1kg_failed, 1024 - other"
 
+We now query rs2228145,
 ```bash
-# Compressed VCF file
-curl ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz -o clinvar_GRCh37.vcf.gz
-# Index file
-curl ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz.tbi -o clinvar_GRCh37.vcf.gz.tbi
-
+vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145 --cache --offline --force_overwrite \
+    --assembly GRCh37 --custom clinvar_GRCh37.vcf.gz,ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN
 ## Where the selected ClinVar INFO fields (from the ClinVar VCF file) are:
 # - CLNSIG:     Clinical significance for this single variant
 # - CLNREVSTAT: ClinVar review status for the Variation ID
 # - CLNDN:      ClinVar's preferred disease name for the concept specified by disease identifiers in CLNDISDB
 # Or the INFO fields you want in the ClinVar VCF file
-
-vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145 --cache --offline --force_overwrite \
-    --assembly GRCh37 --custom clinvar_GRCh37.vcf.gz,ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN
 ```
 which gives
 ```
