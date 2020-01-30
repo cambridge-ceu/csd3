@@ -635,7 +635,7 @@ vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145 --cac
 # - CLNDN:      ClinVar's preferred disease name for the concept specified by disease identifiers in CLNDISDB
 # Or the INFO fields you want in the ClinVar VCF file
 ```
-hich gives
+which gives
 ```
 #Uploaded_variation	Location	Allele	Gene	Feature	Feature_type	Consequence	cDNA_position	CDS_position	Protein_position	Amino_acids	Codons	Existing_variation	Extra
 1_154426970_A/C	1:154426970	C	ENSG00000160712	ENST00000344086	Transcript	intron_variant	-	-	-	-	-	-	IMPACT=MODIFIER;STRAND=1;ClinVar=14660;ClinVar_CLNDN=Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus;ClinVar_CLNREVSTAT=no_assertion_criteria_provided;ClinVar_CLNSIG=association;ClinVar_FILTER=.
