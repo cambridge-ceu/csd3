@@ -9,6 +9,7 @@ This document contains information for the following software:
 [polyphen-2](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#polyphen-2), 
 [poppler](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#poppler), 
 [PRSice](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#prsice), 
+[PRoS](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#pros), 
 [pspp](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#pspp), 
 [qpdf](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#qpdf), 
 [R](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#r), 
@@ -314,6 +315,17 @@ which could be done by editing CMakeCache.txt and/or calling `ccmake .`. After t
 the followihg utilities: 
 pdfattach, pdfdetach,  pdffonts,  pdfimages,  pdfinfo,  pdfseparate,  pdftocairo,  pdftohtml,  pdftoppm,  pdftops,  pdftotext,  pdfunite, 
 and following libraries: libpoppler.so, libpoppler-cpp.so, libpoppler-glibc.so, libpoppler-qt5.so.
+
+## PRSoS
+
+Web page: https://github.com/MeaneyLab/PRSoS.
+
+```bash
+git clone https://github.com/MeaneyLab/PRSoS.git
+cd PRSoS
+pip install –r requirements.txt
+~/.local/bin/spark-submit --master local[*] PRSoS.py examples/example.vcf examples/gwasfile.txt test_output
+```
 
 ## PRSice
 
