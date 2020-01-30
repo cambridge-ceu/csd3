@@ -1,4 +1,4 @@
-# Software notes
+# Usage notes
 
 This document contains information for the following software:
 
