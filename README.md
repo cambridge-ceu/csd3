@@ -15,7 +15,7 @@
   * [R](https://github.com/cambridge-ceu/csd3#r)
   * [matlab](https://github.com/cambridge-ceu/csd3#matlab)
   * [Stata](https://github.com/cambridge-ceu/csd3#stata)
-  * [Software notes](usage.md)
+  * [Usage notes](usage.md)
   * [To-do list](https://github.com/cambridge-ceu/csd3#to-do-list)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
 * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
