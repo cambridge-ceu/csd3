@@ -9,7 +9,7 @@ This document contains information for the following software:
 [polyphen-2](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#polyphen-2), 
 [poppler](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#poppler), 
 [PRSice](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#prsice), 
-[PRoS](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#pros), 
+[PRSoS](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#prsos), 
 [pspp](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#pspp), 
 [qpdf](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#qpdf), 
 [R](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#r), 
@@ -316,17 +316,6 @@ the followihg utilities:
 pdfattach, pdfdetach,  pdffonts,  pdfimages,  pdfinfo,  pdfseparate,  pdftocairo,  pdftohtml,  pdftoppm,  pdftops,  pdftotext,  pdfunite, 
 and following libraries: libpoppler.so, libpoppler-cpp.so, libpoppler-glibc.so, libpoppler-qt5.so.
 
-## PRSoS
-
-Web page: https://github.com/MeaneyLab/PRSoS.
-
-```bash
-git clone https://github.com/MeaneyLab/PRSoS.git
-cd PRSoS
-pip install –r requirements.txt
-~/.local/bin/spark-submit --master local[*] PRSoS.py examples/example.vcf examples/gwasfile.txt test_output
-```
-
 ## PRSice
 
 Web page: https://github.com/choishingwan/PRSice and http://www.prsice.info/.
@@ -345,6 +334,17 @@ wget https://github.com/choishingwan/PRS-Tutorial/raw/master/resources/GIANT.hei
 wget -qO- https://github.com/choishingwan/PRS-Tutorial/raw/master/resources/EUR.zip | jar xv
 ```
 The last two commands download/unpack the documentation example, which is described here, https://choishingwan.github.io/PRS-Tutorial/.
+
+## PRSoS
+
+Web page: https://github.com/MeaneyLab/PRSoS.
+
+```bash
+git clone https://github.com/MeaneyLab/PRSoS.git
+cd PRSoS
+pip install –r requirements.txt
+~/.local/bin/spark-submit --master local[*] PRSoS.py examples/example.vcf examples/gwasfile.txt test_output
+```
 
 ## pspp
 
