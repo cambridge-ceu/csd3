@@ -122,9 +122,6 @@ followed by `qctool -help`.
 When advanced versions of GNU C-related libraries are required, e.g., from R
 ```
 library(plotly)
-```
-we received an error message
-```
 /usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.20' not found
 
 library(UniProt.ws)
