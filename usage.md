@@ -641,11 +641,6 @@ We now query rs2228145,
 ```bash
 vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145 --cache --offline --force_overwrite \
     --assembly GRCh37 --custom clinvar_GRCh37.vcf.gz,ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN
-## Where the selected ClinVar INFO fields (from the ClinVar VCF file) are:
-# - CLNSIG:     Clinical significance for this single variant
-# - CLNREVSTAT: ClinVar review status for the Variation ID
-# - CLNDN:      ClinVar's preferred disease name for the concept specified by disease identifiers in CLNDISDB
-# Or the INFO fields you want in the ClinVar VCF file
 ```
 which gives
 ```
