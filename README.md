@@ -5,8 +5,8 @@
 ***
 
 * [System](https://github.com/cambridge-ceu/csd3#system)
-* [Login](https://github.com/cambridge-ceu/csd3#login)
-* [Directories](https://github.com/cambridge-ceu/csd3#directories)
+  * [Login](https://github.com/cambridge-ceu/csd3#login)
+  * [Directories](https://github.com/cambridge-ceu/csd3#directories)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
   * [ceuadmin](https://github.com/cambridge-ceu/csd3#ceuadmin)
   * [modules](https://github.com/cambridge-ceu/csd3#modules)
