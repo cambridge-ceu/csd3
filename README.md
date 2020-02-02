@@ -16,7 +16,7 @@
   * [matlab](https://github.com/cambridge-ceu/csd3#matlab)
   * [Stata](https://github.com/cambridge-ceu/csd3#stata)
   * [Usage notes](usage.md)
-  * [To-do list](https://github.com/cambridge-ceu/csd3#to-do-list)
+  * [To-do list](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
 * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
 * [*Cardio*](cardio.md)
@@ -288,10 +288,6 @@ As a CEU member the following is possible,
 module load ceuadmin/stata/14
 ```
 as with `ceuadmin/stata/15`.
-
-#### To-do list
-
-This is a [Google spreadsheet](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing). 
 
 ### Training
 
