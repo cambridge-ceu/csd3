@@ -234,6 +234,8 @@ An `hello world` example is [hello.ipynb](files/hello.ipynb) from which [hello.h
 
 See also https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python and https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html.
 
+See [HPC docuementation](https://docs.hpc.cam.ac.uk/hpc/) for additional information on PyTorch, Tensorflow and GPU.
+
 #### R
 
 Official website: [https://www.r-project.org/](https://www.r-project.org/) and also [https://bioconductor.org/](https://bioconductor.org/).
@@ -268,7 +270,6 @@ The package installation directory can be spefied explicitly with R_LIBS, i.e.,
 ```bash
 export R_LIBS=/rds/user/$USER/hpc-work/R:/rds/user/$USER/hpc-work/R-3.6.1/library
 ```
-See [HPC docuementation](https://docs.hpc.cam.ac.uk/hpc/) for additional information on PyTorch, Tensorflow and GPU.
 
 #### matlab
 
