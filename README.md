@@ -197,6 +197,12 @@ pip install jupyter --user
 ```
 installs libraries at `$HOME/.local`.
 
+It is advised to use virual environments, i.e.,
+```bash
+virtualenv py35
+source py35/bin/activate
+deactivate
+```
 Anaconda ([https://www.anaconda.com/](https://www.anaconda.com/)) and Jupyter notebook ([https://jupyter.org/](https://jupyter.org/)) are useful tools. 
 
 We first load Anaconda and create virtual environments,
