@@ -201,10 +201,9 @@ installs libraries at `$HOME/.local`.
 
 It is advised to use virual environments, i.e.,
 ```bash
-virtualenv py35
-source py35/bin/activate
-# inherit system-wide packages
+# inherit system-wide packages as well
 virtualenv --system-site-packages py35
+source py35/bin/activate
 # pip new packages
 deactivate
 ```
