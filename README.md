@@ -201,6 +201,8 @@ It is advised to use virual environments, i.e.,
 ```bash
 virtualenv py35
 source py35/bin/activate
+virtualenv --system-site-packages py35
+pip ...
 deactivate
 ```
 Anaconda ([https://www.anaconda.com/](https://www.anaconda.com/)) and Jupyter notebook ([https://jupyter.org/](https://jupyter.org/)) are useful tools. 
