@@ -268,6 +268,7 @@ The package installation directory can be spefied explicitly with R_LIBS, i.e.,
 ```bash
 export R_LIBS=/rds/user/$USER/hpc-work/R:/rds/user/$USER/hpc-work/R-3.6.1/library
 ```
+See [HPC docuementation](https://docs.hpc.cam.ac.uk/hpc/) for additional information on PyTorch, Tensorflow and GPU.
 
 #### matlab
 
