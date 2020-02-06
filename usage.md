@@ -427,9 +427,10 @@ CXXFLAGS = -std=c++11
 ```
 the proceed with
 ```bash
-geos-3.6.2-gcc-5.4.0-vejexvy
-gdal-2.3.1-gcc-5.4.0-m7j7nw6
-proj-5.0.1-gcc-5.4.0-cpqxtzr
+module load gcc/5
+module load geos-3.6.2-gcc-5.4.0-vejexvy
+module load gdal-2.3.1-gcc-5.4.0-m7j7nw6
+module load proj-5.0.1-gcc-5.4.0-cpqxtzr
 Rscript -e "install.packages(\"sf\")"
 Rscript -e "install.packages(\"rgdal\")"
 ```
