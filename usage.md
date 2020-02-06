@@ -431,8 +431,8 @@ module load gcc/5
 module load geos-3.6.2-gcc-5.4.0-vejexvy
 module load gdal-2.3.1-gcc-5.4.0-m7j7nw6
 module load proj-5.0.1-gcc-5.4.0-cpqxtzr
-Rscript -e "install.packages(\"sf\")"
-Rscript -e "install.packages(\"rgdal\")"
+Rscript -e "install.packages('sf')"
+Rscript -e "install.packages('rgdal')"
 ```
 While gdal could also be installed with proj 6 available,
 ```bash
