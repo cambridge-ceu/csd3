@@ -14,6 +14,7 @@ This document contains information for the following software:
 [qpdf](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#qpdf), 
 [R](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#r), 
 [rjags](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rjags), 
+[rgdal](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rgdal), 
 [rstan](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rstan), 
 [SAIGE](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#saige-03582), 
 [VEP](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#vep),
@@ -413,6 +414,30 @@ make
 make install
 ```
 Package reinstallation could be done with `update.packages(checkBuilt = TRUE, ask = FALSE)`.
+
+## rgdal
+
+We have .R/Makevars as follows,
+```bash
+CC=gcc
+CXX=gcc++ -std=gnu++11
+PKG_CXXFLAGS= -std=c++11
+CFLAGS = -std=c99 -I/usr/include -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-parentheses -Wimplicit-function-declaration
+CXXFLAGS = -std=c++11
+```
+the proceed with
+```bash
+geos-3.6.2-gcc-5.4.0-vejexvy
+gdal-2.3.1-gcc-5.4.0-m7j7nw6
+proj-5.0.1-gcc-5.4.0-cpqxtzr
+Rscript -e "install.packages(\"sf\")"
+Rscript -e "install.packages(\"rgdal\")"
+```
+While gdal could also be installed with proj 6 available,
+```bash
+module load geos-3.6.2-gcc-5.4.0-vejexvy
+./configure --with-proj=$HPC_WORK --without-sqlite3 --prefix=$HPC_WORK
+```
 
 ## rjags
 
