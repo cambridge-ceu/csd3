@@ -687,13 +687,15 @@ GitHub page: [https://github.com/konradjk/loftee](https://github.com/konradjk/lo
 
 It is actually part of the standard VEP plugins.
 ```bash
-# samtools --version gives 0.1.19
+# human_ancestor_fa
+## samtools --version gives 0.1.19
 wget http://www.broadinstitute.org/~konradk/loftee/human_ancestor.fa.rz
 wget http://www.broadinstitute.org/~konradk/loftee/human_ancestor.fa.rz.fai
-# samtools --version gives 1.x
+## samtools --version gives 1.x
 wget https://s3.amazonaws.com/bcbio_nextgen/human_ancestor.fa.gz
 wget https://s3.amazonaws.com/bcbio_nextgen/human_ancestor.fa.gz.fai
 wget https://s3.amazonaws.com/bcbio_nextgen/human_ancestor.fa.gz.gzi
+# conservation_file
 wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/phylocsf_gerp.sql.gz
 wget https://www.broadinstitute.org/~konradk/loftee/phylocsf_data.tsv.gz
 wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/GERP_scores.final.sorted.txt.gz
