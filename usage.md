@@ -681,6 +681,12 @@ which gives
 ```
 A [HTML summary](files/rs2228145_summary.html) (somehow the web browser may not display the embedded figures) is also available. 
 
+### --- loftee ---
+
+GitHub page: [https://github.com/konradjk/loftee](https://github.com/konradjk/loftee).
+
+It is actually part of the standard VEP plugins.
+
 ### --- R ---
 
 This is a wrapper and `the Ensembl VEP perl script must be installed in your path`. Expected to be slower than the `--offline` mode above, it is 
