@@ -686,6 +686,18 @@ A [HTML summary](files/rs2228145_summary.html) (somehow the web browser may not 
 GitHub page: [https://github.com/konradjk/loftee](https://github.com/konradjk/loftee).
 
 It is actually part of the standard VEP plugins.
+```bash
+# samtools --version gives 0.1.19
+wget http://www.broadinstitute.org/~konradk/loftee/human_ancestor.fa.rz
+wget http://www.broadinstitute.org/~konradk/loftee/human_ancestor.fa.rz.fai
+# samtools --version gives 1.x
+wget https://s3.amazonaws.com/bcbio_nextgen/human_ancestor.fa.gz
+wget https://s3.amazonaws.com/bcbio_nextgen/human_ancestor.fa.gz.fai
+wget https://s3.amazonaws.com/bcbio_nextgen/human_ancestor.fa.gz.gzi
+wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/phylocsf_gerp.sql.gz
+wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/GERP_scores.final.sorted.txt.gz
+wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/GERP_scores.exons.txt.gz
+```
 
 ### --- R ---
 
