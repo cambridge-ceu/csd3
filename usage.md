@@ -701,6 +701,7 @@ wget https://www.broadinstitute.org/~konradk/loftee/phylocsf_data.tsv.gz
 wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/GERP_scores.final.sorted.txt.gz
 wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/GERP_scores.exons.txt.gz
 ```
+If offers implementation for parsing CSQ field but is preferably done with R as described below.
 
 ### --- R ---
 
