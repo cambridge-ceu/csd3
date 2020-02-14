@@ -14,6 +14,7 @@ This document contains information for the following software:
 [qpdf](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#qpdf), 
 [R](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#r), 
 [rgdal](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rgdal), 
+[rgeos](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rgeos), 
 [rjags](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rjags), 
 [rstan](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rstan), 
 [SAIGE](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#saige-03582), 
@@ -438,6 +439,13 @@ While gdal could also be installed with proj 6 available,
 ```bash
 module load geos-3.6.2-gcc-5.4.0-vejexvy
 ./configure --with-proj=$HPC_WORK --without-sqlite3 --prefix=$HPC_WORK
+```
+
+## rgeos
+
+This requires geos to be loaded,
+```bash
+module load geos-3.6.2-gcc-5.4.0-vejexvy
 ```
 
 ## rjags
