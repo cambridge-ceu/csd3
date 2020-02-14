@@ -685,6 +685,8 @@ A [HTML summary](files/rs2228145_summary.html) (somehow the web browser may not 
 
 GitHub page: [https://github.com/konradjk/loftee](https://github.com/konradjk/loftee).
 
+Reference: MacArthur DG et al (2012). A systematic survey of loss-of-function variants in human protein-coding genes. *Science* 335:823–828
+
 It is actually part of the standard VEP plugins.
 ```bash
 # human_ancestor_fa
