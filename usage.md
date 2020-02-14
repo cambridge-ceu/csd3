@@ -336,7 +336,7 @@ ln -sf $HPC_WORK/PRSice/bin/PRSice $HPC_WORK/bin/PRSice
 wget https://github.com/choishingwan/PRS-Tutorial/raw/master/resources/GIANT.height.gz
 wget -qO- https://github.com/choishingwan/PRS-Tutorial/raw/master/resources/EUR.zip | jar xv
 ```
-The last two commands download/unpack the documentation example, which is described here, https://choishingwan.github.io/PRS-Tutorial/.
+The last two commands download/unpack the documentation example, which is described here, https://choishingwan.github.io/PRS-Tutorial/, whose scripts are partly extracted [here](files/pgs.sh).
 
 ## PRSoS
 
