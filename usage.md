@@ -689,6 +689,7 @@ Reference: MacArthur DG et al (2012). A systematic survey of loss-of-function va
 
 It is actually part of the standard VEP plugins.
 ```bash
+cd loftee
 # human_ancestor_fa
 ## samtools --version gives 0.1.19
 wget http://www.broadinstitute.org/~konradk/loftee/human_ancestor.fa.rz
@@ -702,6 +703,8 @@ wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/phylocsf_ger
 wget https://www.broadinstitute.org/~konradk/loftee/phylocsf_data.tsv.gz
 wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/GERP_scores.final.sorted.txt.gz
 wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/GERP_scores.exons.txt.gz
+vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145 --cache --offline --force_overwrite \
+    --assembly GRCh37 --plugin LoF,loftee_path:.
 ```
 If offers implementation for parsing CSQ field but is preferably done with R as described below.
 
