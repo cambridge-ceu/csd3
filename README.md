@@ -7,6 +7,7 @@
 * [System](https://github.com/cambridge-ceu/csd3#system)
   * [Login](https://github.com/cambridge-ceu/csd3#login)
   * [Directories](https://github.com/cambridge-ceu/csd3#directories)
+  * [Acknowledgement](https://github.com/cambridge-ceu/csd3#acknowledge-csd3)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
   * [ceuadmin](https://github.com/cambridge-ceu/csd3#ceuadmin)
   * [modules](https://github.com/cambridge-ceu/csd3#modules)
@@ -94,6 +95,10 @@ export rt=/rds/project/jmmh2
 for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rds-jmmh2-$d /home/$USER/rds/$d; done
 ```
  Note to list the directories you need postfix them with '/'.
+
+### Acknowledgement CSD3
+
+See [https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html#acknowledging-csd3](https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html#acknowledging-csd3).
 
 ### Software
 
