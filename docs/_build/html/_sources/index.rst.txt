@@ -9,7 +9,11 @@ Welcome to CSD3's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   usage/system
+   usage/software
+   usage/training
+   usage/contact
+   usage/cardio
 
 
 Indices and tables
