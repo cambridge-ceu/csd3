@@ -1,5 +1,7 @@
-# 31-7-2019 JHZ
+# 27-2-2020 JHZ
 
+git add docs
+git commit -m "docs"
 git add files
 git commit -m "copies of files"
 git add README.md
