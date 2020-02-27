@@ -597,7 +597,8 @@ ensembl <- useMart("ensembl", dataset="hsapiens_gene_ensembl", host="grch37.ense
 attr <- listAttributes(ensembl)
 g <- c('ensembl_gene_id', 'chromosome_name', 'start_position', 'end_position', 'description', 'hgnc_symbol')
 t <- c('ensembl_transcript_id', 'transcription_start_site', 'transcript_start', 'transcript_end')
-gt <- getBM(attributes = c(g,t), mart = ensembl)
+u <- "uniprotswissprot"
+gtu <- getBM(attributes = c(g,t,u), mart = ensembl)
 ```
 For ENSEMBL genes, R/grex is likely to work though it was developed for other purpose, e.g.,
 ```bash
