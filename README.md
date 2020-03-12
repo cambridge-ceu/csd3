@@ -21,6 +21,7 @@
 * [Training](https://github.com/cambridge-ceu/csd3#training)
 * [Contacts](https://github.com/cambridge-ceu/csd3#contacts)
 * [*Cardio*](cardio.md)
+* [Acknowledgements](https://github.com/cambridge-ceu/csd3#acknowledgements)
 
 ***
 
@@ -321,3 +322,7 @@ as with `ceuadmin/stata/15`.
 * **CEU contacts**: Ank Michielsen (<am2710@medschl.cam.ac.uk>) and Niko Ovenden (<nao26@medschl.cam.ac.uk>).
 * **Request for software**: Savita Karthikeyan (<sk752@medschl.cam.ac.uk>).
 * **Contacts for data access**. CSD3datamanager@medschl.cam.ac.uk.
+
+### Acknowledgements
+
+The repository was created as a result of the cambridge-ceu organisation; information regarding system login, Jupyter, VEP received inputs from HPC supporint team.
