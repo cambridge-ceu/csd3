@@ -276,7 +276,11 @@ biocLite(c("GO.db", "preprocessCore", "impute"))
 install.packages("BiocManager")
 BiocManager::install("WGCNA")
 ```
-where `BiocManager` is appropriate for R 3.5.0 or later.
+where `BiocManager` is appropriate for R 3.5.0 or later. In case of difficulty it is still useful to install directly, e.g.,
+```bash
+wget http://master.bioconductor.org/packages//2.10/bioc/src/contrib/ontoCAT_1.8.0.tar.gz
+R CMD INSTALL ontoCAT_1.8.0.tar.gz
+```
 
 A good alternative is to use `devtools` package, e.g.,
 ```r
