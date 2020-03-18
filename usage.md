@@ -13,6 +13,7 @@ This document contains information for the following software:
 [pspp](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#pspp), 
 [qpdf](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#qpdf), 
 [R](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#r), 
+[gnn](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#gnn), 
 [rgdal](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rgdal), 
 [rgeos](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rgeos), 
 [rjags](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rjags), 
@@ -415,6 +416,13 @@ make
 make install
 ```
 Package reinstallation could be done with `update.packages(checkBuilt = TRUE, ask = FALSE)`.
+
+## gnn
+
+It requires libgsl, so
+```bash
+module load gsl/2,4
+```
 
 ## rgdal
 
