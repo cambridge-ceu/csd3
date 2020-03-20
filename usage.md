@@ -737,7 +737,7 @@ wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/GERP_scores.
 wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/GERP_scores.exons.txt.gz
 # annotation
 vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145 --cache --offline --force_overwrite \
-    --assembly GRCh37 --plugin LoF,loftee_path:.
+    --assembly GRCh37 --plugin LoF,loftee_path:.,human_ancestor_fa:human_ancestor.fa.gz
 ```
 If offers implementation for parsing CSQ field but is preferably done with R as described below.
 
