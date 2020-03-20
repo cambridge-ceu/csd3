@@ -697,6 +697,21 @@ which gives
 1_154426970_A/C	1:154426970	C	ENSG00000160712	ENST00000515190	Transcript	missense_variant	481	482	161	D/A	gAt/gCt	-	IMPACT=MODERATE;STRAND=1;FLAGS=cds_start_NF,cds_end_NF;ClinVar=14660;ClinVar_CLNDN=Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus;ClinVar_CLNREVSTAT=no_assertion_criteria_provided;ClinVar_CLNSIG=association;ClinVar_FILTER=.
 ```
 A [HTML summary](files/rs2228145_summary.html) (somehow the web browser may not display the embedded figures) is also available. The `Extra` column looks clumsy and we could add the `--tab` option to generate a tab-delimited output.
+```bash
+vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145 --cache --offline --force_overwrite \
+    --custom clinvar_GRCh37.vcf.gz,ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN --tab \
+    --fields Uploaded_variation,Gene,Consequence,ClinVar_CLNSIG,ClinVar_CLNREVSTAT,ClinVar_CLNDN
+```
+to give neatly
+```
+#Uploaded_variation	Gene	Consequence	ClinVar_CLNSIG	ClinVar_CLNREVSTAT	ClinVar_CLNDN
+1_154426970_A/C	ENSG00000160712	intron_variant	association	no_assertion_criteria_provided	Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus
+1_154426970_A/C	ENSG00000160712	missense_variant	association	no_assertion_criteria_provided	Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus
+1_154426970_A/C	ENSG00000160712	downstream_gene_variant	association	no_assertion_criteria_provided	Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus
+1_154426970_A/C	ENSG00000160712	non_coding_transcript_exon_variant	association	no_assertion_criteria_provided	Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus
+1_154426970_A/C	ENSG00000160712	non_coding_transcript_exon_variant	association	no_assertion_criteria_provided	Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus
+1_154426970_A/C	ENSG00000160712	missense_variant	association	no_assertion_criteria_provided	Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus
+```
 
 ### --- loftee ---
 
