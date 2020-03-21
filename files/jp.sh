@@ -1,4 +1,4 @@
-# 31-8-2019 JHZ
+# 21-3-2020 JHZ
 
 # at CSD3
 
@@ -29,7 +29,12 @@ do
   /DO-NOT-MODIFY-SCRATCH/bp406/apps/software/data_manipulation/rsync-3.1.3/rsync -av --partial \
   $d login-cpu.hpc.cam.ac.uk:/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/jp549
 done
- 
+
+# imputed results
+
+/DO-NOT-MODIFY-SCRATCH/bp406/apps/software/data_manipulation/rsync-3.1.3/rsync -av --partial \
+/DO-NOT-MODIFY-SCRATCH/jp549/olink-merged-output login-cpu.hpc.cam.ac.uk:/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/jp549
+
 # from CSD3 -- too long to create symbolic links!
 
 cd /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/
