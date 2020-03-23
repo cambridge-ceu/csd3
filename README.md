@@ -53,7 +53,7 @@ The CSD3 hostkeys are described here, https://docs.hpc.cam.ac.uk/hpc/user-guide/
 from a local machine,
 ```bash
 cp ~/.ssh/known_hosts ~/.ssh/known_hosts.todays_date
-sed -i='' -e '/128\.232\.224/d' -e '/.*\.hpc\.cam\.ac\.uk/d' ~/.ssh/known_hosts
+sed -i -e '/128\.232\.224/d' -e '/.*\.hpc\.cam\.ac\.uk/d' ~/.ssh/known_hosts
 ```
 Automatic login via ssh/sftp can be enabled with
 ```bash
