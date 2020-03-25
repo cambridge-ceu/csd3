@@ -52,7 +52,7 @@ To reset Raven password, follow https://password.csx.cam.ac.uk/.
 The CSD3 hostkeys are described here, https://docs.hpc.cam.ac.uk/hpc/user-guide/hostkeys.html. From 1st February 2020, the following script needs to be run
 from a local machine,
 ```bash
-cp ~/.ssh/known_hosts ~/.ssh/known_hosts.todays_date
+cp ~/.ssh/known_hosts ~/.ssh/known_hosts.`date +%F`
 sed -i -e '/128\.232\.224/d' -e '/.*\.hpc\.cam\.ac\.uk/d' ~/.ssh/known_hosts
 ```
 Automatic login via ssh/sftp can be enabled with
