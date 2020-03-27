@@ -429,7 +429,7 @@ module load gsl/2,4
 We have .R/Makevars as follows,
 ```bash
 CC=gcc
-CXX=gcc++ -std=gnu++11
+CXX=g++ -std=gnu++11
 PKG_CXXFLAGS= -std=c++11
 CFLAGS = -std=c99 -I/usr/include -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-parentheses -Wimplicit-function-declaration
 CXXFLAGS = -std=c++11
