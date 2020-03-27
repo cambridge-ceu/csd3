@@ -441,6 +441,13 @@ module load geos-3.6.2-gcc-5.4.0-vejexvy
 module load gdal-2.3.1-gcc-5.4.0-m7j7nw6
 module load proj-5.0.1-gcc-5.4.0-cpqxtzr
 Rscript -e "install.packages('sf')"
+# R 3.6.3 also requires
+module load json-c-0.13.1-gcc-5.4.0-ffamohj
+module load libgeotiff-1.4.2-gcc-5.4.0-2emzhxh
+module load libpng-1.6.29-gcc-5.4.0-3qwhidp
+module load cfitsio-3.450-gcc-5.4.0-colpo6h
+module load zlib/1.2.11
+module load mpich-3.2-gcc-5.4.0-idlluti
 Rscript -e "install.packages('rgdal')"
 ```
 While gdal could also be installed with proj 6 available,
