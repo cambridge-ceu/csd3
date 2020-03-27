@@ -450,10 +450,14 @@ module load zlib/1.2.11
 module load mpich-3.2-gcc-5.4.0-idlluti
 Rscript -e "install.packages('rgdal')"
 ```
-While gdal could also be installed with proj 6 available,
+gdal could also be installed with proj 6 available,
 ```bash
 module load geos-3.6.2-gcc-5.4.0-vejexvy
 ./configure --with-proj=$HPC_WORK --without-sqlite3 --prefix=$HPC_WORK
+```
+Then `proj_api.h` should have a statement
+```c
+#define ACCEPT_USE_OF_DEPRECATED_PROJ_API_H 1
 ```
 
 ## rgeos
