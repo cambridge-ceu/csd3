@@ -199,7 +199,11 @@ phenoscanner --help
 phenoscanner --snp=rs704 -c All -x EUR -r 0.8
 phenoscanner -s T -c All -x EUR -p 0.0000001 --r2 0.6 -i INF1.merge.snp -o INF1
 ```
-and R package,
+Note that `module load phenoscanner` is enabled from ~/.bashrc:
+```
+export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
+```
+via `source ~/.bashrc` or a new login. The R package works as follows,
 ```bash
 install.packages("devtools")
 library(devtools)
@@ -207,11 +211,25 @@ install_github("phenoscanner/phenoscanner")
 library(phenoscanner)
 example(phenoscanner)
 ```
-Note that `module load phenoscanner` is enabled from ~/.bashrc:
+When the query list is long, the call is made by chunks, e.g.,
+```r
+options(width=500)
+require(phenoscanner)
+catalogue <- "pQTL"
+rsid <- scan("swath-ms-invn.snp",what="")
+batches <- split(rsid, ceiling(seq_along(rsid)/100))
+s <- t <- list()
+for(i in 1:length(batches))
+{
+  q <- phenoscanner(snpquery=batches[[i]], catalogue=catalogue, proxies = "EUR", pvalue = 1e-07, r2= 0.6, build=37)
+  s[[i]] <- with(q,snps)
+  t[[i]] <- with(q,results)
+}
+snps <- do.call(rbind,s)
+results <- do.call(rbind,t)
+r <- list(snps=snps,results=results)
 ```
-export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
-```
-via `source ~/.bashrc` or a new login.
+i.e., each chunk has 100 snps and chunks are combined manually.
 
 ## polyphen-2
 
