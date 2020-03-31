@@ -228,7 +228,7 @@ snps <- do.call(rbind,s)
 results <- do.call(rbind,t)
 r <- list(snps=snps,results=results)
 ```
-i.e., each chunk has 100 snps and chunks are combined manually.
+i.e., each chunk has 100 SNPs and chunks are combined manually.
 
 ## polyphen-2
 
