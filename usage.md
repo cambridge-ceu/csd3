@@ -467,7 +467,13 @@ module load zlib/1.2.11
 module load mpich-3.2-gcc-5.4.0-idlluti
 Rscript -e "install.packages('rgdal')"
 ```
-Under R 3.6.3, there are complaints about `-std=c++11` when installing `sf` but one gets around with `module load gcc/6`; gdal could also be installed with proj 6 available,
+Under R 3.6.3, there are complaints about `-std=c++11` when installing `sf` but one can gets around with 
+```bash
+module load geos-3.6.2-gcc-5.4.0-vejexvy
+module load gcc/6`
+Rscript -e "install.packages('sf')"
+```
+Finally, gdal could also be installed with proj 6 available,
 ```bash
 module load geos-3.6.2-gcc-5.4.0-vejexvy
 ./configure --with-proj=$HPC_WORK --without-sqlite3 --prefix=$HPC_WORK
