@@ -27,7 +27,7 @@
 
 ### System
 
-CSD3 stands for the Cambridge Service for Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.uk/), which provies an excellent [documentation](https://docs.hpc.cam.ac.uk/hpc/).
+CSD3 stands for the Cambridge Service for Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.uk/), which provies an excellent [documentation](https://docs.hpc.cam.ac.uk/hpc/) besides [other services](https://www.hpc.cam.ac.uk/).
 Here some aspects are highlighted from the perspectives of the [Cardiovascular Epidemiology Unit](https://www.phpc.cam.ac.uk/ceu/) (CEU), where all information about procedures and access requests can be found from **W:\Administration\CSD3 Data Users**.
 
 From a CSD3 console, we issue
@@ -316,7 +316,7 @@ as with `ceuadmin/stata/15`.
 * **First training**: Wednesday, 10th July from 10am – 12pm.
 * **Second training**: Wednesday, 31st July from 9:30am – 4pm.
 * **UCS**: [https://training.cam.ac.uk/ucs/](https://training.cam.ac.uk/ucs/).
-* **Handouts**: [https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf)
+* **Handouts**: [June](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf) and [November](https://www.hpc.cam.ac.uk/files/introduction_to_hpc-nov2019.pdf), 2019.
 * **Presentation**: [Google document](https://tinyurl.com/y3l6jssg) by Praveen Surendran (<ps629@medschl.cam.ac.uk>).
 
 ### Contacts
