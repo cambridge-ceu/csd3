@@ -425,9 +425,9 @@ make install
 To compile all the PDF documentations, load texlive.
 ```bash
 module load texlive
-cd R-3.6.2
+cd R-4.0.0
 export prefix=/rds-d4/user/$USER/hpc-work
-./configure --prefix={prefix} \
+./configure --prefix=${prefix} \
             --enable-R-shlib CPPFLAGS=-I${prefix}/include LDFLAGS=-L${prefix}/lib
 make
 make install
