@@ -57,7 +57,7 @@ sed -i -e '/128\.232\.224/d' -e '/.*\.hpc\.cam\.ac\.uk/d' ~/.ssh/known_hosts
 ```
 Automatic login via ssh/sftp can be enabled with
 ```bash
-ssh-copy-id login.hpc.cam.ac.uk`
+ssh-copy-id login.hpc.cam.ac.uk
 ```
 from a Bash console after one login. If this has not set up, follow these steps,
 ```bash
