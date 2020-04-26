@@ -474,7 +474,7 @@ Rscript -e "install.packages('rgdal')"
 Under R 3.6.3, there are complaints about `-std=c++11` when installing `sf` but one can gets around with 
 ```bash
 module load geos-3.6.2-gcc-5.4.0-vejexvy
-module load gcc/6`
+module load gcc/6
 Rscript -e "install.packages('sf')"
 ```
 Finally, gdal could also be installed with proj 6 available,
