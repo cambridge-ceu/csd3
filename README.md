@@ -49,6 +49,8 @@ Possible login nodes on csd3 are: login.hpc, login-cpu.hpc, login-gpu.hpc, login
 
 To reset Raven password, follow https://password.csx.cam.ac.uk/.
 
+To establish host keys one resort to `ssh-keygen`; the easiest is to accept the default.
+
 The CSD3 hostkeys are described here, https://docs.hpc.cam.ac.uk/hpc/user-guide/hostkeys.html. From 1st February 2020, the following script needs to be run
 from a local machine,
 ```bash
