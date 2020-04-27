@@ -14,6 +14,7 @@ This document contains information for the following software:
 [qpdf](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#qpdf), 
 [R](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#r), 
 [gnn](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#gnn), 
+[LDlinkR](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#ldlinkr), 
 [rgdal](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rgdal), 
 [rgeos](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rgeos), 
 [rjags](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rjags), 
@@ -444,6 +445,10 @@ It requires libgsl, so
 ```bash
 module load gsl/2,4
 ```
+
+## LDlinkR
+
+Issue `install.packages("LDlinkR")` from R but requires registration at [https://ldlink.nci.nih.gov/?tab=apiaccess](https://ldlink.nci.nih.gov/?tab=apiaccess).
 
 ## rgdal
 
