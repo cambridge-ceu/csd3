@@ -546,8 +546,18 @@ GitHub page: [https://github.com/weizhouUMICH/SAIGE](https://github.com/weizhouU
 virtualenv --system-site-packages py35
 source py35/bin/activate
 pip install cget
+git clone https://github.com/weizhouUMICH/SAIGE
+cd SAIGE
+cd thirdParty
+cd bgen
+./waf configure
+./waf
+build/test/unit/test_bgen
+build/apps/bgenix -g example/example.16bits.bgen -list
+cd ../../..
+R CMD INSTALL SAIGE
 ```
-then one can install with `devtools::install_github("weizhouUMICH/SAIGE")` and use `library(SAIGE)` inside R.
+Nevertheless there are issues to proceed at the moment.
 
 ## sojo
 
