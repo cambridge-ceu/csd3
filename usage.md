@@ -564,7 +564,7 @@ build/test/unit/test_bgen
 build/apps/bgenix -g example/example.16bits.bgen -list
 cd ../../..
 ```
-The final hurdle is lapack as the SAIGE.so thus generated could not be loaded without some subroutines in it.
+The final hurdle is lapack as the SAIGE.so thus generated could not be loaded (e.g., `/rds/user/jhz22/hpc-work/R/00LOCK-SAIGE/00new/SAIGE/libs/SAIGE.so: undefined symbol: sgecon_`) without some subroutines in it.
 
 ## sojo
 
