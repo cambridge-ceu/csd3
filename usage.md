@@ -546,7 +546,7 @@ GitHub page: [https://github.com/weizhouUMICH/SAIGE](https://github.com/weizhouU
 module load boost-1.58.0-gcc-5.4.0-onpiqcr
 pip install --user cget
 ```
-then one can use `library(SAIGE)` inside R.
+then one can install with `devtools::install_github("weizhouUMICH/SAIGE")` and use `library(SAIGE)` inside R.
 
 ## sojo
 
