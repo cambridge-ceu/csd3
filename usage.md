@@ -542,17 +542,17 @@ In case `ggplot2` installed with `gcc 5.2.0` it is also necessary to preceed wit
 
 GitHub page: [https://github.com/weizhouUMICH/SAIGE](https://github.com/weizhouUMICH/SAIGE).
 
-The following is based on source from GitHub,
+The following is based on source from GitHub (so with the possibility to git pull),
 ```bash
-module load python/2.7
-virtualenv py27
+module load python/3.5
+module load cmake/3.9 gcc/5
+virtualenv py35
 source py35/bin/activate
 pip install cget
 git clone https://github.com/weizhouUMICH/SAIGE
-module load gcc/5 cmake/3.9
 R CMD INSTALL SAIGE
 ```
-There is a section on bgen as well,
+As side product is bgenix (be careful with a buggy bgen-cat) as well,
 ```
 cd SAIGE
 cd thirdParty
