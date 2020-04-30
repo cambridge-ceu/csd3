@@ -584,7 +584,7 @@ make install prefix=$HPC_WORK
 # gcc/6 is required for pgenlibr
 module load gcc/6
 ```
-File `dotCall64/Makevars` needs to be modified, but can be difficult (requires to reinstall gettext, e.g., https://ftp.gnu.org/gnu/gettext/gettext-0.20.tar.gz), then
+File `dotCall64/Makevars` needs to be modified, but can be difficult (e.g., reinstallation of gettext, https://ftp.gnu.org/gnu/gettext/gettext-0.20.tar.gz), then
 ```
 PKG_CFLAGS = $(SHLIB_OPENMP_CFLAGS) -I../inst/include/ -DDOTCAL64_PRIVATE -I$HPC_WORK/include
 PKG_LIBS = $(SHLIB_OPENMP_CFLAGS) -L$HPC_WORK/lib -lintl
