@@ -543,8 +543,8 @@ In case `ggplot2` installed with `gcc 5.2.0` it is also necessary to preceed wit
 GitHub page: [https://github.com/weizhouUMICH/SAIGE](https://github.com/weizhouUMICH/SAIGE).
 
 ```bash
-module load boost-1.58.0-gcc-5.4.0-onpiqcr
 pip install --user cget
+export PYTHONPATH=/rds/user/$USER/hpc-work/.local/lib/python2.7/site-packages
 ```
 then one can install with `devtools::install_github("weizhouUMICH/SAIGE")` and use `library(SAIGE)` inside R.
 
