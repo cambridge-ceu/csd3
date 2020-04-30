@@ -552,7 +552,7 @@ pip install cget
 git clone https://github.com/weizhouUMICH/SAIGE
 R CMD INSTALL SAIGE
 ```
-One of the third party software is bgenix (be careful with a buggy bgen-cat), whose `wscript` uses Python 2 syntax so it is necessary to stick to python/2.7 explicitly since gcc/5 automatically loads python 3.
+One of the third party software is bgenix (BE careful with a buggy `cat-bgen`!), whose `wscript` uses Python 2 syntax so it is necessary to stick to python/2.7 explicitly since gcc/5 automatically loads python 3.
 ```
 cd SAIGE
 cd thirdParty
