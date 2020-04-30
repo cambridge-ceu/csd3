@@ -20,7 +20,8 @@ This document contains information for the following software:
 [rjags](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rjags), 
 [rstan](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rstan), 
 [SAIGE](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#saige-0366), 
-[sojo](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#sojo), 
+[SAIGE](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#saige-0366), 
+[snpnet](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#snpnet), 
 [VEP](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#vep),
 
 Whenever appropriate, it is assumed that the destination of software installation is ${HPC_WORK}, e.g., 
@@ -567,6 +568,34 @@ build/apps/bgenix -g example/example.16bits.bgen -list
 cd ../../..
 ```
 See [https://github.com/weizhouUMICH/SAIGE/issues/98](https://github.com/weizhouUMICH/SAIGE/issues/98).
+
+## snpnet
+
+GitHub page: [https://github.com/rivas-lab/snpnet](https://github.com/rivas-lab/snpnet).
+
+A number of software needs to be set up with the current version.
+```bash
+module load lz4-1.8.1.2-intel-17.0.4-celw56p
+wget https://github.com/facebook/zstd/releases/download/v1.4.4/zstd-1.4.4.tar.gz
+tar xfz zstd-1.4.4.tar.gz
+cd zstd-1.4.4
+make
+make install prefix=$HPC_WORK
+# gcc/6 is required for pgenlibr
+module load gcc/6
+```
+File `dotCall64/Makevars` needs to be modified, but can be difficult (requires to reinstall gettext, e.g., https://ftp.gnu.org/gnu/gettext/gettext-0.20.tar.gz), then
+```
+PKG_CFLAGS = $(SHLIB_OPENMP_CFLAGS) -I../inst/include/ -DDOTCAL64_PRIVATE -I/rds/usr/jhz22/hpc-work/include
+PKG_LIBS = $(SHLIB_OPENMP_CFLAGS) -L/rds/user/jhz22/hpc-work/lib -lintl
+```
+Finally, we can proceed
+```r
+devtools::install_github("junyangq/glmnetPlus")
+devtools::install_github("chrchang/plink-ng", subdir="/2.0/cindex")
+devtools::install_github("chrchang/plink-ng", subdir="/2.0/pgenlibr")
+devtools::install_github("rivas-lab/snpnet")
+```
 
 ## sojo
 
