@@ -538,7 +538,7 @@ to do away with the error message ``C++14 standard requested but CXX14 is not de
 
 In case `ggplot2` installed with `gcc 5.2.0` it is also necessary to preceed with `module load gcc/5`.
 
-## SAIGE 0.35.8.2
+## SAIGE 0.36.6
 
 GitHub page: [https://github.com/weizhouUMICH/SAIGE](https://github.com/weizhouUMICH/SAIGE).
 
