@@ -566,6 +566,7 @@ build/test/unit/test_bgen
 build/apps/bgenix -g example/example.16bits.bgen -list
 cd ../../..
 ```
+See [https://github.com/weizhouUMICH/SAIGE/issues/98](https://github.com/weizhouUMICH/SAIGE/issues/98).
 
 ## sojo
 
