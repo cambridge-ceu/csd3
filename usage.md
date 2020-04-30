@@ -19,7 +19,7 @@ This document contains information for the following software:
 [rgeos](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rgeos), 
 [rjags](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rjags), 
 [rstan](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rstan), 
-[SAIGE](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#saige-03582), 
+[SAIGE](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#saige-0366), 
 [sojo](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#sojo), 
 [VEP](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#vep),
 
