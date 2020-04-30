@@ -544,15 +544,15 @@ GitHub page: [https://github.com/weizhouUMICH/SAIGE](https://github.com/weizhouU
 
 The following is based on source from GitHub (so with the possibility to git pull),
 ```bash
-module load python/3.5
 module load cmake/3.9 gcc/5
-virtualenv py35
-source py35/bin/activate
+module load python/2.7
+virtualenv py27
+source py27/bin/activate
 pip install cget
 git clone https://github.com/weizhouUMICH/SAIGE
 R CMD INSTALL SAIGE
 ```
-As side product is bgenix (be careful with a buggy bgen-cat) as well,
+One of the third party software is bgenix (be careful with a buggy bgen-cat), whose `wscript` uses Python 2 syntax so it is necessary to stick to python/2.7 explicitly since gcc/5 automatically loads python 3.
 ```
 cd SAIGE
 cd thirdParty
@@ -564,6 +564,7 @@ build/test/unit/test_bgen
 build/apps/bgenix -g example/example.16bits.bgen -list
 cd ../../..
 ```
+The final hurdle is lapack as the SAIGE.so thus generated could not be loaded without some subroutines in it.
 
 ## sojo
 
