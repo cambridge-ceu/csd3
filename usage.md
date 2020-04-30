@@ -586,8 +586,8 @@ module load gcc/6
 ```
 File `dotCall64/Makevars` needs to be modified, but can be difficult (requires to reinstall gettext, e.g., https://ftp.gnu.org/gnu/gettext/gettext-0.20.tar.gz), then
 ```
-PKG_CFLAGS = $(SHLIB_OPENMP_CFLAGS) -I../inst/include/ -DDOTCAL64_PRIVATE -I/rds/usr/jhz22/hpc-work/include
-PKG_LIBS = $(SHLIB_OPENMP_CFLAGS) -L/rds/user/jhz22/hpc-work/lib -lintl
+PKG_CFLAGS = $(SHLIB_OPENMP_CFLAGS) -I../inst/include/ -DDOTCAL64_PRIVATE -I$HPC_WORK/include
+PKG_LIBS = $(SHLIB_OPENMP_CFLAGS) -L$HPC_WORK/lib -lintl
 ```
 Finally, we can proceed
 ```r
@@ -612,7 +612,8 @@ destfile = paste0(find.package('sojo'), "/1000G_Phase3_plinkfiles.tgz"))
 untar(paste0(find.package('sojo'), "/1000G_Phase3_plinkfiles.tgz"),exdir=find.package('sojo'))
 require(sojo)
 data(sum.stat.discovery)
-path.plink <- "/rds/user/jhz22/hpc-work/bin/plink"
+hpc_work <- Sys.getenv("HPC_WORK")
+path.plink <- paste0(hpc_work,"/bin/plink")
 path.1kG <- paste0(find.package('sojo'),"/1000G_EUR_Phase3_plink")
 snps <- sum.stat.discovery$SNP
 write.table(snps, file = paste0(snps[1],"_snp_list.txt"), quote = F, row.names = F, col.names = F)
