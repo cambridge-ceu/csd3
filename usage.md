@@ -552,6 +552,8 @@ pip install cget
 git clone https://github.com/weizhouUMICH/SAIGE
 R CMD INSTALL SAIGE
 ```
+Now we see `.../SAIGE.so: undefined symbol: sgecon_`. One can get away with it by renaming `configure` to `configure.sav` (so avoid repeated downloads) and amend the last `g++ ... -o SAIGE.so` with `-L$HPC_WORK/lib64 -llapack` and then rerun `R CMD INSTALL SAIGE`.
+
 One of the third party software is bgenix (BE careful with a buggy `cat-bgen`!), whose `wscript` uses Python 2 syntax so it is necessary to stick to python/2.7 explicitly since gcc/5 automatically loads python 3.
 ```
 cd SAIGE
@@ -564,7 +566,6 @@ build/test/unit/test_bgen
 build/apps/bgenix -g example/example.16bits.bgen -list
 cd ../../..
 ```
-The final hurdle is lapack as the SAIGE.so thus generated could not be loaded (e.g., `.../SAIGE.so: undefined symbol: sgecon_`) without some subroutines in it. One can get away with it by renaming `configure` to `configure.sav` (so avoid repeated downloads) and amend the last `g++ ... -o SAIGE.so` with `-L$HPC_WORK/lib64 -llapack` and then rerun `R CMD INSTALL SAIGE`.
 
 ## sojo
 
