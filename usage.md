@@ -20,7 +20,6 @@ This document contains information for the following software:
 [rjags](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rjags), 
 [rstan](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rstan), 
 [SAIGE](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#saige-0366), 
-[SAIGE](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#saige-0366), 
 [snpnet](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#snpnet), 
 [VEP](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#vep),
 
