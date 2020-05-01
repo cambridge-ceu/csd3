@@ -554,7 +554,7 @@ R CMD INSTALL SAIGE
 ```
 Now we see `.../SAIGE.so: undefined symbol: sgecon_`. One can get away with it by renaming `configure` to `configure.sav` (so avoid repeated downloads) and amend the last `g++ ... -o SAIGE.so` with `-L$HPC_WORK/lib64 -llapack` and then rerun `R CMD INSTALL SAIGE`. After successful installation, we can try `cd SAIGE/extdata; bash cmd.sh`.
 
-One of the third party software is bgenix (BE careful with a buggy `cat-bgen`!), whose `wscript` uses Python 2 syntax so it is necessary to stick to python/2.7 explicitly since gcc/5 automatically loads python 3.
+One of the third party software is `bgenix` (BE careful with a buggy `cat-bgen`!), whose `wscript` uses Python 2 syntax so it is necessary to stick to python/2.7 explicitly since gcc/5 automatically loads python 3.
 ```
 cd SAIGE
 cd thirdParty
