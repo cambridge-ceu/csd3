@@ -21,7 +21,7 @@ Cardio is the HPC facility at the CEU..
 #SBATCH -p cardio_long
 #SBATCH --qos=cardio_long
 
-# Short queue
+# Short jobs
 
 #SBATCH -A CARDIO-SL0-CPU
 #SBATCH -p cardio_short
