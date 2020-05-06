@@ -2,6 +2,32 @@
 
 Cardio is the HPC facility at the CEU..
 
+### CSD3 partition
+
+```bash
+# cpu-o-1 for interactive jobs with no limit on cpus per user expecting fair usage
+# cpu-o-[2-5] for long jobs with maximum cpus per user set to 40 and a maximum wall time of 7 days
+# cpu-o-7 for short jobs with a maximum wall time of 24 hours
+
+# Interactive jobs
+
+#SBATCH -A CARDIO-SL0-CPU
+#SBATCH -p cardio_intr
+#SBATCH --qos=cardio_intr
+
+# Long jobs
+
+#SBATCH -A CARDIO-SL0-CPU
+#SBATCH -p cardio_long
+#SBATCH --qos=cardio_long
+
+# Short queue
+
+#SBATCH -A CARDIO-SL0-CPU
+#SBATCH -p cardio_short
+#SBATCH --qos=cardio_short
+```
+
 ### login
 
 Automatic login can be enabled with `ssh-copy-id cardio-login.hpc.cam.ac.uk`.
