@@ -503,7 +503,8 @@ module load geos-3.6.2-gcc-5.4.0-vejexvy
 
 ## Rhdf5lib
 
-This is useful for hdf5 file handling,
+This is useful for hdf5 file handling, but BiocManager::install() gives error `cp: cannot stat ‘hdf5/c++/src/.libs/libhdf5_cpp.a’: No such file or directory
+` so we proceed manually,
 ```bash
 module load gcc/6
 cd $HOME
