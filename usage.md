@@ -17,6 +17,7 @@ This document contains information for the following software:
 [LDlinkR](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#ldlinkr), 
 [rgdal](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rgdal), 
 [rgeos](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rgeos), 
+[Rhdf5lib](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#Rhdf5lib), 
 [rjags](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rjags), 
 [rstan](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rstan), 
 [SAIGE](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#saige-0366), 
@@ -498,6 +499,25 @@ Then `proj_api.h` should have a statement
 This requires geos to be loaded,
 ```bash
 module load geos-3.6.2-gcc-5.4.0-vejexvy
+```
+
+## Rhdf5lib
+
+This is useful for hdf5 file handling,
+```bash
+module load gcc/6
+cd $HOME
+wget https://bioconductor.org/packages/3.11/bioc/src/contrib/Rhdf5lib_1.10.0.tar.gz
+tar xfz Rhdf5lib_1.10.0.tar.gz
+cd Rhd5lib ./configure
+mv configure configure.sav
+cd Rhdf5lib/src/hdf5
+./configure --prefix=$HPC_WORK --enable-build-all --enable-cxx CFLAGS=-fPIC
+make
+make install
+mv configure configure.sav
+cd $HOME
+R CMD INSTALL Rhdf5lib
 ```
 
 ## rjags
