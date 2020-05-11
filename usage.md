@@ -513,7 +513,7 @@ tar xfz Rhdf5lib_1.10.0.tar.gz
 cd Rhdf5lib
 ./configure
 mv configure configure.sav
-cd Rhdf5lib/src
+cd src
 tar xfz hdf5small_cxx_hl_1.10.6.tar.gz
 cd hdf5
 ./configure --prefix=$HPC_WORK --enable-build-all --enable-cxx CFLAGS=-fPIC
