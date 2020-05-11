@@ -510,9 +510,12 @@ module load gcc/6
 cd $HOME
 wget https://bioconductor.org/packages/3.11/bioc/src/contrib/Rhdf5lib_1.10.0.tar.gz
 tar xfz Rhdf5lib_1.10.0.tar.gz
-cd Rhdf5lib ./configure
+cd Rhdf5lib
+./configure
 mv configure configure.sav
-cd Rhdf5lib/src/hdf5
+cd Rhdf5lib/src
+tar xfz hdf5small_cxx_hl_1.10.6.tar.gz
+cd hdf5
 ./configure --prefix=$HPC_WORK --enable-build-all --enable-cxx CFLAGS=-fPIC
 make
 make install
