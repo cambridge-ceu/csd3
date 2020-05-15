@@ -897,6 +897,8 @@ export PERL5LIB=$PERL5LIB:$HPC_WORK/loftee
 ```
 is put in .bashrc.
 
+You may also like to explore Hail, [https://hail.is/docs/0.2/](https://hail.is/docs/0.2/).
+
 ### --- R ---
 
 This is a wrapper and `the Ensembl VEP perl script must be installed in your path`. Expected to be slower than the `--offline` mode above, it is 
