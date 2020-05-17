@@ -83,12 +83,12 @@ This [section](https://docs.hpc.cam.ac.uk/hpc/user-guide/io_management.html#summ
 Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
 ```
 hpc-work -> /rds/user/$USER/hpc-work/
-rds-jmmh2-genetics_resources -> /rds/project/jmmh2/rds-jmmh2-genetics_resources/
-rds-jmmh2-legacy_projects -> /rds/project/jmmh2/rds-jmmh2-legacy_projects/
-rds-jmmh2-pre_qc_data -> /rds/project/jmmh2/rds-jmmh2-pre_qc_data/
-rds-jmmh2-projects -> /rds/project/jmmh2/rds-jmmh2-projects/
-rds-jmmh2-public_databases -> /rds/project/jmmh2/rds-jmmh2-public_databases/
-rds-jmmh2-results -> /rds/project/jmmh2/rds-jmmh2-results
+genetics_resources -> /rds/project/jmmh2/rds-jmmh2-genetics_resources/
+legacy_projects -> /rds/project/jmmh2/rds-jmmh2-legacy_projects/
+pre_qc_data -> /rds/project/jmmh2/rds-jmmh2-pre_qc_data/
+projects -> /rds/project/jmmh2/rds-jmmh2-projects/
+public_databases -> /rds/project/jmmh2/rds-jmmh2-public_databases/
+results -> /rds/project/jmmh2/rds-jmmh2-results
 ```
 Short shorter (without rds-jmmh2- prefix) names as on Cardio can be created equivalently with
 ```bash
@@ -210,6 +210,7 @@ installs libraries at `$HOME/.local`.
 It is advised to use virual environments, i.e.,
 ```bash
 # inherit system-wide packages as well
+module load python/3.5
 virtualenv --system-site-packages py35
 source py35/bin/activate
 # pip new packages
