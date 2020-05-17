@@ -913,6 +913,8 @@ python
 >>> mt.write("hail")
 >>> db = hl.experimental.DB()
 >>> mt = db.annotate_rows_db(mt, "gencode")
+>>> at = hl.import_vcf("annotate-test.vcf")
+>>> hl.export_vcf(at,"at.vcf.bgz")
 ```
 
 ### --- R ---
