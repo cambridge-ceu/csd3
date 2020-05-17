@@ -901,6 +901,7 @@ You may also like to explore Hail, [https://hail.is/](https://hail.is/). We proc
 ```bash
 module load python/3.7 hadoop/2.7.7
 virtualenv py37
+source py37/bin/activate
 pip install hail
 python
 >>> import hail as hl
