@@ -897,7 +897,18 @@ export PERL5LIB=$PERL5LIB:$HPC_WORK/loftee
 ```
 is put in .bashrc.
 
-You may also like to explore Hail, [https://hail.is/](https://hail.is/).
+You may also like to explore Hail, [https://hail.is/](https://hail.is/). We proceed as follows,
+```bash
+module load python/3.7 hadoop/2.7.7
+virtualenv py37
+pip install hail
+python
+>>> import hail as hl
+>>> mt = hl.balding_nichols_model(n_populations=3, n_samples=50, n_variants=100)
+>>> mt.count()
+>>> db = hl.experimental.DB()
+>>> mt = db.annotate_rows_db(mt, "gencode")
+```
 
 ### --- R ---
 
