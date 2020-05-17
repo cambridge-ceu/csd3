@@ -905,7 +905,10 @@ pip install hail
 python
 >>> import hail as hl
 >>> mt = hl.balding_nichols_model(n_populations=3, n_samples=50, n_variants=100)
+>>> mt.describe()
 >>> mt.count()
+>>> mt.show()
+>>> mt.export("hail.csv",delimiter=",")
 >>> db = hl.experimental.DB()
 >>> mt = db.annotate_rows_db(mt, "gencode")
 ```
