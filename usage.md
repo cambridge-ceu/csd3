@@ -897,7 +897,7 @@ export PERL5LIB=$PERL5LIB:$HPC_WORK/loftee
 ```
 is put in .bashrc.
 
-You may also like to explore Hail, [https://hail.is/docs/0.2/](https://hail.is/docs/0.2/).
+You may also like to explore Hail, [https://hail.is/](https://hail.is/).
 
 ### --- R ---
 
