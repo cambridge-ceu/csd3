@@ -907,6 +907,7 @@ python
 >>> import hail as hl
 >>> mt = hl.balding_nichols_model(n_populations=3, n_samples=50, n_variants=100)
 >>> mt.describe()
+>>> mt.summarize()
 >>> mt.count()
 >>> mt.show()
 >>> mt.write("hail")
