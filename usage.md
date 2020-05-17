@@ -909,7 +909,7 @@ python
 >>> mt.describe()
 >>> mt.count()
 >>> mt.show()
->>> mt.export("hail.csv",delimiter=",")
+>>> mt.write("hail")
 >>> db = hl.experimental.DB()
 >>> mt = db.annotate_rows_db(mt, "gencode")
 ```
