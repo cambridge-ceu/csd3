@@ -924,10 +924,15 @@ relatively easy to set up,
 ```r
 BiocManager::install("ensemblVEP")
 vignette("ensemblVEP")
+library(ensemblVEP)
 file <- system.file("extdata", "ex2.vcf", package="VariantAnnotation")
-vep <- ensemblVEP(file, param=VEPFlags(flags=list(vcf=TRUE, host="useastdb.ensembl.org")))
+param <- VEPFlags(flags=list(vcf=TRUE,check_existing=TRUE,symbol=TRUE,terms="SO",sift="b",polyphen="p"))
+vep <- ensemblVEP(file, param)
 info(vep)$CSQ
+csq <- parseCSQToGRanges(vep)
+head(csq, 2)
 ```
+We could also add `output_file="test.vcf",force_overwrite=TRUE` to `param` to obtain `test.vcf` and `test.vcf_summary.html`.
 Annotation is made to a VCF file, and returns data with unparsed 'CSQ'.
 
 The facility to parse the CSQ column of a VCF object could be useful as shown below by the documentation example.
