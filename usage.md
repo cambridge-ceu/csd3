@@ -931,11 +931,14 @@ vep <- ensemblVEP(file, param)
 info(vep)$CSQ
 csq <- parseCSQToGRanges(vep)
 head(csq, 2)
+# clinvar
+param <- VEPFlags(flags=list(vcf=TRUE,output_file="clinvar.vcf",force_overwrite=TRUE,assembly="GRCh37",port=3337,
+                  custom="clinvar_GRCh37.vcf.gz,ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN"))
+ensemblVEP(file, param)
 ```
-We could also add `output_file="test.vcf",force_overwrite=TRUE` to `param` to obtain `test.vcf` and `test.vcf_summary.html`.
-Annotation is made to a VCF file, and returns data with unparsed 'CSQ'.
+The second call obtains `clinvar.vcf` and `clinvar.vcf_summary.html`. Annotation is made to a VCF file, and returns data with unparsed 'CSQ'.
 
-The facility to parse the CSQ column of a VCF object could be useful as shown below by the documentation example.
+The facility to parse the CSQ column of a VCF object is done for the documentation example.
 ```r
 # VCF output from the VEP web interface or the call above
 vep <- "INF1.merge.trans.vcf"
