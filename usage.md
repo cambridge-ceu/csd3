@@ -957,6 +957,7 @@ fields <- names(res)
 cadd <- grep('cadd',fields)
 res[fields[cadd]]
 ```
+Note that the CSQ field could also be handled by bcftools split-vep plugin, see [http://samtools.github.io/bcftools/howtos/plugin.split-vep.html](http://samtools.github.io/bcftools/howtos/plugin.split-vep.html).
 
 ### --- docker ---
 
