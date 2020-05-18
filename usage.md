@@ -936,7 +936,7 @@ param <- VEPFlags(flags=list(vcf=TRUE,output_file="clinvar.vcf",force_overwrite=
                   custom="clinvar_GRCh37.vcf.gz,ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN"))
 ensemblVEP(file, param)
 ```
-The second call obtains `clinvar.vcf` and `clinvar.vcf_summary.html`. Annotation is made to a VCF file, and returns data with unparsed 'CSQ'.
+The second `ensemblVEP` obtains `clinvar.vcf` and `clinvar.vcf_summary.html`. Annotation is made to a VCF file, and returns data with unparsed 'CSQ'.
 
 The facility to parse the CSQ column of a VCF object is done for the documentation example.
 ```r
