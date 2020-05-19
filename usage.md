@@ -903,6 +903,7 @@ module load python/3.7 hadoop/2.7.7
 virtualenv py37
 source py37/bin/activate
 pip install hail
+pip install gnomAD
 python
 >>> import hail as hl
 >>> mt = hl.balding_nichols_model(n_populations=3, n_samples=50, n_variants=100)
