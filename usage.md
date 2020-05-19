@@ -897,7 +897,7 @@ export PERL5LIB=$PERL5LIB:$HPC_WORK/loftee
 ```
 is put in .bashrc.
 
-You may also like to explore Hail, [https://hail.is/](https://hail.is/). We proceed as follows,
+You may also like to explore Hail, [https://hail.is/](https://hail.is/) as with [hail on cloud](https://github.com/danking/hail-cloud-docs/blob/master/how-to-cloud.md). We proceed as follows,
 ```bash
 module load python/3.7 hadoop/2.7.7
 virtualenv py37
