@@ -912,9 +912,7 @@ python
 >>> mt.count()
 >>> mt.show()
 >>> mt.write("hail")
->>> db = hl.experimental.DB()
->>> mt = db.annotate_rows_db(mt, "gencode")
->>> at = hl.import_vcf("annotate-test.vcf")
+>>> at = hl.import_vcf("INTERVAL.vcf.bgz")
 >>> hl.export_vcf(at,"at.vcf.bgz")
 ```
 
