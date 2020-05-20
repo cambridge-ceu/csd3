@@ -698,7 +698,7 @@ used by `Build.PL` via its command line parameters.
 
 It is notable that VEP accepts compress (.gz) input. It is worthwhile to check for the VEP plugins: [https://github.com/Ensembl/VEP_plugins](https://github.com/Ensembl/VEP_plugins). For instance, to enable the PolyPhen_SIFT plugin we first generate the database.
 ```bash
-vep --database --plugin PolyPhen_SIFT,create_db=1
+vep --database --port 3337 --format guess --plugin PolyPhen_SIFT,create_db=1
 ```
 
 One may wish to skipped the comments (lines started with ##) in processing of the output, e.g., in R,
