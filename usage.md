@@ -696,8 +696,10 @@ Without the htslib/1.4 module, the `--NO_HTSLIB` option is needed but "Cannot us
 Bio::DB:HTS is in https://github.com/Ensembl/Bio-DB-HTS and change can be made to the `Makefile` of htslibs for a desired location, to be
 used by `Build.PL` via its command line parameters.
 
-It is worthwhile to check for the VEP plugins: [https://github.com/Ensembl/VEP_plugins](https://github.com/Ensembl/VEP_plugins). It is notable that
-VEP accepts compress (.gz) input.
+It is notable that VEP accepts compress (.gz) input. It is worthwhile to check for the VEP plugins: [https://github.com/Ensembl/VEP_plugins](https://github.com/Ensembl/VEP_plugins). For instance, to enable the PolyPhen_SIFT plugin we first generate the database.
+```bash
+vep --database --plugin PolyPhen_SIFT,create_db=1
+```
 
 One may wish to skipped the comments (lines started with ##) in processing of the output, e.g., in R,
 ```bash
