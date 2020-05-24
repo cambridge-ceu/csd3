@@ -14,6 +14,7 @@ This document contains information for the following software:
 [qpdf](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#qpdf), 
 [R](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#r), 
 [gnn](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#gnn), 
+[gsutil](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#gsutil), 
 [LDlinkR](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#ldlinkr), 
 [rgdal](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rgdal), 
 [rgeos](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rgeos), 
@@ -447,6 +448,19 @@ It requires libgsl, so
 ```bash
 module load gsl/2,4
 ```
+
+## gsutil
+
+Web site: https://cloud.google.com/storage/docs/gsutil_install#linux
+
+```bash
+  wget https://storage.googleapis.com/pub/gsutil.tar.gz
+  tar xvfz gsutil.tar.gz -C ..
+  cd ../gsutil
+  pip install pyasn1==0.4.8  --user
+  python setup.py install --prefix=$HPC_WORK
+```
+However, it seems preferable to use via `virtualenv`.
 
 ## LDlinkR
 
