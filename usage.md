@@ -714,7 +714,6 @@ It is notable that VEP accepts compress (.gz) input. It is worthwhile to check f
 ```bash
 vep --database --port 3337 --format guess --plugin PolyPhen_SIFT,create_db=1
 ```
-
 One may wish to skipped the comments (lines started with ##) in processing of the output, e.g., in R,
 ```bash
 export skips=$(grep '##' examples/homo_sapiens_GRCh37.txt | wc -l)
@@ -754,6 +753,19 @@ allowing for variable number of lines given various command-line options to be s
 5      IMPACT=LOW;STRAND=-1;SYMBOL=MRPL39;SYMBOL_SOURCE=HGNC;HGNC_ID=14027
 6      IMPACT=LOW;STRAND=-1;SYMBOL=MRPL39;SYMBOL_SOURCE=HGNC;HGNC_ID=14027
 >
+```
+
+### **Annotation in chunks**
+
+A toy example, following http://www.ensembl.org/info/docs/tools/vep/script/vep_other.html#faster, is given as follows,
+```bash
+cd examples
+bgzip -f homo_sapiens_GRCh37.vcf
+tabix -Cf homo_sapiens_GRCh37.vcf.gz
+tabix -h  homo_sapiens_GRCh37.vcf.gz 22:50616005-50616006 | \
+vep --cache --fork 4 --port 3337 --format vcf -o - --tab --no_stats | \
+grep -v '##'
+cd -
 ```
 
 ### **ENSEMBL-synonym translation**
