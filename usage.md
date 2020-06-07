@@ -754,6 +754,12 @@ allowing for variable number of lines given various command-line options to be s
 6      IMPACT=LOW;STRAND=-1;SYMBOL=MRPL39;SYMBOL_SOURCE=HGNC;HGNC_ID=14027
 >
 ```
+When a particular release really works well on the system, it is possible to install it, e.g.,
+```
+git checkout release/98
+perl INSTALL.pl
+```
+for release 98 instead of the latest from `git pull`.
 
 It could be useful to filter VEP output, see https://www.ensembl.org/info/docs/tools/vep/script/vep_filter.html.
 
