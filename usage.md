@@ -755,6 +755,8 @@ allowing for variable number of lines given various command-line options to be s
 >
 ```
 
+It could be useful to filter VEP output, see https://www.ensembl.org/info/docs/tools/vep/script/vep_filter.html.
+
 ### **Annotation in chunks**
 
 A toy example, following http://www.ensembl.org/info/docs/tools/vep/script/vep_other.html#faster, is given as follows,
