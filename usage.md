@@ -782,6 +782,7 @@ seq 22 | \
 parallel -j1 --env ref -C' ' '
   export n=$(wc -l $ref/impute_{}_interval.snpstats | cut -d" " -f1)
   export g=$(expr ${n} / ${chunk_size})
+  export s=$(expr $n - 1 - $(( $g * $chunk_size)))
   (
     for i in $(seq ${g}); do
       (
@@ -791,7 +792,7 @@ parallel -j1 --env ref -C' ' '
         (
           awk -v i=${i} -v chunk_size=${chunk_size} -v OFS="\t" "NR==(i-1)*chunk_size+1,NR==i*chunk_size {
               if(\$1==\".\") \$1=\$3+0 \":\" \$4 \"_\" \$5 \"/\" \$6; print \$3+0,\$4,\$1,\$5,\$6,\".\",\".\",\$19}"
-          if [ ${i} -eq ${g} ]; then
+          if [ ${s} -gt 0 ] &&  [ ${i} -eq ${g} ]; then
              awk -v i=${i} -v chunk_size=${chunk_size} -v OFS="\t" -v n=${n} "NR==i*chunk_size+1,NR==n-1 {
                  if(\$1==\".\") \$1=\$3+0 \":\" \$4 \"_\" \$5 \"/\" \$6; print \$3+0,\$4,\$1,\$5,\$6,\".\",\".\",\$19}"
           fi
