@@ -808,6 +808,7 @@ parallel -j1 --env ref -C' ' '
   gzip -f > work/INTERVAL-{}.vep.gz
 '
 ```
+Note we use information from `.snpstats` files at location `ref` to build input in vcf format on the fly and feed into VEP.
 
 ### **ENSEMBL-synonym translation**
 
