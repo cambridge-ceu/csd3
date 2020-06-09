@@ -775,7 +775,7 @@ vep --cache --fork 4 --port 3337 --format vcf -o - --tab --no_stats | \
 grep -v '##'
 cd -
 ```
-from this we could propogate the idea for autosomes in chunks as follows,
+from this we could propagate the idea for autosomes in chunks as follows,
 ```bash
 export chunk_size=10000
 seq 22 | \
