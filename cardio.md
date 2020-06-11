@@ -5,6 +5,7 @@ Cardio is the HPC facility at the CEU..
 ### CSD3 partition
 
 ```bash
+scontrol show part
 # cpu-o-1 for interactive jobs with no limit on cpus per user expecting fair usage
 # cpu-o-[2-5] for long jobs with maximum cpus per user set to 40 and a maximum wall time of 7 days
 # cpu-o-7 for short jobs with a maximum wall time of 24 hours
@@ -18,8 +19,8 @@ Cardio is the HPC facility at the CEU..
 # Long jobs
 
 #SBATCH -A CARDIO-SL0-CPU
-#SBATCH -p cardio_long
-#SBATCH --qos=cardio_long
+#SBATCH -p cardio
+#SBATCH --qos=cardio
 
 # Short jobs
 
