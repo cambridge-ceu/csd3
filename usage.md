@@ -847,6 +847,37 @@ giving
 ```
 The aligment of ENSG, ENST, ENSP is `ensGtp.txt.gz` at the same UCSC directory above.
 
+Other possibilities include UCSC/ensembl MySQL server, e.g., 
+```bash
+mysql  --user=genome --host=genome-mysql.cse.ucsc.edu -A -D hg19 <<END
+select distinct G.gene,N.value from ensGtp as G, ensemblToGeneName as N where 
+   G.transcript=N.name and
+   G.gene in ("ENSG00000160712");
+END
+```
+and
+```bash
+mysql -h ensembldb.ensembl.org --port 5306  -u anonymous -D homo_sapiens_core_64_37 -A <<END
+select distinct
+   G.stable_id,
+   S.synonym
+from
+  gene_stable_id as G,
+  object_xref as OX,
+  external_synonym as S,
+  xref as X ,
+  external_db as D
+where
+  D.external_db_id=X.external_db_id and
+  X.xref_id=S.xref_id and
+  OX.xref_id=X.xref_id and
+  OX.ensembl_object_type="Gene" and
+  G.gene_id=OX.ensembl_id and
+  G.stable_id in ("ENSG00000160712");
+END
+```
+according to https://www.biostars.org/p/14367/.
+
 ### **dbNSFP**
 
 Web page: [https://sites.google.com/site/jpopgen/dbNSFP](https://sites.google.com/site/jpopgen/dbNSFP).
