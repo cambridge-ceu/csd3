@@ -845,6 +845,7 @@ giving
   uniprot_id   gene_biotype
 1     A0N0L5 protein_coding
 ```
+The aligment of ENSG, ENST, ENSP is `ensGtp.txt.gz` at the same UCSC directory above.
 
 ### **dbNSFP**
 
