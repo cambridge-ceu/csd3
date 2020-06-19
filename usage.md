@@ -714,7 +714,7 @@ It is notable that VEP accepts compress (.gz) input. It is worthwhile to check f
 ```bash
 vep --database --port 3337 --format guess --plugin PolyPhen_SIFT,create_db=1
 ```
-One may wish to skipped the comments (lines started with ##) in processing of the output, e.g., in R,
+One may wish to skip the comments (lines started with ##) in processing of the output, e.g., in R,
 ```bash
 export skips=$(grep '##' examples/homo_sapiens_GRCh37.txt | wc -l)
 R --no-save -q <<END
