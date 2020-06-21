@@ -780,7 +780,7 @@ from this we could propagate the idea for autosomes in chunks as follows,
 export chunk_size=10000
 seq 22 | \
 parallel -j1 --env ref -C' ' '
-  export n=$(awk "END{print NR-1}" $ref/impute_{}_interval.snpstats)
+  export n=$(awk "END{print NR-1}" ${ref}/impute_{}_interval.snpstats)
   export g=$(expr ${n} / ${chunk_size})
   export s=$(expr $n - $(( $g * $chunk_size)))
   (
