@@ -428,6 +428,7 @@ make install
 
 To compile all the PDF documentations, load texlive.
 ```bash
+module load gcc/6
 module load pcre/8.38
 module load texlive
 wget https://cran.r-project.org/src/base/R-4/R-4.0.0.tar.gz
@@ -446,7 +447,7 @@ Package reinstallation could be done with `update.packages(checkBuilt = TRUE, as
 
 It requires libgsl, so
 ```bash
-module load gsl/2,4
+module load gsl/2.4
 ```
 
 ## gsutil
