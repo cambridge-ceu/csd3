@@ -441,6 +441,8 @@ export prefix=/rds-d4/user/$USER/hpc-work
 make
 make install
 ```
+With this setup, `R CMD check --as-cran` for a CRAN package check can be run smoothly.
+
 Package reinstallation could be done with `update.packages(checkBuilt = TRUE, ask = FALSE)`.
 
 ## gnn
