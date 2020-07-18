@@ -463,7 +463,7 @@ tar xfz google-cloud-sdk-301.0.0-linux-x86_64.tar.gz
 cd google-cloud-sdk
 ./install.sh
 gcloud auto login --no-launch-browser
-gcloud config set PROJECT_ID
+gcloud config set divine-aegis-278909
 ```
 followed by `gsutil config` where `gsutil` is installed via `virtualenv` as follows,
 ```bash
