@@ -227,13 +227,13 @@ We first load Anaconda and create virtual environments,
 module avail miniconda
 module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
 conda create -n py27 python=2.7 ipykernel
-conda create -n py35 python=3.5 ipykernel
 ```
-for Python 2.7 and 3.5 at `/home/$USER/.conda/envs/py27` and `/home/$USER/.conda/envs/py35, respectively, where envs could be replaced with the `--prefix` option. These are only required once.
+for Python 2.7 at `/home/$USER/.conda/envs/py27`, where envs could be replaced with the `--prefix` option. These are only required once.
 
 We can then load Anaconda and activate Python 3.5,
 ```bash
-module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
+module load miniconda/3
+conda create -n py35 python=3.5 ipykernel
 source activate py35
 ```
 and follow [Autoencoder in Keras tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial) on
