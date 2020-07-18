@@ -463,7 +463,7 @@ Web site: https://cloud.google.com/storage/docs/gsutil_install#linux
   pip install pyasn1==0.4.8  --user
   python setup.py install --prefix=$HPC_WORK
 ```
-However, it seems preferable to use via `virtualenv`; the certification is achieved via `gcloud auto login --no-launch-browser` followed by `gsutil config`.
+However, it seems preferable to use via `virtualenv`; the certification is achieved via `gcloud auto login --no-launch-browser; gcloud config set PROJECT_ID` followed by `gsutil config`.
 
 ## LDlinkR
 
