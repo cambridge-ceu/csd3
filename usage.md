@@ -462,7 +462,9 @@ wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk
 tar xfz google-cloud-sdk-301.0.0-linux-x86_64.tar.gz
 cd google-cloud-sdk
 ./install.sh
+# not using the awkward browser at CSD3 and gain a bit flexibility
 gcloud auto login --no-launch-browser
+# to set PROJECT_ID=divine-aegis-278909
 gcloud config set divine-aegis-278909
 ```
 followed by `gsutil config` where `gsutil` is installed via `virtualenv` as follows,
