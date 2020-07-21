@@ -46,12 +46,9 @@ uname -v
 uname -p
 # operating system
 uname -o
-```
-when we issue
-```bash
 lsb_release -a
 ```
-to get
+for instance `lsb_release -a` gives
 ```
 Distributor ID: Scientific
 Description:    Scientific Linux release 7.7 (Nitrogen)
