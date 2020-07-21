@@ -164,7 +164,7 @@ Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
 
 Partition is shown with
 ```bash
-scontrol show part
+scontrol show partition
 ```
 Account details can be seen with
 ```bash
