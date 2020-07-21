@@ -172,13 +172,13 @@ export LD_LIBRARY_PATH=/usr/local/software/master/gcc/5/lib64:/usr/local/softwar
 
 Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
 
-Partition is shown with
-```bash
-scontrol show partition
-```
 Account details can be seen with
 ```bash
 mybalance
+```
+Partition is shown with
+```bash
+scontrol show partition
 ```
 For an interacive job, we could for instance start with 
 ```bash
