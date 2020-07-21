@@ -34,6 +34,7 @@ Basic information is available from a CSD3 console
 ```bash
 # system bit
 getconf LONG_BIT
+# system information
 uname -a
 # -s kernel name
 # -n node name
@@ -41,6 +42,9 @@ uname -a
 # -v kernel version
 # -p processor
 # -o operating system
+# CPU information
+lscpu
+watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""
 lsb_release -a
 ```
 where some broken down flags for `uname` are also given and instance `lsb_release -a` gives
