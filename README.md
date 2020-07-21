@@ -280,7 +280,7 @@ install.packages(dependencies)
 # from Bioconductor
 source("http://bioconductor.org/biocLite.R")
 biocLite(c("GO.db", "preprocessCore", "impute"))
-# R > 3.5.0
+# R >= 3.5.0
 install.packages("BiocManager")
 BiocManager::install("WGCNA")
 ```
