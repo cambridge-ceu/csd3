@@ -30,7 +30,24 @@
 CSD3 stands for the Cambridge Service for Data Driven Discovery by [Research Computing Services](https://www.csd3.cam.ac.uk/), which provies an excellent [documentation](https://docs.hpc.cam.ac.uk/hpc/) besides [other services](https://www.hpc.cam.ac.uk/).
 Here some aspects are highlighted from the perspectives of the [Cardiovascular Epidemiology Unit](https://www.phpc.cam.ac.uk/ceu/) (CEU), where all information about procedures and access requests can be found from **W:\Administration\CSD3 Data Users**.
 
-From a CSD3 console, we issue
+Basic information is available from a CSD3 console, 
+```bash
+# system bit
+getconf LONG_BIT
+# kernel name
+uname -s
+# node name
+uname -n
+# kernel release
+uname -r
+# kernel version
+uname -v
+# processor
+uname -p
+# operating system
+uname -o
+```
+when we issue
 ```bash
 lsb_release -a
 ```
