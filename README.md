@@ -10,12 +10,12 @@
   * [Policies](https://github.com/cambridge-ceu/csd3#policies)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
   * [ceuadmin](https://github.com/cambridge-ceu/csd3#ceuadmin)
+  * [Stata](https://github.com/cambridge-ceu/csd3#stata)
   * [modules](https://github.com/cambridge-ceu/csd3#modules)
   * [SLURM](https://github.com/cambridge-ceu/csd3#slurm)
   * [Python](https://github.com/cambridge-ceu/csd3#python)
   * [R](https://github.com/cambridge-ceu/csd3#r)
   * [matlab](https://github.com/cambridge-ceu/csd3#matlab)
-  * [Stata](https://github.com/cambridge-ceu/csd3#stata)
   * [Usage notes](usage.md)
   * [To-do list](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
@@ -135,6 +135,16 @@ impute_v2.3.2_x86_64_static/  plink_bgi_Dev/               raremetal_4.13.5/    
 interval/                     plink-bgi_linux_x86_64_may/  raremetal_4.13.7/             snptest_2.5.2/
 JAGS/                         plink_linux_x86_64_beta2a/   raremetal_4.13.8/             snptest_2.5.4_beta3/
 ```
+
+#### Stata
+
+Official website: [https://www.stata.com/](https://www.stata.com/).
+
+As a CEU member the following is possible,
+```
+module load ceuadmin/stata/14
+```
+as with `ceuadmin/stata/15`.
 
 #### modules
 
@@ -326,16 +336,6 @@ module avail matlab
 module load matlab/r2019b
 ```
 followed by `matlab`.
-
-#### Stata
-
-Official website: [https://www.stata.com/](https://www.stata.com/).
-
-As a CEU member the following is possible,
-```
-module load ceuadmin/stata/14
-```
-as with `ceuadmin/stata/15`.
 
 ### Training
 
