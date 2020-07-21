@@ -9,12 +9,12 @@
   * [Directories](https://github.com/cambridge-ceu/csd3#directories)
   * [Policies](https://github.com/cambridge-ceu/csd3#policies)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
-  * [ceuadmin](https://github.com/cambridge-ceu/csd3#ceuadmin)
-  * [matlab](https://github.com/cambridge-ceu/csd3#matlab)
-  * [Python](https://github.com/cambridge-ceu/csd3#python)
-  * [R](https://github.com/cambridge-ceu/csd3#r)
-  * [SLURM](https://github.com/cambridge-ceu/csd3#slurm)
-  * [Stata](https://github.com/cambridge-ceu/csd3#stata)
+  * [ceuadmin](https://github.com/cambridge-ceu/csd3#ceuadmin),
+  [matlab](https://github.com/cambridge-ceu/csd3#matlab),
+  [Python](https://github.com/cambridge-ceu/csd3#python),
+  [R](https://github.com/cambridge-ceu/csd3#r),
+  [SLURM](https://github.com/cambridge-ceu/csd3#slurm),
+  [Stata](https://github.com/cambridge-ceu/csd3#stata),
   * [Usage notes](usage.md)
   * [To-do list](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
