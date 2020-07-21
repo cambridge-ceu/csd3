@@ -284,15 +284,14 @@ biocLite(c("GO.db", "preprocessCore", "impute"))
 install.packages("BiocManager")
 BiocManager::install("WGCNA")
 ```
+A good alternative is to use `devtools` package, e.g.,
+```r
+devtools::install_bioc("snpStats")
+```
 In case of difficulty it is still useful to install directly, e.g.,
 ```bash
 wget http://master.bioconductor.org/packages//2.10/bioc/src/contrib/ontoCAT_1.8.0.tar.gz
 R CMD INSTALL ontoCAT_1.8.0.tar.gz
-```
-
-A good alternative is to use `devtools` package, e.g.,
-```r
-devtools::install_bioc("snpStats")
 ```
 The package installation directory can be spefied explicitly with R_LIBS, i.e.,
 ```bash
