@@ -10,7 +10,6 @@
   * [Policies](https://github.com/cambridge-ceu/csd3#policies)
 * [Software](https://github.com/cambridge-ceu/csd3#software)
   * [ceuadmin](https://github.com/cambridge-ceu/csd3#ceuadmin)
-  * [modules](https://github.com/cambridge-ceu/csd3#modules)
   * [matlab](https://github.com/cambridge-ceu/csd3#matlab)
   * [Python](https://github.com/cambridge-ceu/csd3#python)
   * [R](https://github.com/cambridge-ceu/csd3#r)
@@ -119,25 +118,6 @@ See [https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html#acknowledging-csd3]
 
 ### Software
 
-### ceuadmin
-
-The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of December 2019, the list is
-```
-bgenix/                       LDstore/                     plink_linux_x86_64_beta3.32/  raremetal_4.14.0/                   snptest_new/
-biobank/                      magma/                       plinkseq-0.08-x86_64/         raremetal_4.14.1/                   source/
-boltlmm/                      MAGMA_Celltyping/            plinkseq-0.10/                raremetal_BPGen/                    stata/
-boltlmm_2.2/                  metabolomics/                qctool_v1.4-linux-x86_64/     Raremetal_linux_executables/        tabix/
-exomeplus/                    metal/                       R/                            Raremetal_linux_executables.tgz     temp/
-gcta/                         metal_updated/               raremetal_4.13/               raremetal.log                       vcftools/
-gtool_v0.7.5_x86_64/          plink/                       raremetal_4.13.3/             samtools_1.2/                       vcftools_ps629/
-hpg/                          plink_1.90_beta/             raremetal_4.13.4/             shapeit.v2.r790.RHELS_5.4.dynamic/
-impute_v2.3.2_x86_64_static/  plink_bgi_Dev/               raremetal_4.13.5/             snptest/
-interval/                     plink-bgi_linux_x86_64_may/  raremetal_4.13.7/             snptest_2.5.2/
-JAGS/                         plink_linux_x86_64_beta2a/   raremetal_4.13.8/             snptest_2.5.4_beta3/
-```
-
-#### modules
-
 CSD3 uses modules, e.g., with `qctool` v2.0.5,
 ```bash
 module load qctool/v2.0.5
@@ -156,6 +136,23 @@ Error: package or namespace load failed for ‘UniProt.ws’ in loadNamespace(i,
 which would go away should we issue `module load gcc/5` ahead of R. In case of failure after `srun` (see below), enforce lookup by
 ```bash
 export LD_LIBRARY_PATH=/usr/local/software/master/gcc/5/lib64:/usr/local/software/master/gcc/5/lib:$LD_LIBRARY_PATH
+```
+
+### ceuadmin
+
+The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of December 2019, the list is
+```
+bgenix/                       LDstore/                     plink_linux_x86_64_beta3.32/  raremetal_4.14.0/                   snptest_new/
+biobank/                      magma/                       plinkseq-0.08-x86_64/         raremetal_4.14.1/                   source/
+boltlmm/                      MAGMA_Celltyping/            plinkseq-0.10/                raremetal_BPGen/                    stata/
+boltlmm_2.2/                  metabolomics/                qctool_v1.4-linux-x86_64/     Raremetal_linux_executables/        tabix/
+exomeplus/                    metal/                       R/                            Raremetal_linux_executables.tgz     temp/
+gcta/                         metal_updated/               raremetal_4.13/               raremetal.log                       vcftools/
+gtool_v0.7.5_x86_64/          plink/                       raremetal_4.13.3/             samtools_1.2/                       vcftools_ps629/
+hpg/                          plink_1.90_beta/             raremetal_4.13.4/             shapeit.v2.r790.RHELS_5.4.dynamic/
+impute_v2.3.2_x86_64_static/  plink_bgi_Dev/               raremetal_4.13.5/             snptest/
+interval/                     plink-bgi_linux_x86_64_may/  raremetal_4.13.7/             snptest_2.5.2/
+JAGS/                         plink_linux_x86_64_beta2a/   raremetal_4.13.8/             snptest_2.5.4_beta3/
 ```
 
 #### matlab
