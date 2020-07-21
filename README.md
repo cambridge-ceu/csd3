@@ -265,6 +265,7 @@ Official website: [https://www.r-project.org/](https://www.r-project.org/) and a
 
 Under HPC, the default version is 3.3.3 with /usr/bin/R; alternatively choose the desired version of R from
 ```bash
+module avail R
 module avail r
 # if you would also like to use RStudio
 module avail rstudio
