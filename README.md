@@ -12,10 +12,10 @@
   * [ceuadmin](https://github.com/cambridge-ceu/csd3#ceuadmin)
   * [Stata](https://github.com/cambridge-ceu/csd3#stata)
   * [modules](https://github.com/cambridge-ceu/csd3#modules)
-  * [SLURM](https://github.com/cambridge-ceu/csd3#slurm)
+  * [matlab](https://github.com/cambridge-ceu/csd3#matlab)
   * [Python](https://github.com/cambridge-ceu/csd3#python)
   * [R](https://github.com/cambridge-ceu/csd3#r)
-  * [matlab](https://github.com/cambridge-ceu/csd3#matlab)
+  * [SLURM](https://github.com/cambridge-ceu/csd3#slurm)
   * [Usage notes](usage.md)
   * [To-do list](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing)
 * [Training](https://github.com/cambridge-ceu/csd3#training)
@@ -168,63 +168,15 @@ which would go away should we issue `module load gcc/5` ahead of R. In case of f
 export LD_LIBRARY_PATH=/usr/local/software/master/gcc/5/lib64:/usr/local/software/master/gcc/5/lib:$LD_LIBRARY_PATH
 ```
 
-#### SLURM
+#### matlab
 
-Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
+Official website: [https://www.mathworks.com/products/matlab.html](https://www.mathworks.com/products/matlab.html).
 
-Account details can be seen with
-```bash
-mybalance
 ```
-Partition is shown with
-```bash
-scontrol show partition
+module avail matlab
+module load matlab/r2019b
 ```
-For an interacive job, we could for instance start with 
-```bash
-sintr -A MYPROJECT -p skylake -N2 -n2 -t 1:0:0 --qos=INTR
-```
-and also
-```bash
-srun -N1 -n1 -c4 -p skylake-himem -t 12:0:0 --pty bash -i
-```
-or `sintr` then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `/usr/local/software/slurm/current/bin/` contains all the executables while sample scripts are in `/usr/local/Cluster-Docs/SLURM`, e.g., [template for Skylake](files/slurm_submit.peta4-skylake).
-
-Here is an example to convert a large number of PDF files (INTERVAL.*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list,and pipe into ``parallel`.
-```bash
-ls *pdf | \
-sed 's/INTERVAL.//g;s/.manhattan.pdf//g' | \
-parallel -j8 -C' ' '
-  echo {}
-  pdftopng -r 300 INTERVAL.{}.manhattan.pdf
-  mv {}-000001.png INTERVAL.{}.png
-'
-```
-which is equivalent to SLURM implementation using array jobs (https://slurm.schedmd.com/job_array.html).
-```bash
-#!/usr/bin/bash
-
-#SBATCH --ntasks=1
-#SBATCH --job-name=pdftopng
-#SBATCH --time=6:00:00
-#SBATCH --cpus-per-task=8
-#SBATCH --partition=skylake
-#SBATCH --array=1-50%10
-#SBATCH --output=pdftopng_%A_%a.out
-#SBATCH --error=pdftopng_%A_%a.err
-#SBATCH --export ALL
-
-export p=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' INTERVAL.list)
-export TMPDIR=/rds/user/$USER/hpc-work/
-
-echo ${p}
-pdftopng -r 300 INTERVAL.${p}.manhattan.pdf ${p}
-mv ${p}-000001.png INTERVAL.${p}.png
-```
-invoked by `sbatch`. As with Cardio, it is helpful to set a temporary directory, i.e.,
-```bash
-export TMPDIR=/rds/user/$USER/hpc-work/
-```
+followed by `matlab`.
 
 #### Python
 
@@ -327,15 +279,63 @@ The package installation directory can be spefied explicitly with R_LIBS, i.e.,
 export R_LIBS=/rds/user/$USER/hpc-work/R:/rds/user/$USER/hpc-work/R-3.6.1/library
 ```
 
-#### matlab
+#### SLURM
 
-Official website: [https://www.mathworks.com/products/matlab.html](https://www.mathworks.com/products/matlab.html).
+Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
 
+Account details can be seen with
+```bash
+mybalance
 ```
-module avail matlab
-module load matlab/r2019b
+Partition is shown with
+```bash
+scontrol show partition
 ```
-followed by `matlab`.
+For an interacive job, we could for instance start with 
+```bash
+sintr -A MYPROJECT -p skylake -N2 -n2 -t 1:0:0 --qos=INTR
+```
+and also
+```bash
+srun -N1 -n1 -c4 -p skylake-himem -t 12:0:0 --pty bash -i
+```
+or `sintr` then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `/usr/local/software/slurm/current/bin/` contains all the executables while sample scripts are in `/usr/local/Cluster-Docs/SLURM`, e.g., [template for Skylake](files/slurm_submit.peta4-skylake).
+
+Here is an example to convert a large number of PDF files (INTERVAL.*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list,and pipe into ``parallel`.
+```bash
+ls *pdf | \
+sed 's/INTERVAL.//g;s/.manhattan.pdf//g' | \
+parallel -j8 -C' ' '
+  echo {}
+  pdftopng -r 300 INTERVAL.{}.manhattan.pdf
+  mv {}-000001.png INTERVAL.{}.png
+'
+```
+which is equivalent to SLURM implementation using array jobs (https://slurm.schedmd.com/job_array.html).
+```bash
+#!/usr/bin/bash
+
+#SBATCH --ntasks=1
+#SBATCH --job-name=pdftopng
+#SBATCH --time=6:00:00
+#SBATCH --cpus-per-task=8
+#SBATCH --partition=skylake
+#SBATCH --array=1-50%10
+#SBATCH --output=pdftopng_%A_%a.out
+#SBATCH --error=pdftopng_%A_%a.err
+#SBATCH --export ALL
+
+export p=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' INTERVAL.list)
+export TMPDIR=/rds/user/$USER/hpc-work/
+
+echo ${p}
+pdftopng -r 300 INTERVAL.${p}.manhattan.pdf ${p}
+mv ${p}-000001.png INTERVAL.${p}.png
+```
+invoked by `sbatch`. As with Cardio, it is helpful to set a temporary directory, i.e.,
+```bash
+export TMPDIR=/rds/user/$USER/hpc-work/
+```
 
 ### Training
 
