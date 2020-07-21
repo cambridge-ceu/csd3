@@ -154,6 +154,7 @@ impute_v2.3.2_x86_64_static/  plink_bgi_Dev/               raremetal_4.13.5/    
 interval/                     plink-bgi_linux_x86_64_may/  raremetal_4.13.7/             snptest_2.5.2/
 JAGS/                         plink_linux_x86_64_beta2a/   raremetal_4.13.8/             snptest_2.5.4_beta3/
 ```
+these can be loaded with `module load ceuadmin/<module name>`.
 
 #### matlab
 
