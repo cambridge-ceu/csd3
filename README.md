@@ -48,7 +48,7 @@ lsb_release -a
 lscpu
 watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""
 ```
-where some broken down flags for `uname` are also given and instance `lsb_release -a` gives
+where breakdown of `uname -a` are also given and for instance `lsb_release -a` gives
 ```
 Distributor ID: Scientific
 Description:    Scientific Linux release 7.7 (Nitrogen)
