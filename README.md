@@ -42,10 +42,11 @@ uname -a
 # -v kernel version
 # -p processor
 # -o operating system
+# Linux Standard Base (lsb) and distribution information
+lsb_release -a
 # CPU information
 lscpu
 watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""
-lsb_release -a
 ```
 where some broken down flags for `uname` are also given and instance `lsb_release -a` gives
 ```
