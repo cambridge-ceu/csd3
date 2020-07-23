@@ -547,8 +547,8 @@ This is useful for hdf5 file handling, but BiocManager::install() gives error `c
 ```bash
 module load gcc/6
 cd $HOME
-wget https://bioconductor.org/packages/3.11/bioc/src/contrib/Rhdf5lib_1.10.0.tar.gz
-tar xfz Rhdf5lib_1.10.0.tar.gz
+wget https://bioconductor.org/packages/3.11/bioc/src/contrib/Rhdf5lib_1.10.1.tar.gz
+tar xfz Rhdf5lib_1.11.1.tar.gz
 cd Rhdf5lib
 ./configure
 mv configure configure.sav
