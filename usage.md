@@ -21,7 +21,7 @@ This document contains information for the following software:
 [Rhdf5lib](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#Rhdf5lib), 
 [rjags](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rjags), 
 [rstan](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#rstan), 
-[SAIGE](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#saige-0366), 
+[SAIGE](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#saige-0366-and-0392), 
 [snpnet](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#snpnet), 
 [VEP](https://github.com/cambridge-ceu/csd3/blob/master/usage.md#vep),
 
@@ -601,7 +601,7 @@ to do away with the error message ``C++14 standard requested but CXX14 is not de
 
 In case `ggplot2` installed with `gcc 5.2.0` it is also necessary to preceed with `module load gcc/5`.
 
-## SAIGE 0.36.6
+## SAIGE 0.36.6 and 0.39.2
 
 GitHub page: [https://github.com/weizhouUMICH/SAIGE](https://github.com/weizhouUMICH/SAIGE).
 
