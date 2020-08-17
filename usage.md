@@ -631,6 +631,15 @@ cd ../../..
 ```
 See [https://github.com/weizhouUMICH/SAIGE/issues/98](https://github.com/weizhouUMICH/SAIGE/issues/98).
 
+For the latest version 0.39.2 which deals with the chromosome X ploidy, the following steps are necessary
+```bash
+src_branch=0.39.2
+repo_src_url=https://github.com/weizhouUMICH/SAIGE
+git clone --depth 1 -b $src_branch $repo_src_url
+R -e "devtools::install_github('leeshawn/SPAtest')"
+```
+which installs SPAtest 3.1.2 instead of 3.0.2 from CRAN.
+
 ## snpnet
 
 GitHub page: [https://github.com/rivas-lab/snpnet](https://github.com/rivas-lab/snpnet).
