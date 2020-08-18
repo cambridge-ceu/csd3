@@ -633,12 +633,12 @@ See [https://github.com/weizhouUMICH/SAIGE/issues/98](https://github.com/weizhou
 
 For the latest version 0.39.2 which deals with the chromosome X ploidy, the following steps are necessary
 ```bash
-src_branch=0.39.2
-repo_src_url=https://github.com/weizhouUMICH/SAIGE
-git clone --depth 1 -b $src_branch $repo_src_url
+R -e "devtools::install_github('leeshawn/MetaSKAT')"
 R -e "devtools::install_github('leeshawn/SPAtest')"
+git clone --depth 1 -b 0.39.2 https://github.com/weizhouUMICH/SAIGE
+R CMD INSTALL SAIGE
 ```
-which installs SPAtest 3.1.2 instead of 3.0.2 from CRAN.
+which first installs MetaSKAT 0.80 also at CRAN but SPAtest 3.1.2 instead of 3.0.2 from CRAN.
 
 ## snpnet
 
