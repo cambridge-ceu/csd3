@@ -16,6 +16,7 @@ R,
 gnn,
 gsutil,
 LDlinkR,
+liftOver,
 rgdal,
 rgeos,
 Rhdf5lib,
@@ -490,6 +491,10 @@ python setup.py install --prefix=$HPC_WORK
 ## LDlinkR
 
 Issue `install.packages("LDlinkR")` from R but requires registration at [https://ldlink.nci.nih.gov/?tab=apiaccess](https://ldlink.nci.nih.gov/?tab=apiaccess).
+
+## liftOver
+
+This is part of the Kent utilities in module `kentutils-302.1-gcc-5.4.0-kbiujaa` nevertheless without the appropriate chain file.
 
 ## rgdal
 
