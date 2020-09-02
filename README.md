@@ -248,9 +248,9 @@ biocLite(c("GO.db", "preprocessCore", "impute"))
 install.packages("BiocManager")
 BiocManager::install("WGCNA")
 ```
-A good alternative is to use `devtools` package, e.g.,
+A good alternative is to use `remotes` or `devtools` package, e.g.,
 ```r
-devtools::install_bioc("snpStats")
+remotes::install_bioc("snpStats")
 ```
 In case of difficulty it is still useful to install directly, e.g.,
 ```bash
