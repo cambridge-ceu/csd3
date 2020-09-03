@@ -3,8 +3,14 @@
 This document contains information for the following software:
 
 ANNOVAR,
+bedops,
 DosageConverter,
 HESS,
+R,
+gnn,
+gsutil,
+LDlinkR,
+liftOver,
 PhenoScanner,
 polyphen-2,
 poppler,
@@ -12,11 +18,6 @@ PRSice,
 PRSoS,
 pspp,
 qpdf,
-R,
-gnn,
-gsutil,
-LDlinkR,
-liftOver,
 rgdal,
 rgeos,
 Rhdf5lib,
@@ -115,6 +116,13 @@ convert2annovar.pl -format annovar2vcf example/ex1.avinput > ex1.vcf
 vep -i ex1.vcf -o ex1.vcfoutput --offline --force_overwrite
 ```
 
+## bedops
+```bash
+wget -qO- https://github.com/bedops/bedops/releases/download/v2.4.39/bedops_linux_x86_64-v2.4.39.tar.bz2 | \
+tar xfj
+```
+would extract the executables into the bin/ directory.
+
 ## DosageConverter
 
 ```bash
@@ -194,6 +202,58 @@ It is preferable to use `miniconda` since it associates with faster libraries.
 module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
 conda install pandas
 ```
+
+## gnn
+
+It requires libgsl, so
+```bash
+module load gsl/2.4
+```
+
+## gsutil
+
+Web site: https://cloud.google.com/storage/docs/gsutil_install#linux
+
+the authentification is achieved via Google SDK (e.g. [301.0.0](https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-301.0.0-linux-x86_64.tar.gz))
+```bash
+wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-301.0.0-linux-x86_64.tar.gz
+tar xfz google-cloud-sdk-301.0.0-linux-x86_64.tar.gz
+cd google-cloud-sdk
+./install.sh
+# to gain a bit flexibility by not using the awkward browser (Konqueror) at CSD3
+gcloud auto login --no-launch-browser
+# to set PROJECT_ID=divine-aegis-278909
+gcloud config set divine-aegis-278909
+```
+followed by `gsutil config` where `gsutil` is installed via `virtualenv` as follows,
+```bash
+module load python/3.7
+virtualenv py37
+source py37/bin/activate
+pip install gsutil==4.50
+cd ${dir}/py37/bin
+gsutil ls
+# gsutil cp test gs::/covid19-hg-upload-bugbank
+gsutil cp test gs://covid19-hg-upload-uk--blood-donors-cohort
+```
+Less useful is the usual way to install.
+```bash
+wget https://storage.googleapis.com/pub/gsutil.tar.gz
+tar xvfz gsutil.tar.gz -C ..
+cd ../gsutil
+pip install pyasn1==0.4.8  --user
+python setup.py install --prefix=$HPC_WORK
+```
+
+## LDlinkR
+
+Issue `install.packages("LDlinkR")` from R but requires registration at [https://ldlink.nci.nih.gov/?tab=apiaccess](https://ldlink.nci.nih.gov/?tab=apiaccess).
+
+## liftOver
+
+The UCSC site is here, https://genome.ucsc.edu/cgi-bin/hgLiftOver.
+
+This is part of the Kent utilities in module `kentutils-302.1-gcc-5.4.0-kbiujaa` nevertheless without the appropriate chain file.
 
 ## PhenoScanner
 
@@ -445,58 +505,6 @@ make install
 With this setup, `R CMD check --as-cran` for a CRAN package check can be run smoothly.
 
 Package reinstallation could be done with `update.packages(checkBuilt = TRUE, ask = FALSE)`.
-
-## gnn
-
-It requires libgsl, so
-```bash
-module load gsl/2.4
-```
-
-## gsutil
-
-Web site: https://cloud.google.com/storage/docs/gsutil_install#linux
-
-the authentification is achieved via Google SDK (e.g. [301.0.0](https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-301.0.0-linux-x86_64.tar.gz))
-```bash
-wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-301.0.0-linux-x86_64.tar.gz
-tar xfz google-cloud-sdk-301.0.0-linux-x86_64.tar.gz
-cd google-cloud-sdk
-./install.sh
-# to gain a bit flexibility by not using the awkward browser (Konqueror) at CSD3
-gcloud auto login --no-launch-browser
-# to set PROJECT_ID=divine-aegis-278909
-gcloud config set divine-aegis-278909
-```
-followed by `gsutil config` where `gsutil` is installed via `virtualenv` as follows,
-```bash
-module load python/3.7
-virtualenv py37
-source py37/bin/activate
-pip install gsutil==4.50
-cd ${dir}/py37/bin
-gsutil ls
-# gsutil cp test gs::/covid19-hg-upload-bugbank
-gsutil cp test gs://covid19-hg-upload-uk--blood-donors-cohort
-```
-Less useful is the usual way to install.
-```bash
-wget https://storage.googleapis.com/pub/gsutil.tar.gz
-tar xvfz gsutil.tar.gz -C ..
-cd ../gsutil
-pip install pyasn1==0.4.8  --user
-python setup.py install --prefix=$HPC_WORK
-```
-
-## LDlinkR
-
-Issue `install.packages("LDlinkR")` from R but requires registration at [https://ldlink.nci.nih.gov/?tab=apiaccess](https://ldlink.nci.nih.gov/?tab=apiaccess).
-
-## liftOver
-
-The UCSC site is here, https://genome.ucsc.edu/cgi-bin/hgLiftOver.
-
-This is part of the Kent utilities in module `kentutils-302.1-gcc-5.4.0-kbiujaa` nevertheless without the appropriate chain file.
 
 ## rgdal
 
