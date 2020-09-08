@@ -24,6 +24,7 @@ Rhdf5lib,
 rjags,
 rstan,
 SAIGE,
+smr,
 snpnet,
 VEP
 
@@ -657,6 +658,26 @@ git clone --depth 1 -b 0.39.2 https://github.com/weizhouUMICH/SAIGE
 R CMD INSTALL SAIGE
 ```
 which first installs MetaSKAT 0.80 also at CRAN but SPAtest 3.1.2 instead of 3.0.2 from CRAN.
+
+## SMR
+
+Web: https://cnsgenomics.com/software/smr/
+```bash
+wget https://cnsgenomics.com/software/smr/download/smr_1.03_src.zip
+unzip -v smr_1.03_src.zip
+mkdir smr
+cd smr
+unzip ../smr_1.03_src.zip
+rm -rf __MACOSX/
+mv smr_1.03_src/ ../..
+cd ..
+rmdir smr
+cd ../smr_1.03_src/
+module load eigen/latest
+module load zlib/1.2.8
+make
+./smr_linux
+```
 
 ## snpnet
 
