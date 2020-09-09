@@ -3,7 +3,7 @@
 This document contains information for the following software:
 
 ANNOVAR,
-aegis,
+AEGIS,
 bedops,
 DosageConverter,
 HESS,
@@ -118,7 +118,7 @@ convert2annovar.pl -format annovar2vcf example/ex1.avinput > ex1.vcf
 vep -i ex1.vcf -o ex1.vcfoutput --offline --force_overwrite
 ```
 
-## agegis
+## AEGIS
 
 Web: http://aegis.stanford.edu/
 
