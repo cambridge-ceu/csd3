@@ -3,6 +3,7 @@
 This document contains information for the following software:
 
 ANNOVAR,
+aegis,
 bedops,
 DosageConverter,
 HESS,
@@ -116,6 +117,35 @@ It is handy to create a VCF file to be used by VEP (see below),
 convert2annovar.pl -format annovar2vcf example/ex1.avinput > ex1.vcf
 vep -i ex1.vcf -o ex1.vcfoutput --offline --force_overwrite
 ```
+
+## agegis
+
+Web: http://aegis.stanford.edu/
+
+The installation follows the documentation but requires slight change,
+```bash
+# default Python 3.6
+module load python
+
+virtualenv py36
+source py36/bin/activate
+git clone https://github.com/junjiezhujason/aegis.git
+cd aegis
+
+# pip3 install -r requirements.txt
+cat requirements.txt | \
+grep -v MarkupSafe | \
+xargs pip3 install
+
+# setup
+python3 main.py --lite --port 5001 --folder ./data
+export PROJECT_PATH=/home/$USER/genetics/aegis/data
+cd ${PROJECT_PATH}
+wget http://stanford.edu/~jjzhu/fileshare/aegis/local_20180719.tar.gz
+tar -xvzf local_20180719.tar.gz
+python3 main.py --port 5002 --folder ${PROJECT_PATH}
+```
+as it appears that MarkupSafe could not be installed according to the predefined order.
 
 ## bedops
 
