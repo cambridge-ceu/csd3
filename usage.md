@@ -138,11 +138,12 @@ grep -v MarkupSafe | \
 xargs pip3 install
 
 # setup
-python3 main.py --lite --port 5001 --folder ./data
-export PROJECT_PATH=/home/$USER/genetics/aegis/data
+#!/usr/bin/bash
+export PROJECT_PATH=/home/$USER/aegis/data
 cd ${PROJECT_PATH}
-wget http://stanford.edu/~jjzhu/fileshare/aegis/local_20180719.tar.gz
-tar -xvzf local_20180719.tar.gz
+# wget -qO- http://stanford.edu/~jjzhu/fileshare/aegis/local_20180719.tar.gz | tar -xvzf local_20180719.tar.gz
+cd -
+python3 main.py --lite --port 5001 --folder ${PROJECT_PATH} &
 python3 main.py --port 5002 --folder ${PROJECT_PATH} &
 firefox http://localhost:5002 &
 ```
