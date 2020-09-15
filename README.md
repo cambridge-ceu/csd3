@@ -65,7 +65,7 @@ from a local machine,
 cp ~/.ssh/known_hosts ~/.ssh/known_hosts.`date +%F`
 sed -i -e '/128\.232\.224/d' -e '/.*\.hpc\.cam\.ac\.uk/d' ~/.ssh/known_hosts
 # to remove the entry, try:
-# ssh-keygen -f "/home/jhz22/.ssh/known_hosts" -R "login.hpc.cam.ac.uk"
+# ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R "login.hpc.cam.ac.uk"
 ```
 Automatic login via ssh/sftp can be enabled with
 ```bash
