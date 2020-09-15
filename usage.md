@@ -654,6 +654,8 @@ In case `ggplot2` installed with `gcc 5.2.0` it is also necessary to preceed wit
 
 ## SAIGE 0.36.6 and 0.39.2
 
+Full name: Scalable and Accurate Implementation of GEneralized mixed model (SAIGE)
+
 GitHub page: [https://github.com/weizhouUMICH/SAIGE](https://github.com/weizhouUMICH/SAIGE).
 
 The following is based on source from GitHub (so with the possibility to git pull),
