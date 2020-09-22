@@ -185,7 +185,7 @@ source py35/bin/activate
 # pip new packages
 deactivate
 ```
-Anaconda ([https://www.anaconda.com/](https://www.anaconda.com/)) and Jupyter notebook ([https://jupyter.org/](https://jupyter.org/)) are useful tools. 
+Note that when this is set up, one only needs to restart from the `source` command. The `pip` is appropriate for installing small number of package; otherwise Anaconda ([https://www.anaconda.com/](https://www.anaconda.com/)) and Jupyter notebook ([https://jupyter.org/](https://jupyter.org/)) are useful. 
 
 We first load Anaconda and create virtual environments,
 ```bash
