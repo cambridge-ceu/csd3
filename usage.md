@@ -1007,6 +1007,16 @@ END
 ```
 according to https://www.biostars.org/p/14367/.
 
+Perhaps it is the easiest to use `gprofiler2`, i.e.,
+```r
+gprofiler2::gconvert("ENSG00000164761")
+```
+giving
+```
+  input_number input target_number          target name                                               description                           namespace
+1            1  IL6R           1.1 ENSG00000160712 IL6R interleukin 6 receptor [Source:HGNC Symbol;Acc:HGNC:6019] ENTREZGENE,HGNC,UNIPROT_GN,WIKIGENE
+```
+
 ### **dbNSFP**
 
 Web page: [https://sites.google.com/site/jpopgen/dbNSFP](https://sites.google.com/site/jpopgen/dbNSFP).
