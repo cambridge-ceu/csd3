@@ -23,12 +23,14 @@ qpdf,
 rgdal,
 rgeos,
 Rhdf5lib,
+rJava,
 rjags,
 rstan,
 SAIGE,
 smr,
 snpnet,
-VEP
+VEP,
+xlsx
 
 Whenever appropriate, it is assumed that the destination of software installation is ${HPC_WORK}, e.g., 
 via `export HPC_WORK=/rds/user/$USER/hpc-work` in .bashrc.
@@ -562,7 +564,7 @@ With this setup, `R CMD check --as-cran` for a CRAN package check can be run smo
 
 Package reinstallation could be done with `update.packages(checkBuilt = TRUE, ask = FALSE)`.
 
-## rgdal
+## R/rgdal
 
 We have .R/Makevars as follows,
 ```bash
@@ -604,14 +606,14 @@ Then `proj_api.h` should have a statement
 #define ACCEPT_USE_OF_DEPRECATED_PROJ_API_H 1
 ```
 
-## rgeos
+## R/rgeos
 
 This requires geos to be loaded,
 ```bash
 module load geos-3.6.2-gcc-5.4.0-vejexvy
 ```
 
-## Rhdf5lib
+## R/Rhdf5lib
 
 This is useful for hdf5 file handling, but BiocManager::install() gives error `cp: cannot stat ‘hdf5/c++/src/.libs/libhdf5_cpp.a’: No such file or directory
 ` so we proceed manually,
@@ -634,7 +636,22 @@ cd $HOME
 R CMD INSTALL Rhdf5lib
 ```
 
-## rjags
+## R/rJava
+
+One may see the messages
+```
+...
+checking whether JNI programs can be compiled... configure: error: Cannot compile a simple JNI program. See config.log for details.
+...
+ERROR: configuration failed for package ‘rJava’
+```
+so quit R and run 
+```bash
+R CMD javareconf
+Rscript -e 'install.packages("rJava")'
+```
+
+## R/rjags
 
 Web page: [https://sourceforge.net/projects/mcmc-jags/files/rjags/](https://sourceforge.net/projects/mcmc-jags/files/rjags/).
 
@@ -660,7 +677,7 @@ R CMD INSTALL rjags_4-10.tar.gz --configure-args='CPPFLAGS="-fPIC" LDFLAGS="-L${
 --with-jags-includedir=${hpcwork}/include'
 ```
 
-## rstan
+## R/rstan
 
 Official page: [https://mc-stan.org/users/interfaces/rstan](https://mc-stan.org/users/interfaces/rstan) and also [https://cran.r-project.org/package=rstan](https://cran.r-project.org/package=rstan).
 
@@ -1236,3 +1253,19 @@ See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/
 See http://www.ensembl.org/info/data/virtual_machine.html which is possibly best for MicroSoft Windows and is not pursued here.
 
 ENSEMBL-synonym translation (hg19) file
+
+## R/xlsx
+
+When there is message,
+```
+Error: .onLoad failed in loadNamespace() for 'rJava', details:
+  call: dyn.load(file, DLLpath = DLLpath, ...)
+  error: unable to load shared object '/rds/user/jhz22/hpc-work/R/rJava/libs/rJava.so':
+  libjvm.so: cannot open shared object file: No such file or directory
+Execution halted
+ERROR: lazy loading failed for package ‘xlsx’
+* removing ‘/rds/user/jhz22/hpc-work/R/xlsx’
+* restoring previous ‘/rds/user/jhz22/hpc-work/R/xlsx’
+
+```
+then see description on `rJava` earlier.
