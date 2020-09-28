@@ -691,7 +691,7 @@ In case `ggplot2` installed with `gcc 5.2.0` it is also necessary to preceed wit
 
 For the developmental version, try `remotes::install_github("stan-dev/rstan", ref = "develop", subdir = "rstan/rstan")`.
 
-## SAIGE 0.36.6 and 0.39.2
+## R/SAIGE 0.36.6 and 0.39.2
 
 Full name: Scalable and Accurate Implementation of GEneralized mixed model (SAIGE)
 
