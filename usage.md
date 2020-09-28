@@ -162,7 +162,7 @@ tar xfj -
 ```
 would extract the executables into the bin/ directory.
 
-## brms
+## R/brms
 
 It is available from CRAN, so it can be installed with `install.packages()`. Here is a documentation example,
 ```r
