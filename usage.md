@@ -5,11 +5,11 @@ This document contains information for the following software:
 ANNOVAR,
 AEGIS,
 bedops,
-brms,
+R/brms,
 DosageConverter,
 HESS,
 R,
-gnn,
+R/gnn,
 gsutil,
 LDlinkR,
 liftOver,
@@ -20,17 +20,17 @@ PRSice,
 PRSoS,
 pspp,
 qpdf,
-rgdal,
-rgeos,
-Rhdf5lib,
-rJava,
-rjags,
-rstan,
-SAIGE,
+R/rgdal,
+R/rgeos,
+R/Rhdf5lib,
+R/rJava,
+R/rjags,
+R/rstan,
+R/SAIGE,
 smr,
-snpnet,
+R/snpnet,
 VEP,
-xlsx
+R/xlsx
 
 Whenever appropriate, it is assumed that the destination of software installation is ${HPC_WORK}, e.g., 
 via `export HPC_WORK=/rds/user/$USER/hpc-work` in .bashrc.
@@ -261,7 +261,7 @@ module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
 conda install pandas
 ```
 
-## gnn
+## R/gnn
 
 It requires libgsl, so
 ```bash
