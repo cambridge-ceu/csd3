@@ -752,7 +752,7 @@ make
 ./smr_linux
 ```
 
-## snpnet
+## R/snpnet
 
 GitHub page: [https://github.com/rivas-lab/snpnet](https://github.com/rivas-lab/snpnet).
 
@@ -780,7 +780,7 @@ devtools::install_github("chrchang/plink-ng", subdir="/2.0/pgenlibr")
 devtools::install_github("rivas-lab/snpnet")
 ```
 
-## sojo
+## R/sojo
 
 GitHub page: [https://github.com/zhenin/sojo](https://github.com/zhenin/sojo).
 ```r
