@@ -12,6 +12,7 @@ R,
 R/gnn,
 gsutil,
 R/LDlinkR,
+KentUtils,
 liftOver,
 R/PhenoScanner,
 polyphen-2,
@@ -303,15 +304,17 @@ pip install pyasn1==0.4.8  --user
 python setup.py install --prefix=$HPC_WORK
 ```
 
+## KentUtils
+
+liftOver from UCSC is here, https://genome.ucsc.edu/cgi-bin/hgLiftOver.
+
+This is part of the Kent utilities in module `kentutils-302.1-gcc-5.4.0-kbiujaa` nevertheless without the appropriate chain file.
+
+To download the latest utilitiess, try `rsync -aP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/linux.x86_64/ ./`.
+
 ## R/LDlinkR
 
 Issue `install.packages("LDlinkR")` from R but requires registration at [https://ldlink.nci.nih.gov/?tab=apiaccess](https://ldlink.nci.nih.gov/?tab=apiaccess).
-
-## liftOver
-
-The UCSC site is here, https://genome.ucsc.edu/cgi-bin/hgLiftOver.
-
-This is part of the Kent utilities in module `kentutils-302.1-gcc-5.4.0-kbiujaa` nevertheless without the appropriate chain file.
 
 ## R/PhenoScanner
 
