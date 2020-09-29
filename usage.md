@@ -173,6 +173,9 @@ module avail singularity
 module load singularity/current
 # download burten 1.6.5 from https://drive.google.com/file/d/1gelkV-wYydUWqmpc6ITPxE2O9cwyWfIJ/view
 singularity exec burden_testing_latest help
+# LINSIGHT
+# https://github.com/CshlSiepelLab/LINSIGHT/
+wget http://compgen.cshl.edu/LINSIGHT/LINSIGHT.bw
 # CADD
 wget https://krishna.gs.washington.edu/download/CADD/v1.6/GRCh38/whole_genome_SNVs.tsv.gz
 # rclone, https://rclone.org/downloads/
