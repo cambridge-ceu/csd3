@@ -175,8 +175,8 @@ module load singularity/current
 singularity exec burden_testing_latest help
 # CADD
 wget https://krishna.gs.washington.edu/download/CADD/v1.6/GRCh38/whole_genome_SNVs.tsv.gz
-# rclone
-# https://rclone.org/downloads/
+# rclone, https://rclone.org/downloads/
+wget -qO- https://downloads.rclone.org/v1.53.1/rclone-v1.53.1-linux-amd64.zip | jar xv
 ```
 See https://github.com/hmgu-itg/burden_testing/wiki for more.
 
