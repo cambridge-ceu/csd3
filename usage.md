@@ -5,6 +5,7 @@ This document contains information for the following software:
 ANNOVAR,
 AEGIS,
 bedops,
+burden_testing,
 R/brms,
 DosageConverter,
 HESS,
@@ -162,6 +163,19 @@ wget -qO- https://github.com/bedops/bedops/releases/download/v2.4.39/bedops_linu
 tar xfj -
 ```
 would extract the executables into the bin/ directory.
+
+## burden_testing
+
+Web: https://github.com/hmgu-itg/burden_testing/
+
+To set it up, these are the necessary steps,
+```bash
+module avail singularity
+module load singularity/current
+# download burten 1.6.5 from https://drive.google.com/file/d/1gelkV-wYydUWqmpc6ITPxE2O9cwyWfIJ/view
+singularity exec burden_testing_latest help
+```
+See https://github.com/hmgu-itg/burden_testing/wiki for more.
 
 ## R/brms
 
