@@ -13,7 +13,7 @@ R/gnn,
 gsutil,
 LDlinkR,
 liftOver,
-PhenoScanner,
+R/PhenoScanner,
 polyphen-2,
 poppler,
 PRSice,
@@ -313,20 +313,9 @@ The UCSC site is here, https://genome.ucsc.edu/cgi-bin/hgLiftOver.
 
 This is part of the Kent utilities in module `kentutils-302.1-gcc-5.4.0-kbiujaa` nevertheless without the appropriate chain file.
 
-## PhenoScanner
+## R/PhenoScanner
 
-Here are examples loading command-line interface (CLI),
-```bash
-module load ceuadmin/phenoscanner
-phenoscanner --help
-phenoscanner --snp=rs704 -c All -x EUR -r 0.8
-phenoscanner -s T -c All -x EUR -p 0.0000001 --r2 0.6 -i INF1.merge.snp -o INF1
-```
-Note that `module load phenoscanner` is enabled from ~/.bashrc:
-```
-export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
-```
-via `source ~/.bashrc` or a new login. The R package works as follows,
+The R package works as follows,
 ```bash
 install.packages("devtools")
 library(devtools)
@@ -352,6 +341,19 @@ results <- do.call(rbind,t)
 r <- list(snps=snps,results=results)
 ```
 i.e., each chunk has 100 SNPs and chunks are combined manually.
+
+At the moment the command-line interface (CLI) has problems whose examples are as follows,
+```bash
+module load ceuadmin/phenoscanner
+phenoscanner --help
+phenoscanner --snp=rs704 -c All -x EUR -r 0.8
+phenoscanner -s T -c All -x EUR -p 0.0000001 --r2 0.6 -i INF1.merge.snp -o INF1
+```
+Note that `module load phenoscanner` is enabled from ~/.bashrc:
+```
+export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
+```
+via `source ~/.bashrc` or a new login.
 
 ## polyphen-2
 
