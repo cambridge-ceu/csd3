@@ -11,7 +11,7 @@ HESS,
 R,
 R/gnn,
 gsutil,
-LDlinkR,
+R/LDlinkR,
 liftOver,
 R/PhenoScanner,
 polyphen-2,
@@ -303,7 +303,7 @@ pip install pyasn1==0.4.8  --user
 python setup.py install --prefix=$HPC_WORK
 ```
 
-## LDlinkR
+## R/LDlinkR
 
 Issue `install.packages("LDlinkR")` from R but requires registration at [https://ldlink.nci.nih.gov/?tab=apiaccess](https://ldlink.nci.nih.gov/?tab=apiaccess).
 
