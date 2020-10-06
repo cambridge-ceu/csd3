@@ -966,6 +966,20 @@ for release 98 instead of the latest from `git pull`.
 
 It could be useful to filter VEP output, see https://www.ensembl.org/info/docs/tools/vep/script/vep_filter.html.
 
+### **Nearest gene**
+
+This can produces error message
+```
+-------------------- EXCEPTION --------------------
+MSG: ERROR: --nearest requires Set::IntervalTree perl module to be installed
+```
+and we get around with
+```bash
+perl -MCPAN -e shell
+install Set::IntervalTree
+```
+which will enable `--nearest gene`.
+
 ### **Annotation in chunks**
 
 A toy example, following http://www.ensembl.org/info/docs/tools/vep/script/vep_other.html#faster, is given as follows,
