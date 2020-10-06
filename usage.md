@@ -347,7 +347,7 @@ Issue `install.packages("LDlinkR")` from R but requires registration at [https:/
 
 ## R/PhenoScanner
 
-The R package works as follows,
+1. The R package works as follows,
 ```bash
 install.packages("devtools")
 library(devtools)
@@ -355,7 +355,7 @@ install_github("phenoscanner/phenoscanner")
 library(phenoscanner)
 example(phenoscanner)
 ```
-When the query list is long, the call is made by chunks, e.g.,
+2. When the query list is long, the call is made by chunks, e.g.,
 ```r
 options(width=500)
 require(phenoscanner)
@@ -374,7 +374,7 @@ r <- list(snps=snps,results=results)
 ```
 i.e., each chunk has 100 SNPs and chunks are combined manually.
 
-At the moment the command-line interface (CLI) has problems whose examples are as follows,
+3. The command-line interface (CLI)
 ```bash
 module load ceuadmin/phenoscanner
 phenoscanner --help
@@ -386,6 +386,31 @@ Note that `module load phenoscanner` is enabled from ~/.bashrc:
 export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
 ```
 via `source ~/.bashrc` or a new login.
+
+4. Work with R 4.x.x
+
+Section 3 above would fail under R 4.x.x; to get around, make a copy of phenoscanner according to
+```bash
+module load ceuadmin/phenoscanner
+which phenoscanner
+# /rds/project/jmmh2/rds-jmmh2-projects/phenoscanner/mrcatalogue/mrcatalogue/phenoscanner_v2/phenoscanner
+```
+and edit the header to call packages at the default R_LIBS location,
+```r
+#!/rds/user/jhz22/hpc-work/bin/Rscript
+suppressPackageStartupMessages(library(getopt))
+suppressPackageStartupMessages(library(optparse))
+suppressPackageStartupMessages(library(DBI))
+suppressPackageStartupMessages(library(RMySQL))
+suppressPackageStartupMessages(library(reshape2))
+suppressPackageStartupMessages(library(plyr))
+suppressPackageStartupMessages(library(stringi))
+```
+then deposit this to a directory on the search path and invoke,
+```bash
+module load gcc/6
+phenoscanner -h
+```
 
 ## polyphen-2
 
