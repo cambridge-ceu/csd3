@@ -883,7 +883,7 @@ http://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#installer.
 
 There are several possible ways to install under csd3: GitHub, R and docker.
 
-1. --- GitHub ---
+### --- GitHub ---
 
 GitHub Page: [https://github.com/Ensembl/ensembl-vep](https://github.com/Ensembl/ensembl-vep).
 
@@ -966,7 +966,7 @@ for release 98 instead of the latest from `git pull`.
 
 It could be useful to filter VEP output, see https://www.ensembl.org/info/docs/tools/vep/script/vep_filter.html.
 
-2. **Annotation in chunks**
+### **Annotation in chunks**
 
 A toy example, following http://www.ensembl.org/info/docs/tools/vep/script/vep_other.html#faster, is given as follows,
 ```bash
@@ -1014,7 +1014,7 @@ parallel -j1 --env ref -C' ' '
 ```
 Note we use information from `.snpstats` files at location `ref` to build input in vcf format on the fly and feed into VEP.
 
-3. **ENSEMBL-synonym translation**
+### **ENSEMBL-synonym translation**
 
 The ENSEMBL-synonym translation is useful to check for the feature types -- in the case of ENSG00000160712 (IL6R)
 we found ENST00000368485 and ENST00000515190, we do
@@ -1091,7 +1091,7 @@ giving
 1            1  IL6R           1.1 ENSG00000160712 IL6R interleukin 6 receptor [Source:HGNC Symbol;Acc:HGNC:6019] ENTREZGENE,HGNC,UNIPROT_GN,WIKIGENE
 ```
 
-4. **clinvar**
+### **clinvar**
 
 The local installation enables considerable flexibilty, and the following example, using GRCh37 assembly, is based on 
 [https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options](https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options).
@@ -1162,7 +1162,7 @@ to give neatly
 1_154426970_A/C	ENSG00000160712	missense_variant	association	no_assertion_criteria_provided	Interleukin_6,_serum_level_of,_quantitative_trait_locus|Soluble_interleukin-6_receptor,_serum_level_of,_quantitative_trait_locus
 ```
 
-5. **dbNSFP**
+### **dbNSFP**
 
 Web page: [https://sites.google.com/site/jpopgen/dbNSFP](https://sites.google.com/site/jpopgen/dbNSFP).
 
@@ -1184,7 +1184,7 @@ java -jar search_dbNSFP40a.jar -i tryhg19.in -o tryhg19.out -v hg19
 java -jar search_dbNSFP40a.jar -i tryhg38.in -o tryhg38.out
 ```
 
-6. --- loftee ---
+### --- loftee ---
 
 GitHub page: [https://github.com/konradjk/loftee](https://github.com/konradjk/loftee).
 
@@ -1251,7 +1251,7 @@ python
 >>> hl.export_vcf(at,"at.vcf.bgz")
 ```
 
-7. --- R ---
+### --- R ---
 
 This is a wrapper and `the Ensembl VEP perl script must be installed in your path`. Expected to be slower than the `--offline` mode above, it is 
 relatively easy to set up,
@@ -1301,11 +1301,11 @@ res[fields[cadd]]
 ```
 Note that the CSQ field could also be handled by bcftools split-vep plugin, see [http://samtools.github.io/bcftools/howtos/plugin.split-vep.html](http://samtools.github.io/bcftools/howtos/plugin.split-vep.html).
 
-8. --- docker ---
+### --- docker ---
 
 See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/Ensembl/ensembl-vep.
 
-9. --- Virtual machine ---
+### --- Virtual machine ---
 
 See http://www.ensembl.org/info/data/virtual_machine.html which is possibly best for MicroSoft Windows and is not pursued here.
 
