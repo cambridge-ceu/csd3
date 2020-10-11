@@ -14,7 +14,7 @@
   * [To-do list](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing)
 * Training
 * Contacts
-* [*Cardio*](cardio.md)
+* [*Cardio*](cardio/cardio.md)
 * Acknowledgements
 
 ***
