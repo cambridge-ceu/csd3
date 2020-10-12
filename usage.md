@@ -517,6 +517,14 @@ the followihg utilities:
 pdfattach, pdfdetach,  pdffonts,  pdfimages,  pdfinfo,  pdfseparate,  pdftocairo,  pdftohtml,  pdftoppm,  pdftops,  pdftotext,  pdfunite, 
 and following libraries: libpoppler.so, libpoppler-cpp.so, libpoppler-glibc.so, libpoppler-qt5.so.
 
+Note that `poppler-cpp.pc` is installed at `hpc-work/lib64/pkgconfig` and preferably in the search path with
+```bash
+export PKG_CONFIG_PATH=$HPC_WORK/lib/pkgconfig:$HPC_WORK/lib64/pkgconfig:$PKG_CONFIG_PATH
+```
+after which we could install R/pdftools from CRAN.
+
+Note also the packages `R/Rpoppler` and `qpdf` from CRAN.
+
 ## PRSice
 
 Web page: https://github.com/choishingwan/PRSice and http://www.prsice.info/.
