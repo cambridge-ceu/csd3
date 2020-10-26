@@ -748,6 +748,10 @@ Official page: [https://mc-stan.org/users/interfaces/rstan](https://mc-stan.org/
 
 It is necessary to have `¬/.R/Makevars` the following lines,
 ```
+CXX14 = g++ -fPIC -std=gnu++11 -fext-numeric-literals
+```
+but
+```
 CXX14 = g++ -std=c++1y -fPIC
 ```
 to do away with the error message ``C++14 standard requested but CXX14 is not defined`.
