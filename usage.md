@@ -750,7 +750,7 @@ It is necessary to have `¬/.R/Makevars` the following lines,
 ```
 CXX14 = g++ -fPIC -std=gnu++11 -fext-numeric-literals
 ```
-but
+to deal with `error: unable to find numeric literal operator 'operator""Q'` but
 ```
 CXX14 = g++ -std=c++1y -fPIC
 ```
