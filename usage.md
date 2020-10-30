@@ -13,9 +13,9 @@ HESS,
 R,
 R/gnn,
 gsutil,
-R/LDlinkR,
 KentUtils,
 lapack,
+R/LDlinkR,
 R/PhenoScanner,
 polyphen-2,
 poppler,
@@ -357,7 +357,7 @@ cmake -DCMAKE_INSTALL_PREFIX=${HPC_WORK} -DCMAKE_BUILD_TYPE=RELEASE -DBUILD_SHAR
 make
 make install
 ```
-Note call to ccmake does not work properly on csd3. A second call to cmake would enforce the shared libraries.
+Note call to ccmake does not work properly on csd3. A second call to cmake would enforce the shared libraries. Note also that it is possible to build the static libraries by making a copy of `make.inc.example` as `make.inc` and compile cblas and lapacke separately.
 
 ## R/LDlinkR
 
