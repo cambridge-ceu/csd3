@@ -15,6 +15,7 @@ R/gnn,
 gsutil,
 R/LDlinkR,
 KentUtils,
+lapack,
 R/PhenoScanner,
 polyphen-2,
 poppler,
@@ -340,6 +341,23 @@ liftOver from UCSC is here, https://genome.ucsc.edu/cgi-bin/hgLiftOver.
 This is part of the Kent utilities in module `kentutils-302.1-gcc-5.4.0-kbiujaa` nevertheless without the appropriate chain file.
 
 To download the latest utilitiess, try `rsync -aP rsync://hgdownload.soe.ucsc.edu/genome/admin/exe/linux.x86_64/ ./`.
+
+## lapack
+
+The sequence is as follows,
+```bash
+wget http://www.netlib.org/lapack/lapack-3.9.0.tar.gz
+tar xvfz lapack-3.9.0.tar.gz
+cd lapack-3.8.0
+mkdir build
+cd build
+## ccmake .
+cmake ..
+cmake -DCMAKE_INSTALL_PREFIX=${HPC_WORK} -DCMAKE_BUILD_TYPE=RELEASE -DBUILD_SHARED_LIBS=ON -DLAPACKE=ON -DCBLAS=ON
+make
+make install
+```
+Note call to ccmake does not work properly on csd3. A second call to cmake would enforce the shared libraries.
 
 ## R/LDlinkR
 
