@@ -352,12 +352,11 @@ cd lapack-3.8.0
 mkdir build
 cd build
 ## ccmake .
-cmake ..
 cmake -DCMAKE_INSTALL_PREFIX=${HPC_WORK} -DCMAKE_BUILD_TYPE=RELEASE -DBUILD_SHARED_LIBS=ON -DLAPACKE=ON -DCBLAS=ON ..
 make
 make install
 ```
-Note call to ccmake does not work properly on csd3. A second call to cmake would enforce the shared libraries. Note also that it is possible to build the static libraries by making a copy of `make.inc.example` as `make.inc` and compile cblas and lapacke separately.
+Note call to ccmake does not work properly on csd3. By default a call to cmake would build static libraries and the arguments here enforce the shared libraries. Note also that it is possible to build the static libraries by making a copy of `make.inc.example` as `make.inc` and compile cblas and lapacke separately.
 
 ## R/LDlinkR
 
