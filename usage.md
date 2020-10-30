@@ -352,6 +352,7 @@ cd lapack-3.9.0
 mkdir build
 cd build
 ## ccmake .
+## cmake ..
 cmake -DCMAKE_INSTALL_PREFIX=${HPC_WORK} -DCMAKE_BUILD_TYPE=RELEASE -DBUILD_SHARED_LIBS=ON -DLAPACKE=ON -DCBLAS=ON ..
 make
 make install
