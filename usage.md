@@ -348,7 +348,7 @@ The sequence is as follows,
 ```bash
 wget http://www.netlib.org/lapack/lapack-3.9.0.tar.gz
 tar xvfz lapack-3.9.0.tar.gz
-cd lapack-3.8.0
+cd lapack-3.9.0
 mkdir build
 cd build
 ## ccmake .
