@@ -356,7 +356,7 @@ cmake ..
 make
 make install
 ```
-Note `ccmake` is commented as it does not work properly on csd3. By default these build static libraries. It is also possible to build the static libraries by making a copy of `make.inc.example` as `make.inc` and compile `cblas` and `lapacke` from their corresponding directories separately.
+Note `ccmake` is commented as it does not work properly on csd3. By default these build static libraries into build/lib/. It is also possible to build the static libraries in lapack-3.9.0/ by making a copy of `make.inc.example` as `make.inc` and compile `libblas.a`,`liblapack.a` as well as `libcblas.a` and `liblapacke.a` from BLAS/ and LAPACKE/ directories.
 
 To enable the shared libraries, proceed with
 ```bash
