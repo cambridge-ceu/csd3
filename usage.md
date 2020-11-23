@@ -3,6 +3,7 @@
 This document contains information for the following software:
 
 akt,
+ABCtoolbox,
 ANNOVAR,
 AEGIS,
 bedops,
@@ -43,6 +44,18 @@ via `export HPC_WORK=/rds/user/$USER/hpc-work` in .bashrc.
 Web: https://github.com/Illumina/akt
 
 This is Illumina's ancestry and kinship toolkit and the installation is canonical.
+
+## ABCtoolbox
+
+Web page: https://bitbucket.org/wegmannlab/abctoolbox/wiki/Home
+
+```bash
+git clone --depth 1 https://bitbucket.org/wegmannlab/abctoolbox.git
+# g++ -O3 -o ABCtoolbox *.cpp
+module load openmpi/3.1.4-gcc-7.2.0
+g++ -O3 -o ABCtoolbox *.cpp -DUSE_OMP -fopenmp
+```
+Note that the installation guide has misspecified the repository.
 
 ## ANNOVAR
 
