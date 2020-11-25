@@ -1229,20 +1229,27 @@ Web page: [https://sites.google.com/site/jpopgen/dbNSFP](https://sites.google.co
 
 This is set up as follows,
 ```bash
-wget ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.0a.zip
-unzip dbNSFP4.0a.zip -d dbNSFP4.0a
-cd dbNSFP4.0a
-zcat dbNSFP4.0a_variant.chr1.gz | head -n1 > h
-zgrep -h -v ^#chr dbNSFP4.0a_variant.chr* | sort -k1,1 -k2,2n - | cat h - | bgzip -c > dbNSFP4.0a.gz
-tabix -s 1 -b 2 -e 2 dbNSFP4.0a.gz
+wget ftp://dbnsfp:dbnsfp@dbnsfp.softgenetics.com/dbNSFP4.1a.zip
+unzip dbNSFP4.1a.zip -d dbNSFP4.1a
+cd dbNSFP4.1a
+# code for 4.0a
+# zcat dbNSFP4.0a_variant.chr1.gz | head -n1 > h
+# zgrep -h -v ^#chr dbNSFP4.0a_variant.chr* | sort -k1,1 -k2,2n - | cat h - | bgzip -c > dbNSFP4.0a.gz
+# efficient version
+(
+  zcat dbNSFP4.1a_variant.chr1.gz | head -n1
+  echo $(seq 22) M X Y | \
+  xargs -I {} bash -c "zcat dbNSFP4.1a_variant.chr{}.gz | sed '1d'"
+) | bgzip -c > dbNSFP4.1a.gz
+tabix -s 1 -b 2 -e 2 dbNSFP4.1a.gz
 cd -
 vep -i examples/homo_sapiens_GRCh37.vcf -o test --cache --force_overwrite --offline \
-    --plugin dbNSFP,dbNSFP4.0a/dbNSFP4.0a.gz,LRT_score,FATHMM_score,MutationTaster_score
+    --plugin dbNSFP,dbNSFP4.1a/dbNSFP4.1a.gz,LRT_score,FATHMM_score,MutationTaster_score
 ```
 Since this release is frozen on Ensembl 94's transcript set, one may prefer to use it independently via its Java programs, e.g.,
 ```bash
-java -jar search_dbNSFP40a.jar -i tryhg19.in -o tryhg19.out -v hg19
-java -jar search_dbNSFP40a.jar -i tryhg38.in -o tryhg38.out
+java -jar search_dbNSFP41a.jar -i tryhg19.in -o tryhg19.out -v hg19
+java -jar search_dbNSFP41a.jar -i tryhg38.in -o tryhg38.out
 ```
 
 ### --- loftee ---
