@@ -1238,8 +1238,9 @@ cd dbNSFP4.1a
 # efficient version
 (
   zcat dbNSFP4.1a_variant.chr1.gz | head -n1
-  echo $(seq 22) M X Y | \
-  xargs -I {} bash -c "zcat dbNSFP4.1a_variant.chr{}.gz | sed '1d'"
+  export prefix=dbNSFP4.1a_variant.chr
+  echo ${prefix}{1..22}.gz ${prefix}M.gz ${prefix}X.gz ${prefix}Y.gz | \
+  xargs -I {} bash -c "zcat {} | sed '1d'"
 ) | bgzip -c > dbNSFP4.1a.gz
 tabix -s 1 -b 2 -e 2 dbNSFP4.1a.gz
 cd -
