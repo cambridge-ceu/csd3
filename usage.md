@@ -14,6 +14,7 @@ HESS,
 R,
 R/gnn,
 gsutil,
+gwas2vcf,
 KentUtils,
 lapack,
 R/LDlinkR,
@@ -346,6 +347,24 @@ tar xvfz gsutil.tar.gz -C ..
 cd ../gsutil
 pip install pyasn1==0.4.8  --user
 python setup.py install --prefix=$HPC_WORK
+```
+
+## gwas2vcf
+
+Web: https://github.com/MRCIEU/gwas2vcf
+
+The required setup script is as follows,
+```bash
+module load jdk-8u141-b15-gcc-5.4.0-p4aaopt
+module load gatk
+module load python/3.7
+git clone https://github.com/MRCIEU/gwas2vcf
+cd gwas2vcf
+python -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+pip install git+git://github.com/bioinformed/vgraph@v1.4.0#egg=vgraph
+python main.py -h
 ```
 
 ## KentUtils
