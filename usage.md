@@ -364,7 +364,7 @@ python -m venv env
 source env/bin/activate
 pip install -r requirements.txt
 pip install git+git://github.com/bioinformed/vgraph@v1.4.0#egg=vgraph
-ln -s ~/rds/public_databases/GRCh37_reference_fasta/human_g1k_v37.fasta.gz
+ln -s ~/rds/public_databases/GRCh37_reference_fasta/human_g1k_v37.fasta
 ln -s ~/rds/public_databases/GRCh37_reference_fasta/human_g1k_v37.fasta.fai
 python -m pytest -v test
 python main.py -h
