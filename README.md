@@ -84,7 +84,7 @@ ssh-copy-id -i ~/.ssh/mykey login.hpc.cam.ac.uk
 ```
 as in [https://www.ssh.com/ssh/copy-id](https://www.ssh.com/ssh/copy-id).
 
-Environmental variables can be set inside `~/.bashrc`. When there is an error `'abrt-cli status' timed out`, one should remove ${HOME}/.cache and restart.
+Environmental variables can be set inside `~/.bashrc`. When there is an error `'abrt-cli status' timed out`, one should remove ${HOME}/.cache and relogin/source .bashrc.
 
 ### Directories
 
