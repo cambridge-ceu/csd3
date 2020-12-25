@@ -420,6 +420,7 @@ Example scripts for GWAS VCF operations,
   module load gatk
   module load python/3.7
   module load picard/2.9.2
+  export ensembl=${HPC_WORK}/gwas2vcf/ensembl
   export reference=${HPC_WORK}/gwas2vcf/human_g1k_v37
   export input=${INF}/METAL/vcf/${prot}
   export output=${INF}/work/${prot}-b38
@@ -427,6 +428,10 @@ Example scripts for GWAS VCF operations,
   bcftools filter -r 1:1000000-2000000 -o ${input}-r.vcf.gz ${input}.vcf.gz
 # filter on p values
   bcftools filter -i 'FORMAT/LP > 7.3' -o ${input}-7.3.vcf ${input}.vcf.gz
+# annotate GWAS-VCF
+  bcftools annotate -a ${ensembl}.bed.gz -c CHROM,FROM,TO,ENSG_ID \
+                    -h <(echo '##INFO=<ID=ENSG_ID,Number=.,Type=String,Description="Ensembl gene ID">') \
+                    -o ${output}.vcf.gz -O z -l ENSG_ID:unique ${input}.vcf.gz
 # GWAS Catalogue
   bcftools query -e 'ID == "."' -f '%ID\t[%LP]\t%CHROM\t%POS\t%ALT\t%REF\t%AF\t[%ES\t%SE]\n' ${input}.vcf.gz | \
   awk 'BEGIN {
