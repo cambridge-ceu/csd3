@@ -381,6 +381,37 @@ wget http://fileserve.mrcieu.ac.uk/ref/2.8/b37/human_g1k_v37.fasta.fai
 # GRCh38/hg38/b38
 wget https://storage.googleapis.com/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.fasta
 wget https://storage.googleapis.com/genomics-public-data/resources/broad/hg38/v0/Homo_sapiens_assembly38.fasta.fai
+
+## ENSEMBL and Reactome
+
+# download ensembl-to-position mapping and sort by ensgId
+curl ftp://ftp.ensembl.org/pub/grch37/release-87/gff3/homo_sapiens/Homo_sapiens.GRCh37.87.gff3.gz | \
+gzip -dc | \
+awk -F"\t|:|;|=" '$3=="gene" && $1 >= 1 && $1 <= 22 {print $11"\t"$1"\t"$4"\t"$5}' | \
+sort -k1,1 > Ensembl2Position.sorted.txt
+
+# download ensembl-to-pathway mapping and sort by ensgId
+curl https://reactome.org/download/current/Ensembl2Reactome.txt | \
+grep "Homo sapiens" | \
+cut -s -f1,2 | \
+sort -k1,1 > Ensembl2Reactome.sorted.txt
+
+# merge tables by ensgId, sort, compress and index
+join \
+-t $'\t' \
+--check-order \
+Ensembl2Position.sorted.txt \
+Ensembl2Reactome.sorted.txt | \
+awk -F"\t" '{print $2"\t"$3-1"\t"$4"\t"$5}' | \
+sort -k1,1V -k2,2n -k3,3n | \
+bgzip -c > reactome.bed.gz
+tabix -p bed reactome.bed.gz
+
+# sort, compress and index ensembl-to-position mapping
+awk -F"\t" '{print $2"\t"$3-1"\t"$4"\t"$1}' Ensembl2Position.sorted.txt | \
+sort -k1,1V -k2,2n -k3,3n  | \
+bgzip -c > ensembl.bed.gz
+tabix -p bed ensembl.bed.gz
 ```
 
 Example scripts for GWAS VCF operations,
