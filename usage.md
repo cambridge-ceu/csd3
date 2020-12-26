@@ -447,6 +447,34 @@ Example scripts for GWAS VCF operations,
   gatk ValidateVariants -V ${output}.vcf.gz -R ${reference}.fasta --validation-type-to-exclude ALLELES
 ```
 
+To use the latest dbSNP information, these steps can be helpful,
+```bash
+# hg19
+# wget https://ftp.ncbi.nih.gov/snp/archive/b154/VCF/GCF_000001405.25.gz -O snp154_GCF_000001405.25.gz
+# wget https://ftp.ncbi.nih.gov/snp/archive/b154/VCF/GCF_000001405.25.gz.tbi -O snp154_GCF_000001405.25.gz.tbi
+gunzip -c snp154_GCF_000001405.25.gz > snp154_GCF_000001405.25
+
+# https://github.com/vkkodali/cthreepo
+cthreepo \
+    --infile snp154_GCF_000001405.25 \
+    --id_from rs \
+    --id_to uc \
+    --format vcf \
+    --mapfile h37 \
+    --outfile snp154_hg19.vcf
+
+bgzip snp154_hg19.vcf
+tabix -f snp154_hg19.vcf.gz
+
+# hg38
+cthreepo --infile snp154_GCF_000001405.38.txt --id_from rs --id_to uc --format vcf --mapfile h38 --outfile snp154_hg38.vcf
+bgzip snp154_hg38.vcf
+tabix -f snp154_hg38.vcf.gz
+
+# UCSC option
+# https://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/chromToUcsc
+```
+
 ## KentUtils
 
 liftOver from UCSC is here, https://genome.ucsc.edu/cgi-bin/hgLiftOver.
