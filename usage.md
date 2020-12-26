@@ -463,12 +463,12 @@ cthreepo \
     --mapfile h37 \
     --outfile snp154_hg19.vcf
 
-bgzip snp154_hg19.vcf
+bgzip -f snp154_hg19.vcf
 tabix -f snp154_hg19.vcf.gz
 
 # hg38
-cthreepo --infile snp154_GCF_000001405.38.txt --id_from rs --id_to uc --format vcf --mapfile h38 --outfile snp154_hg38.vcf
-bgzip snp154_hg38.vcf
+cthreepo --infile snp154_GCF_000001405.38 --id_from rs --id_to uc --format vcf --mapfile h38 --outfile snp154_hg38.vcf
+bgzip -f snp154_hg38.vcf
 tabix -f snp154_hg38.vcf.gz
 
 # UCSC option
