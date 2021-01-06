@@ -80,7 +80,7 @@ ssh-keygen
 # Your identification has been saved in mykey.
 # Your public key has been saved in mykey.pub.
 The key fingerprint is:
-ssh-copy-id -i ~/.ssh/mykey login.hpc.cam.ac.uk
+ssh-copy-id -i ~/.ssh/mykey.pub login.hpc.cam.ac.uk
 ```
 as in [https://www.ssh.com/ssh/copy-id](https://www.ssh.com/ssh/copy-id).
 
