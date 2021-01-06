@@ -82,7 +82,17 @@ ssh-keygen
 The key fingerprint is:
 ssh-copy-id -i ~/.ssh/mykey.pub login.hpc.cam.ac.uk
 ```
-as in [https://www.ssh.com/ssh/copy-id](https://www.ssh.com/ssh/copy-id).
+as in [https://www.ssh.com/ssh/copy-id](https://www.ssh.com/ssh/copy-id). At a specific host, try
+```bash
+mkdir .ssh
+chmod 700 .ssh
+ssh-keygen
+cd .ssh
+chmod 700 mykey*
+touch authorized_keys
+chmod 700 authorized_keys
+ssh-copy-id -i mykey.pub user@remoteserver
+```
 
 Environmental variables can be set inside `~/.bashrc`. When there is an error `'abrt-cli status' timed out`, one should remove ${HOME}/.cache and relogin/source .bashrc.
 
