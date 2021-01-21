@@ -180,10 +180,12 @@ as it appears that MarkupSafe could not be installed according to the predefined
 ## CaVEMaN
 
 Web, https://github.com/funpopgen/CaVEMaN/
+
+Causal Variant Evidence Mapping with Non-parametric resampling (CaVEMaN) is one of the three fine-mapping software which provided data for GTEx v8.
+```bash
 # binary distribution
 https://github.com/funpopgen/CaVEMaN/releases/download/v1.01/CaVEMaN
 # build from source
-```bash
 git clone https://github.com/funpopgen/CaVEMaN && cd CaVEMaN
 module load xz
 wget -qO- https://github.com/ldc-developers/ldc/releases/download/v1.24.0/ldc2-1.24.0-linux-x86_64.tar.xz | \
