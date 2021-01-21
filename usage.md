@@ -6,6 +6,7 @@ akt,
 ABCtoolbox,
 ANNOVAR,
 AEGIS,
+CaVEMaN,
 bedops,
 burden_testing,
 R/brms,
@@ -175,6 +176,26 @@ python3 main.py --port 5002 --folder ${PROJECT_PATH} &
 firefox http://localhost:5002 &
 ```
 as it appears that MarkupSafe could not be installed according to the predefined order.
+
+## CaVEMaN
+
+Web, https://github.com/funpopgen/CaVEMaN/
+# binary distribution
+https://github.com/funpopgen/CaVEMaN/releases/download/v1.01/CaVEMaN
+# build from source
+```bash
+git clone https://github.com/funpopgen/CaVEMaN && cd CaVEMaN
+module load xz
+wget -qO- https://github.com/ldc-developers/ldc/releases/download/v1.24.0/ldc2-1.24.0-linux-x86_64.tar.xz | \
+tar Jxf -
+module load gsl/2.1
+# modify makefile 
+LDC := ${PWD}/ldc2-1.24.0-linux-x86_64/bin/ldc2
+DMD := ${PWD}/ldc2-1.24.0-linux-x86_64/bin/dmd
+GSL := /usr/local/Cluster-Apps/gsl/2.1
+make
+```
+Note that the D compiler setup actually requires gsl/2.1.
 
 ## bedops
 
