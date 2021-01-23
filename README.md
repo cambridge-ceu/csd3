@@ -9,7 +9,7 @@
   * Directories
   * Policies
 * Software
-  * ceuadmin, matlab, Python, R, SLURM, Stata
+  * ceuadmin, git, matlab, Python, R, SLURM, Stata
   * [Usage notes](usage.md)
   * [To-do list](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing)
 * Training
@@ -162,6 +162,16 @@ interval/                     plink-bgi_linux_x86_64_may/  raremetal_4.13.7/    
 JAGS/                         plink_linux_x86_64_beta2a/   raremetal_4.13.8/             snptest_2.5.4_beta3/
 ```
 These can be loaded with `module load ceuadmin/<module name>`.
+
+#### git
+
+To have the latest git, e.g.,
+```bash
+wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz | tar xfz -
+cd git-2.30.0
+make NO_GETTEXT=YesPlease install
+```
+and the executables will be put to ~/bin.
 
 #### matlab
 
