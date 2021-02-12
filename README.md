@@ -360,7 +360,11 @@ As a CEU member the following is possible,
 ```
 module load ceuadmin/stata/14
 ```
-as with `ceuadmin/stata/15`.
+as with `ceuadmin/stata/15`. The meta-analysis (metan) and Mendelian Randomisation (mrrobust) packages can be installed as follows,
+```stata
+ssc install metan
+net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") replace
+```
 
 ### Training
 
