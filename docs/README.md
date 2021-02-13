@@ -7,9 +7,7 @@ A collection of CSD3 notes.
 
 These include general information regarding the system, as well as a variety of specifiic software.
 
-```
 {% include list.liquid all=true %}
-```
 
 ## The license
 
