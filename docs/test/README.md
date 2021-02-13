@@ -1,5 +1,5 @@
 ---
-sort: 1
+sort: menu
 ---
 
 # CSD3 Documentation
