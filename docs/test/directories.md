@@ -2,6 +2,8 @@
 sort: 3
 ---
 
+# Directories
+
 This [section](https://docs.hpc.cam.ac.uk/hpc/user-guide/io_management.html#summary-of-available-filesystems) gives a summary of the file system.
 
 Goto **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
