@@ -13,6 +13,4 @@ git commit -m "Information on Cardio"
 git remote add origin git@github.com:cambridge-ceu/csd3.git
 git add usage.md
 git commit -m "Usage notes"
-git add _config.yml
-git commit -m "_config.yml"
 git push -u origin master
