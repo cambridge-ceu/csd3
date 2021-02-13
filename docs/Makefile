@@ -1,20 +1,54 @@
-# Minimal makefile for Sphinx documentation
-#
+DEBUG=JEKYLL_GITHUB_TOKEN=blank PAGES_API_URL=http://0.0.0.0
+ALIAS=jekyll-rtd-theme
 
-# You can set these variables from the command line, and also
-# from the environment for the first two.
-SPHINXOPTS    ?=
-SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = .
-BUILDDIR      = _build
-
-# Put it first so that "make" without argument is like "make help".
 help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@echo "HomePage: https://github.com/rundocs/${ALIAS}\n"
+	@echo "Usage:"
+	@echo "    make [subcommand]\n"
+	@echo "Subcommands:"
+	@echo "    install   Install the theme dependencies"
+	@echo "    format    Format all files"
+	@echo "    report    Make a report from Google lighthouse"
+	@echo "    clean     Clean the workspace"
+	@echo "    dist      Build the theme css and script"
+	@echo "    status    Display status before push"
+	@echo "    theme     Make theme as gem and install"
+	@echo "    build     Build the test site"
+	@echo "    server    Make a livereload jekyll server to development"
+	@echo "    checkout  Reset the theme minified css and script to last commit"
 
-.PHONY: help Makefile
+checkout:
+	@git checkout _config.yml
+	@git checkout assets/js/theme.min.js
+	@git checkout assets/css/theme.min.css
 
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+install:
+	@gem install jekyll bundler
+	@npm install
+	@bundle install
+
+format:
+	@npm run format
+
+report:
+	@npm run report
+
+clean:
+	@bundle exec jekyll clean
+
+dist: format clean
+	@npm run build
+
+status: format clean checkout
+	@git status
+
+theme: dist
+	@gem uninstall ${ALIAS}
+	@gem build *.gemspec
+	@gem install *.gem && rm -f *.gem
+
+build: dist
+	@${DEBUG} bundle exec jekyll build --safe --profile
+
+server: dist
+	@${DEBUG} bundle exec jekyll server --safe --livereload
