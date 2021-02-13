@@ -1,4 +1,6 @@
-### ceuadmin
+---
+sort: ceuadmin
+---
 
 The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of December 2019, the list is
 ```

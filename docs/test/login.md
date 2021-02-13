@@ -1,4 +1,6 @@
-### Login
+---
+sort: Login
+---
 
 Possible login nodes on csd3 are: login.hpc, login-cpu.hpc, login-gpu.hpc, login-gfx.hpc, login-e-N.hpc.
 

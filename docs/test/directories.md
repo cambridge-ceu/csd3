@@ -1,4 +1,6 @@
-### Directories
+---
+sort: Directories
+---
 
 This [section](https://docs.hpc.cam.ac.uk/hpc/user-guide/io_management.html#summary-of-available-filesystems) gives a summary of the file system. 
 

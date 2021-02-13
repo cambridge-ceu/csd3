@@ -1,4 +1,6 @@
-### Training
+---
+sort: Training
+---
 
 * **First training**: Wednesday, 10th July 2019 from 10am – 12pm.
 * **Second training**: Wednesday, 31st July 2019 from 9:30am – 4pm.
