@@ -29,3 +29,4 @@ exclude:
   - package-lock.json
   - webpack.config.js
   - csd3.gemspec
+  - st.sh
