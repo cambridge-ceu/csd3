@@ -1,13 +1,11 @@
 ---
-sort: 2
+sort: 1
 ---
 
-# Long caption for long menu
+# CSD3 Documentation
 
 ```
 {% raw %}{% include list.liquid all=true %}{% endraw %}
-
-{% include list.liquid all=true %}
 ```
 
 {% include list.liquid all=true %}
