@@ -5,6 +5,20 @@
 
 ## Usage
 
+## Backend engines
+
+This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
+
+- [@primer/css](https://github.com/primer/css)
+- [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
+
+```yml
+remote_theme: rundocs/jekyll-rtd-theme
+```
+
+Documentation that can guide how to create with Github pages, see [rundocs.io](https://rundocs.io) for details.
+
+You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
 
 ## Features
 
@@ -76,21 +90,6 @@ plugins:
   - jekyll-avatar
   - jekyll-mentions
 ```
-
-## Backend engines
-
-This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
-
-- [@primer/css](https://github.com/primer/css)
-- [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
-
-```yml
-remote_theme: rundocs/jekyll-rtd-theme
-```
-
-Documentation that can guide how to create with Github pages, see [rundocs.io](https://rundocs.io) for details.
-
-You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
 
 ## The license
 
