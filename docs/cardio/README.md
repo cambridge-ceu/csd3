@@ -6,6 +6,12 @@ sort: 2
 
 source: `{{ page.path }}`
 
+```
+{% raw %}{% include list.liquid all=true %}{% endraw %}
+```
+
+{% include list.liquid all=true %}
+
 Cardio is the HPC facility at the CEU.
 
 ## CSD3 partition
