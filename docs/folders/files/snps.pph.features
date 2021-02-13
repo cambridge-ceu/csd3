@@ -1,0 +1,12 @@
+#snp_pos         	str	        gene	  transcript	 ccid	        ccds	cciden	refa	        type	   ntpos	nt1	nt2	flanks	trv	cpg	  jxdon	  jxacc	   exon	  cexon	jxc	dgn	  cdnpos	frame	cdn1	cdn2	aa1	aa2	   aapos	spmap	     spacc	      spname	    refs_acc	    dbrsid	dbobsrvd	   dbavHet	 dbavHetSE	dbRmPaPt	comments
+chr1:154426970  	  +	        IL6R	  uc001fez.1	 1573	  CCDS1067.1	     1	 A/C	    missense	   49302	  A	  C	    GT	  1	  0	    +88	     -7	   9/10	   9/10	   	  0	     358	    1	 GAT	 GCT	  D	  A	     358	    1	    P08887	 IL6RA_HUMAN	   NP_000556	 rs2228145	   A/C/T	   0.44471	  0.156806	        
+## Totals:
+##   lines input               1
+##   lines skipped             0
+##   alleles annotated         1
+##     missense                1
+##     nonsense                0
+##     coding-synon            0
+##     intron                  0
+##     utr-3                   0
+##     utr-5                   0
