@@ -4,8 +4,4 @@ sort: 1
 
 # General information
 
-```
-{% raw %}{% include list.liquid all=true %}{% endraw %}
-```
-
 {% include list.liquid all=true %}
