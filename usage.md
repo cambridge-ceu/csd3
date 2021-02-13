@@ -1,6 +1,6 @@
 # Usage notes
 
-This document is now visiable from the following address:
+This document is now visible from the following address:
 
 ### https://cambridge-ceu.github.io/csd3/usages/
 
