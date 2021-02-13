@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contents &#8212; CSD3 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <p><a href="https://www.top500.org/"><img src="https://www.top500.org/static//images/Top500_logo.png" align="right"></a></p>
+<div class="section" id="contents">
+<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>System</p>
+<ul>
+<li><p>Login</p></li>
+<li><p>Directories</p></li>
+<li><p>Policies</p></li>
+</ul>
+</li>
+<li><p>Software</p>
+<ul>
+<li><p>ceuadmin, git, matlab, Python, R, SLURM, Stata</p></li>
+<li><p><a class="reference internal" href="usage.html"><span class="doc">Usage notes</span></a></p></li>
+<li><p><a class="reference external" href="https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing">To-do list</a></p></li>
+</ul>
+</li>
+<li><p>Training</p></li>
+<li><p>Contacts</p></li>
+<li><p><a class="reference external" href="cardio/cardio"><em>Cardio</em></a></p></li>
+<li><p>Acknowledgements</p></li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="system">
+<h2>System<a class="headerlink" href="#system" title="Permalink to this headline">¶</a></h2>
+<p>CSD3 stands for the Cambridge Service for Data Driven Discovery by <a class="reference external" href="https://www.csd3.cam.ac.uk/">Research Computing Services</a>, which provies an excellent <a class="reference external" href="https://docs.hpc.cam.ac.uk/hpc/">documentation</a> besides <a class="reference external" href="https://www.hpc.cam.ac.uk/">other services</a>.
+Here some aspects are highlighted from the perspectives of the <a class="reference external" href="https://www.phpc.cam.ac.uk/ceu/">Cardiovascular Epidemiology Unit</a> (CEU), where all information about procedures and access requests can be found from <strong>W:\Administration\CSD3 Data Users</strong>.</p>
+<p>Basic information is available from a CSD3 console</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># system bit</span>
+getconf LONG_BIT
+<span class="c1"># system information</span>
+uname -a
+<span class="c1"># -s kernel name</span>
+<span class="c1"># -n node name</span>
+<span class="c1"># -r kernel release</span>
+<span class="c1"># -v kernel version</span>
+<span class="c1"># -p processor</span>
+<span class="c1"># -o operating system</span>
+<span class="c1"># Linux Standard Base (lsb) and distribution information</span>
+lsb_release -a
+<span class="c1"># CPU information</span>
+lscpu
+watch -n.1 <span class="s2">&quot;cat /proc/cpuinfo | grep \&quot;^[c]pu MHz\&quot;&quot;</span>
+</pre></div>
+</div>
+<p>where breakdown of <code class="docutils literal notranslate"><span class="pre">uname</span> <span class="pre">-a</span></code> is also given and for instance <code class="docutils literal notranslate"><span class="pre">lsb_release</span> <span class="pre">-a</span></code> gives</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Distributor</span> <span class="n">ID</span><span class="p">:</span> <span class="n">Scientific</span>
+<span class="n">Description</span><span class="p">:</span>    <span class="n">Scientific</span> <span class="n">Linux</span> <span class="n">release</span> <span class="mf">7.7</span> <span class="p">(</span><span class="n">Nitrogen</span><span class="p">)</span>
+<span class="n">Release</span><span class="p">:</span>        <span class="mf">7.7</span>
+<span class="n">Codename</span><span class="p">:</span>       <span class="n">Nitrogen</span>
+</pre></div>
+</div>
+<p>so the system is Scientific Linux 7 (SL7), see <a class="reference external" href="http://www.scientificlinux.org/">http://www.scientificlinux.org/</a>, also /usr/share/doc/HTML/en-US/index.html,</p>
+</div>
+<div class="section" id="login">
+<h2>Login<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h2>
+<p>Possible login nodes on csd3 are: login.hpc, login-cpu.hpc, login-gpu.hpc, login-gfx.hpc, login-e-N.hpc.</p>
+<p>To reset Raven password, follow https://password.csx.cam.ac.uk/.</p>
+<p>To establish host keys one resort to <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code>; the easiest is to accept the default.</p>
+<p>The CSD3 hostkeys are described here, https://docs.hpc.cam.ac.uk/hpc/user-guide/hostkeys.html. From 1st February 2020, the following script needs to be run
+from a local machine,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp ~/.ssh/known_hosts ~/.ssh/known_hosts.<span class="sb">`</span>date +%F<span class="sb">`</span>
+sed -i -e <span class="s1">&#39;/128\.232\.224/d&#39;</span> -e <span class="s1">&#39;/.*\.hpc\.cam\.ac\.uk/d&#39;</span> ~/.ssh/known_hosts
+<span class="c1"># to remove the entry, try:</span>
+<span class="c1"># ssh-keygen -f &quot;/home/$USER/.ssh/known_hosts&quot; -R &quot;login.hpc.cam.ac.uk&quot;</span>
+</pre></div>
+</div>
+<p>Automatic login via ssh/sftp can be enabled with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-copy-id login.hpc.cam.ac.uk
+</pre></div>
+</div>
+<p>from a Bash console after one login. If this is not set up, follow these steps,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen
+<span class="c1"># Enter file in which to save the key (/home/$USER/.ssh/id_rsa): mykey</span>
+<span class="c1"># Enter passphrase (empty for no passphrase): </span>
+<span class="c1"># Enter same passphrase again: </span>
+<span class="c1"># Your identification has been saved in mykey.</span>
+<span class="c1"># Your public key has been saved in mykey.pub.</span>
+The key fingerprint is:
+ssh-copy-id -i ~/.ssh/mykey.pub login.hpc.cam.ac.uk
+</pre></div>
+</div>
+<p>as in <a class="reference external" href="https://www.ssh.com/ssh/copy-id">https://www.ssh.com/ssh/copy-id</a>. At a specific host, try</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir .ssh
+chmod <span class="m">700</span> .ssh
+ssh-keygen
+<span class="nb">cd</span> .ssh
+chmod <span class="m">700</span> mykey*
+touch authorized_keys
+chmod <span class="m">700</span> authorized_keys
+ssh-copy-id -i mykey.pub user@remoteserver
+</pre></div>
+</div>
+<p>Environmental variables can be set inside <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>. When there is an error <code class="docutils literal notranslate"><span class="pre">'abrt-cli</span> <span class="pre">status'</span> <span class="pre">timed</span> <span class="pre">out</span></code>, one should remove ${HOME}/.cache and relogin/source .bashrc.</p>
+</div>
+<div class="section" id="directories">
+<h2>Directories<a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h2>
+<p>This <a class="reference external" href="https://docs.hpc.cam.ac.uk/hpc/user-guide/io_management.html#summary-of-available-filesystems">section</a> gives a summary of the file system.</p>
+<p>Goto <strong>CSD3 portal</strong>: <a class="reference external" href="https://selfservice.uis.cam.ac.uk/account/">https://selfservice.uis.cam.ac.uk/account/</a> and accept the terms and conditions. An <code class="docutils literal notranslate"><span class="pre">rds/</span></code> directory should then be created with symbolic links as follows,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>hpc-work -&gt; /rds/user/$USER/hpc-work/
+genetics_resources -&gt; /rds/project/jmmh2/rds-jmmh2-genetics_resources/
+legacy_projects -&gt; /rds/project/jmmh2/rds-jmmh2-legacy_projects/
+pre_qc_data -&gt; /rds/project/jmmh2/rds-jmmh2-pre_qc_data/
+projects -&gt; /rds/project/jmmh2/rds-jmmh2-projects/
+public_databases -&gt; /rds/project/jmmh2/rds-jmmh2-public_databases/
+results -&gt; /rds/project/jmmh2/rds-jmmh2-results
+</pre></div>
+</div>
+<p>Short shorter (without rds-jmmh2- prefix) names as on Cardio can be created equivalently with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> ! -d /home/<span class="nv">$USER</span>/rds <span class="o">]</span><span class="p">;</span> <span class="k">then</span> mkdir /home/<span class="nv">$USER</span>/rds<span class="p">;</span> <span class="k">fi</span>
+ln -sf /rds/user/<span class="nv">$USER</span>/hpc-work /home/<span class="nv">$USER</span>/rds/hpc-work
+<span class="nb">export</span> <span class="nv">rt</span><span class="o">=</span>/rds/project/jmmh2
+<span class="k">for</span> d in <span class="k">$(</span>ls <span class="nv">$rt</span> <span class="p">|</span> xargs -l basename <span class="p">|</span> sed <span class="s1">&#39;s/rds-jmmh2-//g&#39;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> ln -sf <span class="nv">$rt</span>/rds-jmmh2-<span class="nv">$d</span> /home/<span class="nv">$USER</span>/rds/<span class="nv">$d</span><span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
+<p>Note to list the directories you need postfix them with ‘/’.</p>
+</div>
+<div class="section" id="policies">
+<h2>Policies<a class="headerlink" href="#policies" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html#acknowledging-csd3">https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html#acknowledging-csd3</a>.</p>
+</div>
+<div class="section" id="software">
+<h2>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h2>
+<p>CSD3 uses modules, e.g., with <code class="docutils literal notranslate"><span class="pre">qctool</span></code> v2.0.5,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module load qctool/v2.0.5
+</pre></div>
+</div>
+<p>followed by <code class="docutils literal notranslate"><span class="pre">qctool</span> <span class="pre">-help</span></code>.</p>
+<p>When advanced versions of GNU C-related libraries are required, e.g., from R</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>library(plotly)
+/usr/lib64/libstdc++.so.6: version `GLIBCXX_3.4.20&#39; not found
+
+library(UniProt.ws)
+Error: package or namespace load failed for ‘UniProt.ws’ in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]):
+ namespace ‘rlang’ 0.4.2 is already loaded, but &gt;= 0.4.3 is required
+</pre></div>
+</div>
+<p>which would go away should we issue <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">gcc/5</span></code> ahead of R. In case of failure after <code class="docutils literal notranslate"><span class="pre">srun</span></code> (see below), enforce lookup by</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/software/master/gcc/5/lib64:/usr/local/software/master/gcc/5/lib:<span class="nv">$LD_LIBRARY_PATH</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ceuadmin">
+<h2>ceuadmin<a class="headerlink" href="#ceuadmin" title="Permalink to this headline">¶</a></h2>
+<p>The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of December 2019, the list is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bgenix</span><span class="o">/</span>                       <span class="n">LDstore</span><span class="o">/</span>                     <span class="n">plink_linux_x86_64_beta3</span><span class="o">.</span><span class="mi">32</span><span class="o">/</span>  <span class="n">raremetal_4</span><span class="o">.</span><span class="mf">14.0</span><span class="o">/</span>                   <span class="n">snptest_new</span><span class="o">/</span>
+<span class="n">biobank</span><span class="o">/</span>                      <span class="n">magma</span><span class="o">/</span>                       <span class="n">plinkseq</span><span class="o">-</span><span class="mf">0.08</span><span class="o">-</span><span class="n">x86_64</span><span class="o">/</span>         <span class="n">raremetal_4</span><span class="o">.</span><span class="mf">14.1</span><span class="o">/</span>                   <span class="n">source</span><span class="o">/</span>
+<span class="n">boltlmm</span><span class="o">/</span>                      <span class="n">MAGMA_Celltyping</span><span class="o">/</span>            <span class="n">plinkseq</span><span class="o">-</span><span class="mf">0.10</span><span class="o">/</span>                <span class="n">raremetal_BPGen</span><span class="o">/</span>                    <span class="n">stata</span><span class="o">/</span>
+<span class="n">boltlmm_2</span><span class="o">.</span><span class="mi">2</span><span class="o">/</span>                  <span class="n">metabolomics</span><span class="o">/</span>                <span class="n">qctool_v1</span><span class="o">.</span><span class="mi">4</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">/</span>     <span class="n">Raremetal_linux_executables</span><span class="o">/</span>        <span class="n">tabix</span><span class="o">/</span>
+<span class="n">exomeplus</span><span class="o">/</span>                    <span class="n">metal</span><span class="o">/</span>                       <span class="n">R</span><span class="o">/</span>                            <span class="n">Raremetal_linux_executables</span><span class="o">.</span><span class="n">tgz</span>     <span class="n">temp</span><span class="o">/</span>
+<span class="n">gcta</span><span class="o">/</span>                         <span class="n">metal_updated</span><span class="o">/</span>               <span class="n">raremetal_4</span><span class="o">.</span><span class="mi">13</span><span class="o">/</span>               <span class="n">raremetal</span><span class="o">.</span><span class="n">log</span>                       <span class="n">vcftools</span><span class="o">/</span>
+<span class="n">gtool_v0</span><span class="o">.</span><span class="mf">7.5</span><span class="n">_x86_64</span><span class="o">/</span>          <span class="n">plink</span><span class="o">/</span>                       <span class="n">raremetal_4</span><span class="o">.</span><span class="mf">13.3</span><span class="o">/</span>             <span class="n">samtools_1</span><span class="o">.</span><span class="mi">2</span><span class="o">/</span>                       <span class="n">vcftools_ps629</span><span class="o">/</span>
+<span class="n">hpg</span><span class="o">/</span>                          <span class="n">plink_1</span><span class="o">.</span><span class="mi">90</span><span class="n">_beta</span><span class="o">/</span>             <span class="n">raremetal_4</span><span class="o">.</span><span class="mf">13.4</span><span class="o">/</span>             <span class="n">shapeit</span><span class="o">.</span><span class="n">v2</span><span class="o">.</span><span class="n">r790</span><span class="o">.</span><span class="n">RHELS_5</span><span class="o">.</span><span class="mf">4.</span><span class="n">dynamic</span><span class="o">/</span>
+<span class="n">impute_v2</span><span class="o">.</span><span class="mf">3.2</span><span class="n">_x86_64_static</span><span class="o">/</span>  <span class="n">plink_bgi_Dev</span><span class="o">/</span>               <span class="n">raremetal_4</span><span class="o">.</span><span class="mf">13.5</span><span class="o">/</span>             <span class="n">snptest</span><span class="o">/</span>
+<span class="n">interval</span><span class="o">/</span>                     <span class="n">plink</span><span class="o">-</span><span class="n">bgi_linux_x86_64_may</span><span class="o">/</span>  <span class="n">raremetal_4</span><span class="o">.</span><span class="mf">13.7</span><span class="o">/</span>             <span class="n">snptest_2</span><span class="o">.</span><span class="mf">5.2</span><span class="o">/</span>
+<span class="n">JAGS</span><span class="o">/</span>                         <span class="n">plink_linux_x86_64_beta2a</span><span class="o">/</span>   <span class="n">raremetal_4</span><span class="o">.</span><span class="mf">13.8</span><span class="o">/</span>             <span class="n">snptest_2</span><span class="o">.</span><span class="mf">5.4</span><span class="n">_beta3</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>These can be loaded with <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">ceuadmin/&lt;module</span> <span class="pre">name&gt;</span></code>.</p>
+<div class="section" id="git">
+<h3>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h3>
+<p>To have the latest git, e.g.,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz <span class="p">|</span> tar xfz -
+<span class="nb">cd</span> git-2.30.0
+make <span class="nv">NO_GETTEXT</span><span class="o">=</span>YesPlease install
+</pre></div>
+</div>
+<p>and the executables will be put to ~/bin.</p>
+</div>
+<div class="section" id="matlab">
+<h3>matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h3>
+<p>Official website: <a class="reference external" href="https://www.mathworks.com/products/matlab.html">https://www.mathworks.com/products/matlab.html</a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">avail</span> <span class="n">matlab</span>
+<span class="n">module</span> <span class="n">load</span> <span class="n">matlab</span><span class="o">/</span><span class="n">r2019b</span>
+</pre></div>
+</div>
+<p>followed by <code class="docutils literal notranslate"><span class="pre">matlab</span></code>.</p>
+</div>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>Official website: <a class="reference external" href="https://www.python.org/">https://www.python.org/</a>.</p>
+<p>This can be invoked from a CSD3 console via <code class="docutils literal notranslate"><span class="pre">python</span></code> and <code class="docutils literal notranslate"><span class="pre">python3</span></code>. Libraries can be installed via <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">pip3</span></code> (or equivalently <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span></code> and <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span></code>), e.g., the script</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install mygene --user
+pip install tensorflow --user
+pip install keras --user
+pip install jupyter --user
+</pre></div>
+</div>
+<p>installs libraries at <code class="docutils literal notranslate"><span class="pre">$HOME/.local</span></code>.</p>
+<p>It is advised to use virual environments, i.e.,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># inherit system-wide packages as well</span>
+module load python/3.5
+virtualenv --system-site-packages py35
+<span class="nb">source</span> py35/bin/activate
+<span class="c1"># pip new packages</span>
+deactivate
+</pre></div>
+</div>
+<p>Note that when this is set up, one only needs to restart from the <code class="docutils literal notranslate"><span class="pre">source</span></code> command. The <code class="docutils literal notranslate"><span class="pre">pip</span></code> is appropriate for installing small number of package; otherwise Anaconda (<a class="reference external" href="https://www.anaconda.com/">https://www.anaconda.com/</a>) and Jupyter notebook (<a class="reference external" href="https://jupyter.org/">https://jupyter.org/</a>) are useful.</p>
+<p>We first load Anaconda and create virtual environments,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module avail miniconda
+module load miniconda2-4.3.14-gcc-5.4.0-xjtq53h
+conda create -n py27 <span class="nv">python</span><span class="o">=</span><span class="m">2</span>.7 ipykernel
+</pre></div>
+</div>
+<p>for Python 2.7 at <code class="docutils literal notranslate"><span class="pre">/home/$USER/.conda/envs/py27</span></code>, where envs could be replaced with the <code class="docutils literal notranslate"><span class="pre">--prefix</span></code> option. These are only required once.</p>
+<p>We can then load Anaconda and activate Python 3.5,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module load miniconda/3
+conda create -n py35 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.5 ipykernel
+<span class="nb">source</span> activate py35
+</pre></div>
+</div>
+<p>and follow <a class="reference external" href="https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial">Autoencoder in Keras tutorial</a> on
+data from <a class="reference external" href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a></p>
+<p>The Jupyter notebook can be started as follows,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>hostname
+<span class="nv">$HOME</span>/.local/bin/jupyter notebook --ip<span class="o">=</span><span class="m">127</span>.0.0.1 --no-browser --port <span class="m">8081</span>
+</pre></div>
+</div>
+<p>If it fails to assign the port number, let the system choose (by dropping the <code class="docutils literal notranslate"><span class="pre">--port</span></code> option). The process which use the port can be shown with <code class="docutils literal notranslate"><span class="pre">lsof</span>&#160; <span class="pre">-i:8081</span></code> or stopped by <code class="docutils literal notranslate"><span class="pre">lsof</span> <span class="pre">-ti:8081</span> <span class="pre">|</span> <span class="pre">xargs</span> <span class="pre">kill</span> <span class="pre">-9</span></code>. The command <code class="docutils literal notranslate"><span class="pre">hostname</span></code> gives the name of the node. Once the port number is assigned, it is
+used by another ssh session <em>elsewhere</em> and the URL generated openable from a browser, e.g.,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -4 -L <span class="m">8081</span>:127.0.0.1:8081 -fN &lt;hostname&gt;.hpc.cam.ac.uk
+firefox &lt;URL&gt; <span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>paying attention to the port number as it may change.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">hello</span> <span class="pre">world</span></code> example is <a class="reference external" href="files/hello.ipynb">hello.ipynb</a> from which <a class="reference external" href="files/hello.html">hello.html</a> and <a class="reference external" href="files/hello.pdf">hello.pdf</a> were generated with <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">nbconvert</span> <span class="pre">--to</span> <span class="pre">html|pdf</span> <span class="pre">hello.ipynb</span></code>.</p>
+<p>See also https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anaconda-python and https://docs.hpc.cam.ac.uk/hpc/software-packages/jupyter.html.</p>
+<p>See <a class="reference external" href="https://docs.hpc.cam.ac.uk/hpc/">HPC docuementation</a> for additional information on PyTorch, Tensorflow and GPU.</p>
+</div>
+<div class="section" id="r">
+<h3>R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h3>
+<p>Official website: <a class="reference external" href="https://www.r-project.org/">https://www.r-project.org/</a> and also <a class="reference external" href="https://bioconductor.org/">https://bioconductor.org/</a>.</p>
+<p>Under HPC, the default version is 3.3.3 with /usr/bin/R; alternatively choose the desired version of R from</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module avail R
+module avail r
+<span class="c1"># if you would also like to use RStudio</span>
+module avail rstudio
+</pre></div>
+</div>
+<p>e.g., <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">r-3.6.0-gcc-5.4.0-bzuuksv</span> <span class="pre">rstudio/1.1.383</span></code>.</p>
+<p>The following code installs package for weighted correlation network analysis (<a class="reference external" href="https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/">WGCNA</a>).</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># from CRAN</span>
+<span class="n">dependencies</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;matrixStats&quot;</span><span class="p">,</span> <span class="s">&quot;Hmisc&quot;</span><span class="p">,</span> <span class="s">&quot;splines&quot;</span><span class="p">,</span> <span class="s">&quot;foreach&quot;</span><span class="p">,</span> <span class="s">&quot;doParallel&quot;</span><span class="p">,</span>
+                  <span class="s">&quot;fastcluster&quot;</span><span class="p">,</span> <span class="s">&quot;dynamicTreeCut&quot;</span><span class="p">,</span> <span class="s">&quot;survival&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="n">dependencies</span><span class="p">)</span>
+<span class="c1"># from Bioconductor</span>
+<span class="nf">source</span><span class="p">(</span><span class="s">&quot;http://bioconductor.org/biocLite.R&quot;</span><span class="p">)</span>
+<span class="nf">biocLite</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;GO.db&quot;</span><span class="p">,</span> <span class="s">&quot;preprocessCore&quot;</span><span class="p">,</span> <span class="s">&quot;impute&quot;</span><span class="p">))</span>
+<span class="c1"># R &gt;= 3.5.0</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;BiocManager&quot;</span><span class="p">)</span>
+<span class="n">BiocManager</span><span class="o">::</span><span class="nf">install</span><span class="p">(</span><span class="s">&quot;WGCNA&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A good alternative is to use <code class="docutils literal notranslate"><span class="pre">remotes</span></code> or <code class="docutils literal notranslate"><span class="pre">devtools</span></code> package, e.g.,</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">remotes</span><span class="o">::</span><span class="nf">install_bioc</span><span class="p">(</span><span class="s">&quot;snpStats&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In case of difficulty it is still useful to install directly, e.g.,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget http://master.bioconductor.org/packages//2.10/bioc/src/contrib/ontoCAT_1.8.0.tar.gz
+R CMD INSTALL ontoCAT_1.8.0.tar.gz
+<span class="c1"># Alternatively,</span>
+R -e <span class="s2">&quot;install.packages(&#39;ontoCAT_1.8.0.tar.gz&#39;,repos=NULL)&quot;</span>
+</pre></div>
+</div>
+<p>The package installation directory can be spefied explicitly with R_LIBS, i.e.,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">R_LIBS</span><span class="o">=</span>/rds/user/<span class="nv">$USER</span>/hpc-work/R:/rds/user/<span class="nv">$USER</span>/hpc-work/R-3.6.1/library
+</pre></div>
+</div>
+</div>
+<div class="section" id="slurm">
+<h3>SLURM<a class="headerlink" href="#slurm" title="Permalink to this headline">¶</a></h3>
+<p>Official website: <a class="reference external" href="https://slurm.schedmd.com/">https://slurm.schedmd.com/</a>.</p>
+<p>Account details can be seen with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mybalance
+</pre></div>
+</div>
+<p>Partition is shown with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scontrol show partition
+</pre></div>
+</div>
+<p>For an interacive job, we could for instance start with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sintr -A MYPROJECT -p skylake -N2 -n2 -t <span class="m">1</span>:0:0 --qos<span class="o">=</span>INTR
+</pre></div>
+</div>
+<p>and also</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun -N1 -n1 -c4 -p skylake-himem -t <span class="m">12</span>:0:0 --pty bash -i
+</pre></div>
+</div>
+<p>or <code class="docutils literal notranslate"><span class="pre">sintr</span></code> then check with <code class="docutils literal notranslate"><span class="pre">squeue</span> <span class="pre">-u</span> <span class="pre">$USER</span></code>, <code class="docutils literal notranslate"><span class="pre">qstat</span> <span class="pre">-u</span> <span class="pre">$USER</span></code> and <code class="docutils literal notranslate"><span class="pre">sacct</span></code>. The directory <code class="docutils literal notranslate"><span class="pre">/usr/local/software/slurm/current/bin/</span></code> contains all the executables while sample scripts are in <code class="docutils literal notranslate"><span class="pre">/usr/local/Cluster-Docs/SLURM</span></code>, e.g., <a class="reference external" href="files/slurm_submit.peta4-skylake">template for Skylake</a>.</p>
+<p>Here is an example to convert a large number of PDF files (INTERVAL.*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list,and pipe into ``parallel`.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls *pdf <span class="p">|</span> <span class="se">\</span>
+sed <span class="s1">&#39;s/INTERVAL.//g;s/.manhattan.pdf//g&#39;</span> <span class="p">|</span> <span class="se">\</span>
+parallel -j8 -C<span class="s1">&#39; &#39;</span> <span class="s1">&#39;</span>
+<span class="s1">  echo {}</span>
+<span class="s1">  pdftopng -r 300 INTERVAL.{}.manhattan.pdf</span>
+<span class="s1">  mv {}-000001.png INTERVAL.{}.png</span>
+<span class="s1">&#39;</span>
+</pre></div>
+</div>
+<p>which is equivalent to SLURM implementation using array jobs (https://slurm.schedmd.com/job_array.html).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/bash</span>
+
+<span class="c1">#SBATCH --ntasks=1</span>
+<span class="c1">#SBATCH --job-name=pdftopng</span>
+<span class="c1">#SBATCH --time=6:00:00</span>
+<span class="c1">#SBATCH --cpus-per-task=8</span>
+<span class="c1">#SBATCH --partition=skylake</span>
+<span class="c1">#SBATCH --array=1-50%10</span>
+<span class="c1">#SBATCH --output=pdftopng_%A_%a.out</span>
+<span class="c1">#SBATCH --error=pdftopng_%A_%a.err</span>
+<span class="c1">#SBATCH --export ALL</span>
+
+<span class="nb">export</span> <span class="nv">p</span><span class="o">=</span><span class="k">$(</span>awk <span class="s1">&#39;NR==ENVIRON[&quot;SLURM_ARRAY_TASK_ID&quot;]&#39;</span> INTERVAL.list<span class="k">)</span>
+<span class="nb">export</span> <span class="nv">TMPDIR</span><span class="o">=</span>/rds/user/<span class="nv">$USER</span>/hpc-work/
+
+<span class="nb">echo</span> <span class="si">${</span><span class="nv">p</span><span class="si">}</span>
+pdftopng -r <span class="m">300</span> INTERVAL.<span class="si">${</span><span class="nv">p</span><span class="si">}</span>.manhattan.pdf <span class="si">${</span><span class="nv">p</span><span class="si">}</span>
+mv <span class="si">${</span><span class="nv">p</span><span class="si">}</span>-000001.png INTERVAL.<span class="si">${</span><span class="nv">p</span><span class="si">}</span>.png
+</pre></div>
+</div>
+<p>invoked by <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>. As with Cardio, it is helpful to set a temporary directory, i.e.,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">TMPDIR</span><span class="o">=</span>/rds/user/<span class="nv">$USER</span>/hpc-work/
+</pre></div>
+</div>
+<p>It is possible to avoid both <code class="docutils literal notranslate"><span class="pre">parallel</span></code> and SLURM, e.g.,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">url</span><span class="o">=</span>https://zenodo.org/record/2615265/files/
+<span class="k">if</span> <span class="o">[</span> ! -d ~/rds/results/public/proteomics/scallop-cvd1 <span class="o">]</span><span class="p">;</span> <span class="k">then</span> mkdir ~/rds/results/public/proteomics/scallop-cvd1<span class="p">;</span> <span class="k">fi</span>
+cat cvd1.txt <span class="p">|</span> xargs -I <span class="o">{}</span> bash -c <span class="s2">&quot;wget </span><span class="si">${</span><span class="nv">url</span><span class="si">}</span><span class="s2">/{}.txt.gz -O ~/rds/results/public/proteomics/scallop-cvd1/{}.txt.gz&quot;</span>
+<span class="c1">#  ln -s ~/rds/results/public/proteomics/scallop-cvd1</span>
+</pre></div>
+</div>
+<p>which downloads the SCALLOP-cvd1 sumstats for proteins listed in <code class="docutils literal notranslate"><span class="pre">cvd1.txt</span></code>.</p>
+</div>
+<div class="section" id="stata">
+<h3>Stata<a class="headerlink" href="#stata" title="Permalink to this headline">¶</a></h3>
+<p>Official website: <a class="reference external" href="https://www.stata.com/">https://www.stata.com/</a>.</p>
+<p>As a CEU member the following is possible,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">ceuadmin</span><span class="o">/</span><span class="n">stata</span><span class="o">/</span><span class="mi">14</span>
+</pre></div>
+</div>
+<p>as with <code class="docutils literal notranslate"><span class="pre">ceuadmin/stata/15</span></code>. The meta-analysis (metan) and Mendelian Randomisation (mrrobust) packages can be installed as follows,</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">ssc</span> install metan<span class="k"></span>
+<span class="k">net</span> install mrrobust, from(<span class="s">&quot;https://raw.github.com/remlapmot/mrrobust/master/&quot;</span>)<span class="k"> replace</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="training">
+<h2>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>First training</strong>: Wednesday, 10th July 2019 from 10am – 12pm.</p></li>
+<li><p><strong>Second training</strong>: Wednesday, 31st July 2019 from 9:30am – 4pm.</p></li>
+<li><p><strong>UCS</strong>: <a class="reference external" href="https://training.cam.ac.uk/ucs/">https://training.cam.ac.uk/ucs/</a>.</p></li>
+<li><p><strong>Handouts</strong>: <a class="reference external" href="https://www.hpc.cam.ac.uk/files/introduction_to_hpc-jun2019-handout_0.pdf">June</a> and <a class="reference external" href="https://www.hpc.cam.ac.uk/files/introduction_to_hpc-nov2019.pdf">November</a>, 2019.</p></li>
+<li><p><strong>Presentation</strong>: <a class="reference external" href="https://tinyurl.com/y3l6jssg">Google document</a> by Praveen Surendran (<a class="reference external" href="mailto:ps629&#37;&#52;&#48;medschl&#46;cam&#46;ac&#46;uk">ps629<span>&#64;</span>medschl<span>&#46;</span>cam<span>&#46;</span>ac<span>&#46;</span>uk</a>).</p></li>
+</ul>
+</div>
+<div class="section" id="contacts">
+<h2>Contacts<a class="headerlink" href="#contacts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>CSD3 account</strong>: <a class="reference external" href="https://www.hpc.cam.ac.uk/rcs-application">https://www.hpc.cam.ac.uk/rcs-application</a> as in <a class="reference external" href="https://www.hpc.cam.ac.uk/applications-access-research-computing-services">Applications for Access to Research Computing Services</a>.</p></li>
+<li><p><strong>HPC support</strong>: <a class="reference external" href="mailto:support&#37;&#52;&#48;hpc&#46;cam&#46;ac&#46;uk">support<span>&#64;</span>hpc<span>&#46;</span>cam<span>&#46;</span>ac<span>&#46;</span>uk</a> with the title “cardio migration”.</p></li>
+<li><p><strong>CEU contacts</strong>: Ank Michielsen (<a class="reference external" href="mailto:am2710&#37;&#52;&#48;medschl&#46;cam&#46;ac&#46;uk">am2710<span>&#64;</span>medschl<span>&#46;</span>cam<span>&#46;</span>ac<span>&#46;</span>uk</a>) and Niko Ovenden (<a class="reference external" href="mailto:nao26&#37;&#52;&#48;medschl&#46;cam&#46;ac&#46;uk">nao26<span>&#64;</span>medschl<span>&#46;</span>cam<span>&#46;</span>ac<span>&#46;</span>uk</a>).</p></li>
+<li><p><strong>Request for software</strong>: Savita Karthikeyan (<a class="reference external" href="mailto:sk752&#37;&#52;&#48;medschl&#46;cam&#46;ac&#46;uk">sk752<span>&#64;</span>medschl<span>&#46;</span>cam<span>&#46;</span>ac<span>&#46;</span>uk</a>).</p></li>
+<li><p><strong>Contacts for data access</strong>. CSD3datamanager&#64;medschl.cam.ac.uk.</p></li>
+</ul>
+</div>
+<div class="section" id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
+<p>The repository was created as a result of the cambridge-ceu organisation; information regarding system login, Jupyter, polyphen, Stata and VEP received inputs from HPC supporint team.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">CSD3</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Jing Hua Zhao.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/README.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
