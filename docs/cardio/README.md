@@ -10,8 +10,6 @@ source: `{{ page.path }}`
 {% raw %}{% include list.liquid all=true %}{% endraw %}
 ```
 
-{% include list.liquid all=true %}
-
 Cardio is the HPC facility at the CEU.
 
 ## CSD3 partition
@@ -70,7 +68,7 @@ Bram Prins (<bp406@medschl.cam.ac.uk>) has the latest version (3.1.3) that doesn
 
 /DO-NOT-MODIFY-SCRATCH/bp406/apps/software/data_manipulation/rsync-3.1.3/rsync
 
-Note **/scratch** at Cardio is now **/DO-NOT-MODIFY-SCRATCH** -- an example is [jp.sh](files/jp.sh).
+Note **/scratch** at Cardio is now **/DO-NOT-MODIFY-SCRATCH** -- an example is [jp.sh](jp.sh).
 
 ### R package reinstallations
 
@@ -105,5 +103,5 @@ pkgs <- unname(installed.packages(lib.loc = location)[, "Package"])
 install.packages(pkgs, lib=location, repos="https://cran.r-project.org")
 ```
 
-A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](cardio/reinstall_r_pkgs.R), also touches upon Bioconductor,
+A version by Scott Ritchie (<sr827@medschl.cam.ac.uk>), [reinstall_r_pkgs.R](reinstall_r_pkgs.R), also touches upon Bioconductor,
 whose package installations and updates are described at [https://bioconductor.org/install/](https://bioconductor.org/install/).
