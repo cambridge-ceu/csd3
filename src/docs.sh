@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+function renum()
+{
+  ls usages/*md | grep -v -e README -e files | sort | xargs -I {} basename {} .md | awk '{print NR,$1}' | \
+  parallel -j1 -C' ' '
+    echo {1} {2}
+    export line=2
+    export value={1}
+    sed -i "${line}s/\S\+/${value}/2" usages/{2}.md
+  '
+}
+
+renum
+make build
