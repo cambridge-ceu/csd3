@@ -1,8 +1,8 @@
-# csd3 -- A collection of CSD3 notes
+# csd3 -- A respository for applications on CSD3
 
 ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
 ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
 
-## The collection includes general information regarding the system as well as a variety of specifiic software.
+## The collection includes system information together with general and specifiic software.
 
 {% include list.liquid all=true %}

@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["saowang"]
   spec.email         = ["saowang@outlook.com"]
 
-  spec.summary       = "A collection of CSD3 notes"
+  spec.summary       = "A respository for applications on CSD3"
   spec.license       = "MIT"
   spec.homepage      = "https://cambridge-ceu.github.io/csd3/"
 
