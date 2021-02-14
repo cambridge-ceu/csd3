@@ -3,13 +3,13 @@ description: A collection of CSD3 notes
 
 theme: null
 
-# debug:
-#   compress: true
-#   dist: false
+debug:
+  compress: true
+  dist: false
+  shortcodes: false
 
 readme_index:
   with_frontmatter: true
-  shortcodes: false
 
 plugins:
   - jemoji
