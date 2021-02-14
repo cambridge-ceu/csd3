@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# Mathjax Test
+# Mathjax
 
 $$
 \begin{aligned}
