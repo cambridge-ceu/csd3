@@ -1,5 +1,5 @@
 ---
-sort: 4
+sort: 1
 ---
 
 # Test Documentation
