@@ -2,7 +2,7 @@
 sort: 4
 ---
 
-## ANNOVAR
+# ANNOVAR
 
 Web page: http://annovar.openbioinformatics.org/en/latest/
 

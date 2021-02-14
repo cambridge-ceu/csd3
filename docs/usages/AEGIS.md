@@ -2,7 +2,7 @@
 sort: 2
 ---
 
-## AEGIS
+# AEGIS
 
 Web: http://aegis.stanford.edu/
 

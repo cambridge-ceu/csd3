@@ -2,7 +2,7 @@
 sort: 8
 ---
 
-## DosageConverter
+# DosageConverter
 
 ```bash
 ## assuming you use hpc-work/ with a subdirectory called bin/

@@ -1,5 +1,5 @@
 ---
-sort: 31
+sort: 32
 ---
 
 # R/SAIGE 0.36.6 and 0.39.2
@@ -48,16 +48,3 @@ R CMD INSTALL SAIGE
 ```
 
 which first installs MetaSKAT 0.80 also at CRAN but SPAtest 3.1.2 instead of 3.0.2 from CRAN.
-
-A by-product of this is LEMMA,
-
-```bash
-wget -qO- https://github.com/mkerin/LEMMA/archive/v1.0.2.tar.gz | \
-tar xvfz | \
-cd LEMMA-1.0.2
-cmake -S . -B build \
-      -DBGEN_ROOT=${HOME}/SAIGE/thirdParty/bgen \
-      -DBOOST_ROOT=${HOME}/SAIGE/thirdParty/bgen/3rd_party/boost_1_55_0
-cd build
-make
-```
