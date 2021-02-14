@@ -7,6 +7,6 @@ git add src
 git commit -m "commands"
 git add README.md
 git commit -m "README"
-git add usage.md
-git commit -m "Usage notes"
+git add applications.md
+git commit -m "applications"
 git push -u origin master
