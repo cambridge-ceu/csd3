@@ -5,8 +5,4 @@
 
 ## The collection includes general information regarding the system as well as a variety of specifiic software.
 
-{% include list.liquid %}
-
-## The license
-
-The theme is available as open source under the terms of the MIT License
+{% include list.liquid all=true %}
