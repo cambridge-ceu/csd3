@@ -13,3 +13,8 @@ function renum()
 
 renum
 make build
+
+
+### Earlier experiment: https://readthedocs.org/projects/csd3/
+### Earlier experiment: https://readthedocs.org/projects/csd3v2/
+
