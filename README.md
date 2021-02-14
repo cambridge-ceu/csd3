@@ -10,7 +10,7 @@
   * Policies
 * Software
   * ceuadmin, git, matlab, Python, R, SLURM, Stata
-  * [Usage notes](usage.md)
+  * [Applications](applications.md)
   * [To-do list](https://docs.google.com/spreadsheets/d/15KYXH-B0xJg7GEHjPpFOH1VRDc-Nj5rrejEoyLoMuU4/edit?usp=sharing)
 * Training
 * Contacts
