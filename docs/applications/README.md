@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# Miscellaneous notes
+# Applications
 
 source: `{{ page.path }}`
 
