@@ -4,8 +4,8 @@ description: A collection of CSD3 notes
 theme: null
 
 debug:
-  #   compress: true
-  #   dist: false
+  compress: true
+  dist: false
   shortcodes: false
 
 readme_index:
