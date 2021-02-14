@@ -5,7 +5,7 @@
 
 ## The collection includes general information regarding the system as well as a variety of specifiic software.
 
-{% include list.liquid all=true %}
+{% include list.liquid %}
 
 ## The license
 
