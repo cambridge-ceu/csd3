@@ -6,10 +6,10 @@ theme: null
 # debug:
 #   compress: true
 #   dist: false
-#   shortcodes: true
 
 readme_index:
   with_frontmatter: true
+  shortcodes: false
 
 plugins:
   - jemoji
