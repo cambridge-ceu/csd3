@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# General information
+# The system
 
 source: `{{ page.path }}`
 
