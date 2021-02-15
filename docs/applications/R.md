@@ -24,3 +24,17 @@ make install
 With this setup, `R CMD check --as-cran` for a CRAN package check can be run smoothly.
 
 Package reinstallation could be done with `update.packages(checkBuilt = TRUE, ask = FALSE)`.
+
+It may complain about libiconv.so.2,
+
+> ... R: error while loading shared libraries: libiconv.so.2: cannot open shared object file: No such file or directory
+
+which can be installed as follows,
+
+```bash
+wget -qO- https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.16.tar.gz | tar xvfz -
+cd libiconv-1.16
+./configure --prefix=${HPC_WORK}
+make
+make install
+```
