@@ -28,4 +28,4 @@ exclude:
   - package.json
   - package-lock.json
   - webpack.config.js
-  - csd3.gemspec
+  - jekyll-rtd-theme.gemspec

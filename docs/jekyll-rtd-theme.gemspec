@@ -1,12 +1,12 @@
 Gem::Specification.new do |spec|
-  spec.name          = "csd3"
+  spec.name          = "jekyll-rtd-theme"
   spec.version       = "2.0.10"
   spec.authors       = ["saowang"]
   spec.email         = ["saowang@outlook.com"]
 
   spec.summary       = "A respository for applications on CSD3"
   spec.license       = "MIT"
-  spec.homepage      = "https://cambridge-ceu.github.io/csd3/"
+  spec.homepage      = "https://github.com/rundocs/jekyll-rtd-theme"
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README)!i) }
 
