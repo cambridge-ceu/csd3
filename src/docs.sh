@@ -11,8 +11,10 @@ function renum()
   '
 }
 
+cd docs
 renum
 make build
+cd -
 
 ### Earlier experiment: https://readthedocs.org/projects/csd3/
 ### Earlier experiment: https://readthedocs.org/projects/csd3v2/
