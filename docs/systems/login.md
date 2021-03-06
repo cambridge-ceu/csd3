@@ -52,4 +52,12 @@ chmod 700 authorized_keys
 ssh-copy-id -i mykey.pub user@remoteserver
 ```
 
-Environmental variables can be set inside `~/.bashrc`. When there is an error `'abrt-cli status' timed out`, one should remove ${HOME}/.cache and relogin/source .bashrc.
+Environmental variables can be set inside `~/.bashrc`. In particular when some changes have been made, one can enable them with
+
+```bash
+source ~/.bashrc
+```
+
+where the `~` sign is equivalent to ${HOME}.
+
+When there is an error `'abrt-cli status' timed out`, one should remove ${HOME}/.cache and relogin/source .bashrc.
