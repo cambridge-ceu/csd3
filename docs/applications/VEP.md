@@ -140,6 +140,7 @@ cd -
 from this we could propagate the idea for autosomes in chunks as follows,
 
 ```bash
+export ref=~/rds/post_qc_data/interval/reference_files/genetic/reference_files_genotyped_imputed/
 export chunk_size=10000
 seq 22 | \
 parallel -j1 --env ref -C' ' '
@@ -171,6 +172,16 @@ parallel -j1 --env ref -C' ' '
   ) | \
   gzip -f > work/INTERVAL-{}.vep.gz
 '
+```
+
+and the .snpstats has the following lines,
+
+```
+SNPID	RSID	chromosome	position	A_allele	B_allele	minor_allele	major_allele	AA	AB	BB	AA_calls	AB_calls	BB_calls	MAF	HWE	missing	missing_calls	information
+rs587697622	rs587697622	22	16050075	A	G	G	A	43058	1.2499	0	43058	1	0	1.4514e-05	-0	0	0	0.81003
+rs587755077	rs587755077	22	16050115	G	A	A	G	42485	572.42	1.7625	42105	306	1	0.0066878	0.14341	3.5437e-09	0.015026	0.68672
+rs587654921	rs587654921	22	16050213	C	T	T	C	42848	211.12	0.16248	42746	124	0	0.0024553	-0	1.4175e-09	0.0043893	0.67168
+rs587712275	rs587712275	22	16050319	C	T	T	C	43022	36.998	0	43022	23	0	0.00042962	-0	0	0.00032514	0.69071
 ```
 
 Note we use information from `.snpstats` files at location `ref` to build input in vcf format on the fly and feed into VEP.
