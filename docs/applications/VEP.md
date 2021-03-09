@@ -174,7 +174,7 @@ parallel -j1 --env ref -C' ' '
 '
 ```
 
-and for instance `impute_22_interval.snpstats` has the following lines,
+and for instance `impute_22_interval.snpstats` contains the following lines,
 
 ```
 SNPID	RSID	chromosome	position	A_allele	B_allele	minor_allele	major_allele	AA	AB	BB	AA_calls	AB_calls	BB_calls	MAF	HWE	missing	missing_calls	information
