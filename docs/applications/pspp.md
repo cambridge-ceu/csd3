@@ -22,7 +22,7 @@ However, it is possible to compile it directly by using
 
 ```bash
 export PREFIX=/rds/user/$USER/hpc-work
-export GTKSOURCEVIEW_CFLAGS=-I${PREFIX}/includegtksourceview-4
+export GTKSOURCEVIEW_CFLAGS=-I${PREFIX}/include/gtksourceview-4
 export GTKSOURCEVIEW_LIBS="-L${PREFIX}/lib -lgtksourceview-4"
 ./configure --prefix=${PREFIX}
 make
@@ -44,3 +44,25 @@ psppire plot.ps &
 ```
 
 More documentation examples are in the [examples](files/examples) directory.
+
+Version 1.4.1 requires spread-sheet-widget 0.6 and we follow the following steps,
+
+```bash
+wget http://alpha.gnu.org/gnu/ssw/spread-sheet-widget-0.7.tar.gz
+tar xvfz spread-sheet-widget-0.7.tar.gz
+cd spread-sheet-widget-0.7
+./configure --prefix=$HPC_WORK
+make
+make install
+export PREFIX=/rds/user/$USER/hpc-work
+export GTKSOURCEVIEW_CFLAGS=-I${PREFIX}/include/gtksourceview-4
+export GTKSOURCEVIEW_LIBS="-L${PREFIX}/lib -lgtksourceview-4"
+wget http://mirror.lyrahosting.com/gnu/pspp/pspp-1.4.1.tar.gz
+tar xvfz pspp-1.4.1.tar.gz
+cd pspp-1.4.1
+./configure --prefix=${PREFIX}
+```
+
+Again we removed PREFIX= in call to perl-module/Makefile.PL.
+
+Finally, the LD = flag was not set in perl-module/Makefile and we use LD = 'gcc'.
