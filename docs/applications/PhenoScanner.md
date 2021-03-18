@@ -37,7 +37,7 @@ r <- list(snps=snps,results=results)
 
 i.e., each chunk has 100 SNPs and chunks are combined manually.
 
-Command-line interface (CLI)
+## Command-line interface (CLI)
 
 ```bash
 module load ceuadmin/phenoscanner
