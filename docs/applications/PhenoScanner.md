@@ -54,9 +54,9 @@ export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
 
 via `source ~/.bashrc` or a new login.
 
-R 4.x.x
+## R 4.x.x
 
-Section 3 above would fail under R 4.x.x; to get around, make a copy of phenoscanner according to
+Section above would fail under R 4.x.x; to get around, make a copy of phenoscanner according to
 
 ```bash
 module load ceuadmin/phenoscanner
