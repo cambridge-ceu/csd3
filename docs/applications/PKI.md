@@ -4,7 +4,7 @@ sort: 20
 
 # R/PKI
 
-When installing/updating the following error message,
+When installing/updating, the following error message appears,
 
 ```
 Error: package or namespace load failed for ‘PKI’ in dyn.load(file, DLLpath = DLLpath, ...):
