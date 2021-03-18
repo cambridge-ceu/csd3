@@ -4,7 +4,7 @@ sort: 19
 
 # R/PhenoScanner
 
-1. The R package works as follows,
+## The R package works as follows,
 
 ```bash
 install.packages("devtools")
@@ -14,7 +14,7 @@ library(phenoscanner)
 example(phenoscanner)
 ```
 
-2. When the query list is long, the call is made by chunks, e.g.,
+## When the query list is long, the call is made by chunks, e.g.,
 
 ```r
 options(width=500)
@@ -33,7 +33,9 @@ results <- do.call(rbind,t)
 r <- list(snps=snps,results=results)
 ```
 
-i.e., each chunk has 100 SNPs and chunks are combined manually. 3. The command-line interface (CLI)
+i.e., each chunk has 100 SNPs and chunks are combined manually.
+
+## The command-line interface (CLI)
 
 ```bash
 module load ceuadmin/phenoscanner
