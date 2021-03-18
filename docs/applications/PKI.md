@@ -21,6 +21,7 @@ One can get around with a twist of openssl, e.g.,
 Rscript -e "download.packages('PKI','.')"
 tar xvfz PKI_0.1-8.tar.gz
 module load openssl-1.1.0e-gcc-5.4.0-a4xxzqm
+cd PKI
 ./configure PKG_CPPFLAGS="-I/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/openssl-1.1.0e-a4xxzqmcsb3o2o7yctmpxef3cp36qk33/include/openssl/" \
             PKG_LIBS="-L/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/openssl-1.1.0e-a4xxzqmcsb3o2o7yctmpxef3cp36qk33/lib"
 # with openssl-1.1.1h installed locally
