@@ -4,7 +4,7 @@ sort: 19
 
 # R/PhenoScanner
 
-## The R package works as follows,
+1. The R package setup,
 
 ```bash
 install.packages("devtools")
@@ -14,7 +14,9 @@ library(phenoscanner)
 example(phenoscanner)
 ```
 
-## When the query list is long, the call is made by chunks, e.g.,
+2. Long query
+
+The call is made by chunks, e.g.,
 
 ```r
 options(width=500)
@@ -35,7 +37,7 @@ r <- list(snps=snps,results=results)
 
 i.e., each chunk has 100 SNPs and chunks are combined manually.
 
-## The command-line interface (CLI)
+3. Command-line interface (CLI)
 
 ```bash
 module load ceuadmin/phenoscanner
@@ -46,13 +48,13 @@ phenoscanner -s T -c All -x EUR -p 0.0000001 --r2 0.6 -i INF1.merge.snp -o INF1
 
 Note that `module load phenoscanner` is enabled from ~/.bashrc:
 
-```
+```bash
 export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
 ```
 
 via `source ~/.bashrc` or a new login.
 
-## Work with R 4.x.x
+4. R 4.x.x
 
 Section 3 above would fail under R 4.x.x; to get around, make a copy of phenoscanner according to
 
