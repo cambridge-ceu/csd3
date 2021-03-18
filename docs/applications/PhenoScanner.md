@@ -50,7 +50,11 @@ Note that `module load phenoscanner` is enabled from ~/.bashrc:
 export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
 ```
 
-via `source ~/.bashrc` or a new login. 4. Work with R 4.x.x. Section 3 above would fail under R 4.x.x; to get around, make a copy of phenoscanner according to
+via `source ~/.bashrc` or a new login.
+
+## Work with R 4.x.x
+
+Section 3 above would fail under R 4.x.x; to get around, make a copy of phenoscanner according to
 
 ```bash
 module load ceuadmin/phenoscanner
