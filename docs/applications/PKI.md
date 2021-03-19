@@ -4,7 +4,7 @@ sort: 20
 
 # R/PKI
 
-When installing/updating, the following error message appears,
+When installing/updating the package, the following error message appears,
 
 ```
 Error: package or namespace load failed for ‘PKI’ in dyn.load(file, DLLpath = DLLpath, ...):
@@ -15,7 +15,7 @@ Execution halted
 ERROR: loading failed
 ```
 
-One can get around with a twist of openssl, e.g.,
+and one can get around with a twist of openssl, e.g.,
 
 ```bash
 Rscript -e "download.packages('PKI','.')"
