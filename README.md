@@ -1,7 +1,5 @@
 <a href="https://www.top500.org/"><img src="https://www.top500.org/static//images/Top500_logo.png" align="right"></a>
 
-# csd3 -- CSD3 Applications
+# csd3 -- CSD3 applications
 
-The information is now fully detailed from this page: 
-
-### https://cambridge-ceu.github.io/csd3/
+### It is now fully detailed from: https://cambridge-ceu.github.io/csd3/
