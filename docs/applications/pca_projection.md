@@ -2,7 +2,7 @@
 sort: 19
 ---
 
-# pca_projection
+# PCA projection
 
 Official page: [https://github.com/covid19-hg/pca_projection](https://github.com/covid19-hg/pca_projection).
 
