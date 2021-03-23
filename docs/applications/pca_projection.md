@@ -244,4 +244,4 @@ Rscript ${PCA_projection}/plot_projected_pc.R \
   --out ${prefix}/work/snpid
 ```
 
-One may get around without the use SNP 150 reference data, but there is a big overhead to duplicate all data for a combined bgen file followed by indexing.
+One may get around without the use of SNP 150 reference data, but there is a big overhead to duplicate all data for a combined bgen file followed by indexing.
