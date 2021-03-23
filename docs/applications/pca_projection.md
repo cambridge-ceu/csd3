@@ -204,11 +204,9 @@ snpid_rsid;bgen_sample;map;snpid
 module load plink/2.00-alpha
 plink2 --bgen ${prefix}/work/snpid.bgen ref-first --make-pfile --out ${prefix}/work/snpid
 
-# The "chr" prefix in the provided file is unnecessary
-sed 's/chr//g' ${PCA_projection}/${PCA_af} > ${prefix}/work/PCA_af.tsv
 plink2 --pfile ${prefix}/work/snpid \
        --score ${PCA_projection}/${PCA_loadings} center cols=-scoreavgs,+scoresums list-variants header-read \
-       --score-col-nums 3-22 --read-freq ${prefix}/work/PCA_af.tsv --out ${prefix}/work/init
+       --score-col-nums 3-22 --read-freq ${PCA_projection}/${PCA_af} --out ${prefix}/work/init
 # The score file does not have FID (=0)
 awk '
 {
