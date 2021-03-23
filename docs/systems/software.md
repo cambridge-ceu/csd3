@@ -172,19 +172,19 @@ export R_LIBS=/rds/user/$USER/hpc-work/R:/rds/user/$USER/hpc-work/R-3.6.1/librar
 
 Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
 
-Account details can be seen with
+##### Account details
 
 ```bash
 mybalance
 ```
 
-Partition is shown with
+##### Partition
 
 ```bash
 scontrol show partition
 ```
 
-For an interacive job, we could for instance start with
+##### An interacive job
 
 ```bash
 sintr -A MYPROJECT -p skylake -N2 -n2 -t 1:0:0 --qos=INTR
@@ -198,7 +198,9 @@ srun -N1 -n1 -c4 -p skylake-himem -t 12:0:0 --pty bash -i
 
 or `sintr` then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `/usr/local/software/slurm/current/bin/` contains all the executables while sample scripts are in `/usr/local/Cluster-Docs/SLURM`, e.g., [template for Skylake](files/slurm_submit.peta4-skylake).
 
-Here is an example to convert a large number of PDF files (INTERVAL.\*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list,and pipe into ``parallel`.
+##### An example
+
+To convert a large number of PDF files (INTERVAL.\*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list,and pipe into ``parallel`.
 
 ```bash
 ls *pdf | \
@@ -239,7 +241,7 @@ invoked by `sbatch`. As with Cardio, it is helpful to set a temporary directory,
 export TMPDIR=/rds/user/$USER/hpc-work/
 ```
 
-It is possible to avoid both `parallel` and SLURM, e.g.,
+##### Neither `parallel` nor SLURM
 
 ```bash
 export url=https://zenodo.org/record/2615265/files/
@@ -249,6 +251,25 @@ cat cvd1.txt | xargs -I {} bash -c "wget ${url}/{}.txt.gz -O ~/rds/results/publi
 ```
 
 which downloads the SCALLOP-cvd1 sumstats for proteins listed in `cvd1.txt`.
+
+##### Trouble shooting
+
+With error message
+
+```
+squeue: error: _parse_next_key: Parsing error at unrecognized key:
+InteractiveStepOptions
+squeue: error: Parse error in file
+/usr/local/software/slurm/slurm-20.11.4/etc/slurm.conf line 22:
+"InteractiveStepOptions="--pty --preserve-env --mpi=none $SHELL""
+squeue: fatal: Unable to process configuration file
+```
+
+then either log out and login again, or
+
+```bash
+unset SLURM_CONF
+```
 
 #### Stata
 
