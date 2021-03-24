@@ -4,13 +4,16 @@ sort: 6
 
 # bgenix
 
+Web: [https://enkre.net/cgi-bin/code/bgen/dir?ci=trunk](https://enkre.net/cgi-bin/code/bgen/dir?ci=trunk)
+
 It is now possible to compile 1.1.7 under Python 3.x.
 
 ```bash
 #!/usr/bin/bash
 # get it
 wget -qO- http://code.enkre.net/bgen/tarball/release/bgen.tgz | tar xvfz -
-cd bgen.tgz
+mv bgen.tgz bgenix
+cd bgenix
 # compile it
 ./waf configure
 ./waf
