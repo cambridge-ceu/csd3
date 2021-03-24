@@ -118,7 +118,7 @@ export autosomes=~/rds/post_qc_data/interval/imputed/uk10k_1000g_b37/
 export ref=~/rds/post_qc_data/interval/reference_files/genetic/reference_files_genotyped_imputed/
 # HGI working directory
 export prefix=~/rds/rds-asb38-ceu-restricted/projects/covid/HGI
-export dir=20201201-male-ANA_C2_V2
+export dir=20201201-ANA_C2_V2
 
 export PCA_projection=pca_projection
 export PCA_loadings=hgdp_tgp_pca_covid19hgi_snps_loadings.GRCh37.plink.tsv
