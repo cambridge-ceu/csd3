@@ -4,6 +4,8 @@ sort: 29
 
 # regenie
 
+web: [GitHub](https://github.com/rgcgithub/regenie) ([documentation](https://rgcgithub.github.io/regenie/))
+
 It is the easiest to use the Centos 7 distribution,
 
 ```bash
@@ -174,3 +176,8 @@ Usage:
 For more information, use option '--help' or visit the website: https://rgcgithub.github.io/regenie/
 
 ```
+
+## Reference
+
+Mbatchou, J., et al. (2020). "Computationally efficient whole genome regression for quantitative and binary traits." bioRxiv: 2020.2006.2019.162354.
+https://www.biorxiv.org/content/10.1101/2020.06.19.162354v1
