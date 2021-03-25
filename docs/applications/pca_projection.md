@@ -310,7 +310,7 @@ if __name__ == '__main__':
     main(args)
 ```
 
-One may wonder the information regarding .bgen.bgi at all, which can be viewed as follows,
+One may wonder the information regarding `.bgen.bgi` at all, which can be viewed as follows,
 
 ```bash
 sqlite3 INTERVAL.bgen.bgi < bgi.sql
