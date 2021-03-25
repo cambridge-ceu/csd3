@@ -11,7 +11,9 @@ git clone https://github.com/covid19-hg/pca_projection
 cd pca_projection
 ```
 
-The setup according to the documentation can be summarised as follows,
+## setup
+
+The required steps according to the documentation can be summarised as follows,
 
 ```bash
 # Pre-computed PCA loadings, reference allele frequencies and scores
@@ -106,10 +108,10 @@ Rscript plot_projected_pc.R \
 # --reference-score-file
 ```
 
-In reality, a number of changes needs to be made and our worked implementaion is as follows.
+Our worked implementaion is detailed below by section.
 
 ```bash
-#!/usr/bash/bin
+#!/usr/bin/bash
 
 export TMPDIR=${HPC_WORK}/work
 # genotype
@@ -125,134 +127,16 @@ export PCA_loadings=hgdp_tgp_pca_covid19hgi_snps_loadings.GRCh37.plink.tsv
 export PCA_af=hgdp_tgp_pca_covid19hgi_snps_loadings.GRCh37.plink.afreq
 export sscore=hgdp_tgp_pca_covid19hgi_snps_scores.txt.gz
 
-function snpid_rsid()
+module load plink/2.00-alpha ceuadmin/stata
+
+function extract_data()
 {
   cut -f1 ${PCA_projection}/${PCA_loadings} | tail -n +2 > variants.extract
   (
     cat variants.extract
     awk '{split($1,a,":");print "chr"a[1]":"a[2]"_"a[4]"_"a[3]}' variants.extract
   ) > variants.extract2
-  awk '{split($1,a,":");if(a[3]<a[4]) print "chr"a[1]":"a[2]"_"a[3]"_"a[4];else print "chr"a[1]":"a[2]"_"a[4]"_"a[3]}' variants.extract > snpid.extract
-  join <(sort -k1,1 snpid.extract) <(gunzip -c ${HPC_WORK}/SUMSTATS/snp150.snpid_rsid.gz) > snpid-rsid.extract
-  cut -d' ' -f2 snpid-rsid.extract > rsid.extract
-}
 
-function bgen_only_as_documented()
-{
-  seq 22 | \
-  parallel -C' ' --env prefix --env dir ' bgenix -g ${prefix}/${dir}/output/INTERVAL-{}.bgen -incl-rsids rsid.extract > ${prefix}/work/INTERVAL-{}.bgen'
-  cat-bgen -g $(echo ${prefix}/work/INTERVAL-{1..22}.bgen) -og ${prefix}/work/INTERVAL.bgen -clobber
-  bgenix -g ${prefix}/work/INTERVAL.bgen -index
-  qctool -g ${prefix}/work/INTERVAL.bgen -og ${prefix}/work/INTERVAL.vcf.gz
-}
-
-function bgen_sample()
-{
-  seq 22 | \
-  parallel -C' ' --env prefix --env dir '
-  qctool -g ${prefix}/${dir}/output/INTERVAL-{}.bgen -incl-rsids rsid.extract \
-         -s ${prefix}/${dir}/output/INTERVAL-{}.samples \
-         -og ${prefix}/work/INTERVAL-{}.bgen -os ${prefix}/work/INTERVAL.samples
-  bgenix -g ${prefix}/work/INTERVAL-{}.bgen -index -clobber
-  '
-}
-
-function map()
-{
-  seq 22 | \
-  parallel --env prefix -C' ' '
-    (
-      echo alternate_ids rsid chromosome position allele1 allele2 rsid SNPID chromosome position allele1 allele2
-      bgenix -g ${prefix}/work/INTERVAL-{}.bgen -list 2>&1 | \
-      sed "1,9d" | \
-      awk "
-      {
-        CHR=\$3+0
-        POS=\$4
-        a1=toupper(\$6)
-        a2=toupper(\$7)
-        snpid=CHR \":\" POS \":\" a1 \":\" a2
-        if (NF==7) print \$1, \$2, \$3, POS, \$6, \$7, \$1, snpid, CHR, POS, a1, a2
-      }"
-    ) | \
-    awk "a[\$2]++==0" > ${prefix}/work/INTERVAL-{}.map
-    cut -d" " -f2 ${prefix}/work/INTERVAL-{}.map > ${prefix}/work/INTERVAL-{}.nodup
-  '
-}
-
-function snpid()
-{
-  seq 22 | \
-  parallel --env prefix -C' ' '
-    qctool -g ${prefix}/work/INTERVAL-{}.bgen -s ${prefix}/work/INTERVAL.samples \
-           -incl-rsids ${prefix}/work/INTERVAL-{}.nodup -map-id-data ${prefix}/work/INTERVAL-{}.map \
-           -bgen-bits 8 \
-           -og ${prefix}/work/snpid-{}.bgen -os ${prefix}/work/snpid-{}.samples
-    bgenix -g ${prefix}/work/snpid-{}.bgen -index -clobber
-  '
-  cat-bgen -g $(echo ${prefix}/work/snpid-{1..22}.bgen) -og ${prefix}/work/snpid.bgen -clobber
-  bgenix -g ${prefix}/work/snpid.bgen -index
-}
-
-function install_R_packages()
-{
-  Rscript -e "install.packages(c("data.table", "hexbin", "optparse", "patchwork", "R.utils", "tidyverse"))"
-}
-
-snpid_rsid;bgen_sample;map;snpid
-
-module load plink/2.00-alpha
-plink2 --bgen ${prefix}/work/snpid.bgen ref-first --make-pfile --out ${prefix}/work/snpid
-
-plink2 --pfile ${prefix}/work/snpid \
-       --score ${PCA_projection}/${PCA_loadings} center cols=-scoreavgs,+scoresums list-variants header-read \
-       --score-col-nums 3-22 --read-freq ${PCA_projection}/${PCA_af} --out ${prefix}/work/init
-# The score file does not have FID (=0)
-awk '
-{
-  if (NR==1) $1="#FID IID"
-  else $1=0" "$1
-  print
-}' ${prefix}/work/init.sscore > ${prefix}/work/snpid.sscore
-ln -sf ${prefix}/work/init.sscore.vars ${prefix}/work/snpid.sscore.vars
-
-# Our PCs are PC_# rather than PC#
-# The phenotype and covariate file missed FID (=0) column
-awk '
-{
-  if (NR==1)
-  {
-    $1="FID I"$1
-    gsub(/PC_/,"PC",$0)
-  }
-  else $1=0" " $1
-};1' ${dir}/work/INTERVAL-covid.txt | \
-tr ' ' '\t' > ${prefix}/work/snpid.txt
-cut -f1-3 ${prefix}/work/snpid.txt > ${prefix}/work/snpid.pheno
-cut -f3 --complement ${prefix}/work/snpid.txt > ${prefix}/work/snpid.covars
-Rscript ${PCA_projection}/plot_projected_pc.R \
-  --sscore ${prefix}/work/snpid.sscore \
-  --phenotype-file ${prefix}/work/snpid.pheno \
-  --phenotype-col SARS_CoV \
-  --covariate-file ${prefix}/work/snpid.covars \
-  --pc-prefix PC \
-  --pc-num 20 \
-  --ancestry EUR \
-  --study snpid \
-  --out ${prefix}/work/snpid
-```
-
-One may get around without the use of SNP 150 reference data, but there is a big overhead to duplicate all data for a combined bgen file -- an alternative approach is to modify the `.bgen.bgi` instead..
-
-```bash
-cut -f1 ${PCA_projection}/${PCA_loadings} | tail -n +2 > variants.extract
-(
-  cat variants.extract
-  awk '{split($1,a,":");print "chr"a[1]":"a[2]"_"a[4]"_"a[3]}' variants.extract
-) > variants.extract2
-
-function extract_data()
-{
   cp ${prefix}/${dir}/output/INTERVAL-*.bgen.bgi ${TMPDIR}
   seq 22 | \
   parallel -C' ' --env prefix --env dir '
@@ -260,26 +144,140 @@ function extract_data()
     python update_bgi.py --bgi ${TMPDIR}/INTERVAL-{}.bgen.bgi
     bgenix -g ${TMPDIR}/INTERVAL-{}.bgen -incl-rsids variants.extract2 > ${prefix}/work/INTERVAL-{}.bgen
   '
-  cat-bgen -g $(echo ${prefix}/work/INTERVAL-{1..22}.bgen) -og ${prefix}/work/INTERVAL.bgen -clobber
-  bgenix -g ${prefix}/work/INTERVAL.bgen -index -clobber
 }
 
-module load plink/2.00-alpha
-extract_data
-plink2 --bgen ${prefix}/work/INTERVAL.bgen ref-first --make-pfile --out INTERVAL
+function twist()
+{
+  cat-bgen -g $(echo ${prefix}/work/INTERVAL-{1..22}.bgen) -og ${prefix}/work/INTERVAL.bgen -clobber
+  bgenix -g ${prefix}/work/INTERVAL.bgen -index -clobber
 
-export csvfile=INTERVAL.csv
-python update_bgi.py --bgi INTERVAL.bgen.bgi
-(
-  head -1 INTERVAL.pvar
-  paste <(sed '1d' INTERVAL.pvar | cut -f1,2) \
-        <(sed '1d' INTERVAL.csv | cut -d, -f3) | \
-  paste - <(sed '1d' INTERVAL.pvar | cut -f4,5)
-) > ${prefix}/work/INTERVAL.pvar
-cp INTEVAL.p?? ${prefix}/work
+  plink2 --bgen ${prefix}/work/INTERVAL.bgen ref-first --make-pfile --out INTERVAL
+
+  export csvfile=INTERVAL.csv
+  python update_bgi.py --bgi INTERVAL.bgen.bgi
+  (
+    head -1 INTERVAL.pvar
+    paste <(sed '1d' INTERVAL.pvar | cut -f1,2) \
+          <(sed '1d' INTERVAL.csv | cut -d, -f3) | \
+    paste - <(sed '1d' INTERVAL.pvar | cut -f4,5)
+  ) > ${prefix}/work/INTERVAL.pvar
+  cp INTEVAL.p?? ${prefix}/work
+}
+
+function project_pc()
+{
+#!/bin/bash
+
+  set -eu
+################################################################################
+# Please fill in the below variables
+################################################################################
+# Metadata
+  STUDY_NAME="INTERVAL"
+  ANALYST_LAST_NAME="ZHAO"
+  DATE="$(date +'%Y%m%d')"
+  OUTNAME="${prefix}/work/${STUDY_NAME}.${ANALYST_LAST_NAME}.${DATE}"
+################################################################################
+# Location of downloaded input files
+  PCA_LOADINGS="${PCA_projection}/${PCA_loadings}"
+  PCA_AF="${PCA_projection}/${PCA_af}"
+################################################################################
+# Location of imputed genotype files
+# [Recommended]
+# PLINK 2 binary format: a prefix (with directories) of .pgen/.pvar/.psam files
+  PFILE="${prefix}/work/INTERVAL"
+# [Acceptable]
+# PLINK 1 binary format: a prefix of .bed/.bim/.fam files
+  BFILE=""
+################################################################################
+
+  function error_exit() {
+    echo "${1:-"Unknown Error"}" 1>&2
+    exit 1
+  }
+
+# Input checks
+  if [[ -z "${STUDY_NAME}" ]]; then
+    error_exit "Please specify \$STUDY_NAME."
+  fi
+
+  if [[ -z "${ANALYST_LAST_NAME}" ]]; then
+    error_exit "Please specify \$ANALYST_LAST_NAME."
+  fi
+
+  if [[ -z "${PCA_LOADINGS}" ]]; then
+    error_exit "Please specify \$PCA_LOADINGS."
+  fi
+
+  if [[ -z "${PCA_AF}" ]]; then
+    error_exit "Please specify \$PCA_AF."
+  fi
+
+  if [[ -n "${PFILE}" ]]; then
+    input_command="--pfile ${PFILE}"
+  elif [[ -n "${BFILE}" ]]; then
+    input_command="--bfile ${BFILE}"
+  else
+    error_exit "Either \$PFILE or \$BFILE should be specified"
+  fi
+
+# Run plink2 --score
+  plink2 \
+    ${input_command} \
+    --score ${PCA_LOADINGS} \
+            variance-standardize \
+            cols=-scoreavgs,+scoresums \
+            list-variants \
+            header-read \
+    --score-col-nums 3-12 \
+    --read-freq ${PCA_AF} \
+    --out ${OUTNAME}
+
+# The score file does not have FID (=0)
+  awk '
+  {
+    if (NR==1) $1="#FID IID"
+    else $1=0" "$1
+    print
+  }' ${OUTNAME}.sscore > ${prefix}/work/snpid.sscore
+  ln -sf ${OUTNAME}.sscore.vars ${prefix}/work/snpid.sscore.vars
+
+# Our PCs are PC_# rather than PC#
+# The phenotype and covariate file missed FID (=0) column
+  awk '
+  {
+    if (NR==1)
+    {
+      $1="FID I"$1
+      gsub(/PC_/,"PC",$0)
+    }
+    else $1=0" " $1
+  };1' ${dir}/work/INTERVAL-covid.txt | \
+  tr ' ' '\t' > ${prefix}/work/snpid.txt
+  cut -f1-3 ${prefix}/work/snpid.txt > ${prefix}/work/snpid.pheno
+  cut -f3 --complement ${prefix}/work/snpid.txt > ${prefix}/work/snpid.covars
+
+  stata -b do ethnic.do
+
+  Rscript ${PCA_projection}/plot_projected_pc.R \
+        --sscore ${prefix}/work/snpid.sscore \
+        --phenotype-file ${prefix}/work/snpid.pheno \
+        --phenotype-col SARS_CoV \
+        --covariate-file ${prefix}/work/snpid.covars \
+        --pc-prefix PC \
+        --pc-num 20 \
+        --ancestry-file ethnic.txt \
+        --ancestry-col ethnic \
+        --study ${STUDY_NAME} \
+        --out ${OUTNAME}
+}
+
+twist;project_pc
 ```
 
-with the rest remains as before. The magic `update_bgi.py` is as follows
+## update_bgi.py
+
+The magic `update_bgi.py` is as follows
 
 ```python
 import argparse
@@ -311,6 +309,8 @@ if __name__ == '__main__':
     main(args)
 ```
 
+## .bgen.bgi
+
 One may wonder the information regarding `.bgen.bgi` at all, which can be viewed as follows,
 
 ```bash
@@ -327,4 +327,31 @@ while `bgi.sql` has the following lines
 select * from metadata;
 .output Variant.txt
 select * from Variant;
+```
+
+## ethnic.do
+
+The Stata program generates files containing FID, IID and ethnicity
+
+```stata
+gzuse work/INTERVAL-omics-covid.dta.gz
+sort identifier
+gzsave INTERVAL-omics-covid, replace
+insheet using 20201201/INTERVALdata_01DEC2020.csv, case clear
+sort identifier
+gzmerge identifier using INTERVAL-omics-covid.dta.gz
+tabulate ethnicPulse SARS_CoV, all
+gen str20 ethnic=ethnicPulse
+replace ethnic="EUR" if inlist(ethnicPulse,"Eng/W/Scot/NI/Brit","White Irish")==1
+replace ethnic="EAS" if inlist(ethnicPulse,"Asian- Bangladeshi","Asian- Indian","Asian- Pakistan","Chinese")==1
+replace ethnic="MID" if ethnicPulse=="Arab"
+gen ethnic_NA=ethnic
+replace ethnic_NA="NA" if inlist(ethnic,"EUR","EAS","MID")==0
+tab ethnic SARS_CoV, all
+tab ethnic_NA SARS_CoV, all
+gen FID=0
+rename ID IID
+outsheet FID IID ethnic using ethnic.txt if IID!=., noquote replace
+outsheet FID IID ethnic_NA using ethnic_NA.txt if IID!=., noquote replace
+rm INTERVAL-omics-covid.dta.gz
 ```
