@@ -4,6 +4,8 @@ sort: 16
 
 # lapack
 
+Web: [http://www.netlib.org/lapack/](http://www.netlib.org/lapack/)
+
 The sequence is as follows,
 
 ```bash

@@ -242,4 +242,88 @@ Rscript ${PCA_projection}/plot_projected_pc.R \
   --out ${prefix}/work/snpid
 ```
 
-One may get around without the use of SNP 150 reference data, but there is a big overhead to duplicate all data for a combined bgen file followed by indexing.
+One may get around without the use of SNP 150 reference data, but there is a big overhead to duplicate all data for a combined bgen file -- an alternative approach is to modify the .bgen.bgi instead..
+
+```bash
+cut -f1 ${PCA_projection}/${PCA_loadings} | tail -n +2 > variants.extract
+(
+  cat variants.extract
+  awk '{split($1,a,":");print "chr"a[1]":"a[2]"_"a[4]"_"a[3]}' variants.extract
+) > variants.extract2
+
+function extract_data()
+{
+  cp ${prefix}/${dir}/output/INTERVAL-*.bgen.bgi ${TMPDIR}
+  seq 22 | \
+  parallel -C' ' --env prefix --env dir '
+    ln -sf ${prefix}/${dir}/output/INTERVAL-{}.bgen ${TMPDIR}/INTERVAL-{}.bgen
+    python update_bgi.py --bgi ${TMPDIR}/INTERVAL-{}.bgen.bgi
+    bgenix -g ${TMPDIR}/INTERVAL-{}.bgen -incl-rsids variants.extract2 > ${prefix}/work/INTERVAL-{}.bgen
+  '
+  cat-bgen -g $(echo ${prefix}/work/INTERVAL-{1..22}.bgen) -og ${prefix}/work/INTERVAL.bgen -clobber
+  bgenix -g ${prefix}/work/INTERVAL.bgen -index -clobber
+}
+
+module load plink/2.00-alpha
+plink2 --bgen ${prefix}/work/INTERVAL.bgen ref-first --make-pfile --out INTERVAL
+
+export csvfile=INTERVAL.csv
+python update_bgi.py --bgi INTERVAL.bgen.bgi
+(
+  head -1 INTERVAL.pvar
+  paste <(sed '1d' INTERVAL.pvar | cut -f1,2) \
+        <(sed '1d' INTERVAL.csv | cut -d, -f3) | \
+  paste - <(sed '1d' INTERVAL.pvar | cut -f4,5)
+) > ${prefix}/work/INTERVAL.pvar
+cp INTEVAL.p?? ${prefix}/work
+```
+
+with the rest remains as before. The magic update_bgi.py is as follows
+
+```python
+import argparse
+import os
+import pandas as pd
+import sqlite3
+
+# mapping chromosome string (incluing 01-09, 23, and X) and correct string
+CHROM_MAPPING_STR = dict([(str(i), str(i)) for i in range(1, 23)] + [('0' + str(i), str(i)) for i in range(1, 10)] +
+                         [('X', 'X')])
+csvfile=os.environ['csvfile']
+
+def main(args):
+    conn = sqlite3.connect(args.bgi)
+    c = conn.cursor()
+    df = pd.read_sql("select * from Variant", conn)
+    print(df,flush=True)
+    df.rsid = df.apply(lambda x: "{}:{}:{}:{}".format(CHROM_MAPPING_STR[x[0]], x[1], x[4], x[5]), axis=1)
+    print(df,flush=True)
+    df.to_sql("Variant", conn, if_exists="replace", index=False)
+    if csvfile != '':
+       df.to_csv(csvfile,index=False)
+    conn.close()
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--bgi', type=str, required=True)
+    args = parser.parse_args()
+    main(args)
+```
+
+One may wonder the information regarding .bgen.bgi at all, which can be viewed as follows,
+
+```bash
+sqlite3 INTERVAL.bgen.bgi < bgi.sql
+```
+
+while bgi.sql has the following lines
+
+```sqlite3
+.tables
+.separator "\t"
+.header on
+.output metadata.txt
+select * from metadata;
+.output Variant.txt
+select * from Variant;
+```
