@@ -108,7 +108,9 @@ Rscript plot_projected_pc.R \
 # --reference-score-file
 ```
 
-Our worked implementaion is detailed below by section.
+## Implementation
+
+This is detailed below by section.
 
 ```bash
 #!/usr/bin/bash
@@ -275,7 +277,7 @@ function project_pc()
 twist;project_pc
 ```
 
-## update_bgi.py
+### update_bgi.py
 
 The magic `update_bgi.py` is as follows
 
@@ -309,7 +311,7 @@ if __name__ == '__main__':
     main(args)
 ```
 
-## .bgen.bgi
+### .bgen.bgi
 
 One may wonder the information regarding `.bgen.bgi` at all, which can be viewed as follows,
 
@@ -329,7 +331,7 @@ select * from metadata;
 select * from Variant;
 ```
 
-## ethnic.do
+### ethnic.do
 
 The Stata program generates files containing FID, IID and ethnicity
 
