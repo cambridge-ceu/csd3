@@ -4,7 +4,7 @@ sort: 29
 
 # regenie
 
-web: [https://github.com/rgcgithub/regenie](https://github.com/rgcgithub/regenie) ([documentation](https://rgcgithub.github.io/regenie/))
+Web: [https://github.com/rgcgithub/regenie](https://github.com/rgcgithub/regenie) ([documentation](https://rgcgithub.github.io/regenie/))
 
 It is the easiest to use the Centos 7 distribution,
 
