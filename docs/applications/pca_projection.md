@@ -345,7 +345,7 @@ gzmerge identifier using INTERVAL-omics-covid.dta.gz
 tabulate ethnicPulse SARS_CoV, all
 gen str20 ethnic=ethnicPulse
 replace ethnic="EUR" if inlist(ethnicPulse,"Eng/W/Scot/NI/Brit","White Irish")==1
-replace ethnic="EAS" if inlist(ethnicPulse,"Asian- Bangladeshi","Asian- Indian","Asian- Pakistan","Chinese")==1
+replace ethnic="EAS" if inlist(ethnicPulse,"Asian- Bangladeshi","Asian- Indian","Asian- Pakistani","Chinese")==1
 replace ethnic="MID" if ethnicPulse=="Arab"
 gen ethnic_NA=ethnic
 replace ethnic_NA="NA" if inlist(ethnic,"EUR","EAS","MID")==0
