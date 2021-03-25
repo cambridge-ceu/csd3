@@ -242,7 +242,7 @@ Rscript ${PCA_projection}/plot_projected_pc.R \
   --out ${prefix}/work/snpid
 ```
 
-One may get around without the use of SNP 150 reference data, but there is a big overhead to duplicate all data for a combined bgen file -- an alternative approach is to modify the .bgen.bgi instead..
+One may get around without the use of SNP 150 reference data, but there is a big overhead to duplicate all data for a combined bgen file -- an alternative approach is to modify the `.bgen.bgi` instead..
 
 ```bash
 cut -f1 ${PCA_projection}/${PCA_loadings} | tail -n +2 > variants.extract
@@ -278,7 +278,7 @@ python update_bgi.py --bgi INTERVAL.bgen.bgi
 cp INTEVAL.p?? ${prefix}/work
 ```
 
-with the rest remains as before. The magic update_bgi.py is as follows
+with the rest remains as before. The magic `update_bgi.py` is as follows
 
 ```python
 import argparse
@@ -316,7 +316,7 @@ One may wonder the information regarding .bgen.bgi at all, which can be viewed a
 sqlite3 INTERVAL.bgen.bgi < bgi.sql
 ```
 
-while bgi.sql has the following lines
+while `bgi.sql` has the following lines
 
 ```sqlite3
 .tables
