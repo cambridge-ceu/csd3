@@ -265,6 +265,7 @@ function extract_data()
 }
 
 module load plink/2.00-alpha
+extract_data
 plink2 --bgen ${prefix}/work/INTERVAL.bgen ref-first --make-pfile --out INTERVAL
 
 export csvfile=INTERVAL.csv
