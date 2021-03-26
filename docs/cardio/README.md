@@ -35,6 +35,10 @@ scontrol show part
 #SBATCH --qos=cardio_short
 ```
 
+---
+
+## Legacy materials
+
 ### login
 
 Automatic login can be enabled with `ssh-copy-id cardio-login.hpc.cam.ac.uk`.
