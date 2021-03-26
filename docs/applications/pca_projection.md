@@ -311,7 +311,7 @@ if __name__ == '__main__':
     main(args)
 ```
 
-### .bgen.bgi
+### bgi.sql
 
 One may wonder the information regarding `.bgen.bgi` at all, which can be viewed as follows,
 
