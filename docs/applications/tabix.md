@@ -17,7 +17,7 @@ Its utility to extract data has only been realised recently
 
 ```bash
 tabix ftp://ftp.ebi.ac.uk/pub/databases/spot/eQTL/csv/BLUEPRINT/ge/BLUEPRINT_ge_monocyte.all.tsv.gz 20:46120612-46120613
-tabix https://gwas.mrcieu.ac.uk/files/ebi-a-GCST010776/ebi-a-GCST010776.vcf.gz gz -r 1:1-1000000
+tabix https://gwas.mrcieu.ac.uk/files/ebi-a-GCST010776/ebi-a-GCST010776.vcf.gz gz 1:1-1000000
 ```
 
 with earlier versions possibly giving error messages, so we install the latest,
