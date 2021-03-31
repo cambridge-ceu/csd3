@@ -27,6 +27,7 @@ module load gcc/6
 wget -qO- https://github.com/samtools/htslib/releases/download/1.12/htslib-1.12.tar.bz2 | \
 tar -vxjf -
 cd htslib-1.12/
+autoreconf -i
 ./configure --enable-libcurl --prefix=${HPC_WORK}
 make
 make install
