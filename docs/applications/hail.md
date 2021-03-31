@@ -24,4 +24,4 @@ python
 >>> hl.export_vcf(at,"at.vcf.bgz")
 ```
 
-Some files can be made available with `gsutil` installed.
+Some files can be made available with `gsutil` installed. The HGDP data comes with release 3.1, `gs://gcp-public-data--gnomad/release/`.
