@@ -36,7 +36,7 @@ make install
 One could obtain a list of outcomes as follows,
 
 ```bash
-Rscript -e "ao <- TwoSampleMR::available_outcomes(); write.table(as.data.frame(ao),file='ao.txt',quote=FALSE,row.names=FALSE,sep='\t')"
+Rscript -e "write.table(TwoSampleMR::available_outcomes(),file='ao.txt',quote=FALSE,row.names=FALSE,sep='\t')"
 ```
 
 **NOTE**
