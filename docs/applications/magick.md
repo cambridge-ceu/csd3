@@ -2,7 +2,7 @@
 sort: 19
 ---
 
-R/magick
+# R/magick
 
 When installing the package we have error message,
 
