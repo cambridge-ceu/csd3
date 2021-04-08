@@ -20,7 +20,7 @@ tabix ftp://ftp.ebi.ac.uk/pub/databases/spot/eQTL/csv/BLUEPRINT/ge/BLUEPRINT_ge_
 tabix https://gwas.mrcieu.ac.uk/files/ebi-a-GCST010776/ebi-a-GCST010776.vcf.gz 1:1-1000000
 ```
 
-with earlier versions possibly giving error messages -- so we install the latest,
+with earlier versions possibly giving error messages; we install the latest,
 
 ```bash
 module load gcc/6
