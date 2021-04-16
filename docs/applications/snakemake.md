@@ -11,7 +11,7 @@ It is a python-based workflow management system.
 We illustrate installation through `mamba` and designated location.
 
 ```bash
-module load miniconda/4.5.1
+module load miniconda3/4.5.1
 export mypath=${HOME}/COVID-19/miniconda37
 conda create --prefix ${mypath} python=3.7 ipykernel
 conda init bash
@@ -23,7 +23,15 @@ snakemake --help
 conda deactivate
 ```
 
-By default, the installation path is ${HOME}/.conda/envs/miniconda37
+By default, the installation path is ${HOME}/.conda/envs/miniconda37.
+
+After installation, the call later on will be simpler,
+
+```bash
+module load miniconda3/4.5.1
+export mypath=${HOME}/COVID-19/miniconda37
+conda activate ${mypath}
+```
 
 ## Application example
 
