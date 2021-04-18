@@ -11,6 +11,8 @@ function renum()
   '
 }
 
+module load gcc/6
+
 cd docs
 renum
 make build
