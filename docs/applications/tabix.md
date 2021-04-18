@@ -48,3 +48,5 @@ wget https://gwas.mrcieu.ac.uk/files/ebi-a-GCST010776/ebi-a-GCST010776.vcf.gz
 wget https://gwas.mrcieu.ac.uk/files/ebi-a-GCST010776/ebi-a-GCST010776.vcf.gz.tbi
 bcftools query -f '%ID\t%ALT\t%REF\t%AF\t[%ES]\t[%SE]\t[%LP]\t[%SS]\t%CHROM\t%POS\n' -r 1:1-1000000 ebi-a-GCST010776.vcf.gz
 ```
+
+It appears to be more perplexing with the syntax but also appealing for an output in a well-defined format.
