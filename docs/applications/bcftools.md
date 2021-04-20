@@ -28,3 +28,14 @@ bcftools query -f '%ID\t%ALT\t%REF\t%AF\t[%ES]\t[%SE]\t[%LP]\t[%SS]\t%CHROM\t%PO
 ```
 
 A number of other options can be used together with -r or -R.
+
+We can also obtain data with the header (-H)
+
+```bash
+export f=ebi-a-GCST010776
+bcftools query -f '%ID\t%ALT\t%REF\t%AF\t[%ES]\t[%SE]\t[%LP]\t[%SS]\t%CHROM\t%POS\n' \
+               -H \
+               -r 1:1-1000000 \
+               https://gwas.mrcieu.ac.uk/files/${f}/${f}.vcf.gz | \
+               sed "s/\[[0-9]*\]//g;s/^[\#] //;s/${f}://g" > chr1:1-1000000.dat
+```
