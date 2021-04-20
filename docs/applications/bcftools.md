@@ -6,7 +6,7 @@ sort: 5
 
 Web: [http://www.htslib.org/download/](http://www.htslib.org/download/)
 
-ON CSD3, `module list bcftools` gives a list of versions but none can query data from the web.
+On CSD3, `module list bcftools` gives a list of versions but none can query data from the web.
 
 However, the installation is straightforward.
 
