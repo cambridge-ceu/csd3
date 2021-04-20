@@ -1,5 +1,5 @@
 ---
-sort: 45
+sort: 46
 ---
 
 # tabix
@@ -40,6 +40,8 @@ Rscript -e "write.table(TwoSampleMR::available_outcomes(),file='ao.txt',quote=FA
 ```
 
 **NOTE**
+
+See specific section on bcftools for additional information.
 
 `bcftools query` works similarly on a local VCF file nevertheless the option `-r` is necessary.
 
