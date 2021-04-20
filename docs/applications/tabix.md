@@ -44,9 +44,8 @@ Rscript -e "write.table(TwoSampleMR::available_outcomes(),file='ao.txt',quote=FA
 `bcftools query` works similarly on a local VCF file nevertheless the option `-r` is necessary.
 
 ```bash
-wget https://gwas.mrcieu.ac.uk/files/ebi-a-GCST010776/ebi-a-GCST010776.vcf.gz
-wget https://gwas.mrcieu.ac.uk/files/ebi-a-GCST010776/ebi-a-GCST010776.vcf.gz.tbi
-bcftools query -f '%ID\t%ALT\t%REF\t%AF\t[%ES]\t[%SE]\t[%LP]\t[%SS]\t%CHROM\t%POS\n' -r 1:1-1000000 ebi-a-GCST010776.vcf.gz
+bcftools query -f '%ID\t%ALT\t%REF\t%AF\t[%ES]\t[%SE]\t[%LP]\t[%SS]\t%CHROM\t%POS\n' -r 1:1-1000000 \
+               https://gwas.mrcieu.ac.uk/files/ebi-a-GCST010776/ebi-a-GCST010776.vcf.gz
 ```
 
-It appears to be more perplexing with the syntax but also appealing for an output in a well-defined format.
+The rather perplexing syntax (cut and paste from here in which case) gains its appeal for an output in a well-defined format.
