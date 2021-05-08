@@ -132,6 +132,8 @@ module avail rstudio
 
 e.g., `module load r-3.6.0-gcc-5.4.0-bzuuksv rstudio/1.1.383`.
 
+For information about Bioconductor installation, see [https://bioconductor.org/install/](https://bioconductor.org/install/).
+
 The following code installs package for weighted correlation network analysis ([WGCNA](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/)).
 
 ```r
@@ -146,8 +148,6 @@ biocLite(c("GO.db", "preprocessCore", "impute"))
 install.packages("BiocManager")
 BiocManager::install("WGCNA")
 ```
-
-Further information about Bioconductor installation, see [https://bioconductor.org/install/](https://bioconductor.org/install/).
 
 A good alternative is to use `remotes` or `devtools` package, e.g.,
 
