@@ -147,6 +147,8 @@ install.packages("BiocManager")
 BiocManager::install("WGCNA")
 ```
 
+Further information about Bioconductor installation, see [https://bioconductor.org/install/](https://bioconductor.org/install/).
+
 A good alternative is to use `remotes` or `devtools` package, e.g.,
 
 ```r
