@@ -8,7 +8,7 @@ Web: [https://www.rstudio.com/](https://www.rstudio.com/)
 
 ## CSD3 modules
 
-From `module avail rstudio` which gives `rstudio/0.99/rstudio-0.99`, `rstudio/1.1.383`, `rstudio/1.3.1093`, and we intend to use the most recent version with `module load rstudio/1.3.1093; rstudio` and fail with messages:
+From `module avail rstudio` which gives `rstudio/0.99/rstudio-0.99`, `rstudio/1.1.383`, `rstudio/1.3.1093`, we intend to use the most recent version with `module load rstudio/1.3.1093; rstudio` but fail with messages:
 
 ```
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
