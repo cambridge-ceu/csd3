@@ -1,5 +1,5 @@
 ---
-sort: 11
+sort: 8
 ---
 
 # Mermaid Test

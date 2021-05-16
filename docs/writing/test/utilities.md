@@ -1,5 +1,5 @@
 ---
-sort: 13
+sort: 10
 ---
 
 # Primer Utilities Test
