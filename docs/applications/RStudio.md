@@ -14,7 +14,7 @@ We first check its availability,
 module avail rstudio
 ```
 
-and obtains
+and it obtains
 
 ```
 ---------------------------------------------------------- /usr/local/Cluster-Config/modulefiles -----------------------------------------------------------
