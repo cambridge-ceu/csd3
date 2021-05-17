@@ -52,7 +52,7 @@ cd rstudio-1.4
 bin/rstudio
 ```
 
-However it requires openssl.so.1.0.0, which requires specific installation to get away with `No version informaiton for openssl.so.1.0.0`, with `openssl.ld`, according to https://stackoverflow.com/questions/18390833/no-version-information-available, as follows
+However it requires openssl.so.1.0.0, which in turn requires specific installation to get away with `No version informaiton for openssl.so.1.0.0`, with `openssl.ld`, according to https://stackoverflow.com/questions/18390833/no-version-information-available, as follows
 
 ```
 OPENSSL_1.0.0 {
