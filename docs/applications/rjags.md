@@ -29,7 +29,7 @@ R CMD INSTALL rjags_4-10.tar.gz --configure-args='CPPFLAGS="-fPIC" LDFLAGS="-L${
 --with-jags-includedir=${hpcwork}/include'
 ```
 
-As is the the module `jags-4.3.0-gcc-5.4.0-4z5shby`,Iwe would see this error message with R 4.1.0,
+As is with the module `jags-4.3.0-gcc-5.4.0-4z5shby`,Iwe would see this error message with R 4.1.0,
 ```
 ** testing if installed package can be loaded from temporary location
 Error: package or namespace load failed for ‘rjags’:
