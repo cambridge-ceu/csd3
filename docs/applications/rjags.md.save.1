@@ -28,17 +28,16 @@ R CMD INSTALL rjags_4-10.tar.gz --configure-args='CPPFLAGS="-fPIC" LDFLAGS="-L${
 --with-jags-libdir=${hpcwork}/lib
 --with-jags-includedir=${hpcwork}/include'
 ```
-
-As is with the module `jags-4.3.0-gcc-5.4.0-4z5shby`, we would see this error message with R 4.1.0,
+If we see this error message,
 ```
 ** testing if installed package can be loaded from temporary location
 Error: package or namespace load failed for ‘rjags’:
  .onLoad failed in loadNamespace() for 'rjags', details:
   call: dyn.load(file, DLLpath = DLLpath, ...)
   error: unable to load shared object '/rds/user/jhz22/hpc-work/R/00LOCK-rjags/00new/rjags/libs/rjags.so':
-  /rds/user/jhz22/hpc-work/R/00LOCK-rjags/00new/rjags/libs/rjags.so: undefined symbol: _ZN4jags7Console10setRNGnameERKNSt7__cxx1112basic_stringIcSt11char_t$
+  /rds/user/jhz22/hpc-work/R/00LOCK-rjags/00new/rjags/libs/rjags.so: undefined symbol: _ZN4jags7Console10setRNGnameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEj
 Error: loading failed
 Execution halted
 ERROR: loading failed
 ```
-then this is due different versions of compilers were used to build JAGS and rjags, so the former needs to be rebuilt.
+then it is duo to JAGS and rjags used different versions of compilers and therefore prefe
