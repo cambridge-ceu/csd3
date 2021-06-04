@@ -21,7 +21,7 @@ Following this, we could issue `Rscript -e "install.packages('plumber')"`.
 
 ## Example
 
-This is adapted from https://www.rplumber.io/.
+This is adapted from [https://www.rplumber.io/](https://www.rplumber.io/).
 
 We first create a file named [`plumber.R`](files/plumber.R) as follows,
 
