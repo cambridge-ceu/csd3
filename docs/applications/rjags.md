@@ -1,5 +1,5 @@
 ---
-sort: 37
+sort: 38
 ---
 
 # R/rjags
@@ -30,6 +30,7 @@ R CMD INSTALL rjags_4-10.tar.gz --configure-args='CPPFLAGS="-fPIC" LDFLAGS="-L${
 ```
 
 As is with the module `jags-4.3.0-gcc-5.4.0-4z5shby`, we would see this error message from R 4.1.0,
+
 ```
 ** testing if installed package can be loaded from temporary location
 Error: package or namespace load failed for ‘rjags’:
@@ -41,4 +42,5 @@ Error: loading failed
 Execution halted
 ERROR: loading failed
 ```
+
 then this is due to different versions of compilers were used to build JAGS and rjags, so the former needs to be rebuilt.
