@@ -1,5 +1,5 @@
 ---
-sort: 26
+sort: 27
 ---
 
 # R/plumber
@@ -59,7 +59,6 @@ Rscript -e "library(plumber);pr('plumber.R') %>% pr_run(port=8000)"
 ```
 
 and GET and POST as follows,
-
 
 ```bash
 curl "http://localhost:8000/echo"

@@ -1,5 +1,5 @@
 ---
-sort: 22
+sort: 23
 ---
 
 # pandoc
@@ -16,3 +16,5 @@ wget -qO- https://github.com/jgm/pandoc/releases/download/2.13/pandoc-2.13-linux
 ```
 
 so that the executable file and documentation are made available from bin/ and share/ directories, respectively.
+
+See citeproc for handling bibliography.
