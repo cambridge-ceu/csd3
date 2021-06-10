@@ -4,7 +4,7 @@ sort: 10
 
 # citeproc
 
-Web: [https://hackage.haskell.org/package/citeproc](https://hackage.haskell.org/package/citeproc)
+Web: [https://hackage.haskell.org/package/citeproc](https://hackage.haskell.org/package/citeproc) ([GitHub](https://github.com/jgm/citeproc))
 
 We can set up the latest version as follows,
 
@@ -40,6 +40,31 @@ vignette: >
   %\VignetteIndexEntry{Shiny for Genetic Analysis Package (gap) Designs}
   %\VignetteEncoding{UTF-8}
 ---
+
+# Appendix: Theory for gap designs
+
+## Family-based and population-based designs
+
+See the R/gap package vignette jss or @zhao07.
+
+## Case-cohort design
+
+### Power
+
+Following @cai04, we have
+$$\Phi\left(Z_\alpha+\tilde{n}^\frac{1}{2}\theta\sqrt{\frac{p_1p_2p_D}{q+(1-q)p_D}}\right)$$
+
+where $\alpha$ is the significance level, $\theta$ is the log-hazard ratio for
+two groups, $p_j, j = 1, 2$, are the proportion of the two groups
+in the population ($p_1 + p_2 = 1$), $\tilde{n}$ is the total number of subjects in the subcohort, $p_D$ is the proportion of the failures in
+the full cohort, and $q$ is the sampling fraction of the subcohort.
+
+### Sample size
+
+$$\tilde{n}=\frac{nBp_D}{n-B(1-p_D)}$$ where $B=\frac{Z_{1-\alpha}+Z_\beta}{\theta^2p_1p_2p_D}$ and $n$ is the whole cohort size.
+
+# References
+
 ```
 
 with `shinygap.bib` with entries,
