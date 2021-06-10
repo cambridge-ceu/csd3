@@ -113,3 +113,9 @@ and `shinygap.bib` contains two entries,
    Year = {2007}
 }
 ```
+
+We would like to use available styles as well from [https://github.com/citation-style-language/styles](https://github.com/citation-style-language/styles), after which we add the following after the command `bibliography`.
+
+```
+csl: biomed-central.csl
+```
