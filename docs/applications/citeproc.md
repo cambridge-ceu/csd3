@@ -67,7 +67,7 @@ $$\tilde{n}=\frac{nBp_D}{n-B(1-p_D)}$$ where $B=\frac{Z_{1-\alpha}+Z_\beta}{\the
 
 ```
 
-with `shinygap.bib` with entries,
+and `shinygap.bib` contains two entries,
 
 ```
 @article{cai04,
