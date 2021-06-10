@@ -13,9 +13,28 @@ cd ${HPC_WORK}/
 wget -qO- https://hackage.haskell.org/package/citeproc-0.4.0.1/citeproc-0.4.0.1.tar.gz | \
 tar xvfz -
 cd citeproc-0.4.0.1
-module load cabal/3.0.0.0
+module load cabal/3.0.0.0 gcc/6
 cabal install --installdir=${HPC_WORK}/bin exe:citeproc
 ```
+
+We have error as follows,
+
+```
+[1 of 1] Compiling Main             ( app/Main.hs, dist/build/citeproc/citeproc-tmp/Main.o )
+
+app/Main.hs:35:36: error:
+    • Variable not in scope: (<>) :: IO () -> [Char] -> IO a0
+    • Perhaps you meant one of these:
+        ‘<|>’ (imported from Control.Applicative),
+        ‘<$>’ (imported from Prelude), ‘*>’ (imported from Prelude)
+   |
+35 |     putStrLn $ "citeproc version " <> VERSION_citeproc
+   |                                    ^^
+cabal: Failed to build exe:citeproc from citeproc-0.4.0.1. See the build log
+above for details.
+```
+
+and we change `<>` to `<|>` line 35 of app/Main.hs. and repeat the last command with success.
 
 An example use with `pandoc`:
 
