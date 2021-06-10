@@ -17,7 +17,7 @@ module load cabal/3.0.0.0 gcc/6
 cabal install --installdir=${HPC_WORK}/bin exe:citeproc
 ```
 
-We have error as follows,
+We have error messages as follows,
 
 ```
 [1 of 1] Compiling Main             ( app/Main.hs, dist/build/citeproc/citeproc-tmp/Main.o )
