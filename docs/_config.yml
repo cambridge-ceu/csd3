@@ -14,7 +14,14 @@ readme_index:
 mermaid:
   custom: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
   initialize:
-
+    startOnLoad: true
+    logLevel: fatal
+    flowchart:
+      diagramPadding: 8
+      htmlLabels: true
+      curve: linear
+    gantt:
+      titleTopMargin: 25
 plugins:
   - jemoji
   - jekyll-avatar
