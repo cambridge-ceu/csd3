@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jekyll-rtd-theme (2.0.10)
+    csd3 (2.0.10)
       github-pages (~> 209)
 
 GEM
@@ -267,8 +267,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  csd3!
   github-pages
-  jekyll-rtd-theme!
 
 BUNDLED WITH
    2.2.21

@@ -1,10 +1,10 @@
 Gem::Specification.new do |spec|
-  spec.name          = "jekyll-rtd-theme"
+  spec.name          = "csd3"
   spec.version       = "2.0.10"
   spec.authors       = ["saowang"]
   spec.email         = ["saowang@outlook.com"]
 
-  spec.summary       = "Just another documentation theme compatible with GitHub Pages"
+  spec.summary       = "A respository for applications on CSD3"
   spec.license       = "MIT"
   spec.homepage      = "https://github.com/rundocs/jekyll-rtd-theme"
 
