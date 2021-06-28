@@ -1,7 +1,8 @@
 title: csd3
+lang: en
 description: A collection of CSD3 notes
 
-theme: jekyll-rtd-theme
+remote_theme: rundocs/jekyll-rtd-theme
 
 debug:
   compress: true
