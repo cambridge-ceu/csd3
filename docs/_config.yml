@@ -21,6 +21,7 @@ mermaid:
       curve: linear
     gantt:
       titleTopMargin: 25
+
 plugins:
   - jemoji
   - jekyll-avatar
