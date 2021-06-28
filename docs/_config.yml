@@ -2,7 +2,12 @@ title: csd3
 lang: en
 description: A collection of CSD3 notes
 
-theme: null
+theme: jekyll-rtd-theme
+
+debug:
+  compress: false
+  dist: false
+  shortcodes: true
 
 lsi: false
 safe: true
@@ -14,15 +19,15 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
 
-debug:
-  compress: true
-  dist: false
-  shortcodes: true
-
 readme_index:
   with_frontmatter: true
+  show_sorted: false
 
 plugins:
+  - jekyll-default-layout
+  - jekyll-readme-index
+  - jekyll-github-metadata
+  - jekyll-titles-from-headings
   - jemoji
   - jekyll-avatar
   - jekyll-mentions

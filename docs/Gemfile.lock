@@ -268,7 +268,14 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-avatar
+  jekyll-default-layout
+  jekyll-github-metadata
+  jekyll-mentions
+  jekyll-readme-index
   jekyll-rtd-theme
+  jekyll-titles-from-headings
+  jemoji
 
 BUNDLED WITH
    2.2.21
