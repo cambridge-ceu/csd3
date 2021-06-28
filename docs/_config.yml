@@ -11,6 +11,10 @@ debug:
 readme_index:
   with_frontmatter: true
 
+mermaid:
+  custom:
+  initialize:
+
 plugins:
   - jemoji
   - jekyll-avatar
