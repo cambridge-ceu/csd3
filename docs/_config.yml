@@ -1,7 +1,7 @@
 title: csd3
 description: A collection of CSD3 notes
 
-theme: null
+theme: jekyll-rtd-theme
 
 debug:
   compress: true
