@@ -12,6 +12,10 @@ function renum()
 }
 
 module load gcc/6
+# bundle install
+# bundle info jekyll-rtd-theme
+# make install
+# make theme
 
 cd docs
 renum
