@@ -1,24 +1,20 @@
-title: csd3
-lang: en
-description: A collection of CSD3 notes
+title: jekyll-rtd-theme
+description: Just another documentation theme compatible with GitHub Pages
 
-remote_theme: rundocs/jekyll-rtd-theme
+theme: null
 
-debug:
-  compress: true
-  dist: false
-  shortcodes: false
+# debug:
+#   compress: true
+#   dist: false
+#   shortcodes: true
 
-mermaid:
-  custom: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+readme_index:
+  with_frontmatter: true
 
 plugins:
   - jemoji
   - jekyll-avatar
   - jekyll-mentions
-
-readme_index:
-  with_frontmatter: true
 
 exclude:
   - Makefile
