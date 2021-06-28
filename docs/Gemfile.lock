@@ -1,9 +1,3 @@
-PATH
-  remote: .
-  specs:
-    csd3 (2.0.10)
-      github-pages (~> 209)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -155,6 +149,8 @@ GEM
       jekyll (>= 3.5, < 5.0)
       jekyll-sass-converter (>= 1.0, <= 3.0.0, != 2.0.0)
       rubyzip (>= 1.3.0, < 3.0)
+    jekyll-rtd-theme (2.0.10)
+      github-pages (~> 209)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-seo-tag (2.6.1)
@@ -271,8 +267,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  csd3!
   github-pages
+  jekyll-rtd-theme
 
 BUNDLED WITH
    2.2.21
