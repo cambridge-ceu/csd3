@@ -9,24 +9,16 @@ debug:
   dist: false
   shortcodes: false
 
-readme_index:
-  with_frontmatter: true
-
 mermaid:
-  initialize:
-    startOnLoad: true
-    logLevel: fatal
-    flowchart:
-      diagramPadding: 8
-      htmlLabels: true
-      curve: linear
-    gantt:
-      titleTopMargin: 25
+  custom: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
 
 plugins:
   - jemoji
   - jekyll-avatar
   - jekyll-mentions
+
+readme_index:
+  with_frontmatter: true
 
 exclude:
   - Makefile
