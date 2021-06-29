@@ -37,7 +37,7 @@ and the executables will be put to ~/bin.
 
 #### libraOffice
 
-The executables (`oocalc`, `ooffice`, `ooimpress`, `oomath`, `ooviewdoc`, `oowriter`) are in `/usr/bin` directory and can be conveniently called from the console, e.g.,
+The executables (`oocalc`, `ooffice`, `ooimpress`, `oomath`, `ooviewdoc`, `oowriter`) are in the `/usr/bin` directory and can be conveniently called from the console, e.g.,
 
 ```bash
 oowriter README.docx
