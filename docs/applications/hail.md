@@ -25,3 +25,33 @@ python
 ```
 
 Some files can be made available with `gsutil` installed. The HGDP data comes with release 3.1, `gs://gcp-public-data--gnomad/release/`.
+
+We now attempt to access the latest [genebass](https://genebass.org/). First, we download the data as follows,
+
+```bash
+# csd3 location
+export dest=~/rds/results/public/gwas/ukb_excomes
+mkdir -p ${dest}
+cd ${dest}
+# Gene burden results
+gsutil -m cp -r gs://ukbb-exome-public/300k/results/results.mt .
+# Single variant association results
+gsutil -m cp -r gs://ukbb-exome-public/300k/results/variant_results.mt .
+```
+
+and then mirror the setup above and invoke hail for basic information of the gene burden results,
+
+```bash
+module load python/3.7 hadoop/2.7.7
+# we start from location where there is our py37
+source py37/bin/activate
+cd ~/rds/results/public/gwas/ukb_excomes
+python <<END
+import hail as hl
+mt = hl.read_matrix_table('results.mt')
+mt.describe()
+mt.summarize()
+mt.show()
+mt_cols = mt.cols()
+END
+```
