@@ -4,20 +4,21 @@ sort: 6
 
 # Software
 
-The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of December 2019, the list is
+The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of June 2021, the list is
 
 ```
-bgenix/                       LDstore/                     plink_linux_x86_64_beta3.32/  raremetal_4.14.0/                   snptest_new/
-biobank/                      magma/                       plinkseq-0.08-x86_64/         raremetal_4.14.1/                   source/
-boltlmm/                      MAGMA_Celltyping/            plinkseq-0.10/                raremetal_BPGen/                    stata/
-boltlmm_2.2/                  metabolomics/                qctool_v1.4-linux-x86_64/     Raremetal_linux_executables/        tabix/
-exomeplus/                    metal/                       R/                            Raremetal_linux_executables.tgz     temp/
-gcta/                         metal_updated/               raremetal_4.13/               raremetal.log                       vcftools/
-gtool_v0.7.5_x86_64/          plink/                       raremetal_4.13.3/             samtools_1.2/                       vcftools_ps629/
-hpg/                          plink_1.90_beta/             raremetal_4.13.4/             shapeit.v2.r790.RHELS_5.4.dynamic/
-impute_v2.3.2_x86_64_static/  plink_bgi_Dev/               raremetal_4.13.5/             snptest/
-interval/                     plink-bgi_linux_x86_64_may/  raremetal_4.13.7/             snptest_2.5.2/
-JAGS/                         plink_linux_x86_64_beta2a/   raremetal_4.13.8/             snptest_2.5.4_beta3/
+bgenix/                       JAGS/                        plink_linux_x86_64_beta2a/    raremetal_4.14.0/                   snptest_2.5.4_beta3/
+biobank/                      LDstore/                     plink_linux_x86_64_beta3.32/  raremetal_4.14.1/                   snptest_new/
+boltlmm/                      locuszoom/                   plinkseq-0.08-x86_64/         raremetal_BPGen/                    source/
+boltlmm_2.2/                  magma/                       plinkseq-0.10/                Raremetal_linux_executables/        stata/
+crossmap/                     MAGMA_Celltyping/            qctool_v1.4-linux-x86_64/     Raremetal_linux_executables.tgz     tabix/
+exomeplus/                    metabolomics/                R/                            raremetal.log                       temp/
+gcta/                         metal/                       raremetal_4.13/               regenie/                            vcftools/
+gtool_v0.7.5_x86_64/          metal_updated/               raremetal_4.13.3/             samtools-1.10.tar.bz2               vcftools_ps629/
+hpg/                          plink/                       raremetal_4.13.4/             samtools_1.2/
+htslib/                       plink_1.90_beta/             raremetal_4.13.5/             shapeit.v2.r790.RHELS_5.4.dynamic/
+impute_v2.3.2_x86_64_static/  plink_bgi_Dev/               raremetal_4.13.7/             snptest/
+interval/                     plink-bgi_linux_x86_64_may/  raremetal_4.13.8/             snptest_2.5.2/
 ```
 
 These can be loaded with `module load ceuadmin/<module name>`.
@@ -33,6 +34,16 @@ make NO_GETTEXT=YesPlease install
 ```
 
 and the executables will be put to ~/bin.
+
+#### libraOffice
+
+The executables (oocalc, ooffice, ooimpress, oomath, ooviewdoc, oowriter) are in `/usr/bin` directory and can be conveniently called from the console, e.g.,
+
+```bash
+oowriter README.docx
+```
+
+to load the Word document.
 
 #### matlab
 
@@ -272,6 +283,16 @@ then either log out and login again, or
 ```bash
 unset SLURM_CONF
 ```
+
+#### ssh
+
+It is already covered in the `login` section; however it is useful to note that it is preferable to put an alias
+
+```
+alias ssh='-q -X $@'
+```
+
+into `${HOME}/.bashrc` in case a remote login is necessary (e.g., faster login to csd3 or there is poor local network connection).
 
 #### Stata
 
