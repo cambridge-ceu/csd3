@@ -39,7 +39,7 @@ gsutil -m cp -r gs://ukbb-exome-public/300k/results/results.mt .
 gsutil -m cp -r gs://ukbb-exome-public/300k/results/variant_results.mt .
 ```
 
-and then mirror the setup above and invoke hail for basic information of the gene burden results,
+and then mirror the setup above and invoke `hail` for basic information of the gene burden results,
 
 ```bash
 module load python/3.7 hadoop/2.7.7
