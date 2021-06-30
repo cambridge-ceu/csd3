@@ -28,14 +28,24 @@ python
 >>> hl.export_vcf(at,"at.vcf.bgz")
 ```
 
+Alternatively, we could also start a session using `ipython`.
+
 ## Tutorials
+
+We can get the tutorials at the current directory as follows
 
 ```bash
 wget -qO- https://hail.is/docs/0.2/tutorials.tar.gz | tar xf -
+```
+
+We cut/paste code from the hail website to our command-line session and a better quality can be achieved with a browser which unfortunately does not function so well on csd3 and requires some tweak elsewhere as follows,
+
+First, from a csd3 session and issue commands,
+```bash
 hostname
 jupyter notebook tutorials/ --ip=127.0.0.1 --no-browser --port 8081
 ```
-and for this instance we have `hostname` as `login-e-12`.
+and for this instance we have `hostname` as `login-e-12` and additional information as follows,
 
 ```
 [I 15:54:40.577 NotebookApp] The port 8081 is already in use, trying another port.
@@ -52,7 +62,7 @@ and for this instance we have `hostname` as `login-e-12`.
         http://127.0.0.1:8082/?token=27811cfc600c43bb56c6b91a0ac26bfddd57fb00299a2961
 ```
 
-from a console other than a csd3 session we do
+from a console other than a csd3 session (e.g., a `srcf` or `ds` or Windows `virtualbox` virtual machine) we access the csd3 session above.
 
 ```bash
 ssh -4 -L 8082:127.0.0.1:8082 -fN login-e-12.hpc.cam.ac.uk
