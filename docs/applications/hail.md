@@ -35,7 +35,9 @@ Some files can be made available with `gsutil` installed, e.g.,
 - Pan-ancestry genetic analysis of the UK Biobank, `https://pan.ukbb.broadinstitute.org/docs/hail-format`.
 - Exome-based association statistics ([genebass](https://genebass.org/)), `gs://ukbb-exome-public/300k/results`.
 
-Here we illustrate with `genebass`,
+## genebass
+
+### Download
 
 ```bash
 # genebass and csd3 locations
@@ -49,7 +51,9 @@ gsutil -m cp -r ${src}/results.mt .
 gsutil -m cp -r ${src}/variant_results.mt .
 ```
 
-and then mirror the setup above and invoke `hail` for basic information of the gene burden results,
+### Access
+
+This mirrors the setup above,
 
 ```bash
 module load python/3.7 hadoop/2.7.7
