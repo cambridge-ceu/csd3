@@ -6,16 +6,35 @@ sort: 16
 
 Web: [https://hail.is/](https://hail.is/) as with [hail on cloud](https://github.com/danking/hail-cloud-docs/blob/master/how-to-cloud.md).
 
-## Installation
+## Preparations
 
-We proceed as follows,
+We will need to set up an virtual environment as follows,
 
 ```bash
 module load python/3.7 hadoop/2.7.7
 virtualenv py37
 source py37/bin/activate
+```
+
+Later, only two of the commands are necessary, i.e.,
+
+```bash
+module load python/3.7 hadoop/2.7.7
+source py37/bin/activate
+```
+
+## Installation
+
+We proceed with,
+
+```bash
 pip install hail
 pip install gnomAD
+```
+
+where `gnomAD` is optional, and we could invoke Python as follows,
+
+```python
 python
 >>> import hail as hl
 >>> mt = hl.balding_nichols_model(n_populations=3, n_samples=50, n_variants=100)
@@ -30,24 +49,17 @@ python
 
 Alternatively, we could also start a session using `ipython`.
 
-From now on, we would use this part of the setup above,
-
-```bash
-module load python/3.7 hadoop/2.7.7
-source py37/bin/activate
-```
-
 ## Tutorials
 
-We can get the tutorials at the current directory as follows
+We can get the tutorials at the current directory,
 
 ```bash
 wget -qO- https://hail.is/docs/0.2/tutorials.tar.gz | tar xf -
 ```
 
-We cut/paste code from the hail website to our command-line session and a better quality can be achieved with a browser which unfortunately does not function so well on csd3 and requires some tweak elsewhere as follows,
+and cut/paste code from the hail website to our command-line session. A better quality can be achieved with a browser, which unfortunately does not function so well on csd3 and requires some tweak from elsewhere,
 
-First, from a csd3 session and issue commands,
+First, from a csd3 session we issue commands,
 
 ```bash
 hostname
@@ -91,7 +103,7 @@ Some files can be made available with `gsutil` installed, e.g.,
 
 ## genebass
 
-Web: [genebass](https://genebass.org/) (`gs://ukbb-exome-public/300k/results`)
+Web: [genebass](https://genebass.org/)
 
 ### Download
 
