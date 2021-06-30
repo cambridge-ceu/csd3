@@ -30,6 +30,13 @@ python
 
 Alternatively, we could also start a session using `ipython`.
 
+From now on, we would use this part of the setup above,
+
+```bash
+module load python/3.7 hadoop/2.7.7
+source py37/bin/activate
+```
+
 ## Tutorials
 
 We can get the tutorials at the current directory as follows
@@ -102,12 +109,9 @@ gsutil -m cp -r ${src}/variant_results.mt .
 
 ### Access
 
-This mirrors the setup above,
+We could run the script directly as follows,
 
 ```bash
-module load python/3.7 hadoop/2.7.7
-# we start from location where there is our py37
-source py37/bin/activate
 cd ~/rds/results/public/gwas/ukb_excomes
 python <<END
 
@@ -146,6 +150,7 @@ gbr_cols_reduced=gb_cols.drop(*fields_to_drop)
 vr = hl.read_matrix_table('variant_results.mt')
 vr.count()
 vr.describe()
-
+vr.select_cols().show(1)
+vr.select_rows().show(1)
 END
 ```
