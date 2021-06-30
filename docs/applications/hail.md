@@ -41,10 +41,12 @@ wget -qO- https://hail.is/docs/0.2/tutorials.tar.gz | tar xf -
 We cut/paste code from the hail website to our command-line session and a better quality can be achieved with a browser which unfortunately does not function so well on csd3 and requires some tweak elsewhere as follows,
 
 First, from a csd3 session and issue commands,
+
 ```bash
 hostname
 jupyter notebook tutorials/ --ip=127.0.0.1 --no-browser --port 8081
 ```
+
 and for this instance we have `hostname` as `login-e-12` and additional information as follows,
 
 ```
