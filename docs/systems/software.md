@@ -289,7 +289,7 @@ unset SLURM_CONF
 It is already covered in the `login` section; however it is useful to note that it is preferable to put an alias
 
 ```
-alias ssh='-q -X $@'
+alias ssh='ssh -q -X $@'
 ```
 
 into `${HOME}/.bashrc` in case a remote login is necessary (e.g., faster login to csd3 or there is poor local network connection).
