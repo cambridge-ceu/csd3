@@ -105,6 +105,15 @@ files=dir+"libblas.so:"+dir+"libcblas.so:"+dir+"liblapack.so"
 print(files)
 # os.environ['PYENSEMBL_CACHE_DIR'] = '/custom/cache/dir'
 hl.init(spark_conf={"spark.executor.extraClassPath": files})
+# Gene information
+gene_ht = hl.import_table('tutorials/data/ensembl_gene_annotations.txt', impute=True)
+gene_ht.show()
+gene_ht.count()
+gene_ht = gene_ht.transmute(interval = hl.locus_interval(gene_ht['Chromosome'],
+                                                         gene_ht['Gene start'],
+                                                         gene_ht['Gene end'], 
+                                                         reference_genome='GRCh37'))
+gene_ht = gene_ht.key_by('interval')
 # 1000Genomes data from the tutorials
 sa = hl.import_table('tutorials/data/1kg_annotations.txt', impute=True, key='Sample')
 sa.describe()
@@ -137,14 +146,6 @@ mt.variant_qc.describe()
 mt.variant_qc.AF.show()
 mt = mt.filter_rows(hl.min(mt.variant_qc.AF) > 1e-6)
 mt = mt.filter_rows(mt.variant_qc.p_value_hwe > 0.005)
-gene_ht = hl.import_table('tutorials/data/ensembl_gene_annotations.txt', impute=True)
-gene_ht.show()
-gene_ht.count()
-gene_ht = gene_ht.transmute(interval = hl.locus_interval(gene_ht['Chromosome'],
-                                                         gene_ht['Gene start'],
-                                                         gene_ht['Gene end'], 
-                                                         reference_genome='GRCh37'))
-gene_ht = gene_ht.key_by('interval')
 mt = mt.annotate_rows(gene_info = gene_ht[mt.locus])
 mt.gene_info.show()
 burden_mt = (
@@ -248,12 +249,15 @@ gr_cols_reduced=gb_cols.drop(*fields_to_drop)
 
 # Variant results
 vr = hl.read_matrix_table('variant_results.mt')
+hl.summarize_variants(vr)
 vr.count()
 vr.describe()
 vr.select_cols().show(1)
 vr.select_rows().show(1)
 vr.locus.show(1)
-hl.summarize_variants(vr)
+co1777=vr.filter_cols(vr.coding=="1777").show()
+co1777.entry
+co1777.entry.take(5)
 
 # IL12B
 END
