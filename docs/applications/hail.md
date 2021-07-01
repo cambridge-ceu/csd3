@@ -35,7 +35,7 @@ pip install varcode
 pyensembl install --release 99 --species human
 ```
 
-where `gnomAD, `pyensembl` ([https://github.com/openvax/pyensembl](https://github.com/openvax/pyensembl)) and `varcode` ([https://github.com/openvax/varcode](https://github.com/openvax/varcode)) are optional, and we could invoke Python as follows,
+where `gnomAD`, `pyensembl` ([https://github.com/openvax/pyensembl](https://github.com/openvax/pyensembl)) and `varcode` ([https://github.com/openvax/varcode](https://github.com/openvax/varcode)) are optional, and we could invoke Python as follows,
 
 ```python
 python
