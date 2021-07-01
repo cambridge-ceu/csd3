@@ -30,9 +30,12 @@ We proceed with,
 ```bash
 pip install hail
 pip install gnomAD
+pip install pyensembl
+pip install varcode
+pyensembl install --release 99 --species human
 ```
 
-where `gnomAD` is optional, and we could invoke Python as follows,
+where `gnomAD, `pyensembl` ([https://github.com/openvax/pyensembl](https://github.com/openvax/pyensembl)) and `varcode` ([https://github.com/openvax/varcode](https://github.com/openvax/varcode))are optional, and we could invoke Python as follows,
 
 ```python
 python
@@ -100,6 +103,7 @@ import os
 dir=os.environ['HPC_WORK']+"/lib64/"
 files=dir+"libblas.so:"+dir+"libcblas.so:"+dir+"liblapack.so"
 print(files)
+# os.environ['PYENSEMBL_CACHE_DIR'] = '/custom/cache/dir'
 hl.init(spark_conf={"spark.executor.extraClassPath": files})
 # 1000Genomes data from the tutorials
 sa = hl.import_table('tutorials/data/1kg_annotations.txt', impute=True, key='Sample')
