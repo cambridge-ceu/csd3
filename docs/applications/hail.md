@@ -69,25 +69,25 @@ jupyter notebook tutorials/ --ip=127.0.0.1 --no-browser --port 8081
 and for this instance we have `hostname` as `login-e-12` and additional information as follows,
 
 ```
-[I 15:54:40.577 NotebookApp] The port 8081 is already in use, trying another port.
-[I 15:54:40.882 NotebookApp] Serving notebooks from local directory: /rds/project/jmmh2/rds-jmmh2-results/public/gwas/ukb_exomes/tutorials
-[I 15:54:40.882 NotebookApp] The Jupyter Notebook is running at:
-[I 15:54:40.882 NotebookApp] http://127.0.0.1:8082/?token=27811cfc600c43bb56c6b91a0ac26bfddd57fb00299a2961
-[I 15:54:40.882 NotebookApp]  or http://127.0.0.1:8082/?token=27811cfc600c43bb56c6b91a0ac26bfddd57fb00299a2961
-[I 15:54:40.882 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[C 15:54:40.919 NotebookApp]
+[I 20:21:59.258 NotebookApp] Serving notebooks from local directory: /rds/project/jmmh2/rds-jmmh2-results/public/gwas/ukb_exomes/tutorials
+[I 20:21:59.258 NotebookApp] The Jupyter Notebook is running at:
+[I 20:21:59.258 NotebookApp] http://127.0.0.1:8081/?token=2d4ba02d3d0d782ad1dbafc73f96a3fc3d0bdff4573899c9
+[I 20:21:59.258 NotebookApp]  or http://127.0.0.1:8081/?token=2d4ba02d3d0d782ad1dbafc73f96a3fc3d0bdff4573899c9
+[I 20:21:59.258 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 20:21:59.300 NotebookApp]
 
     To access the notebook, open this file in a browser:
-        file:///home/jhz22/.local/share/jupyter/runtime/nbserver-121490-open.html
+        file:///home/jhz22/.local/share/jupyter/runtime/nbserver-235186-open.html
     Or copy and paste one of these URLs:
-        http://127.0.0.1:8082/?token=27811cfc600c43bb56c6b91a0ac26bfddd57fb00299a2961
+        http://127.0.0.1:8081/?token=2d4ba02d3d0d782ad1dbafc73f96a3fc3d0bdff4573899c9
+     or http://127.0.0.1:8081/?token=2d4ba02d3d0d782ad1dbafc73f96a3fc3d0bdff4573899c9
 ```
 
-from a console other than a csd3 session (e.g., a `srcf` or `ds` or Windows `virtualbox` virtual machine) we access the csd3 session above.
+from a console other than a csd3 session (e.g., from a `srcf` or `ds` or Windows `virtualbox` virtual machine) we access the csd3 session above.
 
 ```bash
-ssh -4 -L 8082:127.0.0.1:8082 -fN login-e-12.hpc.cam.ac.uk
-firefox http://127.0.0.1:8082/?token=27811cfc600c43bb56c6b91a0ac26bfddd57fb00299a2961
+ssh -4 -L 8081:127.0.0.1:8081 -fN login-e-12.hpc.cam.ac.uk
+firefox http://127.0.0.1:8081/?token=2d4ba02d3d0d782ad1dbafc73f96a3fc3d0bdff4573899c9
 ```
 
 and run the tutorial from firefox. Similar process is also described at the system/software section on Python.
@@ -194,7 +194,7 @@ Web: [https://genebass.org/](https://genebass.org/)
 ```bash
 # genebass and csd3 locations
 export src=gs://ukbb-exome-public/300k/results
-export dest=~/rds/results/public/gwas/ukb_excomes
+export dest=~/rds/results/public/gwas/ukb_exomes
 mkdir -p ${dest}
 cd ${dest}
 # Gene burden results
@@ -208,7 +208,7 @@ gsutil -m cp -r ${src}/variant_results.mt .
 We could run the script directly as follows,
 
 ```bash
-cd ~/rds/results/public/gwas/ukb_excomes
+cd ~/rds/results/public/gwas/ukb_exomes
 python <<END
 
 import hail as hl
