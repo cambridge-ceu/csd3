@@ -70,7 +70,7 @@ and for this instance we have `hostname` as `login-e-12` and additional informat
 
 ```
 [I 15:54:40.577 NotebookApp] The port 8081 is already in use, trying another port.
-[I 15:54:40.882 NotebookApp] Serving notebooks from local directory: /rds/project/jmmh2/rds-jmmh2-results/public/gwas/ukb_excomes/tutorials
+[I 15:54:40.882 NotebookApp] Serving notebooks from local directory: /rds/project/jmmh2/rds-jmmh2-results/public/gwas/ukb_exomes/tutorials
 [I 15:54:40.882 NotebookApp] The Jupyter Notebook is running at:
 [I 15:54:40.882 NotebookApp] http://127.0.0.1:8082/?token=27811cfc600c43bb56c6b91a0ac26bfddd57fb00299a2961
 [I 15:54:40.882 NotebookApp]  or http://127.0.0.1:8082/?token=27811cfc600c43bb56c6b91a0ac26bfddd57fb00299a2961
