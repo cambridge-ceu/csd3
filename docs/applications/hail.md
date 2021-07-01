@@ -173,6 +173,7 @@ gwas = hl.linear_regression_rows(
     y=mt.pheno.CaffeineConsumption, 
     x=mt.GT.n_alt_alleles(),
     covariates=[1.0, mt.pheno.isFemale, mt.pca.scores[0], mt.pca.scores[1], mt.pca.scores[2]])```
+```
 
 ## Resources
 
