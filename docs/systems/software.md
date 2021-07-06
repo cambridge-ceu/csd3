@@ -213,7 +213,7 @@ then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `
 
 ##### An example
 
-To convert a large number of PDF files (INTERVAL.\*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list,and pipe into ``parallel`.
+To convert a large number of PDF files (INTERVAL.\*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list, and pipe into ``parallel`.
 
 ```bash
 ls *pdf | \
