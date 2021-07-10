@@ -16,7 +16,7 @@ tar xvfz code-stable-x64-1625728370.tar.gz
 ln -sf ${HPC_WORK}/VSCode-linux-x64/bin/code ${HPC_WORK}/bin/code
 ```
 
-By default it requires `chrome-sandbox is owned by root and has mode 4755` which could be achieved by CSD3 by
+By default it requires `chrome-sandbox is owned by root and has mode 4755` which could be achieved at CSD3 by
 
 ```bash
 sudo chown root:root chrome-sandbox
