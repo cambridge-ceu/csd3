@@ -97,7 +97,7 @@ and run the tutorial from firefox. Similar process is also described at the syst
 
 For convenience, we list the code from the tutorials on 1000Genomes data, see https://notebook.community/danking/hail/notebook/images/hail/resources/Hail-Workshop-Notebook.
 
-```python
+````python
 import hail as hl
 import os
 dir=os.environ['HPC_WORK']+"/lib64/"
@@ -111,7 +111,7 @@ gene_ht.show()
 gene_ht.count()
 gene_ht = gene_ht.transmute(interval = hl.locus_interval(gene_ht['Chromosome'],
                                                          gene_ht['Gene start'],
-                                                         gene_ht['Gene end'], 
+                                                         gene_ht['Gene end'],
                                                          reference_genome='GRCh37'))
 gene_ht = gene_ht.key_by('interval')
 # 1000Genomes data from the tutorials
@@ -160,14 +160,14 @@ pca_scores.describe()
 pca_scores.scores[0].show()
 pca_loadings.describe()
 mt = mt.annotate_cols(pca = pca_scores[mt.s])
-p = hl.plot.scatter(mt.pca.scores[0], 
+p = hl.plot.scatter(mt.pca.scores[0],
                     mt.pca.scores[1],
                     label=mt.pheno.SuperPopulation)
 show(p)
 # errors from here though hl.init() above
 # https://discuss.hail.is/t/undefined-symbol-cblas-dgemm/1488
-gwas = hl.linear_regression_rows(y=mt.pheno.CaffeineConsumption, 
-                                 x=mt.GT.n_alt_alleles(), 
+gwas = hl.linear_regression_rows(y=mt.pheno.CaffeineConsumption,
+                                 x=mt.GT.n_alt_alleles(),
                                  covariates=[1.0])
 gwas.describe()
 p = hl.plot.manhattan(gwas.p_value)
@@ -175,20 +175,20 @@ show(p)
 p = hl.plot.qq(gwas.p_value)
 show(p)
 gwas = hl.linear_regression_rows(
-    y=mt.pheno.CaffeineConsumption, 
+    y=mt.pheno.CaffeineConsumption,
     x=mt.GT.n_alt_alleles(),
     covariates=[1.0, mt.pheno.isFemale, mt.pca.scores[0], mt.pca.scores[1], mt.pca.scores[2]])```
-```
+````
 
 ## Resources
 
 Some files can be made available with `gsutil` installed, e.g.,
 
-* The HGDP release 3.1, `gs://gcp-public-data--gnomad/release/3.1`.
-  * See also, `gs://gnomad-public/release`.
-* UK Biobank results, `gs://hail-datasets/ukbb_imputed_v3_gwas_results_both_sexes.GRCh37.mt`.
-* Pan-ancestry genetic analysis of the UK Biobank, [https://pan.ukbb.broadinstitute.org/docs/hail-format](https://pan.ukbb.broadinstitute.org/docs/hail-format).
-* Exome-based association statistics, see below.
+- The HGDP release 3.1, `gs://gcp-public-data--gnomad/release/3.1`.
+  - See also, `gs://gnomad-public/release`.
+- UK Biobank results, `gs://hail-datasets/ukbb_imputed_v3_gwas_results_both_sexes.GRCh37.mt`.
+- Pan-ancestry genetic analysis of the UK Biobank, [https://pan.ukbb.broadinstitute.org/docs/hail-format](https://pan.ukbb.broadinstitute.org/docs/hail-format).
+- Exome-based association statistics, see below.
 
 ## genebass
 
