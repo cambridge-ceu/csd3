@@ -41,12 +41,12 @@ Note the munging procedure requests large resources and will be terminated by CS
 
 ## SLURM
 
-We now complete the download on frequencies, baseline model LD scores, and regression weights and furnish a LD score regression.
+We now complete the download on frequencies, baseline model LD scores, and regression weights and furnish a LD heritability partition..
 
 ```bash
+wget -qO- https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/1000G_Phase1_frq.tgz | tar xvfz -
 wget -qO- https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/1000G_Phase1_baseline_ldscores.tgz | tar xvfz -
 wget -qO- https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/weights_hm3_no_hla.tgz | tar xvfz -
-wget -qO- https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/1000G_Phase1_frq.tgz | tar xvfz -
 ```
 
 Our batch file is as follows,
