@@ -38,3 +38,27 @@ python munge_sumstats.py --sumstats BMI.txt --a1 Tested_Allele --a2 Other_Allele
 ```
 
 Note the munging procedure requests large resources and will be terminated by CSD3, so we better test with a slurm job instead.
+
+## SLURM
+
+Our batch file is as follows,
+
+```
+#!/usr/bin/bash
+
+#SBATCH --job-name=BMI
+#SBATCH --account CARDIO-SL0-CPU
+#SBATCH --partition cardio
+#SBATCH --qos=cardio
+#SBATCH --mem=28800
+#SBATCH --time=5-00:00:00
+#SBATCH --output=/rds/user/jhz22/hpc-work/work/_BMI_%A_%a.out
+#SBATCH --error=/rds/user/jhz22/hpc-work/work/_BMI_%A_%a.err
+#SBATCH --export ALL
+
+export TMPDIR=/rds/user/$USER/hpc-work/work
+
+module load python/2.7
+source ${HOME}/py27/bin/activate
+python munge_sumstats.py --sumstats BMI.txt --a1 Tested_Allele --a2 Other_Allele --merge-alleles w_hm3.snplist --out ldsc --a1-inc
+```
