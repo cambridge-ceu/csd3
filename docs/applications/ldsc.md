@@ -24,7 +24,7 @@ bzip2 -d
 
 The last two commands also gets the HapMap 3 SNP list. It is worthwhile to note that
 
-- The ldsc documentation suggests Anaconda and on CSD3 we could use the miniconda/2 module, i.e, [https://cambridge-ceu.github.io/csd3/systems/software.html](https://cambridge-ceu.github.io/csd3/systems/software.html), but it is considerably more involved.
+- The ldsc documentation suggests Anaconda and on CSD3 we could use the miniconda/2 module, i.e, [https://cambridge-ceu.github.io/csd3/systems/software.html#python](https://cambridge-ceu.github.io/csd3/systems/software.html#python), but it is considerably more involved.
 - We only need `module load python/2.7` and `source ${HOME}/py27/bin/activate` later on.
 
 ## Testing
