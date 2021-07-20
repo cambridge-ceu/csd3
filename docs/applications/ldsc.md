@@ -41,6 +41,14 @@ Note the munging procedure requests large resources and will be terminated by CS
 
 ## SLURM
 
+We now complete the download on frequencies, baseline model LD scores, and regression weights and furnish a LD score regression.
+
+```bash
+wget -qO- https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/1000G_Phase1_baseline_ldscores.tgz | tar xvfz -
+wget -qO- https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/weights_hm3_no_hla.tgz | tar xvfz -
+wget -qO- https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/1000G_Phase1_frq.tgz | tar xvfz -
+```
+
 Our batch file is as follows,
 
 ```
@@ -60,5 +68,13 @@ export TMPDIR=/rds/user/$USER/hpc-work/work
 
 module load python/2.7
 source ${HOME}/py27/bin/activate
+cd ${HPC_WORK}/ldsc
 python munge_sumstats.py --sumstats BMI.txt --a1 Tested_Allele --a2 Other_Allele --merge-alleles w_hm3.snplist --out ldsc --a1-inc
+python ldsc.py 
+	--h2 BMI.sumstats.gz\
+	--ref-ld-chr baseline.\ 
+	--w-ld-chr weights.\
+	--overlap-annot\
+	--frqfile-chr 1000G.mac5eur.\
+	--out BMI_baseline
 ```
