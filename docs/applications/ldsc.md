@@ -72,9 +72,9 @@ cd ${HPC_WORK}/ldsc
 python munge_sumstats.py --sumstats BMI.txt --a1 Tested_Allele --a2 Other_Allele --merge-alleles w_hm3.snplist --out ldsc --a1-inc
 python ldsc.py 
 	--h2 BMI.sumstats.gz\
-	--ref-ld-chr baseline.\ 
-	--w-ld-chr weights.\
+	--ref-ld-chr baseline/baseline.\ 
+	--w-ld-chr weights_hm3_no_hla/weights.\
 	--overlap-annot\
-	--frqfile-chr 1000G.mac5eur.\
+	--frqfile-chr 1000G_frq/1000G.mac5eur.\
 	--out BMI_baseline
 ```
