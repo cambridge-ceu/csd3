@@ -80,7 +80,7 @@ python ldsc.py\
 	--frqfile-chr 1000G_frq/1000G.mac5eur.\
 	--out BMI_baseline
 ```
-and our results are contained in the tab-delimited file named `BMI_baseline.result`.
+and our results are contained in the tab-delimited file named `BMI_baseline.result` -- note in particular the CNS enrichment P=8.30e-24.
 
 ### Cell type analysis
 
@@ -130,3 +130,4 @@ Neuron |  4.4874060288359995e-09 | 2.48025909733557e-09  |  0.035206172355899706
 Oligodendrocyte | 8.067689953393081e-10 |  2.569340962599481e-09 |  0.376761120478732
 Astrocyte    |   -4.036699628095808e-09 | 2.0886996416620756e-09 | 0.9733595763245972
 
+In line with the finding above, we have a P=0.035 for neurons.
