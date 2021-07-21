@@ -105,3 +105,28 @@ python ldsc.py\
 ```
 
 and our results are now contained in the tab-delimited file named `BMI_CNS.results`.
+
+We next use the `--h2-cts` option with the Cahoy data analysis in a nutshell,
+
+```bash
+export cts_name=Cahoy
+wget -qO- https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/LDSC_SEG_ldscores/${cts_name}_1000Gv3_ldscores.tgz | \
+tar xfvz -
+wget -qO- https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/1000G_Phase3_baseline_ldscores.tgz | \
+tar xvfz -
+ldsc.py\
+    --h2-cts BMI.sumstats.gz \
+    --ref-ld-chr 1000G_EUR_Phase3_baseline/baseline. \
+    --out BMI_${cts_name} \
+    --ref-ld-chr-cts $cts_name.ldcts \
+    --w-ld-chr weights_hm3_no_hla/weights.
+```
+
+The output `BMI_Cahoy.cell_type_results.txt` is sufficiently small to include here,
+
+Name | Coefficient     | Coefficient_std_error |  Coefficient_P_value
+-----|-----------------|-----------------------|----------------------
+Neuron |  4.4874060288359995e-09 | 2.48025909733557e-09  |  0.035206172355899706
+Oligodendrocyte | 8.067689953393081e-10 |  2.569340962599481e-09 |  0.376761120478732
+Astrocyte    |   -4.036699628095808e-09 | 2.0886996416620756e-09 | 0.9733595763245972
+
