@@ -39,9 +39,11 @@ python munge_sumstats.py --sumstats BMI.txt --a1 Tested_Allele --a2 Other_Allele
 
 Note the munging procedure requests large resources and will be terminated by CSD3, so we better test with a slurm job instead.
 
-## SLURM
+## Analysis
 
-We now complete the download on frequencies, baseline model LD scores, and regression weights and furnish a LD heritability partition..
+### Heritability partition.
+
+We now complete the download on frequencies, baseline model LD scores, and regression weights and furnish this.
 
 ```bash
 wget -qO- https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/1000G_Phase1_frq.tgz | tar xvfz -
@@ -70,7 +72,7 @@ module load python/2.7
 source ${HOME}/py27/bin/activate
 cd ${HPC_WORK}/ldsc
 python munge_sumstats.py --sumstats BMI.txt --a1 Tested_Allele --a2 Other_Allele --merge-alleles w_hm3.snplist --out BMI --a1-inc
-python ldsc.py \
+python ldsc.py\
 	--h2 BMI.sumstats.gz\
 	--ref-ld-chr baseline/baseline.\ 
 	--w-ld-chr weights_hm3_no_hla/weights.\
@@ -79,3 +81,27 @@ python ldsc.py \
 	--out BMI_baseline
 ```
 and our results are contained in the tab-delimited file named `BMI_baseline.result`.
+
+### Cell type analysis
+
+We carry on with the download,
+
+```bash
+wget -qO- https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/1000G_Phase1_cell_type_groups.tgz | \
+tar xvfz -
+```
+
+and for CNS, we have
+
+```bash
+python ldsc.py\
+        --h2 BMI.sumstats.gz\
+        --w-ld-chr weights_hm3_no_hla/weights.\
+        --ref-ld-chr cell_type_groups/CNS.,baseline/baseline.\
+        --overlap-annot\
+        --frqfile-chr 1000G_frq/1000G.mac5eur.\
+        --out BMI_CNS\
+        --print-coefficients
+```
+
+and our results are now contained in the tab-delimited file named `BMI_CNS.results`.
