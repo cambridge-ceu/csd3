@@ -69,8 +69,8 @@ export TMPDIR=/rds/user/$USER/hpc-work/work
 module load python/2.7
 source ${HOME}/py27/bin/activate
 cd ${HPC_WORK}/ldsc
-python munge_sumstats.py --sumstats BMI.txt --a1 Tested_Allele --a2 Other_Allele --merge-alleles w_hm3.snplist --out ldsc --a1-inc
-python ldsc.py 
+python munge_sumstats.py --sumstats BMI.txt --a1 Tested_Allele --a2 Other_Allele --merge-alleles w_hm3.snplist --out BMI --a1-inc
+python ldsc.py \
 	--h2 BMI.sumstats.gz\
 	--ref-ld-chr baseline/baseline.\ 
 	--w-ld-chr weights_hm3_no_hla/weights.\
