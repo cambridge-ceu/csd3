@@ -78,3 +78,4 @@ python ldsc.py \
 	--frqfile-chr 1000G_frq/1000G.mac5eur.\
 	--out BMI_baseline
 ```
+and our results are contained in the tab-delimited file named `BMI_baseline.result`.
