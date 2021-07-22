@@ -41,7 +41,7 @@ Note the munging procedure requests large resources and will be terminated by CS
 
 ## Analysis
 
-### Heritability partition.
+### Heritability partition
 
 We now complete the download on frequencies, baseline model LD scores, and regression weights and furnish this.
 
