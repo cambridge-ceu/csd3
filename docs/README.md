@@ -9,9 +9,9 @@
 
 ```mermaid
 graph TB;
-csd3 --> system["The SYSTEM"]
+csd3 --> system["THE SYSTEM"]
 csd3 --> cardio["CARDIO"]
-csd3 --> applications["Applications"]
+csd3 --> applications["APPLICATIONS"]
 csd3 --> wr["Writing related"]
 system --> System
 system --> Login
