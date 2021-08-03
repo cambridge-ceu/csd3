@@ -4,7 +4,7 @@ sort: 21
 
 # ldsc
 
-Web: [https://github.com/bulik/ldsc](https://github.com/bulik/ldsc).
+Web: [https://github.com/bulik/ldsc](https://github.com/bulik/ldsc) ([Google group](https://groups.google.com/g/ldsc_users/)).
 
 ## Installation
 
