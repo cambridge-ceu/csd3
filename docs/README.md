@@ -12,7 +12,7 @@ graph TB;
 csd3 --> system["THE SYSTEM"]
 csd3 --> cardio["CARDIO"]
 csd3 --> applications["APPLICATIONS"]
-csd3 --> wr["Writing related"]
+csd3 --> wr["WRITING RELATED"]
 system --> System
 system --> Login
 system --> sysdot["..."]
