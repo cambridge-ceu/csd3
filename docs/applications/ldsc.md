@@ -34,7 +34,7 @@ We use the GIANT BMI data,
 ```bash
 wget -qO- http://portals.broadinstitute.org/collaboration/giant/images/c/c8/Meta-analysis_Locke_et_al%2BUKBiobank_2018_UPDATED.txt.gz | \
 gunzip -c > BMI.txt
-python munge_sumstats.py --sumstats BMI.txt --a1 Tested_Allele --a2 Other_Allele --merge-alleles w_hm3.snplist --out ldsc --a1-inc
+python munge_sumstats.py --sumstats BMI.txt --a1 Tested_Allele --a2 Other_Allele --merge-alleles w_hm3.snplist --out BMI --a1-inc
 ```
 
 Note the munging procedure requests large resources and will be terminated by CSD3, so we better test with a slurm job instead.
@@ -132,3 +132,31 @@ The output `BMI_Cahoy.cell_type_results.txt` is sufficiently small to include he
 | Astrocyte       | -4.036699628095808e-09 | 2.0886996416620756e-09 | 0.9733595763245972   |
 
 In line with the finding above, we have a P=0.035 for neurons.
+
+### Genetic correlation
+
+We carry on to calculate the genetic correlation (rg) between BMI and height. First, we obtain the LD scores,
+
+```bash
+wget -qO- wget https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_w_ld_chr.tar.bz2 | \
+tar xjf -
+```
+
+followed by downloading and munging height GWAS summary statistics
+
+```bash
+wget -qO- http://portals.broadinstitute.org/collaboration/giant/images/0/01/GIANT_HEIGHT_Wood_et_al_2014_publicrelease_HapMapCeuFreq.txt.gz | \
+gunzip -c > height.txt
+python munge_sumstats.py --sumstats height.txt \
+                         --snp MarkerName --a1 Allele1 --a2 Allele2 --merge-alleles w_hm3.snplist --p p --out height --a1-inc
+```
+
+Our analysis then proceeds with
+
+```bash
+python ldsc.py \
+      --rg BMI.sumstats.gz,height.sumstats.gz \
+      --ref-ld-chr eur_w_ld_chr/ \
+      --w-ld-chr eur_w_ld_chr/ \
+      --out BMI_height
+```
