@@ -163,7 +163,7 @@ python ldsc.py \
       --out BMI_height
 ```
 
-It took just over 15s and `BMI_height.log` contains the desired output quoted below
+It took just under 16s and `BMI_height.log` contains the desired output quoted below
 
 ```
 *********************************************************************
