@@ -135,7 +135,7 @@ In line with the finding above, we have a P=0.035 for neurons.
 
 ### Genetic correlation
 
-We carry on to calculate the genetic correlation (\\(r_g\\)) between BMI and height. First, we obtain the LD scores,
+We carry on to calculate the genetic correlation (\(r_g\)) between BMI and height. First, we obtain the LD scores,
 
 ```bash
 wget -qO- https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_w_ld_chr.tar.bz2 | \
@@ -233,4 +233,4 @@ Analysis finished at Wed Aug  4 07:11:18 2021
 Total time elapsed: 15.56s
 ```
 
-and \\(r_g\\)=0.57.
+and \(r_g\)=0.57.
