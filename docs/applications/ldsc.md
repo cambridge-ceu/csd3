@@ -135,7 +135,7 @@ In line with the finding above, we have a P=0.035 for neurons.
 
 ### Genetic correlation
 
-We carry on to calculate the genetic correlation ($r_g$) between BMI and height. First, we obtain the LD scores,
+We carry on to calculate the genetic correlation (\\(r_g\\)) between BMI and height. First, we obtain the LD scores,
 
 ```bash
 wget -qO- https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_w_ld_chr.tar.bz2 | \
@@ -151,7 +151,7 @@ python munge_sumstats.py --sumstats height.txt \
                          --snp MarkerName --a1 Allele1 --a2 Allele2 --merge-alleles w_hm3.snplist --p p --out height --a1-inc
 ```
 
-but again it will be killed and we need a SLURM job as above. On CSD3, it took just about 14 hours.
+but again it will be killed and we need a SLURM job as above. On CSD3, it took a staggering 14hr.
 
 Our analysis then proceeds with
 
@@ -233,4 +233,4 @@ Analysis finished at Wed Aug  4 07:11:18 2021
 Total time elapsed: 15.56s
 ```
 
-and $r_g$=0.57.
+and \\(r_g\\)=0.57.
