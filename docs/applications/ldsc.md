@@ -37,7 +37,7 @@ gunzip -c > BMI.txt
 python munge_sumstats.py --sumstats BMI.txt --a1 Tested_Allele --a2 Other_Allele --merge-alleles w_hm3.snplist --out BMI --a1-inc
 ```
 
-Note the munging procedure requests large resources and will be terminated by CSD3, so we better test with a slurm job instead.
+Note the munging procedure requests large resources and will be terminated by CSD3, so we better test with a SLURM job instead.
 
 ## Analysis
 
@@ -135,7 +135,7 @@ In line with the finding above, we have a P=0.035 for neurons.
 
 ### Genetic correlation
 
-We carry on to calculate the genetic correlation (rg) between BMI and height. First, we obtain the LD scores,
+We carry on to calculate the genetic correlation ($r_g$) between BMI and height. First, we obtain the LD scores,
 
 ```bash
 wget -qO- https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_w_ld_chr.tar.bz2 | \
@@ -151,6 +151,8 @@ python munge_sumstats.py --sumstats height.txt \
                          --snp MarkerName --a1 Allele1 --a2 Allele2 --merge-alleles w_hm3.snplist --p p --out height --a1-inc
 ```
 
+but again it will be killed and we need a SLURM job as above. On CSD3, it took just about 14 hours.
+
 Our analysis then proceeds with
 
 ```bash
@@ -160,3 +162,75 @@ python ldsc.py \
       --w-ld-chr eur_w_ld_chr/ \
       --out BMI_height
 ```
+
+Howover it took just over 15s and `BMI_height.log` contains the desired output quoted below
+
+```
+*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call:
+./ldsc.py \
+--ref-ld-chr eur_w_ld_chr/ \
+--out BMI_height \
+--rg BMI.sumstats.gz,height.sumstats.gz \
+--w-ld-chr eur_w_ld_chr/
+
+Beginning analysis at Wed Aug  4 07:11:02 2021
+Reading summary statistics from BMI.sumstats.gz ...
+Read summary statistics for 1019865 SNPs.
+Reading reference panel LD Score from eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1290028 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1290028 SNPs.
+After merging with reference panel LD, 1014995 SNPs remain.
+After merging with regression SNP LD, 1014995 SNPs remain.
+Computing rg for phenotype 2/2
+Reading summary statistics from height.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1014995 SNPs remain.
+993172 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.2104 (0.0066)
+Lambda GC: 2.7872
+Mean Chi^2: 3.9573
+Intercept: 1.0292 (0.0298)
+Ratio: 0.0099 (0.0101)
+
+Heritability of phenotype 2/2
+-----------------------------
+Total Observed scale h2: 0.342 (0.0176)
+Lambda GC: 2.0007
+Mean Chi^2: 2.9726
+Intercept: 1.2239 (0.033)
+Ratio: 0.1135 (0.0167)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.1517 (0.0047)
+Mean z1*z2: 2.0178
+Intercept: 0.738 (0.0148)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.5656 (0.0081)
+Z-score: 70.1339
+P: 0.
+
+
+Summary of Genetic Correlation Results
+p1                  p2      rg      se        z    p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+BMI.sumstats.gz  height.sumstats.gz  0.5656  0.0081  70.1339  0.0   0.342     0.0176  1.2239      0.033     0.738       0.0148
+
+Analysis finished at Wed Aug  4 07:11:18 2021
+Total time elapsed: 15.56s
+```
+
+and $r_g$=0.57.
