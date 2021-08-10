@@ -4,7 +4,7 @@ sort: 32
 
 # R/protolite
 
-We may see this message,
+When we issued update.packages(ask=FALSE, checkBuilt=TRUE), we saw the following error message
 
 ```
 Error: package or namespace load failed for ‘protolite’ in dyn.load(file, DLLpath = DLLpath, ...):
@@ -13,12 +13,13 @@ Error: package or namespace load failed for ‘protolite’ in dyn.load(file, DL
 Error: loading failed
 Execution halted
 ERROR: loading failed
+* removing ‘/rds/user/jhz22/hpc-work/R/protolite’
+* restoring previous ‘/rds/user/jhz22/hpc-work/R/protolite’
 ```
 
-This can be furnished with
+We can get away with this,
 
 ```bash
-module load protobuf-3.4.0-gcc-5.4.0-zkpendv
+module load  protobuf-3.4.0-gcc-5.4.0-zkpendv
+Rscript -e "install.packages('protolite')"
 ```
-
-and try again.
