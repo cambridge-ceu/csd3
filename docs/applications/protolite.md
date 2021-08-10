@@ -4,7 +4,7 @@ sort: 32
 
 # R/protolite
 
-When we issued update.packages(ask=FALSE, checkBuilt=TRUE), we saw the following error message
+When we issued `update.packages(ask=FALSE, checkBuilt=TRUE)`, we saw the following error message
 
 ```
 Error: package or namespace load failed for ‘protolite’ in dyn.load(file, DLLpath = DLLpath, ...):
