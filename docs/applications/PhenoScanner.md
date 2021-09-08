@@ -82,4 +82,7 @@ then deposit this to a directory on the search path and invoke,
 ```bash
 module load gcc/6
 phenoscanner -h
+phenoscanner -s chr5:29439275
 ```
+
+and we have `chr5:29439275_PhenoScanner_SNP_Info.tsv` and `chr5:29439275_PhenoScanner_GWAS.tsv` for variant annotation and GWAS lookup, respectively.
