@@ -85,4 +85,4 @@ phenoscanner -h
 phenoscanner -s chr5:29439275
 ```
 
-and we have `chr5:29439275_PhenoScanner_SNP_Info.tsv` and `chr5:29439275_PhenoScanner_GWAS.tsv` for variant annotation and GWAS lookup, respectively.
+and we have `chr5:29439275_PhenoScanner_SNP_Info.tsv` and `chr5:29439275_PhenoScanner_GWAS.tsv` for variant annotation and GWAS lookup, respectively; one can add `-c None` to the last command and get the SNP annotation only.
