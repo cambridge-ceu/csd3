@@ -6,7 +6,14 @@ sort: 2
 
 Possible login nodes on csd3 are: login.hpc, login-cpu.hpc, login-gpu.hpc, login-gfx.hpc, login-e-N.hpc.
 
-To reset Raven password, follow https://password.csx.cam.ac.uk/.
+Nodes login-e-[9-16] are collectively as login-cpu. To use GPU, log into login-gpu (login-e-[1-8]), and switch to the login-cpu environment with
+
+```bash
+module purge
+module load rhel7/default-peta4
+```
+
+To reset Raven password, follow [https://password.csx.cam.ac.uk/](https://password.csx.cam.ac.uk/).
 
 To establish host keys one resorts to `ssh-keygen`; the easiest is to accept the default.
 
