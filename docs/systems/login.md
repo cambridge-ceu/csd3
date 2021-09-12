@@ -6,7 +6,17 @@ sort: 2
 
 Possible login nodes on csd3 are: login.hpc, login-cpu.hpc, login-gpu.hpc, login-gfx.hpc, login-e-N.hpc.
 
-Nodes login-e-[9-16] are collectively as login-cpu. To use GPU, log into login-gpu (login-e-[1-8]), and switch to the login-cpu environment with
+Nodes login-e-[9-16] are collectively as login-cpu. To use GPU, log into login-gpu (login-e-[1-8]), with `module list` we have
+
+```bash
+Currently Loaded Modulefiles:
+  1) dot                                5) singularity/current                9) openmpi-1.10.7-gcc-5.4.0-jdc7f4f
+  2) slurm                              6) rhel7/global                      10) cmake/latest
+  3) turbovnc/2.0.1                     7) cuda/8.0                          11) rhel7/default-gpu
+  4) vgl/2.5.1/64                       8) gcc-5.4.0-gcc-4.8.5-fis24gg
+```
+
+and switch to the login-cpu environment with
 
 ```bash
 module purge
