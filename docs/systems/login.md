@@ -23,6 +23,15 @@ module purge
 module load rhel7/default-peta4
 ```
 
+Our module list is now
+
+```
+  1) dot                            5) singularity/current            9) intel/impi/2017.4/intel       13) intel/libs/daal/2017.4
+  2) slurm                          6) rhel7/global                  10) intel/libs/idb/2017.4         14) intel/bundles/complib/2017.4
+  3) turbovnc/2.0.1                 7) intel/compilers/2017.4        11) intel/libs/tbb/2017.4         15) cmake/latest
+  4) vgl/2.5.1/64                   8) intel/mkl/2017.4              12) intel/libs/ipp/2017.4         16) rhel7/default-peta4
+```
+
 To reset Raven password, follow [https://password.csx.cam.ac.uk/](https://password.csx.cam.ac.uk/).
 
 To establish host keys one resorts to `ssh-keygen`; the easiest is to accept the default.
