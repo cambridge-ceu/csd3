@@ -150,20 +150,18 @@ function extract_data()
 
 function twist()
 {
-  cat-bgen -g $(echo ${prefix}/work/INTERVAL-{1..22}.bgen) -og ${prefix}/work/INTERVAL.bgen -clobber
-  bgenix -g ${prefix}/work/INTERVAL.bgen -index -clobber
-  ln -sf ${prefix}/work/INTERVAL.bgen
-  cp ${prefix}/work/INTERVAL.bgen.bgi .
-  python update_bgi.py --bgi INTERVAL.bgen.bgi
-  plink2 --bgen ${prefix}/work/INTERVAL.bgen ref-first --make-pfile --out INTERVAL
+  cat-bgen -g $(echo ${prefix}/work/INTERVAL-{1..22}.bgen) -og INTERVAL.bgen -clobber
+  bgenix -g INTERVAL.bgen -index -clobber
   export csvfile=INTERVAL.csv
+  python update_bgi.py --bgi INTERVAL.bgen.bgi
+  plink2 --bgen INTERVAL.bgen ref-first --make-pfile --out INTERVAL
+  cp INTERVAL.p??? ${prefix}/work
   (
     head -1 INTERVAL.pvar
     paste <(sed '1d' INTERVAL.pvar | cut -f1,2) \
           <(sed '1d' INTERVAL.csv | cut -d, -f3) | \
     paste - <(sed '1d' INTERVAL.pvar | cut -f4,5)
   ) > ${prefix}/work/INTERVAL.pvar
-  cp INTERVAL.p??? ${prefix}/work
 }
 
 function project_pc()
