@@ -186,6 +186,8 @@ export R_LIBS=/rds/user/$USER/hpc-work/R:/rds/user/$USER/hpc-work/R-3.6.1/librar
 
 Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
 
+Location at csd3: [/usr/local/Cluster-Docs/SLURM/](/usr/local/Cluster-Docs/SLURM/).
+
 ##### Account details
 
 ```bash

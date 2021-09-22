@@ -1,0 +1,41 @@
+---
+sort: 5
+---
+
+# R/gsl
+
+When there is message,
+
+```
+configure: error: Need GSL version >= 1.16
+ERROR: configuration failed for package ‘gsl’
+* removing ‘/rds/user/jhz22/hpc-work/R/gsl’
+* restoring previous ‘/rds/user/jhz22/hpc-work/R/gsl’
+
+The downloaded source packages are in
+        ‘/tmp/Rtmp5Qygwr/downloaded_packages’
+Warning message:
+In install.packages("gsl") :
+  installation of package ‘gsl’ had non-zero exit status
+```
+
+Our first attempt is to load modules as for `R/gnn`
+
+```bash
+module avail gsl
+module load gsl/2.4
+```
+
+Unfortunately, the same error message remains.
+
+Our second attempt is to install from source
+
+```bash
+Rscript -e download.packages("gsl",".")'
+# unpack the downloaded version
+tar xvfz gsl_2.1-7.tar.gz
+cd gsl
+mv configure configure.sav
+gsl-config --cflags
+gsl-lib
+```
