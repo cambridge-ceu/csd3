@@ -31,7 +31,7 @@ Unfortunately, the same error message remains.
 Our second attempt is to install from source
 
 ```bash
-Rscript -e download.packages("gsl",".")'
+Rscript -e 'download.packages("gsl",".")'
 tar xvfz gsl_2.1-7.tar.gz
 cd gsl
 mv configure configure.sav
