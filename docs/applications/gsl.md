@@ -35,9 +35,9 @@ Rscript -e 'download.packages("gsl",".")'
 tar xvfz gsl_2.1-7.tar.gz
 cd gsl
 mv configure configure.sav
+cd -
 gsl-config --cflags
 gsl-config --libs
-cd -
 ```
 
 where we mask the default `configure` and the latter two commands give
