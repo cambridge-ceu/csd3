@@ -66,4 +66,4 @@ Now our installation is succesful with
 R CMD INSTALL gsl
 ```
 
-Note that it was proposed in the web to use an equivalence of `CFLAGS=$(gsl-config --cflags) LDFLAGS=$(gsl-config --cflags) R` and try `install.packages("gsl")` but that does not work, either.
+Note that it was proposed on the web to use an equivalence of `CFLAGS=$(gsl-config --cflags) LDFLAGS=$(gsl-config --cflags) R` and try `install.packages("gsl")` but that does not work, either.
