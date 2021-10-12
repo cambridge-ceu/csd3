@@ -442,7 +442,7 @@ samtools faidx human_ancestor.fa.rz
 ll human_ancestor.fa.*
 ```
 
-### bigwig file
+### BigWig file
 
 One can have additional features installed such as JSON, Set::IntervalTree, Bio::DB::BigFile, PerlIO::gzip and ensembl-xs. We exemplify Bio::DB::BigFile here,
 
