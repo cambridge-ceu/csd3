@@ -444,7 +444,7 @@ ll human_ancestor.fa.*
 
 ### BigWig file
 
-One can have additional features installed such as JSON, Set::IntervalTree, Bio::DB::BigFile, PerlIO::gzip and ensembl-xs. We exemplify Bio::DB::BigFile here,
+One can have additional features installed such as JSON, Set::IntervalTree, Bio::DB::BigFile, PerlIO::gzip and ensembl-xs. We exemplify JSON and Bio::DB::BigFile here,
 
 Also see [https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#bigfile](https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#bigfile).
 
@@ -469,13 +469,14 @@ make clean && make
 # 5. On Mac OSX
 ln -s $KENT_SRC/lib/x86_64/* $KENT_SRC/lib/
 # 6.
+cd ${HPC_WORK}/ensembl-vep
+cpan JSON
 cpan Bio::DB::BigFile
 ```
 
 Now we have
 
 ```
-cd ${HPC_WORK}/ensembl-vep
 perl -Imodules t/AnnotationSource_File_BigWig.t
 ok 1 - use Bio::EnsEMBL::VEP::AnnotationSource::File;
 ok 2 - use Bio::EnsEMBL::VEP::AnnotationSource::File::BigWig;
