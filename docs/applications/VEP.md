@@ -13,7 +13,7 @@ http://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#installer.
 
 There are several possible ways to install under csd3: GitHub, R and docker.
 
-### --- GitHub ---
+## --- GitHub ---
 
 GitHub Page: [https://github.com/Ensembl/ensembl-vep](https://github.com/Ensembl/ensembl-vep).
 
@@ -442,7 +442,62 @@ samtools faidx human_ancestor.fa.rz
 ll human_ancestor.fa.*
 ```
 
-### --- R ---
+### bigwig file
+
+One can have additional features installed such as JSON, Set::IntervalTree, Bio::DB::BigFile, PerlIO::gzip and ensembl-xs. We exemplify Bio::DB::BigFile here,
+
+Also see [https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#bigfile](https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#bigfile).
+
+```bash
+# 1.
+wget -qO- https://github.com/ucscGenomeBrowser/kent/archive/v335_base.tar.gz | \
+tar xvz -
+# 2.
+export KENT_SRC=$HOME/kent-335_base/src
+export MACHTYPE=$(uname -m)
+export CFLAGS="-fPIC"
+export MYSQLINC=`mysql_config --include | sed -e 's/^-I//g'`
+export MYSQLLIBS=`mysql_config --libs`
+# 3.
+cd $KENT_SRC/lib
+echo 'CFLAGS="-fPIC"' > ../inc/localEnvironment.mk
+# 4.
+make clean && make
+cd ../jkOwnLib
+make clean && make
+# 5. On Mac OSX
+ln -s $KENT_SRC/lib/x86_64/* $KENT_SRC/lib/
+# 6.
+perl -MCPAN -e shell
+install Bio::DB::BigFile
+```
+
+Now we have
+
+```
+cd ${HPC_WORK}/ensembl-vep
+perl -Imodules t/AnnotationSource_File_BigWig.t
+ok 1 - use Bio::EnsEMBL::VEP::AnnotationSource::File;
+ok 2 - use Bio::EnsEMBL::VEP::AnnotationSource::File::BigWig;
+ok 3 - use Bio::EnsEMBL::VEP::Config;
+ok 4 - get new config object
+ok 5 - new is defined
+Couldn't open foo
+ok 6 - new with invalid file throws
+ok 7 - use Bio::EnsEMBL::VEP::Parser::VCF;
+ok 8 - get parser object
+ok 9 - use Bio::EnsEMBL::VEP::InputBuffer;
+ok 10 - check class
+ok 11 - check buffer next
+ok 12 - annotate_InputBuffer - overlap
+ok 13 - annotate_InputBuffer - exact, additive
+ok 14 - annotate_InputBuffer - out by 1 (5')
+ok 15 - annotate_InputBuffer - out by 1 (3')
+ok 16 - overlap fixedStep
+1..16
+```
+
+## --- R ---
 
 This is a wrapper and `the Ensembl VEP perl script must be installed in your path`. Expected to be slower than the `--offline` mode above, it is
 relatively easy to set up,
@@ -498,11 +553,11 @@ res[fields[cadd]]
 
 Note that the CSQ field could also be handled by bcftools split-vep plugin, see [http://samtools.github.io/bcftools/howtos/plugin.split-vep.html](http://samtools.github.io/bcftools/howtos/plugin.split-vep.html).
 
-### --- docker ---
+## --- docker ---
 
 See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/Ensembl/ensembl-vep.
 
-### --- Virtual machine ---
+## --- Virtual machine ---
 
 See http://www.ensembl.org/info/data/virtual_machine.html which is possibly best for MicroSoft Windows and is not pursued here.
 
