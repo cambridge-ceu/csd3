@@ -469,8 +469,7 @@ make clean && make
 # 5. On Mac OSX
 ln -s $KENT_SRC/lib/x86_64/* $KENT_SRC/lib/
 # 6.
-perl -MCPAN -e shell
-install Bio::DB::BigFile
+cpan Bio::DB::BigFile
 ```
 
 Now we have
