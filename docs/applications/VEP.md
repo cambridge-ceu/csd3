@@ -450,6 +450,7 @@ Also see [https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#b
 
 ```bash
 # 1.
+cd $HOME
 wget -qO- https://github.com/ucscGenomeBrowser/kent/archive/v335_base.tar.gz | \
 tar xvz -
 # 2.
