@@ -476,7 +476,7 @@ cpan Bio::DB::BigFile
 perl -Imodules t/AnnotationSource_File_BigWig.t
 ```
 
-from Step 7 above we have
+From step 7 above we have
 
 ```
 ok 1 - use Bio::EnsEMBL::VEP::AnnotationSource::File;
