@@ -452,7 +452,7 @@ Also see [https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#b
 # 1.
 cd $HOME
 wget -qO- https://github.com/ucscGenomeBrowser/kent/archive/v335_base.tar.gz | \
-tar xvz -
+tar xzf -
 # 2.
 export KENT_SRC=$HOME/kent-335_base/src
 export MACHTYPE=$(uname -m)
