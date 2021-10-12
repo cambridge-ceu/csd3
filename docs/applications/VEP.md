@@ -449,32 +449,34 @@ One can have additional features installed such as JSON, Set::IntervalTree, Bio:
 Also see [https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#bigfile](https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#bigfile).
 
 ```bash
-# 1.
+# 1. Download and extract source code
 cd $HOME
 wget -qO- https://github.com/ucscGenomeBrowser/kent/archive/v335_base.tar.gz | \
 tar xzf -
-# 2.
+# 2. Set up compiling flags
 export KENT_SRC=$HOME/kent-335_base/src
 export MACHTYPE=$(uname -m)
 export CFLAGS="-fPIC"
 export MYSQLINC=`mysql_config --include | sed -e 's/^-I//g'`
 export MYSQLLIBS=`mysql_config --libs`
-# 3.
+# 3. Amend parameters
 cd $KENT_SRC/lib
 echo 'CFLAGS="-fPIC"' > ../inc/localEnvironment.mk
-# 4.
+# 4. Build library
 make clean && make
 cd ../jkOwnLib
 make clean && make
 # 5. On Mac OSX
 ln -s $KENT_SRC/lib/x86_64/* $KENT_SRC/lib/
-# 6.
+# 6. Install Perl modules
 cd ${HPC_WORK}/ensembl-vep
 cpan JSON
 cpan Bio::DB::BigFile
+# 7. Test
+perl -Imodules t/AnnotationSource_File_BigWig.t
 ```
 
-Now we have from `perl -Imodules t/AnnotationSource_File_BigWig.t`
+from Step 7 above we have
 
 ```
 ok 1 - use Bio::EnsEMBL::VEP::AnnotationSource::File;
