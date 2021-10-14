@@ -27,6 +27,8 @@ mkdir .vep
 ln -sf $HPC_WORK/ensembl-vep/.vep $HOME/.vep
 module load htslib/1.4
 perl INSTALL.pl
+# Plugins
+# perl INSTALL.pl --PLUGINS all
 # set up symbolic links to the executables
 for f in convert_cache.pl filter_vep haplo variant_recoder vep;
     do ln -sf $HPC_WORK/ensembl-vep/$f $HPC_WORK/bin/$f; done
