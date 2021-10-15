@@ -43,11 +43,15 @@ vep -i examples/homo_sapiens_GRCh37.vcf -o examples/homo_sapiens_GRCh37.txt \
     --force_overwrite --offline --pick --symbol
 ```
 
+A log file can be found here, [VEP.log](files/VEP.log).
+
 Note in particular that by default, the cache files will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user,
 and as before the destination was redirected. The setup above facilitates storage of cache files, FASTA files and plugins.
 
 > The FASTA file should be automatically detected by the VEP when using --cache or --offline.
+
 > If it is not, use "--fasta $HOME/.vep/homo_sapiens/98_GRCh37/Homo_sapiens.GRCh37.75.dna.primary_assembly.fa"
+
 > Remember to use --merged when running the VEP with \_merged cache!
 
 Without the htslib/1.4 module, the `--NO_HTSLIB` option is needed but "Cannot use format gff without Bio::DB::HTS::Tabix module installed".
