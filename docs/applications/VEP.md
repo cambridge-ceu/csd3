@@ -138,7 +138,7 @@ which will enable `--nearest gene`.
 
 ### **Annotation in chunks**
 
-A toy example, following http://www.ensembl.org/info/docs/tools/vep/script/vep_other.html#faster, is given as follows,
+A toy example, following [http://www.ensembl.org/info/docs/tools/vep/script/vep_other.html#faster](http://www.ensembl.org/info/docs/tools/vep/script/vep_other.html#faster), is given as follows,
 
 ```bash
 cd examples
