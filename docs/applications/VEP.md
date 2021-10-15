@@ -431,7 +431,7 @@ vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145 --cac
 # VEP documentation example
 vep --input_file homo_sapiens_GRCh37.vcf --output_file test --cache --dir_cache ${HPC_WORK}/ensembl-vep/.vep --dir_plugins ${HPC_WORK}/loftee --offline \
     --pick --force_overwrite --species homo_sapiens --assembly GRCh37 \
-    --plugin LoF,loftee_path:.,human_ancestor_fa:human_ancestor.fa.gz,conservation_file:phylocsf_gerp.sql.gz
+    --plugin LoF,loftee_path:.,human_ancestor_fa:human_ancestor.fa.gz,conservation_file:phylocsf_gerp.sql
 ```
 
 If offers implementation for parsing CSQ field but is also possible with R as described below. Note that if loftee_path uses an absolute path, that path should also be within PERL5LIB, e.g.,
