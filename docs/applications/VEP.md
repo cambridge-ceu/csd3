@@ -402,7 +402,7 @@ java -jar search_dbNSFP41a.jar -i tryhg19.in -o tryhg19.out -v hg19
 java -jar search_dbNSFP41a.jar -i tryhg38.in -o tryhg38.out
 ```
 
-### --- loftee ---
+### **loftee**
 
 GitHub page: [https://github.com/konradjk/loftee](https://github.com/konradjk/loftee).
 
@@ -455,7 +455,7 @@ samtools faidx human_ancestor.fa.rz
 ll human_ancestor.fa.*
 ```
 
-### BigWig file
+### **BigWig file**
 
 One can have additional features installed such as JSON, Set::IntervalTree, Bio::DB::BigFile, PerlIO::gzip and ensembl-xs. We exemplify JSON and Bio::DB::BigFile here,
 
