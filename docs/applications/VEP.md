@@ -9,7 +9,7 @@ Official page: [https://www.ensembl.org/info/docs/tools/vep/index.html](https://
 
 Detailed instructions for installation are available from here,
 
-http://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#installer.
+[http://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#installer](http://www.ensembl.org/info/docs/tools/vep/script/vep_download.html#installer).
 
 There are several possible ways to install under csd3: GitHub, R and docker.
 
@@ -28,12 +28,11 @@ cd ensembl-vep
 # module load htslib/1.4
 # perl INSTALL.pl
 # release/104
-# See https://m.ensembl.org/info/docs/tools/vep/script/vep_download.html#installer
-# long form
+# long form:
 # perl INSTALL.pl --DESTDIR Bio --ASSEMBLY GRCh38 --AUTO acfp --PLUGINS all --SPECIES homo_sapiens,homo_sapiens_merged --NO_TEST --CACHEDIR .vep
-# short form below
 # ---
 module load htslib-1.9-gcc-5.4.0-p2taavl
+# short form:
 perl INSTALL.pl -l Bio -y GRCh38 -a acfp -g all -s homo_sapiens,homo_sapiens_merged --NO_TEST -c .vep
 ln -sf $HPC_WORK/ensembl-vep/.vep $HOME/.vep
 # set up symbolic links to the executables
@@ -43,7 +42,7 @@ vep -i examples/homo_sapiens_GRCh37.vcf -o examples/homo_sapiens_GRCh37.txt \
     --force_overwrite --offline --pick --symbol
 ```
 
-A log file can be found here, [VEP.log](files/VEP.log).
+A (slightly edited due to two species at -s were installed separately) log file can be found here, [VEP.log](files/VEP.log).
 
 Note in particular that by default, the cache files will be installed at $HOME which would exceed the quota (<40GB) of an ordinary user,
 and as before the destination was redirected. The setup above facilitates storage of cache files, FASTA files and plugins.
