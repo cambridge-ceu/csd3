@@ -53,7 +53,7 @@ and as before the destination was redirected. The setup above facilitates storag
 
 > Remember to use --merged when running the VEP with \_merged cache!
 
-Without the htslib/1.4 module, the `--NO_HTSLIB` option is needed but "Cannot use format gff without Bio::DB::HTS::Tabix module installed".
+Without the htslib module, the `--NO_HTSLIB` option is needed but "Cannot use format gff without Bio::DB::HTS::Tabix module installed".
 Bio::DB:HTS is in https://github.com/Ensembl/Bio-DB-HTS and change can be made to the `Makefile` of htslibs for a desired location, to be
 used by `Build.PL` via its command line parameters.
 
