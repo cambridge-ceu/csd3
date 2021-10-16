@@ -276,7 +276,7 @@ where
 END
 ```
 
-according to https://www.biostars.org/p/14367/.
+according to [https://www.biostars.org/p/14367/](https://www.biostars.org/p/14367/).
 
 Perhaps it is the easiest to use `gprofiler2`, i.e.,
 
@@ -570,10 +570,10 @@ Note that the CSQ field could also be handled by bcftools split-vep plugin, see 
 
 ## --- docker ---
 
-See `docker/Dockerfile ` from the GitHub directory above, or https://github.com/Ensembl/ensembl-vep.
+See `docker/Dockerfile ` from the GitHub directory above, or [https://github.com/Ensembl/ensembl-vep](https://github.com/Ensembl/ensembl-vep).
 
 ## --- Virtual machine ---
 
-See http://www.ensembl.org/info/data/virtual_machine.html which is possibly best for MicroSoft Windows and is not pursued here.
+See [http://www.ensembl.org/info/data/virtual_machine.html](http://www.ensembl.org/info/data/virtual_machine.html) which is possibly best for MicroSoft Windows and is not pursued here.
 
 ENSEMBL-synonym translation (hg19) file
