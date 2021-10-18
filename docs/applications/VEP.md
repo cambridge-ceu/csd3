@@ -51,7 +51,7 @@ and as before the destination was redirected. The setup above facilitates storag
 
 > If it is not, use "--fasta $HOME/.vep/homo_sapiens/98_GRCh37/Homo_sapiens.GRCh37.75.dna.primary_assembly.fa"
 
-> Remember to use --merged when running the VEP with \_merged cache!
+> Remember to use --merged or --refseq when running the VEP with \_merged or \_refseq cache!
 
 Without the htslib module, the `--NO_HTSLIB` option is needed but "Cannot use format gff without Bio::DB::HTS::Tabix module installed".
 Bio::DB:HTS is in https://github.com/Ensembl/Bio-DB-HTS and change can be made to the `Makefile` of htslibs for a desired location, to be
@@ -62,6 +62,8 @@ It is notable that VEP accepts compress (.gz) input. It is worthwhile to check f
 ```bash
 vep --database --port 3337 --format guess --plugin PolyPhen_SIFT,create_db=1
 ```
+
+By default the database port number is 5306.
 
 One may wish to skip the comments (lines started with ##) in processing of the output, e.g., in R,
 
