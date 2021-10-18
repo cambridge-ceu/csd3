@@ -4,7 +4,7 @@ sort: 2
 
 # Login
 
-Possible login nodes on csd3 are: login.hpc, login-cpu.hpc, login-gpu.hpc, login-gfx.hpc, login-e-N.hpc.
+Possible login nodes on csd3 are: login.hpc, login-cpu.hpc, login-gpu.hpc, login-gfx.hpc, login-e-N.hpc, login-icelake.
 
 Nodes login-e-[9-16] are collectively as login-cpu. To use GPU, log into login-gpu (login-e-[1-8]), with `module list` we have
 
