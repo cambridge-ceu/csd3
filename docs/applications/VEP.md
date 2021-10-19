@@ -60,12 +60,13 @@ used by `Build.PL` via its command line parameters.
 It is notable that VEP accepts compress (.gz) input. It is worthwhile to check for the VEP plugins: [https://github.com/Ensembl/VEP_plugins](https://github.com/Ensembl/VEP_plugins). For instance, to enable the PolyPhen_SIFT plugin we first generate the database.
 
 ```bash
+cd ${HPC_WORK}
 git clone https://github.com/Ensembl/VEP_plugins
 cd VEP_plugins
-vep --database --port 3337 --format guess --dir_plugin . --plugin PolyPhen_SIFT,create_db=1
+vep -i homo_sapiens_GRCh37.vcf -o homo_sapiens_GRCh37 --database --port 3337 --format vcf --dir_plugin . --plugin PolyPhen_SIFT,create_db=1
 ```
 
-By default the database port number is 5306.
+By default, the database port number is 5306. The `create_db=1` option downloads `homo_sapiens.PolyPhen_SIFT.db` at `${HOME}/.vep`.
 
 One may wish to skip the comments (lines started with ##) in processing of the output, e.g., in R,
 
