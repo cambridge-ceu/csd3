@@ -124,7 +124,7 @@ perl INSTALL.pl
 
 for release 98 instead of the latest from `git pull`.
 
-It could be useful to filter VEP output, see https://www.ensembl.org/info/docs/tools/vep/script/vep_filter.html.
+It could be useful to filter VEP output, see [https://www.ensembl.org/info/docs/tools/vep/script/vep_filter.html](https://www.ensembl.org/info/docs/tools/vep/script/vep_filter.html).
 
 ### **Nearest gene**
 
