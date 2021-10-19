@@ -63,7 +63,10 @@ It is notable that VEP accepts compress (.gz) input. It is worthwhile to check f
 cd ${HPC_WORK}
 git clone https://github.com/Ensembl/VEP_plugins
 cd VEP_plugins
-vep -i homo_sapiens_GRCh37.vcf -o homo_sapiens_GRCh37 --database --port 3337 --format vcf --dir_plugin . --plugin PolyPhen_SIFT,create_db=1
+# download of database
+vep --database --port 3337 --force_overwrite --dir_plugin . --plugin PolyPhen_SIFT,create_db=1
+# offline annotation
+vep -i homo_sapiens_GRCh37.vcf -o homo_sapiens_GRCh37 --offline --force_overwrite --format vcf --dir_plugin . --plugin PolyPhen_SIFT
 ```
 
 By default, the database port number is 5306. The `create_db=1` option downloads `homo_sapiens.PolyPhen_SIFT.db` at `${HOME}/.vep`.
