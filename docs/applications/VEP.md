@@ -54,7 +54,7 @@ and as before the destination was redirected. The setup above facilitates storag
 > Remember to use --merged or --refseq when running the VEP with \_merged or \_refseq cache!
 
 Without the htslib module, the `--NO_HTSLIB` option is needed but "Cannot use format gff without Bio::DB::HTS::Tabix module installed".
-Bio::DB:HTS is in https://github.com/Ensembl/Bio-DB-HTS and change can be made to the `Makefile` of htslibs for a desired location, to be
+Bio::DB:HTS is in [https://github.com/Ensembl/Bio-DB-HTS](https://github.com/Ensembl/Bio-DB-HTS) and change can be made to the `Makefile` of htslibs for a desired location, to be
 used by `Build.PL` via its command line parameters.
 
 It is notable that VEP accepts compress (.gz) input. It is worthwhile to check for the VEP plugins: [https://github.com/Ensembl/VEP_plugins](https://github.com/Ensembl/VEP_plugins). For instance, to enable the PolyPhen_SIFT plugin we first generate the database.
