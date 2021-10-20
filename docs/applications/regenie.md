@@ -9,17 +9,19 @@ Web: [https://github.com/rgcgithub/regenie](https://github.com/rgcgithub/regenie
 It is the easiest to use the Centos 7 distribution,
 
 ```bash
-wget -qO- https://github.com/rgcgithub/regenie/releases/download/v2.0.1-newest/regenie_v2.0.2.gz_x86_64_Centos7_mkl.zip | \
-gunzip -c > regenie_v2.0.2
-chmod +x regenie_v2.0.2
-regenie_v2.0.2 --help
+export version=v2.2.4
+wget -qO- https://github.com/rgcgithub/regenie/releases/download/${version}/regenie_${version}.gz_x86_64_Centos7_mkl.zip | \
+gunzip -c > regenie_${version}
+chmod +x regenie_${version}
+ln -sf regenie_${version} regenie
+regenie --help
 ```
 
 The last command gives the following information (Why .gz in the banner?),
 
 ```
               |=============================|
-              |      REGENIE v2.0.2.gz      |
+              |      REGENIE v2.2.4.gz      |
               |=============================|
 
 Copyright (c) 2020-2021 Joelle Mbatchou, Andrey Ziyatdinov and Jonathan Marchini.
@@ -29,7 +31,7 @@ Using Intel MKL with Eigen.
 
 
 Usage:
-  regenie_v2.0.2 [OPTION...]
+  regenie [OPTION...]
 
   -h, --help      print list of available options
       --helpFull  print list of all available options
@@ -44,14 +46,16 @@ Usage:
       --ref-first               use the first allele as the reference for
                                 BGEN or PLINK bed/bim/fam input format [default
                                 assumes reference is last]
-      --keep FILE               file listing samples to retain in the
-                                analysis (no header; starts with FID IID)
-      --remove FILE             file listing samples to remove from the
-                                analysis (no header; starts with FID IID)
-      --extract FILE            file with IDs of variants to retain in the
-                                analysis
-      --exclude FILE            file with IDs of variants to remove from the
-                                analysis
+      --keep FILE               comma-separated list of files listing samples
+                                to retain in the analysis (no header; starts
+                                with FID IID)
+      --remove FILE             comma-separated list of files listing samples
+                                to remove from the analysis (no header;
+                                starts with FID IID)
+      --extract FILE            comma-separated list of files with IDs of
+                                variants to retain in the analysis
+      --exclude FILE            comma-separated list of files with IDs of
+                                variants to remove from the analysis
   -p, --phenoFile FILE          phenotype file (header required starting with
                                 FID IID)
       --phenoCol STRING         phenotype name in header (use for each
@@ -72,6 +76,7 @@ Usage:
                                 comma separated list of categorical
                                 covariates
   -o, --out PREFIX              prefix for output files
+      --qt                      analyze phenotypes as quantitative
       --bt                      analyze phenotypes as binary
   -1, --cc12                    use control=1,case=2,missing=NA encoding for
                                 binary traits
@@ -100,6 +105,8 @@ Usage:
       --print-prs               also output polygenic predictions without
                                 using LOCO (=whole genome PRS)
       --gz                      compress output files (gzip format)
+      --apply-rint              apply Rank-Inverse Normal Transformation to
+                                quantitative traits
       --threads INT             number of threads
       --pred FILE               file containing the list of predictions files
                                 from step 1
@@ -114,8 +121,8 @@ Usage:
                                 variants
       --minINFO DOUBLE(=0)      minimum imputation info score (Impute/Mach
                                 R^2) for tested variants
-      --split                   split asssociation results into separate
-                                files for each trait
+      --no-split                combine asssociation results into a single
+                                for all traits
       --firth                   use Firth correction for p-values less than
                                 threshold
       --approx                  use approximation to Firth correction for
@@ -124,6 +131,11 @@ Usage:
                                 p-values less than threshold
       --pThresh FLOAT(=0.05)    P-value threshold below which to apply
                                 Firth/SPA correction
+      --write-null-firth        store coefficients from null models with
+                                approximate Firth for step 2
+      --compute-all             store Firth estimates for all chromosomes
+      --use-null-firth FILE     use stored coefficients for null model in
+                                approximate Firth
       --chr STRING              specify chromosome to test in step 2 (use for
                                 each chromosome)
       --chrList STRING,..,STRING
@@ -132,21 +144,19 @@ Usage:
       --range CHR:MINPOS-MAXPOS
                                 to specify a physical position window for
                                 variants to test in step 2
-      --test STRING             'dominant' or 'recessive' (default is
-                                additive test)
-      --interaction STRING      perform interaction testing with a
-                                quantitative/categorical covariate
-      --hc4-mac FLOAT(=100)     minor allele count (MAC) threshold below
-                                which to use robust SE with HC4 instead of HC3 for
-                                interaction testing
+      --sex-specific STRING     for sex-specific analyses (male/female)
+      --af-cc                   print effect allele frequencies among
+                                cases/controls for step 2
+      --test STRING             'additive', 'dominant' or 'recessive'
+                                (default is additive test)
       --set-list FILE           file with sets definition
-      --extract-sets FILE       file with IDs of sets to retain in the
+      --extract-sets FILE       comma-separated list of files with IDs of
+                                sets to retain in the analysis
+      --exclude-sets FILE       comma-separated list of files with IDs of
+                                sets to remove from the analysis
+      --extract-setlist STRING  comma separated list of sets to retain in the
                                 analysis
-      --exclude-sets FILE       file with IDs of sets to remove from the
-                                analysis
-      --extract-setlist FILE    comma separated list of sets to retain in the
-                                analysis
-      --exclude-setlist FILE    comma separated list of sets to remove from
+      --exclude-setlist STRING  comma separated list of sets to remove from
                                 the analysis
       --anno-file FILE          file with variant annotations
       --anno-labels FILE        file with labels to annotations
@@ -171,7 +181,7 @@ Usage:
       --check-burden-files      check annotation file, set list file and mask
                                 file for consistency
       --strict-check-burden     to exit early if the annotation, set list and
-                                mask definition files dont agree
+                                mask definition files don't agree
 
 For more information, use option '--help' or visit the website: https://rgcgithub.github.io/regenie/
 
