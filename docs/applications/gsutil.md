@@ -4,6 +4,8 @@ sort: 15
 
 # gsutil
 
+## Installation
+
 Web site: https://cloud.google.com/storage/docs/gsutil_install#linux
 
 the authentification is achieved via Google SDK (e.g. [301.0.0](https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-301.0.0-linux-x86_64.tar.gz))
@@ -41,3 +43,29 @@ cd ../gsutil
 pip install pyasn1==0.4.8  --user
 python setup.py install --prefix=$HPC_WORK
 ```
+
+## Example
+
+The GTEx v8 QTL resources,
+
+```bash
+gsutil -m cp -r \
+  "gs://gtex-resources/GTEx_Analysis_v8_QTLs/" \
+  .
+```
+
+or Europeans individually,
+
+```bash
+gsutil -m cp -r \
+  "gs://gtex-resources/GTEx_Analysis_v8_QTLs/GTEx_Analysis_v8_EUR_eQTL_all_associations/" \
+  "gs://gtex-resources/GTEx_Analysis_v8_QTLs/GTEx_Analysis_v8_EUR_sQTL/" \
+  "gs://gtex-resources/GTEx_Analysis_v8_QTLs/GTEx_Analysis_v8_EUR_sQTL_all_associations/" \
+  "gs://gtex-resources/GTEx_Analysis_v8_QTLs/GTEx_Analysis_v8_eQTL_all_associations/" \
+  "gs://gtex-resources/GTEx_Analysis_v8_QTLs/GTEx_Analysis_v8_sQTL/" \
+  "gs://gtex-resources/GTEx_Analysis_v8_QTLs/GTEx_Analysis_v8_sQTL_all_associations/" \
+  "gs://gtex-resources/GTEx_Analysis_v8_QTLs/GTEx_Analysis_v8_sQTL_leafcutter_counts.tar" \
+  .
+```
+
+as described here, [https://cloud.google.com/storage/docs/downloading-objects](https://cloud.google.com/storage/docs/downloading-objects).
