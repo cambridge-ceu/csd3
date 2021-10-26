@@ -173,6 +173,13 @@ A good alternative is to use `remotes` or `devtools` package, e.g.,
 remotes::install_bioc("snpStats")
 ```
 
+A separate example is from r-forge, e.g.,
+
+```r
+rforge <- "http://r-forge.r-project.org"
+install.packages("estimate", repos=rforge, dependencies=TRUE)
+```
+
 In case of difficulty it is still useful to install directly, e.g.,
 
 ```bash
