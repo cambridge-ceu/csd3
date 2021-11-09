@@ -51,6 +51,8 @@ However, there will be complaints about availability of libreadline.so.6 and the
 error while loading shared libraries: libreadline.so.6: cannot open shared object file: No such file or directory
 ...
 error while loading shared libraries: libicuuc.so.50: cannot open shared object file: No such file or directory
+...
+error while loading shared libraries: libgnutls.so.28: cannot open shared object file: No such file or directory
 ```
 
 The setup below complies with ordinary login nodes.
@@ -67,3 +69,28 @@ while libicuuc.so.50 can be installed following similar procedure, their availab
 
 - [https://github.com/unicode-org/icu/releases/tag/release-50-2](https://github.com/unicode-org/icu/releases/tag/release-50-2)
 - [https://github.com/unicode-org/icu/archive/refs/tags/release-50-2.tar.gz](https://github.com/unicode-org/icu/archive/refs/tags/release-50-2.tar.gz)
+
+Finally, libgnutls.so.28 is unnecessary to start an R session but useful otherwise.
+
+```bash
+module load autogen-5.18.12-gcc-5.4.0-jn2mr4n
+module load nettle-3.4-gcc-5.4.0-2mdpaut
+
+cd ${HPC_WORK}
+wget --no-check-certificate https://www.gnupg.org/ftp/gcrypt/gnutls/v3.5/gnutls-3.5.13.tar.xz
+tar xf gnutls-3.5.13.tar.xz
+cd gnutls-3.5.13/
+./configure --prefix=${HPC_WORK} --with-included-unistring --enable-shared
+make
+make install
+```
+
+- [https://gnutls.org/](https://gnutls.org/)
+- [https://www.gnupg.org/ftp/gcrypt/gnutls/v3.5/](https://www.gnupg.org/ftp/gcrypt/gnutls/v3.5/)
+- [https://gitlab.com/gnutls/gnutls/](https://gitlab.com/gnutls/gnutls/)
+
+# the gnutls module does really load from module
+
+# module load gnutls-3.5.13-gcc-5.4.0-wsonkhq
+
+# export LD_LIBRARY_PATH=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/gnutls-3.5.13-wsonkhqhl4izga6mudwzg3cenxbienr4/lib
