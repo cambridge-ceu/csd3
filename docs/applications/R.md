@@ -89,8 +89,8 @@ make install
 - [https://www.gnupg.org/ftp/gcrypt/gnutls/v3.5/](https://www.gnupg.org/ftp/gcrypt/gnutls/v3.5/)
 - [https://gitlab.com/gnutls/gnutls/](https://gitlab.com/gnutls/gnutls/)
 
+```
 # the gnutls module does really load from module
-
-# module load gnutls-3.5.13-gcc-5.4.0-wsonkhq
-
-# export LD_LIBRARY_PATH=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/gnutls-3.5.13-wsonkhqhl4izga6mudwzg3cenxbienr4/lib
+module load gnutls-3.5.13-gcc-5.4.0-wsonkhq
+export LD_LIBRARY_PATH=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/gnutls-3.5.13-wsonkhqhl4izga6mudwzg3cenxbienr4/lib
+```
