@@ -67,3 +67,17 @@ R CMD INSTALL gsl
 ```
 
 Note that it was proposed on the web to use an equivalence of `CFLAGS=$(gsl-config --cflags) LDFLAGS=$(gsl-config --cflags) R` and try `install.packages("gsl")` but that does not work, either.
+
+## gsl_2.1-7.1
+
+The requires more recent version of GNU gsl and we illustrate with 2.7 below.
+
+```bash
+wget -qO- https://mirror.ibcp.fr/pub/gnu/gsl/gsl-latest.tar.gz | \
+tar xfz -
+cd gsl-2.7/
+configure --prefix=${HPC_WORK}
+make
+make install
+Rscript -e 'install.packages("gsl")'
+```
