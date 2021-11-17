@@ -9,9 +9,11 @@ Web: [https://yanglab.westlake.edu.cn/software/gcta](https://yanglab.westlake.ed
 The setup is quite straitforward and we put additional notes on its use for a linear mixed model.
 
 ```bash
+cd ${HPC_WORK}
 wget https://yanglab.westlake.edu.cn/software/gcta/bin/gcta_1.93.3beta2.zip
 unzip gcta_1.93.3beta2.zip
 cd gcta_1.93.3beta2/
+ln -sf ${HPC_WORK}/gcta_1.93.3beta2/gcta64 ${HPC_WORK}/bin/gcta-1.9
 gcta-1.9 --bfile test --make-grm --out test
 gcta-1.9 --grm test --reml --pheno test.phen --out test
 ```
