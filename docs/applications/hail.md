@@ -262,3 +262,7 @@ co1777.entry.take(5)
 # IL12B
 END
 ```
+
+## Reference
+
+Karczewski, K.J. et al. Systematic single-variant and gene-based association testing of 3,700 phenotypes in 281,850 UK Biobank exomes. medRxiv, 2021.06.19.21259117 (2021).
