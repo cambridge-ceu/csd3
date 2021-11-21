@@ -4,6 +4,8 @@ sort: 31
 
 # PLINK
 
+As with GCTA, we cover direct download, source compilation but provision of detailed screen summary which can serve for lookup.
+
 ## Executables
 
 Download from [https://www.cog-genomics.org/plink/1.9/](https://www.cog-genomics.org/plink/1.9/) or [https://www.cog-genomics.org/plink/2.0/](https://www.cog-genomics.org/plink/2.0/).
