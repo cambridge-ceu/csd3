@@ -47,7 +47,7 @@ cmake ..
 make
 ```
 
-It requires specification of "/usr/local/Cluster-Apps/spectra/0.8.1/include/Spectra/" in `FastFAM.cpp` and `Geno.cpp`. We also get complaints about -lzstd and but could get around with adding -L${HPC_WORK}/lib to `CMakeFiles//gcta64.dir/link.txt` and then `bash CMakeFiles//gcta64.dir/link.txt` which gives the much-desired `gcta64`.
+It requires specification of `/usr/local/Cluster-Apps/spectra/0.8.1/include/Spectra/` in `FastFAM.cpp` and `Geno.cpp`. We also get complaints about -lzstd and but could get around with adding -L${HPC_WORK}/lib to `CMakeFiles//gcta64.dir/link.txt` and then `bash CMakeFiles//gcta64.dir/link.txt` which gives the much-desired `gcta64`.
 
 ## Documentation example
 
