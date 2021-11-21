@@ -144,6 +144,12 @@ Note that they work with a specific version of plink-ng from [https://github.com
 We proceed as follows,
 
 ```bash
+module load eigen/3.3.7
+module load intel/mkl/2017.8
+module load spectra/0.8.1
+export EIGEN3_INCLUDE_DIR=/usr/local/software/master/eigen/latest/include
+export BOOST_LIB=/usr/local/Cluster-Apps/boost/1.65.1/python3.5.1-gcc5.3.0/
+export SPECTRA_LIB=/usr/local/Cluster-Apps/spectra/0.8.1/spectra-0.8.1
 git clone https://github.com/jianyangqt/gcta
 cd gcta
 cd submods
@@ -151,12 +157,7 @@ git clone https://github.com/zhilizheng/plink-ng
 cd ..
 mkdir build && cd build
 cmake ..
-module load eigen/3.3.7
-module load intel/mkl/2017.8
-module load spectra/0.8.1
-export EIGEN3_INCLUDE_DIR=/usr/local/software/master/eigen/latest/include
-export BOOST_LIB=/usr/local/Cluster-Apps/boost/1.65.1/python3.5.1-gcc5.3.0/
-export SPECTRA_LIB=/usr/local/Cluster-Apps/spectra/0.8.1/spectra-0.8.1
+make
 ```
 
 It requires specification of "/usr/local/Cluster-Apps/spectra/0.8.1/include/Spectra/" in `FastFAM.cpp` and `Geno.cpp`. We also get complaints about -lzstd and but could get around with adding -L${HPC_WORK}/lib to `CMakeFiles//gcta64.dir/link.txt` and then `bash CMakeFiles//gcta64.dir/link.txt` which gives the much-desired `gcta64`.
