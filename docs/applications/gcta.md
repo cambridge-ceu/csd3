@@ -2,7 +2,7 @@
 sort: 13
 ---
 
-# gcta
+# GCTA
 
 ## Executable
 
