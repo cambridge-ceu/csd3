@@ -14,7 +14,9 @@ This is useful for obtaining the latest version.
 
 ### 1.9
 
-The stumbling point is zlib and it suffices with 1.2.11 on csd3. The location of `zlib.h`, i.e., `/usr/local/Cluster-Apps/zlib/1.2.11/include/zlib.h`, needs to be changed with `plink_common.h` and `pigz.c`. Putting together, we have
+The stumbling point is zlib and it suffices with 1.2.11 on csd3. The location of `zlib.h`, i.e., `/usr/local/Cluster-Apps/zlib/1.2.11/include/zlib.h`, needs to be changed with `plink_common.h` and `pigz.c`. It also requires explicit with the whereabout of `libcblas.a` in our case at `${HPC_WORK}/lib`.
+
+Putting together, we have
 
 ```bash
 /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-6.5.0-dtb6lagchexqdijlx6xgkin3zlfddpzi/bin/g++ plink.o plink_assoc.o plink_calc.o plink_cluster.o plink_cnv.o plink_common.o plink_data.o plink_dosage.o plink_family.o plink_filter.o plink_glm.o plink_help.o plink_homozyg.o plink_lasso.o plink_ld.o plink_matrix.o plink_misc.o plink_perm.o plink_rserve.o plink_set.o plink_stats.o SFMT.o dcdflib.o pigz.o yarn.o Rconnection.o hfile.o bgzf.o  -L/usr/lib64/atlas -llapack -lblas -lcblas -latlas -lm -lpthread -ldl -L. /usr/local/Cluster-Apps/zlib/1.2.11/lib/libz.so.1.2.11 -L$HPC_WORK/lib64 -o plink
@@ -22,7 +24,7 @@ The stumbling point is zlib and it suffices with 1.2.11 on csd3. The location of
 
 ### 2.0
 
-Assume that ZSTD and LAPACK (in particular `libcblas.a`) have been installed.
+Assume that LAPACK (in particular `libcblas.a`) is available.
 
 It is necessary to modify `include/plink2_zstfile.h` to point to the whereabout of \<zstd.h\>, say "../zstd/lib/zstd.h" or "/rds/user/jhz22/hpc-work/include/zstd.h".
 It still requires addition of -L${HPC_WORK}/lib64 for `libcblas.a`, which can be done by pasting and annexing to the last command from the console.
