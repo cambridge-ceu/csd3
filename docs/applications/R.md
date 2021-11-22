@@ -84,7 +84,7 @@ cd nettle-2.7.1/
 configure --prefix=$HPC_WORK
 make
 make install
-wget --no-check-certificate https://www.gnupg.org/ftp/gcrypt/gnutls/v3.1/gnutls-3.2.21.tar.xz
+wget --no-check-certificate https://www.gnupg.org/ftp/gcrypt/gnutls/v3.2/gnutls-3.2.21.tar.xz
 tar xf gnutls-3.2.21.tar.xz
 cd gnutls-3.2.21/
 ./configure --prefix=${HPC_WORK} --enable-shared
