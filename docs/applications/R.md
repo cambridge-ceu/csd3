@@ -108,5 +108,6 @@ make
 make install
 ```
 
-[^1] On CSD3, there is a more recent module `nettle-3.4-gcc-5.4.0-2mdpaut`. Moreover, with 3.5
-there is also an option `--with-included-unistring` during configuration.
+[^1]:
+    On CSD3, there is a more recent module `nettle-3.4-gcc-5.4.0-2mdpaut`. Moreover, with 3.5
+    there is also an option `--with-included-unistring` during configuration.
