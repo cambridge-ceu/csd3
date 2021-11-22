@@ -41,7 +41,7 @@ make
 make install
 ```
 
-## cclake
+## icelake
 
 As CSD3 often experiences problem from the login nodes, it is desirable to use `login-icelake.hpc.cam.ac.uk`.
 
