@@ -4,12 +4,26 @@ sort: 39
 
 # qpdf
 
-Web page: https://sourceforge.net/projects/qpdf/.
+## GitHub:
+
+Web page [https://github.com/qpdf/qpdf](https://github.com/qpdf/qpdf).
 
 ```bash
-export version=10.3.2
+git clone https://github.com/qpdf/qpdf
+cd qpdf
+configure --prefix=${HPC_WORK}
+make
+make install
+```
+
+## Sourceforge
+
+Web page: [https://sourceforge.net/projects/qpdf/](https://sourceforge.net/projects/qpdf/).
+
+```bash
+export version=10.4.0
 cd $HPC_WORK
-wget -qO- https://sourceforge.net/projects/qpdf/files/qpdf/9.1.0/qpdf-${version}.tar.gz | \
+wget -qO- --no-check-certificate https://sourceforge.net/projects/qpdf/files/qpdf/${version}/qpdf-${version}.tar.gz | \
 tar xvfz -
 cd qpdf-${version}
 ./configure --prefix=$HPC_WORK
