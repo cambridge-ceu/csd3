@@ -27,7 +27,7 @@ Package reinstallation could be done with `update.packages(checkBuilt = TRUE, as
 
 ## libiconv
 
-It may complain about libiconv.so.2,
+It may complain about `libiconv.so.2`,
 
 > ... R: error while loading shared libraries: libiconv.so.2: cannot open shared object file: No such file or directory
 
@@ -40,6 +40,8 @@ cd libiconv-1.16
 make
 make install
 ```
+
+We could also try from `module avail libiconv`.
 
 ## icelake
 
@@ -76,6 +78,7 @@ Finally, `libgnutls.so.28`[^1] requires `nettle-2.7.1`.
 
 ```bash
 module load autogen-5.18.12-gcc-5.4.0-jn2mr4n
+module load gettext-0.19.8.1-gcc-5.4.0-zaldouz
 
 cd ${HPC_WORK}
 wget -qO- wget http://www.lysator.liu.se/~nisse/archive/nettle-2.7.1.tar.gz | \
@@ -87,7 +90,7 @@ make install
 wget --no-check-certificate https://www.gnupg.org/ftp/gcrypt/gnutls/v3.2/gnutls-3.2.21.tar.xz
 tar xf gnutls-3.2.21.tar.xz
 cd gnutls-3.2.21/
-./configure --prefix=${HPC_WORK} --enable-shared
+./configure --prefix=${HPC_WORK} --enable-shared --disable-non-suiteb-curves
 make
 make install
 ```
