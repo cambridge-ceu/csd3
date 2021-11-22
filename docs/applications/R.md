@@ -45,7 +45,7 @@ make install
 
 As CSD3 often experiences problem from the login nodes, it is desirable to use `login-icelake.hpc.cam.ac.uk`.
 
-However, there will be complaints about availability of libreadline.so.6 and then libiccuuc.so.50 which can be got around with their installations.
+However, there will be complaints about availability of `libreadline.so.6` and then `libiccuuc.so.50` which can be got around with their installations.
 
 ```
 error while loading shared libraries: libreadline.so.6: cannot open shared object file: No such file or directory
@@ -53,6 +53,8 @@ error while loading shared libraries: libreadline.so.6: cannot open shared objec
 error while loading shared libraries: libicuuc.so.50: cannot open shared object file: No such file or directory
 ...
 error while loading shared libraries: libgnutls.so.28: cannot open shared object file: No such file or directory
+...
+libpng15.so.15: cannot open shared object file: No such file or directory
 ```
 
 The setup below complies with ordinary login nodes.
@@ -70,27 +72,41 @@ while libicuuc.so.50 can be installed following similar procedure, their availab
 - [https://github.com/unicode-org/icu/releases/tag/release-50-2](https://github.com/unicode-org/icu/releases/tag/release-50-2)
 - [https://github.com/unicode-org/icu/archive/refs/tags/release-50-2.tar.gz](https://github.com/unicode-org/icu/archive/refs/tags/release-50-2.tar.gz)
 
-Finally, libgnutls.so.28 is unnecessary to start an R session but useful otherwise.
+Finally, `libgnutls.so.28`[^1] requires `nettle-2.7.1`.
 
 ```bash
 module load autogen-5.18.12-gcc-5.4.0-jn2mr4n
-module load nettle-3.4-gcc-5.4.0-2mdpaut
 
 cd ${HPC_WORK}
-wget --no-check-certificate https://www.gnupg.org/ftp/gcrypt/gnutls/v3.5/gnutls-3.5.13.tar.xz
-tar xf gnutls-3.5.13.tar.xz
-cd gnutls-3.5.13/
-./configure --prefix=${HPC_WORK} --with-included-unistring --enable-shared
+wget -qO- wget http://www.lysator.liu.se/~nisse/archive/nettle-2.7.1.tar.gz | \
+tar xfvz -
+cd nettle-2.7.1/
+configure --prefix=$HPC_WORK
+make
+make install
+wget --no-check-certificate https://www.gnupg.org/ftp/gcrypt/gnutls/v3.1/gnutls-3.1.21.tar.xz
+tar xf gnutls-3.2.21.tar.xz
+cd gnutls-3.2.21/
+./configure --prefix=${HPC_WORK} --enable-shared
 make
 make install
 ```
 
 - [https://gnutls.org/](https://gnutls.org/)
-- [https://www.gnupg.org/ftp/gcrypt/gnutls/v3.5/](https://www.gnupg.org/ftp/gcrypt/gnutls/v3.5/)
+- [https://www.gnupg.org/ftp/gcrypt/gnutls/v3.2/](https://www.gnupg.org/ftp/gcrypt/gnutls/v3.2/)
 - [https://gitlab.com/gnutls/gnutls/](https://gitlab.com/gnutls/gnutls/)
 
+The `libpng15.so` can be made available from a standard GNU-ware installation as follows,
+
+```bash
+cd ${HPC_WORK}
+wget -qO- https://sourceforge.net/projects/libpng/files/libpng15/1.5.30/libpng-1.5.30.tar.gz | \
+tar xvfz -
+cd libpng-1.5.30
+./configure --prefix=$HPC_WORK
+make
+make install
 ```
-# the gnutls module does really load from module
-module load gnutls-3.5.13-gcc-5.4.0-wsonkhq
-export LD_LIBRARY_PATH=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/gnutls-3.5.13-wsonkhqhl4izga6mudwzg3cenxbienr4/lib
-```
+
+[^1] On CSD3, there is a more recent module `nettle-3.4-gcc-5.4.0-2mdpaut`. Moreover, with 3.5
+there is also an option `--with-included-unistring` during configuration.
