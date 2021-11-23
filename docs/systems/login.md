@@ -4,9 +4,15 @@ sort: 2
 
 # Login
 
-Possible login nodes on csd3 are: login.hpc, login-cpu.hpc, login-gpu.hpc, login-gfx.hpc, login-e-N.hpc, login-icelake.
+The CSD3 login address is `login.hpc.cam.ac.uk` with a mapping table
 
-Nodes login-e-[9-16] are collectively as login-cpu. To use GPU, log into login-gpu (login-e-[1-8]), with `module list` we have
+| Collective name             | Node name      |
+| --------------------------- | -------------- |
+| login-gpu.hpc.cam.ac.uk     | login-e-[1-8]  |
+| login-cpu.hpc.cam.ac.uk     | login-e-[9-16] |
+| login-icelake.hpc.cam.ac.uk | login-q-[1-4]  |
+
+With `module list` we have
 
 ```bash
 Currently Loaded Modulefiles:
