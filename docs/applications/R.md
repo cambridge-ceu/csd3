@@ -45,7 +45,7 @@ We could also try from `module avail libiconv`.
 
 ## icelake
 
-As CSD3 often experiences problem from the login nodes, it is desirable to use `login-icelake.hpc.cam.ac.uk`.
+As CSD3 often experiences problem from the login nodes, it is then desirable to use `login-icelake.hpc.cam.ac.uk`.
 
 However, there will be complaints about availability of `libreadline.so.6` and then `libiccuuc.so.50` which can be got around with their installations.
 
@@ -69,7 +69,7 @@ make
 make install
 ```
 
-while libicuuc.so.50 can be installed following similar procedure, their availability is as follows,
+while `libicuuc.so.50` can be installed following similar procedure, their availability is as follows,
 
 - [https://github.com/unicode-org/icu/releases/tag/release-50-2](https://github.com/unicode-org/icu/releases/tag/release-50-2)
 - [https://github.com/unicode-org/icu/archive/refs/tags/release-50-2.tar.gz](https://github.com/unicode-org/icu/archive/refs/tags/release-50-2.tar.gz)
