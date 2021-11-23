@@ -38,6 +38,15 @@ Our module list is now
   4) vgl/2.5.1/64                   8) intel/mkl/2017.4              12) intel/libs/ipp/2017.4         16) rhel7/default-peta4
 ```
 
+Finally, with icelake we have
+
+```
+Currently Loaded Modulefiles:
+ 1) dot                   4) rhel8/global             7) intel/mkl/2020.2         10) intel/libs/tbb/2020.2   13) intel/bundles/complib/2020.2
+ 2) rhel8/slurm           5) cuda/11.4                8) intel/impi/2020.2/intel  11) intel/libs/ipp/2020.2   14) rhel8/default-icl
+ 3) singularity/current   6) intel/compilers/2020.2   9) intel/libs/idb/2020.2    12) intel/libs/daal/2020.2
+```
+
 To reset Raven password, follow [https://password.csx.cam.ac.uk/](https://password.csx.cam.ac.uk/).
 
 To establish host keys one resorts to `ssh-keygen`; the easiest is to accept the default.
