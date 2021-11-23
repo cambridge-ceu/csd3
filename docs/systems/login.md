@@ -8,8 +8,8 @@ The CSD3 login address is `login.hpc.cam.ac.uk` with a mapping table
 
 | Collective name             | Node name      | Comments    |
 | --------------------------- | -------------- | ----------- |
-| login-gpu.hpc.cam.ac.uk     | login-e-[1-8]  |
-| login-cpu.hpc.cam.ac.uk     | login-e-[9-16] |
+| login-gpu.hpc.cam.ac.uk     | login-e-[1-8]  | GPU         |
+| login-cpu.hpc.cam.ac.uk     | login-e-[9-16] | CPU         |
 | login-icelake.hpc.cam.ac.uk | login-q-[1-4]  | CentOS8[^1] |
 
 With `module list` we have
@@ -52,7 +52,7 @@ sed -i -e '/128\.232\.224/d' -e '/.*\.hpc\.cam\.ac\.uk/d' ~/.ssh/known_hosts
 # ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R "login.hpc.cam.ac.uk"
 ```
 
-Automatic login via ssh/sftp can be enabled with
+Automatic login[^2] via ssh/sftp can be enabled with
 
 ```bash
 ssh-copy-id login.hpc.cam.ac.uk
@@ -95,3 +95,4 @@ where the `~` sign is equivalent to ${HOME}.
 When there is an error `'abrt-cli status' timed out`, one should remove ${HOME}/.cache and relogin/source .bashrc.
 
 [^1]: Applications may need to be recompiled.
+[^2]: This appears subject to the system setup.
