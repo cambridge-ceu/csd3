@@ -12,7 +12,7 @@ The CSD3 login address is `login.hpc.cam.ac.uk` with a mapping table
 | login-cpu.hpc.cam.ac.uk     | login-e-[9-16] | CPU         |
 | login-icelake.hpc.cam.ac.uk | login-q-[1-4]  | CentOS8[^1] |
 
-With `module list` we have
+On a GPU, we have from `module list`
 
 ```bash
 Currently Loaded Modulefiles:
@@ -22,7 +22,7 @@ Currently Loaded Modulefiles:
   4) vgl/2.5.1/64                       8) gcc-5.4.0-gcc-4.8.5-fis24gg
 ```
 
-and switch to the login-cpu environment with
+and can switch to a CPU environment with
 
 ```bash
 module purge
