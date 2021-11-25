@@ -24,8 +24,11 @@ Putting together, we have
 ln -s /usr/local/Cluster-Apps/zlib/1.2.11 zlib-1.2.11
 cd 1.9
 # edit pigz.c and plink_common.h for ../zlib-1.2.11/include/zlib.h
-/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-6.5.0-dtb6lagchexqdijlx6xgkin3zlfddpzi/bin/g++ plink.o plink_assoc.o plink_calc.o plink_cluster.o plink_cnv.o plink_common.o plink_data.o plink_dosage.o plink_family.o plink_filter.o plink_glm.o plink_help.o plink_homozyg.o plink_lasso.o plink_ld.o plink_matrix.o plink_misc.o plink_perm.o plink_rserve.o plink_set.o plink_stats.o SFMT.o dcdflib.o pigz.o yarn.o Rconnection.o hfile.o bgzf.o  -L/usr/lib64/atlas -llapack -lblas -lcblas -latlas -lm -lpthread -ldl -L. /usr/local/Cluster-Apps/zlib/1.2.11/lib/libz.so.1.2.11 -L$HPC_WORK/lib64 -o plink
+make
+/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-6.5.0-dtb6lagchexqdijlx6xgkin3zlfddpzi/bin/g++ plink.o plink_assoc.o plink_calc.o plink_cluster.o plink_cnv.o plink_common.o plink_data.o plink_dosage.o plink_family.o plink_filter.o plink_glm.o plink_help.o plink_homozyg.o plink_lasso.o plink_ld.o plink_matrix.o plink_misc.o plink_perm.o plink_rserve.o plink_set.o plink_stats.o SFMT.o dcdflib.o pigz.o yarn.o Rconnection.o hfile.o bgzf.o  -L/usr/lib64/atlas -llapack -lblas -lcblas -latlas -lm -lpthread -ldl -L/usr/local/Cluster-Apps/zlib/1.2.11/lib/libz.so.1.2.11 -L$HPC_WORK/lib64 -o plink
 ```
+
+Note that the last line is duplicated adding `-L/usr/local/Cluster-Apps/zlib/1.2.11/lib/libz.so.1.2.11 -L$HPC_WORK/lib64`.
 
 ### 2.0
 
@@ -39,6 +42,7 @@ module load zlib/1.2.11
 git clone https://github.com/chrchang/plink-ng
 cd plink-ng/2.0
 build.sh netlib
+make
 /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-6.5.0-dtb6lagchexqdijlx6xgkin3zlfddpzi/bin/g++ include/SFMT.o libdeflate/lib/adler32.o libdeflate/lib/crc32.o libdeflate/lib/deflate_compress.o libdeflate/lib/deflate_decompress.o libdeflate/lib/gzip_compress.o libdeflate/lib/gzip_decompress.o libdeflate/lib/utils.o libdeflate/lib/zlib_compress.o libdeflate/lib/zlib_decompress.o libdeflate/lib/arm/arm_cpu_features.o libdeflate/lib/x86/x86_cpu_features.o zstd/lib/common/debug.o zstd/lib/common/entropy_common.o zstd/lib/common/zstd_common.o zstd/lib/common/error_private.o zstd/lib/common/xxhash.o zstd/lib/common/fse_decompress.o zstd/lib/common/pool.o zstd/lib/common/threading.o zstd/lib/compress/fse_compress.o zstd/lib/compress/hist.o zstd/lib/compress/huf_compress.o zstd/lib/compress/zstd_double_fast.o zstd/lib/compress/zstd_fast.o zstd/lib/compress/zstd_lazy.o zstd/lib/compress/zstd_ldm.o zstd/lib/compress/zstd_opt.o zstd/lib/compress/zstd_compress.o zstd/lib/compress/zstd_compress_literals.o zstd/lib/compress/zstd_compress_sequences.o zstd/lib/compress/zstd_compress_superblock.o zstd/lib/compress/zstdmt_compress.o zstd/lib/decompress/huf_decompress.o zstd/lib/decompress/zstd_decompress.o zstd/lib/decompress/zstd_ddict.o zstd/lib/decompress/zstd_decompress_block.o include/plink2_base.o include/plink2_bits.o include/pgenlib_misc.o include/pgenlib_read.o include/pgenlib_write.o include/plink2_bgzf.o include/plink2_stats.o include/plink2_string.o include/plink2_text.o include/plink2_thread.o include/plink2_zstfile.o plink2.o plink2_adjust.o plink2_cmdline.o plink2_common.o plink2_compress_stream.o plink2_data.o plink2_decompress.o plink2_export.o plink2_fasta.o plink2_filter.o plink2_glm.o plink2_help.o plink2_import.o plink2_ld.o plink2_matrix.o plink2_matrix_calc.o plink2_merge.o plink2_misc.o plink2_psam.o plink2_pvar.o plink2_random.o plink2_set.o -o bin/plink2  -llapack -lcblas -lblas -llapack -lcblas -lblas -lm -lpthread -lz -L$HPC_WORK/lib64
 ```
 
