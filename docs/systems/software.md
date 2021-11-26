@@ -160,11 +160,14 @@ dependencies <- c("matrixStats", "Hmisc", "splines", "foreach", "doParallel",
                   "fastcluster", "dynamicTreeCut", "survival")
 install.packages(dependencies)
 # from Bioconductor
+biocPackages <- c("GO.db", "preprocessCore", "impute", "AnnotationDbi")
+# R < 3.5.0
 source("http://bioconductor.org/biocLite.R")
-biocLite(c("GO.db", "preprocessCore", "impute"))
+biocLite(biocPackages)
 # R >= 3.5.0
 install.packages("BiocManager")
-BiocManager::install("WGCNA")
+BiocManager::install(biocPackages)
+install.packages("WGCNA")
 ```
 
 A good alternative is to use `remotes` or `devtools` package, e.g.,
