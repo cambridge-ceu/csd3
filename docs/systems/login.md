@@ -103,5 +103,13 @@ where the `~` sign is equivalent to ${HOME}.
 
 When there is an error `'abrt-cli status' timed out`, one should remove ${HOME}/.cache and relogin/source .bashrc.
 
+It is useful to note that it is preferable to put an alias
+
+```
+alias ssh='ssh -q -X $@'
+```
+
+into `${HOME}/.bashrc` in case a remote login is necessary (e.g., faster login to CSD3 or there is poor local network connection).
+
 [^1]: Applications such as R/nloptr package require to be recompiled. In this case, we run `download.packages("nloptr",".")` inside `R` on an Internet-enabled node and compile the package with `R CMD INSTALL nloptr_1.2.2.3.tar.gz`, say.
 [^2]: This appears subject to the system setup.

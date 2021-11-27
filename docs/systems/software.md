@@ -23,6 +23,21 @@ interval/                     plink-bgi_linux_x86_64_may/  raremetal_4.13.8/    
 
 These can be loaded with `module load ceuadmin/<module name>`.
 
+#### gcc
+
+It is one of the critical software to use, e.g.,
+
+```bash
+module avail gcc
+gcc --version
+```
+
+#### gfortran
+
+```bash
+gfortran --version
+```
+
 #### git
 
 To have the latest git, e.g.,
@@ -34,6 +49,13 @@ make NO_GETTEXT=YesPlease install
 ```
 
 and the executables will be put to ~/bin.
+
+#### JAVA
+
+```bash
+module avail openjdk
+java -version
+```
 
 #### libraOffice
 
@@ -304,16 +326,6 @@ then either log out and login again, or
 ```bash
 unset SLURM_CONF
 ```
-
-#### ssh
-
-It is already covered in the `login` section; however it is useful to note that it is preferable to put an alias
-
-```
-alias ssh='ssh -q -X $@'
-```
-
-into `${HOME}/.bashrc` in case a remote login is necessary (e.g., faster login to csd3 or there is poor local network connection).
 
 #### Stata
 
