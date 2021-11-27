@@ -51,3 +51,7 @@ createNetworkFromDataFrames(nodes,edges, title="my first network", collection="D
 ```
 
 Additional vignettes are listed at [https://bioconductor.org/packages/release/bioc/html/RCy3.html](https://bioconductor.org/packages/release/bioc/html/RCy3.html).
+
+### Reference
+
+Gustavsen, J.A., Pai, S., Isserlin, R., Demchak, B. & Pico, A.R. RCy3: Network biology using Cytoscape from within R. F1000Research 8, 1774:1-21 (2019).
