@@ -23,7 +23,7 @@ ln -s ${HPC_WORK}/Cytoscape_v3.9.0/cytoscape.sh
 cytoscape.sh
 ```
 
-To press \<tab\> for a list of commands and press \<ctrl-d\> or `osgi:shutdown` to quit the session.
+To press <tab> for a list of commands and press <ctrl-d> or `osgi:shutdown` to quit the session.
 
 ## RCy3
 
