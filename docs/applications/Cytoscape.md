@@ -34,9 +34,14 @@ cytoscape.sh
 
 ## RCy3
 
+Web: [https://cytoscape.org/RCy3/](https://cytoscape.org/RCy3/).
+
+Bioconductor: [https://bioconductor.org/packages/release/bioc/html/RCy3.html](https://bioconductor.org/packages/release/bioc/html/RCy3.html).
+
 We can first start `RStudio` and then `Cytoscape`, so that the R session detects the Cytoscape session.
 
 ```bash
+BiocManager::install("RCy3")
 library(RCy3)
 cytoscapePing()
 # You are connected to Cytoscape!
@@ -56,8 +61,6 @@ edges <- data.frame(source=c("node 0","node 0","node 0","node 2"),
            stringsAsFactors=FALSE)
 createNetworkFromDataFrames(nodes,edges, title="my first network", collection="DataFrame Example")
 ```
-
-Additional vignettes are listed at [https://bioconductor.org/packages/release/bioc/html/RCy3.html](https://bioconductor.org/packages/release/bioc/html/RCy3.html).
 
 ### Reference
 
