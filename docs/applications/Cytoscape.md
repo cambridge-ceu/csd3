@@ -27,7 +27,7 @@ To press `<tab>` for a list of commands and press `<ctrl-d>` or `osgi:shutdown` 
 
 ## RCy3
 
-We can first start `RStudio` and then `Cytoscape`, so that an R session can detect the Cytoscape session.
+We can first start `RStudio` and then `Cytoscape`, so that the R session detects the Cytoscape session.
 
 ```bash
 library(RCy3)
