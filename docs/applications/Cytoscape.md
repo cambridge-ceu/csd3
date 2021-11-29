@@ -55,3 +55,5 @@ Additional vignettes are listed at [https://bioconductor.org/packages/release/bi
 ### Reference
 
 Gustavsen, J.A., Pai, S., Isserlin, R., Demchak, B. & Pico, A.R. RCy3: Network biology using Cytoscape from within R. F1000Research 8, 1774:1-21 (2019).
+
+Ideker, T. et al. Integrated genomic and proteomic analyses of a systematically perturbed metabolic network. Science 292, 929-34 (2001).
