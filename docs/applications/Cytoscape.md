@@ -38,7 +38,7 @@ Web: [https://cytoscape.org/RCy3/](https://cytoscape.org/RCy3/).
 
 Bioconductor: [https://bioconductor.org/packages/release/bioc/html/RCy3.html](https://bioconductor.org/packages/release/bioc/html/RCy3.html).
 
-We can first start `RStudio` and then `Cytoscape`, so that the R session detects the Cytoscape session.
+We can first start `RStudio` and then `Cytoscape`, so that the R session detects the Cytoscape session. In the following script, the `enhancedGraphics` and `STRINGapp` apps are also installed.
 
 ```bash
 if (!"RCy3" %in% installed.packages())
@@ -65,6 +65,7 @@ edges <- data.frame(source=c("node 0","node 0","node 0","node 2"),
            stringsAsFactors=FALSE)
 createNetworkFromDataFrames(nodes,edges, title="my first network", collection="DataFrame Example")
 installApp("enhancedGraphics")
+installApp('STRINGapp')
 ```
 
 It is also possible to first start `cytoscape.sh` and then `R` command-line interface which is less resource-demanding compared to `RStudio`.
