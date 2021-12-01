@@ -69,7 +69,7 @@ installApp("enhancedGraphics")
 
 It is also possible to first start `cytoscape.sh` and then `R` command-line interface which is less resource-demanding compared to `RStudio`.
 
-### Reference
+### References
 
 Gustavsen, J.A., Pai, S., Isserlin, R., Demchak, B. & Pico, A.R. RCy3: Network biology using Cytoscape from within R. F1000Research 8, 1774:1-21 (2019).
 
