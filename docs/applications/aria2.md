@@ -12,6 +12,7 @@ On CSD3, one can use the prerequiste `module load aria2-1.33.1-gcc-5.4.0-r36jubs
 
 ```bash
 export HPC_WORK=/rds/user/${USER}/hpc-work
+cd ${HPC_WORK}
 wget -qO- https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0.tar.gz | \
 tar xvfz -
 cd aria2-1.36.0/
