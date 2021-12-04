@@ -6,6 +6,8 @@ sort: 5
 
 Web: [https://aria2.github.io/](https://aria2.github.io/).
 
+On CSD3, one can use the prerequiste `module load aria2-1.33.1-gcc-5.4.0-r36jubs`.
+
 ## Installation
 
 ```bash
