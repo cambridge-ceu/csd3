@@ -254,6 +254,18 @@ then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `
 
 **NOTE** the skylakes are approaching end of life, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html) and [https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html). For Ampere GPG, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html).
 
+##### Use of modules
+
+The following is part of a real implementation.
+
+```bash
+. /etc/profile.d/modules.sh
+module purge
+module load rhel7/default-peta4
+module load gcc/6
+module load aria2-1.33.1-gcc-5.4.0-r36jubs
+```
+
 ##### An example
 
 To convert a large number of PDF files (INTERVAL.\*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list, and pipe into ``parallel`.
