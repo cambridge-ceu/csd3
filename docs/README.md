@@ -23,7 +23,7 @@ applications --> ABCtoolbox
 applications --> appdot["..."]
 applications --> R
 R --> Rfast
-R --> appdot["..."]
+R --> Rdot["..."]
 R --> rgeos
 applications --> R/xlsx
 wr --> fr["Front matter"]

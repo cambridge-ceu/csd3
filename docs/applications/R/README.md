@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# R packages
+# R-packages
 
 source: `{{ page.path }}`
 
