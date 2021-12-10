@@ -22,9 +22,9 @@ cardio --> lm["Legacy materials"]
 applications --> ABCtoolbox
 applications --> appdot["..."]
 applications --> R
-R --> Rfast
+R --> brms
 R --> Rdot["..."]
-R --> rgeos
+R --> xlsx
 applications --> R/xlsx
 wr --> fr["Front matter"]
 wr --> wrdot["..."]
