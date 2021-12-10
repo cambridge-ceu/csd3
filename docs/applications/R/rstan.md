@@ -1,5 +1,5 @@
 ---
-sort: 50
+sort: 15
 ---
 
 # R/rstan

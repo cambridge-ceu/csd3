@@ -1,5 +1,5 @@
 ---
-sort: 28
+sort: 22
 ---
 
 # MetaXcan

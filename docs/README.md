@@ -8,7 +8,7 @@
 ## The collection covers system and other software.
 
 ```mermaid
-graph TB;
+graph LR;
 csd3 --> system["THE SYSTEM"]
 csd3 --> cardio["CARDIO"]
 csd3 --> applications["APPLICATIONS"]
@@ -21,6 +21,10 @@ cardio --> cp["CSD3 partition"]
 cardio --> lm["Legacy materials"]
 applications --> ABCtoolbox
 applications --> appdot["..."]
+applications --> R
+R --> Rfast
+R --> appdot["..."]
+R --> rgeos
 applications --> R/xlsx
 wr --> fr["Front matter"]
 wr --> wrdot["..."]

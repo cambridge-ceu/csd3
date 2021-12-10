@@ -11,6 +11,17 @@ function renum()
   '
 }
 
+function R_packages()
+{
+  ls applications/R/*md | grep -v -e README | sort | xargs -I {} basename {} .md | awk '{print NR,$1}' | \
+  parallel -j1 -C' ' '
+    echo {1} {2}
+    export line=2
+    export value={1}
+    sed -i "${line}s/\S\+/${value}/2" applications/R/{2}.md
+  '
+}
+
 module load gcc/6
 # bundle install
 # bundle info jekyll-rtd-theme
@@ -19,6 +30,7 @@ module load gcc/6
 
 cd docs
 renum
+R_packages
 make build
 cd -
 

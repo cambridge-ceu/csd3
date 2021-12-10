@@ -1,5 +1,5 @@
 ---
-sort: 30
+sort: 24
 ---
 
 # PCA projection

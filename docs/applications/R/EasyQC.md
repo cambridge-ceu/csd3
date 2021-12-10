@@ -1,8 +1,8 @@
 ---
-sort: 14
+sort: 2
 ---
 
-# EasyQC
+# R/EasyQC
 
 Web: [https://www.uni-regensburg.de/medizin/epidemiologie-praeventivmedizin/genetische-epidemiologie/software/index.html](https://www.uni-regensburg.de/medizin/epidemiologie-praeventivmedizin/genetische-epidemiologie/software/index.html)
 

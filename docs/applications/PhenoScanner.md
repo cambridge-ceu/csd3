@@ -1,5 +1,5 @@
 ---
-sort: 31
+sort: 25
 ---
 
 # R/PhenoScanner
