@@ -1,5 +1,5 @@
 ---
-sort: 40
+sort: 39
 ---
 
 # tabix
