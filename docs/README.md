@@ -21,7 +21,7 @@ cardio --> cp["CSD3 partition"]
 cardio --> lm["Legacy materials"]
 applications --> ABCtoolbox
 applications --> appdot["..."]
-applications --> R
+applications --> R["R packages"]
 R --> brms
 R --> Rdot["..."]
 R --> xlsx
