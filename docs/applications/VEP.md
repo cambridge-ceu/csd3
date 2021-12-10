@@ -435,12 +435,6 @@ gunzip -c > phylocsf_gerp.sql
 # wget https://www.broadinstitute.org/~konradk/loftee/phylocsf_data_schema.sql
 # wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/GERP_scores.final.sorted.txt.gz
 # wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/GERP_scores.exons.txt.gz
-# GRCh38
-# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/gerp_conservation_scores.homo_sapiens.GRCh38.bw
-# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/human_ancestor.fa.gz
-# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/human_ancestor.fa.gz.fai
-# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/human_ancestor.fa.gz.gzi
-# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/loftee.sql.gz
 # annotation
 vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145 --cache --offline --force_overwrite \
     --assembly GRCh37 --plugin LoF,loftee_path:.,human_ancestor_fa:human_ancestor.fa.gz,conservation_file:phylocsf_gerp.sql.gz
@@ -448,16 +442,6 @@ vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145 --cac
 vep --input_file homo_sapiens_GRCh37.vcf --output_file test --cache --dir_cache ${HPC_WORK}/ensembl-vep/.vep --dir_plugins ${HPC_WORK}/loftee --offline \
     --pick --force_overwrite --species homo_sapiens --assembly GRCh37 \
     --plugin LoF,loftee_path:.,human_ancestor_fa:human_ancestor.fa.gz,conservation_file:phylocsf_gerp.sql
-# GRCh38
-xport ENSEMBL=~/rds/rds-jmmh2-public_databases/ensembl-vep
-export LOFTEE38=${ENSEMBL}/loftee/loftee_data/GRCh38
-export LOFTEE38GERP=${LOFTEE38}/gerp_conservation_scores.homo_sapiens.GRCh38.bw
-export LOFTEE38HA=${LOFTEE38}/human_ancestor.fa.gz
-export LOFTEE38SQL=${LOFTEE38}loftee.sql
-vep --input_file for_VEP.txt --format ensembl --output_file ${rds}/for_VEP_output2.txt --force_overwrite --offline --symbol --merged \
-    --fasta Homo_sapiens.GRCh38.dna.toplevel.fa --dir_cache ${rds}/.vep --dir_plugins . \
-    --protein --symbol --tsl --canonical --mane_select --biotype --check_existing --sift b --polyphen b \
-    --plugin LoF,loftee_path:.,gerp_bigwig:${LOFTEE38GERP},human_ancestor_fa:${LOFTEE38HA},conservation_file:${LOFTEE38SQL}
 ```
 
 If offers implementation for parsing CSQ field but is also possible with R as described below. Note that if loftee_path uses an absolute path, that path should also be within PERL5LIB, e.g.,
@@ -538,7 +522,29 @@ ok 16 - overlap fixedStep
 1..16
 ```
 
-For example, see [https://docs.databricks.com/applications/genomics/secondary/vep-pipeline.html](https://docs.databricks.com/applications/genomics/secondary/vep-pipeline.html).
+We have the GRCh38 branch, `git clone --depth 1 --branch grch38 https://github.com/konradjk/loftee.git`.
+
+```bash
+# GRCh38 files
+# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/gerp_conservation_scores.homo_sapiens.GRCh38.bw
+# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/human_ancestor.fa.gz
+# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/human_ancestor.fa.gz.fai
+# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/human_ancestor.fa.gz.gzi
+# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/loftee.sql.gz
+
+# Annotation
+export ENSEMBL=~/rds/rds-jmmh2-public_databases/ensembl-vep
+export LOFTEE38=${ENSEMBL}/loftee/loftee_data/GRCh38
+export LOFTEE38GERP=${LOFTEE38}/gerp_conservation_scores.homo_sapiens.GRCh38.bw
+export LOFTEE38HA=${LOFTEE38}/human_ancestor.fa.gz
+export LOFTEE38SQL=${LOFTEE38}loftee.sql
+vep --input_file for_VEP.txt --format ensembl --output_file ${rds}/for_VEP_output2.txt --force_overwrite --offline --symbol --merged \
+    --fasta Homo_sapiens.GRCh38.dna.toplevel.fa --dir_cache ${rds}/.vep --dir_plugins . \
+    --protein --symbol --tsl --canonical --mane_select --biotype --check_existing --sift b --polyphen b \
+    --plugin LoF,loftee_path:.,gerp_bigwig:${LOFTEE38GERP},human_ancestor_fa:${LOFTEE38HA},conservation_file:${LOFTEE38SQL}
+```
+
+See also [https://docs.databricks.com/applications/genomics/secondary/vep-pipeline.html](https://docs.databricks.com/applications/genomics/secondary/vep-pipeline.html).
 
 ## --- R ---
 
