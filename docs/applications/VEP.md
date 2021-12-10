@@ -435,6 +435,12 @@ gunzip -c > phylocsf_gerp.sql
 # wget https://www.broadinstitute.org/~konradk/loftee/phylocsf_data_schema.sql
 # wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/GERP_scores.final.sorted.txt.gz
 # wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh37/GERP_scores.exons.txt.gz
+# GRCh38
+# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/gerp_conservation_scores.homo_sapiens.GRCh38.bw
+# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/human_ancestor.fa.gz
+# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/human_ancestor.fa.gz.fai
+# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/human_ancestor.fa.gz.gzi
+# wget https://personal.broadinstitute.org/konradk/loftee_data/GRCh38/loftee.sql.gz
 # annotation
 vep --id "1 154426970 154426970 A/C 1" --species homo_sapiens -o rs2228145 --cache --offline --force_overwrite \
     --assembly GRCh37 --plugin LoF,loftee_path:.,human_ancestor_fa:human_ancestor.fa.gz,conservation_file:phylocsf_gerp.sql.gz
