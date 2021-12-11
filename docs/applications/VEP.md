@@ -410,6 +410,23 @@ java -jar search_dbNSFP41a.jar -i tryhg19.in -o tryhg19.out -v hg19
 java -jar search_dbNSFP41a.jar -i tryhg38.in -o tryhg38.out
 ```
 
+### **GeneSplicer**
+
+Web: [https://ccb.jhu.edu/software/genesplicer/](https://ccb.jhu.edu/software/genesplicer/).
+
+#### Setup
+
+```bash
+wget -qO- ftp://ftp.ccb.jhu.edu/pub/software/genesplicer/GeneSplicer.tar.gz | \
+tar xvfz -
+mv GeneSplicer.pm ~/.vep/Plugins
+./vep -i variants.vcf --plugin GeneSplicer,[path_to_genesplicer_bin],[path_to_training_dir],[option1=value],[option2=value]
+```
+
+#### Reference
+
+M. Pertea , X. Lin , S. L. Salzberg. GeneSplicer: a new computational method for splice site prediction. Nucleic Acids Res. 2001 Mar 1;29(5):1185-90.
+
 ### **loftee**
 
 GitHub page: [https://github.com/konradjk/loftee](https://github.com/konradjk/loftee).
@@ -546,6 +563,42 @@ vep --input_file for_VEP.txt --format ensembl --output_file ${rds}/for_VEP_outpu
 ```
 
 See also [https://docs.databricks.com/applications/genomics/secondary/vep-pipeline.html](https://docs.databricks.com/applications/genomics/secondary/vep-pipeline.html).
+
+### **REVEL**
+
+REVEL: Rare Exome Variant Ensemble Learn
+
+Plugin: [https://m.ensembl.org/info/docs/tools/vep/script/vep_plugins.html#revel](https://m.ensembl.org/info/docs/tools/vep/script/vep_plugins.html#revel)
+
+Data: [https://sites.google.com/site/revelgenomics/downloads](https://sites.google.com/site/revelgenomics/downloads).
+
+#### Setup
+
+```bash
+mkdir REVEL
+cd REVEL
+wget https://rothsj06.u.hpc.mssm.edu/revel-v1.3_all_chromosomes.zip
+unzip revel-v1.3_all_chromosomes.zip
+cat revel_with_transcript_ids | tr "," "\t" > tabbed_revel.tsv
+sed '1s/.*/#&/' tabbed_revel.tsv > new_tabbed_revel.tsv
+bgzip new_tabbed_revel.tsv
+# GRCh37:
+tabix -f -s 1 -b 2 -e 2 new_tabbed_revel.tsv.gz
+# GRCh38:
+zcat new_tabbed_revel.tsv.gz | head -n1 > h
+zgrep -h -v ^#chr new_tabbed_revel.tsv.gz | awk '$3 != "." ' | sort -k1,1 -k3,3n - | cat h - | bgzip -c > new_tabbed_revel_grch38.tsv.gz
+tabix -f -s 1 -b 3 -e 3 new_tabbed_revel_grch38.tsv.gz
+```
+
+#### Example
+
+```bash
+vep --input_file <input> --plugin REVEL,${ENSEMBL}/.vep/Plugins/new_tabbed_revel.tsv.gz
+```
+
+#### Reference
+
+Ioannidis NM,_ Rothstein JH,_ Pejaver V, Middha S, McDonnell SK, Baheti S, Musolf A, Li Q, Holzinger E, Karyadi D, Cannon-Albright LA, Teerlink CC, Stanford JL, Isaacs WB, Xu J, Cooney KA, Lange EM, Schleutker J, Carpten JD, Powell IJ, Cussenot O, Cancel-Tassin G, Giles GG, MacInnis RJ, Maier C, Hsieh CL, Wiklund F, Catalona WJ, Foulkes WD, Mandal D, Eeles RA, Kote-Jarai Z, Bustamante CD, Schaid DJ, Hastie T, Ostrander EA, Bailey-Wilson JE, Radivojac P, Thibodeau SN, Whittemore AS, and Sieh W. “REVEL: An ensemble method for predicting the pathogenicity of rare missense variants.” American Journal of Human Genetics 2016; 99(4):877-885. http://dx.doi.org/10.1016/j.ajhg.2016.08.016
 
 ## --- R ---
 
