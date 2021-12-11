@@ -537,7 +537,7 @@ export ENSEMBL=~/rds/rds-jmmh2-public_databases/ensembl-vep
 export LOFTEE38=${ENSEMBL}/loftee/loftee_data/GRCh38
 export LOFTEE38GERP=${LOFTEE38}/gerp_conservation_scores.homo_sapiens.GRCh38.bw
 export LOFTEE38HA=${LOFTEE38}/human_ancestor.fa.gz
-export LOFTEE38SQL=${LOFTEE38}loftee.sql
+export LOFTEE38SQL=${LOFTEE38}/loftee.sql
 export rds=..  # ~/rds/rds-jmmh2-public_databases/ensembl-vep will be user-specific
 vep --input_file for_VEP.txt --format ensembl --output_file ${rds}/for_VEP_output2.txt --force_overwrite --offline --symbol --merged \
     --fasta Homo_sapiens.GRCh38.dna.toplevel.fa --dir_cache ${rds}/.vep --dir_plugins . \
