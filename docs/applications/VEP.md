@@ -566,7 +566,7 @@ See also [https://docs.databricks.com/applications/genomics/secondary/vep-pipeli
 
 ### **REVEL**
 
-REVEL: Rare Exome Variant Ensemble Learn
+REVEL: Rare Exome Variant Ensemble Learning
 
 Plugin: [https://m.ensembl.org/info/docs/tools/vep/script/vep_plugins.html#revel](https://m.ensembl.org/info/docs/tools/vep/script/vep_plugins.html#revel)
 
@@ -598,7 +598,7 @@ vep --input_file <input> --plugin REVEL,${ENSEMBL}/.vep/Plugins/new_tabbed_revel
 
 #### Reference
 
-Ioannidis NM,_ Rothstein JH,_ Pejaver V, Middha S, McDonnell SK, Baheti S, Musolf A, Li Q, Holzinger E, Karyadi D, Cannon-Albright LA, Teerlink CC, Stanford JL, Isaacs WB, Xu J, Cooney KA, Lange EM, Schleutker J, Carpten JD, Powell IJ, Cussenot O, Cancel-Tassin G, Giles GG, MacInnis RJ, Maier C, Hsieh CL, Wiklund F, Catalona WJ, Foulkes WD, Mandal D, Eeles RA, Kote-Jarai Z, Bustamante CD, Schaid DJ, Hastie T, Ostrander EA, Bailey-Wilson JE, Radivojac P, Thibodeau SN, Whittemore AS, and Sieh W. “REVEL: An ensemble method for predicting the pathogenicity of rare missense variants.” American Journal of Human Genetics 2016; 99(4):877-885. http://dx.doi.org/10.1016/j.ajhg.2016.08.016
+Ioannidis NM, et al. “REVEL: An ensemble method for predicting the pathogenicity of rare missense variants.” _Am J Hum Genet_ 2016; 99(4):877-885. http://dx.doi.org/10.1016/j.ajhg.2016.08.016
 
 ## --- R ---
 
