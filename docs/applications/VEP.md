@@ -598,7 +598,7 @@ vep --input_file <input> --plugin REVEL,${ENSEMBL}/.vep/Plugins/new_tabbed_revel
 
 #### Reference
 
-Ioannidis NM, et al. “REVEL: An ensemble method for predicting the pathogenicity of rare missense variants.” _Am J Hum Genet_ 2016; 99(4):877-885. http://dx.doi.org/10.1016/j.ajhg.2016.08.016
+Ioannidis NM, et al. REVEL: An ensemble method for predicting the pathogenicity of rare missense variants. _Am J Hum Genet_ 2016; 99(4):877-885. http://dx.doi.org/10.1016/j.ajhg.2016.08.016
 
 ## --- R ---
 
