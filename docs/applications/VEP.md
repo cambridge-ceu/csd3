@@ -301,6 +301,8 @@ giving
 
 ### **clinvar**
 
+Web: [https://ftp.ncbi.nlm.nih.gov/pub/clinvar/](https://ftp.ncbi.nlm.nih.gov/pub/clinvar/)
+
 The local installation enables considerable flexibilty, and the following example, using GRCh37 assembly, is based on
 [https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options](https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options).
 
