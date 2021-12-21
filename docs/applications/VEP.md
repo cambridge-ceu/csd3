@@ -307,9 +307,11 @@ The local installation enables considerable flexibilty, and the following exampl
 [https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options](https://www.ensembl.org/info/docs/tools/vep/script/vep_custom.html#custom_options).
 
 ```bash
-# GCRh37 compressed VCF file/Index file
+# Compressed VCF file/Index file
+# GCRh37
 curl ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz -o clinvar_GRCh37.vcf.gz
 curl ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz.tbi -o clinvar_GRCh37.vcf.gz.tbi
+# GCRh38
 curl ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar.vcf.gz -o clinvar_GRCh38.vcf.gz
 curl ftp://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar.vcf.gz.tbi -o clinvar_GRCh38.vcf.gz.tbi
 ```
