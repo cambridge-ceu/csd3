@@ -1,34 +1,98 @@
-<a href="https://www.top500.org/"><img src="https://www.top500.org/static//images/Top500_logo.png" align="right"></a>
-
-# CSD3 applications
+# jekyll-rtd-theme
 
 ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
 ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
 
-## The collection covers system and other software.
+Just another documentation theme compatible with GitHub Pages
 
-```mermaid
-graph LR;
-csd3 --> system["THE SYSTEM"]
-csd3 --> cardio["CARDIO"]
-csd3 --> applications["APPLICATIONS"]
-csd3 --> wr["WRITING RELATED"]
-system --> System
-system --> Login
-system --> sysdot["..."]
-system --> Contacts
-cardio --> cp["CSD3 partition"]
-cardio --> lm["Legacy materials"]
-applications --> ABCtoolbox
-applications --> appdot["..."]
-applications --> R["R packages"]
-R --> brms
-R --> Rdot["..."]
-R --> xlsx
-applications --> R/xlsx
-wr --> fr["Front matter"]
-wr --> wrdot["..."]
-wr --> td["Test documentation"]
+## What it does?
+
+This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
+
+- [@primer/css](https://github.com/primer/css)
+- [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
+
+## Quick start
+
+```yml
+remote_theme: rundocs/jekyll-rtd-theme
 ```
 
-{% include list.liquid all=true %}
+You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
+
+## Usage
+
+Documentation that can guide how to create with Github pages, please refer to [rundocs.io](https://rundocs.io) for details
+
+## Features
+
+- Shortcodes (Toasts card, mermaid)
+- Pages Plugins (emoji, gist, avatar, mentions)
+- Auto generate sidebar
+- [Attribute List Definitions](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions) (Primer/css utilities, Font Awesome 4)
+- Service worker (caches)
+- SEO (404, robots.txt, sitemap.xml)
+- Canonical Link (Open Graph, Twitter Card, Schema data)
+
+## Options
+
+| name          | default value        | description       |
+| ------------- | -------------------- | ----------------- |
+| `title`       | repo name            |                   |
+| `description` | repo description     |                   |
+| `url`         | user domain or cname |                   |
+| `baseurl`     | repo name            |                   |
+| `lang`        | `en`                 |                   |
+| `direction`   | `auto`               | `ltr` or `rtl`    |
+| `highlighter` | `rouge`              | Cannot be changed |
+
+```yml
+# folders sort
+readme_index:
+  with_frontmatter: true
+
+meta:
+  key1: value1
+  key2: value2
+  .
+  .
+  .
+
+google:
+  gtag:
+  adsense:
+
+mermaid:
+  custom: # mermaid link
+  initialize: # mermaid options, default: {}
+
+scss:
+script:
+
+translate:
+  # shortcodes
+  danger:
+  note:
+  tip:
+  warning:
+  # 404
+  not_found:
+  # copyright
+  revision:
+  # search
+  searching:
+  search:
+  search_docs:
+  search_results:
+  search_results_found: # the "#" in this translate will replaced with results size!
+  search_results_not_found:
+
+plugins:
+  - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
+```
+
+## The license
+
+The theme is available as open source under the terms of the MIT License

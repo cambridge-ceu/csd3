@@ -1,34 +1,17 @@
-title: csd3
-lang: en
-description: A collection of CSD3 notes
-encoding: UTF-8
+title: jekyll-rtd-theme
+description: Just another documentation theme compatible with GitHub Pages
 
-theme: jekyll-rtd-theme
+theme: null
 
-debug:
-  compress: false
-  dist: false
-  shortcodes: true
-
-lsi: false
-safe: true
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
-kramdown:
-  math_engine: mathjax
-  syntax_highlighter: rouge
+# debug:
+#   compress: true
+#   dist: false
+#   shortcodes: true
 
 readme_index:
   with_frontmatter: true
-  show_sorted: false
 
 plugins:
-  - jekyll-default-layout
-  - jekyll-readme-index
-  - jekyll-github-metadata
-  - jekyll-titles-from-headings
   - jemoji
   - jekyll-avatar
   - jekyll-mentions
