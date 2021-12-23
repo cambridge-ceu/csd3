@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+    <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no">
+<meta name="description" content="ldsc Web: https://github.com/bulik/ldsc (Google group). Installation We proceed as follows for installation into HPC_WORK=/rds/user/$USER/hpc-work,...">
+<meta name="revised" content="2109d8f596b4cd432c7a5937f50b592827e6194f">
+<meta name="author" content="cambridge-ceu">
+<meta name="generator" content="jekyll-rtd-theme v2.0.10"><meta name="theme-color" content="#2980b9">
+<title>ldsc · csd3</title>
+<meta name="twitter:title" content="ldsc · csd3">
+<meta name="twitter:description" content="ldsc Web: https://github.com/bulik/ldsc (Google group). Installation We proceed as follows for installation into HPC_WORK=/rds/user/$USER/hpc-work,...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@cambridge-ceu">
+<meta name="twitter:url" content="/applications/ldsc.html">
+<meta name="twitter:creator" content="@jekyll-rtd-theme v2.0.10">
+<meta property="og:title" content="ldsc · csd3">
+<meta property="og:description" content="ldsc Web: https://github.com/bulik/ldsc (Google group). Installation We proceed as follows for installation into HPC_WORK=/rds/user/$USER/hpc-work,...">
+<meta property="og:locale" content="en">
+<meta property="og:url" content="/applications/ldsc.html">
+<meta property="og:type" content="article">
+<meta property="article:author" content="cambridge-ceu">
+<meta property="article:published_time" content="2021-12-23T16:14:30+00:00">
+<meta property="article:modified_time" content="2021-12-23T16:14:30+00:00">
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "/applications/ldsc.html"
+        },
+        "headline": "ldsc · csd3",
+        "image": [],
+        "author": {
+            "@type": "Person",
+            "name": "cambridge-ceu"
+        },
+        "datePublished": "2021-12-23T16:14:30+00:00",
+        "dateModified": "2021-12-23T16:14:30+00:00",
+        "publisher": {
+            "@type": "",
+            "name": "cambridge-ceu",
+            "logo": {
+                "@type": "ImageObject",
+                "url": ""
+            }
+        },
+        "description": "ldsc Web: https://github.com/bulik/ldsc (Google group). Installation We proceed as follows for installation into HPC_WORK=/rds/user/$USER/hpc-work,..."
+    }
+</script>
+
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="prev" href="/applications/lapack.html"><link rel="next" href="/applications/LEMMA.html"><link rel="canonical" href="/applications/ldsc.html"><link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg"><link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96"><link rel="mask-icon" href="/assets/images/favicon.svg" color="#2980b9"><link rel="apple-touch-icon" href="/assets/images/apple-touch-icon-300x300.jpg">
+<link rel="stylesheet" href="/assets/css/theme.css"><script>
+    window.ui = {
+        title: "csd3",
+        baseurl: "",
+        i18n: {
+            search_results: "Search Results",
+            search_results_found: "Search finished, found # page(s) matching the search query.",
+            search_results_not_found: "Your search did not match any documents, please make sure that all characters are spelled correctly!"
+        }
+    };
+</script>
+</head>
+    <body class="container"><div class="sidebar-wrap overflow-hidden">
+    <div class="sidebar height-full overflow-y-scroll overflow-x-hidden">
+        <div class="header d-flex flex-column p-3 text-center">
+            <div class="title pb-1">
+                <a class="h4 no-underline py-1 px-2 rounded-1" href="/" title="A collection of CSD3 notes">
+                    <i class="fa fa-home"></i> csd3
+                </a>
+            </div>
+            <span class="version"></span>
+            <form class="search pt-2" action="/search.html" method="get" autocomplete="off">
+                <input class="form-control input-block input-sm" type="text" name="q" placeholder="Search docs...">
+            </form>
+        </div>
+        <div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation">
+            
+
+
+<ul>
+</ul>
+
+
+
+
+    
+    <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/systems/">
+        The system
+    </a><ul>
+    
+
+        <li class="toc level-1 " data-sort="1" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/systems/system.html">1. System</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="2" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/systems/login.html">2. Login</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="3" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/systems/directories.html">3. Directories</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="4" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/systems/policies.html">4. Policies</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="5" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/systems/email.html">5. email</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="6" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/systems/software.html">6. Software</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="7" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/systems/training.html">7. Training</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="8" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/systems/acknowledgement.html">8. Acknowledgement</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="8" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/systems/contacts.html">8. Contacts</a>
+        </li></ul>
+
+
+
+    
+    <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/cardio/">
+        cardio
+    </a><ul>
+    </ul>
+
+
+
+    
+    <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/applications/">
+        Applications
+    </a><ul>
+    
+
+        <li class="toc level-1 " data-sort="1" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/ABCtoolbox.html">1. ABCtoolbox</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="2" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/AEGIS.html">2. AEGIS</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="3" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/akt.html">3. akt</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="4" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/ANNOVAR.html">4. ANNOVAR</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="5" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/aria2.html">5. aria2</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="6" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/bcftools.html">6. bcftools</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="7" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/bedops.html">7. bedops</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="8" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/bgenix.html">8. bgenix</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="9" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/CaVEMaN.html">9. CaVEMaN</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="10" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/citeproc.html">10. citeproc</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="11" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/Cytoscape.html">11. Cytoscape</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="12" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/DosageConverter.html">12. DosageConverter</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="13" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/gcta.html">13. GCTA</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="14" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/gsutil.html">14. gsutil</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="15" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/gwas2vcf.html">15. gwas2vcf</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="16" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/hail.html">16. hail</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="17" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/HESS.html">17. HESS</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="18" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/KentUtils.html">18. KentUtils</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="19" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/lapack.html">19. lapack</a>
+        </li>
+
+        <li class="toc level-1 current" data-sort="20" data-level="1">
+            <a class="d-flex flex-items-baseline current" href="/applications/ldsc.html">20. ldsc</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="21" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/LEMMA.html">21. LEMMA</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="22" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/MetaXcan.html">22. MetaXcan</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="23" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/pandoc.html">23. pandoc</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="24" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/pca_projection.html">24. PCA projection</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="25" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/plink.html">25. PLINK</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="26" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/polyphen-2.html">26. polyphen-2</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="27" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/poppler.html">27. poppler</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="28" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/PRSice.html">28. PRSice</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="29" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/PRSoS.html">29. PRSoS</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="30" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/pspp.html">30. pspp</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="31" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/qpdf.html">31. qpdf</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="32" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/regenie.html">32. regenie</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="33" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/R.html">33. R</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="34" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/RStudio.html">34. RStudio</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="35" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/shapeit3.html">35. shapeit3</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="36" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/SMR.html">36. SMR</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="37" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/snakemake.html">37. snakemake</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="38" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/SNPTEST.html">38. SNPTEST</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="39" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/tabix.html">39. tabix</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="40" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/VEP.html">40. VEP</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="41" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/applications/VScode.html">41. Visual Studio code</a>
+        </li>
+        <li class="toc level-1">
+
+
+    <a class="d-flex flex-items-baseline" href="/applications/R/">
+        R packages
+    </a><ul>
+    
+
+        <li class="toc level-2 " data-sort="1" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/brms.html">1. R/brms</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="2" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/EasyQC.html">2. R/EasyQC</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="3" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/gnn.html">3. R/gnn</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="4" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/gsl.html">4. R/gsl</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="5" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/LDlinkR.html">5. R/LDlinkR</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="6" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/magick.html">6. R/magick</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="7" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/PhenoScanner.html">7. R/PhenoScanner</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="8" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/PKI.html">8. R/PKI</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="9" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/plumber.html">9. R/plumber</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="10" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/protolite.html">10. R/protolite</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="11" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/Rfast.html">11. R/Rfast</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="12" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/rgdal.html">12. R/rgdal</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="13" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/rgeos.html">13. R/rgeos</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="14" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/Rhdf5lib.html">14. R/Rhdf5lib</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="15" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/rjags.html">15. R/rjags</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="16" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/rJava.html">16. R/rJava</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="17" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/rstan.html">17. R/rstan</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="18" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/SAIGE.html">18. R/SAIGE 0.36.6 and 0.39.2</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="19" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/sf.html">19. R/sf</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="20" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/snpnet.html">20. R/snpnet</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="21" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/sojo.html">21. R/sojo</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="22" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/applications/R/xlsx.html">22. R/xlsx</a>
+        </li></ul>
+</li></ul>
+
+
+
+    
+    <a class="caption d-block text-uppercase no-wrap px-2 py-0" href="/writing/">
+        Writing Related
+    </a><ul>
+    
+
+        <li class="toc level-1 " data-sort="1" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/writing/front-matter.html">1. Front matter</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="2" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/writing/list.html">2. List directory</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="3" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/writing/mathjax.html">3. Mathjax</a>
+        </li>
+
+        <li class="toc level-1 " data-sort="4" data-level="1">
+            <a class="d-flex flex-items-baseline " href="/writing/admonitions.html">4. Admonition card</a>
+        </li>
+        <li class="toc level-1">
+
+
+    <a class="d-flex flex-items-baseline" href="/writing/test/">
+        Test Documentation
+    </a><ul>
+    
+
+        <li class="toc level-2 " data-sort="1" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/writing/test/markdown.html">1. Markdown Elements</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="2" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/writing/test/toasts.html">2. Toasts Card</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="3" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/writing/test/codes.html">3. Code Blocks</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="4" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/writing/test/mermaid.html">4. Mermaid Test</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="5" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/writing/test/emoji.html">5. Emoji Test</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="6" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/writing/test/gist.html">6. Gist Test</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="7" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/writing/test/avatar.html">7. Avatar Test</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="8" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/writing/test/mentions.html">8. Mentions Test</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="9" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/writing/test/fonts.html">9. Fonts Test</a>
+        </li>
+
+        <li class="toc level-2 " data-sort="10" data-level="2">
+            <a class="d-flex flex-items-baseline " href="/writing/test/utilities.html">10. Primer Utilities Test</a>
+        </li></ul>
+</li></ul>
+
+        </div>
+    </div>
+</div>
+<div class="content-wrap">
+    <div class="header d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation">
+        <button id="toggle" aria-label="Toggle menu" class="btn-octicon p-2 m-0 text-white" type="button">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="title flex-1 d-flex flex-justify-center">
+            <a class="h4 no-underline py-1 px-2 rounded-1" href="/">csd3</a>
+        </div>
+    </div>
+    <div class="content p-3 p-sm-5">
+        <div class="navigation-top d-flex flex-justify-between">
+    <ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation">
+        <li class="breadcrumb-item">
+            <a class="no-underline" href="/" title="/">
+                <i class="fa fa-home"></i>
+            </a>
+        </li><li class="breadcrumb-item" ><a href="/applications/">applications</a></li><li class="breadcrumb-item" aria-current="page">ldsc.md</li></ul>
+    <a class="edit" href="https://github.com/cambridge-ceu/csd3/edit/gh-pages/applications/ldsc.md" title="Edit on GitHub" rel="noreferrer" target="_blank">
+        <i class="fa fa-edit"></i>
+    </a>
+</div>
+
+        <hr>
+        <div role="main" itemscope="itemscope" itemtype="https://schema.org/Article">
+            <div class="markdown-body" itemprop="articleBody">
+                <h1 id="ldsc">ldsc</h1>
+
+<p>Web: <a href="https://github.com/bulik/ldsc">https://github.com/bulik/ldsc</a> (<a href="https://groups.google.com/g/ldsc_users/">Google group</a>).</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>We proceed as follows for installation into HPC_WORK=/rds/user/$USER/hpc-work,</p>
+
+<div class="language-bash highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>module load python/2.7
+virtualenv py27
+<span class="nb">source </span>py27/bin/activate
+<span class="nb">cd</span> <span class="k">${</span><span class="nv">HPC_WORK</span><span class="k">}</span>
+git clone https://github.com/bulik/ldsc
+<span class="nb">cd </span>ldsc
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+wget https://data.broadinstitute.org/alkesgroup/LDSCORE/w_hm3.snplist.bz2 | <span class="se">\</span>
+bzip2 <span class="nt">-d</span>
+</code></pre> </div></div>
+
+<p>The last two commands also gets the HapMap 3 SNP list. It is worthwhile to note that</p>
+
+<ul>
+  <li>The ldsc documentation suggests Anaconda and on CSD3 we could use the miniconda/2 module, i.e, <a href="https://cambridge-ceu.github.io/csd3/systems/software.html#python">https://cambridge-ceu.github.io/csd3/systems/software.html#python</a>, but it is considerably more involved.</li>
+  <li>We only need <code class="language-plaintext highlighter-rouge notranslate">module load python/2.7</code> and <code class="language-plaintext highlighter-rouge notranslate">source ${HOME}/py27/bin/activate</code> later on.</li>
+</ul>
+
+<h2 id="testing">Testing</h2>
+
+<p>We use the GIANT BMI data,</p>
+
+<div class="language-bash highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-qO-</span> http://portals.broadinstitute.org/collaboration/giant/images/c/c8/Meta-analysis_Locke_et_al%2BUKBiobank_2018_UPDATED.txt.gz | <span class="se">\</span>
+<span class="nb">gunzip</span> <span class="nt">-c</span> <span class="o">&gt;</span> BMI.txt
+python munge_sumstats.py <span class="nt">--sumstats</span> BMI.txt <span class="nt">--a1</span> Tested_Allele <span class="nt">--a2</span> Other_Allele <span class="nt">--merge-alleles</span> w_hm3.snplist <span class="nt">--out</span> BMI <span class="nt">--a1-inc</span>
+</code></pre> </div></div>
+
+<p>Note the munging procedure requests large resources and will be terminated by CSD3, so we better test with a SLURM job instead.</p>
+
+<h2 id="analysis">Analysis</h2>
+
+<h3 id="heritability-partition">Heritability partition</h3>
+
+<p>We now complete the download on frequencies, baseline model LD scores, and regression weights and furnish this.</p>
+
+<div class="language-bash highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-qO-</span> https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/1000G_Phase1_frq.tgz | <span class="nb">tar </span>xvfz -
+wget <span class="nt">-qO-</span> https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/1000G_Phase1_baseline_ldscores.tgz | <span class="nb">tar </span>xvfz -
+wget <span class="nt">-qO-</span> https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/weights_hm3_no_hla.tgz | <span class="nb">tar </span>xvfz -
+</code></pre> </div></div>
+
+<p>Our batch file is as follows,</p>
+
+<div class="language-plaintext highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/bash
+
+#SBATCH --job-name=BMI
+#SBATCH --account CARDIO-SL0-CPU
+#SBATCH --partition cardio
+#SBATCH --qos=cardio
+#SBATCH --mem=28800
+#SBATCH --time=5-00:00:00
+#SBATCH --output=/rds/user/jhz22/hpc-work/work/_BMI_%A_%a.out
+#SBATCH --error=/rds/user/jhz22/hpc-work/work/_BMI_%A_%a.err
+#SBATCH --export ALL
+
+export TMPDIR=/rds/user/$USER/hpc-work/work
+
+module load python/2.7
+source ${HOME}/py27/bin/activate
+cd ${HPC_WORK}/ldsc
+python munge_sumstats.py --sumstats BMI.txt --a1 Tested_Allele --a2 Other_Allele --merge-alleles w_hm3.snplist --out BMI --a1-inc
+python ldsc.py\
+	--h2 BMI.sumstats.gz\
+	--ref-ld-chr baseline/baseline.\
+	--w-ld-chr weights_hm3_no_hla/weights.\
+	--overlap-annot\
+	--frqfile-chr 1000G_frq/1000G.mac5eur.\
+	--out BMI_baseline
+</code></pre> </div></div>
+
+<p>and our results are contained in the tab-delimited file named <code class="language-plaintext highlighter-rouge notranslate">BMI_baseline.result</code> – note in particular the CNS enrichment P=8.30e-24.</p>
+
+<h3 id="cell-type-analysis">Cell type analysis</h3>
+
+<p>We carry on with the download,</p>
+
+<div class="language-bash highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-qO-</span> https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/1000G_Phase1_cell_type_groups.tgz | <span class="se">\</span>
+<span class="nb">tar </span>xvfz -
+</code></pre> </div></div>
+
+<p>and for CNS, we have</p>
+
+<div class="language-bash highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>python ldsc.py<span class="se">\</span>
+        <span class="nt">--h2</span> BMI.sumstats.gz<span class="se">\</span>
+        <span class="nt">--w-ld-chr</span> weights_hm3_no_hla/weights.<span class="se">\</span>
+        <span class="nt">--ref-ld-chr</span> cell_type_groups/CNS.,baseline/baseline.<span class="se">\</span>
+        <span class="nt">--overlap-annot</span><span class="se">\</span>
+        <span class="nt">--frqfile-chr</span> 1000G_frq/1000G.mac5eur.<span class="se">\</span>
+        <span class="nt">--out</span> BMI_CNS<span class="se">\</span>
+        <span class="nt">--print-coefficients</span>
+</code></pre> </div></div>
+
+<p>and our results are now contained in the tab-delimited file named <code class="language-plaintext highlighter-rouge notranslate">BMI_CNS.results</code>.</p>
+
+<p>We next use the <code class="language-plaintext highlighter-rouge notranslate">--h2-cts</code> option with the Cahoy data analysis in a nutshell,</p>
+
+<div class="language-bash highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">cts_name</span><span class="o">=</span>Cahoy
+wget <span class="nt">-qO-</span> https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/LDSC_SEG_ldscores/<span class="k">${</span><span class="nv">cts_name</span><span class="k">}</span>_1000Gv3_ldscores.tgz | <span class="se">\</span>
+<span class="nb">tar </span>xfvz -
+wget <span class="nt">-qO-</span> https://storage.googleapis.com/broad-alkesgroup-public/LDSCORE/1000G_Phase3_baseline_ldscores.tgz | <span class="se">\</span>
+<span class="nb">tar </span>xvfz -
+ldsc.py<span class="se">\</span>
+    <span class="nt">--h2-cts</span> BMI.sumstats.gz <span class="se">\</span>
+    <span class="nt">--ref-ld-chr</span> 1000G_EUR_Phase3_baseline/baseline. <span class="se">\</span>
+    <span class="nt">--out</span> BMI_<span class="k">${</span><span class="nv">cts_name</span><span class="k">}</span> <span class="se">\</span>
+    <span class="nt">--ref-ld-chr-cts</span> <span class="nv">$cts_name</span>.ldcts <span class="se">\</span>
+    <span class="nt">--w-ld-chr</span> weights_hm3_no_hla/weights.
+</code></pre> </div></div>
+
+<p>The output <code class="language-plaintext highlighter-rouge notranslate">BMI_Cahoy.cell_type_results.txt</code> is sufficiently small to include here,</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Coefficient</th>
+      <th>Coefficient_std_error</th>
+      <th>Coefficient_P_value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Neuron</td>
+      <td>4.4874060288359995e-09</td>
+      <td>2.48025909733557e-09</td>
+      <td>0.035206172355899706</td>
+    </tr>
+    <tr>
+      <td>Oligodendrocyte</td>
+      <td>8.067689953393081e-10</td>
+      <td>2.569340962599481e-09</td>
+      <td>0.376761120478732</td>
+    </tr>
+    <tr>
+      <td>Astrocyte</td>
+      <td>-4.036699628095808e-09</td>
+      <td>2.0886996416620756e-09</td>
+      <td>0.9733595763245972</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In line with the finding above, we have a P=0.035 for neurons.</p>
+
+<h3 id="genetic-correlation">Genetic correlation</h3>
+
+<p>We carry on to calculate the genetic correlation (rg) between BMI and height. First, we obtain the LD scores,</p>
+
+<div class="language-bash highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-qO-</span> https://data.broadinstitute.org/alkesgroup/LDSCORE/eur_w_ld_chr.tar.bz2 | <span class="se">\</span>
+<span class="nb">tar </span>xjf -
+</code></pre> </div></div>
+
+<p>followed by downloading and munging height GWAS summary statistics</p>
+
+<div class="language-bash highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-qO-</span> http://portals.broadinstitute.org/collaboration/giant/images/0/01/GIANT_HEIGHT_Wood_et_al_2014_publicrelease_HapMapCeuFreq.txt.gz | <span class="se">\</span>
+<span class="nb">gunzip</span> <span class="nt">-c</span> <span class="o">&gt;</span> height.txt
+python munge_sumstats.py <span class="nt">--sumstats</span> height.txt <span class="se">\</span>
+                         <span class="nt">--snp</span> MarkerName <span class="nt">--a1</span> Allele1 <span class="nt">--a2</span> Allele2 <span class="nt">--merge-alleles</span> w_hm3.snplist <span class="nt">--p</span> p <span class="nt">--out</span> height <span class="nt">--a1-inc</span>
+</code></pre> </div></div>
+
+<p>but again it will be killed and we need a SLURM job as above. On CSD3, it took a staggering 14hr.</p>
+
+<p>Our analysis then proceeds with</p>
+
+<div class="language-bash highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>python ldsc.py <span class="se">\</span>
+      <span class="nt">--rg</span> BMI.sumstats.gz,height.sumstats.gz <span class="se">\</span>
+      <span class="nt">--ref-ld-chr</span> eur_w_ld_chr/ <span class="se">\</span>
+      <span class="nt">--w-ld-chr</span> eur_w_ld_chr/ <span class="se">\</span>
+      <span class="nt">--out</span> BMI_height
+</code></pre> </div></div>
+
+<p>It took just under 16s and <code class="language-plaintext highlighter-rouge notranslate">BMI_height.log</code> contains the desired output quoted below</p>
+
+<div class="language-plaintext highlighter-rouge notranslate"><div class="highlight"><pre class="highlight"><code>*********************************************************************
+* LD Score Regression (LDSC)
+* Version 1.0.1
+* (C) 2014-2019 Brendan Bulik-Sullivan and Hilary Finucane
+* Broad Institute of MIT and Harvard / MIT Department of Mathematics
+* GNU General Public License v3
+*********************************************************************
+Call:
+./ldsc.py \
+--ref-ld-chr eur_w_ld_chr/ \
+--out BMI_height \
+--rg BMI.sumstats.gz,height.sumstats.gz \
+--w-ld-chr eur_w_ld_chr/
+
+Beginning analysis at Wed Aug  4 07:11:02 2021
+Reading summary statistics from BMI.sumstats.gz ...
+Read summary statistics for 1019865 SNPs.
+Reading reference panel LD Score from eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read reference panel LD Scores for 1290028 SNPs.
+Removing partitioned LD Scores with zero variance.
+Reading regression weight LD Score from eur_w_ld_chr/[1-22] ... (ldscore_fromlist)
+Read regression weight LD Scores for 1290028 SNPs.
+After merging with reference panel LD, 1014995 SNPs remain.
+After merging with regression SNP LD, 1014995 SNPs remain.
+Computing rg for phenotype 2/2
+Reading summary statistics from height.sumstats.gz ...
+Read summary statistics for 1217311 SNPs.
+After merging with summary statistics, 1014995 SNPs remain.
+993172 SNPs with valid alleles.
+
+Heritability of phenotype 1
+---------------------------
+Total Observed scale h2: 0.2104 (0.0066)
+Lambda GC: 2.7872
+Mean Chi^2: 3.9573
+Intercept: 1.0292 (0.0298)
+Ratio: 0.0099 (0.0101)
+
+Heritability of phenotype 2/2
+-----------------------------
+Total Observed scale h2: 0.342 (0.0176)
+Lambda GC: 2.0007
+Mean Chi^2: 2.9726
+Intercept: 1.2239 (0.033)
+Ratio: 0.1135 (0.0167)
+
+Genetic Covariance
+------------------
+Total Observed scale gencov: 0.1517 (0.0047)
+Mean z1*z2: 2.0178
+Intercept: 0.738 (0.0148)
+
+Genetic Correlation
+-------------------
+Genetic Correlation: 0.5656 (0.0081)
+Z-score: 70.1339
+P: 0.
+
+
+Summary of Genetic Correlation Results
+p1                  p2      rg      se        z    p  h2_obs  h2_obs_se  h2_int  h2_int_se  gcov_int  gcov_int_se
+BMI.sumstats.gz  height.sumstats.gz  0.5656  0.0081  70.1339  0.0   0.342     0.0176  1.2239      0.033     0.738       0.0148
+
+Analysis finished at Wed Aug  4 07:11:18 2021
+Total time elapsed: 15.56s
+</code></pre> </div></div>
+
+<p>and rg=0.57.</p>
+
+            </div>
+        </div>
+        <div class="navigation-bottom d-flex flex-justify-between py-3" role="navigation" aria-label="footer navigation">
+            <div class="prev"><a href="/applications/lapack.html" class="btn" title="lapack" accesskey="p" rel="prev">
+                        <i class="fa fa-arrow-circle-left"></i> Previous
+                    </a></div>
+            <div class="next"><a href="/applications/LEMMA.html" class="btn" title="LEMMA" accesskey="n" rel="next">
+                        Next <i class="fa fa-arrow-circle-right"></i>
+                    </a></div>
+        </div><hr>
+
+<div class="copyright text-center text-gray" role="contentinfo">
+    <i class="fa fa-copyright"></i>
+    <span class="time">2021,</span>
+    <a class="text-gray" href="https://github.com/cambridge-ceu" rel="noreferrer" target="_blank">cambridge-ceu</a>
+    Revision
+    <a class="text-gray" href="https://github.com/cambridge-ceu/csd3/commit/2109d8f596b4cd432c7a5937f50b592827e6194f" title="2109d8f596b4cd432c7a5937f50b592827e6194f" rel="noreferrer" target="_blank">2109d8f</a>
+    
+        <br>
+        <div class="generator">
+            Built with
+            <a href="https://pages.github.com" rel="noreferrer" target="_blank" title="github-pages v209">GitHub Pages</a>
+            using a
+            <a href="https://github.com/rundocs/jekyll-rtd-theme" rel="noreferrer" target="_blank" title="jekyll-rtd-theme v2.0.10">theme</a>
+            provided by
+            <a href="https://rundocs.io" rel="noreferrer" target="_blank">RunDocs</a>.
+        </div>
+    
+</div>
+
+    </div>
+</div>
+<div class="addons-wrap d-flex flex-column overflow-y-auto">
+    <div class="status d-flex flex-justify-between p-2">
+        <div class="title p-1">
+            <i class="fa fa-book"></i> csd3
+        </div>
+        <div class="branch p-1">
+            <span class="name">
+                gh-pages
+            </span>
+            <i class="fa fa-caret-down"></i>
+        </div>
+    </div>
+    <div class="addons d-flex flex-column height-full p-2 d-none">
+        <dl>
+            <dt>GitHub</dt>
+            <dd>
+                <a href="https://github.com/cambridge-ceu/csd3" title="Stars: ">
+                    <i class="fa fa-github"></i>
+                    Homepage
+                </a>
+            </dd>
+            <dd>
+                <a href="" title="Open issues: ">
+                    <i class="fa fa-question-circle-o"></i>
+                    Issues
+                </a>
+            </dd>
+            <dd>
+                <a href="https://github.com/cambridge-ceu/csd3/zipball/gh-pages" title="Size:  Kb">
+                    <i class="fa fa-download"></i>
+                    Download
+                </a>
+            </dd>
+        </dl>
+        <hr>
+        <div class="license f6 pb-2">
+            This
+            <a href="/" title="csd3">Software</a>
+            is under the terms of
+            <a href="https://github.com/cambridge-ceu/csd3">The Unlicense</a>.
+        </div>
+    </div>
+</div>
+<script src="/assets/js/jquery.min.js"></script><script src="/assets/js/theme.js"></script>
+
+
+</body>
+</html>
