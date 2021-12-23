@@ -3,7 +3,6 @@ lang: en
 description: A collection of CSD3 notes
 encoding: UTF-8
 
-remote_theme: rundocs/jekyll-rtd-theme
 theme: jekyll-rtd-theme
 
 debug:
