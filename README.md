@@ -9,6 +9,7 @@
 
 ```mermaid
 graph LR;
+csd3 --> jekyll-rtd-theme
 csd3 --> system["THE SYSTEM"]
 csd3 --> cardio["CARDIO"]
 csd3 --> applications["APPLICATIONS"]
