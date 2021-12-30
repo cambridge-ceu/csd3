@@ -64,7 +64,7 @@ The setup below complies with ordinary login nodes.
 ```bash
 wget -qO- --no-check-certificate https://ftp.gnu.org/pub/pub/gnu/readline/readline-6.3.tar.gz | tar xfvz -
 cd readline-6.3/
-./configure --prefix=${HPC_WORK} --with-shared
+./configure --prefix=${HPC_WORK} --enable-shared
 make
 make install
 ```
