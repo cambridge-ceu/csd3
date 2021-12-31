@@ -22,14 +22,11 @@ cardio --> cp["CSD3 partition"]
 cardio --> lm["Legacy materials"]
 applications --> ABCtoolbox
 applications --> appdot["..."]
-applications --> R["R packages"]
+applications --> vsc["Visual Studio Code"]
+csd3 --> R["R packages"]
 R --> brms
 R --> Rdot["..."]
 R --> xlsx
-applications --> R/xlsx
-wr --> fr["Front matter"]
-wr --> wrdot["..."]
-wr --> td["Test documentation"]
 ```
 
 {% include list.liquid all=true %}
