@@ -13,7 +13,7 @@ jekyll-rtd-theme --> csd3
 csd3 --> system["THE SYSTEM"]
 csd3 --> cardio["CARDIO"]
 csd3 --> applications["APPLICATIONS"]
-csd3 --> wr["WRITING RELATED"]
+csd3 --> R["R packages"]
 system --> System
 system --> Login
 system --> sysdot["..."]
@@ -23,7 +23,6 @@ cardio --> lm["Legacy materials"]
 applications --> ABCtoolbox
 applications --> appdot["..."]
 applications --> vsc["Visual Studio Code"]
-csd3 --> R["R packages"]
 R --> brms
 R --> Rdot["..."]
 R --> xlsx
