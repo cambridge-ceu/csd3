@@ -44,11 +44,26 @@ rstudio &
 
 ## RStudio 1.4
 
-This is also the latest version
+### Fedora 19/Red Hat 7
+
+Version 1.4 allows for plots to be placed inside RStudio. We use the tarball as of 11/1/2022,
+
+```bash
+wget -qO- https://download1.rstudio.org/desktop/centos7/x86_64/rstudio-2021.09.2-382-x86_64-fedora.tar.gz | \
+tar xfz -
+cd rstudio-2021.09.2+382/
+bin/rstudio
+```
+
+We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to call later on.
+
+--- Legacy notes
+
+This is with respect to the latest version under Debian,
 
 ```bash
 wget -qO- https://download1.rstudio.org/desktop/xenial/amd64/rstudio-1.4.1106-amd64-debian.tar.gz | tar xfz -
-cd rstudio-1.4
+cd rstudio-1.4.1106
 bin/rstudio
 ```
 
