@@ -113,7 +113,7 @@ into `${HOME}/.bashrc` in case a remote login is necessary (e.g., faster login t
 
 ---
 
-The following information is helpful, [https://www.scm.com/doc/Installation/Remote_GUI.html)](https://www.scm.com/doc/Installation/Remote_GUI.html)
+The following information is helpful, [https://www.scm.com/doc/Installation/Remote_GUI.html](https://www.scm.com/doc/Installation/Remote_GUI.html)
 
 ## Using the GUI on a remote machine
 
