@@ -111,5 +111,29 @@ alias ssh='ssh -q -X $@'
 
 into `${HOME}/.bashrc` in case a remote login is necessary (e.g., faster login to CSD3 or there is poor local network connection).
 
+---
+
+The following information is helpful, [https://www.scm.com/doc/Installation/Remote_GUI.html)](https://www.scm.com/doc/Installation/Remote_GUI.html)
+
+## Using the GUI on a remote machine
+
+### X11 over SSH
+
+```bash
+ssh -X -Y CRSid@login.hpc.cam.ac.uk
+xclock
+```
+
+### X11 with OpenGL over SSH (3D graphics)
+
+```bash
+glxgears
+glxinfo | grep -E "version|string|rendering|display"
+ldd `which glxinfo`
+ls -l /usr/lib64/libGL.so.1
+find /usr -iname "*libGL.so*" -exec ls -l {} \;
+find /usr -iname "*libGLX*.so*" -exec ls -l {} \;
+```
+
 [^1]: Applications such as R/nloptr package require to be recompiled. In this case, we run `download.packages("nloptr",".")` inside `R` on an Internet-enabled node and compile the package with `R CMD INSTALL nloptr_1.2.2.3.tar.gz`, say.
 [^2]: This appears subject to the system setup.
