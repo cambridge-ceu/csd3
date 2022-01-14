@@ -42,6 +42,8 @@ module load rstudio/1.3.1093
 rstudio &
 ```
 
+Another environmental variable is QT_QPA_PLATFORM_PLUGIN_PATH, which should point to the `plugins/platforms` directory when a particular QT module is loaded.
+
 ## RStudio 1.4
 
 ### Fedora 19/Red Hat 7
@@ -56,6 +58,59 @@ bin/rstudio
 ```
 
 We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to call later on.
+
+### Failure to start R
+
+The error message is shown below,
+
+## R Session Startup Failure Report
+
+### RStudio Version
+
+RStudio 2021.09.2+382, "Ghost Orchid" (fc9e2179, 2022-01-04) for CentOS 7
+
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/5.12.8 Chrome/69.0.3497.128 Safari/537.36
+
+### Error message
+
+[No error available]
+
+### Process Output
+
+The R session exited with code 1.
+
+Error output:
+
+```
+/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/R/rstudio-2021.09.2+382/bin/rsession: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by /rds-d4/user/jhz22/hpc-work/lib/libicuuc.so.50)
+/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/R/rstudio-2021.09.2+382/bin/rsession: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by /rds-d4/user/jhz22/hpc-work/lib/libicui18n.so.50)
+
+```
+
+Standard output:
+
+```
+[No output emitted]
+```
+
+### Logs
+
+_/home/jhz22/.local/share/rstudio/log/rsession-jhz22.log_
+
+```
+2022-01-13T17:06:06.694306Z [rsession-jhz22] ERROR R.getOption: rstudio.errors.suppressed made from non-main thread; LOGGED FROM: SEXPREC* rstudio::r::options::getOption(const string&) src/cpp/r/ROptions.cpp:83
+2022-01-13T17:06:06.758853Z [rsession-jhz22] ERROR evaluateExpression called from thread other than main; LOGGED FROM: rstudio::core::Error rstudio::r::exec::{anonymous}::evaluateExpressionsUnsafe(SEXP, SEXP, SEXPREC**, rstudio::r::sexp::Protect*, rstudio::r::exec::{anonymous}::EvalType) src/cpp/r/RExec.cpp:140
+2022-01-13T17:06:06.758853Z [rsession-jhz22] ERROR evaluateExpression called from thread other than main; LOGGED FROM: rstudio::core::Error rstudio::r::exec::{anonymous}::evaluateExpressionsUnsafe(SEXP, SEXP, SEXPREC**, rstudio::r::sexp::Protect*, rstudio::r::exec::{anonymous}::EvalType) src/cpp/r/RExec.cpp:140
+
+```
+
+This is easily fixed with the usual setup for R, e.g,.
+
+```bash
+module load gcc/6
+module load pcre/8.38
+module load texlive
+```
 
 ### --- Legacy notes
 
