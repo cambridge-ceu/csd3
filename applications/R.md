@@ -111,6 +111,16 @@ make
 make install
 ```
 
+The nano/pico editor would not work on icelake but could be set up as follows,
+
+```bash
+wget -qO- wget https://alpine.x10host.com/alpine/release/src/alpine-2.25.tar.xz | \
+tar Jxf -
+cd alpine-2.25
+configure
+make
+```
+
 [^1]:
     On CSD3, there is a more recent module `nettle-3.4-gcc-5.4.0-2mdpaut`. Moreover, with 3.5
     there is also an option `--with-included-unistring` during configuration.
