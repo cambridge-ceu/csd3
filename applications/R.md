@@ -127,7 +127,7 @@ However, the executables thus obtained would not work on the usual login nodes w
 module load tcl-8.6.6-gcc-5.4.0-mongkp2
 ```
 
-i.e., loading libtcl8.6.
+i.e., loading `libtcl8.6.so`.
 
 Additional information is available from [https://alpine.x10host.com/alpine/release/](https://alpine.x10host.com/alpine/release/).
 
