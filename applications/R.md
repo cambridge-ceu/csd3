@@ -127,7 +127,27 @@ However, the executables thus obtained would not work on the usual login nodes w
 module load tcl-8.6.6-gcc-5.4.0-mongkp2
 ```
 
-i.e., loading `libtcl8.6.so`.
+i.e., loading `libtcl8.6.so`. Based on this idea, we could create three files,
+
+```bash
+#!/usr/bin/bash
+
+export alpine=${HOME}/alpine-2.25
+module load tcl-8.6.6-gcc-5.4.0-mongkp2
+${alpine}/pico/pico $@
+```
+
+called `pico.sh` and
+
+```bash
+#!/usr/bin/bash
+
+export alpine=${HOME}/alpine-2.25
+module load tcl-8.6.6-gcc-5.4.0-mongkp2
+${alpine}/pico/pilot $@
+```
+
+called `pilot.sh`, respectively. Then the three commands can be used both from the usual login nodes as well as icelake.
 
 Additional information is available from [https://alpine.x10host.com/alpine/release/](https://alpine.x10host.com/alpine/release/).
 
