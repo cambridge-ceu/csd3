@@ -121,6 +121,8 @@ configure
 make
 ```
 
+Additional information is available from [https://alpine.x10host.com/alpine/release/](https://alpine.x10host.com/alpine/release/).
+
 [^1]:
     On CSD3, there is a more recent module `nettle-3.4-gcc-5.4.0-2mdpaut`. Moreover, with 3.5
     there is also an option `--with-included-unistring` during configuration.
