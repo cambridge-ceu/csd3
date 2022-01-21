@@ -127,7 +127,7 @@ However, the executables thus obtained would not work on the usual login nodes w
 module load tcl-8.6.6-gcc-5.4.0-mongkp2
 ```
 
-i.e., loading `libtcl8.6.so`. Based on this idea, we could create three files,
+i.e., loading `libtcl8.6.so`. Based on this idea, we could create two files,
 
 ```bash
 #!/usr/bin/bash
