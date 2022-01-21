@@ -117,37 +117,12 @@ The nano/pico editor would not work on icelake but could be set up as follows,
 wget -qO- wget https://alpine.x10host.com/alpine/release/src/alpine-2.25.tar.xz | \
 tar Jxf -
 cd alpine-2.25
-configure
+module load tcl-8.5-gcc-5.4.0-v7dj43g
+configure --prefix=${HPC_WORK}
 make
 ```
 
-However, the executables thus obtained would not work on the usual login nodes which can be amended with
-
-```bash
-module load tcl-8.6.6-gcc-5.4.0-mongkp2
-```
-
-i.e., loading `libtcl8.6.so`. Based on this idea, we could create three files,
-
-```bash
-#!/usr/bin/bash
-
-export alpine=${HOME}/alpine-2.25
-module load tcl-8.6.6-gcc-5.4.0-mongkp2
-${alpine}/pico/pico $@
-```
-
-called `pico.sh` and
-
-```bash
-#!/usr/bin/bash
-
-export alpine=${HOME}/alpine-2.25
-module load tcl-8.6.6-gcc-5.4.0-mongkp2
-${alpine}/pico/pilot $@
-```
-
-called `pilot.sh`, respectively. Then the three commands can be used both from the usual login nodes as well as icelake.
+Note that we have used TCL 8.5, otherwise TCL 8.6 such as `tcl-8.6.6-gcc-5.4.0-mongkp2` is necessary.
 
 Additional information is available from [https://alpine.x10host.com/alpine/release/](https://alpine.x10host.com/alpine/release/).
 
