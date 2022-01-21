@@ -111,7 +111,7 @@ make
 make install
 ```
 
-### nano/pico editor
+### nano editor
 
 It is relatively easy to set up `nano`,
 
@@ -126,6 +126,8 @@ make install
 ```
 
 The executable thus obtained also runs under icelake.
+
+### alpine
 
 To get going with `pilot` we try `alpine` instead,
 
@@ -164,6 +166,8 @@ ${alpine}/pico/pilot $@
 ```
 
 called `pilot.sh`, respectively. Then the three commands can be used both from the usual login nodes as well as icelake.
+
+Nevertheless, we get `alpine/alpine: /usr/lib64/libcrypt.so.1: version `XCRYPT_2.0' not found (required by alpine/alpine)`if we create an`alpine.sh` counterpart.
 
 Additional information is available from [https://alpine.x10host.com/alpine/release/](https://alpine.x10host.com/alpine/release/).
 
