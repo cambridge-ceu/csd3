@@ -111,7 +111,23 @@ make
 make install
 ```
 
-The nano/pico editor would not work on icelake but could be set up as follows,
+### nano/pico editor
+
+It is relatively easy to set up `nano`,
+
+```bash
+module load gcc/6
+wget -qO- --no-check-certificate https://nano-editor.org/dist/v6/nano-6.0.tar.gz | \
+tar xfz -
+cd nano-6.0
+configure --prefix=${HPC_WORK}
+make
+make install
+```
+
+The executable thus obtained also runs under icelake.
+
+To get going with `pilot` we try `alpine` instead,
 
 ```bash
 wget -qO- wget https://alpine.x10host.com/alpine/release/src/alpine-2.25.tar.xz | \
