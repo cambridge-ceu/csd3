@@ -139,7 +139,7 @@ configure
 make
 ```
 
-but `pico`, `pilot` and `alpine` obtained from the usual login node do not work, and we have to do these under icelake, which require TCL 8.6 and we amend them with
+but `pico`, `pilot` and `alpine` obtained from the usual login node do not work, and we have to do these under icelake whose executables require TCL 8.6 under the usual login node and we amend them with
 
 ```bash
 module load tcl-8.6.6-gcc-5.4.0-mongkp2
