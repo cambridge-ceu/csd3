@@ -139,7 +139,7 @@ configure
 make
 ```
 
-However, the `alpine` would not work on icelake. On the other hand we could could use these steps under icelake -- their executables require TCL 8.6 and we amend them with
+However, the `alpine` would not work on icelake. On the other hand we could could use these steps under icelake, and under the usual login nodestheir executables require TCL 8.6 and we amend them with
 
 ```bash
 module load tcl-8.6.6-gcc-5.4.0-mongkp2
