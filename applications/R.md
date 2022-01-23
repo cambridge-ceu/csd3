@@ -165,9 +165,9 @@ module load tcl-8.6.6-gcc-5.4.0-mongkp2
 ${alpine}/pico/pilot $@
 ```
 
-called `pilot.sh`, respectively. Then the three commands can be used both from the usual login nodes as well as icelake.
+called `pilot.sh`, respectively. Then the two commands can be used both from the usual login nodes as well as icelake.
 
-For `alpine` we get `alpine/alpine: /usr/lib64/libcrypt.so.1: version `XCRYPT_2.0' not found (required by alpine/alpine)`if we create an`alpine.sh`counterpart. Nevertheless we might happily use the`alpine` created under the usual login node above.
+For `alpine` we get `alpine/alpine: /usr/lib64/libcrypt.so.1: version `XCRYPT_2.0' not found (required by alpine/alpine)`. Nevertheless we might happily use the `alpine` created under the usual login node above.
 
 Additional information is available from [https://alpine.x10host.com/alpine/release/](https://alpine.x10host.com/alpine/release/).
 
