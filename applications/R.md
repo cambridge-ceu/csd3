@@ -129,7 +129,7 @@ The executable thus obtained also runs under icelake.
 
 ### alpine
 
-One can mirror efforts for nano editor above and compile `pico`, `pilot` and `alpine` under the usual login node,
+We rather attemp to mirror efforts for `nano`,
 
 ```bash
 wget -qO- wget https://alpine.x10host.com/alpine/release/src/alpine-2.25.tar.xz | \
@@ -139,7 +139,7 @@ configure
 make
 ```
 
-However, the `alpine` would not work on icelake. On the other hand we could could use these steps under icelake, and under the usual login nodestheir executables require TCL 8.6 and we amend them with
+but `pico`, `pilot` and `alpine` obtained from the usual login node do not work, and we have to do these under icelake, which require TCL 8.6 and we amend them with
 
 ```bash
 module load tcl-8.6.6-gcc-5.4.0-mongkp2
@@ -167,7 +167,7 @@ ${alpine}/pico/pilot $@
 
 called `pilot.sh`, respectively. Then the two commands can be used both from the usual login nodes as well as icelake.
 
-For `alpine` we get `alpine/alpine: /usr/lib64/libcrypt.so.1: version `XCRYPT_2.0' not found (required by alpine/alpine)`. Nevertheless we might happily use the `alpine` created under the usual login node above.
+For `alpine` we get `alpine/alpine: /usr/lib64/libcrypt.so.1: version `XCRYPT_2.0' not found (required by alpine/alpine)`. Nevertheless we might compile two sets of executables under the usual login node and icelake, respectively.
 
 Additional information is available from [https://alpine.x10host.com/alpine/release/](https://alpine.x10host.com/alpine/release/).
 
