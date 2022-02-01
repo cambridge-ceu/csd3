@@ -11,6 +11,7 @@ Web: [https://github.com/molgenis/systemsgenetics](https://github.com/molgenis/s
 ```bash
 wget -qO- https://github.com/molgenis/systemsgenetics/releases/download/1.4.0_20-8.1/GenotypeHarmonizer-1.4.23-dist.tar.gz | \
 tar xvfz -
+cd GenotypeHarmonizer-1.4.23
 dos2unix GenotypeHarmonizer.sh
 ```
 
@@ -27,8 +28,6 @@ wget ftp://ftp.ncbi.nlm.nih.gov/hapmap/genotypes/latest_phaseIII_ncbi_b36/plink_
 ## Example
 
 ```bash
-cd GenotypeHarmonizer-1.4.23
-
 # Extract first 6Mb of chr20 for CEU samples
 
 # Create list of CEU sampels to extract
