@@ -11,11 +11,16 @@ Web: [https://github.com/qtltools/qtltools](https://github.com/qtltools/qtltools
 We can obtain the source from GitHub and run the setup script,
 
 ```bash
+module load gcc/6
+module load pcre/8.38
+module load texlive
 git clone https://github.com/qtltools/qtltools
 cd qtltools
 install_script.sh
 cp bin/QTLtools ${HPC_WORK}/bin
 ```
+
+The first three modules are actually for R, simply to be in line with other setup.
 
 Although most software listed in the script are duplicated, it seems easiser to keep them intact. Upon completion, the following message is seen,
 
