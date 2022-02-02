@@ -25,6 +25,8 @@ bzip2 -d hapmap3_r2_b36_fwd.consensus.qc.poly.ped.bz2
 wget ftp://ftp.ncbi.nlm.nih.gov/hapmap/genotypes/latest_phaseIII_ncbi_b36/plink_format/relationships_w_pops_121708.txt
 ```
 
+A HapMap2+HapMap3 combined data is available from [https://ftp.ncbi.nlm.nih.gov/hapmap/genotypes/latest_phaseII+III_ncbi_b36/forward/non-redundant/](https://ftp.ncbi.nlm.nih.gov/hapmap/genotypes/latest_phaseII+III_ncbi_b36/forward/non-redundant/).
+
 ## Example
 
 ```bash
