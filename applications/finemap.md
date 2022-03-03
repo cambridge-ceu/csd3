@@ -43,7 +43,7 @@ source py38/bin/activate
 pip install https://files.pythonhosted.org/packages/a8/fd/f98ab7dea176f42cb61b80450b795ef19b329e8eb715b87b0d13c2a0854d/ldstore-0.1.9.tar.gz
 ```
 
-with a Python containing these lines,
+with Python scripts below,
 
 ```python
 from ldstore.bcor import bcor
