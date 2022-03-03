@@ -19,7 +19,7 @@ tar xvfz -
 
 Note that the latest version (1.4) drops options and columns related to causal grouping.
 
-## Tesing
+## Testing
 
 ```bash
 # LDSTORE
