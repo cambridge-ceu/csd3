@@ -37,3 +37,5 @@ Codename:       Nitrogen
 ```
 
 so the system is Scientific Linux 7 (SL7), see [http://www.scientificlinux.org/](http://www.scientificlinux.org/), also /usr/share/doc/HTML/en-US/index.html,
+
+For additional information regarding Scientific Linux and CentOS, see [https://en.wikipedia.org/wiki/Scientific_Linux](https://en.wikipedia.org/wiki/Scientific_Linux).
