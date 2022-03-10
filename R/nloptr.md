@@ -6,7 +6,7 @@ sort: 8
 
 ## NLopt
 
-This relates to pre-installation of `nloptr` though should be applicable to `R/nloptr` itself.
+This relates to pre-installation of `NLopt` though should be applicable to `R/nloptr` itself.
 
 We download the latest NLopt according to [https://nlopt.readthedocs.io/en/latest/](https://nlopt.readthedocs.io/en/latest/), notably
 
