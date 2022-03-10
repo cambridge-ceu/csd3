@@ -31,7 +31,7 @@ and then modify `src/glmnetpp/include/glmnetpp_bits/elnet_point/gaussian_base.hp
                      [=](auto k) {/*self().template update<update_type::partial>*/(k, ab, dem); }
 ```
 
-and similarlyline 55.
+and similarly line 55.
 
 Our final step is then
 
