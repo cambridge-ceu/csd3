@@ -28,7 +28,7 @@ tar tvfz glmnet_4.1-3.tar.gz
 and then modify `src/glmnetpp/include/glmnetpp_bits/elnet_point/gaussian_base.hpp` line 90 as follows,
 
 ```cpp
-                     [=](auto k) {/*self().template update<update_type::partial>*/(k, ab, dem); }
+                     [=](auto k) {this -> self().template update<update_type::partial>(k, ab, dem); }
 ```
 
 and similarly line 55.
