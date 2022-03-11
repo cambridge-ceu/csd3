@@ -48,7 +48,7 @@ We then do several things,
     PKG_CPPFLAGS = -I../inst/include -I/rds/user/jhz22/hpc-work/include
     PKG_LIBS = $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS) -L/rds/user/jhz22/hpc-work/lib64 -lnlopt
     ```
-- change `src/test-C-API.cpp` such that `abs()` there turn into `fabs()`.
+- change `src/test-C-API.cpp` such that `abs()` there turns into `fabs()`.
 
 We now can furnish the installation with
 
