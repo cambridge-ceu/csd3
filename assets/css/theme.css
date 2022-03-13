@@ -1,0 +1,5 @@
+<style>
+.footnote-ref ~ .footnote-ref :before {
+  content: ', '
+}
+</style>
