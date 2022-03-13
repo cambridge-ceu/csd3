@@ -23,7 +23,7 @@ make install
 
 ## R/nloptr
 
-Within R, we have seen error messages from `install.packages("nloptr")`, 
+Within R, we have seen error messages from `install.packages("nloptr")`,
 
 ```
 test-C-API.cpp:108:35: error: call of overloaded 'abs(__gnu_cxx::__alloc_traits<std::allocator<double> >::value_type)' is ambiguous
@@ -43,11 +43,11 @@ We then do several things,
 
 - rename `configure` to be `configure.save`.
 - modify `src/Makevars` to point to -L${HPC_WORK}/lib64 to enable `-lnlopt`, so it becomes
-    ```
-    CXX_STD = CXX11
-    PKG_CPPFLAGS = -I../inst/include -I/rds/user/jhz22/hpc-work/include
-    PKG_LIBS = $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS) -L/rds/user/jhz22/hpc-work/lib64 -lnlopt
-    ```
+  ```
+  CXX_STD = CXX11
+  PKG_CPPFLAGS = -I../inst/include -I/rds/user/jhz22/hpc-work/include
+  PKG_LIBS = $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS) -L/rds/user/jhz22/hpc-work/lib64 -lnlopt
+  ```
 - change `src/test-C-API.cpp` such that `abs()` there turns into `fabs()`.
 
 We now can furnish the installation with
