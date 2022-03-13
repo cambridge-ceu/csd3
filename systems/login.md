@@ -53,7 +53,7 @@ The quota is more readily seen as well,
 quota
 ```
 
-which in my case returns,
+which for instance returns,
 
 ```
 Filesystem/Project    GB        quota     limit   grace    files    quota    limit   grace User/Grp/Proj
