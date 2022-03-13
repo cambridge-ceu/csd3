@@ -2,9 +2,3 @@
 ---
 
 @import "theme.scss";
-
-<style>
-.footnote-ref ~ .footnote-ref :before {
-  content: ', '
-}
-</style>
