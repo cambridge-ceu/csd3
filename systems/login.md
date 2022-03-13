@@ -47,6 +47,36 @@ Currently Loaded Modulefiles:
  3) singularity/current   6) intel/compilers/2020.2   9) intel/libs/idb/2020.2    12) intel/libs/daal/2020.2
 ```
 
+The quota is more readily seen as well,
+
+```bash
+quota
+```
+
+which in my case returns,
+
+```
+Filesystem/Project    GB        quota     limit   grace    files    quota    limit   grace User/Grp/Proj
+/home                 39.5       42.9      42.9       -    ----- No ZFS File Quotas  ----- U:jhz22
+/rds-d2             4479.7        0.0       0.0       -   140409        0        0       - gid
+/rds-d4              705.2     1099.5    1209.5       -   955270  1048576  1048576       - G:jhz22
+/rds-d2                0.0        0.0       0.0       -        1        0        0       - gid
+/rds-d2                0.0        0.0       0.0       -        3        0        0       - gid
+/rds-d2                0.0    54975.6   54975.6       -       39 26214400 26214400       - G:rds-jmmh2-legacy_projects
+/rds-d2                0.2    60000.0   60000.0       -      275 30720000 30720000       - G:rds-jmmh2-pre_qc_data
+/rds-d2             1388.3   109951.2  109951.2       -     5559 52428800 52428800       - G:rds-jmmh2-hes_data
+/rds-d2           161532.6   164926.7  164926.7       - 43733950 78643200 78643200       - G:rds-jmmh2-projects
+/rds-d2            17636.9   109951.2  109951.2       -  1237895 52428800 52428800       - G:rds-jmmh2-results
+/rds-d2            22135.5   109951.2  109951.2       -   681325 52428800 52428800       - G:rds-jmmh2-post_qc_data
+/rds-d2                2.7   109951.2  109951.2       -      238 52428800 52428800       - G:rds-jmmh2-genetics_resources
+/rds-d2            38909.4   109951.2  109951.2       -   673476 52428800 52428800       - G:rds-jmmh2-public_databases
+/rds-d4                0.0        0.0       0.0       -        5        0        0       - gid
+/rds-d4                0.2        0.0       0.0       -        5        0        0       - gid
+/rds-d4                1.3        0.0       0.0       -       74        0        0       - gid
+/rds-d5                0.0        0.0       0.0       -        1        0        0       - gid
+rds-MkfvQMuSUxk    63558.5   100000.0  100000.0       -  1373767 51200000 51200000       - P:90608
+```
+
 To reset Raven password, follow [https://password.csx.cam.ac.uk/](https://password.csx.cam.ac.uk/).
 
 To establish host keys one resorts to `ssh-keygen`; the easiest is to accept the default.
