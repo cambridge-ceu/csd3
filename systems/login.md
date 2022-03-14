@@ -145,6 +145,10 @@ into `${HOME}/.bashrc` in case a remote login is necessary (e.g., faster login t
 
 The following information is helpful, [https://www.scm.com/doc/Installation/Remote_GUI.html](https://www.scm.com/doc/Installation/Remote_GUI.html)
 
+## sftp
+
+The two ethernet SFTP gateways are rds.hpc.cam.ac.uk and rcs.hpc.cam.ac.uk.
+
 ## Using the GUI on a remote machine
 
 ### X11 over SSH
