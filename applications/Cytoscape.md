@@ -73,7 +73,9 @@ exportVisualStyles("test.json","JSON")
 saveSession("test.cys")
 ```
 
-It is also possible to first start `cytoscape.sh` and then `R` command-line interface which is less resource-demanding compared to `RStudio`.
+It is necessary to start `cytoscape.sh` followed by `R` command-line interface which is less resource-demanding compared to `RStudio`.
+
+At the end of script, the network image, data as well as style and Cytoscape session are exported.
 
 ## cytoscape.js
 
@@ -87,7 +89,7 @@ npm install cytoscape
 
 The tutorial example from [cytoscape](https://blog.js.cytoscape.org/2016/05/24/getting-started/) is adapted as [cytoscape.html](files/cytoscape.html). A more sophisticated example is the [Wine & Cheese Map](http://www.wineandcheesemap.com/) (explained [here](https://blog.js.cytoscape.org/2020/05/11/layouts/#the-problem-of-large-graphs), [GitHub](https://github.com/cytoscape/wineandcheesemap)) showing interactive use of layouts.
 
-In the RCy3 example above, the image, data as with its style information are exported. Their use is described at [https://github.com/cytoscape/cyjs-sample/wiki](https://github.com/cytoscape/cyjs-sample/wiki).
+The use of Cytoscape JSON (cyjs) and style (json) file is described at [https://github.com/cytoscape/cyjs-sample/wiki](https://github.com/cytoscape/cyjs-sample/wiki).
 
 ### RCyjs
 
