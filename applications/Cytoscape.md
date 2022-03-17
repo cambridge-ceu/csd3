@@ -74,11 +74,17 @@ It is also possible to first start `cytoscape.sh` and then `R` command-line inte
 
 Web: [https://js.cytoscape.org/](https://js.cytoscape.org/).
 
+### Installation
+
 ```bash
 npm install cytoscape
 ```
 
-The corresponding R package is installed with
+A toy example from [cytoscape](https://blog.js.cytoscape.org/2016/05/24/getting-started/) is adapted [cytoscape.html](files/cytoscape.html)
+
+### RCyjs
+
+The R package is installed with
 
 ```r
 Rscript -e 'BiocManager::install("RCyjs")'
