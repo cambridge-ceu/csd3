@@ -87,7 +87,7 @@ npm install cytoscape
 
 The tutorial example from [cytoscape](https://blog.js.cytoscape.org/2016/05/24/getting-started/) is adapted as [cytoscape.html](files/cytoscape.html). A more sophisticated example is the [Wine & Cheese Map](http://www.wineandcheesemap.com/) (explained [here](https://blog.js.cytoscape.org/2020/05/11/layouts/#the-problem-of-large-graphs), [GitHub](https://github.com/cytoscape/wineandcheesemap)) showing interactive use of layouts.
 
-In the RCy3 example above, the toy network as with its style are generated. Their use is described at [https://github.com/cytoscape/cyjs-sample/wiki](https://github.com/cytoscape/cyjs-sample/wiki).
+In the RCy3 example above, the image, data as with its style information are exported. Their use is described at [https://github.com/cytoscape/cyjs-sample/wiki](https://github.com/cytoscape/cyjs-sample/wiki).
 
 ### RCyjs
 
