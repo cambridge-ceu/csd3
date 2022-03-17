@@ -40,7 +40,7 @@ Bioconductor: [https://bioconductor.org/packages/release/bioc/html/RCy3.html](ht
 
 We can first start `RStudio` and then `Cytoscape`, so that the R session detects the Cytoscape session. In the following script, the `enhancedGraphics` and `STRINGapp` apps are also installed.
 
-```bash
+```r
 if (!"RCy3" %in% installed.packages())
 {
   install.packages("BiocManager")
@@ -51,7 +51,7 @@ cytoscapePing()
 # You are connected to Cytoscape!
 cytoscapeVersionInfo()
 #     apiVersion cytoscapeVersion
-#           "v1"          "3.9.0"
+#           "v1"          "3.9.1"
 browseVignettes("RCy3")
 # from the first vignette
 nodes <- data.frame(id=c("node 0","node 1","node 2","node 3"),
@@ -70,7 +70,34 @@ installApp('STRINGapp')
 
 It is also possible to first start `cytoscape.sh` and then `R` command-line interface which is less resource-demanding compared to `RStudio`.
 
-### References
+## cytoscape.js
+
+Web: [https://js.cytoscape.org/](https://js.cytoscape.org/).
+
+```bash
+npm install cytoscape
+```
+
+The corresponding R package is installed with
+
+```r
+Rscript -e 'BiocManager::install("RCyjs")'
+```
+
+and the toy example from the package vignette,
+
+```r
+nodes <- c("A", "T")
+g <- graphNEL(nodes, edgemode="directed")
+g <- graph::addEdge("A", "T", g)
+rcy <- RCyjs(title="RCyjs vignette")
+setGraph(rcy, g)
+layout(rcy, "grid")
+fit(rcy, padding=200)
+setDefaultStyle(rcy)
+```
+
+## References
 
 Gustavsen, J.A., Pai, S., Isserlin, R., Demchak, B. & Pico, A.R. RCy3: Network biology using Cytoscape from within R. F1000Research 8, 1774:1-21 (2019).
 
