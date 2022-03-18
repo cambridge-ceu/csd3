@@ -220,6 +220,12 @@ The package installation directory can be spefied explicitly with R_LIBS, i.e.,
 export R_LIBS=/rds/user/$USER/hpc-work/R:/rds/user/$USER/hpc-work/R-3.6.1/library
 ```
 
+To upgrade Bioconductor, we can specify as follows,
+
+```r
+BiocManager::install(version = "3.14")
+```
+
 #### SLURM
 
 Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
