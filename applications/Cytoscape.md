@@ -23,9 +23,16 @@ ln -s ${HPC_WORK}/Cytoscape_v3.9.1/cytoscape.sh
 cytoscape.sh
 ```
 
-To press `<tab>` for a list of commands and press `<ctrl-d>` or `osgi:shutdown` to quit the session.
+To press `<tab>` for a list of commands and press `<ctrl-d>` or `osgi:shutdown` to quit the session. One might as well create a `cytoscape.sh` to load the module automatically such that
 
-There might be message such as `karaf: There is a Root instance already running with name Cytoscape 3.9.0 and pid 78872`, then simply,
+```bash
+#!/usr/bin/bash
+
+module load openjdk-11.0.2-gcc-5.4.0-3dxltae
+${HPC_WORK}/bin/Cytoscape_v3.9.1/cytoscape.sh $@
+```
+
+There might be message `karaf: There is a Root instance already running with name Cytoscape 3.9.0 and pid 78872`, then simply,
 
 ```bash
 export CHECK_ROOT_INSTANCE_RUNNING=false
