@@ -41,6 +41,14 @@ Rscript -e "write.table(TwoSampleMR::available_outcomes(),file='ao.txt',quote=FA
 
 **NOTE**
 
+It also works with VCF files, e.g.,
+
+```bash
+tabix -p vcf TSLP.vcf.gz -h 1:100-100000
+```
+
+where the `-h` option is used to preserve the header information.
+
 See specific section on bcftools for additional information.
 
 `bcftools query` works similarly on a local VCF file nevertheless the option `-r` is necessary.
