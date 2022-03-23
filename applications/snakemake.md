@@ -4,7 +4,7 @@ sort: 40
 
 # snakemake
 
-Web: [https://snakemake.readthedocs.io/en/stable/index.html](https://snakemake.readthedocs.io/en/stable/index.html)
+Web: [https://snakemake.github.io/](https://snakemake.github.io/) ([documentation](https://snakemake.readthedocs.io/en/stable/), [GitHub](https://github.com/snakemake/snakemake)).
 
 It is a python-based workflow management system.
 
@@ -18,7 +18,9 @@ conda init bash
 source ~/.bashrc
 conda activate ${mypath}
 conda install -c conda-forge mamba
-mamba install -c conda-forge -c bioconda snakemake-minimal
+mamba install -c bioconda snakemake-minimal
+conda install -c bioconda fastqc
+conda install -c bioconda snakemake
 snakemake --help
 conda deactivate
 ```
@@ -33,6 +35,22 @@ export mypath=${HOME}/COVID-19/miniconda37
 conda activate ${mypath}
 ```
 
-## Application example
+## Examples
 
-[Mendelian Randomziation](https://github.com/marcoralab/MRPipeline)
+### hello world
+
+```bash
+wget -qO- https://github.com/snakemake/snakemake/archive/refs/tags/v7.3.1.tar.gz | \
+tar xvfz -
+cd snakemake-7.3.1/examples/c/src
+snakemake -j4
+hello
+```
+
+> Hello makefiles!
+
+### [Mendelian Randomziation](https://github.com/marcoralab/MRPipeline)
+
+## Reference
+
+Edwards D. Plant Bioinformatics-Methods and Protocols, 3e. Springer 2022. https://link.springer.com/book/10.1007/978-1-0716-2067-0. [Chapter 11](https://link.springer.com/protocol/10.1007/978-1-0716-2067-0_11); [Chapter 9](https://link.springer.com/protocol/10.1007/978-1-0716-2067-0_9).
