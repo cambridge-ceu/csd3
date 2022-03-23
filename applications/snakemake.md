@@ -8,7 +8,7 @@ Web: [https://snakemake.github.io/](https://snakemake.github.io/) ([documentatio
 
 It is a python-based workflow management system.
 
-We illustrate installation through `mamba` and designated location.
+We illustrate installation through `fastqc` and `mamba` at designated location.
 
 ```bash
 module load miniconda3/4.5.1
@@ -17,10 +17,10 @@ conda create --prefix ${mypath} python=3.7 ipykernel
 conda init bash
 source ~/.bashrc
 conda activate ${mypath}
-conda install -c conda-forge mamba
 mamba install -c bioconda snakemake-minimal
-conda install -c bioconda fastqc
 conda install -c bioconda snakemake
+conda install -c bioconda fastqc
+conda install -c conda-forge mamba
 snakemake --help
 conda deactivate
 ```
