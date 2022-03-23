@@ -8,6 +8,8 @@ Web: [https://snakemake.github.io/](https://snakemake.github.io/) ([documentatio
 
 It is a python-based workflow management system.
 
+## Installation
+
 We illustrate installation through `fastqc` and `mamba` at designated location.
 
 ```bash
