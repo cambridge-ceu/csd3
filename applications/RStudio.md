@@ -21,7 +21,7 @@ and it obtains
 rstudio/0.99/rstudio-0.99 rstudio/1.1.383           rstudio/1.3.1093
 ```
 
-<p align="left", style="color:red;font-size:20px"><b>26/3/2022 Update</b></p>: `module load rstudio/1.3.1093` now functions well, which enables R packages such as `R/heatmaply`.
+<font color="blue"><b>26/3/2022 Update</b></font>: `module load rstudio/1.3.1093` now functions well, which enables R packages such as `R/heatmaply`.
 
 We intend to use the most recent version with `module load rstudio/1.3.1093; rstudio` but it fails with messages:
 
