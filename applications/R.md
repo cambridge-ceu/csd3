@@ -45,7 +45,7 @@ We could also try from `module avail libiconv`.
 
 ## icelake
 
-**updates on 26/3/2022**: We can now start R from icelake with `module load R/4.1.0-icelake`.
+<p align="left", style="color:red;font-size:20px"><b>26/3/2022</b></p>: We can now start R from icelake with `module load R/4.1.0-icelake`.
 
 As CSD3 often experiences problem from the login nodes, it is then desirable to use `login-icelake.hpc.cam.ac.uk`.
 
