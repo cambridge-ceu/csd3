@@ -11,9 +11,6 @@ From the console we check its availability with `module avail R` and see
 ```
 ------------------------------------------------------------- /usr/local/software/modulefiles --------------------------------------------------------------
 R/3.4           R/3.5           R/3.6           R/4.0.3         R/4.0.5-icelake R/4.1.0-icelake
-
----------------------------------------------------------- /usr/local/Cluster-Config/modulefiles -----------------------------------------------------------
-Rstudio/1.0.136
 ```
 
 so we can proceed with
