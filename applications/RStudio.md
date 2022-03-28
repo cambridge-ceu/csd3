@@ -18,7 +18,7 @@ and it obtains
 
 ```
 ---------------------------------------------------------- /usr/local/Cluster-Config/modulefiles -----------------------------------------------------------
-rstudio/0.99/rstudio-0.99 rstudio/1.1.383           rstudio/1.3.1093
+rstudio/0.99/rstudio-0.99    rstudio/1.1.383              rstudio/1.3.1093             rstudio-server/2021.09.0-351
 ```
 
 <font color="red"><b>26/3/2022 Update</b></font> `module load rstudio/1.3.1093` <font color="blue"><b>now functions well, which enables R packages such as `R/heatmaply`.</b></font>

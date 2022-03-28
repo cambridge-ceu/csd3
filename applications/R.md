@@ -4,6 +4,29 @@ sort: 36
 
 # R
 
+## Installed modules
+
+From the console we check its availability with `module avail R` and see
+
+```
+------------------------------------------------------------- /usr/local/software/modulefiles --------------------------------------------------------------
+R/3.4           R/3.5           R/3.6           R/4.0.3         R/4.0.5-icelake R/4.1.0-icelake
+
+---------------------------------------------------------- /usr/local/Cluster-Config/modulefiles -----------------------------------------------------------
+Rstudio/1.0.136
+```
+
+so we can proceed with
+
+```bash
+module load R/4.0.3
+R
+```
+
+The second line calls `/usr/local/Cluster-Apps/R/R.4.0.3/bin/R`.
+
+## Compiling from source
+
 To compile all the PDF documentations, load texlive.
 
 ```bash
@@ -45,7 +68,7 @@ We could also try from `module avail libiconv`.
 
 ## icelake
 
-<font color="red"><b>26/3/2022 Update</b></font> `module load R/4.1.0-icelake` <font color="blue"><b>will enable R from icelake.</b></font>
+<font color="red"><b>26/3/2022 Update</b></font> `module load R/4.1.0-icelake` <font color="blue"><b>will enable R 4.1.0 from icelake.</b></font>
 
 As CSD3 often experiences problem from the login nodes, it is then desirable to use `login-icelake.hpc.cam.ac.uk`.
 
