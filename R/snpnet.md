@@ -6,6 +6,8 @@ sort: 23
 
 GitHub page: [https://github.com/rivas-lab/snpnet](https://github.com/rivas-lab/snpnet).
 
+## Installation
+
 A number of software needs to be set up with the current version.
 
 ```bash
@@ -34,3 +36,9 @@ devtools::install_github("chrchang/plink-ng", subdir="/2.0/cindex")
 devtools::install_github("chrchang/plink-ng", subdir="/2.0/pgenlibr")
 devtools::install_github("rivas-lab/snpnet")
 ```
+
+## References
+
+Tanigawa, Y. et al. Significant sparse polygenic risk scores across 813 traits in UK Biobank. PLOS Genetics 18, e1010105 (2022).
+
+Sparse Polygenic Risk Scores (PRSs) with BASIL / snpnet. [https://biobankengine.stanford.edu/prs](https://biobankengine.stanford.edu/prs).
