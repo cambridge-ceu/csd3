@@ -39,6 +39,6 @@ devtools::install_github("rivas-lab/snpnet")
 
 ## References
 
-Tanigawa, Y. et al. Significant sparse polygenic risk scores across 813 traits in UK Biobank. PLOS Genetics 18, e1010105 (2022).
+Tanigawa, Y. et al. Significant sparse polygenic risk scores across 813 traits in UK Biobank. _PLOS Genetics_ **18**, e1010105 (2022).
 
 Sparse Polygenic Risk Scores (PRSs) with BASIL / snpnet. [https://biobankengine.stanford.edu/prs](https://biobankengine.stanford.edu/prs).
