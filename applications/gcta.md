@@ -49,6 +49,16 @@ make
 
 It requires specification of `/usr/local/Cluster-Apps/spectra/0.8.1/include/Spectra/` in `FastFAM.cpp` and `Geno.cpp`. We also get complaints about -lzstd and but could get around with adding -L${HPC_WORK}/lib to `CMakeFiles//gcta64.dir/link.txt` and then `bash CMakeFiles//gcta64.dir/link.txt` which gives the much-desired `gcta64`.
 
+The `libgsl.so.25` is provided with `gsl-2.6` which can be set up as follows,
+
+```bash
+wget -qO- https://ftp.gnu.org/gnu/gsl/gsl-2.6.tar.gz | tar xfz -
+cd gsl-2.6/
+configure --prefix=$HPC_WORK
+make
+make install
+```
+
 ## Documentation example
 
 We use the documentation example to illutrate a linear mixed model (LMM).
