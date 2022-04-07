@@ -4,7 +4,7 @@ sort: 10
 
 # circos
 
-Web [http://circos.ca](http://circos.ca) and its [Google group](https://groups.google.com/g/circos-data-visualization),
+Web [http://circos.ca](http://circos.ca) ([Google group](https://groups.google.com/g/circos-data-visualization))
 
 ## Installation
 
