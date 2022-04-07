@@ -1886,4 +1886,4 @@ GigaScience, 4.
 
 ## Reference
 
-Chang CC. Data Management and Summary Statistics with PLINK, in Dutheil JY. (Ed) Statistical Population Genomics. Chapter 4. Humana Press. 49-65. [https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3](https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3).
+Chang CC. Data Management and Summary Statistics with PLINK, Chapter 4. 49-65. in Dutheil JY. (Ed) Statistical Population Genomics. Humana Press. [https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3](https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3).
