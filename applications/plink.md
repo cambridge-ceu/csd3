@@ -1883,3 +1883,7 @@ Chang CC, Chow CC, Tellier LCAM, Vattikuti S, Purcell SM, Lee JJ (2015)
 Second-generation PLINK: rising to the challenge of larger and richer datasets.
 GigaScience, 4.
 ```
+
+## Reference
+
+Chang CC. Data Management and Summary Statistics with PLINK, in Dutheil JY. (Ed) Statistical Population Genomics. Chapter 4. Humana Press. 49-65. [https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3](https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3).
