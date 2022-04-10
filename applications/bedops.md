@@ -41,4 +41,4 @@ bedmap --echo --echo-map-id-uniq <(bam2bed < reads.bam) <(vcf2bed < variants.vcf
 
 ## Reference
 
-Neph S, et al. (2016). Operating on Genomic Ranges Using BEDOPS, in Math E, Davis S (Ed). Statistical Genomics-Methods and Protocols. Humana Press. Chapter 14, 267-281.
+Neph S, et al. (2016). Operating on Genomic Ranges Using BEDOPS, in Math E, Davis S (Ed). Statistical Genomics-Methods and Protocols. Humana Press. Chapter 14, 267-281. [https://link.springer.com/protocol/10.1007/978-1-4939-3578-9_14](https://link.springer.com/protocol/10.1007/978-1-4939-3578-9_14).
