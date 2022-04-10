@@ -1884,7 +1884,7 @@ Second-generation PLINK: rising to the challenge of larger and richer datasets.
 GigaScience, 4.
 ```
 
-## Reference
+## References
 
 Chang CC (2021). Data Management and Summary Statistics with PLINK, Chapter 3. 49-65. in Dutheil JY. (Ed) Statistical Population Genomics. Humana Press. [https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3](https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3).
 
