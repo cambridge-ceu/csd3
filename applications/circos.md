@@ -51,11 +51,8 @@ We can enter the example/ directory to run its script (`run`), which contains th
 
 ```bash
 #!/bin/bash
-
 echo "Creating image circos.png and writing report to run.out."
-
 echo "Example takes ~45-60 seconds to generate."
-
 ../bin/circos -conf etc/circos.conf -debug_group summary,timer > run.out
 ```
 
