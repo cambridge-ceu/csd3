@@ -38,7 +38,10 @@ where the last command generates a symbolic link to the executable, so that meta
 
 ## Adaptation
 
-We have modified source code to encapsulate information on variant significant statistics such that the +/- signs in the direction field of METAL output becomes p/n when they also have p-value <= 0.05. This faciliates selection of variants using criteria such as flagging variants to be significant at least at the 0.05 level.
+We have modified source code to encapsulate information for two extensions,
+
+- on longer significant digits for effect sizes and standard errors.
+- on variant significant statistics such that the +/- signs in the direction field of METAL output becomes p/n when they also have p-value <= 0.05. This faciliates selection of variants using criteria such as flagging variants to be significant at least at the 0.05 level.
 
 A version is available here, [https://github.com/cambridge-ceu/METAL](https://github.com/cambridge-ceu/METAL); see the release notes there for the changes made.
 
