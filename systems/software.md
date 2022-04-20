@@ -260,6 +260,17 @@ then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `
 
 **NOTE** the skylakes are approaching end of life, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html) and [https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html). For Ampere GPG, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html).
 
+##### Holding and releasing jobs
+
+Suppose a job with id 59230836 is running, they can be achieved with,
+
+```bash
+scontrol hold 59230836
+control release 59230836
+```
+
+respectively.
+
 ##### Use of modules
 
 The following is part of a real implementation.
