@@ -8,9 +8,9 @@ The CSD3 login address is `login.hpc.cam.ac.uk` with a mapping table
 
 | Collective name             | Node name      | Comments    |
 | --------------------------- | -------------- | ----------- |
-| login-gpu.hpc.cam.ac.uk     | login-e-[1-8]  | GPU         |
+| login-gpu.hpc.cam.ac.uk     | login-e-[1-8]  | GPU[^1]     |
 | login-cpu.hpc.cam.ac.uk     | login-e-[9-16] | CPU         |
-| login-icelake.hpc.cam.ac.uk | login-q-[1-4]  | CentOS8[^1] |
+| login-icelake.hpc.cam.ac.uk | login-q-[1-4]  | CentOS8[^2] |
 
 On a GPU, we have from `module list`
 
@@ -91,7 +91,7 @@ sed -i -e '/128\.232\.224/d' -e '/.*\.hpc\.cam\.ac\.uk/d' ~/.ssh/known_hosts
 # ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R "login.hpc.cam.ac.uk"
 ```
 
-Automatic login[^2] via ssh/sftp can be enabled with
+Automatic login[^3] via ssh/sftp can be enabled with
 
 ```bash
 ssh-copy-id login.hpc.cam.ac.uk
@@ -169,5 +169,6 @@ find /usr -iname "*libGL.so*" -exec ls -l {} \;
 find /usr -iname "*libGLX*.so*" -exec ls -l {} \;
 ```
 
-[^1]: Applications such as R/nloptr package require to be recompiled. In this case, we run `download.packages("nloptr",".")` inside `R` on an Internet-enabled node and compile the package with `R CMD INSTALL nloptr_1.2.2.3.tar.gz`, say.
-[^2]: This appears subject to the system setup.
+[^1]: Currently, it is login-e-[1-4]
+[^2]: Applications such as R/nloptr package require to be recompiled. In this case, we run `download.packages("nloptr",".")` inside `R` on an Internet-enabled node and compile the package with `R CMD INSTALL nloptr_1.2.2.3.tar.gz`, say.
+[^3]: This appears subject to the system setup.
