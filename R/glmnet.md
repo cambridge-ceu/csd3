@@ -39,6 +39,27 @@ Our final step is then
 R CMD INSTALL glmnet
 ```
 
+## 4.1-4
+
+Unfortunately, there remains problem with R 4.2.0. A way around is to use R/4.1.0-icelake temporarily.
+
+```bash
+module load R/4.1.0-icelake
+wget https://cran.r-project.org/src/contrib/Matrix_1.4-1.tar.gz
+R CMD INSTALL Matrix_1.4-1.tar.gz
+R CMD INSTALL glmnet_4.1-4.tar.gz
+R CMD INSTALL Matrix_1.4-1.tar.gz -l .
+```
+
+so that a separate Matrix package is made available locally.
+
+```r
+library(Matrix,lib.loc=".")
+library(glmnet)
+```
+
+The Matrix package is then reinstalled from the usual login node.
+
 [^1]: This will be changed at the next release of glmnet.
 [^2]: See [https://www.geeksforgeeks.org/this-pointer-in-c/](https://www.geeksforgeeks.org/this-pointer-in-c/) for information on the `this` operator.
 [^3]: [C++ 2.0 new features -- lambda expressions](https://www.toutiao.com/a7074199269015912990/?channel=&source=search_tab&wid=1647161616813).
