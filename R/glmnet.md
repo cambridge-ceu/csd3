@@ -58,6 +58,7 @@ It is possible to get it work with R/4.1.0-icelake, however the Matrix package i
 ```bash
 module load R/4.1.0-icelake
 wget https://cran.r-project.org/src/contrib/Matrix_1.4-1.tar.gz
+wget https://cran.r-project.org/src/contrib/glmnet_4.1-4.tar.gz
 R CMD INSTALL Matrix_1.4-1.tar.gz
 R CMD INSTALL glmnet_4.1-4.tar.gz
 R CMD INSTALL Matrix_1.4-1.tar.gz -l .
