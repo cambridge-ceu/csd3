@@ -8,7 +8,7 @@ Web: [https://glmnet.stanford.edu/](https://glmnet.stanford.edu/).
 
 ## R
 
-The 'install.packages("glmnet")' for version 4.1-3 gave the following error,
+The 'install.packages("glmnet")' for version 4.1-3 under R 4.1.3 gave the following error,
 
 ```
 elnet_exp.cpp:141:59:   required from here
@@ -41,7 +41,19 @@ R CMD INSTALL glmnet
 
 ## 4.1-4
 
-Unfortunately, there remains problem with R 4.2.0. A way around is to use R/4.1.0-icelake temporarily.
+### login node
+
+It requires C++14, so we proceed with
+
+```bash
+echo "CXX14 = g++ -std=gnu++14 -fPIC" > ~/.R/Makevars
+module load gcc/7
+Rscript -e 'install.packages("glmnet")'
+```
+
+### icelake
+
+It is possible to get it work with R/4.1.0-icelake, however the Matrix package is also required to recompile.
 
 ```bash
 module load R/4.1.0-icelake
@@ -51,7 +63,7 @@ R CMD INSTALL glmnet_4.1-4.tar.gz
 R CMD INSTALL Matrix_1.4-1.tar.gz -l .
 ```
 
-so that a separate Matrix package is made available locally.
+so that the Matrix package is installed first to get going with glmnet but then made available locally to avoid conflict with the login nodes.
 
 ```r
 library(Matrix,lib.loc=".")
