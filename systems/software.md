@@ -238,6 +238,8 @@ Location at csd3: `/usr/local/Cluster-Docs/SLURM/`.
 mybalance
 ```
 
+Note that after software updates on 26/4/2022, this command only works on non-login nodes such as icelake.
+
 ##### Partition
 
 ```bash
