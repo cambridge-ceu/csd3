@@ -4,7 +4,7 @@ sort: 12
 
 # CookHLA
 
-Web: [GitHub](https://github.com/WansonChoi/CookHLA)
+Web: [https://github.com/WansonChoi/CookHLA](https://github.com/WansonChoi/CookHLA)
 
 ## Installation
 
@@ -34,7 +34,9 @@ source ~/COVID-19/py37/bin/activate
 pip install pyliftover==0.4
 ```
 
-However, the dependency directory already contains plink, beagle5.jar (can be renamed into beagle.jar), mach1 and all BEAGLE utilities.
+where ~/COVID-19/py37 is our Python virtual environment under Python version 3.7.
+
+Nevertheless, the dependency directory already contains plink, beagle5.jar (can be renamed into beagle.jar), mach1 and all BEAGLE utilities.
 
 ## Example
 
@@ -66,7 +68,9 @@ Jia, X. et al. Imputing Amino Acid Polymorphisms in Human Leukocyte Antigens. _P
 
 Cook, S. et al. Accurate imputation of human leukocyte antigens with CookHLA. _Nature Communications_ 12, 1264 (2021).
 
-[^]: SNP2HLA
+---
+
+[^1]: SNP2HLA
 
 Web: [SNP2HLA v1.0.3](https://software.broadinstitute.org/mpg/snp2hla/) ([utitlities](https://faculty.washington.edu/browning/beagle_utilities/utilities.html))
 
