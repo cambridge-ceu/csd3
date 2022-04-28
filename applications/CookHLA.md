@@ -64,7 +64,7 @@ python CookHLA.py \
 
 The imputation gives 1958BC+HM_CEU_REF.MHC.HLA_IMPUTATION_OUT .alleles and .hped files, which is handled with [HATK](https://github.com/WansonChoi/HATK).
 
-## Reference
+## References
 
 Jia, X. et al. Imputing Amino Acid Polymorphisms in Human Leukocyte Antigens. _PLOS ONE_ 8, e64683 (2013).
 
