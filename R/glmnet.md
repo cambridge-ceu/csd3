@@ -79,6 +79,8 @@ library(glmnet)
 
 The Matrix package is then reinstalled from the usual login node.
 
+---
+
 [^1]: This will be changed at the next release of glmnet.
 [^2]: See [https://www.geeksforgeeks.org/this-pointer-in-c/](https://www.geeksforgeeks.org/this-pointer-in-c/) for information on the `this` operator.
 [^3]: [C++ 2.0 new features -- lambda expressions](https://www.toutiao.com/a7074199269015912990/?channel=&source=search_tab&wid=1647161616813).
