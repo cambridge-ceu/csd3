@@ -34,7 +34,7 @@ source ~/COVID-19/py37/bin/activate
 pip install pyliftover==0.4
 ```
 
-where ~/COVID-19/py37 is our Python virtual environment under Python version 3.7.
+where ~/COVID-19/py37 is our Python virtual environment under Python version 3.7, and pyliftover is the Python liftover package.
 
 Nevertheless, the dependency directory already contains plink, beagle5.jar (can be renamed into beagle.jar), mach1 and all BEAGLE utilities.
 
@@ -84,7 +84,11 @@ Cook, S. et al. Accurate imputation of human leukocyte antigens with CookHLA. _N
     > cd SNP2HLA_package_v1.0.3/SNP2HLA
     > # add beagle2linkage.jar as above
     > # test.sh is adapted from SNP2HLA.csh by removing argument checking and as an executable.
+    > # The .dos file described in README.txt is actually the .dosage file generated internally from test.sh
+    > # The association statistics will be in .assoc.assoc.dosage; the double .assoc guarantees an .assoc.log file.
     > test.sh 1958BC HM_CEU_REF 1958BC_IMPUTED plink 2000 1000
+    > ParseDosage.csh 1958BC_IMPUTED.bgl.gprobs > 1958BC_IMPUTED.bgl.dos
+    > plink --noweb --dosage 1958BC_IMPUTED.dosage noheader format=1 --fam 1958BC_IMPUTED.fam --logistic --out 1958BC_IMPUTED.assoc
     > ```
     >
     > The output is 1958BC_IMPUTED in PLINK binary format.
