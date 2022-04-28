@@ -8,7 +8,7 @@ Web: [https://glmnet.stanford.edu/](https://glmnet.stanford.edu/).
 
 ### 4.1-3
 
-The 'install.packages("glmnet")' under R 4.1.3 gave the following error,
+The 'install.packages("glmnet")' command under R 4.1.3 gave the following error,
 
 ```
 elnet_exp.cpp:141:59:   required from here
