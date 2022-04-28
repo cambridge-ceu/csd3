@@ -62,7 +62,7 @@ python CookHLA.py \
     -mp 8
 ```
 
-The imputation gives 1958BC+HM_CEU_REF.MHC.HLA_IMPUTATION_OUT[.alleles|.hped] files, which is handled with [HATK](https://github.com/WansonChoi/HATK).
+The imputation gives 1958BC+HM_CEU_REF.MHC.HLA_IMPUTATION_OUT .alleles and .hped files, which is handled with [HATK](https://github.com/WansonChoi/HATK).
 
 ## Reference
 
