@@ -6,9 +6,9 @@ sort: 3
 
 Web: [https://glmnet.stanford.edu/](https://glmnet.stanford.edu/).
 
-## R
+### 4.1-3
 
-The 'install.packages("glmnet")' for version 4.1-3 under R 4.1.3 gave the following error,
+The 'install.packages("glmnet")' under R 4.1.3 gave the following error,
 
 ```
 elnet_exp.cpp:141:59:   required from here
@@ -16,7 +16,7 @@ glmnetpp/include/glmnetpp_bits/elnet_point/gaussian_base.hpp:90:39: error: 'self
                      [=](auto k) { self().template update<update_type::partial>(k, ab, dem); },
 ```
 
-## Bash
+### Bash
 
 We now proceed manually,
 
@@ -53,7 +53,13 @@ Rscript -e 'install.packages("glmnet")'
 
 ### icelake
 
-It is possible to get it work with R/4.1.0-icelake, however the Matrix package is also required to recompile.
+#### Latest information
+
+After software update on 27/4/2022, the R 4.2.0 installed from login nodes also works nicely with glmnet installed there.
+
+#### R/4.1.0-icelake
+
+The Matrix package is also required to recompile.
 
 ```bash
 module load R/4.1.0-icelake
