@@ -54,10 +54,10 @@ python CookHLA.py \
     -hg 19 \
     -o work/1958BC+HM_CEU_REF \
     -ref example/HM_CEU_REF \
-    -gm work/AGM.1958BC+HM_CEU_REF.mach_step.avg.clpsB \
-    -ae work/AGM.1958BC+HM_CEU_REF.aver.erate \
+    -gm example/AGM.1958BC+HM_CEU_REF.mach_step.avg.clpsB \
+    -ae example/AGM.1958BC+HM_CEU_REF.aver.erate \
     -mem 20g \
-    -mp 10
+    -mp 8
 ```
 
 ## Reference
