@@ -62,6 +62,8 @@ python CookHLA.py \
     -mp 8
 ```
 
+The imputation gives 1958BC+HM_CEU_REF.MHC.HLA_IMPUTATION_OUT[.alleles|.hped] files, which is handled with [HATK](https://github.com/WansonChoi/HATK).
+
 ## Reference
 
 Jia, X. et al. Imputing Amino Acid Polymorphisms in Human Leukocyte Antigens. _PLOS ONE_ 8, e64683 (2013).
@@ -72,17 +74,17 @@ Cook, S. et al. Accurate imputation of human leukocyte antigens with CookHLA. _N
 
 [^1]: SNP2HLA
 
-Web: [SNP2HLA v1.0.3](https://software.broadinstitute.org/mpg/snp2hla/) ([utitlities](https://faculty.washington.edu/browning/beagle_utilities/utilities.html))
-
-It turns out to be difficult to download beagle 3.0.4 as indicated so it is included in the files/ directory ([beagle 3.0.4](files/beagle_3.0.4_05May09.zip), [documentation](files/beagle_3.3.2_31Oct11.pdf), [example](files/beagle_example.zip)).
-
-```bash
-wget -qO- https://software.broadinstitute.org/mpg/snp2hla/data/SNP2HLA_package_v1.0.3.tar.gz | \
-tar xvfz -
-cd SNP2HLA_package_v1.0.3/SNP2HLA
-# add beagle2linkage.jar as above
-# test.sh is adapted from SNP2HLA.csh by removing argument checking and as an executable.
-test.sh 1958BC HM_CEU_REF 1958BC_IMPUTED plink 2000 1000
-```
-
-The output is 1958BC_IMPUTED in PLINK binary format.
+    > Web: [SNP2HLA v1.0.3](https://software.broadinstitute.org/mpg/snp2hla/) ([utitlities](https://faculty.washington.edu/browning/beagle_utilities/utilities.html))
+    >
+    > It turns out to be difficult to download beagle 3.0.4 as indicated so it is included in the files/ directory ([beagle 3.0.4](files/beagle_3.0.4_05May09.zip), [documentation](files/beagle_3.3.2_31Oct11.pdf), [example](files/beagle_example.zip)).
+    >
+    > ```bash
+    > wget -qO- https://software.broadinstitute.org/mpg/snp2hla/data/SNP2HLA_package_v1.0.3.tar.gz | \
+    > tar xvfz -
+    > cd SNP2HLA_package_v1.0.3/SNP2HLA
+    > # add beagle2linkage.jar as above
+    > # test.sh is adapted from SNP2HLA.csh by removing argument checking and as an executable.
+    > test.sh 1958BC HM_CEU_REF 1958BC_IMPUTED plink 2000 1000
+    > ```
+    >
+    > The output is 1958BC_IMPUTED in PLINK binary format.
