@@ -40,7 +40,7 @@ Nevertheless, the dependency directory already contains plink, beagle5.jar (can 
 
 ## Example
 
-The example mirrors those in SNPHLA[^1],
+The example mirrors those in SNP2HLA[^1],
 
 ```bash
 # Adaptive Genetic Map
