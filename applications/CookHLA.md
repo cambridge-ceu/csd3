@@ -76,6 +76,8 @@ Cook, S. et al. Accurate imputation of human leukocyte antigens with CookHLA. _N
 
     > Web: [SNP2HLA v1.0.3](https://software.broadinstitute.org/mpg/snp2hla/) ([utitlities](https://faculty.washington.edu/browning/beagle_utilities/utilities.html))
     >
+    > ### Installation
+    >
     > It turns out to be difficult to download beagle 3.0.4 as indicated so it is included in the files/ directory ([beagle 3.0.4](files/beagle_3.0.4_05May09.zip), [documentation](files/beagle_3.3.2_31Oct11.pdf), [example](files/beagle_example.zip)).
     >
     > ```bash
@@ -86,9 +88,82 @@ Cook, S. et al. Accurate imputation of human leukocyte antigens with CookHLA. _N
     > # test.sh is adapted from SNP2HLA.csh by removing argument checking and as an executable.
     > # The .dos file described in README.txt is actually the .dosage file generated internally from test.sh
     > # The association statistics will be in .assoc.assoc.dosage; the double .assoc guarantees an .assoc.log file.
-    > test.sh 1958BC HM_CEU_REF 1958BC_IMPUTED plink 2000 1000
-    > ParseDosage.csh 1958BC_IMPUTED.bgl.gprobs > 1958BC_IMPUTED.bgl.dos
+    > csh SNP2HLA.csh 1958BC HM_CEU_REF 1958BC_IMPUTED plink
+    > csh ParseDosage.csh 1958BC_IMPUTED.bgl.gprobs > 1958BC_IMPUTED.bgl.dos
     > plink --noweb --dosage 1958BC_IMPUTED.dosage noheader format=1 --fam 1958BC_IMPUTED.fam --logistic --out 1958BC_IMPUTED.assoc
     > ```
     >
+    > As indicated, we call the .csh scripts with `csh` which is actually `tsch` on csd3.
+    >
+    > ### Example
+    >
+    > The screen output is as follows,
+    >
+    > ```
+    >   SNP2HLA: Performing HLA imputation for dataset 1958BC
+    > - Java memory = 2000Mb
+    > - Beagle window size = 1000 markers
+    > [1] Extracting SNPs from the MHC.
+    > [2] Performing SNP quality control.
+    > [3] Convering data to beagle format.
+    > [4] Performing HLA imputation (see 1958BC_IMPUTED.bgl.log for progress).
+    > [5] Converting posterior probabilities to PLINK dosage format.
+    > [6] Converting imputation genotypes to PLINK .ped format.
+    > DONE!
+    > ```
+    >
     > The output is 1958BC_IMPUTED in PLINK binary format.
+    >
+    > ### MakeReference
+    >
+    > We first create `MakeReference.tcsh` such that calls to .pl scripts are prefixed with `perl`, e.g.,
+    >
+    > `diff MakeReference.csh MakeReference.tcsh`
+    >
+    > ```
+    > 77c77
+    > <     ./HLAtoSequences.pl $HLA_DATA HLA_DICTIONARY_AA.txt AA > $OUTPUT.AA.ped
+    > ---
+    > >     perl HLAtoSequences.pl $HLA_DATA HLA_DICTIONARY_AA.txt AA > $OUTPUT.AA.ped
+    > 81c81
+    > <     ./encodeVariants.pl $OUTPUT.AA.ped $OUTPUT.AA.map $OUTPUT.AA.CODED
+    > ---
+    > >     perl encodeVariants.pl $OUTPUT.AA.ped $OUTPUT.AA.map $OUTPUT.AA.CODED
+    > 93c93
+    > <     ./encodeHLA.pl $HLA_DATA $OUTPUT.HLA.map > $OUTPUT.HLA.ped
+    > ---
+    > >     perl encodeHLA.pl $HLA_DATA $OUTPUT.HLA.map > $OUTPUT.HLA.ped
+    > 100c100
+    > <     ./HLAtoSequences.pl $HLA_DATA HLA_DICTIONARY_SNPS.txt SNPS > $OUTPUT.SNPS.ped
+    > ---
+    > >     perl HLAtoSequences.pl $HLA_DATA HLA_DICTIONARY_SNPS.txt SNPS > $OUTPUT.SNPS.ped
+    > 104c104
+    > <     ./encodeVariants.pl $OUTPUT.SNPS.ped $OUTPUT.SNPS.map $OUTPUT.SNPS.CODED
+    > ---
+    > ```
+    >
+    > `tcsh MakeReference.tcsh HAPMAP_CEU HAPMAP_CEU_HLA.ped HM_CEU_REF plink`
+    >
+    > ```
+    > tcsh MakeReference.tcsh HAPMAP_CEU HAPMAP_CEU_HLA.ped HM_CEU_REF plink
+    > Creating reference panel: HM_CEU_REF
+    > [1] Generating amino acid sequences from HLA types.
+    > [2] Encoding amino acids positions.
+    > [3] Encoding HLA alleles.
+    > [4] Generating DNA sequences from HLA types.
+    > [5] Encoding SNP positions.
+    > [6] Extracting founders.
+    > [7] Merging SNP, HLA, and amino acid datasets.
+    > Warning: Variants 'SNP_A_30018350' and 'AA_A_-11_30018350' have the same
+    > position.
+    > Warning: Variants 'SNP_A_30018461_G' and 'SNP_A_30018461_A' have the same
+    > position.
+    > Warning: Variants 'SNP_A_30018461_T' and 'SNP_A_30018461_G' have the same
+    > position.
+    > 987 more same-position warnings: see log file.
+    > [8] Performing quality control.
+    > [9] Preparing files for Beagle.
+    > [10] Converting to beagle format.
+    > [11] Phasing reference using Beagle (see progress in HM_CEU_REF.bgl.log).
+    > [12] Done.
+    > ```
