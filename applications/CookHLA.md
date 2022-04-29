@@ -116,7 +116,7 @@ Cook, S. et al. Accurate imputation of human leukocyte antigens with CookHLA. _N
     >
     > ### MakeReference
     >
-    > We first create `MakeReference.tcsh` such that calls to .pl scripts are prefixed with `perl`, e.g.,
+    > We first create `MakeReference.tcsh` such that calls to .pl scripts are prefixed with `perl`, so that
     >
     > ```bash
     > diff MakeReference.csh MakeReference.tcsh
