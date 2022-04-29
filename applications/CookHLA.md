@@ -74,7 +74,7 @@ Cook, S. et al. Accurate imputation of human leukocyte antigens with CookHLA. _N
 
 [^1]: SNP2HLA
 
-    > Web: [SNP2HLA v1.0.3](https://software.broadinstitute.org/mpg/snp2hla/) ([utitlities](https://faculty.washington.edu/browning/beagle_utilities/utilities.html))
+    > Web: [SNP2HLA v1.0.3](https://software.broadinstitute.org/mpg/snp2hla/) ([BEAGLE utitlities](https://faculty.washington.edu/browning/beagle_utilities/utilities.html))
     >
     > ### Installation
     >
@@ -118,7 +118,9 @@ Cook, S. et al. Accurate imputation of human leukocyte antigens with CookHLA. _N
     >
     > We first create `MakeReference.tcsh` such that calls to .pl scripts are prefixed with `perl`, e.g.,
     >
-    > `diff MakeReference.csh MakeReference.tcsh`
+    > ```bash
+    > diff MakeReference.csh MakeReference.tcsh
+    > ```
     >
     > ```
     > 77c77
@@ -142,7 +144,9 @@ Cook, S. et al. Accurate imputation of human leukocyte antigens with CookHLA. _N
     > ---
     > ```
     >
-    > `tcsh MakeReference.tcsh HAPMAP_CEU HAPMAP_CEU_HLA.ped HM_CEU_REF plink`
+    > ```bash
+    > tcsh MakeReference.tcsh HAPMAP_CEU HAPMAP_CEU_HLA.ped HM_CEU_REF plink
+    > ```
     >
     > ```
     > tcsh MakeReference.tcsh HAPMAP_CEU HAPMAP_CEU_HLA.ped HM_CEU_REF plink
