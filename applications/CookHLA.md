@@ -70,6 +70,10 @@ Jia, X. et al. Imputing Amino Acid Polymorphisms in Human Leukocyte Antigens. _P
 
 Cook, S. et al. Accurate imputation of human leukocyte antigens with CookHLA. _Nature Communications_ 12, 1264 (2021).
 
+WHO Committe. Nomenclature for Factors of the HLA System, [http://hla.alleles.org/](http://hla.alleles.org/).
+
+Immuno Polymorphism Database-international ImMunoGeneTics project (IMGT) (IPD-IMGT/HLA), [https://www.ebi.ac.uk/ipd/imgt/hla/](https://www.ebi.ac.uk/ipd/imgt/hla/)
+
 ---
 
 [^1]: SNP2HLA
