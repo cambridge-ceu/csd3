@@ -70,6 +70,9 @@ We are rather tempted to use these from CookHLA with SNP2HLA, and follow the foo
 
 ```bash
 csh SNP2HLA.csh 1958BC 1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC 1958BC_IMPUTED_1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC plink
+plink --noweb --dosage 1958BC_IMPUTED_1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC.dosage noheader format=1 \
+      --fam 1958BC_IMPUTED_1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC.fam \
+      --linear --out 1958BC_IMPUTED_1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC.dosage.assoc
 ```
 
 we obtain the screen output,
@@ -85,6 +88,30 @@ SNP2HLA: Performing HLA imputation for dataset 1958BC
 [5] Converting posterior probabilities to PLINK dosage format.
 [6] Converting imputation genotypes to PLINK .ped format.
 DONE!
+
+PLINK v1.90p 64-bit (8 Nov 2021)               www.cog-genomics.org/plink/1.9/
+(C) 2005-2021 Shaun Purcell, Christopher Chang   GNU General Public License v3
+Logging to 1958BC_IMPUTED_1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC.dosage.assoc.log.
+Options in effect:
+  --dosage 1958BC_IMPUTED_1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC.dosage noheader format=1
+  --fam 1958BC_IMPUTED_1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC.fam
+  --linear
+  --noweb
+  --out 1958BC_IMPUTED_1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC.dosage.assoc
+
+Note: --dosage automatically performs a regression; --linear/--logistic has no
+additional effect.
+Note: --noweb has no effect since no web check is implemented yet.
+257130 MB RAM detected; reserving 128565 MB for main workspace.
+10 people (9 males, 1 female) loaded from .fam.
+10 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+10 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 10 are controls.
+--dosage: Reading from
+1958BC_IMPUTED_1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC.dosage.
+--dosage: Results saved to
+1958BC_IMPUTED_1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC.dosage.assoc.assoc.dosage
 ```
 
 ## References
