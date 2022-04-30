@@ -45,21 +45,21 @@ The example mirrors those in SNP2HLA[^1],
 ```bash
 # Adaptive Genetic Map
 python -m MakeGeneticMap \
-    -i example/1958BC.hg19 \
-    -hg 19 \
-    -ref 1000G_REF/1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC \
-    -o work/1958BC+1000G_REF.EUR
+       -i example/1958BC.hg19 \
+       -hg 19 \
+       -ref 1000G_REF/1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC \
+       -o work/1958BC+1000G_REF.EUR
 
 # Imputation
 python CookHLA.py \
-    -i example/1958BC.hg19 \
-    -hg 19 \
-    -o work/1958BC+HM_CEU_REF \
-    -ref example/HM_CEU_REF \
-    -gm example/AGM.1958BC+HM_CEU_REF.mach_step.avg.clpsB \
-    -ae example/AGM.1958BC+HM_CEU_REF.aver.erate \
-    -mem 20g \
-    -mp 8
+       -i example/1958BC.hg19 \
+       -hg 19 \
+       -o work/1958BC+HM_CEU_REF \
+       -ref example/HM_CEU_REF \
+       -gm example/AGM.1958BC+HM_CEU_REF.mach_step.avg.clpsB \
+       -ae example/AGM.1958BC+HM_CEU_REF.aver.erate \
+       -mem 20g \
+       -mp 8
 ```
 
 The imputation gives 1958BC+HM_CEU_REF.MHC.HLA_IMPUTATION_OUT .alleles and .hped files, which is handled with [HATK](https://github.com/WansonChoi/HATK).
