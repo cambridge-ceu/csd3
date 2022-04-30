@@ -64,7 +64,7 @@ python CookHLA.py \
 
 The imputation gives 1958BC+HM_CEU_REF.MHC.HLA_IMPUTATION_OUT .alleles and .hped files, which is handled with [HATK](https://github.com/WansonChoi/HATK).
 
-## 1000Genoes
+## 1000Genomes
 
 We are rather tempted to use these from CookHLA with SNP2HLA, and follow the footnote on SNP2HLA we have,
 
