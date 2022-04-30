@@ -64,6 +64,29 @@ python CookHLA.py \
 
 The imputation gives 1958BC+HM_CEU_REF.MHC.HLA_IMPUTATION_OUT .alleles and .hped files, which is handled with [HATK](https://github.com/WansonChoi/HATK).
 
+## 1000Genoes
+
+We are rather tempted to use these from CookHLA with SNP2HLA, and follow the footnote on SNP2HLA we have,
+
+```bash
+csh SNP2HLA.csh 1958BC 1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC 1958BC_IMPUTED_1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC plink
+```
+
+we obtain the screen output,
+
+```
+SNP2HLA: Performing HLA imputation for dataset 1958BC
+- Java memory = 2000Mb
+- Beagle window size = 1000 markers
+[1] Extracting SNPs from the MHC.
+[2] Performing SNP quality control.
+[3] Convering data to beagle format.
+[4] Performing HLA imputation (see 1958BC_IMPUTED_1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC.bgl.log for progress).
+[5] Converting posterior probabilities to PLINK dosage format.
+[6] Converting imputation genotypes to PLINK .ped format.
+DONE!
+```
+
 ## References
 
 Jia, X. et al. Imputing Amino Acid Polymorphisms in Human Leukocyte Antigens. _PLOS ONE_ 8, e64683 (2013).
