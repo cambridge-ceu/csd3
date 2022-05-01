@@ -259,4 +259,21 @@ Zheng, X. et al. HIBAG—HLA genotype imputation with attribute bagging. _The Ph
     >         --multiprocess 2
     > ```
     >
-    > This is from the documentation, where `--variants` reads in the genotype files and `--hped` the .hped file to be followed by specification of the RA phenotype in a logistic regression. Note that the example is more desirable compared to the toy data in SNP2HLA given its 600 samples and 29,373 variants.
+    > This is from the documentation, where `--variants` reads in the genotype files and `--hped` the .hped file to be followed by specification of the RA phenotype in a logistic regression. Note that the example is more desirable compared to the toy data in SNP2HLA given its 600 samples and 29,373 variants; we proceed with the imputation with the 1000Genomes panel provided with CookHLA.
+    >
+    > ```bash
+    > export hatk=${HPC_WORK}/HATK
+    > export cookhla=${HPC_WORK}/CookHLA
+    >
+    > cd ${cookhla}
+    > python CookHLA.py \
+    >        -i ${hatk}/example/wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18 \
+    >        -hg 18 \
+    >        -o ${hatk}/work/hla_CookHLA \
+    >        -ref ${cookhla}/1000G_REF/1000G_REF.EUR.chr6.hg18.29mb-34mb.inT1DGC \
+    >        -gm ${caprion}/hla_IMPUTED.mach_step.avg.clpsB \
+    >        -ae ${caprion}/hla_IMPUTED.aver.erate \
+    >        -mem 20g \
+    >        -mp 8
+    > cd -
+    > ```
