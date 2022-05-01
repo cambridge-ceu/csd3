@@ -62,7 +62,7 @@ python CookHLA.py \
        -mp 8
 ```
 
-The imputation gives 1958BC+HM_CEU_REF.MHC.HLA_IMPUTATION_OUT .alleles and .hped files, which is handled with HATK[^2].
+The imputation gives 1958BC+HM_CEU_REF.MHC.HLA_IMPUTATION_OUT .alleles and .hped files, which is handled with HATK[^2]. The software also takes output from HIBAG[^3], among others.
 
 ## 1000Genomes
 
@@ -236,8 +236,6 @@ Zheng, X. et al. HIBAG—HLA genotype imputation with attribute bagging. _The Ph
     >
     > ### Installation
     >
-    > This is standard.
-    >
     > ```bash
     > git clone https://github.com/WansonChoi/HATK
     > ```
@@ -277,3 +275,17 @@ Zheng, X. et al. HIBAG—HLA genotype imputation with attribute bagging. _The Ph
     >        -mp 8
     > cd -
     > ```
+
+[^3]: HIBAG
+
+    > Web: [https://hibag.s3.amazonaws.com/index.html](https://hibag.s3.amazonaws.com/index.html) ([Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/HIBAG.html))
+    >
+    > ### Installation
+    >
+    > ```bash
+    > Rscript -e 'BiocManager:install("HIBAG")'
+    > ```
+    >
+    > ### Examples
+    >
+    > See [https://zhengxwen.github.io/HIBAG/hibag_index.html#example](https://zhengxwen.github.io/HIBAG/hibag_index.html#example).
