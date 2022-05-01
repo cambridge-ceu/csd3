@@ -247,16 +247,16 @@ Zheng, X. et al. HIBAG—HLA genotype imputation with attribute bagging. _The Ph
     > ```bash
     > source ~/COVID-19/py37/bin/activate
     > python3 HATK.py \
-    >     --variants example/wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18 \
-    >     --hped example/wtccc_filtered_58C_RA.hatk.300+300.hped \
-    >     --2field \
-    >     --pheno example/wtccc_filtered_58C_RA.hatk.300+300.phe \
-    >     --pheno-name RA \
-    >     --out work/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18 \
-    >     --imgt 3320 \
-    >     --hg 18 \
-    >     --imgt-dir example/IMGTHLA3320 \
-    >     --multiprocess 2
+    >         --variants example/wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18 \
+    >         --hped example/wtccc_filtered_58C_RA.hatk.300+300.hped \
+    >         --2field \
+    >         --pheno example/wtccc_filtered_58C_RA.hatk.300+300.phe \
+    >         --pheno-name RA \
+    >         --out work/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18 \
+    >         --imgt 3320 \
+    >         --hg 18 \
+    >         --imgt-dir example/IMGTHLA3320 \
+    >         --multiprocess 2
     > ```
     >
     > This is from the documentation, where `--variants` reads in the genotype files and `--hped` the .hped file to be followed by specification of the RA phenotype in a logistic regression. Note that the example is more desirable compared to the toy data in SNP2HLA given its 600 samples and 29,373 variants.
