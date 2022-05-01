@@ -128,7 +128,7 @@ Immuno Polymorphism Database-international ImMunoGeneTics project (IMGT) (IPD-IM
 
 WHO Committe. Nomenclature for Factors of the HLA System, [http://hla.alleles.org/](http://hla.alleles.org/).
 
-Zheng, X. et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pharmacogenomics Journal_ 14, 192-200 (2014).
+Zheng, X. et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pharmacogenomics Journal_ 14, 192-200 (2014), [HLARES](https://hibag.s3.amazonaws.com/hlares_index.html).
 
 ---
 
