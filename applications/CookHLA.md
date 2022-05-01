@@ -259,4 +259,4 @@ Zheng, X. et al. HIBAG—HLA genotype imputation with attribute bagging. _The Ph
     >     --multiprocess 2
     > ```
     >
-    > This is from the documentation, where `--variants` reads in the genotype files and `--hped` the .hped file to be followed by specification of the RA phenotype in a logistic regression. Note that the example is more desirable compared to the toy data in SNP2HLA given its 660 samples and 29,373 variants.
+    > This is from the documentation, where `--variants` reads in the genotype files and `--hped` the .hped file to be followed by specification of the RA phenotype in a logistic regression. Note that the example is more desirable compared to the toy data in SNP2HLA given its 600 samples and 29,373 variants.
