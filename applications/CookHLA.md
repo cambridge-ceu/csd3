@@ -62,7 +62,7 @@ python CookHLA.py \
        -mp 8
 ```
 
-The imputation gives 1958BC+HM_CEU_REF.MHC.HLA_IMPUTATION_OUT .alleles and .hped files, which is handled with [HATK](https://github.com/WansonChoi/HATK).
+The imputation gives 1958BC+HM_CEU_REF.MHC.HLA_IMPUTATION_OUT .alleles and .hped files, which is handled with HATK[^2].
 
 ## 1000Genomes
 
@@ -115,6 +115,8 @@ Among remaining phenotypes, 0 are cases and 10 are controls.
 ```
 
 ## References
+
+Choi, W., Luo, Y., Raychaudhuri, S. & Han, B. HATK: HLA analysis toolkit. _Bioinformatics_ 37, 416-418 (2020).
 
 Cook, S. et al. Accurate imputation of human leukocyte antigens with CookHLA. _Nature Communications_ 12, 1264 (2021).
 
@@ -227,3 +229,34 @@ Zheng, X. et al. HIBAG—HLA genotype imputation with attribute bagging. _The Ph
     > [11] Phasing reference using Beagle (see progress in HM_CEU_REF.bgl.log).
     > [12] Done.
     > ```
+
+[^2]: HATK
+
+    > Web: [https://github.com/WansonChoi/HATK](https://github.com/WansonChoi/HATK)
+    >
+    > ### Installation
+    >
+    > This is standard.
+    >
+    > ```bash
+    > git clone https://github.com/WansonChoi/HATK
+    > ```
+    >
+    > ### Example
+    >
+    > ```bash
+    > source ~/COVID-19/py37/bin/activate
+    > python3 HATK.py \
+    >     --variants example/wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18 \
+    >     --hped example/wtccc_filtered_58C_RA.hatk.300+300.hped \
+    >     --2field \
+    >     --pheno example/wtccc_filtered_58C_RA.hatk.300+300.phe \
+    >     --pheno-name RA \
+    >     --out work/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18 \
+    >     --imgt 3320 \
+    >     --hg 18 \
+    >     --imgt-dir example/IMGTHLA3320 \
+    >     --multiprocess 2
+    > ```
+    >
+    > This is from the documentation, where `--variants` reads in the genotype files and `--hped` the .hped file to be followed by specification of the RA phenotype in a logistic regression. Note that the example is more desirable compared to the toy data in SNP2HLA given its 660 samples and 29,373 variants.
