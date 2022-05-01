@@ -116,13 +116,15 @@ Among remaining phenotypes, 0 are cases and 10 are controls.
 
 ## References
 
+Cook, S. et al. Accurate imputation of human leukocyte antigens with CookHLA. _Nature Communications_ 12, 1264 (2021).
+
 Jia, X. et al. Imputing Amino Acid Polymorphisms in Human Leukocyte Antigens. _PLOS ONE_ 8, e64683 (2013).
 
-Cook, S. et al. Accurate imputation of human leukocyte antigens with CookHLA. _Nature Communications_ 12, 1264 (2021).
+Immuno Polymorphism Database-international ImMunoGeneTics project (IMGT) (IPD-IMGT/HLA), [https://www.ebi.ac.uk/ipd/imgt/hla/](https://www.ebi.ac.uk/ipd/imgt/hla/)
 
 WHO Committe. Nomenclature for Factors of the HLA System, [http://hla.alleles.org/](http://hla.alleles.org/).
 
-Immuno Polymorphism Database-international ImMunoGeneTics project (IMGT) (IPD-IMGT/HLA), [https://www.ebi.ac.uk/ipd/imgt/hla/](https://www.ebi.ac.uk/ipd/imgt/hla/)
+Zheng, X. et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pharmacogenomics Journal_ 14, 192-200 (2014).
 
 ---
 
