@@ -290,4 +290,4 @@ Zheng, X. et al. HIBAG—HLA genotype imputation with attribute bagging. _The Ph
     >
     > ### Examples
     >
-    > See [https://zhengxwen.github.io/HIBAG/hibag_index.html#example](https://zhengxwen.github.io/HIBAG/hibag_index.html#example).
+    > See [Amazon](https://hibag.s3.amazonaws.com/hlares_index.html#example) but most are available from [GitHub](https://zhengxwen.github.io/HIBAG/hibag_index.html#example).
