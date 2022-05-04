@@ -17,7 +17,7 @@ csd3 --> R["R packages"]
 system --> System
 system --> Login
 system --> sysdot["..."]
-system --> Contacts
+system --> Acknowledgement
 cardio --> cp["CSD3 partition"]
 cardio --> lm["Legacy materials"]
 applications --> ABCtoolbox
