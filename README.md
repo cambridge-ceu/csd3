@@ -15,7 +15,6 @@ csd3 --> cardio["CARDIO"]
 csd3 --> applications["APPLICATIONS"]
 csd3 --> R["R packages"]
 system --> System
-system --> Login
 system --> sysdot["..."]
 system --> Acknowledgement
 cardio --> cp["CSD3 partition"]
