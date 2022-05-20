@@ -8,31 +8,21 @@ Web: [https://www.green-algorithms.org/](https://www.green-algorithms.org/) (Git
 
 Source at GitHub: [https://github.com/Llannelongue/GreenAlgorithms4HPC](https://github.com/Llannelongue/GreenAlgorithms4HPC))
 
-## Installation
-
-```bash
-git clone https://github.com/Llannelongue/GreenAlgorithms4HPC
-cd GreenAlgorithms4HPC
-chmod +x myCarbonFootprint.sh
-```
-
-## Script on CSD3
+## CSD3
 
 The location of the script is as follows,
 
 [/rds/project/jmmh2/rds-jmmh2-projects/inouye_lab_other/share_space/GreenAlgorithms4HPC/myCarbonFootprint.sh](/rds/project/jmmh2/rds-jmmh2-projects/inouye_lab_other/share_space/GreenAlgorithms4HPC/myCarbonFootprint.sh)
 
-## Usage
+It is possible to use this directly,
 
 ```bash
-myCarbonFootprint.sh --help
-myCarbonFootprint.sh --startDay 2022-01-01 --endDay 2022-05-31
+/rds/project/jmmh2/rds-jmmh2-projects/inouye_lab_other/share_space/GreenAlgorithms4HPC/myCarbonFootprint.sh --help
 ```
 
-and the first line gives the following output,
+which gives the following output,
 
 ```
-myCarbonFootprint.sh --help
 Python versions: OK
 Virtualenv: OK
 usage: GreenAlgorithms_global.py [-h] [-S STARTDAY] [-E ENDDAY] [--filterCWD]
@@ -59,6 +49,23 @@ optional arguments:
                         number of cores and memory usage.
   --reportBugHere       Similar to --reportBug, but exports the output to your
                         home folder
+```
+
+## GitHub
+
+We can also install a specific copy,
+
+```bash
+git clone https://github.com/Llannelongue/GreenAlgorithms4HPC
+cd GreenAlgorithms4HPC
+chmod +x myCarbonFootprint.sh
+```
+
+and then call as follows,
+
+```bash
+myCarbonFootprint.sh --help
+myCarbonFootprint.sh --startDay 2022-01-01 --endDay 2022-05-31
 ```
 
 ## Reference
