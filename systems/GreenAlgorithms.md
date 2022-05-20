@@ -12,7 +12,7 @@ Source at GitHub: [https://github.com/Llannelongue/GreenAlgorithms4HPC](https://
 
 The location of the script is as follows,
 
-[/rds/project/jmmh2/rds-jmmh2-projects/inouye_lab_other/share_space/GreenAlgorithms4HPC/myCarbonFootprint.sh](/rds/project/jmmh2/rds-jmmh2-projects/inouye_lab_other/share_space/GreenAlgorithms4HPC/myCarbonFootprint.sh)
+> /rds/project/jmmh2/rds-jmmh2-projects/inouye_lab_other/share_space/GreenAlgorithms4HPC/myCarbonFootprint.sh
 
 It is possible to use this directly,
 
