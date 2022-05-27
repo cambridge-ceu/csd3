@@ -126,7 +126,7 @@ Jia X, et al. Imputing Amino Acid Polymorphisms in Human Leukocyte Antigens. _PL
 
 Immuno Polymorphism Database-international ImMunoGeneTics project (IMGT) (IPD-IMGT/HLA), [https://www.ebi.ac.uk/ipd/imgt/hla/](https://www.ebi.ac.uk/ipd/imgt/hla/)
 
-Luo, Y, et al. A high-resolution HLA reference panel capturing global population diversity enables multi-ancestry fine-mapping in HIV host response. Nat Genet 53, 1504–1516 (2021). https://doi.org/10.1038/s41588-021-00935-7
+Luo, Y, et al. A high-resolution HLA reference panel capturing global population diversity enables multi-ancestry fine-mapping in HIV host response. Nat Genet 53, 1504–1516 (2021), [https://doi.org/10.1038/s41588-021-00935-7](https://doi.org/10.1038/s41588-021-00935-7).
 
 WHO Committe. Nomenclature for Factors of the HLA System, [http://hla.alleles.org/](http://hla.alleles.org/).
 
