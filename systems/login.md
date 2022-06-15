@@ -169,6 +169,6 @@ find /usr -iname "*libGL.so*" -exec ls -l {} \;
 find /usr -iname "*libGLX*.so*" -exec ls -l {} \;
 ```
 
-[^1]: Currently, it is login-e-[1-4]
+[^1]: Currently, it is login-e-[1-4], login-e-1 is also the license server. The so-called 3D viz nodes are login(gpu)-e-[1-7].
 [^2]: Applications such as R/nloptr package require to be recompiled. In this case, we run `download.packages("nloptr",".")` inside `R` on an Internet-enabled node and compile the package with `R CMD INSTALL nloptr_1.2.2.3.tar.gz`, say.
 [^3]: This appears subject to the system setup.

@@ -6,6 +6,8 @@ sort: 35
 
 Official page: [https://www.gnu.org/software/pspp/](https://www.gnu.org/software/pspp/).
 
+## 1.2.0
+
 ```bash
 module load pspp/1.2.0
 pspp example.sps
@@ -44,6 +46,8 @@ psppire plot.ps &
 ```
 
 More documentation examples are in the [examples](files/examples) directory.
+
+## 1.4.1
 
 Version 1.4.1 requires spread-sheet-widget 0.6 and we follow the following steps,
 
@@ -121,3 +125,49 @@ VARIABLE ALIGNMENT Genes (RIGHT).
 VARIABLE WIDTH Genes (8).
 list.
 ```
+
+## 1.6.0
+
+A couple of Perl modules are required,
+
+```bash
+perl -MCPAN -e shell
+install Config::Perl::V
+install Memory::Usage
+```
+
+The installation then proceeds with,
+
+```bash
+module load libiconv-1.15-gcc-5.4.0-ymwv5vs
+module load gettext-0.19.8.1-gcc-5.4.0-zaldouz
+module load texinfo-6.3-gcc-5.4.0-gszsfum
+
+wget -qO- https://ftp.nluug.nl/pub/gnu/pspp/pspp-1.6.0.tar.gz | \
+tar xvfz -
+cd pspp-1.6.0
+configure --prefix=$HPC_WORK LDFLAGS="-lreadline -ltinfo" --with-gnu-ld
+make
+```
+
+Assuming `libreadline` is installed from [https://ftp.gnu.org/gnu/readline/](https://ftp.gnu.org/gnu/readline/).
+
+Near the end we saw complaints about Perl module and we specifically run the following code
+
+```bash
+cd perl-module && /usr/bin/perl Makefile.PL \
+   OPTIMIZE="-g -O2 -DGCC_LINT \
+   -I/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/zlib-1.2.11-lnf7bswyozdhprbg7jo6n5ha5633ftj2/include \
+   -I/rds/user/jhz22/hpc-work/include/libpng15 -I/rds/user/jhz22/hpc-work/include \
+   -I/rds-d4/user/jhz22/hpc-work/include/fribidi -I/usr/include/cairo -I/usr/include/glib-2.0 \
+   -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/uuid -I/usr/include/libdrm \
+   -I/usr/include/pango-1.0 -I/usr/include/harfbuzz   -Wno-error" \
+   LD="`/usr/bin/perl -e 'use Config::Perl::V;print Config::Perl::V::myconfig()->{config}{ld};'` -lreadline -ltinfo"
+cd -
+make
+make install
+```
+
+where we droppped `PREFIX=/rds/user/jhz22/hpc-work` after `Makefile.PL` and furnish the installation with another make/make install..
+
+Note that the Windows version is available from [https://caeis.etech.fh-augsburg.de/downloads/windows/pspp-win-daily/1.6.0-ge6b96c/](https://caeis.etech.fh-augsburg.de/downloads/windows/pspp-win-daily/1.6.0-ge6b96c/).

@@ -4,7 +4,7 @@ sort: 44
 
 # SNPTEST
 
-Web: [https://www.well.ox.ac.uk/~gav/snptest/](https://www.well.ox.ac.uk/~gav/snptest/) and [https://jmarchini.org/snptest/](https://jmarchini.org/snptest/)
+Web: [https://www.well.ox.ac.uk/~gav/snptest/](https://www.well.ox.ac.uk/~gav/snptest/)
 
 ```bash
 cd ${HPC_WORK}
