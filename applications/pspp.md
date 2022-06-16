@@ -136,7 +136,7 @@ install Config::Perl::V
 install Memory::Usage
 ```
 
-Assuming `libreadline` is installed from [https://ftp.gnu.org/gnu/readline/](https://ftp.gnu.org/gnu/readline/), The installation then proceeds with,
+Assuming `libreadline` is installed from [https://ftp.gnu.org/gnu/readline/](https://ftp.gnu.org/gnu/readline/), the installation then proceeds with
 
 ```bash
 module load libiconv-1.15-gcc-5.4.0-ymwv5vs
