@@ -2,6 +2,8 @@ title: csd3
 lang: en
 description: A collection of CSD3 notes
 encoding: UTF-8
+baseurl: /csd3/
+url: https://cambridge-ceu.github.io
 
 theme: null
 
