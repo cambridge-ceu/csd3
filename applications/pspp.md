@@ -45,7 +45,7 @@ Now we can execute [plot.sps](files/plot.sps)
 psppire plot.ps &
 ```
 
-More documentation examples are in the [examples](files/examples) directory.
+More documentation examples are in the [examples](https://github.com/cambridge-ceu/csd3/tree/master/applications/files/examples) directory.
 
 ## 1.4.1
 
