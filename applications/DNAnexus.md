@@ -8,7 +8,7 @@ Web: [https://www.dnanexus.com/partnerships/ukbiobank](https://www.dnanexus.com/
 
 ## Platform SDK
 
-This follows documentation at [https://documentation.dnanexus.com/downloads](https://documentation.dnanexus.com/downloads)
+This follows [https://documentation.dnanexus.com/downloads](https://documentation.dnanexus.com/downloads),
 
 ```bash
 module avail python
@@ -21,7 +21,7 @@ pip install --upgrade dxpy
 dx help ls
 ```
 
-using the Python virtual environment at `~/COVID-19/py37/bin/activate`, say.
+using the Python virtual environment at `~/COVID-19/py37/`, say.
 
 ## dx-toolkit
 
