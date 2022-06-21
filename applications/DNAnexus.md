@@ -78,7 +78,7 @@ python scripts/create_manifest.py "project-G8pGb82KjVGq8bZ053jkKqQ5:/Users/Jing 
 bzip2 -d -c test.manifest.json.bz2
 ```
 
-where `create_manifest.py` is used to obtain `test.manifest.json.bz2` whereas the last command concatenates the contents of the manifest file to the terminal.
+where `create_manifest.py` is used to obtain `test.manifest.json.bz2` whereas the last command shows the contents of the manifest file to the terminal.
 
 ## dxCompiler
 
