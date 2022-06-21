@@ -38,17 +38,6 @@ dx upgrade
 
 and `dx upgrade v0.225.0` returns to the previous version.
 
-## Upload Agent
-
-```bash
-wget -qO- https://dnanexus-sdk.s3.amazonaws.com/dnanexus-upload-agent-1.5.33-linux.tar.gz | \
-tar xzf -
-cd dnanexus-upload-agent-*-linux
-ua
-```
-
-This requires a DNAnexus API token[^1] to be set up.
-
 ## Download Agent
 
 See [dx-download-agent](https://github.com/dnanexus/dxda/blob/master/README.md) and [releases](https://github.com/dnanexus/dxda/releases).
@@ -71,13 +60,22 @@ python scripts/create_manifest.py "project-G8pGb82KjVGq8bZ053jkKqQ5:/Users/Jing 
 bzip2 -d -c manifest.json.bz2
 ```
 
-where `create_manifest.py` is used to obtain `manifest.json.bz2` whereas the last command shows the contents of the file to the terminal.
+where `create_manifest.py` is used to obtain a bz2-compressed JSON manifest (`manifest.json.bz2`) file whereas the last command shows the contents of the file to the terminal.
 
-The bz2-compressed JSON manifest (.manifest.json.bz2) file thus obtained is used with the API token.
+The file thus obtained is used with a DNAnexus API token[^1].
 
 ```bash
 export DX_API_TOKEN=$(cat ~/doc/nexus)
 dx-download-agent download manifest.json.bz2
+```
+
+## Upload Agent
+
+```bash
+wget -qO- https://dnanexus-sdk.s3.amazonaws.com/dnanexus-upload-agent-1.5.33-linux.tar.gz | \
+tar xzf -
+cd dnanexus-upload-agent-*-linux
+ua
 ```
 
 ## dxCompiler
