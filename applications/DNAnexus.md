@@ -61,7 +61,7 @@ dx-download-agent --help
 cd -
 ```
 
-It gets going with bz2-compressed JSON manifest file with the API token indicated.
+It gets going with a bz2-compressed JSON manifest file with the API token indicated.
 
 ```bash
 export DX_API_TOKEN=$(cat ~/doc/nexus)
@@ -78,7 +78,7 @@ python scripts/create_manifest.py "project-G8pGb82KjVGq8bZ053jkKqQ5:/Users/Jing 
 bzip2 -d -c test.manifest.json.bz2
 ```
 
-where the last command concatenates the contents of the manifest file on the screen.
+where `create_manifest.py` is used to obtain `test.manifest.json.bz2` whereas the last command concatenates the contents of the manifest file to the terminal.
 
 ## dxCompiler
 
