@@ -23,21 +23,6 @@ dx help ls
 
 using the Python virtual environment at `~/COVID-19/py37/`, say.
 
-## dx-toolkit
-
-GitHub: [https://github.com/dnanexus/dx-toolkit](https://github.com/dnanexus/dx-toolkit)
-
-This installs R, C++ and Python 2.7.
-
-```bash
-wget -qO- https://dnanexus-sdk.s3.amazonaws.com/dx-toolkit-v0.320.0-centos-amd64.tar.gz | \
-tar xvfz -
-cd dx-toolkit && source environment
-dx upgrade
-```
-
-and `dx upgrade v0.225.0` returns to the previous version.
-
 ## Download Agent
 
 See [dx-download-agent](https://github.com/dnanexus/dxda/blob/master/README.md) and [releases](https://github.com/dnanexus/dxda/releases).
@@ -83,6 +68,21 @@ ua
 See [https://github.com/dnanexus/dxCompiler/](https://github.com/dnanexus/dxCompiler/) for [releases](https://github.com/dnanexus/dxCompiler/releases).
 
 It will compile workflows in WDL, [https://github.com/openwdl/wdl](https://github.com/openwdl/wdl) with example in [https://github.com/openwdl/wdl/blob/main/versions/1.1/SPEC.md](https://github.com/openwdl/wdl/blob/main/versions/1.1/SPEC.md).
+
+## dx-toolkit
+
+GitHub: [https://github.com/dnanexus/dx-toolkit](https://github.com/dnanexus/dx-toolkit)
+
+This installs R, C++ and Python 2.7.
+
+```bash
+wget -qO- https://dnanexus-sdk.s3.amazonaws.com/dx-toolkit-v0.320.0-centos-amd64.tar.gz | \
+tar xvfz -
+cd dx-toolkit && source environment
+dx upgrade
+```
+
+and `dx upgrade v0.225.0` returns to the previous version.
 
 ---
 
