@@ -61,6 +61,9 @@ wget -qO- https://dnanexus-sdk.s3.amazonaws.com/dnanexus-upload-agent-1.5.33-lin
 tar xzf -
 cd dnanexus-upload-agent-*-linux
 ua
+# This will make it visible from ${HPC_WORK}/bin
+export HPC_WORK=rds/user/$USER/hpc-work
+ln -sf ${PWD}/ua ${HPC_WORK}/bin/ua
 ```
 
 ## dxCompiler
