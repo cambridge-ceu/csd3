@@ -21,6 +21,8 @@ pip install --upgrade dxpy
 dx help ls
 ```
 
+using the Python virtual environment at `~/COVID-19/py37/bin/activate`, say.
+
 ## dx-toolkit
 
 GitHub: [https://github.com/dnanexus/dx-toolkit](https://github.com/dnanexus/dx-toolkit)
@@ -45,11 +47,35 @@ cd dnanexus-upload-agent-*-linux
 ua
 ```
 
-This requires a token to be set up.
+This requires a DNAnexus API token to be set up.
 
 ## Download Agent
 
 See [dx-download-agent](https://github.com/dnanexus/dxda/blob/master/README.md) and [releases](https://github.com/dnanexus/dxda/releases).
+
+```bash
+cd ${HPC_WORK}/bin
+wget https://github.com/dnanexus/dxda/releases/download/v0.5.9/dx-download-agent-linux -O dx-download-agent
+chmod +x dx-download-agent
+dx-download-agent --help
+cd -
+```
+
+or from source,
+
+```bash
+wget https://github.com/dnanexus/dxda/archive/refs/tags/v0.5.9.tar.gz -O - | \
+tar xvfz -
+cd dxda-*
+create_release.sh
+```
+
+It gets going with bz2-compressed JSON manifest file with the API token indicated.
+
+```bash
+export DX_API_TOKEN=<INSERT API TOKEN HERE>
+dx-download-agent download <BZ2-compressed JSON manifest file>
+```
 
 ## dxCompiler
 
