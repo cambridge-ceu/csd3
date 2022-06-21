@@ -47,7 +47,7 @@ cd dnanexus-upload-agent-*-linux
 ua
 ```
 
-This requires a DNAnexus API token to be set up.
+This requires a DNAnexus API token[^1] to be set up.
 
 ## Download Agent
 
@@ -82,3 +82,7 @@ dx-download-agent download <BZ2-compressed JSON manifest file>
 See [https://github.com/dnanexus/dxCompiler/](https://github.com/dnanexus/dxCompiler/) for [releases](https://github.com/dnanexus/dxCompiler/releases).
 
 It will compile workflows in WDL, [https://github.com/openwdl/wdl](https://github.com/openwdl/wdl) with example in [https://github.com/openwdl/wdl/blob/main/versions/1.1/SPEC.md](https://github.com/openwdl/wdl/blob/main/versions/1.1/SPEC.md).
+
+---
+
+[^1]: Instead of the `dx login` and `dx logout` pair one can login with a token, try `dx login --token`; the `--noprojects` option allows for non-interactive login. The `dx select` command allows for specific projects are selected. See also [https://documentation.dnanexus.com/user/login-and-logout](https://documentation.dnanexus.com/user/login-and-logout).
