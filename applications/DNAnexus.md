@@ -90,7 +90,7 @@ and `dx upgrade v0.225.0` returns to the previous version.
 ---
 
 [^1]:
-    Instead of the `dx login` and `dx logout` pair one can login with a token, try
+    Instead of the `dx login` and `dx logout` pair one can login with a token, i.e.,
 
     > ```bash
     > dx login --token $(cat ~/doc/nexus)
