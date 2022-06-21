@@ -28,6 +28,7 @@ using the Python virtual environment at `~/COVID-19/py37/`, say.
 See [dx-download-agent](https://github.com/dnanexus/dxda/blob/master/README.md) and [releases](https://github.com/dnanexus/dxda/releases).
 
 ```bash
+export HPC_WORK=rds/user/$USER/hpc-work
 cd ${HPC_WORK}/bin
 wget https://github.com/dnanexus/dxda/releases/download/v0.5.9/dx-download-agent-linux -O dx-download-agent
 chmod +x dx-download-agent
@@ -62,7 +63,6 @@ tar xzf -
 cd dnanexus-upload-agent-*-linux
 ua
 # This will make it visible from ${HPC_WORK}/bin
-export HPC_WORK=rds/user/$USER/hpc-work
 ln -sf ${PWD}/ua ${HPC_WORK}/bin/ua
 ```
 
