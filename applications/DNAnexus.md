@@ -61,21 +61,24 @@ dx-download-agent --help
 cd -
 ```
 
-or from source,
-
-```bash
-wget https://github.com/dnanexus/dxda/archive/refs/tags/v0.5.9.tar.gz -O - | \
-tar xvfz -
-cd dxda-*
-create_release.sh
-```
-
 It gets going with bz2-compressed JSON manifest file with the API token indicated.
 
 ```bash
 export DX_API_TOKEN=$(cat ~/doc/nexus)
 dx-download-agent download <BZ2-compressed JSON manifest file>
 ```
+
+A number of utilities are available from the source,
+
+```bash
+wget https://github.com/dnanexus/dxda/archive/refs/tags/v0.5.9.tar.gz -O - | \
+tar xvfz -
+cd dxda-*
+python scripts/create_manifest.py "project-G8pGb82KjVGq8bZ053jkKqQ5:/Users/Jing Hua" --recursive --output_file "test.manifest.json.bz2"
+bzip2 -d -c test.manifest.json.bz2
+```
+
+where the last command concatenates the contents of the manifest file on the screen.
 
 ## dxCompiler
 
