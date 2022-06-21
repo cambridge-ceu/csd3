@@ -67,17 +67,17 @@ A number of utilities are available from the source,
 wget https://github.com/dnanexus/dxda/archive/refs/tags/v0.5.9.tar.gz -O - | \
 tar xvfz -
 cd dxda-*
-python scripts/create_manifest.py "project-G8pGb82KjVGq8bZ053jkKqQ5:/Users/Jing Hua" --recursive --output_file "test.manifest.json.bz2"
-bzip2 -d -c test.manifest.json.bz2
+python scripts/create_manifest.py "project-G8pGb82KjVGq8bZ053jkKqQ5:/Users/Jing Hua" --recursive --output_file "manifest.json.bz2"
+bzip2 -d -c manifest.json.bz2
 ```
 
-where `create_manifest.py` is used to obtain `test.manifest.json.bz2` whereas the last command shows the contents of the file to the terminal.
+where `create_manifest.py` is used to obtain `manifest.json.bz2` whereas the last command shows the contents of the file to the terminal.
 
 The bz2-compressed JSON manifest (.manifest.json.bz2) file thus obtained is used with the API token.
 
 ```bash
 export DX_API_TOKEN=$(cat ~/doc/nexus)
-dx-download-agent download test.manifest.json.bz2
+dx-download-agent download manifest.json.bz2
 ```
 
 ## dxCompiler
