@@ -47,7 +47,7 @@ bzip2 -d -c manifest.json.bz2
 
 where `create_manifest.py` is used to obtain a bz2-compressed JSON manifest (`manifest.json.bz2`) file whereas the last command shows the contents of the file to the terminal.
 
-The file thus obtained is used with a DNAnexus API token[^1].
+The file thus obtained is used with a DNAnexus API token[^1] as contained in `~/doc/nexus` here.
 
 ```bash
 export DX_API_TOKEN=$(cat ~/doc/nexus)
