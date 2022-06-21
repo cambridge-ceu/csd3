@@ -77,7 +77,7 @@ The bz2-compressed JSON manifest (.manifest.json.bz2) file thus obtained is used
 
 ```bash
 export DX_API_TOKEN=$(cat ~/doc/nexus)
-dx-download-agent download <test.manifest.json.bz2>
+dx-download-agent download test.manifest.json.bz2
 ```
 
 ## dxCompiler
