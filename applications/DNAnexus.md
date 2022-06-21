@@ -73,7 +73,7 @@ create_release.sh
 It gets going with bz2-compressed JSON manifest file with the API token indicated.
 
 ```bash
-export DX_API_TOKEN=<INSERT API TOKEN HERE>
+export DX_API_TOKEN=$(cat ~/doc/nexus)
 dx-download-agent download <BZ2-compressed JSON manifest file>
 ```
 
@@ -85,4 +85,12 @@ It will compile workflows in WDL, [https://github.com/openwdl/wdl](https://githu
 
 ---
 
-[^1]: Instead of the `dx login` and `dx logout` pair one can login with a token, try `dx login --token`; the `--noprojects` option allows for non-interactive login. The `dx select` command allows for specific projects are selected. See also [https://documentation.dnanexus.com/user/login-and-logout](https://documentation.dnanexus.com/user/login-and-logout).
+[^1]:
+    Instead of the `dx login` and `dx logout` pair one can login with a token, try
+
+    > ```bash
+    > dx login --token $(cat ~/doc/nexus)
+    > dx select --level VIEW`
+    > ```
+    >
+    > The `--noprojects` option allows for non-interactive login. The `dx select` command allows for specific projects be selected. See also [https://documentation.dnanexus.com/user/login-and-logout](https://documentation.dnanexus.com/user/login-and-logout).
