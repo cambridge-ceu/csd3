@@ -21,7 +21,7 @@ pip install --upgrade dxpy
 dx help ls
 ```
 
-using the Python virtual environment at `py37/`, say.
+using the Python virtual environment at `py37/`, say[^1].
 
 > It is not unusual to have version compatibility issues, so doing this ahead of time is helpful for you. For issues, please contact Customer Care at support@dnanexus.com for help with installation.
 
@@ -50,7 +50,7 @@ bzip2 -d -c manifest.json.bz2
 
 where `create_manifest.py` is used to obtain a bz2-compressed JSON manifest file (`manifest.json.bz2`) whereas the last command shows the contents of the file to the terminal.
 
-The file thus obtained is used with a DNAnexus API token[^1] as contained in `~/doc/nexus` here.
+The file thus obtained is used with a DNAnexus API token[^2] as contained in `~/doc/nexus` here.
 
 ```bash
 export DX_API_TOKEN=$(cat ~/doc/nexus)
@@ -99,7 +99,8 @@ and `dx upgrade v0.225.0` returns to the previous version.
 
 ---
 
-[^1]:
+[^1]: A summary of all commands is available from [https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities](https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities).
+[^2]:
     Instead of the `dx login` and `dx logout` pair one can login with a token, i.e.,
 
     > ```bash
