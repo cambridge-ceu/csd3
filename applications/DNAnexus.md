@@ -85,7 +85,7 @@ java -jar dxCompiler-2.10.2.jar
 
 GitHub: [https://github.com/dnanexus/dx-toolkit](https://github.com/dnanexus/dx-toolkit)
 
-This installs R, C++ and Python 2.7.
+This installs API language bindings for R, C++ and Python 2.7.
 
 ```bash
 module load gcc/6 texlive python/2.7
@@ -95,7 +95,7 @@ cd dx-toolkit && source environment
 dx upgrade
 ```
 
-and `dx upgrade v0.225.0` returns to the previous version.
+and `dx upgrade v0.225.0` returns to the previous version. A separate repository is available for JavaScript, [https://github.com/dnanexus/dx-javascript-toolkit](https://github.com/dnanexus/dx-javascript-toolkit).
 
 ---
 
