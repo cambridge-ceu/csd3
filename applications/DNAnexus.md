@@ -74,6 +74,13 @@ See [https://github.com/dnanexus/dxCompiler/](https://github.com/dnanexus/dxComp
 
 It will compile workflows in WDL, [https://github.com/openwdl/wdl](https://github.com/openwdl/wdl) with example in [https://github.com/openwdl/wdl/blob/main/versions/1.1/SPEC.md](https://github.com/openwdl/wdl/blob/main/versions/1.1/SPEC.md).
 
+We can get it as follows,
+
+```bash
+wget https://github.com/dnanexus/dxCompiler/releases/download/2.10.2/dxCompiler-2.10.2.jar
+java -jar dxCompiler-2.10.2.jar
+```
+
 ## dx-toolkit
 
 GitHub: [https://github.com/dnanexus/dx-toolkit](https://github.com/dnanexus/dx-toolkit)
