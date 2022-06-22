@@ -23,6 +23,8 @@ dx help ls
 
 using the Python virtual environment at `~/COVID-19/py37/`, say.
 
+> It is not unusual to have version compatibility issues, so doing this ahead of time is helpful for you. For issues, please contact Customer Care at support@dnanexus.com for help with installation.
+
 ## Download Agent
 
 See [dx-download-agent](https://github.com/dnanexus/dxda/blob/master/README.md) and [releases](https://github.com/dnanexus/dxda/releases).
