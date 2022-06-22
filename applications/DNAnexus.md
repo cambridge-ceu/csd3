@@ -88,6 +88,7 @@ GitHub: [https://github.com/dnanexus/dx-toolkit](https://github.com/dnanexus/dx-
 This installs R, C++ and Python 2.7.
 
 ```bash
+module load gcc/6 texlive python/2.7
 wget -qO- https://dnanexus-sdk.s3.amazonaws.com/dx-toolkit-v0.320.0-centos-amd64.tar.gz | \
 tar xvfz -
 cd dx-toolkit && source environment
