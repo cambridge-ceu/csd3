@@ -13,7 +13,7 @@ This follows [https://documentation.dnanexus.com/downloads](https://documentatio
 ```bash
 module avail python
 module load python/3.7
-source ~/COVID-19/py37/bin/activate
+source py37/bin/activate
 pip install dxpy
 eval "$(register-python-argcomplete dx|sed 's/-o default//')"
 export PYTHONIOENCODING=UTF-8
@@ -21,7 +21,7 @@ pip install --upgrade dxpy
 dx help ls
 ```
 
-using the Python virtual environment at `~/COVID-19/py37/`, say.
+using the Python virtual environment at `py37/`, say.
 
 > It is not unusual to have version compatibility issues, so doing this ahead of time is helpful for you. For issues, please contact Customer Care at support@dnanexus.com for help with installation.
 
