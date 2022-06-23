@@ -21,7 +21,13 @@ pip install --upgrade dxpy
 dx help ls
 ```
 
-using the Python virtual environment at `py37/`, say[^1].
+using the Python virtual environment at `py37/`, say[^1]. Once this is done, subsequent calls are simplified as
+
+```bash
+module load python/3.7
+source py37/bin/activate
+dx help ls
+```
 
 > It is not unusual to have version compatibility issues, so doing this ahead of time is helpful for you. For issues, please contact Customer Care at support@dnanexus.com for help with installation.
 
@@ -96,6 +102,13 @@ dx upgrade
 ```
 
 and `dx upgrade v0.225.0` returns to the previous version. A separate repository is available for JavaScript, [https://github.com/dnanexus/dx-javascript-toolkit](https://github.com/dnanexus/dx-javascript-toolkit).
+
+As before, once this is done subsequent preparation for various apps in the toolkit is simplified as
+
+```bash
+module load gcc/6 texlive python/2.7
+cd dx-toolkit && source environment
+```
 
 ---
 
