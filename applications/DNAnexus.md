@@ -2,7 +2,7 @@
 sort: 14
 ---
 
-# DNAnexus
+# DNAnexus[^1]
 
 Web: [https://www.dnanexus.com/partnerships/ukbiobank](https://www.dnanexus.com/partnerships/ukbiobank) ([WebUI](https://platform.dnanexus.com/login))
 
@@ -21,7 +21,7 @@ pip install --upgrade dxpy
 dx help ls
 ```
 
-using the Python virtual environment at `py37/`, say[^1]. Once this is done, subsequent calls are simplified as
+using the Python virtual environment at `py37/`, say[^2]. Once this is done, subsequent calls are simplified as
 
 ```bash
 module load python/3.7
@@ -56,7 +56,7 @@ bzip2 -d -c manifest.json.bz2
 
 where `create_manifest.py` is used to obtain a bz2-compressed JSON manifest file (`manifest.json.bz2`) whereas the last command shows the contents of the file to the terminal.
 
-The file thus obtained is used with a DNAnexus API token[^2] as contained in `~/doc/nexus` here.
+The file thus obtained is used with a DNAnexus API token[^3] as contained in `~/doc/nexus` here.
 
 ```bash
 export DX_API_TOKEN=$(cat ~/doc/nexus)
@@ -112,8 +112,23 @@ cd dx-toolkit && source environment
 
 ---
 
-[^1]: A summary of all commands is available from [https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities](https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities).
-[^2]:
+[^1]:
+    To facilitate the upcoming training courses by DNAnexus, the resource is made available for CEU users here, [/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/](/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/).
+
+    > For instance one only to do these to use `dx` and apps in `dx-toolkit`,
+    >
+    > ```bash
+    > # dx:
+    > module load python/3.7
+    > source /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/py37/bin/activate
+    > dx help ls
+    > # dx-toolkit:
+    > module load gcc/6 texlive python/2.7
+    > cd /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/dx-toolkit && source environment
+    > ```
+
+[^2]: A summary of all commands is available from [https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities](https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities).
+[^3]:
     Instead of the `dx login` and `dx logout` pair one can login with a token, i.e.,
 
     > ```bash
