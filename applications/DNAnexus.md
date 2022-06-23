@@ -2,9 +2,11 @@
 sort: 14
 ---
 
-# DNAnexus[^1]
+# DNAnexus
 
 Web: [https://www.dnanexus.com/partnerships/ukbiobank](https://www.dnanexus.com/partnerships/ukbiobank) ([WebUI](https://platform.dnanexus.com/login))
+
+NOTE: To facilitate the upcoming training courses by DNAnexus, the resource is made available for CEU users[^1].
 
 ## Platform SDK
 
@@ -113,9 +115,9 @@ cd dx-toolkit && source environment
 ---
 
 [^1]:
-    To facilitate the upcoming training courses by DNAnexus, the resource is made available for CEU users here, [/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/](/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/).
+    Location: [/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/](/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/).
 
-    > For instance one only to do these to use `dx` and apps in `dx-toolkit`,
+    > For instance one only needs to do these to use `dx` and apps in `dx-toolkit`,
     >
     > ```bash
     > # dx:
