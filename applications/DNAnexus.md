@@ -4,7 +4,9 @@ sort: 14
 
 # DNAnexus
 
-Web: [https://www.dnanexus.com/partnerships/ukbiobank](https://www.dnanexus.com/partnerships/ukbiobank) ([WebUI](https://platform.dnanexus.com/login))
+Web: [https://www.dnanexus.com/](https://www.dnanexus.com/) ([documentation](https://documentation.dnanexus.com/), [WebUI](https://platform.dnanexus.com/login))
+
+UKBioBank: [https://www.dnanexus.com/partnerships/ukbiobank](https://www.dnanexus.com/partnerships/ukbiobank)
 
 NOTE: To facilitate the upcoming training courses by DNAnexus, the resource is made available for CEU users[^1].
 
