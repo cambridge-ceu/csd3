@@ -23,13 +23,7 @@ pip install --upgrade dxpy
 dx help ls
 ```
 
-using the Python virtual environment at `py37/`, say[^2]. Once this is done, subsequent calls are simplified as
-
-```bash
-module load python/3.7
-source py37/bin/activate
-dx help ls
-```
+using the Python virtual environment at `py37/`, say[^2].
 
 > It is not unusual to have version compatibility issues, so doing this ahead of time is helpful for you. For issues, please contact Customer Care at support@dnanexus.com for help with installation.
 
@@ -52,11 +46,40 @@ A number of utilities are available from the source,
 wget https://github.com/dnanexus/dxda/archive/refs/tags/v0.5.9.tar.gz -O - | \
 tar xvfz -
 cd dxda-*
-python scripts/create_manifest.py "project-G8pGb82KjVGq8bZ053jkKqQ5:/Users/Jing Hua" --recursive --output_file "manifest.json.bz2"
+python scripts/create_manifest.py "project-GBvPBV80Q662PGqP4gGKJ15j:/Users/jhz22/" --recursive --output_file "manifest.json.bz2"
 bzip2 -d -c manifest.json.bz2
 ```
 
-where `create_manifest.py` is used to obtain a bz2-compressed JSON manifest file (`manifest.json.bz2`) whereas the last command shows the contents of the file to the terminal.
+where `create_manifest.py` is used to obtain a bz2-compressed JSON manifest file (`manifest.json.bz2`) whereas the last command shows the contents of the file to the terminal, e.g.,
+
+```
+{
+  "project-GBvPBV80Q662PGqP4gGKJ15j": [
+    {
+      "folder": "/Users/jhz22",
+      "id": "file-GBvg79j0Jyf855Y44v4PvV06",
+      "name": "SRR100022_20_1.stats-fastqc.txt",
+      "parts": {
+        "1": {
+          "md5": "2d93f9138611b45aefde5e9d30430d3c",
+          "size": 16959
+        }
+      }
+    },
+    {
+      "folder": "/Users/jhz22",
+      "id": "file-GBvg79j0Jyf3f3v24qVQfyk1",
+      "name": "SRR100022_20_1.stats-fastqc.html",
+      "parts": {
+        "1": {
+          "md5": "f3cbbbf3c824dcd94952a119e62c2452",
+          "size": 661025
+        }
+      }
+    }
+  ]
+}
+```
 
 The file thus obtained is used with a DNAnexus API token[^3] as contained in `~/doc/nexus` here.
 
