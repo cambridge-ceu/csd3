@@ -137,6 +137,17 @@ module load gcc/6 texlive python/2.7
 cd dx-toolkit && source environment
 ```
 
+## jq
+
+[https://stedolan.github.io/jq/](https://stedolan.github.io/jq/)
+
+jq is a lightweight and flexible command-line JSON processor.
+
+```bash
+wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -O jq
+jq --help
+```
+
 ---
 
 [^1]:
