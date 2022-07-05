@@ -8,6 +8,8 @@ Web: [https://www.dnanexus.com/](https://www.dnanexus.com/) ([documentation](htt
 
 UKBioBank: [https://www.dnanexus.com/partnerships/ukbiobank](https://www.dnanexus.com/partnerships/ukbiobank)
 
+Organisation: [https://documentation.dnanexus.com/getting-started/key-concepts/organizations](https://documentation.dnanexus.com/getting-started/key-concepts/organizations) and [Member Guide](https://documentation.dnanexus.com/user/organization-member-guide)
+
 NOTE: To facilitate the upcoming training courses by DNAnexus, the resource is made available for CEU users[^1].
 
 ## Platform SDK
