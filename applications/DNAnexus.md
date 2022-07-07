@@ -155,32 +155,32 @@ jq --help
 [^1]:
     Location: [/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/](/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/).
 
-    > For instance one only needs to do these to use `dx` and apps in `dx-toolkit`,
-    >
-    > ```bash
-    > # dx:
-    > module load python/3.7
-    > source /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/py37/bin/activate
-    > dx help ls
-    > # dx-toolkit:
-    > module load gcc/6 texlive python/2.7
-    > cd /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/dx-toolkit && source environment
-    > ```
+    For instance one only needs to do these to use `dx` and apps in `dx-toolkit`,
+
+    ```bash
+    # dx:
+    module load python/3.7
+    source /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/py37/bin/activate
+    dx help ls
+    # dx-toolkit:
+    module load gcc/6 texlive python/2.7
+    cd /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/dx-toolkit && source environment
+    ```
 
 [^2]:
     A summary of all commands is available from [https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities](https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities), particularly its [API Methods](https://documentation.dnanexus.com/developer/api/api-directory) section.
 
-    > OpenBio Jupyter notebooks:
-    >
-    > - [UKB research analysis platform notebooks](https://github.com/dnanexus/OpenBio/tree/master/UKB_notebooks)
-    > - [getting started with dxdata](https://github.com/dnanexus/OpenBio/blob/master/dxdata/getting_started_with_dxdata.ipynb)
+    OpenBio Jupyter notebooks:
+
+    - [UKB research analysis platform notebooks](https://github.com/dnanexus/OpenBio/tree/master/UKB_notebooks)
+    - [getting started with dxdata](https://github.com/dnanexus/OpenBio/blob/master/dxdata/getting_started_with_dxdata.ipynb)
 
 [^3]:
     Instead of the `dx login` and `dx logout` pair one can login with a token, i.e.,
 
-    > ```bash
-    > dx login --token $(cat ~/doc/nexus)
-    > dx select --level VIEW`
-    > ```
-    >
-    > The `--noprojects` option allows for non-interactive login. The `dx select` command allows for specific projects be selected. See also [https://documentation.dnanexus.com/user/login-and-logout](https://documentation.dnanexus.com/user/login-and-logout).
+    ```bash
+    dx login --token $(cat ~/doc/nexus)
+    dx select --level VIEW`
+    ```
+
+    The `--noprojects` option allows for non-interactive login. The `dx select` command allows for specific projects be selected. See also [https://documentation.dnanexus.com/user/login-and-logout](https://documentation.dnanexus.com/user/login-and-logout).
