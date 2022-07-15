@@ -189,6 +189,8 @@ jq --help
 
     [Resource centre](https://www.dnanexus.com/resources) (DNAnexus xVantage Care team [support@dnanexus.com](mailto:support@dnanexus.com))
 
+    Webinar on RStudio, [July 14, 2022](https://www.youtube.com/watch?v=iy22sxlj5Ik)
+
 [^3]: Token
 
     Instead of the `dx login` and `dx logout` pair one can login with a token, i.e.,
