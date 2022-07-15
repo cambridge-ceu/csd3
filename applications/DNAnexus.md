@@ -29,7 +29,7 @@ dx help ls
 
 using the Python virtual environment at `py37/`, say[^2].
 
-> It is not unusual to have version compatibility issues, so doing this ahead of time is helpful for you. For issues, please contact Customer Care at support@dnanexus.com for help with installation.
+> It is not unusual to have version compatibility issues, so doing this ahead of time is helpful for you. For issues, please contact Customer Care at [support@dnanexus.com](mailto:support@dnanexus.com) for help with installation.
 
 ## Download Agent
 
@@ -152,7 +152,8 @@ jq --help
 
 ---
 
-[^1]:
+[^1]: CSD3
+
     Location: [/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/](/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/).
 
     For instance one only needs to do these to use `dx` and apps in `dx-toolkit`,
@@ -167,15 +168,29 @@ jq --help
     cd /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/dx-toolkit && source environment
     ```
 
-[^2]:
-    A summary of all commands is available from [https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities](https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities), particularly its [API Methods](https://documentation.dnanexus.com/developer/api/api-directory) section.
+    Access to the [training sessions](https://platform.dnanexus.com/panx/projects/GBkP5QXK4v3jy5Gj4jXpG6y8/data/) is possible through [Richard Houghton](mailto:rh12@sanger.ac.uk).
+
+[^2]: DNAnexus
+
+    Billing, [https://documentation.dnanexus.com/admin/billing-and-account-management](https://documentation.dnanexus.com/admin/billing-and-account-management)
+
+    Cohort browser, [https://documentation.dnanexus.com/user/cohort-browser](https://documentation.dnanexus.com/user/cohort-browser)
+
+    Index of dx commands [https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities](https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities), particularly its [API Methods](https://documentation.dnanexus.com/developer/api/api-directory) section.
+
+    Introduction to building Apps, [https://documentation.dnanexus.com/developer/apps/intro-to-building-apps](https://documentation.dnanexus.com/developer/apps/intro-to-building-apps)
 
     [OpenBio](https://github.com/dnanexus/OpenBio) Jupyter notebooks:
 
     - [UKB research analysis platform notebooks](https://github.com/dnanexus/OpenBio/tree/master/UKB_notebooks)
     - [getting started with dxdata](https://github.com/dnanexus/OpenBio/blob/master/dxdata/getting_started_with_dxdata.ipynb)
+    - DxJupyterLab QuickStart, [https://documentation.dnanexus.com/user/jupyter-notebooks/quickstart](https://documentation.dnanexus.com/user/jupyter-notebooks/quickstart)
+    - LocusZoom, [https://documentation.dnanexus.com/science/scientific-guides/locuszoom-dnanexus-app](https://documentation.dnanexus.com/science/scientific-guides/locuszoom-dnanexus-app)
 
-[^3]:
+    [Resource centre](https://www.dnanexus.com/resources) (DNAnexus xVantage Care team [support@dnanexus.com](mailto:support@dnanexus.com))
+
+[^3]: Token
+
     Instead of the `dx login` and `dx logout` pair one can login with a token, i.e.,
 
     ```bash
