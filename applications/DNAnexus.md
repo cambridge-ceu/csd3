@@ -189,7 +189,7 @@ jq --help
 
     [Resource centre](https://www.dnanexus.com/resources) (DNAnexus xVantage Care team [support@dnanexus.com](mailto:support@dnanexus.com))
 
-    Webinar on RStudio, [July 14, 2022](https://www.youtube.com/watch?v=iy22sxlj5Ik)
+    [DNAnexus community](https://community.dnanexus.com/s/), Webinar on RStudio, [July 14, 2022](https://www.youtube.com/watch?v=iy22sxlj5Ik)
 
 [^3]: Token
 
