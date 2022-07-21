@@ -28,7 +28,7 @@ tar xvfz rJava_1.0-6.tar.gz
 R CMD INSTALL rJava
 ```
 
-With Bioconductor package Rcpi the rJava.so could not be loaded but can be installed inside R, namely.
+With Bioconductor package `Rcpi` the `rJava.so` could not be loaded but can be installed inside R, namely.
 
 ```
 > BiocManager::install("Rcpi")
