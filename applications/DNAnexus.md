@@ -6,7 +6,7 @@ sort: 14
 
 Web: [https://www.dnanexus.com/](https://www.dnanexus.com/) ([documentation](https://documentation.dnanexus.com/), [WebUI](https://platform.dnanexus.com/login))
 
-UKBioBank: [https://www.dnanexus.com/partnerships/ukbiobank](https://www.dnanexus.com/partnerships/ukbiobank)
+UKBioBank: [landing](https://ukbiobank.dnanexus.com/landing), [partnership](https://www.dnanexus.com/partnerships/ukbiobank)
 
 Organisation: [https://documentation.dnanexus.com/getting-started/key-concepts/organizations](https://documentation.dnanexus.com/getting-started/key-concepts/organizations) and [Member Guide](https://documentation.dnanexus.com/user/organization-member-guide)
 
