@@ -141,6 +141,8 @@ cd dx-toolkit && source environment
 
 ## jq
 
+It is distributed with `dx-toolkit` above but the latest version is available from
+
 [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/)
 
 jq is a lightweight and flexible command-line JSON processor.
