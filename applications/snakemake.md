@@ -4,7 +4,7 @@ sort: 44
 
 # snakemake
 
-[GitHub](https://github.com/snakemake/snakemake) ([documentation](https://snakemake.github.io/), ([stable documentation](https://snakemake.readthedocs.io/en/stable/))
+[GitHub](https://github.com/snakemake/snakemake) ([documentation](https://snakemake.github.io/), ([stable documentation](https://snakemake.readthedocs.io/en/stable/)))
 
 It is a python-based workflow management system.
 
