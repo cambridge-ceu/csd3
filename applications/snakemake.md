@@ -4,7 +4,7 @@ sort: 44
 
 # snakemake
 
-Web: [https://snakemake.github.io/](https://snakemake.github.io/) ([documentation](https://snakemake.readthedocs.io/en/stable/), [GitHub](https://github.com/snakemake/snakemake)).
+[GitHub](https://github.com/snakemake/snakemake) ([documentation](https://snakemake.github.io/), ([stable documentation](https://snakemake.readthedocs.io/en/stable/))
 
 It is a python-based workflow management system.
 
@@ -18,13 +18,13 @@ export mypath=${HOME}/COVID-19/miniconda37
 conda create --prefix ${mypath} python=3.7 ipykernel
 conda init bash
 source ~/.bashrc
-conda activate ${mypath}
+source activate ${mypath}
 mamba install -c bioconda snakemake-minimal
 conda install -c bioconda snakemake
 conda install -c bioconda fastqc
 conda install -c conda-forge mamba
 snakemake --help
-conda deactivate
+source deactivate
 ```
 
 By default, the installation path is ${HOME}/.conda/envs/miniconda37.
@@ -34,7 +34,7 @@ After installation, the call later on will be simpler,
 ```bash
 module load miniconda3/4.5.1
 export mypath=${HOME}/COVID-19/miniconda37
-conda activate ${mypath}
+source activate ${mypath}
 ```
 
 ## Examples
@@ -50,6 +50,8 @@ hello
 ```
 
 > Hello makefiles!
+
+as others from the GitHub/examples directory.
 
 ### [Mendelian Randomziation](https://github.com/marcoralab/MRPipeline)
 
