@@ -24,7 +24,7 @@ conda install -c bioconda snakemake
 conda install -c bioconda fastqc
 conda install -c conda-forge mamba
 snakemake --help
-source deactivate
+conda deactivate
 ```
 
 By default, the installation path is ${HOME}/.conda/envs/miniconda37.
