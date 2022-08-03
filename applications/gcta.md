@@ -20,6 +20,15 @@ cd gcta_1.93.3beta2/
 ln -sf ${HPC_WORK}/gcta_1.93.3beta2/gcta64 ${HPC_WORK}/bin/gcta-1.9
 ```
 
+For the recommended version 1.94.1, we have
+
+```bash
+wget https://yanglab.westlake.edu.cn/software/gcta/bin/gcta-1.94.1-linux-kernel-3-x86_64.zip
+unzip  gcta-1.94.1-linux-kernel-3-x86_64.zip
+cd gcta-1.94.1-linux-kernel-3-x86_64/
+ln -sf ${PWD}/gcta-1.94.1 ${HPC_WORK}/bin/gcta-1.9
+```
+
 ## Source
 
 Distribution with the paper: [https://zenodo.org/record/5226943/files/jianyangqt/gcta-v1.93.3beta2.zip](https://zenodo.org/record/5226943/files/jianyangqt/gcta-v1.93.3beta2.zip).
@@ -87,7 +96,7 @@ now we are able to build `gcta64` whose size is substantially smaller (~13MB) th
 
 ## Documentation example
 
-We use the documentation example to illutrate a linear mixed model (LMM), where `gcta-1.9` is a symbolic link.
+We use the documentation example to illutrate a linear mixed model (LMM).
 
 ```bash
 gcta-1.9 --bfile test --make-grm --out test
