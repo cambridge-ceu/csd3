@@ -47,7 +47,7 @@ module load intel/mkl/2017.8
 module load spectra/0.8.1
 export EIGEN3_INCLUDE_DIR=/usr/local/software/master/eigen/latest/include
 export BOOST_LIB=/usr/local/Cluster-Apps/boost/1.65.1/python3.5.1-gcc5.3.0/
-export SPECTRA_LIB=/usr/local/Cluster-Apps/spectra/0.8.1/spectra-0.8.1
+export SPECTRA_LIB=/usr/local/Cluster-Apps/spectra/0.8.1
 git clone https://github.com/jianyangqt/gcta
 cd gcta
 cd submods
@@ -58,7 +58,7 @@ cmake ..
 make
 ```
 
-It requires specification of `/usr/local/Cluster-Apps/spectra/0.8.1/include/Spectra/` in `FastFAM.cpp` and `Geno.cpp`. We also get complaints about -lzstd and but could get around with adding -L${HPC_WORK}/lib to `CMakeFiles//gcta64.dir/link.txt` and then `bash CMakeFiles//gcta64.dir/link.txt` which gives the much-desired `gcta64`.
+It requires specifications of `/usr/local/Cluster-Apps/spectra/0.8.1/include/Spectra/` in `FastFAM.cpp` and `zstd.h` in `Geno.cpp`. We also get complaints about -lzstd and but could get around with adding -L${HPC_WORK}/lib to `CMakeFiles//gcta64.dir/link.txt` and then `bash CMakeFiles//gcta64.dir/link.txt` which gives the much-desired `gcta64`.
 
 The `libgsl.so.25` is provided with `gsl-2.6` which can be set up as follows,
 
@@ -72,9 +72,9 @@ make install
 
 ### v1.94.1
 
-In fact, the specificatin of `SPECTRA_LIB` above is useless since the directory is empty. Ahead of the `make` command, check with `git submodule update --init`.
+Ahead of the `make` command, check with `git submodule update --init`.
 
-There is still complaint about "zstd.h" in Geno.cpp and change it to \<zstd.h\> and precede with `module load zstd-1.3.0-intel-17.0.4-eyn6gaw`. Again there are complaints about Spectra/ and we replace
+There is still complaint about "zstd.h" in `Geno.cpp` and change it to \<zstd.h\> and precede with `module load zstd-1.3.0-intel-17.0.4-eyn6gaw`. Again there are complaints about Spectra/ and we replace
 
 ```cpp
 #include <Spectra/SymEigsSolver.h>
