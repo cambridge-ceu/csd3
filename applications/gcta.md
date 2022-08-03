@@ -28,6 +28,8 @@ GitHub: [https://github.com/jianyangqt/gcta](https://github.com/jianyangqt/gcta)
 
 Note that they work with a specific version of plink-ng from [https://github.com/zhilizheng/plink-ng](https://github.com/zhilizheng/plink-ng). With GitHub, we could track any change(s) we made with `git diff`.
 
+### v1.93.3beta2
+
 We proceed as follows,
 
 ```bash
@@ -59,9 +61,33 @@ make
 make install
 ```
 
+### v1.94.1
+
+In fact, the specificatin of `SPECTRA_LIB` above is useless since the directory is empty.
+
+There is still complaint about "zstd.h" in Geno.cpp and change it to <zstd.h> and precede with `module load zstd-1.3.0-intel-17.0.4-eyn6gaw`. Again there are complaints about Spectra/ and we replace
+
+```cpp
+#include <Spectra/SymEigsSolver.h>
+#include <Spectra/MatOp/SparseSymMatProd.h>
+```
+
+with
+
+```cpp
+//#include <Spectra/SymEigsSolver.h>
+//#include <Spectra/MatOp/SparseSymMatProd.h>
+#include "/usr/local/Cluster-Apps/spectra/0.8.1/include/Spectra/SymEigsSolver.h"
+#include "/usr/local/Cluster-Apps/spectra/0.8.1/include/Spectra/MatOp/SparseSymMatProd.h"
+```
+
+in `FastFAM.cpp`.
+
+now we are able to build `gcta64` whose size is substantially smaller (~13MB) than the distributed file.
+
 ## Documentation example
 
-We use the documentation example to illutrate a linear mixed model (LMM).
+We use the documentation example to illutrate a linear mixed model (LMM), where `gcta-1.9` is a symbolic link.
 
 ```bash
 gcta-1.9 --bfile test --make-grm --out test
@@ -73,11 +99,12 @@ Where the first statement generates the genomic relationship matrix (GRM) follow
 ```
 *******************************************************************
 * Genome-wide Complex Trait Analysis (GCTA)
-* version 1.93.3 beta Linux
-* (C) 2010-present, Jian Yang, The University of Queensland
-* Please report bugs to Jian Yang <jian.yang.qt@gmail.com>
+* version v1.94.1 Linux
+* Built at Aug  3 2022 04:46:31, by GCC 8.5
+* (C) 2010-present, Yang Lab, Westlake University
+* Please report bugs to Jian Yang <jian.yang@westlake.edu.cn>
 *******************************************************************
-Analysis started at 10:53:18 GMT on Wed Nov 17 2021.
+Analysis started at 11:26:53 BST on Wed Aug 03 2022.
 Hostname: login-e-16
 
 Options:
@@ -86,8 +113,8 @@ Options:
 --make-grm
 --out test
 
-The program will be running on up to 1 threads.
-Note: GRM is computed using the SNPs on the autosome.
+The program will be running with up to 1 threads.
+Note: GRM is computed using the SNPs on the autosomes.
 Reading PLINK FAM file from [test.fam]...
 3925 individuals to be included from FAM file.
 3925 individuals to be included. 1643 males, 2282 females, 0 unknown.
@@ -96,27 +123,27 @@ Reading PLINK BIM file from [test.bim]...
 Computing the genetic relationship matrix (GRM) v2 ...
 Subset 1/1, no. subject 1-3925
   3925 samples, 1000 markers, 7704775 GRM elements
-IDs for the GRM file has been saved in the file [test.grm.id]
+IDs for the GRM file have been saved in the file [test.grm.id]
 Computing GRM...
-  100% finished in 0.6 sec
+  100% finished in 0.5 sec
 1000 SNPs have been processed.
   Used 1000 valid SNPs.
 The GRM computation is completed.
 Saving GRM...
 GRM has been saved in the file [test.grm.bin]
 Number of SNPs in each pair of individuals has been saved in the file [test.grm.N.bin]
-```
 
-and
-
-```
+Analysis finished at 11:26:54 BST on Wed Aug 03 2022
+Overall computational time: 1.21 sec.
+(base) 11:26 jhz22@login-e-16 ~/hpc-work/gcta-1.94.1-linux-kernel-3-x86_64 $ gcta-1.9 --grm test --reml --pheno test.phen --out test
 *******************************************************************
 * Genome-wide Complex Trait Analysis (GCTA)
-* version 1.93.3 beta Linux
-* (C) 2010-present, Jian Yang, The University of Queensland
-* Please report bugs to Jian Yang <jian.yang.qt@gmail.com>
+* version v1.94.1 Linux
+* Built at Aug  3 2022 04:46:31, by GCC 8.5
+* (C) 2010-present, Yang Lab, Westlake University
+* Please report bugs to Jian Yang <jian.yang@westlake.edu.cn>
 *******************************************************************
-Analysis started at 10:55:35 GMT on Wed Nov 17 2021.
+Analysis started at 11:26:54 BST on Wed Aug 03 2022.
 Hostname: login-e-16
 
 Accepted options:
@@ -128,7 +155,7 @@ Accepted options:
 Note: This is a multi-thread program. You could specify the number of threads by the --thread-num option to speed up the computation if there are multiple processors in your machine.
 
 Reading IDs of the GRM from [test.grm.id].
-3925 IDs read from [test.grm.id].
+3925 IDs are read from [test.grm.id].
 Reading the GRM from [test.grm.bin].
 GRM for 3925 individuals are included from [test.grm.bin].
 Reading phenotypes from [test.phen].
@@ -175,12 +202,17 @@ Sampling variance/covariance of the estimates of variance components:
 -4.800941e-05   5.242193e-04
 
 Summary result of REML analysis has been saved in the file [test.hsq].
+
+Analysis finished at 11:27:12 BST on Wed Aug 03 2022
+Overall computational time: 17.87 sec.
 ```
 
-Therefore the documentation example provides a heritability estimate of 0.223 (0.00877).
+Therefore the documentation example provides a heritability estimate of 0.0223 (0.00877). The version compiled from source takes 19.86 sec for the heritability analysis (slower).
 
 It offers alternative to regenie on this site according to the associate paper below.
 
-## Reference
+## References
+
+Li, A. et al. mBAT-combo: a more powerful test to detect gene-trait associations from GWAS data. bioRxiv, 2022.06.27.497850 (2022).
 
 Jiang, L., Zheng, Z., Fang, H. & Yang, J. A generalized linear mixed model association tool for biobank-scale data. Nature Genetics 53, 1616-1621 (2021).
