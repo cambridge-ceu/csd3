@@ -74,7 +74,7 @@ make install
 
 In fact, the specificatin of `SPECTRA_LIB` above is useless since the directory is empty.
 
-There is still complaint about "zstd.h" in Geno.cpp and change it to <zstd.h> and precede with `module load zstd-1.3.0-intel-17.0.4-eyn6gaw`. Again there are complaints about Spectra/ and we replace
+There is still complaint about "zstd.h" in Geno.cpp and change it to \<zstd.h\> and precede with `module load zstd-1.3.0-intel-17.0.4-eyn6gaw`. Again there are complaints about Spectra/ and we replace
 
 ```cpp
 #include <Spectra/SymEigsSolver.h>
