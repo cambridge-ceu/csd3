@@ -37,6 +37,10 @@ export mypath=${HOME}/COVID-19/miniconda37
 source activate ${mypath}
 ```
 
+## slurm
+
+The `--cluster-config` specification has been extended several ways, e.g., [https://github.com/Snakemake-Profiles/slurm](https://github.com/Snakemake-Profiles/slurm).
+
 ## Examples
 
 ### hello world
