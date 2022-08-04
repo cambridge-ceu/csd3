@@ -57,7 +57,7 @@ hello
 
 as others from the GitHub/examples directory.
 
-### [Mendelian Randomziation](https://github.com/marcoralab/MRPipeline)
+### [MRpipeline](https://github.com/marcoralab/MRPipeline) ([MRcovid](https://github.com/marcoralab/MRcovid))
 
 ### [CVD1-HF analysis](https://github.com/alhenry/cvd1-hf)
 
