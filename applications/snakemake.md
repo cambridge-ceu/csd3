@@ -43,7 +43,7 @@ The `--cluster-config` specification has been extended several ways, e.g., [http
 
 ## Examples
 
-### hello world
+### 1. hello world
 
 ```bash
 wget -qO- https://github.com/snakemake/snakemake/archive/refs/tags/v7.3.1.tar.gz | \
@@ -57,9 +57,9 @@ hello
 
 as others from the GitHub/examples directory.
 
-### [MRpipeline](https://github.com/marcoralab/MRPipeline) ([MRcovid](https://github.com/marcoralab/MRcovid))
+### 2. [MRpipeline](https://github.com/marcoralab/MRPipeline) ([MRcovid](https://github.com/marcoralab/MRcovid))
 
-### [CVD1-HF analysis](https://github.com/alhenry/cvd1-hf)
+### 3. [CVD1-HF analysis](https://github.com/alhenry/cvd1-hf)
 
 ## Reference
 
