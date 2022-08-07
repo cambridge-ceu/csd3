@@ -50,10 +50,14 @@ python3
 >>> from snakemake.io import expand, glob_wildcards
 >>> expand("{a}-{b}.tst",a=['a', 'b', 'c'],b=[1, 2, 3])
 ['a-1.tst', 'a-2.tst', 'a-3.tst', 'b-1.tst', 'b-2.tst', 'b-3.tst', 'c-1.tst', 'c-2.tst', 'c-3.tst']
+>>> expand("{sample}_{id}.txt", zip, sample=["a", "b", "c"], id=["1", "2", "3"])
+['a_1.txt', 'b_2.txt', 'c_3.txt']
 >>> proteins = glob_wildcards('METAL/{metal}-chrX-1.tbl.gz').metal
 >>> len(proteins)
 987
 ```
+
+Note the `zip` argument which prevents expanding every combinations.
 
 ## Examples
 
