@@ -41,6 +41,20 @@ source activate ${mypath}
 
 The `--cluster-config` specification has been extended several ways, e.g., [https://github.com/Snakemake-Profiles/slurm](https://github.com/Snakemake-Profiles/slurm).
 
+## Python functions
+
+The mysterious `expand()` function can be explicitly exploited,
+
+```
+python3
+>>> from snakemake.io import expand, glob_wildcards
+>>> expand("{a}-{b}.tst",a=['a', 'b', 'c'],b=[1, 2, 3])
+['a-1.tst', 'a-2.tst', 'a-3.tst', 'b-1.tst', 'b-2.tst', 'b-3.tst', 'c-1.tst', 'c-2.tst', 'c-3.tst']
+>>> proteins = glob_wildcards('METAL/{metal}-chrX-1.tbl.gz').metal
+>>> len(proteins)
+987
+```
+
 ## Examples
 
 ### 1. hello world
