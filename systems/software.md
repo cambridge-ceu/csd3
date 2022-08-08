@@ -157,7 +157,7 @@ See also https://docs.hpc.cam.ac.uk/hpc/software-tools/python.html#using-anacond
 
 See [HPC docuementation](https://docs.hpc.cam.ac.uk/hpc/) for additional information on PyTorch, Tensorflow and GPU.
 
-A nice tutorial, including parallel computing, is [hpc-python](https://www.hpc-carpentry.org/hpc-python/) ([GitHub](https://github.com/hpc-carpentry/hpc-python/)).
+:star: **[hpc-python](https://www.hpc-carpentry.org/hpc-python/) ([GitHub](https://github.com/hpc-carpentry/hpc-python/)).**
 
 #### R
 
