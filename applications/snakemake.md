@@ -79,6 +79,8 @@ as others from the GitHub/examples directory.
 
 ### 3. [CVD1-HF analysis](https://github.com/alhenry/cvd1-hf)
 
-## Reference
+## References
+
+Köster J, Rahmann S: Snakemake--a scalable bioinformatics workflow engine. _Bioinformatics_. 2012, 28 (19): 2520-2; 2018, 34 (20): 3600
 
 Edwards D. Plant Bioinformatics-Methods and Protocols, 3e. Springer 2022. https://link.springer.com/book/10.1007/978-1-0716-2067-0. [Chapter 11](https://link.springer.com/protocol/10.1007/978-1-0716-2067-0_11); [Chapter 9](https://link.springer.com/protocol/10.1007/978-1-0716-2067-0_9).
