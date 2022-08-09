@@ -21,7 +21,9 @@ impute_v2.3.2_x86_64_static/  plink_bgi_Dev/               raremetal_4.13.7/    
 interval/                     plink-bgi_linux_x86_64_may/  raremetal_4.13.8/             snptest_2.5.2/
 ```
 
-These can be loaded with `module load ceuadmin/<module name>`.
+These are wrapped up as modules, which can be loaded with `module load ceuadmin/<module name>`.
+
+:star: **[modules documentation](https://modules.readthedocs.io/en/latest/index.html)**
 
 #### gcc
 
