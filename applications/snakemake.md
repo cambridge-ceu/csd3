@@ -8,6 +8,8 @@ sort: 44
 
 It is a python-based workflow management system.
 
+:star: **[https://github.com/troycomi/snakemake-training](https://github.com/troycomi/snakemake-training)**
+
 ## Installation
 
 We illustrate installation through `fastqc` and `mamba` at designated location.
