@@ -52,11 +52,29 @@ make NO_GETTEXT=YesPlease install
 
 and the executables will be put to ~/bin.
 
+### ghc
+
+The Glasgow Haskell Compiler is seen from `module avail ghc`, e.g.,
+
+```bash
+module load ghc/8.2.2
+ghc --version
+```
+
 #### JAVA
 
 ```bash
 module avail openjdk
 java -version
+```
+
+#### Julia
+
+The Julia compiler is visible from `module avail julia`, and by default it loads 1.6.2
+
+```bash
+module load gcc/9 julia
+julia --version
 ```
 
 #### libraOffice
