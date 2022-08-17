@@ -52,7 +52,7 @@ make NO_GETTEXT=YesPlease install
 
 and the executables will be put to ~/bin.
 
-### ghc
+#### ghc
 
 The Glasgow Haskell Compiler is seen from `module avail ghc`, e.g.,
 
