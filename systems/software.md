@@ -370,7 +370,7 @@ export TMPDIR=/rds/user/$USER/hpc-work/
 
 ##### Neither `parallel` nor SLURM
 
-The following script moves all files a day earlier to to directory old/,
+The following script moves all files a day earlier to directory old/,
 
 ```bash
 find . -mtime +1 | xargs -l -I {} mv {} old
