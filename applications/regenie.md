@@ -189,4 +189,4 @@ For more information, use option '--help' or visit the website: https://rgcgithu
 
 ## Reference
 
-Mbatchou, J., Barnard, L., Backman, J. et al. Computationally efficient whole-genome regression for quantitative and binary traits. Nat Genet 53, 1097–1103 (2021). https://doi.org/10.1038/s41588-021-00870-7
+Mbatchou, J., Barnard, L., Backman, J. et al. Computationally efficient whole-genome regression for quantitative and binary traits. _Nat Genet_ 53, 1097–1103 (2021). https://doi.org/10.1038/s41588-021-00870-7

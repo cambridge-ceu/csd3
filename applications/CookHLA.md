@@ -118,19 +118,19 @@ Among remaining phenotypes, 0 are cases and 10 are controls.
 
 Choi W, Luo Y, Raychaudhuri S & Han B HATK: HLA analysis toolkit. _Bioinformatics_ 37, 416-418 (2020).
 
-Cook S, et al. Accurate imputation of human leukocyte antigens with CookHLA. _Nature Communications_ 12, 1264 (2021).
+Cook S, et al. Accurate imputation of human leukocyte antigens with CookHLA. _Nat Comm_ 12, 1264 (2021).
 
-Degenhardt F, et al. Construction and benchmarking of a multi-ethnic reference panel for the imputation of HLA class I and II alleles. _Human Molecular Genetics_ 28, 2078-2092 (2018).
+Degenhardt F, et al. Construction and benchmarking of a multi-ethnic reference panel for the imputation of HLA class I and II alleles. _Hum Mol Genet_ 28, 2078-2092 (2018).
 
 Jia X, et al. Imputing Amino Acid Polymorphisms in Human Leukocyte Antigens. _PLOS ONE_ 8, e64683 (2013).
 
 Immuno Polymorphism Database-international ImMunoGeneTics project (IMGT) (IPD-IMGT/HLA), [https://www.ebi.ac.uk/ipd/imgt/hla/](https://www.ebi.ac.uk/ipd/imgt/hla/)
 
-Luo, Y, et al. A high-resolution HLA reference panel capturing global population diversity enables multi-ancestry fine-mapping in HIV host response. Nat Genet 53, 1504–1516 (2021), [https://doi.org/10.1038/s41588-021-00935-7](https://doi.org/10.1038/s41588-021-00935-7).
+Luo, Y, et al. A high-resolution HLA reference panel capturing global population diversity enables multi-ancestry fine-mapping in HIV host response. _Nat Genet_ 53, 1504–1516 (2021), [https://doi.org/10.1038/s41588-021-00935-7](https://doi.org/10.1038/s41588-021-00935-7).
 
 WHO Committe. Nomenclature for Factors of the HLA System, [http://hla.alleles.org/](http://hla.alleles.org/).
 
-Zheng X, et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pharmacogenomics Journal_ 14, 192-200 (2014), [HLARES](https://hibag.s3.amazonaws.com/hlares_index.html).
+Zheng X, et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pharmacogenomics J_ 14, 192-200 (2014), [HLARES](https://hibag.s3.amazonaws.com/hlares_index.html).
 
 ---
 

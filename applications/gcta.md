@@ -222,6 +222,6 @@ It offers alternative to regenie on this site according to the associate paper b
 
 ## References
 
-Li, A. et al. mBAT-combo: a more powerful test to detect gene-trait associations from GWAS data. bioRxiv, 2022.06.27.497850 (2022).
+Li, A. et al. mBAT-combo: a more powerful test to detect gene-trait associations from GWAS data. _bioRxiv_, 2022.06.27.497850 (2022).
 
-Jiang, L., Zheng, Z., Fang, H. & Yang, J. A generalized linear mixed model association tool for biobank-scale data. Nature Genetics 53, 1616-1621 (2021).
+Jiang, L., Zheng, Z., Fang, H. & Yang, J. A generalized linear mixed model association tool for biobank-scale data. _Nat Genet_ 53, 1616-1621 (2021).
