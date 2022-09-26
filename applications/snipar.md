@@ -2,7 +2,7 @@
 sort: 45
 ---
 
-# snpiar
+# snipar
 
 GitHub: [https://github.com/AlexTISYoung/snipar](https://github.com/AlexTISYoung/snipar).
 
