@@ -22,6 +22,7 @@ This is standard, i.e.,
 
 ```bash
 git clone https://github.com/AlexTISYoung/snipar
+cd snipar
 python -m unittest snipar.tests
 ```
 
