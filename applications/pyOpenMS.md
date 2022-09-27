@@ -70,7 +70,9 @@ Script for testing is called `alphapept_test.py` which takes the following argum
 `szwk021704i19101xms1.raw`, `szwk021704i19101xms3.raw`, `szwk021704i19101xms5.raw` | Raw spectra
 `2022-07-05-reviewed-contam-UP000005640.fasta` | Database of protein sequences: 
 
-## pyOpenMS: [https://pyopenms.readthedocs.io/en/latest/index.html](https://pyopenms.readthedocs.io/en/latest/index.html) 
+## pyOpenMS
+
+Web: [https://pyopenms.readthedocs.io/en/latest/index.html](https://pyopenms.readthedocs.io/en/latest/index.html) 
 
 The newest features are through the nightly build/wheel (needs to be version 3.0+). Our first attempt is Python 3.7,
 
