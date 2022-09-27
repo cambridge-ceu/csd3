@@ -120,7 +120,7 @@ conda install -c openms pyopenms
 
 Web: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (older, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS)).
 
-This is fairly messy involving a lot of contributed modules, which needs to obtain manually. Nevertheless, it would allow for more flexible options.
+This involves a lot of contributed modules, which needs to obtain manually. Nevertheless, it would allow for more flexible options.
 
 ```bash
 git clone https://github.com/OpenMS/OpenMS
@@ -130,34 +130,34 @@ cd contrib
 cmake -DBUILD_TYPE=LIST ../OpenMS/contrib
 cmake -DBUILD_TYPE=ALL -DNUMBER_OF_JOBS=4 ../OpenMS/contrib
 # https://sourceforge.net/projects/open-ms/files/contrib/
-# cd archives
-# wget https://src.fedoraproject.org/lookaside/pkgs/libsvm/libsvm-3.12.tar.gz/a1b1083fe69a4ac695da753f4c83ed42/libsvm-3.12.tar.gz
-# cmake -DBUILD_TYPE=LIBSVM
-# wget https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.0.tar.gz -O Xerces-C_3_2_0.tar.gz
-# wget http://www.coin-or.org/download/source/CoinMP/CoinMP-1.8.3.tgz -O CoinMP-1.8.3-vs22.tar.gz
-# cmake -DBUILD_TYPE=COINOR
-# wget https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.gz
-# cmake -DBUILD_TYPE=BOOST
-# wget https://sources.libreelec.tv/mirror/sqlite/sqlite-autoconf-3150000.tar.gz
-# cmake -DBUILD_TYPE=SQLITE
-# wget https://sourceforge.net/projects/open-ms/files/contrib/WildMagic5.tar.gz
-# cmake -DBUILD_TYPE=WILDMAGIC
-# wget https://sourceforge.net/projects/kissfft/files/kissfft/v1_3_0/kiss_fft130.tar.gz -O kissfft-130.tar.gz
-# wget https://sourceforge.net/projects/open-ms/files/contrib/glpk-4.46.tar.gz
-# cmake -DBUILD_TYPE=GLPK
+cd archives
+wget https://src.fedoraproject.org/lookaside/pkgs/libsvm/libsvm-3.12.tar.gz/a1b1083fe69a4ac695da753f4c83ed42/libsvm-3.12.tar.gz
+cmake -DBUILD_TYPE=LIBSVM
+wget https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.0.tar.gz -O Xerces-C_3_2_0.tar.gz
+wget http://www.coin-or.org/download/source/CoinMP/CoinMP-1.8.3.tgz -O CoinMP-1.8.3-vs22.tar.gz
+cmake -DBUILD_TYPE=COINOR
+wget https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.gz
+cmake -DBUILD_TYPE=BOOST
+wget https://sources.libreelec.tv/mirror/sqlite/sqlite-autoconf-3150000.tar.gz
+cmake -DBUILD_TYPE=SQLITE
+wget https://sourceforge.net/projects/open-ms/files/contrib/WildMagic5.tar.gz
+cmake -DBUILD_TYPE=WILDMAGIC
+wget https://sourceforge.net/projects/kissfft/files/kissfft/v1_3_0/kiss_fft130.tar.gz -O kissfft-130.tar.gz
+wget https://sourceforge.net/projects/open-ms/files/contrib/glpk-4.46.tar.gz
+cmake -DBUILD_TYPE=GLPK
 # https://www.hdfgroup.org/packages/hdf5-1105-source/#
-# cmake -DBUILD_TYPE=HDF5
-# wget https://zlib.net/fossils/zlib-1.2.11.tar.gz
-# cmake -DBUILD_TYPE=ZLIB
-# wget https://src.fedoraproject.org/repo/pkgs/bzip2/bzip2-1.0.5.tar.gz/3c15a0c8d1d3ee1c46a1634d00617b1a/bzip2-1.0.5.tar.gz
-# cmake -DBUILD_TYPE=BZIP2
-# wget https://gitlab.com/libeigen/eigen/-/archive/3.3.4/eigen-3.3.4.tar.gz
-# tar xvfz eigen-3.3.4.tar.gz
-# cd eigen-3.3.4
-# mkdir build
-# cd build
-# cmake .. -DCMAKE_INSTALL_PREFIX=${Caprion}/OpenMS/contrib
-# make install
+cmake -DBUILD_TYPE=HDF5
+wget https://zlib.net/fossils/zlib-1.2.11.tar.gz
+cmake -DBUILD_TYPE=ZLIB
+wget https://src.fedoraproject.org/repo/pkgs/bzip2/bzip2-1.0.5.tar.gz/3c15a0c8d1d3ee1c46a1634d00617b1a/bzip2-1.0.5.tar.gz
+cmake -DBUILD_TYPE=BZIP2
+wget https://gitlab.com/libeigen/eigen/-/archive/3.3.4/eigen-3.3.4.tar.gz
+tar xvfz eigen-3.3.4.tar.gz
+cd eigen-3.3.4
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=${Caprion}/OpenMS/contrib
+make install
 ```
 
 ```bash
