@@ -198,6 +198,17 @@ The `cmake` lines exit with errors -- some edits are necessary with `cmake/cmake
 
 Strauss, M.T., et al., AlphaPept, a modern and open framework for MS-based proteomics. bioRxiv, 2021: p. 2021.07.23.453379. [https://www.biorxiv.org/content/10.1101/2021.07.23.453379v1](https://www.biorxiv.org/content/10.1101/2021.07.23.453379v1).
 
+[^benchmark]: Benchmark
+
+    Download file from [Dropbox](https://www.dropbox.com/sh/lb0agu7q7yg6w3x/AAAX4ENfgVeAq841qglH9rxAa?dl=0).
+
+    ```bash
+    ln -s alphapept-0.4.8 alphapept
+    unzip hpc_setup.zip
+    ```
+
+    which gives `alphapept_test.py` and `pyopenms_test.py` above along with data files.
+
 ---
 
 ## Independent installations
@@ -236,14 +247,3 @@ cp libsvm.so.3 ${Caprion}/lib
 cd python
 python setup.py install --prefix=${Caprion}/py38
 ```
-
-[^benchmark]: Benchmark
-
-    Download file from [Dropbox](https://www.dropbox.com/sh/lb0agu7q7yg6w3x/AAAX4ENfgVeAq841qglH9rxAa?dl=0).
-
-    ```bash
-    ln -s alphapept-0.4.8 alphapept
-    unzip hpc_setup.zip
-    ```
-
-    which gives `alphapept_test.py` and `pyopenms_test.py` above along with data files.
