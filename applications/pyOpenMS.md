@@ -18,7 +18,7 @@ where `gcc/7` specified though `gcc/6` appears to work well.
 
 ## Python
 
-The installations involves environements for several versions of Python, e.g., Python 3.7/3.8.
+The installations involve environements for several versions of Python, e.g., Python 3.7/3.8.
 
 ```bash
 module load python/3.7
@@ -32,6 +32,8 @@ module load python/3.8
 virtualenv py38
 source py38/bin/activate
 ```
+
+Note the `virtualenv py3[7|8]` are unnecessary after the installations.
 
 ## AlphaPept
 
@@ -62,7 +64,7 @@ cd alphapept-0.4.8
 python setup.py install --prefix=${Caprion}/py38
 ```
 
-Script for testing is called `alphapept_test.py` which takes the following arguments,
+Script for testing is called `alphapept_test.py` [^benchmark] which takes the following arguments,
 
   Name | Description
 -------|-----------------------------------------------------------------------
@@ -74,16 +76,34 @@ Script for testing is called `alphapept_test.py` which takes the following argum
 
 Web: [https://pyopenms.readthedocs.io/en/latest/index.html](https://pyopenms.readthedocs.io/en/latest/index.html) 
 
-The newest features are through the nightly build/wheel (needs to be version 3.0+). Our first attempt is Python 3.7,
+The newest features are through the nightly build/wheel (needs to be version 3.0+).
 
 ```bash
 wget -qO- https://nightly.link/OpenMS/OpenMS/workflows/pyopenms-wheels/nightly/Linux-wheels.zip\?status\=completed
 unzip Linux-wheels.zip\?status\=completed
-pip install pyopenms_nightly-3.0.0.dev20220924-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl --no-cache-dir  --prefix=${Caprion}/py37
-python pyopenms_test.py
 ```
 
-and gives the following error messages,
+It turned out only the first file in the zip downloads
+```
+Archive:  Linux-wheels.zip?status=completed
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+96180971  Defl:N 95271735   1% 09-25-2022 00:41 37b53f6d  pyopenms_nightly-3.0.0.dev20220924-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+76497352  Defl:N 75780910   1% 09-25-2022 00:41 63b654a1  pyopenms_nightly-3.0.0.dev20220924-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+56599302  Defl:N 56080139   1% 09-25-2022 00:41 86fa8bd7  pyopenms_nightly-3.0.0.dev20220924-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+--------          -------  ---                            -------
+229277625         227132784   1%                            3 files
+```
+
+is approppriate on CSD3. Our first attempt the proceeds with
+
+```bash
+module load python/3.7
+source py37/bin/activate
+pip install pyopenms_nightly-3.0.0.dev20220924-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl --no-cache-dir  --prefix=${Caprion}/py37
+```
+
+and a call to `python pyopenms_test.py` gave the following error messages,
 
 ```
 3.0.0.dev20220924
@@ -95,11 +115,7 @@ Traceback (most recent call last):
 ValueError: unsupported pickle protocol: 5
 ```
 
-and we turn to source in the next section.
-
-**Miniconda**
-
-We attempt to use the latest version, which is more recent than those at CSD3.
+We turned to **Miniconda** below. We set out for the latest version, which is more desirable than those at CSD3,
 
 ```bash
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -115,6 +131,8 @@ conda config --add channels conda-forge
 conda install pandas
 conda install -c openms pyopenms
 ```
+
+so `python pyopenms_test.py` responsed.
 
 ### OpenMS
 
@@ -173,15 +191,6 @@ cmake -DCMAKE_PREFIX_PATH=${Caprion} -DBOOST_USE_STATIC=ON
 
 Note the second `cmake` exits with error.
 
-## Benchmark
-
-Download file from [Dropbox](https://www.dropbox.com/sh/lb0agu7q7yg6w3x/AAAX4ENfgVeAq841qglH9rxAa?dl=0).
-
-```bash
-ln -s alphapept-0.4.8 alphapept
-unzip hpc_setup.zip
-```
-
 ## References
 
 Strauss, M.T., et al., AlphaPept, a modern and open framework for MS-based proteomics. bioRxiv, 2021: p. 2021.07.23.453379. [https://www.biorxiv.org/content/10.1101/2021.07.23.453379v1](https://www.biorxiv.org/content/10.1101/2021.07.23.453379v1).
@@ -224,3 +233,14 @@ cp libsvm.so.3 ${Caprion}/lib
 cd python
 python setup.py install --prefix=${Caprion}/py38
 ```
+
+[^benchmark]: Benchmark
+
+    Download file from [Dropbox](https://www.dropbox.com/sh/lb0agu7q7yg6w3x/AAAX4ENfgVeAq841qglH9rxAa?dl=0).
+
+    ```bash
+    ln -s alphapept-0.4.8 alphapept
+    unzip hpc_setup.zip
+    ```
+
+    which gives `alphapept_test.py` and `pyopenms_test.py` above along with data files.
