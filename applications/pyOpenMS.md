@@ -33,7 +33,7 @@ virtualenv py38
 source py38/bin/activate
 ```
 
-Note the `virtualenv py3[7|8]` are unnecessary after the installations.
+Note the `virtualenv py3[7|8]` lines are unnecessary after the installations.
 
 ## AlphaPept
 
@@ -95,7 +95,7 @@ Archive:  Linux-wheels.zip?status=completed
 229277625         227132784   1%                            3 files
 ```
 
-is approppriate on CSD3. Our first attempt the proceeds with
+is approppriate on CSD3. Our first attempt then proceeded with
 
 ```bash
 module load python/3.7
@@ -138,7 +138,7 @@ so `python pyopenms_test.py` responsed.
 
 Web: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (older, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS)).
 
-This involves a lot of contributed modules, which needs to obtain manually. Nevertheless, it would allow for more flexible options.
+This involves a lot of contributed software, which needs to obtain manually. Nevertheless, it would allow for more flexible options.
 
 ```bash
 git clone https://github.com/OpenMS/OpenMS
@@ -178,7 +178,10 @@ cmake .. -DCMAKE_INSTALL_PREFIX=${Caprion}/OpenMS/contrib
 make install
 ```
 
+Now 
+
 ```bash
+cd ${Caprion}/OpenMS
 pip install setuptools  --prefix=${Caprion}/py38
 pip install pip  --prefix=${Caprion}/py38
 pip install autowrap  --prefix=${Caprion}/py38
