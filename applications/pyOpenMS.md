@@ -33,7 +33,9 @@ virtualenv py38
 source py38/bin/activate
 ```
 
-## AlphaPept: [https://github.com/MannLabs/alphapept](https://github.com/MannLabs/alphapept) ([latest installer](https://github.com/MannLabs/alphapept/releases/latest)).
+## AlphaPept
+
+Web: [https://github.com/MannLabs/alphapept](https://github.com/MannLabs/alphapept) ([latest installer](https://github.com/MannLabs/alphapept/releases/latest)).
 
 This requires Python >= 3.8.
 
@@ -93,7 +95,9 @@ ValueError: unsupported pickle protocol: 5
 
 and we turn to source in the next section.
 
-### OpenMS: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (older, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS)).
+### OpenMS
+
+Web: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (older, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS)).
 
 **Miniconda**
 
@@ -220,5 +224,3 @@ cp libsvm.so.3 ${Caprion}/lib
 cd python
 python setup.py install --prefix=${Caprion}/py38
 ```
-
-
