@@ -189,7 +189,7 @@ cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON ../Ope
 cmake -DCMAKE_PREFIX_PATH=${Caprion} -DBOOST_USE_STATIC=ON
 ```
 
-Note the second `cmake` exits with error.
+The `cmake` lines exit with errors -- some edits are necessary with `cmake/cmake_findExternalLibs.cmake`.
 
 ## References
 
