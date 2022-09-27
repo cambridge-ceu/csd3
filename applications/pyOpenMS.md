@@ -97,10 +97,6 @@ ValueError: unsupported pickle protocol: 5
 
 and we turn to source in the next section.
 
-### OpenMS
-
-Web: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (older, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS)).
-
 **Miniconda**
 
 We attempt to use the latest version, which is more recent than those at CSD3.
@@ -120,9 +116,11 @@ conda install pandas
 conda install -c openms pyopenms
 ```
 
-**Sources**
+### OpenMS
 
-This is a fairly messy route involving a lot of contributed modules, which needs to obtain manually. Nevertheless, it would allow for more flexible options.
+Web: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (older, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS)).
+
+This is fairly messy involving a lot of contributed modules, which needs to obtain manually. Nevertheless, it would allow for more flexible options.
 
 ```bash
 git clone https://github.com/OpenMS/OpenMS
