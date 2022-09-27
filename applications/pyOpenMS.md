@@ -138,7 +138,9 @@ so `python pyopenms_test.py` responsed.
 
 Web: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (older, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS)).
 
-This involves a lot of contributed software, which needs to obtain manually. Nevertheless, it would allow for more flexible options.
+Contributed software: [https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/](https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/)
+
+This involves a lot of contributed software, which needs to obtain manually [^contrib]. Nevertheless, it would allow for more flexible options.
 
 ```bash
 git clone https://github.com/OpenMS/OpenMS
@@ -208,6 +210,18 @@ Strauss, M.T., et al., AlphaPept, a modern and open framework for MS-based prote
     ```
 
     which gives `alphapept_test.py` and `pyopenms_test.py` above along with data files.
+
+[^contrib]: Contributed software
+
+    This was identified after initial attempt.
+
+    ```bash
+    wget https://abibuilder.cs.uni-tuebingen.de/archive/contrib/os_support/scientific_linux_7/dependencies_ball.sh
+    wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-src.tar.gz
+    wget -nd --execute="robots = off" --mirror --convert-links --no-parent --wait=5 https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/
+    ```
+
+    The last `wget` statement is much more efficient to download all the software.
 
 ---
 
