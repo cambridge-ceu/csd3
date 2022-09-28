@@ -261,17 +261,3 @@ export XercesC_INCLUDE_DIR=${Caprion}/include
 export XercesC_LIBRARY=${Caprion}/lib
 export XercesC_VERSION=3.2.3
 ```
-
-### LibSVM
-
-Web: [](https://www.csie.ntu.edu.tw/~cjlin/libsvm/oldfiles/index-1.0.html)
-
-```bash
-wget http://www.csie.ntu.edu.tw/~cjlin/cgi-bin/libsvm.cgi?+http://www.csie.ntu.edu.tw/~cjlin/libsvm -O libsvm-3.3.zip
-unzip libsvm-3.3.zip
-cd libsvm-3.3
-make lib
-cp libsvm.so.3 ${Caprion}/lib
-cd python
-python setup.py install --prefix=${Caprion}/py38
-```
