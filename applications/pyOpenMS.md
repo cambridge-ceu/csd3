@@ -136,7 +136,7 @@ so `python pyopenms_test.py` responsed.
 
 ### OpenMS
 
-Web: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (older, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS)).
+Web: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (older, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS), [wikiwand](https://www.wikiwand.com/en/OpenMS)).
 
 Contributed software: [https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/](https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/)
 
@@ -192,9 +192,12 @@ pip install numpy  --prefix=${Caprion}/py38
 pip install wheel  --prefix=${Caprion}/py38
 cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON ../OpenMS
 cmake -DCMAKE_PREFIX_PATH=${Caprion} -DBOOST_USE_STATIC=ON
+export PYTHONPATH=${Caprion}/py38/lib/python3.8/site-packages
+cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DWITH_GUI=OFF \
+      -DPython_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS
 ```
 
-The `cmake` lines exit with errors -- some edits are necessary with `cmake/cmake_findExternalLibs.cmake`.
+The first two `cmake` lines exit with errors -- some edits are necessary with `cmake/cmake_findExternalLibs.cmake` adding -DWITH_GUI=OFF, etc.
 
 ## References
 
