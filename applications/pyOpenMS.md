@@ -4,7 +4,11 @@ sort: 37
 
 # AlphaPept and PyOpenMS
 
-## GNU C
+## Preparations
+
+These involves GNU C, Python and Miniconda.
+
+### GNU C
 
 The location at CSD3 is set as follows,
 
@@ -16,7 +20,7 @@ module load gcc/7
 
 where `gcc/7` specified though `gcc/6` appears to work well.
 
-## Python
+### Python
 
 The installations involve environements for several versions of Python, e.g., Python 3.7/3.8.
 
@@ -35,33 +39,29 @@ source py38/bin/activate
 
 Note the `virtualenv py3[7|8]` lines are unnecessary after the installations.
 
+### Miniconda
+
+It is possible to use virtual environment from Miniconda3 at CSD3, however we set out for the latest version,
+
+```bash
+module load python/3.8
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${Caprion}/miniconda3/lib
+export PATH=${Caprion}/miniconda3/bin:${PATH}
+export include=${Caprion}/miniconda3/include
+```
+
+Note the three export commands will be necessary in later calls to pyopenms.
+
 ## AlphaPept
 
 Web: [https://github.com/MannLabs/alphapept](https://github.com/MannLabs/alphapept) ([latest installer](https://github.com/MannLabs/alphapept/releases/latest)).
 
-This requires Python >= 3.8.
+After loading the Miniconda environment, we proceed with
 
 ```bash
-module load python/3.8
-cd ${Caprion}
-source py38/bin/activate
-python -mpip install pyyaml --prefix=${Caprion}/py38
-python -mpip install numba --prefix=${Caprion}/py38
-python -mpip install tqdm --prefix=${Caprion}/py38
-python -mpip install h5py --prefix=${Caprion}/py38
-python -mpip install fastcore --prefix=${Caprion}/py38
-python -mpip install psutil --prefix=${Caprion}/py38
-python -mpip install click --prefix=${Caprion}/py38
-python -mpip install Bio --prefix=${Caprion}/py38
-python -mpip install networkx --prefix=${Caprion}/py38
-python -mpip install sqlalchemy --prefix=${Caprion}/py38
-# matplotlib might need --user option
-python -mpip install matplotlib --prefix=${Caprion}/py38
-python -mpip install sklearn --prefix=${Caprion}/py38
-wget -qO- https://github.com/MannLabs/alphapept/archive/refs/tags/v0.4.8.tar.gz | \
-tar xvfz -
-cd alphapept-0.4.8
-python setup.py install --prefix=${Caprion}/py38
+pip install "alphapept[stable,gui-stable]"
 ```
 
 Script for testing is called `alphapept_test.py` [^benchmark] which takes the following arguments,
@@ -75,6 +75,92 @@ Script for testing is called `alphapept_test.py` [^benchmark] which takes the fo
 ## pyOpenMS
 
 Web: [https://pyopenms.readthedocs.io/en/latest/index.html](https://pyopenms.readthedocs.io/en/latest/index.html) 
+
+### Miniconda installation
+
+```bash
+module load python/3.8
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+conda install pandas
+conda install -c openms pyopenms
+```
+
+so `python pyopenms_test.py` responsed.
+
+### OpenMS
+
+Web: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (older, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS), [wikiwand](https://www.wikiwand.com/en/OpenMS)).
+
+Contributed software: [https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/](https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/)
+
+This approach is generic and possiblly more computationally efficient.
+
+```bash
+cd ${Caprion}
+wget -qO- https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-src.tar.gz | \
+tar xfz -
+cd OpenMS-2.8.0/contrib
+mkdir archives
+cd archives
+wget -nd --execute="robots = off" --mirror --convert-links --no-parent --wait=5 \
+     https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/
+cd -
+cmake -DBUILD_TYPE=ALL
+```
+The second `wget` statement is much more efficient to download all the software.
+
+Now pyOpenMS is compiled with the following scripts
+
+```bash
+cd ${Caprion}/OpenMS
+module load python/3.8
+source ${Caprion}/bin/activate
+pip install setuptools  --prefix=${Caprion}/py38
+pip install pip  --prefix=${Caprion}/py38
+pip install autowrap  --prefix=${Caprion}/py38
+pip install nose  --prefix=${Caprion}/py38
+pip install numpy  --prefix=${Caprion}/py38
+pip install wheel  --prefix=${Caprion}/py38
+cmake -DPYOPENMS=ON
+make pyopenms
+```
+
+---
+
+## Legacy
+
+The steps below are very much bricks and tiles which are more involved.
+
+### AlphaPept
+
+This requires Python >= 3.8.
+
+```bash
+cd ${Caprion}
+module load python/3.8
+source py38/bin/activate
+pip install pyyaml --prefix=${Caprion}/py38
+pip install numba --prefix=${Caprion}/py38
+pip install tqdm --prefix=${Caprion}/py38
+pip install h5py --prefix=${Caprion}/py38
+pip install fastcore --prefix=${Caprion}/py38
+pip install psutil --prefix=${Caprion}/py38
+pip install click --prefix=${Caprion}/py38
+pip install Bio --prefix=${Caprion}/py38
+pip install networkx --prefix=${Caprion}/py38
+pip install sqlalchemy --prefix=${Caprion}/py38
+pip install matplotlib --prefix=${Caprion}/py38
+pip install sklearn --prefix=${Caprion}/py38
+python -m pip install --upgrade numpy --user
+wget -qO- https://github.com/MannLabs/alphapept/archive/refs/tags/v0.4.8.tar.gz | \
+tar xvfz -
+cd alphapept-0.4.8
+python setup.py install --prefix=${Caprion}/py38
+```
+
+Be careful with conflicts of packages.
 
 The newest features are through the nightly build/wheel (needs to be version 3.0+).
 
@@ -115,39 +201,15 @@ Traceback (most recent call last):
 ValueError: unsupported pickle protocol: 5
 ```
 
-We turned to **Miniconda** below. We set out for the latest version, which is more desirable than those at CSD3,
+### pyOpenMS
 
-```bash
-wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${Caprion}/miniconda3/lib
-export PATH=${Caprion}/miniconda3/bin:${PATH}
-export include=${Caprion}/miniconda3/include
-module load python/3.8
-conda update -n base -c defaults conda
-conda config --add channels defaults
-conda config --add channels bioconda
-conda config --add channels conda-forge
-conda install pandas
-conda install -c openms pyopenms
-```
-
-so `python pyopenms_test.py` responsed.
-
-### OpenMS
-
-Web: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (older, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS), [wikiwand](https://www.wikiwand.com/en/OpenMS)).
-
-Contributed software: [https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/](https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/)
-
-This involves a lot of contributed software, which needs to obtain manually [^contrib]. Nevertheless, it would allow for more flexible options.
+This was initially attempted therefore the addresses were random with hybrid of manual compiling.
 
 ```bash
 git clone https://github.com/OpenMS/OpenMS
 cd OpenMS
 git submodule update --init contrib
-cd contrib
-cmake -DBUILD_TYPE=LIST ../OpenMS/contrib
+cmake -DBUILD_TYPE=list ../OpenMS/contrib
 cmake -DBUILD_TYPE=ALL -DNUMBER_OF_JOBS=4 ../OpenMS/contrib
 # https://sourceforge.net/projects/open-ms/files/contrib/
 cd archives
@@ -178,26 +240,6 @@ mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=${Caprion}/OpenMS/contrib
 make install
-cd ${Caprion}/OpenMS
-cmake -DPYOPENMS=OFF
-```
-
-There were issues with COIN, GLPK, WM5 and a temporary fix was to comment on them in `cmake/cmake_findExternalLibs.cmake`.
-
-Now pyOpenMS is compiled with the following scripts
-
-```bash
-cd ${Caprion}/OpenMS
-module load python/3.8
-source ${Caprion}/bin/activate
-pip install setuptools  --prefix=${Caprion}/py38
-pip install pip  --prefix=${Caprion}/py38
-pip install autowrap  --prefix=${Caprion}/py38
-pip install nose  --prefix=${Caprion}/py38
-pip install numpy  --prefix=${Caprion}/py38
-pip install wheel  --prefix=${Caprion}/py38
-cmake -DPYOPENMS=ON
-make pyopenms
 ```
 
 We can fiddle around various command-line options, e.g., 
@@ -224,40 +266,3 @@ Strauss, M.T., et al., AlphaPept, a modern and open framework for MS-based prote
     ```
 
     which gives `alphapept_test.py` and `pyopenms_test.py` above along with data files.
-
-[^contrib]: Contributed software
-
-    This was identified after initial attempt.
-
-    ```bash
-    wget https://abibuilder.cs.uni-tuebingen.de/archive/contrib/os_support/scientific_linux_7/dependencies_ball.sh
-    wget https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/release/2.8.0/OpenMS-2.8.0-src.tar.gz
-    wget -nd --execute="robots = off" --mirror --convert-links --no-parent --wait=5 https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/
-    ```
-
-    The last `wget` statement is much more efficient to download all the software.
-
----
-
-## Independent installations
-
-They are generic and not necessarily bound to OpenMS.
-
-### xerces
-
-Web: [https://xerces.apache.org/index.html](https://xerces.apache.org/index.html)
-
-```bash
-wget -qO- https://downloads.apache.org/xerces/c/3/sources/xerces-c-3.2.3.tar.gz | \
-tar xvfz -
-cd xerces-c-3.2.3
-./configure --prefix=${Caprion}
-make
-make install
-export INCLUDE=$INCLUDE:{Caprion}/include
-export LD_LIBRAYR_PATH=$LD_LIBRARY_PATH:${Caprion}/lib
-export PATH=$PATH:${Caprion}/bin
-export XercesC_INCLUDE_DIR=${Caprion}/include
-export XercesC_LIBRARY=${Caprion}/lib
-export XercesC_VERSION=3.2.3
-```
