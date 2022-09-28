@@ -245,11 +245,9 @@ make install
 We can fiddle around various command-line options, e.g., 
 
 ```bash
-cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON ../OpenMS
-cmake -DCMAKE_PREFIX_PATH=${Caprion} -DBOOST_USE_STATIC=ON
 export PYTHONPATH=${Caprion}/py38/lib/python3.8/site-packages
-cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DWITH_GUI=OFF \
-      -DPython_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS
+cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=${Caprion} \
+      -DPYTHON_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS
 ```
 
 ## References
