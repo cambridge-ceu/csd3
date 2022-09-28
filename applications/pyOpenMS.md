@@ -178,7 +178,11 @@ mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=${Caprion}/OpenMS/contrib
 make install
+cd ${Caprion}/OpenMS
+cmake -DPYOPENMS=OFF
 ```
+
+There were issues with COIN, GLPK, WM5 and a temporary fix was to comment on them in `cmake/cmake_findExternalLibs.cmake`.
 
 Now pyOpenMS is compiled with the following scripts
 
@@ -205,8 +209,6 @@ export PYTHONPATH=${Caprion}/py38/lib/python3.8/site-packages
 cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DWITH_GUI=OFF \
       -DPython_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS
 ```
-
-making changes to `cmake/cmake_findExternalLibs.cmake` etc., but it is notable that -DPYOPENMS=OFF turned to be simpler.
 
 ## References
 
