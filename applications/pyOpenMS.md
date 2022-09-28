@@ -184,6 +184,8 @@ Now
 
 ```bash
 cd ${Caprion}/OpenMS
+module load python/3.8
+source ${Caprion}/bin/activate
 pip install setuptools  --prefix=${Caprion}/py38
 pip install pip  --prefix=${Caprion}/py38
 pip install autowrap  --prefix=${Caprion}/py38
