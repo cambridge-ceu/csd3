@@ -194,11 +194,6 @@ pip install numpy  --prefix=${Caprion}/py38
 pip install wheel  --prefix=${Caprion}/py38
 cmake -DPYOPENMS=ON
 make pyopenms
-```
-
-We can fiddle around various command-line options, e.g., 
-
-```bash
 cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON ../OpenMS
 cmake -DCMAKE_PREFIX_PATH=${Caprion} -DBOOST_USE_STATIC=ON
 export PYTHONPATH=${Caprion}/py38/lib/python3.8/site-packages
@@ -206,7 +201,7 @@ cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DWITH
       -DPython_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS
 ```
 
-making changes to `cmake/cmake_findExternalLibs.cmake` etc., but it is notable that -DPYOPENMS=OFF turned to be simpler.
+The first two `cmake` lines exit with errors -- some edits are necessary with `cmake/cmake_findExternalLibs.cmake` adding -DWITH_GUI=OFF, etc.
 
 ## References
 
