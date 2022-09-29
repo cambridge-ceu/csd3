@@ -378,7 +378,6 @@ find . -mtime +1 | xargs -l -I {} mv {} old
 
 while the code below downloads the SCALLOP-cvd1 sumstats for proteins listed in `cvd1.txt`.
 
-
 ```bash
 export url=https://zenodo.org/record/2615265/files/
 if [ ! -d ~/rds/results/public/proteomics/scallop-cvd1 ]; then mkdir ~/rds/results/public/proteomics/scallop-cvd1; fi
