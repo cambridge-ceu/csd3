@@ -107,9 +107,15 @@ cd archives
 wget -nd --execute="robots = off" --mirror --convert-links --no-parent --wait=5 \
      https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/
 cd -
-cmake -DBUILD_TYPE=ALL
+cmake -DBUILD_TYPE=ALL contrib
+cd ${Caprion}
+mkdir build
+cd build
+cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=${Caprion} \
+      -DPYTHON_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS-2.8.0
 ```
-The second `wget` statement is much more efficient to download all the software.
+The second `wget` statement is much more efficient to download all the software. There were problems with XERCESC and OPENMP so were done manually
+(e.g., module load libiconv-1.15-gcc-5.4.0-ymwv5vs llvm). Note also patches were made to those in `contrib/src`.
 
 Now pyOpenMS is compiled with the following scripts
 
@@ -216,6 +222,7 @@ cd archives
 wget https://src.fedoraproject.org/lookaside/pkgs/libsvm/libsvm-3.12.tar.gz/a1b1083fe69a4ac695da753f4c83ed42/libsvm-3.12.tar.gz
 cmake -DBUILD_TYPE=LIBSVM
 wget https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.0.tar.gz -O Xerces-C_3_2_0.tar.gz
+# manual build is necessary!
 wget http://www.coin-or.org/download/source/CoinMP/CoinMP-1.8.3.tgz -O CoinMP-1.8.3-vs22.tar.gz
 cmake -DBUILD_TYPE=COINOR
 wget https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.gz
@@ -240,12 +247,7 @@ mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=${Caprion}/OpenMS/contrib
 make install
-```
-
-We can fiddle around various command-line options, e.g., 
-
-```bash
-export PYTHONPATH=${Caprion}/py38/lib/python3.8/site-packages
+cd ${Caprion}
 cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=${Caprion} \
       -DPYTHON_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS
 ```
