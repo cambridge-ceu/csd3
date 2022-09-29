@@ -117,22 +117,6 @@ cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAK
 The second `wget` statement is much more efficient to download all the software. There were problems with XERCESC and OPENMP so were done manually
 (e.g., module load libiconv-1.15-gcc-5.4.0-ymwv5vs llvm). Note also patches were made to those in `contrib/src`.
 
-Now pyOpenMS is compiled with the following scripts
-
-```bash
-cd ${Caprion}/OpenMS
-module load python/3.8
-source ${Caprion}/bin/activate
-pip install setuptools  --prefix=${Caprion}/py38
-pip install pip  --prefix=${Caprion}/py38
-pip install autowrap  --prefix=${Caprion}/py38
-pip install nose  --prefix=${Caprion}/py38
-pip install numpy  --prefix=${Caprion}/py38
-pip install wheel  --prefix=${Caprion}/py38
-cmake -DPYOPENMS=ON
-make pyopenms
-```
-
 ---
 
 ## Legacy
@@ -250,6 +234,22 @@ make install
 cd ${Caprion}
 cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=${Caprion} \
       -DPYTHON_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS
+```
+
+Now pyOpenMS is compiled with the following scripts
+
+```bash
+cd ${Caprion}/OpenMS
+module load python/3.8
+source ${Caprion}/bin/activate
+pip install setuptools  --prefix=${Caprion}/py38
+pip install pip  --prefix=${Caprion}/py38
+pip install autowrap  --prefix=${Caprion}/py38
+pip install nose  --prefix=${Caprion}/py38
+pip install numpy  --prefix=${Caprion}/py38
+pip install wheel  --prefix=${Caprion}/py38
+cmake -DPYOPENMS=ON
+make pyopenms
 ```
 
 ## References
