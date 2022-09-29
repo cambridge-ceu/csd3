@@ -108,7 +108,7 @@ wget -nd --execute="robots = off" --mirror --convert-links --no-parent --wait=5 
      https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/
 cd -
 cmake -DBUILD_TYPE=ALL contrib
-cd ${Caprion}
+cd ${Caprion}/OpenMS-2.8.0
 cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=contrib \
       -DPYTHON_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS-2.8.0
 ```
