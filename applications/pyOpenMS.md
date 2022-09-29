@@ -29,7 +29,6 @@ module load python/3.7
 virtualenv py37
 source py37/bin/activate
 ```
-
 or
 
 ```bash
@@ -67,15 +66,15 @@ pip install "alphapept[stable,gui-stable]"
 
 Script for testing is called `alphapept_test.py` [^benchmark] which takes the following arguments,
 
-| Name                                                                               | Description                                                                          |
-| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `alphapept_settings.yaml`                                                          | A configuratino file containing relevant information, e.g., paths and `n_processes`. |
-| `szwk021704i19101xms1.raw`, `szwk021704i19101xms3.raw`, `szwk021704i19101xms5.raw` | Raw spectra                                                                          |
-| `2022-07-05-reviewed-contam-UP000005640.fasta`                                     | Database of protein sequences:                                                       |
+  Name | Description
+-------|-----------------------------------------------------------------------
+`alphapept_settings.yaml`| A configuratino file containing relevant information, e.g., paths and `n_processes`.
+`szwk021704i19101xms1.raw`, `szwk021704i19101xms3.raw`, `szwk021704i19101xms5.raw` | Raw spectra
+`2022-07-05-reviewed-contam-UP000005640.fasta` | Database of protein sequences: 
 
 ## pyOpenMS
 
-Web: [https://pyopenms.readthedocs.io/en/latest/index.html](https://pyopenms.readthedocs.io/en/latest/index.html)
+Web: [https://pyopenms.readthedocs.io/en/latest/index.html](https://pyopenms.readthedocs.io/en/latest/index.html) 
 
 ### Miniconda installation
 
@@ -110,10 +109,9 @@ wget -nd --execute="robots = off" --mirror --convert-links --no-parent --wait=5 
 cd -
 cmake -DBUILD_TYPE=ALL contrib
 cd ${Caprion}/OpenMS-2.8.0
-cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=contrib \
+cmake -DOPENMS_CONTRIB_LIBS="../OpenMS-2.8.0/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=contrib \
       -DPYTHON_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS-2.8.0
 ```
-
 The second `wget` statement is much more efficient to download all the software. There were problems with XERCESC and OPENMP so were done manually
 (e.g., module load libiconv-1.15-gcc-5.4.0-ymwv5vs llvm). Note also patches were made to those in `contrib/src`.
 
@@ -160,7 +158,6 @@ unzip Linux-wheels.zip\?status\=completed
 ```
 
 It turned out only the first file in the zip downloads
-
 ```
 Archive:  Linux-wheels.zip?status=completed
  Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
