@@ -87,7 +87,7 @@ conda install pandas
 conda install -c openms pyopenms
 ```
 
-so `python pyopenms_test.py` responsed.
+so `python pyopenms_test.py` responseds.
 
 ### OpenMS
 
