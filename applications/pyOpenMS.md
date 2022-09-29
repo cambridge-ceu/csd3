@@ -110,7 +110,7 @@ cd -
 cmake -DBUILD_TYPE=ALL contrib
 cd ${Caprion}/OpenMS-2.8.0
 cmake -DOPENMS_CONTRIB_LIBS="../OpenMS-2.8.0/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=contrib \
-      -DPYTHON_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS-2.8.0
+      -DPython_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS-2.8.0
 ```
 The second `wget` statement is much more efficient to download all the software. There were problems with XERCESC and OPENMP so were done manually
 (e.g., module load libiconv-1.15-gcc-5.4.0-ymwv5vs llvm). Note also patches were made to those in `contrib/src`.
@@ -231,7 +231,7 @@ cmake .. -DCMAKE_INSTALL_PREFIX=${Caprion}/OpenMS/contrib
 make install
 cd ${Caprion}/OpenMS
 cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=contrib \
-      -DPYTHON_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS
+      -DPython_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS
 ```
 
 Now pyOpenMS is compiled with the following scripts
