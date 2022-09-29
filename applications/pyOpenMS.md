@@ -53,7 +53,7 @@ export PATH=${Caprion}/miniconda3/bin:${PATH}
 export include=${Caprion}/miniconda3/include
 ```
 
-Note the three export commands will be necessary in later calls to pyopenms.
+Note the three export commands will be necessary in later calls.
 
 ## AlphaPept
 
