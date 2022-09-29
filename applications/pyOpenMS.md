@@ -109,9 +109,7 @@ wget -nd --execute="robots = off" --mirror --convert-links --no-parent --wait=5 
 cd -
 cmake -DBUILD_TYPE=ALL contrib
 cd ${Caprion}
-mkdir build
-cd build
-cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=${Caprion} \
+cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=contrib \
       -DPYTHON_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS-2.8.0
 ```
 The second `wget` statement is much more efficient to download all the software. There were problems with XERCESC and OPENMP so were done manually
@@ -231,8 +229,8 @@ mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=${Caprion}/OpenMS/contrib
 make install
-cd ${Caprion}
-cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=${Caprion} \
+cd ${Caprion}/OpenMS
+cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=contrib \
       -DPYTHON_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS
 ```
 
