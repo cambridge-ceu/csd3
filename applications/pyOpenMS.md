@@ -39,8 +39,6 @@ source py38/bin/activate
 
 Note the `virtualenv py3[7|8]` lines are unnecessary after the installations.
 
-The steps below are very much bricks and tiles which are more involved.
-
 ### Miniconda
 
 Here is to set up the latest version.
