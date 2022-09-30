@@ -39,20 +39,24 @@ source py38/bin/activate
 
 Note the `virtualenv py3[7|8]` lines are unnecessary after the installations.
 
+The steps below are very much bricks and tiles which are more involved.
+
 ### Miniconda
 
-It is possible to use virtual environment from Miniconda3 at CSD3, however we set out for the latest version,
+Here is to set up the latest version.
 
 ```bash
+# Step 1. Install Miniconda3
 module load python/3.8
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
+# Step 2. Specify module-like environment
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${Caprion}/miniconda3/lib
 export PATH=${Caprion}/miniconda3/bin:${PATH}
 export include=${Caprion}/miniconda3/include
 ```
 
-Note the three export commands will be necessary in later calls.
+Only Step 2 is necessary in later calls.
 
 ## AlphaPept
 
@@ -111,16 +115,28 @@ cd -
 cmake -DBUILD_TYPE=ALL contrib
 cd ${Caprion}/OpenMS-${version}
 cmake -DOPENMS_CONTRIB_LIBS="../OpenMS-${version}/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=contrib \
-      -DPython_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS-${version}
+      -DPython_EXECUTABLE=${Caprion}/py/38/bin/python ../OpenMS-${version}
 ```
 The second `wget` statement is much more efficient to download all the software. There were problems with XERCESC and OPENMP so were done manually
-(e.g., module load libiconv-1.15-gcc-5.4.0-ymwv5vs llvm). Note also patches were made to those in `contrib/src`.
+(e.g., module load libiconv-1.15-gcc-5.4.0-ymwv5vs llvm). Note also patches were made to those in `contrib/src` and python modules [^cython].
 
 ---
 
 ## Legacy
 
-The steps below are very much bricks and tiles which are more involved.
+### Miniconda3
+
+It is relatively straightforward to use module on CSD3.
+
+```bash
+module load miniconda/3
+conda create -n miniconda38 python=3.8 ipykernel
+conda activate miniconda38
+conda deactivate
+```
+
+`conda create` is unnecessary in later calls.
+
 
 ### AlphaPept
 
@@ -232,7 +248,7 @@ cmake .. -DCMAKE_INSTALL_PREFIX=${Caprion}/OpenMS/contrib
 make install
 cd ${Caprion}/OpenMS
 cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=contrib \
-      -DPython_EXECUTABLE=/usr/local/software/master/python/3.8/bin/python ../OpenMS
+      -DPython_EXECUTABLE=${Caprion}/py38/bin/python ../OpenMS
 ```
 
 Now pyOpenMS is compiled with the following scripts
@@ -265,3 +281,12 @@ Strauss, M.T., et al., AlphaPept, a modern and open framework for MS-based prote
     ```
 
     which gives `alphapept_test.py` and `pyopenms_test.py` above along with data files.
+
+[^cython]:
+
+    See [https://cmake.org/cmake/help/latest/module/FindPython.html](https://cmake.org/cmake/help/latest/module/FindPython.html)
+
+    ```bash
+    export Python_LIBRARY_DIRS=../py38/lib/python3.8/site-packages
+    export Python_INCLUDE_DIR=../py38/include/python3.8/
+    ```
