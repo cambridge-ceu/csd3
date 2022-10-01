@@ -50,9 +50,9 @@ bash Miniconda3-latest-Linux-x86_64.sh
 "$(/rds/project/jmmh2/rds-jmmh2-projects/Caprion_proteomics/miniconda3/bin/conda shell.bash hook)"
 conda config --set auto_activate_base false
 # Step 2. Specify module-like environment
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${Caprion}/miniconda3/lib
+export LD_LIBRARY_PATH=${Caprion}/miniconda3/lib:${LD_LIBRARY_PATH}
 export PATH=${Caprion}/miniconda3/bin:${PATH}
-export include=${Caprion}/miniconda3/include
+export INCLUDE=${Caprion}/miniconda3/include:${INCLUDE}
 export PYTHONPATH=${Caprion}/miniconda3/lib/python3.9/site-packages
 ```
 
