@@ -117,9 +117,35 @@ cmake -DOPENMS_CONTRIB_LIBS="../OpenMS-${version}/contrib/lib" -DBOOST_USE_STATI
       -DPython_EXECUTABLE=${Caprion}/miniconda3/bin/python ../OpenMS-${version}
 make targets
 ```
-The second `wget` statement is much more efficient to download all the software. There were problems with XERCESC and OPENMP so were done manually
-(e.g., module load libiconv-1.15-gcc-5.4.0-ymwv5vs llvm). Note also patches were made to those in `contrib/src` and python modules [^cython]. With
-`-DPYOPENMS=OFF` one might drop `-DPython_EXECUTABLE=${Caprion}/miniconda3/bin/python`. The last statement gives the following output.
+The second `wget` statement is much more efficient to download all the software. There were problems with OPENMP so were done manually.
+Problems with XERCESC appeared OK with 
+
+```bash
+wget https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.0.tar.gz -O Xerces-C_3_2_0.tar.gz
+wget http://www.coin-or.org/download/source/CoinMP/CoinMP-1.8.3.tgz -O CoinMP-1.8.3-vs22.tar.gz
+```
+
+It also requires some third party tools.
+
+```
+-- Searching for third party tools...
+--   - MaRaCluster not found
+--   - Comet not found
+--   - X! Tandem not found
+--   - MS-GF+ not found
+--   - MSFragger not found
+--   - Percolator not found
+--   - Fido not found
+--   - FidoChooseParameters not found
+--   - Sirius not found
+--   - Novor not found
+--   - SpectraST not found
+--   - ThermoRawFileParser not found
+--   - LuciPHOr2 not found
+--   - CometAdapter not found
+```
+
+Note also patches were made to those in `contrib/src` and python modules [^cython]. The last statement gives the following output.
 
 ```
 [100%] The most important targets for OpenMS
