@@ -114,7 +114,7 @@ cd -
 cmake -DBUILD_TYPE=ALL contrib
 cd ${Caprion}/OpenMS-${version}
 cmake -DOPENMS_CONTRIB_LIBS="../OpenMS-${version}/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=contrib \
-      -DPython_EXECUTABLE=${Caprion}/py/38/bin/python ../OpenMS-${version}
+      -DPython_EXECUTABLE=${Caprion}/miniconda3/bin/python ../OpenMS-${version}
 ```
 The second `wget` statement is much more efficient to download all the software. There were problems with XERCESC and OPENMP so were done manually
 (e.g., module load libiconv-1.15-gcc-5.4.0-ymwv5vs llvm). Note also patches were made to those in `contrib/src` and python modules [^cython].
@@ -286,6 +286,6 @@ Strauss, M.T., et al., AlphaPept, a modern and open framework for MS-based prote
     See [https://cmake.org/cmake/help/latest/module/FindPython.html](https://cmake.org/cmake/help/latest/module/FindPython.html)
 
     ```bash
-    export Python_LIBRARY_DIRS=../py38/lib/python3.8/site-packages
-    export Python_INCLUDE_DIR=../py38/include/python3.8/
+    export Python_LIBRARY_DIRS=${Caprion}/miniconda/lib
+    export Python_INCLUDE_DIR=${Caprion}/miniconda3/include
     ```
