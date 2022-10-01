@@ -4,9 +4,7 @@ sort: 37
 
 # AlphaPept and PyOpenMS
 
-## Preparations
-
-These involves GNU C, Python and Miniconda.
+The prerequisites involve location, GNU C and Miniconda.
 
 ### GNU C
 
@@ -19,25 +17,6 @@ module load gcc/7
 ```
 
 where `gcc/7` specified though `gcc/6` appears to work well.
-
-### Python
-
-The installations involve environements for several versions of Python, e.g., Python 3.7/3.8.
-
-```bash
-module load python/3.7
-virtualenv py37
-source py37/bin/activate
-```
-or
-
-```bash
-module load python/3.8
-virtualenv py38
-source py38/bin/activate
-```
-
-Note the `virtualenv py3[7|8]` lines are unnecessary after the installations.
 
 ### Miniconda
 
@@ -96,34 +75,32 @@ so `python pyopenms_test.py` responseds.
 
 Web: [https://www.openms.de/](https://www.openms.de/) (GitHub, [https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS), [Contributed software](https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/))
 
-This approach is generic and possiblly more computationally efficient.
+This approach is generic and potentially more efficient.
 
 ```bash
 cd ${Caprion}
-export version=3.0.0
-wget -qO- https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-${version}-src.tar.gz | \
-tar xfz -
-cd OpenMS-${version}/contrib
-mkdir archives
-cd archives
+git clone https://github.com/OpenMS/OpenMS
+cd OpenMS
+git submodule update --init contrib
+mkdir -p contrib/archives
+cd contrib/archives
 wget -nd --execute="robots = off" --mirror --convert-links --no-parent --wait=5 \
      https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/
 cd -
 cmake -DBUILD_TYPE=ALL contrib
-cd ${Caprion}/OpenMS-${version}
-cmake -DOPENMS_CONTRIB_LIBS="../OpenMS-${version}/contrib/lib" -DCMAKE_PREFIX_PATH=contrib ../OpenMS-${version}
+cmake -DOPENMS_CONTRIB_LIBS=${Caprion}/miniconda3/lib -DCMAKE_PREFIX_PATH=contrib ../OpenMS
 make targets
 ```
 The second `wget` statement is much more efficient to download all the software.
 
-Beside the codebase, various other operations could be done,
+Beside the codebase, various other options are possible, e.g., 
 
 ```bash
 wget https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.0.tar.gz -O Xerces-C_3_2_0.tar.gz
 cmake -DOPENMS_CONTRIB_LIBS=${Caprion}/miniconda3/lib -DCMAKE_PREFIX_PATH=contrib -DMY_CXX_FLAGS="-std=c++17" -DWITH_GUI=OFF ../OpenMS
 ```
 
-It also requires some third party tools.
+The required third party tools are listed as follows,
 
 ```
 -- Searching for third party tools...
@@ -143,11 +120,9 @@ It also requires some third party tools.
 --   - CometAdapter not found
 ```
 
-Note also patches were made to those in `contrib/src` and python modules [^cython]. The last statement gives the following output.
+The last statement gives the most important targets for OpenMS
 
 ```
-[100%] The most important targets for OpenMS
-
 ==========================================================================
 
 The following make targets are available:
@@ -167,27 +142,46 @@ The following make targets are available:
     doc_tutorials   builds the PDF tutorials
     help            list all available targets (very verbose)
 
-    (Disabled) pyopenms targets are not enabled (to enable use -D PYOPENMS=ON).
+    pyopenms        targets are not enabled (to enable use -D PYOPENMS=ON).
 
 
-    (Disabled) OpenMS_coverage reporting target is not enabled (to enable use -D OPENMS_COVERAGE=ON).
-               Caution: Building with debug and coverage info uses a lot of disk space (>40GB)
+    OpenMS_coverage reporting target is not enabled (to enable use -D OPENMS_COVERAGE=ON).
+                    Caution: Building with debug and coverage info uses a lot of disk space (>40GB)
 
 
 Single TOPP tools and UTILS have their own target, e.g. TOPPView
 
 ==========================================================================
-
-[100%] Built target targets
 ```
 
 ---
 
 ## Legacy
 
+Python itself is light weight but more involved.
+
+### Python
+
+The installations involve environements for several versions of Python, e.g., Python 3.7/3.8.
+
+```bash
+module load python/3.7
+virtualenv py37
+source py37/bin/activate
+```
+or
+
+```bash
+module load python/3.8
+virtualenv py38
+source py38/bin/activate
+```
+
+Note the `virtualenv py3[7|8]` lines are unnecessary after the installations.
+
 ### Miniconda3
 
-It is relatively straightforward to use module on CSD3.
+This is in regard to use of module on CSD3.
 
 ```bash
 module load miniconda/3
@@ -196,8 +190,7 @@ conda activate miniconda38
 conda deactivate
 ```
 
-`conda create` is unnecessary in later calls.
-
+where `conda create` is unnecessary in later calls.
 
 ### AlphaPept
 
@@ -235,7 +228,8 @@ wget -qO- https://nightly.link/OpenMS/OpenMS/workflows/pyopenms-wheels/nightly/L
 unzip Linux-wheels.zip\?status\=completed
 ```
 
-It turned out only the first file in the zip downloads
+We have
+
 ```
 Archive:  Linux-wheels.zip?status=completed
  Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
@@ -247,7 +241,7 @@ Archive:  Linux-wheels.zip?status=completed
 229277625         227132784   1%                            3 files
 ```
 
-is approppriate on CSD3. Our first attempt then proceeded with
+It turned out only the first file is approppriate on CSD3, so we proceeded with
 
 ```bash
 module load python/3.7
@@ -255,7 +249,7 @@ source py37/bin/activate
 pip install pyopenms_nightly-3.0.0.dev20220924-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl --no-cache-dir  --prefix=${Caprion}/py37
 ```
 
-and a call to `python pyopenms_test.py` gave the following error messages,
+However, a call to `python pyopenms_test.py` gave the following error messages,
 
 ```
 3.0.0.dev20220924
@@ -269,7 +263,7 @@ ValueError: unsupported pickle protocol: 5
 
 ### pyOpenMS
 
-This was initially attempted therefore the addresses were random with hybrid of manual compiling.
+As will become obvious, the addresses were random with a hybrid of integrated and manual compiling.
 
 ```bash
 git clone https://github.com/OpenMS/OpenMS
@@ -327,6 +321,8 @@ cmake -DPYOPENMS=ON
 make pyopenms
 ```
 
+In particular, Cython involves its specifications [^cython].
+
 ## References
 
 Strauss, M.T., et al., AlphaPept, a modern and open framework for MS-based proteomics. bioRxiv, 2021: p. 2021.07.23.453379. [https://www.biorxiv.org/content/10.1101/2021.07.23.453379v1](https://www.biorxiv.org/content/10.1101/2021.07.23.453379v1).
@@ -354,6 +350,7 @@ Rost HL, et al., OpenMS: a flexible open-source software platform for mass spect
     See [https://cmake.org/cmake/help/latest/module/FindPython.html](https://cmake.org/cmake/help/latest/module/FindPython.html)
 
     ```bash
-    export Python_LIBRARY_DIRS=${Caprion}/miniconda/lib
+    export Python_LIBRARY_DIRS=${Caprion}/miniconda3/lib
     export Python_INCLUDE_DIR=${Caprion}/miniconda3/include
+    export Python_EXECUTABLE=${Caprion}/miniconda3/bin/python
     ```
