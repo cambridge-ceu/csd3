@@ -94,9 +94,7 @@ so `python pyopenms_test.py` responseds.
 
 ### OpenMS
 
-Web: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (codebase, [https://www.openms.de/](https://www.openms.de/))
-
-Contributed software: [https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/](https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/)
+Web: [https://www.openms.de/](https://www.openms.de/) (GitHub, [https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS), [Contributed software](https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/))
 
 This approach is generic and possiblly more computationally efficient.
 
