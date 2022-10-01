@@ -114,11 +114,47 @@ cd -
 cmake -DBUILD_TYPE=ALL contrib
 cd ${Caprion}/OpenMS-${version}
 cmake -DOPENMS_CONTRIB_LIBS="../OpenMS-${version}/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=contrib -DPYOPENMS=OFF ../OpenMS-${version}
-
+make targets
 ```
 The second `wget` statement is much more efficient to download all the software. There were problems with XERCESC and OPENMP so were done manually
-(e.g., module load libiconv-1.15-gcc-5.4.0-ymwv5vs llvm). Note also patches were made to those in `contrib/src` and python modules [^cython]. Without
-`-DPYOPENMS=OFF` one might need `-DPython_EXECUTABLE=${Caprion}/miniconda3/bin/python` as well.
+(e.g., module load libiconv-1.15-gcc-5.4.0-ymwv5vs llvm). Note also patches were made to those in `contrib/src` and python modules [^cython]. With
+`-DPYOPENMS=ON` (default) one might need `-DPython_EXECUTABLE=${Caprion}/miniconda3/bin/python` as well. The last statement gives the following output.
+
+```
+[100%] The most important targets for OpenMS
+
+==========================================================================
+
+The following make targets are available:
+    [no target]     builds the OpenMS library, TOPP tools and UTILS tools
+    OpenMS          builds the OpenMS library
+    TOPP            builds the TOPP tools
+    UTILS           builds the UTILS tools
+    GUI             builds the GUI tools (TOPPView,...)
+    test            executes OpenMS and TOPP tests
+                    make sure they are built using the 'all' target
+    Tutorials_build builds the code snippets of the tutorials in source/EXAMPLES
+    doc             builds the doxygen and class documentation, parameters
+                    documentation, and tutorial PDFs
+    doc_class_only  builds only the doxygen and class documentation
+                    (faster then doc and very useful when writing
+                    documentation).
+    doc_tutorials   builds the PDF tutorials
+    help            list all available targets (very verbose)
+
+    (Disabled) pyopenms targets are not enabled (to enable use -D PYOPENMS=ON).
+
+
+    (Disabled) OpenMS_coverage reporting target is not enabled (to enable use -D OPENMS_COVERAGE=ON).
+               Caution: Building with debug and coverage info uses a lot of disk space (>40GB)
+
+
+Single TOPP tools and UTILS have their own target, e.g. TOPPView
+
+==========================================================================
+
+[100%] Built target targets
+```
 
 ---
 
