@@ -17,7 +17,7 @@ cd ${Caprion}
 
 ### GNU C
 
-It supports for`c++17` and it is sufficient with.
+OpenMS supports for`c++17` and it is sufficient with.
 
 ```bash
 module load gcc/7
