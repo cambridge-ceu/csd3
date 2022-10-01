@@ -163,7 +163,7 @@ Single TOPP tools and UTILS have their own target, e.g. TOPPView
 
 ## Legacy
 
-Python itself is light weight but more involved.
+Python itself is lightweight but more involved.
 
 ### Python
 
