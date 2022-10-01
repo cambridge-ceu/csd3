@@ -13,7 +13,7 @@ These involves GNU C, Python and Miniconda.
 The location at CSD3 is set as follows,
 
 ```bash
-export Caprion=/rds/project/jmmh2/rds-jmmh2-projects/Caprion_proteomics/
+export Caprion=/rds/project/jmmh2/rds-jmmh2-projects/Caprion_proteomics
 cd ${Caprion}
 module load gcc/7
 ```
@@ -41,17 +41,19 @@ Note the `virtualenv py3[7|8]` lines are unnecessary after the installations.
 
 ### Miniconda
 
-Here is to set up the latest version.
+This options are considerably easier than bare python above and we opt to set up the latest version.
 
 ```bash
 # Step 1. Install Miniconda3
-module load python/3.8
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
+"$(/rds/project/jmmh2/rds-jmmh2-projects/Caprion_proteomics/miniconda3/bin/conda shell.bash hook)"
+conda config --set auto_activate_base false
 # Step 2. Specify module-like environment
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${Caprion}/miniconda3/lib
 export PATH=${Caprion}/miniconda3/bin:${PATH}
 export include=${Caprion}/miniconda3/include
+export PYTHONPATH=${Caprion}/miniconda3/lib/python3.9/site-packages
 ```
 
 Only Step 2 is necessary in later calls.
@@ -81,7 +83,6 @@ Web: [https://pyopenms.readthedocs.io/en/latest/index.html](https://pyopenms.rea
 ### Miniconda installation
 
 ```bash
-module load python/3.8
 conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
