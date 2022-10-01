@@ -336,7 +336,7 @@ Rost HL, et al., OpenMS: a flexible open-source software platform for mass spect
 
 ## Other URLs
 
-[SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS), [wikiwand](https://www.wikiwand.com/en/OpenMS).
+[SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS), [wikiwand](https://www.wikiwand.com/en/OpenMS), [OpenSWATH](https://openswath.org/en/latest/).
 
 
 [^benchmark]: Benchmark
