@@ -309,8 +309,9 @@ cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=${Caprion}/OpenMS/contrib
 make install
 cd ${Caprion}/OpenMS
-cmake -DOPENMS_CONTRIB_LIBS="../OpenMS/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=contrib \
+cmake -DOPENMS_CONTRIB_LIBS=contrib -DCMAKE_PREFIX_PATH=contrib -DCMAKE_INSTALL_PREFIX=${Caprion} \
       -DPython_EXECUTABLE=${Caprion}/py38/bin/python ../OpenMS
+cmake -DOPENMS_CONTRIB_LIBS=contrib -DCMAKE_PREFIX_PATH=contrib -DPYOPENMS=OFF -DWITH_GUI=OFF ../OpenMS
 ```
 
 Now pyOpenMS is compiled with the following scripts
