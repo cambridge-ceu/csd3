@@ -94,7 +94,7 @@ so `python pyopenms_test.py` responseds.
 
 ### OpenMS
 
-Web: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (older, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS), [wikiwand](https://www.wikiwand.com/en/OpenMS)).
+Web: ([https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS)) (codebase, [https://www.openms.de/](https://www.openms.de/))
 
 Contributed software: [https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/](https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/)
 
@@ -116,11 +116,13 @@ cd ${Caprion}/OpenMS-${version}
 cmake -DOPENMS_CONTRIB_LIBS="../OpenMS-${version}/contrib/lib" -DCMAKE_PREFIX_PATH=contrib ../OpenMS-${version}
 make targets
 ```
-The second `wget` statement is much more efficient to download all the software. There were problems with OPENMP so were done manually.
-Problems with XERCESC appeared OK with 
+The second `wget` statement is much more efficient to download all the software.
+
+Beside the codebase, various other operations could be done,
 
 ```bash
 wget https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.0.tar.gz -O Xerces-C_3_2_0.tar.gz
+cmake -DOPENMS_CONTRIB_LIBS=${Caprion}/miniconda3/lib -DCMAKE_PREFIX_PATH=contrib -DMY_CXX_FLAGS="-std=c++17" -DWITH_GUI=OFF ../OpenMS
 ```
 
 It also requires some third party tools.
@@ -332,6 +334,11 @@ make pyopenms
 Strauss, M.T., et al., AlphaPept, a modern and open framework for MS-based proteomics. bioRxiv, 2021: p. 2021.07.23.453379. [https://www.biorxiv.org/content/10.1101/2021.07.23.453379v1](https://www.biorxiv.org/content/10.1101/2021.07.23.453379v1).
 
 Rost HL, et al., OpenMS: a flexible open-source software platform for mass spectrometry data analysis. Nat Meth. 2016; 13, 9: 741-748. doi:10.1038/nmeth.3959.
+
+## Other URLs
+
+[SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS), [wikiwand](https://www.wikiwand.com/en/OpenMS)).
+
 
 [^benchmark]: Benchmark
 
