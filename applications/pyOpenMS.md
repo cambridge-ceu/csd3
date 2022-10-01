@@ -113,8 +113,7 @@ wget -nd --execute="robots = off" --mirror --convert-links --no-parent --wait=5 
 cd -
 cmake -DBUILD_TYPE=ALL contrib
 cd ${Caprion}/OpenMS-${version}
-cmake -DOPENMS_CONTRIB_LIBS="../OpenMS-${version}/contrib/lib" -DBOOST_USE_STATIC=ON -DCMAKE_PREFIX_PATH=contrib \
-      -DPython_EXECUTABLE=${Caprion}/miniconda3/bin/python ../OpenMS-${version}
+cmake -DOPENMS_CONTRIB_LIBS="../OpenMS-${version}/contrib/lib" -DCMAKE_PREFIX_PATH=contrib ../OpenMS-${version}
 make targets
 ```
 The second `wget` statement is much more efficient to download all the software. There were problems with OPENMP so were done manually.
@@ -309,9 +308,7 @@ cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=${Caprion}/OpenMS/contrib
 make install
 cd ${Caprion}/OpenMS
-cmake -DOPENMS_CONTRIB_LIBS=contrib -DCMAKE_PREFIX_PATH=contrib -DCMAKE_INSTALL_PREFIX=${Caprion} \
-      -DPython_EXECUTABLE=${Caprion}/py38/bin/python ../OpenMS
-cmake -DOPENMS_CONTRIB_LIBS=contrib -DCMAKE_PREFIX_PATH=contrib -DPYOPENMS=OFF -DWITH_GUI=OFF ../OpenMS
+cmake -DOPENMS_CONTRIB_LIBS=contrib -DCMAKE_PREFIX_PATH=contrib -DCMAKE_INSTALL_PREFIX=${Caprion} ../OpenMS
 ```
 
 Now pyOpenMS is compiled with the following scripts
@@ -333,6 +330,8 @@ make pyopenms
 ## References
 
 Strauss, M.T., et al., AlphaPept, a modern and open framework for MS-based proteomics. bioRxiv, 2021: p. 2021.07.23.453379. [https://www.biorxiv.org/content/10.1101/2021.07.23.453379v1](https://www.biorxiv.org/content/10.1101/2021.07.23.453379v1).
+
+Rost HL, et al., OpenMS: a flexible open-source software platform for mass spectrometry data analysis. Nat Meth. 2016; 13, 9: 741-748. doi:10.1038/nmeth.3959.
 
 [^benchmark]: Benchmark
 
