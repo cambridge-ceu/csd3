@@ -122,7 +122,6 @@ Problems with XERCESC appeared OK with
 
 ```bash
 wget https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.0.tar.gz -O Xerces-C_3_2_0.tar.gz
-wget http://www.coin-or.org/download/source/CoinMP/CoinMP-1.8.3.tgz -O CoinMP-1.8.3-vs22.tar.gz
 ```
 
 It also requires some third party tools.
