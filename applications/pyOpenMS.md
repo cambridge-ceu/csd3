@@ -6,21 +6,26 @@ sort: 37
 
 The prerequisites involve location, GNU C and Miniconda.
 
-### GNU C
+### CSD3 location
 
-The location at CSD3 is set as follows,
+This is set as follows,
 
 ```bash
 export Caprion=/rds/project/jmmh2/rds-jmmh2-projects/Caprion_proteomics
 cd ${Caprion}
+```
+
+### GNU C
+
+It supports for`c++17` and it is sufficient with.
+
+```bash
 module load gcc/7
 ```
 
-where `gcc/7` specified though `gcc/6` appears to work well.
-
 ### Miniconda
 
-This options are considerably easier than bare python above and we opt to set up the latest version.
+This options are considerably easier and we opt to set up the latest version.
 
 ```bash
 # Step 1. Install Miniconda3
@@ -321,7 +326,7 @@ cmake -DPYOPENMS=ON
 make pyopenms
 ```
 
-In particular, Cython involves its specifications [^cython].
+Further information is available from cmake website [^python].
 
 ## References
 
@@ -345,9 +350,11 @@ Rost HL, et al., OpenMS: a flexible open-source software platform for mass spect
 
     which gives `alphapept_test.py` and `pyopenms_test.py` above along with data files.
 
-[^cython]:
+[^python]:
 
     See [https://cmake.org/cmake/help/latest/module/FindPython.html](https://cmake.org/cmake/help/latest/module/FindPython.html)
+
+    Also
 
     ```bash
     export Python_LIBRARY_DIRS=${Caprion}/miniconda3/lib
