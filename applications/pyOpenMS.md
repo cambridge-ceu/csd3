@@ -15,12 +15,12 @@ export Caprion=/rds/project/jmmh2/rds-jmmh2-projects/Caprion_proteomics
 cd ${Caprion}
 ```
 
-### GNU C
+### GNU C and TeXlive
 
-OpenMS supports for`c++17` and it is sufficient with.
+OpenMS supports for`c++17` while [TeX Live](https://www.tug.org/texlive/) supports for building documentation with pdfTeX. We do
 
 ```bash
-module load gcc/7
+module load gcc/7 texlive
 ```
 
 ### Miniconda
@@ -37,8 +37,10 @@ conda config --set auto_activate_base false
 export LD_LIBRARY_PATH=${Caprion}/miniconda3/lib:${LD_LIBRARY_PATH}
 export PATH=${Caprion}/miniconda3/bin:${PATH}
 export INCLUDE=${Caprion}/miniconda3/include:${INCLUDE}
-export PYTHONPATH=${Caprion}/miniconda3/lib/python3.9/site-packages
+export PYTHONPATH=${Caprion}/miniconda3/lib/python3.9/site-packages:${PYTHONPATH}
 ```
+
+NOte that Python 3.9.12 is installed, and in cases the existing environtal variables are carried over.
 
 Only Step 2 is necessary in later calls.
 
@@ -96,7 +98,7 @@ cmake -DBUILD_TYPE=ALL contrib
 cmake -DOPENMS_CONTRIB_LIBS=${Caprion}/miniconda3/lib -DCMAKE_PREFIX_PATH=contrib ../OpenMS
 make targets
 ```
-The second `wget` statement is much more efficient to download all the software.
+The second `wget` statement is much more efficient to download all the files.
 
 Beside the codebase, various other options are possible, e.g., 
 
@@ -109,20 +111,20 @@ The required third party tools are listed as follows,
 
 ```
 -- Searching for third party tools...
---   - MaRaCluster not found
---   - Comet not found
---   - X! Tandem not found
---   - MS-GF+ not found
---   - MSFragger not found
---   - Percolator not found
---   - Fido not found
---   - FidoChooseParameters not found
---   - Sirius not found
---   - Novor not found
---   - SpectraST not found
---   - ThermoRawFileParser not found
---   - LuciPHOr2 not found
---   - CometAdapter not found
+--   - MaRaCluster
+--   - Comet
+--   - X! Tandem
+--   - MS-GF+
+--   - MSFragger
+--   - Percolator
+--   - Fido
+--   - FidoChooseParameters
+--   - Sirius
+--   - Novor
+--   - SpectraST
+--   - ThermoRawFileParser
+--   - LuciPHOr2
+--   - CometAdapter
 ```
 
 The last statement gives the most important targets for OpenMS
@@ -162,6 +164,8 @@ Single TOPP tools and UTILS have their own target, e.g. TOPPView
 ---
 
 ## Legacy
+
+As with instances elsewhere, this section is kept not only for historical reasons but also some useful information.
 
 Python itself is lightweight but more involved.
 
