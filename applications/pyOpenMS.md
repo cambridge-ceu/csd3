@@ -17,7 +17,7 @@ cd ${Caprion}
 
 ### GNU C and TeXlive
 
-OpenMS supports for`c++17` while [TeX Live](https://www.tug.org/texlive/) supports for building documentation with pdfTeX. We do
+OpenMS supports for`c++17` while [TeX Live](https://www.tug.org/texlive/) allows for documentation with pdfTeX. We have
 
 ```bash
 module load gcc/7 texlive
@@ -40,7 +40,7 @@ export INCLUDE=${Caprion}/miniconda3/include:${INCLUDE}
 export PYTHONPATH=${Caprion}/miniconda3/lib/python3.9/site-packages:${PYTHONPATH}
 ```
 
-NOte that Python 3.9.12 is installed, and in cases the existing environtal variables are carried over.
+NOte that Python 3.9.12 is installed, and in cases the current environtal variables are carried over.
 
 Only Step 2 is necessary in later calls.
 
@@ -165,7 +165,7 @@ Single TOPP tools and UTILS have their own target, e.g. TOPPView
 
 ## Legacy
 
-As with instances elsewhere, this section is kept not only for historical reasons but also some useful information.
+As with instances elsewhere, this section is kept not only for historical reasons but also for some useful information.
 
 Python itself is lightweight but more involved.
 
