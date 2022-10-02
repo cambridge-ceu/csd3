@@ -80,7 +80,7 @@ so `python pyopenms_test.py` responseds.
 
 ### OpenMS
 
-Web: [https://www.openms.de/](https://www.openms.de/) (GitHub, [https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS), [Contributed software](https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/))
+Web: [https://www.openms.de/](https://www.openms.de/) ([Contributed software](https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/)) (GitHub, [https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS))
 
 This approach is generic and potentially more efficient.
 
