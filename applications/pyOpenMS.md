@@ -25,7 +25,7 @@ module load gcc/7 texlive
 
 ### Miniconda
 
-This options are considerably easier and we opt to set up the latest version.
+This option is considerably easier and we set up the latest version.
 
 ```bash
 # Step 1. Install Miniconda3
