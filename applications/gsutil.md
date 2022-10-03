@@ -44,7 +44,40 @@ pip install pyasn1==0.4.8  --user
 python setup.py install --prefix=$HPC_WORK
 ```
 
-## Example
+## Examples
+
+## FinnGen
+
+The R7 public data can be downloaded as follows,
+
+```bash
+gsutil -m cp -r \
+  "gs://finngen-public-data-r7/summary_stats" \
+  .
+```
+
+and with all results lined up together we could use
+
+```bash
+gsutil -m cp -r \
+  "gs://finngen-public-data-r7/annotations" \
+  "gs://finngen-public-data-r7/covid" \
+  "gs://finngen-public-data-r7/finemapping" \
+  "gs://finngen-public-data-r7/summary_stats" \
+  .
+```
+
+This could be very space hungry and we could make a list of files and select by phenocode, e.g.,
+
+```bash
+gsutil ls gs://finngen-public-data-r7/summary_stats > finngen-r7.list
+grep -e JUVEN_ARTHR -e L12_PSORIASIS -e D3_SARCOIDOSIS finngen-r7.list | \
+xargs -l -I {} gsutil -m cp {} .
+```
+
+The phenocode is available from [https://r7.finngen.fi/](https://r7.finngen.fi/).
+
+### GTEx
 
 The GTEx v8 QTL resources,
 
