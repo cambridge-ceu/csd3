@@ -100,13 +100,13 @@ make targets
 ```
 The second `wget` statement is much more efficient to download all the files.
 
-The last statement gives the most important targets for OpenMS
+The last statement gives the most important targets for OpenMS, where TOPP refers to `The OpenMS Proteomics Pipeline`.
 
 ```
 ==========================================================================
 
 The following make targets are available:
-    [no target]     builds the OpenMS library, TOPP [^topp] tools and UTILS tools
+    [no target]     builds the OpenMS library, TOPP tools and UTILS tools
     OpenMS          builds the OpenMS library
     TOPP            builds the TOPP tools
     UTILS           builds the UTILS tools
@@ -133,8 +133,6 @@ Single TOPP tools and UTILS have their own target, e.g. TOPPView
 
 ==========================================================================
 ```
-
-[^topp]: The OpenMS Proteomics Pipeline.
 
 Beside the codebase, various other options are possible, e.g.,
 
