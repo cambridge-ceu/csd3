@@ -48,7 +48,9 @@ python setup.py install --prefix=$HPC_WORK
 
 ## FinnGen
 
-The R7 public data can be downloaded as follows,
+Web: [https://www.finngen.fi/en/access_results](https://www.finngen.fi/en/access_results)
+
+The GWAS summary statistics from R7 public data can be downloaded as follows,
 
 ```bash
 gsutil -m cp -r \
@@ -75,7 +77,7 @@ grep -e JUVEN_ARTHR -e L12_PSORIASIS -e D3_SARCOIDOSIS finngen-r7.list | \
 xargs -l -I {} gsutil -m cp {} .
 ```
 
-The phenocode is available from [https://r7.finngen.fi/](https://r7.finngen.fi/).
+The phenocode can be found from [https://r7.finngen.fi/](https://r7.finngen.fi/).
 
 ### GTEx
 
