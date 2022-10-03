@@ -82,7 +82,7 @@ so `python pyopenms_test.py` responses.
 
 Web: [https://www.openms.de/](https://www.openms.de/) ([Contributed software](https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/)) (GitHub, [https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS))
 
-This approach is generic and potentially more efficient.
+This approach is generic and usually more efficient.
 
 ```bash
 cd ${Caprion}
@@ -100,40 +100,13 @@ make targets
 ```
 The second `wget` statement is much more efficient to download all the files.
 
-Beside the codebase, various other options are possible, e.g., 
-
-```bash
-wget https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.0.tar.gz -O Xerces-C_3_2_0.tar.gz
-cmake -DOPENMS_CONTRIB_LIBS=${Caprion}/miniconda3/lib -DCMAKE_PREFIX_PATH=contrib -DMY_CXX_FLAGS="-std=c++17" -DWITH_GUI=OFF ../OpenMS
-```
-
-The required third party tools are listed as follows,
-
-```
--- Searching for third party tools...
---   - MaRaCluster
---   - Comet
---   - X! Tandem
---   - MS-GF+
---   - MSFragger
---   - Percolator
---   - Fido
---   - FidoChooseParameters
---   - Sirius
---   - Novor
---   - SpectraST
---   - ThermoRawFileParser
---   - LuciPHOr2
---   - CometAdapter
-```
-
 The last statement gives the most important targets for OpenMS
 
 ```
 ==========================================================================
 
 The following make targets are available:
-    [no target]     builds the OpenMS library, TOPP tools and UTILS tools
+    [no target]     builds the OpenMS library, TOPP [^topp] tools and UTILS tools
     OpenMS          builds the OpenMS library
     TOPP            builds the TOPP tools
     UTILS           builds the UTILS tools
@@ -159,6 +132,15 @@ The following make targets are available:
 Single TOPP tools and UTILS have their own target, e.g. TOPPView
 
 ==========================================================================
+```
+
+[^topp]: The OpenMS Proteomics Pipeline.
+
+Beside the codebase, various other options are possible, e.g.,
+
+```bash
+wget https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.0.tar.gz -O Xerces-C_3_2_0.tar.gz
+cmake -DOPENMS_CONTRIB_LIBS=${Caprion}/miniconda3/lib -DCMAKE_PREFIX_PATH=contrib -DMY_CXX_FLAGS="-std=c++17" -DWITH_GUI=OFF ../OpenMS
 ```
 
 ---
