@@ -15,13 +15,23 @@ export Caprion=/rds/project/jmmh2/rds-jmmh2-projects/Caprion_proteomics
 cd ${Caprion}
 ```
 
-### GNU C and TeXlive
+### GNU C
 
-OpenMS supports for`c++17` while [TeX Live](https://www.tug.org/texlive/) allows for documentation with pdfTeX. We have
+OpenMS supports for`c++17`. We have
 
 ```bash
 module load gcc/7 texlive
 ```
+
+### TeX Live
+
+Web: [TeX Live](https://www.tug.org/texlive/)
+
+```bash
+module load texlive
+```
+
+This is not essential for OpenMS to be functional, but allows for documentation with pdfTeX -- additional packages are reuired [^tlmgr].
 
 ### Miniconda
 
@@ -320,8 +330,41 @@ Rost HL, et al., OpenMS: a flexible open-source software platform for mass spect
 
 ## Other URLs
 
-[SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS), [wikiwand](https://www.wikiwand.com/en/OpenMS), [OpenSWATH](https://openswath.org/en/latest/).
+* OpenMS, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS), [wikiwand](https://www.wikiwand.com/en/OpenMS), [OpenSWATH](https://openswath.org/en/latest/).
+* tlmgr, [tlmgr.pdf](https://tug.ctan.org/info/tlmgrbasics/doc/tlmgr.pdf), [Installing_Extra_Packages](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages), [pkginstall](https://www.tug.org/texlive/pkginstall.html), [Rstudio query](https://community.rstudio.com/t/latex-language-package-installation-not-working/51596/3).
 
+[^tlmgr]: tlmgr
+
+    The required `newtx`, `fontaxes` and `xtab` package can be installed as follows,
+
+    ```bash
+    tlmgr init-usertree
+    tlmgr option repository ftp://tug.org/historic/systems/texlive/2015/tlnet-final --user-mode
+    tlmgr install --user-mode newtx
+    tlmgr install --user-mode fontaxes
+    tlmgr install --user-mode xtab
+    ```
+
+    For instance `tlmgr info newtx` command gives the following information,
+
+    ```
+    package:     newtx
+    category:    Package
+    shortdesc:   Alternative uses of the TX fonts, with improved metrics
+    longdesc:    The bundle splits txfonts.sty (from the TX fonts distribution) into two independent packages, newtxtext.sty and newtxmath.sty, each with fixes and enhancements. newtxmath's metrics have been re-evaluated to provide a less tight appearance, and to provide a libertine option that substitutes Libertine italic and Greek letter for the existing math italic and Greek glyphs, making a mathematics package that matches Libertine text quite well. newtxmath can also use the maths italic font provided with the garamondx package, thus offering a garamond-alike text-with- maths combination.
+    installed:   Yes
+    revision:    39072
+    sizes:       doc: 865k, run: 7429k
+    relocatable: Yes
+    cat-version: 1.463
+    cat-date:    2015-12-11 20:31:08 +0100
+    cat-license: lppl1.3
+    cat-topics:  font font-maths font-type1
+    cat-related: minion2newtx
+    collection:  collection-fontsextra
+    ```
+
+    See also [https://ctan.org/pkg/newtx](https://ctan.org/pkg/newtx). Also related is # Karl's Path SEarch Library WHICH (kpsewhich), e.g., `kpsewich tikz`.
 
 [^benchmark]: Benchmark
 
