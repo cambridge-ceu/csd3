@@ -89,7 +89,7 @@ so `python pyopenms_test.py` responses.
 
 Web: [https://www.openms.de/](https://www.openms.de/) ([Contributed software](https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/)) (GitHub, [https://github.com/OpenMS/OpenMS](https://github.com/OpenMS/OpenMS))
 
-This approach is generic and usually more efficient.
+This procedure produces many efficient programs which are complementary to pyopenms.
 
 ```bash
 cd ${Caprion}
@@ -162,7 +162,7 @@ wget -nd --execute="robots = off" --mirror --convert-links --no-parent --wait=5 
 cd -
 cmake -DBUILD_TYPE=ALL contrib
 cmake -DGIT_TRACKING=OFF -DENABLE_UPDATE_CHECK=OFF -DOPENMS_CONTRIB_LIBS=contrib \
-      -DPYOPENMS=ON -DOPENMS_COVERAGE=OFF ../OpenMS-${version}
+      -DPYOPENMS=OFF -DOPENMS_COVERAGE=OFF ../OpenMS-${version}
 ```
 
 ---
