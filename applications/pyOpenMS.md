@@ -330,7 +330,7 @@ Rost HL, et al., OpenMS: a flexible open-source software platform for mass spect
 * OpenMS, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS), [wikiwand](https://www.wikiwand.com/en/OpenMS), [OpenSWATH](https://openswath.org/en/latest/).
 * tlmgr, [tlmgr.pdf](https://tug.ctan.org/info/tlmgrbasics/doc/tlmgr.pdf), [Installing_Extra_Packages](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages), [pkginstall](https://www.tug.org/texlive/pkginstall.html), [Rstudio query](https://community.rstudio.com/t/latex-language-package-installation-not-working/51596/3).
 
-[^tlmgr]: tlmgr
+[^tlmgr]: tlmgr -- the TEX Live Manager
 
     The required `newtx`, `fontaxes` and `xtab` package can be installed as follows,
 
