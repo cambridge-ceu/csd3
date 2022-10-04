@@ -19,11 +19,16 @@ cd ${Caprion}
 
 OpenMS supports for`c++17`. [TeX Live](https://www.tug.org/texlive/) is not essential for OpenMS to be functional but allows for documentation with pdfTeX -- additional packages are required [^tlmgr].
 
+Furthermore, OpenMS requires somewhat earlier version of ghostscript which is actually available on CSD3 abd we point to it via a symbolic link assuming ${HOME}/bin is on top of $PATH,
+
 We have
 
 ```bash
 module load gcc/7 texlive
+ln -sf /usr/bin/ghostscript ${HOME}/bin/gs
 ```
+
+In so doing `gsftopk ntx-Bold-tlf-t1 600`, etc. in the documentation building process will work. We obtain the much desired `OpenMS_tutorial/latex_output/refman.pdf` and [`OpenMS_tutorial.pdf`](OpenMS_tutorial.pdf).
 
 ### Miniconda
 
