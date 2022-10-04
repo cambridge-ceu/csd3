@@ -19,7 +19,7 @@ cd ${Caprion}
 
 OpenMS supports for`c++17`. [TeX Live](https://www.tug.org/texlive/) is not essential for OpenMS to be functional but allows for documentation with pdfTeX -- additional packages are required [^tlmgr].
 
-Furthermore, OpenMS requires somewhat earlier version of ghostscript which is actually available on CSD3 abd we point to it via a symbolic link assuming ${HOME}/bin is on top of $PATH,
+Furthermore, OpenMS requires somewhat earlier version of ghostscript which is actually available on CSD3 (GPL Ghostscript 9.25 (2018-09-13)) and we point to it via a symbolic link assuming ${HOME}/bin is on top of $PATH,
 
 We have
 
