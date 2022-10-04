@@ -15,7 +15,7 @@ export Caprion=/rds/project/jmmh2/rds-jmmh2-projects/Caprion_proteomics
 cd ${Caprion}
 ```
 
-### GNU C
+### GNU C and Tex Live
 
 OpenMS supports for`c++17`. We have
 
@@ -23,15 +23,7 @@ OpenMS supports for`c++17`. We have
 module load gcc/7 texlive
 ```
 
-### TeX Live
-
-Web: [TeX Live](https://www.tug.org/texlive/)
-
-```bash
-module load texlive
-```
-
-This is not essential for OpenMS to be functional, but allows for documentation with pdfTeX -- additional packages are reuired [^tlmgr].
+[TeX Live](https://www.tug.org/texlive/) is not essential for OpenMS to be functional but allows for documentation with pdfTeX -- additional packages are reuired [^tlmgr].
 
 ### Miniconda
 
