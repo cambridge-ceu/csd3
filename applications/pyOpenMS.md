@@ -28,7 +28,7 @@ module load gcc/7 texlive
 ln -sf /usr/bin/ghostscript ${HOME}/bin/gs
 ```
 
-In so doing `gsftopk ntx-Bold-tlf-t1 600`, etc. in the documentation building process will work. We obtain the much desired `OpenMS_tutorial/latex_output/refman.pdf` and [`OpenMS_tutorial.pdf`](OpenMS_tutorial.pdf).
+In so doing `gsftopk ntx-Bold-tlf-t1 600`, etc. in the documentation building process will work. We obtain the much desired `OpenMS_tutorial/latex_output/refman.pdf` and [`OpenMS_tutorial.pdf`](files/OpenMS_tutorial.pdf).
 
 ### Miniconda
 
