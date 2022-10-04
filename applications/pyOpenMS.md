@@ -148,6 +148,23 @@ wget https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.2.0.tar.gz -O
 cmake -DOPENMS_CONTRIB_LIBS=${Caprion}/miniconda3/lib -DCMAKE_PREFIX_PATH=contrib -DMY_CXX_FLAGS="-std=c++17" -DWITH_GUI=OFF ../OpenMS
 ```
 
+For a particular version without using GitHub, it is necessary to specify explicitly, e.g.,
+
+```bash
+cd ${Caprion}
+export version=3.0.0
+wget -qO- https://abibuilder.cs.uni-tuebingen.de/archive/openms/OpenMSInstaller/nightly/OpenMS-${version}-src.tar.gz | \
+tar xfz -
+cd ${Caprion}/OpenMS-${version}
+mkdir -p contrib/archives
+wget -nd --execute="robots = off" --mirror --convert-links --no-parent --wait=5 \
+     https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/
+cd -
+cmake -DBUILD_TYPE=ALL contrib
+cmake -DGIT_TRACKING=OFF -DENABLE_UPDATE_CHECK=OFF -DOPENMS_CONTRIB_LIBS=contrib \
+      -DPYOPENMS=ON -DOPENMS_COVERAGE=OFF ../OpenMS-${version}
+```
+
 ---
 
 ## Legacy
