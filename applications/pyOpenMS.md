@@ -17,7 +17,7 @@ cd ${Caprion}
 
 ### GNU C and Tex Live
 
-OpenMS supports for`c++17`. [TeX Live](https://www.tug.org/texlive/) is not essential for OpenMS to be functional but allows for documentation with pdfTeX -- additional packages are reuired [^tlmgr].
+OpenMS supports for`c++17`. [TeX Live](https://www.tug.org/texlive/) is not essential for OpenMS to be functional but allows for documentation with pdfTeX -- additional packages are required [^tlmgr].
 
 We have
 
