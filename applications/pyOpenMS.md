@@ -47,7 +47,7 @@ export INCLUDE=${Caprion}/miniconda3/include:${INCLUDE}
 export PYTHONPATH=${Caprion}/miniconda3/lib/python3.9/site-packages:${PYTHONPATH}
 ```
 
-NOte that Python 3.9.12 is installed, and in cases the current environtal variables are carried over.
+Note that Python 3.9.12 is installed, and in all cases the current environtal variables are carried over.
 
 Only Step 2 is necessary in later calls.
 
