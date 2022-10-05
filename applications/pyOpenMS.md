@@ -4,7 +4,7 @@ sort: 37
 
 # AlphaPept and PyOpenMS
 
-The prerequisites involve location, GNU C and Miniconda.
+The prerequisites involve CSD3 location, [GNU C](https://gcc.gnu.org/), [cmake](https://cmake.org/), [TeX Live](https://www.tug.org/texlive/) and [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
 ### CSD3 location
 
@@ -21,8 +21,8 @@ A number of aspects are worthwhile to highlight:
 
 1. OpenMS supports for`c++17`.
 2. It also requires a recent version of cmake, which will recognise its associate directives [^python].
-3. [TeX Live](https://www.tug.org/texlive/) is not essential for OpenMS to be functional but allows for documentation with pdfTeX -- additional packages are required [^tlmgr].
-4. OpenMS requires somewhat earlier version of ghostscript which is actually available on CSD3 (GPL Ghostscript 9.25 (2018-09-13)) and we point to it via a symbolic link assuming ${HOME}/bin is on top of $PATH,
+3. TeX Live is not essential for OpenMS to be functional but allows for documentation with pdfTeX -- additional packages are required [^tlmgr].
+4. OpenMS requires somewhat earlier version of ghostscript which is actually available on CSD3 (GPL Ghostscript 9.25 (2018-09-13)) and we point to it via a symbolic link assuming ${HOME}/bin is on top of $PATH.
 
 We have
 
