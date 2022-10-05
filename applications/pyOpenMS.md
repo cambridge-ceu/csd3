@@ -15,16 +15,19 @@ export Caprion=/rds/project/jmmh2/rds-jmmh2-projects/Caprion_proteomics
 cd ${Caprion}
 ```
 
-### GNU C and Tex Live
+### GNU C, cmake and Tex Live
 
-OpenMS supports for`c++17`. [TeX Live](https://www.tug.org/texlive/) is not essential for OpenMS to be functional but allows for documentation with pdfTeX -- additional packages are required [^tlmgr].
+A number of aspects are worthwhile to highlight:
 
-Furthermore, OpenMS requires somewhat earlier version of ghostscript which is actually available on CSD3 (GPL Ghostscript 9.25 (2018-09-13)) and we point to it via a symbolic link assuming ${HOME}/bin is on top of $PATH,
+1. OpenMS supports for`c++17`.
+2. It also requires a recent version of cmake, which will recognise its associate directives [^python].
+3. [TeX Live](https://www.tug.org/texlive/) is not essential for OpenMS to be functional but allows for documentation with pdfTeX -- additional packages are required [^tlmgr].
+4. OpenMS requires somewhat earlier version of ghostscript which is actually available on CSD3 (GPL Ghostscript 9.25 (2018-09-13)) and we point to it via a symbolic link assuming ${HOME}/bin is on top of $PATH,
 
 We have
 
 ```bash
-module load gcc/7 texlive
+module load gcc/7 cmake-3.19.7-gcc-5.4-5gbsejo texlive
 ln -sf /usr/bin/ghostscript ${HOME}/bin/gs
 ```
 
@@ -102,7 +105,7 @@ wget -nd --execute="robots = off" --mirror --convert-links --no-parent --wait=5 
      https://abibuilder.cs.uni-tuebingen.de/archive/openms/contrib/source_packages/
 cd -
 cmake -DBUILD_TYPE=ALL contrib
-cmake -DOPENMS_CONTRIB_LIBS=${Caprion}/miniconda3/lib -DCMAKE_PREFIX_PATH=contrib ../OpenMS
+cmake -DOPENMS_CONTRIB_LIBS=${Caprion}/miniconda3/lib -DCMAKE_PREFIX_PATH=contrib -DPYOPENMS=ON ../OpenMS
 make targets
 ```
 The second `wget` statement is much more efficient to download all the files.
@@ -128,12 +131,13 @@ The following make targets are available:
                     documentation).
     doc_tutorials   builds the PDF tutorials
     help            list all available targets (very verbose)
+    pyopenms           builds pyOpenMS inplace
+    pyopenms_bdist_egg builds pyOpenMS bdist_egg
+    pyopenms_bdist     builds pyOpenMS bdist as zip file
+    pyopenms_rpm       builds pyOpenMS rpm
 
-    pyopenms        targets are not enabled (to enable use -D PYOPENMS=ON).
-
-
-    OpenMS_coverage reporting target is not enabled (to enable use -D OPENMS_COVERAGE=ON).
-                    Caution: Building with debug and coverage info uses a lot of disk space (>40GB)
+    (Disabled) OpenMS_coverage reporting target is not enabled (to enable use -D OPENMS_COVERAGE=ON).
+               Caution: Building with debug and coverage info uses a lot of disk space (>40GB)
 
 
 Single TOPP tools and UTILS have their own target, e.g. TOPPView
@@ -347,6 +351,16 @@ Rost HL, et al., OpenMS: a flexible open-source software platform for mass spect
 * OpenMS, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS), [wikiwand](https://www.wikiwand.com/en/OpenMS), [OpenSWATH](https://openswath.org/en/latest/).
 * tlmgr, [tlmgr.pdf](https://tug.ctan.org/info/tlmgrbasics/doc/tlmgr.pdf), [Installing_Extra_Packages](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages), [pkginstall](https://www.tug.org/texlive/pkginstall.html), [Rstudio query](https://community.rstudio.com/t/latex-language-package-installation-not-working/51596/3).
 
+[^python]:
+
+    The website [https://cmake.org/cmake/help/latest/module/FindPython.html](https://cmake.org/cmake/help/latest/module/FindPython.html) explains several options which appear unnecessary for cmake 3.19.
+
+    ```bash
+    export Python_LIBRARY_DIRS=${Caprion}/miniconda3/lib
+    export Python_INCLUDE_DIR=${Caprion}/miniconda3/include
+    export Python_EXECUTABLE=${Caprion}/miniconda3/bin/python
+    ```
+
 [^tlmgr]: tlmgr -- the TEX Live Manager
 
     The required `newtx`, `fontaxes` and `xtab` package can be installed as follows,
@@ -390,15 +404,3 @@ Rost HL, et al., OpenMS: a flexible open-source software platform for mass spect
     ```
 
     which gives `alphapept_test.py` and `pyopenms_test.py` above along with data files.
-
-[^python]:
-
-    See [https://cmake.org/cmake/help/latest/module/FindPython.html](https://cmake.org/cmake/help/latest/module/FindPython.html)
-
-    Also
-
-    ```bash
-    export Python_LIBRARY_DIRS=${Caprion}/miniconda3/lib
-    export Python_INCLUDE_DIR=${Caprion}/miniconda3/include
-    export Python_EXECUTABLE=${Caprion}/miniconda3/bin/python
-    ```
