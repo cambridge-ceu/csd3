@@ -85,7 +85,7 @@ conda config --add channels conda-forge
 conda install -c openms pyopenms
 ```
 
-so `python pyopenms_test.py` responses. Note that currently it uses Python 3.9.6 therefore a slight backtrack whic could be remedied by compiling from OpenMS in the next section.
+so `python pyopenms_test.py` responses. Note that currently it uses Python 3.9.6 therefore a slight backtrack which could be remedied by compiling from OpenMS in the next section.
 
 ### OpenMS
 
