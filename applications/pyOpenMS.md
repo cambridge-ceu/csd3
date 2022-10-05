@@ -82,11 +82,10 @@ Web: [https://pyopenms.readthedocs.io/en/latest/index.html](https://pyopenms.rea
 conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
-conda install pandas
 conda install -c openms pyopenms
 ```
 
-so `python pyopenms_test.py` responses.
+so `python pyopenms_test.py` responses. Note that currently it uses Python 3.9.6 therefore a slight backtrack whic could be remedied by compiling from OpenMS in the next section.
 
 ### OpenMS
 
