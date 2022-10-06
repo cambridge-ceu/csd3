@@ -144,7 +144,7 @@ Single TOPP tools and UTILS have their own target, e.g. TOPPView
 ==========================================================================
 ```
 
-Upon completion, the pyopenms package is within OpenMS/pyOpenMS. It would come handy to link bin/, lib/, etc. in the environmental variables accordingly.
+Upon completion, the pyopenms package is within OpenMS/pyOpenMS. It would come handy to link bin/, lib/, etc. in the environmental variables accordingly; in particular pyOpenMS to PYTHONPATH.
 
 Beside the codebase, various other options are possible, e.g.,
 
