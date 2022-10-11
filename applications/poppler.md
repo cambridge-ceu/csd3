@@ -52,7 +52,7 @@ Note also the packages `R/Rpoppler`, `pdftools` and `qpdf` from CRAN.
 
 ## pdf2djvu
 
-The -DENABLE_UNSTABLE_API_ABI_HEADERS=ON flags above enables pdf2djvu to be compiled.
+The -DENABLE_UNSTABLE_API_ABI_HEADERS=ON flags above enables pdf2djvu to be compiled. The headers are not installed by default but to pass -DENABLE_UNSTABLE_API_ABI_HEADERS=ON (for Poppler >= 0.78) or -DENABLE_XPDF_HEADERS=ON (for older Popplers) to cmake; or pass --enable-xpdf-headers to configure.
 
 ```bash
 wget https://github.com/jwilk/pdf2djvu/releases/download/0.9.19/pdf2djvu-0.9.19.tar.xz
@@ -64,3 +64,5 @@ module load libuuid-1.0.3-gcc-5.4.0-weheiii
 make
 make install
 ```
+
+This appears better than [https://pdf2djvu.com/](https://pdf2djvu.com/).
