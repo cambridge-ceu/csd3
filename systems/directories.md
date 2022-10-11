@@ -4,6 +4,8 @@ sort: 3
 
 # Directories
 
+## Users
+
 This [section](https://docs.hpc.cam.ac.uk/hpc/user-guide/io_management.html#summary-of-available-filesystems) gives a summary of the file system.
 
 Go to **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
@@ -28,3 +30,7 @@ for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rd
 ```
 
 Note to list the directories you need postfix them with '/'.
+
+## Data managers
+
+In the case of HES data, add users from [https://selfservice.uis.cam.ac.uk/storage/project/306/](https://selfservice.uis.cam.ac.uk/storage/project/306/).
