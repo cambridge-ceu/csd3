@@ -4,7 +4,7 @@ sort: 36
 
 # pspp
 
-Official page: [https://www.gnu.org/software/pspp/](https://www.gnu.org/software/pspp/).
+Official page: [https://www.gnu.org/software/pspp/](https://www.gnu.org/software/pspp/) ([News](https://www.gnu.org/software/pspp/NEWS)).
 
 ## 1.2.0
 
