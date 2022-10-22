@@ -7,9 +7,9 @@ sort: 6
 The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of October 2022, the list is [^original]
 
 ```
-bgenix/   crossmap/   gtool/   impute/    LDstore/    metabolomics/  plinkseq/  R/          samtools/  source/  vcftools/
-biobank/  exomeplus/  hpg/     interval/  locuszoom/  metal/         pspp/      raremetal/  shapeit/   stata/
-boltlmm/  gcta/       htslib/  JAGS/      magma/      plink/         qctool/    regenie/    snptest/   tabix/
+bgenix/   crossmap/   gcta/   htslib/    JAGS/     locuszoom/     metal/     pspp/    raremetal/  samtools/  sources/  vcftools/
+biobank/  exomeplus/  gtool/  impute/    KING/     magma/         plink/     qctool/  README.md   shapeit/   stata/
+boltlmm/  finemap/    hpg/    interval/  LDstore/  metabolomics/  plinkseq/  R/       regenie/    snptest/   tabix/
 ```
 
 These are wrapped up as modules, /usr/local/Cluster-Config/modulefiles/ceuadmin, which can be loaded with `module load ceuadmin/<module name>`.
@@ -438,5 +438,3 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     hpg/                  metal/                        pspp/                         raremetal_4.14.1/  snptest_2.5.2/
     htslib/               metal_updated/                qctool_v1.4-linux-x86_64/     raremetal_BPGen/   snptest_2.5.4_beta3/
     ```
-
-
