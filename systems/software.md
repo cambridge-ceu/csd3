@@ -4,21 +4,19 @@ sort: 6
 
 # Software
 
-The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of June 2021, the list is
+The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of October 2022, the list is
 
 ```
-bgenix/                       JAGS/                        plink_linux_x86_64_beta2a/    raremetal_4.14.0/                   snptest_2.5.4_beta3/
-biobank/                      LDstore/                     plink_linux_x86_64_beta3.32/  raremetal_4.14.1/                   snptest_new/
-boltlmm/                      locuszoom/                   plinkseq-0.08-x86_64/         raremetal_BPGen/                    source/
-boltlmm_2.2/                  magma/                       plinkseq-0.10/                Raremetal_linux_executables/        stata/
-crossmap/                     MAGMA_Celltyping/            qctool_v1.4-linux-x86_64/     Raremetal_linux_executables.tgz     tabix/
-exomeplus/                    metabolomics/                R/                            raremetal.log                       temp/
-gcta/                         metal/                       raremetal_4.13/               regenie/                            vcftools/
-gtool_v0.7.5_x86_64/          metal_updated/               raremetal_4.13.3/             samtools-1.10.tar.bz2               vcftools_ps629/
-hpg/                          plink/                       raremetal_4.13.4/             samtools_1.2/
-htslib/                       plink_1.90_beta/             raremetal_4.13.5/             shapeit.v2.r790.RHELS_5.4.dynamic/
-impute_v2.3.2_x86_64_static/  plink_bgi_Dev/               raremetal_4.13.7/             snptest/
-interval/                     plink-bgi_linux_x86_64_may/  raremetal_4.13.8/             snptest_2.5.2/
+bgenix/               impute_v2.3.2_x86_64_static/  plink/                        R/                 Raremetal_linux_executables/        snptest_new/
+biobank/              interval/                     plink_1.90_beta/              raremetal_4.13/    Raremetal_linux_executables.tgz     source/
+boltlmm/              JAGS/                         plink_bgi_Dev/                raremetal_4.13.3/  raremetal.log                       stata/
+boltlmm_2.2/          LDstore/                      plink-bgi_linux_x86_64_may/   raremetal_4.13.4/  regenie/                            tabix/
+crossmap/             locuszoom/                    plink_linux_x86_64_beta2a/    raremetal_4.13.5/  samtools-1.10.tar.bz2               temp/
+exomeplus/            magma/                        plink_linux_x86_64_beta3.32/  raremetal_4.13.7/  samtools_1.2/                       vcftools/
+gcta/                 MAGMA_Celltyping/             plinkseq-0.08-x86_64/         raremetal_4.13.8/  shapeit.v2.r790.RHELS_5.4.dynamic/  vcftools_ps629/
+gtool_v0.7.5_x86_64/  metabolomics/                 plinkseq-0.10/                raremetal_4.14.0/  snptest/
+hpg/                  metal/                        pspp/                         raremetal_4.14.1/  snptest_2.5.2/
+htslib/               metal_updated/                qctool_v1.4-linux-x86_64/     raremetal_BPGen/   snptest_2.5.4_beta3/
 ```
 
 These are wrapped up as modules, /usr/local/Cluster-Config/modulefiles/ceuadmin, which can be loaded with `module load ceuadmin/<module name>`.
@@ -109,7 +107,7 @@ to load the Word document.
 
 Official website: [https://www.mathworks.com/products/matlab.html](https://www.mathworks.com/products/matlab.html).
 
-```
+```bash
 module avail matlab
 module load matlab/r2019b
 ```
@@ -121,6 +119,17 @@ followed by `matlab`.
 One could access databases elsewhere, e.g., at UCSC -- see examples on VEP.
 
 > There isn't any MySQL cluster running as a general service on CSD3. Do you believe your group has something running on a VM hosted on our network possibly? If you need a database for your work, running it in your own department and then allowing access to it from CSD3. Databases are not suitable candidates to run on a HPC cluster, the resource requirements are different and by definition they need to be running continuously whilst access is required, so wouldn't be run via slurm for example.
+
+
+#### pspp
+
+Official website: [https://www.gnu.org/software/pspp/](https://www.gnu.org/software/pspp/)
+
+```bash
+module load ceuadmin/pspp
+```
+
+with command-line tool `pspp` and a GUI counterpart `psppire`.
 
 #### Python
 
