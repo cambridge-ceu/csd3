@@ -7,14 +7,16 @@ sort: 6
 The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of October 2022, the list is [^original]
 
 ```
-bgenix/   crossmap/   gcta/   htslib/    JAGS/     locuszoom/     metal/     pspp/    raremetal/  samtools/  sources/  vcftools/
-biobank/  exomeplus/  gtool/  impute/    KING/     magma/         plink/     qctool/  README.md   shapeit/   stata/
-boltlmm/  finemap/    hpg/    interval/  LDstore/  metabolomics/  plinkseq/  R/       regenie/    snptest/   tabix/
+bcftools/  boltlmm/   exomeplus/  gtool/   impute/    KING/       magma/         MORGAN/    pspp/       R/          samtools/  sources/  vcftools/
+bgenix/    crossmap/  finemap/    hpg/     interval/  LDstore/    metabolomics/  plink/     qctool/     raremetal/  shapeit/   stata/
+biobank/   doc/       gcta/       htslib/  JAGS/      locuszoom/  metal/         plinkseq/  quicktest/  regenie/    snptest/   tabix/
 ```
 
 These are wrapped up as modules, /usr/local/Cluster-Config/modulefiles/ceuadmin, which can be loaded with `module load ceuadmin/<module name>`.
 
 :star: **[modules documentation](https://modules.readthedocs.io/en/latest/index.html)**
+
+Additional notes are avaiiable from the doc/ directory.
 
 #### gcc
 
@@ -424,7 +426,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
 ```
 
 ---
-[^original]: The original list was a mixed list of modules and directories as follows,
+[^original]: The original list was a mixture of modules and directories as follows,
 
     ```
     bgenix/               impute_v2.3.2_x86_64_static/  plink/                        R/                 Raremetal_linux_executables/        snptest_new/
