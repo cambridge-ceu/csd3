@@ -20,6 +20,15 @@ make install
 bcftools --version
 ```
 
+According to documentation, the configuration could slightly be more complicated with
+
+```bash
+export BCFTOOLS_PLUGINS=${HPC_WORK}/bcftools-1.12/plugins
+autoheader && autoconf && ./configure --enable-libgsl --enable-perl-filters --prefix=/usr/local/Cluster-Apps/ceuadmin/bcftools/1.12
+make
+make install
+```
+
 The data query example as in `tabix` is quoted here.
 
 ```bash
