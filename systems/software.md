@@ -16,7 +16,8 @@ These are wrapped up as modules, /usr/local/Cluster-Config/modulefiles/ceuadmin,
 
 :star: **[modules documentation](https://modules.readthedocs.io/en/latest/index.html)**
 
-Additional notes are avaiiable from the doc/ directory.
+Additional notes are avaiiable from the doc/ directory. Software with large size / reference data will be available from /rds/project/jmmh2.
+Candiates under this category include ensembl-vep, OpenMS, R (large collection of packages), locuszoom (chromosome X data).
 
 #### gcc
 
