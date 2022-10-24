@@ -6,7 +6,7 @@ sort: 11
 
 Web: [https://hackage.haskell.org/package/citeproc](https://hackage.haskell.org/package/citeproc) ([GitHub](https://github.com/jgm/citeproc))
 
-We can set up the latest version as follows,
+We can set up a version as follows,
 
 ```bash
 cd ${HPC_WORK}/
@@ -32,6 +32,12 @@ app/Main.hs:35:36: error:
    |                                    ^^
 cabal: Failed to build exe:citeproc from citeproc-0.4.0.1. See the build log
 above for details.
+```
+
+An executable file can also be generated with
+
+```bash
+cabal build --enable-executable-static
 ```
 
 and we change `<>` to `<|>` at line 35 of `app/Main.hs` and repeat the last command with success.
