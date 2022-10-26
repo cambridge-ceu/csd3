@@ -7,12 +7,16 @@ sort: 6
 The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of October 2022, the list is [^original]
 
 ```
-bcftools/  doc/        GEMMA/      interval/      metal/      pspp/       samtools/  tabix/
-bgenix/    exomeplus/  GitKraken/  JAGS/          MORGAN/     qctool/     shapeit/   Typora/
-biobank/   FastQTL/    gtool/      KING/          pandoc/     quicktest/  SMR/       vcftools/
-boltlmm/   fcGENE/     hpg/        LDstore/       plink/      R/          snptest/   VSCode/
-citeproc/  finemap/    htslib/     magma/         plink-bgi/  raremetal/  sources/
-crossmap/  gcta/       impute/     metabolomics/  plinkseq/   regenie/    stata/
+ [1] "bcftools"    "bgen"        "biobank"     "boltlmm"     "circos"
+ [6] "citeproc"    "crossmap"    "DjVuLibre"   "exomeplus"   "FastQTL"
+[11] "fcGENE"      "finemap"     "gcta"        "GEMMA"       "ghostscript"
+[16] "GitKraken"   "gtool"       "hpg"         "htslib"      "impute"
+[21] "JAGS"        "KING"        "LDstore"     "magma"       "metal"
+[26] "MORGAN"      "pandoc"      "plink"       "plink-bgi"   "plinkseq"
+[31] "pspp"        "qctool"      "qpdf"        "quicktest"   "R"
+[36] "raremetal"   "regenie"     "samtools"    "shapeit"     "SMR"
+[41] "snptest"     "stata"       "tabix"       "Typora"      "vcftools"
+[46] "VSCode"
 ```
 
 These are wrapped up as modules, /usr/local/Cluster-Config/modulefiles/ceuadmin, which can be loaded with `module load ceuadmin/<module name>`.
