@@ -34,13 +34,13 @@ cabal: Failed to build exe:citeproc from citeproc-0.4.0.1. See the build log
 above for details.
 ```
 
+and we change `<>` to `<|>` at line 35 of `app/Main.hs` and repeat the last command with success.
+
 An executable file can also be generated with
 
 ```bash
 cabal build --enable-executable-static
 ```
-
-and we change `<>` to `<|>` at line 35 of `app/Main.hs` and repeat the last command with success.
 
 An example use with `pandoc`:
 
