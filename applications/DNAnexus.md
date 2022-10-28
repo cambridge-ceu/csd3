@@ -152,7 +152,7 @@ wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -O jq
 jq --help
 ```
 
-It is useful to obtain the shared libraries, help files, etc. from source.
+It is useful to obtain the shared libraries, help files, etc. from source, [https://github.com/stedolan/jq](https://github.com/stedolan/jq).
 
 ```bash
 
