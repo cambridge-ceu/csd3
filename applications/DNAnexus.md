@@ -155,8 +155,6 @@ jq --help
 It is useful to obtain the shared libraries, help files, etc. from source, [https://github.com/stedolan/jq](https://github.com/stedolan/jq).
 
 ```bash
-
-```
 module load automake-1.16.1-gcc-5.4.0-uccejfj
 module load libtool-2.4.6-gcc-5.4.0-xtclmhg
 git submodule update --init # if building from git to get oniguruma
@@ -164,6 +162,8 @@ autoreconf -fi              # if building from git
 ./configure --with-oniguruma=builtin --prefix=/usr/local/Cluster-Apps/ceuadmin/jq/1.6
 make -j8
 make check
+```
+
 ---
 
 It also works with oniguruma 0.6.9.8 installed from the standard proecedure.
