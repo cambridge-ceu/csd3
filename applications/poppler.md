@@ -50,6 +50,36 @@ after which we could install R/pdftools from CRAN.
 
 Note also the packages `R/Rpoppler`, `pdftools` and `qpdf` from CRAN.
 
+## nspr
+
+There is complaint from `nss` on `nspr`,
+
+```
+-- Checking for module 'nss>=3.19'
+--   Found nss, version 3.67.0
+Package 'NSS-UTIL' requires 'nspr >= 4.30.0' but version of NSPR is 4.10.0
+```
+
+so we furnish this with
+
+```bash
+wget -qO- https://ftp.mozilla.org/pub/nspr/releases/v4.35/src/nspr-4.35.tar.gz | tar xvfz -
+module unload gcc/6
+cd nspr-4.35/
+cd nspr
+./configure --prefix=${HPC_WORK}
+make
+make install
+```
+
+Note the default `gcc/4.8.5` has to be used rather than `gcc/6`. Upon completion, we succeed with
+
+```bash
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local/Cluster-Apps/ceuadmin/poppler/0.84  -DCMAKE_BUILD_TYPE=release
+make
+make install
+```
+
 ## pdf2djvu
 
 The -DENABLE_UNSTABLE_API_ABI_HEADERS=ON flags above enables pdf2djvu to be compiled. The headers are not installed by default but to pass -DENABLE_UNSTABLE_API_ABI_HEADERS=ON (for Poppler >= 0.78) or -DENABLE_XPDF_HEADERS=ON (for older Popplers) to cmake; or pass --enable-xpdf-headers to configure.
