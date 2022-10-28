@@ -166,7 +166,7 @@ make check
 
 ---
 
-It also works with oniguruma 0.6.9.8 installed from the standard proecedure.
+It also works with oniguruma 0.6.9.8 in lieu of its counterpart from GitHub.
 
 [^1]: CSD3
 
