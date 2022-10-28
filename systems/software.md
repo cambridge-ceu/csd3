@@ -7,16 +7,19 @@ sort: 6
 The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of October 2022, the list is [^original]
 
 ```
- [1] "bcftools"    "bgen"        "biobank"     "boltlmm"     "circos"
- [6] "citeproc"    "crossmap"    "DjVuLibre"   "exomeplus"   "FastQTL"
-[11] "fcGENE"      "finemap"     "gcta"        "GEMMA"       "ghostscript"
-[16] "GitKraken"   "gtool"       "hpg"         "htslib"      "impute"
-[21] "JAGS"        "jq"          "KING"        "LDstore"     "magma"
-[26] "metal"       "MORGAN"      "pandoc"      "plink"       "plink-bgi"
-[31] "plinkseq"    "poppler"     "pspp"        "qctool"      "qpdf"
-[36] "quicktest"   "R"           "raremetal"   "regenie"     "samtools"
-[41] "shapeit"     "SMR"         "snptest"     "sqlite"      "stata"
-[46] "tabix"       "Typora"      "vcftools"    "VSCode"
+ [1] "bcftools"        "bgen"            "biobank"         "boltlmm"
+ [5] "circos"          "citeproc"        "crossmap"        "DjVuLibre"
+ [9] "DosageConverter" "exomeplus"       "FastQTL"         "fcGENE"
+[13] "finemap"         "gcta"            "GEMMA"           "ghostscript"
+[17] "GitKraken"       "gtool"           "hpg"             "htslib"
+[21] "impute"          "JAGS"            "jq"              "KING"
+[25] "LDstore"         "magma"           "metal"           "MORGAN"
+[29] "pandoc"          "plink"           "plink-bgi"       "plinkseq"
+[33] "poppler"         "pspp"            "qctool"          "qpdf"
+[37] "quicktest"       "R"               "raremetal"       "regenie"
+[41] "samtools"        "shapeit"         "SMR"             "snptest"
+[45] "sqlite"          "stata"           "tabix"           "Typora"
+[49] "vcftools"        "VSCode"
 ```
 
 These are wrapped up as modules, /usr/local/Cluster-Config/modulefiles/ceuadmin, which can be loaded with `module load ceuadmin/<module name>`.
