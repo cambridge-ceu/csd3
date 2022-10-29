@@ -39,8 +39,9 @@ cabal update
 cabal build pandoc-citeproc.cabal
 cabal install --installdir=${CEUADMIN}/bin \
               --enable-shared --enable-static --enable-executable-dynamic --enable-executable-static --install-method=copy --overwrite-policy=always
-# Makefile from GitHub
-wget https://raw.githubusercontent.com/jgm/pandoc-citeproc/master/Makefile
+# GitHub counterpart has a makefile
+# https://raw.githubusercontent.com/jgm/pandoc-citeproc/master/Makefile
+make
 ```
 
 The directories involves ${HOME}/.cabal or ${HOME}/.stack (which also include ghc 8.6.5) and `/rds/user/jhz22/hpc-work/.local/` when Makefile is used.
