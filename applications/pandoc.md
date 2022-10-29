@@ -27,9 +27,10 @@ This has been replaced by citeproc but somewhat of interest.
 
 ```bash
 # install stack
-curl -sSL https://get.haskellstack.org/ | sh -s - -d /usr/local/Cluster-Apps/ceuadmin/pandoc-citeproc/0.17.0.2/bin
+wget -qO- https://get.haskellstack.org/ > stack.sh
+## editing stack.sh to let DESTDIR=${HPC_WORK} and `sh stack.sh`
 cd pandoc-citeproc-0.17.0.2
 make
 ```
 
-which installs stack-related files into ${HOME}/.stack (which includes ghc 8.6.5) and pandoc-citeproc-0.17.0.2 to `/rds/user/jhz22/hpc-work/.local/`.
+which installs stack-related files into ${HOME}/.stack (which also include ghc 8.6.5) and stack/pandoc-citeproc-0.17.0.2 to `/rds/user/jhz22/hpc-work/.local/`.
