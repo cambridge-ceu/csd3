@@ -35,9 +35,12 @@ wget -qO- https://get.haskellstack.org/ > stack.sh
 sh stack.sh -f
 export CEUADMIN=/usr/local/Cluster-Apps/ceuadmin/pandoc-citeproc/0.17.0.2
 module load cabal/3.2.0.0
+cabal update
 cabal build pandoc-citeproc.cabal
 cabal install --installdir=${CEUADMIN}/bin \
               --enable-shared --enable-static --enable-executable-dynamic --enable-executable-static --install-method=copy --overwrite-policy=always
+# Makefile from GitHub
+wget https://raw.githubusercontent.com/jgm/pandoc-citeproc/master/Makefile
 ```
 
-The directories involves ${HOME}/.cabal or ${HOME}/.stack (which also include ghc 8.6.5) and `/rds/user/jhz22/hpc-work/.local/`.
+The directories involves ${HOME}/.cabal or ${HOME}/.stack (which also include ghc 8.6.5) and `/rds/user/jhz22/hpc-work/.local/` when Makefile is used.
