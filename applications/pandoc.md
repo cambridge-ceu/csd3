@@ -21,16 +21,23 @@ See citeproc for handling bibliography.
 
 ## pandoc-citeproc
 
-Web: [https://github.com/jgm/pandoc-citeproc](https://github.com/jgm/pandoc-citeproc)
+Web: [https://hackage.haskell.org/package/pandoc-citeproc](https://hackage.haskell.org/package/pandoc-citeproc)
 
 This has been replaced by citeproc but somewhat of interest.
 
 ```bash
+wget -qO- https://hackage.haskell.org/package/pandoc-citeproc-0.17.0.2/pandoc-citeproc-0.17.0.2.tar.gz | \
+tar xvfz -
+cd pandoc-citeproc-0.17.0.2/
 # install stack
 wget -qO- https://get.haskellstack.org/ > stack.sh
-## editing stack.sh to let DESTDIR=${HPC_WORK} and `sh stack.sh`
-cd pandoc-citeproc-0.17.0.2
-make
+## editing stack.sh to let DESTDIR=${HPC_WORK}
+sh stack.sh -f
+export CEUADMIN=/usr/local/Cluster-Apps/ceuadmin/pandoc-citeproc/0.17.0.2
+module load cabal/3.2.0.0
+cabal build pandoc-citeproc.cabal
+cabal install --installdir=${CEUADMIN}/bin \
+              --enable-shared --enable-static --enable-executable-dynamic --enable-executable-static --install-method=copy --overwrite-policy=always
 ```
 
-which installs stack-related files into ${HOME}/.stack (which also include ghc 8.6.5) and stack/pandoc-citeproc-0.17.0.2 to `/rds/user/jhz22/hpc-work/.local/`.
+The directories involves ${HOME}/.cabal or ${HOME}/.stack (which also include ghc 8.6.5) and `/rds/user/jhz22/hpc-work/.local/`.
