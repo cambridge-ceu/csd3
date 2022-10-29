@@ -37,4 +37,4 @@ cd pandoc-citeproc-0.17.0.2
 make
 ```
 
-which installs stack-related files (2.3GB) into ${HOME}/.stack (which includes ghc 8.6.5) and pandoc-citeproc-0.17.0.2 to `/rds/user/jhz22/hpc-work/.local/` (22G).
+which installs stack-related files into ${HOME}/.stack (which includes ghc 8.6.5) and pandoc-citeproc-0.17.0.2 to `/rds/user/jhz22/hpc-work/.local/`.
