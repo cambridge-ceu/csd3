@@ -27,12 +27,7 @@ This has been replaced by citeproc but somewhat of interest.
 
 ```bash
 # install stack
-wget -qO- https://get.haskellstack.org/ > stack.sh
-```
-
-then editing st.sh to let DEFAULT_DEST="/rds/user/jhz22/hpc-work/bin/stack" and run with bash. These are followed by
-
-```bash
+curl -sSL https://get.haskellstack.org/ | sh -s - -d /usr/local/Cluster-Apps/ceuadmin/pandoc-citeproc/0.17.0.2/bin
 cd pandoc-citeproc-0.17.0.2
 make
 ```
