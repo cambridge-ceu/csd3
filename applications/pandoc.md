@@ -44,4 +44,4 @@ cabal install --installdir=${CEUADMIN}/bin \
 make
 ```
 
-The directories involves ${HOME}/.cabal or ${HOME}/.stack (which also include ghc 8.6.5) and `/rds/user/jhz22/hpc-work/.local/` when Makefile is used.
+The directories involves ${HOME}/.cabal or ${HOME}/.stack (which also include ghc 8.6.5) and `${HOME}/.local` when Makefile is used.
