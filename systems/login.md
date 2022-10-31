@@ -4,7 +4,11 @@ sort: 2
 
 # Login
 
-:warning: MultiFactor Authentication (MFA) is mandatory on CSD3 and RCS Storage Services from 1st November 2022, [https://docs.hpc.cam.ac.uk/hpc/user-guide/mfa.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/mfa.html).
+:warning: MultiFactor Authentication (MFA) is mandatory on CSD3 and RCS Storage Services from 1st November 2022, [https://docs.hpc.cam.ac.uk/hpc/user-guide/mfa.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/mfa.html). 
+
+A common form of MFA, two-factor authentication (2FA), is through Time-based One-Time Passwords (TOTP), [https://www.twilio.com/docs/glossary/totp](https://www.twilio.com/docs/glossary/totp).
+
+## Login nodes
 
 The CSD3 login address is `login.hpc.cam.ac.uk` with a mapping table
 
@@ -81,6 +85,8 @@ rds-MkfvQMuSUxk    63558.5   100000.0  100000.0       -  1373767 51200000 512000
 
 To reset Raven password, follow [https://password.csx.cam.ac.uk/](https://password.csx.cam.ac.uk/).
 
+## Host keys
+
 To establish host keys one resorts to `ssh-keygen`; the easiest is to accept the default.
 
 The CSD3 hostkeys are described here, [https://docs.hpc.cam.ac.uk/hpc/user-guide/hostkeys.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/hostkeys.html). From 1st February 2020, the following script needs to be run
@@ -146,6 +152,10 @@ into `${HOME}/.bashrc` in case a remote login is necessary (e.g., faster login t
 ---
 
 The following information is helpful, [https://www.scm.com/doc/Installation/Remote_GUI.html](https://www.scm.com/doc/Installation/Remote_GUI.html)
+
+## Login-Web Interface
+
+Address: [https://docs.hpc.cam.ac.uk/hpc/user-guide/login-web.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/login-web.html)
 
 ## sftp
 
