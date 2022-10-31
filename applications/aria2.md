@@ -20,10 +20,8 @@ module load gettext-0.19.8.1-gcc-5.4.0-zaldouz
 module load jemalloc-4.5.0-gcc-5.4.0-j3zbugm
 module load libuv-1.25.0-gcc-5.4.0-stlddds
 module load zlib/1.2.11
-# these modules are not picked up
-module load expat-2.2.5-gcc-5.4.0-4mvunyd libgcrypt-1.8.1-gcc-5.4.0-gbvid6j openssl-system-gcc-5.4.0-equqac7
-./configure --prefix=${HPC_WORK} --enable-libaria2 --enable-static --with-jemalloc --with-libuv \
-            --with-libexpat --with-libgcrypt --with-openssl
+# modules not picked up: expat-2.2.5-gcc-5.4.0-4mvunyd libgcrypt-1.8.1-gcc-5.4.0-gbvid6j openssl-system-gcc-5.4.0-equqac7
+./configure --prefix=${HPC_WORK} --enable-libaria2 --enable-static --with-jemalloc --with-libuv
 make
 make install
 ```
