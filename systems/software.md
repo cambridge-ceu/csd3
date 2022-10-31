@@ -7,20 +7,20 @@ sort: 6
 The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of October 2022, the list is [^original]
 
 ```
- [1] "bcftools"        "bgen"            "biobank"         "boltlmm"
- [5] "circos"          "citeproc"        "crossmap"        "DjVuLibre"
- [9] "DosageConverter" "exomeplus"       "FastQTL"         "fcGENE"
-[13] "finemap"         "gcta"            "GEMMA"           "ghc"
-[17] "ghostscript"     "git"             "GitKraken"       "gtool"
-[21] "hpg"             "htslib"          "impute"          "JAGS"
-[25] "jq"              "KING"            "LDstore"         "magma"
-[29] "metal"           "MORGAN"          "pandoc"          "pandoc-citeproc"
-[33] "plink"           "plink-bgi"       "plinkseq"        "poppler"
-[37] "pspp"            "qctool"          "qpdf"            "quicktest"
-[41] "R"               "raremetal"       "regenie"         "samtools"
-[45] "shapeit"         "SMR"             "snptest"         "sqlite"
-[49] "stata"           "tabix"           "tidy"            "Typora"
-[53] "vcftools"        "VSCode"
+ [1] "aria2"           "bcftools"        "bgen"            "biobank"
+ [5] "boltlmm"         "circos"          "citeproc"        "crossmap"
+ [9] "DjVuLibre"       "DosageConverter" "exomeplus"       "FastQTL"
+[13] "fcGENE"          "finemap"         "gcta"            "GEMMA"
+[17] "ghc"             "ghostscript"     "git"             "GitKraken"
+[21] "gtool"           "hpg"             "htslib"          "impute"
+[25] "JAGS"            "jq"              "KING"            "LDstore"
+[29] "magma"           "metal"           "MORGAN"          "pandoc"
+[33] "pandoc-citeproc" "plink"           "plink-bgi"       "plinkseq"
+[37] "poppler"         "pspp"            "qctool"          "qpdf"
+[41] "quicktest"       "R"               "raremetal"       "regenie"
+[45] "samtools"        "shapeit"         "SMR"             "snptest"
+[49] "sqlite"          "stata"           "tabix"           "tidy"
+[53] "Typora"          "vcftools"        "VSCode"
 ```
 
 These are wrapped up as modules, /usr/local/Cluster-Config/modulefiles/ceuadmin, which can be loaded with `module load ceuadmin/<module name>`.
