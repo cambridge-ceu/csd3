@@ -11,16 +11,16 @@ The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of Oc
  [5] "circos"          "citeproc"        "crossmap"        "DjVuLibre"
  [9] "DosageConverter" "exomeplus"       "FastQTL"         "fcGENE"
 [13] "finemap"         "gcta"            "GEMMA"           "ghc"
-[17] "ghostscript"     "GitKraken"       "gtool"           "hpg"
-[21] "htslib"          "impute"          "JAGS"            "jq"
-[25] "KING"            "LDstore"         "magma"           "metal"
-[29] "MORGAN"          "pandoc"          "pandoc-citeproc" "plink"
-[33] "plink-bgi"       "plinkseq"        "poppler"         "pspp"
-[37] "qctool"          "qpdf"            "quicktest"       "R"
-[41] "raremetal"       "regenie"         "samtools"        "shapeit"
-[45] "SMR"             "snptest"         "sqlite"          "stata"
-[49] "tabix"           "tidy"            "Typora"          "vcftools"
-[53] "VSCode"
+[17] "ghostscript"     "git"             "GitKraken"       "gtool"
+[21] "hpg"             "htslib"          "impute"          "JAGS"
+[25] "jq"              "KING"            "LDstore"         "magma"
+[29] "metal"           "MORGAN"          "pandoc"          "pandoc-citeproc"
+[33] "plink"           "plink-bgi"       "plinkseq"        "poppler"
+[37] "pspp"            "qctool"          "qpdf"            "quicktest"
+[41] "R"               "raremetal"       "regenie"         "samtools"
+[45] "shapeit"         "SMR"             "snptest"         "sqlite"
+[49] "stata"           "tabix"           "tidy"            "Typora"
+[53] "vcftools"        "VSCode"
 ```
 
 These are wrapped up as modules, /usr/local/Cluster-Config/modulefiles/ceuadmin, which can be loaded with `module load ceuadmin/<module name>`.
@@ -53,6 +53,12 @@ To have the latest git, e.g.,
 wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz | tar xfz -
 cd git-2.30.0
 make NO_GETTEXT=YesPlease install
+# 2.38.1
+wget -qO- https://github.com/git/git/archive/v2.38.1.tar.gz | tar xfz -
+cd git-2.38.1
+module load zlib/1.2.11
+export ZLIB_PATH=/usr/local/Cluster-Apps/zlib/1.2.11/
+make
 ```
 
 and the executables will be put to ~/bin.
