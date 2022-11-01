@@ -4,23 +4,24 @@ sort: 6
 
 # Software
 
-The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of October 2022, the list is [^original]
+The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of November 2022, the list is [^original]
 
 ```
- [1] "aria2"           "bcftools"        "bgen"            "biobank"
- [5] "boltlmm"         "circos"          "citeproc"        "crossmap"
- [9] "DjVuLibre"       "DosageConverter" "exomeplus"       "FastQTL"
-[13] "fcGENE"          "finemap"         "gcta"            "GEMMA"
-[17] "ghc"             "ghostscript"     "git"             "GitKraken"
-[21] "gtool"           "hpg"             "htslib"          "impute"
-[25] "JAGS"            "jq"              "KING"            "LDstore"
-[29] "magma"           "metal"           "MORGAN"          "pandoc"
-[33] "pandoc-citeproc" "plink"           "plink-bgi"       "plinkseq"
-[37] "poppler"         "pspp"            "qctool"          "qpdf"
-[41] "quicktest"       "R"               "raremetal"       "regenie"
-[45] "samtools"        "shapeit"         "SMR"             "snptest"
-[49] "sqlite"          "stata"           "tabix"           "tidy"
-[53] "Typora"          "vcftools"        "VSCode"
+ [1] "alpine"          "aria2"           "bcftools"        "bgen"
+ [5] "biobank"         "boltlmm"         "circos"          "citeproc"
+ [9] "crossmap"        "DjVuLibre"       "DosageConverter" "exomeplus"
+[13] "FastQTL"         "fcGENE"          "finemap"         "gcta"
+[17] "GEMMA"           "ghc"             "ghostscript"     "git"
+[21] "GitKraken"       "gtool"           "hpg"             "htslib"
+[25] "impute"          "JAGS"            "jq"              "KING"
+[29] "LDstore"         "magma"           "metal"           "MORGAN"
+[33] "pandoc"          "pandoc-citeproc" "plink"           "plink-bgi"
+[37] "plinkseq"        "poppler"         "pspp"            "qctool"
+[41] "qpdf"            "quicktest"       "R"               "raremetal"
+[45] "readline"        "regenie"         "samtools"        "shapeit"
+[49] "SMR"             "snptest"         "sqlite"          "stata"
+[53] "tabix"           "tidy"            "Typora"          "vcftools"
+[57] "VSCode"
 ```
 
 These are wrapped up as modules, /usr/local/Cluster-Config/modulefiles/ceuadmin, which can be loaded with `module load ceuadmin/<module name>`.
