@@ -4,7 +4,7 @@ sort: 6
 
 # Software
 
-The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of November 2022, the list is [^original]
+The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of November 2022, the list[^original] is as follows,
 
 ```
  [1] "alpine"          "aria2"           "bcftools"        "bedops"
