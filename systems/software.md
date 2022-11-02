@@ -16,13 +16,14 @@ The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of No
 [25] "hpg"             "htslib"          "impute"          "JAGS"
 [29] "jq"              "KING"            "lapack"          "LDstore"
 [33] "magma"           "metal"           "MORGAN"          "nano"
-[37] "pandoc"          "pandoc-citeproc" "parallel"        "pdf2djvu"
-[41] "plink"           "plink-bgi"       "plinkseq"        "poppler"
-[45] "pspp"            "qctool"          "qpdf"            "quicktest"
-[49] "R"               "raremetal"       "readline"        "regenie"
-[53] "samtools"        "shapeit"         "SMR"             "snptest"
-[57] "sqlite"          "stata"           "tabix"           "tidy"
-[61] "Typora"          "vcftools"        "VSCode"
+[37] "NLopt"           "pandoc"          "pandoc-citeproc" "parallel"
+[41] "pdf2djvu"        "plink"           "plink-bgi"       "plinkseq"
+[45] "poppler"         "pspp"            "qctool"          "qpdf"
+[49] "QTLtools"        "quicktest"       "R"               "raremetal"
+[53] "readline"        "regenie"         "samtools"        "shapeit"
+[57] "SMR"             "snptest"         "sqlite"          "stata"
+[61] "tabix"           "tidy"            "Typora"          "vcftools"
+[65] "VSCode"
 ```
 
 These are wrapped up as modules, /usr/local/Cluster-Config/modulefiles/ceuadmin, which can be loaded with `module load ceuadmin/<module name>`.
