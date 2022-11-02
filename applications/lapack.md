@@ -9,11 +9,12 @@ Web: [http://www.netlib.org/lapack/](http://www.netlib.org/lapack/)
 The sequence is as follows,
 
 ```bash
-wget http://www.netlib.org/lapack/lapack-3.9.0.tar.gz
-tar xvfz lapack-3.9.0.tar.gz
-cd lapack-3.9.0
+wget -qO- https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.10.1.tar.gz | \
+tar xfz -
+cd lapack-3.10.1
 mkdir build
 cd build
+module load cmake-3.19.7-gcc-5.4-5gbsejo
 ## ccmake .
 cmake ..
 make
