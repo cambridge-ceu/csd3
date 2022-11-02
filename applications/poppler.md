@@ -96,3 +96,16 @@ make install
 ```
 
 This appears better than [https://pdf2djvu.com/](https://pdf2djvu.com/).
+
+It is preferable to have GraphicsMagick++ installed,
+
+```bash
+wget -qO- https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.38/GraphicsMagick-1.3.38.tar.gz/download | \
+tar xfz -
+cd GraphicsMagick-1.3.38/
+./configure --prefix=$HPC_WORK --enable-shared
+make
+make install
+```
+
+Note we explicitly enables shared libraries to be called.
