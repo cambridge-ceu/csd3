@@ -7,7 +7,7 @@ sort: 6
 The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of November 2022, the list[^original] is as follows,
 
 ```
- [1] "alpine"          "aria2"           "bcftools"        "bealge"
+ [1] "alpine"          "aria2"           "bcftools"        "Beagle"
  [5] "bedops"          "bedtools2"       "bgen"            "biobank"
  [9] "blat"            "boltlmm"         "circos"          "citeproc"
 [13] "crossmap"        "Cytoscape"       "DjVuLibre"       "DosageConverter"
