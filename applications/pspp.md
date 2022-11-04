@@ -188,7 +188,7 @@ Note that the Windows version is available from [https://caeis.etech.fh-augsburg
     wget -qO- https://github.com/GNOME/gtksourceview/archive/refs/tags/4.6.0.tar.gz | tar xfz -
     cd gtksourceview-4.6.0
     mkdir build
-    meson configure--prefix=$CEUADMIN/gtksourcereview/4.6.0
+    meson configure --prefix=$CEUADMIN/gtksourcereview/4.6.0 --default-library=both
     meson build
     cd build
     ninja install
