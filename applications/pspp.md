@@ -17,7 +17,16 @@ where [example.sps](files/example.sps) is the documentation example. Nevertheles
 
 However, it is possible to compile it directly by using
 
-- gtksourceview 4.0.3 (4.4.0 is more demanding with Python 3.5, meson, Vala, etc.) and use PKG_CONFIG_PATH when appropriate
+- gtksourceview[^gsv] 4.0.3 (4.4.0 is more demanding with Python 3.5, meson, Vala, etc.) and use PKG_CONFIG_PATH when appropriate
+
+    ```bash
+    ./configure --prefix=$HPC_WORK CFLAGS=-I$HPC_work/include LDFLAGS=-L$HPC_WORK/lib LIBS=-lintl --enable-static
+    make
+    make install
+    ```
+
+    See [https://www.gnu.org/software/gettext/FAQ.html](https://www.gnu.org/software/gettext/FAQ.html) for any error messages.
+
 - spread-sheet-widget-0.3
 - fribidi-1.0.8
 - GTKSOURVIEW_CFLAGS and GTKSOURVIEW_LIBS in the configuration.
@@ -169,3 +178,19 @@ make install
 where we drop `PREFIX=/rds/user/jhz22/hpc-work` after `Makefile.PL` and furnish the installation with another `make/make install`.
 
 Note that the Windows version is available from [https://caeis.etech.fh-augsburg.de/downloads/windows/pspp-win-daily/1.6.0-ge6b96c/](https://caeis.etech.fh-augsburg.de/downloads/windows/pspp-win-daily/1.6.0-ge6b96c/).
+
+[^gsv]: gtksourceview 4.6.0 installation
+
+    ```bash
+    source py37/bin/activate
+    python -m pip install meson==0.63.3
+    python -m pip install --force-reinstall  ninja==1.10.0
+    wget -qO- https://github.com/GNOME/gtksourceview/archive/refs/tags/4.6.0.tar.gz | tar xfz -
+    cd gtksourceview-4.6.0
+    mkdir build
+    meson configure--prefix=$CEUADMIN/gtksourcereview/4.6.0
+    meson build
+    cd build
+    ninja install
+    ```
+    where ninja releases are seen from [https://github.com/ninja-build/ninja/releases](https://github.com/ninja-build/ninja/releases). One may need to insert -L$HPC_WORK/lib -I$HPC_WORK/include to the command manually.
