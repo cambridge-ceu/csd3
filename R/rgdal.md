@@ -37,7 +37,6 @@ Under R 3.6.3, there are complaints about `-std=c++11` when installing `sf` but 
 Finally, gdal could also be installed with proj 6 available,
 
 ```bash
-module load geos-3.6.2-gcc-5.4.0-vejexvy
 ./configure --with-proj=$HPC_WORK --without-sqlite3 --prefix=$HPC_WORK
 ```
 
