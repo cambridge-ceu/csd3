@@ -27,10 +27,10 @@ The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of No
 [69] "plinkseq"        "poppler"         "proj"            "pspp"
 [73] "qctool"          "qpdf"            "QTLtools"        "quicktest"
 [77] "R"               "raremetal"       "readline"        "regenie"
-[81] "samtools"        "shapeit"         "SMR"             "snptest"
-[85] "sqlite"          "ssw"             "stata"           "tabix"
-[89] "tidy"            "trinculo"        "Typora"          "vala"
-[93] "vcftools"        "VSCode"          "zstd"
+[81] "ruby"            "samtools"        "shapeit"         "SMR"
+[85] "snptest"         "sqlite"          "ssw"             "stata"
+[89] "tabix"           "tidy"            "trinculo"        "Typora"
+[93] "vala"            "vcftools"        "VSCode"          "zstd"
 ```
 
 These are wrapped up as modules, /usr/local/Cluster-Config/modulefiles/ceuadmin, which can be loaded with `module load ceuadmin/<module name>`.
@@ -296,6 +296,13 @@ To upgrade Bioconductor, we can specify as follows,
 
 ```r
 BiocManager::install(version = "3.14")
+```
+
+### ruby
+
+```
+module load ceuadmin/ruby
+ruby --version
 ```
 
 #### SLURM
