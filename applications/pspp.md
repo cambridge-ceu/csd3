@@ -19,13 +19,13 @@ However, it is possible to compile it directly by using
 
 - gtksourceview[^gsv] 4.0.3 (4.4.0 is more demanding with Python 3.5, meson, Vala, etc.) and use PKG_CONFIG_PATH when appropriate
 
-    ```bash
-    ./configure --prefix=$HPC_WORK CFLAGS=-I$HPC_work/include LDFLAGS=-L$HPC_WORK/lib LIBS=-lintl --enable-static
-    make
-    make install
-    ```
+  ```bash
+  ./configure --prefix=$HPC_WORK CFLAGS=-I$HPC_work/include LDFLAGS=-L$HPC_WORK/lib LIBS=-lintl --enable-static
+  make
+  make install
+  ```
 
-    See [https://www.gnu.org/software/gettext/FAQ.html](https://www.gnu.org/software/gettext/FAQ.html) for any error messages.
+  See [https://www.gnu.org/software/gettext/FAQ.html](https://www.gnu.org/software/gettext/FAQ.html) for any error messages.
 
 - spread-sheet-widget-0.3
 - fribidi-1.0.8
@@ -193,4 +193,5 @@ Note that the Windows version is available from [https://caeis.etech.fh-augsburg
     cd build
     ninja install
     ```
+
     where ninja releases are seen from [https://github.com/ninja-build/ninja/releases](https://github.com/ninja-build/ninja/releases). One may need to insert -L$HPC_WORK/lib -I$HPC_WORK/include to the command manually.

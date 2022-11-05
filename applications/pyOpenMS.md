@@ -66,15 +66,15 @@ pip install "alphapept[stable,gui-stable]"
 
 Script for testing is called `alphapept_test.py` [^benchmark] which takes the following arguments,
 
-  Name | Description
--------|-----------------------------------------------------------------------
-`alphapept_settings.yaml`| A configuratino file containing relevant information, e.g., paths and `n_processes`.
-`szwk021704i19101xms1.raw`, `szwk021704i19101xms3.raw`, `szwk021704i19101xms5.raw` | Raw spectra
-`2022-07-05-reviewed-contam-UP000005640.fasta` | Database of protein sequences: 
+| Name                                                                               | Description                                                                          |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `alphapept_settings.yaml`                                                          | A configuratino file containing relevant information, e.g., paths and `n_processes`. |
+| `szwk021704i19101xms1.raw`, `szwk021704i19101xms3.raw`, `szwk021704i19101xms5.raw` | Raw spectra                                                                          |
+| `2022-07-05-reviewed-contam-UP000005640.fasta`                                     | Database of protein sequences:                                                       |
 
 ## pyOpenMS
 
-Web: [https://pyopenms.readthedocs.io/en/latest/index.html](https://pyopenms.readthedocs.io/en/latest/index.html) 
+Web: [https://pyopenms.readthedocs.io/en/latest/index.html](https://pyopenms.readthedocs.io/en/latest/index.html)
 
 ### Miniconda installation
 
@@ -107,6 +107,7 @@ cmake -DBUILD_TYPE=ALL contrib
 cmake -DOPENMS_CONTRIB_LIBS=${Caprion}/miniconda3/lib -DCMAKE_PREFIX_PATH=contrib -DPYOPENMS=ON ../OpenMS
 make targets
 ```
+
 The second `wget` statement is much more efficient to download all the files.
 
 The last statement gives the most important targets for OpenMS, where TOPP refers to `The OpenMS Proteomics Pipeline`.
@@ -187,6 +188,7 @@ module load python/3.7
 virtualenv py37
 source py37/bin/activate
 ```
+
 or
 
 ```bash
@@ -349,13 +351,12 @@ Rost HL, et al., OpenMS: a flexible open-source software platform for mass spect
 
 ## Other URLs
 
-* OpenMS, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS), [wikiwand](https://www.wikiwand.com/en/OpenMS), [OpenSWATH](https://openswath.org/en/latest/).
-* tlmgr, [tlmgr.pdf](https://tug.ctan.org/info/tlmgrbasics/doc/tlmgr.pdf), [Installing_Extra_Packages](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages), [pkginstall](https://www.tug.org/texlive/pkginstall.html), [Rstudio query](https://community.rstudio.com/t/latex-language-package-installation-not-working/51596/3).
+- OpenMS, [SourceForge](https://sourceforge.net/projects/open-ms/); [GITTER](https://gitter.im/OpenMS/OpenMS), [wikiwand](https://www.wikiwand.com/en/OpenMS), [OpenSWATH](https://openswath.org/en/latest/).
+- tlmgr, [tlmgr.pdf](https://tug.ctan.org/info/tlmgrbasics/doc/tlmgr.pdf), [Installing_Extra_Packages](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages), [pkginstall](https://www.tug.org/texlive/pkginstall.html), [Rstudio query](https://community.rstudio.com/t/latex-language-package-installation-not-working/51596/3).
 
 ---
 
 [^python]:
-
     The website [https://cmake.org/cmake/help/latest/module/FindPython.html](https://cmake.org/cmake/help/latest/module/FindPython.html) explains several options which appear unnecessary for cmake 3.19.
 
     ```bash
