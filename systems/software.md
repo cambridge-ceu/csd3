@@ -143,7 +143,6 @@ One could access databases elsewhere, e.g., at UCSC -- see examples on VEP.
 
 > There isn't any MySQL cluster running as a general service on CSD3. Do you believe your group has something running on a VM hosted on our network possibly? If you need a database for your work, running it in your own department and then allowing access to it from CSD3. Databases are not suitable candidates to run on a HPC cluster, the resource requirements are different and by definition they need to be running continuously whilst access is required, so wouldn't be run via slurm for example.
 
-
 #### pspp
 
 Official website: [https://www.gnu.org/software/pspp/](https://www.gnu.org/software/pspp/)
@@ -461,7 +460,9 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
 ```
 
 ---
-[^original]: The original list was a mixture of modules and directories as follows,
+
+[^original]:
+    The original list was a mixture of modules and directories as follows,
 
     ```
     bgenix/               impute_v2.3.2_x86_64_static/  plink/                        R/                 Raremetal_linux_executables/        snptest_new/
@@ -478,35 +479,35 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
 
     A grep of those in the Genetics category is as follows,
 
-    |Date       |Add.ons                  |Category           |
-    |:----------|:------------------------|:------------------|
-    |2022-10-22 |snptest/2.5.6            |Genetics           |
-    |   ""      |qctool/2.0.8             |Genetics           |
-    |   ""      |gcta/1.94.1              |Genetics           |
-    |   ""      |KING/2.1.6               |Genetics           |
-    |   ""      |LDstore/2.0              |Genetics           |
-    |   ""      |shapeit/3                |Genetics           |
-    |   ""      |vcftools/0.1.16          |Genetics           |
-    |   ""      |finemap/1.4              |Genetics           |
-    |2022-10-23 |quicktest/1.1            |Genetics           |
-    |   ""      |samtools/1.11            |Genetics           |
-    |   ""      |bcftools/1.12            |Genetics           |
-    |   ""      |MORGAN/3.4               |Genetics           |
-    |   ""      |METAL/2020-05-05r        |Genetics[^metal]   |
-    |   ""      |regenie/3.2.1            |Genetics           |
-    |   ""      |GEMMA/0.98.5             |Genetics[^gemma]   |
-    |   ""      |htslib/1.12              |Genetics           |
-    |   ""      |fcGENE/1.0.7             |Genetics[^fcgene]  |
-    |   ""      |SMR/1.0.3                |Genetics           |
-    |   ""      |FastQTL/2.165            |Genetics           |
-    |2022-10-26 |circos/0.69-9            |Genetics           |
-    |   ""      |bgen/1.1.7               |Genetics           |
-    |   ""      |DosageConverter/1.0.0    |Genetics           |
-    |   ""      |QTLtools/1.3.1-25        |Genetics[^qtltools]|
-    |   ""      |blat/37x1                |Genetics           |
-    |   ""      |bedtools2/2.29.2         |Genetics           |
-    |   ""      |bedops/2.4.41            |Genetics           |
-    |2022-11-03 |Beagle/3.0.4             |Genetics           |
+    | Date       | Add.ons               | Category            |
+    | :--------- | :-------------------- | :------------------ |
+    | 2022-10-22 | snptest/2.5.6         | Genetics            |
+    | ""         | qctool/2.0.8          | Genetics            |
+    | ""         | gcta/1.94.1           | Genetics            |
+    | ""         | KING/2.1.6            | Genetics            |
+    | ""         | LDstore/2.0           | Genetics            |
+    | ""         | shapeit/3             | Genetics            |
+    | ""         | vcftools/0.1.16       | Genetics            |
+    | ""         | finemap/1.4           | Genetics            |
+    | 2022-10-23 | quicktest/1.1         | Genetics            |
+    | ""         | samtools/1.11         | Genetics            |
+    | ""         | bcftools/1.12         | Genetics            |
+    | ""         | MORGAN/3.4            | Genetics            |
+    | ""         | METAL/2020-05-05r     | Genetics[^metal]    |
+    | ""         | regenie/3.2.1         | Genetics            |
+    | ""         | GEMMA/0.98.5          | Genetics[^gemma]    |
+    | ""         | htslib/1.12           | Genetics            |
+    | ""         | fcGENE/1.0.7          | Genetics[^fcgene]   |
+    | ""         | SMR/1.0.3             | Genetics            |
+    | ""         | FastQTL/2.165         | Genetics            |
+    | 2022-10-26 | circos/0.69-9         | Genetics            |
+    | ""         | bgen/1.1.7            | Genetics            |
+    | ""         | DosageConverter/1.0.0 | Genetics            |
+    | ""         | QTLtools/1.3.1-25     | Genetics[^qtltools] |
+    | ""         | blat/37x1             | Genetics            |
+    | ""         | bedtools2/2.29.2      | Genetics            |
+    | ""         | bedops/2.4.41         | Genetics            |
+    | 2022-11-03 | Beagle/3.0.4          | Genetics            |
 
 [^metal]: Notes on METAL 2020-05-05r
 

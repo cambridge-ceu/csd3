@@ -4,7 +4,7 @@ sort: 2
 
 # Login
 
-:warning: MultiFactor Authentication (MFA) is mandatory on CSD3 and RCS Storage Services from 1st November 2022, [https://docs.hpc.cam.ac.uk/hpc/user-guide/mfa.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/mfa.html). 
+:warning: MultiFactor Authentication (MFA) is mandatory on CSD3 and RCS Storage Services from 1st November 2022, [https://docs.hpc.cam.ac.uk/hpc/user-guide/mfa.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/mfa.html).
 
 A common form of MFA, two-factor authentication (2FA), is through Time-based One-Time Passwords (TOTP), [https://www.twilio.com/docs/glossary/totp](https://www.twilio.com/docs/glossary/totp).
 
