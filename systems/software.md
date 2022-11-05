@@ -468,3 +468,57 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     hpg/                  metal/                        pspp/                         raremetal_4.14.1/  snptest_2.5.2/
     htslib/               metal_updated/                qctool_v1.4-linux-x86_64/     raremetal_BPGen/   snptest_2.5.4_beta3/
     ```
+
+    A grep of those in the Genetics category is as follows,
+
+    |Date       |Add.ons                  |Category           |
+    |:----------|:------------------------|:------------------|
+    |2022-10-22 |snptest/2.5.6            |Genetics           |
+    |   ""      |qctool/2.0.8             |Genetics           |
+    |   ""      |gcta/1.94.1              |Genetics           |
+    |   ""      |KING/2.1.6               |Genetics           |
+    |   ""      |LDstore/2.0              |Genetics           |
+    |   ""      |shapeit/3                |Genetics           |
+    |   ""      |vcftools/0.1.16          |Genetics           |
+    |   ""      |finemap/1.4              |Genetics           |
+    |2022-10-23 |quicktest/1.1            |Genetics           |
+    |   ""      |samtools/1.11            |Genetics           |
+    |   ""      |bcftools/1.12            |Genetics           |
+    |   ""      |MORGAN/3.4               |Genetics           |
+    |   ""      |METAL/2020-05-05r        |Genetics[^metal]   |
+    |   ""      |regenie/3.2.1            |Genetics           |
+    |   ""      |GEMMA/0.98.5             |Genetics[^gemma]   |
+    |   ""      |htslib/1.12              |Genetics           |
+    |   ""      |fcGENE/1.0.7             |Genetics[^fcgene]  |
+    |   ""      |SMR/1.0.3                |Genetics           |
+    |   ""      |FastQTL/2.165            |Genetics           |
+    |   ""      |pandoc/2.19.2            |Genetics           |
+    |2022-10-26 |circos/0.69-9            |Genetics           |
+    |   ""      |bgen/1.1.7               |Genetics           |
+    |   ""      |DosageConverter/1.0.0    |Genetics           |
+    |   ""      |QTLtools/1.3.1-25        |Genetics[^qtltools]|
+    |   ""      |blat/37x1                |Genetics           |
+    |   ""      |bedtools2/2.29.2         |Genetics           |
+    |   ""      |bedops/2.4.41            |Genetics           |
+    |2022-11-03 |Beagle/3.0.4             |Genetics           |
+
+[^metal]: Notes on METAL 2020-05-05r
+
+    This version has options EFFECT_PRINT_PRECISION and STDERR_PRINT_PRECISION (both with default 4) to enable many decimal places.
+
+    The letter `r` as in `2020-05-05r` indicates a replacement of functions in `libsrc/MathStats.cpp` to ensure generality -- details have also been posted>
+
+[^gemma]: Note on compiling from source
+
+    A considerably smaller (1,097,256 vs 22,721,624) executable, /usr/local/Cluster-Apps/ceuadmin/GEMMA/0.98.5/bin, is generated under CSD3 but the origina>
+
+    ```bash
+    module load openblas/0.2.15
+    make
+    ```
+
+[^fcgene]: Alternative site
+
+    See [https://github.com/dr-roshyara/fcgene](https://github.com/dr-roshyara/fcgene)
+
+[^qtltools]: The long version number is 1.3.1-25-g6e49f85f20.
