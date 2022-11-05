@@ -29,8 +29,8 @@ The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of No
 [77] "R"               "raremetal"       "readline"        "regenie"
 [81] "samtools"        "shapeit"         "SMR"             "snptest"
 [85] "sqlite"          "ssw"             "stata"           "tabix"
-[89] "tidy"            "Typora"          "vala"            "vcftools"
-[93] "VSCode"          "zstd"
+[89] "tidy"            "trinculo"        "Typora"          "vala"
+[93] "vcftools"        "VSCode"          "zstd"
 ```
 
 These are wrapped up as modules, /usr/local/Cluster-Config/modulefiles/ceuadmin, which can be loaded with `module load ceuadmin/<module name>`.
