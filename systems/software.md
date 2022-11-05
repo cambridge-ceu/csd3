@@ -492,7 +492,6 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     |   ""      |fcGENE/1.0.7             |Genetics[^fcgene]  |
     |   ""      |SMR/1.0.3                |Genetics           |
     |   ""      |FastQTL/2.165            |Genetics           |
-    |   ""      |pandoc/2.19.2            |Genetics           |
     |2022-10-26 |circos/0.69-9            |Genetics           |
     |   ""      |bgen/1.1.7               |Genetics           |
     |   ""      |DosageConverter/1.0.0    |Genetics           |
