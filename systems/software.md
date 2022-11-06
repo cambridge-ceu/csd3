@@ -55,6 +55,15 @@ gcc --version
 gfortran --version
 ```
 
+#### ghc
+
+The Glasgow Haskell Compiler is seen from `module avail ghc`, e.g.,
+
+```bash
+module load ghc/8.2.2
+ghc --version
+```
+
 #### git
 
 To have the latest git, e.g.,
@@ -73,14 +82,9 @@ make
 
 and the executables will be put to ~/bin.
 
-#### ghc
+### Go
 
-The Glasgow Haskell Compiler is seen from `module avail ghc`, e.g.,
-
-```bash
-module load ghc/8.2.2
-ghc --version
-```
+It is avail from `/usr/bin/go` and also visiable from `module avail go`.
 
 #### JAVA
 
