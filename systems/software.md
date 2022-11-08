@@ -30,9 +30,9 @@ The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of No
  [81] "quicktest"       "R"               "raremetal"       "readline"
  [85] "regenie"         "ruby"            "samtools"        "shapeit"
  [89] "SMR"             "snptest"         "sqlite"          "ssw"
- [93] "stata"           "tabix"           "tidy"            "trinculo"
- [97] "trousers"        "Typora"          "unbound"         "vala"
-[101] "vcftools"        "VSCode"          "zstd"
+ [93] "stata"           "SurvivalKit"     "tabix"           "tidy"
+ [97] "trinculo"        "trousers"        "Typora"          "unbound"
+[101] "vala"            "vcftools"        "VSCode"          "zstd"
 ```
 
 These are wrapped up as modules, :star: **[modules documentation](https://modules.readthedocs.io/en/latest/index.html)**
@@ -526,6 +526,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | ""         | bedops/2.4.41         | Genetics            |
     | 2022-11-03 | Beagle/3.0.4          | Genetics            |
     | 2022-11-08 | CrossMap/0.6.4        | Genetics            |
+    | ""         | SurvivalKit/6.12      | Genetics            |
 
 [^metal]: Notes on METAL 2020-05-05r
 
