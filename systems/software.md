@@ -4,7 +4,7 @@ sort: 6
 
 # Software
 
-The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of November 2022, the list[^original] is as follows,
+The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As of November 2022, the list[^original] is as follows,
 
 ```
   [1] "alpine"          "aria2"           "bcftools"        "Beagle"
@@ -51,7 +51,7 @@ module unload ceuadmin/<module name>
 module whatis ceuadmin/<module name>
 ```
 
-The module files are defined at /usr/local/Cluster-Config/modulefiles/ceuadmin.
+The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin**.
 
 #### gcc
 
