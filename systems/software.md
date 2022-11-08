@@ -496,7 +496,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     htslib/               metal_updated/                qctool_v1.4-linux-x86_64/     raremetal_BPGen/   snptest_2.5.4_beta3/
     ```
 
-    A grep of those in the Genetics category is as follows,
+    A grep of recent add-ons in the Genetics category is as follows,
 
     | Date       | Add.ons               | Category            |
     | :--------- | :-------------------- | :------------------ |
