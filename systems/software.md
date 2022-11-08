@@ -35,12 +35,21 @@ The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of No
 [101] "vcftools"        "VSCode"          "zstd"
 ```
 
-These are wrapped up as modules, /usr/local/Cluster-Config/modulefiles/ceuadmin, which can be loaded with `module load ceuadmin/<module name>`.
+These are wrapped up as modules, :star: **[modules documentation](https://modules.readthedocs.io/en/latest/index.html)**
 
-:star: **[modules documentation](https://modules.readthedocs.io/en/latest/index.html)**
-
-Additional notes are avaiiable from the doc/ directory. Software with large size / reference data will be available from /rds/project/jmmh2.
+Software with large size / reference data will be available from /rds/project/jmmh2.
 Candiates under this category include ensembl-vep, OpenMS, R (large collection of packages), locuszoom (chromosome X data).
+Additional notes are avaiiable from the doc/ directory.
+
+Common operations on modules are
+
+```bash
+module help ceuadmin/<module name>
+module load ceuadmin/<module name>
+module unload ceuadmin/<module name>
+```
+
+The module files are defined at /usr/local/Cluster-Config/modulefiles/ceuadmin.
 
 #### gcc
 
@@ -184,6 +193,8 @@ source py35/bin/activate
 # pip new packages
 deactivate
 ```
+
+An alternative syntax is `python3 -m venv py37`
 
 Note that when this is set up, one only needs to restart from the `source` command. The `pip` is appropriate for installing small number of package; otherwise Anaconda ([https://www.anaconda.com/](https://www.anaconda.com/)) and Jupyter notebook ([https://jupyter.org/](https://jupyter.org/)) are useful.
 
@@ -514,6 +525,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | ""         | bedtools2/2.29.2      | Genetics            |
     | ""         | bedops/2.4.41         | Genetics            |
     | 2022-11-03 | Beagle/3.0.4          | Genetics            |
+    | 2022-11-08 | CrossMap/0.6.4        | Genetics            |
 
 [^metal]: Notes on METAL 2020-05-05r
 
