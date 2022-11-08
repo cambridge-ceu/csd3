@@ -26,13 +26,14 @@ The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of No
  [65] "nspr"            "oniguruma"       "pandoc"          "pandoc-citeproc"
  [69] "parallel"        "pcre2"           "pdf2djvu"        "plink"
  [73] "plink-bgi"       "plinkseq"        "poppler"         "proj"
- [77] "pspp"            "qctool"          "qpdf"            "QTLtools"
- [81] "quicktest"       "R"               "raremetal"       "readline"
- [85] "regenie"         "ruby"            "samtools"        "shapeit"
- [89] "SMR"             "snptest"         "sqlite"          "ssw"
- [93] "stata"           "SurvivalKit"     "tabix"           "tidy"
- [97] "trinculo"        "trousers"        "Typora"          "unbound"
-[101] "vala"            "vcftools"        "VSCode"          "zstd"
+ [77] "PRSice"          "pspp"            "qctool"          "qpdf"
+ [81] "QTLtools"        "quicktest"       "R"               "raremetal"
+ [85] "readline"        "regenie"         "ruby"            "samtools"
+ [89] "shapeit"         "SMR"             "snptest"         "sqlite"
+ [93] "ssw"             "stata"           "SurvivalKit"     "tabix"
+ [97] "tidy"            "trinculo"        "trousers"        "Typora"
+[101] "unbound"         "vala"            "vcftools"        "VSCode"
+[105] "zstd"
 ```
 
 These are wrapped up as modules, :star: **[modules documentation](https://modules.readthedocs.io/en/latest/index.html)**
@@ -47,6 +48,7 @@ Common operations on modules are
 module help ceuadmin/<module name>
 module load ceuadmin/<module name>
 module unload ceuadmin/<module name>
+module whatis ceuadmin/<module name>
 ```
 
 The module files are defined at /usr/local/Cluster-Config/modulefiles/ceuadmin.
@@ -527,6 +529,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | 2022-11-03 | Beagle/3.0.4          | Genetics            |
     | 2022-11-08 | CrossMap/0.6.4        | Genetics            |
     | ""         | SurvivalKit/6.12      | Genetics            |
+    | ""         | PRSice/2.3.3          | Genetics            |
 
 [^metal]: Notes on METAL 2020-05-05r
 
