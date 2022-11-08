@@ -36,7 +36,7 @@ The CEU software repository is here, /usr/local/Cluster-Apps/ceuadmin/. As of No
 [105] "zstd"
 ```
 
-These are wrapped up as :star::star::star: **[modules documentation](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
+These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
 
 Software with large size / reference data will be available from /rds/project/jmmh2.
 Candiates under this category include ensembl-vep, OpenMS, R (large collection of packages), locuszoom (chromosome X data).
