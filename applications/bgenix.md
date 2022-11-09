@@ -6,7 +6,7 @@ sort: 8
 
 Web: [https://enkre.net/cgi-bin/code/bgen/dir?ci=trunk](https://enkre.net/cgi-bin/code/bgen/dir?ci=trunk)
 
-It is now possible to compile 1.1.7 under Python 3.x.
+It is now possible to compile 1.1.7 without Python 2.x.
 
 ```bash
 #!/usr/bin/bash
