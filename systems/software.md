@@ -12,28 +12,28 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
   [9] "blat"            "boltlmm"         "circos"          "citeproc"
  [13] "crossmap"        "Cytoscape"       "DjVuLibre"       "docbook2X"
  [17] "DosageConverter" "exiv2"           "exomeplus"       "expat"
- [21] "FastQTL"         "fcGENE"          "finemap"         "fribidi"
- [25] "gcta"            "gdal"            "GEMMA"           "gettext"
- [29] "ghc"             "ghostscript"     "git"             "git-extras"
- [33] "GitKraken"       "gmp"             "gnutls"          "googletest"
- [37] "GraphicsMagick"  "gtksourceview"   "gtool"           "hpg"
- [41] "htslib"          "impute"          "JAGS"            "jq"
- [45] "KING"            "lapack"          "ldc2"            "LDstore"
- [49] "libgit2"         "libiconv"        "libidn2"         "libntlm"
- [53] "libpng"          "libsodium"       "libssh2"         "libxml2"
- [57] "libxslt"         "magma"           "metal"           "MORGAN"
- [61] "nano"            "netbeans"        "nettle"          "NLopt"
- [65] "nspr"            "oniguruma"       "pandoc"          "pandoc-citeproc"
- [69] "parallel"        "pcre2"           "pdf2djvu"        "plink"
- [73] "plink-bgi"       "plinkseq"        "poppler"         "proj"
- [77] "PRSice"          "pspp"            "qctool"          "qpdf"
- [81] "QTLtools"        "quicktest"       "R"               "raremetal"
- [85] "readline"        "regenie"         "ruby"            "samtools"
- [89] "shapeit"         "SMR"             "snptest"         "sqlite"
- [93] "ssw"             "stata"           "SurvivalKit"     "tabix"
- [97] "tidy"            "trinculo"        "trousers"        "Typora"
-[101] "unbound"         "vala"            "vcftools"        "VSCode"
-[105] "zstd"
+ [21] "FastQTL"         "fcGENE"          "finemap"         "fossil"
+ [25] "fribidi"         "gcta"            "gdal"            "GEMMA"
+ [29] "gettext"         "ghc"             "ghostscript"     "git"
+ [33] "git-extras"      "GitKraken"       "gmp"             "gnutls"
+ [37] "googletest"      "GraphicsMagick"  "gtksourceview"   "gtool"
+ [41] "hpg"             "htslib"          "impute"          "JAGS"
+ [45] "jq"              "KING"            "lapack"          "ldc2"
+ [49] "LDstore"         "libgit2"         "libiconv"        "libidn2"
+ [53] "libntlm"         "libpng"          "libsodium"       "libssh2"
+ [57] "libxml2"         "libxslt"         "magma"           "metal"
+ [61] "MORGAN"          "nano"            "netbeans"        "nettle"
+ [65] "NLopt"           "nspr"            "oniguruma"       "pandoc"
+ [69] "pandoc-citeproc" "parallel"        "pcre2"           "pdf2djvu"
+ [73] "plink"           "plink-bgi"       "plinkseq"        "poppler"
+ [77] "proj"            "PRSice"          "pspp"            "qctool"
+ [81] "qpdf"            "QTLtools"        "quicktest"       "R"
+ [85] "raremetal"       "readline"        "regenie"         "ruby"
+ [89] "samtools"        "shapeit"         "SMR"             "snptest"
+ [93] "sqlite"          "ssw"             "stata"           "SurvivalKit"
+ [97] "tabix"           "tidy"            "trinculo"        "trousers"
+[101] "Typora"          "unbound"         "vala"            "vcftools"
+[105] "VSCode"          "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -529,6 +529,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | 2022-11-08 | CrossMap/0.6.4        | Genetics            |
     | ""         | SurvivalKit/6.12      | Genetics            |
     | ""         | PRSice/2.3.3          | Genetics            |
+    | 2022-11-09 | qctool/2.2.0          | Genetics            |
 
 [^metal]: Notes on METAL 2020-05-05r
 
