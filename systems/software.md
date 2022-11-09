@@ -535,7 +535,14 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
 
     This version has options EFFECT_PRINT_PRECISION and STDERR_PRINT_PRECISION (both with default 4) to enable many decimal places.
 
-    The letter `r` as in `2020-05-05r` indicates a replacement of functions in `libsrc/MathStats.cpp` to ensure generality -- details have also been posted>
+    The letter `r` as in `2020-05-05r` indicates a replacement of functions in `libsrc/MathStats.cpp` to ensure generality -- [details](files/complaint.pdf) have also been posted to the GitHub page, [https://github.com/statgen/METAL/issues/24](https://github.com/statgen/METAL/issues/24).
+
+    ```
+    FATAL ERROR -
+    a too large, ITMAX too small in gamma countinued fraction (gcf)
+
+    so the -1.info file could not be generated.
+    ```
 
 [^gemma]: Note on compiling from source
 
