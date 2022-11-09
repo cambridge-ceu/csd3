@@ -42,14 +42,13 @@ Software with large size / reference data will be available from /rds/project/jm
 Candiates under this category include ensembl-vep, OpenMS, R (large collection of packages), locuszoom (chromosome X data).
 Additional notes are avaiiable from the doc/ directory.
 
-Common operations on modules are
+A module is loaded/unloaded as follows,
 
 ```bash
-module help ceuadmin/<module name>
 module load ceuadmin/<module name>
-module unload ceuadmin/<module name>
-module whatis ceuadmin/<module name>
 ```
+
+Other commands include `display`, `help`, `show`, `unload`, `whatis`, as in [3.2.9](https://linux.die.net/man/4/modulefile).
 
 The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin**.
 
