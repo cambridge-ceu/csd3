@@ -15,7 +15,7 @@ wget -qO- http://code.enkre.net/bgen/tarball/release/bgen.tgz | tar xvfz -
 mv bgen.tgz bgenix
 cd bgenix
 # compile it
-./waf configure
+./waf configure --prefix=${HPC_WORK}
 ./waf
 # test it
 ./build/test/unit/test_bgen
