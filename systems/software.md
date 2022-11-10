@@ -25,16 +25,17 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
  [61] "libxslt"         "magma"           "metal"           "MONSTER"
  [65] "MORGAN"          "MsCAVIAR"        "nano"            "netbeans"
  [69] "nettle"          "NLopt"           "nspr"            "oniguruma"
- [73] "pandoc"          "pandoc-citeproc" "parallel"        "pcre2"
- [77] "pdf2djvu"        "plink"           "plink-bgi"       "plinkseq"
- [81] "poppler"         "proj"            "PRSice"          "pspp"
- [85] "qctool"          "qpdf"            "QTLtools"        "quicktest"
- [89] "R"               "raremetal"       "rclone"          "readline"
- [93] "regenie"         "ruby"            "samtools"        "shapeit"
- [97] "SMR"             "snptest"         "sqlite"          "ssw"
-[101] "stata"           "SurvivalKit"     "tabix"           "tidy"
-[105] "trinculo"        "trousers"        "Typora"          "unbound"
-[109] "vala"            "vcftools"        "VSCode"          "zstd"
+ [73] "osca"            "pandoc"          "pandoc-citeproc" "parallel"
+ [77] "pcre2"           "pdf2djvu"        "plink"           "plink-bgi"
+ [81] "plinkseq"        "poppler"         "proj"            "PRSice"
+ [85] "pspp"            "qctool"          "qpdf"            "QTLtools"
+ [89] "quicktest"       "R"               "raremetal"       "rclone"
+ [93] "readline"        "regenie"         "ruby"            "samtools"
+ [97] "shapeit"         "SMR"             "snptest"         "sqlite"
+[101] "ssw"             "stata"           "SurvivalKit"     "tabix"
+[105] "tidy"            "trinculo"        "trousers"        "Typora"
+[109] "unbound"         "vala"            "vcftools"        "VSCode"
+[113] "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -529,6 +530,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     |   ""       | MsCAVIAR/0.6.4        | Genetics            |
     |   ""       | CAVIAR/2.2            | Genetics            |
     |   ""       | MONSTER/1.3           | Genetics            |
+    |   ""       | osca/0.46             | Genetics            |
 
 [^metal]: Notes on METAL 2020-05-05r
 
