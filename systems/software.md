@@ -10,32 +10,32 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
   [1] "akt"             "alpine"          "aria2"           "bcftools"
   [5] "Beagle"          "bedops"          "bedtools2"       "bgen"
   [9] "biobank"         "blat"            "boltlmm"         "CaVEMaN"
- [13] "CAVIAR"          "circos"          "citeproc"        "crossmap"
- [17] "Cytoscape"       "DjVuLibre"       "docbook2X"       "DosageConverter"
- [21] "exiv2"           "exomeplus"       "expat"           "FastQTL"
- [25] "fcGENE"          "finemap"         "fossil"          "fribidi"
- [29] "gcta"            "gdal"            "GEMMA"           "gettext"
- [33] "ghc"             "ghostscript"     "git"             "git-extras"
- [37] "GitKraken"       "gmp"             "gnutls"          "googletest"
- [41] "GraphicsMagick"  "gtksourceview"   "gtool"           "hpg"
- [45] "htslib"          "impute"          "JAGS"            "jq"
- [49] "KING"            "lapack"          "ldc2"            "LDstore"
- [53] "LEMMA"           "libgit2"         "libiconv"        "libidn2"
- [57] "libntlm"         "libpng"          "libsodium"       "libssh2"
- [61] "libxml2"         "libxslt"         "magma"           "metal"
- [65] "MONSTER"         "MORGAN"          "MsCAVIAR"        "nano"
- [69] "netbeans"        "nettle"          "NLopt"           "nspr"
- [73] "oniguruma"       "osca"            "pandoc"          "pandoc-citeproc"
- [77] "parallel"        "pcre2"           "pdf2djvu"        "plink"
- [81] "plink-bgi"       "plinkseq"        "poppler"         "proj"
- [85] "PRSice"          "pspp"            "qctool"          "qpdf"
- [89] "QTLtools"        "quicktest"       "R"               "raremetal"
- [93] "rclone"          "readline"        "regenie"         "ruby"
- [97] "samtools"        "shapeit"         "SMR"             "snptest"
-[101] "sqlite"          "ssw"             "stata"           "SurvivalKit"
-[105] "tabix"           "tidy"            "trinculo"        "trousers"
-[109] "Typora"          "unbound"         "vala"            "vcftools"
-[113] "VSCode"          "zstd"
+ [13] "CAVIAR"          "CAVIARBF"        "circos"          "citeproc"
+ [17] "crossmap"        "Cytoscape"       "DjVuLibre"       "docbook2X"
+ [21] "DosageConverter" "exiv2"           "exomeplus"       "expat"
+ [25] "FastQTL"         "fcGENE"          "finemap"         "fossil"
+ [29] "fribidi"         "gcta"            "gdal"            "GEMMA"
+ [33] "gettext"         "ghc"             "ghostscript"     "git"
+ [37] "git-extras"      "GitKraken"       "gmp"             "gnutls"
+ [41] "googletest"      "GraphicsMagick"  "gtksourceview"   "gtool"
+ [45] "hpg"             "htslib"          "impute"          "JAGS"
+ [49] "jq"              "KING"            "lapack"          "ldc2"
+ [53] "LDstore"         "LEMMA"           "libgit2"         "libiconv"
+ [57] "libidn2"         "libntlm"         "libpng"          "libsodium"
+ [61] "libssh2"         "libxml2"         "libxslt"         "magma"
+ [65] "metal"           "MONSTER"         "MORGAN"          "MsCAVIAR"
+ [69] "nano"            "netbeans"        "nettle"          "NLopt"
+ [73] "nspr"            "oniguruma"       "osca"            "pandoc"
+ [77] "pandoc-citeproc" "parallel"        "pcre2"           "pdf2djvu"
+ [81] "plink"           "plink-bgi"       "plinkseq"        "poppler"
+ [85] "proj"            "PRSice"          "pspp"            "qctool"
+ [89] "qpdf"            "QTLtools"        "quicktest"       "R"
+ [93] "raremetal"       "rclone"          "readline"        "regenie"
+ [97] "ruby"            "samtools"        "shapeit"         "SMR"
+[101] "snptest"         "sqlite"          "ssw"             "stata"
+[105] "SurvivalKit"     "tabix"           "tidy"            "trinculo"
+[109] "trousers"        "Typora"          "unbound"         "vala"
+[113] "vcftools"        "VSCode"          "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -526,12 +526,13 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | ""         | PRSice/2.3.3          | Genetics            |
     | 2022-11-09 | qctool/2.2.0          | Genetics            |
     | 2022-11-10 | CaVEMaN/1.01-c1815a0  | Genetics            |
-    |   ""       | akt/0.3.3             | Genetics            |
-    |   ""       | MsCAVIAR/0.6.4        | Genetics            |
-    |   ""       | CAVIAR/2.2            | Genetics            |
-    |   ""       | MONSTER/1.3           | Genetics            |
-    |   ""       | osca/0.46             | Genetics            |
-    |   ""       | LEMMA/1.0.4           | Genetics[^lemma]    |
+    | ""         | akt/0.3.3             | Genetics            |
+    | ""         | MsCAVIAR/0.6.4        | Genetics            |
+    | ""         | CAVIAR/2.2            | Genetics            |
+    | ""         | MONSTER/1.3           | Genetics            |
+    | ""         | osca/0.46             | Genetics            |
+    | ""         | LEMMA/1.0.4           | Genetics[^lemma]    |
+    | ""         | CAVIARBF/0.2.1        | Genetics[^lemma]    |
 
 [^metal]: Notes on METAL 2020-05-05r
 
@@ -560,5 +561,4 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     See [https://github.com/dr-roshyara/fcgene](https://github.com/dr-roshyara/fcgene)
 
 [^qtltools]: The long version number is 1.3.1-25-g6e49f85f20.
-
 [^lemma]: The documentation indicates a requirement of gcc/9.4, boost/1.78, OpenMP/3.1 and/or Intel MKL Library 2019 Update 1 but it is possible to proceed with gcc/11, cmake-3.19.7-gcc-5.4-5gbsejo, boost-1.66.0-gcc-5.4.0-slpq3un, ceuadmin/bgen/1.1.7.
