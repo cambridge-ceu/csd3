@@ -28,12 +28,12 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
  [73] "plink"           "plink-bgi"       "plinkseq"        "poppler"
  [77] "proj"            "PRSice"          "pspp"            "qctool"
  [81] "qpdf"            "QTLtools"        "quicktest"       "R"
- [85] "raremetal"       "readline"        "regenie"         "ruby"
- [89] "samtools"        "shapeit"         "SMR"             "snptest"
- [93] "sqlite"          "ssw"             "stata"           "SurvivalKit"
- [97] "tabix"           "tidy"            "trinculo"        "trousers"
-[101] "Typora"          "unbound"         "vala"            "vcftools"
-[105] "VSCode"          "zstd"
+ [85] "raremetal"       "rclone"          "readline"        "regenie"
+ [89] "ruby"            "samtools"        "shapeit"         "SMR"
+ [93] "snptest"         "sqlite"          "ssw"             "stata"
+ [97] "SurvivalKit"     "tabix"           "tidy"            "trinculo"
+[101] "trousers"        "Typora"          "unbound"         "vala"
+[105] "vcftools"        "VSCode"          "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -78,21 +78,12 @@ ghc --version
 
 #### git
 
-To have the latest git, e.g.,
+The popular git can be loaded,
 
 ```bash
-wget -qO- https://github.com/git/git/archive/v2.30.0.tar.gz | tar xfz -
-cd git-2.30.0
-make NO_GETTEXT=YesPlease install
-# 2.38.1
-wget -qO- https://github.com/git/git/archive/v2.38.1.tar.gz | tar xfz -
-cd git-2.38.1
-module load zlib/1.2.11
-export ZLIB_PATH=/usr/local/Cluster-Apps/zlib/1.2.11/
-make
+git --help
+git add --help
 ```
-
-and the executables will be put to ~/bin.
 
 ### Go
 
