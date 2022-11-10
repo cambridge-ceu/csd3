@@ -4,7 +4,7 @@ sort: 26
 
 # LEMMA
 
-Web: [https://github.com/mkerin/LEMMA/](https://github.com/mkerin/LEMMA/)
+Web: [https://mkerin.github.io/LEMMA/](https://mkerin.github.io/LEMMA/) (GitHub](https://github.com/mkerin/LEMMA/))
 
 ## 1.0.2
 
