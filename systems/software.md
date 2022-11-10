@@ -20,22 +20,22 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
  [41] "GraphicsMagick"  "gtksourceview"   "gtool"           "hpg"
  [45] "htslib"          "impute"          "JAGS"            "jq"
  [49] "KING"            "lapack"          "ldc2"            "LDstore"
- [53] "libgit2"         "libiconv"        "libidn2"         "libntlm"
- [57] "libpng"          "libsodium"       "libssh2"         "libxml2"
- [61] "libxslt"         "magma"           "metal"           "MONSTER"
- [65] "MORGAN"          "MsCAVIAR"        "nano"            "netbeans"
- [69] "nettle"          "NLopt"           "nspr"            "oniguruma"
- [73] "osca"            "pandoc"          "pandoc-citeproc" "parallel"
- [77] "pcre2"           "pdf2djvu"        "plink"           "plink-bgi"
- [81] "plinkseq"        "poppler"         "proj"            "PRSice"
- [85] "pspp"            "qctool"          "qpdf"            "QTLtools"
- [89] "quicktest"       "R"               "raremetal"       "rclone"
- [93] "readline"        "regenie"         "ruby"            "samtools"
- [97] "shapeit"         "SMR"             "snptest"         "sqlite"
-[101] "ssw"             "stata"           "SurvivalKit"     "tabix"
-[105] "tidy"            "trinculo"        "trousers"        "Typora"
-[109] "unbound"         "vala"            "vcftools"        "VSCode"
-[113] "zstd"
+ [53] "LEMMA"           "libgit2"         "libiconv"        "libidn2"
+ [57] "libntlm"         "libpng"          "libsodium"       "libssh2"
+ [61] "libxml2"         "libxslt"         "magma"           "metal"
+ [65] "MONSTER"         "MORGAN"          "MsCAVIAR"        "nano"
+ [69] "netbeans"        "nettle"          "NLopt"           "nspr"
+ [73] "oniguruma"       "osca"            "pandoc"          "pandoc-citeproc"
+ [77] "parallel"        "pcre2"           "pdf2djvu"        "plink"
+ [81] "plink-bgi"       "plinkseq"        "poppler"         "proj"
+ [85] "PRSice"          "pspp"            "qctool"          "qpdf"
+ [89] "QTLtools"        "quicktest"       "R"               "raremetal"
+ [93] "rclone"          "readline"        "regenie"         "ruby"
+ [97] "samtools"        "shapeit"         "SMR"             "snptest"
+[101] "sqlite"          "ssw"             "stata"           "SurvivalKit"
+[105] "tabix"           "tidy"            "trinculo"        "trousers"
+[109] "Typora"          "unbound"         "vala"            "vcftools"
+[113] "VSCode"          "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -531,6 +531,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     |   ""       | CAVIAR/2.2            | Genetics            |
     |   ""       | MONSTER/1.3           | Genetics            |
     |   ""       | osca/0.46             | Genetics            |
+    |   ""       | LEMMA/1.0.4           | Genetics[^lemma]    |
 
 [^metal]: Notes on METAL 2020-05-05r
 
@@ -559,3 +560,5 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     See [https://github.com/dr-roshyara/fcgene](https://github.com/dr-roshyara/fcgene)
 
 [^qtltools]: The long version number is 1.3.1-25-g6e49f85f20.
+
+[^lemma]: The documentation indicates a requirement of gcc/9.4, boost/1.78, OpenMP/3.1 and/or Intel MKL Library 2019 Update 1 but it is possible to proceed with gcc/11, cmake-3.19.7-gcc-5.4-5gbsejo, boost-1.66.0-gcc-5.4.0-slpq3un, ceuadmin/bgen/1.1.7.
