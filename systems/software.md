@@ -125,6 +125,8 @@ julia>
 
 #### libraOffice
 
+Official website: [https://www.libreoffice.org/](https://www.libreoffice.org/)
+
 The executables (`oocalc`, `ooffice`, `ooimpress`, `oomath`, `ooviewdoc`, `oowriter`) are in the `/usr/bin` directory and can be conveniently called from the console, e.g.,
 
 ```bash
