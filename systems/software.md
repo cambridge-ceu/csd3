@@ -525,7 +525,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | ""         | SurvivalKit/6.12      | Genetics            |
     | ""         | PRSice/2.3.3          | Genetics            |
     | 2022-11-09 | qctool/2.2.0          | Genetics            |
-    |   ""       | CaVEMaN/1.01-c1815a0  | Genetics            |
+    | 2022-11-10 | CaVEMaN/1.01-c1815a0  | Genetics            |
     |   ""       | akt/0.3.3             | Genetics            |
     |   ""       | MsCAVIAR/0.6.4        | Genetics            |
     |   ""       | CAVIAR/2.2            | Genetics            |
