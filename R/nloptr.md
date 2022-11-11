@@ -6,6 +6,8 @@ sort: 9
 
 ## NLopt
 
+Web: [https://nlopt.readthedocs.io/en/latest/](https://nlopt.readthedocs.io/en/latest/)
+
 This relates to pre-installation of `NLopt` though should be applicable to `R/nloptr` itself.
 
 We download the latest NLopt according to [https://nlopt.readthedocs.io/en/latest/](https://nlopt.readthedocs.io/en/latest/), notably
@@ -14,12 +16,12 @@ We download the latest NLopt according to [https://nlopt.readthedocs.io/en/lates
 wget -qO- https://github.com/stevengj/nlopt/archive/v2.7.1.tar.gz | \
 tar xvfz -
 cd nlopt-2.7.1/
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=${HPC_WORK} ..
+cmake -DCMAKE_INSTALL_PREFIX=${HPC_WORK} .
 make
 make install
 ```
+
+Additional options are available from its homepage.
 
 ## R/nloptr
 
