@@ -4,7 +4,7 @@ sort: 4
 
 # ANNOVAR
 
-Web page: http://annovar.openbioinformatics.org/en/latest/
+Web page: [http://annovar.openbioinformatics.org/en/latest/](http://annovar.openbioinformatics.org/en/latest/)
 
 Registered from http://download.openbioinformatics.org/annovar_download_form.php with the following information,
 
