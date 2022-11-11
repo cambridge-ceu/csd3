@@ -31,5 +31,4 @@ make
 
 ## Reference
 
-Arthur, R., et al., AKT: ancestry and kinship toolkit. *Bioinformatics*, 2017. 33(1): p. 142-144.
-
+Arthur, R., et al., AKT: ancestry and kinship toolkit. _Bioinformatics_, 2017. 33(1): p. 142-144.
