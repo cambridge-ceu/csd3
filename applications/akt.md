@@ -6,6 +6,8 @@ sort: 3
 
 Web: [https://github.com/Illumina/akt](https://github.com/Illumina/akt)
 
+## Installation and testing
+
 This is Illumina's ancestry and kinship toolkit and the installation is canonical.
 
 ```bash
@@ -26,3 +28,8 @@ git clone https://github.com/Illumina/akt
 cd akt
 make
 ```
+
+## Reference
+
+Arthur, R., et al., AKT: ancestry and kinship toolkit. *Bioinformatics*, 2017. 33(1): p. 142-144.
+
