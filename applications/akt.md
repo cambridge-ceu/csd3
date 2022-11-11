@@ -17,7 +17,7 @@ cd test
 test.sh
 ```
 
-then `akt` is available in the current directory.
+then `akt` is available in the current directory and used by `test/test.sh`.
 
 Alternatively, one can clone the latest version from GitHub
 
