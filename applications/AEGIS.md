@@ -4,7 +4,7 @@ sort: 2
 
 # AEGIS
 
-Web: http://aegis.stanford.edu/
+Web: [http://aegis.stanford.edu/](http://aegis.stanford.edu/)
 
 The installation follows the documentation but requires slight change,
 

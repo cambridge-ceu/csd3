@@ -4,7 +4,11 @@ sort: 1
 
 # ABCtoolbox
 
-Web page: https://bitbucket.org/wegmannlab/abctoolbox/wiki/Home
+Web page: [https://bitbucket.org/wegmannlab/abctoolbox/wiki/Home](https://bitbucket.org/wegmannlab/abctoolbox/wiki/Home)
+
+Now there is a `Makefile` so a simple `make` will furnish the exeutable file.
+
+However, the initial attempt to use `openmpi` remains valid.
 
 ```bash
 git clone --depth 1 https://bitbucket.org/wegmannlab/abctoolbox.git
