@@ -25,17 +25,17 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
  [61] "libssh2"         "libxml2"         "libxslt"         "magma"
  [65] "metal"           "MONSTER"         "MORGAN"          "MsCAVIAR"
  [69] "nano"            "netbeans"        "nettle"          "NLopt"
- [73] "nspr"            "oniguruma"       "osca"            "pandoc"
- [77] "pandoc-citeproc" "parallel"        "pcre2"           "pdf2djvu"
- [81] "plink"           "plink-bgi"       "plinkseq"        "poppler"
- [85] "proj"            "PRSice"          "pspp"            "qctool"
- [89] "qpdf"            "QTLtools"        "quicktest"       "R"
- [93] "raremetal"       "rclone"          "readline"        "regenie"
- [97] "ruby"            "samtools"        "shapeit"         "SMR"
-[101] "snptest"         "sqlite"          "ssw"             "stata"
-[105] "SurvivalKit"     "tabix"           "tidy"            "trinculo"
-[109] "trousers"        "Typora"          "unbound"         "vala"
-[113] "vcftools"        "VSCode"          "zstd"
+ [73] "nspr"            "oniguruma"       "osca"            "PAINTOR"
+ [77] "pandoc"          "pandoc-citeproc" "parallel"        "pcre2"
+ [81] "pdf2djvu"        "plink"           "plink-bgi"       "plinkseq"
+ [85] "poppler"         "proj"            "PRSice"          "pspp"
+ [89] "qctool"          "qpdf"            "QTLtools"        "quicktest"
+ [93] "R"               "raremetal"       "rclone"          "readline"
+ [97] "regenie"         "ruby"            "samtools"        "shapeit"
+[101] "SMR"             "snptest"         "sqlite"          "ssw"
+[105] "stata"           "SurvivalKit"     "tabix"           "tidy"
+[109] "trinculo"        "trousers"        "Typora"          "unbound"
+[113] "vala"            "vcftools"        "VSCode"          "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -533,6 +533,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | ""         | osca/0.46             | Genetics            |
     | ""         | LEMMA/1.0.4           | Genetics[^lemma]    |
     | ""         | CAVIARBF/0.2.1        | Genetics[^lemma]    |
+    | 2022-11-11 | PAINTOR/3.0           | Genetics            |
 
 [^metal]: Notes on METAL 2020-05-05r
 
