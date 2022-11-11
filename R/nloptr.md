@@ -6,7 +6,7 @@ sort: 9
 
 ## NLopt
 
-Web: [https://nlopt.readthedocs.io/en/latest/](https://nlopt.readthedocs.io/en/latest/)
+Web: [https://nlopt.readthedocs.io/en/latest/](https://nlopt.readthedocs.io/en/latest/) ([GitHub](https://github.com/stevengj/nlopt))
 
 This relates to pre-installation of `NLopt` though should be applicable to `R/nloptr` itself.
 
