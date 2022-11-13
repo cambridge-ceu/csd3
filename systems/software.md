@@ -533,7 +533,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | ""         | MONSTER/1.3           | Genetics            |
     | ""         | osca/0.46             | Genetics            |
     | ""         | LEMMA/1.0.4           | Genetics[^lemma]    |
-    | ""         | CAVIARBF/0.2.1        | Genetics[^lemma]    |
+    | ""         | CAVIARBF/0.2.1        | Genetics            |
     | 2022-11-11 | PAINTOR/3.0           | Genetics            |
 
 [^metal]: Notes on METAL 2020-05-05r
