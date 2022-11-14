@@ -14,9 +14,9 @@ The CSD3 login address is `login.hpc.cam.ac.uk` with a mapping table
 
 | Collective name             | Node name      | Comments    |
 | --------------------------- | -------------- | ----------- |
-| login-gpu.hpc.cam.ac.uk     | login-e-[1-8]  | GPU[^1]     |
-| login-cpu.hpc.cam.ac.uk     | login-e-[9-16] | CPU         |
-| login-icelake.hpc.cam.ac.uk | login-q-[1-4]  | CentOS8[^2] |
+| login-gpu.hpc.cam.ac.uk     | login-e-[1-4]  | GPU[^gpu]     |
+| [login|login-cpu|login-skylake].hpc.cam.ac.uk     | login-e-[9-16] | CPU         |
+| login-icelake.hpc.cam.ac.uk | login-q-[1-4]  | CentOS8[^icelake] |
 
 On a GPU, we have from `module list`
 
@@ -99,7 +99,7 @@ sed -i -e '/128\.232\.224/d' -e '/.*\.hpc\.cam\.ac\.uk/d' ~/.ssh/known_hosts
 # ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R "login.hpc.cam.ac.uk"
 ```
 
-Automatic login[^3] via ssh/sftp can be enabled with
+Automatic login[^autologin] via ssh/sftp can be enabled with
 
 ```bash
 ssh-copy-id login.hpc.cam.ac.uk
@@ -181,6 +181,6 @@ find /usr -iname "*libGL.so*" -exec ls -l {} \;
 find /usr -iname "*libGLX*.so*" -exec ls -l {} \;
 ```
 
-[^1]: Currently, it is login-e-[1-4] (login.hpc), login-e-1 is also the license server. The so-called 3D viz nodes are login-gpu-e-[1-7].
-[^2]: Applications such as R/nloptr package require to be recompiled. In this case, we run `download.packages("nloptr",".")` inside `R` on an Internet-enabled node and compile the package with `R CMD INSTALL nloptr_1.2.2.3.tar.gz`, say.
-[^3]: This appears subject to the system setup.
+[^gpu]: Currently, it is login-e-[1-4] (login.hpc), login-e-1 is also the license server. The so-called 3D viz/startgfx nodes are login-gpu-e-[1-8].
+[^icelake]: Applications such as R/nloptr package require to be recompiled. In this case, we run `download.packages("nloptr",".")` inside `R` on an Internet-enabled node and compile the package with `R CMD INSTALL nloptr_1.2.2.3.tar.gz`, say.
+[^autologin]: This appears subject to the system setup.
