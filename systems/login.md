@@ -15,7 +15,7 @@ The CSD3 login address is `login.hpc.cam.ac.uk` with a mapping table
 | Collective name             | Node name      | Comments    |
 | --------------------------- | -------------- | ----------- |
 | login-gpu.hpc.cam.ac.uk     | login-e-[1-4]  | GPU[^gpu]     |
-| [login,login-cpu,login-skylake].hpc.cam.ac.uk     | login-e-[9-16] | CPU         |
+| [login, login-cpu, login-skylake].hpc.cam.ac.uk     | login-e-[9-16] | CPU         |
 | login-icelake.hpc.cam.ac.uk | login-q-[1-4]  | CentOS8[^icelake] |
 
 On a GPU, we have from `module list`
