@@ -24,20 +24,21 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
  [57] "ldc2"            "LDstore"         "LEMMA"           "libgit2"
  [61] "libiconv"        "libidn2"         "libntlm"         "libpng"
  [65] "libsodium"       "libssh2"         "libxml2"         "libxslt"
- [69] "magma"           "metal"           "MONSTER"         "MORGAN"
- [73] "MR-MEGA"         "MsCAVIAR"        "nano"            "netbeans"
- [77] "nettle"          "NLopt"           "nspr"            "oniguruma"
- [81] "osca"            "PAINTOR"         "pandoc"          "pandoc-citeproc"
- [85] "parallel"        "pcre2"           "pdf2djvu"        "plink"
- [89] "plink-bgi"       "plinkseq"        "poppler"         "proj"
- [93] "PRSice"          "pspp"            "qctool"          "qpdf"
- [97] "QTLtools"        "quicktest"       "R"               "raremetal"
-[101] "rclone"          "readline"        "regenie"         "ruby"
-[105] "samtools"        "shapeit"         "SMR"             "SNP2HLA"
-[109] "snptest"         "sqlite"          "ssw"             "STAR"
-[113] "stata"           "SurvivalKit"     "tabix"           "tidy"
-[117] "trinculo"        "trousers"        "Typora"          "unbound"
-[121] "vala"            "vcftools"        "VSCode"          "zstd"
+ [69] "magma"           "Mega2"           "metal"           "MONSTER"
+ [73] "MORGAN"          "MR-MEGA"         "MsCAVIAR"        "nano"
+ [77] "netbeans"        "nettle"          "NLopt"           "nspr"
+ [81] "oniguruma"       "osca"            "PAINTOR"         "pandoc"
+ [85] "pandoc-citeproc" "parallel"        "pcre2"           "pdf2djvu"
+ [89] "plink"           "plink-bgi"       "plinkseq"        "poppler"
+ [93] "proj"            "PRSice"          "pspp"            "qctool"
+ [97] "qpdf"            "QTLtools"        "quicktest"       "R"
+[101] "raremetal"       "rclone"          "readline"        "regenie"
+[105] "ruby"            "samtools"        "shapeit"         "SMR"
+[109] "SNP2HLA"         "snptest"         "sqlite"          "ssw"
+[113] "STAR"            "stata"           "SurvivalKit"     "tabix"
+[117] "tidy"            "trinculo"        "trousers"        "Typora"
+[121] "unbound"         "vala"            "vcftools"        "VSCode"
+[125] "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -539,6 +540,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | 2022-11-14 | MR-MEGA/0.2           | Genetics            |
     | 2022-11-16 | SNP2HLA/1.0.3         | Genetics            |
     | ""         | STAR/2.7.10b          | Genetics            |
+    | ""         | Mega2/6.0.0           | Genetics            |
 
 [^metal]: Notes on METAL 2020-05-05r
 
