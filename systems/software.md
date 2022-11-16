@@ -34,10 +34,10 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
  [97] "QTLtools"        "quicktest"       "R"               "raremetal"
 [101] "rclone"          "readline"        "regenie"         "ruby"
 [105] "samtools"        "shapeit"         "SMR"             "SNP2HLA"
-[109] "snptest"         "sqlite"          "ssw"             "stata"
-[113] "SurvivalKit"     "tabix"           "tidy"            "trinculo"
-[117] "trousers"        "Typora"          "unbound"         "vala"
-[121] "vcftools"        "VSCode"          "zstd"
+[109] "snptest"         "sqlite"          "ssw"             "STAR"
+[113] "stata"           "SurvivalKit"     "tabix"           "tidy"
+[117] "trinculo"        "trousers"        "Typora"          "unbound"
+[121] "vala"            "vcftools"        "VSCode"          "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -538,6 +538,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | 2022-11-11 | PAINTOR/3.0           | Genetics            |
     | 2022-11-14 | MR-MEGA/0.2           | Genetics            |
     | 2022-11-16 | SNP2HLA/1.0.3         | Genetics            |
+    | ""         | STAR/2.7.10b          | Genetics            |
 
 [^metal]: Notes on METAL 2020-05-05r
 
