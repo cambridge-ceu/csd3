@@ -545,13 +545,15 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | 2022-11-16 | SNP2HLA/1.0.3         | Genetics            |
     | ""         | STAR/2.7.10b          | Genetics            |
     | ""         | Mega2/6.0.0           | Genetics            |
-    | 2022-11-19 | ensembl-vep/104       | Genetics            |
-    | ""         | OpenMS/3.0.0          | Genetics            |
-    | ""         | polyphen/2.2.2        | Genetics            |
-    | ""         | ANNOVAR/24Oct2019     | Genetics            |
-    | ""         | MAGENTA/vs2_July2011  | Genetics            |
-    | ""         | GARFIELD/v2           | Genetics            |
-    | ""         | KentUtils/2022-11-14  | Genetics            |
+    | 2022-11-19 | ensembl-vep/104       | Genetics*           |
+    | ""         | OpenMS/3.0.0          | Genetics*           |
+    | ""         | polyphen/2.2.2        | Genetics*           |
+    | ""         | ANNOVAR/24Oct2019     | Genetics*           |
+    | ""         | MAGENTA/vs2_July2011  | Genetics*           |
+    | ""         | GARFIELD/v2           | Genetics*           |
+    | ""         | KentUtils/2022-11-14  | Genetics*           |
+
+* CEU or requested users only.
 
 [^metal]: Notes on METAL 2020-05-05r
 
