@@ -553,7 +553,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | ""         | GARFIELD/v2           | Genetics*           |
     | ""         | KentUtils/2022-11-14  | Genetics*           |
 
-    * CEU or requested users only.
+    \* CEU or requested users only.
 
 [^metal]: Notes on METAL 2020-05-05r
 
