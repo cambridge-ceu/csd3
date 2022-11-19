@@ -45,8 +45,9 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
 
-Software with large size / reference data will be available from /rds/project/jmmh2. However, CEU users will be able to use these
-ANNOVAR, ensembl-vep, OpenMS, polyphen linking internal projects. Additional notes are avaiiable from the doc/ directory.
+Ideally, software with large size / reference data will be available from /rds/project/jmmh2/software. However, CEU users will be 
+able to use ANNOVAR, ensembl-vep, OpenMS, polyphen, KentUtils linking internal projects/personal space (additional requests need to 
+be made). Further information is avaiiable from **doc/README.md, README.html**.
 
 A module is loaded/unloaded as follows,
 
@@ -54,7 +55,9 @@ A module is loaded/unloaded as follows,
 module load ceuadmin/<module name>
 ```
 
-Other commands include `display`, `help`, `show`, `unload`, `whatis`, as in [3.2.9](https://linux.die.net/man/4/modulefile).
+Other commands include `display`, `help`, `show`, `unload`, `whatis`, as in [3.2.9](https://linux.die.net/man/4/modulefile). In 
+particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss 
+of function (LoF) annotation.
 
 The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin**.
 
