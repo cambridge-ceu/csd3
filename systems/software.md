@@ -548,6 +548,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | ""         | ANNOVAR/24Oct2019     | Genetics            |
     | ""         | MAGENTA/vs2_July2011  | Genetics            |
     | ""         | GARFIELD/v2           | Genetics            |
+    | ""         | KentUtils/2022-11-14  | Genetics            |
 
 [^metal]: Notes on METAL 2020-05-05r
 
