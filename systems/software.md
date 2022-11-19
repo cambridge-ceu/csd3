@@ -16,30 +16,31 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
  [25] "DjVuLibre"       "docbook2X"       "DosageConverter" "ensembl-vep"    
  [29] "exiv2"           "exomeplus"       "expat"           "FastQTL"        
  [33] "fcGENE"          "ffmpeg"          "finemap"         "fossil"         
- [37] "fribidi"         "gcta"            "gdal"            "GEMMA"          
- [41] "gettext"         "ghc"             "ghostscript"     "git"            
- [45] "git-extras"      "GitKraken"       "gmp"             "gnutls"         
- [49] "googletest"      "GraphicsMagick"  "gtksourceview"   "gtool"          
- [53] "hpg"             "htslib"          "impute"          "JAGS"           
- [57] "jq"              "KING"            "lapack"          "ldc2"           
- [61] "LDstore"         "LEMMA"           "libgit2"         "libiconv"       
- [65] "libidn2"         "libntlm"         "libpng"          "libsodium"      
- [69] "libssh2"         "libxml2"         "libxslt"         "MAGENTA"        
- [73] "magma"           "Mega2"           "metal"           "MONSTER"        
- [77] "MORGAN"          "MR-MEGA"         "MsCAVIAR"        "nano"           
- [81] "netbeans"        "nettle"          "NLopt"           "nspr"           
- [85] "oniguruma"       "OpenMS"          "osca"            "PAINTOR"        
- [89] "pandoc"          "pandoc-citeproc" "parallel"        "pcre2"          
- [93] "pdf2djvu"        "plink"           "plink-bgi"       "plinkseq"       
- [97] "polyphen"        "poppler"         "proj"            "PRSice"         
-[101] "pspp"            "qctool"          "qpdf"            "QTLtools"       
-[105] "quicktest"       "R"               "raremetal"       "rclone"         
-[109] "readline"        "regenie"         "ruby"            "samtools"       
-[113] "shapeit"         "SMR"             "SNP2HLA"         "snptest"        
-[117] "sqlite"          "ssw"             "STAR"            "stata"          
-[121] "SurvivalKit"     "tabix"           "tidy"            "trinculo"       
-[125] "trousers"        "Typora"          "unbound"         "vala"           
-[129] "vcftools"        "VSCode"          "zstd"           
+ [37] "fribidi"         "GARFIELD"        "gcta"            "gdal"           
+ [41] "GEMMA"           "gettext"         "ghc"             "ghostscript"    
+ [45] "git"             "git-extras"      "GitKraken"       "gmp"            
+ [49] "gnutls"          "googletest"      "GraphicsMagick"  "gtksourceview"  
+ [53] "gtool"           "hpg"             "htslib"          "impute"         
+ [57] "JAGS"            "jq"              "KentUtils"       "KING"           
+ [61] "lapack"          "ldc2"            "LDstore"         "LEMMA"          
+ [65] "libgit2"         "libiconv"        "libidn2"         "libntlm"        
+ [69] "libpng"          "libsodium"       "libssh2"         "libxml2"        
+ [73] "libxslt"         "MAGENTA"         "magma"           "Mega2"          
+ [77] "metal"           "MONSTER"         "MORGAN"          "MR-MEGA"        
+ [81] "MsCAVIAR"        "nano"            "netbeans"        "nettle"         
+ [85] "NLopt"           "nspr"            "oniguruma"       "OpenMS"         
+ [89] "osca"            "PAINTOR"         "pandoc"          "pandoc-citeproc"
+ [93] "parallel"        "pcre2"           "pdf2djvu"        "plink"          
+ [97] "plink-bgi"       "plinkseq"        "polyphen"        "poppler"        
+[101] "proj"            "PRSice"          "pspp"            "qctool"         
+[105] "qpdf"            "QTLtools"        "quicktest"       "R"              
+[109] "raremetal"       "rclone"          "readline"        "regenie"        
+[113] "ruby"            "samtools"        "shapeit"         "SMR"            
+[117] "SNP2HLA"         "snptest"         "sqlite"          "ssw"            
+[121] "STAR"            "stata"           "SurvivalKit"     "tabix"          
+[125] "tidy"            "trinculo"        "trousers"        "Typora"         
+[129] "unbound"         "vala"            "vcftools"        "VSCode"         
+[133] "zstd"           
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -546,6 +547,7 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | ""         | polyphen/2.2.2        | Genetics            |
     | ""         | ANNOVAR/24Oct2019     | Genetics            |
     | ""         | MAGENTA/vs2_July2011  | Genetics            |
+    | ""         | GARFIELD/v2           | Genetics            |
 
 [^metal]: Notes on METAL 2020-05-05r
 
