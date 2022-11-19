@@ -7,45 +7,45 @@ sort: 6
 The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As of November 2022, the list[^original] is as follows,
 
 ```
-  [1] "ABCtoolbox"      "akt"             "alpine"          "aria2"
-  [5] "axel"            "bazel"           "bcftools"        "Beagle"
-  [9] "bedops"          "bedtools2"       "bgen"            "biobank"
- [13] "blat"            "boltlmm"         "CaVEMaN"         "CAVIAR"
- [17] "CAVIARBF"        "ccal"            "circos"          "citeproc"
- [21] "cppunit"         "crossmap"        "Cytoscape"       "DjVuLibre"
- [25] "docbook2X"       "DosageConverter" "exiv2"           "exomeplus"
- [29] "expat"           "FastQTL"         "fcGENE"          "ffmpeg"
- [33] "finemap"         "fossil"          "fribidi"         "gcta"
- [37] "gdal"            "GEMMA"           "gettext"         "ghc"
- [41] "ghostscript"     "git"             "git-extras"      "GitKraken"
- [45] "gmp"             "gnutls"          "googletest"      "GraphicsMagick"
- [49] "gtksourceview"   "gtool"           "hpg"             "htslib"
- [53] "impute"          "JAGS"            "jq"              "KING"
- [57] "lapack"          "ldc2"            "LDstore"         "LEMMA"
- [61] "libgit2"         "libiconv"        "libidn2"         "libntlm"
- [65] "libpng"          "libsodium"       "libssh2"         "libxml2"
- [69] "libxslt"         "magma"           "Mega2"           "metal"
- [73] "MONSTER"         "MORGAN"          "MR-MEGA"         "MsCAVIAR"
- [77] "nano"            "netbeans"        "nettle"          "NLopt"
- [81] "nspr"            "oniguruma"       "osca"            "PAINTOR"
- [85] "pandoc"          "pandoc-citeproc" "parallel"        "pcre2"
- [89] "pdf2djvu"        "plink"           "plink-bgi"       "plinkseq"
- [93] "poppler"         "proj"            "PRSice"          "pspp"
- [97] "qctool"          "qpdf"            "QTLtools"        "quicktest"
-[101] "R"               "raremetal"       "rclone"          "readline"
-[105] "regenie"         "ruby"            "samtools"        "shapeit"
-[109] "SMR"             "SNP2HLA"         "snptest"         "sqlite"
-[113] "ssw"             "STAR"            "stata"           "SurvivalKit"
-[117] "tabix"           "tidy"            "trinculo"        "trousers"
-[121] "Typora"          "unbound"         "vala"            "vcftools"
-[125] "VSCode"          "zstd"
+  [1] "ABCtoolbox"      "akt"             "alpine"          "annovar"
+  [5] "aria2"           "axel"            "bazel"           "bcftools"
+  [9] "Beagle"          "bedops"          "bedtools2"       "bgen"
+ [13] "biobank"         "blat"            "boltlmm"         "CaVEMaN"
+ [17] "CAVIAR"          "CAVIARBF"        "ccal"            "circos"
+ [21] "citeproc"        "cppunit"         "crossmap"        "Cytoscape"
+ [25] "DjVuLibre"       "docbook2X"       "DosageConverter" "ensembl-vep"
+ [29] "exiv2"           "exomeplus"       "expat"           "FastQTL"
+ [33] "fcGENE"          "ffmpeg"          "finemap"         "fossil"
+ [37] "fribidi"         "gcta"            "gdal"            "GEMMA"
+ [41] "gettext"         "ghc"             "ghostscript"     "git"
+ [45] "git-extras"      "GitKraken"       "gmp"             "gnutls"
+ [49] "googletest"      "GraphicsMagick"  "gtksourceview"   "gtool"
+ [53] "hpg"             "htslib"          "impute"          "JAGS"
+ [57] "jq"              "KING"            "lapack"          "ldc2"
+ [61] "LDstore"         "LEMMA"           "libgit2"         "libiconv"
+ [65] "libidn2"         "libntlm"         "libpng"          "libsodium"
+ [69] "libssh2"         "libxml2"         "libxslt"         "magma"
+ [73] "Mega2"           "metal"           "MONSTER"         "MORGAN"
+ [77] "MR-MEGA"         "MsCAVIAR"        "nano"            "netbeans"
+ [81] "nettle"          "NLopt"           "nspr"            "oniguruma"
+ [85] "OpenMS"          "osca"            "PAINTOR"         "pandoc"
+ [89] "pandoc-citeproc" "parallel"        "pcre2"           "pdf2djvu"
+ [93] "plink"           "plink-bgi"       "plinkseq"        "polyphen"
+ [97] "poppler"         "proj"            "PRSice"          "pspp"
+[101] "qctool"          "qpdf"            "QTLtools"        "quicktest"
+[105] "R"               "raremetal"       "rclone"          "readline"
+[109] "regenie"         "ruby"            "samtools"        "shapeit"
+[113] "SMR"             "SNP2HLA"         "snptest"         "sqlite"
+[117] "ssw"             "STAR"            "stata"           "SurvivalKit"
+[121] "tabix"           "tidy"            "trinculo"        "trousers"
+[125] "Typora"          "unbound"         "vala"            "vcftools"
+[129] "VSCode"          "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
 
-Software with large size / reference data will be available from /rds/project/jmmh2.
-Candiates under this category include ensembl-vep, OpenMS, R (large collection of packages), locuszoom (chromosome X data).
-Additional notes are avaiiable from the doc/ directory.
+Software with large size / reference data will be available from /rds/project/jmmh2. However, CEU users will be able to use these
+ANNOVAR, ensembl-vep, OpenMS, polyphen linking internal projects. Additional notes are avaiiable from the doc/ directory.
 
 A module is loaded/unloaded as follows,
 
@@ -541,6 +541,10 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
     | 2022-11-16 | SNP2HLA/1.0.3         | Genetics            |
     | ""         | STAR/2.7.10b          | Genetics            |
     | ""         | Mega2/6.0.0           | Genetics            |
+    | 2022-11-19 | ensembl-vep/104       | Genetics            |
+    | ""         | OpenMS/3.0.0          | Genetics            |
+    | ""         | polyphen/2.2.2        | Genetics            |
+    | ""         | ANNOVAR/24Oct2019     | Genetics            |
 
 [^metal]: Notes on METAL 2020-05-05r
 
