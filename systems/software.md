@@ -6,8 +6,6 @@ sort: 6
 
 ## ceuadmin
 
-The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
-
 See [https://cambridge-ceu.github.io/csd3/systems/ceuadmin.html](https://cambridge-ceu.github.io/csd3/systems/ceuadmin.html) for additional information.
 
 ## gcc
