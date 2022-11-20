@@ -10,7 +10,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
 
-See [https://cambridge-ceu.github.io/csd3/systems/software.html](https://cambridge-ceu.github.io/csd3/systems/software.html) for additional information.
+See [https://cambridge-ceu.github.io/csd3/systems/ceuadmin.html](https://cambridge-ceu.github.io/csd3/systems/ceuadmin.html) for additional information.
 
 ## gcc
 
