@@ -2,7 +2,7 @@
 sort: 19
 ---
 
-# Genotype Harmonizer
+# Genotype-Harmonizer
 
 Web: [https://github.com/molgenis/systemsgenetics](https://github.com/molgenis/systemsgenetics) ([Manual](https://github.com/molgenis/systemsgenetics/wiki/Genotype-Harmonizer)).
 
