@@ -62,9 +62,30 @@ A module is loaded/unloaded as follows,
 module load ceuadmin/<module name>
 ```
 
-Other commands include `display`, `help`, `show`, `whatis`, as in [3.2.9](https://linux.die.net/man/4/modulefile). In particular, 
-`module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of 
-function (LoF) annotation.
+They should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
+
+```bash
+module help ceuadmin/pspp
+```
+
+and the module is loaded with
+
+```bash
+module load ceuadmin/pspp
+psppire
+```
+
+which will starts the PSPP 1.6.0 graphical user interface (GUI)[^gui]. Once the job is done, one can restore the previous environment with
+
+```bash
+module unload ceuadmin/pspp
+```
+
+A full list of module subcommands is available with `module help` as detailed in [3.2.9](https://linux.die.net/man/4/modulefile).
+In particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in
+loss of function (LoF) annotation.
+
+NB most software use gcc/6, which can be enabled with `module load gcc/6`.
 
 The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin**.
 
