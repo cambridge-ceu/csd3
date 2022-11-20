@@ -61,7 +61,7 @@ Ideally, software with large size / reference data will be available from /rds/p
 able to use ANNOVAR, ensembl-vep, OpenMS, polyphen, KentUtils linking internal projects/personal space (additional requests need to 
 be made). Further information is avaiiable from **doc/README.md, README.html**. A large collection of R packages (1,258 as of 
 November 2022) is linked with ceuadmin/R/4.2.2, the latest R distribution, please drop an email to <jhz22@medschl.cam.ac.uk> for 
-access. The original list prior to November 2022 is given blow[^original].
+access. The original list prior to mid-November 2022 is given blow[^original].
 
 ---
 
