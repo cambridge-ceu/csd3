@@ -4,7 +4,7 @@ sort: 7
 
 # ceuadmin
 
-The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As of November 2022, the list[^original] is as follows,
+The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As of November 2022, the list is as follows,
 
 ```
   [1] "ABCtoolbox"      "akt"             "alpine"          "annovar"
@@ -45,21 +45,23 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
 
-Ideally, software with large size / reference data will be available from /rds/project/jmmh2/software. However, CEU users will be
-able to use ANNOVAR, ensembl-vep, OpenMS, polyphen, KentUtils linking internal projects/personal space (additional requests need to
-be made). Further information is avaiiable from **doc/README.md, README.html**.
-
 A module is loaded/unloaded as follows,
 
 ```bash
 module load ceuadmin/<module name>
 ```
 
-Other commands include `display`, `help`, `show`, `unload`, `whatis`, as in [3.2.9](https://linux.die.net/man/4/modulefile). In
-particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss
-of function (LoF) annotation.
+Other commands include `display`, `help`, `show`, `whatis`, as in [3.2.9](https://linux.die.net/man/4/modulefile). In particular, 
+`module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of 
+function (LoF) annotation.
 
 The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin**.
+
+Ideally, software with large size / reference data will be available from /rds/project/jmmh2/software. However, CEU users will be 
+able to use ANNOVAR, ensembl-vep, OpenMS, polyphen, KentUtils linking internal projects/personal space (additional requests need to 
+be made). Further information is avaiiable from **doc/README.md, README.html**. A large collection of R packages (1,258 as of 
+November 2022) is linked with ceuadmin/R/4.2.2, the latest R distribution, please drop an email to <jhz22@medschl.cam.ac.uk> for 
+access. The original list prior to November 2022 is given blow[^original].
 
 ---
 
@@ -135,7 +137,7 @@ The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin
     | ""         | GARFIELD/v2           | Genetics\*          |
     | ""         | KentUtils/2022-11-14  | Genetics\*          |
 
-    \* CEU or requested users only.
+    \* CEU or approved users only.
 
 [^metal]: Notes on METAL 2020-05-05r
 
