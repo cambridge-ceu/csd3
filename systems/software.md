@@ -21,7 +21,7 @@ module avail gcc
 gcc --version
 ```
 
-### gfortran
+## gfortran
 
 ```bash
 gfortran --version
@@ -281,7 +281,7 @@ Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
 
 Location at csd3: `/usr/local/Cluster-Docs/SLURM/`.
 
-##### Account details
+### Account details
 
 ```bash
 mybalance
@@ -311,7 +311,7 @@ then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `
 
 **NOTE** the skylakes are approaching end of life, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html) and [https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html). For Ampere GPU, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html).
 
-##### Holding and releasing jobs
+### Holding and releasing jobs
 
 Suppose a job with id 59230836 is running, they can be achieved with,
 
@@ -322,7 +322,7 @@ control release 59230836
 
 respectively.
 
-##### Use of modules
+### Use of modules
 
 The following is part of a real implementation.
 
