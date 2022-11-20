@@ -68,14 +68,14 @@ Most should be available to all CSD3 users in the campus, e.g., for pspp, a brie
 module help ceuadmin/pspp
 ```
 
-and the module is loaded with
+and the module is loaded and graphical user interface (GUI)[^gui] started with
 
 ```bash
 module load ceuadmin/pspp
 psppire
 ```
 
-which will starts the PSPP 1.6.0 graphical user interface (GUI)[^gui]. Once the job is done, one can restore the previous environment with
+for PSPP 1.6.0. Once the job is done, one can restore the previous environment with
 
 ```bash
 module unload ceuadmin/pspp
