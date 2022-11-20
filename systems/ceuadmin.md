@@ -147,7 +147,7 @@ access. The original list prior to mid-November 2022 is given below[^original].
     | ""         | MAGENTA/vs2_July2011       | Genetics\*          |
     | ""         | GARFIELD/v2                | Genetics\*          |
     | ""         | KentUtils/2022-11-14       | Genetics\*          |
-    | 2022-11-20 | GenotypeHarmonizer/1.4.25  | Genetics\*          |
+    | 2022-11-20 | GenotypeHarmonizer/1.4.25  | Genetics            |
 
     \* CEU or approved users only.
 
