@@ -81,7 +81,7 @@ which will starts the PSPP 1.6.0 graphical user interface (GUI)[^gui]. Once the 
 module unload ceuadmin/pspp
 ```
 
-A full list of module subcommands is available with `module help` as detailed in [3.2.9](https://linux.die.net/man/4/modulefile).
+A full list of module subcommands is available with `module help` as detailed here for [3.2.9](https://linux.die.net/man/4/modulefile).
 In particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in
 loss of function (LoF) annotation.
 
