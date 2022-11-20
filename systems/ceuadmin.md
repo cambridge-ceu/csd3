@@ -20,7 +20,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
  [31] "expat"              "FastQTL"            "fcGENE"
  [34] "ffmpeg"             "finemap"            "fossil"
  [37] "fribidi"            "GARFIELD"           "gcta"
- [40] "gdal"               "GEMMA"              "GenotypeHarmonizer"
+ [40] "gdal"               "GEMMA"              "Genotype-Harmonizer"
  [43] "gettext"            "ghc"                "ghostscript"
  [46] "git"                "git-extras"         "GitKraken"
  [49] "gmp"                "gnutls"             "googletest"
@@ -147,7 +147,7 @@ access. The original list prior to mid-November 2022 is given below[^original].
     | ""         | MAGENTA/vs2_July2011       | Genetics\*          |
     | ""         | GARFIELD/v2                | Genetics\*          |
     | ""         | KentUtils/2022-11-14       | Genetics\*          |
-    | 2022-11-20 | GenotypeHarmonizer/1.4.25  | Genetics            |
+    | 2022-11-20 | Genotype-Harmonizer/1.4.25 | Genetics            |
 
     \* CEU or approved users only.
 
