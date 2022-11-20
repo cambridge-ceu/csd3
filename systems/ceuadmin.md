@@ -172,6 +172,10 @@ access. The original list prior to mid-November 2022 is given below[^original].
 
     \* CEU or approved users only.
 
+[^gui]: GUI
+
+    As GUI-based programs claim more computing resources, it is recommended that they are only used occasionally, e.g., calling back GitHub sessions.
+
 [^metal]: Notes on METAL 2020-05-05r
 
     This version has options EFFECT_PRINT_PRECISION and STDERR_PRINT_PRECISION (both with default 4) to enable many decimal places.
