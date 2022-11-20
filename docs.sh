@@ -2,13 +2,15 @@
 
 function renum()
 {
-  ls applications/*md  | \
+  echo ${1}
+  export folder=${1}
+  ls $1/*md  | \
   grep -v -e README -e files | sort | xargs -I {} basename {} .md | awk '{print NR,$1}' | \
-  parallel -j1 -C' ' '
+  parallel -j1 -C' ' --env folder '
     echo {1} {2}
     export line=2
     export value={1}
-    sed -i "${line}s/\S\+/${value}/2" applications/{2}.md
+    sed -i "${line}s/\S\+/${value}/2" ${folder}/{2}.md
   '
 }
 
@@ -29,7 +31,8 @@ module load gcc/6
 # make install
 # make theme
 
-renum
+renum systems
+renum applications
 R_packages
 make build
 
