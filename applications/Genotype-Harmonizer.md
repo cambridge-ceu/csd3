@@ -6,7 +6,7 @@ sort: 19
 
 Web: [https://github.com/molgenis/systemsgenetics](https://github.com/molgenis/systemsgenetics) ([Manual](https://github.com/molgenis/systemsgenetics/wiki/Genotype-Harmonizer)).
 
-## Setup
+## 1.4.23
 
 ```bash
 wget -qO- https://github.com/molgenis/systemsgenetics/releases/download/1.4.0_20-8.1/GenotypeHarmonizer-1.4.23-dist.tar.gz | \
@@ -27,7 +27,7 @@ wget ftp://ftp.ncbi.nlm.nih.gov/hapmap/genotypes/latest_phaseIII_ncbi_b36/plink_
 
 A HapMap2+HapMap3 combined data is available from [https://ftp.ncbi.nlm.nih.gov/hapmap/genotypes/latest_phaseII+III_ncbi_b36/forward/non-redundant/](https://ftp.ncbi.nlm.nih.gov/hapmap/genotypes/latest_phaseII+III_ncbi_b36/forward/non-redundant/).
 
-## Example
+### Example
 
 ```bash
 # Extract first 6Mb of chr20 for CEU samples
@@ -60,6 +60,20 @@ plink --file hapmap3CeuChr20B37Mb6 --out hapmap3CeuChr20B37Mb6 --make-bed
 dos2unix HarmonizeBinaryPlinkExample.sh
 HarmonizeBinaryPlinkExample.sh
 ```
+
+## 1.4.25
+
+This appears simpler, namely.
+
+```bash
+wget -qO- https://github.com/molgenis/systemsgenetics/archive/refs/tags/GH_1.4.25.tar.gz | x
+tar xvfz -
+cd GenotypeHarmonizer-1.4.25-SNAPSHOT/
+do2unix *.sh
+HarmonizeBinaryPlinkExample.sh
+```
+
+which produces results in `exampleOutput/`.
 
 ## Reference
 
