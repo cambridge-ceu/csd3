@@ -62,7 +62,7 @@ A module is loaded/unloaded as follows,
 module load ceuadmin/<module name>
 ```
 
-Most should be available to all CSD3 users in the campus, e.g., for pspp, a brief description of a module is available with
+Most should be available to all CSD3 users at the campus, e.g., for pspp, a brief description of a module is available with
 
 ```bash
 module help ceuadmin/pspp
