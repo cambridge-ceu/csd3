@@ -165,7 +165,7 @@ mid-November 2022 is given below[^original].
     | ""         | STAR/2.7.10b               | Genetics            |
     | ""         | Mega2/6.0.0                | Genetics            |
     | 2022-11-19 | ensembl-vep/104            | Genetics\*          |
-    | ""         | OpenMS/3.0.0               | Genetics\*          |
+    | ""         | OpenMS/3.0.0               | Genetics\*[^OpenMS] |
     | ""         | polyphen/2.2.2             | Genetics\*          |
     | ""         | ANNOVAR/24Oct2019          | Genetics\*          |
     | ""         | MAGENTA/vs2_July2011       | Genetics\*          |
@@ -214,6 +214,8 @@ mid-November 2022 is given below[^original].
 [^qtltools]: The long version number is 1.3.1-25-g6e49f85f20.
 
 [^lemma]: The documentation indicates a requirement of gcc/9.4, boost/1.78, OpenMP/3.1 and/or Intel MKL Library 2019 Update 1 but it is possible to proceed with gcc/11, cmake-3.19.7-gcc-5.4-5gbsejo, boost-1.66.0-gcc-5.4.0-slpq3un, ceuadmin/bgen/1.1.7.
+
+[^OpenMS]: Installed with OpenMS is also alphapept.
 
 [^lz]: locuszoom
 
