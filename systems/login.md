@@ -105,7 +105,9 @@ Automatic login[^autologin] via ssh/sftp can be enabled with
 ssh-copy-id login.hpc.cam.ac.uk
 ```
 
-from a Bash console after one login. If this is not set up, follow these steps,
+from a Bash console after one login.
+
+If this is not set up, e.g., with error message `/usr/bin/ssh-copy-id: ERROR: No identities found`, follow these steps,
 
 ```bash
 ssh-keygen
