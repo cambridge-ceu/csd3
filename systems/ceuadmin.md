@@ -7,51 +7,51 @@ sort: 7
 The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As of November 2022, the list is as follows,
 
 ```
-  [1] "ABCtoolbox"         "akt"                "alpine"
-  [4] "annovar"            "aria2"              "axel"
-  [7] "bazel"              "bcftools"           "Beagle"
- [10] "bedops"             "bedtools2"          "bgen"
- [13] "biobank"            "blat"               "boltlmm"
- [16] "CaVEMaN"            "CAVIAR"             "CAVIARBF"
- [19] "ccal"               "circos"             "citeproc"
- [22] "cppunit"            "crossmap"           "Cytoscape"
- [25] "DjVuLibre"          "docbook2X"          "DosageConverter"
- [28] "ensembl-vep"        "exiv2"              "exomeplus"
- [31] "expat"              "FastQTL"            "fcGENE"
- [34] "ffmpeg"             "finemap"            "fossil"
- [37] "fribidi"            "GARFIELD"           "gcta"
- [40] "gdal"               "GEMMA"              "Genotype-Harmonizer"
- [43] "gettext"            "ghc"                "ghostscript"
- [46] "git"                "git-extras"         "GitKraken"
- [49] "gmp"                "gnutls"             "googletest"
- [52] "GraphicsMagick"     "gtksourceview"      "gtool"
- [55] "hpg"                "htslib"             "impute"
- [58] "JAGS"               "jq"                 "KentUtils"
- [61] "KING"               "lapack"             "ldc2"
- [64] "LDstore"            "LEMMA"              "libgit2"
- [67] "libiconv"           "libidn2"            "libntlm"
- [70] "libpng"             "libsodium"          "libssh2"
- [73] "libxml2"            "libxslt"            "MAGENTA"
- [76] "magma"              "Mega2"              "metal"
- [79] "MONSTER"            "MORGAN"             "MR-MEGA"
- [82] "MsCAVIAR"           "nano"               "netbeans"
- [85] "nettle"             "NLopt"              "nspr"
- [88] "oniguruma"          "OpenMS"             "osca"
- [91] "PAINTOR"            "pandoc"             "pandoc-citeproc"
- [94] "parallel"           "pcre2"              "pdf2djvu"
- [97] "plink"              "plink-bgi"          "plinkseq"
-[100] "polyphen"           "poppler"            "proj"
-[103] "PRSice"             "pspp"               "qctool"
-[106] "qpdf"               "QTLtools"           "quicktest"
-[109] "R"                  "raremetal"          "rclone"
-[112] "readline"           "regenie"            "ruby"
-[115] "samtools"           "shapeit"            "SMR"
-[118] "SNP2HLA"            "snptest"            "sqlite"
-[121] "ssw"                "STAR"               "stata"
-[124] "SurvivalKit"        "tabix"              "tidy"
-[127] "trinculo"           "trousers"           "Typora"
-[130] "unbound"            "vala"               "vcftools"
-[133] "VSCode"             "zstd"
+  [1] "ABCtoolbox"          "akt"                 "alpine"
+  [4] "annovar"             "aria2"               "axel"
+  [7] "bazel"               "bcftools"            "Beagle"
+ [10] "bedops"              "bedtools2"           "bgen"
+ [13] "biobank"             "blat"                "boltlmm"
+ [16] "CaVEMaN"             "CAVIAR"              "CAVIARBF"
+ [19] "ccal"                "circos"              "citeproc"
+ [22] "cppunit"             "crossmap"            "Cytoscape"
+ [25] "DjVuLibre"           "docbook2X"           "DosageConverter"
+ [28] "ensembl-vep"         "exiv2"               "exomeplus"
+ [31] "expat"               "FastQTL"             "fcGENE"
+ [34] "ffmpeg"              "finemap"             "fossil"
+ [37] "fribidi"             "GARFIELD"            "gcta"
+ [40] "gdal"                "GEMMA"               "Genotype-Harmonizer"
+ [43] "gettext"             "ghc"                 "ghostscript"
+ [46] "git"                 "git-extras"          "GitKraken"
+ [49] "gmp"                 "gnutls"              "googletest"
+ [52] "GraphicsMagick"      "gtksourceview"       "gtool"
+ [55] "hpg"                 "htslib"              "impute"
+ [58] "JAGS"                "jq"                  "KentUtils"
+ [61] "KING"                "lapack"              "ldc2"
+ [64] "LDstore"             "LEMMA"               "libgit2"
+ [67] "libiconv"            "libidn2"             "libntlm"
+ [70] "libpng"              "libsodium"           "libssh2"
+ [73] "libxml2"             "libxslt"             "locuszoom"
+ [76] "MAGENTA"             "magma"               "Mega2"
+ [79] "metal"               "MONSTER"             "MORGAN"
+ [82] "MR-MEGA"             "MsCAVIAR"            "nano"
+ [85] "netbeans"            "nettle"              "NLopt"
+ [88] "nspr"                "oniguruma"           "OpenMS"
+ [91] "osca"                "PAINTOR"             "pandoc"
+ [94] "pandoc-citeproc"     "parallel"            "pcre2"
+ [97] "pdf2djvu"            "plink"               "plink-bgi"
+[100] "plinkseq"            "polyphen"            "poppler"
+[103] "proj"                "PRSice"              "pspp"
+[106] "qctool"              "qpdf"                "QTLtools"
+[109] "quicktest"           "R"                   "raremetal"
+[112] "rclone"              "readline"            "regenie"
+[115] "ruby"                "samtools"            "shapeit"
+[118] "SMR"                 "SNP2HLA"             "snptest"
+[121] "sqlite"              "ssw"                 "STAR"
+[124] "stata"               "SurvivalKit"         "tabix"
+[127] "tidy"                "trinculo"            "trousers"
+[130] "Typora"              "unbound"             "vala"
+[133] "vcftools"            "VSCode"              "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -170,6 +170,7 @@ access. The original list prior to mid-November 2022 is given below[^original].
     | ""         | GARFIELD/v2                | Genetics\*          |
     | ""         | KentUtils/2022-11-14       | Genetics\*          |
     | 2022-11-20 | Genotype-Harmonizer/1.4.25 | Genetics            |
+    | 2022-11-21 | locuszoom/1.4              | Genetics\*[^lz]     |
 
     \* CEU or approved users only.
 
@@ -192,7 +193,7 @@ access. The original list prior to mid-November 2022 is given below[^original].
 
 [^gemma]: Note on compiling from source
 
-    A considerably smaller (1,097,256 vs 22,721,624) executable, /usr/local/Cluster-Apps/ceuadmin/GEMMA/0.98.5/bin, is generated under CSD3 but the origina>
+    A considerably smaller (1,097,256 vs 22,721,624) executable, /usr/local/Cluster-Apps/ceuadmin/GEMMA/0.98.5/bin, is generated under CSD3 but the original distribution is used by default.
 
     ```bash
     module load openblas/0.2.15
@@ -204,4 +205,10 @@ access. The original list prior to mid-November 2022 is given below[^original].
     See [https://github.com/dr-roshyara/fcgene](https://github.com/dr-roshyara/fcgene)
 
 [^qtltools]: The long version number is 1.3.1-25-g6e49f85f20.
+
 [^lemma]: The documentation indicates a requirement of gcc/9.4, boost/1.78, OpenMP/3.1 and/or Intel MKL Library 2019 Update 1 but it is possible to proceed with gcc/11, cmake-3.19.7-gcc-5.4-5gbsejo, boost-1.66.0-gcc-5.4.0-slpq3un, ceuadmin/bgen/1.1.7.
+
+[^lz]: locuszoom
+
+    The version adds chromosome X data and will have options using INTERVAL data.
+
