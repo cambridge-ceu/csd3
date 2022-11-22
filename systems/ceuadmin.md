@@ -60,12 +60,6 @@ These are wrapped up as :star::star::star: **[modules](https://modules.readthedo
 
 The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin**. Most software use gcc/6; when required it can be enabled with `module load gcc/6`.
 
-A module is loaded/unloaded as follows,
-
-```bash
-module load ceuadmin/<module name>
-```
-
 Most should be available to all CSD3 users at the campus, e.g., for pspp, a brief description of a module is available with
 
 ```bash
