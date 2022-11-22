@@ -207,7 +207,7 @@ mid-November 2022 is given below[^original].
 
 [^lemma]: The documentation indicates a requirement of gcc/9.4, boost/1.78, OpenMP/3.1 and/or Intel MKL Library 2019 Update 1 but it is possible to proceed with gcc/11, cmake-3.19.7-gcc-5.4-5gbsejo, boost-1.66.0-gcc-5.4.0-slpq3un, ceuadmin/bgen/1.1.7.
 
-[^OpenMS]: When OpenMS module is loaded, pyopenms and alphapept also become available.
+[^OpenMS]: When the OpenMS module is loaded, pyopenms and alphapept also become available.
 
 [^lz]: locuszoom
 
