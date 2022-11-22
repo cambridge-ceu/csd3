@@ -58,6 +58,8 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
 
+The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin**. Most software use gcc/6; when required it can be enabled with `module load gcc/6`.
+
 A module is loaded/unloaded as follows,
 
 ```bash
@@ -87,10 +89,6 @@ A full list of module subcommands is available with `module help` as detailed he
 [3.2.9](https://linux.die.net/man/4/modulefile) -- CSD3 uses version 3.2.10 dated 2012-12-21. In particular, `module whatis 
 ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of function (LoF) 
 annotation.
-
-NB most software use gcc/6, which can be enabled with `module load gcc/6`.
-
-The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin**.
 
 Ideally, software with large size / reference data will be available from /rds/project/jmmh2/software. However, CEU users will be able to use 
 ANNOVAR, ensembl-vep, OpenMS, polyphen, KentUtils/MAGMA/Pascal/VEGASV2/fgwas/locuszoom linking internal projects/personal space (additional requests 
