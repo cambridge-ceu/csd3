@@ -12,6 +12,7 @@ function renum()
     export value={1}
     sed -i "${line}s/\S\+/${value}/2" ${folder}/{2}.md
   '
+  head -3 $1/*md | grep sort | sort -k2,2n
 }
 
 function R_packages()
