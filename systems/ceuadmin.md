@@ -46,14 +46,15 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As o
 [109] "pspp"                "qctool"              "qpdf"
 [112] "qtcreator"           "QTLtools"            "quicktest"
 [115] "R"                   "raremetal"           "rclone"
-[118] "readline"            "regenie"             "ruby"
-[121] "samtools"            "shapeit"             "SMR"
-[124] "SNP2HLA"             "snptest"             "sqlite"
-[127] "ssw"                 "STAR"                "stata"
-[130] "SurvivalKit"         "tabix"               "tidy"
-[133] "trinculo"            "trousers"            "Typora"
-[136] "unbound"             "vala"                "vcftools"
-[139] "VEGAS2"              "VSCode"              "zstd"
+[118] "readline"            "regenie"             "rstudio"
+[121] "ruby"                "samtools"            "shapeit"
+[124] "SMR"                 "SNP2HLA"             "snptest"
+[127] "sqlite"              "ssw"                 "STAR"
+[130] "stata"               "SurvivalKit"         "tabix"
+[133] "tidy"                "trinculo"            "trousers"
+[136] "Typora"              "unbound"             "vala"
+[139] "vcftools"            "VEGAS2"              "VSCode"
+[142] "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
