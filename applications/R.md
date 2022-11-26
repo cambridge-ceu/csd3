@@ -96,7 +96,7 @@ while `libicuuc.so.50` can be installed following similar procedure, their avail
 - [https://github.com/unicode-org/icu/releases/tag/release-50-2](https://github.com/unicode-org/icu/releases/tag/release-50-2)
 - [https://github.com/unicode-org/icu/archive/refs/tags/release-50-2.tar.gz](https://github.com/unicode-org/icu/archive/refs/tags/release-50-2.tar.gz)
 
-Finally, `libgnutls.so.28`[^1] requires `nettle-2.7.1`.
+Finally, `libgnutls.so.28`[^gnutls] requires `nettle-2.7.1`.
 
 ```bash
 module load autogen-5.18.12-gcc-5.4.0-jn2mr4n
@@ -106,7 +106,7 @@ cd ${HPC_WORK}
 wget -qO- wget http://www.lysator.liu.se/~nisse/archive/nettle-2.7.1.tar.gz | \
 tar xfvz -
 cd nettle-2.7.1/
-configure --prefix=$HPC_WORK
+configure --prefix=$HPC_WORK --with-include-path=$HPC_WORK/include --with-lib-path=$HPC_WORK/lib:$HPC_WORK/lib64 --enable-mini-gmp
 make
 make install
 wget --no-check-certificate https://www.gnupg.org/ftp/gcrypt/gnutls/v3.2/gnutls-3.2.21.tar.xz
@@ -193,6 +193,16 @@ For `alpine` we get `alpine/alpine: /usr/lib64/libcrypt.so.1: version `XCRYPT_2.
 
 Additional information is available from [https://alpine.x10host.com/alpine/release/](https://alpine.x10host.com/alpine/release/).
 
-[^1]:
+[^gnutls]:
+
     On CSD3, there is a more recent module `nettle-3.4-gcc-5.4.0-2mdpaut`. Moreover, with 3.5
     there is also an option `--with-included-unistring` during configuration.
+
+    Version 3.7.8 requires libunistring (optionally --with-included-unistring), libidn2, libunbound, and trousers.
+
+    ```bash
+    ./configure --prefix=$HPC_WORK --with-included-unistring --with-nettle-mini --enable-ssl3-support \
+                CFLAGS=-I$HPC_WORK/include LDFLAGS=-L$HPC_WORK/lib LIBS=-lunbound LIBS=-ltspi --enable-sha1-support --disable-guile
+    ````
+
+    It is necessary to edit `lib/pkcs11_privkey.c` to make `ck_rsa_pkcs_pss_params` definition explicit.  Then there is error with guile so we use --disable-guile.
