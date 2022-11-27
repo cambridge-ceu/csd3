@@ -43,7 +43,7 @@ Aborted
 
 Additional information could also be seen from `export QT_DEBUG_PLUGINS=1` and run `rstudio` again.
 
-The error messages above can be bypassed with[^qt5] and also see[^legacy]
+The error messages above can be bypassed with[^qt5] and also see below[^legacy]
 
 ```bash
 export QT_PLUGIN_PATH=/usr/lib64/qt5/plugins
