@@ -46,6 +46,25 @@ rstudio &
 
 Another environmental variable is QT_QPA_PLATFORM_PLUGIN_PATH, which should point to the `plugins/platforms` directory when a particular QT module is loaded.
 
+<font color="red"><b>27/11/2022 Update</b></font>: `module load rstudio/1.3.1093` fails with error messages <font color="blue"><b>
+
+```bash
+# of primary importance
+export QT_QPA_PLATFORM=xcb
+export QT_PLUGIN_PATH=/usr/lib64/qt5/plugins
+# effective by default
+export QTDIR=/usr/lib64/qt-3.3
+export QTINC=/usr/lib64/qt-3.3/include
+export QTLIB=/usr/lib64/qt-3.3/lib
+export QT_GRAPHICSSYSTEM_CHECKED=1
+# gcc/6 is necessary to start R
+# We also take advantage of R's TeX-awareness
+module load gcc/6 texlive
+rstudio --no-sandbox
+```
+
+Note this fix applies to RStudio 1.4 below; the most recent release is packaged and can be loaded with `module load ceuadmin/rstudio; rstudio`.
+
 ## RStudio 1.4
 
 ### Fedora 19/Red Hat 7
