@@ -21,6 +21,13 @@ and it obtains
 rstudio/0.99/rstudio-0.99    rstudio/1.1.383              rstudio/1.3.1093             rstudio-server/2021.09.0-351
 ```
 
+so we could use
+
+```bash
+module load rstudio/1.1.383
+rstudio
+```
+
 <font color="red"><b>26/3/2022 Update</b></font> `module load rstudio/1.3.1093` <font color="blue"><b>now functions well, which enables R packages such as `R/heatmaply`.</b></font>
 
 We intend to use the most recent version with `module load rstudio/1.3.1093; rstudio` but it fails with messages:
@@ -41,7 +48,6 @@ The error messages above can be bypassed with[^qt] and also see[^legacy]
 ```bash
 export QT_PLUGIN_PATH=/usr/lib64/qt5/plugins
 module load rstudio/1.3.1093
-rstudio &
 ```
 
 Another environmental variable is QT_QPA_PLATFORM_PLUGIN_PATH, which should point to the `plugins/platforms` directory when a particular QT module is loaded.
@@ -63,7 +69,7 @@ module load gcc/6 texlive
 rstudio --no-sandbox
 ```
 
-Note this fix applies to RStudio 1.4 below; the most recent release is packaged and can be loaded with `module load ceuadmin/rstudio; rstudio`. Note also that rstudio/1.1.383 still works without these.
+Note this fix applies to RStudio 1.4 below; the most recent release is packaged and can be loaded with `module load ceuadmin/rstudio; rstudio`.
 
 ## RStudio 1.4
 
@@ -82,7 +88,7 @@ bin/rstudio --no-sandbox
 
 We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to call later on.
 
-[^legacy]: Legacy notes
+[^legacy]: ## Legacy notes
 
     This is with respect to the latest version under Debian,
 
