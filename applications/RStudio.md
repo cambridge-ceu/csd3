@@ -177,9 +177,9 @@ These are side notes on installation of Qt5 according to https://forums.linuxmin
 ```bash
 git clone git://code.qt.io/qt/qt5.git
 cd qt5
-git checkout 5.12
+git checkout 5.15
 ./init-repository
 export LLVM_INSTALL_DIR=${HPC_WORK}/llvm
-../qt5/configure -developer-build -opensource -nomake examples -nomake tests
+../qt5/configure -developer-build -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas
 make
 ```
