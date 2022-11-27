@@ -46,7 +46,7 @@ rstudio &
 
 Another environmental variable is QT_QPA_PLATFORM_PLUGIN_PATH, which should point to the `plugins/platforms` directory when a particular QT module is loaded.
 
-<font color="red"><b>27/11/2022 Update</b></font>: `module load rstudio/1.3.1093` fails with error messages <font color="blue"><b>
+<font color="red"><b>27/11/2022 Update</b></font>`module load rstudio/1.3.1093` fails with error messages <font color="blue"><b> and a way forward is as follows,
 
 ```bash
 # of primary importance
@@ -63,7 +63,7 @@ module load gcc/6 texlive
 rstudio --no-sandbox
 ```
 
-Note this fix applies to RStudio 1.4 below; the most recent release is packaged and can be loaded with `module load ceuadmin/rstudio; rstudio`.
+Note this fix applies to RStudio 1.4 below; the most recent release is packaged and can be loaded with `module load ceuadmin/rstudio; rstudio`. Note also that rstudio/1.1.383 still works without these.
 
 ## RStudio 1.4
 
