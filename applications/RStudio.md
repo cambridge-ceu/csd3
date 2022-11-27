@@ -88,7 +88,9 @@ bin/rstudio --no-sandbox
 
 We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to call later on.
 
-[^legacy]: ## Legacy notes
+[^legacy]:
+
+    ## Legacy notes
 
     This is with respect to the latest version under Debian,
 
