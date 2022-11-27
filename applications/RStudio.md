@@ -182,7 +182,7 @@ We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to
 
     ## qt/5
 
-    These are side notes on installation of Qt5 according to https://forums.linuxmint.com/viewtopic.php?t=306738, though no longer necessary for reasons above.
+    These are side notes on installation of Qt5 according to <https://forums.linuxmint.com/viewtopic.php?t=306738>, though no longer necessary for reasons above.
 
     ```bash
     git clone git://code.qt.io/qt/qt5.git
@@ -191,7 +191,7 @@ We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to
     ./init-repository
     export LLVM_INSTALL_DIR=${HPC_WORK}/llvm
     ../qt5/configure -developer-build -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
-    make
+    gmake
     ```
 
     `module load ninja;ninja --versions` gives 1.10.0 while `source py27/bin/activate;pip install ninja` uses 1.11.1.
