@@ -57,7 +57,7 @@ export QTDIR=/usr/lib64/qt-3.3
 export QTINC=/usr/lib64/qt-3.3/include
 export QTLIB=/usr/lib64/qt-3.3/lib
 export QT_GRAPHICSSYSTEM_CHECKED=1
-# gcc/6 is necessary to start R
+# gcc/6 is necessary here, since it is used to build R
 # We also take advantage of R's TeX-awareness
 module load gcc/6 texlive
 rstudio --no-sandbox
