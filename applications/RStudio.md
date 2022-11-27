@@ -75,6 +75,8 @@ Version 1.4 allows for plots to be placed inside RStudio. We use the tarball as 
 wget -qO- https://download1.rstudio.org/desktop/centos7/x86_64/rstudio-2021.09.2-382-x86_64-fedora.tar.gz | \
 tar xfz -
 cd rstudio-2021.09.2+382/
+export QT_QPA_PLATFORM=xcb
+export QT_PLUGIN_PATH=/usr/lib64/qt5/plugins
 bin/rstudio
 ```
 
