@@ -36,7 +36,7 @@ Aborted
 
 Additional information could also be seen from `export QT_DEBUG_PLUGINS=1` and run `rstudio` again.
 
-The error messages above can be bypassed with[^legacy]
+The error messages above can be bypassed with[^qt] and also see[^legacy]
 
 ```bash
 export QT_PLUGIN_PATH=/usr/lib64/qt5/plugins
@@ -81,20 +81,6 @@ bin/rstudio --no-sandbox
 ```
 
 We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to call later on.
-
-## qt/5
-
-These are side notes on installation of Qt5 according to https://forums.linuxmint.com/viewtopic.php?t=306738, but no longer necessary for reasons above.
-
-```bash
-git clone git://code.qt.io/qt/qt5.git
-cd qt5
-git checkout 5.15
-./init-repository
-export LLVM_INSTALL_DIR=${HPC_WORK}/llvm
-../qt5/configure -developer-build -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
-make
-```
 
 [^legacy]: Legacy notes
 
@@ -184,3 +170,18 @@ make
     module load texlive
     ```
 
+[^qt5]:
+
+    ## qt/5
+
+    These are side notes on installation of Qt5 according to https://forums.linuxmint.com/viewtopic.php?t=306738, but no longer necessary for reasons above.
+
+    ```bash
+    git clone git://code.qt.io/qt/qt5.git
+    cd qt5
+    git checkout 5.15
+    ./init-repository
+    export LLVM_INSTALL_DIR=${HPC_WORK}/llvm
+    ../qt5/configure -developer-build -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
+    make
+    ```
