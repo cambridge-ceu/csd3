@@ -131,19 +131,19 @@ We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to
 
     The error message is shown below,
 
-    ## R Session Startup Failure Report
+    ### R Session Startup Failure Report
 
-    ### RStudio Version
+    #### RStudio Version
 
     RStudio 2021.09.2+382, "Ghost Orchid" (fc9e2179, 2022-01-04) for CentOS 7
 
     Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/5.12.8 Chrome/69.0.3497.128 Safari/537.36
 
-    ### Error message
+    #### Error message
 
     [No error available]
 
-    ### Process Output
+    #### Process Output
 
     The R session exited with code 1.
 
@@ -160,7 +160,7 @@ We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to
     [No output emitted]
     ```
 
-    ### Logs
+    #### Logs
 
     _/home/jhz22/.local/share/rstudio/log/rsession-jhz22.log_
 
