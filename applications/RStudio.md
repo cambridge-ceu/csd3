@@ -197,9 +197,14 @@ We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to
     cd qt_build
     ../qt5/configure -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.7 -developer-build -opensource \
                  -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
-    qmake
     make
     make install
+    ```
+
+    The `Makefile` thus generated records the information at its header.
+
+    ```
+    /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/qt_build/qtbase/bin/qmake -o Makefile /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/qt5/qt.pro -- -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.7 -developer-build -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
     ```
 
     `module load ninja;ninja --versions` gives 1.10.0 while `source py27/bin/activate;pip install ninja` uses 1.11.1.
