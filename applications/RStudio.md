@@ -190,7 +190,7 @@ We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to
     git checkout 5.15
     ./init-repository
     export LLVM_INSTALL_DIR=${HPC_WORK}/llvm
-    ../qt5/configure -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.7 -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
+    configure -developer-build -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
     gmake
     ```
 
