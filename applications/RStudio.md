@@ -196,14 +196,9 @@ We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to
 
     `module load ninja;ninja --versions` gives 1.10.0 while `source py27/bin/activate;pip install ninja` uses 1.11.1.
 
-    The installation directory is visible/specified in `qt.conf`, i.e.,
+    The installation directory is visible/specified in `qt.conf`.
 
-    ```
-    [Paths]
-    Prefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.7
-    ```
-
-    It calls NSPR, which is installed as follows,
+    It also calls NSPR, which is installed as follows,
 
     ```bash
     wget -qO-  https://archive.mozilla.org/pub/nspr/releases/v4.35/src/nspr-4.35.tar.gz | \
