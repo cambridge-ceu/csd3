@@ -190,11 +190,18 @@ We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to
     git checkout 5.15
     ./init-repository
     export LLVM_INSTALL_DIR=${HPC_WORK}/llvm
-    ../qt5/configure -developer-build -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
+    ../qt5/configure -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.7 -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
     gmake
     ```
 
     `module load ninja;ninja --versions` gives 1.10.0 while `source py27/bin/activate;pip install ninja` uses 1.11.1.
+
+    The installation directory is visible/specified in `qt.conf`, i.e.,
+
+    ```
+    [Paths]
+    Prefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.7
+    ```
 
     It calls NSPR, which is installed as follows,
 
@@ -207,5 +214,4 @@ We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to
               --with-pthreads \
               $([ $(uname -m) = x86_64 ] && echo --enable-64bit) &&
     make
-    make install
     ```
