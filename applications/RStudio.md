@@ -204,6 +204,12 @@ We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to
 
     `module load ninja;ninja --versions` gives 1.10.0 while `source py27/bin/activate;pip install ninja` uses 1.11.1.
 
+    With error `qglobal_p.h: No such file or directory`, according to <https://github.com/alexzorin/lpass-ui/issues/1> we get around with
+
+    ```bash
+    ln -sf /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/qt5/qtbase/include/QtCore/5.15.7/QtCore/private /rds/user/jhz22/hpc-work/include/
+    ```
+
     The installation directory is visible/specified in `qt.conf`.
 
     It also calls NSPR, which is installed as follows,
