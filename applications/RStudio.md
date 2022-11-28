@@ -192,8 +192,13 @@ We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to
     git checkout 5.15
     ./init-repository
     export LLVM_INSTALL_DIR=${HPC_WORK}/llvm
-    configure -developer-build -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
-    gmake
+    mkdir qt_build
+    cd qt_build
+    ../configure -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.7 -developer-build -opensource \
+                 -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
+    qmake
+    make
+    make install
     ```
 
     `module load ninja;ninja --versions` gives 1.10.0 while `source py27/bin/activate;pip install ninja` uses 1.11.1.
