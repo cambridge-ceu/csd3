@@ -182,6 +182,8 @@ We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to
 
     ## qt/5
 
+    Web: <https://doc.qt.io/qt-5/configure-options.html>
+
     These are side notes on installation of Qt5 according to <https://forums.linuxmint.com/viewtopic.php?t=306738>, though no longer necessary for reasons above.
 
     ```bash
