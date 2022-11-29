@@ -207,15 +207,31 @@ We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to
     /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/qt_build/qtbase/bin/qmake -o Makefile /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/qt5/qt.pro -- -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.7 -developer-build -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
     ```
 
-    `module load ninja;ninja --versions` gives 1.10.0 while `source py27/bin/activate;pip install ninja` uses 1.11.1.
-
     With error `qglobal_p.h: No such file or directory`, according to <https://github.com/alexzorin/lpass-ui/issues/1> we get around with
 
     ```bash
     ln -sf /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/qt5/qtbase/include/QtCore/5.15.7/QtCore/private /rds/user/jhz22/hpc-work/include/
     ```
 
-    The installation directory is visible/specified in `qt.conf`.
+    The installation directory is visible/specified in `qtbase/bin/qt.conf`, namely,
+
+    ```
+    [EffectivePaths]
+    Prefix=..
+    [DevicePaths]
+    Prefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.7
+    [Paths]
+    Prefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.7
+    HostPrefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.7
+    Sysroot=
+    SysrootifyPrefix=false
+    TargetSpec=linux-g++
+    HostSpec=linux-g++
+    [EffectiveSourcePaths]
+    Prefix=/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/qt5/qtbase
+    ```
+
+    It requires ninja, `module load ninja;ninja --versions` gives 1.10.0 while `source py27/bin/activate;pip install ninja` uses 1.11.1.
 
     It also calls NSPR, which is installed as follows,
 
