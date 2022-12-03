@@ -8,9 +8,15 @@ Web: [https://www.green-algorithms.org/](https://www.green-algorithms.org/) (Git
 
 Source at GitHub: [https://github.com/Llannelongue/GreenAlgorithms4HPC](https://github.com/Llannelongue/GreenAlgorithms4HPC))
 
-## CSD3
+## CSD3 location
 
-The location of the script is as follows,
+<font color="red"><b>26/11/2022 Update</b></font><font color="blue"><b> it is available as a module.</b></font>
+
+```bash
+module load ceuadmin/GreenAlgorithms4HPC/0.2.2-beta
+```
+
+For CEU users, the location of the script is as follows,
 
 > /rds/project/jmmh2/rds-jmmh2-projects/inouye_lab_other/share_space/GreenAlgorithms4HPC/myCarbonFootprint.sh
 

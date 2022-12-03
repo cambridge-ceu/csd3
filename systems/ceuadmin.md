@@ -4,7 +4,7 @@ sort: 7
 
 # ceuadmin
 
-The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. As of November 2022, the list is as follows,
+The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. The current list is as follows,
 
 ```
   [1] "ABCtoolbox"          "akt"                 "alpine"
