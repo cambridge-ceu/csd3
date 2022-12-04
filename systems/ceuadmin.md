@@ -41,21 +41,22 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. The 
  [94] "oniguruma"           "OpenMS"              "openssl"
  [97] "osca"                "PAINTOR"             "pandoc"
 [100] "pandoc-citeproc"     "parallel"            "Pascal"
-[103] "pcre2"               "pdf2djvu"            "plink"
-[106] "plink-bgi"           "plinkseq"            "polyphen"
-[109] "poppler"             "proj"                "PRSice"
-[112] "pspp"                "qctool"              "qpdf"
-[115] "qt"                  "qtcreator"           "QTLtools"
-[118] "quicktest"           "R"                   "raremetal"
-[121] "rclone"              "readline"            "regenie"
-[124] "rstudio"             "ruby"                "samtools"
-[127] "shapeit"             "SMR"                 "SNP2HLA"
-[130] "snptest"             "sqlite"              "ssw"
-[133] "STAR"                "stata"               "SurvivalKit"
-[136] "tabix"               "tidy"                "trinculo"
-[139] "trousers"            "Typora"              "unbound"
-[142] "vala"                "vcftools"            "VEGAS2"
-[145] "VSCode"              "yaml-cpp"            "zstd"
+[103] "pcre2"               "pdf2djvu"            "phenoscanner"
+[106] "plink"               "plink-bgi"           "plinkseq"
+[109] "polyphen"            "poppler"             "proj"
+[112] "PRSice"              "pspp"                "qctool"
+[115] "qpdf"                "qt"                  "qtcreator"
+[118] "QTLtools"            "quicktest"           "R"
+[121] "raremetal"           "rclone"              "readline"
+[124] "regenie"             "rstudio"             "ruby"
+[127] "samtools"            "shapeit"             "SMR"
+[130] "SNP2HLA"             "snptest"             "sqlite"
+[133] "ssw"                 "STAR"                "stata"
+[136] "SurvivalKit"         "tabix"               "tidy"
+[139] "trinculo"            "trousers"            "Typora"
+[142] "unbound"             "vala"                "vcftools"
+[145] "VEGAS2"              "VSCode"              "yaml-cpp"
+[148] "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -172,6 +173,7 @@ mid-November 2022 is given below[^original].
     | ""         | Pascal/v_debut             | Genetics\*          |
     | ""         | VEGAS2/2.01.17             | Genetics\*          |
     | ""         | fgwas/0.3.6                | Genetics\*          |
+    | 2022-12-04 | phenoscanner/v2            | Genetics\*          |
 
     \* CEU or approved users only.
 
