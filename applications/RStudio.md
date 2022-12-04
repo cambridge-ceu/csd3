@@ -69,18 +69,9 @@ module load gcc/6 texlive
 rstudio --no-sandbox
 ```
 
-Note this fix applies to RStudio 1.4 below; the most recent release is packaged and can be loaded with `module load ceuadmin/rstudio; rstudio`.
+A fix is provided which is available from `module load ceuadmin/rstudio/1.3.1093`.
 
-## RStudio 1.4
-
-The choice is Fedora 19/Red Hat 7 and version 1.4 allows for plots to be placed inside RStudioe, e.g., the tarball as of 11/1/2022,
-
-```bash
-wget -qO- https://download1.rstudio.org/desktop/centos7/x86_64/rstudio-2021.09.2-382-x86_64-fedora.tar.gz | \
-tar xfz -
-```
-
-We could use `ln -sf ${PWD}/bin/rstudio ${HPC_WORK}/bin/rstudio` for instance to call later on. However, the ceuadmin/rstudio module should have covered these.
+The most recent release is packaged and can be loaded with `module load ceuadmin/rstudio; rstudio`.
 
 [^legacy]:
 
