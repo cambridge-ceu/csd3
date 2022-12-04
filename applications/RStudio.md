@@ -30,7 +30,7 @@ rstudio
 
 <font color="red"><b>26/3/2022 Update</b></font> `module load rstudio/1.3.1093` <font color="blue"><b>now functions well, which enables R packages such as `R/heatmaply`.</b></font>
 
-We intend to use the most recent version with `module load rstudio/1.3.1093; rstudio` but it fails with messages:
+However, in November 2022 this fails with messages:
 
 ```
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
@@ -43,14 +43,14 @@ Aborted
 
 Additional information could also be seen from `export QT_DEBUG_PLUGINS=1` and run `rstudio` again.
 
-The error messages above can be bypassed with[^qt5] and also see below[^legacy]
+The error messages above can be bypassed with[^qt5]
 
 ```bash
 export QT_PLUGIN_PATH=/usr/lib64/qt5/plugins
 module load rstudio/1.3.1093
 ```
 
-Another environmental variable is QT_QPA_PLATFORM_PLUGIN_PATH, which should point to the `plugins/platforms` directory when a particular QT module is loaded.
+and also see below[^legacy]. Another environmental variable is QT_QPA_PLATFORM_PLUGIN_PATH, which should point to the `plugins/platforms` directory when a particular QT module is loaded.
 
 <font color="red"><b>27/11/2022 Update</b></font>`module load rstudio/1.3.1093` fails with error messages <font color="blue"><b> and a way forward is as follows,
 
