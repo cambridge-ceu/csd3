@@ -93,6 +93,8 @@ and we have `chr5:29439275_PhenoScanner_SNP_Info.tsv` and `chr5:29439275_PhenoSc
 
 ```bash
 module load ceuadmin/phenoscanner/v2
+phenoscanner -h
+phenoscanner -s chr5:29439275
 ```
 
 which also uses ceuadmin/R/4.2.2.
