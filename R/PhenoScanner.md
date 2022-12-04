@@ -86,3 +86,13 @@ phenoscanner -s chr5:29439275
 ```
 
 and we have `chr5:29439275_PhenoScanner_SNP_Info.tsv` and `chr5:29439275_PhenoScanner_GWAS.tsv` for variant annotation and GWAS lookup, respectively; one can add `-c None` to the last command and get the SNP annotation only.
+
+## ceuadmin/phenoscanner/v2
+
+<font color="red"><b>4/12/2022 Update</b></font>: <font color="blue"><b>The recent implementation incorporates changes aforementioned.</b></font>
+
+```bash
+module load ceuadmin/phenoscanner/v2
+```
+
+which also uses ceuadmin/R/4.2.2.
