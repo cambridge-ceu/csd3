@@ -89,7 +89,7 @@ and we have `chr5:29439275_PhenoScanner_SNP_Info.tsv` and `chr5:29439275_PhenoSc
 
 ## ceuadmin/phenoscanner/v2
 
-<font color="red"><b>4/12/2022 Update</b></font>: <font color="blue"><b>The recent implementation incorporates changes aforementioned.</b></font>
+<font color="red"><b>4/12/2022 Update</b></font><font color="blue"><b>The recent implementation incorporates changes aforementioned.</b></font>
 
 ```bash
 module load ceuadmin/phenoscanner/v2
