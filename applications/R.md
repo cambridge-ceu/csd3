@@ -194,7 +194,6 @@ For `alpine` we get `alpine/alpine: /usr/lib64/libcrypt.so.1: version `XCRYPT_2.
 Additional information is available from [https://alpine.x10host.com/alpine/release/](https://alpine.x10host.com/alpine/release/).
 
 [^gnutls]:
-
     On CSD3, there is a more recent module `nettle-3.4-gcc-5.4.0-2mdpaut`. Moreover, with 3.5
     there is also an option `--with-included-unistring` during configuration.
 
@@ -203,6 +202,6 @@ Additional information is available from [https://alpine.x10host.com/alpine/rele
     ```bash
     ./configure --prefix=$HPC_WORK --with-included-unistring --with-nettle-mini --enable-ssl3-support \
                 CFLAGS=-I$HPC_WORK/include LDFLAGS=-L$HPC_WORK/lib LIBS=-lunbound LIBS=-ltspi --enable-sha1-support --disable-guile
-    ````
+    ```
 
-    It is necessary to edit `lib/pkcs11_privkey.c` to make `ck_rsa_pkcs_pss_params` definition explicit.  Then there is error with guile so we use --disable-guile.
+    It is necessary to edit `lib/pkcs11_privkey.c` to make `ck_rsa_pkcs_pss_params` definition explicit. Then there is error with guile so we use --disable-guile.

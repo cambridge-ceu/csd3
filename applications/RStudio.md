@@ -73,9 +73,7 @@ A fix is provided which is available from `module load ceuadmin/rstudio/1.3.1093
 
 The most recent release is packaged and can be loaded with `module load ceuadmin/rstudio; rstudio`.
 
-[^legacy]:
-
-    ## Legacy notes
+[^legacy]: ## Legacy notes
 
     This is with respect to the latest version under Debian,
 
@@ -163,9 +161,7 @@ The most recent release is packaged and can be loaded with `module load ceuadmin
     module load texlive
     ```
 
-[^qt5]:
-
-    ## qt/5
+[^qt5]: ## qt/5
 
     Web: <https://doc.qt.io/qt-5/configure-options.html>
 
