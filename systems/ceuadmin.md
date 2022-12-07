@@ -52,11 +52,11 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. The 
 [127] "samtools"            "shapeit"             "SMR"
 [130] "SNP2HLA"             "snptest"             "sqlite"
 [133] "ssw"                 "STAR"                "stata"
-[136] "SurvivalKit"         "tabix"               "tidy"
-[139] "trinculo"            "trousers"            "Typora"
-[142] "unbound"             "vala"                "vcftools"
-[145] "VEGAS2"              "VSCode"              "yaml-cpp"
-[148] "zstd"
+[136] "SurvivalAnalysis"    "SurvivalKit"         "tabix"
+[139] "tidy"                "trinculo"            "trousers"
+[142] "Typora"              "unbound"             "vala"
+[145] "vcftools"            "VEGAS2"              "VSCode"
+[148] "yaml-cpp"            "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -82,15 +82,14 @@ for PSPP 1.6.0. Once the job is done, one can restore the previous environment w
 module unload ceuadmin/pspp
 ```
 
-A full list of module subcommands is available with `module help` as detailed here for 
-[3.2.9](https://linux.die.net/man/4/modulefile) -- CSD3 uses version 3.2.10 dated 2012-12-21. In particular, `module whatis 
-ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of function (LoF) 
+A full list of module subcommands is available with `module help` as detailed here for
+[3.2.9](https://linux.die.net/man/4/modulefile) -- CSD3 uses version 3.2.10 dated 2012-12-21. In particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of function (LoF)
 annotation.
 
-Ideally, software with large size / reference data will be available from /rds/project/jmmh2/software. However, CEU users will be able to use 
-ANNOVAR, ensembl-vep, OpenMS, polyphen, KentUtils/MAGMA/Pascal/VEGASV2/fgwas/locuszoom linking internal projects/personal space (additional requests 
-need to be made). Further information is avaiiable from **doc/README.md, README.html**. A large collection of R packages (1,258 as of November 2022) 
-is linked with ceuadmin/R/4.2.2, the latest R distribution, please drop an email to <jhz22@medschl.cam.ac.uk> for access. The original list prior to 
+Ideally, software with large size / reference data will be available from /rds/project/jmmh2/software. However, CEU users will be able to use
+ANNOVAR, ensembl-vep, OpenMS, polyphen, KentUtils/MAGMA/Pascal/VEGASV2/fgwas/locuszoom linking internal projects/personal space (additional requests
+need to be made). Further information is avaiiable from **doc/README.md, README.html**. A large collection of R packages (1,258 as of November 2022)
+is linked with ceuadmin/R/4.2.2, the latest R distribution, please drop an email to <jhz22@medschl.cam.ac.uk> for access. The original list prior to
 mid-November 2022 is given below[^original].
 
 ---
@@ -113,67 +112,68 @@ mid-November 2022 is given below[^original].
 
     A grep of recent add-ons in the Genetics category is as follows,
 
-    | Date       | Add.ons                    | Category            |
-    | :--------- | :------------------------- | :------------------ |
-    | 2022-10-22 | snptest/2.5.6              | Genetics            |
-    | ""         | qctool/2.0.8               | Genetics            |
-    | ""         | gcta/1.94.1                | Genetics            |
-    | ""         | KING/2.1.6                 | Genetics            |
-    | ""         | LDstore/2.0                | Genetics            |
-    | ""         | shapeit/3                  | Genetics            |
-    | ""         | vcftools/0.1.16            | Genetics            |
-    | ""         | finemap/1.4                | Genetics            |
-    | 2022-10-23 | quicktest/1.1              | Genetics            |
-    | ""         | samtools/1.11              | Genetics            |
-    | ""         | bcftools/1.12              | Genetics            |
-    | ""         | MORGAN/3.4                 | Genetics            |
-    | ""         | METAL/2020-05-05r          | Genetics[^metal]    |
-    | ""         | regenie/3.2.1              | Genetics            |
-    | ""         | GEMMA/0.98.5               | Genetics[^gemma]    |
-    | ""         | htslib/1.12                | Genetics            |
-    | ""         | fcGENE/1.0.7               | Genetics[^fcgene]   |
-    | ""         | SMR/1.0.3                  | Genetics            |
-    | ""         | FastQTL/2.165              | Genetics            |
-    | 2022-10-26 | circos/0.69-9              | Genetics            |
-    | ""         | bgen/1.1.7                 | Genetics            |
-    | ""         | DosageConverter/1.0.0      | Genetics            |
-    | ""         | QTLtools/1.3.1-25          | Genetics[^qtltools] |
-    | ""         | blat/37x1                  | Genetics            |
-    | ""         | bedtools2/2.29.2           | Genetics            |
-    | ""         | bedops/2.4.41              | Genetics            |
-    | 2022-11-03 | Beagle/3.0.4               | Genetics            |
-    | 2022-11-08 | CrossMap/0.6.4             | Genetics            |
-    | ""         | SurvivalKit/6.12           | Genetics            |
-    | ""         | PRSice/2.3.3               | Genetics            |
-    | 2022-11-09 | qctool/2.2.0               | Genetics            |
-    | 2022-11-10 | CaVEMaN/1.01-c1815a0       | Genetics            |
-    | ""         | akt/0.3.3                  | Genetics            |
-    | ""         | MsCAVIAR/0.6.4             | Genetics            |
-    | ""         | CAVIAR/2.2                 | Genetics            |
-    | ""         | MONSTER/1.3                | Genetics            |
-    | ""         | osca/0.46                  | Genetics            |
-    | ""         | LEMMA/1.0.4                | Genetics[^lemma]    |
-    | ""         | CAVIARBF/0.2.1             | Genetics            |
-    | 2022-11-11 | PAINTOR/3.0                | Genetics            |
-    | 2022-11-14 | MR-MEGA/0.2                | Genetics            |
-    | 2022-11-16 | SNP2HLA/1.0.3              | Genetics            |
-    | ""         | STAR/2.7.10b               | Genetics            |
-    | ""         | Mega2/6.0.0                | Genetics            |
-    | 2022-11-19 | ensembl-vep/104            | Genetics\*          |
-    | ""         | OpenMS/3.0.0               | Genetics\*[^OpenMS] |
-    | ""         | polyphen/2.2.2             | Genetics\*          |
-    | ""         | ANNOVAR/24Oct2019          | Genetics\*          |
-    | ""         | MAGENTA/vs2_July2011       | Genetics\*          |
-    | ""         | GARFIELD/v2                | Genetics\*          |
-    | ""         | KentUtils/2022-11-14       | Genetics\*          |
-    | 2022-11-20 | Genotype-Harmonizer/1.4.25 | Genetics            |
-    | 2022-11-21 | locuszoom/1.4              | Genetics\*[^lz]     |
-    | ""         | DEPICT/v1_rel194           | Genetics\*          |
-    | ""         | MAGMA/1.10                 | Genetics\*          |
-    | ""         | Pascal/v_debut             | Genetics\*          |
-    | ""         | VEGAS2/2.01.17             | Genetics\*          |
-    | ""         | fgwas/0.3.6                | Genetics\*          |
-    | 2022-12-04 | phenoscanner/v2            | Genetics\*          |
+    | Date       | Add.ons                     | Category            |
+    | :--------- | :-------------------------- | :------------------ |
+    | 2022-10-22 | snptest/2.5.6               | Genetics            |
+    | ""         | qctool/2.0.8                | Genetics            |
+    | ""         | gcta/1.94.1                 | Genetics            |
+    | ""         | KING/2.1.6                  | Genetics            |
+    | ""         | LDstore/2.0                 | Genetics            |
+    | ""         | shapeit/3                   | Genetics            |
+    | ""         | vcftools/0.1.16             | Genetics            |
+    | ""         | finemap/1.4                 | Genetics            |
+    | 2022-10-23 | quicktest/1.1               | Genetics            |
+    | ""         | samtools/1.11               | Genetics            |
+    | ""         | bcftools/1.12               | Genetics            |
+    | ""         | MORGAN/3.4                  | Genetics            |
+    | ""         | METAL/2020-05-05r           | Genetics[^metal]    |
+    | ""         | regenie/3.2.1               | Genetics            |
+    | ""         | GEMMA/0.98.5                | Genetics[^gemma]    |
+    | ""         | htslib/1.12                 | Genetics            |
+    | ""         | fcGENE/1.0.7                | Genetics[^fcgene]   |
+    | ""         | SMR/1.0.3                   | Genetics            |
+    | ""         | FastQTL/2.165               | Genetics            |
+    | 2022-10-26 | circos/0.69-9               | Genetics            |
+    | ""         | bgen/1.1.7                  | Genetics            |
+    | ""         | DosageConverter/1.0.0       | Genetics            |
+    | ""         | QTLtools/1.3.1-25           | Genetics[^qtltools] |
+    | ""         | blat/37x1                   | Genetics            |
+    | ""         | bedtools2/2.29.2            | Genetics            |
+    | ""         | bedops/2.4.41               | Genetics            |
+    | 2022-11-03 | Beagle/3.0.4                | Genetics            |
+    | 2022-11-08 | CrossMap/0.6.4              | Genetics            |
+    | ""         | SurvivalKit/6.12            | Genetics            |
+    | ""         | PRSice/2.3.3                | Genetics            |
+    | 2022-11-09 | qctool/2.2.0                | Genetics            |
+    | 2022-11-10 | CaVEMaN/1.01-c1815a0        | Genetics            |
+    | ""         | akt/0.3.3                   | Genetics            |
+    | ""         | MsCAVIAR/0.6.4              | Genetics            |
+    | ""         | CAVIAR/2.2                  | Genetics            |
+    | ""         | MONSTER/1.3                 | Genetics            |
+    | ""         | osca/0.46                   | Genetics            |
+    | ""         | LEMMA/1.0.4                 | Genetics[^lemma]    |
+    | ""         | CAVIARBF/0.2.1              | Genetics            |
+    | 2022-11-11 | PAINTOR/3.0                 | Genetics            |
+    | 2022-11-14 | MR-MEGA/0.2                 | Genetics            |
+    | 2022-11-16 | SNP2HLA/1.0.3               | Genetics            |
+    | ""         | STAR/2.7.10b                | Genetics            |
+    | ""         | Mega2/6.0.0                 | Genetics            |
+    | 2022-11-19 | ensembl-vep/104             | Genetics\*          |
+    | ""         | OpenMS/3.0.0                | Genetics\*[^openms] |
+    | ""         | polyphen/2.2.2              | Genetics\*          |
+    | ""         | ANNOVAR/24Oct2019           | Genetics\*          |
+    | ""         | MAGENTA/vs2_July2011        | Genetics\*          |
+    | ""         | GARFIELD/v2                 | Genetics\*          |
+    | ""         | KentUtils/2022-11-14        | Genetics\*          |
+    | 2022-11-20 | Genotype-Harmonizer/1.4.25  | Genetics            |
+    | 2022-11-21 | locuszoom/1.4               | Genetics\*[^lz]     |
+    | ""         | DEPICT/v1_rel194            | Genetics\*          |
+    | ""         | MAGMA/1.10                  | Genetics\*          |
+    | ""         | Pascal/v_debut              | Genetics\*          |
+    | ""         | VEGAS2/2.01.17              | Genetics\*          |
+    | ""         | fgwas/0.3.6                 | Genetics\*          |
+    | 2022-12-04 | phenoscanner/v2             | Genetics\*          |
+    | 2022-12-07 | SurvivalAnalysis/2016-05-09 | Genetics            |
 
     \* CEU or approved users only.
 
@@ -208,12 +208,8 @@ mid-November 2022 is given below[^original].
     See [https://github.com/dr-roshyara/fcgene](https://github.com/dr-roshyara/fcgene)
 
 [^qtltools]: The long version number is 1.3.1-25-g6e49f85f20.
-
 [^lemma]: The documentation indicates a requirement of gcc/9.4, boost/1.78, OpenMP/3.1 and/or Intel MKL Library 2019 Update 1 but it is possible to proceed with gcc/11, cmake-3.19.7-gcc-5.4-5gbsejo, boost-1.66.0-gcc-5.4.0-slpq3un, ceuadmin/bgen/1.1.7.
-
-[^OpenMS]: When the OpenMS module is loaded, pyopenms and alphapept also become available.
-
+[^openms]: When the OpenMS module is loaded, pyopenms and alphapept also become available.
 [^lz]: locuszoom
 
     The version adds chromosome X data and will have options using INTERVAL data.
-
