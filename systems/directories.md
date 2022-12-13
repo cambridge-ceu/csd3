@@ -36,3 +36,17 @@ Note to list the directories you need postfix them with '/'.
 In the case of [Hospital Episode Statistics](https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics) (HES) data, add users from [https://selfservice.uis.cam.ac.uk/storage/project/306/](https://selfservice.uis.cam.ac.uk/storage/project/306/).
 
 See also [https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/](https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/).
+
+## SRCP
+
+Web: [https://docs.hpc.cam.ac.uk/srcp/index.html](https://docs.hpc.cam.ac.uk/srcp/index.html)
+
+### Application
+
+[https://docs.hpc.cam.ac.uk/srcp/user-onboarding/index.html](https://docs.hpc.cam.ac.uk/srcp/user-onboarding/index.html)
+
+### Access
+
+- [https://vhpc.srcp.hpc.cam.ac.uk](https://vhpc.srcp.hpc.cam.ac.uk)
+- [UIS-VPN](https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn)
+- sftp, [sftp [crsid]@data-vhpc.srcp.hpc.cam.ac.uk](sftp [crsid]@data-vhpc.srcp.hpc.cam.ac.uk)
