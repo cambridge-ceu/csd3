@@ -49,6 +49,5 @@ Web: [https://docs.hpc.cam.ac.uk/srcp/index.html](https://docs.hpc.cam.ac.uk/src
 
 - token, [https://tokens.uis.cam.ac.uk/](https://tokens.uis.cam.ac.uk/)
 - [UIS-VPN](https://help.uis.cam.ac.uk/service/network-services/remote-access/uis-vpn)
-- Request, [https://www.hpc.cam.ac.uk/srcp-request-user-access](https://www.hpc.cam.ac.uk/srcp-request-user-access)
 - sftp, [sftp [crsid]@data-vhpc.srcp.hpc.cam.ac.uk](sftp [crsid]@data-vhpc.srcp.hpc.cam.ac.uk)
 - vHPC, [https://vhpc.srcp.hpc.cam.ac.uk](https://vhpc.srcp.hpc.cam.ac.uk)
