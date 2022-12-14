@@ -39,11 +39,16 @@ See also [https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/](https:
 
 ## SRCP
 
-Web: [https://docs.hpc.cam.ac.uk/srcp/index.html](https://docs.hpc.cam.ac.uk/srcp/index.html)
+Web: [https://docs.hpc.cam.ac.uk/srcp/](https://docs.hpc.cam.ac.uk/srcp/)
+
+### Information
+
+- Acceptable Use and Information Security Policies, [https://docs.hpc.cam.ac.uk/srcp/isms-docs/index.html](https://docs.hpc.cam.ac.uk/srcp/isms-docs/index.html)
+- Ouick start guide to configure your device for first login, [https://docs.hpc.cam.ac.uk/srcp/2fa/get-token.html](https://docs.hpc.cam.ac.uk/srcp/2fa/get-token.html)
 
 ### Application
 
-[https://docs.hpc.cam.ac.uk/srcp/user-onboarding/index.html](https://docs.hpc.cam.ac.uk/srcp/user-onboarding/index.html)
+- User Onboarding ([SRCP Request User Access](https://www.hpc.cam.ac.uk/srcp-request-user-access)), [https://docs.hpc.cam.ac.uk/srcp/user-onboarding/index.html](https://docs.hpc.cam.ac.uk/srcp/user-onboarding/index.html)
 
 ### Access
 
