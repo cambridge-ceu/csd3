@@ -56,4 +56,4 @@ Web: [https://docs.hpc.cam.ac.uk/srcp/](https://docs.hpc.cam.ac.uk/srcp/)
 ### Access
 
 - sftp, [sftp [crsid]@data-vhpc.srcp.hpc.cam.ac.uk](sftp [crsid]@data-vhpc.srcp.hpc.cam.ac.uk)
-- vHPC, [https://vhpc.srcp.hpc.cam.ac.uk](https://vhpc.srcp.hpc.cam.ac.uk)
+- vHPC, [https://vhpc.srcp.hpc.cam.ac.uk](https://vhpc.srcp.hpc.cam.ac.uk) (Raven login followed by OTP/2FA)
