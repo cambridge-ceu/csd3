@@ -73,6 +73,35 @@ A fix is provided which is available from `module load ceuadmin/rstudio/1.3.1093
 
 The most recent release is packaged and can be loaded with `module load ceuadmin/rstudio; rstudio`.
 
+## Building from source (incomplete)
+
+Some notes are kept here,
+
+```bash
+# https://gitlab.freedesktop.org/glvnd/libglvnd/-/tags
+
+wget -qO- https://github.com/jbeder/yaml-cpp/archive/refs/tags/yaml-cpp-0.7.0.tar.gz | tar xvfz -
+cd yaml-cpp-yaml-cpp-0.7.0/
+mkdir build
+cd build
+make
+cmake .. -DCMAKE_INSTALL_PREFIX=$HPC_WORK -DBUILD_SHARED_LIBS=On
+make
+make install
+
+module load gcc/6 ceuadmin/gmp/6.2.1 qt-5.9.1-gcc-5.4.0-3qinlch cmake-3.19.7-gcc-5.4-5gbsejo
+
+git clone https://github.com/rstudio/rstudio
+cd rstudio
+mkdir build
+cd build
+cmake .. -DRSTUDIO_TARGET=Electron -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=$HPC_WORK
+cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=$HPC_WORK \
+      -DQT_QMAKE_EXECUTABLE=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/qt-5.9.1-3qinlchrl6vimsn3suwivchqme5do36l/bin ..
+```
+
+Note that `yaml-cpp` is now a ceuadmin module.
+
 [^legacy]: ## Legacy notes
 
     This is with respect to the latest version under Debian,
