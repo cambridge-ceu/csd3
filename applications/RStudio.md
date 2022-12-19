@@ -71,7 +71,27 @@ rstudio --no-sandbox
 
 A fix is provided which is available from `module load ceuadmin/rstudio/1.3.1093`.
 
-The most recent release is packaged and can be loaded with `module load ceuadmin/rstudio; rstudio`.
+The 2022.07.2+576o release is packaged and can be loaded with `module load ceuadmin/rstudio/2022.07.2+576; rstudio`.
+
+## 2022.12.0-353
+
+We have the following error message,
+
+```
+/usr/local/Cluster-Apps/ceuadmin/rstudio/2022.12.0+353/resources/app/bin/rsession: /lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by /rds-d4/user/jhz22/hpc-work/lib/libicuuc.so.50)
+/usr/local/Cluster-Apps/ceuadmin/rstudio/2022.12.0+353/resources/app/bin/rsession: /lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by /rds-d4/user/jhz22/hpc-work/lib/libicui18n.so.50)
+
+```
+
+We only need to remove ${HPC_WORK}/lib/libicu* -- it can be installed as follows,
+
+```bash
+wget -qO- https://github.com/unicode-org/icu/releases/download/release-50-2/icu4c-50_2-src.tgz | tar xfz -
+cd icu/source
+./configure --prefix=${HPC_WORK}
+gmake
+gmake install
+```
 
 ## Building from source (incomplete)
 
