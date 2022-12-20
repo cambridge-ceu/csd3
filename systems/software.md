@@ -159,7 +159,7 @@ source activate py27
 
 for Python 2.7 at `/home/$USER/.conda/envs/py27`, where envs could be replaced with the `--prefix` option. These are only required once.
 
-We can also load Anaconda and activate Python 3.5,
+We can also load Anaconda and activate Python 3.5[^venv],
 
 ```bash
 module load miniconda/3
@@ -425,3 +425,14 @@ as with `ceuadmin/stata/15`. The meta-analysis (metan) and Mendelian Randomisati
 ssc install metan
 net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") replace
 ```
+
+[^venv]:
+
+    The following error
+
+    ```
+    CustomValidationError: Parameter channel_priority = 'flexible' declared in <<merged>> is invalid.
+    The value 'flexible' cannot be boolified.
+    ```
+
+    can be resolved with `conda config --set channel_priority false`.
