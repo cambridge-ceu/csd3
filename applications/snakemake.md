@@ -21,10 +21,10 @@ conda create --prefix ${mypath} python=3.7 ipykernel
 conda init bash
 source ~/.bashrc
 source activate ${mypath}
+conda install -c conda-forge mamba
 mamba install -c bioconda snakemake-minimal
 conda install -c bioconda snakemake
 conda install -c bioconda fastqc
-conda install -c conda-forge mamba
 snakemake --help
 conda deactivate
 ```
