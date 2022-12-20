@@ -39,6 +39,24 @@ export mypath=${HOME}/COVID-19/miniconda37
 source activate ${mypath}
 ```
 
+## CSD3 module
+
+This is available with
+
+```bash
+module load ceuadmin/snakemake/7.19.1
+snakemake --help
+```
+
+Alternatively,
+
+```bash
+module load miniconda3/4.5.1
+source activate /usr/local/Cluster-Apps/ceuadmin/snakemake/7.19.1
+snakemake --help
+source deactivate
+```
+
 ## slurm
 
 The `--cluster-config` specification has been extended several ways, e.g., [https://github.com/Snakemake-Profiles/slurm](https://github.com/Snakemake-Profiles/slurm).
@@ -66,9 +84,9 @@ Note the `zip` argument which prevents expanding every combinations.
 ### 1. hello world
 
 ```bash
-wget -qO- https://github.com/snakemake/snakemake/archive/refs/tags/v7.3.1.tar.gz | \
+wget -qO- https://github.com/snakemake/snakemake/archive/refs/tags/v7.12.0.tar.gz | \
 tar xvfz -
-cd snakemake-7.3.1/examples/c/src
+cd snakemake-7.12.0/examples/c/src
 snakemake -j4
 hello
 ```
