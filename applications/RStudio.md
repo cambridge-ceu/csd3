@@ -71,7 +71,7 @@ rstudio --no-sandbox
 
 A fix is provided which is available from `module load ceuadmin/rstudio/1.3.1093`.
 
-The 2022.07.2+576o release is packaged and can be loaded with `module load ceuadmin/rstudio/2022.07.2+576; rstudio`.
+The 2022.07.2+576 release is packaged and can be loaded with `module load ceuadmin/rstudio/2022.07.2+576; rstudio`.
 
 ## 2022.12.0+353
 
