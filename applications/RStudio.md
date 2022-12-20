@@ -75,15 +75,7 @@ The 2022.07.2+576o release is packaged and can be loaded with `module load ceuad
 
 ## 2022.12.0+353
 
-We have the following error message,
-
-```
-/usr/local/Cluster-Apps/ceuadmin/rstudio/2022.12.0+353/resources/app/bin/rsession: /lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by /rds-d4/user/jhz22/hpc-work/lib/libicuuc.so.50)
-/usr/local/Cluster-Apps/ceuadmin/rstudio/2022.12.0+353/resources/app/bin/rsession: /lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by /rds-d4/user/jhz22/hpc-work/lib/libicui18n.so.50)
-
-```
-
-We only need to remove ${HPC_WORK}/lib/libicu* -- it can be installed as follows,
+We have the following error message regarding /lib64/libstdc++.so.6: version `CXXABI_1.3.8' as seen earlier[^libstdc] and remove ${HPC_WORK}/lib/libicu* -- it can be installed as follows,
 
 ```bash
 wget -qO- https://github.com/unicode-org/icu/releases/download/release-50-2/icu4c-50_2-src.tgz | tar xfz -
@@ -275,3 +267,23 @@ Note that `yaml-cpp` is now a ceuadmin module.
               $([ $(uname -m) = x86_64 ] && echo --enable-64bit) &&
     make
     ```
+
+[^libstdc]:
+
+    A version which satisfies this can be furnished as follows,
+
+    ```bash
+    module load gcc-4.9.4-gcc-4.8.5-3sdjf2c
+    strings  /usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-4.8.5/gcc-4.9.4-3sdjf2ct5necl5qb26ymnu5ptekysdye/lib64/libstdc++.so.6 | \
+    grep GLIBCXX_3.4.20
+    ```
+
+    Information can be see from <https://stackoverflow.com/questions/44773296/libstdc-so-6-version-glibcxx-3-4-20-not-found>
+
+    Fedora packages are available from <https://pkgs.org/download/libstdc++.so.6(GLIBCXX_3.4.20)(64bit)> and
+    <https://rpmfind.net/linux/rpm2html/search.php?query=libstdc%2B%2B.so.6(GLIBCXX_3.4.20)(64bit)>, e.g.,
+
+    ```bash
+    rpm2cpio libstdc++-11.3.1-2.fc34.x86_64.rpm | cpio -idnum
+    strings /lib64/libstdc++.so.6 | grep GLIBCXX
+    ````
