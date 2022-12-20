@@ -50,14 +50,14 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. The 
 [121] "quicktest"           "R"                   "raremetal"
 [124] "rclone"              "readline"            "regenie"
 [127] "rstudio"             "ruby"                "samtools"
-[130] "shapeit"             "SMR"                 "SNP2HLA"
-[133] "snptest"             "sqlite"              "ssw"
-[136] "STAR"                "stata"               "SurvivalAnalysis"
-[139] "SurvivalKit"         "tabix"               "tidy"
-[142] "trinculo"            "trousers"            "Typora"
-[145] "unbound"             "vala"                "vcftools"
-[148] "VEGAS2"              "VSCode"              "yaml-cpp"
-[151] "zstd"
+[130] "shapeit"             "SMR"                 "snakamake"
+[133] "snakemake"           "SNP2HLA"             "snptest"
+[136] "sqlite"              "ssw"                 "STAR"
+[139] "stata"               "SurvivalAnalysis"    "SurvivalKit"
+[142] "tabix"               "tidy"                "trinculo"
+[145] "trousers"            "Typora"              "unbound"
+[148] "vala"                "vcftools"            "VEGAS2"
+[151] "VSCode"              "yaml-cpp"            "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
