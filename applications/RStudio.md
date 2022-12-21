@@ -142,7 +142,7 @@ make
 make install
 ```
 
-## yaml-cpp
+### yaml-cpp
 
 ```bash
 wget -qO- https://github.com/jbeder/yaml-cpp/archive/refs/tags/yaml-cpp-0.7.0.tar.gz | tar xvfz -
