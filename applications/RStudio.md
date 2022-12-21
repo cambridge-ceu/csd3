@@ -73,25 +73,78 @@ A fix is provided which is available from `module load ceuadmin/rstudio/1.3.1093
 
 The 2022.07.2+576 release is packaged and can be loaded with `module load ceuadmin/rstudio/2022.07.2+576; rstudio`.
 
-## 2022.12.0+353
+## Building from source (incomplete)
 
-We have the following error message regarding /lib64/libstdc++.so.6: version `CXXABI_1.3.8' as seen earlier[^libstdc] and remove ${HPC_WORK}/lib/libicu* -- it can be installed as follows,
+Version 2022.12.0+353 dependencies from `rstudio --version-json` are as follows,
+
+```json
+{
+  "node": "16.14.2",
+  "v8": "10.2.154.15-electron.0",
+  "uv": "1.43.0",
+  "zlib": "1.2.11",
+  "brotli": "1.0.9",
+  "ares": "1.18.1",
+  "modules": "106",
+  "nghttp2": "1.45.1",
+  "napi": "8",
+  "llhttp": "6.0.4",
+  "openssl": "1.1.1",
+  "cldr": "40.0",
+  "icu": "70.1",
+  "tz": "2021a3",
+  "unicode": "14.0",
+  "electron": "19.1.3",
+  "chrome": "102.0.5005.167",
+  "rstudio": "2022.12.0+353"
+}
+```
+
+### brotli 1.0.9
 
 ```bash
-wget -qO- https://github.com/unicode-org/icu/releases/download/release-50-2/icu4c-50_2-src.tgz | tar xfz -
+wget -qO- https://github.com/google/brotli/archive/v1.0.9/brotli-1.0.9.tar.gz | tar xfz -
+bootstrap
+./configure --prefix=${HPC_WORK}
+make
+make install
+```
+
+### icu 70.1
+
+```bash
+module load gcc/6
+wget -qO- https://github.com/unicode-org/icu/releases/download/release-70-1/icu4c-70_1-src.tgz | tar xfz -
 cd icu/source
 ./configure --prefix=${HPC_WORK}
 gmake
 gmake install
 ```
 
-## Building from source (incomplete)
+The --enable-static option is also available.
 
-Some notes are kept here,
+### electron 19.1.3
+
+Web: [https://releases.electronjs.org/release/v19.1.3](https://releases.electronjs.org/release/v19.1/3)
 
 ```bash
-# https://gitlab.freedesktop.org/glvnd/libglvnd/-/tags
+npm install electron@v19.1.3
+```
 
+### libuv 1.43.0
+
+```bash
+wget -qO- https://dist.libuv.org/dist/v1.43.0/libuv-v1.43.0.tar.gz | tar xfz -
+cd libuv-v1.43.0/
+autogen.sh
+./configure --prefix=$HPC_WORK
+make
+make install
+```
+
+## yaml-cpp
+
+```bash
 wget -qO- https://github.com/jbeder/yaml-cpp/archive/refs/tags/yaml-cpp-0.7.0.tar.gz | tar xvfz -
 cd yaml-cpp-yaml-cpp-0.7.0/
 mkdir build
@@ -100,6 +153,14 @@ make
 cmake .. -DCMAKE_INSTALL_PREFIX=$HPC_WORK -DBUILD_SHARED_LIBS=On
 make
 make install
+```
+
+Note that `brotli`, `icu`, `libuv`, `yaml-cpp` are now ceuadmin modules while `nghttp2` is available from https://src.fedoraproject.org/repo/pkgs/nghttp2/nghttp2-1.45.1.tar.xz/.
+
+An attempt with qt is as follows,
+
+```bash
+# https://gitlab.freedesktop.org/glvnd/libglvnd/-/tags
 
 module load gcc/6 ceuadmin/gmp/6.2.1 qt-5.9.1-gcc-5.4.0-3qinlch cmake-3.19.7-gcc-5.4-5gbsejo
 
@@ -111,8 +172,6 @@ cmake .. -DRSTUDIO_TARGET=Electron -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PRE
 cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=$HPC_WORK \
       -DQT_QMAKE_EXECUTABLE=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/qt-5.9.1-3qinlchrl6vimsn3suwivchqme5do36l/bin ..
 ```
-
-Note that `yaml-cpp` is now a ceuadmin module.
 
 [^legacy]: ## Legacy notes
 
