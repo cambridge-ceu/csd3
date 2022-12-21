@@ -33,6 +33,8 @@ Note to list the directories you need postfix them with '/'.
 
 ## Data managers
 
+Self-service storage, [https://selfservice.uis.cam.ac.uk/storage/project/303/](https://selfservice.uis.cam.ac.uk/storage/project/303/).
+
 In the case of [Hospital Episode Statistics](https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics) (HES) data, add users from [https://selfservice.uis.cam.ac.uk/storage/project/306/](https://selfservice.uis.cam.ac.uk/storage/project/306/).
 
 See also 
