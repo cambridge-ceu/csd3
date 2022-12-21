@@ -155,7 +155,7 @@ make
 make install
 ```
 
-Note that `brotli`, `icu`, `libuv`, `yaml-cpp` are now ceuadmin modules while `nghttp2` is available from https://src.fedoraproject.org/repo/pkgs/nghttp2/nghttp2-1.45.1.tar.xz/.
+Note that `brotli`, `icu`, `libuv`, `yaml-cpp` are now ceuadmin modules while `nghttp2` is available from <https://src.fedoraproject.org/repo/pkgs/nghttp2/nghttp2-1.45.1.tar.xz/> and chromium from <https://chromium.googlesource.com/chromium/src.git/+/refs/tags/102.0.5005.167>
 
 An attempt with qt is as follows,
 
