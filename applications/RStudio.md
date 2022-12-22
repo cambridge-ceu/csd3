@@ -71,7 +71,7 @@ rstudio --no-sandbox
 
 A fix is provided which is available from `module load ceuadmin/rstudio/1.3.1093`.
 
-The 2022.07.2+576 release is packaged and can be loaded with `module load ceuadmin/rstudio/2022.07.2+576; rstudio`.
+The 2022.07.2+576 release is packaged and can be loaded with `module load ceuadmin/rstudio/2022.07.2+576; rstudio`. However, the libstdc++ issue[^libstdc] is not entirely resolved.
 
 ## Building from source (incomplete)
 
@@ -173,9 +173,9 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
       -DQT_QMAKE_EXECUTABLE=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/qt-5.9.1-3qinlchrl6vimsn3suwivchqme5do36l/bin ..
 ```
 
-[^legacy]: ## Legacy notes
+[^legacy]: ## openssl
 
-    This is with respect to the latest version under Debian,
+    This is with respect to a version under Debian though the Fedora distribution should be used,
 
     ```bash
     wget -qO- https://download1.rstudio.org/desktop/xenial/amd64/rstudio-1.4.1106-amd64-debian.tar.gz | tar xfz -
@@ -209,57 +209,6 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
     ```
 
     and invoke with `source ~/.bashrc` from current session or automatically from the next onwards.
-
-    ### Failure to start R
-
-    The error message is shown below,
-
-    ### R Session Startup Failure Report
-
-    #### RStudio Version
-
-    RStudio 2021.09.2+382, "Ghost Orchid" (fc9e2179, 2022-01-04) for CentOS 7
-
-    Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) QtWebEngine/5.12.8 Chrome/69.0.3497.128 Safari/537.36
-
-    #### Error message
-
-    [No error available]
-
-    #### Process Output
-
-    The R session exited with code 1.
-
-    Error output:
-
-    ```
-    /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/R/rstudio-2021.09.2+382/bin/rsession: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by /rds-d4/user/jhz22/hpc-work/lib/libicuuc.so.50)
-    /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/R/rstudio-2021.09.2+382/bin/rsession: /usr/lib64/libstdc++.so.6: version `CXXABI_1.3.8' not found (required by /rds-d4/user/jhz22/hpc-work/lib/libicui18n.so.50)
-    ```
-
-    Standard output:
-
-    ```
-    [No output emitted]
-    ```
-
-    #### Logs
-
-    _/home/jhz22/.local/share/rstudio/log/rsession-jhz22.log_
-
-    ```
-    2022-01-13T17:06:06.694306Z [rsession-jhz22] ERROR R.getOption: rstudio.errors.suppressed made from non-main thread; LOGGED FROM: SEXPREC* rstudio::r::options::getOption(const string&) src/cpp/r/ROptions.cpp:83
-    2022-01-13T17:06:06.758853Z [rsession-jhz22] ERROR evaluateExpression called from thread other than main; LOGGED FROM: rstudio::core::Error rstudio::r::exec::{anonymous}::evaluateExpressionsUnsafe(SEXP, SEXP, SEXPREC**, rstudio::r::sexp::Protect*, rstudio::r::exec::{anonymous}::EvalType) src/cpp/r/RExec.cpp:140
-    2022-01-13T17:06:06.758853Z [rsession-jhz22] ERROR evaluateExpression called from thread other than main; LOGGED FROM: rstudio::core::Error rstudio::r::exec::{anonymous}::evaluateExpressionsUnsafe(SEXP, SEXP, SEXPREC**, rstudio::r::sexp::Protect*, rstudio::r::exec::{anonymous}::EvalType) src/cpp/r/RExec.cpp:140
-    ```
-
-    This is easily fixed with the usual setup for R, e.g,.
-
-    ```bash
-    module load gcc/6
-    module load pcre/8.38
-    module load texlive
-    ```
 
 [^qt5]: ## qt/5
 
