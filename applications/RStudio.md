@@ -173,7 +173,9 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
       -DQT_QMAKE_EXECUTABLE=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/qt-5.9.1-3qinlchrl6vimsn3suwivchqme5do36l/bin ..
 ```
 
-[^legacy]: ## openssl
+[^legacy]:
+
+    ## openssl
 
     This is with respect to a version under Debian though the Fedora distribution should be used,
 
@@ -210,7 +212,9 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
 
     and invoke with `source ~/.bashrc` from current session or automatically from the next onwards.
 
-[^qt5]: ## qt/5
+[^qt5]:
+
+    ## qt/5
 
     Web: <https://doc.qt.io/qt-5/configure-options.html>
 
@@ -277,6 +281,8 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
     ```
 
 [^libstdc]:
+
+    ## libstdc++
 
     A version which satisfies this can be furnished as follows,
 
