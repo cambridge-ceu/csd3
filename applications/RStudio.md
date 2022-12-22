@@ -131,6 +131,8 @@ Web: [https://releases.electronjs.org/release/v19.1.3](https://releases.electron
 npm install electron@v19.1.3
 ```
 
+Note that a symbolic `node_modules` will be replaced with a physical `node_modules/`.
+
 ### libuv 1.43.0
 
 ```bash
