@@ -91,6 +91,17 @@ make
 make install
 ```
 
+where ncurses can be installed as follows,
+
+```bash
+wget -qO- https://invisible-mirror.net/archives/ncurses/current/ncurses.tar.gz | \
+tar xfz -
+cd ncurses-6.3-20221224/
+./configure --prefix=$HPC_WORK --with-shared --with-termlib
+make
+make install
+```
+
 while `libicuuc.so.50` can be installed following similar procedure, their availability is as follows,
 
 - [https://github.com/unicode-org/icu/releases/tag/release-50-2](https://github.com/unicode-org/icu/releases/tag/release-50-2)
