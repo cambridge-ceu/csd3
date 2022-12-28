@@ -91,13 +91,13 @@ make
 make install
 ```
 
-where ncurses can be installed as follows,
+where ncurses can be installed as follows (recent version actually is with libtinfo.so, e.g., LDFLAGS=-L$HPC_WORK/lib LIBS=-ltinfo),
 
 ```bash
 wget -qO- https://invisible-mirror.net/archives/ncurses/current/ncurses.tar.gz | \
 tar xfz -
 cd ncurses-6.3-20221224/
-./configure --prefix=$HPC_WORK --with-shared --with-termlib
+./configure --prefix=$HPC_WORK --with-shared --enable-termcap
 make
 make install
 ```
