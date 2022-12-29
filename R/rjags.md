@@ -9,7 +9,6 @@ Web page: [https://sourceforge.net/projects/mcmc-jags/files/rjags/](https://sour
 It is known for sometime for its difficulty to install; here is what was done
 
 ```bash
-
 # Cardio
 export PKG_CONFIG_PATH=/scratch/$USER/lib/pkgconfig
 
@@ -44,3 +43,14 @@ ERROR: loading failed
 ```
 
 then this is due to different versions of compilers were used to build JAGS and rjags, so the former needs to be rebuilt.
+
+## 4_13
+
+This following can be adapted from `rjags/src` under Fedora 37 for R-devel,
+
+```bash
+g++ -std=gnu++14 -I"/home/jhz22/R-devel/include" -DNDEBUG -I/usr/local/include/JAGS -fpic -g -O2 -c jags.cc -o jags.o
+g++ -std=gnu++14 -I"/home/jhz22/R-devel/include" -DNDEBUG -I/usr/local/include/JAGS -fpic -g -O2 -c parallel.cc -o parallel.o
+```
+
+This is due to call such as `#include <rng/RNGFactory.h>` as in `parallel.cc` is within /usr/local/include/JAGS.
