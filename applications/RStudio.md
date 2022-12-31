@@ -71,7 +71,7 @@ rstudio --no-sandbox
 
 A fix is provided which is available from `module load ceuadmin/rstudio/1.3.1093`.
 
-The 2022.07.2+576 release is packaged and can be loaded with `module load ceuadmin/rstudio/2022.07.2+576; rstudio`. Since there are issues with libstdc++.so[^libstdc], this is directed to gcc/6 as in ceuadmin/R/4.2.2.
+The 2022.07.2+576 release is packaged and can be loaded with `module load ceuadmin/rstudio/2022.07.2+576; rstudio`. Since there are issues with libstdc++.so[^libstdc], it loads gcc/6 and ceuadmin/R/4.2.2.
 
 ## Building from source (incomplete)
 
@@ -310,7 +310,7 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
     #!/usr/bin/bash
 
     module load gcc/6 geos-3.6.2-gcc-5.4.0-vejexvy gettext-0.19.8.1-gcc-5.4.0-5iqkv5z pcre2-10.20-gcc-5.4.0-tcuhtrb texlive
-    export prefix=/rds-d4/user/$USER/hpc-work
+    export prefix=/usr/local/Cluster-Apps/ceuadmin/R/4.2.2
     cd ${prefix}
     export version=4.2.2
     wget -qO- https://cran.r-project.org/src/base/R-${major}/R-${version}.tar.gz | \
