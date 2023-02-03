@@ -4,7 +4,7 @@ sort: 14
 
 # R/RcppTOML
 
-We set ~/.R/Makevars as follows,
+It requires C++17 therefore gcc/7, and we set ~/.R/Makevars as follows,
 
 ```
 CXX17FLAGS= -fPIC
@@ -31,7 +31,7 @@ Execution halted
 ERROR: loading failed
 ```
 
-but we get around with
+The dilemma is possibly created by `gcc/6` used to build R, so we seek alternative that does not have this drawback.
 
 ```bash
 module load R/4.2.2
