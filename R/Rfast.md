@@ -19,6 +19,6 @@ CXX17 = g++ -std=gnu++17 -fPIC
 We can get away with this,
 
 ```bash
-module load gcc/7
+module load gcc/6
 Rscript -e "install.packages('Rfast')"
 ```
