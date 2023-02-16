@@ -1,10 +1,10 @@
 ---
-sort: 16
+sort: 2
 ---
 
-# R/Rfast
+# R/conquer
 
-For 2.0.4, we received the following error,
+For 1.3.2, we received the following error,
 
 ```
 Error: C++17 standard requested but CXX17 is not defined
@@ -20,5 +20,5 @@ We can get away with this,
 
 ```bash
 module load gcc/7
-Rscript -e "install.packages('Rfast')"
+Rscript -e "install.packages('conquer')"
 ```
