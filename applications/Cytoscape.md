@@ -119,6 +119,11 @@ fit(rcy, padding=200)
 setDefaultStyle(rcy)
 ```
 
+## Example applicaiton
+
+Jostins, L., et al., Host–microbe interactions have shaped the genetic architecture of inflammatory bowel disease. Nature, 2012. 491(7422): p. 119-124.
+([pdf](https://rdcu.be/c5Zhp), [Cytoscape files](https://static-content.springer.com/esm/art%3A10.1038%2Fnature11582/MediaObjects/41586_2012_BFnature11582_MOESM91_ESM.zip))
+
 ## References
 
 Gustavsen, J.A., Pai, S., Isserlin, R., Demchak, B. & Pico, A.R. RCy3: Network biology using Cytoscape from within R. F1000Research 8, 1774:1-21 (2019).
