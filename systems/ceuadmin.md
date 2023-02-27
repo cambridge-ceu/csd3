@@ -60,7 +60,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. The 
 [151] "trinculo"            "trousers"            "Typora"
 [154] "unbound"             "vala"                "vcftools"
 [157] "VEGAS2"              "VSCode"              "yaml-cpp"
-[160] "zstd"
+[160] "Zotero"              "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
