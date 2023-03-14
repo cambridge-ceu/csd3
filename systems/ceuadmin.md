@@ -181,6 +181,7 @@ mid-November 2022 is given below[^original].
     | 2023-01-03 | Eagle/2.4.1                 | Genetics            |
     | 2023-01-05 | GEM/1.4.5                   | Genetics            |
     | 2023-02-01 | GENEHUNTER/2.1_r6           | Genetics            |
+    | 2023-03-14 |regenie/3.2.5                | Genetics            |
 
     \* CEU or approved users only.
 
