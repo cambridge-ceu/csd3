@@ -37,6 +37,6 @@ ERROR: loading failed
 * restoring previous ‘/rds/user/jhz22/hpc-work/R/sf’
 ```
 
-though they generate the same `sf/src/Makevars` as sf_1.0-9 which is installed successfully.
+though they generate the same `sf/src/Makevars` as 1.0-9 which is installed successfully.
 
-This turns out to be probelm with **Rcpp** and after its reinstallation the loading is OK.
+It error is due to **Rcpp** and after its reinstallation the loading is OK.
