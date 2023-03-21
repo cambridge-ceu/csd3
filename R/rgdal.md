@@ -45,3 +45,30 @@ Then `proj_api.h` should have a statement
 ```c
 #define ACCEPT_USE_OF_DEPRECATED_PROJ_API_H 1
 ```
+
+## 1.6-5
+
+We have seen errors
+
+```
+./configure: line 2526: -I/rds/user/jhz22/hpc-work/include: No such file or directory
+./configure: line 2541: -I/rds/user/jhz22/hpc-work/include: No such file or directory
+configure: Install failure: compilation and/or linkage problems.
+configure: error: GDALAllRegister not found in libgdal.
+ERROR: configuration failed for package ‘rgdal’
+* removing ‘/rds/user/jhz22/hpc-work/R/rgdal’
+* restoring previous ‘/rds/user/jhz22/hpc-work/R/rgdal’
+
+The downloaded source packages are in
+        ‘/rds/user/jhz22/hpc-work/work/Rtmpa8tFOu/downloaded_packages’
+Warning message:
+In install.packages("rgdal") :
+  installation of package ‘rgdal’ had non-zero exit status
+Error in qq() : could not find function "qq"
+```
+
+which goes away with C++17, namely, `~/.R/Makevars`
+
+```bash
+CXX17 = g++ -std=gnu++17 -fPIC
+```
