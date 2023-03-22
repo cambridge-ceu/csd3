@@ -332,7 +332,7 @@ module load aria2-1.33.1-gcc-5.4.0-r36jubs
 
 ### An example
 
-To convert a large number of PDF files (INTERVAL.\*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list, and pipe into ``parallel`.
+To convert a large number of PDF files (INTERVAL.\*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list, and pipe into `parallel`.
 
 ```bash
 ls *pdf | \
