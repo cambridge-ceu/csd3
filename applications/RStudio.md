@@ -77,6 +77,10 @@ The 2022.07.2+576 release is packaged and can be loaded with `module load ceuadm
 
 module `ceuadmin/rstudio/2022.12.0+353` is now available. Since there are issues with libstdc++.so[^libstdc], it loads gcc/6 and ceuadmin/R/4.2.2.
 
+<font color="red"><b>22/3/2023 Update</b></font>
+
+module `ceuadmin/rstudio/2023.03.0+386` is now available; there is no need to load gcc/6 and ceuadmin/R/4.2.2.
+
 ## Building from source (incomplete)
 
 Version 2022.12.0+353 dependencies from `rstudio --version-json` are as follows,
