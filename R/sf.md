@@ -39,4 +39,4 @@ ERROR: loading failed
 
 though they generate the same `sf/src/Makevars` as 1.0-9 which is installed successfully.
 
-It error is due to **Rcpp** and after its reinstallation the loading is OK.
+The error is actually due to **Rcpp** and after its reinstallation the loading is OK.
