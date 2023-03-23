@@ -318,7 +318,7 @@ control release 59230836
 
 respectively.
 
-### Monitering jobs
+### Monitoring jobs
 
 This is done with `squeue` command as above.
 
