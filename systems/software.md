@@ -106,7 +106,7 @@ followed by `matlab`.
 
 One could access databases elsewhere, e.g., at UCSC -- see examples on VEP.
 
-> There isn't any MySQL cluster running as a general service on CSD3. Do you believe your group has something running on a VM hosted on our network possibly? If you need a database for your work, running it in your own department and then allowing access to it from CSD3. Databases are not suitable candidates to run on a HPC cluster, the resource requirements are different and by definition they need to be running continuously whilst access is required, so wouldn't be run via slurm for example.
+> There isn't any MySQL cluster running as a general service on CSD3. Do you believe your group has something running on a VM hosted on our network possibly? If you need a database for your work, running it in your own department and then allowing access to it from CSD3. Databases are not suitable candidates to run on a HPC cluster, the resource requirements are different and by definition they need to be running continuously whilst access is required, so wouldn't be run via SLURM for example.
 
 ## pspp
 
@@ -317,6 +317,10 @@ control release 59230836
 ```
 
 respectively.
+
+### Monitering jobs
+
+This is done with `squeue` command as above.
 
 ### Use of modules
 
