@@ -77,9 +77,17 @@ The 2022.07.2+576 release is packaged and can be loaded with `module load ceuadm
 
 module `ceuadmin/rstudio/2022.12.0+353` is now available. Since there are issues with libstdc++.so[^libstdc], it loads gcc/6 and ceuadmin/R/4.2.2.
 
+We see error,
+
+```
+[102106:0323/213152.555182:ERROR:bus.cc(398)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+```
+
+One way to get around is to invoke `rstudio-dbus`.
+
 <font color="red"><b>22/3/2023 Update</b></font>
 
-module `ceuadmin/rstudio/2023.03.0+386` is now available; there is no need to load gcc/6 and ceuadmin/R/4.2.2.
+module `ceuadmin/rstudio/2023.03.0+386` is now available; there is no need to load gcc/6 and ceuadmin/R/4.2.2. There is also `rstudio-dbus`.
 
 ## Building from source (incomplete)
 
