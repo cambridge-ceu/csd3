@@ -344,7 +344,7 @@ parallel -j8 -C' ' '
 '
 ```
 
-which is equivalent to SLURM implementation using array jobs (<https://slurm.schedmd.com/job_array.html>).
+which is equivalent to SLURM implementation using job arrays (<https://slurm.schedmd.com/job_array.html>).
 
 ```bash
 #!/usr/bin/bash
