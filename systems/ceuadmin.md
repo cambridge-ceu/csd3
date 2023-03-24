@@ -46,21 +46,21 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. The 
 [109] "pandoc"              "pandoc-citeproc"     "parallel"
 [112] "Pascal"              "pcre2"               "pdf2djvu"
 [115] "phenoscanner"        "plink"               "plink-bgi"
-[118] "plinkseq"            "polyphen"            "poppler"
-[121] "proj"                "PRSice"              "pspp"
-[124] "qctool"              "qpdf"                "qt"
-[127] "qtcreator"           "QTLtools"            "quicktest"
-[130] "R"                   "raremetal"           "rclone"
-[133] "readline"            "regenie"             "rstudio"
-[136] "ruby"                "samtools"            "shapeit"
-[139] "SMR"                 "snakemake"           "SNP2HLA"
-[142] "snptest"             "sqlite"              "ssw"
-[145] "STAR"                "stata"               "SurvivalAnalysis"
-[148] "SurvivalKit"         "tabix"               "tidy"
-[151] "trinculo"            "trousers"            "Typora"
-[154] "unbound"             "vala"                "vcftools"
-[157] "VEGAS2"              "VSCode"              "yaml-cpp"
-[160] "Zotero"              "zstd"
+[118] "plinkseq"            "PoGo"                "polyphen"
+[121] "poppler"             "proj"                "PRSice"
+[124] "pspp"                "qctool"              "qpdf"
+[127] "qt"                  "qtcreator"           "QTLtools"
+[130] "quicktest"           "R"                   "raremetal"
+[133] "rclone"              "readline"            "regenie"
+[136] "rstudio"             "ruby"                "samtools"
+[139] "shapeit"             "SMR"                 "snakemake"
+[142] "SNP2HLA"             "snptest"             "sqlite"
+[145] "ssw"                 "STAR"                "stata"
+[148] "SurvivalAnalysis"    "SurvivalKit"         "tabix"
+[151] "tidy"                "trinculo"            "trousers"
+[154] "Typora"              "unbound"             "vala"
+[157] "vcftools"            "VEGAS2"              "VSCode"
+[160] "yaml-cpp"            "Zotero"              "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -181,7 +181,8 @@ mid-November 2022 is given below[^original].
     | 2023-01-03 | Eagle/2.4.1                 | Genetics            |
     | 2023-01-05 | GEM/1.4.5                   | Genetics            |
     | 2023-02-01 | GENEHUNTER/2.1_r6           | Genetics            |
-    | 2023-03-14 |regenie/3.2.5                | Genetics            |
+    | 2023-03-14 | regenie/3.2.5               | Genetics            |
+    | 2023-03-24 | PoGo/1.0.0                  | Genetics            |
 
     \* CEU or approved users only.
 
