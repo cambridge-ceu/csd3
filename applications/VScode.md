@@ -50,4 +50,8 @@ It will be displayed by design.
 
 ## CodeGPT
 
-This requires an API key from Open AI, <https://platform.openai.com/overview>, entered via `Ctrl-Shift-p` for `CodeGPT: Set API Key`. From Visual Studio Code, install CodeGPT, create a file such as `testCodeGPT.R` with comments `# I would like to draw a forest plot` and key in `Ctrl-Shift-i`.
+From Visual Studio Code, install CodeGPT.
+
+Supply an API key from Open AI, <https://platform.openai.com/overview>, entered via `Ctrl-Shift-p` for `CodeGPT: Set API Key`.
+
+Create a file such as `testCodeGPT.R` with comments `# I would like to draw a forest plot` and key in `Ctrl-Shift-i`.
