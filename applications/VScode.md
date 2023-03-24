@@ -43,3 +43,11 @@ code --no-sandbox 01-genome-wide-association-study.ipynb &
 ```
 
 which greatly simplifies the procedure as described for `genebass`. MAKE sure various extensions/options suggesed from the session.
+
+## Markdown document
+
+It will be displayed by design.
+
+## CodeGPT
+
+This requires an API key from Open AI, <https://platform.openai.com/overview>, entered via `Ctrl-Shift-P`. From Visual Studio Code, install CodeGPT, create a file such as `testCodeGPT.R` with comments `# I would like to draw a forest plot` and key in `Ctrl-Shift-i`.
