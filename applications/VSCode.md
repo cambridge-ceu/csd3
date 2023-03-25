@@ -33,6 +33,16 @@ Start for reasons above,
 code --no-sandbox
 ```
 
+## ceuadmin module
+
+This is called
+
+```bash
+module load ceuadmin/VSCode/1.76.2
+```
+
+which enables executation with relevant command-line arguments.
+
 ## Jupyter notebook
 
 We could start our virtual environment as described in `hail`, e.g.,
