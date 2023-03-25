@@ -35,7 +35,7 @@ code --no-sandbox
 
 ## ceuadmin module
 
-This is called
+This is called with
 
 ```bash
 module load ceuadmin/VSCode/1.76.2
