@@ -40,7 +40,7 @@ make build
 ### Earlier experiment: https://readthedocs.org/projects/csd3/
 ### Earlier experiment: https://readthedocs.org/projects/csd3v2/
 
-for f in $(ls)
+for f in $(ls -a)
 do
    git add ${f}
    git commit -m "${f}"
