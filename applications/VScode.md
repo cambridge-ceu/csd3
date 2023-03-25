@@ -55,3 +55,33 @@ From Visual Studio Code, install CodeGPT.
 Supply an API key from Open AI, <https://platform.openai.com/overview>, entered via `Ctrl-Shift-p` for `CodeGPT: Set API Key`.
 
 Create a file such as `testCodeGPT.R` with comments `# I would like to draw a forest plot` and key in `Ctrl-Shift-i`.
+
+Here is an example,
+
+> # Can I draw a Manhattan plot of GWAS
+
+with answer below,
+
+Yes, you can draw a Manhattan plot of GWAS in R using the `qqman` package.
+
+Here's a sample code:
+
+```R
+# install and load the `qqman` package
+install.packages("qqman")
+library(qqman)
+
+# read in the GWAS results file
+gwas_results <- read.table("my_gwas_results.txt", header=T)
+
+# specify the chromosome column
+chr_col <- "CHR"
+
+# specify the p-value column
+pval_col <- "P_VALUE"
+
+# draw the Manhattan plot
+manhattan(gwas_results, chr=chr_col, p=pval_col)
+```
+
+Replace `"my_gwas_results.txt"` with the actual name of your GWAS results file. Also, make sure to specify the correct column names for chromosome and p-value in `chr_col` and `pval_col`, respectively.
