@@ -68,7 +68,7 @@ Create a file such as `testCodeGPT.R` with comments `# I would like to draw a fo
 
 Here is an example,
 
-> # Can I draw a Manhattan plot of GWAS
+> \# Can I draw a Manhattan plot of GWAS
 
 with answer below,
 
