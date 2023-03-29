@@ -39,8 +39,22 @@ In the case of [Hospital Episode Statistics](https://digital.nhs.uk/data-and-inf
 
 See also 
 
-- [https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/](https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/).
-- [https://www.baeldung.com/linux/public-key-known_hosts](https://www.baeldung.com/linux/public-key-known_hosts)
+- External links
+  * [https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/](https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/).
+  * [https://www.baeldung.com/linux/public-key-known_hosts](https://www.baeldung.com/linux/public-key-known_hosts)
+- CEU
+  * SOPs, CSD3Datamanagement_only\SOPs
+    + Guide to CSD3 data management.docx
+    + Guide to CSD3.docx
+  * audit, "W:\Administration\CSD3 Data Users\CSD3Datamanagement_only\Access Audits\Programmes\CSD3 audit usergroup mappings\audit.R"
+
+## Users
+
+See "W:\Administration\CSD3 Data Users\Information for Users".
+
+## Cluster monitoring
+
+See "V:\Operations\GENERAL_CEU\CSD3\monitoring CSD3 usage".
 
 ## SRCP
 
