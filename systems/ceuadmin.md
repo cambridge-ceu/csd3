@@ -48,19 +48,20 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. The 
 [115] "phenoscanner"        "plink"               "plink-bgi"
 [118] "plinkseq"            "PoGo"                "polyphen"
 [121] "poppler"             "proj"                "PRSice"
-[124] "pspp"                "qctool"              "qpdf"
-[127] "qt"                  "qtcreator"           "QTLtools"
-[130] "quicktest"           "R"                   "raremetal"
-[133] "rclone"              "readline"            "regenie"
-[136] "rstudio"             "ruby"                "samtools"
-[139] "shapeit"             "SMR"                 "snakemake"
-[142] "SNP2HLA"             "snptest"             "sqlite"
-[145] "ssw"                 "STAR"                "stata"
-[148] "SurvivalAnalysis"    "SurvivalKit"         "tabix"
-[151] "tidy"                "trinculo"            "trousers"
-[154] "Typora"              "unbound"             "vala"
-[157] "vcftools"            "VEGAS2"              "VSCode"
-[160] "yaml-cpp"            "Zotero"              "zstd"
+[124] "pspp"                "PWCoCo"              "qctool"
+[127] "qpdf"                "qt"                  "qtcreator"
+[130] "QTLtools"            "quicktest"           "R"
+[133] "raremetal"           "rclone"              "readline"
+[136] "regenie"             "rstudio"             "ruby"
+[139] "samtools"            "shapeit"             "SMR"
+[142] "snakemake"           "SNP2HLA"             "snptest"
+[145] "sqlite"              "ssw"                 "STAR"
+[148] "stata"               "SurvivalAnalysis"    "SurvivalKit"
+[151] "tabix"               "tidy"                "trinculo"
+[154] "trousers"            "Typora"              "unbound"
+[157] "vala"                "vcftools"            "VEGAS2"
+[160] "VSCode"              "yaml-cpp"            "Zotero"
+[163] "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -183,6 +184,7 @@ mid-November 2022 is given below[^original].
     | 2023-02-01 | GENEHUNTER/2.1_r6           | Genetics            |
     | 2023-03-14 | regenie/3.2.5               | Genetics            |
     | 2023-03-24 | PoGo/1.0.0                  | Genetics            |
+    | 2023-03-31 | PWCoCo/2023-03-31           | Genetics            |
 
     \* CEU or approved users only.
 
