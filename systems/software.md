@@ -60,7 +60,7 @@ setenv            XZ_HOME               $root
 EOL
 ```
 
-The module is made visible through environment variable MODULEPATH. Note that there will be permission issue for a user, however.
+The module is made visible through environment variable MODULEPATH. Note that there will be permission issue for a user, however, to make changes to `/usr/local/Cluster-Apps`.
 
 ## gcc
 
