@@ -185,6 +185,7 @@ mid-November 2022 is given below[^original].
     | 2023-03-14 | regenie/3.2.5               | Genetics            |
     | 2023-03-24 | PoGo/1.0.0                  | Genetics            |
     | 2023-03-31 | PWCoCo/2023-03-31           | Genetics            |
+    | 2023-04-02 | regenie/3.2.5.3             | Genetics            |
 
     \* CEU or approved users only.
 
