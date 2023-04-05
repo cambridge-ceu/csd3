@@ -35,29 +35,31 @@ export CEUADMIN=/usr/local/Cluster-Apps/ceuadmin
 module load miniconda3/4.5.1
 conda activate $CEUADMIN/PhySO
 
+conda install -p $CEUADMIN/PhySO --file requirements.txt
+conda install -p $CEUADMIN/PhySO --file requirements_display1.txt
+pip install -e .
+EOL
+
 function create()
 {
  # This step is doable from a login node
  conda create -y -p $CEUADMIN/PhySO python=3.8
  # The following statements are all automatic recommendations
  ## conda update -n base -c defaults conda
- ## user
  echo ". /usr/local/Cluster-Apps/miniconda3/4.5.1/etc/profile.d/conda.sh" >> ~/.bashrc
  ## All users
  sudo ln -s /usr/local/Cluster-Apps/miniconda3/4.5.1/etc/profile.d/conda.sh /etc/profile.d/conda.sh
  echo "conda activate" >> ~/.bashrc
 }
-
-conda install -p $CEUADMIN/PhySO --file requirements.txt
-conda install -p $CEUADMIN/PhySO --file requirements_display1.txt
-pip install -e
-EOL
 ```
 
 where we have made it available from `/usr/local/Cluster-Apps/ceuadmin` with all the steps to be generated into ~/PhySO.sb, called with `sbatch`.
+
+Unfortunately, `requirements.txt` includes `pytorch` which should have been `torch`.
 
 Tests of package loading and units follow suit from the documentation.
 
 ## By-products
 
-It is noticeable that `PyTORCH` is also made available as a dependency.
+Besides `torch`, it is noticeable that `jupyterlab` and `scikit-learn` are also made available as dependencies. In fact, quite some packages are installed to `lib/python3.8/site-packages/`.
+
