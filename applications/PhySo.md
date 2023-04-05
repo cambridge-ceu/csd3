@@ -65,11 +65,12 @@ Besides `torch`, it is noticeable that `jupyterlab` and `scikit-learn` are also 
 
 ## CSD3 module
 
-Assume that `~/.bashrc` already contains the line `. /usr/local/Cluster-Apps/miniconda3/4.5.1/etc/profile.d/conda.sh`
-
 ```bash
 module load ceuadmin/PhySO
+. /usr/local/Cluster-Apps/miniconda3/4.5.1/etc/profile.d/conda.sh
 conda activate ${PhySO}
 ```
+
+Line for `conda.sh` could alternatively be contained in `~/.bashrc`.
 
 and `conda deactivate` will unload the module.
