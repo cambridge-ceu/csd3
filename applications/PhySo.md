@@ -57,9 +57,8 @@ where we have made it available from `/usr/local/Cluster-Apps/ceuadmin` with all
 
 Unfortunately, `requirements.txt` includes `pytorch` which should have been `torch`. The `conda install` stattements could also be replaced with `pip install -r requirements.txt`, say.
 
-Tests of package loading and units follow suit from the documentation.
+Tests of package loading and units follow suit from the documentation. Note that at the `Getting started` section Python session needs to be started followed by a statement `import numpy as np` to proceed.
 
 ## By-products
 
-Besides `torch`, it is noticeable that `jupyterlab` and `scikit-learn` are also made available as dependencies. In fact, quite some packages are installed to `lib/python3.8/site-packages/`.
-
+Besides `torch`, it is noticeable that `jupyterlab` and `scikit-learn` are also made available as dependencies. In fact, quite some packages are installed to `lib/python3.8/site-packages/`, leading to an overall size of ~7GB.
