@@ -62,3 +62,14 @@ Tests of package loading and units follow suit from the documentation. Note that
 ## By-products
 
 Besides `torch`, it is noticeable that `jupyterlab` and `scikit-learn` are also made available as dependencies. In fact, quite some packages are installed to `lib/python3.8/site-packages/`, leading to an overall size of ~7GB.
+
+## CSD3 module
+
+Assume that `~/.bashrc` already contains the line `. /usr/local/Cluster-Apps/miniconda3/4.5.1/etc/profile.d/conda.sh`
+
+```bash
+module load ceuadmin/PhySO
+conda activate ${PhySO}
+```
+
+and `conda deactivate` will unload the module.
