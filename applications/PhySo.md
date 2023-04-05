@@ -56,7 +56,7 @@ EOL
 
 where we have made it available from `/usr/local/Cluster-Apps/ceuadmin` with all the steps to be generated into ~/PhySO.sb, called with `sbatch`.
 
-Tests of package loading and units follow suite from the documentation.
+Tests of package loading and units follow suit from the documentation.
 
 ## By-products
 
