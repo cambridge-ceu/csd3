@@ -55,7 +55,7 @@ function create()
 
 where we have made it available from `/usr/local/Cluster-Apps/ceuadmin` with all the steps to be generated into ~/PhySO.sb, called with `sbatch`.
 
-Note that `requirements.txt` includes `pytorch` for `conda install` but `torch` replaced with `pip install -r requirements.txt`.
+Note that `requirements.txt` includes `pytorch` for `conda install` but `torch` with `pip install -r requirements.txt`.
 
 Tests of package loading and units follow suit from the documentation. Note that at the `Getting started` section Python session needs to be started followed by a statement `import numpy as np` to proceed.
 
