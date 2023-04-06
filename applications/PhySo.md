@@ -73,3 +73,61 @@ conda activate ${PhySO}
 ```
 
 and `conda deactivate` will unload the module.
+
+## A full test
+
+This is extracted from README.md,
+
+```python
+import numpy as np
+import physo
+
+z = np.random.uniform(-10, 10, 50)
+v = np.random.uniform(-10, 10, 50)
+X = np.stack((z, v), axis=0)
+y = 1.234*9.807*z + 1.234*v**2
+
+expression, logs = physo.SR(X, y,
+                            X_units = [ [1, 0, 0] , [1, -1, 0] ],
+                            y_units = [2, -2, 1],
+                            fixed_consts       = [ 1.      ],
+                            fixed_consts_units = [ [0,0,0] ],
+                            free_consts_units  = [ [0, 0, 1] , [1, -2, 0] ],
+)
+
+expression, logs = physo.SR(X, y,
+                            X_units = [ [1, 0, 0] , [1, -1, 0] ],
+                            y_units = [2, -2, 1],
+                            fixed_consts       = [ 1.      ],
+                            fixed_consts_units = [ [0,0,0] ],
+                            free_consts_units  = [ [0, 0, 1] , [1, -2, 0] ],
+                            run_config = physo.config.config1.config1
+)
+
+expression, logs = physo.SR(X, y,
+                            X_names = [ "z"       , "v"        ],
+                            X_units = [ [1, 0, 0] , [1, -1, 0] ],
+                            y_name  = "E",
+                            y_units = [2, -2, 1],
+                            fixed_consts       = [ 1.      ],
+                            fixed_consts_units = [ [0,0,0] ],
+                            free_consts_names = [ "m"       , "g"        ],
+                            free_consts_units = [ [0, 0, 1] , [1, -2, 0] ],
+                            op_names = ["mul", "add", "sub", "div", "inv", "n2", "sqrt", "neg", "exp", "log", "sin", "cos"]
+)
+
+print(expression.get_infix_pretty(do_simplify=True))
+print(expression.get_infix_latex(do_simplify=True))
+print(expression.free_const_values.cpu().detach().numpy())
+
+for i, prog in enumerate(pareto_front_expressions):
+    # Showing expression
+    print(prog.get_infix_pretty(do_simplify=True))
+    # Showing free constant
+    free_consts = prog.free_const_values.detach().cpu().numpy()
+    for j in range (len(free_consts)):
+        print("%s = %f"%(prog.library.free_const_names[j], free_consts[j]))
+    # Showing RMSE
+    print("RMSE = {:e}".format(pareto_front_rmse[i]))
+    print("-------------")
+```
