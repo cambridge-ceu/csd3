@@ -77,6 +77,8 @@ Line containing `conda.sh` could also be in ~/.bashrc, and `conda deactivate` wi
 
 ## A full test
 
+Demos are available from `/demo` in forms of both `.ipynb` and `.py`.
+
 This is extracted from README.md,
 
 ```python
