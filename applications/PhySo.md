@@ -12,6 +12,7 @@ The download is as usual.
 
 ```bash
 git clone https://github.com/WassimTenachi/PhySO
+cd PhySO
 ```
 
 It takes more than usual resources, which is necessary to get around with SLURM.
@@ -33,6 +34,7 @@ export CEUADMIN=/usr/local/Cluster-Apps/ceuadmin
 
 . /etc/profile.d/modules.sh
 module load miniconda3/4.5.1
+. /usr/local/Cluster-Apps/miniconda3/4.5.1/etc/profile.d/conda.sh
 conda activate $CEUADMIN/PhySO
 
 conda install -p $CEUADMIN/PhySO --file requirements.txt
@@ -67,10 +69,7 @@ Besides `torch`, it is noticeable that `jupyterlab` and `scikit-learn` are also 
 
 ```bash
 module load ceuadmin/PhySO
-. /usr/local/Cluster-Apps/miniconda3/4.5.1/etc/profile.d/conda.sh
 conda activate ${PhySO}
 ```
-
-Line for `conda.sh` could alternatively be contained in `~/.bashrc`.
 
 and `conda deactivate` will unload the module.
