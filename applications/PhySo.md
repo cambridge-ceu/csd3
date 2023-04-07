@@ -33,7 +33,7 @@ cat << 'EOL' > ~/PhySO.sb
 export CEUADMIN=/usr/local/Cluster-Apps/ceuadmin
 
 . /etc/profile.d/modules.sh
-module load miniconda3/4.5.1
+module load miniconda3/4.5.1 texlive
 . /usr/local/Cluster-Apps/miniconda3/4.5.1/etc/profile.d/conda.sh
 conda activate $CEUADMIN/PhySO
 . /usr/local/Cluster-Apps/miniconda3/4.5.1/etc/profile.d/conda.sh
