@@ -36,7 +36,6 @@ export CEUADMIN=/usr/local/Cluster-Apps/ceuadmin
 module load miniconda3/4.5.1 texlive
 . /usr/local/Cluster-Apps/miniconda3/4.5.1/etc/profile.d/conda.sh
 conda activate $CEUADMIN/PhySO
-. /usr/local/Cluster-Apps/miniconda3/4.5.1/etc/profile.d/conda.sh
 conda install -p $CEUADMIN/PhySO --file requirements.txt
 conda install -p $CEUADMIN/PhySO --file requirements_display1.txt
 pip install -e .
