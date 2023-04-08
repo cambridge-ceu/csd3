@@ -88,7 +88,7 @@ z = np.random.uniform(-10, 10, 50)
 v = np.random.uniform(-10, 10, 50)
 X = np.stack((z, v), axis=0)
 y = 1.234*9.807*z + 1.234*v**2
-
+# set 1
 expression, logs = physo.SR(X, y,
                             X_units = [ [1, 0, 0] , [1, -1, 0] ],
                             y_units = [2, -2, 1],
@@ -96,7 +96,7 @@ expression, logs = physo.SR(X, y,
                             fixed_consts_units = [ [0,0,0] ],
                             free_consts_units  = [ [0, 0, 1] , [1, -2, 0] ],
 )
-
+# set 2
 expression, logs = physo.SR(X, y,
                             X_units = [ [1, 0, 0] , [1, -1, 0] ],
                             y_units = [2, -2, 1],
@@ -105,7 +105,7 @@ expression, logs = physo.SR(X, y,
                             free_consts_units  = [ [0, 0, 1] , [1, -2, 0] ],
                             run_config = physo.config.config1.config1
 )
-
+# set 3
 expression, logs = physo.SR(X, y,
                             X_names = [ "z"       , "v"        ],
                             X_units = [ [1, 0, 0] , [1, -1, 0] ],
@@ -133,3 +133,5 @@ for i, prog in enumerate(pareto_front_expressions):
     print("RMSE = {:e}".format(pareto_front_rmse[i]))
     print("-------------")
 ```
+
+The runs are organised in three sets of parameters.
