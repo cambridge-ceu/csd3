@@ -129,6 +129,7 @@ print(expression.get_infix_pretty(do_simplify=True))
 print(expression.get_infix_latex(do_simplify=True))
 print(expression.free_const_values.cpu().detach().numpy())
 
+pareto_front_complexities, pareto_front_expressions, pareto_front_r, pareto_front_rmse = logs.get_pareto_front()
 for i, prog in enumerate(pareto_front_expressions):
     # Showing expression
     print(prog.get_infix_pretty(do_simplify=True))
