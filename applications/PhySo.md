@@ -58,7 +58,14 @@ where we have made it available from `/usr/local/Cluster-Apps/ceuadmin` with all
 
 Note that `requirements.txt` includes `pytorch` for `conda install` but `torch` with `pip install -r requirements.txt`. It also appears that `dot2tex`, `pdflatex` (needs to be `pip install pdflatex`) and `pdf2image` are necessary.
 
-Tests of package loading and units follow suit from the documentation. Note that at the `Getting started` section Python session needs to be started followed by a statement `import numpy as np` to proceed.
+Tests of package loading and units follow suit from the documentation.
+
+```bash
+python -c 'import physo;print("OK")'
+python -m unittest discover -p "*UnitTest.py"
+```
+
+Note that at the `Getting started` section Python session needs to be started followed by a statement `import numpy as np` to proceed.
 
 ## By-products
 
