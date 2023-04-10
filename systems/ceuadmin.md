@@ -87,6 +87,8 @@ for PSPP 1.6.0. Once the job is done, one can restore the previous environment w
 module unload ceuadmin/pspp
 ```
 
+Note that `module add/rm` is equivalent to `module load/unload`.
+
 A full list of module subcommands is available with `module help` as detailed here for
 [3.2.9](https://linux.die.net/man/4/modulefile) -- CSD3 uses version 3.2.10 dated 2012-12-21. In particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of function (LoF)
 annotation.
