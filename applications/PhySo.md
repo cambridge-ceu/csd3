@@ -142,4 +142,4 @@ for i, prog in enumerate(pareto_front_expressions):
     print("-------------")
 ```
 
-The runs are organised in three sets of parameters.
+Three sets of parameters are provided which require to be run separately.
