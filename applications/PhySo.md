@@ -90,7 +90,7 @@ module load ceuadmin/PhySO
 source activate $PhySO
 ```
 
-with `source deactivate`.
+with `source deactivate`. In both cases, `PhySO` is already defined by the `ceuadmin/PhySO` module.
 
 ## A full test
 
