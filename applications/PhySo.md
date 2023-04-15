@@ -153,4 +153,4 @@ for i, prog in enumerate(pareto_front_expressions):
     print("-------------")
 ```
 
-Three sets of parameters are provided which require to be run separately.
+Three sets of parameters are provided which initially require to be run separately.
