@@ -94,7 +94,7 @@ with `source deactivate`. In both cases, `PhySO` is already defined by the `ceua
 
 ## A full test
 
-Demos are available from `/demo` in forms of both `.ipynb` and `.py`.
+Demos are available from `demo/` in forms of both `.ipynb` and `.py`.
 
 This is extracted from README.md,
 
