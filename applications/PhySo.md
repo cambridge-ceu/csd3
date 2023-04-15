@@ -162,7 +162,7 @@ This section is according to <https://alexanderlabwhoi.github.io/post/2021-03-mi
 
 ```
 rm ~/.cache/matplotlib -rf
-conda install -c conda-forge mscorefonts
+conda install -p $PhySO -c conda-forge mscorefonts
 ```
 
 and use them,
