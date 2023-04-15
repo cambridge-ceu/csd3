@@ -155,3 +155,35 @@ for i, prog in enumerate(pareto_front_expressions):
 ```
 
 Three sets of parameters are provided which no longer requires to be run separately. These are also wrapped as a [physo.ipynb](files/physo.ipynb).
+
+## fonts
+
+This section is according to <https://alexanderlabwhoi.github.io/post/2021-03-missingfont/>.
+
+```
+rm ~/.cache/matplotlib -rf
+conda install -c conda-forge mscorefonts
+```
+
+and use them,
+
+```pyton
+import matplotlib
+matplotlib.rcParams['font.family'] = "sans-serif"
+matplotlib.rcParams['font.sans-serif'] = "Comic Sans MS"
+```
+
+This will reveal location of the default specification,
+
+```python
+import matplotlib
+print(matplotlib.matplotlib_fname())
+```
+
+where we make changes such as,
+
+```
+font.family:  sans-serif
+font.sans-serif: Arial
+pdf.fonttype: 42
+```
