@@ -154,4 +154,4 @@ for i, prog in enumerate(pareto_front_expressions):
     print("-------------")
 ```
 
-Three sets of parameters are provided which no longer requires to be run separately. These are also wrapped as a [physo.ipynb](files/physo.ipynb
+Three sets of parameters are provided which no longer requires to be run separately. These are also wrapped as a [physo.ipynb](files/physo.ipynb).
