@@ -106,6 +106,7 @@ z = np.random.uniform(-10, 10, 50)
 v = np.random.uniform(-10, 10, 50)
 X = np.stack((z, v), axis=0)
 y = 1.234*9.807*z + 1.234*v**2
+
 # set 1. Symbolic regression with default hyperparameters.
 expression, logs = physo.SR(X, y,
                             X_units = [ [1, 0, 0] , [1, -1, 0] ],
@@ -153,4 +154,4 @@ for i, prog in enumerate(pareto_front_expressions):
     print("-------------")
 ```
 
-Three sets of parameters are provided which initially require to be run separately.
+Three sets of parameters are provided which no longer requires to be run separately. These are also wrapped as a [physo.ipynb](files/physo.ipynb
