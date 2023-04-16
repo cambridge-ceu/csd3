@@ -56,7 +56,9 @@ function create()
 
 where we have made it available from `/usr/local/Cluster-Apps/ceuadmin` with all the steps to be generated into ~/PhySO.sb, called with `sbatch`.
 
-Note that `requirements.txt` includes `pytorch` for `conda install` but `torch` with `pip install -r requirements.txt`. It also appears that `dot2tex`, `pdflatex` (needs to be `pip install pdflatex`) and `pdf2image` are necessary.
+Note that `requirements.txt` includes `pytorch` for `conda install` but `torch` with `pip install -r requirements.txt`. It also appears that `dot2tex`, `pdflatex` (needs to be `pip install pdflatex`) and `pdf2image` are necessary. Some notes are available from `requirements_display2.txt`.
+
+It appears that there is conflict between `texlive/2015` from CSD3 and `texlive-core` so we execute `conda uninstall -p $PhySO texlive-core` to be in line with the former.
 
 Tests of package loading and units follow suit from the documentation.
 
@@ -70,6 +72,8 @@ Note that at the `Getting started` section Python session needs to be started fo
 ## By-products
 
 Besides `torch`, it is noticeable that `jupyterlab` and `scikit-learn` are also made available as dependencies. In fact, quite some packages are installed to `lib/python3.8/site-packages/`, leading to an overall size of ~7GB.
+
+A full list is visible through `conda list`.
 
 ## CSD3 module
 
@@ -180,7 +184,7 @@ import matplotlib
 print(matplotlib.matplotlib_fname())
 ```
 
-where we make changes such as,
+which in this case, `/usr/local/Cluster-Apps/ceuadmin/PhySO/lib/python3.8/site-packages/matplotlib/mpl-data/matplotlibrc`, where we make changes such as,
 
 ```
 font.family:  sans-serif
