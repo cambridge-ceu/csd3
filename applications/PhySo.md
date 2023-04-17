@@ -38,6 +38,7 @@ module load miniconda3/4.5.1 texlive
 conda activate $CEUADMIN/PhySO
 conda install -p $CEUADMIN/PhySO --file requirements.txt
 conda install -p $CEUADMIN/PhySO --file requirements_display1.txt
+pip install -r requirements_display2.txt
 pip install -e .
 EOL
 
