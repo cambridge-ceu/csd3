@@ -4,11 +4,11 @@ sort: 7
 
 # ceuadmin
 
-These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
+The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
 
 ## Entries
 
-The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. The current list is as follows,
+The current list is as follows,
 
 ```
   [1] "ABCtoolbox"          "akt"                 "alpine"
