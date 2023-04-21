@@ -70,7 +70,7 @@ The current list is as follows,
 
 ## Setup
 
-Here is example,
+The following example shows how to set up a module,
 
 ```bash
 #!/bin/bash
