@@ -4,6 +4,10 @@ sort: 7
 
 # ceuadmin
 
+These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
+
+## Entries
+
 The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. The current list is as follows,
 
 ```
@@ -64,28 +68,21 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. The 
 [163] "yaml-cpp"            "Zotero"              "zstd"
 ```
 
-These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
+## Setup
 
-Here is example of setting up a module,
+Here is example,
 
 ```bash
 #!/bin/bash
 
 mkdir tmp-xz
 cd tmp-xz
-
 wget http://tukaani.org/xz/xz-5.2.2.tar.gz
-
 tar zxvf xz-5.2.2.tar.gz
-
 cd xz-5.2.2
-
 mkdir -p /usr/local/Cluster-Apps/xz/5.2.2
-
 export PREFIX=/usr/local/Cluster-Apps/xz/5.2.2
-
 ./configure --prefix=$PREFIX
-
 make
 make check
 sg swinst 'make install'
@@ -122,6 +119,8 @@ The module is made visible through environment variable MODULEPATH. Note that th
 
 The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin**. Most software use gcc/6; when required it can be enabled with `module load gcc/6`.
 
+## Usage
+
 Most should be available to all CSD3 users at the campus, e.g., for pspp, a brief description of a module is available with
 
 ```bash
@@ -152,6 +151,8 @@ ANNOVAR, ensembl-vep, OpenMS, polyphen, KentUtils/MAGMA/Pascal/VEGASV2/fgwas/loc
 need to be made). Further information is avaiiable from **doc/ceuadmin.md, ceuadmin.html**. A large collection of R packages (1,258 as of November 2022)
 is linked with ceuadmin/R/4.2.2, the latest R distribution, please drop an email to <jhz22@medschl.cam.ac.uk> for access. The original list prior to
 mid-November 2022 is given below[^original].
+
+## Footnotes
 
 ---
 
