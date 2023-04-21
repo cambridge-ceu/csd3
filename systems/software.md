@@ -8,60 +8,6 @@ sort: 6
 
 See [https://cambridge-ceu.github.io/csd3/systems/ceuadmin.html](https://cambridge-ceu.github.io/csd3/systems/ceuadmin.html) for additional information.
 
-Here is example of setting up a module,
-
-```bash
-#!/bin/bash
-
-mkdir tmp-xz
-cd tmp-xz
-
-wget http://tukaani.org/xz/xz-5.2.2.tar.gz
-
-tar zxvf xz-5.2.2.tar.gz
-
-cd xz-5.2.2
-
-mkdir -p /usr/local/Cluster-Apps/xz/5.2.2
-
-export PREFIX=/usr/local/Cluster-Apps/xz/5.2.2
-
-./configure --prefix=$PREFIX
-
-make
-make check
-sg swinst 'make install'
-
-cat << 'EOL' > /usr/local/Cluster-Config/modulefiles/xz/5.2.2
-#%Module -*- tcl -*-
-##
-## modulefile
-##
-proc ModulesHelp { } {
-
-  puts stderr "\tXZ Utils is free general-purpose data compression software with a high compression ratio.\n"
-  puts stderr "\tInstalled under: /usr/local/Cluster-Apps/xz/5.2.2
-     Hompage:http://tukaani.org/xz/"
-
-}
-
-module-whatis "xz free general-purpose data compression"
-
-conflict xz
-set               root                  /usr/local/Cluster-Apps/xz/5.2.2
-prepend-path      PATH                  $root/bin
-prepend-path      MANPATH               $root/man
-prepend-path      LD_LIBRARY_PATH       $root/lib
-prepend-path      LIBRARY_PATH          $root/lib
-prepend-path      FPATH                 $root/include
-prepend-path      CPATH                 $root/include
-prepend-path      INCLUDE               $root/include
-setenv            XZ_HOME               $root
-EOL
-```
-
-The module is made visible through environment variable MODULEPATH. Note that there will be permission issue for a user, however, to make changes to `/usr/local/Cluster-Apps`.
-
 ## gcc
 
 It is one of the critical software to use, e.g.,
