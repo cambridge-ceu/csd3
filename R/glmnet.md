@@ -51,6 +51,14 @@ module load gcc/7
 Rscript -e 'install.packages("glmnet")'
 ```
 
+## 4.1-7
+
+Released on 23/3/2023, it requires C++17 so the Makevars as above becomes
+
+```bash
+CXX17 = g++ -std=gnu++17 -fPIC
+```
+
 ### icelake
 
 #### Latest information
