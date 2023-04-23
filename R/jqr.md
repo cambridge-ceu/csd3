@@ -50,7 +50,7 @@ cat <<'EOL'
 PKG_CPPFLAGS=-I/rds/user/jhz22/hpc-work/include
 PKG_LIBS=-L/rds/user/jhz22/hpc-work/lib -ljq
 EOL
-) <(cat src/Makevars.in) > src/Makevars
+) <(awk 'NR>2' src/Makevars.in) > src/Makevars
 cd -
 R CMD INSTALL jqr
 ```
