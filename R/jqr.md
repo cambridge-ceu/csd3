@@ -45,16 +45,12 @@ Rscript -e 'download.packages("jqr",".")'
 tar xvfz jqr_1.2.3.tar.gz
 cd jqr
 mv configure configure.save
-cat 'EOL' > src/Makevars
+cat <(
+cat <<'EOL'
 PKG_CPPFLAGS=-I/rds/user/jhz22/hpc-work/include
 PKG_LIBS=-L/rds/user/jhz22/hpc-work/lib -ljq
-
-all: clean
-
-clean:
-        rm -f $(SHLIB) $(OBJECTS)
-
 EOL
+) <(cat src/Makevars.in) > src/Makevars
 cd -
 R CMD INSTALL jqr
 ```

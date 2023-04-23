@@ -153,7 +153,7 @@ mid-November 2022 is given below[^original].
 
 ## Footnotes
 
-Further information is avaiiable from **doc/ceuadmin.md, ceuadmin.html**.
+Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceuadmin.md, ceuadmin.html**.
 
 ---
 
