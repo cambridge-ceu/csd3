@@ -38,7 +38,7 @@ In install.packages("jqr") :
 
 ```
 
-Since we have already had `libjq.so` installed at `/rds/user/jhz22/hpc-work/lib`, we would need change the default configuration,
+Since we have already had `libjq.so` installed at `/rds/user/jhz22/hpc-work/lib`, see <https://cambridge-ceu.github.io/csd3/applications/DNAnexus.html>; we would need change the default configuration,
 
 ```bash
 Rscript -e 'download.packages("jqr",".")'
