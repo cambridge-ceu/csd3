@@ -6,7 +6,7 @@ sort: 4
 
 source: `{{ page.path }}`
 
-Here is a list of R packages.
+Here is a list of (well, most likely to be difficult to install/update) R packages.
 
 {% include list.liquid all=true %}
 
