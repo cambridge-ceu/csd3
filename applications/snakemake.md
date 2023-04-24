@@ -105,6 +105,6 @@ as others from the GitHub/examples directory.
 
 Köster J, Rahmann S: Snakemake--a scalable bioinformatics workflow engine. _Bioinformatics_. 2012, 28 (19): 2520-2; 2018, 34 (20): 3600
 
-Molder F, et al. Sustainable data analysis with Snakemake [version 2; peer review: 2 approved]. _F1000Research_ 2021, 10:33 (https://doi.org/10.12688/f1000research.29032.2)
+Molder F, et al. Sustainable data analysis with Snakemake [version 2; peer review: 2 approved]. _F1000Research_ 2021, 10:33 (<https://doi.org/10.12688/f1000research.29032.2>)
 
-Edwards D. Plant Bioinformatics-Methods and Protocols, 3e. Springer 2022. https://link.springer.com/book/10.1007/978-1-0716-2067-0. [Chapter 11](https://link.springer.com/protocol/10.1007/978-1-0716-2067-0_11); [Chapter 9](https://link.springer.com/protocol/10.1007/978-1-0716-2067-0_9).
+Edwards D. Plant Bioinformatics-Methods and Protocols, 3e. Springer 2022. <https://link.springer.com/book/10.1007/978-1-0716-2067-0>. [Chapter 9](https://link.springer.com/protocol/10.1007/978-1-0716-2067-0_9); [Chapter 11](https://link.springer.com/protocol/10.1007/978-1-0716-2067-0_11).
