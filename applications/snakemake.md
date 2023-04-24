@@ -99,9 +99,7 @@ as others from the GitHub/examples directory.
 
 ### 3. [CVD1-HF analysis](https://github.com/alhenry/cvd1-hf)
 
-## Other piplines
-
-### 4. [gwas-sumstats-harmoniser](https://github.com/EBISPOT/gwas-sumstats-harmoniser)
+### 4. [gwas-sumstats-harmoniser](https://github.com/EBISPOT/gwas-sumstats-harmoniser) (Nextflow)
 
 ## References
 
