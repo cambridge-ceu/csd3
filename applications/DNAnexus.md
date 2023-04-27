@@ -164,6 +164,8 @@ make -j8
 make check
 ```
 
+## Footnotes
+
 ---
 
 It also works with oniguruma 0.6.9.8 in lieu of its counterpart from GitHub.
