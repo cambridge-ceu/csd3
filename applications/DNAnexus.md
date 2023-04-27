@@ -192,8 +192,6 @@ It also works with oniguruma 0.6.9.8 in lieu of its counterpart from GitHub.
 
     Cohort browser, [https://documentation.dnanexus.com/user/cohort-browser](https://documentation.dnanexus.com/user/cohort-browser)
 
-    HDRUK INTERVAL Dataset User Acceptance Testing, [video](https://tinyurl.com/yckye46w)
-
     Index of dx commands [https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities](https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities), particularly its [API Methods](https://documentation.dnanexus.com/developer/api/api-directory) section.
 
     Introduction to building Apps, [https://documentation.dnanexus.com/developer/apps/intro-to-building-apps](https://documentation.dnanexus.com/developer/apps/intro-to-building-apps)
