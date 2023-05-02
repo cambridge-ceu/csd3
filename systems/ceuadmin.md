@@ -4,12 +4,13 @@ sort: 7
 
 # ceuadmin
 
-The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**. These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
+The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
-These software are largely available for all CSD3 users, only limited by software with excessive size / reference data -- which ideally will be available from /rds/project/jmmh2/software. However, CEU users will be able to use
-ANNOVAR, ensembl-vep, OpenMS, polyphen, KentUtils/MAGMA/Pascal/VEGASV2/fgwas/locuszoom linking internal projects/personal space (additional requests
-need to be made). A large collection of R packages (1,300 as of 23/4/2023) is linked with ceuadmin/R/4.2.2, the latest R distribution, please drop an email to <jhz22@medschl.cam.ac.uk> for access. The original list prior to
-mid-November 2022 is given below[^original].
+Most software are available for all CSD3 users, only limited by software with excessive size / reference data -- which ideally will be 
+available from /rds/project/jmmh2/software. However, CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `polyphen`, 
+`KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom` linking internal projects/personal space (additional requests need to be 
+made). A large collection of R packages (1,300 as of 23/4/2023) is linked with the latest R distribution, 4.3.0. Please drop an email to 
+<jhz22@medschl.cam.ac.uk> for access. The original list prior to mid-November 2022 is given below[^original].
 
 ## Entries
 
@@ -74,9 +75,11 @@ The current list is as follows,
 [166] "zstd"
 ```
 
+These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
+
 ## Usage
 
-Most should be available to all CSD3 users at the campus, e.g., for pspp, a brief description of a module is available with
+We illustrate with pspp. A brief description of a module is available with
 
 ```bash
 module help ceuadmin/pspp
@@ -101,7 +104,7 @@ A full list of module subcommands is available with `module help` as detailed he
 [3.2.9](https://linux.die.net/man/4/modulefile) -- CSD3 uses version 3.2.10 dated 2012-12-21. In particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of function (LoF)
 annotation.
 
-## Setup
+## Module creation
 
 The following example shows how to set up a module,
 
