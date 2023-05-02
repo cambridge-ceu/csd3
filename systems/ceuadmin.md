@@ -10,7 +10,7 @@ Most software are available for all CSD3 users, only limited by software with ex
 available from /rds/project/jmmh2/software. However, CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `polyphen`, 
 `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom` linking internal projects/personal space (additional requests need to be 
 made). A large collection of R packages (1,300 as of 23/4/2023) is linked with the latest R distribution, 4.3.0. Please drop an email to 
-<jhz22@medschl.cam.ac.uk> for access. The original list prior to mid-November 2022 is given below[^original].
+<jhz22@medschl.cam.ac.uk> for access.
 
 ## Entries
 
@@ -76,6 +76,8 @@ The current list is as follows,
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
+
+The original list prior to mid-November 2022 is given below[^original].
 
 ## Usage
 
