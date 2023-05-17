@@ -56,4 +56,10 @@ We simply do inside R,
 remotes::install_github("dmurdoch/rgl")
 ```
 
-but it fails to load.
+but it fails to load. To this point we resort to
+
+```r
+remotes::install_github("dmurdoch/rgl",INSTALL_opts = "--disable-opengl")
+```
+
+but again it fails to load.
