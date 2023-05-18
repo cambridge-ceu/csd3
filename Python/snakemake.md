@@ -1,5 +1,5 @@
 ---
-sort: 47
+sort: 3
 ---
 
 # snakemake

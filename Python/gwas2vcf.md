@@ -1,5 +1,5 @@
 ---
-sort: 21
+sort: 1
 ---
 
 # gwas2vcf
