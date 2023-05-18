@@ -15,7 +15,7 @@ module load ceuadmin/snakemake
 pip3 install synapseclient
 ```
 
-where we borrows the setup for snakemake to save space.
+where we borrow the setup for snakemake to save space.
 
 ### Usage
 
