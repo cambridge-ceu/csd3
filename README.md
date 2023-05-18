@@ -24,7 +24,7 @@ applications --> ABCtoolbox
 applications --> appdot["..."]
 applications --> vsc["Visual Studio Code"]
 Python --> PhySO
-Python --> Rdot["..."]
+Python --> Pythondot["..."]
 Python --> snakemake
 R --> brms
 R --> Rdot["..."]
