@@ -44,7 +44,7 @@ synLogin('synapse_username', 'password')
 files <- synapserutils::syncFromSynapse('syn51364943') 
 ```
 
-## UKB-PPP
+## Application to UKB-PPP data
 
 ### Twitter post, <https://twitter.com/chrisdwhelan/status/1658865452368515072>
 
