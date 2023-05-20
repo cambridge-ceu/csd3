@@ -94,7 +94,7 @@ This step will facilitate practical use, and is illustrated with the European (d
 #SBATCH --qos=cardio
 
 #SBATCH --export ALL
-#SBATCH --array=1-1473
+#SBATCH --array=1-1472
 #SBATCH --output=_%A_%a.o
 #SBATCH --error=_%A_%a.e
 
@@ -109,8 +109,27 @@ if [ ! -f "${dst}/${discovery}.lst" ]; then
    ls "${src}" | grep -v MANIFEST | xargs -l -I {} basename {} .tar > "${dst}/${discovery}.lst"
 fi
 
+function dup_list()
+{
+cat << 'EOL'
+CKMT1A_CKMT1B_P12532_OID20721_v1_Inflammation
+DEFA1_DEFA1B_P59665_OID20344_v1_Cardiometabolic
+DEFB4A_DEFB4B_O15263_OID21373_v1_Oncology
+EBI3_IL27_Q14213_Q8NEV9_OID21389_v1_Oncology
+FUT3_FUT5_P21217_Q11128_OID21013_v1_Neurology
+IL12A_IL12B_P29459_P29460_OID21327_v1_Oncology
+LGALS7_LGALS7B_P47929_OID21406_v1_Oncology
+MICB_MICA_Q29980_Q29983_OID20593_v1_Inflammation
+EOL
+}
+
 export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' "${dst}/${discovery}.lst")
 export protein_tar=$(echo ${protein} | sed 's/_/:/g')
+
+export dup=$(dup_list | grep ${protein})
+if [ ${dup} != "" ]; then
+   export protein_tar=$(echo ${protein} | sed 's/_/:/2' | rev | sed 's/_/:/;s/_/:/;s/_/:/' | rev)
+fi
 
 cd "${dst}/${discovery}"
 tar xf "${src}/${protein}.tar"
@@ -127,3 +146,5 @@ bgzip -f > "${dst}/${discovery}/${protein}.gz"
 rm -rf ${protein}
 tabix -S1 -s1 -b2 -e2 -f "${dst}/${discovery}/${protein}.gz"
 ```
+
+where eight compound proteins are hanled specifically.
