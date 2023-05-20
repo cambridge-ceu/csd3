@@ -106,7 +106,7 @@ export src="${sun22}/${UKB_PPP}/${discovery}"
 export dst="${sun22}/${UKB_PPP_reformatted}"
 
 if [ ! -f "${dst}/${discovery}.lst" ]; then
-   ls "${src}" | xargs -l -I {} basename {} .tar > "${dst}/${discovery}.lst"
+   ls "${src}" | grep -v MANIFEST | xargs -l -I {} basename {} .tar > "${dst}/${discovery}.lst"
 fi
 
 export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' "${dst}/${discovery}.lst")
