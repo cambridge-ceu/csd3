@@ -7,10 +7,10 @@ sort: 2
 The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 Most software are available for all CSD3 users, only limited by software with excessive size / reference data -- which ideally will be 
-available from /rds/project/jmmh2/software. However, CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `polyphen`, 
-`KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom` linking internal projects/personal space (additional requests need to be 
-made). A large collection of R packages (1,300 as of 23/4/2023) is linked with the latest R distribution, 4.3.0. Please drop an email to 
-<jhz22@medschl.cam.ac.uk> for access.
+available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmmh2-public_databases/software` as a trade-off. However, 
+CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom` 
+linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,300 as of 23/4/2023) 
+is linked with the latest R distribution, 4.3.0. Please drop an email to <jhz22@medschl.cam.ac.uk> for access.
 
 ## Entries
 
