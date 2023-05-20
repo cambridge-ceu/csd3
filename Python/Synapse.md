@@ -77,3 +77,53 @@ module load ceuadmin/snakemake/7.19.1
 synapse login -u <username> -p <user password> --remember-me
 synapse get -r syn51364943
 ```
+
+### Indexing the data
+
+This step will facilitate practical use, and is illustrated with the European (discovery) data.
+
+```bash
+#!/usr/bin/bash
+
+#SBATCH --job-name=_reformatted
+#SBATCH --mem=28800
+#SBATCH --time=12:00:00
+
+#SBATCH --account CARDIO-SL0-CPU
+#SBATCH --partition cardio
+#SBATCH --qos=cardio
+
+#SBATCH --export ALL
+#SBATCH --array=1-1473
+#SBATCH --output=_%A_%a.o
+#SBATCH --error=_%A_%a.e
+
+export sun22=~/rds/results/public/proteomics/UKB-PPP/sun22
+export UKB_PPP=UKB-PPP\ pGWAS\ summary\ statistics
+export UKB_PPP_reformatted=${UKB_PPP}\ \(reformatted\)
+export discovery=European\ \(discovery\)
+export src="${sun22}/${UKB_PPP}/${discovery}"
+export dst="${sun22}/${UKB_PPP_reformatted}"
+
+if [ ! -f "${dst}/${discovery}.lst" ]; then
+   ls "${src}" | xargs -l -I {} basename {} .tar > "${dst}/${discovery}.lst"
+fi
+
+export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' "${dst}/${discovery}.lst")
+export protein_tar=$(echo ${protein} | sed 's/_/:/g')
+
+cd "${dst}/${discovery}"
+tar xf "${src}/${protein}.tar"
+(
+  chmod -x ${protein}/*
+  zcat ${protein}/*gz | head -1
+  for chr in {1..22} X
+  do
+    zcat ${protein}/discovery_chr${chr}_${protein_tar}.gz | sed '1d'
+  done
+) | \
+tr ' ' '\t' | \
+bgzip -f > "${dst}/${discovery}/${protein}.gz"
+rm -rf ${protein}
+tabix -S1 -s1 -b2 -e2 -f "${dst}/${discovery}/${protein}.gz"
+```
