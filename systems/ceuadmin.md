@@ -10,7 +10,17 @@ Most software are available for all CSD3 users, only limited by software with ex
 available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmmh2-public_databases/software` as a trade-off. However, 
 CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom` 
 linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,300 as of 23/4/2023) 
-is linked with the latest R distribution, 4.3.0. Please drop an email to <jhz22@medschl.cam.ac.uk> for access.
+is linked with the latest R distribution, 4.3.0.
+
+For CEU users, it is easy to point to them, e.g.,
+
+```bash
+export HPC_WORK=/rds/user/$USER/hpc-work/
+export RDS=~/rds/public_databases/software
+export R_LIBS=${RDS}/R:${RDS}/R-4.3.0/library
+```
+
+or possible to have your own installations based on these. For non-CEU users, please drop an email to <jhz22@medschl.cam.ac.uk> for access.
 
 ## Entries
 

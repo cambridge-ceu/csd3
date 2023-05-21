@@ -147,4 +147,4 @@ rm -rf ${protein}
 tabix -S1 -s1 -b2 -e2 -f "${dst}/${discovery}/${protein}.gz"
 ```
 
-where eight compound proteins are hanled specifically.
+where eight compound proteins are handled specifically.
