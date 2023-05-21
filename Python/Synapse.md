@@ -44,17 +44,10 @@ synLogin('synapse_username', 'password')
 files <- synapserutils::syncFromSynapse('syn51364943') 
 ```
 
-## Application to UKB-PPP data
+## Application to Biobank Pharma Proteomics Project (UKB-PPP)
 
-### Twitter post, <https://twitter.com/chrisdwhelan/status/1658865452368515072>
-
-### pGWAS summary statistics
-
-URL: <https://www.synapse.org/#!Synapse:syn51365301>
-
-### UK Biobank Pharma Proteomics Project (UKB-PPP)
-
-URL: <https://www.synapse.org/#!Synapse:syn51364943>
+* Synapse page, <https://www.synapse.org/#!Synapse:syn51364943> (pGWAS summary statistics, <https://www.synapse.org/#!Synapse:syn51365301>)
+* Twitter post, <https://twitter.com/chrisdwhelan/status/1658865452368515072>
 
 ### SLURM script
 
