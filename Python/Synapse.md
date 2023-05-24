@@ -71,7 +71,7 @@ synapse login -u <username> -p <user password> --remember-me
 synapse get -r syn51364943
 ```
 
-### Indexing the data
+### Merging and indexing
 
 This step will facilitate practical use, and is illustrated with the European (discovery) data.
 
