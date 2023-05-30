@@ -25,6 +25,15 @@ export R_LIBS=${RDS}/R:${RDS}/R-4.3.0/library
 or possible to have your own installations based on these, e.g., through creation of a modified `Makefile` with altered prefix followed
 by `make install -f <modified Makefile>`.
 
+For instance, the following script tests for loading of `dplyr`:
+
+```bash
+export RDS=~/rds/public_databases/software
+export PATH=${PATH}:/${RDS}/R-4.3.0/bin
+export R_LIBS=${RDS}/R-4.3.0/lib64/library:${RDS}/R
+Rscript -e 'library(dplyr);cat("no error!\n")'
+```
+
 For non-CEU users, please drop an email to <jhz22@medschl.cam.ac.uk> for access.
 
 ## Entries
