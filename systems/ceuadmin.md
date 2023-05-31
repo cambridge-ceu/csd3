@@ -36,6 +36,15 @@ export R_LIBS=${RDS}/R-4.3.0/library:${RDS}/R
 Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
 ```
 
+It appears clumsy to do these every time, so an attempt is made to have them in a module, namely
+
+```bash
+module load ceuadmin/R/latest
+which R
+echo $R_LIBS
+Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
+```
+
 For non-CEU users, please drop an email to <jhz22@medschl.cam.ac.uk> for access.
 
 ## Entries
