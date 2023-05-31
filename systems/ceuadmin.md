@@ -32,7 +32,7 @@ For instance, the following script tests for loading of `dplyr`:
 # export RDS=~/rds/public_databases/software
 export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
 export PATH=${PATH}:${RDS}/R-4.3.0/bin
-export R_LIBS=${RDS}/R-4.3.0/lib64/library:${RDS}/R
+export R_LIBS=${RDS}/R-4.3.0/library:${RDS}/R
 Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
 ```
 
