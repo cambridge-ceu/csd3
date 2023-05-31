@@ -114,7 +114,7 @@ The original list prior to mid-November 2022 is given below[^original].
 
 ## Usage
 
-We illustrate with pspp. A brief description of a module is available with
+We illustrate with `pspp`. A brief description of a module is available with
 
 ```bash
 module help ceuadmin/pspp
@@ -127,7 +127,7 @@ module load ceuadmin/pspp
 psppire
 ```
 
-for PSPP 1.6.0. Once the job is done, one can restore the previous environment with
+for version 1.6.0. Once the job is done, one can restore the previous environment with
 
 ```bash
 module unload ceuadmin/pspp
