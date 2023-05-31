@@ -18,18 +18,16 @@ For CEU users, it is easy to point to them, e.g.,
 
 ```bash
 export HPC_WORK=/rds/user/$USER/hpc-work/
-export RDS=~/rds/public_databases/software
+export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
 export R_LIBS=${RDS}/R:${RDS}/R-4.3.0/library
 ```
 
 or possible to have your own installations based on these, e.g., through creation of a modified `Makefile` with altered prefix followed
 by `make install -f <modified Makefile>`.
 
-For instance, the following script tests for loading of `dplyr`:
+The following script tests for loading of `dplyr`:
 
 ```bash
-# shortened path name
-# export RDS=~/rds/public_databases/software
 export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
 export PATH=${PATH}:${RDS}/R-4.3.0/bin
 export R_LIBS=${RDS}/R-4.3.0/library:${RDS}/R
