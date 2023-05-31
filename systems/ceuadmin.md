@@ -29,7 +29,7 @@ For instance, the following script tests for loading of `dplyr`:
 
 ```bash
 export RDS=~/rds/public_databases/software
-export PATH=${PATH}:/${RDS}/R-4.3.0/bin
+export PATH=${PATH}:${RDS}/R-4.3.0/bin
 export R_LIBS=${RDS}/R-4.3.0/lib64/library:${RDS}/R
 Rscript -e 'library(dplyr);cat("no error!\n")'
 ```
