@@ -28,7 +28,9 @@ by `make install -f <modified Makefile>`.
 For instance, the following script tests for loading of `dplyr`:
 
 ```bash
-export RDS=~/rds/public_databases/software
+# shortened path name
+# export RDS=~/rds/public_databases/software
+export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/
 export PATH=${PATH}:${RDS}/R-4.3.0/bin
 export R_LIBS=${RDS}/R-4.3.0/lib64/library:${RDS}/R
 Rscript -e 'library(dplyr);cat("no error!\n")'
