@@ -4,17 +4,17 @@ sort: 15
 
 # DNAnexus
 
-Web: [https://www.dnanexus.com/](https://www.dnanexus.com/) ([documentation](https://documentation.dnanexus.com/), [WebUI](https://platform.dnanexus.com/login))
+Web: <https://www.dnanexus.com/> ([documentation](https://documentation.dnanexus.com/), [WebUI](https://platform.dnanexus.com/login))
 
 UKBioBank: [landing](https://ukbiobank.dnanexus.com/landing), [partnership](https://www.dnanexus.com/partnerships/ukbiobank)
 
-Organisation: [https://documentation.dnanexus.com/getting-started/key-concepts/organizations](https://documentation.dnanexus.com/getting-started/key-concepts/organizations) and [Member Guide](https://documentation.dnanexus.com/user/organization-member-guide)
+Organisation: <https://documentation.dnanexus.com/getting-started/key-concepts/organizations> and [Member Guide](https://documentation.dnanexus.com/user/organization-member-guide)
 
 NOTE: To facilitate the upcoming training courses by DNAnexus, the resource is made available for CEU users[^1].
 
 ## Platform SDK
 
-This follows [https://documentation.dnanexus.com/downloads](https://documentation.dnanexus.com/downloads),
+This follows <https://documentation.dnanexus.com/downloads>,
 
 ```bash
 module avail python
@@ -105,9 +105,9 @@ ln -sf ${PWD}/ua ${HPC_WORK}/bin/ua
 
 ## dxCompiler
 
-See [https://github.com/dnanexus/dxCompiler/](https://github.com/dnanexus/dxCompiler/) for [releases](https://github.com/dnanexus/dxCompiler/releases).
+See <https://github.com/dnanexus/dxCompiler/> for [releases](https://github.com/dnanexus/dxCompiler/releases).
 
-It will compile workflows in WDL, [https://github.com/openwdl/wdl](https://github.com/openwdl/wdl) with example in [https://github.com/openwdl/wdl/blob/main/versions/1.1/SPEC.md](https://github.com/openwdl/wdl/blob/main/versions/1.1/SPEC.md).
+It will compile workflows in WDL, <https://github.com/openwdl/wdl> with example in [https://github.com/openwdl/wdl/blob/main/versions/1.1/SPEC.md](https://github.com/openwdl/wdl/blob/main/versions/1.1/SPEC.md).
 
 We can get it as follows,
 
@@ -143,7 +143,7 @@ cd dx-toolkit && source environment
 
 It is distributed with `dx-toolkit` above but the latest version is available from
 
-[https://stedolan.github.io/jq/](https://stedolan.github.io/jq/)
+<https://stedolan.github.io/jq/>
 
 jq is a lightweight and flexible command-line JSON processor.
 
@@ -152,7 +152,7 @@ wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -O jq
 jq --help
 ```
 
-It is useful to obtain the shared libraries, help files, etc. from source, [https://github.com/stedolan/jq](https://github.com/stedolan/jq).
+It is useful to obtain the shared libraries, help files, etc. from source, <https://github.com/stedolan/jq>.
 
 ```bash
 module load automake-1.16.1-gcc-5.4.0-uccejfj
@@ -172,7 +172,7 @@ It also works with oniguruma 0.6.9.8 in lieu of its counterpart from GitHub.
 
 [^1]: CSD3
 
-    Location: [/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/](/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/).
+    Location: </rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/>
 
     For instance one only needs to do these to use `dx` and apps in `dx-toolkit`,
 
@@ -190,26 +190,28 @@ It also works with oniguruma 0.6.9.8 in lieu of its counterpart from GitHub.
 
 [^2]: DNAnexus
 
-    Billing, [https://documentation.dnanexus.com/admin/billing-and-account-management](https://documentation.dnanexus.com/admin/billing-and-account-management)
+    Billing, <https://documentation.dnanexus.com/admin/billing-and-account-management>, [three tiers](https://www.ukbiobank.ac.uk/enable-your-research/costs)
 
-    Cohort browser, [https://documentation.dnanexus.com/user/cohort-browser](https://documentation.dnanexus.com/user/cohort-browser)
+    Cohort browser, <https://documentation.dnanexus.com/user/cohort-browser>
 
-    Index of dx commands [https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities](https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities), particularly its [API Methods](https://documentation.dnanexus.com/developer/api/api-directory) section.
+    Index of dx commands <https://documentation.dnanexus.com/user/helpstrings-of-sdk-command-line-utilities>, particularly its [API Methods](https://documentation.dnanexus.com/developer/api/api-directory) section.
 
-    Introduction to building Apps, [https://documentation.dnanexus.com/developer/apps/intro-to-building-apps](https://documentation.dnanexus.com/developer/apps/intro-to-building-apps)
+    Introduction to building Apps, <https://documentation.dnanexus.com/developer/apps/intro-to-building-apps>
 
     [OpenBio](https://github.com/dnanexus/OpenBio) Jupyter notebooks:
 
     - [UKB research analysis platform notebooks](https://github.com/dnanexus/OpenBio/tree/master/UKB_notebooks)
     - [getting started with dxdata](https://github.com/dnanexus/OpenBio/blob/master/dxdata/getting_started_with_dxdata.ipynb)
-    - DxJupyterLab QuickStart, [https://documentation.dnanexus.com/user/jupyter-notebooks/quickstart](https://documentation.dnanexus.com/user/jupyter-notebooks/quickstart)
-    - LocusZoom, [https://documentation.dnanexus.com/science/scientific-guides/locuszoom-dnanexus-app](https://documentation.dnanexus.com/science/scientific-guides/locuszoom-dnanexus-app)
+    - DxJupyterLab QuickStart, <https://documentation.dnanexus.com/user/jupyter-notebooks/quickstart>
+    - LocusZoom, <https://documentation.dnanexus.com/science/scientific-guides/locuszoom-dnanexus-app>
 
     [Resource centre](https://www.dnanexus.com/resources) (DNAnexus xVantage Care team [support@dnanexus.com](mailto:support@dnanexus.com))
 
     [DNAnexus community](https://community.dnanexus.com/s/), Webinar on RStudio, [July 14, 2022](https://www.youtube.com/watch?v=iy22sxlj5Ik)
 
     [DNAnexus Olink proteomics community](https://tinyurl.com/p7zam69r), Integrative Analysis of UK Biobank Proteomics Data, April 26, 2023, [vides](https://www.youtube.com/watch?v=btOYvmgwZGA), [slides](https://20779781.fs1.hubspotusercontent-na1.net/hubfs/20779781/UKB%20RAP%20Proteomics%20Showcase%20Webinar%20Slides.pdf)
+
+    [UKB-RAP](https://github.com/dnanexus/UKB_RAP)
 
 [^3]: Token
 
@@ -220,4 +222,4 @@ It also works with oniguruma 0.6.9.8 in lieu of its counterpart from GitHub.
     dx select --level VIEW`
     ```
 
-    The `--noprojects` option allows for non-interactive login. The `dx select` command allows for specific projects be selected. See also [https://documentation.dnanexus.com/user/login-and-logout](https://documentation.dnanexus.com/user/login-and-logout).
+    The `--noprojects` option allows for non-interactive login. The `dx select` command allows for specific projects be selected. See also <https://documentation.dnanexus.com/user/login-and-logout>.
