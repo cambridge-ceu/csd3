@@ -210,8 +210,9 @@ It also works with oniguruma 0.6.9.8 in lieu of its counterpart from GitHub.
     [DNAnexus community](https://community.dnanexus.com/s/), Webinar on RStudio, [July 14, 2022](https://www.youtube.com/watch?v=iy22sxlj5Ik)
 
     [DNAnexus Olink proteomics community](https://tinyurl.com/p7zam69r), <https://hubs.ly/Q01Lc0c50>
-        * Integrative Analysis of UK Biobank Proteomics Data, April 26, 2023, [vides](https://www.youtube.com/watch?v=btOYvmgwZGA), [slides](https://20779781.fs1.hubspotusercontent-na1.net/hubfs/20779781/UKB%20RAP%20Proteomics%20Showcase%20Webinar%20Slides.pdf)
-        * Webinar June 1: Analyzing the UK Biobank Proteomics Data on the UK Biobank Research Analysis Platform, [slides](applications/files/UKB RAP Proteomics - June 2023.pdf), [recording](https://tinyurl.com/mpayuw7e)
+
+    - Integrative Analysis of UK Biobank Proteomics Data, April 26, 2023, [vides](https://www.youtube.com/watch?v=btOYvmgwZGA), [slides](https://20779781.fs1.hubspotusercontent-na1.net/hubfs/20779781/UKB%20RAP%20Proteomics%20Showcase%20Webinar%20Slides.pdf)
+    - Webinar June 1: Analyzing the UK Biobank Proteomics Data on the UK Biobank Research Analysis Platform, [slides](applications/files/UKB RAP Proteomics - June 2023.pdf), [recording](https://tinyurl.com/mpayuw7e)
 
     [UKB-RAP](https://github.com/dnanexus/UKB_RAP)
 
