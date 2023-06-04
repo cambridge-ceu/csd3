@@ -187,6 +187,28 @@ For more information, use option '--help' or visit the website: https://rgcgithu
 
 ```
 
+## 3.2.7
+
+We could compile from source,
+
+```bash
+cd ~/rds/public_databases/software/
+wget -qO- https://github.com/rgcgithub/regenie/archive/refs/tags/v3.2.7.tar.gz | \
+tar xvfz -
+cd regenie-3.2.7/
+export BGEN_PATH=~/rds/public_databases/software/bgen
+module load zlib/1.2.11
+export ZLIB_LIBRARY=/usr/local/Cluster-Apps/zlib/1.2.11
+module load gcc/6
+module load cmake-3.19.7-gcc-5.4-5gbsejo
+mkdir build
+cd build
+cmake ..
+make
+```
+
+where the bgen and zlib libraries are indicated; module `gcc/6` and `cmake-3.19.7` are also necessary to get around some other errors.
+
 ## Reference
 
 Mbatchou, J., Barnard, L., Backman, J. et al. Computationally efficient whole-genome regression for quantitative and binary traits. _Nat Genet_ 53, 1097–1103 (2021). <https://doi.org/10.1038/s41588-021-00870-7>
