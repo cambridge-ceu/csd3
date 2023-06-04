@@ -59,3 +59,29 @@ bcftools query -f '%ID\t%ALT\t%REF\t%AF\t[%ES]\t[%SE]\t[%LP]\t[%SS]\t%CHROM\t%PO
 ```
 
 The rather perplexing syntax (cut and paste from here in which case) gains its appeal for an output in a well-defined format.
+
+## Applications: Heart-KP
+
+### Web
+
+<http://heartkp.org/>
+
+### Zenodo
+
+```bash
+#!/usr/bin/bash
+
+wget https://zenodo.org/record/7239166/files/Bai82_names_ukb_v2.csv
+seq 1 82 | \
+parallel -j10 -C' ' '
+  echo {}
+  wget -qO- https://zenodo.org/record/7239166/files/ukbiobank_heart_pheno{}_may2022.zip | \
+  gunzip -c | bgzip -f  > ukbiobank_heart_pheno{}_may2022.gz
+  tabix -f -S1 -s1 -b3 -e3 ukbiobank_heart_pheno{}_may2022.gz
+'
+```
+
+### Reference
+
+Zhao, B., T. Li, Z. Fan, Y. Yang, J. Shu, X. Yang, X. Wang, T. Luo, J. Tang, D. Xiong, Z. Wu, B. Li, J. Chen, Y. Shan, C. Tomlinson, Z. Zhu, Y. Li, J. L. Stein and H. Zhu "Heart-brain connections: Phenotypic and genetic insights from magnetic resonance images." Science 380(6648): abn6598.
+<https://doi.org/10.1126/science.abn6598>
