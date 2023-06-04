@@ -284,7 +284,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-03-31 | PWCoCo/2023-03-31           | Genetics            |
     | 2023-04-02 | regenie/3.2.5.3             | Genetics            |
     | 2023-04-04 | PWCoCo/1.0                  | Genetics            |
-    | 2023-06-02 | regenie/3.2.7               | Genetics            |
+    | 2023-06-02 | regenie/3.2.7               | Genetics[^regenie]  |
 
     \* CEU or approved users only.
 
@@ -324,3 +324,22 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
 [^lz]: locuszoom
 
     The version adds chromosome X data and will have options using INTERVAL data.
+
+[^regenie]:
+
+    ```bash
+    cd ~/rds/public_databases/software/
+    wget -qO- https://github.com/rgcgithub/regenie/archive/refs/tags/v3.2.7.tar.gz | \
+    tar xvfz -
+    cd regenie-3.2.7/
+    export BGEN_PATH=~/rds/public_databases/software/bgen
+    module load zlib/1.2.11
+    export ZLIB_LIBRARY=/usr/local/Cluster-Apps/zlib/1.2.11
+    module load gcc/6
+    module load cmake-3.19.7-gcc-5.4-5gbsejo
+    module load intel/mkl/mic/2018.4
+    mkdir build
+    cd build
+    cmake ..
+    make
+    ```
