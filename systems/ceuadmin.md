@@ -326,7 +326,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
 
     The version adds chromosome X data and will have options using INTERVAL data.
 
-[^regenie]:
+[^regenie]: Building regenie 3.2.7
 
     ```bash
     cd ~/rds/public_databases/software/
