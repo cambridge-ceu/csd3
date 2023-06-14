@@ -179,6 +179,33 @@ where we drop `PREFIX=/rds/user/jhz22/hpc-work` after `Makefile.PL` and furnish 
 
 Note that the Windows version is available from [https://caeis.etech.fh-augsburg.de/downloads/windows/pspp-win-daily/1.6.0-ge6b96c/](https://caeis.etech.fh-augsburg.de/downloads/windows/pspp-win-daily/1.6.0-ge6b96c/).
 
+## Other approaches
+
+Direct use of binary distribution is possible with these modules,
+
+```bash
+module load ceuadmin/gettext/0.21 ceuadmin/readline/8.0
+module load automake-1.15.1-gcc-5.4.0-kqipzs7 cairo/1.16.0
+module load gcc/6 gtkplus-2.24.31-gcc-5.4.0-2a7zfti
+module load libtool-2.4.6-gcc-6.2.0-sqmr7cn
+module load pango-1.40.3-gcc-5.4.0-32phpcz
+```
+
+provided that GLIBCxx could be sorted out.
+
+The use of flatpak is possible with these operations,
+
+```bash
+# root privilege is required
+# echo 20000 > /proc/sys/user/max_user_namespaces
+# https://wiki.archlinux.org/title/Bubblewrap
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo --user
+flatpak install flathub org.gnu.pspp
+flatpak list
+flatpak run org.gnu.pspp
+```
+
 [^gsv]: gtksourceview 4.6.0 installation
 
     ```bash
