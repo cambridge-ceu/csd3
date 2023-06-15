@@ -58,7 +58,9 @@ See "V:\Operations\GENERAL_CEU\CSD3\monitoring CSD3 usage".
 
 ## SRCP
 
-Web: [https://docs.hpc.cam.ac.uk/srcp/](https://docs.hpc.cam.ac.uk/srcp/)
+Web: <https://docs.hpc.cam.ac.uk/srcp/>
+
+CAM:ID <https://ide-cam.org.uk/>
 
 ### Information
 
