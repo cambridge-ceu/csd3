@@ -6,9 +6,7 @@ sort: 2
 
 Web: <https://www.ebi.ac.uk/gwas/deposition> ([email](gwas-subs@ebi.ac.uk),[GitHub](https://github.com/EBISPOT/gwas-sumstats-tools))
 
-## Command-line tool
-
-### Installation
+## Installation
 
 ```bash
 module load ceuadmin/snakemake
@@ -17,7 +15,7 @@ pip3 install gwas-sumstats-tools
 
 where to save space we borrow the setup for snakemake, whose Python 3.11.0 also satisfies the requirement of at least 3.9.0.
 
-### Usage
+## Usage
 
 This is described pragmatically as follows.
 
@@ -25,7 +23,7 @@ This is described pragmatically as follows.
 gwas-ssf --help
 ```
 
-## Application to SCALLOP-INF sumstats submission
+## Application: SCALLOP-INF sumstats submission
 
 * Project page, <https://jinghuazhao.github.io/INF/>
 
