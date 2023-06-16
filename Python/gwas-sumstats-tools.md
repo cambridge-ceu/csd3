@@ -25,7 +25,7 @@ gwas-ssf --help
 
 ## Application: SCALLOP-INF sumstats submission
 
-* Project page, <https://jinghuazhao.github.io/INF/>
+Web: <https://jinghuazhao.github.io/INF/>
 
 ### Reformatting and indexing
 
