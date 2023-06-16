@@ -45,24 +45,22 @@ gwas-ssf --help
 #SBATCH --output=_%A_%a.o
 #SBATCH --error=_%A_%a.e
 
-export src=~/rds/results/private/proteomics/scallop-inf1
-export src=~/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/INF/METAL
+export src=/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/INF/METAL
 export dst=~/rds/results/public/proteomics/scallop-inf1
 
-if [ ! -f "${dst}/files.lst" ]; then
-   ls ${src}/*gz | grep -v BDNF | xargs -l -I {} basename {} -1.tbl.gz | sed 's/-/\t/'| cut -f1 > ${dst}/files.lst
+if [ ! -f "${dst}/proteins.lst" ]; then
+   ls ${src}/*gz | grep -v BDNF | xargs -l -I {} basename {} -1.tbl.gz | sed 's/-/\t/'| cut -f1 > ${dst}/proteins.lst
 fi
 
-export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' "${dst}/files.lst")
+export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' "${dst}/proteins.lst")
 
 (
   echo chromosome base_pair_location effect_allele other_allele beta standard_error effect_allele_frequency p_value variant_id n
   zcat ${src}/${protein}-1.tbl.gz | \
   awk '
-    NR>1
     {
       gsub(/chr/,"",$3)
-      print $1,$2,$4,$5,$10,$11,-$12,$6,$3,$18
+      if (NR>1) print $1,$2,$4,$5,$10,$11,-$12,$6,$3,$18
     }' | \
   sort -k1,1n -k2,2n
 ) | \
@@ -70,6 +68,7 @@ tr ' ' '\t' | \
 bgzip -f > "${dst}/${protein}.gz"
 tabix -S1 -s1 -b2 -e2 -f "${dst}/${protein}.gz"
 
+# export src=~/rds/results/private/proteomics/scallop-inf1
 #1 Chromosome
 #2 Position
 #3 MarkerName
