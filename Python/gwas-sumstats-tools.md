@@ -114,3 +114,5 @@ cd globusconnectpersonal-3.2.2
 # ./globusconnectpersonal
 ./globusconnectpersonal -setup --no-gui
 ```
+
+We carry on building a module so it is enabled with `module load ceuadmin/globusconnectpersonal/3.2.2`.
