@@ -45,6 +45,11 @@ gwas-ssf --help
 #SBATCH --output=_%A_%a.o
 #SBATCH --error=_%A_%a.e
 
+. /etc/profile.d/modules.sh
+module purge
+module load rhel7/default-peta4
+module load ceuadmin/snakemake
+
 export src=/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/INF/METAL
 export dst=~/rds/results/public/proteomics/scallop-inf1
 
@@ -60,13 +65,18 @@ export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' ${dst}/proteins.lst)
   awk '
     {
       gsub(/chr/,"",$3)
-      if (NR>1) print $1,$2,$4,$5,$10,$11,$6,-$12,$3,$18
+      gsub(/:/,"_",$3)
+      $4=toupper($4)
+      $5=toupper($5)
+      if (NR>1 && length($4)==1 && length($5)==1) print $1,$2,$4,$5,$10,$11,$6,10^$12,$3,int($18)
     }' | \
   sort -k1,1n -k2,2n
 ) | \
 tr ' ' '\t' | \
-bgzip -f > ${dst}/${protein}.gz
-tabix -S1 -s1 -b2 -e2 -f ${dst}/${protein}.gz
+bgzip -f > ${dst}/${protein}.tsv.gz
+tabix -S1 -s1 -b2 -e2 -f ${dst}/${protein}.tsv.gz
+gwas-ssf read ${dst}/${protein}.tsv.gz
+gwas-ssf validate ${dst}/${protein}.tsv.gz
 
 # export src=~/rds/results/private/proteomics/scallop-inf1
 #1 Chromosome
@@ -89,4 +99,4 @@ tabix -S1 -s1 -b2 -e2 -f ${dst}/${protein}.gz
 #18 N
 ```
 
-These are followed by `md5sum ${dst}/* > ${dst} >> ${dst}/README.md`.
+These are followed by `md5sum ${dst}/* > ${dst} >> ${dst}/README.md`. Note that to comply with the (somewhat unreasonable) requirement, indels are dropped.
