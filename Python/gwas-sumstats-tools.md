@@ -60,7 +60,7 @@ export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' ${dst}/proteins.lst)
   awk '
     {
       gsub(/chr/,"",$3)
-      if (NR>1) print $1,$2,$4,$5,$10,$11,-$12,$6,$3,$18
+      if (NR>1) print $1,$2,$4,$5,$10,$11,$6,-$12,$3,$18
     }' | \
   sort -k1,1n -k2,2n
 ) | \
