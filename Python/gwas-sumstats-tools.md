@@ -4,7 +4,9 @@ sort: 2
 
 # gwas-sumstats-tools
 
-Web: <https://www.ebi.ac.uk/gwas/deposition> ([email](gwas-subs@ebi.ac.uk),[GitHub](https://github.com/EBISPOT/gwas-sumstats-tools))
+Web: <https://www.ebi.ac.uk/gwas/deposition> ([doc](https://www.ebi.ac.uk/gwas/docs/submission),[email](gwas-subs@ebi.ac.uk),[GitHub](https://github.com/EBISPOT/gwas-sumstats-tools))
+
+Life Science Login, Contact: <support@aai.lifescience-ri.eu>, Homepage: https://lifescience-ri.eu/ls-login/
 
 ## Installation
 
@@ -99,4 +101,16 @@ gwas-ssf validate ${dst}/${protein}.tsv.gz
 #18 N
 ```
 
-These are followed by `md5sum ${dst}/* > ${dst} >> ${dst}/README.md`. Note that to comply with the (somewhat unreasonable) requirement, indels are dropped.
+These are followed by `md5sum ${dst}/*gz* > ${dst}/MD5`. Note that to comply with the (somewhat unreasonable) requirement, indels are dropped.
+
+## Globus Connect Personal
+
+Web: <https://www.globus.org/globus-connect-personal>
+
+```bash
+wget -qO- https://downloads.globus.org/globus-connect-personal/linux/stable/globusconnectpersonal-latest.tgz | \
+tar xvfz -
+cd globusconnectpersonal-3.2.2
+# ./globusconnectpersonal
+./globusconnectpersonal -setup --no-gui
+```
