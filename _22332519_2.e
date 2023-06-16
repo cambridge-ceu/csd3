@@ -1,0 +1,23 @@
+ls: cannot access /home/jhz22/rds/results/private/proteomics/scallop-inf1/*gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
+gzip: /home/jhz22/rds/results/private/proteomics/scallop-inf1/-1.tbl.gz: No such file or directory
