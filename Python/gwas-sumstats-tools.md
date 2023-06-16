@@ -52,7 +52,7 @@ if [ ! -f "${dst}/proteins.lst" ]; then
    ls ${src}/*gz | grep -v BDNF | xargs -l -I {} basename {} -1.tbl.gz | sed 's/-/\t/'| cut -f1 > ${dst}/proteins.lst
 fi
 
-export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' "${dst}/proteins.lst")
+export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' ${dst}/proteins.lst)
 
 (
   echo chromosome base_pair_location effect_allele other_allele beta standard_error effect_allele_frequency p_value variant_id n
@@ -65,8 +65,8 @@ export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' "${dst}/proteins.lst")
   sort -k1,1n -k2,2n
 ) | \
 tr ' ' '\t' | \
-bgzip -f > "${dst}/${protein}.gz"
-tabix -S1 -s1 -b2 -e2 -f "${dst}/${protein}.gz"
+bgzip -f > ${dst}/${protein}.gz
+tabix -S1 -s1 -b2 -e2 -f ${dst}/${protein}.gz
 
 # export src=~/rds/results/private/proteomics/scallop-inf1
 #1 Chromosome
