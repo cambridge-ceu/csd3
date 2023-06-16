@@ -29,35 +29,12 @@ gwas-ssf --help
 
 * Project page, <https://jinghuazhao.github.io/INF/>
 
-### SLURM script
+### Reformatting and indexing
 
 ```bash
 #!/usr/bin/bash
 
 #SBATCH --job-name=_gwas_catalog
-#SBATCH --mem=28800
-#SBATCH --time=12:00:00
-
-#SBATCH --account CARDIO-SL0-CPU
-#SBATCH --partition cardio
-#SBATCH --qos=cardio
-
-#SBATCH --export ALL
-#SBATCH --output=_syn51364943.o
-#SBATCH --error=_syn51364943.e
-
-module load ceuadmin/snakemake/7.19.1
-synapse login -u <username> -p <user password> --remember-me
-```
-
-### Reformatting and indexing
-
-This is done as follows.
-
-```bash
-#!/usr/bin/bash
-
-#SBATCH --job-name=_reformatted
 #SBATCH --mem=28800
 #SBATCH --time=12:00:00
 
@@ -74,24 +51,21 @@ export src=~/rds/results/private/proteomics/scallop-inf1
 export dst=~/rds/results/public/proteomics/scallop-inf1
 
 if [ ! -f "${dst}/files.lst" ]; then
-   ls "${src}/*gz" | xargs -l -I {} basename {} -1.tbl.gz > "${dst}/files.lst"
+   ls ${src}/*gz | xargs -l -I {} basename {} -1.tbl.gz | sed 's/-/\t/'| cut -f1 > ${dst}/files.lst
 fi
 
 export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' "${dst}/files.lst")
 
 (
   echo chromosome base_pair_location effect_allele other_allele beta standard_error effect_allele_frequency p_value variant_id n
-  for chr in {1..22}
-  do
-    zcat ${src}/${protein}-1.tbl.gz | \
-    awk -v chr=${chr} '
-    $1==chr
+  zcat ${src}/${protein}-1.tbl.gz | \
+  awk -v chr=${chr} '
+    NR>1 && $1==chr
     {
       gsub(/chr/,"",$3)
       print $1,$2,$4,$5,$10,$11,-$12,$6,$3,$18
     }' | \
-    sort -k1,1n -k2,2n
-  done
+  sort -k1,1n -k2,2n
 ) | \
 tr ' ' '\t' | \
 bgzip -f > "${dst}/${protein}.gz"
