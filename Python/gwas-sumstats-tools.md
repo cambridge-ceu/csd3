@@ -48,10 +48,11 @@ gwas-ssf --help
 #SBATCH --error=_%A_%a.e
 
 export src=~/rds/results/private/proteomics/scallop-inf1
+export src=~/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/INF/METAL
 export dst=~/rds/results/public/proteomics/scallop-inf1
 
 if [ ! -f "${dst}/files.lst" ]; then
-   ls ${src}/*gz | xargs -l -I {} basename {} -1.tbl.gz | sed 's/-/\t/'| cut -f1 > ${dst}/files.lst
+   ls ${src}/*gz | grep -v BDNF | xargs -l -I {} basename {} -1.tbl.gz | sed 's/-/\t/'| cut -f1 > ${dst}/files.lst
 fi
 
 export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' "${dst}/files.lst")
@@ -70,7 +71,6 @@ export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' "${dst}/files.lst")
 tr ' ' '\t' | \
 bgzip -f > "${dst}/${protein}.gz"
 tabix -S1 -s1 -b2 -e2 -f "${dst}/${protein}.gz"
-```
 
 #1 Chromosome
 #2 Position
@@ -90,5 +90,6 @@ tabix -S1 -s1 -b2 -e2 -f "${dst}/${protein}.gz"
 #16 HetDf
 #17 logHetP
 #18 N
+```
 
-md5sum ${dst}/* > ${dst} >> ${dst}/README.md
+These are followed by `md5sum ${dst}/* > ${dst} >> ${dst}/README.md`.
