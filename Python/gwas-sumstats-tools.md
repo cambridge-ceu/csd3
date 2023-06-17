@@ -109,7 +109,7 @@ md5sum ${dst}/*gz* > MD5
 ls *gz | sed 's/.tsv.gz//' | \
 parallel -j10 -C' ' '
   cat <(echo {}) \
-      <(grep -w {} MD5 | grep -v tbi) | \
+      <(grep -w [{}$] MD5) | \
   tr "\n" "\t"
   gunzip -c {}.tsv.gz | sed "1d" | cut -f10 | sort -k1,1nr | head -1
 ' | \
