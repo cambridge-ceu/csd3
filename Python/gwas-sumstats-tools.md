@@ -131,7 +131,7 @@ gwas-ssf validate ${dst}/${protein}.tsv.gz
 #18 N
 ```
 
-Note that to comply with the (somewhat unreasonable) requirement, indels are dropped. Moreover, CXCL6, FGF.5 and IL.18R1 have p_value=0 so their specifical handling with R is introduced as a generic solution..
+Note that to comply with the (somewhat unreasonable) requirement, indels are dropped. Moreover, a number of proteins including CCL25, CD6, CXCL6, FGF.5,  IL.12B, IL.18R1 and TNFB have p_value=0 so their specifical handling with R is introduced as a generic solution.
 We could obtain the meta-data as required in the submission form,
 
 ```bash
