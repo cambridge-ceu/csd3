@@ -25,6 +25,30 @@ This is described pragmatically as follows.
 gwas-ssf --help
 ```
 
+## Globus
+
+Web: <https://www.globus.org/globus-connect-personal> ([CLI](https://docs.globus.org/cli/))
+
+```bash
+wget -qO- https://downloads.globus.org/globus-connect-personal/linux/stable/globusconnectpersonal-latest.tgz | \
+tar xvfz -
+cd globusconnectpersonal-3.2.2
+# ./globusconnectpersonal
+./globusconnectpersonal -setup --no-gui
+# CLI
+module load ceuadmin/snakemake
+pip3 install globus-cli
+globus list-commands
+globus login
+globus whoami
+globus session show
+globus transfer --help
+globus logout
+
+```
+
+We carry on building a module so it is enabled with `module load ceuadmin/globusconnectpersonal/3.2.2` and could simply run `globusconnect` as well as  `globus`.
+
 ## Application: SCALLOP-INF sumstats submission
 
 Web: <https://jinghuazhao.github.io/INF/>
@@ -109,6 +133,7 @@ md5sum ${dst}/*gz* > MD5
 ls *gz | sed 's/.tsv.gz//' | \
 parallel -j10 -C' ' '
   cat <(echo {}) \
+      <(gunzip -c {}.tsv.gz | wc -l | cut -d" " -f1) \
       <(grep -w {}.tsv.gz$ MD5 | sed "s/  /\t/") | \
   tr "\n" "\t"
   gunzip -c {}.tsv.gz | sed "1d" | cut -f10 | sort -k1,1nr | head -1
@@ -117,26 +142,4 @@ sort -k1,1 > meta.tsv
 cd -
 ```
 
-## Globus
-
-Web: <https://www.globus.org/globus-connect-personal> ([CLI](https://docs.globus.org/cli/))
-
-```bash
-wget -qO- https://downloads.globus.org/globus-connect-personal/linux/stable/globusconnectpersonal-latest.tgz | \
-tar xvfz -
-cd globusconnectpersonal-3.2.2
-# ./globusconnectpersonal
-./globusconnectpersonal -setup --no-gui
-# CLI
-module load ceuadmin/snakemake
-pip3 install globus-cli
-globus list-commands
-globus login
-globus whoami
-globus session show
-globus transfer --help
-globus logout
-
-```
-
-We carry on building a module so it is enabled with `module load ceuadmin/globusconnectpersonal/3.2.2` and could simply run `globusconnect`.
+which include protein name, number of variants, md5, file name and sample size.
