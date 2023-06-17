@@ -143,3 +143,5 @@ cd -
 ```
 
 which include protein name, number of variants, md5, file name and sample size.
+
+The login information is visiable from <https://www.ebi.ac.uk/gwas/deposition/login>.
