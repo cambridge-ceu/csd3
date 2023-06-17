@@ -103,9 +103,9 @@ gwas-ssf validate ${dst}/${protein}.tsv.gz
 
 These are followed by `md5sum ${dst}/*gz* > ${dst}/MD5`. Note that to comply with the (somewhat unreasonable) requirement, indels are dropped.
 
-## Globus Connect Personal
+## Globus
 
-Web: <https://www.globus.org/globus-connect-personal>
+Web: <https://www.globus.org/globus-connect-personal> ([CLI](https://docs.globus.org/cli/))
 
 ```bash
 wget -qO- https://downloads.globus.org/globus-connect-personal/linux/stable/globusconnectpersonal-latest.tgz | \
@@ -113,6 +113,16 @@ tar xvfz -
 cd globusconnectpersonal-3.2.2
 # ./globusconnectpersonal
 ./globusconnectpersonal -setup --no-gui
+# CLI
+module load ceuadmin/snakemake
+pip3 install globus-cli
+globus --help
+globus list-commands
+globus login
+globus whoami
+globus session show
+globus logout
+
 ```
 
-We carry on building a module so it is enabled with `module load ceuadmin/globusconnectpersonal/3.2.2`.
+We carry on building a module so it is enabled with `module load ceuadmin/globusconnectpersonal/3.2.2` and could simply run `globusconnect`.
