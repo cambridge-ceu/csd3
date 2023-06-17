@@ -101,7 +101,21 @@ gwas-ssf validate ${dst}/${protein}.tsv.gz
 #18 N
 ```
 
-These are followed by `md5sum ${dst}/*gz* > ${dst}/MD5`. Note that to comply with the (somewhat unreasonable) requirement, indels are dropped.
+Note that to comply with the (somewhat unreasonable) requirement, indels are dropped. We could obtain the meta-data as required in the submission form,
+
+```bash
+cd ${dst}
+md5sum ${dst}/*gz* > MD5
+ls *gz | sed 's/.tsv.gz//' | \
+parallel -j10 -C' ' '
+  cat <(echo {}) \
+      <(grep -w {} MD5 | grep -v tbi) | \
+  tr "\n" "\t"
+  gunzip -c {}.tsv.gz | sed "1d" | cut -f10 | sort -k1,1nr | head -1
+' | \
+sort -k1,1 > meta.dat
+cd -
+```
 
 ## Globus
 
