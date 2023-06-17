@@ -113,7 +113,7 @@ parallel -j10 -C' ' '
   tr "\n" "\t"
   gunzip -c {}.tsv.gz | sed "1d" | cut -f10 | sort -k1,1nr | head -1
 ' | \
-sort -k1,1 > meta.dat
+sort -k1,1 > meta.tsv
 cd -
 ```
 
