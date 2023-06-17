@@ -6,7 +6,7 @@ sort: 2
 
 Web: <https://www.ebi.ac.uk/gwas/deposition> ([doc](https://www.ebi.ac.uk/gwas/docs/submission), [email](gwas-subs@ebi.ac.uk), [GitHub](https://github.com/EBISPOT/gwas-sumstats-tools), [submission form](https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata))
 
-Life Science Login, Contact: <support@aai.lifescience-ri.eu>, Homepage: https://lifescience-ri.eu/ls-login/
+Life Science Login, Contact: <support@aai.lifescience-ri.eu>, Homepage: <https://lifescience-ri.eu/ls-login/>
 
 ## Installation
 
@@ -116,11 +116,11 @@ cd globusconnectpersonal-3.2.2
 # CLI
 module load ceuadmin/snakemake
 pip3 install globus-cli
-globus --help
 globus list-commands
 globus login
 globus whoami
 globus session show
+globus transfer --help
 globus logout
 
 ```
