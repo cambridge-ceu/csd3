@@ -99,6 +99,12 @@ export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' ${dst}/proteins.lst)
   sort -k1,1n -k2,2n
 ) | \
 tr ' ' '\t' | \
+Rscript -e '
+  suppressMessages(library(dplyr))
+  pgwas <- read.delim("stdin") %>%
+           mutate(p_value=gap::pvalue(beta/standard_error))
+  write.table(pgwas,quote=FALSE,row.names=FALSE,sep="\t")
+' | \
 bgzip -f > ${dst}/${protein}.tsv.gz
 tabix -S1 -s1 -b2 -e2 -f ${dst}/${protein}.tsv.gz
 gwas-ssf read ${dst}/${protein}.tsv.gz
@@ -125,11 +131,12 @@ gwas-ssf validate ${dst}/${protein}.tsv.gz
 #18 N
 ```
 
-Note that to comply with the (somewhat unreasonable) requirement, indels are dropped. We could obtain the meta-data as required in the submission form,
+Note that to comply with the (somewhat unreasonable) requirement, indels are dropped. Moreover, CXCL6, FGF.5 and IL.18R1 have p_value=0 so their specifical handling with R is introduced as a generic solution..
+We could obtain the meta-data as required in the submission form,
 
 ```bash
 cd ${dst}
-md5sum ${dst}/*gz* > MD5
+md5sum *gz* > MD5
 ls *gz | sed 's/.tsv.gz//' | \
 parallel -j10 -C' ' '
   cat <(echo {}) \
