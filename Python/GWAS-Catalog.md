@@ -8,7 +8,7 @@ Web: <https://www.ebi.ac.uk/gwas/deposition> ([doc](https://www.ebi.ac.uk/gwas/d
 
 European Life Science Research Infrastructure Login, Contact: <support@aai.lifescience-ri.eu>, Homepage: <https://lifescience-ri.eu/ls-login/>
 
-Like the entry for DNAnexus here, we documented a collection of software related to data submission to the GWAS Catalog.
+Like the entry for DNAnexus here, the collection of software relate to data submission to the GWAS Catalog.
 
 ## gwas-sumstats-tools
 
