@@ -2,13 +2,17 @@
 sort: 2
 ---
 
-# gwas-sumstats-tools
+# GWAS Catalog
 
 Web: <https://www.ebi.ac.uk/gwas/deposition> ([doc](https://www.ebi.ac.uk/gwas/docs/submission), [email](gwas-subs@ebi.ac.uk), [GitHub](https://github.com/EBISPOT/gwas-sumstats-tools), [submission form](https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata))
 
 European Life Science Research Infrastructure Login, Contact: <support@aai.lifescience-ri.eu>, Homepage: <https://lifescience-ri.eu/ls-login/>
 
-## Installation
+Like the entry for DNAnexus here, we documented a collection of software related to data submission to the GWAS Catalog.
+
+## gwas-sumstats-tools
+
+### Installation
 
 ```bash
 module load ceuadmin/snakemake
@@ -17,7 +21,7 @@ pip3 install gwas-sumstats-tools
 
 where to save space we borrow the setup for snakemake, whose Python 3.11.0 also satisfies the requirement of at least 3.9.0.
 
-## Usage
+### Usage
 
 This is described pragmatically as follows.
 
@@ -153,9 +157,9 @@ which include protein name, number of variants, md5, file name and sample size.
 
 The login information is visible from <https://www.ebi.ac.uk/gwas/deposition/login> for the following steps,
 
-> 1. Upload summary statistics file(s) to your Globus submission folder
+> 1. Upload summary statistics file(s) to ***your Globus submission folder***
 > 2. Download submission form
-> 3. Fill in submission form (see here for help)
+> 3. Fill in submission form (see ***here*** for help)
 > 4. Wait to receive an email confirmation from Globus that all summary statistics files have successfully been transferred
 > 5. Submit submission form
 
