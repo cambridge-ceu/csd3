@@ -4,13 +4,15 @@ sort: 2
 
 # GWAS Catalog
 
-Web: <https://www.ebi.ac.uk/gwas/deposition> ([doc](https://www.ebi.ac.uk/gwas/docs/submission), [email](gwas-subs@ebi.ac.uk), [GitHub](https://github.com/EBISPOT/gwas-sumstats-tools), [submission form](https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata))
+Web: <https://www.ebi.ac.uk/gwas/deposition> ([doc](https://www.ebi.ac.uk/gwas/docs/submission), [email](gwas-subs@ebi.ac.uk), [submission form](https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata))
 
 European Life Science Research Infrastructure Login, Contact: <support@aai.lifescience-ri.eu>, Homepage: <https://lifescience-ri.eu/ls-login/>
 
 Like the entry for DNAnexus here, we documented a collection of software related to data submission to the GWAS Catalog.
 
 ## gwas-sumstats-tools
+
+GitHub: <https://github.com/EBISPOT/gwas-sumstats-tools> 
 
 ### Installation
 
