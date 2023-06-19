@@ -46,12 +46,14 @@ make
 /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-6.5.0-dtb6lagchexqdijlx6xgkin3zlfddpzi/bin/g++ include/SFMT.o libdeflate/lib/adler32.o libdeflate/lib/crc32.o libdeflate/lib/deflate_compress.o libdeflate/lib/deflate_decompress.o libdeflate/lib/gzip_compress.o libdeflate/lib/gzip_decompress.o libdeflate/lib/utils.o libdeflate/lib/zlib_compress.o libdeflate/lib/zlib_decompress.o libdeflate/lib/arm/arm_cpu_features.o libdeflate/lib/x86/x86_cpu_features.o zstd/lib/common/debug.o zstd/lib/common/entropy_common.o zstd/lib/common/zstd_common.o zstd/lib/common/error_private.o zstd/lib/common/xxhash.o zstd/lib/common/fse_decompress.o zstd/lib/common/pool.o zstd/lib/common/threading.o zstd/lib/compress/fse_compress.o zstd/lib/compress/hist.o zstd/lib/compress/huf_compress.o zstd/lib/compress/zstd_double_fast.o zstd/lib/compress/zstd_fast.o zstd/lib/compress/zstd_lazy.o zstd/lib/compress/zstd_ldm.o zstd/lib/compress/zstd_opt.o zstd/lib/compress/zstd_compress.o zstd/lib/compress/zstd_compress_literals.o zstd/lib/compress/zstd_compress_sequences.o zstd/lib/compress/zstd_compress_superblock.o zstd/lib/compress/zstdmt_compress.o zstd/lib/decompress/huf_decompress.o zstd/lib/decompress/zstd_decompress.o zstd/lib/decompress/zstd_ddict.o zstd/lib/decompress/zstd_decompress_block.o include/plink2_base.o include/plink2_bits.o include/pgenlib_misc.o include/pgenlib_read.o include/pgenlib_write.o include/plink2_bgzf.o include/plink2_stats.o include/plink2_string.o include/plink2_text.o include/plink2_thread.o include/plink2_zstfile.o plink2.o plink2_adjust.o plink2_cmdline.o plink2_common.o plink2_compress_stream.o plink2_data.o plink2_decompress.o plink2_export.o plink2_fasta.o plink2_filter.o plink2_glm.o plink2_help.o plink2_import.o plink2_ld.o plink2_matrix.o plink2_matrix_calc.o plink2_merge.o plink2_misc.o plink2_psam.o plink2_pvar.o plink2_random.o plink2_set.o -o bin/plink2  -llapack -lcblas -lblas -llapack -lcblas -lblas -lm -lpthread -lz -L$HPC_WORK/lib64
 ```
 
-### 2.00a3.3
+### ceuadmin/plink/2.00a3.3
 
 Two elements are notable,
 
-1. The last line is unneccesary, however, after adding -L/rds/usr/jhz22/hpc-work/lib64 to the BLASFLAGS64 variable in build.sh.
+1. The last line is unneccesary, however, after adding -L/rds/project/jmmh2/rds-jmmh2-public_databases/software to the BLASFLAGS64 variable in build.sh.
 2. gcc/6 is required for 2.0.
+
+Ideally, these points to campus-wide location to enable non-CEU users as well.
 
 We have from `bin/plink2 -help`
 
