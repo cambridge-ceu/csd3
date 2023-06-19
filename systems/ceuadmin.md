@@ -287,6 +287,8 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-04-04 | PWCoCo/1.0                  | Genetics            |
     | 2023-06-02 | regenie/3.2.7               | Genetics[^regenie]  |
     | 2023-06-06 | allegro/2.0f                | Genetics            |
+    | 2023-06-19 | plink-ng/2.00a3.3           | Genetics            |
+
 
     \* CEU or approved users only.
 
