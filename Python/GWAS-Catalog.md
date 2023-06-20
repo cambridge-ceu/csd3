@@ -21,7 +21,7 @@ module load ceuadmin/snakemake
 pip3 install gwas-sumstats-tools
 ```
 
-where to save space we borrow the setup for snakemake, whose Python 3.11.0 also satisfies the requirement of at least 3.9.0.
+where to save space we borrow the setup for snakemake, whose Python 3.11.0 also satisfies the requirement (>=3.9.0).
 
 ### Usage
 
