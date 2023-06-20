@@ -50,10 +50,10 @@ make
 
 Two elements are notable,
 
-1. The last line is unneccesary, however, after adding -L/rds/project/jmmh2/rds-jmmh2-public_databases/software to the BLASFLAGS64 variable in build.sh.
+1. The last line is unneccesary, however, after adding -L/usr/local/Cluster-Apps/ceuadmin/lapack/3.10.1/lib64 to the BLASFLAGS64 variable in build.sh.
 2. gcc/6 is required for 2.0.
 
-Ideally, these points to campus-wide location to enable non-CEU users as well.
+Now these points to campus-wide location to enable non-CEU users (-L/usr/local/Cluster-Apps/ceuadmin/lapack/3.10.1/lib64) as well.
 
 We have from `bin/plink2 -help`
 
