@@ -8,7 +8,13 @@ Web: <https://www.ebi.ac.uk/gwas/deposition> ([doc](https://www.ebi.ac.uk/gwas/d
 
 European Life Science Research Infrastructure Login, Contact: <support@aai.lifescience-ri.eu>, Homepage: <https://lifescience-ri.eu/ls-login/>
 
-Like the entry for DNAnexus here, the collection of software relate to data submission to the GWAS Catalog.
+Like the entry for DNAnexus here, the collection of software relate to data submission to the GWAS Catalog. For these, we involve `ceuadmin/snakemake`
+
+```bash
+module load ceuadmin/snakemake
+```
+
+to save space.
 
 ## gwas-sumstats-tools
 
@@ -17,11 +23,10 @@ GitHub: <https://github.com/EBISPOT/gwas-sumstats-tools>
 ### Installation
 
 ```bash
-module load ceuadmin/snakemake
 pip3 install gwas-sumstats-tools
 ```
 
-where to save space we borrow the setup for snakemake, whose Python 3.11.0 also satisfies the requirement (>=3.9.0).
+where we borrow the setup for `snakemake` associated with Python 3.11.0 that satisfies the requirement (>=3.9.0).
 
 ### Usage
 
@@ -42,7 +47,6 @@ cd globusconnectpersonal-3.2.2
 # ./globusconnectpersonal
 ./globusconnectpersonal -setup --no-gui
 # CLI
-module load ceuadmin/snakemake
 pip3 install globus-cli
 globus list-commands
 globus login
@@ -52,6 +56,8 @@ globus transfer --help
 globus logout
 
 ```
+
+where we again use the setup for `snakemake`.
 
 We carry on building a module so it is enabled with `module load ceuadmin/globusconnectpersonal/3.2.2` and could simply run `globusconnect` as well as  `globus`.
 
