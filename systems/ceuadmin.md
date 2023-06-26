@@ -97,16 +97,16 @@ The current list is as follows,
 [133] "qctool"                "qpdf"                  "qt"
 [136] "qtcreator"             "QTLtools"              "quicktest"
 [139] "R"                     "raremetal"             "rclone"
-[142] "readline"              "regenie"               "rstudio"
-[145] "ruby"                  "samtools"              "shapeit"
-[148] "SMR"                   "snakemake"             "SNP2HLA"
-[151] "snptest"               "sqlite"                "ssw"
-[154] "STAR"                  "stata"                 "SurvivalAnalysis"
-[157] "SurvivalKit"           "tabix"                 "tidy"
-[160] "trinculo"              "trousers"              "Typora"
-[163] "unbound"               "vala"                  "vcftools"
-[166] "VEGAS2"                "VSCode"                "yaml-cpp"
-[169] "Zotero"                "zstd"
+[142] "readline"              "regenie"               "RHHsoftware"
+[145] "rstudio"               "ruby"                  "samtools"
+[148] "shapeit"               "SMR"                   "snakemake"
+[151] "SNP2HLA"               "snptest"               "sqlite"
+[154] "ssw"                   "STAR"                  "stata"
+[157] "SurvivalAnalysis"      "SurvivalKit"           "tabix"
+[160] "tidy"                  "trinculo"              "trousers"
+[163] "Typora"                "unbound"               "vala"
+[166] "vcftools"              "VEGAS2"                "VSCode"
+[169] "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -288,6 +288,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-06-02 | regenie/3.2.7               | Genetics[^regenie]  |
     | 2023-06-06 | allegro/2.0f                | Genetics            |
     | 2023-06-19 | plink-ng/2.00a3.3           | Genetics            |
+    | 2023-06-26 | RHHsoftware/0.1             | Genetics            |
 
 
     \* CEU or approved users only.
