@@ -33,7 +33,6 @@ module load gcc/6
 # make install
 # make theme
 
-renum systems
 renum applications
 _packages Python
 _packages R
