@@ -45,7 +45,7 @@ git add --help
 
 It is avail from `/usr/bin/go` and also visiable from `module avail go`.
 
-## JAVA
+## Java
 
 ```bash
 module avail openjdk
