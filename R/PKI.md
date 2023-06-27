@@ -2,7 +2,7 @@
 sort: 14
 ---
 
-# R/PKI
+# PKI
 
 When installing/updating the package, the following error message appears,
 

@@ -2,7 +2,7 @@
 sort: 4
 ---
 
-# R/geometries
+# geometries
 
 The error message for 0.2.2 is similar to several others,
 

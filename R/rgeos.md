@@ -2,7 +2,7 @@
 sort: 20
 ---
 
-# R/rgeos
+# rgeos
 
 This requires geos to be loaded,
 

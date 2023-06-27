@@ -2,7 +2,7 @@
 sort: 13
 ---
 
-# R/PhenoScanner
+# PhenoScanner
 
 ## R package setup
 

@@ -2,7 +2,7 @@
 sort: 26
 ---
 
-# R/SAIGE
+# SAIGE
 
 ## 0.36.6 and 0.39.2
 

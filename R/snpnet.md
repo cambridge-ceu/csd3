@@ -2,7 +2,7 @@
 sort: 28
 ---
 
-# R/snpnet
+# snpnet
 
 GitHub page: [https://github.com/rivas-lab/snpnet](https://github.com/rivas-lab/snpnet).
 

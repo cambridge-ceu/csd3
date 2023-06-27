@@ -2,7 +2,7 @@
 sort: 22
 ---
 
-# R/Rhdf5lib
+# Rhdf5lib
 
 This is useful for hdf5 file handling, but BiocManager::install() gives error `cp: cannot stat ‘hdf5/c++/src/.libs/libhdf5_cpp.a’: No such file or directory ` so we proceed manually,
 

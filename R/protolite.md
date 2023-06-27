@@ -2,7 +2,7 @@
 sort: 16
 ---
 
-# R/protolite
+# protolite
 
 When we issued `update.packages(ask=FALSE, checkBuilt=TRUE)`, we saw the following error message
 

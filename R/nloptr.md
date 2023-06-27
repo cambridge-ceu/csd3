@@ -2,7 +2,7 @@
 sort: 12
 ---
 
-# R/nloptr
+# nloptr
 
 ## NLopt
 

@@ -2,7 +2,7 @@
 sort: 24
 ---
 
-# R/rJava
+# rJava
 
 One may see the messages
 

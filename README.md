@@ -23,9 +23,9 @@ cardio --> lm["Legacy materials"]
 applications --> ABCtoolbox
 applications --> appdot["..."]
 applications --> vsc["Visual Studio Code"]
-Python --> PhySO
+Python --> gwas2vcf
 Python --> Pythondot["..."]
-Python --> snakemake
+Python --> Synase
 R --> brms
 R --> Rdot["..."]
 R --> xlsx

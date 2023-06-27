@@ -2,7 +2,7 @@
 sort: 30
 ---
 
-# R/SPACox
+# SPACox
 
 GitHub page: [https://github.com/WenjianBI/SPACox](https://github.com/WenjianBI/SPACox).
 

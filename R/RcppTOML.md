@@ -2,7 +2,7 @@
 sort: 17
 ---
 
-# R/RcppTOML
+# RcppTOML
 
 It requires C++17 therefore gcc/7, and we set ~/.R/Makevars as follows,
 

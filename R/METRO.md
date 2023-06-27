@@ -2,7 +2,7 @@
 sort: 11
 ---
 
-# R/METRO
+# METRO
 
 Full name: Multi-ancEstry TRanscriptOme-wide analysis (METRO)
 

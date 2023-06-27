@@ -2,7 +2,7 @@
 sort: 32
 ---
 
-# R/xlsx
+# xlsx
 
 When there is message,
 

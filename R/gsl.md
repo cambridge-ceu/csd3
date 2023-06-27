@@ -2,7 +2,7 @@
 sort: 7
 ---
 
-# R/gsl
+# gsl
 
 When there is message,
 

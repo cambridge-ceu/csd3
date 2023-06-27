@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# R/brms
+# brms
 
 It is available from CRAN, so it can be installed with `install.packages()`. Here is a documentation example,
 

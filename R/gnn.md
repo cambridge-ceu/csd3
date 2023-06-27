@@ -2,7 +2,7 @@
 sort: 6
 ---
 
-# R/gnn
+# gnn
 
 It requires libgsl. The available version is seen from
 

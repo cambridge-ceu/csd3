@@ -2,7 +2,7 @@
 sort: 10
 ---
 
-# R/magick
+# magick
 
 > The magick package provide a modern and simple toolkit for image processing in R. It wraps the ImageMagick STL which is the most comprehensive open-source image processing library available today.
 

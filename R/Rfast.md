@@ -2,7 +2,7 @@
 sort: 18
 ---
 
-# R/Rfast
+# Rfast
 
 For 2.0.4, we received the following error,
 

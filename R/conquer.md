@@ -2,7 +2,7 @@
 sort: 2
 ---
 
-# R/conquer
+# conquer
 
 For 1.3.2, we received the following error,
 

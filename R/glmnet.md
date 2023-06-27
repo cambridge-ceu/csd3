@@ -2,7 +2,7 @@
 sort: 5
 ---
 
-# R/glmnet
+# glmnet
 
 Web: [https://glmnet.stanford.edu/](https://glmnet.stanford.edu/).
 

@@ -2,7 +2,7 @@
 sort: 23
 ---
 
-# R/rjags
+# rjags
 
 Web page: [https://sourceforge.net/projects/mcmc-jags/files/rjags/](https://sourceforge.net/projects/mcmc-jags/files/rjags/).
 

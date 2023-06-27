@@ -2,7 +2,7 @@
 sort: 31
 ---
 
-# R/tenXplore
+# tenXplore
 
 For 1.17.1, we received the following error,
 

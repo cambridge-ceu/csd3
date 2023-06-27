@@ -2,7 +2,7 @@
 sort: 29
 ---
 
-# R/sojo
+# sojo
 
 GitHub page: [https://github.com/zhenin/sojo](https://github.com/zhenin/sojo).
 

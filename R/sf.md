@@ -2,7 +2,7 @@
 sort: 27
 ---
 
-# R/sf
+# sf
 
 A number of packages use it as dependency and there might be error such as this,
 

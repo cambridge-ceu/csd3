@@ -2,7 +2,7 @@
 sort: 25
 ---
 
-# R/rstan
+# rstan
 
 Official page: [https://mc-stan.org/users/interfaces/rstan](https://mc-stan.org/users/interfaces/rstan) and also [https://cran.r-project.org/package=rstan](https://cran.r-project.org/package=rstan).
 

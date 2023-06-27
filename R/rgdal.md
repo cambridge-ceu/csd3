@@ -2,7 +2,7 @@
 sort: 19
 ---
 
-# R/rgdal
+# rgdal
 
 We have .R/Makevars as follows,
 

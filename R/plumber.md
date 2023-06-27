@@ -2,7 +2,7 @@
 sort: 15
 ---
 
-# R/plumber
+# plumber
 
 ## Installation
 
