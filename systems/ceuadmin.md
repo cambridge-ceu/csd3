@@ -19,7 +19,7 @@ For CEU users, it is easy to point to them, e.g.,
 ```bash
 export HPC_WORK=/rds/user/$USER/hpc-work/
 export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-export R_LIBS=${RDS}/R:${RDS}/R-4.3.0/library
+export R_LIBS=${RDS}/R:${RDS}/R-4.3.1/library
 ```
 
 or possible to have your own installations based on these, e.g., through creation of a modified `Makefile` with altered prefix followed
