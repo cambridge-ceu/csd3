@@ -29,8 +29,8 @@ The following script tests for loading of `dplyr`:
 
 ```bash
 export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-export PATH=${PATH}:${RDS}/R-4.3.0/bin
-export R_LIBS=${RDS}/R-4.3.0/library:${RDS}/R
+export PATH=${PATH}:${RDS}/R-4.3.1/bin
+export R_LIBS=${RDS}/R-4.3.1/library:${RDS}/R
 Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
 ```
 
