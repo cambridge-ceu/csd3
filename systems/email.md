@@ -4,7 +4,9 @@ sort: 5
 
 # email
 
-This can be done with `mutt` from the console.
+This can be done with `mutt` from the console, which leaves to a menu-driven session.
+
+Alternatively, to send a message one can following these steps,
 
 ```bash
 mail <your-email address>
