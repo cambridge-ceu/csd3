@@ -10,6 +10,8 @@ To download the latest utilitiess, try `rsync -aP rsync://hgdownload.soe.ucsc.ed
 
 The most notable is liftOver from UCSC here, [https://genome.ucsc.edu/cgi-bin/hgLiftOver](https://genome.ucsc.edu/cgi-bin/hgLiftOver).
 
+## A toy example
+
 Suppose we have `r6-b38-A2.bed`,
 
 ```
@@ -43,4 +45,27 @@ chr1	798958	798959	1:863579:G:A
 chr1	799498	799499	1:864119:T:C
 chr1	801535	801536	1:866156:T:G
 chr1	801660	801661	1:866281:C:T
+```
+
+## A real application
+
+```bash
+#!/usr/bin/bash
+
+module load ceuadmin/KentUtils/2022-11-14
+export chain_file=~/rds/public_databases/software/bin/hg38ToHg19.over.chain.gz
+
+cat <(echo -e "#CHROM\tstart\tend\tid") \
+    <(gunzip -c gtex_cis_etls_alltissues_b38.gz | \
+      awk -v OFS="\t" 'NR>1{print $7,$8,$8,$1"-"$22"-"$23}') > b38.bed
+liftOver b38.bed $chain_file b37.bed b37-unlifted.bed
+cat <(echo -e "#CHROM\tstart37\tend37\t" | paste - <(gunzip -c gtex_cis_etls_alltissues_b38.gz | head -1)) \
+    <(awk '{print $4,$1,$2,$3}' b37.bed | \
+      sort -k1,1 | \
+      join - <(gunzip -c gtex_cis_etls_alltissues_b38.gz | awk 'NR>1{$1=$1"-"$22"-"$23 "\t" $1;print}' | sort -k1,1) | \
+      tr ' ' '\t' | \
+      cut -f1 --complement | \
+      sort -k1,1 -k2,2n) | \
+bgzip -f > gtex_cis_etls_alltissues_b37.gz
+tabix -S1 -s1 -b2 -e3 gtex_cis_etls_alltissues_b37.gz
 ```
