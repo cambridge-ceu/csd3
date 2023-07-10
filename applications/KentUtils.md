@@ -49,7 +49,7 @@ chr1	801660	801661	1:866281:C:T
 
 ## A real application
 
-The first few lines of our input file are listed as follows,
+The first few lines of our input file, `gtex_cis_etls_alltissues_b38.gz`, are listed as follows,
 
 ```
 gene_id	num_var	beta_shape1	beta_shape2	true_df	pval_true_df	chr	pos	ref	alt	tss_distance	minor_allele_samples	minor_allele_count	maf	ref_factor	pval_nominal	slope	slope_se	pval_perm	pval_beta	rank	tissue	SNP
