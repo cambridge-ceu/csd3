@@ -8,6 +8,8 @@ source: `{{ page.path }}`
 
 Cardio is the HPC facility at the CEU.
 
+<font color="red"><b>25/7/2023 Update</b>: </font><font color="blue"><b> it will be finally decommissioned.</b></font>
+
 ## CSD3 partition
 
 ```bash
