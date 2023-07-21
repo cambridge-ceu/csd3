@@ -16,7 +16,7 @@ module load ceuadmin/snakemake
 
 to save space.
 
-## gwas-sumstats-tools
+## I. gwas-sumstats-tools
 
 GitHub: <https://github.com/EBISPOT/gwas-sumstats-tools> 
 
@@ -36,7 +36,7 @@ This is described pragmatically as follows.
 gwas-ssf --help
 ```
 
-## Globus
+## II. Globus
 
 Web: <https://www.globus.org/globus-connect-personal> ([CLI](https://docs.globus.org/cli/))
 
@@ -61,7 +61,7 @@ where we again use the setup for `snakemake`.
 
 We carry on building a module so it is enabled with `module load ceuadmin/globusconnectpersonal/3.2.2` and could simply run `globusconnect` as well as  `globus`.
 
-## Application: SCALLOP-INF sumstats submission
+## III. Application: SCALLOP-INF sumstats submission
 
 Web: <https://jinghuazhao.github.io/INF/>
 
