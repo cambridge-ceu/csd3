@@ -4,7 +4,7 @@ sort: 2
 
 # GWAS Catalog
 
-Web: <https://www.ebi.ac.uk/gwas/deposition> ([doc](https://www.ebi.ac.uk/gwas/docs/submission), [email](mailto:gwas-subs@ebi.ac.uk), [submission form](https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata))
+Web: <https://www.ebi.ac.uk/gwas/deposition> ([doc](https://www.ebi.ac.uk/gwas/docs/submission), [email](mailto:gwas-subs@ebi.ac.uk), [format](https://www.ebi.ac.uk/gwas/docs/summary-statistics-format), [submission form](https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata))
 
 European Life Science Research Infrastructure Login, Contact: <support@aai.lifescience-ri.eu>, Homepage: <https://lifescience-ri.eu/ls-login/>
 
