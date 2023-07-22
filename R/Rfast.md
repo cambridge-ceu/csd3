@@ -22,3 +22,16 @@ We can get away with this,
 module load gcc/6
 Rscript -e "install.packages('Rfast')"
 ```
+
+## 2.0.8
+
+Actaully the requirement for C++17 is explicitly stated, <https://cran.r-project.org/package=Rfast>.
+
+```bash
+module load R/4.2.2
+Rscript -e 'install.packages("Rfast")'
+```
+
+## Rfast2
+
+It is similar to Rfast, e.g., 0.1.5.

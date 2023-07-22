@@ -172,3 +172,7 @@ The login information is visible from <https://www.ebi.ac.uk/gwas/deposition/log
 > 5. Submit submission form
 
 > To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
+
+### References
+
+James, H. et al. A community driven GWAS summary statistics standard. bioRxiv, 2022.2007.2015.500230 (2023).
