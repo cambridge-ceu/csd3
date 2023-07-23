@@ -175,4 +175,5 @@ The login information is visible from <https://www.ebi.ac.uk/gwas/deposition/log
 
 ### References
 
-James, H. et al. A community driven GWAS summary statistics standard. bioRxiv, 2022.2007.2015.500230 (2023).
+Hayhurst, J. et al. A community driven GWAS summary statistics standard. bioRxiv, 2022.2007.2015.500230 (2022).
+
