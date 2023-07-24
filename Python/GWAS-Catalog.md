@@ -36,7 +36,7 @@ This is described pragmatically as follows.
 gwas-ssf --help
 ```
 
-## II. Globus
+## II. Globus CLI
 
 Web: <https://www.globus.org/globus-connect-personal> ([CLI](https://docs.globus.org/cli/))
 
@@ -98,15 +98,19 @@ fi
 export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' ${dst}/proteins.lst)
 
 (
-  echo chromosome base_pair_location effect_allele other_allele beta standard_error effect_allele_frequency p_value variant_id n
+  echo chromosome base_pair_location effect_allele other_allele beta standard_error effect_allele_frequency p_value variant_id rsid n
   zcat ${src}/${protein}-1.tbl.gz | \
+  sed '1d' | \
+  cut -f1-6,10-12,18 | \
+  sort -k3,3 | \
+  join - -13 -21 ${INF}/work/INTERVAL.rsid | \
   awk '
     {
-      gsub(/chr/,"",$3)
-      gsub(/:/,"_",$3)
       $4=toupper($4)
       $5=toupper($5)
-      if (NR>1 && length($4)==1 && length($5)==1) print $1,$2,$4,$5,$10,$11,$6,10^$12,$3,int($18)
+      $1=$2"_"$3"_"$4"_"$5
+      if(substr($11,1,2)!="rs") $11="NA"
+      print $2,$3,$4,$5,$7,$8,$6,10^$9,$1,$11,int($10)
     }' | \
   sort -k1,1n -k2,2n
 ) | \
@@ -120,7 +124,7 @@ Rscript -e '
 bgzip -f > ${dst}/${protein}.tsv.gz
 tabix -S1 -s1 -b2 -e2 -f ${dst}/${protein}.tsv.gz
 gwas-ssf read ${dst}/${protein}.tsv.gz
-gwas-ssf validate ${dst}/${protein}.tsv.gz
+gwas-ssf validate -e ${dst}/${protein}.tsv.gz
 
 # export src=~/rds/results/private/proteomics/scallop-inf1
 #1 Chromosome
@@ -143,7 +147,7 @@ gwas-ssf validate ${dst}/${protein}.tsv.gz
 #18 N
 ```
 
-Note that to comply with the (somewhat unreasonable) requirement, indels are dropped. Moreover, a number of proteins including CCL25, CD6, CXCL6, FGF.5,  IL.12B, IL.18R1 and TNFB have p_value=0 so their specifical handling with R is introduced as a generic solution.
+A number of proteins including CCL25, CD6, CXCL6, FGF.5,  IL.12B, IL.18R1 and TNFB have p_value=0 so their specifical handling with R is introduced as a generic solution.
 We could obtain the meta-data as required in the submission form,
 
 ```bash
@@ -163,13 +167,15 @@ cd -
 
 which include protein name, number of variants, md5, file name and sample size.
 
-The login information is visible from <https://www.ebi.ac.uk/gwas/deposition/login> for the following steps,
+* globus file manager, <https://app.globus.org/file-manager?origin_id=c5ed8ca7-45e2-4628-9393-b9349203d759&origin_path=%2F>
+* LS RI profile, <https://profile.aai.lifescience-ri.eu/profile/identities>
+* Login information,  <https://www.ebi.ac.uk/gwas/deposition/login> and steps,
 
-> 1. Upload summary statistics file(s) to ***your Globus submission folder***
-> 2. Download submission form
-> 3. Fill in submission form (see ***here*** for help)
-> 4. Wait to receive an email confirmation from Globus that all summary statistics files have successfully been transferred
-> 5. Submit submission form
+  > 1. Upload summary statistics file(s) to ***your Globus submission folder***
+  > 2. Download submission form
+  > 3. Fill in submission form (see ***here*** for help)
+  > 4. Wait to receive an email confirmation from Globus that all summary statistics files have successfully been transferred
+  > 5. Submit submission form
 
 > To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
 
