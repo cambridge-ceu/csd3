@@ -67,6 +67,18 @@ Web: <https://jinghuazhao.github.io/INF/>
 
 ### Reformatting and indexing
 
+The documented example[^reference] is shown as follows,
+```
+chromosome	base_pair_location	effect_allele	other_allele	beta	standard_error	effect_allele_frequency	p_value	variant_id	rsid
+1	869388	A	G	-0.016619	0.00806496	0.997221	0.1	1_869388_A_G	NA
+1	205811055	C	T	-0.0089589	0.00331941	0.983589	9.7E-03	1_205811055_C_T	rs74143854
+2	70478797	T	TG	0.0187528	0.00167685	0.934121	3.5E-30	2_70478797_T_TG	rs142640435
+2	27875036	TAAA	T	-0.0184003	0.00101051	0.78451	5.7E-76	2_27875036_TAAA_T	rs774624803
+23	24145170	A	G	0.00387762	0.08757958	0.627178	2.3E-08	23_24145170_A_G	rs5949232
+```
+
+We have a SLURM script,
+
 ```bash
 #!/usr/bin/bash
 
@@ -145,6 +157,9 @@ gwas-ssf validate -e ${dst}/${protein}.tsv.gz
 #16 HetDf
 #17 logHetP
 #18 N
+# head -2 ~/INF/work/INTERVAL.rsid
+# chr10:100000051_A_G rs141059932
+# chr10:100000056_C_G 10:100000056_C_G
 ```
 
 A number of proteins including CCL25, CD6, CXCL6, FGF.5,  IL.12B, IL.18R1 and TNFB have p_value=0 so their specifical handling with R is introduced as a generic solution.
@@ -179,7 +194,4 @@ which include protein name, number of variants, md5, file name and sample size.
 
 > To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
 
-### References
-
-Hayhurst, J. et al. A community driven GWAS summary statistics standard. bioRxiv, 2022.2007.2015.500230 (2022).
-
+[^reference]: Hayhurst, J. et al. A community driven GWAS summary statistics standard. bioRxiv, 2022.2007.2015.500230 (2022).
