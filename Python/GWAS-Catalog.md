@@ -4,7 +4,7 @@ sort: 2
 
 # GWAS Catalog
 
-Web: <https://www.ebi.ac.uk/gwas/deposition> ([doc](https://www.ebi.ac.uk/gwas/docs/submission), [email](mailto:gwas-subs@ebi.ac.uk), [format](https://www.ebi.ac.uk/gwas/docs/summary-statistics-format), [submission form](https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata))
+Web: <https://www.ebi.ac.uk/gwas/deposition> ([doc](https://www.ebi.ac.uk/gwas/docs/submission), [email](mailto:gwas-subs@ebi.ac.uk), [format](https://www.ebi.ac.uk/gwas/docs/summary-statistics-format))
 
 European Life Science Research Infrastructure Login, Contact: <support@aai.lifescience-ri.eu>, Homepage: <https://lifescience-ri.eu/ls-login/>
 
@@ -182,15 +182,15 @@ cd -
 
 which include protein name, number of variants, md5, file name and sample size.
 
-* globus file manager, <https://app.globus.org/file-manager?origin_id=c5ed8ca7-45e2-4628-9393-b9349203d759&origin_path=%2F>
-* LS RI profile, <https://profile.aai.lifescience-ri.eu/profile/identities>
+* Start, <https://www.ebi.ac.uk/gwas/deposition>
+* globus, <https://www.globus.org/globus-connect-personal> (e.g., [globus file manager](https://app.globus.org/file-manager?origin_id=c5ed8ca7-45e2-4628-9393-b9349203d759&origin_path=%2F), [LS RI profile](https://profile.aai.lifescience-ri.eu/profile/identities))
 * Login information,  <https://www.ebi.ac.uk/gwas/deposition/login> and steps,
 
-  > 1. Upload summary statistics file(s) to ***your Globus submission folder***
-  > 2. Download submission form
-  > 3. Fill in submission form (see ***here*** for help)
-  > 4. Wait to receive an email confirmation from Globus that all summary statistics files have successfully been transferred
-  > 5. Submit submission form
+  1. Upload summary statistics file(s) to ***your Globus submission folder***
+  2. Download submission form
+  3. Fill in submission form (see [***here***](https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata) for help)
+  4. Wait to receive an email confirmation from Globus that all summary statistics files have successfully been transferred
+  5. Submit submission form
 
 > To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
 
