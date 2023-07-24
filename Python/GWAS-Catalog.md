@@ -159,7 +159,7 @@ parallel -j10 -C' ' '
       <(gunzip -c {}.tsv.gz | wc -l | cut -d" " -f1) \
       <(grep -w {}.tsv.gz$ MD5 | sed "s/  /\t/") | \
   tr "\n" "\t"
-  gunzip -c {}.tsv.gz | sed "1d" | cut -f10 | sort -k1,1nr | head -1
+  gunzip -c {}.tsv.gz | sed "1d" | cut -f11 | sort -k1,1nr | head -1
 ' | \
 sort -k1,1 > meta.tsv
 cd -
