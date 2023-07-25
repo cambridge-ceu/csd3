@@ -184,9 +184,7 @@ cd -
 which include protein name, number of variants, md5, file name and sample size.
 
 We are ready to proceed from <https://www.ebi.ac.uk/gwas/deposition> with globus running and a LS RI profile
-(e.g., [globus file manager](https://app.globus.org/file-manager?origin_id=c5ed8ca7-45e2-4628-9393-b9349203d759&origin_path=%2F), [LS RI profile](https://profile.aai.lifescience-ri.eu/profile/identities)).
-
-The submission page shows these steps,
+(e.g., [globus file manager](https://app.globus.org/file-manager?origin_id=c5ed8ca7-45e2-4628-9393-b9349203d759&origin_path=%2F), [LS RI profile](https://profile.aai.lifescience-ri.eu/profile/identities)). The submission page shows these steps,
 
   1. Upload summary statistics file(s) to ***your Globus submission folder***
   2. Download submission form
