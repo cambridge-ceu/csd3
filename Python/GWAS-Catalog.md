@@ -192,7 +192,7 @@ We are ready to proceed from <https://www.ebi.ac.uk/gwas/deposition> with globus
   4. Wait to receive an email confirmation from Globus that all summary statistics files have successfully been transferred
   5. Submit submission form
 
-  > To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
+  To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
 
 Upon successes, email notifications are given along with study accessions. One revisit the page via <https://www.ebi.ac.uk/gwas/deposition/login>.
 
