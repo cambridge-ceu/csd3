@@ -36,7 +36,7 @@ This is described pragmatically as follows.
 gwas-ssf --help
 ```
 
-## II. Globus CLI
+## II. Globus
 
 Web: <https://www.globus.org/globus-connect-personal> ([CLI](https://docs.globus.org/cli/))
 
@@ -61,6 +61,8 @@ where we again use the setup for `snakemake`.
 
 We carry on building a module so it is enabled with `module load ceuadmin/globusconnectpersonal/3.2.2` and could simply run `globusconnect` as well as  `globus`.
 
+It is desirable to use a web browser, whose close counterpart on CSD3 is from the `ceuadmin/Cytoscape/3.9.1` module.
+
 ## III. Application: SCALLOP-INF sumstats submission
 
 Web: <https://jinghuazhao.github.io/INF/>
@@ -69,12 +71,12 @@ Web: <https://jinghuazhao.github.io/INF/>
 
 The documented example[^reference] is shown as follows,
 ```
-chromosome	base_pair_location	effect_allele	other_allele	beta	standard_error	effect_allele_frequency	p_value	variant_id	rsid
-1	869388	A	G	-0.016619	0.00806496	0.997221	0.1	1_869388_A_G	NA
-1	205811055	C	T	-0.0089589	0.00331941	0.983589	9.7E-03	1_205811055_C_T	rs74143854
-2	70478797	T	TG	0.0187528	0.00167685	0.934121	3.5E-30	2_70478797_T_TG	rs142640435
-2	27875036	TAAA	T	-0.0184003	0.00101051	0.78451	5.7E-76	2_27875036_TAAA_T	rs774624803
-23	24145170	A	G	0.00387762	0.08757958	0.627178	2.3E-08	23_24145170_A_G	rs5949232
+chromosome|base_pair_location|effect_allele|other_allele|beta|standard_error|effect_allele_frequency|p_value|variant_id|rsid
+1|869388|A|G|-0.016619|0.00806496|0.997221|0.1|1_869388_A_G|NA
+1|205811055|C|T|-0.0089589|0.00331941|0.983589|9.7E-03|1_205811055_C_T|rs74143854
+2|70478797|T|TG|0.0187528|0.00167685|0.934121|3.5E-30|2_70478797_T_TG|rs142640435
+2|27875036|TAAA|T|-0.0184003|0.00101051|0.78451|5.7E-76|2_27875036_TAAA_T|rs774624803
+23|24145170|A|G|0.00387762|0.08757958|0.627178|2.3E-08|23_24145170_A_G|rs5949232
 ```
 
 We have a SLURM script,
@@ -192,6 +194,8 @@ which include protein name, number of variants, md5, file name and sample size.
   4. Wait to receive an email confirmation from Globus that all summary statistics files have successfully been transferred
   5. Submit submission form
 
-> To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
+  > To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
+
+Upon successes, email notifications are given along with accession.
 
 [^reference]: Hayhurst, J. et al. A community driven GWAS summary statistics standard. bioRxiv, 2022.2007.2015.500230 (2022).
