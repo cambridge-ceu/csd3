@@ -195,6 +195,6 @@ which include protein name, number of variants, md5, file name and sample size.
 
   > To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
 
-Upon successes, email notifications are given along with accession.
+Upon successes, email notifications are given along with study accessions.
 
 [^reference]: Hayhurst, J. et al. A community driven GWAS summary statistics standard. bioRxiv, 2022.2007.2015.500230 (2022).
