@@ -194,6 +194,6 @@ We are ready to proceed from <https://www.ebi.ac.uk/gwas/deposition> with globus
 
   > To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
 
-Upon successes, email notifications are given along with study accessions. One revisit it via <https://www.ebi.ac.uk/gwas/deposition/login>.
+Upon successes, email notifications are given along with study accessions. One revisit the page via <https://www.ebi.ac.uk/gwas/deposition/login>.
 
 [^reference]: Hayhurst, J. et al. A community driven GWAS summary statistics standard. bioRxiv, 2022.2007.2015.500230 (2022).
