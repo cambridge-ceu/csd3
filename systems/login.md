@@ -183,7 +183,7 @@ find /usr -iname "*libGL.so*" -exec ls -l {} \;
 find /usr -iname "*libGLX*.so*" -exec ls -l {} \;
 ```
 
-[^cpu]: login-skylake.hpc.cam.ac.uk, namely login-e-[9-16], is removed on 25-26/7/2023 and is replaced with `cascadelake`.
+[^cpu]: login-skylake.hpc.cam.ac.uk, namely login-e-[9-16], is removed on 25-26/7/2023 and is replaced with `login-cascadelake`.
 
 [^gpu]: Currently, it is login-e-[1-4] (login.hpc), login-e-1 is also the license server. The so-called 3D viz/startgfx nodes are login-gpu-e-[1-7].
 
