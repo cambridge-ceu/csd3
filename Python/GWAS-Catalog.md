@@ -139,7 +139,7 @@ tabix -S1 -s1 -b2 -e2 -f ${dst}/${protein}.tsv.gz
 gwas-ssf read ${dst}/${protein}.tsv.gz
 gwas-ssf validate -e ${dst}/${protein}.tsv.gz
 
-# export src=~/rds/results/private/proteomics/scallop-inf1
+# gunzip -c  $src/4E.BP1-1.tbl.gz  | head -1 | tr '\t' '\n' | awk '{print "#"NR, $1}'
 #1 Chromosome
 #2 Position
 #3 MarkerName
@@ -186,14 +186,14 @@ which include protein name, number of variants, md5, file name and sample size.
 We are ready to proceed from <https://www.ebi.ac.uk/gwas/deposition> with globus running and a LS RI profile
 (e.g., [globus file manager](https://app.globus.org/file-manager?origin_id=c5ed8ca7-45e2-4628-9393-b9349203d759&origin_path=%2F), [LS RI profile](https://profile.aai.lifescience-ri.eu/profile/identities)). The submission page shows these steps,
 
-  1. Upload summary statistics file(s) to ***your Globus submission folder***
-  2. Download submission form
-  3. Fill in submission form (see [***here***](https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata) for help)
-  4. Wait to receive an email confirmation from Globus that all summary statistics files have successfully been transferred
-  5. Submit submission form
+  > 1. Upload summary statistics file(s) to ***your Globus submission folder***
+  > 2. Download submission form
+  > 3. Fill in submission form (see ***here*** for help)
+  > 4. Wait to receive an email confirmation from Globus that all summary statistics files have successfully been transferred
+  > 5. Submit submission form
 
   > To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
 
-Upon successes, email notifications are given along with study accessions. One revisit the page via <https://www.ebi.ac.uk/gwas/deposition/login>.
+where ***here*** is <https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata>. Upon successes, email notifications are given along with study accessions. It is possible to revisit the page via <https://www.ebi.ac.uk/gwas/deposition/login>.
 
 [^reference]: Hayhurst, J. et al. A community driven GWAS summary statistics standard. bioRxiv, 2022.2007.2015.500230 (2022).
