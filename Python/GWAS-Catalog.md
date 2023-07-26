@@ -188,12 +188,12 @@ We are ready to proceed from <https://www.ebi.ac.uk/gwas/deposition> with globus
 
   > 1. Upload summary statistics file(s) to ***your Globus submission folder***
   > 2. Download submission form
-  > 3. Fill in submission form (see ***here*** for help)
+  > 3. Fill in submission form (see [***here***](https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata) for help)
   > 4. Wait to receive an email confirmation from Globus that all summary statistics files have successfully been transferred
   > 5. Submit submission form
 
   > To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
 
-where ***here*** is <https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata>. Upon successes, email notifications are given along with study accessions. It is possible to revisit the page via <https://www.ebi.ac.uk/gwas/deposition/login>.
+Upon successes, email notifications are given along with study accessions. It is possible to revisit the page via <https://www.ebi.ac.uk/gwas/deposition/login>.
 
 [^reference]: Hayhurst, J. et al. A community driven GWAS summary statistics standard. bioRxiv, 2022.2007.2015.500230 (2022).
