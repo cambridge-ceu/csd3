@@ -10,12 +10,11 @@ A common form of MFA, two-factor authentication (2FA), is through Time-based One
 
 ## Login nodes
 
-The CSD3 login address is `login.hpc.cam.ac.uk` with a mapping table
+The CSD3 login address is `login.hpc.cam.ac.uk` with a mapping table[^cpu]
 
 | Collective name                                 | Node name      | Comments          |
 | ----------------------------------------------- | -------------- | ----------------- |
 | login-gpu.hpc.cam.ac.uk                         | login-e-[1-4]  | GPU[^gpu]         |
-| [login, login-cpu, login-skylake].hpc.cam.ac.uk | login-e-[9-16] | CPU               |
 | login-icelake.hpc.cam.ac.uk                     | login-q-[1-4]  | CentOS8[^icelake] |
 
 On a GPU, we have from `module list`
@@ -38,10 +37,11 @@ module load rhel7/default-peta4
 Our module list is now
 
 ```
-  1) dot                            5) singularity/current            9) intel/impi/2017.4/intel       13) intel/libs/daal/2017.4
-  2) slurm                          6) rhel7/global                  10) intel/libs/idb/2017.4         14) intel/bundles/complib/2017.4
-  3) turbovnc/2.0.1                 7) intel/compilers/2017.4        11) intel/libs/tbb/2017.4         15) cmake/latest
-  4) vgl/2.5.1/64                   8) intel/mkl/2017.4              12) intel/libs/ipp/2017.4         16) rhel7/default-peta4
+urrently Loaded Modulefiles:
+  1) dot                            5) singularity/current            9) intel/impi/2020.2/intel       13) intel/libs/daal/2020.2
+  2) slurm                          6) rhel7/global                  10) intel/libs/idb/2020.2         14) intel/bundles/complib/2020.2
+  3) turbovnc/2.0.1                 7) intel/compilers/2020.2        11) intel/libs/tbb/2020.2         15) cmake/latest
+  4) vgl/2.5.1/64                   8) intel/mkl/2020.2              12) intel/libs/ipp/2020.2         16) rhel7/default-ccl
 ```
 
 Finally, with icelake we have
@@ -183,6 +183,7 @@ find /usr -iname "*libGL.so*" -exec ls -l {} \;
 find /usr -iname "*libGLX*.so*" -exec ls -l {} \;
 ```
 
+[^cpu] [login, login-cpu, login-skylake].hpc.cam.ac.uk, login-e-[9-16], are removed on 25-26/7/2023 and is replaced with `cascadelake`.
 [^gpu]: Currently, it is login-e-[1-4] (login.hpc), login-e-1 is also the license server. The so-called 3D viz/startgfx nodes are login-gpu-e-[1-7].
 [^icelake]: Applications such as R/nloptr package require to be recompiled. In this case, we run `download.packages("nloptr",".")` inside `R` on an Internet-enabled node and compile the package with `R CMD INSTALL nloptr_1.2.2.3.tar.gz`, say.
 [^autologin]: This appears subject to the system setup.
