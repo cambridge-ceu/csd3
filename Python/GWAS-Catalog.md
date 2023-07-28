@@ -183,6 +183,18 @@ cd -
 
 which include protein name, number of variants, md5, file name and sample size.
 
+A post-hoc remapping of protein target names to genes can be achieved as follows,
+
+```bash
+Rscript -e '
+  suppressMessages(library(dplyr))
+  ids <- pQTLdata::inf1 %>% filter(gene!="BDNF")%>%select(prot,target.short,gene)
+  write.table(ids,col.names=FALSE,row.names=FALSE,quote=FALSE,sep="\t")
+' | \
+sort -k1,1 | \
+join -t$'\t' <(ls ${dst} | grep -v tbi | sed 's/.tsv.gz//' | sort -k1,1) - > prot_target_gene.tsv
+```
+
 We are ready to proceed from <https://www.ebi.ac.uk/gwas/deposition> with globus running and a LS RI profile
 (e.g., [globus file manager](https://app.globus.org/file-manager?origin_id=c5ed8ca7-45e2-4628-9393-b9349203d759&origin_path=%2F), [LS RI profile](https://profile.aai.lifescience-ri.eu/profile/identities)). The submission page shows these steps,
 
