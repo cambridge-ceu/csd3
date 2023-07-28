@@ -183,7 +183,7 @@ cd -
 
 which include protein name, number of variants, md5, file name and sample size.
 
-A post-hoc remapping of protein target names to genes can be achieved as follows,
+A post-hoc remapping of protein target names to gene symbols can be achieved as follows,
 
 ```bash
 Rscript -e '
