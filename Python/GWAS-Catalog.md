@@ -188,7 +188,9 @@ A post-hoc remapping of protein target names to genes can be achieved as follows
 ```bash
 Rscript -e '
   suppressMessages(library(dplyr))
-  ids <- pQTLdata::inf1 %>% filter(gene!="BDNF")%>%select(prot,target.short,gene)
+  ids <- pQTLdata::inf1 %>%
+         filter(gene!="BDNF") %>%
+         select(prot,target.short,gene)
   write.table(ids,col.names=FALSE,row.names=FALSE,quote=FALSE,sep="\t")
 ' | \
 sort -k1,1 | \
