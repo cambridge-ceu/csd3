@@ -283,13 +283,14 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-02-01 | GENEHUNTER/2.1_r6           | Genetics            |
     | 2023-03-14 | regenie/3.2.5               | Genetics            |
     | 2023-03-24 | PoGo/1.0.0                  | Genetics            |
-    | 2023-03-31 | PWCoCo/2023-03-31           | Genetics            |
+    | 2023-03-31 | PWCoCo/2023-03-31           | Genetics[^pwcoco]   |
     | 2023-04-02 | regenie/3.2.5.3             | Genetics            |
     | 2023-04-04 | PWCoCo/1.0                  | Genetics            |
     | 2023-06-02 | regenie/3.2.7               | Genetics[^regenie]  |
     | 2023-06-06 | allegro/2.0f                | Genetics            |
     | 2023-06-19 | plink-ng/2.00a3.3           | Genetics            |
     | 2023-06-26 | RHHsoftware/0.1             | Genetics            |
+    | 2023-07-28 | PWCoCo/1.1                  | Genetics            |
 
 
     \* CEU or approved users only.
@@ -330,6 +331,10 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
 [^lz]: locuszoom
 
     The version adds chromosome X data and will have options using INTERVAL data.
+
+[^pwcoco]:
+
+    It compiles under gcc/9. Upon release of 1.1, this snapshot is removed.
 
 [^regenie]: Building regenie 3.2.7
 
