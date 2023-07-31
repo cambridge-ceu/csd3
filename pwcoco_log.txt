@@ -1,1 +1,0 @@
-[2023-07-28 16:51:38.922] [pwcoco_log] [critical] No .bim file found; a .bim file MUST be supplied!
