@@ -330,7 +330,7 @@ respectively.
 
 This is done with `squeue` command as above.
 
-### Use of modules
+### Using modules
 
 The following is part of a real implementation.
 
