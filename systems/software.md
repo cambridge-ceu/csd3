@@ -291,7 +291,7 @@ Note that after software updates on 26/4/2022, this command only works on non-lo
 scontrol show partition
 ```
 
-### An interacive job
+### An interactive job
 
 ```bash
 sintr -A MYPROJECT -p skylake -N2 -n2 -t 1:0:0 --qos=INTR
@@ -300,7 +300,7 @@ sintr -A MYPROJECT -p skylake -N2 -n2 -t 1:0:0 --qos=INTR
 and also
 
 ```bash
-srun -N1 -n1 -c4 -p skylake-himem -t 12:0:0 --pty bash -i
+srun -N1 -n1 -c4 -p cclake-himem -t 12:0:0 --pty bash -i
 ```
 
 then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `/usr/local/software/slurm/current/bin/` contains all the executables while sample scripts are in `/usr/local/Cluster-Docs/SLURM`, e.g., [template for Skylake](files/slurm_submit.peta4-skylake).
