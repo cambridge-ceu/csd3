@@ -307,7 +307,7 @@ then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `
 
 **NOTE** the skylakes are approaching end of life, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html) and [https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html). For Ampere GPU, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html).
 
-### Start a job at a specific time
+### Starting a job at a specific time
 
 This is achieved with the `-b` or `--begin` option, e.g.,
 
