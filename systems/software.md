@@ -291,6 +291,8 @@ Note that after software updates on 26/4/2022, this command only works on non-lo
 scontrol show partition
 ```
 
+The load of a specific partition can be checked with `squeue -p <partition name>`.
+
 ### An interactive job
 
 ```bash
