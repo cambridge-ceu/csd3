@@ -381,7 +381,7 @@ pdftopng -r 300 INTERVAL.${p}.manhattan.pdf ${p}
 mv ${p}-000001.png INTERVAL.${p}.png
 ```
 
-invoked by `sbatch`. To embed SLURM call in a bash script, one can use `sbatch --wait <SLURM scripts>`. SLURM scripts can also be inside its Bash counterpart.
+invoked by `sbatch`. To embed SLURM call in a bash script, one can use `sbatch --wait <SLURM scripts>`. SLURM scripts can also be inside the Bash counterpart.
 
 As with Cardio, it is helpful to set a temporary directory, i.e.,
 
