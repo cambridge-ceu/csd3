@@ -75,6 +75,33 @@ These are wrapped up as :star::star::star: **[modules](https://modules.readthedo
 
 The original list prior to mid-November 2022 is given below[^original].
 
+## Usage
+
+We illustrate with `pspp`. A brief description of a module is available with
+
+```bash
+module help ceuadmin/pspp
+```
+
+and the module is loaded and graphical user interface (GUI)[^gui] started with
+
+```bash
+module load ceuadmin/pspp
+psppire
+```
+
+for version 1.6.0. Once the job is done, one can restore the previous environment with
+
+```bash
+module unload ceuadmin/pspp
+```
+
+Note that `module add/rm` is equivalent to `module load/unload`.
+
+A full list of module subcommands is available with `module help` as detailed here for
+[3.2.9](https://linux.die.net/man/4/modulefile) -- CSD3 uses version 3.2.10 dated 2012-12-21. In particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of function (LoF)
+annotation.
+
 Most software are available for all CSD3 users, only limited by software with excessive size / reference data -- which ideally will be 
 available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmmh2-public_databases/software` as a trade-off. These can
 largely be seen as sources which are used to build the reoository given above.
@@ -113,33 +140,6 @@ Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
 ```
 
 For non-CEU users, please drop an email to <jhz22@medschl.cam.ac.uk> for access.
-
-## Usage
-
-We illustrate with `pspp`. A brief description of a module is available with
-
-```bash
-module help ceuadmin/pspp
-```
-
-and the module is loaded and graphical user interface (GUI)[^gui] started with
-
-```bash
-module load ceuadmin/pspp
-psppire
-```
-
-for version 1.6.0. Once the job is done, one can restore the previous environment with
-
-```bash
-module unload ceuadmin/pspp
-```
-
-Note that `module add/rm` is equivalent to `module load/unload`.
-
-A full list of module subcommands is available with `module help` as detailed here for
-[3.2.9](https://linux.die.net/man/4/modulefile) -- CSD3 uses version 3.2.10 dated 2012-12-21. In particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of function (LoF)
-annotation.
 
 ## Module creation
 
