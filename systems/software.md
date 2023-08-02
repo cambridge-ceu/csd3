@@ -291,8 +291,6 @@ Note that after software updates on 26/4/2022, this command only works on non-lo
 scontrol show partition
 ```
 
-The load of a specific partition can be checked with `squeue -p <partition name>`.
-
 ### An interactive job
 
 ```bash
@@ -304,8 +302,6 @@ and also
 ```bash
 srun -N1 -n1 -c4 -p cclake-himem -t 12:0:0 --pty bash -i
 ```
-
-then check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `/usr/local/software/slurm/current/bin/` contains all the executables while sample scripts are in `/usr/local/Cluster-Docs/SLURM`, e.g., [template for Skylake](files/slurm_submit.peta4-skylake).
 
 **NOTE** the skylakes are approaching end of life, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html) and [https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html). For Ampere GPU, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html).
 
@@ -330,7 +326,11 @@ respectively.
 
 ### Monitoring jobs
 
-This is done with `squeue` command as above.
+This is done with `squeue` command.
+
+The load of a specific partition can be checked with `squeue -p <partition name>`.
+
+For `$USER`, check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `/usr/local/software/slurm/current/bin/` contains all the executables while sample scripts are in `/usr/local/Cluster-Docs/SLURM`, e.g., [template for Skylake](files/slurm_submit.peta4-skylake).
 
 ### Using modules
 
