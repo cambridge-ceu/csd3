@@ -383,11 +383,16 @@ mv ${p}-000001.png INTERVAL.${p}.png
 
 invoked by `sbatch`. To embed SLURM call in a bash script, one can use `sbatch --wait <SLURM scripts>`. SLURM scripts can also be inside the Bash counterpart.
 
-As with Cardio, it is helpful to set a temporary directory, i.e.,
+
+### Temporary directory
+
+It the example script above, the following statement sets a temporary directory, i.e.,
 
 ```bash
 export TMPDIR=/rds/user/$USER/hpc-work/
 ```
+
+Although it is less apparent with a single, SLURM jobs tend to use large temporary space which can easily be beyond the system default.
 
 ### Neither `parallel` nor SLURM
 
