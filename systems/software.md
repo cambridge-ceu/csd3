@@ -386,13 +386,13 @@ invoked by `sbatch`. To embed SLURM call in a bash script, one can use `sbatch -
 
 ### Temporary directory
 
+Although it is less apparent with a single run, SLURM jobs tend to use large temporary space which can easily be beyond the system default.
+
 It the example script above, the following statement sets a temporary directory, i.e.,
 
 ```bash
 export TMPDIR=/rds/user/$USER/hpc-work/
 ```
-
-Although it is less apparent with a single, SLURM jobs tend to use large temporary space which can easily be beyond the system default.
 
 ### Neither `parallel` nor SLURM
 
