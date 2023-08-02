@@ -6,45 +6,6 @@ sort: 7
 
 The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
-Most software are available for all CSD3 users, only limited by software with excessive size / reference data -- which ideally will be 
-available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmmh2-public_databases/software` as a trade-off. These can
-largely be seen as sources which are used to build the reoository given above.
-
-CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom` 
-linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,310 as of 27/6/2023)
-is linked with the latest R distribution, 4.3.1.
-
-For CEU users, it is easy to point to them, e.g.,
-
-```bash
-export HPC_WORK=/rds/user/$USER/hpc-work/
-export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-export R_LIBS=${RDS}/R:${RDS}/R-4.3.1/library
-```
-
-or possible to have your own installations based on these, e.g., through creation of a modified `Makefile` with altered prefix followed
-by `make install -f <modified Makefile>`.
-
-The following script tests for loading of `dplyr`:
-
-```bash
-export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-export PATH=${PATH}:${RDS}/R-4.3.1/bin
-export R_LIBS=${RDS}/R-4.3.1/library:${RDS}/R
-Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
-```
-
-It appears clumsy to do these every time, so an attempt is made to have them in a module, namely
-
-```bash
-module load ceuadmin/R/latest
-which R
-echo $R_LIBS
-Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
-```
-
-For non-CEU users, please drop an email to <jhz22@medschl.cam.ac.uk> for access.
-
 ## Entries
 
 The current list is as follows,
@@ -113,6 +74,45 @@ The current list is as follows,
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
 
 The original list prior to mid-November 2022 is given below[^original].
+
+Most software are available for all CSD3 users, only limited by software with excessive size / reference data -- which ideally will be 
+available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmmh2-public_databases/software` as a trade-off. These can
+largely be seen as sources which are used to build the reoository given above.
+
+CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom` 
+linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,310 as of 27/6/2023)
+is linked with the latest R distribution, 4.3.1.
+
+For CEU users, it is easy to point to them, e.g.,
+
+```bash
+export HPC_WORK=/rds/user/$USER/hpc-work/
+export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
+export R_LIBS=${RDS}/R:${RDS}/R-4.3.1/library
+```
+
+or possible to have your own installations based on these, e.g., through creation of a modified `Makefile` with altered prefix followed
+by `make install -f <modified Makefile>`.
+
+The following script tests for loading of `dplyr`:
+
+```bash
+export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
+export PATH=${PATH}:${RDS}/R-4.3.1/bin
+export R_LIBS=${RDS}/R-4.3.1/library:${RDS}/R
+Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
+```
+
+It appears clumsy to do these every time, so an attempt is made to have them in a module, namely
+
+```bash
+module load ceuadmin/R/latest
+which R
+echo $R_LIBS
+Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
+```
+
+For non-CEU users, please drop an email to <jhz22@medschl.cam.ac.uk> for access.
 
 ## Usage
 
