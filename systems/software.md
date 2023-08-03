@@ -277,7 +277,7 @@ Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
 
 Location at csd3: `/usr/local/Cluster-Docs/SLURM/`.
 
-The directory `/usr/local/software/slurm/current/bin/` contains all the executables while sample scripts are in `/usr/local/Cluster-Docs/SLURM`, e.g., [template for Skylake](files/slurm_submit.peta4-skylake).
+The directory `/usr/local/software/slurm/current/bin/` contains all the executables..
 
 ### Account details
 
@@ -306,6 +306,12 @@ and also
 ```bash
 srun -N1 -n1 -c4 -p cclake-himem -t 12:0:0 --pty bash -i
 ```
+
+### Batch job
+
+A batch job is invoked by `sbatch`.
+
+Sample scripts are in `/usr/local/Cluster-Docs/SLURM`, e.g., [template for Skylake](files/slurm_submit.peta4-skylake).
 
 ### Starting a job at a specific time
 
@@ -429,7 +435,7 @@ pdftopng -r 300 INTERVAL.${p}.manhattan.pdf ${p}
 mv ${p}-000001.png INTERVAL.${p}.png
 ```
 
-invoked by `sbatch`. To embed SLURM call in a bash script, one can use `sbatch --wait <SLURM scripts>`. SLURM scripts can also be inside the Bash counterpart.
+To embed SLURM call in a bash script, one can use `sbatch --wait <SLURM scripts>`. SLURM scripts can also be inside the Bash counterpart.
 
 ## Stata
 
