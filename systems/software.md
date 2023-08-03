@@ -277,6 +277,8 @@ Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
 
 Location at csd3: `/usr/local/Cluster-Docs/SLURM/`.
 
+The directory `/usr/local/software/slurm/current/bin/` contains all the executables while sample scripts are in `/usr/local/Cluster-Docs/SLURM`, e.g., [template for Skylake](files/slurm_submit.peta4-skylake).
+
 ### Account details
 
 ```bash
@@ -291,6 +293,8 @@ Note that after software updates on 26/4/2022, this command only works on non-lo
 scontrol show partition
 ```
 
+The skylakes have been decommissioned, [https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html) and [https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html). For Ampere GPU, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html).
+
 ### An interactive job
 
 ```bash
@@ -302,8 +306,6 @@ and also
 ```bash
 srun -N1 -n1 -c4 -p cclake-himem -t 12:0:0 --pty bash -i
 ```
-
-**NOTE** the skylakes are approaching end of life, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html) and [https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html). For Ampere GPU, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html).
 
 ### Starting a job at a specific time
 
@@ -330,7 +332,7 @@ This is done with `squeue` command.
 
 The load of a specific partition can be checked with `squeue -p <partition name>`.
 
-For `$USER`, check with `squeue -u $USER`, `qstat -u $USER` and `sacct`. The directory `/usr/local/software/slurm/current/bin/` contains all the executables while sample scripts are in `/usr/local/Cluster-Docs/SLURM`, e.g., [template for Skylake](files/slurm_submit.peta4-skylake).
+For `$USER`, check with `squeue -u $USER`, `qstat -u $USER` and `sacct`.
 
 ### Using modules
 
@@ -342,6 +344,16 @@ module purge
 module load rhel7/default-peta4
 module load gcc/6
 module load aria2-1.33.1-gcc-5.4.0-r36jubs
+```
+
+### Temporary directory
+
+Although it is less apparent with a single run, SLURM jobs tend to use large temporary space which can easily be beyond the system default.
+
+The following statement sets a temporary directory, i.e.,
+
+```bash
+export TMPDIR=/rds/user/$USER/hpc-work/
 ```
 
 ### An example
@@ -382,17 +394,6 @@ mv ${p}-000001.png INTERVAL.${p}.png
 ```
 
 invoked by `sbatch`. To embed SLURM call in a bash script, one can use `sbatch --wait <SLURM scripts>`. SLURM scripts can also be inside the Bash counterpart.
-
-
-### Temporary directory
-
-Although it is less apparent with a single run, SLURM jobs tend to use large temporary space which can easily be beyond the system default.
-
-It the example script above, the following statement sets a temporary directory, i.e.,
-
-```bash
-export TMPDIR=/rds/user/$USER/hpc-work/
-```
 
 ### Neither `parallel` nor SLURM
 
