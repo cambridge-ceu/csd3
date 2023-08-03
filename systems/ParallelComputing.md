@@ -160,7 +160,7 @@ mv ${p}-000001.png INTERVAL.${p}.png
 
 To embed SLURM call in a bash script, one can use `sbatch --wait <SLURM scripts>`. SLURM scripts can also be inside the Bash counterpart.
 
-## Neither `parallel` nor SLURM
+## Other approaches
 
 The following script moves all files a day earlier to directory old/,
 
