@@ -356,6 +356,42 @@ The following statement sets a temporary directory, i.e.,
 export TMPDIR=/rds/user/$USER/hpc-work/
 ```
 
+### Trouble shooting
+
+With error message
+
+```
+squeue: error: _parse_next_key: Parsing error at unrecognized key:
+InteractiveStepOptions
+squeue: error: Parse error in file
+/usr/local/software/slurm/slurm-20.11.4/etc/slurm.conf line 22:
+"InteractiveStepOptions="--pty --preserve-env --mpi=none $SHELL""
+squeue: fatal: Unable to process configuration file
+```
+
+then either log out and login again, or
+
+```bash
+unset SLURM_CONF
+```
+
+### Neither `parallel` nor SLURM
+
+The following script moves all files a day earlier to directory old/,
+
+```bash
+find . -mtime +1 | xargs -l -I {} mv {} old
+```
+
+while the code below downloads the SCALLOP-cvd1 sumstats for proteins listed in `cvd1.txt`.
+
+```bash
+export url=https://zenodo.org/record/2615265/files/
+if [ ! -d ~/rds/results/public/proteomics/scallop-cvd1 ]; then mkdir ~/rds/results/public/proteomics/scallop-cvd1; fi
+cat cvd1.txt | xargs -I {} bash -c "wget ${url}/{}.txt.gz -O ~/rds/results/public/proteomics/scallop-cvd1/{}.txt.gz"
+#  ln -s ~/rds/results/public/proteomics/scallop-cvd1
+```
+
 ### An example
 
 To convert a large number of PDF files (INTERVAL.\*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list, and pipe into `parallel`.
@@ -394,42 +430,6 @@ mv ${p}-000001.png INTERVAL.${p}.png
 ```
 
 invoked by `sbatch`. To embed SLURM call in a bash script, one can use `sbatch --wait <SLURM scripts>`. SLURM scripts can also be inside the Bash counterpart.
-
-### Neither `parallel` nor SLURM
-
-The following script moves all files a day earlier to directory old/,
-
-```bash
-find . -mtime +1 | xargs -l -I {} mv {} old
-```
-
-while the code below downloads the SCALLOP-cvd1 sumstats for proteins listed in `cvd1.txt`.
-
-```bash
-export url=https://zenodo.org/record/2615265/files/
-if [ ! -d ~/rds/results/public/proteomics/scallop-cvd1 ]; then mkdir ~/rds/results/public/proteomics/scallop-cvd1; fi
-cat cvd1.txt | xargs -I {} bash -c "wget ${url}/{}.txt.gz -O ~/rds/results/public/proteomics/scallop-cvd1/{}.txt.gz"
-#  ln -s ~/rds/results/public/proteomics/scallop-cvd1
-```
-
-### Trouble shooting
-
-With error message
-
-```
-squeue: error: _parse_next_key: Parsing error at unrecognized key:
-InteractiveStepOptions
-squeue: error: Parse error in file
-/usr/local/software/slurm/slurm-20.11.4/etc/slurm.conf line 22:
-"InteractiveStepOptions="--pty --preserve-env --mpi=none $SHELL""
-squeue: fatal: Unable to process configuration file
-```
-
-then either log out and login again, or
-
-```bash
-unset SLURM_CONF
-```
 
 ## Stata
 
