@@ -133,23 +133,6 @@ then either log out and login again, or
 unset SLURM_CONF
 ```
 
-### Neither `parallel` nor SLURM
-
-The following script moves all files a day earlier to directory old/,
-
-```bash
-find . -mtime +1 | xargs -l -I {} mv {} old
-```
-
-while the code below downloads the SCALLOP-cvd1 sumstats for proteins listed in `cvd1.txt`.
-
-```bash
-export url=https://zenodo.org/record/2615265/files/
-if [ ! -d ~/rds/results/public/proteomics/scallop-cvd1 ]; then mkdir ~/rds/results/public/proteomics/scallop-cvd1; fi
-cat cvd1.txt | xargs -I {} bash -c "wget ${url}/{}.txt.gz -O ~/rds/results/public/proteomics/scallop-cvd1/{}.txt.gz"
-#  ln -s ~/rds/results/public/proteomics/scallop-cvd1
-```
-
 ### An example
 
 The example in GNU Parallel is turned to SLURM implementation using job arrays (<https://slurm.schedmd.com/job_array.html>).
@@ -176,3 +159,20 @@ mv ${p}-000001.png INTERVAL.${p}.png
 ```
 
 To embed SLURM call in a bash script, one can use `sbatch --wait <SLURM scripts>`. SLURM scripts can also be inside the Bash counterpart.
+
+## Neither `parallel` nor SLURM
+
+The following script moves all files a day earlier to directory old/,
+
+```bash
+find . -mtime +1 | xargs -l -I {} mv {} old
+```
+
+while the code below downloads the SCALLOP-cvd1 sumstats for proteins listed in `cvd1.txt`.
+
+```bash
+export url=https://zenodo.org/record/2615265/files/
+if [ ! -d ~/rds/results/public/proteomics/scallop-cvd1 ]; then mkdir ~/rds/results/public/proteomics/scallop-cvd1; fi
+cat cvd1.txt | xargs -I {} bash -c "wget ${url}/{}.txt.gz -O ~/rds/results/public/proteomics/scallop-cvd1/{}.txt.gz"
+#  ln -s ~/rds/results/public/proteomics/scallop-cvd1
+```
