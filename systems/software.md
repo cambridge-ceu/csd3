@@ -131,7 +131,7 @@ pip install keras --user
 pip install jupyter --user
 ```
 
-installs libraries at `$HOME/.local`. To install package to a specific directory, use the `--target=` option and flag in PYTHONPATH environmental variable.
+installs libraries at `$HOME/.local`. To install package to a specific directory, use the `--target=` (or `--install-option="--prefix=$PREFIX_PATH"`) option and flag in PYTHONPATH environmental variable.
 
 It is advised to use virual environments, i.e.,
 
