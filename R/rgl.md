@@ -46,20 +46,6 @@ z <- rnorm(1000) + atan2(x, y)
 plot3d(x, y, z, col = rainbow(1000))
 ```
 
-# 1.1.16
+# 1.2.1
 
-It seems the issue as indicated above goes away with this developmental version,
-
-We simply do inside R,
-
-```r
-remotes::install_github("dmurdoch/rgl")
-```
-
-but it fails to load. To this point we resort to
-
-```r
-remotes::install_github("dmurdoch/rgl",INSTALL_opts = "--disable-opengl")
-```
-
-but again it fails to load.
+It compiles and loads smoothly.
