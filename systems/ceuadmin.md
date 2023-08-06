@@ -292,7 +292,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-06-26 | RHHsoftware/0.1             | Genetics            |
     | 2023-07-28 | PWCoCo/1.1                  | Genetics            |
     | 2023-08-02 | regenie/3.2.9               | Genetics            |
-
+    | 2023-08-06 | finemap/1.4.2               | Genetics            |
 
     \* CEU or approved users only.
 
