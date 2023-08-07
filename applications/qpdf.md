@@ -4,7 +4,7 @@ sort: 37
 
 # qpdf
 
-## GitHub:
+## GitHub
 
 Web page [https://github.com/qpdf/qpdf](https://github.com/qpdf/qpdf).
 
