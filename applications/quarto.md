@@ -6,7 +6,7 @@ sort: 39
 
 Web page <https://quarto.org/>
 
-## setup
+## Installation
 
 It requires CentOS 8 (icelake, or login-q-*); otherwise it fails with message: `GLIBC_2.18` not found.
 
