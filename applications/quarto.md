@@ -43,6 +43,8 @@ It turns out `gnutls` relies on `nettle` and in turn on `libhogweed`; the `/usr/
 
 ### nettle
 
+Web: <https://ftp.gnu.org/gnu/nettle>
+
 Our script is slightly more involved as follows,
 
 ```bash
@@ -55,7 +57,9 @@ make install
 
 ### gnutls
 
-The syntax is as follows,
+Web: <https://www.gnutls.org/>
+
+The syntax for configuration is as follows,
 
 ```bash
 ./configure --prefix=$HPC_WORK --with-included-unistring --with-nettle-mini --enable-ssl3-support \
@@ -68,6 +72,8 @@ make install
 It is necessary to edit `lib/pkcs11_privkey.c` to make `ck_rsa_pkcs_pss_params` definition explicit. Then there is error with guile so we use --disable-guile.
 
 ### jupyter
+
+Web: <https://jupyter.org/>
 
 ```bash
 module load python/3.8.11/gcc/pqdmnzmw
