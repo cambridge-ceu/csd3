@@ -6,6 +6,8 @@ sort: 39
 
 Web page <https://quarto.org/>
 
+An open-source scientific and technical publishing system; the Linux version is able to run a TypeScript, R, Python, or Lua script.
+
 ## Installation
 
 It requires CentOS 8 (icelake, or login-q-*); otherwise it fails with message: `GLIBC_2.18` not found.
@@ -17,7 +19,12 @@ wget -qO- https://github.com/quarto-dev/quarto-cli/releases/download/v1.3.450/qu
 tar xvfz -
 ```
 
-Initially, we saw this error message,
+For R, e take advantage of the module,
+```bash
+module load R/4.3.1-icelake
+```
+
+but saw this error message,
 
 ```
 $ R
@@ -36,7 +43,7 @@ It turns out `gnutls` relies on `nettle` and in turn on `libhogweed`; the `/usr/
 
 ### nettle
 
-To get around add `LDFLAGS=-L` `LIBS=-l` to configure. Similarly `gmp` is specified with `--with-lib-path=` and `--with-include-path`; our script is as follows,
+Our script is slightly more involved as follows,
 
 ```bash
 ./configure --prefix=$HPC_WORK LDFLAGS=-L$HPC_WORK/lib64 LIBS=-lhogweed --disable-openssl \
@@ -69,11 +76,6 @@ export PYTHONPATH=${PWD}/python:$PYTHONPATH
 ```
 
 ### R
-
-We take advantage of the module,
-```bash
-module load R/4.3.1-icelake
-```
 
 To enable `rmarkdown`, we need to get around issue of no Internet on icelake with the following before entering `login-q-1`,
 
@@ -183,3 +185,36 @@ quarto --help
     check           [target]              - Verify correct functioning of Quarto installation.
     help            [command]             - Show this help or the help of a sub-command.
 ```
+
+We can prooceed with a `qmd` as follows,
+
+```qmd
+---
+title: "This is a test"
+author: "Author"
+format: html
+editor: visual
+---
+
+Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
+
+Running Code
+
+When you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed 
+code like this:
+
+{r}
+1 + 1
+
+You can add options to executable code like this
+
+{r}
+#| echo: false
+2 * 2
+
+The echo: false option disables the printing of code (only output is displayed).
+```
+
+We emply `quarto render test.qmd` to obtain `test.html`.
