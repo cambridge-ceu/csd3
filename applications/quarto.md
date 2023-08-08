@@ -32,11 +32,11 @@ Error in dyn.load("/usr/local/Cluster-Apps/R/4.3.1-icelake/lib64/R/library/grDev
 >
 ```
 
-Since `gnutls` relies on `nettle` and in turn on `libhogweed`. The `/usr/lib64/hogweed.so.2` would conflict with `libhogweed.so.6`.
+It turns out `gnutls` relies on `nettle` and in turn on `libhogweed`; the `/usr/lib64/hogweed.so.2` conflicts with `libhogweed.so.6`.
 
 ### nettle
 
-To get around add LDFLAGS=-L LIBS=-l to configure. Similarly `gmp` is specified with `--with-lib-path=` and `--with-include-path`; our script is as follows,
+To get around add `LDFLAGS=-L` `LIBS=-l` to configure. Similarly `gmp` is specified with `--with-lib-path=` and `--with-include-path`; our script is as follows,
 
 ```bash
 ./configure --prefix=$HPC_WORK LDFLAGS=-L$HPC_WORK/lib64 LIBS=-lhogweed --disable-openssl \
