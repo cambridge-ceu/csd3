@@ -19,7 +19,7 @@ wget -qO- https://github.com/quarto-dev/quarto-cli/releases/download/v1.3.450/qu
 tar xvfz -
 ```
 
-For R, e take advantage of the module,
+For R, we take advantage of the module,
 ```bash
 module load R/4.3.1-icelake
 ```
