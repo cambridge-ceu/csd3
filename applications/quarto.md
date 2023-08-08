@@ -6,7 +6,7 @@ sort: 39
 
 Web page <https://quarto.org/>
 
-An open-source scientific and technical publishing system; the Linux version is able to run a TypeScript, R, Python, or Lua script.
+It is an open-source scientific and technical publishing system; the Linux version is able to run a TypeScript, R, Python, or Lua script.
 
 ## Installation
 
@@ -186,7 +186,7 @@ quarto --help
     help            [command]             - Show this help or the help of a sub-command.
 ```
 
-We can prooceed with a `qmd` as follows,
+We can prooceed with a `test.qmd` as follows,
 
 ```qmd
 ---
@@ -217,4 +217,4 @@ You can add options to executable code like this
 The echo: false option disables the printing of code (only output is displayed).
 ```
 
-We emply `quarto render test.qmd` to obtain `test.html`.
+We employ `quarto render test.qmd` to obtain `test.html`.
