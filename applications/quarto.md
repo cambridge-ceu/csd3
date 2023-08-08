@@ -231,6 +231,6 @@ You can add options to executable code like this
 The echo: false option disables the printing of code (only output is displayed).
 ```
 
-We employ `quarto render test.qmd` to obtain `test.html`.
+We employ `quarto render test.qmd` to obtain `test.html`. It is also possible to obtain other formats, e.g., `quarto render test.qmd --to docx`.
 
 We can also invoke `RStutio`, e.g., `module load ceuadmin/rstudio; rstudio` and render the document there.
