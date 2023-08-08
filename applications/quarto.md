@@ -149,6 +149,14 @@ quarto check
 [✓] Checking Knitr engine render......OK
 ```
 
+### texlive
+
+This is necessary for rendering PDF, which is enabled as usual,
+
+```bash
+module load texlive/2015
+```
+
 ## Usage
 
 ```bash
