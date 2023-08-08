@@ -32,11 +32,11 @@ Error in dyn.load("/usr/local/Cluster-Apps/R/4.3.1-icelake/lib64/R/library/grDev
 >
 ```
 
-Since `gnutls` relies on `nettle` and in turn on `libhogweed`. The `/usr/lib64/hogweed.so.2` would conflict with `libhogweed.so.6`, so to get around add LDFLAGS=-L LIBS=-l to configure. Similarly `gmp` is specified with `--with-lib-path=` and `--with-include-path`.
+Since `gnutls` relies on `nettle` and in turn on `libhogweed`. The `/usr/lib64/hogweed.so.2` would conflict with `libhogweed.so.6`.
 
 ### nettle
 
-The error message above is amended with
+To get around add LDFLAGS=-L LIBS=-l to configure. Similarly `gmp` is specified with `--with-lib-path=` and `--with-include-path`; our script is as follows,
 
 ```bash
 ./configure --prefix=$HPC_WORK LDFLAGS=-L$HPC_WORK/lib64 LIBS=-lhogweed --disable-openssl \
@@ -54,6 +54,8 @@ The syntax is as follows,
 ./configure --prefix=$HPC_WORK --with-included-unistring --with-nettle-mini --enable-ssl3-support \
             CFLAGS=-I$HPC_WORK/include LDFLAGS=-L$HPC_WORK/lib LIBS=-lhogweed LIBS=-lunbound LIBS=-ltspi \
             --enable-sha1-support --disable-guile
+make
+make install
 ```
 
 It is necessary to edit `lib/pkcs11_privkey.c` to make `ck_rsa_pkcs_pss_params` definition explicit. Then there is error with guile so we use --disable-guile.
@@ -73,7 +75,7 @@ We take advantage of the module,
 module load R/4.3.1-icelake
 ```
 
-To enable `rmarkdown`, we need to get around issue of no Internet on icelake with the following,
+To enable `rmarkdown`, we need to get around issue of no Internet on icelake with the following before entering `login-q-1`,
 
 ```r
 packages <- c("base64enc","bslib","cachem","cli","digest",
@@ -92,7 +94,7 @@ Add ${PWD} to `R_LIBS`. Furthermore, to allow for generality, python and R direc
 
 ### ceuadmin/quarto
 
-The cumbersome steps above have been wrapped in the module.
+The cumbersome steps above have been wrapped in the named module.
 
 ```bash
 module load ceuadmin/quarto
