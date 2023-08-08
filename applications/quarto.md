@@ -218,3 +218,5 @@ The echo: false option disables the printing of code (only output is displayed).
 ```
 
 We employ `quarto render test.qmd` to obtain `test.html`.
+
+We can also invoke `RStutio`, e.g., `module load ceuadmin/rstudio; rstudio` and render the document there.
