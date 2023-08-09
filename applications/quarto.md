@@ -219,15 +219,15 @@ Running Code
 When you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed 
 code like this:
 
-{r}
+```{r}
 1 + 1
-
+```
 You can add options to executable code like this
 
-{r}
+```{r}
 #| echo: false
 2 * 2
-
+```
 The echo: false option disables the printing of code (only output is displayed).
 ```
 
