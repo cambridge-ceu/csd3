@@ -6,7 +6,7 @@ sort: 39
 
 Web page <https://quarto.org/> ([Guide](https://quarto.org/docs/guide/))
 
-It is an open-source scientific and technical publishing system; the Linux version is able to run a TypeScript, R, Python, or Lua script.
+It is an open-source scientific and technical publishing system; the Linux version is able to run a script in TypeScript, R, Python, or Lua.
 
 ## Installation
 
