@@ -202,13 +202,15 @@ quarto --help
 
 We can prooceed with a `test.qmd` as follows,
 
+> ```
 > ---
 > title: "This is a test"
 > author: "Author"
 > format: html
 > editor: visual
 > ---
-> 
+> ```
+>
 > Quarto
 > 
 > Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
