@@ -202,7 +202,6 @@ quarto --help
 
 We can prooceed with a `test.qmd` as follows,
 
-> ```qmd
 > ---
 > title: "This is a test"
 > author: "Author"
@@ -228,7 +227,6 @@ We can prooceed with a `test.qmd` as follows,
 > 2 * 2
 > ```
 > The echo: false option disables the printing of code (only output is displayed).
-> ```
 
 We employ `quarto render test.qmd` to obtain `test.html`. It is also possible to obtain other formats, e.g., `quarto render test.qmd --to docx`.
 
