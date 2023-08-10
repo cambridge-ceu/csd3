@@ -104,6 +104,17 @@ module load gcc/6
 module load aria2-1.33.1-gcc-5.4.0-r36jubs
 ```
 
+For icelake, we have
+
+```bash
+. /etc/profile.d/modules.sh
+module purge
+# default modules
+module load dot rhel8/slurm singularity/current rhel8/global cuda/11.4 vgl/2.5.1/64
+module load intel-oneapi-compilers/2022.1.0/gcc/b6zld2mz
+module load intel-oneapi-mpi/2021.6.0/intel/guxuvcpm rhel8/default-icl
+```
+
 ### Temporary directory
 
 Although it is less apparent with a single run, SLURM jobs tend to use large temporary space which can easily be beyond the system default.
