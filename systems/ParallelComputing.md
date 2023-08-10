@@ -109,10 +109,7 @@ For icelake, we have
 ```bash
 . /etc/profile.d/modules.sh
 module purge
-# default modules
-module load dot rhel8/slurm singularity/current rhel8/global cuda/11.4 vgl/2.5.1/64
-module load intel-oneapi-compilers/2022.1.0/gcc/b6zld2mz
-module load intel-oneapi-mpi/2021.6.0/intel/guxuvcpm rhel8/default-icl
+module load rhel8/default-icl
 ```
 
 ### Temporary directory
