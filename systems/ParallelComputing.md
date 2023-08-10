@@ -94,12 +94,13 @@ For `$USER`, check with `squeue -u $USER`, `qstat -u $USER` and `sacct`.
 
 ### Using modules
 
-The following is part of a real implementation.
+The following is part of a real project.
 
 ```bash
 . /etc/profile.d/modules.sh
 module purge
 module load rhel7/default-peta4
+
 module load gcc/6
 module load aria2-1.33.1-gcc-5.4.0-r36jubs
 ```
