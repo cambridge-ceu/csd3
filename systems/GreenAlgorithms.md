@@ -10,6 +10,12 @@ Source at GitHub: [https://github.com/Llannelongue/GreenAlgorithms4HPC](https://
 
 ## CSD3 location
 
+<font color="red"><b>10/08/2023 Update</b>: </font><font color="blue"><b> module 0.3 available.</b></font>
+
+```bash
+module load ceuadmin/GreenAlgorithms4HPC/0.3
+```
+
 <font color="red"><b>26/11/2022 Update</b>: </font><font color="blue"><b> it is available as a module.</b></font>
 
 ```bash
