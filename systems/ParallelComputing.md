@@ -110,7 +110,7 @@ For cclake, we have
 ```bash
 . /etc/profile.d/modules.sh
 module purge
-module load rhel8/default-ccl
+module load rhel7/default-ccl
 ```
 
 For icelake, we have
