@@ -67,8 +67,8 @@ The current list is as follows,
 [160] "SurvivalKit"           "tabix"                 "tidy"
 [163] "trinculo"              "trousers"              "Typora"
 [166] "unbound"               "vala"                  "vcftools"
-[169] "VEGAS2"                "VSCode"                "yaml-cpp"
-[172] "Zotero"                "zstd"
+[169] "VEGAS2"                "VSCode"                "xpdf"
+[172] "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
