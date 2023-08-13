@@ -200,36 +200,7 @@ quarto --help
     help            [command]             - Show this help or the help of a sub-command.
 ```
 
-We can prooceed with a `test.qmd` as follows,
-
-> ```
-> ---
-> title: "This is a test"
-> author: "Author"
-> format: html
-> editor: visual
-> ---
-> ```
->
-> Quarto
-> 
-> Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.
-> 
-> Running Code
-> 
-> When you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
->
-> ```{r}
-> 1 + 1
-> ```
-> You can add options to executable code like this
-> 
-> ```{r}
-> #| echo: false
-> 2 * 2
-> ```
-> The echo: false option disables the printing of code (only output is displayed).
-
-We employ `quarto render test.qmd` to obtain `test.html`. It is also possible to obtain other formats, e.g., `quarto render test.qmd --to docx`.
+We can prooceed with a [`test.qmd`](https://github.com/cambridge-ceu/csd3/tree/master/applications/files/test.qmd) with
+`quarto render test.qmd` to obtain `test.html`. It is also possible to obtain other formats, e.g., `quarto render test.qmd --to docx`.
 
 We can also invoke `RStutio`, e.g., `module load ceuadmin/rstudio; rstudio` and render the document there.
