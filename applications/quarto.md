@@ -203,4 +203,4 @@ quarto --help
 We can prooceed with a [`test.qmd`](https://github.com/cambridge-ceu/csd3/tree/master/applications/files/test.qmd) with
 `quarto render test.qmd` to obtain `test.html`. It is also possible to obtain other formats, e.g., `quarto render test.qmd --to docx`.
 
-We can also invoke `RStutio`, e.g., `module load ceuadmin/rstudio; rstudio` and render the document there.
+We can also invoke `RStutio`, which embeds `quarto`, e.g., `module load ceuadmin/rstudio; rstudio` and render the document there.
