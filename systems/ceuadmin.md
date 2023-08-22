@@ -64,11 +64,12 @@ The current list is as follows,
 [151] "SMR"                   "snakemake"             "SNP2HLA"
 [154] "snptest"               "sqlite"                "ssw"
 [157] "STAR"                  "stata"                 "SurvivalAnalysis"
-[160] "SurvivalKit"           "tabix"                 "tidy"
-[163] "trinculo"              "trousers"              "Typora"
-[166] "unbound"               "vala"                  "vcftools"
-[169] "VEGAS2"                "VSCode"                "xpdf"
-[172] "yaml-cpp"              "Zotero"                "zstd"
+[160] "SurvivalKit"           "tabix"                 "thunderbird"
+[163] "tidy"                  "trinculo"              "trousers"
+[166] "Typora"                "unbound"               "vala"
+[169] "vcftools"              "VEGAS2"                "VSCode"
+[172] "xpdf"                  "yaml-cpp"              "Zotero"
+[175] "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
