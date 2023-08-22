@@ -280,7 +280,7 @@ Zheng X, et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pha
     > cd -
     > ```
 
-[^3]: HLA-TAPAS
+[^3]: HLA-TAPAS (HLA-Typing At Protein for Association Studies)
 
     > Web: [https://github.com/immunogenomics/HLA-TAPAS](https://github.com/immunogenomics/HLA-TAPAS)
     >
