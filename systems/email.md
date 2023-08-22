@@ -26,4 +26,6 @@ An attempt was made with this,
 module load ceuadmin/thunderbird
 ```
 
+The package is from <https://www.thunderbird.net/en-US/thunderbird/all>.
+
 It is necessary to follow instructions here, <https://help.uis.cam.ac.uk/service/collaboration/365/exchange-online/how-access-your-mailbox/set-thunderbird-exchange-online>.
