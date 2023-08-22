@@ -4,7 +4,9 @@ sort: 5
 
 # email
 
-This can be done with `mutt` from the console, which leaves to a menu-driven session.
+## mutt
+
+This can be done from the console, which leaves to a menu-driven session.
 
 Alternatively, to send a message one can follow these steps,
 
