@@ -106,12 +106,29 @@ export dst=~/rds/public_databases/software/locuszoom_1.4/data/interval/genotypes
 
 # as in 1000Gwenomes 2014 version with ChrX added here, 1000G/genotypes/2014-10-14/EUR
 if [ ! -d ${dst} ]; then mkdir -p ${dst}; fi
+
+function autosomes()
+{
 plink2 --bgen ${impute}/impute_{}_interval.bgen ref-unknown \
        --sample ${impute}/interval.samples \
        --export bgen-1.2 bits=8 --dosage-erase-threshold 0.001 \
        --set-missing-var-ids chr@:#_\$r_\$a --new-id-max-allele-len 680 \
        --make-bed \
        --out ${dst}/chr${chr}
+}
+
+function X()
+{
+  plink2 --vcf ${X}/INTERVAL_X_imp_ann_filt_v2.vcf.gz \
+         --export bgen-1.2 bits=8 \
+         --dosage-erase-threshold 0.001 \
+         --set-missing-var-ids @:#_\$r_\$a \
+         --new-id-max-allele-len 680 \
+         --out ${dst}/chrX
+}
+
+# autosomes
+X
 ```
 
 A specific handling is made with respect to chromosome X.
