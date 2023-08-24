@@ -100,7 +100,7 @@ module load rhel7/default-ccl
 
 export interval=~/rds/post_qc_data/interval/
 export impute=${interval}/imputed/uk10k_1000g_b37
-export chr=SLURM_ARRAY_TASK_ID
+export chr=$SLURM_ARRAY_TASK_ID
 export src=${impute}/impute_${chr}_interval.bgen
 export dst=~/rds/public_databases/software/locuszoom_1.4/data/interval/genotypes/EUR
 
