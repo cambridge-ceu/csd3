@@ -8,7 +8,7 @@ Web: <https://genome.sph.umich.edu/wiki/LocusZoom_Standalone>
 
 The installation is standard and can be found from `~/rds/public_databases/software/locuszoom_1.4`. Noted below are reference panel using INTERVAL data (hg19).
 
-## snp_pos.txt
+## snp_pos.csv
 
 The following script creates a SNP-position file (~90M).
 
@@ -47,9 +47,9 @@ function snp_pos()
 snp_pos
 ``````
 
-## snp_pos table
+## locuszoom_interval_hg19.db
 
-We first examine the schema of built-in SNP-position counterpart from `locuszoom_hg19.db`.
+We first examine the schema of built-in SNP-position table from `locuszoom_hg19.db`.
 
 ```
 $ sqlite3 locuszoom_hg19.db
@@ -73,7 +73,7 @@ CREATE INDEX ind_snp_pos_snp ON snp_pos (snp);
 .quit
 ```
 
-We could check availability of chromosome X data with `select * from snp_pos where chr==23;`.
+We could confirm availability of chromosome X data with `select * from snp_pos where chr==23;`.
 
 ## genotypes
 
@@ -109,12 +109,12 @@ if [ ! -d ${dst} ]; then mkdir -p ${dst}; fi
 
 function autosomes()
 {
-plink2 --bgen ${impute}/impute_{}_interval.bgen ref-unknown \
-       --sample ${impute}/interval.samples \
-       --export bgen-1.2 bits=8 --dosage-erase-threshold 0.001 \
-       --set-missing-var-ids chr@:#_\$r_\$a --new-id-max-allele-len 680 \
-       --make-bed \
-       --out ${dst}/chr${chr}
+  plink2 --bgen ${impute}/impute_{}_interval.bgen ref-unknown \
+         --sample ${impute}/interval.samples \
+         --export bgen-1.2 bits=8 --dosage-erase-threshold 0.001 \
+         --set-missing-var-ids chr@:#_\$r_\$a --new-id-max-allele-len 680 \
+         --make-bed \
+         --out ${dst}/chr${chr}
 }
 
 function X()
