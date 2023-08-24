@@ -33,6 +33,7 @@ module load rhel7/default-ccl
 
 export interval=~/rds/post_qc_data/interval/
 export impute=${interval}/imputed/uk10k_1000g_b37
+export X=/rds/project/jmmh2/rds-jmmh2-projects/covid/ace2/interval_genetic_data/interval_imputed_data
 export chr=$SLURM_ARRAY_TASK_ID
 export src=${impute}/impute_${chr}_interval.bgen
 export dst=~/rds/public_databases/software/locuszoom_1.4/data/interval/genotypes/EUR
@@ -60,8 +61,7 @@ function X()
          --out ${dst}/chrX
 }
 
-# autosomes
-X
+autosomes
 ```
 
 A specific handling is made with respect to chromosome X.
