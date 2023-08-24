@@ -229,7 +229,6 @@ export TMPDIR=${HPC_WORK}/work
 
 function snp_pos()
 {
-# autosomes sorted by alleles appropriate for meta-analysis
   (
     for chr in {1..22}
     do
@@ -239,6 +238,7 @@ function snp_pos()
        pos=$3
        a1=$4
        a2=$5
+     # sort by alleles appropriate for meta-analysis
        if(a1>a2) snpid="chr"chr":"pos"_"a2"_"a1;
        else snpid="chr"chr":"pos"_"a1"_"a2
        if($1==".") rsid=snpid; else rsid=$1
