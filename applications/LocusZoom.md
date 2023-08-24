@@ -14,7 +14,7 @@ A module was created pointing to this setup, i.e.,
 module load ceuadmin/locuszoom/1.4
 ```
 
-Specifically noted below are reference panel using INTERVAL (<https://www.intervalstudy.org.uk/>) data (hg19).
+Specifically noted below are reference panel using INTERVAL (<https://www.intervalstudy.org.uk/>) data[^interval] (hg19).
 
 ## genotypes
 
@@ -293,3 +293,7 @@ locuszoom --source interval --build hg19 --pop EUR --metal ${phenoname}-{4}.lz \
           --no-date --plotonly --prefix=${phenoname} --rundir . --svg --refsnp {4}
 '
 ```
+
+[^interval]: ## Permission to access
+
+<font color="red"><b>Permission is needed</b> to access</font>.
