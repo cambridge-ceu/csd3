@@ -281,7 +281,7 @@ We could confirm availability of chromosome X data with `select * from snp_pos w
 
 ## Example
 
-Assuming that our phenotype is $phenomae-$rsid.lz, we could generate a plot on $chr:$start-$end as follows,
+Assuming that our phenotype is $phenoname-$rsid.lz, we could generate a plot on $chr:$start-$end as follows,
 
 ```bash
 export phenoname=$phenoname
@@ -296,6 +296,6 @@ locuszoom --source interval --build hg19 --pop EUR --metal ${phenoname}-{4}.lz \
 
 [^interval]:
 
-    ## Permission to access
+    ### Permission to access
 
     <font color="red"><b>Permission is needed</b> to access</font>.
