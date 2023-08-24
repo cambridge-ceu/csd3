@@ -296,6 +296,6 @@ locuszoom --source interval --build hg19 --pop EUR --metal ${phenoname}-{4}.lz \
 
 [^interval]:
 
-     ## Permission to access
+    ## Permission to access
 
     <font color="red"><b>Permission is needed</b> to access</font>.
