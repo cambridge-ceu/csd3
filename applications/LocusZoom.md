@@ -58,7 +58,7 @@ $ sqlite3 locuszoom_hg19.db
 .quit
 ```
 
-A customised database is thus derived via `cp -p locuszoom_hg19.db`locuszoom_interval_hg19.db` (faster than `.save locuszoom_interval_hg19.db` inside `sqlite3` above).
+A customised database is thus derived via `cp -p locuszoom_hg19.db locuszoom_interval_hg19.db` (faster than `.save locuszoom_interval_hg19.db` inside `sqlite3` above).
 
 Now the INTERVAL SNP-position file above is taken.
 
