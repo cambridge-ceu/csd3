@@ -8,73 +8,6 @@ Web: <https://genome.sph.umich.edu/wiki/LocusZoom_Standalone>
 
 The installation is standard and can be found from `~/rds/public_databases/software/locuszoom_1.4`. Noted below are reference panel using INTERVAL data (hg19).
 
-## snp_pos.csv
-
-The following script creates a SNP-position file (~90M).
-
-```bash
-#!/usr/bin/bash
-
-export interval=~/rds/post_qc_data/interval/
-export impute=${interval}/imputed/uk10k_1000g_b37
-export snpstats=${interval}/reference_files/genetic/reference_files_genotyped_imputed/
-export X=/rds/project/jmmh2/rds-jmmh2-projects/covid/ace2/interval_genetic_data/interval_imputed_data
-export TMPDIR=${HPC_WORK}/work
-
-function snp_pos()
-{
-# autosomes sorted by alleles appropriate for meta-analysis
-  (
-    for chr in {1..22}
-    do
-      cut -f1,3-6,19 ${snpstats}/impute_${chr}_interval.snpstats | \
-      awk 'NR>1{
-       chr=$2+0
-       pos=$3
-       a1=$4
-       a2=$5
-       if(a1>a2) snpid="chr"chr":"pos"_"a2"_"a1;
-       else snpid="chr"chr":"pos"_"a1"_"a2
-       if($1==".") rsid=snpid; else rsid=$1
-       print rsid,chr,pos
-      }'
-    done
-    awk '{print $5,23,$2}' ${X}/INTERVAL_X_imp_ann_filt_v2_stats.txt
-  ) | sort -k2,2n -k3,3n > interval.snp_pos.csv
-  sed -i 's/ /,/g' interval.snp_pos.csv
-}
-
-snp_pos
-``````
-
-## locuszoom_interval_hg19.db
-
-We first examine the schema of built-in SNP-position table from `locuszoom_hg19.db`.
-
-```
-$ sqlite3 locuszoom_hg19.db
-.tables
-.schema snp_pos
-.quit
-```
-
-A customised database is thus derived via `cp -p locuszoom_hg19.db locuszoom_interval_hg19.db` (faster than `.save locuszoom_interval_hg19.db` inside `sqlite3` above).
-
-Now the INTERVAL SNP-position file above is taken.
-
-```sqlite3
-sqlite3 locuszoom_interval_hg19.db
-DROP TABLE IF EXISTS snp_pos;
-CREATE TABLE snp_pos ( snp TEXT, chr INTEGER, pos INTEGER );
-.mode csv
-.import /home/jhz22/interval.snp_pos.csv snp_pos
-CREATE INDEX ind_snp_pos_chrpos ON snp_pos (chr,pos);
-CREATE INDEX ind_snp_pos_snp ON snp_pos (snp);
-.quit
-```
-
-We could confirm availability of chromosome X data with `select * from snp_pos where chr==23;`.
-
 ## genotypes
 
 Our genotype files are built as follows,
@@ -274,5 +207,74 @@ LD_DB = {
   }
 }
 ```
+
+where there is an option to use a customised database named `locuszoom_interval_hg19.db` as well, see below.
+
+## snp_pos
+
+It seems unnecessary to replace the `snp_pos` (~125M) table in `locuszoom_hg19.db` but nevertheless here is how to.
+
+The following script creates a SNP-position file (~90M).
+
+```bash
+#!/usr/bin/bash
+
+export interval=~/rds/post_qc_data/interval/
+export impute=${interval}/imputed/uk10k_1000g_b37
+export snpstats=${interval}/reference_files/genetic/reference_files_genotyped_imputed/
+export X=/rds/project/jmmh2/rds-jmmh2-projects/covid/ace2/interval_genetic_data/interval_imputed_data
+export TMPDIR=${HPC_WORK}/work
+
+function snp_pos()
+{
+# autosomes sorted by alleles appropriate for meta-analysis
+  (
+    for chr in {1..22}
+    do
+      cut -f1,3-6,19 ${snpstats}/impute_${chr}_interval.snpstats | \
+      awk 'NR>1{
+       chr=$2+0
+       pos=$3
+       a1=$4
+       a2=$5
+       if(a1>a2) snpid="chr"chr":"pos"_"a2"_"a1;
+       else snpid="chr"chr":"pos"_"a1"_"a2
+       if($1==".") rsid=snpid; else rsid=$1
+       print rsid,chr,pos
+      }'
+    done
+    awk '{print $5,23,$2}' ${X}/INTERVAL_X_imp_ann_filt_v2_stats.txt
+  ) | sort -k2,2n -k3,3n > interval.snp_pos.csv
+  sed -i 's/ /,/g' interval.snp_pos.csv
+}
+
+snp_pos
+``````
+
+We then examine the schema of built-in SNP-position table from `locuszoom_hg19.db`.
+
+```
+$ sqlite3 locuszoom_hg19.db
+.tables
+.schema snp_pos
+.quit
+```
+
+A customised database is thus derived via `cp -p locuszoom_hg19.db locuszoom_interval_hg19.db` (faster than `.save locuszoom_interval_hg19.db` inside `sqlite3` above).
+
+Now the INTERVAL SNP-position file above is taken.
+
+```sqlite3
+sqlite3 locuszoom_interval_hg19.db
+DROP TABLE IF EXISTS snp_pos;
+CREATE TABLE snp_pos ( snp TEXT, chr INTEGER, pos INTEGER );
+.mode csv
+.import /home/jhz22/interval.snp_pos.csv snp_pos
+CREATE INDEX ind_snp_pos_chrpos ON snp_pos (chr,pos);
+CREATE INDEX ind_snp_pos_snp ON snp_pos (snp);
+.quit
+```
+
+We could confirm availability of chromosome X data with `select * from snp_pos where chr==23;`.
 
 ## Example
