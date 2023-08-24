@@ -272,3 +272,16 @@ CREATE INDEX ind_snp_pos_snp ON snp_pos (snp);
 We could confirm availability of chromosome X data with `select * from snp_pos where chr==23;`.
 
 ## Example
+
+Assuming that our phenotype is $phenomae-$rsid.lz, we could generate a plot on $chr:$start-$end as follows,
+
+```bash
+export phenoname=$phenoname
+echo $chr $start $end $rsid | \
+parallel -C' ' '
+locuszoom --source interval --build hg19 --pop EUR --metal ${phenoname}-{4}.lz \
+          --delim tab title="${phenoname}-{4}" \
+          --markercol MarkerName --pvalcol log10P --no-transform --chr {1} --start {2} --end {3} --cache None \
+          --no-date --plotonly --prefix=${phenoname} --rundir . --svg --refsnp {4}
+'
+```
