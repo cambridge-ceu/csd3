@@ -285,3 +285,9 @@ locuszoom --source interval --build hg19 --pop EUR --metal ${phenoname}-{4}.lz \
           --no-date --plotonly --prefix=${phenoname} --rundir . --svg --refsnp {4}
 '
 ```
+
+A module was created pointing to this setup, i.e.,
+
+```bash
+module load ceuadmin/locuszoom/1.4
+```
