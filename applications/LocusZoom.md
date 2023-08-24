@@ -100,12 +100,6 @@ GWAS_CATS = {
       'desc' : "The EBI GWAS catalog, filtered to SNPs with p-value < 5E-08"
     }
   },
-  'interval37' : {
-    'whole-cat_significant-only' : {
-      'file' : "data/gwas_catalog/gwas_catalog_hg19.txt",
-      'desc' : "The EBI GWAS catalog, filtered to SNPs with p-value < 5E-08"
-    }
-  },
   'hg38' : {
     'whole-cat_significant-only' : {
       'file' : "data/gwas_catalog/gwas_catalog_hg38.txt",
@@ -199,7 +193,7 @@ LD_DB = {
     }
   },
   'interval' : {
-    'interval37' : {
+    'hg19' : {
       'EUR' : {
         'bim_dir' : "data/interval/genotypes/EUR/",
       }
