@@ -6,7 +6,7 @@ sort: 26
 
 Web: <https://genome.sph.umich.edu/wiki/LocusZoom_Standalone>
 
-The installation is standard and can be found from `~/rds/public_databases/software/locuszoom_1.4`. Noted below builds reference panel using INTERVAL data (hg19).
+The installation is standard and can be found from `~/rds/public_databases/software/locuszoom_1.4`. Noted below are reference panel using INTERVAL data (hg19).
 
 ## snp_pos.txt
 
@@ -47,9 +47,9 @@ function snp_pos()
 snp_pos
 ``````
 
-## snp_pos
+## snp_pos table
 
-We also examine the schema of built-in SNP-position counterpart.
+We first examine the schema of built-in SNP-position counterpart from `locuszoom_hg19.db`.
 
 ```
 $ sqlite3 locuszoom_hg19.db
