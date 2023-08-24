@@ -6,7 +6,15 @@ sort: 26
 
 Web: <https://genome.sph.umich.edu/wiki/LocusZoom_Standalone>
 
-The installation is standard and can be found from `~/rds/public_databases/software/locuszoom_1.4`. Noted below are reference panel using INTERVAL data (hg19).
+The installation is standard and can be found from `~/rds/public_databases/software/locuszoom_1.4`.
+
+A module was created pointing to this setup, i.e.,
+
+```bash
+module load ceuadmin/locuszoom/1.4
+```
+
+Specifically noted below are reference panel using INTERVAL (<https://www.intervalstudy.org.uk/>) data (hg19).
 
 ## genotypes
 
@@ -64,7 +72,7 @@ function X()
 autosomes
 ```
 
-A specific handling is made with respect to chromosome X.
+where a specific handling is made with respect to chromosome X, which does not need a job array.
 
 ## m2zfast.conf
 
@@ -202,7 +210,7 @@ LD_DB = {
 }
 ```
 
-where there is an option to use a customised database named `locuszoom_interval_hg19.db` as well, see below.
+where there is an option to use a customised database named `locuszoom_interval_hg19.db` in the `interval` section, see below.
 
 ## snp_pos
 
@@ -284,10 +292,4 @@ locuszoom --source interval --build hg19 --pop EUR --metal ${phenoname}-{4}.lz \
           --markercol MarkerName --pvalcol log10P --no-transform --chr {1} --start {2} --end {3} --cache None \
           --no-date --plotonly --prefix=${phenoname} --rundir . --svg --refsnp {4}
 '
-```
-
-A module was created pointing to this setup, i.e.,
-
-```bash
-module load ceuadmin/locuszoom/1.4
 ```
