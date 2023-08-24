@@ -109,7 +109,7 @@ if [ ! -d ${dst} ]; then mkdir -p ${dst}; fi
 
 function autosomes()
 {
-  plink2 --bgen ${impute}/impute_{}_interval.bgen ref-unknown \
+  plink2 --bgen ${impute}/impute_${chr}_interval.bgen ref-unknown \
          --sample ${impute}/interval.samples \
          --export bgen-1.2 bits=8 --dosage-erase-threshold 0.001 \
          --set-missing-var-ids chr@:#_\$r_\$a --new-id-max-allele-len 680 \
