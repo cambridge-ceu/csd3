@@ -66,6 +66,7 @@ function X()
          --dosage-erase-threshold 0.001 \
          --set-missing-var-ids @:#_\$r_\$a \
          --new-id-max-allele-len 680 \
+         --make-bed \
          --out ${dst}/chrX
 }
 
