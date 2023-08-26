@@ -73,7 +73,24 @@ function X()
 autosomes
 ```
 
-where a specific handling is made with respect to chromosome X, which does not need a job array.
+where a specific handling is made with respect to chromosome X, which does not need a job array; slight changes are necessary:
+
+```bash
+cp -p chrX.fam chrX.fam-original
+# 0       110000305926_110000305926       0       0       0       -
+cp -p chrX.bim chrX.bim-original
+# X       X:60425_C_A     0       60425   A       C
+cp -p chrX.sample chrX.sample-original
+# ID_1 ID_2 missing sex
+# 0 0 0 D
+# 0 110000305926_110000305926 0 NA
+cat <(head -2 chrX.sample-original) \
+    <(sed '1,2d' chrX.sample-original | cut -f1 --complement chrX.sample-original | sed 's/_/ /') > chrX.sample
+cp -p chrX.log chrX.log-original
+# 0       110000305926_110000305926       0       0       0       -9
+cut -f1 --complement chrX.fam-original | sed 's/_/\t/' > chrX.fam
+sed -i 's/X/23/;s/X/chr23/'  chrX.bim
+```
 
 ## m2zfast.conf
 
