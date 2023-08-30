@@ -220,7 +220,7 @@ LD_DB = {
   },
   'interval' : {
     'hg19' : {
-      'EUR' : {
+      'interval37' : {
         'bim_dir' : "data/interval/genotypes/EUR/",
       }
     }
@@ -228,7 +228,17 @@ LD_DB = {
 }
 ```
 
-where there is an option to use a customised database named `locuszoom_interval_hg19.db` in the `interval` section, see below.
+where there is an option to use a customised database named `locuszoom_interval_hg19.db` in the `interval` section.
+
+We have seen error message `Warning: rs114800762 is not the current name in genome build (should be: rs3982708)`, which is recorded in `refsnp_trans` table (though the `snp_pos` does have rs114800762) and we now have the flexibility to mask it:
+
+```bash
+sqlite3 locuszoom_interval_hg19.db <<END
+UPDATE refsnp_trans SET rs_current = "rs114800762" WHERE rs_orig = "rs114800762";
+END
+```
+
+Our call is then `locuszoom --source interval --build interval37 --pop EUR ...`.
 
 ## snp_pos
 
