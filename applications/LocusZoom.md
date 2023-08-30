@@ -219,8 +219,8 @@ LD_DB = {
     }
   },
   'interval' : {
-    'hg19' : {
-      'interval37' : {
+    'interval37' : {
+      'EUR' : {
         'bim_dir' : "data/interval/genotypes/EUR/",
       }
     }
