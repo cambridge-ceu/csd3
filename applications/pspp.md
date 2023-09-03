@@ -179,6 +179,8 @@ where we drop `PREFIX=/rds/user/jhz22/hpc-work` after `Makefile.PL` and furnish 
 
 Note that the Windows version is available from [https://caeis.etech.fh-augsburg.de/downloads/windows/pspp-win-daily/1.6.0-ge6b96c/](https://caeis.etech.fh-augsburg.de/downloads/windows/pspp-win-daily/1.6.0-ge6b96c/).
 
+The software package is available with `module load ceuadmin/pspp/1.6.0`.
+
 
 ## 2.0.0-pre1ge32bec
 
@@ -186,11 +188,11 @@ The source is <https://benpfaff.org/~blp/pspp-master/20230624103130/source/pspp-
 
 In `Makefile`, we replace `makeinfo` with `makeinfo --force --no-validate`,
 
-The binaries thus produced can be merged into GNU binary build:
+The binaries thus produced can be merged into GNU binary build (with errors from GLIB_CXX on its own):
 
 <https://benpfaff.org/~blp/pspp-master/20230624103130/x86_64/pspp-2.0.0-pre1ge32bec-x86_64-build20230624103419.tar.gz>
 
-We proceed with `module load pspp/2.0.0-pre1ge32bec`.
+We proceed with `module load ceuadmin/pspp/2.0.0-pre1ge32bec`.
 
 ## Other approaches
 
