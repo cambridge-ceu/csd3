@@ -62,14 +62,14 @@ The current list is as follows,
 [145] "regenie"               "RHHsoftware"           "rstudio"
 [148] "ruby"                  "samtools"              "shapeit"
 [151] "SMR"                   "snakemake"             "SNP2HLA"
-[154] "snptest"               "sqlite"                "ssw"
-[157] "STAR"                  "stata"                 "SurvivalAnalysis"
-[160] "SurvivalKit"           "tabix"                 "thunderbird"
-[163] "tidy"                  "trinculo"              "trousers"
-[166] "Typora"                "unbound"               "vala"
-[169] "vcftools"              "VEGAS2"                "VSCode"
-[172] "xpdf"                  "yaml-cpp"              "Zotero"
-[175] "zstd"
+[154] "snptest"               "spread-sheet-widget"   "sqlite"
+[157] "ssw"                   "STAR"                  "stata"
+[160] "SurvivalAnalysis"      "SurvivalKit"           "tabix"
+[163] "thunderbird"           "tidy"                  "trinculo"
+[166] "trousers"              "Typora"                "unbound"
+[169] "vala"                  "vcftools"              "VEGAS2"
+[172] "VSCode"                "xpdf"                  "yaml-cpp"
+[175] "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -91,7 +91,7 @@ module load ceuadmin/pspp
 psppire
 ```
 
-for version 1.6.0. Once the job is done, one can restore the previous environment with
+for version 2.0.0-pre1. Once the job is done, one can restore the previous environment with
 
 ```bash
 module unload ceuadmin/pspp
