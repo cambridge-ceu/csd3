@@ -194,9 +194,7 @@ The binaries thus produced can be merged into GNU binary build (with errors from
 
 We proceed with `module load ceuadmin/pspp/2.0.0-pre1ge32bec`.
 
-## Other approaches
-
-Direct use of binary distribution is possible with these modules,
+Direct use of binary distribution is implicit with these modules,
 
 ```bash
 module load ceuadmin/gettext/0.21 ceuadmin/readline/8.0
@@ -220,6 +218,8 @@ bin/pspp: /usr/lib64/libc.so.6: version `GLIBC_2.34' not found (required by /usr
 bin/pspp: /usr/lib64/libm.so.6: version `GLIBC_2.29' not found (required by /usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0-pre1ge32bec/lib/pspp/libpspp-core-2.0.0-pre1ge32bec.so)
 bin/pspp: /usr/lib64/libpq.so.5: no version information available (required by /usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0-pre1ge32bec/lib/pspp/libpspp-core-2.0.0-pre1ge32bec.so)
 ```
+
+## flatpak
 
 The use of flatpak is possible with these operations,
 
