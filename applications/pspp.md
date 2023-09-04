@@ -188,7 +188,7 @@ The source is <https://benpfaff.org/~blp/pspp-master/20230624103130/source/pspp-
 
 In `Makefile`, we replace `makeinfo` with `makeinfo --force --no-validate`,
 
-The binaries thus produced can be merged into GNU binary build (with errors from GLIB_CXX on its own):
+The binaries thus produced can be merged into GNU binary build (with errors from GLIBCXX on its own):
 
 <https://benpfaff.org/~blp/pspp-master/20230624103130/x86_64/pspp-2.0.0-pre1ge32bec-x86_64-build20230624103419.tar.gz>
 
@@ -206,7 +206,20 @@ module load libtool-2.4.6-gcc-6.2.0-sqmr7cn
 module load pango-1.40.3-gcc-5.4.0-32phpcz
 ```
 
-provided that GLIBCxx could be sorted out.
+provided that GLIBCxx could be sorted out, i.e.,
+
+```
+bin/pspp: /usr/lib64/libc.so.6: version `GLIBC_2.34' not found (required by bin/pspp)
+bin/pspp: /usr/lib64/libc.so.6: version `GLIBC_2.33' not found (required by /usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0-pre1ge32bec/lib/pspp/libpspp-2.0.0-pre1ge32bec.so)
+bin/pspp: /usr/lib64/libm.so.6: version `GLIBC_2.29' not found (required by /usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0-pre1ge32bec/lib/pspp/libpspp-2.0.0-pre1ge32bec.so)
+bin/pspp: /usr/lib64/libc.so.6: version `GLIBC_2.25' not found (required by /usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0-pre1ge32bec/lib/pspp/libpspp-core-2.0.0-pre1ge32bec.so)
+bin/pspp: /usr/lib64/libc.so.6: version `GLIBC_2.26' not found (required by /usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0-pre1ge32bec/lib/pspp/libpspp-core-2.0.0-pre1ge32bec.so)
+bin/pspp: /usr/lib64/libc.so.6: version `GLIBC_2.32' not found (required by /usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0-pre1ge32bec/lib/pspp/libpspp-core-2.0.0-pre1ge32bec.so)
+bin/pspp: /usr/lib64/libc.so.6: version `GLIBC_2.33' not found (required by /usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0-pre1ge32bec/lib/pspp/libpspp-core-2.0.0-pre1ge32bec.so)
+bin/pspp: /usr/lib64/libc.so.6: version `GLIBC_2.34' not found (required by /usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0-pre1ge32bec/lib/pspp/libpspp-core-2.0.0-pre1ge32bec.so)
+bin/pspp: /usr/lib64/libm.so.6: version `GLIBC_2.29' not found (required by /usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0-pre1ge32bec/lib/pspp/libpspp-core-2.0.0-pre1ge32bec.so)
+bin/pspp: /usr/lib64/libpq.so.5: no version information available (required by /usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0-pre1ge32bec/lib/pspp/libpspp-core-2.0.0-pre1ge32bec.so)
+```
 
 The use of flatpak is possible with these operations,
 
