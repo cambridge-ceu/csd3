@@ -20,9 +20,9 @@ mkdir dependency
 cd dependency
 # 2. mach1
 wget -qO- https://csg.sph.umich.edu/abecasis/MACH/download/mach.1.0.18.Linux.tgz | \
+tar xvfz -
 # 3. beagle 5.1
 wget https://faculty.washington.edu/browning/beagle/beagle.18May20.d20.jar -O beagle.jar
-tar xvfz -
 # 4. beagle utilities
 wget https://faculty.washington.edu/browning/beagle_utilities/beagle2linkage.jar
 wget https://faculty.washington.edu/browning/beagle_utilities/beagle2vcf.jar
