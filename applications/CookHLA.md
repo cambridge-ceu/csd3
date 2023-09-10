@@ -236,7 +236,7 @@ Zheng X, et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pha
 
 [^2]: HATK (HLA Analysis Toolkit)
 
-    > Web: [https://github.com/WansonChoi/HATK](https://github.com/WansonChoi/HATK)
+    > Web: <https://github.com/WansonChoi/HATK> ([docs(]https://github.com/WansonChoi/HATK/tree/master/docs))
     >
     > ### Installation
     >
@@ -246,7 +246,7 @@ Zheng X, et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pha
     >
     > ### Example
     >
-    > The next example shows hla2hped from HIBAG, as in `https://github.com/WansonChoi/HATK/tree/master/docs`.
+    > The next example shows hla2hped from HIBAG,
     >
     > ```bash
     > source ~/COVID-19/py37/bin/activate
