@@ -246,8 +246,26 @@ Zheng X, et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pha
     >
     > ### Example
     >
+    > The next example shows hla2hped from HIBAG, as in `https://github.com/WansonChoi/HATK/tree/master/docs`.
+    >
     > ```bash
     > source ~/COVID-19/py37/bin/activate
+    > python HATK.py \
+    >     --hla2hped \
+    >     --platform HIBAG \
+    >     --out MyHLA2HPED_HIBAG/MyHIBAG \
+    >     --rhped \
+    >     example/HLA2HPED/HIBAG/HIBAG_TestResult.HLA-A.out \
+    >     example/HLA2HPED/HIBAG/HIBAG_TestResult.HLA-B.out \
+    >     example/HLA2HPED/HIBAG/HIBAG_TestResult.HLA-C.out \
+    >     example/HLA2HPED/HIBAG/HIBAG_TestResult.HLA-DPA1.out \
+    >     example/HLA2HPED/HIBAG/HIBAG_TestResult.HLA-DPB1.out \
+    >     example/HLA2HPED/HIBAG/HIBAG_TestResult.HLA-DQA1.out \
+    >     example/HLA2HPED/HIBAG/HIBAG_TestResult.HLA-DQB1.out \
+    >     example/HLA2HPED/HIBAG/HIBAG_TestResult.HLA-DRB1.out
+    > ```
+    >
+    > ```bash
     > python3 HATK.py \
     >         --variants example/wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18 \
     >         --hped example/wtccc_filtered_58C_RA.hatk.300+300.hped \
