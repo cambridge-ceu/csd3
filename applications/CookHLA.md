@@ -236,7 +236,7 @@ Zheng X, et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pha
 
 [^2]: HATK (HLA Analysis Toolkit)
 
-    > Web: <https://github.com/WansonChoi/HATK> ([docs(]https://github.com/WansonChoi/HATK/tree/master/docs))
+    > Web: <https://github.com/WansonChoi/HATK> ([docs](https://github.com/WansonChoi/HATK/tree/master/docs))
     >
     > ### Installation
     >
