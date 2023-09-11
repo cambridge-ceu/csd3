@@ -371,6 +371,8 @@ Zheng X, et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pha
     > git clone https://github.com/immunogenomics/HLA-TAPAS
     > ```
     >
+    > The association tests require R packages, `argparse`, `multidplyr`, `rcompanion`, and their dependencies. The `OMNIBUS` analysis should be `OMNIBUS_LOGISTIC` or `OMNIBUS_LINEAR` instead.
+    >
     > ### Example
     >
     > ```bash
