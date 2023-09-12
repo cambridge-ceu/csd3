@@ -325,6 +325,8 @@ Zheng X, et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pha
     >     --out MyHeatmap/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18
     > ```
     >
+    > Furthermore, from the documentation
+    >
     > ```bash
     > python3 HATK.py \
     >         --variants example/wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18 \
@@ -339,7 +341,7 @@ Zheng X, et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pha
     >         --multiprocess 2
     > ```
     >
-    > This is from the documentation, where `--variants` reads in the genotype files and `--hped` the .hped file to be followed by specification of the RA phenotype in a logistic regression. Note that the example is more desirable compared to the toy data in SNP2HLA given its 600 samples and 29,373 variants; we proceed with the imputation with the 1000Genomes panel provided with CookHLA.
+    > where `--variants` reads in the genotype files and `--hped` the .hped file to be followed by specification of the RA phenotype in a logistic regression. Note that the example is more desirable compared to the toy data in SNP2HLA given its 600 samples and 29,373 variants; we proceed with the imputation with the 1000Genomes panel provided with CookHLA.
     >
     > Next, we used results from a real project,
     >
