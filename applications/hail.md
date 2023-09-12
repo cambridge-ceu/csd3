@@ -189,7 +189,7 @@ Some files can be made available with `gsutil` installed, e.g.,
 - UK Biobank results, `gs://hail-datasets/ukbb_imputed_v3_gwas_results_both_sexes.GRCh37.mt`.
 - Pan-ancestry genetic analysis of the UK Biobank, <https://pan.ukbb.broadinstitute.org/docs/hail-format> ([Downloads](https://pan.ukbb.broadinstitute.org/downloads/index.html)).
 - Exome-based association statistics, see below.
-- sparkhail -- a 'Sparklyr' Extension for 'Hail', https://cran.r-project.org/package=sparkhail.
+- sparkhail -- a 'Sparklyr' extension for 'Hail', <https://cran.r-project.org/package=sparkhail>.
 
 ## genebass
 
