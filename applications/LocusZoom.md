@@ -51,6 +51,22 @@ if [ ! -d ${dst} ]; then mkdir -p ${dst}; fi
 
 function autosomes()
 {
+  export src=~/INF/INTERVAL/per_chr
+  module load ceuadmin/plink/2.0
+  parallel -C' ' -j5 '
+  plink2 --allow-no-sex \
+         --bgen ${src}/interval.imputed.olink.chr_{1}.bgen \
+         --make-bed \
+         --out ${src}/chr{1} \
+         --sample ${src}/interval.imputed.olink.chr_{1}.sample
+  ' ::: $(seq 22)
+  parallel -C' ' 'mv ${src}/chr{1}.{2} ${dst}/chr{1}.{2}' ::: $(seq 22) ::: bed bim fam
+}
+# wrong since chr${1}.{2}
+# parallel -C' ' --dry-run 'mv ${src}/interval.imputed.olink.chr_{1}.{2} ${dst}/chr{1}.{2}' ::: $(seq 22) ::: bed bim fam
+
+function bgen()
+{
   plink2 --bgen ${impute}/impute_${chr}_interval.bgen ref-unknown \
          --sample ${impute}/interval.samples \
          --export bgen-1.2 bits=8 --dosage-erase-threshold 0.001 \
@@ -70,10 +86,12 @@ function X()
          --out ${dst}/chrX
 }
 
-autosomes
+bgen
 ```
 
-where a specific handling is made with respect to chromosome X, which does not need a job array; slight changes are necessary:
+The `autosomes()` function takes advantage of the reference panel used in the SCALLOP analysis as well as GNU parallel such that no SLURM job is needed. For both this panel and the whole cohort, the .bgen/.sample (whose bgen+bed/bim/fam ~ 1.2TB instead of 327GB) are available.
+
+A specific handling is made with respect to chromosome X, which does not need a job array; slight changes are necessary:
 
 ```bash
 cp -p chrX.fam chrX.fam-original
