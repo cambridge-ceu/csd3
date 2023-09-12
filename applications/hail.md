@@ -187,9 +187,8 @@ Some files can be made available with `gsutil` installed, e.g.,
 - The HGDP release 3.1, `gs://gcp-public-data--gnomad/release/3.1`.
   - See also, `gs://gnomad-public/release`.
 - UK Biobank results, `gs://hail-datasets/ukbb_imputed_v3_gwas_results_both_sexes.GRCh37.mt`.
-- Pan-ancestry genetic analysis of the UK Biobank, [https://pan.ukbb.broadinstitute.org/docs/hail-format](https://pan.ukbb.broadinstitute.org/docs/hail-format).
+- Pan-ancestry genetic analysis of the UK Biobank, <https://pan.ukbb.broadinstitute.org/docs/hail-format> ([Downloads](https://pan.ukbb.broadinstitute.org/downloads/index.html)).
 - Exome-based association statistics, see below.
-
 ## genebass
 
 Web: [https://genebass.org/](https://genebass.org/)
