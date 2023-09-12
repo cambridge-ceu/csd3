@@ -89,7 +89,7 @@ function X()
 bgen
 ```
 
-The `autosomes()` function takes advantage of the reference panel used in the SCALLOP analysis as well as GNU parallel such that no SLURM job is needed. For both this panel and the whole cohort, the .bgen/.sample (whose bgen+bed/bim/fam ~ 1.2TB instead of 327GB) are available.
+The `autosomes()` function takes advantage of the reference panel used in the SCALLOP analysis as well as GNU `parallel` such that no SLURM job is not needed. For both this panel and the whole cohort, the .bgen/.sample (whose bgen+bed/bim/fam ~ 1.2TB instead of 327GB) are available.
 
 A specific handling is made with respect to chromosome X, which does not need a job array; slight changes are necessary:
 
