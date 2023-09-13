@@ -237,6 +237,11 @@ LD_DB = {
     }
   },
   'interval' : {
+    'hg19' : {
+      'EUR' : {
+        'bim_dir' : "data/1000G/genotypes/2014-10-14/EUR/",
+      }
+    },
     'interval37' : {
       'EUR' : {
         'bim_dir' : "data/interval/genotypes/EUR/",
