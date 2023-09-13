@@ -110,6 +110,15 @@ cut -f1 --complement chrX.fam-original | sed 's/_/\t/' > chrX.fam
 sed -i 's/X/23/;s/X/chr23/'  chrX.bim
 ```
 
+Importantly, we convert all rsid/SNPid to chr:pos as required by locuszoom.
+
+```bash
+parallel -C ' ' -j5 '
+  mv chr{}.bim chr{}.bim.orig
+  awk -vFS="\t" -vOFS="\t" "{\$2=\"chr\"\$1\":\"\$4;print}" chr{}.bim.orig > chr{}.bim
+' ::: $(echo {1..22} X)
+```
+
 ## m2zfast.conf
 
 This is the LocusZoom configuration file, whose entries are extended accordingly.
