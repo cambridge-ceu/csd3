@@ -592,5 +592,5 @@ Three aspects are notable,
     ```bash
     module load anaconda/3.2019-10
     conda env create -p /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10 -f gatkcondaenv.yml
-    conda activate anaconda-3.2019-10
+    conda activate /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10
     ```
