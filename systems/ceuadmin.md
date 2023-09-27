@@ -295,6 +295,8 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-07-28 | PWCoCo/1.1                  | Genetics            |
     | 2023-08-02 | regenie/3.2.9               | Genetics            |
     | 2023-08-06 | finemap/1.4.2               | Genetics            |
+    | 2023-09-27 | ncbi-vdb/3.0.8              | Genetics            |
+    | 2023-09-27 | sra-tools/3.0.8             | Genetics            |
 
     \* CEU or approved users only.
 
