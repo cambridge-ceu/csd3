@@ -594,3 +594,5 @@ Three aspects are notable,
     conda env create -p /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10 -f gatkcondaenv.yml
     conda activate /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10
     ```
+
+    Workflow downloads: <https://github.com/gatk-workflows>
