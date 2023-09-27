@@ -39,31 +39,32 @@ The current list is as follows[^ls],
  [94] "MAGENTA"               "magma"                 "MAGMA"
  [97] "Mega2"                 "metal"                 "MONSTER"
 [100] "MORGAN"                "MR-MEGA"               "MsCAVIAR"
-[103] "nano"                  "ncurses"               "netbeans"
-[106] "nettle"                "NLopt"                 "node"
-[109] "nspr"                  "oniguruma"             "OpenMS"
-[112] "openssl"               "osca"                  "PAINTOR"
-[115] "pandoc"                "pandoc-citeproc"       "parallel"
-[118] "Pascal"                "pcre2"                 "pdf2djvu"
-[121] "pdfjam"                "phenoscanner"          "PhySO"
-[124] "plink"                 "plink-bgi"             "plinkseq"
-[127] "PoGo"                  "polyphen"              "poppler"
-[130] "proj"                  "PRSice"                "pspp"
-[133] "PWCoCo"                "qctool"                "qpdf"
-[136] "qt"                    "qtcreator"             "QTLtools"
-[139] "quarto"                "quicktest"             "R"
-[142] "raremetal"             "rclone"                "readline"
-[145] "regenie"               "RHHsoftware"           "rstudio"
-[148] "ruby"                  "samtools"              "shapeit"
-[151] "SMR"                   "snakemake"             "SNP2HLA"
-[154] "snptest"               "spread-sheet-widget"   "sqlite"
-[157] "ssw"                   "STAR"                  "stata"
-[160] "SurvivalAnalysis"      "SurvivalKit"           "tabix"
-[163] "thunderbird"           "tidy"                  "trinculo"
-[166] "trousers"              "Typora"                "unbound"
-[169] "vala"                  "vcftools"              "VEGAS2"
-[172] "VSCode"                "xpdf"                  "yaml-cpp"
-[175] "Zotero"                "zstd"
+[103] "nano"                  "ncbi-vdb"              "ncurses"
+[106] "netbeans"              "nettle"                "NLopt"
+[109] "node"                  "nspr"                  "oniguruma"
+[112] "OpenMS"                "openssl"               "osca"
+[115] "PAINTOR"               "pandoc"                "pandoc-citeproc"
+[118] "parallel"              "Pascal"                "pcre2"
+[121] "pdf2djvu"              "pdfjam"                "phenoscanner"
+[124] "PhySO"                 "plink"                 "plink-bgi"
+[127] "plinkseq"              "PoGo"                  "polyphen"
+[130] "poppler"               "proj"                  "PRSice"
+[133] "pspp"                  "PWCoCo"                "qctool"
+[136] "qpdf"                  "qt"                    "qtcreator"
+[139] "QTLtools"              "quarto"                "quicktest"
+[142] "R"                     "raremetal"             "rclone"
+[145] "readline"              "regenie"               "RHHsoftware"
+[148] "rstudio"               "ruby"                  "samtools"
+[151] "shapeit"               "SMR"                   "snakemake"
+[154] "SNP2HLA"               "snptest"               "spread-sheet-widget"
+[157] "sqlite"                "sra-tools"             "ssw"
+[160] "STAR"                  "stata"                 "SurvivalAnalysis"
+[163] "SurvivalKit"           "tabix"                 "thunderbird"
+[166] "tidy"                  "trinculo"              "trousers"
+[169] "Typora"                "unbound"               "vala"
+[172] "vcftools"              "VEGAS2"                "VSCode"
+[175] "xpdf"                  "yaml-cpp"              "Zotero"
+[178] "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -281,7 +282,9 @@ They are ordered chronologically.
 !2023-08-22 |thunderbird/115.1.1              |Generic            |
 !2023-08-24 |pdfjam/3.07                      |Generic            |
 |2023-09-03 |2.0.0-pre1ge32bec                |Genetic[^pspp]     |
-|2023-09-03 |spead-sheet-widget               |Genetic            |
+|2023-09-03 |spead-sheet-widget               |Generic            |
+|2023-09-27 |ncbi-vdb/3.0.8                   |Genetics[^ncbi-vdb]|
+|2023-09-27 |sra-tools/3.0.8                  |Genetics[^sra-tools]|
 
 
 \* CEU or approved users only.
@@ -561,3 +564,24 @@ Three aspects are notable,
     MAKEINFO = ${SHELL} '/rds/project/jmmh2/rds-jmmh2-public_databases/software/pspp-2.0.0-pre1ge32bec/build-aux/missing' makeinfo --force --no-validate
     ```
     while the rest is copied from GNU build, <https://benpfaff.org/~blp/pspp-master/20230624103130/x86_64/pspp-2.0.0-pre1ge32bec-x86_64-build20230624103419.tar.gz>.
+
+[^ncbi-vdb]:
+
+    The installation is preceeded with `module load gcc/6 flex-2.6.4-gcc-5.4.0-2u2fgon`. Although `configure` is provided, `cmake` is used instead.
+
+    ```bash
+    cmake -DCMAKE_PREFIX_PATH=$CEUADMIN/ncbi-vdb/3.0.8 -DCMAKE_INSTALL_PREFIX=$CEUADMIN/ncbi-vdb/3.0.8 ..
+    ```
+
+[^sra-tools]:
+
+    First, create a symbolic link for `ncbi-vdb/3.0.8` in the parent directory.
+
+    ```bash
+    cmake -DVDB_LIBDIR=$CEUADMIN/ncbi-vdb/3.0.8/lib64 -DCMAKE_INSTALL_PREFIX=$CEUADMIN/sra-tools/3.0.8 ..
+    ```
+    
+    Drop `constexpr` as in `constexpr size_type max_size() const { return SIZE_MAX; }` in line 161 of the following header file:
+
+    `/usr/local/Cluster-Apps/ceuadmin/sra-tools/3.0.8/tools/external/driver-tool/util.hpp`.
+
