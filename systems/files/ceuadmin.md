@@ -285,7 +285,7 @@ They are ordered chronologically.
 |2023-09-03 |spead-sheet-widget               |Generic             |
 |2023-09-27 |ncbi-vdb/3.0.8                   |Genetics[^ncbi-vdb] |
 |2023-09-27 |sra-tools/3.0.8                  |Genetics[^sra-tools]|
-|2023-09-27 |gatk/4.4.0.0                     |Genetics            |
+|2023-09-27 |gatk/4.4.0.0                     |Genetics[^gatk]     |
 
 \* CEU or approved users only.
 
@@ -585,3 +585,12 @@ Three aspects are notable,
 
     `/usr/local/Cluster-Apps/ceuadmin/sra-tools/3.0.8/tools/external/driver-tool/util.hpp`.
 
+[^gatk]:
+
+    The Python dependencies are set up as follows,
+
+    ```bash
+    module load miniconda3/4.5.1
+    conda env create -n gatk -f 4.4.0.0/gatkcondaenv.yml
+    conda activate gatk
+    ```
