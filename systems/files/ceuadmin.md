@@ -20,51 +20,51 @@ The current list is as follows[^ls],
  [37] "expat"                 "FastQTL"               "fcGENE"
  [40] "ffmpeg"                "fgwas"                 "finemap"
  [43] "fossil"                "fribidi"               "GARFIELD"
- [46] "gcta"                  "gdal"                  "GEM"
- [49] "GEMMA"                 "Genotype-Harmonizer"   "gettext"
- [52] "gh"                    "ghc"                   "ghostscript"
- [55] "git"                   "git-extras"            "GitKraken"
- [58] "globusconnectpersonal" "gmp"                   "gnutls"
- [61] "googletest"            "GraphicsMagick"        "GreenAlgorithms4HPC"
- [64] "gsl"                   "gtksourceview"         "gtool"
- [67] "hpg"                   "htslib"                "icu"
- [70] "ImageJ"                "impute"                "JabRef"
- [73] "JAGS"                  "jq"                    "KentUtils"
- [76] "KING"                  "lapack"                "ldc2"
- [79] "LDstore"               "LEMMA"                 "libcares"
- [82] "libgit2"               "libglvnd"              "libiconv"
- [85] "libidn2"               "libntlm"               "libpng"
- [88] "libsodium"             "libssh2"               "libuv"
- [91] "libxml2"               "libxslt"               "locuszoom"
- [94] "MAGENTA"               "magma"                 "MAGMA"
- [97] "Mega2"                 "metal"                 "MONSTER"
-[100] "MORGAN"                "MR-MEGA"               "MsCAVIAR"
-[103] "nano"                  "ncbi-vdb"              "ncurses"
-[106] "netbeans"              "nettle"                "NLopt"
-[109] "node"                  "nspr"                  "oniguruma"
-[112] "OpenMS"                "openssl"               "osca"
-[115] "PAINTOR"               "pandoc"                "pandoc-citeproc"
-[118] "parallel"              "Pascal"                "pcre2"
-[121] "pdf2djvu"              "pdfjam"                "phenoscanner"
-[124] "PhySO"                 "plink"                 "plink-bgi"
-[127] "plinkseq"              "PoGo"                  "polyphen"
-[130] "poppler"               "proj"                  "PRSice"
-[133] "pspp"                  "PWCoCo"                "qctool"
-[136] "qpdf"                  "qt"                    "qtcreator"
-[139] "QTLtools"              "quarto"                "quicktest"
-[142] "R"                     "raremetal"             "rclone"
-[145] "readline"              "regenie"               "RHHsoftware"
-[148] "rstudio"               "ruby"                  "samtools"
-[151] "shapeit"               "SMR"                   "snakemake"
-[154] "SNP2HLA"               "snptest"               "spread-sheet-widget"
-[157] "sqlite"                "sra-tools"             "ssw"
-[160] "STAR"                  "stata"                 "SurvivalAnalysis"
-[163] "SurvivalKit"           "tabix"                 "thunderbird"
-[166] "tidy"                  "trinculo"              "trousers"
-[169] "Typora"                "unbound"               "vala"
-[172] "vcftools"              "VEGAS2"                "VSCode"
-[175] "xpdf"                  "yaml-cpp"              "Zotero"
-[178] "zstd"
+ [46] "gatk"                  "gcta"                  "gdal"
+ [49] "GEM"                   "GEMMA"                 "Genotype-Harmonizer"
+ [52] "gettext"               "gh"                    "ghc"
+ [55] "ghostscript"           "git"                   "git-extras"
+ [58] "GitKraken"             "globusconnectpersonal" "gmp"
+ [61] "gnutls"                "googletest"            "GraphicsMagick"
+ [64] "GreenAlgorithms4HPC"   "gsl"                   "gtksourceview"
+ [67] "gtool"                 "hpg"                   "htslib"
+ [70] "icu"                   "ImageJ"                "impute"
+ [73] "JabRef"                "JAGS"                  "jq"
+ [76] "KentUtils"             "KING"                  "lapack"
+ [79] "ldc2"                  "LDstore"               "LEMMA"
+ [82] "libcares"              "libgit2"               "libglvnd"
+ [85] "libiconv"              "libidn2"               "libntlm"
+ [88] "libpng"                "libsodium"             "libssh2"
+ [91] "libuv"                 "libxml2"               "libxslt"
+ [94] "locuszoom"             "MAGENTA"               "magma"
+ [97] "MAGMA"                 "Mega2"                 "metal"
+[100] "MONSTER"               "MORGAN"                "MR-MEGA"
+[103] "MsCAVIAR"              "nano"                  "ncbi-vdb"
+[106] "ncurses"               "netbeans"              "nettle"
+[109] "NLopt"                 "node"                  "nspr"
+[112] "oniguruma"             "OpenMS"                "openssl"
+[115] "osca"                  "PAINTOR"               "pandoc"
+[118] "pandoc-citeproc"       "parallel"              "Pascal"
+[121] "pcre2"                 "pdf2djvu"              "pdfjam"
+[124] "phenoscanner"          "PhySO"                 "plink"
+[127] "plink-bgi"             "plinkseq"              "PoGo"
+[130] "polyphen"              "poppler"               "proj"
+[133] "PRSice"                "pspp"                  "PWCoCo"
+[136] "qctool"                "qpdf"                  "qt"
+[139] "qtcreator"             "QTLtools"              "quarto"
+[142] "quicktest"             "R"                     "raremetal"
+[145] "rclone"                "readline"              "regenie"
+[148] "RHHsoftware"           "rstudio"               "ruby"
+[151] "samtools"              "shapeit"               "SMR"
+[154] "snakemake"             "SNP2HLA"               "snptest"
+[157] "spread-sheet-widget"   "sqlite"                "sra-tools"
+[160] "ssw"                   "STAR"                  "stata"
+[163] "SurvivalAnalysis"      "SurvivalKit"           "tabix"
+[166] "thunderbird"           "tidy"                  "trinculo"
+[169] "trousers"              "Typora"                "unbound"
+[172] "vala"                  "vcftools"              "VEGAS2"
+[175] "VSCode"                "xpdf"                  "yaml-cpp"
+[178] "Zotero"                "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -97,195 +97,195 @@ Due to limitation in size, a trade-off has been made to make some software avail
 
 They are ordered chronologically.
 
-|Date       |Add ons                          |Category           |
-|:----------|:--------------------------------|:------------------|
-|2022-10-21 |pspp/1.6.0                       |Generic            |
-|2022-10-22 |snptest/2.5.6                    |Genetics           |
-|   ""      |qctool/2.0.8                     |Genetics           |
-|   ""      |gcta/1.94.1                      |Genetics           |
-|   ""      |KING/2.1.6                       |Genetics           |
-|   ""      |LDstore/2.0                      |Genetics           |
-|   ""      |shapeit/3                        |Genetics           |
-|   ""      |vcftools/0.1.16                  |Genetics           |
-|   ""      |finemap/1.4                      |Genetics           |
-|2022-10-23 |quicktest/1.1                    |Genetics           |
-|   ""      |samtools/1.11                    |Genetics           |
-|   ""      |bcftools/1.12                    |Genetics           |
-|   ""      |MORGAN/3.4                       |Genetics           |
-|   ""      |METAL/2020-05-05r                |Genetics[^metal]   |
-|   ""      |regenie/3.2.1                    |Genetics           |
-|   ""      |GEMMA/0.98.5                     |Genetics[^gemma]   |
-|   ""      |htslib/1.12                      |Genetics           |
-|   ""      |fcGENE/1.0.7                     |Genetics[^fcgene]  |
-|   ""      |SMR/1.0.3                        |Genetics           |
-|   ""      |FastQTL/2.165                    |Genetics           |
-|   ""      |GitKraken/8.1.0                  |Generic            |
-|2022-10-24 |Typora/0.11.8beta                |Generic            |
-|   ""      |pandoc/2.19.2                    |Generic            |
-|   ""      |citeproc/0.4.0.1                 |Generic            |
-|   ""      |citeproc/0.8.0.2                 |Generic            |
-|2022-10-26 |circos/0.69-9                    |Genetics           |
-|   ""      |DjVuLibre/3.5.27.1-14            |Generic            |
-|   ""      |ghostscript/9.56.1               |Generic            |
-|   ""      |bgen/1.1.7                       |Genetics           |
-|2022-10-27 |sqlite/3.39.4                    |Generic            |
-|2022-10-28 |poppler/0.84.0                   |Generic            |
-|   ""      |jq/1.6                           |Generic[^jq]       |
-|   ""      |DosageConverter/1.0.0            |Genetics           |
-|   ""      |tidy/5.8.0                       |Generic            |
-|2022-10-29 |ghc/8.6.5                        |Generic            |
-|   ""      |pandoc-citeproc/0.17.0.2         |Generic            |
-|2022-10-31 |git/2.38.1                       |Generic            |
-|   ""      |aria2/1.36.0                     |Generic            |
-|2022-11-01 |alpine/2.26                      |Generic            |
-|   ""      |readline/8.0                     |Generic            |
-|   ""      |Cytoscape/3.9.1                  |Generic            |
-|   ""      |nano/6.0                         |Generic            |
-|   ""      |R/4.2.2                          |Generic            |
-|   ""      |parallel/20220222                |Generic            |
-|   ""      |pdf2djvu/0.9.19                  |Generic            |
-|2022-11-02 |lapack/3.10.1                    |Generic            |
-|   ""      |GraphicsMagick/1.3.38            |Generic            |
-|   ""      |QTLtools/1.3.1-25                |Genetics[^qtltools]|
-|   ""      |NLopt/2.7.1                      |Generic            |
-|   ""      |blat/37x1                        |Genetics           |
-|   ""      |bedtools2/2.29.2                 |Genetics           |
-|   ""      |bedops/2.4.41                    |Genetics           |
-|2022-11-03 |Beagle/3.0.4                     |Genetics           |
-|   ""      |netbeans/15                      |Generic            |
-|   ""      |JAGS/4.3.1                       |Generic            |
-|   ""      |exiv2/0.27.5                     |Generic[^exiv2]    |
-|   ""      |googletest/1.8.0                 |Generic            |
-|   ""      |googletest/1.12.1                |Generic            |
-|   ""      |libiconv/1.17                    |Generic            |
-|   ""      |ldc2/1.24.0                      |Generic            |
-|   ""      |gettext/0.21                     |Generic            |
-|   ""      |ssw/0.7                          |Generic            |
-|   ""      |fribidi/1.0.8                    |Generic            |
-|   ""      |proj/6.3.0                       |Generic            |
-|   ""      |gmp/6.2.1                        |Generic            |
-|   ""      |pcre2/10.30                      |Generic            |
-|   ""      |zstd/1.5.2                       |Generic            |
-|2022-11-04 |libxslt/1.1.34                   |Generic[^libxslt]  |
-|   ""      |libssh2/1.10.0                   |Generic            |
-|   ""      |libxml2/2.9.10                   |Generic[^libxml2]  |
-|   ""      |libsodium/1.10.0                 |Generic            |
-|   ""      |gdal/3.0.4                       |Generic[^gdal]     |
-|   ""      |expat/2.4.7                      |Generic[^expat]    |
-|   ""      |docbook2X/0.8.8                  |Generic            |
-|   ""      |libntlm/1.6                      |Generic            |
-|   ""      |vala/0.46.5                      |Generic            |
-|   ""      |gtksourceview/4.0.3              |Generic            |
-|   ""      |oniguruma/6.9.8                  |Generic            |
-|   ""      |nspr/4.35                        |Generic            |
-|   ""      |nettle/2.7.1                     |Generic            |
-|2022-11-05 |trinculo/0.96                    |Generic            |
-|   ""      |ruby/2.7.5                       |Generic            |
-|2022-11-06 |libpng/0.5.30                    |Generic            |
-|   ""      |libgit2/1.1.0                    |Generic[^libgit2]  |
-|   ""      |git-extras/6.5.0                 |Generic            |
-|   ""      |trousers/0.3.14                  |Generic            |
-|   ""      |libidn2/2.3.4                    |Generic            |
-|   ""      |unbound/1.17.0                   |Generic            |
-|   ""      |nettle/3.6.0                     |Generic[^nettle]   |
-|   ""      |gnutls/3.7.8                     |Generic[^gnutls]   |
-|2022-11-08 |CrossMap/0.6.4                   |Genetics           |
-|   ""      |SurvivalKit/6.12                 |Genetics           |
-|   ""      |PRSice/2.3.3                     |Genetics           |
-|2022-11-09 |qctool/2.2.0                     |Genetics           |
-|   ""      |fossil/2.19                      |Generic            |
-|2022-11-10 |rclone/1.53.1                    |Generic            |
-|   ""      |CaVEMaN/1.01-c1815a0             |Genetics           |
-|   ""      |akt/0.3.3                        |Genetics           |
-|   ""      |MsCAVIAR/0.6.4                   |Genetics           |
-|   ""      |CAVIAR/2.2                       |Genetics           |
-|   ""      |MONSTER/1.3                      |Genetics           |
-|   ""      |osca/0.46                        |Genetics           |
-|   ""      |LEMMA/1.0.4                      |Genetics[^lemma]   |
-|   ""      |CAVIARBF/0.2.1                   |Genetics           |
-|2022-11-11 |PAINTOR/3.0                      |Genetics           |
-|   ""      |ABCtoolbox/2.0                   |Generic            |
-|   ""      |cppunit/1.15.2                   |Generic            |
-|2022-11-12 |ccal/2.5.3                       |Generic            |
-|2022-11-13 |axel/2.17.11                     |Generic[^axel]     |
-|   ""      |axel/1.0a                        |Generic            |
-|   ""      |bazel/2.0.0                      |Generic            |
-|   ""      |bazel/1.2.1                      |Generic            |
-|2022-11-14 |MR-MEGA/0.2                      |Genetics           |
-|2022-11-16 |SNP2HLA/1.0.3                    |Genetics           |
-|   ""      |STAR/2.7.10b                     |Genetics           |
-|   ""      |Mega2/6.0.0                      |Genetics           |
-|2022-11-18 |ffmpeg/5.1.1                     |Generic            |
-|2022-11-19 |ensembl-vep/104                  |Genetics*          |
-|   ""      |OpenMS/3.0.0-pre-develop         |Genetics*[^OpenMS] |
-|   ""      |polyphen/2.2.2                   |Genetics*          |
-|   ""      |ANNOVAR/24Oct2019                |Genetics*          |
-|   ""      |MAGENTA/vs2_July2011             |Genetics*          |
-|   ""      |GARFIELD/v2                      |Genetics*          |
-|   ""      |KentUtils/2022-11-14             |Genetics*          |
-|2022-11-20 |Genotype-Harmonizer/1.4.25       |Genetics           |
-|2022-11-21 |locuszoom/1.4                    |Genetics*[^lz]     |
-|   ""      |DEPICT/v1_rel194                 |Genetics*          |
-|   ""      |MAGMA/1.10                       |Genetics*          |
-|   ""      |Pascal/v_debut                   |Genetics*          |
-|   ""      |VEGAS2/2.01.17                   |Genetics*          |
-|   ""      |fgwas/0.3.6                      |Genetics*          |
-|2022-11-24 |qtcreator/2.5.2                  |Generic            |
-|   ""      |rstudio/2022.07.2+576            |Generic            |
-|2022-11-26 |yaml-cpp/0.7.0                   |Generic            |
-|   ""      |libglvnd/1.6.0                   |Generic            |
-|   ""      |GreenAlgorithmsforHPC/0.2.2-beta |Generic            |
-|2022-11-28 |openssl/1.1.1s                   |Generic            |
-|2022-11-29 |qt/5.15.7                        |Generic*           |
-|2022-12-02 |rstudio/1.3.1093                 |Generic[^rstudio]  |
-|2022-12-04 |phenoscanner/v2                  |Genetics*          |
-|2022-12-07 |SurvivalAnalysis/2016-05-09      |Genetics           |
-|2022-12-14 |node/16.14.0                     |Generic            |
-|2022-12-19 |rstudio/2022.12.0+353            |Generic            |
-|   ""      |icu/50.2                         |Generic            |
-|2022-12-20 |snakemake/7.19.1                 |Generic            |
-|2022-12-21 |icu/70.1                         |Generic            |
-|   ""      |libuv/1.43.0                     |Generic            |
-|   ""      |libcares/1.18.1                  |Generic            |
-|   ""      |brotli/1.0.9                     |Generic            |
-|2022-12-28 |ncurses/6.3                      |Generic            |
-|2023-01-03 |Eagle/2.4.1                      |Genetics           |
-|2023-01-05 |GEM/1.4.5                        |Genetics           |
-|2023-02-01 |GENEHUNTER/2.1_r6                |Genetics           |
-|2023-02-26 |JabRef/5.9                       |Generic            |
-|2023-02-27 |Zotero/6.0.22                    |Generic            |
-|2023-03-14 |regenie/3.2.5                    |Genetics           |
-|2023-03-22 |rstudio/2023.03.0+386            |Generic            |
-|2023-03-24 |PoGo/1.0.0                       |Genetics           |
-|2023-03-31 |PWCoCo/2023-03-31                |Genetics[^pwcoco]  |
-|2023-04-02 |regenie/3.2.5.3                  |Genetics           |
-|2023-04-04 |PWCoCo/1.0                       |Genetics           |
-|2023-04-05 |PhySO/1.0-dev0                   |Generic            |
-!2023-04-21 |ImageJ/1.53t                     |Generic            |
-!2023-04-25 |busybox/1.35.0                   |Generic            |
-|2023-06-02 |regenie/3.2.7                    |Genetics[^regenie] |
-|2023-06-05 |gsl/2.7.1                        |Generic            |
-|2023-06-06 |allegre/2.0f                     |Genetics           |
-|2023-06-14 |autoconf/2.72c.24-8e728          |Generic[^autoconf] |
-|2023-06-16 |globusconnectpersonal/3.2.2      |Generic            |
-|2023-06-19 |plink-ng/2.00a3.3                |Genetics           |
-|2023-06-26 |RHHsoftware/0.1                  |Genetics           |
-!2023-07-19 |pdfjam/3.06                      |Generic            |
-|2023-07-22 |rstudio/2023.06.1+524            |Generic            |
-|2023-07-28 |PWCoCo/1.1                       |Genetics           |
-|2023-08-02 |regenie/3.2.9                    |Genetics           |
-|2023-08-02 |fossil/2.22                      |Generic            |
-|2023-08-04 |quarto/1.3.450-icelake           |Generic[^quarto]   |
-|2023-08-06 |finemap/1.4.2                    |Genetics           |
-|2023-08-10 |GreenAlgorithmsforHPC/0.3        |Generic            |
-|2023-08-12 |xpdf/4.04                        |Generic[^xpdf]     |
-!2023-08-22 |thunderbird/115.1.1              |Generic            |
-!2023-08-24 |pdfjam/3.07                      |Generic            |
-|2023-09-03 |2.0.0-pre1ge32bec                |Genetic[^pspp]     |
-|2023-09-03 |spead-sheet-widget               |Generic            |
-|2023-09-27 |ncbi-vdb/3.0.8                   |Genetics[^ncbi-vdb]|
+|Date       |Add ons                          |Category            |
+|:----------|:--------------------------------|:-------------------|
+|2022-10-21 |pspp/1.6.0                       |Generic             |
+|2022-10-22 |snptest/2.5.6                    |Genetics            |
+|   ""      |qctool/2.0.8                     |Genetics            |
+|   ""      |gcta/1.94.1                      |Genetics            |
+|   ""      |KING/2.1.6                       |Genetics            |
+|   ""      |LDstore/2.0                      |Genetics            |
+|   ""      |shapeit/3                        |Genetics            |
+|   ""      |vcftools/0.1.16                  |Genetics            |
+|   ""      |finemap/1.4                      |Genetics            |
+|2022-10-23 |quicktest/1.1                    |Genetics            |
+|   ""      |samtools/1.11                    |Genetics            |
+|   ""      |bcftools/1.12                    |Genetics            |
+|   ""      |MORGAN/3.4                       |Genetics            |
+|   ""      |METAL/2020-05-05r                |Genetics[^metal]    |
+|   ""      |regenie/3.2.1                    |Genetics            |
+|   ""      |GEMMA/0.98.5                     |Genetics[^gemma]    |
+|   ""      |htslib/1.12                      |Genetics            |
+|   ""      |fcGENE/1.0.7                     |Genetics[^fcgene]   |
+|   ""      |SMR/1.0.3                        |Genetics            |
+|   ""      |FastQTL/2.165                    |Genetics            |
+|   ""      |GitKraken/8.1.0                  |Generic             |
+|2022-10-24 |Typora/0.11.8beta                |Generic             |
+|   ""      |pandoc/2.19.2                    |Generic             |
+|   ""      |citeproc/0.4.0.1                 |Generic             |
+|   ""      |citeproc/0.8.0.2                 |Generic             |
+|2022-10-26 |circos/0.69-9                    |Genetics            |
+|   ""      |DjVuLibre/3.5.27.1-14            |Generic             |
+|   ""      |ghostscript/9.56.1               |Generic             |
+|   ""      |bgen/1.1.7                       |Genetics            |
+|2022-10-27 |sqlite/3.39.4                    |Generic             |
+|2022-10-28 |poppler/0.84.0                   |Generic             |
+|   ""      |jq/1.6                           |Generic[^jq]        |
+|   ""      |DosageConverter/1.0.0            |Genetics            |
+|   ""      |tidy/5.8.0                       |Generic             |
+|2022-10-29 |ghc/8.6.5                        |Generic             |
+|   ""      |pandoc-citeproc/0.17.0.2         |Generic             |
+|2022-10-31 |git/2.38.1                       |Generic             |
+|   ""      |aria2/1.36.0                     |Generic             |
+|2022-11-01 |alpine/2.26                      |Generic             |
+|   ""      |readline/8.0                     |Generic             |
+|   ""      |Cytoscape/3.9.1                  |Generic             |
+|   ""      |nano/6.0                         |Generic             |
+|   ""      |R/4.2.2                          |Generic             |
+|   ""      |parallel/20220222                |Generic             |
+|   ""      |pdf2djvu/0.9.19                  |Generic             |
+|2022-11-02 |lapack/3.10.1                    |Generic             |
+|   ""      |GraphicsMagick/1.3.38            |Generic             |
+|   ""      |QTLtools/1.3.1-25                |Genetics[^qtltools] |
+|   ""      |NLopt/2.7.1                      |Generic             |
+|   ""      |blat/37x1                        |Genetics            |
+|   ""      |bedtools2/2.29.2                 |Genetics            |
+|   ""      |bedops/2.4.41                    |Genetics            |
+|2022-11-03 |Beagle/3.0.4                     |Genetics            |
+|   ""      |netbeans/15                      |Generic             |
+|   ""      |JAGS/4.3.1                       |Generic             |
+|   ""      |exiv2/0.27.5                     |Generic[^exiv2]     |
+|   ""      |googletest/1.8.0                 |Generic             |
+|   ""      |googletest/1.12.1                |Generic             |
+|   ""      |libiconv/1.17                    |Generic             |
+|   ""      |ldc2/1.24.0                      |Generic             |
+|   ""      |gettext/0.21                     |Generic             |
+|   ""      |ssw/0.7                          |Generic             |
+|   ""      |fribidi/1.0.8                    |Generic             |
+|   ""      |proj/6.3.0                       |Generic             |
+|   ""      |gmp/6.2.1                        |Generic             |
+|   ""      |pcre2/10.30                      |Generic             |
+|   ""      |zstd/1.5.2                       |Generic             |
+|2022-11-04 |libxslt/1.1.34                   |Generic[^libxslt]   |
+|   ""      |libssh2/1.10.0                   |Generic             |
+|   ""      |libxml2/2.9.10                   |Generic[^libxml2]   |
+|   ""      |libsodium/1.10.0                 |Generic             |
+|   ""      |gdal/3.0.4                       |Generic[^gdal]      |
+|   ""      |expat/2.4.7                      |Generic[^expat]     |
+|   ""      |docbook2X/0.8.8                  |Generic             |
+|   ""      |libntlm/1.6                      |Generic             |
+|   ""      |vala/0.46.5                      |Generic             |
+|   ""      |gtksourceview/4.0.3              |Generic             |
+|   ""      |oniguruma/6.9.8                  |Generic             |
+|   ""      |nspr/4.35                        |Generic             |
+|   ""      |nettle/2.7.1                     |Generic             |
+|2022-11-05 |trinculo/0.96                    |Generic             |
+|   ""      |ruby/2.7.5                       |Generic             |
+|2022-11-06 |libpng/0.5.30                    |Generic             |
+|   ""      |libgit2/1.1.0                    |Generic[^libgit2]   |
+|   ""      |git-extras/6.5.0                 |Generic             |
+|   ""      |trousers/0.3.14                  |Generic             |
+|   ""      |libidn2/2.3.4                    |Generic             |
+|   ""      |unbound/1.17.0                   |Generic             |
+|   ""      |nettle/3.6.0                     |Generic[^nettle]    |
+|   ""      |gnutls/3.7.8                     |Generic[^gnutls]    |
+|2022-11-08 |CrossMap/0.6.4                   |Genetics            |
+|   ""      |SurvivalKit/6.12                 |Genetics            |
+|   ""      |PRSice/2.3.3                     |Genetics            |
+|2022-11-09 |qctool/2.2.0                     |Genetics            |
+|   ""      |fossil/2.19                      |Generic             |
+|2022-11-10 |rclone/1.53.1                    |Generic             |
+|   ""      |CaVEMaN/1.01-c1815a0             |Genetics            |
+|   ""      |akt/0.3.3                        |Genetics            |
+|   ""      |MsCAVIAR/0.6.4                   |Genetics            |
+|   ""      |CAVIAR/2.2                       |Genetics            |
+|   ""      |MONSTER/1.3                      |Genetics            |
+|   ""      |osca/0.46                        |Genetics            |
+|   ""      |LEMMA/1.0.4                      |Genetics[^lemma]    |
+|   ""      |CAVIARBF/0.2.1                   |Genetics            |
+|2022-11-11 |PAINTOR/3.0                      |Genetics            |
+|   ""      |ABCtoolbox/2.0                   |Generic             |
+|   ""      |cppunit/1.15.2                   |Generic             |
+|2022-11-12 |ccal/2.5.3                       |Generic             |
+|2022-11-13 |axel/2.17.11                     |Generic[^axel]      |
+|   ""      |axel/1.0a                        |Generic             |
+|   ""      |bazel/2.0.0                      |Generic             |
+|   ""      |bazel/1.2.1                      |Generic             |
+|2022-11-14 |MR-MEGA/0.2                      |Genetics            |
+|2022-11-16 |SNP2HLA/1.0.3                    |Genetics            |
+|   ""      |STAR/2.7.10b                     |Genetics            |
+|   ""      |Mega2/6.0.0                      |Genetics            |
+|2022-11-18 |ffmpeg/5.1.1                     |Generic             |
+|2022-11-19 |ensembl-vep/104                  |Genetics*           |
+|   ""      |OpenMS/3.0.0-pre-develop         |Genetics*[^OpenMS]  |
+|   ""      |polyphen/2.2.2                   |Genetics*           |
+|   ""      |ANNOVAR/24Oct2019                |Genetics*           |
+|   ""      |MAGENTA/vs2_July2011             |Genetics*           |
+|   ""      |GARFIELD/v2                      |Genetics*           |
+|   ""      |KentUtils/2022-11-14             |Genetics*           |
+|2022-11-20 |Genotype-Harmonizer/1.4.25       |Genetics            |
+|2022-11-21 |locuszoom/1.4                    |Genetics*[^lz]      |
+|   ""      |DEPICT/v1_rel194                 |Genetics*           |
+|   ""      |MAGMA/1.10                       |Genetics*           |
+|   ""      |Pascal/v_debut                   |Genetics*           |
+|   ""      |VEGAS2/2.01.17                   |Genetics*           |
+|   ""      |fgwas/0.3.6                      |Genetics*           |
+|2022-11-24 |qtcreator/2.5.2                  |Generic             |
+|   ""      |rstudio/2022.07.2+576            |Generic             |
+|2022-11-26 |yaml-cpp/0.7.0                   |Generic             |
+|   ""      |libglvnd/1.6.0                   |Generic             |
+|   ""      |GreenAlgorithmsforHPC/0.2.2-beta |Generic             |
+|2022-11-28 |openssl/1.1.1s                   |Generic             |
+|2022-11-29 |qt/5.15.7                        |Generic*            |
+|2022-12-02 |rstudio/1.3.1093                 |Generic[^rstudio]   |
+|2022-12-04 |phenoscanner/v2                  |Genetics*           |
+|2022-12-07 |SurvivalAnalysis/2016-05-09      |Genetics            |
+|2022-12-14 |node/16.14.0                     |Generic             |
+|2022-12-19 |rstudio/2022.12.0+353            |Generic             |
+|   ""      |icu/50.2                         |Generic             |
+|2022-12-20 |snakemake/7.19.1                 |Generic             |
+|2022-12-21 |icu/70.1                         |Generic             |
+|   ""      |libuv/1.43.0                     |Generic             |
+|   ""      |libcares/1.18.1                  |Generic             |
+|   ""      |brotli/1.0.9                     |Generic             |
+|2022-12-28 |ncurses/6.3                      |Generic             |
+|2023-01-03 |Eagle/2.4.1                      |Genetics            |
+|2023-01-05 |GEM/1.4.5                        |Genetics            |
+|2023-02-01 |GENEHUNTER/2.1_r6                |Genetics            |
+|2023-02-26 |JabRef/5.9                       |Generic             |
+|2023-02-27 |Zotero/6.0.22                    |Generic             |
+|2023-03-14 |regenie/3.2.5                    |Genetics            |
+|2023-03-22 |rstudio/2023.03.0+386            |Generic             |
+|2023-03-24 |PoGo/1.0.0                       |Genetics            |
+|2023-03-31 |PWCoCo/2023-03-31                |Genetics[^pwcoco]   |
+|2023-04-02 |regenie/3.2.5.3                  |Genetics            |
+|2023-04-04 |PWCoCo/1.0                       |Genetics            |
+|2023-04-05 |PhySO/1.0-dev0                   |Generic             |
+!2023-04-21 |ImageJ/1.53t                     |Generic             |
+!2023-04-25 |busybox/1.35.0                   |Generic             |
+|2023-06-02 |regenie/3.2.7                    |Genetics[^regenie]  |
+|2023-06-05 |gsl/2.7.1                        |Generic             |
+|2023-06-06 |allegre/2.0f                     |Genetics            |
+|2023-06-14 |autoconf/2.72c.24-8e728          |Generic[^autoconf]  |
+|2023-06-16 |globusconnectpersonal/3.2.2      |Generic             |
+|2023-06-19 |plink-ng/2.00a3.3                |Genetics            |
+|2023-06-26 |RHHsoftware/0.1                  |Genetics            |
+!2023-07-19 |pdfjam/3.06                      |Generic             |
+|2023-07-22 |rstudio/2023.06.1+524            |Generic             |
+|2023-07-28 |PWCoCo/1.1                       |Genetics            |
+|2023-08-02 |regenie/3.2.9                    |Genetics            |
+|2023-08-02 |fossil/2.22                      |Generic             |
+|2023-08-04 |quarto/1.3.450-icelake           |Generic[^quarto]    |
+|2023-08-06 |finemap/1.4.2                    |Genetics            |
+|2023-08-10 |GreenAlgorithmsforHPC/0.3        |Generic             |
+|2023-08-12 |xpdf/4.04                        |Generic[^xpdf]      |
+!2023-08-22 |thunderbird/115.1.1              |Generic             |
+!2023-08-24 |pdfjam/3.07                      |Generic             |
+|2023-09-03 |2.0.0-pre1ge32bec                |Genetic[^pspp]      |
+|2023-09-03 |spead-sheet-widget               |Generic             |
+|2023-09-27 |ncbi-vdb/3.0.8                   |Genetics[^ncbi-vdb] |
 |2023-09-27 |sra-tools/3.0.8                  |Genetics[^sra-tools]|
-
+|2023-09-27 |gatk/4.4.0.0                     |Genetics            |
 
 \* CEU or approved users only.
 
