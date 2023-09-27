@@ -590,7 +590,7 @@ Three aspects are notable,
     The Python dependencies are set up as follows,
 
     ```bash
-    module load miniconda3/4.5.1
-    conda env create -n gatk -f 4.4.0.0/gatkcondaenv.yml
-    conda activate gatk
+    module load anaconda/3.2019-10
+    conda env create -n anaconda-3.2019-10 -f gatkcondaenv.yml
+    conda activate anaconda-3.2019-10
     ```
