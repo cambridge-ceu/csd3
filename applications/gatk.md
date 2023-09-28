@@ -37,7 +37,13 @@ wget https://github.com/broadinstitute/cromwell/releases/download/50/cromwell-50
 wget https://github.com/broadinstitute/cromwell/releases/download/50/womtool-50.jar
 ```
 
-OpenJDK is installed from <https://www.openlogic.com/openjdk-downloads> as `ceuadmin/openjdk/11.0.20+8` & `ceuadmin/openjdk/8u382-b05/` for Java 8 & 11, respectively.
+OpenJDK is installed from <https://www.openlogic.com/openjdk-downloads> as `ceuadmin/openjdk/[8u382-b05 | 11.0.20+8 | 17.0.8+7]` for Java 8 | 11 | 17, respectively.
+
+Version |   module  | cromwell
+--------|-----------|----------------
+     8  | 8u382-b05 | cromwell-50.jar
+     11 | 11.0.20+8 | cromwell-85.jar
+     17 | 17.0.8+7  | cromwell-85.jar
 
 ## hello world
 

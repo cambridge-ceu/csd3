@@ -287,7 +287,8 @@ They are ordered chronologically.
 |2023-09-27 |sra-tools/3.0.8                  |Genetics[^sra-tools]|
 |2023-09-27 |gatk/4.4.0.0                     |Genetics[^gatk]     |
 |2023-09-28 |openjdk/8u382-b05                |Generic             |
-|2023-09-28 |openjdk//11.0.20+8               |Generic             |
+|2023-09-28 |openjdk/11.0.20+8                |Generic             |
+|2023-09-28 |openjdk/17.0.8+7                 |Generic             |
 
 \* CEU or approved users only.
 
