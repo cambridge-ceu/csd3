@@ -24,6 +24,12 @@ make install
 
 First, create a symbolic link for `ncbi-vdb/3.0.8` in the parent directory: `ln -s ../ncbi-vdb/3.0.8/ ncbi-3.0.8` since both are within `$CEUADMIN`.
 
+Drop `constexpr` as in `constexpr size_type max_size() const { return SIZE_MAX; }` in line 161 of the following header file:
+
+`/usr/local/Cluster-Apps/ceuadmin/sra-tools/3.0.8/tools/external/driver-tool/util.hpp`.
+
+Now we proceed similarly to `ncbi-vdb` above.
+
 ```bash
 cd $CEUADMIN
 wget -qO- https://github.com/ncbi/sra-tools/archive/refs/tags/3.0.8.tar.gz | tar xvfz -
@@ -33,10 +39,6 @@ cmake -DVDB_LIBDIR=$CEUADMIN/ncbi-vdb/3.0.8/lib64 -DCMAKE_INSTALL_PREFIX=$CEUADM
 make
 make install
 ```
-
-Drop `constexpr` as in `constexpr size_type max_size() const { return SIZE_MAX; }` in line 161 of the following header file:
-
-`/usr/local/Cluster-Apps/ceuadmin/sra-tools/3.0.8/tools/external/driver-tool/util.hpp`.
 
 ## modules
 
