@@ -11,6 +11,10 @@ Web: <https://github.com/ncbi/sra-tools>
 The installation is preceeded with `module load gcc/6 flex-2.6.4-gcc-5.4.0-2u2fgon`. Although `configure` is provided, `cmake` is used instead.
 
 ```bash
+cd $CEUADMIN
+wget -qO- https://github.com/ncbi/ncbi-vdb/archive/refs/tags/3.0.8.tar.gz | tar xvfz -
+mv ncbi-vdb-3.0.8 3.0.8
+cd 3.0.8/build
 cmake -DCMAKE_PREFIX_PATH=$CEUADMIN/ncbi-vdb/3.0.8 -DCMAKE_INSTALL_PREFIX=$CEUADMIN/ncbi-vdb/3.0.8 ..
 ```
 
@@ -19,6 +23,10 @@ cmake -DCMAKE_PREFIX_PATH=$CEUADMIN/ncbi-vdb/3.0.8 -DCMAKE_INSTALL_PREFIX=$CEUAD
 First, create a symbolic link for `ncbi-vdb/3.0.8` in the parent directory.
 
 ```bash
+cd $CEUADMIN
+wget -qO- https://github.com/ncbi/sra-tools/archive/refs/tags/3.0.8.tar.gz | tar xvfz -
+mv sra-tools-3.0.8 3.0.8
+cd 3.0.8/build
 cmake -DVDB_LIBDIR=$CEUADMIN/ncbi-vdb/3.0.8/lib64 -DCMAKE_INSTALL_PREFIX=$CEUADMIN/sra-tools/3.0.8 ..
 ```
 

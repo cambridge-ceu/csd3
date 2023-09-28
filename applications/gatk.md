@@ -29,6 +29,14 @@ conda activate /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10
 
 The workflow description language (WDL) support is via cromwell, <https://cromwell.readthedocs.io/en/stable/>.
 
+```bash
+cd $CEUADMIN/gatk/cromwell
+wget https://github.com/broadinstitute/cromwell/releases/download/85/cromwell-85.jar
+wget https://github.com/broadinstitute/cromwell/releases/download/85/womtool-85.jar
+wget https://github.com/broadinstitute/cromwell/releases/download/50/cromwell-50.jar
+wget https://github.com/broadinstitute/cromwell/releases/download/50/womtool-50.jar
+```
+
 ## hello world
 
 The WDL script `hello-world.wdl` is as follows,
