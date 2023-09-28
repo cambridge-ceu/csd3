@@ -22,7 +22,7 @@ make install
 
 ## sra-tools
 
-First, create a symbolic link for `ncbi-vdb/3.0.8` in the parent directory.
+First, create a symbolic link for `ncbi-vdb/3.0.8` in the parent directory: `ln -s ../ncbi-vdb/3.0.8/ ncbi-3.0.8` since both are within `$CEUADMIN`.
 
 ```bash
 cd $CEUADMIN
