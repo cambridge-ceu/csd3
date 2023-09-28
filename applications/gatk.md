@@ -9,17 +9,35 @@ Web: <https://gatk.broadinstitute.org/hc/en-us>
 
 ## Installation
 
+### OpenJDK
+
+Web: <https://www.openlogic.com/openjdk-downloads>
+
+Version |   module  | cromwell        | Class file version
+--------|-----------|-----------------|-------------------
+     8  | 8u382-b05 | cromwell-50.jar | 52
+     11 | 11.0.20+8 | cromwell-85.jar | 55
+     17 | 17.0.8+7  | cromwell-85.jar | 61
+
+namely `module load ceuadmin/openjdk/[8u382-b05 | 11.0.20+8 | 17.0.8+7]` for Java 8 | 11 | 17, respectively.
+
+### GATK
+
 The latest is 4.4.0.0,
 
 ```bash
 wget https://github.com/broadinstitute/gatk/releases/download/4.4.0.0/gatk-4.4.0.0.zip
 unzip gatk-4.4.0.0.zip
-gatk --help
+gatk --list
 ```
 
-An attempt has been made for a module `module load ceuadmin/gatk`.
+We proceed to setup a module, to be loaded with `module load ceuadmin/gatk/4.4.0.0`.
 
-The Python dependencies are set up as follows,
+At the time of writing (28/9/2023), `gatk --list` only works with Java 17.
+
+### Python
+
+The dependencies are set up as follows,
 
 ```bash
 module load anaconda/3.2019-10
@@ -36,14 +54,6 @@ wget https://github.com/broadinstitute/cromwell/releases/download/85/womtool-85.
 wget https://github.com/broadinstitute/cromwell/releases/download/50/cromwell-50.jar
 wget https://github.com/broadinstitute/cromwell/releases/download/50/womtool-50.jar
 ```
-
-OpenJDK is installed from <https://www.openlogic.com/openjdk-downloads> as `ceuadmin/openjdk/[8u382-b05 | 11.0.20+8 | 17.0.8+7]` for Java 8 | 11 | 17, respectively.
-
-Version |   module  | cromwell
---------|-----------|----------------
-     8  | 8u382-b05 | cromwell-50.jar
-     11 | 11.0.20+8 | cromwell-85.jar
-     17 | 17.0.8+7  | cromwell-85.jar
 
 ## hello world
 
