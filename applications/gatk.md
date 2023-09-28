@@ -31,7 +31,7 @@ unzip gatk-4.4.0.0.zip
 gatk --list
 ```
 
-We proceed to setup a module, to be loaded with `module load ceuadmin/gatk/4.4.0.0`.
+We proceed to set up a module, to be loaded with `module load ceuadmin/gatk/4.4.0.0`.
 
 At the time of writing (28/9/2023), `gatk --list` only works with Java 17.
 
