@@ -88,6 +88,7 @@ The call is as follows,
 export GATK=$CEUADMIN/gatk
 export v=4.4.0.0
 
+module load ceuadmin/gatk/4.4.0.0
 java -jar ${GATK}/cromwell/cromwell-85.jar run ${GATK}/${v}/tests/hello-world.wdl
 ```
 
