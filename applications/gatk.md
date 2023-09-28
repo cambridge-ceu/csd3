@@ -37,6 +37,8 @@ wget https://github.com/broadinstitute/cromwell/releases/download/50/cromwell-50
 wget https://github.com/broadinstitute/cromwell/releases/download/50/womtool-50.jar
 ```
 
+OpenJDK is installed from <https://www.openlogic.com/openjdk-downloads> as `ceuadmin/openjdk/11.0.20+8` & `ceuadmin/openjdk/8u382-b05/` for Java 8 & 11, respectively.
+
 ## hello world
 
 The WDL script `hello-world.wdl` is as follows,
@@ -66,7 +68,7 @@ The call is as follows,
 export GATK=$CEUADMIN/gatk
 export v=4.4.0.0
 
-java -jar ${GATK}/cromwell/cromwell-50.jar run ${GATK}/${v}/tests/hello-world.wdl
+java -jar ${GATK}/cromwell/cromwell-85.jar run ${GATK}/${v}/tests/hello-world.wdl
 ```
 
 ## GATK workflows
