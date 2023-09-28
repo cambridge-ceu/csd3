@@ -45,7 +45,11 @@ conda env create -p /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.201
 conda activate /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10
 ```
 
-The workflow description language (WDL) support is via cromwell, <https://cromwell.readthedocs.io/en/stable/>.
+### cromwell
+
+Web: <https://cromwell.readthedocs.io/en/stable/>
+
+It provides support for workflow description language (WDL).
 
 ```bash
 cd $CEUADMIN/gatk/cromwell
