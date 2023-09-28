@@ -19,7 +19,7 @@ Version |   module  | cromwell        | Class file version
      11 | 11.0.20+8 | cromwell-85.jar | 55
      17 | 17.0.8+7  | cromwell-85.jar | 61
 
-namely `module load ceuadmin/openjdk/[8u382-b05 | 11.0.20+8 | 17.0.8+7]` for Java 8 | 11 | 17, respectively.
+e.g., `module load ceuadmin/openjdk/17.0.8+7` for Java 17.
 
 ### GATK
 
