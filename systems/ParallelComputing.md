@@ -23,6 +23,34 @@ parallel -j8 -C' ' '
 '
 ```
 
+Additional note is worthwhile about Bash function, as demonstrated by the following script,
+
+```bash
+function turboman()
+{
+  R --slave --vanilla --args \
+    input_data_path=${phenotype}.txt.gz \
+    output_data_rootname=${phenotype} \
+    custom_peak_annotation_file_path=${phenotype}.annotate \
+    reference_file_path=turboman_hg19_reference_data.rda \
+    pvalue_sign=1e-2 \
+    plot_title="${phenotype}" < turboman.r
+}
+
+export -f rsid txt_gz vep_annotate turboman
+
+parallel -C' ' -j4 --env ALL '
+  echo {}
+  export phenotype={}
+  rsid
+  txt_gz
+  vep_annotate
+  turboman
+' ::: chronotype sleep_duration insomnia snoring
+```
+
+where multiple functions (only turboman is kept here) are exported, to be called inside Parallel.
+
 ## SLURM
 
 Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
