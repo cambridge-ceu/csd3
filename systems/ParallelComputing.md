@@ -49,7 +49,7 @@ parallel -C' ' -j4 --env ALL '
 ' ::: chronotype sleep_duration insomnia snoring
 ```
 
-where multiple functions (only turboman is kept here) are exported, to be called inside Parallel.
+where multiple functions (only `turboman` is kept here) are exported, to be called inside Parallel.
 
 ## SLURM
 
