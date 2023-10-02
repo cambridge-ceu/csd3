@@ -39,14 +39,14 @@ function turboman()
 
 export -f turboman
 
-parallel -C' ' -j4 --env ALL '
+parallel -C' ' -j4 --env _ '
   echo {}
   export phenotype={}
   turboman
 ' ::: chronotype sleep_duration insomnia snoring
 ```
 
-where function `turboman` is exported and called by `parallel`.
+where function `turboman` is exported and called by `parallel`. The `--env _` options copies exported all variables except those in `~/.parallel/ignored_vars`, while `env_parallel` would copy all export/non-exported variables.
 
 ## SLURM
 
