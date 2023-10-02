@@ -37,19 +37,16 @@ function turboman()
     plot_title="${phenotype}" < turboman.r
 }
 
-export -f rsid txt_gz vep_annotate turboman
+export -f turboman
 
 parallel -C' ' -j4 --env ALL '
   echo {}
   export phenotype={}
-  rsid
-  txt_gz
-  vep_annotate
   turboman
 ' ::: chronotype sleep_duration insomnia snoring
 ```
 
-where multiple functions (only `turboman` is kept here) are exported, to be called inside Parallel.
+where function `turboman` is exported and called by `parallel`.
 
 ## SLURM
 
