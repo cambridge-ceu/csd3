@@ -48,7 +48,7 @@ parallel -C' ' -j4 --env _ '
 
 where function `turboman` is exported and called by `parallel`. The `--env _` options copies exported all variables except those in `~/.parallel/ignored_vars`, while `env_parallel` would copy all export/non-exported variables.
 
-Note that the two options and implemented by `parallel --record-env` and `env_parallel --install`, respectively.
+Note that the two options are preceeded with `parallel --record-env` and `env_parallel --install`, respectively.
 
 
 ## SLURM
