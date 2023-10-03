@@ -1,0 +1,73 @@
+#!/usr/bin/bash
+
+#SBATCH --time=12:00:00
+#SBATCH --account=PETERS-SL3-CPU
+#SBATCH --partition=cclake-himem
+#SBATCH --job-name=HLA-TAPAS
+#SBATCH --mem=6840
+#SBATCH --output=/rds/user/jhz22/hpc-work/work/_hla_%A_%a.o
+#SBATCH --error=/rds/user/jhz22/hpc-work/work/_hla_%A_%a.e
+
+export TMPDIR=${HPC_WORK}/work
+
+source ~/COVID-19/py37/bin/activate
+chmod +x dependency/plink
+
+python HLA-TAPAS.py \
+    --target example/Case+Control.300+300.chr6.hg18 \
+    --reference example/1000G.EUR.chr6.hg18.28mb-35mb \
+    --hped-Ggroup example/1000G.EUR.Ggroup.hped \
+    --pheno example/Case+Control.300+300.phe \
+    --hg 18 \
+    --out MyHLA-TAPAS/Case+Control+1000G_EUR_REF \
+    --mem 4g \
+    --nthreads 4
+
+python -m NomenCleaner \
+    --hped NomenCleaner/example/g1k_subset.ped \
+    --out NomenCleaner/example/g1k_subset \
+    --4field
+
+python -m MakeReference \
+    --variants  MakeReference/example/g1k_subset_snps\
+    --chped MakeReference/example/g1k_subset.chped \
+    --hg 19 \
+    --out MakeReference/example/g1k_subset.bglv4 \
+    --dict-AA MakeReference/data/hg19/HLA_DICTIONARY_AA.hg19.imgt3320 \
+    --dict-SNPS MakeReference/data/hg19/HLA_DICTIONARY_SNPS.hg19.imgt3320 \
+    --phasing
+
+python -m SNP2HLA \
+    --target SNP2HLA/example/1958BC \
+    --reference resources/1000G.bglv4 \
+    --out MySNP2HLA/IMPUTED.1958BC \
+    --nthreads 2 \
+    --mem 4g
+
+python -m HLAassoc LOGISTIC \
+    --vcf HLAassoc/example/IMPUTED.1958BC.bgl.phased.vcf.gz \
+    --out Myassoc/IMPUTED.1958BC.rev_map \
+    --pheno HLAassoc/example/1958BC.phe \
+    --pheno-name p1 \
+    --hped HLAassoc/example/1958BC.Ggroup.hped \
+    --chped HLAassoc/example/1958BC.imgt3320.4field.chped
+
+python -m HLAassoc LINEAR \
+    --vcf HLAassoc/example/IMPUTED.1958BC.bgl.phased.vcf.gz \
+    --out Myassoc/IMPUTED.1958BC.rev_map \
+    --pheno HLAassoc/example/1958BC.phe \
+    --pheno-name p2 \
+    --hped HLAassoc/example/1958BC.Ggroup.hped \
+    --chped HLAassoc/example/1958BC.imgt3320.4field.chped
+
+python -m HLAassoc OMNIBUS_LINEAR \
+    --file HLAassoc/example/OMNIBUS/Case+Control+1000G_EUR_REF.IMPUTED.chr6.hg18.100+100 \
+    --pop HLAassoc/example/OMNIBUS/Case+Control+1000G_EUR_REF.IMPUTED.chr6.hg18.100+100.pop \
+    --out Myassoc/Case+Control+1000G_EUR_REF.OMNIBUS \
+    --aa-only \
+    --maf-threshold 0
+
+python -m HLAManhattan \
+    --assoc-result HLAManhattan/example/1958BC+HM_CEU_REF.IMPUTED.assoc.logistic \
+    --hg 18 \
+    --out MyManhattan/1958BC+HM_CEU_REF.IMPUTED
