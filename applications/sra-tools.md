@@ -64,7 +64,7 @@ Our SLURM script is named `gastric.sb` as follows,
 #SBATCH --nodes=1
 #SBATCH --ntasks=4
 #SBATCH --array=1-2
-#SBATCH --time=03:00:00
+#SBATCH --time=10:00:00
 #SBATCH --mail-type=NONE
 #SBATCH --output=/rds/project/jmmh2/rds-jmmh2-public_databases/CPTAC/TEMP/_gastric_%A_%a.o
 #SBATCH --error=/rds/project/jmmh2/rds-jmmh2-public_databases/CPTAC/TEMP/_gastric_%A_%a.e
