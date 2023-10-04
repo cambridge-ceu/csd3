@@ -83,9 +83,10 @@ application="fasterq-dump"
 options="-t ${TMPDIR} ${file} -O ${destdir}"
 workdir="$SLURM_SUBMIT_DIR"
 cd $workdir
+echo -e "Changed directory to `pwd`.\n"
 CMD="$application $options"
 eval $CMD
-
+cd -
 echo -e "JobID: $JOBID\n======"
 echo "Time: `date`"
 echo "Running on master node: `hostname`"
