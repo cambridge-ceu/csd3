@@ -43,3 +43,61 @@ make install
 ## modules
 
 This is available from `module load ceuadmin/sra-tools`
+
+## Application
+
+We have `gastric.list` with two records,
+
+```
+SRR8244777
+SRR8244854
+```
+
+Our SLURM script is named `gastric.sb` as follows,
+
+```bash
+#!/bin/bash
+
+#SBATCH --job-name gastric
+#SBATCH --account PETERS-SL3-CPU
+#SBATCH --partition icelake-himem
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --array=1-2
+#SBATCH --time=03:00:00
+#SBATCH --mail-type=NONE
+#SBATCH --output=/rds/project/jmmh2/rds-jmmh2-public_databases/CPTAC/TEMP/_gastric_%A_%a.o
+#SBATCH --error=/rds/project/jmmh2/rds-jmmh2-public_databases/CPTAC/TEMP/_gastric_%A_%a.e
+
+. /etc/profile.d/modules.sh
+module purge
+module load rhel8/default-icl
+module load ceuadmin/sra-tools/3.0.8
+
+JOBID=$SLURM_JOB_ID
+TMPDIR=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP/
+destdir=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP #gastric_Korea_2019/SRA_PRJNA505380/
+
+file=$(awk -v record=${SLURM_ARRAY_TASK_ID} 'NR==record' gastric.list)
+application="fasterq-dump"
+options="-t ${TMPDIR} ${file} -O ${destdir}"
+workdir="$SLURM_SUBMIT_DIR"
+cd $workdir
+CMD="$application $options"
+eval $CMD
+
+echo -e "JobID: $JOBID\n======"
+echo "Time: `date`"
+echo "Running on master node: `hostname`"
+echo "Current directory: `pwd`"
+if [ "$SLURM_JOB_NODELIST" ]; then
+        #! Create a machine file:
+        export NODEFILE=`generate_pbs_nodefile`
+        cat $NODEFILE | uniq > machine.file.$JOBID
+        echo -e "\nNodes allocated:\n================"
+        echo `cat machine.file.$JOBID | sed -e 's/\..*$//g'`
+fi
+echo -e "\nExecuting command:\n==================\n$CMD\n"
+```
+
+and submitted as `sbatch gastric.sb`.
