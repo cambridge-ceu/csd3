@@ -268,6 +268,7 @@ Zheng X, et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pha
     >
     > We observe screen output as follows,
     >
+    > ```
     >     Namespace(Ggroup=False, HLA=None, NoCaption=False, Pgroup=False, aa=None, ar=None, bmarkergenerator=False, chped=None, condition=None, condition_list=None, covar=None, covar_name=None, dict_AA=None, dict_SNPS=None, fam=None, fourF=False, hat=None, heatmap=False, hg='18', hla2hped=False, hped='example/wtccc_filtered_58C_RA.hatk.300+300.hped', imgt='3320', imgt2seq=False, imgt_dir='example/IMGTHLA3320', input=None, leave_NotFound=False, logistic=False, manhattan=False, maptable=None, metaanalysis=False, multiprocess=2, no_indel=False, nomencleaner=False, omnibus=False, oneF=False, out='MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18', phased=None, pheno='example/wtccc_filtered_58C_RA.hatk.300+300.phe', pheno_name='RA', platform=None, point_color='#778899', point_size='15', reference_allele=None, rhped=None, s1_bim=None, s1_logistic_result=None, s2_bim=None, s2_logistic_result=None, save_intermediates=False, threeF=False, top_color='#FF0000', twoF=True, variants='example/wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18', yaxis_unit='10')
     >
     > [IMGT2Seq.py]: Multiprocessing.
