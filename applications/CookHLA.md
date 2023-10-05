@@ -266,6 +266,84 @@ Zheng X, et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pha
     >
     > where `--variants` reads in the genotype files and `--hped` the .hped file to be followed by specification of the RA phenotype in a logistic regression. Note that the example is more desirable compared to the toy data in SNP2HLA given its 600 samples and 29,373 variants.
     >
+    > We observe screen output as follows,
+    >
+    >     Namespace(Ggroup=False, HLA=None, NoCaption=False, Pgroup=False, aa=None, ar=None, bmarkergenerator=False, chped=None, condition=None, condition_list=None, covar=None, covar_name=None, dict_AA=None, dict_SNPS=None, fam=None, fourF=False, hat=None, heatmap=False, hg='18', hla2hped=False, hped='example/wtccc_filtered_58C_RA.hatk.300+300.hped', imgt='3320', imgt2seq=False, imgt_dir='example/IMGTHLA3320', input=None, leave_NotFound=False, logistic=False, manhattan=False, maptable=None, metaanalysis=False, multiprocess=2, no_indel=False, nomencleaner=False, omnibus=False, oneF=False, out='MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18', phased=None, pheno='example/wtccc_filtered_58C_RA.hatk.300+300.phe', pheno_name='RA', platform=None, point_color='#778899', point_size='15', reference_allele=None, rhped=None, s1_bim=None, s1_logistic_result=None, s2_bim=None, s2_logistic_result=None, save_intermediates=False, threeF=False, top_color='#FF0000', twoF=True, variants='example/wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18', yaxis_unit='10')
+    >
+    > [IMGT2Seq.py]: Multiprocessing.
+    >
+    > [ProcessIMGT.py]: Generating sequence information dictionary for HLA A.
+    >
+    > [ProcessIMGT.py]: Generating sequence information dictionary for HLA B.
+    >
+    > [ProcessIMGT.py]: Generating sequence information dictionary for HLA C.
+    >
+    > [ProcessIMGT.py]: Generating sequence information dictionary for HLA DPA1.
+    >
+    > [ProcessIMGT.py]: Generating sequence information dictionary for HLA DPB1.
+    >
+    > [ProcessIMGT.py]: Generating sequence information dictionary for HLA DQA1.
+    >
+    > [ProcessIMGT.py]: Generating sequence information dictionary for HLA DQB1.
+    >
+    > [ProcessIMGT.py]: Generating sequence information dictionary for HLA DRB1.
+    >
+    > [HLA_Study.py]: IMGT2Seq result :
+    > < IMGT2Sequence(Newly generated.) >
+    > - HLA Amino Acids : MyHLAStudy/HLA_DICTIONARY_AA.hg18.imgt3320
+    > - HLA SNPs : MyHLAStudy/HLA_DICTIONARY_SNPS.hg18.imgt3320
+    > - HLA Allele Table : MyHLAStudy/HLA_ALLELE_TABLE.imgt3320.hat
+    > - Maptables for heatmap :
+    >    A   : MyHLAStudy/HLA_MAPTABLE_A.hg18.imgt3320.txt
+    >    B   : MyHLAStudy/HLA_MAPTABLE_B.hg18.imgt3320.txt
+    >    C   : MyHLAStudy/HLA_MAPTABLE_C.hg18.imgt3320.txt
+    >    DPA1: MyHLAStudy/HLA_MAPTABLE_DPA1.hg18.imgt3320.txt
+    >    DPB1: MyHLAStudy/HLA_MAPTABLE_DPB1.hg18.imgt3320.txt
+    >    DQA1: MyHLAStudy/HLA_MAPTABLE_DQA1.hg18.imgt3320.txt
+    >    DQB1: MyHLAStudy/HLA_MAPTABLE_DQB1.hg18.imgt3320.txt
+    >    DRB1: MyHLAStudy/HLA_MAPTABLE_DRB1.hg18.imgt3320.txt
+    >
+    >
+    > [HLA_Study.py]: Given HPED file('example/wtccc_filtered_58C_RA.hatk.300+300.hped') is to be processed by NomenCleaner.
+    >
+    > [NomenCleaner.py]: Generating CHPED with Maximum 2 fields HLA alleles.
+    >
+    > [bMarkerGenerator.py]: Making Reference Panel for "MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18"
+    >
+    > [1] Generating Amino acid(AA)sequences from HLA types.
+    > [2] Encoding Amino acids positions.
+    > [3] Encoding HLA alleles.
+    > [4] Generating DNA(SNPS) sequences from HLA types.
+    > [5] Encoding SNP positions.
+    > [6] Extracting founders.
+    > [7] Merging SNP, HLA, and amino acid datasets.
+    > Warning: Variants 'HLA_A*02:01' and 'HLA_A*01:01' have the same position.
+    > Warning: Variants 'HLA_A*02:02' and 'HLA_A*02:01' have the same position.
+    > Warning: Variants 'HLA_A*02:05' and 'HLA_A*02:02' have the same position.
+    > 2924 more same-position warnings: see log file.
+    > [8] Performing quality control.
+    > [9] Making reference panel for HLA-AA,SNPS,HLA and Normal variants(SNPs) is Done!
+    >
+    > [HLA_Study.py]: bMarkerGenerator result(Prefix) :
+    > MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18
+    >
+    > [HLA_Study.py]: Logistic Regression result :
+    > MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18.assoc.logistic
+    >
+    > [HLA_Study.py]: Manhattan result :
+    > MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18.manhattan.pdf
+    >
+    > [HLA_Study.py]: Heatmap result :
+    >  A : MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18.HLA_A.heatmap.pdf
+    >  B : MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18.HLA_B.heatmap.pdf
+    >  C : MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18.HLA_C.heatmap.pdf
+    >  DPA1 : MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18.HLA_DPA1.heatmap.pdf
+    >  DPB1 : MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18.HLA_DPB1.heatmap.pdf
+    >  DQA1 : MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18.HLA_DQA1.heatmap.pdf
+    >  DQB1 : MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18.HLA_DQB1.heatmap.pdf
+    >  DRB1 : MyHLAStudy/RESULT_EXAMPLE_wtccc_filtered_58C_RA.hatk.300+300.chr6.hg18.HLA_DRB1.heatmap.pdf
+    > ```
+    >
     > We proceed with the imputation with the 1000Genomes panel provided with CookHLA on a real project,
     >
     > ```bash
