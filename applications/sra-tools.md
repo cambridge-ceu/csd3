@@ -56,7 +56,7 @@ SRR8244854
 Our SLURM script is named `gastric.sb` as follows,
 
 ```bash
-#!/bin/bash
+#!/usr/bin/bash
 
 #SBATCH --job-name gastric
 #SBATCH --account PETERS-SL3-CPU
