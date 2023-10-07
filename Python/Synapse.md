@@ -15,7 +15,11 @@ module load ceuadmin/snakemake
 pip3 install synapseclient
 ```
 
-where we borrow the setup for snakemake to save space.
+where we borrow the setup for snakemake to save space. Whenever appropriate, the `synapseclient` can be upgrade,
+
+```bash
+pip install --upgrade synapseclient
+```
 
 ### Usage
 
@@ -25,23 +29,42 @@ This is described pragmatically as follows.
 synapse get -r syn51364943
 ```
 
-Closely related are the Python and R counterparts.
+Closely related are the Python
 
 ```python
-import synapseclient 
-import synapseutils 
+import synapseclient
+import synapseutils
  
-syn = synapseclient.Synapse() 
-syn.login('synapse_username','password') 
-files = synapseutils.syncFromSynapse(syn, ' syn51364943 ')
+syn = synapseclient.Synapse()
+syn.login('synapse_username','password')
+files = synapseutils.syncFromSynapse(syn, 'syn51364943')
 ```
 
+and R counterparts.
+
+
+```bash
+export R_HOME=/rds/project/jmmh2/rds-jmmh2-public_databases/software/R-4.3.1
+```
+
+To fine-tune installation, it is handy to download the package(s) as well
+
 ```r
-library(synapser) 
-library(synapserutils) 
+src <- c("http://ran.synapse.org", "http://cran.fhcrc.org")
+download.packages(c("synapser","synapserutils"), repos=src, ".")
+install.packages(c("synapser","synapserutils"), repos=src)
+```
+
+In line with requirement of package `rjson` in need of R >= 4.0.0 and built under R 4.3.1,
+
+Upon success,
+
+```r
+library(synapser)
+library(synapserutils)
  
-synLogin('synapse_username', 'password') 
-files <- synapserutils::syncFromSynapse('syn51364943') 
+synLogin('synapse_username', 'password')
+files <- synapserutils::syncFromSynapse('syn51364943')
 ```
 
 ## Application to Biobank Pharma Proteomics Project (UKB-PPP)
@@ -50,6 +73,8 @@ files <- synapserutils::syncFromSynapse('syn51364943')
 * Twitter post, <https://twitter.com/chrisdwhelan/status/1658865452368515072>
 
 ### SLURM script
+
+This is for Olink Explore 1536,
 
 ```bash
 #!/usr/bin/bash
@@ -69,6 +94,38 @@ files <- synapserutils::syncFromSynapse('syn51364943')
 module load ceuadmin/snakemake/7.19.1
 synapse login -u <username> -p <user password> --remember-me
 synapse get -r syn51364943
+```
+
+An equivalent script for Olink Explore 3072, not using cardio,  is as follows,
+
+```bash
+#!/usr/bin/bash
+
+#SBATCH --job-name=_syn51365301
+#SBATCH --mem=28800
+#SBATCH --time=12:00:00
+
+#SBATCH --account PETERS-SL3-CPU
+#SBATCH --partition cclake-himem
+
+#SBATCH --export ALL
+#SBATCH --output=_syn51365301.o
+#SBATCH --error=_syn51365301.e
+
+. /etc/profile.d/modules.sh
+module purge
+module load rhel7/default-ccl
+module load ceuadmin/snakemake/7.19.1
+
+synapse login -u jhz -p jhz22@Synapse --remember-me
+synapse get -r syn51365301
+```
+
+which requests a large memory from `cclake-himem` and requires a cache created as follows,
+
+```
+mkdir /rds/project/jmmh2/rds-jmmh2-results/public/proteomics/UKB-PPP/synapseCache
+ln -fs /rds/project/jmmh2/rds-jmmh2-results/public/proteomics/UKB-PPP/synapseCache ~/.synapseCache
 ```
 
 ### Merging and indexing
