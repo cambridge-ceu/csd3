@@ -57,7 +57,7 @@ pip install synapse
 module load ceuadmin/R
 ```
 
-In line with requirement of package `rjson` in need of R >= 4.0.0 and built under R 4.3.1 implemented in module `ceuadmin/R`, One may also install the Python virtual environment as required by package `reticulate`.
+In line with requirement of package `rjson` in need of R >= 4.0.0 and built under R 4.3.1 as implemented in module `ceuadmin/R`, One may also install the Python virtual environment as required by package `reticulate`.
 
 To facilitate installation of the R package(s), we download them and make changes as needed.
 
