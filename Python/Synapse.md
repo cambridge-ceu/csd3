@@ -6,7 +6,7 @@ sort: 6
 
 Web: <https://www.synapse.org> ([GitHub](https://github.com/Sage-Bionetworks/))
 
-## Command-line tool
+## Python command-line tool
 
 ### Installation
 
@@ -29,7 +29,7 @@ This is described pragmatically as follows.
 synapse get -r syn51364943
 ```
 
-Closely related are the Python
+Closely related are the Python script,
 
 ```python
 import synapseclient
@@ -40,9 +40,9 @@ syn.login('synapse_username','password')
 files = synapseutils.syncFromSynapse(syn, 'syn51364943')
 ```
 
-and R counterparts.
+## Python and R
 
-To fine-tune installation, it is handy to download the package(s) as well taking advantage of `anaconda` as for `gatk`,
+It turns out Anaconda is required, so we take advantage of `anaconda` as for `gatk`.
 
 ```bash
 module load anaconda/3.2019-10
@@ -55,19 +55,26 @@ conda activate /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10
 pip install synapseclient
 pip install synapse
 module load ceuadmin/R
+```
+
+In line with requirement of package `rjson` in need of R >= 4.0.0 and built under R 4.3.1 implemented in module `ceuadmin/R`, One may also install the Python virtual environment as required by package `reticulate`.
+
+To facilitate installation of the R package(s), we download them and make changes as needed.
+
+```bash
 Rscript -e '
   options(repos=c("http://ran.synapse.org", "http://cran.fhcrc.org"))
   download.packages(c("synapser","synapserutils"), ".")
 '
 tar xvfz synapser_1.1.0.119.tar.gz
-cd synapser; comment on "Rscript --vanilla tools/installPythonClient.R $PWD_FROM_R" in `configure` configure.txt; cd -
+cd synapser; comment on "Rscript --vanilla tools/installPythonClient.R $PWD_FROM_R" in `configure`; cd -
 R CMD INSTALL synapser
 R CMD INSTALL synapserutils_1.0.0.15.tar.gz
 ```
 
-In line with requirement of package `rjson` in need of R >= 4.0.0 and built under R 4.3.1,
+The change to `configure` is necessary, since all Python packages have been installed.
 
-Upon success,
+The call is as follows,
 
 ```r
 library(synapser)
