@@ -54,7 +54,7 @@ conda activate /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10
                                                          -c conda-forge requests[version='<3'] pandas[version='<1.5'] pysftp jinja2 markupsafe
 pip install synapseclient
 pip install synapse
-export R_HOME=/rds/project/jmmh2/rds-jmmh2-public_databases/software/R-4.3.1
+module load ceuadmin/R
 Rscript -e '
   options(repos=c("http://ran.synapse.org", "http://cran.fhcrc.org"))
   download.packages(c("synapser","synapserutils"), ".")
