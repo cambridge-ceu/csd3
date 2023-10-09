@@ -42,17 +42,27 @@ files = synapseutils.syncFromSynapse(syn, 'syn51364943')
 
 and R counterparts.
 
+To fine-tune installation, it is handy to download the package(s) as well taking advantage of `anaconda` as for `gatk`,
 
 ```bash
+module load anaconda/3.2019-10
+conda activate /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10
+# information: not to update conda but install synapseclient/synpase all over again
+# conda update -n base -c defaults conda
+# conda init bash
+/usr/local/software/anaconda/3.2019-10/bin/conda install --prefix /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10 \
+                                                         -c conda-forge requests[version='<3'] pandas[version='<1.5'] pysftp jinja2 markupsafe
+pip install synapseclient
+pip install synapse
 export R_HOME=/rds/project/jmmh2/rds-jmmh2-public_databases/software/R-4.3.1
-```
-
-To fine-tune installation, it is handy to download the package(s) as well
-
-```r
-src <- c("http://ran.synapse.org", "http://cran.fhcrc.org")
-download.packages(c("synapser","synapserutils"), repos=src, ".")
-install.packages(c("synapser","synapserutils"), repos=src)
+Rscript -e '
+  options(repos=c("http://ran.synapse.org", "http://cran.fhcrc.org"))
+  download.packages(c("synapser","synapserutils"), ".")
+'
+tar xvfz synapser_1.1.0.119.tar.gz
+cd synapser; comment on "Rscript --vanilla tools/installPythonClient.R $PWD_FROM_R" in `configure` configure.txt; cd -
+R CMD INSTALL synapser
+R CMD INSTALL synapserutils_1.0.0.15.tar.gz
 ```
 
 In line with requirement of package `rjson` in need of R >= 4.0.0 and built under R 4.3.1,
