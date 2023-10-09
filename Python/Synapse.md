@@ -29,7 +29,7 @@ This is described pragmatically as follows.
 synapse get -r syn51364943
 ```
 
-Closely related are the Python script,
+A Python script is as follows,
 
 ```python
 import synapseclient
@@ -74,7 +74,7 @@ R CMD INSTALL synapserutils_1.0.0.15.tar.gz
 
 The change to `configure` is necessary, since all Python packages have been installed.
 
-The call is as follows,
+Our call is as follows,
 
 ```r
 library(synapser)
