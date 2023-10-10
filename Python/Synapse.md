@@ -6,7 +6,7 @@ sort: 6
 
 Web: <https://www.synapse.org> ([GitHub](https://github.com/Sage-Bionetworks/))
 
-## Miniconda
+## I. Miniconda
 
 ### Python packages
 
@@ -40,7 +40,7 @@ syn.login('synapse_username','password')
 files = synapseutils.syncFromSynapse(syn, 'syn51364943')
 ```
 
-## Anaconda
+## II. Anaconda
 
 This is required for R packages `synapser` and `synapserutils`, so we take advantage of `anaconda` as for `gatk`.
 
@@ -88,7 +88,7 @@ synLogin('synapse_username', 'password')
 files <- synapserutils::syncFromSynapse('syn51364943')
 ```
 
-## Application to Biobank Pharma Proteomics Project (UKB-PPP)
+## III. Application to Biobank Pharma Proteomics Project (UKB-PPP)
 
 * Synapse page, <https://www.synapse.org/#!Synapse:syn51364943> (pGWAS summary statistics, <https://www.synapse.org/#!Synapse:syn51365301>)
 * Twitter post, <https://twitter.com/chrisdwhelan/status/1658865452368515072>
