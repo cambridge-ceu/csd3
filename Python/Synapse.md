@@ -122,7 +122,7 @@ synapse login -u <username> -p <user password> --remember-me
 synapse get -r syn51364943
 ```
 
-An equivalent script for Olink Explore 3072, not using cardio,  is as follows,
+An equivalent script for Olink Explore 3072, not using `cardio`,  is as follows,
 
 ```bash
 #!/usr/bin/bash
@@ -159,6 +159,8 @@ for by default, the `~/.synapseCache` would have a maximum of <50Gb (or a 55Gb l
 ### 3.2 Reformat
 
 This step will facilitate practical use, and is illustrated with the European (discovery) data.
+
+The Olink Explore 1536 is done as follows,
 
 ```bash
 #!/usr/bin/bash
@@ -226,3 +228,54 @@ tabix -S1 -s1 -b2 -e2 -f "${dst}/${discovery}/${protein}.gz"
 ```
 
 where eight compound proteins are handled specifically.
+
+On reflection, it is somewhat clumsy so we adopt a fuzzy approach to handle Olink Explore 3072 and again not use the decommissioned `cardio`,
+
+```bash
+#!/usr/bin/bash
+
+#SBATCH --job-name=_reformatted
+#SBATCH --mem=28800
+#SBATCH --time=12:00:00
+
+#SBATCH --account PETERS-SL3-CPU
+#SBATCH --partition cclake-himem
+
+#SBATCH --export ALL
+#SBATCH --array=1-2940
+#SBATCH --output=_reformat_%A_%a.o
+#SBATCH --error=_reformat_%A_%a.e
+
+export sun23=~/rds/results/public/proteomics/UKB-PPP/sun23
+export UKB_PPP="UKB-PPP pGWAS summary statistics"
+export UKB_PPP_reformatted="${UKB_PPP} (reformatted)"
+export discovery="European (discovery)"
+export src="${sun23}/${UKB_PPP}/${discovery}"
+export dst="${sun23}/${UKB_PPP_reformatted}"
+
+if [ ! -f "${dst}/${discovery}.lst" ]; then
+   ls "${src}" | grep -v MANIFEST | xargs -l -I {} basename {} .tar > "${dst}/${discovery}.lst"
+fi
+
+if [ ! -d "${dst}/${discovery}" ]; then
+   mkdir -p "${dst}/${discovery}"
+fi
+
+export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' "${dst}/${discovery}.lst")
+
+tar xf "${src}/${protein}.tar"
+(
+  chmod -x ${protein}/*
+  zcat ${protein}/*gz | head -1
+  for chr in {1..22} X
+  do
+    zcat ${protein}/discovery_chr${chr}_*.gz | sed '1d'
+  done
+) | \
+tr ' ' '\t' | \
+bgzip -f > "${dst}/${discovery}/${protein}.bgz"
+rm -rf ${protein}
+tabix -S1 -s1 -b2 -e2 -f "${dst}/${discovery}/${protein}.bgz"
+```
+
+where we finally use the file extension name `.bgz` (by `bgzip`) to differentiate the usual `.gz` (by `gzip`).
