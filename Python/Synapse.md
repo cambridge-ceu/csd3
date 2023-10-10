@@ -72,7 +72,7 @@ R CMD INSTALL synapser
 R CMD INSTALL synapserutils_1.0.0.15.tar.gz
 ```
 
-The change to `configure` is necessary, since all Python packages have been installed.
+The change to `configure` is necessary, since by default it uses root directories (a user does not have permission) but all Python packages have been installed.
 
 ### Command-line tool
 
