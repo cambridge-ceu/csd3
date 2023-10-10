@@ -94,7 +94,8 @@ files <- synapserutils::syncFromSynapse('syn51364943')
 
 ## 3. Application to Biobank Pharma Proteomics Project (UKB-PPP)
 
-* Synapse page, <https://www.synapse.org/#!Synapse:syn51364943> (pGWAS summary statistics, <https://www.synapse.org/#!Synapse:syn51365301>)
+* Synapse page, <https://www.synapse.org/#!Synapse:syn51364943>
+* pGWAS summary statistics, <https://www.synapse.org/#!Synapse:syn51365301>
 * Twitter post, <https://twitter.com/chrisdwhelan/status/1658865452368515072>
 
 ### 3.1 Downloads
@@ -152,6 +153,8 @@ which requests a large memory from `cclake-himem` and requires a cache created a
 mkdir /rds/project/jmmh2/rds-jmmh2-results/public/proteomics/UKB-PPP/synapseCache
 ln -fs /rds/project/jmmh2/rds-jmmh2-results/public/proteomics/UKB-PPP/synapseCache ~/.synapseCache
 ```
+
+for by default, the `~/.synapseCache` would have a maximum of <50Gb (or a 55Gb limit) which is quickly overflowed.
 
 ### 3.2 Reformat
 
