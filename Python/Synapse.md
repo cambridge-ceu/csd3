@@ -15,7 +15,7 @@ module load ceuadmin/snakemake
 pip3 install synapseclient
 ```
 
-where we borrow the setup for snakemake to save space. Whenever appropriate, the `synapseclient` can be upgrade,
+where we borrow the setup for snakemake to save space. Whenever appropriate, the `synapseclient` can be upgraded.
 
 ```bash
 pip install --upgrade synapseclient
