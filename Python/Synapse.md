@@ -143,7 +143,7 @@ module purge
 module load rhel7/default-ccl
 module load ceuadmin/snakemake/7.19.1
 
-synapse login -u jhz -p jhz22@Synapse --remember-me
+synapse login -u <username> -p <user password> --remember-me
 synapse get -r syn51365301
 ```
 
