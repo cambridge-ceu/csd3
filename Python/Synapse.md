@@ -249,19 +249,20 @@ On reflection, it is somewhat clumsy so we adopt a fuzzy approach to handle Olin
 export sun23=~/rds/results/public/proteomics/UKB-PPP/sun23
 export UKB_PPP="UKB-PPP pGWAS summary statistics"
 export UKB_PPP_reformatted="${UKB_PPP} (reformatted)"
-export discovery="European (discovery)"
-export src="${sun23}/${UKB_PPP}/${discovery}"
+export population="European (discovery)"
+export prefix=discovery
+export src="${sun23}/${UKB_PPP}/${population}"
 export dst="${sun23}/${UKB_PPP_reformatted}"
 
-if [ ! -f "${dst}/${discovery}.lst" ]; then
-   ls "${src}" | grep -v MANIFEST | xargs -l -I {} basename {} .tar > "${dst}/${discovery}.lst"
+if [ ! -f "${dst}/${population}.lst" ]; then
+   ls "${src}" | grep -v MANIFEST | xargs -l -I {} basename {} .tar > "${dst}/${population}.lst"
 fi
 
-if [ ! -d "${dst}/${discovery}" ]; then
-   mkdir -p "${dst}/${discovery}"
+if [ ! -d "${dst}/${population}" ]; then
+   mkdir -p "${dst}/${population}"
 fi
 
-export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' "${dst}/${discovery}.lst")
+export protein=$(awk 'NR==ENVIRON["SLURM_ARRAY_TASK_ID"]' "${dst}/${population}.lst")
 
 tar xf "${src}/${protein}.tar"
 (
@@ -269,13 +270,13 @@ tar xf "${src}/${protein}.tar"
   zcat ${protein}/*gz | head -1
   for chr in {1..22} X
   do
-    zcat ${protein}/discovery_chr${chr}_*.gz | sed '1d'
+    zcat ${protein}/${prefix}_chr${chr}_*.gz | sed '1d'
   done
 ) | \
 tr ' ' '\t' | \
-bgzip -f > "${dst}/${discovery}/${protein}.bgz"
+bgzip -f > "${dst}/${population}/${protein}.bgz"
 rm -rf ${protein}
-tabix -S1 -s1 -b2 -e2 -f "${dst}/${discovery}/${protein}.bgz"
+tabix -S1 -s1 -b2 -e2 -f "${dst}/${population}/${protein}.bgz"
 ```
 
 where we finally use the file extension name `.bgz` (by `bgzip`) to differentiate from the usual `.gz` (by `gzip`).
