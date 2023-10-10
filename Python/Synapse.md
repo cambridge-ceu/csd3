@@ -6,9 +6,9 @@ sort: 6
 
 Web: <https://www.synapse.org> ([GitHub](https://github.com/Sage-Bionetworks/))
 
-## I. Miniconda
+## 1. Miniconda
 
-### Python packages
+### 1.1 Python packages
 
 ```bash
 module load ceuadmin/snakemake
@@ -21,7 +21,7 @@ where we borrow the setup for snakemake to save space. Whenever appropriate, the
 pip install --upgrade synapseclient
 ```
 
-### Command-line tool
+### 1.2 Command-line tool
 
 This is described pragmatically as follows.
 
@@ -29,7 +29,7 @@ This is described pragmatically as follows.
 synapse get -r syn51364943
 ```
 
-### Python script
+### 1.3 Python script
 
 ```python
 import synapseclient
@@ -40,7 +40,9 @@ syn.login('synapse_username','password')
 files = synapseutils.syncFromSynapse(syn, 'syn51364943')
 ```
 
-## II. Anaconda
+## 2. Anaconda
+
+### 2.1 Python packages
 
 This is required for R packages `synapser` and `synapserutils`, so we take advantage of `anaconda` as for `gatk`.
 
@@ -54,14 +56,12 @@ conda activate /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10
                                                          -c conda-forge requests[version='<3'] pandas[version='<1.5'] pysftp jinja2 markupsafe
 pip install synapseclient
 pip install synapse
-module load ceuadmin/R
 ```
 
-In line with requirement of package `rjson` in need of R >= 4.0.0 and built under R 4.3.1 as implemented in module `ceuadmin/R`, One may also install the Python virtual environment as required by package `reticulate`.
-
-To facilitate installation of the R package(s), we download them and make changes as needed.
+### 2.2 R packages
 
 ```bash
+module load ceuadmin/R
 Rscript -e '
   options(repos=c("http://ran.synapse.org", "http://cran.fhcrc.org"))
   download.packages(c("synapser","synapserutils"), ".")
@@ -72,13 +72,17 @@ R CMD INSTALL synapser
 R CMD INSTALL synapserutils_1.0.0.15.tar.gz
 ```
 
-The change to `configure` is necessary, since by default it uses root directories (a user does not have permission) but all Python packages have been installed.
+Several notes are worthwhile,
 
-### Command-line tool
+* In line with requirement of package `rjson` in need of R >= 4.0.0 and built under R 4.3.1 as implemented in module `ceuadmin/R`, One may also install the Python virtual environment as required by package `reticulate`.
+* To facilitate installation of the R package(s), we download them and make changes as needed.
+* The change to `configure` is necessary, since by default it uses root directories (a user does not have permission) but all Python packages have been installed.
+
+### 2.3 Command-line tool
 
 It is the same syntax as above.
 
-## R script
+### 2.4 R script
 
 ```r
 library(synapser)
@@ -88,12 +92,12 @@ synLogin('synapse_username', 'password')
 files <- synapserutils::syncFromSynapse('syn51364943')
 ```
 
-## III. Application to Biobank Pharma Proteomics Project (UKB-PPP)
+## 3. Application to Biobank Pharma Proteomics Project (UKB-PPP)
 
 * Synapse page, <https://www.synapse.org/#!Synapse:syn51364943> (pGWAS summary statistics, <https://www.synapse.org/#!Synapse:syn51365301>)
 * Twitter post, <https://twitter.com/chrisdwhelan/status/1658865452368515072>
 
-### Downloads
+### 3.1 Downloads
 
 This is for Olink Explore 1536,
 
@@ -149,7 +153,7 @@ mkdir /rds/project/jmmh2/rds-jmmh2-results/public/proteomics/UKB-PPP/synapseCach
 ln -fs /rds/project/jmmh2/rds-jmmh2-results/public/proteomics/UKB-PPP/synapseCache ~/.synapseCache
 ```
 
-### Reformat
+### 3.2 Reformat
 
 This step will facilitate practical use, and is illustrated with the European (discovery) data.
 
