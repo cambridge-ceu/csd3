@@ -6,9 +6,9 @@ sort: 6
 
 Web: <https://www.synapse.org> ([GitHub](https://github.com/Sage-Bionetworks/))
 
-## Python command-line tool
+## Miniconda
 
-### Installation
+### Python packages
 
 ```bash
 module load ceuadmin/snakemake
@@ -21,7 +21,7 @@ where we borrow the setup for snakemake to save space. Whenever appropriate, the
 pip install --upgrade synapseclient
 ```
 
-### Usage
+### Command-line tool
 
 This is described pragmatically as follows.
 
@@ -29,7 +29,7 @@ This is described pragmatically as follows.
 synapse get -r syn51364943
 ```
 
-A Python script is as follows,
+### Python script
 
 ```python
 import synapseclient
@@ -40,9 +40,9 @@ syn.login('synapse_username','password')
 files = synapseutils.syncFromSynapse(syn, 'syn51364943')
 ```
 
-## Python and R
+## Anaconda
 
-It turns out Anaconda is required, so we take advantage of `anaconda` as for `gatk`.
+This is required for R packages `synapser` and `synapserutils`, so we take advantage of `anaconda` as for `gatk`.
 
 ```bash
 module load anaconda/3.2019-10
@@ -74,7 +74,11 @@ R CMD INSTALL synapserutils_1.0.0.15.tar.gz
 
 The change to `configure` is necessary, since all Python packages have been installed.
 
-Our call is as follows,
+### Command-line tool
+
+It is the same syntax as above.
+
+## R script
 
 ```r
 library(synapser)
@@ -89,7 +93,7 @@ files <- synapserutils::syncFromSynapse('syn51364943')
 * Synapse page, <https://www.synapse.org/#!Synapse:syn51364943> (pGWAS summary statistics, <https://www.synapse.org/#!Synapse:syn51365301>)
 * Twitter post, <https://twitter.com/chrisdwhelan/status/1658865452368515072>
 
-### SLURM script
+### Downloads
 
 This is for Olink Explore 1536,
 
@@ -145,7 +149,7 @@ mkdir /rds/project/jmmh2/rds-jmmh2-results/public/proteomics/UKB-PPP/synapseCach
 ln -fs /rds/project/jmmh2/rds-jmmh2-results/public/proteomics/UKB-PPP/synapseCache ~/.synapseCache
 ```
 
-### Merging and indexing
+### Reformat
 
 This step will facilitate practical use, and is illustrated with the European (discovery) data.
 
