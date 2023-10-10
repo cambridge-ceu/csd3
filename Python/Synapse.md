@@ -278,4 +278,4 @@ rm -rf ${protein}
 tabix -S1 -s1 -b2 -e2 -f "${dst}/${discovery}/${protein}.bgz"
 ```
 
-where we finally use the file extension name `.bgz` (by `bgzip`) to differentiate the usual `.gz` (by `gzip`).
+where we finally use the file extension name `.bgz` (by `bgzip`) to differentiate from the usual `.gz` (by `gzip`).
