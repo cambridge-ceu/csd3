@@ -133,7 +133,6 @@ module load perl-5.20.0-gcc-5.4.0-4npvg5p
 module load ceuadmin/sra-tools
 
 TMPDIR=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP
-destdir=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP/gastric_Korea_2019/SRA_PRJNA505380
 
 cat gastric.list | \
 parallel -C' ' -j5 '
@@ -142,11 +141,8 @@ parallel -C' ' -j5 '
   (
     vdb-dump ${accession} --info
     prefetch --force ALL --transport http --max-size u --progress ${accession}
-#   if [ -d ${accession} ]; then
-#      fasterq-dump ${accession} -O ${destdir}
-#   fi
   ) > ${accession}.log
 '
 ```
 
-Now the issue with `Perl` also goes away but `fasterq-dump` requires large amount of RAM so it is more preferable to be embedded in a SLRUM job and we use `vdb-config -i` to disable remote access first.
+Now the issue with `Perl` also goes away and `fasterq-dump` can be used to extact the downloads after `vdb-config -i` disables remote access.
