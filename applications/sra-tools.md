@@ -73,11 +73,11 @@ module load rhel8/default-icl
 module load ceuadmin/sra-tools/3.0.8
 
 TMPDIR=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP/
-destdir=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP #gastric_Korea_2019/SRA_PRJNA505380/
+destdir=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP/gastric_Korea_2019/SRA_PRJNA505380/
 
-file=$(awk -v record=${SLURM_ARRAY_TASK_ID} 'NR==record' gastric.list)
+accession=$(awk -v n=${SLURM_ARRAY_TASK_ID} 'NR==n' gastric.list)
 application="fasterq-dump"
-options="-t ${TMPDIR} ${file} -O ${destdir}"
+options="-t ${TMPDIR} -O ${destdir} ${accession}"
 cd $TMPDIR
 echo -e "Changed directory from $SLURM_SUBMIT_DIR to $TMPDIR.\n"
 CMD="$application $options"
@@ -99,7 +99,26 @@ cd -
 
 and submitted as `sbatch gastric.sb`.
 
-A `GNU parallel` version is as follows,
+## Additional notes
+
+The `fasterq-dump` could produces error as follows,
+
+```
+Loading rhel8/default-icl
+  Loading requirement: dot rhel8/slurm singularity/current rhel8/global
+    cuda/11.4 vgl/2.5.1/64 intel-oneapi-compilers/2022.1.0/gcc/b6zld2mz
+    intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
+Loading ceuadmin/sra-tools/3.0.8
+  Loading requirement: gcc/6 flex-2.6.4-gcc-5.4.0-2u2fgon
+2023-10-10T15:52:30 sratools.3.0.8 err: libs/vfs/names4-response.c:2293:Response4StatusInit: error unexpected while resolving query within virtual file system module - No accession to process ( 500 )
+Failed to call external services.
+```
+
+It has been suggested to use `prefetch` in this post, <https://github.com/ncbi/sra-tools/wiki/08.-prefetch-and-fasterq-dump>, nevertheless giving similar error.
+
+It turns out to be an issue with SLURM, for `vdb-dump <accession>` confirms availability of the accessions and `prefetch <accessopm>` works from an interactive Linux session.
+
+Consequently, we resort to `GNU parallel` as follows,
 
 ```bash
 #!/usr/bin/bash
@@ -124,4 +143,4 @@ parallel -C' ' -j5 '
 '
 ```
 
-Note that `fasterq-dump` requires large amount of RAM so it is more preferable to be embedded in a SLRUM job.
+Now the issue with `Perl` also goes away but `fasterq-dump` requires large amount of RAM so it is more preferable to be embedded in a SLRUM job.
