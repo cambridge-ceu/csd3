@@ -148,4 +148,4 @@ parallel -C' ' -j5 '
 cd -
 ```
 
-Now the issue with `Perl` also goes away under `cclake-himem` and `fasterq-dump` can be used to extact the downloads after `vdb-config -i` disables remote access.
+Now the issue with `Perl` also goes away under `cclake-himem`, and `fasterq-dump` can be used to extact the downloads after remote access is disabled from `vdb-config -i`.
