@@ -132,17 +132,17 @@ Consequently, we resort to `GNU parallel` as follows,
 module load perl-5.20.0-gcc-5.4.0-4npvg5p
 module load ceuadmin/sra-tools
 
-TMPDIR=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP
-
+export TMPDIR=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP
+cd ${TMPDIR}
 cat gastric.list | \
 parallel -C' ' -j5 '
   export accession={}
-  cd ${TMPDIR}
   (
     vdb-dump ${accession} --info
     prefetch --force ALL --transport http --max-size u --progress ${accession}
   ) > ${accession}.log
 '
+cd -
 ```
 
 Now the issue with `Perl` also goes away and `fasterq-dump` can be used to extact the downloads after `vdb-config -i` disables remote access.
