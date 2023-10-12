@@ -99,6 +99,12 @@ cd -
 
 and submitted as `sbatch gastric.sb`.
 
+By default, the download is split into three parts which can be combined as follows, see <https://github.com/ncbi/sra-tools/wiki/08.-prefetch-and-fasterq-dump>.
+
+```bash
+fasterq-dump <accession> --concatenate-reads --include-technical
+```
+
 ## Additional notes
 
 The `fasterq-dump` could produces error as follows,
@@ -114,7 +120,7 @@ Loading ceuadmin/sra-tools/3.0.8
 Failed to call external services.
 ```
 
-It has been suggested to use `prefetch` in this post, <https://github.com/ncbi/sra-tools/wiki/08.-prefetch-and-fasterq-dump>, nevertheless giving similar error.
+It has been suggested to use `prefetch` in this post, nevertheless giving similar error.
 
 It turns out to be an issue with SLURM, for `vdb-dump <accession>` confirms availability of the accessions and `prefetch <accessopm>` works from an interactive Linux session.
 
@@ -137,10 +143,10 @@ parallel -C' ' -j5 '
     vdb-dump ${accession} --info
     prefetch --force ALL --transport http --max-size u --progress ${accession}
 #   if [ -d ${accession} ]; then
-#      fasterq-dump ${accession} --concatenate-reads --include-technical -O ${destdir}
+#      fasterq-dump ${accession} -O ${destdir}
 #   fi
   ) > ${accession}.log
 '
 ```
 
-Now the issue with `Perl` also goes away but `fasterq-dump` requires large amount of RAM so it is more preferable to be embedded in a SLRUM job.
+Now the issue with `Perl` also goes away but `fasterq-dump` requires large amount of RAM so it is more preferable to be embedded in a SLRUM job and we use `vdb config -i` to disable remote access first.
