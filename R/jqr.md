@@ -56,3 +56,13 @@ R CMD INSTALL jqr
 ```
 
 where the body of `Makevars` is duplicated from `Makevars.in` adding location of `jq.h` and `jq.so`.
+
+### 1.3.0
+
+The error message is simiar, but we proceed with a relatively simpler syntax,
+
+```bash
+Rscript -e 'download.packages("jqr",".")'
+R CMD INSTALL --configure-vars='INCLUDE_DIR=/rds/user/jhz22/hpc-work/include LIB_DIR=/rds/user/jhz22/hpc-work/lib' jqr_1.3.0.tar.gz
+rm jqr_*
+```
