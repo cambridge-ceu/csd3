@@ -149,4 +149,4 @@ parallel -C' ' -j5 '
 '
 ```
 
-Now the issue with `Perl` also goes away but `fasterq-dump` requires large amount of RAM so it is more preferable to be embedded in a SLRUM job and we use `vdb config -i` to disable remote access first.
+Now the issue with `Perl` also goes away but `fasterq-dump` requires large amount of RAM so it is more preferable to be embedded in a SLRUM job and we use `vdb-config -i` to disable remote access first.
