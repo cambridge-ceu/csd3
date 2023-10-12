@@ -109,7 +109,7 @@ See also <https://github.com/ncbi/sra-tools/wiki/08.-prefetch-and-fasterq-dump>.
 
 ## Additional notes
 
-The `fasterq-dump` could produce error as follows,
+Call to `fasterq-dump` in the SLURM script above could produce error as follows,
 
 ```
 Loading rhel8/default-icl
