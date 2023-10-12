@@ -99,15 +99,17 @@ cd -
 
 and submitted as `sbatch gastric.sb`.
 
-By default, the download is split into three parts which can be combined as follows, see <https://github.com/ncbi/sra-tools/wiki/08.-prefetch-and-fasterq-dump>.
+By default, the download is split into three parts which can be combined as follows,
 
 ```bash
 fasterq-dump <accession> --concatenate-reads --include-technical
 ```
 
+See also <https://github.com/ncbi/sra-tools/wiki/08.-prefetch-and-fasterq-dump>.
+
 ## Additional notes
 
-The `fasterq-dump` could produces error as follows,
+The `fasterq-dump` could produce error as follows,
 
 ```
 Loading rhel8/default-icl
@@ -120,9 +122,9 @@ Loading ceuadmin/sra-tools/3.0.8
 Failed to call external services.
 ```
 
-It has been suggested to use `prefetch` in this post, nevertheless giving similar error.
+Use of `prefetch` nevertheless gives similar error.
 
-It turns out to be an issue with SLURM, for `vdb-dump <accession>` confirms availability of the accessions and `prefetch <accessopm>` works from an interactive Linux session.
+It appears to be an issue with SLURM, for `vdb-dump <accession>` confirms availability of the accessions and `prefetch <accession>` works from an interactive Linux session.
 
 Consequently, we resort to `GNU parallel` as follows,
 
@@ -133,8 +135,9 @@ module load perl-5.20.0-gcc-5.4.0-4npvg5p
 module load ceuadmin/sra-tools
 
 export TMPDIR=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP
+export cwd=${PWD}
 cd ${TMPDIR}
-cat gastric.list | \
+cat ${cwd}/gastric.list | \
 parallel -C' ' -j5 '
   export accession={}
   (
@@ -145,4 +148,4 @@ parallel -C' ' -j5 '
 cd -
 ```
 
-Now the issue with `Perl` also goes away and `fasterq-dump` can be used to extact the downloads after `vdb-config -i` disables remote access.
+Now the issue with `Perl` also goes away under `cclake-himem` and `fasterq-dump` can be used to extact the downloads after `vdb-config -i` disables remote access.
