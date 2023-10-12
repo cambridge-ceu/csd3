@@ -148,4 +148,4 @@ parallel -C' ' -j5 '
 cd -
 ```
 
-Now the issue with `Perl` also goes away under `cclake-himem`, and `fasterq-dump` can be used to exttact the `.sra` files after remote access is disabled from `vdb-config -i`.
+Now the issue with `Perl` also goes away under `cclake-himem`, and `fasterq-dump` can be used to extract the `.sra` file for each accession after remote access is disabled from `vdb-config -i`.
