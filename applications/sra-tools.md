@@ -136,7 +136,7 @@ module load ceuadmin/sra-tools
 
 export TMPDIR=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP
 export cwd=${PWD}
-cd ${TMPDIR}
+cd ${TMPDIR}/prefetch
 cat ${cwd}/gastric.list | \
 parallel -C' ' -j5 '
   export accession={}
