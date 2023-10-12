@@ -61,8 +61,6 @@ Our SLURM script is named `gastric.sb` as follows,
 #SBATCH --job-name gastric
 #SBATCH --account PETERS-SL3-CPU
 #SBATCH --partition icelake-himem
-#SBATCH --nodes=1
-#SBATCH --ntasks=4
 #SBATCH --array=1-2
 #SBATCH --time=10:00:00
 #SBATCH --mail-type=NONE
@@ -74,31 +72,54 @@ module purge
 module load rhel8/default-icl
 module load ceuadmin/sra-tools/3.0.8
 
-JOBID=$SLURM_JOB_ID
 TMPDIR=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP/
 destdir=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP #gastric_Korea_2019/SRA_PRJNA505380/
 
 file=$(awk -v record=${SLURM_ARRAY_TASK_ID} 'NR==record' gastric.list)
 application="fasterq-dump"
 options="-t ${TMPDIR} ${file} -O ${destdir}"
-workdir="$SLURM_SUBMIT_DIR"
-cd $workdir
-echo -e "Changed directory to `pwd`.\n"
+cd $TMPDIR
+echo -e "Changed directory from $SLURM_SUBMIT_DIR to $TMPDIR.\n"
 CMD="$application $options"
 eval $CMD
-cd -
-echo -e "JobID: $JOBID\n======"
+echo -e "JobID: $SLURM_JOB_ID\n======"
 echo "Time: `date`"
 echo "Running on master node: `hostname`"
 echo "Current directory: `pwd`"
 if [ "$SLURM_JOB_NODELIST" ]; then
         #! Create a machine file:
-        export NODEFILE=`generate_pbs_nodefile`
-        cat $NODEFILE | uniq > machine.file.$JOBID
+        export NODEFILE=`generate_pbs_nodefile $SLURM_JOB_NODELIST`
+        cat $NODEFILE | uniq > machine.file.$SLURM_ARRAY_TASK_ID
         echo -e "\nNodes allocated:\n================"
-        echo `cat machine.file.$JOBID | sed -e 's/\..*$//g'`
+        cat machine.file.$SLURM_ARRAY_TASK_ID | sed -e 's/\..*$//g'
 fi
 echo -e "\nExecuting command:\n==================\n$CMD\n"
+cd -
 ```
 
 and submitted as `sbatch gastric.sb`.
+
+A `GNU parallel` version is as follows,
+
+```bash
+#!/usr/bin/bash
+
+module load perl-5.20.0-gcc-5.4.0-4npvg5p
+module load ceuadmin/sra-tools
+
+TMPDIR=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP
+destdir=~/rds/rds-jmmh2-public_databases/CPTAC/TEMP/gastric_Korea_2019/SRA_PRJNA505380
+
+cat gastric.list | \
+parallel -C' ' -j5 '
+  export accession={}
+  cd ${TMPDIR}
+  (
+    vdb-dump ${accession} --info
+    prefetch --force ALL --transport http --max-size u --progress ${accession}
+#   if [ -d ${accession} ]; then
+#      fasterq-dump ${accession} --concatenate-reads --include-technical -O ${destdir}
+#   fi
+  ) > ${accession}.log
+'
+```
