@@ -123,3 +123,5 @@ parallel -C' ' -j5 '
   ) > ${accession}.log
 '
 ```
+
+Note that `fasterq-dump` requires large amount of RAM so it is more preferable to be embedded in a SLRUM job.
