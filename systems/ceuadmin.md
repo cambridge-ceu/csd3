@@ -4,9 +4,9 @@ sort: 7
 
 # ceuadmin
 
-![ceuadmin](ceuadmin.png)
-
 The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
+
+![ceuadmin](ceuadmin.png)
 
 A word cloud diagram is generated from the following R script,
 
