@@ -2,7 +2,7 @@
 sort: 7
 ---
 
-![ceuadmin][ceuadmin.png]
+![ceuadmin](ceuadmin.png)
 
 # ceuadmin
 
