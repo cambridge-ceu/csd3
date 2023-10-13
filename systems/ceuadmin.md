@@ -2,9 +2,9 @@
 sort: 7
 ---
 
-![ceuadmin](ceuadmin.png)
-
 # ceuadmin
+
+![ceuadmin](ceuadmin.png)
 
 The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
