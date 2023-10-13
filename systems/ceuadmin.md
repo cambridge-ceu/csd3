@@ -2,9 +2,30 @@
 sort: 7
 ---
 
+![ceuadmin][ceuadmin.png]
+
 # ceuadmin
 
 The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
+
+A word cloud diagram is generated from the following R script,
+
+```r
+library(RColorBrewer)
+library(dplyr)
+library(tm)
+library(wordcloud)
+ceuadmin <- Sys.getenv("CEUADMIN")
+modules <- setdiff(dir(ceuadmin),c("doc","lib","misc","sources"))
+docs <- Corpus(VectorSource(modules))
+m <- TermDocumentMatrix(docs) %>%
+     as.matrix()
+words <- sort(rowSums(m),decreasing=TRUE) 
+freq <- rpois(length(words),lambda=3)
+png("ceuadmin.png",res=300,height=10,width=10,units="in")
+wordcloud(names(words), freq, min.freq = 1, max.words=200, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
+dev.off()
+```
 
 ## Entries
 
@@ -43,34 +64,34 @@ The current list is as follows,
  [88] "libpng"                "libsodium"             "libssh2"
  [91] "libuv"                 "libxml2"               "libxslt"
  [94] "locuszoom"             "MAGENTA"               "magma"
- [97] "MAGMA"                 "Mega2"                 "metal"
-[100] "MONSTER"               "MORGAN"                "MR-MEGA"
-[103] "MsCAVIAR"              "nano"                  "ncbi-vdb"
-[106] "ncurses"               "netbeans"              "nettle"
-[109] "NLopt"                 "node"                  "nspr"
-[112] "oniguruma"             "openjdk"               "OpenMS"
-[115] "openssl"               "osca"                  "PAINTOR"
-[118] "pandoc"                "pandoc-citeproc"       "parallel"
-[121] "Pascal"                "pcre2"                 "pdf2djvu"
-[124] "pdfjam"                "phenoscanner"          "PhySO"
-[127] "plink"                 "plink-bgi"             "plinkseq"
-[130] "PoGo"                  "polyphen"              "poppler"
-[133] "proj"                  "PRSice"                "pspp"
-[136] "PWCoCo"                "qctool"                "qpdf"
-[139] "qt"                    "qtcreator"             "QTLtools"
-[142] "quarto"                "quicktest"             "R"
-[145] "raremetal"             "rclone"                "readline"
-[148] "regenie"               "RHHsoftware"           "rstudio"
-[151] "ruby"                  "samtools"              "shapeit"
-[154] "SMR"                   "snakemake"             "SNP2HLA"
-[157] "snptest"               "spread-sheet-widget"   "sqlite"
-[160] "sra-tools"             "ssw"                   "STAR"
-[163] "stata"                 "SurvivalAnalysis"      "SurvivalKit"
-[166] "tabix"                 "thunderbird"           "tidy"
-[169] "trinculo"              "trousers"              "Typora"
-[172] "unbound"               "vala"                  "vcftools"
-[175] "VEGAS2"                "VSCode"                "xpdf"
-[178] "yaml-cpp"              "Zotero"                "zstd"
+ [97] "Mega2"                 "metal"                 "MONSTER"
+[100] "MORGAN"                "MR-MEGA"               "MsCAVIAR"
+[103] "nano"                  "ncbi-vdb"              "ncurses"
+[106] "netbeans"              "nettle"                "NLopt"
+[109] "node"                  "nspr"                  "oniguruma"
+[112] "openjdk"               "OpenMS"                "openssl"
+[115] "osca"                  "PAINTOR"               "pandoc"
+[118] "pandoc-citeproc"       "parallel"              "Pascal"
+[121] "pcre2"                 "pdf2djvu"              "pdfjam"
+[124] "phenoscanner"          "PhySO"                 "plink"
+[127] "plink-bgi"             "plinkseq"              "PoGo"
+[130] "polyphen"              "poppler"               "proj"
+[133] "PRSice"                "pspp"                  "PWCoCo"
+[136] "qctool"                "qpdf"                  "qt"
+[139] "qtcreator"             "QTLtools"              "quarto"
+[142] "quicktest"             "R"                     "raremetal"
+[145] "rclone"                "readline"              "regenie"
+[148] "RHHsoftware"           "rstudio"               "ruby"
+[151] "samtools"              "shapeit"               "SMR"
+[154] "snakemake"             "SNP2HLA"               "snptest"
+[157] "spread-sheet-widget"   "sqlite"                "sra-tools"
+[160] "ssw"                   "STAR"                  "stata"
+[163] "SurvivalAnalysis"      "SurvivalKit"           "tabix"
+[166] "thunderbird"           "tidy"                  "trinculo"
+[169] "trousers"              "Typora"                "unbound"
+[172] "vala"                  "vcftools"              "VEGAS2"
+[175] "VSCode"                "xpdf"                  "yaml-cpp"
+[178] "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -109,7 +130,7 @@ available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmm
 largely be seen as sources which are used to build the reoository given above.
 
 CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom` 
-linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,333 as of 9/10/2023)
+linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,339 as of 13/10/2023)
 is linked with the latest R distribution, 4.3.1.
 
 For CEU users, it is easy to point to them, e.g.,
