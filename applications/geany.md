@@ -53,31 +53,34 @@ It requires gtk+>=3.22, so the setup for gtk+3.3.8 is somewhat involved. At leas
 
 ```bash
 module load gcc/7
-module load glib-2.56.2-gcc-5.4.0-4rjjizl
 # pango 1.41.1
-./configure --prefix=$CEUADMIN/pango/1.41.1
 wget https://download.gnome.org/sources/pango/1.41/pango-1.41.1.tar.xz
 tar xf pango-1.41.1.tar.xz
 cd pango-1.41.1/
 ./configure --prefix=$CEUADMIN/pango/1.41.1
 make
 make install
-# gtk+-3.24.9
+# gtk+-3.3.8
 wget https://download.gnome.org/sources/gtk+/3.3/gtk%2B-3.3.8.tar.xz
 tar xf gtk+-3.3.8.tar.xz
 cd gtk+-3.3.8
 module load ceuadmin/gettext/0.20
+module load ceuadmin/pango/1.41.1
+module load cups-2.2.3-gcc-5.4.0-du37l7s
+module load glib-2.56.2-gcc-5.4.0-4rjjizl
 export gcc7=/usr/local/software/master/gcc/7
 export intl=/usr/local/Cluster-Apps/ceuadmin/gettext/0.20
-module load cups-2.2.3-gcc-5.4.0-du37l7s
-module load ceuadmin/pango
 export include=${gcc7}/include:${intl}/include:${HPC_WORK}/include
 export ldflags=${gcc7}/lib64:${gcc7}/lib:${intl}/lib:${HPC_WORK}/lib64:${HPC_WORK}/lib
-configure --prefix=${CEUADMIN}/gtk+/3.24.9 CPPFLAGS=-I${include} LDFLAGS=-L${ldflags} LIBS=-lintl
+configure --prefix=${CEUADMIN}/gtk+/3.3.8
+# configure --prefix=${CEUADMIN}/gtk+/3.3.8 CPPFLAGS=-I${include} LDFLAGS=-L${ldflags} LIBS=-lintl
 make
+make install
 # geany 2.0
 wget https://github.com/geany/geany/releases/download/2.0.0/geany-2.0.tar.gz
 tar tvfz geany-2.0.tar.gz
+cd geany-2.0
+module load ceuadmin/gtk+/3.3.8
 ```
 
 Attempts to get around with available modules, e.g.,
