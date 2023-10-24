@@ -42,6 +42,8 @@ make install
 
 The `gcc/7` module is loaded since C++17 is required.
 
+To this point, the software as with the utilities is available upon `module load ceuadmin/geany`.
+
 ## 2.0
 
 (To be continued)
