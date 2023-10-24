@@ -23,7 +23,7 @@ rst2pdf --version
 
 We can see that options are added to the canonical `pip install rst2pdf`.
 
-## geany 1.38
+## 1.38
 
 This proceeds as follows,
 
@@ -39,7 +39,9 @@ make install
 
 The `gcc/7` module is loaded since C++17 is required.
 
-## geany 2.0
+## 2.0
+
+(To be continued)
 
 It requires gtk+>=3.22, so the setup for gtk+3.24.9 is somewhat involved. At least, these are necessary,
 
