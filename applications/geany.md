@@ -17,11 +17,14 @@ module load texlive
 module load python/3.8
 virtualenv py38
 source /usr/local/Cluster-Apps/ceuadmin/rst2pdf/0.101/py38/bin/activate
+pip install PyPI
 pip install rst2pdf[aafiguresupport,mathsupport,plantumlsupport,rawhtmlsupport,sphinx,svgsupport]
 rst2pdf --version
 ```
 
-We can see that options are added to the canonical `pip install rst2pdf`.
+As requested, `PyPI` (<https://pypi.org/>) is instadlled and options are added to the canonical `pip install rst2pdf` (see also <https://pypi.org/project/rst2pdf/>).
+
+Note that many utilities are now available, including `qr`, `svg2pdf`, `ttx` as well `sphinx-apidoc|autogen|build|quickstart`.
 
 ## 1.38
 
