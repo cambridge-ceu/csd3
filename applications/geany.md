@@ -24,7 +24,7 @@ rst2pdf --version
 
 As requested, `PyPI` (<https://pypi.org/>) is instadlled and options are added to the canonical `pip install rst2pdf` (see also <https://pypi.org/project/rst2pdf/>).
 
-Note that many utilities are now available, including `qr`, `svg2pdf`, `ttx` as well `sphinx-apidoc|autogen|build|quickstart`.
+Note that many utilities are now available, including `qr`, `svg2pdf`, `ttx` as well as `sphinx-apidoc|autogen|build|quickstart`.
 
 ## 1.38
 
