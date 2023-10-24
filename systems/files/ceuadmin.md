@@ -45,27 +45,27 @@ The current list is as follows[^ls],
 [112] "nspr"                  "oniguruma"             "openjdk"
 [115] "OpenMS"                "openssl"               "osca"
 [118] "PAINTOR"               "pandoc"                "pandoc-citeproc"
-[121] "parallel"              "Pascal"                "pcre2"
-[124] "pdf2djvu"              "pdfjam"                "phenoscanner"
-[127] "PhySO"                 "plink"                 "plink-bgi"
-[130] "plinkseq"              "PoGo"                  "polyphen"
-[133] "poppler"               "proj"                  "PRSice"
-[136] "pspp"                  "PWCoCo"                "qctool"
-[139] "qpdf"                  "qt"                    "qtcreator"
-[142] "QTLtools"              "quarto"                "quicktest"
-[145] "R"                     "raremetal"             "rclone"
-[148] "readline"              "regenie"               "RHHsoftware"
-[151] "rst2pdf"               "rstudio"               "ruby"
-[154] "samtools"              "shapeit"               "SMR"
-[157] "snakemake"             "SNP2HLA"               "snptest"
-[160] "spread-sheet-widget"   "sqlite"                "sra-tools"
-[163] "ssw"                   "STAR"                  "stata"
-[166] "SurvivalAnalysis"      "SurvivalKit"           "tabix"
-[169] "thunderbird"           "tidy"                  "trinculo"
-[172] "trousers"              "Typora"                "unbound"
-[175] "vala"                  "vcftools"              "VEGAS2"
-[178] "VSCode"                "xpdf"                  "yaml-cpp"
-[181] "Zotero"                "zstd"
+[121] "pango"                 "parallel"              "Pascal"
+[124] "pcre2"                 "pdf2djvu"              "pdfjam"
+[127] "phenoscanner"          "PhySO"                 "plink"
+[130] "plink-bgi"             "plinkseq"              "PoGo"
+[133] "polyphen"              "poppler"               "proj"
+[136] "PRSice"                "pspp"                  "PWCoCo"
+[139] "qctool"                "qpdf"                  "qt"
+[142] "qtcreator"             "QTLtools"              "quarto"
+[145] "quicktest"             "R"                     "raremetal"
+[148] "rclone"                "readline"              "regenie"
+[151] "RHHsoftware"           "rst2pdf"               "rstudio"
+[154] "ruby"                  "samtools"              "shapeit"
+[157] "SMR"                   "snakemake"             "SNP2HLA"
+[160] "snptest"               "spread-sheet-widget"   "sqlite"
+[163] "sra-tools"             "ssw"                   "STAR"
+[166] "stata"                 "SurvivalAnalysis"      "SurvivalKit"
+[169] "tabix"                 "thunderbird"           "tidy"
+[172] "trinculo"              "trousers"              "Typora"
+[175] "unbound"               "vala"                  "vcftools"
+[178] "VEGAS2"                "VSCode"                "xpdf"
+[181] "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -292,6 +292,8 @@ They are ordered chronologically.
 |2023-09-28 |openjdk/17.0.8+7                 |Generic             |
 |2023-10-24 |rst2pdf/0.101                    |Generic             |
 |2023-10-24 |geany/1.38                       |Generic             |
+|2023-10-24 |pango/1.41.1                     |Generic             |
+|2023-10-24 |gettext/0.20                     |Generic             |
 
 \* CEU or approved users only.
 

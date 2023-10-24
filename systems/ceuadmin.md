@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=182$$, $$\lambda=3$$.
+A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=183$$, $$\lambda=3$$.
 
 ```r
 library(RColorBrewer)
@@ -17,6 +17,7 @@ library(tm)
 library(wordcloud)
 ceuadmin <- Sys.getenv("CEUADMIN")
 modules <- setdiff(dir(ceuadmin),c("doc","lib","misc","sources"))
+length(modules)
 set.seed(1234321)
 docs <- Corpus(VectorSource(modules))
 m <- TermDocumentMatrix(docs) %>%
@@ -73,27 +74,27 @@ The current list is as follows,
 [112] "nspr"                  "oniguruma"             "openjdk"
 [115] "OpenMS"                "openssl"               "osca"
 [118] "PAINTOR"               "pandoc"                "pandoc-citeproc"
-[121] "parallel"              "Pascal"                "pcre2"
-[124] "pdf2djvu"              "pdfjam"                "phenoscanner"
-[127] "PhySO"                 "plink"                 "plink-bgi"
-[130] "plinkseq"              "PoGo"                  "polyphen"
-[133] "poppler"               "proj"                  "PRSice"
-[136] "pspp"                  "PWCoCo"                "qctool"
-[139] "qpdf"                  "qt"                    "qtcreator"
-[142] "QTLtools"              "quarto"                "quicktest"
-[145] "R"                     "raremetal"             "rclone"
-[148] "readline"              "regenie"               "RHHsoftware"
-[151] "rst2pdf"               "rstudio"               "ruby"
-[154] "samtools"              "shapeit"               "SMR"
-[157] "snakemake"             "SNP2HLA"               "snptest"
-[160] "spread-sheet-widget"   "sqlite"                "sra-tools"
-[163] "ssw"                   "STAR"                  "stata"
-[166] "SurvivalAnalysis"      "SurvivalKit"           "tabix"
-[169] "thunderbird"           "tidy"                  "trinculo"
-[172] "trousers"              "Typora"                "unbound"
-[175] "vala"                  "vcftools"              "VEGAS2"
-[178] "VSCode"                "xpdf"                  "yaml-cpp"
-[181] "Zotero"                "zstd"
+[121] "pango"                 "parallel"              "Pascal"
+[124] "pcre2"                 "pdf2djvu"              "pdfjam"
+[127] "phenoscanner"          "PhySO"                 "plink"
+[130] "plink-bgi"             "plinkseq"              "PoGo"
+[133] "polyphen"              "poppler"               "proj"
+[136] "PRSice"                "pspp"                  "PWCoCo"
+[139] "qctool"                "qpdf"                  "qt"
+[142] "qtcreator"             "QTLtools"              "quarto"
+[145] "quicktest"             "R"                     "raremetal"
+[148] "rclone"                "readline"              "regenie"
+[151] "RHHsoftware"           "rst2pdf"               "rstudio"
+[154] "ruby"                  "samtools"              "shapeit"
+[157] "SMR"                   "snakemake"             "SNP2HLA"
+[160] "snptest"               "spread-sheet-widget"   "sqlite"
+[163] "sra-tools"             "ssw"                   "STAR"
+[166] "stata"                 "SurvivalAnalysis"      "SurvivalKit"
+[169] "tabix"                 "thunderbird"           "tidy"
+[172] "trinculo"              "trousers"              "Typora"
+[175] "unbound"               "vala"                  "vcftools"
+[178] "VEGAS2"                "VSCode"                "xpdf"
+[181] "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
