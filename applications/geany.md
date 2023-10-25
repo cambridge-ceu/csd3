@@ -68,12 +68,16 @@ module load ceuadmin/gettext/0.20
 module load ceuadmin/pango/1.41.1
 module load cups-2.2.3-gcc-5.4.0-du37l7s
 module load glib-2.56.2-gcc-5.4.0-4rjjizl
+module load spack/current
+source $SPACK_ROOT/share/spack/setup-env.sh
 export gcc7=/usr/local/software/master/gcc/7
 export intl=/usr/local/Cluster-Apps/ceuadmin/gettext/0.20
 export include=${gcc7}/include:${intl}/include:${HPC_WORK}/include
 export ldflags=${gcc7}/lib64:${gcc7}/lib:${intl}/lib:${HPC_WORK}/lib64:${HPC_WORK}/lib
 configure --prefix=${CEUADMIN}/gtk+/3.3.8
 # configure --prefix=${CEUADMIN}/gtk+/3.3.8 CPPFLAGS=-I${include} LDFLAGS=-L${ldflags} LIBS=-lintl
+export pango=usr/local/Cluster-Apps/ceuadmin/pango/1.41.1
+# configure --prefix=${CEUADMIN}/gtk+/3.3.8 CXXFLAGS="-I{pango}/include/pango-1.0" LDFLAGS="-L${pango}/lib" --disable-glibtest
 make
 make install
 # geany 2.0
@@ -97,10 +101,5 @@ export h=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc
 export include=${h}/lib/gtk-2.0/include:${h}/include/gtk-2.0/gtk:${g}/include/glib-2.0:${g}/lib/glib-2.0/include
 export ldflags=${h}/lib:${g}/lib
 ./configure --prefix=$CEUADMIN/geany/2.0 --enable-binreloc=yes GTK_CFLAGS=-I${include} LDFLAGS=-L${ldflags} GTK_LIBS=-lgtk-x11-2.0 GTK_LIBS=-lglib-2.0
-# pango 1.5.2
-wget https://download.gnome.org/sources/pango/1.5/pango-1.5.2.tar.gz
-tar xvfz pango-1.5.2.tar.gz
-cd pango-1.5.2/
-configure --prefix=$CEUADMIN/pango/1.5.2 GLIB_CFLAGS="-I$g/include/glib-2.0 -I$g/lib/glib-2.0/include" GLIB_LIBS="-L$g/lib -L${intl} -lintl -lglib-2.0"
 make
 ```
