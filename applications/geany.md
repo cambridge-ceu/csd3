@@ -47,47 +47,100 @@ To this point, the software as with the utilities is available upon `module load
 
 ## 2.0
 
-(To be continued)
-
-It requires gtk+>=3.22, so the setup for gtk+3.3.8 is somewhat involved. At least, these are necessary,
+It requires GTK+ >= 3.24.
 
 ```bash
 module load gcc/7
-# pango 1.41.1
+wget -qO- https://github.com/geany/geany/releases/download/2.0.0/geany-2.0.tar.gz | \
+tar xvfz -
+cd geany-2.0
+module load ceuadmin/rst2pdf
+module load ceuadmin/gtk+/3.24.0
+export PKG_CONFIG_PATH=$CEUADMIN/gtk+/lib/pkgconfig:$PKG_CONFIG_PATH
+configure --prefix=$CEUADMIN/geany/2.0 --enable-binreloc=yes
+make
+make install
+```
+
+### gtk+ (success)
+
+```bash
+wget -qO- https://download.gnome.org/sources/gtk+/3.8/gtk%2B-3.8.0.tar.xz | \
+tar xfJ -
+cd gtk+-3.24.0
+module load ceuadmin/pango/1.41.1
+module load cups-2.2.3-gcc-5.4.0-du37l7s
+module load ceuadmin/gettext/0.20
+module load glib-2.56.2-gcc-5.4.0-4rjjizl
+module load spack/current
+source $SPACK_ROOT/share/spack/setup-env.sh
+configure --prefix=${CEUADMIN}/gtk+/3.24.0
+make
+make install
+```
+
+Strangely, the glib module has to be unloaded to avoid a call of a mislocated `sbang`.
+
+### pango (success)
+
+```bash
 wget https://download.gnome.org/sources/pango/1.41/pango-1.41.1.tar.xz
 tar xf pango-1.41.1.tar.xz
 cd pango-1.41.1/
 ./configure --prefix=$CEUADMIN/pango/1.41.1
 make
 make install
-# gtk+-3.3.8
-wget https://download.gnome.org/sources/gtk+/3.3/gtk%2B-3.3.8.tar.xz
-tar xf gtk+-3.3.8.tar.xz
-cd gtk+-3.3.8
-module load ceuadmin/gettext/0.20
-module load ceuadmin/pango/1.41.1
-module load cups-2.2.3-gcc-5.4.0-du37l7s
-module load glib-2.56.2-gcc-5.4.0-4rjjizl
-module load spack/current
-source $SPACK_ROOT/share/spack/setup-env.sh
-export gcc7=/usr/local/software/master/gcc/7
-export intl=/usr/local/Cluster-Apps/ceuadmin/gettext/0.20
-export include=${gcc7}/include:${intl}/include:${HPC_WORK}/include
-export ldflags=${gcc7}/lib64:${gcc7}/lib:${intl}/lib:${HPC_WORK}/lib64:${HPC_WORK}/lib
-configure --prefix=${CEUADMIN}/gtk+/3.3.8
-# configure --prefix=${CEUADMIN}/gtk+/3.3.8 CPPFLAGS=-I${include} LDFLAGS=-L${ldflags} LIBS=-lintl
-export pango=usr/local/Cluster-Apps/ceuadmin/pango/1.41.1
-# configure --prefix=${CEUADMIN}/gtk+/3.3.8 CXXFLAGS="-I{pango}/include/pango-1.0" LDFLAGS="-L${pango}/lib" --disable-glibtest
-make
-make install
-# geany 2.0
-wget https://github.com/geany/geany/releases/download/2.0.0/geany-2.0.tar.gz
-tar tvfz geany-2.0.tar.gz
-cd geany-2.0
-module load ceuadmin/gtk+/3.3.8
 ```
 
-Attempts to get around with available modules, e.g.,
+1.5.2 is also successful but again has permission issue.
+
+## legacy attempts
+
+These are to do with higher version of GTK+ or avaiable CSD3 modules.
+
+### cups (failed)
+
+```bash
+# cups 2.3.6 requires root
+wget -qO- https://github.com/apple/cups/archive/refs/tags/v2.3.6.tar.gz | \
+tar xfz -
+cd cups-2.3.6
+module load ceuadmin/libiconv/1.17
+configure --prefix=$CEUADMIN/cups/2.3.6 --with-cups-user
+make
+make install
+```
+
+The failure is due to the fact that root permission is required.
+
+### graphene (success)
+
+Web: <https://ebassi.github.io/graphene/>
+
+```bash
+# 1.4.0
+wget -qO- https://github.com/ebassi/graphene/archive/refs/tags/1.4.0.tar.gz | \
+tar xfvz -
+cd graphene-1.4.0/
+autogen.sh
+configure --prefix=$CEUADMIN/graphene/1.4.0
+make
+make install
+# 1.8.0
+wget -qO- https://github.com/ebassi/graphene/releases/download/1.8.0/graphene-1.8.0.tar.xz | \
+tar xfJ -
+cd graphene-1.8.0
+mkdir _build
+cd _build
+module load ninja
+meson --reconfigure --prefix=$CEUADMIN/graphene/1.8.0 ..
+cd ..
+ninja -C _build
+ninja -C _build test
+ninja -C _build install
+```
+
+### Others
 
 ```bash
 module load atk-2.20.0-gcc-5.4.0-kiljdkb
