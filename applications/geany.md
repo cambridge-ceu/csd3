@@ -56,6 +56,7 @@ tar xvfz -
 cd geany-2.0
 module load ceuadmin/rst2pdf
 module load ceuadmin/gtk+/3.24.0
+module load glib-2.56.2-gcc-5.4.0-4rjjizl
 export PKG_CONFIG_PATH=$CEUADMIN/gtk+/lib/pkgconfig:$PKG_CONFIG_PATH
 configure --prefix=$CEUADMIN/geany/2.0 --enable-binreloc=yes
 make
