@@ -65,6 +65,19 @@ make
 make install
 ```
 
+### geany-plugins
+
+```bash
+wget -qO- https://github.com/geany/geany-plugins/releases/download/2.0.0/geany-plugins-2.0.tar.gz | \
+tar xfz -
+cd geany-plugins-2.0/
+configure --prefix=$CEUADMIN/geany/2.0 --with-geany-libdir=$CEUADMIN/geany/2.0/lib
+make
+make install
+```
+
+We now have the plugins which can be seen from Tools --> Plugin Manager.
+
 ### gtk+
 
 ```bash
@@ -97,24 +110,11 @@ make install
 
 1.5.2 is also successful but again has permission issue.
 
-## geany-plugins
-
-```bash
-wget -qO- https://github.com/geany/geany-plugins/releases/download/2.0.0/geany-plugins-2.0.tar.gz | \
-tar xfz -
-cd geany-plugins-2.0/
-configure --prefix=$CEUADMIN/geany/2.0 --with-geany-libdir=$CEUADMIN/geany/2.0/lib
-make
-make install
-```
-
-We now have the plugins which can be seen from Tools --> Plugin Manager.
-
-## legacy attempts
+### legacy attempts
 
 These are to do with higher version of GTK+ or avaiable CSD3 modules.
 
-### cups (failed)
+#### cups (failed)
 
 ```bash
 # cups 2.3.6 requires root
@@ -129,7 +129,7 @@ make install
 
 The failure is due to the fact that root permission is required.
 
-### graphene
+#### graphene
 
 Web: <https://ebassi.github.io/graphene/>
 
@@ -156,7 +156,7 @@ ninja -C _build test
 ninja -C _build install
 ```
 
-### Others (failed)
+#### Others (failed)
 
 ```bash
 module load atk-2.20.0-gcc-5.4.0-kiljdkb
