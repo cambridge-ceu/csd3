@@ -47,6 +47,8 @@ To this point, the software as with the utilities is available upon `module load
 
 ## 2.0
 
+[YouTube](https://m.youtube.com/watch?v=VkG1YrNgb7U>)
+
 It requires GTK+ >= 3.24.
 
 ```bash
@@ -63,7 +65,7 @@ make
 make install
 ```
 
-### gtk+ (success)
+### gtk+
 
 ```bash
 wget -qO- https://download.gnome.org/sources/gtk+/3.8/gtk%2B-3.8.0.tar.xz | \
@@ -82,7 +84,7 @@ make install
 
 Strangely, the glib module has to be unloaded to avoid a call of a mislocated `sbang`.
 
-### pango (success)
+### pango
 
 ```bash
 wget https://download.gnome.org/sources/pango/1.41/pango-1.41.1.tar.xz
@@ -94,6 +96,19 @@ make install
 ```
 
 1.5.2 is also successful but again has permission issue.
+
+## geany-plugins
+
+```bash
+wget -qO- https://github.com/geany/geany-plugins/releases/download/2.0.0/geany-plugins-2.0.tar.gz | \
+tar xfz -
+cd geany-plugins-2.0/
+configure --prefix=$CEUADMIN/geany/2.0 --with-geany-libdir=$CEUADMIN/geany/2.0/lib
+make
+make install
+```
+
+We now have the plugins which can be seen from Tools --> Plugin Manager.
 
 ## legacy attempts
 
@@ -114,7 +129,7 @@ make install
 
 The failure is due to the fact that root permission is required.
 
-### graphene (success)
+### graphene
 
 Web: <https://ebassi.github.io/graphene/>
 
@@ -141,7 +156,7 @@ ninja -C _build test
 ninja -C _build install
 ```
 
-### Others
+### Others (failed)
 
 ```bash
 module load atk-2.20.0-gcc-5.4.0-kiljdkb
