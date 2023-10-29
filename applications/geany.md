@@ -143,10 +143,6 @@ make
 make install
 ```
 
-### Other attempts
-
-These are to do with higher version of GTK+ or avaiable CSD3 modules.
-
 ### gtk+ 3.90.0
 
 This requires graphene, see below.
@@ -203,4 +199,4 @@ make
 make install
 ```
 
-It fails to install since root permission is required.
+Nevertheless it fails to install since root permission is required.
