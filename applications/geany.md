@@ -129,13 +129,13 @@ and we build ceuadmin/hunspell/1.7.2
 
 ### enchant2
 
-Web: <https://src.fedoraproject.org/repo/pkgs/enchant2/enchant-2.6.1.tar.gz/>
+Web: <https://src.fedoraproject.org/repo/pkgs/enchant2/enchant-2.2.0.tar.gz/>
 
 ```bash
-wget -qO- ...long sha512 name... enchant-2.6.1.tar.gz | tar xfz -
-cd enchant-2.6.1/
-export PKG_CONFIG_PATH=${CEUADMIN}/hunspell/1.7.2/lib/pkgconfig/:$PKG_CONFIG_PATH
-./configure --prefix=$CEUADMIN/enchant/2.6.1 --enable-relocatable
+wget -qO- ...long sha512 name... enchant-2.2.0.tar.gz | tar xfz -
+cd enchant-2.2.0/
+export PKG_CONFIG_PATH=${CEUADMIN}/hunspell/1.7.0/lib/pkgconfig/:$PKG_CONFIG_PATH
+./configure --prefix=$CEUADMIN/enchant/2.2.0 --enable-relocatable
 make
 make install
 ```
