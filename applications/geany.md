@@ -131,6 +131,12 @@ wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_GB.aff
 wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_GB.dic
 wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.aff
 wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.dic
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/hyph_en_GB.dic
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/hyph_en_US.dic
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_en_GB.txt
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_en_US.txt
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_hyph_en_GB.txt
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_hyph_en_US.txt
 cd -
 ```
 
@@ -143,8 +149,7 @@ Web: <https://src.fedoraproject.org/repo/pkgs/enchant2/enchant-2.2.0.tar.gz/>
 ```bash
 wget -qO- ...long sha512 name... enchant-2.2.0.tar.gz | tar xfz -
 cd enchant-2.2.0/
-export PKG_CONFIG_PATH=${CEUADMIN}/hunspell/1.7.0/lib/pkgconfig/:$PKG_CONFIG_PATH
-./configure --prefix=$CEUADMIN/enchant/2.2.0 --enable-relocatable
+./configure --prefix=$CEUADMIN/enchant/2.2.0 --enable-relocatable PKG_CONFIG_PATH=${CEUADMIN}/hunspell/1.7.0/lib/pkgconfig
 make
 make install
 ```
