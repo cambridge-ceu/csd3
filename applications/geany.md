@@ -52,15 +52,14 @@ To this point, the software as with the utilities is available upon `module load
 It requires GTK+ >= 3.24.
 
 ```bash
-module load gcc/7
 wget -qO- https://github.com/geany/geany/releases/download/2.0.0/geany-2.0.tar.gz | \
 tar xvfz -
 cd geany-2.0
+module load gcc/7
 module load ceuadmin/rst2pdf
 module load ceuadmin/gtk+/3.24.0
 module load glib-2.56.2-gcc-5.4.0-4rjjizl
-export PKG_CONFIG_PATH=$CEUADMIN/gtk+/lib/pkgconfig:$PKG_CONFIG_PATH
-configure --prefix=$CEUADMIN/geany/2.0 --enable-binreloc=yes
+configure --prefix=$CEUADMIN/geany/2.0 --enable-binreloc=yes PKG_CONFIG_PATH=$CEUADMIN/gtk+/3.24.0/lib/pkgconfig
 make
 make install
 ```
@@ -71,6 +70,11 @@ make install
 wget -qO- https://github.com/geany/geany-plugins/releases/download/2.0.0/geany-plugins-2.0.tar.gz | \
 tar xfz -
 cd geany-plugins-2.0/
+module load gcc/7
+module load ceuadmin/enchant/2.2.0
+module load ceuadmin/gtk+/3.24.0
+module load glib-2.56.2-gcc-5.4.0-4rjjizl
+export PKG_CONFIG_PATH=$CEUADMIN/geany/2.0/lib/pkgconfig:${CEUADMIN}/gtk+/3.24.0/lib/pkgconfig:${CEUADMIN}/enchant/2.2.0:$PKG_CONFIG_PATH
 configure --prefix=$CEUADMIN/geany/2.0 --with-geany-libdir=$CEUADMIN/geany/2.0/lib
 make
 make install
@@ -86,7 +90,6 @@ tar xfJ -
 cd gtk+-3.24.0
 module load ceuadmin/pango/1.41.1
 module load cups-2.2.3-gcc-5.4.0-du37l7s
-module load ceuadmin/gettext/0.20
 module load glib-2.56.2-gcc-5.4.0-4rjjizl
 module load spack/current
 source $SPACK_ROOT/share/spack/setup-env.sh
@@ -94,8 +97,6 @@ configure --prefix=${CEUADMIN}/gtk+/3.24.0
 make
 make install
 ```
-
-Strangely, the glib module has to be unloaded to avoid a call of a mislocated `sbang`.
 
 ### pango 1.4.1
 
@@ -124,8 +125,13 @@ autoreconf -vfi
 make
 make install
 make check
-wget -O en_US.aff  https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.aff?id=a4473e06b56bfe35187e302754f6baaa8d75e54f
-wget -O en_US.dic https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.dic?id=a4473e06b56bfe35187e302754f6baaa8d75e54f
+mkdir -p $CEUADMIN/dictionaries/hunspell
+cd $CEUADMIN/dictionaries/hunspell
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_GB.aff
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_GB.dic
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.aff
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.dic
+cd -
 ```
 
 and we build ceuadmin/hunspell/1.7.0. Aspell dictionary location: <https://ftp.gnu.org/gnu/aspell/dict/en/>.
