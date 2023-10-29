@@ -47,7 +47,7 @@ To this point, the software as with the utilities is available upon `module load
 
 ## 2.0
 
-[YouTube](https://m.youtube.com/watch?v=VkG1YrNgb7U>)
+[Geany IDE 2.0 YouTube](https://m.youtube.com/watch?v=VkG1YrNgb7U>)
 
 It requires GTK+ >= 3.24.
 
@@ -109,6 +109,36 @@ make install
 ```
 
 1.5.2 is also successful but again has permission issue.
+
+
+### Hunspell
+
+Web: <https://hunspell.github.io/>
+
+```bash
+wget -qO- https://github.com/hunspell/hunspell/archive/refs/tags/v1.7.2.tar.gz | \
+tar xfz -
+cd hunspell-1.7.2/
+autoreconf -vfi
+./configure --prefix=$CEUADMIN/hunspell/1.7.2
+make
+make install
+```
+
+and we build ceuadmin/hunspell/1.7.2
+
+### enchant2
+
+Web: <https://src.fedoraproject.org/repo/pkgs/enchant2/enchant-2.6.1.tar.gz/>
+
+```bash
+wget -qO- ...long sha512 name... enchant-2.6.1.tar.gz | tar xfz -
+cd enchant-2.6.1/
+export PKG_CONFIG_PATH=${CEUADMIN}/hunspell/1.7.2/lib/pkgconfig/:$PKG_CONFIG_PATH
+./configure --prefix=$CEUADMIN/enchant/2.6.1 --enable-relocatable
+make
+make install
+```
 
 ### legacy attempts
 
