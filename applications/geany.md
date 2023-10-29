@@ -116,16 +116,19 @@ make install
 Web: <https://hunspell.github.io/>
 
 ```bash
-wget -qO- https://github.com/hunspell/hunspell/archive/refs/tags/v1.7.2.tar.gz | \
+wget -qO- https://github.com/hunspell/hunspell/archive/refs/tags/v1.7.0.tar.gz | \
 tar xfz -
-cd hunspell-1.7.2/
+cd hunspell-1.7.0/
 autoreconf -vfi
-./configure --prefix=$CEUADMIN/hunspell/1.7.2
+./configure --prefix=$CEUADMIN/hunspell/1.7.0
 make
 make install
+make check
+wget -O en_US.aff  https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.aff?id=a4473e06b56bfe35187e302754f6baaa8d75e54f
+wget -O en_US.dic https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.dic?id=a4473e06b56bfe35187e302754f6baaa8d75e54f
 ```
 
-and we build ceuadmin/hunspell/1.7.2
+and we build ceuadmin/hunspell/1.7.0. Aspell dictionary location: <https://ftp.gnu.org/gnu/aspell/dict/en/>.
 
 ### enchant2
 
