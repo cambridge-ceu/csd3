@@ -299,12 +299,12 @@ They are ordered chronologically.
 |2023-10-26 |glib/2.58.3                      |Generic             |
 |2023-10-27 |graphene/1.4.0                   |Generic             |
 |2023-10-27 |graphene/1.8.0                   |Generic             |
-|2023-10-24 |gtk+/3.8.0                       |Generic             |
 |2023-10-24 |gtk+/3.24.0                      |Generic             |
 |2023-10-24 |geany/2.0                        |Generic             |
 |2023-10-28 |hunspell/1.7.0                   |Generic             |
 |2023-10-28 |hunspell/1.7.2                   |Generic             |
 |2023-10-28 |enchant/2.2.0                    |Generic             |
+|2023-10-29 |gtk+/3.90.0                      |Generic             |
 
 \* CEU or approved users only.
 

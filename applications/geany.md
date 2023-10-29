@@ -78,7 +78,7 @@ make install
 
 We now have the plugins which can be seen from Tools --> Plugin Manager.
 
-### gtk+
+### gtk+ 3.24.0
 
 ```bash
 wget -qO- https://download.gnome.org/sources/gtk+/3.8/gtk%2B-3.8.0.tar.xz | \
@@ -97,7 +97,7 @@ make install
 
 Strangely, the glib module has to be unloaded to avoid a call of a mislocated `sbang`.
 
-### pango
+### pango 1.4.1
 
 ```bash
 wget https://download.gnome.org/sources/pango/1.41/pango-1.41.1.tar.xz
@@ -143,9 +143,26 @@ make
 make install
 ```
 
-### legacy attempts
+### Other attempts
 
 These are to do with higher version of GTK+ or avaiable CSD3 modules.
+
+### gtk+ 3.90.0
+
+This requires graphene, see below.
+
+```bash
+module load ceuadmin/gettext/0.20
+wget -qO- https://download.gnome.org/sources/gtk+/3.90/gtk%2B-3.90.0.tar.xz | \
+tar xJf -
+cd gtk+-3.90.0
+configure --prefix=$CEUADMIN/gtk+/3.90.0 PKG_CONFIG_PATH=${CEUADMIN}/graphene/1.8.0/lib64/pkgconfig --enable-static
+export LD_LIBRARY_PATH=${CEUADMIN}/graphene/1.8.0/lib64:$LD_LIBRARY_PATH
+ln -s ${CEUADMIN}/graphene/1.8.0/share/gir-1.0/Graphene-1.0.gir gsk/Graphene-1.0.gir
+ln -s ${CEUADMIN}/graphene/1.8.0/share/gir-1.0/Graphene-1.0.gir gtk/Graphene-1.0.gir
+```
+
+Some extra requirement to amend LD_LIBRARY_PATH and addition of Graphene-1.0.gir.
 
 #### cups (failed)
 
