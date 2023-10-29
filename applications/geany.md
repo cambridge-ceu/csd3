@@ -164,21 +164,6 @@ ln -s ${CEUADMIN}/graphene/1.8.0/share/gir-1.0/Graphene-1.0.gir gtk/Graphene-1.0
 
 Some extra requirement to amend LD_LIBRARY_PATH and addition of Graphene-1.0.gir.
 
-#### cups (failed)
-
-```bash
-# cups 2.3.6 requires root
-wget -qO- https://github.com/apple/cups/archive/refs/tags/v2.3.6.tar.gz | \
-tar xfz -
-cd cups-2.3.6
-module load ceuadmin/libiconv/1.17
-configure --prefix=$CEUADMIN/cups/2.3.6 --with-cups-user
-make
-make install
-```
-
-The failure is due to the fact that root permission is required.
-
 #### graphene
 
 Web: <https://ebassi.github.io/graphene/>
@@ -206,19 +191,16 @@ ninja -C _build test
 ninja -C _build install
 ```
 
-#### Others (failed)
+#### cups
 
 ```bash
-module load atk-2.20.0-gcc-5.4.0-kiljdkb
-module load cairo/1.16.0
-module load ceuadmin/fribidi
-module load glib-2.56.2-gcc-5.4.0-4rjjizl
-module load gtkplus-2.24.31-gcc-5.4.0-2a7zfti
-module load ceuadmin/rst2pdf
-export g=/usr/local/software/spack/current/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/glib-2.56.2-4rjjizlvegjs2vwdag76hzgvlck3zlqb
-export h=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/gtkplus-2.24.31-2a7zfti5vy55wwliac2v5bnwybhsfs4a
-export include=${h}/lib/gtk-2.0/include:${h}/include/gtk-2.0/gtk:${g}/include/glib-2.0:${g}/lib/glib-2.0/include
-export ldflags=${h}/lib:${g}/lib
-./configure --prefix=$CEUADMIN/geany/2.0 --enable-binreloc=yes GTK_CFLAGS=-I${include} LDFLAGS=-L${ldflags} GTK_LIBS=-lgtk-x11-2.0 GTK_LIBS=-lglib-2.0
+wget -qO- https://github.com/apple/cups/archive/refs/tags/v2.3.6.tar.gz | \
+tar xfz -
+cd cups-2.3.6
+module load ceuadmin/libiconv/1.17
+configure --prefix=$CEUADMIN/cups/2.3.6 --with-cups-user
 make
+make install
 ```
+
+It fails to install since root permission is required.
