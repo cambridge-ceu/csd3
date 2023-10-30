@@ -176,7 +176,7 @@ ln -s ${CEUADMIN}/graphene/1.8.0/share/gir-1.0/Graphene-1.0.gir gtk/Graphene-1.0
 
 Some extra requirement to amend LD_LIBRARY_PATH and addition of Graphene-1.0.gir.
 
-#### graphene 1.4.0 & 1.8.0
+### graphene 1.4.0 & 1.8.0
 
 Web: <https://ebassi.github.io/graphene/>
 
@@ -203,7 +203,7 @@ ninja -C _build test
 ninja -C _build install
 ```
 
-#### cups 2.3.6
+### cups 2.3.6
 
 ```bash
 wget -qO- https://github.com/apple/cups/archive/refs/tags/v2.3.6.tar.gz | \
