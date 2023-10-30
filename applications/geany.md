@@ -112,9 +112,11 @@ make install
 1.5.2 is also successful but again has permission issue.
 
 
-### Hunspell
+### Hunspell 1.7.0 & 1.7.2
 
 Web: <https://hunspell.github.io/>
+
+Aspell dictionary location: <https://ftp.gnu.org/gnu/aspell/dict/en/>
 
 ```bash
 wget -qO- https://github.com/hunspell/hunspell/archive/refs/tags/v1.7.0.tar.gz | \
@@ -140,9 +142,9 @@ wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_hyph_e
 cd -
 ```
 
-and we build ceuadmin/hunspell/1.7.0. Aspell dictionary location: <https://ftp.gnu.org/gnu/aspell/dict/en/>.
+and we build ceuadmin/hunspell/1.7.0. 2.7.3 is built similarly.
 
-### enchant2
+### enchant2 2.2.0
 
 Web: <https://src.fedoraproject.org/repo/pkgs/enchant2/enchant-2.2.0.tar.gz/>
 
@@ -171,7 +173,7 @@ ln -s ${CEUADMIN}/graphene/1.8.0/share/gir-1.0/Graphene-1.0.gir gtk/Graphene-1.0
 
 Some extra requirement to amend LD_LIBRARY_PATH and addition of Graphene-1.0.gir.
 
-#### graphene
+#### graphene 1.4.0 & 1.8.0
 
 Web: <https://ebassi.github.io/graphene/>
 
@@ -198,7 +200,7 @@ ninja -C _build test
 ninja -C _build install
 ```
 
-#### cups
+#### cups 2.3.6
 
 ```bash
 wget -qO- https://github.com/apple/cups/archive/refs/tags/v2.3.6.tar.gz | \
