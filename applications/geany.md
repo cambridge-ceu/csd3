@@ -123,6 +123,7 @@ wget -qO- https://github.com/hunspell/hunspell/archive/refs/tags/v1.7.0.tar.gz |
 tar xfz -
 cd hunspell-1.7.0/
 autoreconf -vfi
+module load gcc/7
 ./configure --prefix=$CEUADMIN/hunspell/1.7.0
 make
 make install
@@ -149,7 +150,8 @@ and we build ceuadmin/hunspell/1.7.0. 2.7.3 is built similarly.
 Web: <https://src.fedoraproject.org/repo/pkgs/enchant2/enchant-2.2.0.tar.gz/>
 
 ```bash
-wget -qO- ...long sha512 name... enchant-2.2.0.tar.gz | tar xfz -
+wget -qO- ...long sha512 name... enchant-2.2.0.tar.gz | \
+tar xfz -
 cd enchant-2.2.0/
 ./configure --prefix=$CEUADMIN/enchant/2.2.0 --enable-relocatable PKG_CONFIG_PATH=${CEUADMIN}/hunspell/1.7.0/lib/pkgconfig
 make
