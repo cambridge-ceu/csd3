@@ -4,10 +4,8 @@ sort: 20
 
 # geany
 
-Web: <https://www.geany.org/> (<https://www.geany.org/download/git/>)
-
-GitHub: <https://github.com/geany/geany/>
-
+Web: <https://www.geany.org/> (<https://www.geany.org/download/git/>)\
+GitHub: <https://github.com/geany/geany/>\
 Plugins: <https://plugins.geany.org/>
 
 > Geany is a powerful, stable and lightweight programmer's text editor that provides tons of useful features without bogging down your workflow. It runs on Linux, Windows and macOS, is translated into over 40 languages, and has built-in support for more than 50 programming languages.
@@ -118,8 +116,7 @@ make install
 
 ### Hunspell 1.7.0 & 1.7.2
 
-Web: <https://hunspell.github.io/>
-
+Web: <https://hunspell.github.io/>\
 Aspell dictionary location: <https://ftp.gnu.org/gnu/aspell/dict/en/>
 
 ```bash
