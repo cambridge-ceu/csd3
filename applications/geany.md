@@ -41,6 +41,12 @@ cd geany-1.38/
 configure --prefix=$CEUADMIN/geany/1.38 --enable-binreloc=yes
 make
 make install
+wget -qO- https://plugins.geany.org/geany-plugins/geany-plugins-1.38.tar.gz | \
+tar xvfz -
+cd geany-plugin-1.38
+configure --prefix=$CEUADMIN/geany/1.38 PKG_CONFIG_PATH=$CEUADMIN/geany/1.38/lib/pkgconfig
+make
+make install
 ```
 
 The `gcc/7` module is loaded since C++17 is required.
