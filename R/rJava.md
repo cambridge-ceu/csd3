@@ -16,7 +16,7 @@ ERROR: configuration failed for package ‘rJava’
 so quit R and run
 
 ```bash
-R CMD javareconf
+R CMD javareconf -e
 Rscript -e 'install.packages("rJava")'
 ```
 

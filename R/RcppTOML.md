@@ -37,3 +37,6 @@ The dilemma is possibly created by `gcc/6` used to build R, so we seek alternati
 module load R/4.2.2
 Rscript -e 'install.packages("RcppTOML")'
 ```
+
+For RcppTOML 0.2.2, rcdk 3.8.1, splines2 0.5.1, both gcc/7 and R/4.2.2 are necessary.
+

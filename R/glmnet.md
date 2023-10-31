@@ -59,6 +59,14 @@ Released on 23/3/2023, it requires C++17 so the Makevars as above becomes
 CXX17 = g++ -std=gnu++17 -fPIC
 ```
 
+## 4.1-8
+
+Besides ~/.R/Makevars, the following is necessary
+
+```bash
+module switch gcc/7
+```
+
 ### icelake
 
 #### Latest information
