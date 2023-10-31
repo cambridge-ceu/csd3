@@ -54,4 +54,4 @@ It is similar to Rfast, e.g., 0.1.5.1.
 
 ## Other packages
 
-These includes `rcdk`, `splines2`, which all involves `R/4.2.2`.
+These includes `rcdk`, which involves `R/4.2.2`.

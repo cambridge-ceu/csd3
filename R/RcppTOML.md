@@ -38,5 +38,4 @@ module load R/4.2.2
 Rscript -e 'install.packages("RcppTOML")'
 ```
 
-For RcppTOML 0.2.2, rcdk 3.8.1, splines2 0.5.1, both gcc/7 and R/4.2.2 are necessary.
-
+For RcppTOML 0.2.2, rcdk 3.8.1, splines2 0.5.1 (but gcc/7 is sufficient for R 4.3.2), both gcc/7 and R/4.2.2 are necessary.
