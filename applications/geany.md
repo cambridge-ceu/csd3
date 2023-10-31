@@ -44,7 +44,8 @@ make install
 wget -qO- https://plugins.geany.org/geany-plugins/geany-plugins-1.38.tar.gz | \
 tar xvfz -
 cd geany-plugin-1.38
-configure --prefix=$CEUADMIN/geany/1.38 PKG_CONFIG_PATH=$CEUADMIN/geany/1.38/lib/pkgconfig
+configure --prefix=$CEUADMIN/geany/1.38 --enable-spellcheck \
+          PKG_CONFIG_PATH=$CEUADMIN/geany/1.38/lib/pkgconfig:$CEUAMIN/enchant/2.2.0/lib/pkgconfig
 make
 make install
 ```
@@ -82,8 +83,9 @@ module load gcc/7
 module load ceuadmin/enchant/2.2.0
 module load ceuadmin/gtk+/3.24.0
 module load glib-2.56.2-gcc-5.4.0-4rjjizl
-export PKG_CONFIG_PATH=$CEUADMIN/geany/2.0/lib/pkgconfig:${CEUADMIN}/gtk+/3.24.0/lib/pkgconfig:${CEUADMIN}/enchant/2.2.0:$PKG_CONFIG_PATH
-configure --prefix=$CEUADMIN/geany/2.0 --with-geany-libdir=$CEUADMIN/geany/2.0/lib
+configure --prefix=$CEUADMIN/geany/2.0 --with-geany-libdir=$CEUADMIN/geany/2.0/lib \
+          --enable-spellcheck \
+          PKG_CONFIG_PATH=${CEUADMIN}/enchant/2.2.0/lib/pkgconfig:${CEUADMIN}/gtk+/3.24.0/lib/pkgconfig
 make
 make install
 ```
@@ -204,7 +206,7 @@ cd graphene-1.8.0
 mkdir _build
 cd _build
 module load ninja
-meson --reconfigure --prefix=$CEUADMIN/graphene/1.8.0 ..
+meson setup --prefix=$CEUADMIN/graphene/1.8.0 ..
 cd ..
 ninja -C _build
 ninja -C _build test
