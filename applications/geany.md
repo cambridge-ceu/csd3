@@ -50,7 +50,54 @@ make
 make install
 ```
 
-The `gcc/7` module is loaded since C++17 is required.
+The `gcc/7` module is loaded since C++17 is required. Spellcheck requires Hunspell and enchant to be available.
+
+### Hunspell 1.7.0 & 1.7.2
+
+Web: <https://hunspell.github.io/>\
+Aspell dictionary location: <https://ftp.gnu.org/gnu/aspell/dict/en/>
+
+```bash
+wget -qO- https://github.com/hunspell/hunspell/archive/refs/tags/v1.7.0.tar.gz | \
+tar xfz -
+cd hunspell-1.7.0/
+autoreconf -vfi
+module load gcc/7
+./configure --prefix=$CEUADMIN/hunspell/1.7.0
+make
+make install
+make check
+mkdir -p $CEUADMIN/dictionaries/hunspell
+cd $CEUADMIN/dictionaries/hunspell
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_GB.aff
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_GB.dic
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.aff
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.dic
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/hyph_en_GB.dic
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/hyph_en_US.dic
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_en_GB.txt
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_en_US.txt
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_hyph_en_GB.txt
+wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_hyph_en_US.txt
+cd -
+```
+
+and we build ceuadmin/hunspell/1.7.0. 2.7.3 is built similarly.
+
+### enchant2 2.2.0
+
+Web: <https://src.fedoraproject.org/repo/pkgs/enchant2/enchant-2.2.0.tar.gz/>
+
+```bash
+wget -qO- ...long sha512 name... enchant-2.2.0.tar.gz | \
+tar xfz -
+cd enchant-2.2.0/
+./configure --prefix=$CEUADMIN/enchant/2.2.0 --enable-relocatable \
+            --with-hunspell --with-hunspell-dir=$CEUADMIN/hunspell/dictionaries \
+            PKG_CONFIG_PATH=$CEUADMIN/hunspell/1.7.0/lib/pkgconfig
+make
+make install
+```
 
 To this point, the software as with the utilities is available upon `module load ceuadmin/geany`.
 
@@ -121,57 +168,9 @@ make install
 
 1.5.2 is also successful but again has permission issue.
 
-
-### Hunspell 1.7.0 & 1.7.2
-
-Web: <https://hunspell.github.io/>\
-Aspell dictionary location: <https://ftp.gnu.org/gnu/aspell/dict/en/>
-
-```bash
-wget -qO- https://github.com/hunspell/hunspell/archive/refs/tags/v1.7.0.tar.gz | \
-tar xfz -
-cd hunspell-1.7.0/
-autoreconf -vfi
-module load gcc/7
-./configure --prefix=$CEUADMIN/hunspell/1.7.0
-make
-make install
-make check
-mkdir -p $CEUADMIN/dictionaries/hunspell
-cd $CEUADMIN/dictionaries/hunspell
-wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_GB.aff
-wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_GB.dic
-wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.aff
-wget https://cgit.freedesktop.org/libreoffice/dictionaries/plain/en/en_US.dic
-wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/hyph_en_GB.dic
-wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/hyph_en_US.dic
-wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_en_GB.txt
-wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_en_US.txt
-wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_hyph_en_GB.txt
-wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_hyph_en_US.txt
-cd -
-```
-
-and we build ceuadmin/hunspell/1.7.0. 2.7.3 is built similarly.
-
-### enchant2 2.2.0
-
-Web: <https://src.fedoraproject.org/repo/pkgs/enchant2/enchant-2.2.0.tar.gz/>
-
-```bash
-wget -qO- ...long sha512 name... enchant-2.2.0.tar.gz | \
-tar xfz -
-cd enchant-2.2.0/
-./configure --prefix=$CEUADMIN/enchant/2.2.0 --enable-relocatable \
-            --with-hunspell --with-hunspell-dir=$CEUADMIN/hunspell/dictionaries \
-            PKG_CONFIG_PATH=$CEUADMIN/hunspell/1.7.0/lib/pkgconfig
-make
-make install
-```
-
 ### gtk+ 3.90.0
 
-This requires graphene, see below.
+It is as yet not needed, and requires graphene.
 
 ```bash
 module load ceuadmin/gettext/0.20
