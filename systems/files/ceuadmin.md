@@ -66,8 +66,8 @@ The current list is as follows[^ls],
 [175] "tidy"                  "trinculo"              "trousers"
 [178] "Typora"                "unbound"               "vala"
 [181] "vcftools"              "VEGAS2"                "VSCode"
-[184] "xpdf"                  "yaml-cpp"              "Zotero"
-[187] "zstd"
+[184] "vte"                   "xpdf"                  "yaml-cpp"
+[187] "Zotero"                "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -305,6 +305,7 @@ They are ordered chronologically.
 |2023-10-28 |hunspell/1.7.2                   |Generic             |
 |2023-10-28 |enchant/2.2.0                    |Generic             |
 |2023-10-29 |gtk+/3.90.0                      |Generic             |
+|2023-10-31 |vte/0.55.0                       |Generic             |
 
 \* CEU or approved users only.
 

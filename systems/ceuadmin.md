@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=187$$, $$\lambda=3$$.
+A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=188$$, $$\lambda=3$$.
 
 ```r
 library(RColorBrewer)
@@ -95,8 +95,8 @@ The current list is as follows,
 [175] "tidy"                  "trinculo"              "trousers"
 [178] "Typora"                "unbound"               "vala"
 [181] "vcftools"              "VEGAS2"                "VSCode"
-[184] "xpdf"                  "yaml-cpp"              "Zotero"
-[187] "zstd"
+[184] "vte"                   "xpdf"                  "yaml-cpp"
+[187] "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
