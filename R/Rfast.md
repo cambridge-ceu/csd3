@@ -32,9 +32,25 @@ module load R/4.2.2
 Rscript -e 'install.packages("Rfast")'
 ```
 
+## 2.0.9
+
+This is done under R 4.3.2
+
+```bash
+Rscript -e 'download.packages("Rfast",".")'
+tar xvfz Rfast_2.0.9.tar.gz
+R CND INSTALL Rfast
+module load R/4.2.2
+R CMD INSTALL Rfast
+```
+
+the second call of `R CMD INSTALL` simply take advantages of `GLIBCXX_3.4.26`. Instances can be found for instance,
+
+> strings /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-9.2.0-jx6bolbg5xir5al7djbzfubyojnz6tq2/lib64/libstdc++.so.6 | grep GLIBCXX
+
 ## Rfast2
 
-It is similar to Rfast, e.g., 0.1.5.
+It is similar to Rfast, e.g., 0.1.5.1.
 
 ## Other packages
 
