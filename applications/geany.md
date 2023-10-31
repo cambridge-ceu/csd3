@@ -29,28 +29,7 @@ As requested, `PyPI` (<https://pypi.org/>) is instadlled and options are added t
 
 Note that many utilities are now available, including `qr`, `svg2pdf`, `ttx` as well as `sphinx-apidoc|autogen|build|quickstart`.
 
-## 1.38
-
-This proceeds as follows,
-
-```bash
-module load gcc/7
-wget https://github.com/geany/geany/releases/download/1.38.0/geany-1.38.tar.gz
-tar xfz geany-1.38.tar.gz
-cd geany-1.38/
-configure --prefix=$CEUADMIN/geany/1.38 --enable-binreloc=yes
-make
-make install
-wget -qO- https://plugins.geany.org/geany-plugins/geany-plugins-1.38.tar.gz | \
-tar xvfz -
-cd geany-plugin-1.38
-configure --prefix=$CEUADMIN/geany/1.38 --enable-spellcheck \
-          PKG_CONFIG_PATH=$CEUADMIN/geany/1.38/lib/pkgconfig:$CEUAMIN/enchant/2.2.0/lib/pkgconfig
-make
-make install
-```
-
-The `gcc/7` module is loaded since C++17 is required. Spellcheck requires Hunspell and enchant to be available.
+Spellcheck requires Hunspell and enchant to be available.
 
 ### Hunspell 1.7.0 & 1.7.2
 
@@ -99,6 +78,29 @@ make
 make install
 ```
 
+## 1.38
+
+This proceeds as follows,
+
+```bash
+module load gcc/7
+wget https://github.com/geany/geany/releases/download/1.38.0/geany-1.38.tar.gz
+tar xfz geany-1.38.tar.gz
+cd geany-1.38/
+configure --prefix=$CEUADMIN/geany/1.38 --enable-binreloc=yes
+make
+make install
+wget -qO- https://plugins.geany.org/geany-plugins/geany-plugins-1.38.tar.gz | \
+tar xvfz -
+cd geany-plugin-1.38
+configure --prefix=$CEUADMIN/geany/1.38 --enable-spellcheck \
+          PKG_CONFIG_PATH=$CEUADMIN/geany/1.38/lib/pkgconfig:$CEUAMIN/enchant/2.2.0/lib/pkgconfig
+make
+make install
+```
+
+The `gcc/7` module is loaded since C++17 is required.
+
 To this point, the software as with the utilities is available upon `module load ceuadmin/geany`.
 
 ## 2.0
@@ -120,7 +122,7 @@ make
 make install
 ```
 
-### geany-plugins
+The plugins are more involved.
 
 ```bash
 wget -qO- https://github.com/geany/geany-plugins/releases/download/2.0.0/geany-plugins-2.0.tar.gz | \
