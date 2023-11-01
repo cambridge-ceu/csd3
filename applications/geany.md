@@ -61,7 +61,7 @@ wget https://cgit.freedesktop.org/libreoffice/dictionaries/tree/en/README_hyph_e
 cd -
 ```
 
-and we build ceuadmin/hunspell/1.7.0. 2.7.3 is built similarly.
+and we build ceuadmin/hunspell/1.7.0. 1.7.2 is built similarly.
 
 ### enchant2 2.2.0
 
