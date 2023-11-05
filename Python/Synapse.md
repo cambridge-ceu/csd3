@@ -63,6 +63,8 @@ pip install synapse
 
 ### 2.2 R packages
 
+Web: <https://r-docs.synapse.org/>
+
 ```bash
 module load ceuadmin/R
 Rscript -e '
