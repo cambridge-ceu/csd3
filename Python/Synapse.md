@@ -96,7 +96,7 @@ synLogin('synapse_username', 'password')
 files <- synapserutils::syncFromSynapse('syn51364943')
 ```
 
-## Anaconda3-2023.09-0
+## Anaconda3/2023.09-0
 
 Web: <https://www.anaconda.com/download#downloads>
 
@@ -116,7 +116,7 @@ pip install synapseclient
 pip install synapse
 ```
 
-into location `~/rds/public_databases/software/Anaconda3-2023.09-0`..
+into location `~/rds/public_databases/software/Anaconda3-2023.09-0`. A module as such is loaded with `module load Anaconda3/2023.09-0`.
 
 ## 3. Application to Biobank Pharma Proteomics Project (UKB-PPP)
 
