@@ -97,6 +97,18 @@ synLogin('synapse_username', 'password')
 files <- synapserutils::syncFromSynapse('syn51364943')
 ```
 
+We can also use tken,
+
+```bash
+  export token=$(cat /home/$USER/doc/ukb-ppp-download)
+  Rscript -e '
+    library(synapserutils)
+    ukb_ppp_download_token <- Sys.getenv("token")
+    sysLogin(authToken=ukb_ppp_download_token)
+    files <- synapserutils::syncFromSynapse("syn51365301")
+  '
+```
+
 ## Anaconda3/2023.09-0
 
 Web: <https://www.anaconda.com/download#downloads>
