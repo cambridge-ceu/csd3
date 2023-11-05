@@ -4,7 +4,8 @@ sort: 6
 
 # Synapse
 
-Web: <https://www.synapse.org> ([GitHub](https://github.com/Sage-Bionetworks/))
+Web: <https://www.synapse.org> ([GitHub](https://github.com/Sage-Bionetworks/))\
+Token: <https://www.synapse.org/#!PersonalAccessTokens:>
 
 ## 1. Miniconda
 
