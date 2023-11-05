@@ -95,7 +95,7 @@ It is the same syntax as above.
 library(synapser)
 library(synapserutils)
  
-synLogin('synapse_username', 'password')
+synLogin('synapse_username', 'password'", rememberMe=TRUE)
 files <- synapserutils::syncFromSynapse('syn51364943')
 ```
 
