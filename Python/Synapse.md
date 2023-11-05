@@ -12,7 +12,9 @@ Web: <https://www.synapse.org> ([GitHub](https://github.com/Sage-Bionetworks/))
 
 ```bash
 module load ceuadmin/snakemake
+conda install --prefix ${CEUADMIN}/snakemake/7.19.1 -c conda-forge requests[version='<3'] pandas[version='<1.5'] pysftp jinja2 markupsafe
 pip install synapseclient
+pip install synapse
 ```
 
 where we borrow the setup for snakemake to save space. Whenever appropriate, the `synapseclient` can be upgraded.
@@ -77,6 +79,8 @@ Several notes are worthwhile,
 * In line with requirement of package `rjson` in need of R >= 4.0.0 and built under R 4.3.1 as implemented in module `ceuadmin/R`, One may also install the Python virtual environment as required by package `reticulate`.
 * To facilitate installation of the R package(s), we download them and make changes as needed.
 * The change to `configure` is necessary, since by default it uses root directories (a user does not have permission) but all Python packages have been installed.
+
+synapser 1.2.0.143 is similar, but calls for `conda install --yes --prefix /usr/local/Cluster-Apps/ceuadmin/snakemake/7.19.1 -c conda-forge pandas pysftp jinja2 markupsafe`.
 
 ### 2.3 Command-line tool
 
