@@ -136,6 +136,7 @@ configure --prefix=$CEUADMIN/geany/2.0 --with-geany-libdir=$CEUADMIN/geany/2.0/l
           --enable-spellcheck \
           PKG_CONFIG_PATH=${CEUADMIN}/enchant/2.2.0/lib/pkgconfig:${CEUADMIN}/gtk+/3.24.0/lib/pkgconfig
 make
+make check
 make install
 ```
 

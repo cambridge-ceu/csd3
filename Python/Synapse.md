@@ -12,7 +12,7 @@ Web: <https://www.synapse.org> ([GitHub](https://github.com/Sage-Bionetworks/))
 
 ```bash
 module load ceuadmin/snakemake
-pip3 install synapseclient
+pip install synapseclient
 ```
 
 where we borrow the setup for snakemake to save space. Whenever appropriate, the `synapseclient` can be upgraded.
@@ -52,8 +52,8 @@ conda activate /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10
 # information: not to update conda but install synapseclient/synpase all over again
 # conda update -n base -c defaults conda
 # conda init bash
-/usr/local/software/anaconda/3.2019-10/bin/conda install --prefix /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10 \
-                                                         -c conda-forge requests[version='<3'] pandas[version='<1.5'] pysftp jinja2 markupsafe
+conda install --prefix /usr/local/Cluster-Apps/ceuadmin/gatk/4.4.0.0/anaconda-3.2019-10 \
+              -c conda-forge requests[version='<3'] pandas[version='<1.5'] pysftp jinja2 markupsafe
 pip install synapseclient
 pip install synapse
 ```
@@ -91,6 +91,28 @@ library(synapserutils)
 synLogin('synapse_username', 'password')
 files <- synapserutils::syncFromSynapse('syn51364943')
 ```
+
+## Anaconda3-2023.09-0
+
+Web: <https://www.anaconda.com/download#downloads>
+
+This updates Anaconda3 including Python 3.11.
+
+```bash
+wget https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
+bash Anaconda3-2023.09-0-Linux-x86_64.sh
+conda install scikit-learn-intelex
+python -m sklearnex my_application.py
+conda config --set auto_activate_base false
+eval "$(/rds/project/jmmh2/rds-jmmh2-public_databases/software/Anaconda3-2023.09-0/bin/conda shell.bash hook)"
+/rds/project/jmmh2/rds-jmmh2-public_databases/software/Anaconda3-2023.09-0/bin/conda init
+conda activate
+python --version
+pip install synapseclient
+pip install synapse
+```
+
+into location `~/rds/public_databases/software/Anaconda3-2023.09-0`..
 
 ## 3. Application to Biobank Pharma Proteomics Project (UKB-PPP)
 
