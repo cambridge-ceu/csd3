@@ -32,6 +32,8 @@ This is described pragmatically as follows.
 synapse get -r syn51364943
 ```
 
+One can specify token, `synapse -p token get -r syn51364943`.
+
 ### 1.3 Python script
 
 ```python
@@ -41,6 +43,14 @@ import synapseutils
 syn = synapseclient.Synapse()
 syn.login('synapse_username','password')
 files = synapseutils.syncFromSynapse(syn, 'syn51364943')
+```
+
+To specify token, use `sys.login(authToken=)`; i.e.,
+
+```bash
+import os
+token = os.environ['token']
+syn.logtin(authToken=token)
 ```
 
 ## 2. Anaconda
@@ -99,7 +109,7 @@ synLogin('synapse_username', 'password'", rememberMe=TRUE)
 files <- synapserutils::syncFromSynapse('syn51364943')
 ```
 
-We can also use tken,
+We can also use token,
 
 ```bash
   export token=$(cat /home/$USER/doc/ukb-ppp-download)
