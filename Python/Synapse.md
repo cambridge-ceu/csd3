@@ -5,7 +5,8 @@ sort: 6
 # Synapse
 
 Web: <https://www.synapse.org> ([GitHub](https://github.com/Sage-Bionetworks/))\
-Token: <https://www.synapse.org/#!PersonalAccessTokens:>
+Token: <https://www.synapse.org/#!PersonalAccessTokens:>\
+Help forum: <https://www.synapse.org/#!SynapseForum:default>
 
 ## 1. Miniconda
 
@@ -23,6 +24,8 @@ where we borrow the setup for snakemake to save space. Whenever appropriate, the
 ```bash
 pip install --upgrade synapseclient
 ```
+
+For GitHub installation, it is recommended that `git clone git@github.com:Sage-Bionetworks/synapsePythonClient.git` to avoid time out.
 
 ### 1.2 Command-line tool
 
