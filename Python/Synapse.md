@@ -124,7 +124,7 @@ We can also use token,
   '
 ```
 
-## Anaconda3/2023.09-0
+### Anaconda3/2023.09-0
 
 Web: <https://www.anaconda.com/download#downloads>
 
@@ -159,7 +159,7 @@ Web: <https://help.synapse.org/docs/Synapse-Infrastructure.2835382273.html>
 > This table lists the IP addresses Synapse.org uses. These IP addresses are dedicated and granted to Synapse by AWS. Your IT department may need to add these IP addresses to an “allow list” to allow you to connect to Synapse. Make sure to include ALL addresses.
 
 Host Name | IP Address
-----------|-----------
+----------|-----------------------------------------------------
 www.synapse.org (web UI) |
  &nbsp;	| 34.234.4.162
  &nbsp; | 34.233.95.87
