@@ -146,13 +146,42 @@ pip install synapse
 
 into location `~/rds/public_databases/software/Anaconda3-2023.09-0`. A module as such is loaded with `module load Anaconda3/2023.09-0`.
 
-## 3. Application to Biobank Pharma Proteomics Project (UKB-PPP)
+## 3. A IP-enabled list
+
+Web: <https://help.synapse.org/docs/Synapse-Infrastructure.2835382273.html>
+
+<Synapse.org> is hosted in Amazon Web Service (AWS) in the US-EAST-1 (aka the Standard) region.
+
+<www.synapse.org> is the web-based user interface for users to manage data, projects, profiles and teams,
+
+<repo-prod.prod.sagebase.org> is the endpoint for Synapse Programmatic Clients. 
+
+> This table lists the IP addresses Synapse.org uses. These IP addresses are dedicated and granted to Synapse by AWS. Your IT department may need to add these IP addresses to an “allow list” to allow you to connect to Synapse. Make sure to include ALL addresses.
+
+Host Name | IP Address
+----------|-----------
+www.synapse.org (web UI) |
+ &nbsp;	| 34.234.4.162
+ &nbsp; | 34.233.95.87
+ &nbsp; | 54.166.5.127
+ &nbsp; | 54.226.68.127
+ &nbsp; | 3.215.225.38
+ &nbsp; | 44.194.89.171
+repo-prod.prod.sagebase.org (endpoint for programmatic clients) |
+ &nbsp;	| 52.45.221.235
+ &nbsp; | 52.7.75.49
+ &nbsp; | 3.234.175.106
+ &nbsp; | 3.88.97.84
+ &nbsp; | 44.194.236.113
+ &nbsp; | 54.205.219.117
+
+## 4. Application to Biobank Pharma Proteomics Project (UKB-PPP)
 
 * Synapse page, <https://www.synapse.org/#!Synapse:syn51364943>
 * pGWAS summary statistics, <https://www.synapse.org/#!Synapse:syn51365301>
 * Twitter post, <https://twitter.com/chrisdwhelan/status/1658865452368515072>
 
-### 3.1 Downloads
+### 4.1 Downloads
 
 This is for Olink Explore 1536,
 
@@ -210,7 +239,7 @@ ln -fs /rds/project/jmmh2/rds-jmmh2-results/public/proteomics/UKB-PPP/synapseCac
 
 for by default, the `~/.synapseCache` would have a maximum of <50Gb (or a 55Gb limit) which is quickly overflowed.
 
-### 3.2 Reformat
+### 4.2 Reformat
 
 This step will facilitate practical use, and is illustrated with the European (discovery) data.
 
