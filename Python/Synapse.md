@@ -146,7 +146,7 @@ pip install synapse
 
 into location `~/rds/public_databases/software/Anaconda3-2023.09-0`. A module as such is loaded with `module load Anaconda3/2023.09-0`.
 
-## 3. A IP-enabled list
+## 3. Synapse Infrastructure
 
 Web: <https://help.synapse.org/docs/Synapse-Infrastructure.2835382273.html>
 
@@ -160,14 +160,14 @@ Web: <https://help.synapse.org/docs/Synapse-Infrastructure.2835382273.html>
 
 Host Name | IP Address
 ----------|-----------------------------------------------------
-www.synapse.org (web UI) |
+<www.synapse.org> (web UI) | &nbsp;
  &nbsp;	| 34.234.4.162
  &nbsp; | 34.233.95.87
  &nbsp; | 54.166.5.127
  &nbsp; | 54.226.68.127
  &nbsp; | 3.215.225.38
  &nbsp; | 44.194.89.171
-repo-prod.prod.sagebase.org (endpoint for programmatic clients) |
+<repo-prod.prod.sagebase.org> (endpoint for programmatic clients) | &nbsp;
  &nbsp;	| 52.45.221.235
  &nbsp; | 52.7.75.49
  &nbsp; | 3.234.175.106
