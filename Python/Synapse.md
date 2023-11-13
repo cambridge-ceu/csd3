@@ -124,7 +124,7 @@ We can also use token,
   '
 ```
 
-### Anaconda3/2023.09-0
+### 2.5 Anaconda3/2023.09-0
 
 Web: <https://www.anaconda.com/download#downloads>
 
@@ -150,25 +150,25 @@ into location `~/rds/public_databases/software/Anaconda3-2023.09-0`. A module as
 
 Web: <https://help.synapse.org/docs/Synapse-Infrastructure.2835382273.html>
 
-<Synapse.org> is hosted in Amazon Web Service (AWS) in the US-EAST-1 (aka the Standard) region.
+[Synapse.org](synapse.org/) is hosted in Amazon Web Service (AWS) in the US-EAST-1 (aka the Standard) region.
 
-<www.synapse.org> is the web-based user interface for users to manage data, projects, profiles and teams,
+[www.synapse.org](www.synapse.org/) is the web-based user interface for users to manage data, projects, profiles and teams,
 
-<repo-prod.prod.sagebase.org> is the endpoint for Synapse Programmatic Clients. 
+[repo-prod.prod.sagebase.org](repo-prod.prod.sagebase.org/) is the endpoint for [Synapse Programmatic Clients](https://help.synapse.org/docs/API-Clients-and-Documentation.1985446128.html).
 
-> This table lists the IP addresses Synapse.org uses. These IP addresses are dedicated and granted to Synapse by AWS. Your IT department may need to add these IP addresses to an “allow list” to allow you to connect to Synapse. Make sure to include ALL addresses.
+> This table lists the IP addresses [Synapse.org](synapse.org/) uses. These IP addresses are dedicated and granted to Synapse by AWS. Your IT department may need to add these IP addresses to an “allow list” to allow you to connect to Synapse. Make sure to include ALL addresses.
 
 Host Name                  | IP Address
 ---------------------------|---------------------------------------------
-<www.synapse.org> (web UI) | &nbsp;
- &nbsp;	| 34.234.4.162
+[www.synapse.org](www.synapse.org/) (web UI) | &nbsp;
+ &nbsp; | 34.234.4.162
  &nbsp; | 34.233.95.87
  &nbsp; | 54.166.5.127
  &nbsp; | 54.226.68.127
  &nbsp; | 3.215.225.38
  &nbsp; | 44.194.89.171
-<repo-prod.prod.sagebase.org> (endpoint for programmatic clients) | &nbsp;
- &nbsp;	| 52.45.221.235
+[repo-prod.prod.sagebase.org](repo-prod.prod.sagebase.org/) (endpoint for programmatic clients) | &nbsp;
+ &nbsp; | 52.45.221.235
  &nbsp; | 52.7.75.49
  &nbsp; | 3.234.175.106
  &nbsp; | 3.88.97.84
