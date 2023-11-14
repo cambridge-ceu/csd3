@@ -8,6 +8,18 @@ Web: <https://www.synapse.org> ([GitHub](https://github.com/Sage-Bionetworks/))\
 Token: <https://www.synapse.org/#!PersonalAccessTokens:>\
 Help forum: <https://www.synapse.org/#!SynapseForum:default>
 
+A configure file ~/.synapseConfig would contain the following,
+
+```
+[authentication]
+username=<user name>
+password=<password>
+[endpoints]
+repoEndpoint=https://repo-prod.prod.sagebase.org/repo/v1
+authEndpoint=https://repo-prod.prod.sagebase.org/auth/v1
+fileHandleEndpoint=https://repo-prod.prod.sagebase.org/file/v1
+```
+
 ## 1. Miniconda
 
 ### 1.1 Python packages
