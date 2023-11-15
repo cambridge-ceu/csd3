@@ -20,6 +20,10 @@ authEndpoint=https://repo-prod.prod.sagebase.org/auth/v1
 fileHandleEndpoint=https://repo-prod.prod.sagebase.org/file/v1
 ```
 
+which does away with -u -p options (see below).
+
+Synapse also accepts token, e.g., `export SYNAPSE_AUTH_TOKEN=$(cat ~/doc/ukb-ppp-download).`
+
 ## 1. Miniconda
 
 ### 1.1 Python packages
@@ -47,7 +51,7 @@ This is described pragmatically as follows.
 synapse get -r syn51364943
 ```
 
-One can specify token, `synapse -p token get -r syn51364943`.
+One can specify token, `synapse -p ${SYNAPSE_AUTH_TOKEN} get -r syn51364943`.
 
 ### 1.3 Python script
 
