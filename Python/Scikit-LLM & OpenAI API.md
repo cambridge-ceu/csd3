@@ -34,6 +34,9 @@ SKLLMConfig.set_openai_org(OPENAI_ORG_ID)
 (To be refined)
 
 ```python
+
+# Zero-Shot GPTClassifier
+
 # importing zeroshotgptclassifier module and classification dataset
 from skllm import ZeroShotGPTClassifier
 from skllm.datasets import get_classification_dataset
@@ -74,6 +77,8 @@ for review, sentiment in zip(X_test, predicted_labels):
 from sklearn.metrics import accuracy_score
 print(f"Accuracy: {accuracy_score(y_test, predicted_labels):.2f}")
 
+# No Labeled Data
+
 # defining the model
 clf_no_label = ZeroShotGPTClassifier()
 # No training so passing the labels only for prediction
@@ -87,6 +92,8 @@ training_data):
 print(f"Accuracy: {accuracy_score(y_test, predicted_labels_without_
 training_data):.2f}")
 
+# Multilabel Zero-Shot Text Classification
+
 # importing Multi-Label zeroshot module and classification
 from skllm import MultiLabelZeroShotGPTClassifier
 from skllm.datasets import get_multilabel_classification
@@ -98,6 +105,8 @@ clf = MultiLabelZeroShotGPTClassifier(max_labels=3)
 clf.fit(X, y)
 # making predictions
 labels = clf.predict(X)
+
+# No Labeled Data
 
 # getting classification dataset for prediction only
 from skllm.datasets import get_multilabel_classification_dataset
@@ -117,6 +126,8 @@ clf = MultiLabelZeroShotGPTClassifier(max_labels=3)
 clf.fit(None, [candidate_labels])
 # predicting the data
 labels = clf.predict(X)
+
+# Text Vectorization
 
 # Importing the GPTVectorizer class from the skllm.preprocessing module
 from skllm.preprocessing import GPTVectorizer
@@ -145,6 +156,8 @@ clf.fit(X_train, y_train_encoded)
 # Predicting the labels for the test data 'X_test' using the trained 
 pipeline
 yh = clf.predict(X_test)
+
+# Text Summarization
 
 # Importing the GPTSummarizer class from the skllm.preprocessing module
 from skllm.preprocessing import GPTSummarizer
