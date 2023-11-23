@@ -11,9 +11,9 @@
 graph LR;
 jekyll-rtd-theme --> csd3
 csd3 --> system["THE SYSTEM"]
-csd3 --> applications["APPLICATIONS"]
 csd3 --> Python["Python packages"]
 csd3 --> R["R packages"]
+csd3 --> applications["APPLICATIONS"]
 csd3 --> cardio["CARDIO"]
 system --> System
 system --> sysdot["..."]
