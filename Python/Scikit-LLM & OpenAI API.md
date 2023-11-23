@@ -230,32 +230,32 @@ chaid = RetrievalQA.from_chain_type(llm=openai_lm, chain_type='retrieval', retri
 # Input the query at runtime
 user_query = input("Enter your query: ")
 # Run the QA using the provided query
-qa_resu1t = chain.run(user_query)
-print("0penAI Response", qa_result)
+qa_result = chain.run(user_query)
+print("OpenAI Response:", qa_result)
 
 # Input the query at runtime
 user_query = input("Enter your query: ")
 # Run the QA using the provided query
 qa_result = chain.run(user_query)
-print("0penAI Response", qa_resu1t)
+print("OpenAI Response:", qa_result)
 
 # Input the query at runtime
 user_query = input("Enter your query: ")
 # Run the QA using the provided query
-qa_resu1t = chain.run(user_query)
-print("OpenAI Response", qa_result)
-
-# Input the query at runtilne
-user_query = inplrt("Enter your query: ")
-# Run the QA using the provided query
-qa_resu1t = chain.run(user_query)
-print ( "0penAI Response: " , qa_resu1t)
+qa_result = chain.run(user_query)
+print("OpenAI Response:", qa_result)
 
 # Input the query at runtime
 user_query = input("Enter your query: ")
-8 Run the Qn using the provided query
-qa_resu1t = chain.run(user_query)
-print("OpenAI Response:", qa_resu1t)
+# Run the QA using the provided query
+qa_result = chain.run(user_query)
+print("OpenAI Response:", qa_result)
+
+# Input the query at runtime
+user_query = input("Enter your query: ")
+# Run the QA using the provided query
+qa_result = chain.run(user_query)
+print("OpenAI Response:", qa_result)
 ```
 
 ## Reference
