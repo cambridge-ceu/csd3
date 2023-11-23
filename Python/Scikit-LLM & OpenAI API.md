@@ -33,8 +33,9 @@ SKLLMConfig.set_openai_org(OPENAI_ORG_ID)
 
 (To be refined)
 
-```python
+### SciKit-LLM
 
+```python
 # Zero-Shot GPTClassifier
 
 # importing zeroshotgptclassifier module and classification dataset
@@ -172,6 +173,89 @@ input data 'X'.
 # It fits the model to the data and generates the summaries, which are 
 assigned to the variable 'summaries'
 summaries = s.fit_transform(X)
+```
+
+### OpenAI API
+
+Web: Alice in Wonderland, <https://www.gutenberg.org/ebooks/11>
+
+```bash
+export OPENAI_API_KEY=$(grep sk ~/doc/OpenAI)
+```
+
+```python
+# Initialisation
+
+```python
+import openai
+import langchain
+from langchain import OpenAI
+from langchain.document_loaders import UnstructuredFileLoader
+from langchain.vectorstores import Chroma
+from langchain.chains import RetrievalQA
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.text_splitter import CharacterTextSplitter
+
+openai.api_key = "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"
+
+# Create a separate instance for the language model
+openai_lm = OpenAI()
+
+# Test the environment
+
+response = openai.Completion.create(engine="davinci", prompt="Once upon a time in a", max_tokens=50)
+print(response.choices[0].text.strip())
+
+# Data preparation
+
+def load_pdf(pdf_path):
+    loader = UnstructuredFileLoader(pdf_path)  # Corrected the typo and used parentheses
+    pages = loader.load()
+    return pages
+
+# Assuming the rest of your code is correct
+pages = load_pdf('/content/drive/MyDrive/Colab Notebooks/Alices_Advantures_in_Wonderland_by_Lewis_Carroroll.pdf')
+text_to_chunks = CharacterTextSplitter(chunk_size=500, chunk_overlap=0)  # Corrected the typo in the class name
+chunks_of_text = text_to_chunks.split_documents(pages)
+
+# Embeddings and VectorDB Using LangChain and Chroma
+
+# Assuming the correct setup for openai.api_key and chunks_of_text
+embeddings_function = OpenAIEmbeddings(openai_api_key=openai.api_key)
+docsearch = Chroma.from_documents(chunks_of_text, embeddings_function)
+chaid = RetrievalQA.from_chain_type(llm=openai_lm, chain_type='retrieval', retriever=docsearch.as_retriever())
+
+# Utilising OpenAI API
+
+# Input the query at runtime
+user_query = input("Enter your query: ")
+# Run the QA using the provided query
+qa_resu1t = chain.run(user_query)
+print("0penAI Response", qa_result)
+
+# Input the query at runtime
+user_query = input("Enter your query: ")
+# Run the QA using the provided query
+qa_result = chain.run(user_query)
+print("0penAI Response", qa_resu1t)
+
+# Input the query at runtime
+user_query = input("Enter your query: ")
+# Run the QA using the provided query
+qa_resu1t = chain.run(user_query)
+print("OpenAI Response", qa_result)
+
+# Input the query at runtilne
+user_query = inplrt("Enter your query: ")
+# Run the QA using the provided query
+qa_resu1t = chain.run(user_query)
+print ( "0penAI Response: " , qa_resu1t)
+
+# Input the query at runtime
+user_query = input("Enter your query: ")
+8 Run the Qn using the provided query
+qa_resu1t = chain.run(user_query)
+print("OpenAI Response:", qa_resu1t)
 ```
 
 ## Reference
