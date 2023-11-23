@@ -4,6 +4,8 @@ sort: 7
 
 # Large language model
 
+We take advantages of the Adaconda module.
+
 ## Python packages
 
 ```bash
