@@ -14,6 +14,8 @@ pip install openai langchain pypdf unstructured "unstructured[pdf]"
 
 ## Configuration
 
+Web: <https://platform.openai.com/account/api-keys> & <https://platform.openai.com/account/org-settings>
+
 ```python
  importing SKLLMConfig to configure OpenAI API (key and Name)
 from skllm.config import SKLLMConfig
