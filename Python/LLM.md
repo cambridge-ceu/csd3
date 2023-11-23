@@ -31,7 +31,7 @@ SKLLMConfig.set_openai_org(OPENAI_ORG_ID)
 
 ## Testing
 
-(To be revised)
+(To be refined)
 
 Web: Chapter 6 of book from [Amazon](https://www.amazon.co.uk/gp/reader/1484299930/?tag=ebookshare-21)
 
