@@ -2,9 +2,9 @@
 sort: 7
 ---
 
-# Large language model
+# Scikit-LLM & OpenAI API
 
-We take advantages of the Adaconda module.
+We take advantages of the Anaconda module.
 
 ## Python packages
 
@@ -29,11 +29,9 @@ SKLLMConfig.set_openai_key(OPENAI_API_KEY )
 SKLLMConfig.set_openai_org(OPENAI_ORG_ID)
 ```
 
-## Testing
+## Implementation
 
 (To be refined)
-
-Web: Chapter 6 of book from [Amazon](https://www.amazon.co.uk/gp/reader/1484299930/?tag=ebookshare-21)
 
 ```python
 # importing zeroshotgptclassifier module and classification dataset
@@ -162,3 +160,7 @@ input data 'X'.
 assigned to the variable 'summaries'
 summaries = s.fit_transform(X)
 ```
+
+## Reference
+
+Kulkarni A, Shivananda A, Kulkarni A, Gudivada D (2023). Applied Generative AI for Beginners. Apress, Berkeley, CA. <https://link.springer.com/book/10.1007/978-1-4842-9994-4> ([Amazon](https://www.amazon.co.uk/gp/reader/1484299930/?tag=ebookshare-21))
