@@ -6,7 +6,7 @@ sort: 7
 
 We take advantages of the Anaconda module.
 
-## Python packages
+## Installation
 
 ```bash
 module load ceuadmin/Anaconda3/2023.09-0
