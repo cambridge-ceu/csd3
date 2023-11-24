@@ -4,7 +4,15 @@ sort: 5
 
 # Scikit-LLM & OpenAI API
 
-We take advantages of the Anaconda module.
+## Module
+
+They are available with
+
+```bash
+module load ceuadmin/Anaconda3/2023.09-0
+```
+
+which take advantages of the Anaconda module; however like other software in this respository more details are given below.
 
 ## Installation
 
