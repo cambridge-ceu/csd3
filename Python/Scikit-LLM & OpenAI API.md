@@ -4,7 +4,7 @@ sort: 5
 
 # Scikit-LLM & OpenAI API
 
-## Module
+## CSD3 Module
 
 They are available with
 

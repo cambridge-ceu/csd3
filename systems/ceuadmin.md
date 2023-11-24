@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=189$$, $$\lambda=3$$.
+A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=190$$, $$\lambda=3$$.
 
 ```r
 library(RColorBrewer)
@@ -62,41 +62,42 @@ The current list is as follows,
  [76] "hunspell"              "icu"                   "ImageJ"
  [79] "impute"                "JabRef"                "JAGS"
  [82] "jq"                    "KentUtils"             "KING"
- [85] "lapack"                "ldc2"                  "LDstore"
- [88] "LEMMA"                 "libcares"              "libgit2"
- [91] "libglvnd"              "libiconv"              "libidn2"
- [94] "libntlm"               "libpng"                "libsodium"
- [97] "libssh2"               "libuv"                 "libxml2"
-[100] "libxslt"               "locuszoom"             "MAGENTA"
-[103] "magma"                 "Mega2"                 "metal"
-[106] "MONSTER"               "MORGAN"                "MR-MEGA"
-[109] "MsCAVIAR"              "nano"                  "ncbi-vdb"
-[112] "ncurses"               "netbeans"              "nettle"
-[115] "NLopt"                 "node"                  "nspr"
-[118] "oniguruma"             "openjdk"               "OpenMS"
-[121] "openssl"               "osca"                  "PAINTOR"
-[124] "pandoc"                "pandoc-citeproc"       "pango"
-[127] "parallel"              "Pascal"                "pcre2"
-[130] "pdf2djvu"              "pdfjam"                "phenoscanner"
-[133] "PhySO"                 "plink"                 "plink-bgi"
-[136] "plinkseq"              "PoGo"                  "polyphen"
-[139] "poppler"               "proj"                  "PRSice"
-[142] "pspp"                  "PWCoCo"                "qctool"
-[145] "qpdf"                  "qt"                    "qtcreator"
-[148] "QTLtools"              "quarto"                "quicktest"
-[151] "R"                     "raremetal"             "rclone"
-[154] "readline"              "regenie"               "RHHsoftware"
-[157] "rst2pdf"               "rstudio"               "ruby"
-[160] "samtools"              "shapeit"               "SMR"
-[163] "snakemake"             "SNP2HLA"               "snptest"
-[166] "spread-sheet-widget"   "sqlite"                "sra-tools"
-[169] "ssw"                   "STAR"                  "stata"
-[172] "SurvivalAnalysis"      "SurvivalKit"           "tabix"
-[175] "thunderbird"           "tidy"                  "trinculo"
-[178] "trousers"              "Typora"                "unbound"
-[181] "vala"                  "vcftools"              "VEGAS2"
-[184] "VSCode"                "vte"                   "xpdf"
-[187] "yaml-cpp"              "Zotero"                "zstd"
+ [85] "lapack"                "ldc2"                  "ldsc"
+ [88] "LDstore"               "LEMMA"                 "libcares"
+ [91] "libgit2"               "libglvnd"              "libiconv"
+ [94] "libidn2"               "libntlm"               "libpng"
+ [97] "libsodium"             "libssh2"               "libuv"
+[100] "libxml2"               "libxslt"               "locuszoom"
+[103] "MAGENTA"               "magma"                 "Mega2"
+[106] "metal"                 "MONSTER"               "MORGAN"
+[109] "MR-MEGA"               "MsCAVIAR"              "nano"
+[112] "ncbi-vdb"              "ncurses"               "netbeans"
+[115] "nettle"                "NLopt"                 "node"
+[118] "nspr"                  "oniguruma"             "openjdk"
+[121] "OpenMS"                "openssl"               "osca"
+[124] "PAINTOR"               "pandoc"                "pandoc-citeproc"
+[127] "pango"                 "parallel"              "Pascal"
+[130] "pcre2"                 "pdf2djvu"              "pdfjam"
+[133] "phenoscanner"          "PhySO"                 "plink"
+[136] "plink-bgi"             "plinkseq"              "PoGo"
+[139] "polyphen"              "poppler"               "proj"
+[142] "PRSice"                "pspp"                  "PWCoCo"
+[145] "qctool"                "qpdf"                  "qt"
+[148] "qtcreator"             "QTLtools"              "quarto"
+[151] "quicktest"             "R"                     "raremetal"
+[154] "rclone"                "readline"              "regenie"
+[157] "RHHsoftware"           "rst2pdf"               "rstudio"
+[160] "ruby"                  "samtools"              "shapeit"
+[163] "SMR"                   "snakemake"             "SNP2HLA"
+[166] "snptest"               "spread-sheet-widget"   "sqlite"
+[169] "sra-tools"             "ssw"                   "STAR"
+[172] "stata"                 "SurvivalAnalysis"      "SurvivalKit"
+[175] "tabix"                 "thunderbird"           "tidy"
+[178] "trinculo"              "trousers"              "Typora"
+[181] "unbound"               "vala"                  "vcftools"
+[184] "VEGAS2"                "VSCode"                "vte"
+[187] "xpdf"                  "yaml-cpp"              "Zotero"
+[190] "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -324,6 +325,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-09-27 | ncbi-vdb/3.0.8              | Genetics            |
     | 2023-09-27 | sra-tools/3.0.8             | Genetics            |
     | 2023-09-27 | gatk/4.4.0.0                | Genetics            |
+    | 2023-11-24 | ldsc/1.0.1                  | Genetics            |
 
     \* CEU or approved users only.
 

@@ -6,6 +6,14 @@ sort: 3
 
 Web: [https://github.com/bulik/ldsc](https://github.com/bulik/ldsc) ([Google group](https://groups.google.com/g/ldsc_users/)).
 
+## CSD3 Module
+
+It is loaded with
+
+```bash
+module load ceuadmin/ldsc
+```
+
 ## Installation
 
 We proceed as follows for installation into HPC_WORK=/rds/user/$USER/hpc-work,
