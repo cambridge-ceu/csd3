@@ -4,7 +4,7 @@ sort: 1
 
 # gwas2vcf
 
-Web: https://github.com/MRCIEU/gwas2vcf
+Web: <https://github.com/MRCIEU/gwas2vcf>
 
 The required setup script is as follows,
 
