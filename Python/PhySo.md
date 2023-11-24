@@ -6,6 +6,27 @@ sort: 4
 
 Web: <https://github.com/WassimTenachi/PhySO>.
 
+## CSD3 module
+
+It is recommended that the following commands are necessary,
+
+```bash
+module load ceuadmin/PhySO
+. /usr/local/Cluster-Apps/miniconda3/4.5.1/etc/profile.d/conda.sh
+conda activate ${PhySO}
+```
+
+Line containing `conda.sh` could also be in ~/.bashrc, and `conda deactivate` will unload the module.
+
+However, it appears simpler with
+
+```bash
+module load ceuadmin/PhySO
+source activate $PhySO
+```
+
+with `source deactivate`. In both cases, `PhySO` is already defined by the `ceuadmin/PhySO` module.
+
 ## Installation
 
 The download is as usual.
@@ -75,27 +96,6 @@ Note that at the `Getting started` section Python session needs to be started fo
 Besides `torch`, it is noticeable that `jupyterlab` and `scikit-learn` are also made available as dependencies. In fact, quite some packages are installed to `lib/python3.8/site-packages/`, leading to an overall size of ~7GB.
 
 A full list is visible through `conda list`.
-
-## CSD3 module
-
-It is recommended that the following commands are necessary,
-
-```bash
-module load ceuadmin/PhySO
-. /usr/local/Cluster-Apps/miniconda3/4.5.1/etc/profile.d/conda.sh
-conda activate ${PhySO}
-```
-
-Line containing `conda.sh` could also be in ~/.bashrc, and `conda deactivate` will unload the module.
-
-However, it appears simpler with
-
-```bash
-module load ceuadmin/PhySO
-source activate $PhySO
-```
-
-with `source deactivate`. In both cases, `PhySO` is already defined by the `ceuadmin/PhySO` module.
 
 ## A full test
 
