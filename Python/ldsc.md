@@ -14,7 +14,7 @@ The module is loaded with
 module load ceuadmin/ldsc
 ```
 
-abd one can run `python ldsc.py` smoothly as documented.
+and one can run `python ldsc.py` smoothly as documented.
 
 ## Installation
 
