@@ -6,13 +6,15 @@ sort: 3
 
 Web: [https://github.com/bulik/ldsc](https://github.com/bulik/ldsc) ([Google group](https://groups.google.com/g/ldsc_users/)).
 
-## CSD3 Module
+## CSD3 module
 
-It is loaded with
+The module is loaded with
 
 ```bash
 module load ceuadmin/ldsc
 ```
+
+abd one can run `python ldsc.py` smoothly as documented.
 
 ## Installation
 
