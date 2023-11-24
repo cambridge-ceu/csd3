@@ -8,7 +8,19 @@ Web: <https://www.synapse.org> ([GitHub](https://github.com/Sage-Bionetworks/))\
 Token: <https://www.synapse.org/#!PersonalAccessTokens:>\
 Help forum: <https://www.synapse.org/#!SynapseForum:default>
 
-A configure file ~/.synapseConfig would contain the following,
+## CSD3 modules
+
+As will be seen below, it is available as companion of both snakemake and Anaconda, namely,
+
+```bash
+module load ceuadmin/snakemake
+# or anaconda/3.2019-10
+module load ceuadmin/gatk
+# or 2023.09-0
+module load ceuadmin/Anaconda3
+```
+
+In all cases, a configure file ~/.synapseConfig can be used with the following specifications,
 
 ```
 [authentication]
