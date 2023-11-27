@@ -218,6 +218,8 @@ pip install jupyter --user
 
 installs libraries at `$HOME/.local`. To install package to a specific directory, use the `--target=` (or `--install-option="--prefix=$PREFIX_PATH"`) option and flag in PYTHONPATH environmental variable.
 
+Recent version of packages such as fastapi-0.104.1 would complain about lack of `setup.py` but one can get around with `pip install .` which uses its `pyproject.toml`.
+
 It is advised to use virual environments, i.e.,
 
 ```bash
