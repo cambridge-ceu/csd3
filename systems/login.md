@@ -19,6 +19,8 @@ The CSD3 login address is `login.hpc.cam.ac.uk` with a mapping table[^cpu]
 | &nbsp;                                          | gpu-r-[1-10]   | Visualisation Nodes|                                              
 | login-icelake.hpc.cam.ac.uk                     | login-q-[1-4]  | CentOS8[^icelake]  |
 
+Additional information is available with `sinfo`, `scontrol show node` in the case of SLURM.
+
 On a GPU, we have from `module list`
 
 ```bash
