@@ -299,6 +299,8 @@ e.g., `module load r-3.6.0-gcc-5.4.0-bzuuksv rstudio/1.1.383`.
 
 For information about Bioconductor installation, see [https://bioconductor.org/install/](https://bioconductor.org/install/).
 
+### Package installation
+
 The following code installs package for weighted correlation network analysis ([WGCNA](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/)).
 
 ```r
@@ -350,6 +352,10 @@ To upgrade Bioconductor, we can specify as follows,
 ```r
 BiocManager::install(version = "3.14")
 ```
+
+### Integration with Rcpp
+
+Template-Rcpp, <https://github.com/stsds/Template-Rcpp> (LinkedIn [post](https://www.linkedin.com/feed/update/urn:li:activity:7136774813066358785/))
 
 ## ruby
 
