@@ -53,6 +53,19 @@ where we borrow the setup for snakemake to save space. Whenever appropriate, the
 pip install --upgrade synapseclient
 ```
 
+e.g., 
+
+```
+UPGRADE AVAILABLE
+
+A more recent version of the Synapse Client (3.2.0) is available. Your version (3.1.1) can be upgraded by typing:
+    pip install --upgrade synapseclient
+
+Python Synapse Client version 3.2.0 release notes
+
+https://python-docs.synapse.org/build/html/news.html
+```
+
 For GitHub installation, it is recommended that `git clone git@github.com:Sage-Bionetworks/synapsePythonClient.git` to avoid time out.
 
 ### 1.2 Command-line tool
