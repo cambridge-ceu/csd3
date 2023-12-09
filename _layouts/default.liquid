@@ -17,18 +17,19 @@ layout: tasks/compress
         {%- include rest/styles.liquid -%}
         {%- include common/script.liquid -%}
         {%- include extra/head.html -%}
+<style>
+.ucam-brand img {
+  width: 40px; /* Adjust the width as needed */
+  height: auto;
+  /* Add any other styling properties */
+}
+</style>
     </head>
     <body class="container">
         {%- include templates/sidebar.liquid -%}
         {%- include templates/content.liquid -%}
         {%- include templates/addons.liquid -%}
         {%- include extra/body.html -%}
-        <!-- Example: Inserting the home image under the home icon -->
-        <div class="home-icon-container">
-            <a href="/">
-                <img src="{{ site.home_image | relative_url }}" alt="Home">
-            </a>
-        </div>
         {%- include rest/script.liquid -%}
         {%- include common/mermaid.liquid -%}
         {%- include common/mathjax.liquid -%}
