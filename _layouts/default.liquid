@@ -23,16 +23,16 @@ layout: tasks/compress
         {%- include templates/content.liquid -%}
         {%- include templates/addons.liquid -%}
         {%- include extra/body.html -%}
-    <!-- Example: Inserting the home image under the home icon -->
-    <div class="home-icon-container">
-        <a href="/">
-            <img src="{{ site.home_image | relative_url }}" alt="Home">
-        </a>
-    </div>
+        <!-- Example: Inserting the home image under the home icon -->
+        <div class="home-icon-container">
+            <a href="/">
+                <img src="{{ site.home_image | relative_url }}" alt="Home">
+            </a>
+        </div>
         {%- include rest/script.liquid -%}
-        {%- include common/mermaid.liquid-%}
-        {%- include common/mathjax.liquid-%}
-        {%- include common/google_gtag.liquid-%}
-        {%- include common/google_adsense.liquid-%}
+        {%- include common/mermaid.liquid -%}
+        {%- include common/mathjax.liquid -%}
+        {%- include common/google_gtag.liquid -%}
+        {%- include common/google_adsense.liquid -%}
     </body>
 </html>
