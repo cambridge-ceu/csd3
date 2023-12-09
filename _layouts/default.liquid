@@ -5,11 +5,6 @@ layout: tasks/compress
 {%- include rest/defaults.liquid -%}
 {%- include common/rest/defaults.liquid -%}
 
-<!-- Example: Inserting the home image from _config.yml under the home icon in default.liquid -->
-<a class="home-icon" href="/">
-    <img src="{{ site.home_image | relative_url }}" alt="Home">
-</a>
-
 <!DOCTYPE html>
 <html lang="{{ lang }}" dir="{{ direction }}">
     <head>
@@ -28,6 +23,12 @@ layout: tasks/compress
         {%- include templates/content.liquid -%}
         {%- include templates/addons.liquid -%}
         {%- include extra/body.html -%}
+    <!-- Example: Inserting the home image under the home icon -->
+    <div class="home-icon-container">
+        <a href="/">
+            <img src="{{ site.home_image | relative_url }}" alt="Home">
+        </a>
+    </div>
         {%- include rest/script.liquid -%}
         {%- include common/mermaid.liquid-%}
         {%- include common/mathjax.liquid-%}
