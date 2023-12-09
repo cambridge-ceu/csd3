@@ -4,7 +4,7 @@ description: A collection of CSD3 notes
 encoding: UTF-8
 baseurl: /csd3/
 url: https://cambridge-ceu.github.io
-home_image: /assets/images/_static/cambridge_university2.svg
+home_image: /assets/images/_static/cambridge_university2.png
 
 theme: null
 
