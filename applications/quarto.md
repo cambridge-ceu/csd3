@@ -10,7 +10,7 @@ It is an open-source scientific and technical publishing system; the Linux versi
 
 ## Installation
 
-It requires CentOS 8 (icelake, or login-q-*); otherwise it fails with message: `GLIBC_2.18` not found.
+It requires CentOS 8 (icelake, or login-q-\*); otherwise it fails with message: `GLIBC_2.18` not found.
 
 To enter icelake, simply issue `ssh login-q-1`, say. Now, we obtain the package as usual,
 
@@ -20,6 +20,7 @@ tar xvfz -
 ```
 
 For R, we take advantage of the module,
+
 ```bash
 module load R/4.3.1-icelake
 ```
@@ -53,7 +54,7 @@ Our script is slightly more involved as follows,
             --with-include-path=/usr/local/Cluster-Apps/ceuadmin/gmp/6.2.1/include
 make
 make install
- ```
+```
 
 ### gnutls
 
@@ -107,6 +108,7 @@ The cumbersome steps above have been wrapped in the named module.
 ```bash
 module load ceuadmin/quarto
 ```
+
 ```
 Loading ceuadmin/quarto/1.3.450-icelake
   Loading requirement: libmd/1.0.3/gcc/pwhyd3ij libbsd/0.11.3/gcc/tpfgc3ec expat/2.4.1/gcc/qkcdojqk ncurses/6.2/gcc/givuz2aq
@@ -119,9 +121,11 @@ Loading ceuadmin/quarto/1.3.450-icelake
     libxext/1.3.3/gcc/eq7cyrku scrnsaverproto/1.2.2/gcc/sbkbtjzo libxscrnsaver/1.2.2/gcc/6hjlwbjv tk/8.6.11/gcc/i5j46nlm
     python/3.8.11/gcc/pqdmnzmw R/4.3.1-icelake
 ```
+
 ```bash
 quarto check
 ```
+
 ```
 [✓] Checking versions of quarto binary dependencies...
       Pandoc version 3.1.1: OK

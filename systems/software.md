@@ -385,9 +385,7 @@ ssc install metan
 net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") replace
 ```
 
-[^venv]:
-
-    The following error
+[^venv]: The following error
 
     ```
     CustomValidationError: Parameter channel_priority = 'flexible' declared in <<merged>> is invalid.

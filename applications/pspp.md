@@ -181,7 +181,6 @@ Note that the Windows version is available from [https://caeis.etech.fh-augsburg
 
 The software package is available with `module load ceuadmin/pspp/1.6.0`.
 
-
 ## 2.0.0-pre1ge32bec
 
 The source is <https://benpfaff.org/~blp/pspp-master/20230624103130/source/pspp-2.0.0-pre1ge32bec.tar.gz>.

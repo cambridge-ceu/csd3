@@ -6,18 +6,17 @@ sort: 18
 
 Web: <https://gatk.broadinstitute.org/hc/en-us>
 
-
 ## Installation
 
 ### OpenJDK
 
 Web: <https://www.openlogic.com/openjdk-downloads>
 
-Version |   module  | cromwell        | Class file version
---------|-----------|-----------------|-------------------
-     8  | 8u382-b05 | cromwell-50.jar | 52
-     11 | 11.0.20+8 | cromwell-85.jar | 55
-     17 | 17.0.8+7  | cromwell-85.jar | 61
+| Version | module    | cromwell        | Class file version |
+| ------- | --------- | --------------- | ------------------ |
+| 8       | 8u382-b05 | cromwell-50.jar | 52                 |
+| 11      | 11.0.20+8 | cromwell-85.jar | 55                 |
+| 17      | 17.0.8+7  | cromwell-85.jar | 61                 |
 
 e.g., `module load ceuadmin/openjdk/17.0.8+7` for Java 17.
 

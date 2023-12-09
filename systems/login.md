@@ -12,12 +12,12 @@ A common form of MFA, two-factor authentication (2FA), is through Time-based One
 
 The CSD3 login address is `login.hpc.cam.ac.uk` with a mapping table[^cpu]
 
-| Collective name                                 | Node name      | Comments           |
-| ----------------------------------------------- | -------------- | ------------------ |
-| login-cascadelake.hpc.cam.ac.uk                 | login-p-[1-4]  | CentOS7[^cclake]   |
-| login-gpu.hpc.cam.ac.uk                         | login-e-[1-4]  | GPU[^gpu]          |
-| &nbsp;                                          | gpu-r-[1-10]   | Visualisation Nodes|                                              
-| login-icelake.hpc.cam.ac.uk                     | login-q-[1-4]  | CentOS8[^icelake]  |
+| Collective name                 | Node name     | Comments            |
+| ------------------------------- | ------------- | ------------------- |
+| login-cascadelake.hpc.cam.ac.uk | login-p-[1-4] | CentOS7[^cclake]    |
+| login-gpu.hpc.cam.ac.uk         | login-e-[1-4] | GPU[^gpu]           |
+| &nbsp;                          | gpu-r-[1-10]  | Visualisation Nodes |
+| login-icelake.hpc.cam.ac.uk     | login-q-[1-4] | CentOS8[^icelake]   |
 
 Additional information is available with `sinfo`, `scontrol show node` in the case of SLURM.
 
@@ -188,11 +188,7 @@ find /usr -iname "*libGLX*.so*" -exec ls -l {} \;
 ```
 
 [^cpu]: login-skylake.hpc.cam.ac.uk, namely login-e-[9-16], is removed on 25-26/7/2023 and is replaced with `login-cascadelake`.
-
 [^cclake]: see footnote[^cpu] above.
-
 [^gpu]: Currently, it is login-e-[1-4] (login.hpc), login-e-1 is also the license server. The so-called 3D viz/startgfx nodes are login-gpu-e-[1-7].
-
 [^icelake]: Applications such as R/nloptr package require to be recompiled. In this case, we run `download.packages("nloptr",".")` inside `R` on an Internet-enabled node and compile the package with `R CMD INSTALL nloptr_1.2.2.3.tar.gz`, say.
-
 [^autologin]: This appears subject to the system setup.

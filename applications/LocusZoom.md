@@ -311,7 +311,7 @@ function snp_pos()
 }
 
 snp_pos
-``````
+```
 
 We then examine the schema of built-in SNP-position table from `locuszoom_hg19.db`.
 
@@ -354,8 +354,6 @@ locuszoom --source interval --build hg19 --pop EUR --metal ${phenoname}-{4}.lz \
 '
 ```
 
-[^interval]:
-
-    ### Permission to access
+[^interval]: ### Permission to access
 
     <font color="red"><b>Permission is needed</b> to access</font>.

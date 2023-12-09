@@ -390,6 +390,7 @@ Zheng X, et al. HIBAG—HLA genotype imputation with attribute bagging. _The Pha
     >        --mem 4g \
     >        --nthreads 4
     > ```
+    >
     > A collection of documentation example is [hla-tapas.sb](https://github.com/cambridge-ceu/csd3/blob/master/applications/files/hla-tapas.sb).
 
 [^4]: HIBAG

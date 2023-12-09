@@ -71,7 +71,7 @@ rstudio --no-sandbox
 
 A fix is provided which is available from `module load ceuadmin/rstudio/1.3.1093`.
 
-The 2022.07.2+576 release is packaged and can be loaded with `module load ceuadmin/rstudio/2022.07.2+576; rstudio`. 
+The 2022.07.2+576 release is packaged and can be loaded with `module load ceuadmin/rstudio/2022.07.2+576; rstudio`.
 
 <font color="red"><b>31/12/2022 Update</b></font>
 
@@ -189,9 +189,7 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
       -DQT_QMAKE_EXECUTABLE=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/qt-5.9.1-3qinlchrl6vimsn3suwivchqme5do36l/bin ..
 ```
 
-[^legacy]:
-
-    ## openssl
+[^legacy]: ## openssl
 
     This is with respect to a version under Debian though the Fedora distribution should be used,
 
@@ -228,9 +226,7 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
 
     and invoke with `source ~/.bashrc` from current session or automatically from the next onwards.
 
-[^qt5]:
-
-    ## qt/5
+[^qt5]: ## qt/5
 
     Web: <https://doc.qt.io/qt-5/configure-options.html>
 
@@ -296,9 +292,7 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
     make
     ```
 
-[^libstdc]:
-
-    ## libstdc++
+[^libstdc]: ## libstdc++
 
     A version which satisfies this can be furnished as follows,
 
@@ -316,4 +310,4 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
     ```bash
     rpm2cpio libstdc++-11.3.1-2.fc34.x86_64.rpm | cpio -idnum
     strings /lib64/libstdc++.so.6 | grep GLIBCXX
-    ````
+    ```

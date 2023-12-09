@@ -22,7 +22,7 @@ set.seed(1234321)
 docs <- Corpus(VectorSource(modules))
 m <- TermDocumentMatrix(docs) %>%
      as.matrix()
-words <- sort(rowSums(m),decreasing=TRUE) 
+words <- sort(rowSums(m),decreasing=TRUE)
 freq <- rpois(length(words),lambda=3)
 png("ceuadmin.png",res=300,height=10,width=10,units="in")
 wordcloud(names(words), freq, min.freq = 1, max.words=200, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
@@ -131,11 +131,11 @@ A full list of module subcommands is available with `module help` as detailed he
 [3.2.9](https://linux.die.net/man/4/modulefile) -- CSD3 uses version 3.2.10 dated 2012-12-21. In particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of function (LoF)
 annotation.
 
-Most software are available for all CSD3 users, only limited by software with excessive size / reference data -- which ideally will be 
+Most software are available for all CSD3 users, only limited by software with excessive size / reference data -- which ideally will be
 available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmmh2-public_databases/software` as a trade-off. These can
 largely be seen as sources which are used to build the reoository given above.
 
-CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom` 
+CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom`
 linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,342 as of 14/10/2023)
 is linked with the latest R distribution, 4.3.1.
 
@@ -367,10 +367,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
 
     The version adds chromosome X data and will have options using INTERVAL data.
 
-[^pwcoco]:
-
-    It compiles under gcc/9. Upon release of 1.1, this snapshot is removed.
-
+[^pwcoco]: It compiles under gcc/9. Upon release of 1.1, this snapshot is removed.
 [^regenie]: Building regenie 3.2.7
 
     ```bash
@@ -390,6 +387,4 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     make
     ```
 
-[^gdc]:
-
-    It also includes gdc_dtt-ui 1.0.0
+[^gdc]: It also includes gdc_dtt-ui 1.0.0

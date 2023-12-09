@@ -18,7 +18,7 @@ to save space.
 
 ## I. gwas-sumstats-tools
 
-GitHub: <https://github.com/EBISPOT/gwas-sumstats-tools> 
+GitHub: <https://github.com/EBISPOT/gwas-sumstats-tools>
 
 ### Installation
 
@@ -59,7 +59,7 @@ globus logout
 
 where we again use the setup for `snakemake`.
 
-We carry on building a module so it is enabled with `module load ceuadmin/globusconnectpersonal/3.2.2` and could simply run `globusconnect` as well as  `globus`.
+We carry on building a module so it is enabled with `module load ceuadmin/globusconnectpersonal/3.2.2` and could simply run `globusconnect` as well as `globus`.
 
 It is desirable to use a web browser, whose close counterpart on CSD3 is from the `ceuadmin/Cytoscape/3.9.1` module.
 
@@ -163,7 +163,7 @@ gwas-ssf validate -e ${dst}/${protein}.tsv.gz
 # chr10:100000056_C_G 10:100000056_C_G
 ```
 
-A number of proteins including CCL25, CD6, CXCL6, FGF.5,  IL.12B, IL.18R1 and TNFB have p_value=0 so their specifical handling with R is introduced as a generic solution.
+A number of proteins including CCL25, CD6, CXCL6, FGF.5, IL.12B, IL.18R1 and TNFB have p_value=0 so their specifical handling with R is introduced as a generic solution.
 We could obtain the meta-data as required in the submission form,
 
 ```bash
@@ -200,13 +200,13 @@ join -t$'\t' <(ls ${dst} | grep -v tbi | sed 's/.tsv.gz//' | sort -k1,1) - > pro
 We are ready to proceed from <https://www.ebi.ac.uk/gwas/deposition> with globus running and a LS RI profile
 (e.g., [globus file manager](https://app.globus.org/file-manager?origin_id=c5ed8ca7-45e2-4628-9393-b9349203d759&origin_path=%2F), [LS RI profile](https://profile.aai.lifescience-ri.eu/profile/identities)). The submission page shows these steps,
 
-  > 1. Upload summary statistics file(s) to ***your Globus submission folder***
-  > 2. Download submission form
-  > 3. Fill in submission form (see [***here***](https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata) for help)
-  > 4. Wait to receive an email confirmation from Globus that all summary statistics files have successfully been transferred
-  > 5. Submit submission form
+> 1. Upload summary statistics file(s) to **_your Globus submission folder_**
+> 2. Download submission form
+> 3. Fill in submission form (see [**_here_**](https://www.ebi.ac.uk/gwas/docs/submission-summary-statistics-plus-metadata) for help)
+> 4. Wait to receive an email confirmation from Globus that all summary statistics files have successfully been transferred
+> 5. Submit submission form
 
-  > To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
+> To remove the current submission form, click "Reset". Use "Review submission" to download the current submission form.
 
 Upon successes, email notifications are given along with study accessions. It is possible to revisit the page via <https://www.ebi.ac.uk/gwas/deposition/login>.
 

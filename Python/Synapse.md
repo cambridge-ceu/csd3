@@ -53,7 +53,7 @@ where we borrow the setup for snakemake to save space. Whenever appropriate, the
 pip install --upgrade synapseclient
 ```
 
-e.g., 
+e.g.,
 
 ```
 UPGRADE AVAILABLE
@@ -83,7 +83,7 @@ One can specify token, `synapse -p ${SYNAPSE_AUTH_TOKEN} get -r syn51364943`.
 ```python
 import synapseclient
 import synapseutils
- 
+
 syn = synapseclient.Synapse()
 syn.login('synapse_username','password')
 files = synapseutils.syncFromSynapse(syn, 'syn51364943')
@@ -133,9 +133,9 @@ R CMD INSTALL synapserutils_1.0.0.15.tar.gz
 
 Several notes are worthwhile,
 
-* In line with requirement of package `rjson` in need of R >= 4.0.0 and built under R 4.3.1 as implemented in module `ceuadmin/R`, One may also install the Python virtual environment as required by package `reticulate`.
-* To facilitate installation of the R package(s), we download them and make changes as needed.
-* The change to `configure` is necessary, since by default it uses root directories (a user does not have permission) but all Python packages have been installed.
+- In line with requirement of package `rjson` in need of R >= 4.0.0 and built under R 4.3.1 as implemented in module `ceuadmin/R`, One may also install the Python virtual environment as required by package `reticulate`.
+- To facilitate installation of the R package(s), we download them and make changes as needed.
+- The change to `configure` is necessary, since by default it uses root directories (a user does not have permission) but all Python packages have been installed.
 
 synapser 1.2.0.143 is similar, but calls for `conda install --yes --prefix /usr/local/Cluster-Apps/ceuadmin/snakemake/7.19.1 -c conda-forge pandas pysftp jinja2 markupsafe`.
 
@@ -148,7 +148,7 @@ It is the same syntax as above.
 ```r
 library(synapser)
 library(synapserutils)
- 
+
 synLogin('synapse_username', 'password'", rememberMe=TRUE)
 files <- synapserutils::syncFromSynapse('syn51364943')
 ```
@@ -199,28 +199,28 @@ Web: <https://help.synapse.org/docs/Synapse-Infrastructure.2835382273.html>
 
 > This table lists the IP addresses [Synapse.org](synapse.org/) uses. These IP addresses are dedicated and granted to Synapse by AWS. Your IT department may need to add these IP addresses to an “allow list” to allow you to connect to Synapse. Make sure to include ALL addresses.
 
-Host Name                  | IP Address
----------------------------|---------------------------------------------
-[www.synapse.org](www.synapse.org/) (web UI) | &nbsp;
- &nbsp; | 34.234.4.162
- &nbsp; | 34.233.95.87
- &nbsp; | 54.166.5.127
- &nbsp; | 54.226.68.127
- &nbsp; | 3.215.225.38
- &nbsp; | 44.194.89.171
-[repo-prod.prod.sagebase.org](repo-prod.prod.sagebase.org/) (endpoint for programmatic clients) | &nbsp;
- &nbsp; | 52.45.221.235
- &nbsp; | 52.7.75.49
- &nbsp; | 3.234.175.106
- &nbsp; | 3.88.97.84
- &nbsp; | 44.194.236.113
- &nbsp; | 54.205.219.117
+| Host Name                                                                                       | IP Address     |
+| ----------------------------------------------------------------------------------------------- | -------------- |
+| [www.synapse.org](www.synapse.org/) (web UI)                                                    | &nbsp;         |
+| &nbsp;                                                                                          | 34.234.4.162   |
+| &nbsp;                                                                                          | 34.233.95.87   |
+| &nbsp;                                                                                          | 54.166.5.127   |
+| &nbsp;                                                                                          | 54.226.68.127  |
+| &nbsp;                                                                                          | 3.215.225.38   |
+| &nbsp;                                                                                          | 44.194.89.171  |
+| [repo-prod.prod.sagebase.org](repo-prod.prod.sagebase.org/) (endpoint for programmatic clients) | &nbsp;         |
+| &nbsp;                                                                                          | 52.45.221.235  |
+| &nbsp;                                                                                          | 52.7.75.49     |
+| &nbsp;                                                                                          | 3.234.175.106  |
+| &nbsp;                                                                                          | 3.88.97.84     |
+| &nbsp;                                                                                          | 44.194.236.113 |
+| &nbsp;                                                                                          | 54.205.219.117 |
 
 ## 4. Application to Biobank Pharma Proteomics Project (UKB-PPP)
 
-* Synapse page, <https://www.synapse.org/#!Synapse:syn51364943>
-* pGWAS summary statistics, <https://www.synapse.org/#!Synapse:syn51365301>
-* Twitter post, <https://twitter.com/chrisdwhelan/status/1658865452368515072>
+- Synapse page, <https://www.synapse.org/#!Synapse:syn51364943>
+- pGWAS summary statistics, <https://www.synapse.org/#!Synapse:syn51365301>
+- Twitter post, <https://twitter.com/chrisdwhelan/status/1658865452368515072>
 
 ### 4.1 Downloads
 
@@ -246,7 +246,7 @@ synapse login -u <username> -p <user password> --remember-me
 synapse get -r syn51364943
 ```
 
-An equivalent script for Olink Explore 3072, not using `cardio`,  is as follows,
+An equivalent script for Olink Explore 3072, not using `cardio`, is as follows,
 
 ```bash
 #!/usr/bin/bash

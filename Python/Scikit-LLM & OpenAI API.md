@@ -140,7 +140,7 @@ labels = clf.predict(X)
 
 # Importing the GPTVectorizer class from the skllm.preprocessing module
 from skllm.preprocessing import GPTVectorizer
-# Creating an instance of the GPTVectorizer class and assigning it to the 
+# Creating an instance of the GPTVectorizer class and assigning it to the
 variable 'model'
 model = GPTVectorizer()
 # transforming the
@@ -159,10 +159,10 @@ y_test_encoded = le.transform(y_test)
 steps = [('GPT', GPTVectorizer()), ('Clf', XGBClassifier())]
 # Creating a pipeline with the defined steps
 clf = Pipeline(steps)
-# Fitting the pipeline on the training data 'X_train' and the encoded 
+# Fitting the pipeline on the training data 'X_train' and the encoded
 training labels 'y_train_encoded'
 clf.fit(X_train, y_train_encoded)
-# Predicting the labels for the test data 'X_test' using the trained 
+# Predicting the labels for the test data 'X_test' using the trained
 pipeline
 yh = clf.predict(X_test)
 
@@ -176,9 +176,9 @@ from skllm.datasets import get_summarization_dataset
 X = get_summarization_dataset()
 # Creating an instance of the GPTSummarizer
 s = GPTSummarizer(openai_model='gpt-3.5-turbo', max_words=15)
-# Applying the fit_transform method of the GPTSummarizer instance to the 
+# Applying the fit_transform method of the GPTSummarizer instance to the
 input data 'X'.
-# It fits the model to the data and generates the summaries, which are 
+# It fits the model to the data and generates the summaries, which are
 assigned to the variable 'summaries'
 summaries = s.fit_transform(X)
 ```
@@ -191,7 +191,7 @@ Web: Alice in Wonderland, <https://www.gutenberg.org/ebooks/11>
 export OPENAI_API_KEY=$(grep sk ~/doc/OpenAI)
 ```
 
-```python
+````python
 # Initialisation
 
 ```python
@@ -264,7 +264,7 @@ user_query = input("Enter your query: ")
 # Run the QA using the provided query
 qa_result = chain.run(user_query)
 print("OpenAI Response:", qa_result)
-```
+````
 
 ## Reference
 

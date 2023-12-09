@@ -8,7 +8,6 @@ sort: 8
 
 Web: <https://www.gnu.org/software/parallel/>
 
-
 ### An example
 
 To convert a large number of PDF files (INTERVAL.\*.manhattn.pdf) to PNG with smaller file sizes. To start, we build a file list, and pipe into `parallel`.
@@ -49,7 +48,6 @@ parallel -C' ' -j4 --env _ '
 where function `turboman` is exported and called by `parallel`. The `--env _` options copies exported all variables except those in `~/.parallel/ignored_vars`, while `env_parallel` would copy all export/non-exported variables.
 
 Note that the two options are preceded with `parallel --record-env` and `env_parallel --install`, respectively.
-
 
 ## SLURM
 

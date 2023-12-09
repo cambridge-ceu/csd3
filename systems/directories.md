@@ -37,16 +37,16 @@ Self-service storage, [https://selfservice.uis.cam.ac.uk/storage/project/303/](h
 
 In the case of [Hospital Episode Statistics](https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics) (HES) data, add users from [https://selfservice.uis.cam.ac.uk/storage/project/306/](https://selfservice.uis.cam.ac.uk/storage/project/306/).
 
-See also 
+See also
 
 - CEU, "W:\Administration\CSD3 Data Users\CSD3Datamanagement_only"
-  * SOPs, SOPs
-    + Guide to CSD3 data management.docx
-    + Guide to CSD3.docx
-  * audit, Access Audits\Programmes\CSD3 audit usergroup mappings\audit.R"
+  - SOPs, SOPs
+    - Guide to CSD3 data management.docx
+    - Guide to CSD3.docx
+  - audit, Access Audits\Programmes\CSD3 audit usergroup mappings\audit.R"
 - External links
-  * [https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/](https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/).
-  * [https://www.baeldung.com/linux/public-key-known_hosts](https://www.baeldung.com/linux/public-key-known_hosts)
+  - [https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/](https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/).
+  - [https://www.baeldung.com/linux/public-key-known_hosts](https://www.baeldung.com/linux/public-key-known_hosts)
 
 ## Users
 
