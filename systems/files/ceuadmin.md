@@ -410,15 +410,9 @@ Three aspects are notable,
     ./configure --with-libjson-c=$HPC_WORK --with-proj=$HPC_WORK --without-sqlite3 --prefix=$HPC_WORK \
       --with-cfitsio=/usr/local/software/spack/current/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/cfitsio-3.450-colpo6hwycaaind2al47yriydf4oysyx \
       --with-cpp14
-
-    ```
-
-# module load json-c-0.13.1-gcc-5.4.0-ffamohj
-
-# module load proj-6.2.0-gcc-5.4.0-iw4jbzs
-
-# --with-proj=/usr/local/software/spack/spack-git/opt/spack/linux-rhel7-broadwell/gcc-5.4.0/proj-6.2.0-iw4jbzsrjirypecjm4c7bmlhdvhgwjmx \
-
+    # module load json-c-0.13.1-gcc-5.4.0-ffamohj
+    # module load proj-6.2.0-gcc-5.4.0-iw4jbzs
+    # --with-proj=/usr/local/software/spack/spack-git/opt/spack/linux-rhel7-broadwell/gcc-5.4.0/proj-6.2.0-iw4jbzsrjirypecjm4c7bmlhdvhgwjmx \
     ```
 
 [^expat]: Due to error messages, the options are specified as follows,
