@@ -320,6 +320,8 @@ Three aspects are notable,
 2. A symbolic link is generated when appropriate to simplify executable file name.
 3. The available source package is kept in the sources/ directory.
 
+---
+
 [^ls]: The list is generated and the number counted with
 
     ```bash
