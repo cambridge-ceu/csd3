@@ -28,6 +28,7 @@ The latest is 4.4.0.0,
 wget https://github.com/broadinstitute/gatk/releases/download/4.4.0.0/gatk-4.4.0.0.zip
 unzip gatk-4.4.0.0.zip
 gatk --list
+gatk HaplotypeCaller --help
 ```
 
 We proceed to set up a module, to be loaded with `module load ceuadmin/gatk/4.4.0.0`.
