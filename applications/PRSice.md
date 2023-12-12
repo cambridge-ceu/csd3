@@ -4,7 +4,7 @@ sort: 36
 
 # PRSice
 
-Web page: <https://github.com/choishingwan/PRSice> and <http://www.prsice.info/>.
+Web page: <https://github.com/choishingwan/PRSice> and <https://choishingwan.github.io/PRSice/.
 
 ## Installation
 
