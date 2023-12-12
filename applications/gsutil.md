@@ -104,3 +104,33 @@ gsutil -m cp -r \
 ```
 
 as described here, [https://cloud.google.com/storage/docs/downloading-objects](https://cloud.google.com/storage/docs/downloading-objects).
+
+### HGI
+
+Web: <https://www.covid19hg.org/>
+
+Exerpts of scripts,
+
+```bash
+# setup
+# Request an account
+# https://docs.google.com/forms/d/1eAaf-4XNYkplBo5Appbf8LHl2KHJyks9R4t0E3h0jII/viewform?edit_requested=true
+# upload
+  gsutil ls gs://covid19-hg-upload-uk--blood-donors-cohort
+  gsutil -m cp $1 gs://covid19-hg-upload-uk--blood-donors-cohort
+  gsutil -m cp 20210317*/output/INTERVAL.Zhao* gs://covid19-hg-upload-uk--blood-donors-cohort
+# web: https://console.cloud.google.com/storage/browser/covid19-hg-upload-uk--blood-donors-cohort?project=covid-19-hg
+# HGI spreadsheet
+  ls 20210317*/output/INTERVAL.Zhao* | xargs -l basename | xsel -i
+# Fill the form (now uses tab in the spreadsheet),
+# https://airtable.com/shrdJDwSHRZKXv45H
+# HGI results
+# gs://covid19-hg-analysis
+# gs://covid19-hg-public
+# https://console.cloud.google.com/storage/browser/covid19-hg-analysis
+# https://www.covid19hg.org/results/
+# Bugbank
+# gsutil cp $1 gs://covid19-hg-upload-bugbank
+# https://console.cloud.google.com/storage/browser/covid19-hg-upload-bugbank
+}
+```
