@@ -4,7 +4,9 @@ sort: 36
 
 # PRSice
 
-Web page: https://github.com/choishingwan/PRSice and http://www.prsice.info/.
+Web page: <https://github.com/choishingwan/PRSice> and <http://www.prsice.info/>.
+
+## Installation
 
 ```bash
 cd $HPC_WORK
@@ -20,4 +22,10 @@ wget https://github.com/choishingwan/PRS-Tutorial/raw/master/resources/GIANT.hei
 wget -qO- https://github.com/choishingwan/PRS-Tutorial/raw/master/resources/EUR.zip | jar xv
 ```
 
-The last two commands download/unpack the documentation example, which is described here, https://choishingwan.github.io/PRS-Tutorial/, whose scripts are partly extracted [here](files/pgs.sh).
+The last two commands download/unpack the documentation example, which is described here, <https://choishingwan.github.io/PRS-Tutorial/>, whose scripts are partly extracted [here](files/pgs.sh).
+
+## Module
+
+```bash
+module load ceuadmin/PRSice
+```
