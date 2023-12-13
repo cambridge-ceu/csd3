@@ -4,6 +4,8 @@ sort: 46
 
 # Rust
 
+Web: <https://www.rust-lang.org/>
+
 ## module
 
 ```bash
