@@ -359,9 +359,16 @@ Template-Rcpp, <https://github.com/stsds/Template-Rcpp> (LinkedIn [post](https:/
 
 ## ruby
 
-```
+```bash
 module load ceuadmin/ruby
 ruby --version
+```
+
+## Rust
+
+```bash
+module load ceuadmin/rust
+rustc --version
 ```
 
 ## SLURM

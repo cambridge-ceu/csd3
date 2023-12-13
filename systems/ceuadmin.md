@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=191$$, $$\lambda=3$$.
+A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=192$$, $$\lambda=3$$.
 
 ```r
 library(RColorBrewer)
@@ -87,17 +87,17 @@ The current list is as follows,
 [151] "quarto"                "quicktest"             "R"
 [154] "raremetal"             "rclone"                "readline"
 [157] "regenie"               "RHHsoftware"           "rst2pdf"
-[160] "rstudio"               "ruby"                  "samtools"
-[163] "shapeit"               "SMR"                   "snakemake"
-[166] "SNP2HLA"               "snptest"               "spread-sheet-widget"
-[169] "sqlite"                "sra-tools"             "ssw"
-[172] "STAR"                  "stata"                 "SurvivalAnalysis"
-[175] "SurvivalKit"           "tabix"                 "thunderbird"
-[178] "tidy"                  "trinculo"              "trousers"
-[181] "Typora"                "unbound"               "vala"
-[184] "vcftools"              "VEGAS2"                "VSCode"
-[187] "vte"                   "xpdf"                  "yaml-cpp"
-[190] "Zotero"                "zstd"
+[160] "rstudio"               "ruby"                  "rust"
+[163] "samtools"              "shapeit"               "SMR"
+[166] "snakemake"             "SNP2HLA"               "snptest"
+[169] "spread-sheet-widget"   "sqlite"                "sra-tools"
+[172] "ssw"                   "STAR"                  "stata"
+[175] "SurvivalAnalysis"      "SurvivalKit"           "tabix"
+[178] "thunderbird"           "tidy"                  "trinculo"
+[181] "trousers"              "Typora"                "unbound"
+[184] "vala"                  "vcftools"              "VEGAS2"
+[187] "VSCode"                "vte"                   "xpdf"
+[190] "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.

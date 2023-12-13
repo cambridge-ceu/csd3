@@ -58,17 +58,17 @@ The current list is as follows[^ls],
 [151] "quarto"                "quicktest"             "R"
 [154] "raremetal"             "rclone"                "readline"
 [157] "regenie"               "RHHsoftware"           "rst2pdf"
-[160] "rstudio"               "ruby"                  "samtools"
-[163] "shapeit"               "SMR"                   "snakemake"
-[166] "SNP2HLA"               "snptest"               "spread-sheet-widget"
-[169] "sqlite"                "sra-tools"             "ssw"
-[172] "STAR"                  "stata"                 "SurvivalAnalysis"
-[175] "SurvivalKit"           "tabix"                 "thunderbird"
-[178] "tidy"                  "trinculo"              "trousers"
-[181] "Typora"                "unbound"               "vala"
-[184] "vcftools"              "VEGAS2"                "VSCode"
-[187] "vte"                   "xpdf"                  "yaml-cpp"
-[190] "Zotero"                "zstd"
+[160] "rstudio"               "ruby"                  "rust"
+[163] "samtools"              "shapeit"               "SMR"
+[166] "snakemake"             "SNP2HLA"               "snptest"
+[169] "spread-sheet-widget"   "sqlite"                "sra-tools"
+[172] "ssw"                   "STAR"                  "stata"
+[175] "SurvivalAnalysis"      "SurvivalKit"           "tabix"
+[178] "thunderbird"           "tidy"                  "trinculo"
+[181] "trousers"              "Typora"                "unbound"
+[184] "vala"                  "vcftools"              "VEGAS2"
+[187] "VSCode"                "vte"                   "xpdf"
+[190] "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -265,8 +265,8 @@ They are ordered chronologically.
 | 2023-04-02  | regenie/3.2.5.3                  | Genetics             |
 | 2023-04-04  | PWCoCo/1.0                       | Genetics             |
 | 2023-04-05  | PhySO/1.0-dev0                   | Generic              |
-| !2023-04-21 | ImageJ/1.53t                     | Generic              |
-| !2023-04-25 | busybox/1.35.0                   | Generic              |
+| 2023-04-21  | ImageJ/1.53t                     | Generic              |
+| 2023-04-25  | busybox/1.35.0                   | Generic              |
 | 2023-06-02  | regenie/3.2.7                    | Genetics[^regenie]   |
 | 2023-06-05  | gsl/2.7.1                        | Generic              |
 | 2023-06-06  | allegre/2.0f                     | Genetics             |
@@ -274,7 +274,7 @@ They are ordered chronologically.
 | 2023-06-16  | globusconnectpersonal/3.2.2      | Generic              |
 | 2023-06-19  | plink-ng/2.00a3.3                | Genetics             |
 | 2023-06-26  | RHHsoftware/0.1                  | Genetics             |
-| !2023-07-19 | pdfjam/3.06                      | Generic              |
+| 2023-07-19  | pdfjam/3.06                      | Generic              |
 | 2023-07-22  | rstudio/2023.06.1+524            | Generic              |
 | 2023-07-28  | PWCoCo/1.1                       | Genetics             |
 | 2023-08-02  | regenie/3.2.9                    | Genetics             |
@@ -283,8 +283,8 @@ They are ordered chronologically.
 | 2023-08-06  | finemap/1.4.2                    | Genetics             |
 | 2023-08-10  | GreenAlgorithmsforHPC/0.3        | Generic              |
 | 2023-08-12  | xpdf/4.04                        | Generic[^xpdf]       |
-| !2023-08-22 | thunderbird/115.1.1              | Generic              |
-| !2023-08-24 | pdfjam/3.07                      | Generic              |
+| 2023-08-22  | thunderbird/115.1.1              | Generic              |
+| 2023-08-24  | pdfjam/3.07                      | Generic              |
 | 2023-09-03  | 2.0.0-pre1ge32bec                | Genetic[^pspp]       |
 | 2023-09-03  | spead-sheet-widget               | Generic              |
 | 2023-09-27  | ncbi-vdb/3.0.8                   | Genetics[^ncbi-vdb]  |
@@ -311,6 +311,7 @@ They are ordered chronologically.
 | 2023-11-23  | SciKit-LLM & OpenAI API          | Genetic              |
 | 2023-11-24  | ldsc/1.0.1                       | Genetics             |
 | 2023-11-30  | gdc/1.6.1-1.0.0                  | Genetics[^gdc]       |
+| 2023-12-13  | rust/1.74.1                      | Generic              |
 
 \* CEU or approved users only.
 
