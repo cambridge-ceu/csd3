@@ -67,8 +67,9 @@ The current list is as follows[^ls],
 [178] "thunderbird"           "tidy"                  "trinculo"
 [181] "trousers"              "Typora"                "unbound"
 [184] "vala"                  "vcftools"              "VEGAS2"
-[187] "VSCode"                "vte"                   "xpdf"
-[190] "yaml-cpp"              "Zotero"                "zstd"
+[187] "verifyBamID"           "VSCode"                "vte"
+[190] "xpdf"                  "yaml-cpp"              "Zotero"
+[193] "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -312,6 +313,7 @@ They are ordered chronologically.
 | 2023-11-24  | ldsc/1.0.1                       | Genetics             |
 | 2023-11-30  | gdc/1.6.1-1.0.0                  | Genetics[^gdc]       |
 | 2023-12-13  | rust/1.74.1                      | Generic              |
+| 2023-12-20  | verifyBamID/1.1.3                | Genetics             |
 
 \* CEU or approved users only.
 

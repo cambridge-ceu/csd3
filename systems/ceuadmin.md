@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=192$$, $$\lambda=3$$.
+A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=193$$, $$\lambda=3$$.
 
 ```r
 library(RColorBrewer)
@@ -96,8 +96,9 @@ The current list is as follows,
 [178] "thunderbird"           "tidy"                  "trinculo"
 [181] "trousers"              "Typora"                "unbound"
 [184] "vala"                  "vcftools"              "VEGAS2"
-[187] "VSCode"                "vte"                   "xpdf"
-[190] "yaml-cpp"              "Zotero"                "zstd"
+[187] "verifyBamID"           "VSCode"                "vte"
+[190] "xpdf"                  "yaml-cpp"              "Zotero"
+[193] "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -327,6 +328,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-09-27 | gatk/4.4.0.0                | Genetics            |
     | 2023-11-24 | ldsc/1.0.1                  | Genetics            |
     | 2023-11-30 | gdc/1.6.1-1.0.0             | Genetics[^gdc]      |
+    | 2023-12-20 | verifyBamID/1.1.3           | Genetics            |
 
     \* CEU or approved users only.
 
