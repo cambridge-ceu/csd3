@@ -314,6 +314,7 @@ They are ordered chronologically.
 | 2023-11-30  | gdc/1.6.1-1.0.0                  | Genetics[^gdc]       |
 | 2023-12-13  | rust/1.74.1                      | Generic              |
 | 2023-12-20  | verifyBamID/1.1.3                | Genetics             |
+| 2023-12-21  | verifyBamID/2.0.1                | Genetics[^VB2]       |
 
 \* CEU or approved users only.
 
@@ -616,3 +617,5 @@ Three aspects are notable,
     Workflow downloads: <https://github.com/gatk-workflows>
 
 [^gdc]: It also includes gdc_dtt-ui 1.0.0
+
+[^VB2]: To build from source, module `htslib-1.9-gcc-5.4.0-p2taavl` is needed yet with message `/usr/bin/ld: warning: libbz2.so.1.0, needed by /usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/htslib-1.9-p2taavlu3ieppo25otjfgvfu5tysbgho/lib/libhts.so, may conflict with libbz2.so.1`. In fact, 1 == 1.0 so it is ignored.

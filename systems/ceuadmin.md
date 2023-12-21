@@ -329,6 +329,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-11-24 | ldsc/1.0.1                  | Genetics            |
     | 2023-11-30 | gdc/1.6.1-1.0.0             | Genetics[^gdc]      |
     | 2023-12-20 | verifyBamID/1.1.3           | Genetics            |
+    | 2023-12-21 | verifyBamID/2.0.1           | Genetics            |
 
     \* CEU or approved users only.
 
