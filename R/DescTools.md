@@ -35,4 +35,4 @@ sed -i '/LinkingTo/i\SystemRequirements: C++17' DescTools/DESCRIPTION
 R CMD INSTALL DescTools
 ```
 
-where file `DESCRIPTION` is modified adding `SystemRequirements: C++17` before the LinkingTo directive.
+where file `DESCRIPTION` is modified adding `SystemRequirements: C++17` before the `LinkingTo` directive.
