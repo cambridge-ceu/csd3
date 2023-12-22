@@ -2,9 +2,9 @@
 sort: 6
 ---
 
-# DescTools
+# glmnet
 
-Web: <https://andrisignorell.github.io/DescTools/>
+Web: [https://glmnet.stanford.edu/](https://glmnet.stanford.edu/).
 
 ### 4.1-3
 

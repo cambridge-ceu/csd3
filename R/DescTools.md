@@ -2,9 +2,9 @@
 sort: 3
 ---
 
-# glmnet
+# DescTools
 
-Web: [https://glmnet.stanford.edu/](https://glmnet.stanford.edu/).
+Web: <https://andrisignorell.github.io/DescTools/>
 
 ### 0.99.52
 
