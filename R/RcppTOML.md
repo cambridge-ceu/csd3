@@ -39,3 +39,5 @@ Rscript -e 'install.packages("RcppTOML")'
 ```
 
 For RcppTOML 0.2.2, rcdk 3.8.1, splines2 0.5.1 (but gcc/7 is sufficient for R 4.3.2), both gcc/7 and R/4.2.2 are necessary.
+
+RcppTOML 0.2.2 and rjsoncons 1.1.0 also compile under gcc/11, C++17 and R/4.2.2.

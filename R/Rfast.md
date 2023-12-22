@@ -48,6 +48,10 @@ the second call of `R CMD INSTALL` simply take advantages of `GLIBCXX_3.4.26`. I
 
 > strings /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-9.2.0-jx6bolbg5xir5al7djbzfubyojnz6tq2/lib64/libstdc++.so.6 | grep GLIBCXX
 
+## 2.1.0
+
+It compiles under gcc/11, C++17 and R/4.2.2.
+
 ## Rfast2
 
 It is similar to Rfast, e.g., 0.1.5.1.
