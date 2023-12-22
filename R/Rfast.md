@@ -50,7 +50,7 @@ the second call of `R CMD INSTALL` simply take advantages of `GLIBCXX_3.4.26`. I
 
 ## 2.1.0
 
-It compiles under gcc/11, C++17 and R/4.2.2.
+It compiles under gcc/9, C++17 and R/4.2.2.
 
 ## Rfast2
 
