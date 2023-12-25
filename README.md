@@ -16,8 +16,6 @@ csd3 --> cardio["CARDIO"]
 system --> System
 system --> sysdot["..."]
 system --> Acknowledgement
-cardio --> cp["CSD3 partition"]
-cardio --> lm["Legacy materials"]
 applications --> ABCtoolbox
 applications --> appdot["..."]
 applications --> vsc["Visual Studio Code"]
