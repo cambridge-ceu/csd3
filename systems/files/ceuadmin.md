@@ -57,19 +57,19 @@ The current list is as follows[^ls],
 [148] "qt"                    "qtcreator"             "QTLtools"
 [151] "quarto"                "quicktest"             "R"
 [154] "raremetal"             "rclone"                "readline"
-[157] "regenie"               "RHHsoftware"           "rst2pdf"
-[160] "rstudio"               "ruby"                  "rust"
-[163] "samtools"              "shapeit"               "SMR"
-[166] "snakemake"             "SNP2HLA"               "snptest"
-[169] "spread-sheet-widget"   "sqlite"                "sra-tools"
-[172] "ssw"                   "STAR"                  "stata"
-[175] "SurvivalAnalysis"      "SurvivalKit"           "tabix"
-[178] "thunderbird"           "tidy"                  "trinculo"
-[181] "trousers"              "Typora"                "unbound"
-[184] "vala"                  "vcftools"              "VEGAS2"
-[187] "verifyBamID"           "VSCode"                "vte"
-[190] "xpdf"                  "yaml-cpp"              "Zotero"
-[193] "zstd"
+[157] "regenie"               "regtools"              "RHHsoftware"
+[160] "rst2pdf"               "rstudio"               "ruby"
+[163] "rust"                  "samtools"              "shapeit"
+[166] "SMR"                   "snakemake"             "SNP2HLA"
+[169] "snptest"               "spread-sheet-widget"   "sqlite"
+[172] "sra-tools"             "ssw"                   "STAR"
+[175] "stata"                 "SurvivalAnalysis"      "SurvivalKit"
+[178] "tabix"                 "thunderbird"           "tidy"
+[181] "trinculo"              "trousers"              "Typora"
+[184] "unbound"               "vala"                  "vcftools"
+[187] "VEGAS2"                "verifyBamID"           "VSCode"
+[190] "vte"                   "xpdf"                  "yaml-cpp"
+[193] "Zotero"                "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -315,6 +315,7 @@ They are ordered chronologically.
 | 2023-12-13  | rust/1.74.1                      | Generic              |
 | 2023-12-20  | verifyBamID/1.1.3                | Genetics             |
 | 2023-12-21  | verifyBamID/2.0.1                | Genetics[^VB2]       |
+| 2023-12-27  | regtools/1.0.0                   | Genetics[^regtools]  |
 
 \* CEU or approved users only.
 
@@ -619,3 +620,5 @@ Three aspects are notable,
 [^gdc]: It also includes gdc_dtt-ui 1.0.0
 
 [^VB2]: To build from source, module `htslib-1.9-gcc-5.4.0-p2taavl` is needed yet with message `/usr/bin/ld: warning: libbz2.so.1.0, needed by /usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/htslib-1.9-p2taavlu3ieppo25otjfgvfu5tysbgho/lib/libhts.so, may conflict with libbz2.so.1`. In fact, 1 == 1.0 so it is ignored.
+
+[^regtools]: gcc/6 is required.
