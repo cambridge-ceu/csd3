@@ -330,6 +330,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-11-30 | gdc/1.6.1-1.0.0             | Genetics[^gdc]      |
     | 2023-12-20 | verifyBamID/1.1.3           | Genetics            |
     | 2023-12-21 | verifyBamID/2.0.1           | Genetics            |
+    | 2023-12-27 | regtools/1.0.0              | Genetics[^regtools] |
 
     \* CEU or approved users only.
 
@@ -391,3 +392,5 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     ```
 
 [^gdc]: It also includes gdc_dtt-ui 1.0.0
+
+[^regtools]: gcc/6 is required for C++11.
