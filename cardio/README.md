@@ -39,7 +39,7 @@ scontrol show part
 
 ---
 
-## Legacy materials
+## Migration
 
 ### login
 

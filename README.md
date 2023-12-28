@@ -12,7 +12,7 @@ csd3 --> system["THE SYSTEM"]
 csd3 --> Python["Python packages"]
 csd3 --> R["R packages"]
 csd3 --> applications["APPLICATIONS"]
-csd3 --> cardio["CARDIO"]
+csd3 --> cardio["CARDIO (legacy materials)"]
 system --> System
 system --> sysdot["..."]
 system --> Acknowledgement
