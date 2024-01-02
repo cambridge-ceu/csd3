@@ -31,28 +31,29 @@ The current list is as follows[^ls],
  [93] "libglvnd"              "libiconv"              "libidn2"               "libntlm"
  [97] "libpng"                "libsodium"             "libssh2"               "libuv"
 [101] "libxml2"               "libxslt"               "locuszoom"             "MAGENTA"
-[105] "magma"                 "Mega2"                 "metal"                 "MONSTER"
-[109] "MORGAN"                "MR-MEGA"               "MsCAVIAR"              "nano"
-[113] "ncbi-vdb"              "ncurses"               "netbeans"              "nettle"
-[117] "NLopt"                 "node"                  "nspr"                  "oniguruma"
-[121] "openjdk"               "OpenMS"                "openssl"               "osca"
-[125] "PAINTOR"               "pandoc"                "pandoc-citeproc"       "pango"
-[129] "parallel"              "Pascal"                "pcre2"                 "pdf2djvu"
-[133] "pdfjam"                "phenoscanner"          "PhySO"                 "plink"
-[137] "plink-bgi"             "plinkseq"              "PoGo"                  "polyphen"
-[141] "poppler"               "proj"                  "PRSice"                "pspp"
-[145] "PWCoCo"                "qctool"                "qpdf"                  "qt"
-[149] "qtcreator"             "QTLtools"              "quarto"                "quicktest"
-[153] "R"                     "raremetal"             "rclone"                "readline"
-[157] "regenie"               "regtools"              "RHHsoftware"           "rst2pdf"
-[161] "rstudio"               "ruby"                  "rust"                  "samtools"
-[165] "shapeit"               "SMR"                   "snakemake"             "SNP2HLA"
-[169] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"
-[173] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"
-[177] "SurvivalKit"           "tabix"                 "thunderbird"           "tidy"
-[181] "trinculo"              "trousers"              "Typora"                "unbound"
-[185] "vala"                  "VarScan"               "vcftools"              "VEGAS2"
-[189] "verifyBamID"           "VSCode"                "vte"                   "xpdf"
+[105] "magma"                 "Mango"                 "Mega2"                 "metal"
+[109] "MONSTER"               "MORGAN"                "MR-MEGA"               "MsCAVIAR"
+[113] "nano"                  "ncbi-vdb"              "ncurses"               "netbeans"
+[117] "nettle"                "NLopt"                 "node"                  "nspr"
+[121] "oniguruma"             "openjdk"               "OpenMS"                "openssl"
+[125] "osca"                  "PAINTOR"               "pandoc"                "pandoc-citeproc"
+[129] "pango"                 "parallel"              "Pascal"                "pcre2"
+[133] "pdf2djvu"              "pdfjam"                "phenoscanner"          "PhySO"
+[137] "plink"                 "plink-bgi"             "plinkseq"              "PoGo"
+[141] "polyphen"              "poppler"               "proj"                  "PRSice"
+[145] "pspp"                  "PWCoCo"                "qctool"                "qpdf"
+[149] "qt"                    "qtcreator"             "QTLtools"              "quarto"
+[153] "quicktest"             "R"                     "raremetal"             "rclone"
+[157] "readline"              "regenie"               "regtools"              "RHHsoftware"
+[161] "rst2pdf"               "rstudio"               "ruby"                  "rust"
+[165] "samtools"              "shapeit"               "SMR"                   "snakemake"
+[169] "SNP2HLA"               "snptest"               "spread-sheet-widget"   "sqlite"
+[173] "sra-tools"             "ssw"                   "STAR"                  "stata"
+[177] "SurvivalAnalysis"      "SurvivalKit"           "tabix"                 "thunderbird"
+[181] "tidy"                  "trinculo"              "trousers"              "Typora"
+[185] "unbound"               "vala"                  "VarScan"               "vcftools"
+[189] "VEGAS2"                "verifyBamID"           "VSCode"                "vte"
+[193] "xpdf"                  "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -300,6 +301,7 @@ They are ordered chronologically.
 | 2023-12-21  | verifyBamID/2.0.1                | Genetics[^VB2]       |
 | 2023-12-27  | regtools/1.0.0                   | Genetics[^regtools]  |
 | 2023-12-27  | VarScan/2.4.6                    | Genetics[^varscan]   |
+| 2024-01-02  | Mango/0.1.0                      | Generic              |
 
 \* CEU or approved users only.
 
