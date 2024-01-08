@@ -1893,8 +1893,23 @@ Second-generation PLINK: rising to the challenge of larger and richer datasets.
 GigaScience, 4.
 ```
 
+## Resources[^ld]
+
+Finemapping tools such as `finemap` and `Susie` require a correlation matrix, e.g., from 1000Genomes data, which can be built as follows,
+
+1. Download the 1000Genomes data, <https://www.cog-genomics.org/plink/2.0/resources>.
+2. Build a `reference` file such that the reference allele for each SNP to be the first ASCII-sorted allele (using the `--ref-allele force` flag).
+3. Create a region-specific reference file: `plink2 --pfile reference --extract file_with_variants --make-bed --out reference_plink1`.
+4. Calculate LD for the region,
+   - 1.9. `plink --bfile reference_plink1 --r square keep-allele-order`.
+   - 2.0. `plink2 --bfile reference_plink1 --r-unphased square ref-based` (e.g., `module load ceuadmin/plink/2.0_20240105; plink2dev --help --r-unphased`).
+
 ## References
 
 Chang CC (2021). Data Management and Summary Statistics with PLINK, Chapter 3. 49-65. in Dutheil JY. (Ed) Statistical Population Genomics. Humana Press. [https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3](https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3).
 
 Mills, MC, Barban N, Tropf FC (2020). An Introduction to Statistical Genetic Data Analysis. The MIT Press. [https://mitpress.mit.edu/books/introduction-statistical-genetic-data-analysis](https://mitpress.mit.edu/books/introduction-statistical-genetic-data-analysis).
+
+[^ld]: Acknowledgement
+
+    This is courtesy of communications of Nick Schreib and Christopher Chang from the Google group discussion, <https://groups.google.com/u/1/g/plink2-users/c/rhCqeStPKgw>.
