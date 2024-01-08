@@ -115,6 +115,14 @@ module unload ceuadmin/pspp
 
 Note that `module add/rm` is equivalent to `module load/unload`.
 
+Some modules are based on compiled Java (.jar) which can be called directly but it is handy to use preset environment variables, e.g.,
+
+```bash
+module load ceuadmin/picard
+java -jar ${PICARD_HOME}/picard.jar --help
+
+```
+
 A full list of module subcommands is available with `module help` as detailed here for
 [3.2.9](https://linux.die.net/man/4/modulefile) -- CSD3 uses version 3.2.10 dated 2012-12-21. In particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of function (LoF)
 annotation.
