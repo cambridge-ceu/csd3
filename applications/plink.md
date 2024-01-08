@@ -1893,9 +1893,9 @@ Second-generation PLINK: rising to the challenge of larger and richer datasets.
 GigaScience, 4.
 ```
 
-## Resources[^ld]
+## Resources
 
-Finemapping tools such as `finemap` and `Susie` require a correlation matrix, e.g., from 1000Genomes data, which can be built as follows,
+Finemapping tools such as `finemap` and `Susie` require a correlation matrix, e.g., from 1000Genomes data, which can be built as follows[^ld],
 
 1. Download the 1000Genomes data, <https://www.cog-genomics.org/plink/2.0/resources>.
 2. Build a `reference` file such that the reference allele for each SNP to be the first ASCII-sorted allele (using the `--ref-allele force` flag).
