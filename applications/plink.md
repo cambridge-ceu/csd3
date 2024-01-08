@@ -1913,3 +1913,26 @@ Mills, MC, Barban N, Tropf FC (2020). An Introduction to Statistical Genetic Dat
 [^ld]: **Acknowledgement**
 
     This is courtesy of communications between Nick Schreib and Christopher Chang from the Google group discussion, <https://groups.google.com/u/1/g/plink2-users/c/rhCqeStPKgw>.
+
+    ```bash
+    # copy the data so we dont modify the original
+    cp /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/INF/INTERVAL/cardio/INTERVAL.* .
+
+    mkdir tmp
+
+    plink2 --bfile INTERVAL --mac 2 --make-pgen multiallelics=- varid-split --chr 1-22 --new-id-max-allele-len 100 missing --out tmp/INTERVAL --set-all-var-ids @_#_\$1_\$2
+
+    # some snps have missing ID, we want to remove them
+    plink2 --pfile tmp/INTERVAL --set-missing-var-ids @_#_remove --make-pgen --out tmp/INTERVAL
+
+    # exclude all variants with missing ID, i.e. the ones that are super long.
+    awk '!/^#/ && $3 ~ /remove/ {print $3}' tmp/INTERVAL.pvar > tmp/missing_ids.txt
+    plink2 --pfile tmp/INTERVAL --exclude tmp/missing_ids.txt --make-pgen --out tmp/INTERVAL --rm-dup exclude-mismatch
+
+    # currently, we have only set the new IDs in the pvar file. We also want to update them in the pgen file, so that A1 in the variant ID matches the actual A1.
+    # for this we have to exctract the A1 allel.
+    awk '!/^#/{split($3, arr, "_"); print $3, arr[3], arr[4] > "tmp/update_ref_allele.txt"}' tmp/INTERVAL.pvar
+
+    # update the pgen file (and pvar)
+    plink2 --pfile tmp/INTERVAL --ref-allele force tmp/update_ref_allele.txt 2 1 --make-pgen --out tmp/INTERVAL_new_ref
+    ```
