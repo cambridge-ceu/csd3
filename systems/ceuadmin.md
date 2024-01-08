@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=196$$, $$\lambda=3$$.
+A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=198$$, $$\lambda=3$$.
 
 ```bash
 Rscript -e '
@@ -36,55 +36,56 @@ Rscript -e '
 The current list is as follows,
 
 ```
-  [1] "ABCtoolbox"            "akt"                   "allegro"               "alpine"
-  [5] "Anaconda3"             "annovar"               "aria2"                 "autoconf"
-  [9] "axel"                  "bazel"                 "bcftools"              "Beagle"
- [13] "bedops"                "bedtools2"             "bgen"                  "biobank"
- [17] "blat"                  "boltlmm"               "brotli"                "busybox"
- [21] "CaVEMaN"               "CAVIAR"                "CAVIARBF"              "ccal"
- [25] "circos"                "citeproc"              "cppunit"               "crossmap"
- [29] "Cytoscape"             "DEPICT"                "DjVuLibre"             "docbook2X"
- [33] "DosageConverter"       "Eagle"                 "enchant"               "ensembl-vep"
- [37] "exiv2"                 "exomeplus"             "expat"                 "FastQTL"
- [41] "fcGENE"                "ffmpeg"                "fgwas"                 "finemap"
- [45] "fossil"                "fribidi"               "GARFIELD"              "gatk"
- [49] "gcta"                  "gdal"                  "gdc"                   "geany"
- [53] "GEM"                   "GEMMA"                 "Genotype-Harmonizer"   "gettext"
- [57] "gh"                    "ghc"                   "ghostscript"           "git"
+  [1] "ABCtoolbox"            "akt"                   "allegro"               "alpine"               
+  [5] "Anaconda3"             "annovar"               "aria2"                 "autoconf"             
+  [9] "axel"                  "bazel"                 "bcftools"              "Beagle"               
+ [13] "bedops"                "bedtools2"             "bgen"                  "biobank"              
+ [17] "blat"                  "boltlmm"               "brotli"                "busybox"              
+ [21] "CaVEMaN"               "CAVIAR"                "CAVIARBF"              "ccal"                 
+ [25] "circos"                "citeproc"              "cppunit"               "crossmap"             
+ [29] "Cytoscape"             "DEPICT"                "DjVuLibre"             "docbook2X"            
+ [33] "DosageConverter"       "Eagle"                 "enchant"               "ensembl-vep"          
+ [37] "exiv2"                 "exomeplus"             "expat"                 "FastQTL"              
+ [41] "fcGENE"                "ffmpeg"                "fgwas"                 "finemap"              
+ [45] "fossil"                "fribidi"               "GARFIELD"              "gatk"                 
+ [49] "gcta"                  "gdal"                  "gdc"                   "geany"                
+ [53] "GEM"                   "GEMMA"                 "Genotype-Harmonizer"   "gettext"              
+ [57] "gh"                    "ghc"                   "ghostscript"           "git"                  
  [61] "git-extras"            "GitKraken"             "glib"                  "globusconnectpersonal"
- [65] "gmp"                   "gnutls"                "googletest"            "graphene"
- [69] "GraphicsMagick"        "GreenAlgorithms4HPC"   "gsl"                   "gtk+"
- [73] "gtksourceview"         "gtool"                 "hpg"                   "htslib"
- [77] "hunspell"              "icu"                   "ImageJ"                "impute"
- [81] "JabRef"                "JAGS"                  "jq"                    "KentUtils"
- [85] "KING"                  "lapack"                "ldc2"                  "ldsc"
- [89] "LDstore"               "LEMMA"                 "libcares"              "libgit2"
- [93] "libglvnd"              "libiconv"              "libidn2"               "libntlm"
- [97] "libpng"                "libsodium"             "libssh2"               "libuv"
-[101] "libxml2"               "libxslt"               "locuszoom"             "MAGENTA"
-[105] "magma"                 "Mango"                 "Mega2"                 "metal"
-[109] "MONSTER"               "MORGAN"                "MR-MEGA"               "MsCAVIAR"
-[113] "nano"                  "ncbi-vdb"              "ncurses"               "netbeans"
-[117] "nettle"                "NLopt"                 "node"                  "nspr"
-[121] "oniguruma"             "openjdk"               "OpenMS"                "openssl"
-[125] "osca"                  "PAINTOR"               "pandoc"                "pandoc-citeproc"
-[129] "pango"                 "parallel"              "Pascal"                "pcre2"
-[133] "pdf2djvu"              "pdfjam"                "phenoscanner"          "PhySO"
-[137] "plink"                 "plink-bgi"             "plinkseq"              "PoGo"
-[141] "polyphen"              "poppler"               "proj"                  "PRSice"
-[145] "pspp"                  "PWCoCo"                "qctool"                "qpdf"
-[149] "qt"                    "qtcreator"             "QTLtools"              "quarto"
-[153] "quicktest"             "R"                     "raremetal"             "rclone"
-[157] "readline"              "regenie"               "regtools"              "RHHsoftware"
-[161] "rst2pdf"               "rstudio"               "ruby"                  "rust"
-[165] "samtools"              "shapeit"               "SMR"                   "snakemake"
-[169] "SNP2HLA"               "snptest"               "spread-sheet-widget"   "sqlite"
-[173] "sra-tools"             "ssw"                   "STAR"                  "stata"
-[177] "SurvivalAnalysis"      "SurvivalKit"           "tabix"                 "thunderbird"
-[181] "tidy"                  "trinculo"              "trousers"              "Typora"
-[185] "unbound"               "vala"                  "VarScan"               "vcftools"
-[189] "VEGAS2"                "verifyBamID"           "VSCode"                "vte"
-[193] "xpdf"                  "yaml-cpp"              "Zotero"                "zstd"
+ [65] "gmp"                   "gnutls"                "googletest"            "graphene"             
+ [69] "GraphicsMagick"        "GreenAlgorithms4HPC"   "gsl"                   "gtk+"                 
+ [73] "gtksourceview"         "gtool"                 "hpg"                   "htslib"               
+ [77] "hunspell"              "icu"                   "ImageJ"                "impute"               
+ [81] "JabRef"                "JAGS"                  "jq"                    "KentUtils"            
+ [85] "KING"                  "l"                     "lapack"                "ldc2"                 
+ [89] "ldsc"                  "LDstore"               "LEMMA"                 "libcares"             
+ [93] "libgit2"               "libglvnd"              "libiconv"              "libidn2"              
+ [97] "libntlm"               "libpng"                "libsodium"             "libssh2"              
+[101] "libuv"                 "libxml2"               "libxslt"               "locuszoom"            
+[105] "MAGENTA"               "magma"                 "Mango"                 "Mega2"                
+[109] "metal"                 "MONSTER"               "MORGAN"                "MR-MEGA"              
+[113] "MsCAVIAR"              "nano"                  "ncbi-vdb"              "ncurses"              
+[117] "netbeans"              "nettle"                "NLopt"                 "node"                 
+[121] "nspr"                  "oniguruma"             "openjdk"               "OpenMS"               
+[125] "openssl"               "osca"                  "PAINTOR"               "pandoc"               
+[129] "pandoc-citeproc"       "pango"                 "parallel"              "Pascal"               
+[133] "pcre2"                 "pdf2djvu"              "pdfjam"                "phenoscanner"         
+[137] "PhySO"                 "picard"                "plink"                 "plink-bgi"            
+[141] "plinkseq"              "PoGo"                  "polyphen"              "poppler"              
+[145] "proj"                  "PRSice"                "pspp"                  "PWCoCo"               
+[149] "qctool"                "qpdf"                  "qt"                    "qtcreator"            
+[153] "QTLtools"              "quarto"                "quicktest"             "R"                    
+[157] "raremetal"             "rclone"                "readline"              "regenie"              
+[161] "regtools"              "RHHsoftware"           "rst2pdf"               "rstudio"              
+[165] "ruby"                  "rust"                  "samtools"              "shapeit"              
+[169] "SMR"                   "snakemake"             "SNP2HLA"               "snptest"              
+[173] "spread-sheet-widget"   "sqlite"                "sra-tools"             "ssw"                  
+[177] "STAR"                  "stata"                 "SurvivalAnalysis"      "SurvivalKit"          
+[181] "tabix"                 "thunderbird"           "tidy"                  "trinculo"             
+[185] "trousers"              "Typora"                "unbound"               "vala"                 
+[189] "VarScan"               "vcftools"              "VEGAS2"                "verifyBamID"          
+[193] "VSCode"                "vte"                   "xpdf"                  "yaml-cpp"             
+[197] "Zotero"                "zstd"                 
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -318,6 +319,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-12-21 | verifyBamID/2.0.1           | Genetics            |
     | 2023-12-27 | regtools/1.0.0              | Genetics[^regtools] |
     | 2023-12-27 | VarScan/2.4.6               | Genetics[^varscan]  |
+    | 2024-01-08 | picard/3.1.1                | Genetics            |
 
     \* CEU or approved users only.
 
