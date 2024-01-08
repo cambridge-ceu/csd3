@@ -1895,10 +1895,10 @@ GigaScience, 4.
 
 ## Resources
 
-Finemapping tools such as `finemap` and `Susie` require a correlation matrix, e.g., from 1000Genomes data, which can be built as follows[^ld],
+Finemapping tools such as `finemap` and `Susie` require a correlation matrix for variants in a region of interest, e.g., from 1000Genomes data, which can be built as follows[^ld],
 
 1. Download the 1000Genomes data, <https://www.cog-genomics.org/plink/2.0/resources>.
-2. Build a `reference` file such that the reference allele for each SNP to be the first ASCII-sorted allele (using the `--ref-allele force` flag).
+2. Build a `reference` file such that the reference allele for each variant to be the first ASCII-sorted allele (using the `--ref-allele force` flag).
 3. Create a region-specific reference file: `plink2 --pfile reference --extract file_with_variants --make-bed --out reference_plink1`.
 4. Calculate LD for the region,
    - 1.9. `plink --bfile reference_plink1 --r square keep-allele-order`.
@@ -1910,6 +1910,6 @@ Chang CC (2021). Data Management and Summary Statistics with PLINK, Chapter 3. 4
 
 Mills, MC, Barban N, Tropf FC (2020). An Introduction to Statistical Genetic Data Analysis. The MIT Press. [https://mitpress.mit.edu/books/introduction-statistical-genetic-data-analysis](https://mitpress.mit.edu/books/introduction-statistical-genetic-data-analysis).
 
-[^ld]: Acknowledgement
+[^ld]: **Acknowledgement**
 
-    This is courtesy of communications of Nick Schreib and Christopher Chang from the Google group discussion, <https://groups.google.com/u/1/g/plink2-users/c/rhCqeStPKgw>.
+    This is courtesy of communications between Nick Schreib and Christopher Chang from the Google group discussion, <https://groups.google.com/u/1/g/plink2-users/c/rhCqeStPKgw>.
