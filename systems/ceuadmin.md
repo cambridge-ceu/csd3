@@ -320,6 +320,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-12-27 | regtools/1.0.0              | Genetics[^regtools] |
     | 2023-12-27 | VarScan/2.4.6               | Genetics[^varscan]  |
     | 2024-01-08 | picard/3.1.1                | Genetics            |
+    | 2024-01-08 | plink/2.0_20240105          | Genetics            |
 
     \* CEU or approved users only.
 

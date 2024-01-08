@@ -304,6 +304,7 @@ They are ordered chronologically.
 | 2023-12-27  | VarScan/2.4.6                    | Genetics[^varscan]   |
 | 2024-01-02  | Mango/0.1.0                      | Generic              |
 | 2024-01-08  | picard/3.1.1                     | Genetics             |
+| 2024-01-08  | plink/2.0_20240105               | Genetics             |
 
 \* CEU or approved users only.
 
