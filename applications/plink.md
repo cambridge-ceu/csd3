@@ -1898,11 +1898,11 @@ GigaScience, 4.
 Finemapping tools such as `finemap` and `Susie` require a correlation matrix of variants involved in a region, as shown step-by-step with 1000Genomes data below[^ld],
 
 1. Download the 1000Genomes data, <https://www.cog-genomics.org/plink/2.0/resources>.
-2. Build a `reference-file` in which the reference allele for each variant to be the first ASCII-sorted allele (via the `--ref-allele force` flag).
-3. Create a region-specific reference file: `plink2 --pfile reference-file --extract file_with_variants --make-bed --out reference_plink1`.
+2. Build a `reference-file` in which the reference allele for each variant is the first ASCII-sorted allele (via the `--ref-allele force` flag).
+3. Create a region-specific reference file: `plink2 --pfile reference-file --extract file_with_variants --make-bed --out reference_region`.
 4. Calculate LD for the region,
-   - 1.9. `plink --bfile reference_plink1 --r square keep-allele-order`.
-   - 2.0. `plink2 --bfile reference_plink1 --r-unphased square ref-based` (e.g., `module load ceuadmin/plink/2.0_20240105; plink2dev --help --r-unphased`).
+   - 1.9. `plink --bfile reference_region --r square keep-allele-order`.
+   - 2.0. `plink2 --bfile reference_region --r-unphased square ref-based` (e.g., `module load ceuadmin/plink/2.0_20240105; plink2dev --help --r-unphased`).
 
 ## References
 
@@ -1935,4 +1935,7 @@ Mills, MC, Barban N, Tropf FC (2020). An Introduction to Statistical Genetic Dat
 
     # update the pgen file (and pvar)
     plink2 --pfile tmp/INTERVAL --ref-allele force tmp/update_ref_allele.txt 2 1 --make-pgen --out tmp/INTERVAL_new_ref
+
+    # PwCoCo need bfile format...
+    plink2 --pfile tmp/INTERVAL_new_ref --make-bed --out tmp/INTERVAL_new_ref
     ```
