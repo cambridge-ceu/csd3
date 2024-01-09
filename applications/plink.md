@@ -51,7 +51,7 @@ make
 Two elements are notable,
 
 1. The last line is unneccesary, however, after adding `-L/usr/local/Cluster-Apps/ceuadmin/lapack/3.10.1/lib64` to the BLASFLAGS64 variable in `build.sh`.
-2. gcc/6 is required for 2.0.
+2. The `gcc/6` module is required for 2.0.
 
 Now these points to campus-wide location to enable non-CEU users (`-L/usr/local/Cluster-Apps/ceuadmin/lapack/3.10.1/lib64`) as well.
 
