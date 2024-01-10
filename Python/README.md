@@ -10,7 +10,11 @@ This directory hosts some Python packages, though it is harder to separate them 
 
 {% include list.liquid all=true %}
 
-Special notes are given here regarding biopython with data from UniProt, e.g., APOB and A1BG,
+Special notes are given here regarding `biopython`, i.e.,
+
+<https://biopython.org/>
+
+with data from UniProt, e.g., APOB and A1BG,
 
 ```bash
 wget https://rest.uniprot.org/uniprotkb/P04114.txt
