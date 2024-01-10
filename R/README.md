@@ -24,15 +24,16 @@ For completeness, here is the counterpart for `biopython`
 
 ```r
 library(Biostrings)
-fasta_file_path <- 'P04217.fasta'
+fasta_file_path <- 'https://rest.uniprot.org/uniprotkb/P04217.fasta'
 fasta_sequences <- readAAStringSet(fasta_file_path, format = "fasta")
 first_sequence <- fasta_sequences[[1]]
 cat("Sequence:", toString(first_sequence), "\n")
 search_442688365 <- 'TDGEGALSEPSATVTIEELAAPPPPVLMHHGESSQVLHPGNK'
 match_position <- regexpr(search_442688365, first_sequence)
+match_position
 ```
 
-and the output is longer,
+which handles URL and generates more informative output,
 
 ```
 > match_position
