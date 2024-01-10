@@ -50,11 +50,11 @@ The current list is as follows[^ls],
 [169] "shapeit"               "SMR"                   "snakemake"             "SNP2HLA"              
 [173] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"            
 [177] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"     
-[181] "SurvivalKit"           "tabix"                 "thunderbird"           "tidy"                 
-[185] "trinculo"              "trousers"              "Typora"                "unbound"              
-[189] "vala"                  "VarScan"               "vcftools"              "VEGAS2"               
-[193] "verifyBamID"           "VSCode"                "vte"                   "xpdf"                 
-[197] "yaml-cpp"              "Zotero"                "zstd"                 
+[181] "SurvivalKit"           "tabix"                 "tatami"                "thunderbird"          
+[185] "tidy"                  "trinculo"              "trousers"              "Typora"               
+[189] "unbound"               "vala"                  "VarScan"               "vcftools"             
+[193] "VEGAS2"                "verifyBamID"           "VSCode"                "vte"                  
+[197] "xpdf"                  "yaml-cpp"              "Zotero"                "zstd"                 
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
