@@ -16,6 +16,31 @@ CXX17 = g++ -std=gnu++17 -fPIC
 
 Occasionally, package(s) such as `glmnet` will indicate this, a practice that facilitates installation greatly.
 
+To be complete, here is the counterpart for `biopython`
+
+```r
+library(Biostrings)
+fasta_file_path <- 'P04217.fasta'
+fasta_sequences <- readAAStringSet(fasta_file_path, format = "fasta")
+first_sequence <- fasta_sequences[[1]]
+cat("Sequence:", toString(first_sequence), "\n")
+search_442688365 <- 'TDGEGALSEPSATVTIEELAAPPPPVLMHHGESSQVLHPGNK'
+match_position <- regexpr(search_442688365, first_sequence)
+```
+
+and the output is longer,
+
+```
+> match_position
+[1] 186
+attr(,"match.length")
+[1] 42
+attr(,"index.type")
+[1] "chars"
+attr(,"useBytes")
+[1] TRUE
+```
+
 {% include list.liquid all=true %}
 
 :star: **[R website](https://www.r-project.org/)**

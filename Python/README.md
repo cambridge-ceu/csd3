@@ -14,15 +14,17 @@ Special notes are given here regarding `biopython`, i.e.,
 
 <https://biopython.org/>
 
-with data from UniProt, e.g., APOB and A1BG,
+with data from UniProt, e.g., APOB and A1BG, whose setup is as follows,
 
 ```bash
 wget https://rest.uniprot.org/uniprotkb/P04114.txt
 wget https://rest.uniprot.org/uniprotkb/P04217.fasta
-
 source ~/rds/public_databases/software/py38/bin/activate
+```
 
-python <<END
+Our Python script to handle them is listed below.
+
+```python
 # all information
 from Bio import SwissProt
 with open('P04217.txt') as file:
@@ -60,7 +62,6 @@ id = 'sp|P04217|A1BG_HUMAN'
 amino_acid_sequence = sequence[id].seq
 match_position = find_matching_position(amino_acid_sequence, search_442688365)
 print(f"Match found at position: {match_position}")
-END
 ```
 
 so that the matched position is found at position 185.
