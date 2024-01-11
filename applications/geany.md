@@ -148,12 +148,12 @@ We now have the plugins which can be seen from Tools --> Plugin Manager.
 wget -qO- https://download.gnome.org/sources/gtk+/3.8/gtk%2B-3.8.0.tar.xz | \
 tar xfJ -
 cd gtk+-3.24.0
-module load ceuadmin/pango/1.41.1
+module load ceuadmin/pango/1.41.1 ceuadmin/gettext/0.20
 module load cups-2.2.3-gcc-5.4.0-du37l7s
 module load glib-2.56.2-gcc-5.4.0-4rjjizl
 module load spack/current
 source $SPACK_ROOT/share/spack/setup-env.sh
-configure --prefix=${CEUADMIN}/gtk+/3.24.0
+configure --prefix=${CEUADMIN}/gtk+/3.24.0 LIBS=-lintl
 make
 make install
 ```
