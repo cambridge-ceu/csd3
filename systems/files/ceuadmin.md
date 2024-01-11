@@ -306,7 +306,7 @@ They are ordered chronologically.
 | 2024-01-08  | picard/3.1.1                     | Genetics             |
 | 2024-01-08  | plink/2.0_20240105               | Genetics             |
 | 2024-01-10  | cmake/3.28.1                     | Generic              |
-| 2024-01-10  | tatami/2.1.2                     | Generic              |
+| 2024-01-10  | tatami/2.1.2                     | Generic[^tatami]     |
 
 \* CEU or approved users only.
 
@@ -615,3 +615,10 @@ Three aspects are notable,
 [^regtools]: gcc/6 is required for C++11.
 
 [^varscan]: Simply call `java -jar $VARSCAN_HOME/VarScan.v2.4.6.jar` after `module load ceuadmin/VarScan/2.4.6`.
+
+[^tatami]: The following aspects are required.
+
+    1. module load gcc/9
+    2. mkdir build && cd build
+    3. cmake .. -DCMAKE_INSTALL_PREFIX=$CEUADMIN/tatami/2.1.2
+    4. cmake --build . --target install
