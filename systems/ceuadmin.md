@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=200$$, $$\lambda=3$$.
+A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=199$$, $$\lambda=3$$.
 
 ```bash
 Rscript -e '
@@ -81,11 +81,11 @@ The current list is as follows,
 [169] "shapeit"               "SMR"                   "snakemake"             "SNP2HLA"              
 [173] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"            
 [177] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"     
-[181] "SurvivalKit"           "tabix"                 "thunderbird"           "tidy"                 
-[185] "trinculo"              "trousers"              "Typora"                "unbound"              
-[189] "vala"                  "VarScan"               "vcftools"              "VEGAS2"               
-[193] "verifyBamID"           "VSCode"                "vte"                   "xpdf"                 
-[197] "yaml-cpp"              "Zotero"                "zstd"                 
+[181] "SurvivalKit"           "tabix"                 "tatami"                "thunderbird"          
+[185] "tidy"                  "trinculo"              "trousers"              "Typora"               
+[189] "unbound"               "vala"                  "VarScan"               "vcftools"             
+[193] "VEGAS2"                "verifyBamID"           "VSCode"                "vte"                  
+[197] "xpdf"                  "yaml-cpp"              "Zotero"                "zstd"                 
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
