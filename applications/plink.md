@@ -1893,6 +1893,12 @@ Second-generation PLINK: rising to the challenge of larger and richer datasets.
 GigaScience, 4.
 ```
 
+## References
+
+Chang CC (2021). Data Management and Summary Statistics with PLINK, Chapter 3. 49-65. in Dutheil JY. (Ed) Statistical Population Genomics. Humana Press. [https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3](https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3).
+
+Mills, MC, Barban N, Tropf FC (2020). An Introduction to Statistical Genetic Data Analysis. The MIT Press. [https://mitpress.mit.edu/books/introduction-statistical-genetic-data-analysis](https://mitpress.mit.edu/books/introduction-statistical-genetic-data-analysis) ([Code snippets](https://github.com/melindacmills/IntroStatisticalGenetics)).
+
 ## Resources
 
 Finemapping tools such as `finemap` and `Susie` require a correlation matrix of variants involved in a region, as shown step-by-step with 1000Genomes data below[^ld],
@@ -1903,12 +1909,6 @@ Finemapping tools such as `finemap` and `Susie` require a correlation matrix of 
 4. Calculate LD for the region,
    - 1.9. `plink --bfile reference_region --r square keep-allele-order`.
    - 2.0. `plink2 --bfile reference_region --r-unphased square ref-based` (e.g., `module load ceuadmin/plink/2.0_20240105; plink2dev --help --r-unphased`).
-
-## References
-
-Chang CC (2021). Data Management and Summary Statistics with PLINK, Chapter 3. 49-65. in Dutheil JY. (Ed) Statistical Population Genomics. Humana Press. [https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3](https://link.springer.com/protocol/10.1007/978-1-0716-0199-0_3).
-
-Mills, MC, Barban N, Tropf FC (2020). An Introduction to Statistical Genetic Data Analysis. The MIT Press. [https://mitpress.mit.edu/books/introduction-statistical-genetic-data-analysis](https://mitpress.mit.edu/books/introduction-statistical-genetic-data-analysis) ([Code snippets](https://github.com/melindacmills/IntroStatisticalGenetics)).
 
 [^ld]: **Acknowledgement**
 
