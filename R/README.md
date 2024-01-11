@@ -26,11 +26,13 @@ For completeness, here is the counterpart for `biopython`
 library(Biostrings)
 fasta_file_path <- 'https://rest.uniprot.org/uniprotkb/P04217.fasta'
 fasta_sequences <- readAAStringSet(fasta_file_path, format = "fasta")
-first_sequence <- fasta_sequences[[1]]
-cat("Sequence:", toString(first_sequence), "\n")
-search_442688365 <- 'TDGEGALSEPSATVTIEELAAPPPPVLMHHGESSQVLHPGNK'
-match_position <- regexpr(search_442688365, first_sequence)
+AA_sequence <- fasta_sequences[[1]]
+cat("Sequence:", toString(AA_sequence), "\n")
+iso_442688365 <- 'TDGEGALSEPSATVTIEELAAPPPPVLMHHGESSQVLHPGNK'
+match_position <- regexpr(iso_442688365, AA_sequence)
 match_position
+mp <- matchPattern(iso_442688365,AA_sequence)
+mp
 ```
 
 which handles URL and generates more informative output,
@@ -44,4 +46,11 @@ attr(,"index.type")
 [1] "chars"
 attr(,"useBytes")
 [1] TRUE
+ mp <- matchPattern(iso_442688365,AA_sequence)
+> mp
+Views on a 495-letter AAString subject
+subject: MSMLVVFLLLWGVTWGPVTEAAIFYETQPSLWAESESLLKPLANVTLTCQAHLETPDFQLFKNGVAQEPVHLDSPAIKHQFLLTGDTQGRYRCR...RPQLRATWSGAVLAGRDAVLRCEGPIPDVTFELLREGETKAVKTVRTPGAAANLELIFVGPQHAGNYRCRYRSWVPHTFESELSDPVELLVAES
+views:
+      start end width
+  [1]   186 227    42 [TDGEGALSEPSATVTIEELAAPPPPVLMHHGESSQVLHPGNK]
 ```
