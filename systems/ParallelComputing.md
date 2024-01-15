@@ -219,3 +219,44 @@ if [ ! -d ~/rds/results/public/proteomics/scallop-cvd1 ]; then mkdir ~/rds/resul
 cat cvd1.txt | xargs -I {} bash -c "wget ${url}/{}.txt.gz -O ~/rds/results/public/proteomics/scallop-cvd1/{}.txt.gz"
 #  ln -s ~/rds/results/public/proteomics/scallop-cvd1
 ```
+
+The following example illustrates job canceling with status "PD" but leaving those running untouched,
+
+```
+$ squeue -u jhz22
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+    41800594_[1-4] cclake-hi _3-CADM1    jhz22 PD       0:00      1 (None)
+   41800593_[1-11] cclake-hi _3-CADH6    jhz22 PD       0:00      1 (None)
+   41800592_[1-44] cclake-hi _3-CADH5    jhz22 PD       0:00      1 (None)
+   41800591_[1-13] cclake-hi _3-CADH1    jhz22 PD       0:00      1 (None)
+    41800590_[1-2] cclake-hi _3-CAD19    jhz22 PD       0:00      1 (None)
+   41800589_[1-19] cclake-hi _3-CA2D1    jhz22 PD       0:00      1 (None)
+   41800588_[1-43] cclake-hi _3-C4BPA    jhz22 PD       0:00      1 (None)
+  41800587_[1-113] cclake-hi   _3-C1S    jhz22 PD       0:00      1 (None)
+   41800586_[1-13] cclake-hi  _3-C1RL    jhz22 PD       0:00      1 (None)
+   41800585_[1-90] cclake-hi   _3-C1R    jhz22 PD       0:00      1 (None)
+    41800584_[1-3] cclake-hi _3-C1QR1    jhz22 PD       0:00      1 (None)
+   41800583_[1-23] cclake-hi  _3-C1QC    jhz22 PD       0:00      1 (None)
+   41800582_[1-41] cclake-hi  _3-C1QB    jhz22 PD       0:00      1 (None)
+    41800581_[1-5] cclake-hi   _3-BTK    jhz22 PD       0:00      1 (None)
+   41800580_[1-11] cclake-hi  _3-BST1    jhz22 PD       0:00      1 (None)
+      41800344_[1] cclake-hi  _3-AMYP    jhz22 PD       0:00      1 (Priority)
+       41800236_51 cclake-hi   _3-ALS    jhz22  R       0:31      1 cpu-p-198
+       41800236_53 cclake-hi   _3-ALS    jhz22  R       0:31      1 cpu-p-597
+       41800337_12 cclake-hi  _3-AMBP    jhz22  R       0:31      1 cpu-p-490
+       41800337_14 cclake-hi  _3-AMBP    jhz22  R       0:31      1 cpu-p-490
+        41800338_3 cclake-hi   _3-AMD    jhz22  R       0:31      1 cpu-p-251
+        41800162_1 cclake-hi _3-AGRG6    jhz22  R       1:14      1 cpu-p-251
+      41800059_160 cclake-hi  _3-AACT    jhz22  R       1:34      1 cpu-p-417
+        41798125_1 cclake-hi _3-AGRG6    jhz22  R       7:19      1 cpu-p-418
+      41797610_160 cclake-hi  _3-AACT    jhz22  R       7:52      1 cpu-p-597
+      41747018_214 cclake-hi _3-ITIH2    jhz22  R    4:07:36      1 cpu-p-245
+      41705768_214 cclake-hi _3-ITIH2    jhz22  R   11:18:49      1 cpu-p-245
+
+```
+
+We use `xargs`,
+
+```bash
+squeue -u jhz22 | grep PD | awk '{print $1}' | xargs -l -I {} scancel {}
+```
