@@ -255,7 +255,7 @@ $ squeue -u jhz22
 
 ```
 
-We use `xargs`,
+We also use `xargs`,
 
 ```bash
 squeue -u jhz22 | grep PD | awk '{print $1}' | xargs -l -I {} scancel {}
