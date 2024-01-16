@@ -161,7 +161,7 @@ The following information is helpful, [https://www.scm.com/doc/Installation/Remo
 
 ## Login-Web Interface
 
-Address: [https://docs.hpc.cam.ac.uk/hpc/user-guide/login-web.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/login-web.html)
+Address: <https://login-web.hpc.cam.ac.uk/> ([User Guide](https://docs.hpc.cam.ac.uk/hpc/user-guide/login-web.html))
 
 ## sftp
 
