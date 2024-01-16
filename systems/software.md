@@ -379,13 +379,19 @@ Due to increase of size, the entry is moved here, <https://cambridge-ceu.github.
 
 Official website: [https://www.stata.com/](https://www.stata.com/).
 
-As a CEU member the following is possible,
+```
+$ module avail ceuadmin/stata
+----------------------------------------------------------------- /usr/local/Cluster-Config/modulefiles -----------------------------------------------------------------
+ceuadmin/stata/14  ceuadmin/stata/15  ceuadmin/stata/16
+```
+
+e.g., as a CEU member the following is possible,
 
 ```
 module load ceuadmin/stata/14
 ```
 
-as with `ceuadmin/stata/15`. The meta-analysis (metan) and Mendelian Randomisation (mrrobust) packages can be installed as follows,
+The meta-analysis (metan) and Mendelian Randomisation (mrrobust) packages can be installed as follows,
 
 ```stata
 ssc install metan
