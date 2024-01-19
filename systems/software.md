@@ -128,7 +128,7 @@ git add --help
 
 ## Go
 
-It is avail from `/usr/bin/go` and also visiable from `module avail go`.
+It is avail from `/usr/bin/go` and also visible from `module avail go`.
 
 ## Java
 
