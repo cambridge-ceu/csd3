@@ -307,6 +307,7 @@ They are ordered chronologically.
 | 2024-01-08  | plink/2.0_20240105               | Genetics             |
 | 2024-01-10  | cmake/3.28.1                     | Generic              |
 | 2024-01-10  | tatami/2.1.2                     | Generic[^tatami]     |
+| 2024-01-19  | htslib/1.19                      | Genetics             |
 
 \* CEU or approved users only.
 
