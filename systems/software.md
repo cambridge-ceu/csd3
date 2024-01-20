@@ -137,6 +137,24 @@ module avail openjdk
 java -version
 ```
 
+## JavaScript
+
+Given `hello.js` containing these
+
+```javascript
+// hello world
+console.log('Hello World!');
+```
+
+called by
+
+```bash
+module load ceuadmin/node/16.14.0
+node hello.js
+```
+
+and we get `Hello World!`.
+
 ## Julia
 
 The Julia compiler is visible from `module avail julia`, and by default it loads 1.6.2
