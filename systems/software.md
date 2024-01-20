@@ -379,8 +379,9 @@ Due to increase of size, the entry is moved here, <https://cambridge-ceu.github.
 
 Official website: [https://www.stata.com/](https://www.stata.com/).
 
+We issue `module avail ceuadmin/stata` to give,
+
 ```
-$ module avail ceuadmin/stata
 ----------------------------------------------------------------- /usr/local/Cluster-Config/modulefiles -----------------------------------------------------------------
 ceuadmin/stata/14  ceuadmin/stata/15  ceuadmin/stata/16
 ```
