@@ -417,6 +417,30 @@ ssc install metan
 net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") replace
 ```
 
+## TypeScript
+
+This can achieved with `node`
+
+```bash
+# Method 1
+npm install -g typescript
+tsc hello.ts
+node hello.js
+# Method 2
+npm install -g ts-node
+ts-node helloworld.ts
+```
+
+In the following, `hello.ts` use method 2 through `/usr/bin/env`
+
+```bash
+#!/usr/bin/env ts-node
+
+console.log('Hello from TypeScript!');
+```
+
+which is effectively `ts-node hello.ts`.
+
 [^venv]: The following error
 
     ```
