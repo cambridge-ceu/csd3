@@ -419,6 +419,8 @@ net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") 
 
 ## TypeScript
 
+Web: <https://www.typescriptlang.org/>
+
 This can achieved with `node`
 
 ```bash
