@@ -139,6 +139,15 @@ ghc --version
 
 It is avail from `/usr/bin/go` and also visible from `module avail go`.
 
+A more recent version is available
+
+```
+module load ceuadmin/go
+go version
+```
+
+giving `go version go1.21.6 linux/amd64`.
+
 ## Java
 
 ```bash
