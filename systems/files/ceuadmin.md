@@ -310,7 +310,7 @@ They are ordered chronologically.
 | 2024-01-10  | cmake/3.28.1                     | Generic              |
 | 2024-01-10  | tatami/2.1.2                     | Generic[^tatami]     |
 | 2024-01-19  | htslib/1.19                      | Genetics             |
-| 2024-01-23  | nextflow/ceuadmin/go/1.21.6      | Generic[^nextflow]   |
+| 2024-01-23  | nextflow/23.10.1                 | Generic[^nextflow]   |
 | 2024-01-23  | go/1.21.6                        | Generic              |
 | 2024-01-23  | singularity/4.0.3                | Generic              |
 | 2024-01-23  | libseccomp/2.5.5                 | Generic              |
