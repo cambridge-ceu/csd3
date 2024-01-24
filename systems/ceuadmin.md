@@ -8,28 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-A word cloud diagram is generated from the following R script, noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=203$$, $$\lambda=3$$.
-
-```bash
-Rscript -e '
-  library(RColorBrewer)
-  library(dplyr)
-  library(tm)
-  library(wordcloud)
-  ceuadmin <- Sys.getenv("CEUADMIN")
-  modules <- setdiff(dir(ceuadmin),c("doc","lib","misc","sources"))
-  length(modules)
-  set.seed(1234321)
-  docs <- Corpus(VectorSource(modules))
-  m <- TermDocumentMatrix(docs) %>%
-       as.matrix()
-  words <- sort(rowSums(m),decreasing=TRUE)
-  freq <- rpois(length(words),lambda=3)
-  png("ceuadmin.png",res=300,height=10,width=10,units="in")
-  wordcloud(names(words), freq, min.freq = 1, max.words=200, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
-  dev.off()
-'
-```
+noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=203$$, $$\lambda=3$$.
 
 ## Entries
 
@@ -334,6 +313,10 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2024-01-19 | htslib/1.19                 | Genetics            |
 
     \* CEU or approved users only.
+
+    More detailed diagrams on genetics (87) and generic (134) software are as follows,
+
+    ![Genetics](genetics.png) ![Generic](generic.png)
 
 [^gui]: GUI
 

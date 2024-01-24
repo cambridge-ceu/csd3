@@ -323,19 +323,49 @@ Three aspects are notable,
 2. A symbolic link is generated when appropriate to simplify executable file name.
 3. The available source package is kept in the sources/ directory.
 
+
+A word cloud diagram is generated from the following script
+
+```bash
+grep -e Generic ${CEUADMIN}/doc/ceuadmin.md | grep "^[|]" | awk '{print $4}' > generic.lst
+grep -e Genetics ${CEUADMIN}/doc/ceuadmin.md | grep "^[|]" | awk '{print $4}' > genetics.lst
+grep -e Genetics -e Generic ${CEUADMIN}/doc/ceuadmin.md | grep "^[|]" | awk '{print $4}' | wc -l
+rm -f ceuadmin.png generic.png genetics.png
+Rscript -e '
+  library(RColorBrewer)
+  library(dplyr)
+  library(tm)
+  library(wordcloud)
+  options(width=110);
+  ceuadmin <- Sys.getenv("CEUADMIN")
+  wc <- function(modules,png)
+  {
+    print(length(modules))
+    docs <- Corpus(VectorSource(modules))
+    m <- TermDocumentMatrix(docs) %>%
+         as.matrix()
+    words <- sort(rowSums(m),decreasing=TRUE)
+    freq <- rpois(length(words),lambda=3)
+    png(png,,res=300,height=10,width=10,units="in")
+    wordcloud(names(words), freq, min.freq = 1, max.words=200, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
+    dev.off()
+  }
+  modules <- setdiff(dir(ceuadmin),c("doc","lib","misc","sources","generic.lst","genetics.lst"))
+  print(modules)
+  set.seed(1234321)
+  generic <- scan("generic.lst",what="")
+  genetics <- scan("genetics.lst",what="")
+  wc(modules,"ceuadmin.png")
+  wc(generic,"generic.png")
+  wc(genetics,"genetics.png")
+  unlink(c("generic.lst","genetics.lst"))
+'
+```
+
+
 ---
 
-[^ls]: The list is generated and the number counted with
-
-    ```bash
-    Rscript -e 'options(width=110);setdiff(dir(),c("doc","lib","misc","sources"))'
-    # Generic, Genetics, All
-    grep -e Generic ceuadmin.md | grep "^[|]" | wc -l
-    grep -e Genetics ceuadmin.md | grep "^[|]" | wc -l
-    grep -e Genetics -e Generic ceuadmin.md | grep "^[|]" | wc -l
-    ```
-
-    The latest R (4.2.2 as of 31/10/2022) is installed but a larger collection of packages will be deposited at /rds/project/jmmh2.
+[^ls]: A larger collection of packages is deposited at /rds/project/jmmh2.
 
 [^gui]: GUI
 
