@@ -314,7 +314,7 @@ They are ordered chronologically.
 | 2024-01-23  | go/1.21.6                        | Generic              |
 | 2024-01-23  | singularity/4.0.3                | Generic[^singularity]|
 | 2024-01-23  | libseccomp/2.5.5                 | Generic              |
-| 2024-01-24  | fraposa_calc/2.0.0-alpha.4       | Genetics             |
+| 2024-01-24  | fraposa_pgsc/0.1.0               | Genetics[^fraposa]   |
 | 2024-01-24  | pgsc_calc/2.0.0-alpha.4          | Genetics[^pgsc_calc] |
 
 \* CEU or approved users only.
@@ -674,6 +674,25 @@ Rscript -e '
     mconfig --prefix=$CEUADMIN/singularity/4.0.3 --without-seccomp --without-conmon --without-suid
     cd builddir & make
     ```
+
+[^fraposa]:
+
+    Several packages, including poetry, poetry-plugin-export and fraposa_pgsc, will be installed as follows,
+
+    ```bash
+    module load ceuadmin/Anaconda3/2023.09-0
+    pip install poetry
+    pip3 install poetry-plugin-export
+    pip install --use-feature=fast-deps .
+    scripts/run_example.sh
+    ```
+
+    This is necessay since by default `peotry install` will use user's home directory. As indicated from `poetry install --help`:
+
+    The install command reads the poetry.lock file from
+    the current directory, processes it, and downloads and installs all the
+    libraries and dependencies outlined in that file. If the file does not
+    exist it will look for pyproject.toml and do the same.
 
 [^pgsc_calc]:
 

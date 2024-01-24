@@ -311,7 +311,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2024-01-08 | picard/3.1.1                | Genetics            |
     | 2024-01-08 | plink/2.0_20240105          | Genetics            |
     | 2024-01-19 | htslib/1.19                 | Genetics            |
-    | 2024-01-24 | fraposa_calc/2.0.0-alpha.4  | Genetics            |
+    | 2024-01-24 | fraposa_pgsc/0.1.0          | Genetics[^fraposa]  |
     | 2024-01-24 | pgsc_calc/2.0.0-alpha.4     | Genetics[^pgsc_calc]|
 
     \* CEU or approved users only.
@@ -382,6 +382,25 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
 [^regtools]: gcc/6 is required for C++11.
 
 [^varscan]: Simply call `java -jar $VARSCAN_HOME/VarScan.v2.4.6.jar` after `module load ceuadmin/VarScan/2.4.6`.
+
+[^fraposa]:
+
+    Several packages, including poetry, poetry-plugin-export and fraposa_pgsc, will be installed as follows,
+
+    ```bash
+    module load ceuadmin/Anaconda3/2023.09-0
+    pip install poetry
+    pip3 install poetry-plugin-export
+    pip install --use-feature=fast-deps .
+    scripts/run_example.sh
+    ```
+
+    This is necessay since by default `peotry install` will use user's home directory. As indicated from `poetry install --help`:
+
+    The install command reads the poetry.lock file from
+    the current directory, processes it, and downloads and installs all the
+    libraries and dependencies outlined in that file. If the file does not
+    exist it will look for pyproject.toml and do the same.
 
 [^pgsc_calc]:
 
