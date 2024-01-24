@@ -17,6 +17,7 @@ module load ceuadmin/go/1.21.6
 module load ceuadmin/fraposa_pgsc/0.1.0
 module load ceuadmin/singularity/4.0.3
 module load ceuadmin/nextflow/23.10.1
+module load ceuadmin/plink/2.00a3.3
 module load ceuadmin/quarto/1.3.450-icelake
 ```
 
