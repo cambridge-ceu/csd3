@@ -382,3 +382,14 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
 [^regtools]: gcc/6 is required for C++11.
 
 [^varscan]: Simply call `java -jar $VARSCAN_HOME/VarScan.v2.4.6.jar` after `module load ceuadmin/VarScan/2.4.6`.
+
+[^pgsc_calc]:
+
+    Application, <https://pgsc-calc.readthedocs.io/en/latest/index.html>
+
+    ```bash
+    nextflow run pgscatalog/pgsc_calc -profile test,singularity
+    ```
+
+    It appears quarto is called so presumably under icelake.
+
