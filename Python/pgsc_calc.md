@@ -11,6 +11,7 @@ Web: <https://pgsc-calc.readthedocs.io/en/latest/> (GitHub, <https://github.com/
 This is furnished by loading the following modules,
 
 ```bash
+module load ceuadmin/Anaconda3/2023.09-0
 module load ceuadmin/go/1.21.6
 module load ceuadmin/fraposa_pgsc/0.1.0
 module load ceuadmin/singularity/4.0.3
