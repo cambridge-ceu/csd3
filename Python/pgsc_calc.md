@@ -8,7 +8,7 @@ Web: <https://pgsc-calc.readthedocs.io/en/latest/> (GitHub, <https://github.com/
 
 ## Installation
 
-This is furnished by loading the following modules,
+This is furnished by a number of modules,
 
 ```bash
 module load ceuadmin/Anaconda3/2023.09-0
