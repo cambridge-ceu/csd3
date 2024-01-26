@@ -4,7 +4,7 @@ sort: 4
 
 # pgsc_calc
 
-Web: <https://pgsc-calc.readthedocs.io/en/latest/> (GitHub, <https://github.com/PGScatalog/pgsc_calc>)
+Web: <https://pgsc-calc.readthedocs.io/en/latest/> (GitHub, <https://github.com/PGScatalog/pgsc_calc>; ftp, <https://ftp.ebi.ac.uk/pub/databases/spot/pgs/>)
 
 ## Installation
 
