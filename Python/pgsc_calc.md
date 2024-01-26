@@ -116,10 +116,10 @@ Please remember to cite polygenic score authors if you publish with them!
 Check the output report for citation details
 ```
 
-The DAG from the output is shown here,
+The DAG from the output is shown here from left to right,
 
 ```mermaid
-flowchart TB
+flowchart LR
     subgraph " "
     v0["Channel.fromPath"]
     v3["Channel.fromPath"]
