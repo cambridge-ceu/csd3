@@ -115,3 +115,128 @@ executor >  local (9)
 Please remember to cite polygenic score authors if you publish with them!
 Check the output report for citation details
 ```
+
+The DAG from the output is shown here,
+
+```mermaid
+flowchart TB
+    subgraph " "
+    v0["Channel.fromPath"]
+    v3["Channel.fromPath"]
+    v8["Channel.fromPath"]
+    v43["Channel.fromPath"]
+    v44["Channel.fromPath"]
+    v45["Channel.of"]
+    v105["Channel.fromPath"]
+    v112["reference_panel_name"]
+    end
+    subgraph PGSCATALOG_PGSCALC
+    subgraph PGSCALC
+    subgraph INPUT_CHECK
+    v10([SAMPLESHEET_JSON])
+    v18([COMBINE_SCOREFILES])
+    v4(( ))
+    v12(( ))
+    end
+    subgraph MAKE_COMPATIBLE
+    v28([PLINK2_RELABELBIM])
+    v31([PLINK2_RELABELPVAR])
+    v34([PLINK2_VCF])
+    v40(( ))
+    end
+    subgraph MATCH
+    v51([MATCH_VARIANTS])
+    v65([MATCH_COMBINE])
+    v68(( ))
+    end
+    subgraph APPLY_SCORE
+    v83([PLINK2_SCORE])
+    v90([SCORE_AGGREGATE])
+    v37(( ))
+    v88(( ))
+    v92(( ))
+    end
+    subgraph REPORT
+    v113([SCORE_REPORT])
+    v103(( ))
+    v117(( ))
+    v119(( ))
+    end
+    v122([DUMPSOFTWAREVERSIONS])
+    v11(( ))
+    end
+    end
+    subgraph " "
+    v41["vmiss"]
+    v57[" "]
+    v66[" "]
+    v75[" "]
+    v84[" "]
+    v85[" "]
+    v114[" "]
+    v115[" "]
+    v116[" "]
+    v118["versions"]
+    v123[" "]
+    v124[" "]
+    v125[" "]
+    end
+    v0 --> v10
+    v3 --> v4
+    v8 --> v18
+    v10 --> v11
+    v10 --> v12
+    v4 --> v18
+    v18 --> v11
+    v18 --> v37
+    v18 --> v103
+    v12 --> v28
+    v28 --> v11
+    v28 --> v37
+    v28 --> v40
+    v12 --> v31
+    v31 --> v11
+    v31 --> v37
+    v31 --> v40
+    v12 --> v34
+    v34 --> v11
+    v34 --> v37
+    v34 --> v40
+    v40 --> v41
+    v43 --> v37
+    v44 --> v113
+    v45 --> v37
+    v37 --> v51
+    v51 --> v11
+    v51 --> v37
+    v37 --> v57
+    v37 --> v65
+    v65 --> v66
+    v65 --> v11
+    v65 --> v37
+    v65 --> v68
+    v65 --> v103
+    v37 --> v75
+    v37 --> v83
+    v83 --> v85
+    v83 --> v84
+    v83 --> v11
+    v83 --> v88
+    v88 --> v90
+    v90 --> v11
+    v90 --> v92
+    v90 --> v103
+    v105 --> v103
+    v112 --> v113
+    v103 --> v113
+    v113 --> v116
+    v113 --> v115
+    v113 --> v114
+    v113 --> v117
+    v113 --> v119
+    v117 --> v118
+    v11 --> v122
+    v122 --> v125
+    v122 --> v124
+    v122 --> v123
+```
