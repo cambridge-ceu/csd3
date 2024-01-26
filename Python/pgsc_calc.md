@@ -8,7 +8,7 @@ Web: <https://pgsc-calc.readthedocs.io/en/latest/> (GitHub, <https://github.com/
 
 ## Installation
 
-This is furnished by a number of modules,
+This is furnished by a number of modules[^issue],
 
 ```bash
 module load ceuadmin/Anaconda3/2023.09-0
@@ -31,7 +31,7 @@ module load ceuadmin/pgsc_calc
 nextflow run pgscatalog/pgsc_calc -profile test,singularity
 ```
 
-### DAG
+### Directed acyclic graph (DAG)
 
 Shown here is from left to right instead,
 
@@ -247,3 +247,7 @@ Check the output report for citation details
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
+
+[^issue]:
+
+    As of 26/1/2024, there is the following issue: It works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but NXF_HOME must be /home/$USER/.netflow.
