@@ -240,3 +240,8 @@ flowchart LR
     v122 --> v124
     v122 --> v123
 ```
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
