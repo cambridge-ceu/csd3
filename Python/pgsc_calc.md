@@ -8,7 +8,7 @@ Web: <https://pgsc-calc.readthedocs.io/en/latest/> ([GitHub](https://github.com/
 
 ## Installation
 
-This is furnished by a number of modules[^issue],
+This is furnished by a number of modules,
 
 ```bash
 module load ceuadmin/Anaconda3/2023.09-0
@@ -25,6 +25,8 @@ The last module apparently only works on icelake. Specific handling of individua
 section when appropriate.
 
 ## Usage
+
+Currently, 2.0.0-alpha.4 is the latest[^issue]
 
 ```
 module load ceuadmin/pgsc_calc
@@ -248,6 +250,10 @@ Check the output report for citation details
   mermaid.initialize({ startOnLoad: true });
 </script>
 
+### report.html
+
+This is [files](files/report.html).
+
 [^issue]:
 
-    As of 26/1/2024, it works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but NXF_HOME must be /home/$USER/.nextflow.
+    As of 26/1/2024, it works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but NXF_HOME must be /home/$USER/.nextflow. It requires at least vctrs 0.6.4 and [report.html](files/report.html) is manually rendered from report.qmd.
