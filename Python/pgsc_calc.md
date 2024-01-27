@@ -4,7 +4,7 @@ sort: 4
 
 # pgsc_calc
 
-Web: <https://pgsc-calc.readthedocs.io/en/latest/> (GitHub, <https://github.com/PGScatalog/pgsc_calc>; ftp, <https://ftp.ebi.ac.uk/pub/databases/spot/pgs/>)
+Web: <https://pgsc-calc.readthedocs.io/en/latest/> ([GitHub](https://github.com/PGScatalog/pgsc_calc), [ftp](https://ftp.ebi.ac.uk/pub/databases/spot/pgs/))
 
 ## Installation
 
@@ -250,4 +250,4 @@ Check the output report for citation details
 
 [^issue]:
 
-    As of 26/1/2024, there is the following issue: It works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but NXF_HOME must be /home/$USER/.netflow.
+    As of 26/1/2024, it works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but NXF_HOME must be /home/$USER/.nextflow.
