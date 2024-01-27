@@ -254,6 +254,64 @@ Check the output report for citation details
 
 This is [report.html](files/report.html)[^report].
 
+It is handy to have all options of quarto listed here,
+
+```
+quarto render --help
+
+  Usage:   quarto render [input] [args...]
+  Version: 1.3.450
+
+  Description:
+
+    Render files or projects to various document types.
+
+  Options:
+
+    -h, --help                          - Show this help.
+    -t, --to                            - Specify output format(s).
+    -o, --output                        - Write output to FILE (use '--output -' for stdout).
+    --output-dir                        - Write project output to DIR (path is project relative)
+    -M, --metadata                      - Metadata value (KEY:VALUE).
+    --site-url                          - Override site-url for website or book output
+    --execute                           - Execute code (--no-execute to skip execution).
+    -P, --execute-param                 - Execution parameter (KEY:VALUE).
+    --execute-params                    - YAML file with execution parameters.
+    --execute-dir                       - Working directory for code execution.
+    --execute-daemon                    - Keep Jupyter kernel alive (defaults to 300 seconds).
+    --execute-daemon-restart            - Restart keepalive Jupyter kernel before render.
+    --execute-debug                     - Show debug output for Jupyter kernel.
+    --use-freezer                       - Force use of frozen computations for an incremental file render.
+    --cache                             - Cache execution output (--no-cache to prevent cache).
+    --cache-refresh                     - Force refresh of execution cache.
+    --no-clean                          - Do not clean project output-dir prior to render
+    --debug                             - Leave intermediate files in place after render.
+    pandoc-args...                      - Additional pandoc command line arguments.
+    --log                     <level>   - Path to log file
+    --log-level               <level>   - Log level (info, warning, error, critical)
+    --log-format              <format>  - Log format (plain, json-stream)
+    --quiet                             - Suppress console output.
+    --profile                           - Active project profile(s)
+
+  Commands:
+
+    help  [command]  - Show this help or the help of a sub-command.
+
+  Examples:
+
+    Render Markdown:    quarto render document.qmd
+                        quarto render document.qmd --to html
+                        quarto render document.qmd --to pdf --toc
+    Render Notebook:    quarto render notebook.ipynb
+                        quarto render notebook.ipynb --to docx
+                        quarto render notebook.ipynb --to pdf --toc
+    Render Project:     quarto render
+                        quarto render projdir
+    Render w/ Metadata: quarto render document.qmd -M echo:false
+                        quarto render document.qmd -M code-fold:true
+    Render to Stdout:   quarto render document.qmd --output -
+```
+
 [^issue]:
 
     As of 27/1/2024, it works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but NXF_HOME must be /home/$USER/.nextflow.
