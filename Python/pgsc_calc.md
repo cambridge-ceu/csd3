@@ -2,6 +2,11 @@
 sort: 4
 ---
 
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
 # pgsc_calc
 
 Web: <https://pgsc-calc.readthedocs.io/en/latest/> ([GitHub](https://github.com/PGScatalog/pgsc_calc), [ftp](https://ftp.ebi.ac.uk/pub/databases/spot/pgs/))
@@ -21,12 +26,12 @@ module load ceuadmin/plink/2.00a3.3
 module load ceuadmin/quarto/1.3.450-icelake
 ```
 
-The last module apparently only works on icelake. Specific handling of individual module is documented on the ceuadmin
+The last module apparently only works on icelake[^issue]. Specific handling of individual module is documented on the ceuadmin
 section when appropriate.
 
 ## Usage
 
-Currently, 2.0.0-alpha.4 is the latest[^issue]
+Currently, 2.0.0-alpha.4 is the latest.
 
 ```
 module load ceuadmin/pgsc_calc
@@ -245,14 +250,9 @@ Please remember to cite polygenic score authors if you publish with them!
 Check the output report for citation details
 ```
 
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
-</script>
-
 ### report.html
 
-This is [files](files/report.html).
+This is [report.html](files/report.html).
 
 [^issue]:
 
