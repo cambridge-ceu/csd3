@@ -4,7 +4,9 @@ sort: 6
 
 # Languages
 
-<font color="red"><b>17/1/2024 Update</b></font>: `ceuadmin/deno/1.40.2` and `ceuadmin/deno/1.40.2-icelake` are available for JavaScript and TypeScript, with `deno --version` giving
+<font color="red"><b>17/1/2024 Update</b></font>
+
+Modules `ceuadmin/deno/1.40.2` and `ceuadmin/deno/1.40.2-icelake` are available for JavaScript and TypeScript, with `deno --version` giving
 
 ```
 deno 1.40.2 (release, x86_64-unknown-linux-gnu)
