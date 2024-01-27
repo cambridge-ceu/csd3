@@ -23,19 +23,15 @@ module load ceuadmin/fraposa_pgsc/0.1.0
 module load ceuadmin/singularity/4.0.3
 module load ceuadmin/nextflow/23.10.1
 module load ceuadmin/plink/2.00a3.3
-module load ceuadmin/quarto/1.3.450-icelake
+module load ceuadmin/quarto/1.4.549
 ```
 
-The last module apparently only works on icelake[^issue]. Specific handling of individual module is documented on the ceuadmin
-section when appropriate. However, it appears problematic with the Internet under icelake so we get around with glibc/2.18[^glibc].
-
-```bash
-module load ceuadmin/glibc/2.18
-```
+Under icelake, one can use `ceuadmin/quarto/1.3.450-icelake`. Specific handling of individual module is documented on the ceuadmin
+section when appropriate.
 
 ## Usage
 
-Currently, 2.0.0-alpha.4 is the latest.
+Currently, 2.0.0-alpha.4 is the latest[^issue].
 
 ```
 module load ceuadmin/pgsc_calc
@@ -258,13 +254,11 @@ Check the output report for citation details
 
 This is [report.html](files/report.html)[^report].
 
-It is handy to have all options of quarto listed here,
+It is handy to have all options of quarto render listed here,
 
 ```
-quarto render --help
-
   Usage:   quarto render [input] [args...]
-  Version: 1.3.450
+  Version: 1.4.549
 
   Description:
 
@@ -275,7 +269,7 @@ quarto render --help
     -h, --help                          - Show this help.
     -t, --to                            - Specify output format(s).
     -o, --output                        - Write output to FILE (use '--output -' for stdout).
-    --output-dir                        - Write project output to DIR (path is project relative)
+    --output-dir                        - Write output to DIR (path is input/project relative)
     -M, --metadata                      - Metadata value (KEY:VALUE).
     --site-url                          - Override site-url for website or book output
     --execute                           - Execute code (--no-execute to skip execution).
@@ -284,14 +278,14 @@ quarto render --help
     --execute-dir                       - Working directory for code execution.
     --execute-daemon                    - Keep Jupyter kernel alive (defaults to 300 seconds).
     --execute-daemon-restart            - Restart keepalive Jupyter kernel before render.
-    --execute-debug                     - Show debug output for Jupyter kernel.
+    --execute-debug                     - Show debug output when executing computations.
     --use-freezer                       - Force use of frozen computations for an incremental file render.
     --cache                             - Cache execution output (--no-cache to prevent cache).
     --cache-refresh                     - Force refresh of execution cache.
     --no-clean                          - Do not clean project output-dir prior to render
     --debug                             - Leave intermediate files in place after render.
     pandoc-args...                      - Additional pandoc command line arguments.
-    --log                     <level>   - Path to log file
+    --log                     <file>    - Path to log file
     --log-level               <level>   - Log level (info, warning, error, critical)
     --log-format              <format>  - Log format (plain, json-stream)
     --quiet                             - Suppress console output.
@@ -314,13 +308,16 @@ quarto render --help
     Render w/ Metadata: quarto render document.qmd -M echo:false
                         quarto render document.qmd -M code-fold:true
     Render to Stdout:   quarto render document.qmd --output -
+
 ```
 
 [^issue]:
 
     As of 27/1/2024, it works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but NXF_HOME must be /home/$USER/.nextflow.
 
-[^glibc]:
+    However, it appears problematic with the Internet under icelake. There was problem with GLIBC_2.18 due to deno, which is now available as `ceuadmin/deno/1.40.2` and `ceuadmin/deno/1.40.2-icelake`.
+
+    An attempt was made for `ceuadmin/glibc/2.18|2.55`, but this could be very complex.
 
     ```bash
     export version=2.18
@@ -333,13 +330,14 @@ quarto render --help
     module load texinfo-6.5-gcc-5.4.0-vxuomb7 binutils/2.25 texlive/2015 gcc/6
     mkdir build && cd build
     ../configure --prefix=${CEUADMIN}/glibc/${version}
+    make install
     ```
 
     The usual `prepend-path` for modules somehow will purge modules, so `append-path` is used instead in definition of the module file.
 
 [^report]:
 
-    It requires at least vctrs 0.6.4 and [report.html](files/report.html) is manually rendered from [report.qmd](files/report.qmd).
+It requires at least vctrs 0.6.4 and [report.html](files/report.html) is manually rendered from [report.qmd](files/report.qmd) at `assets/pgscatalog/pgsc_calc/assets/report/*`.
 
     ```bash
     quarto render report.qmd -M "self-contained:true" -P score_path:aggregated_scores.txt.gz -P sampleset:cineca -P run_ancestry:false -P reference_panel_name:NO_PANEL

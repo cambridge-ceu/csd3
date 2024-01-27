@@ -10,6 +10,19 @@ It is an open-source scientific and technical publishing system; the Linux versi
 
 ## Installation
 
+### 1.4.549
+
+This fixed the problem on GLIBC_2.18 as in 1.3.450.
+
+```bash
+wget -qO- https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.549/quarto-1.4.549-linux-rhel7-amd64.tar.gz | \
+tar xvfz -
+```
+
+giving quarto-1.4.549/ with `bin/quarto`, among others.
+
+### 1.3.450
+
 It requires CentOS 8 (icelake, or login-q-\*); otherwise it fails with message: `GLIBC_2.18` not found.
 
 To enter icelake, simply issue `ssh login-q-1`, say. Now, we obtain the package as usual,
