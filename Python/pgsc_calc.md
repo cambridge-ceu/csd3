@@ -256,4 +256,8 @@ This is [report.html](files/report.html).
 
 [^issue]:
 
-    As of 26/1/2024, it works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but NXF_HOME must be /home/$USER/.nextflow. It requires at least vctrs 0.6.4 and [report.html](files/report.html) is manually rendered from report.qmd.
+    As of 27/1/2024, it works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but NXF_HOME must be /home/$USER/.nextflow. It requires at least vctrs 0.6.4 and [report.html](files/report.html) is manually rendered from report.qmd.
+
+    ```bash
+    quarto render report.qmd -M "self-contained:true" -P score_path:aggregated_scores.txt.gz -P sampleset:cineca -P run_ancestry:false -P reference_panel_name:NO_PANEL
+    ```
