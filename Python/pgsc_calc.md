@@ -27,7 +27,11 @@ module load ceuadmin/quarto/1.3.450-icelake
 ```
 
 The last module apparently only works on icelake[^issue]. Specific handling of individual module is documented on the ceuadmin
-section when appropriate.
+section when appropriate. However, it appears problematic with the Internet under icelake so we get around with glibc/2.18[^glibc].
+
+```bash
+module load ceuadmin/glibc/2.18
+```
 
 ## Usage
 
@@ -315,6 +319,23 @@ quarto render --help
 [^issue]:
 
     As of 27/1/2024, it works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but NXF_HOME must be /home/$USER/.nextflow.
+
+[^glibc]:
+
+    ```bash
+    export version=2.18
+    wget -qO- https://ftp.gnu.org/gnu/glibc/glibc-${version}.tar.gz | \
+    tar xvfz -
+    mkdir ${version}
+    mv glibc-${version}/ src
+    mv src ${version}
+    cd ${version}/src
+    module load texinfo-6.5-gcc-5.4.0-vxuomb7 binutils/2.25 texlive/2015 gcc/6
+    mkdir build && cd build
+    ../configure --prefix=${CEUADMIN}/glibc/${version}
+    ```
+
+    The usual `prepend-path` for modules somehow will purge modules, so `append-path` is used instead in definition of the module file.
 
 [^report]:
 

@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=205$$, $$\lambda=3$$.
+noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=206$$, $$\lambda=3$$.
 
 ## Entries
 
@@ -31,42 +31,42 @@ The current list is as follows,
  [53] "gdc"                   "geany"                 "GEM"                   "GEMMA"
  [57] "Genotype-Harmonizer"   "gettext"               "gh"                    "ghc"
  [61] "ghostscript"           "git"                   "git-extras"            "GitKraken"
- [65] "glib"                  "globusconnectpersonal" "gmp"                   "gnutls"
- [69] "go"                    "googletest"            "graphene"              "GraphicsMagick"
- [73] "GreenAlgorithms4HPC"   "gsl"                   "gtk+"                  "gtksourceview"
- [77] "gtool"                 "hpg"                   "htslib"                "hunspell"
- [81] "icu"                   "ImageJ"                "impute"                "JabRef"
- [85] "JAGS"                  "jq"                    "KentUtils"             "KING"
- [89] "lapack"                "ldc2"                  "ldsc"                  "LDstore"
- [93] "LEMMA"                 "libcares"              "libgit2"               "libglvnd"
- [97] "libiconv"              "libidn2"               "libntlm"               "libpng"
-[101] "libseccomp"            "libsodium"             "libssh2"               "libuv"
-[105] "libxml2"               "libxslt"               "locuszoom"             "MAGENTA"
-[109] "magma"                 "Mango"                 "Mega2"                 "metal"
-[113] "MONSTER"               "MORGAN"                "MR-MEGA"               "MsCAVIAR"
-[117] "nano"                  "ncbi-vdb"              "ncurses"               "netbeans"
-[121] "nettle"                "nextflow"              "NLopt"                 "node"
-[125] "nspr"                  "oniguruma"             "openjdk"               "OpenMS"
-[129] "openssl"               "osca"                  "PAINTOR"               "pandoc"
-[133] "pandoc-citeproc"       "pango"                 "parallel"              "Pascal"
-[137] "pcre2"                 "pdf2djvu"              "pdfjam"                "pgsc_calc"
-[141] "phenoscanner"          "PhySO"                 "picard"                "plink"
-[145] "plink-bgi"             "plinkseq"              "PoGo"                  "polyphen"
-[149] "poppler"               "proj"                  "PRSice"                "pspp"
-[153] "PWCoCo"                "qctool"                "qpdf"                  "qt"
-[157] "qtcreator"             "QTLtools"              "quarto"                "quicktest"
-[161] "R"                     "raremetal"             "rclone"                "readline"
-[165] "regenie"               "regtools"              "RHHsoftware"           "rst2pdf"
-[169] "rstudio"               "ruby"                  "rust"                  "samtools"
-[173] "shapeit"               "singularity"           "SMR"                   "snakemake"
-[177] "SNP2HLA"               "snptest"               "spread-sheet-widget"   "sqlite"
-[181] "sra-tools"             "ssw"                   "STAR"                  "stata"
-[185] "SurvivalAnalysis"      "SurvivalKit"           "tabix"                 "tatami"
-[189] "thunderbird"           "tidy"                  "trinculo"              "trousers"
-[193] "Typora"                "unbound"               "vala"                  "VarScan"
-[197] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
-[201] "vte"                   "xpdf"                  "yaml-cpp"              "Zotero"
-[205] "zstd"
+ [65] "glib"                  "glibc"                 "globusconnectpersonal" "gmp"
+ [69] "gnutls"                "go"                    "googletest"            "graphene"
+ [73] "GraphicsMagick"        "GreenAlgorithms4HPC"   "gsl"                   "gtk+"
+ [77] "gtksourceview"         "gtool"                 "hpg"                   "htslib"
+ [81] "hunspell"              "icu"                   "ImageJ"                "impute"
+ [85] "JabRef"                "JAGS"                  "jq"                    "KentUtils"
+ [89] "KING"                  "lapack"                "ldc2"                  "ldsc"
+ [93] "LDstore"               "LEMMA"                 "libcares"              "libgit2"
+ [97] "libglvnd"              "libiconv"              "libidn2"               "libntlm"
+[101] "libpng"                "libseccomp"            "libsodium"             "libssh2"
+[105] "libuv"                 "libxml2"               "libxslt"               "locuszoom"
+[109] "MAGENTA"               "magma"                 "Mango"                 "Mega2"
+[113] "metal"                 "MONSTER"               "MORGAN"                "MR-MEGA"
+[117] "MsCAVIAR"              "nano"                  "ncbi-vdb"              "ncurses"
+[121] "netbeans"              "nettle"                "nextflow"              "NLopt"
+[125] "node"                  "nspr"                  "oniguruma"             "openjdk"
+[129] "OpenMS"                "openssl"               "osca"                  "PAINTOR"
+[133] "pandoc"                "pandoc-citeproc"       "pango"                 "parallel"
+[137] "Pascal"                "pcre2"                 "pdf2djvu"              "pdfjam"
+[141] "pgsc_calc"             "phenoscanner"          "PhySO"                 "picard"
+[145] "plink"                 "plink-bgi"             "plinkseq"              "PoGo"
+[149] "polyphen"              "poppler"               "proj"                  "PRSice"
+[153] "pspp"                  "PWCoCo"                "qctool"                "qpdf"
+[157] "qt"                    "qtcreator"             "QTLtools"              "quarto"
+[161] "quicktest"             "R"                     "raremetal"             "rclone"
+[165] "readline"              "regenie"               "regtools"              "RHHsoftware"
+[169] "rst2pdf"               "rstudio"               "ruby"                  "rust"
+[173] "samtools"              "shapeit"               "singularity"           "SMR"
+[177] "snakemake"             "SNP2HLA"               "snptest"               "spread-sheet-widget"
+[181] "sqlite"                "sra-tools"             "ssw"                   "STAR"
+[185] "stata"                 "SurvivalAnalysis"      "SurvivalKit"           "tabix"
+[189] "tatami"                "thunderbird"           "tidy"                  "trinculo"
+[193] "trousers"              "Typora"                "unbound"               "vala"
+[197] "VarScan"               "vcftools"              "VEGAS2"                "verifyBamID"
+[201] "VSCode"                "vte"                   "xpdf"                  "yaml-cpp"
+[205] "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -316,7 +316,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
 
     \* CEU or approved users only.
 
-    More detailed diagrams on recently added genetics (89) and generic (134) software are as follows,
+    More detailed diagrams on recently added genetics (89) and generic (136) software are as follows,
 
     ![Genetics](genetics.png) ![Generic](generic.png)
 
