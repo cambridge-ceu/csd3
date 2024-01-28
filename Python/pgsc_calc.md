@@ -2,14 +2,14 @@
 sort: 4
 ---
 
+# pgsc_calc
+
+Web: <https://pgsc-calc.readthedocs.io/en/latest/> ([GitHub](https://github.com/PGScatalog/pgsc_calc), [ftp](https://ftp.ebi.ac.uk/pub/databases/spot/pgs/))
+
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
-
-# pgsc_calc
-
-Web: <https://pgsc-calc.readthedocs.io/en/latest/> ([GitHub](https://github.com/PGScatalog/pgsc_calc), [ftp](https://ftp.ebi.ac.uk/pub/databases/spot/pgs/))
 
 ## Installation
 
@@ -17,13 +17,13 @@ This is furnished by a number of modules,
 
 ```bash
 module load ceuadmin/Anaconda3/2023.09-0
-module load ceuadmin/openjdk/11.0.20+8
 module load ceuadmin/go/1.21.6
 module load ceuadmin/fraposa_pgsc/0.1.0
-module load ceuadmin/singularity/4.0.3
 module load ceuadmin/nextflow/23.10.1
+module load ceuadmin/openjdk/11.0.20+8
 module load ceuadmin/plink/2.00a3.3
 module load ceuadmin/quarto/1.4.549
+module load ceuadmin/singularity/4.0.3
 ```
 
 Under icelake, one can use `ceuadmin/quarto/1.3.450-icelake`. Specific handling of individual module is documented on the ceuadmin
@@ -333,11 +333,11 @@ It is handy to have all options of quarto render listed here,
     make install
     ```
 
-    The usual `prepend-path` for modules somehow will purge modules, so `append-path` is used instead in definition of the module file.
+    The usual `prepend-path` for modules somehow will purge modules, so `append-path` is used instead (effectively dysfunctional but providing the information) in definition of the module file.
 
 [^report]:
 
-It requires at least vctrs 0.6.4 and [report.html](files/report.html) is manually rendered from [report.qmd](files/report.qmd) at `assets/pgscatalog/pgsc_calc/assets/report/*`.
+    It requires at least vctrs 0.6.4 and [report.html](files/report.html) is manually rendered from [report.qmd](files/report.qmd) at `assets/pgscatalog/pgsc_calc/assets/report/*`.
 
     ```bash
     quarto render report.qmd -M "self-contained:true" -P score_path:aggregated_scores.txt.gz -P sampleset:cineca -P run_ancestry:false -P reference_panel_name:NO_PANEL
