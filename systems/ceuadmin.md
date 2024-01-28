@@ -397,7 +397,9 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     make
     ```
 
-[^gdc]: It also includes gdc_dtt-ui 1.0.0
+[^gdc]: **gdc**
+
+    It also includes gdc_dtt-ui 1.0.0
 
 [^regtools]: **regtools**
 
