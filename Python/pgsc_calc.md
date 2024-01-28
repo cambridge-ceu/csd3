@@ -21,7 +21,7 @@ module load ceuadmin/quarto/1.4.549
 module load ceuadmin/singularity/4.0.3
 ```
 
-Under icelake, one can use `ceuadmin/quarto/1.3.450-icelake`. Specific handling of individual module is documented on the ceuadmin
+Under icelake, one can also use `ceuadmin/quarto/1.3.450-icelake`. Specific handling of individual module is documented on the ceuadmin
 section when appropriate.
 
 ## Usage
