@@ -266,7 +266,7 @@ They are ordered chronologically.
 | 2023-07-22  | rstudio/2023.06.1+524            | Generic              |
 | 2023-07-28  | PWCoCo/1.1                       | Genetics             |
 | 2023-08-02  | regenie/3.2.9                    | Genetics             |
-| 2023-08-02  | fossil/2.22                      | Generic              |
+| ""          | fossil/2.22                      | Generic              |
 | 2023-08-04  | quarto/1.3.450-icelake           | Generic[^quarto]     |
 | 2023-08-06  | finemap/1.4.2                    | Genetics             |
 | 2023-08-10  | GreenAlgorithmsforHPC/0.3        | Generic              |
@@ -274,25 +274,25 @@ They are ordered chronologically.
 | 2023-08-22  | thunderbird/115.1.1              | Generic              |
 | 2023-08-24  | pdfjam/3.07                      | Generic              |
 | 2023-09-03  | 2.0.0-pre1ge32bec                | Genetic[^pspp]       |
-| 2023-09-03  | spead-sheet-widget               | Generic              |
+| ""          | spead-sheet-widget               | Generic              |
 | 2023-09-27  | ncbi-vdb/3.0.8                   | Genetics[^ncbi-vdb]  |
-| 2023-09-27  | sra-tools/3.0.8                  | Genetics[^sra-tools] |
-| 2023-09-27  | gatk/4.4.0.0                     | Genetics[^gatk]      |
+| ""          | sra-tools/3.0.8                  | Genetics[^sra-tools] |
+| ""          | gatk/4.4.0.0                     | Genetics[^gatk]      |
 | 2023-09-28  | openjdk/8u382-b05                | Generic              |
-| 2023-09-28  | openjdk/11.0.20+8                | Generic              |
-| 2023-09-28  | openjdk/17.0.8+7                 | Generic              |
+| ""          | openjdk/11.0.20+8                | Generic              |
+| ""          | openjdk/17.0.8+7                 | Generic              |
 | 2023-10-24  | rst2pdf/0.101                    | Generic              |
-| 2023-10-24  | geany/1.38                       | Generic              |
-| 2023-10-24  | pango/1.41.1                     | Generic              |
-| 2023-10-24  | gettext/0.20                     | Generic              |
+| ""          | geany/1.38                       | Generic              |
+| ""          | pango/1.41.1                     | Generic              |
+| ""          | gettext/0.20                     | Generic              |
 | 2023-10-26  | glib/2.58.3                      | Generic              |
 | 2023-10-27  | graphene/1.4.0                   | Generic              |
-| 2023-10-27  | graphene/1.8.0                   | Generic              |
+| ""          | graphene/1.8.0                   | Generic              |
 | 2023-10-24  | gtk+/3.24.0                      | Generic              |
-| 2023-10-24  | geany/2.0                        | Generic              |
+| ""          | geany/2.0                        | Generic              |
 | 2023-10-28  | hunspell/1.7.0                   | Generic              |
-| 2023-10-28  | hunspell/1.7.2                   | Generic              |
-| 2023-10-28  | enchant/2.2.0                    | Generic              |
+| ""          | hunspell/1.7.2                   | Generic              |
+| ""          | enchant/2.2.0                    | Generic              |
 | 2023-10-29  | gtk+/3.90.0                      | Generic              |
 | 2023-10-31  | vte/0.55.0                       | Generic              |
 | 2023-11-05  | Anaconda3/2023.09-0              | Generic              |
@@ -303,24 +303,24 @@ They are ordered chronologically.
 | 2023-12-20  | verifyBamID/1.1.3                | Genetics             |
 | 2023-12-21  | verifyBamID/2.0.1                | Genetics[^VB2]       |
 | 2023-12-27  | regtools/1.0.0                   | Genetics[^regtools]  |
-| 2023-12-27  | VarScan/2.4.6                    | Genetics[^varscan]   |
+| ""          | VarScan/2.4.6                    | Genetics[^varscan]   |
 | 2024-01-02  | Mango/0.1.0                      | Generic              |
 | 2024-01-08  | picard/3.1.1                     | Genetics             |
-| 2024-01-08  | plink/2.0_20240105               | Genetics             |
+| ""          | plink/2.0_20240105               | Genetics             |
 | 2024-01-10  | cmake/3.28.1                     | Generic              |
-| 2024-01-10  | tatami/2.1.2                     | Generic[^tatami]     |
+| ""          | tatami/2.1.2                     | Generic[^tatami]     |
 | 2024-01-19  | htslib/1.19                      | Genetics             |
 | 2024-01-23  | nextflow/23.10.1                 | Generic[^nextflow]   |
-| 2024-01-23  | go/1.21.6                        | Generic              |
-| 2024-01-23  | singularity/4.0.3                | Generic[^singularity]|
-| 2024-01-23  | libseccomp/2.5.5                 | Generic              |
+| ""          | go/1.21.6                        | Generic              |
+| ""          | singularity/4.0.3                | Generic[^singularity]|
+| ""          | libseccomp/2.5.5                 | Generic              |
 | 2024-01-24  | fraposa_pgsc/0.1.0               | Genetics[^fraposa]   |
 | 2024-01-24  | pgsc_calc/2.0.0-alpha.4          | Genetics[^pgsc_calc] |
 | 2024-01-27  | glibc/2.18                       | Generic              |
-| 2024-01-27  | glibc/2.26                       | Generic              |
-| 2024-01-27  | deno/1.40.2                      | Generic[^deno]       |
-| 2024-01-27  | deno/1.40.2-icelake              | Generic              |
-| 2024-01-27  | quarto/1.4.549                   | Generic              |
+| ""          | glibc/2.26                       | Generic              |
+| ""          | deno/1.40.2                      | Generic[^deno]       |
+| ""          | deno/1.40.2-icelake              | Generic              |
+| ""          | quarto/1.4.549                   | Generic              |
 
 \* CEU or approved users only.
 
@@ -372,13 +372,17 @@ Rscript -e '
 
 ---
 
-[^ls]: A larger collection of packages is deposited at /rds/project/jmmh2.
+[^ls]: **ls**
 
-[^gui]: GUI
+    A larger collection of packages is deposited at /rds/project/jmmh2.
+
+[^gui]: **GUI**
 
     As GUI-based programs claim more computing resources, it is recommended that they are only used occasionally, e.g., calling back GitHub sessions.
 
-[^metal]: Notes on METAL 2020-05-05r
+[^metal]: **metal**
+
+    Notes on METAL 2020-05-05r
 
     This version has options EFFECT_PRINT_PRECISION and STDERR_PRINT_PRECISION (both with default 4) to enable many decimal places.
 
@@ -391,7 +395,9 @@ Rscript -e '
     so the -1.info file could not be generated.
     ```
 
-[^gemma]: Note on compiling from source
+[^gemma]: **gema**
+
+    Note on compiling from source
 
     A considerably smaller (1,097,256 vs 22,721,624) executable, /usr/local/Cluster-Apps/ceuadmin/GEMMA/0.98.5/bin, is generated under CSD3 but the original distribution is used by default.
 
@@ -400,16 +406,25 @@ Rscript -e '
     make
     ```
 
-[^fcgene]: Alternative site
+[^fcgene]: **fcgene**
+
+    Alternative site
 
     See [https://github.com/dr-roshyara/fcgene](https://github.com/dr-roshyara/fcgene)
 
-[^jq]: The executable points to the one available from the website.
+[^jq]: **jq**
+
+    The executable points to the one available from the website.
 
     The bin/, include/, lib/, share/ directories are obtained from source with oniguruma also compiled independently.
 
-[^qtltools]: The long version number is 1.3.1-25-g6e49f85f20.
-[^exiv2]: This is compiled with configuration
+[^qtltools]: **qtltools**
+
+    The long version number is 1.3.1-25-g6e49f85f20.
+
+[^exiv2]: **exiv2**
+
+    This is compiled with configuration
 
     ```bash
     cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/exiv/0.27.5 -DEXIV2_ENABLE_NLS=On -DEXIV2_ENABLE_BMFF=On -DEXIV2_BUILD_UNIT_TESTS=Off -DCMAKE_PREFIX_PATH=$HPC_WORK ..
@@ -417,8 +432,12 @@ Rscript -e '
 
     The modules ceuadmin/gettext/0.21, ceuadmin/libiconv/1.17, ceuadmin/googletest/1.8.0 are at disposal.
 
-[^libxslt]: There is complaint about docbook as in expat, however there is no apparent option to control for this.
-[^libxml2]:
+[^libxslt]: **libxslt**
+
+    There is complaint about docbook as in expat, however there is no apparent option to control for this.
+
+[^libxml2]: **libxml2**
+
     The packaging is not perfect and Python 2 package requires to be manually furnished,
 
     ```bash
@@ -435,7 +454,9 @@ Rscript -e '
     export PYTHONPATH=$root/lib/python2.7/site-packages:$PYTHONPATH
     ```
 
-[^gdal]: This involves many libraries; an expeeriment has been done as follows,
+[^gdal]: **gdal**
+
+    This involves many libraries; an expeeriment has been done as follows,
 
     ```bash
     module load gcc/6
@@ -457,13 +478,16 @@ Rscript -e '
     # --with-proj=/usr/local/software/spack/spack-git/opt/spack/linux-rhel7-broadwell/gcc-5.4.0/proj-6.2.0-iw4jbzsrjirypecjm4c7bmlhdvhgwjmx \
     ```
 
-[^expat]: Due to error messages, the options are specified as follows,
+[^expat]: **expat**
+
+    Due to error messages, the options are specified as follows,
 
     ```bash
     ./configure --prefix=$CEUADMIN/expat/2.4.7 --without-docbook
     ```
 
-[^libgit2]:
+[^libgit2]: **libgit2**
+
     It uses Python 2.7 and libssh2 (as above). The following warnings are given
 
     ```
@@ -471,7 +495,8 @@ Rscript -e '
     /usr/bin/ld: warning: libcrypto.so.10, needed by /home/jhz22/hpc-work/lib/libssh2.so, may conflict with libcrypto.so.1.1
     ```
 
-[^nettle]:
+[^nettle]: **nettle**
+
     This is required by gnutls/3.7.8, which requires `ceuadmin/gmp/6.2.1` and `--enable-mini-gmp`.
 
     Alternatively, we use
@@ -482,7 +507,8 @@ Rscript -e '
                 --with-include-path=/usr/local/Cluster-Apps/ceuadmin/gmp/6.2.1/include
     ```
 
-[^gnutls]:
+[^gnutls]: **gnutls**
+
     It requires libunistring (optionally --with-included-unistring), libidn2, libunbound, and trousers, all prepared above.
 
     ```bash
@@ -493,7 +519,10 @@ Rscript -e '
 
     It is necessary to edit `lib/pkcs11_privkey.c` to make `ck_rsa_pkcs_pss_params` definition explicit. Then there is error with guile so we use --disable-guile.
 
-[^lemma]: The documentation indicates a requirement of gcc/9.4, boost/1.78, OpenMP/3.1 and/or Intel MKL Library 2019 Update 1 but it is possible to proceed with gcc/11, cmake-3.19.7-gcc-5.4-5gbsejo, boost-1.66.0-gcc-5.4.0-slpq3un, ceuadmin/bgen.
+[^lemma]: **lemma**
+
+    The documentation indicates a requirement of gcc/9.4, boost/1.78, OpenMP/3.1 and/or Intel MKL Library 2019 Update 1 but it is possible to proceed with gcc/11, cmake-3.19.7-gcc-5.4-5gbsejo, boost-1.66.0-gcc-5.4.0-slpq3un, ceuadmin/bgen.
+
 [^axel]: The following scripts avoid option `--without-ssl`.
 
     ```bash
@@ -503,14 +532,24 @@ Rscript -e '
     ./configure --prefix=$CEUADMIN/axel/2.17.11  LDFLAGS=-L/usr/lib64 LIBS=-lssl
     ```
 
-[^OpenMS]: When the OpenMS module is loaded, pyopenms and alphapept also become available.
-[^lz]: locuszoom
+[^OpenMS]: **OpenMS**
+
+    When the OpenMS module is loaded, pyopenms and alphapept also become available.
+
+[^lz]: **locuszoom**
 
     The version adds chromosome X data and will have options using INTERVAL data.
 
-[^rstudio]: This is replacement of the module by HPC (no longer working) with the RStudio itself unchanged.
-[^pwcoco]: It compiles under gcc/9. Upon release of 1.1, this snapshot is removed.
-[^regenie]:
+[^rstudio]: **rstudio**
+
+    This is replacement of the module by HPC (no longer working) with the RStudio itself unchanged.
+
+[^pwcoco]: **pwcoco**
+
+    It compiles under gcc/9. Upon release of 1.1, this snapshot is removed.
+
+[^regenie]: **regenie**
+
     ```bash
     cd ~/rds/public_databases/software/
     wget -qO- https://github.com/rgcgithub/regenie/archive/refs/tags/v3.2.7.tar.gz | \
@@ -528,7 +567,8 @@ Rscript -e '
     make
     ```
 
-[^autoconf]:
+[^autoconf]: **autoconf**
+
     ```bash
     git clone git://git.sv.gnu.org/autoconf
     cd autoconf/
@@ -539,7 +579,8 @@ Rscript -e '
     make install
     ```
 
-[^quarto]:
+[^quarto]: **quarto**
+
     It requires CentOS 8 (icelake, or login-q-\*); otherwise it fails with message: `GLIBC_2.18` not found.
 
     Upon installation, we supplement `jupyter` (python3 -m pip install jupyter --target=${PWD}/python; set PYTHONPATH in the module) and `knitr` (R_LIBS is set in the module). Furthermore, to allow for generality, python and R directories are symbollically linked.
@@ -594,7 +635,9 @@ Rscript -e '
     [✓] Checking Knitr engine render......OK
     ```
 
-[^xpdf]: To enable display fonts as in login-e-[1-4] in /etc/xpdfrc or ~/.xpdfrc
+[^xpdf]: **xpdf**
+
+    To enable display fonts as in login-e-[1-4] in /etc/xpdfrc or ~/.xpdfrc
 
     ```
     # SJR addition
@@ -614,7 +657,9 @@ Rscript -e '
     fontFile ZapfDingbats          /usr/share/fonts/urw-base35/D050000L.t1
     ```
 
-[^pspp]: Makeinfo
+[^pspp]: **pspp**
+
+    Makeinfo
 
     The following replacement is used.
 
@@ -624,14 +669,16 @@ Rscript -e '
 
     while the rest is copied from GNU build, <https://benpfaff.org/~blp/pspp-master/20230624103130/x86_64/pspp-2.0.0-pre1ge32bec-x86_64-build20230624103419.tar.gz>.
 
-[^ncbi-vdb]:
+[^ncbi-vdb]: **ncbi-vdb**
+
     The installation is preceeded with `module load gcc/6 flex-2.6.4-gcc-5.4.0-2u2fgon`. Although `configure` is provided, `cmake` is used instead.
 
     ```bash
     cmake -DCMAKE_PREFIX_PATH=$CEUADMIN/ncbi-vdb/3.0.8 -DCMAKE_INSTALL_PREFIX=$CEUADMIN/ncbi-vdb/3.0.8 ..
     ```
 
-[^sra-tools]:
+[^sra-tools]: **sra-tools**
+
     First, create a symbolic link for `ncbi-vdb/3.0.8` in the parent directory.
 
     ```bash
@@ -642,7 +689,9 @@ Rscript -e '
 
     `/usr/local/Cluster-Apps/ceuadmin/sra-tools/3.0.8/tools/external/driver-tool/util.hpp`.
 
-[^gatk]: The Python dependencies are set up as follows,
+[^gatk]: **gatk**
+
+    The Python dependencies are set up as follows,
 
     ```bash
     module load anaconda/3.2019-10
@@ -652,35 +701,45 @@ Rscript -e '
 
     Workflow downloads: <https://github.com/gatk-workflows>
 
-[^gdc]: It also includes gdc_dtt-ui 1.0.0
+[^gdc]: **gdc**
 
-[^VB2]: To build from source, module `htslib-1.9-gcc-5.4.0-p2taavl` is needed yet with message `/usr/bin/ld: warning: libbz2.so.1.0, needed by /usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/htslib-1.9-p2taavlu3ieppo25otjfgvfu5tysbgho/lib/libhts.so, may conflict with libbz2.so.1`. In fact, 1 == 1.0 so it is ignored.
+    It also includes gdc_dtt-ui 1.0.0
 
-[^regtools]: gcc/6 is required for C++11.
+[^VB2]: **VB2**
 
-[^varscan]: Simply call `java -jar $VARSCAN_HOME/VarScan.v2.4.6.jar` after `module load ceuadmin/VarScan/2.4.6`.
+    To build from source, module `htslib-1.9-gcc-5.4.0-p2taavl` is needed yet with message `/usr/bin/ld: warning: libbz2.so.1.0, needed by /usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/htslib-1.9-p2taavlu3ieppo25otjfgvfu5tysbgho/lib/libhts.so, may conflict with libbz2.so.1`. In fact, 1 == 1.0 so it is ignored.
 
-[^tatami]: The following aspects are required.
+[^regtools]: **regtools**
+
+    gcc/6 is required for C++11.
+
+[^varscan]: **varscan**
+
+    Simply call `java -jar $VARSCAN_HOME/VarScan.v2.4.6.jar` after `module load ceuadmin/VarScan/2.4.6`.
+
+[^tatami]: **tatami**
+
+    The following aspects are required.
 
     1. module load gcc/9
     2. mkdir build && cd build
     3. cmake .. -DCMAKE_INSTALL_PREFIX=$CEUADMIN/tatami/2.1.2
     4. cmake --build . --target install
 
-[^nextflow]:
+[^nextflow]: **nextflow**
 
     ```bash
     curl -fsSL get.nextflow.io | bash
     ```
 
-[^singularity]:
+[^singularity]: **singularity**
 
     ```bash
     mconfig --prefix=$CEUADMIN/singularity/4.0.3 --without-seccomp --without-conmon --without-suid
     cd builddir & make
     ```
 
-[^fraposa]:
+[^fraposa]: **fraposa**
 
     Several packages, including poetry, poetry-plugin-export and fraposa_pgsc, will be installed as follows,
 
@@ -699,7 +758,7 @@ Rscript -e '
     libraries and dependencies outlined in that file. If the file does not
     exist it will look for pyproject.toml and do the same.
 
-[^pgsc_calc]:
+[^pgsc_calc]: **pgsc_calc**
 
     Application, <https://pgsc-calc.readthedocs.io/en/latest/index.html>
 
@@ -709,7 +768,7 @@ Rscript -e '
 
     It appears quarto is called so presumably under icelake.
 
-[^deno]:
+[^deno]: **deno**
 
     Web: <https://anaconda.org/conda-forge/deno/files>
 

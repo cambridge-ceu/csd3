@@ -300,19 +300,19 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-08-02 | regenie/3.2.9               | Genetics            |
     | 2023-08-06 | finemap/1.4.2               | Genetics            |
     | 2023-09-27 | ncbi-vdb/3.0.8              | Genetics            |
-    | 2023-09-27 | sra-tools/3.0.8             | Genetics            |
-    | 2023-09-27 | gatk/4.4.0.0                | Genetics            |
+    | ""         | sra-tools/3.0.8             | Genetics            |
+    | ""         | gatk/4.4.0.0                | Genetics            |
     | 2023-11-24 | ldsc/1.0.1                  | Genetics            |
     | 2023-11-30 | gdc/1.6.1-1.0.0             | Genetics[^gdc]      |
     | 2023-12-20 | verifyBamID/1.1.3           | Genetics            |
     | 2023-12-21 | verifyBamID/2.0.1           | Genetics            |
     | 2023-12-27 | regtools/1.0.0              | Genetics[^regtools] |
-    | 2023-12-27 | VarScan/2.4.6               | Genetics[^varscan]  |
+    | ""         | VarScan/2.4.6               | Genetics[^varscan]  |
     | 2024-01-08 | picard/3.1.1                | Genetics            |
-    | 2024-01-08 | plink/2.0_20240105          | Genetics            |
+    | ""         | plink/2.0_20240105          | Genetics            |
     | 2024-01-19 | htslib/1.19                 | Genetics            |
     | 2024-01-24 | fraposa_pgsc/0.1.0          | Genetics[^fraposa]  |
-    | 2024-01-24 | pgsc_calc/2.0.0-alpha.4     | Genetics[^pgsc_calc]|
+    | ""         | pgsc_calc/2.0.0-alpha.4     | Genetics[^pgsc_calc]|
 
     \* CEU or approved users only.
 
@@ -320,11 +320,13 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
 
     ![Genetics](genetics.png) ![Generic](generic.png)
 
-[^gui]: GUI
+[^gui]: **GUI**
 
     As GUI-based programs claim more computing resources, it is recommended that they are only used occasionally, e.g., calling back GitHub sessions.
 
-[^metal]: Notes on METAL 2020-05-05r
+[^metal]: **metal**
+
+    Notes on METAL 2020-05-05r
 
     This version has options EFFECT_PRINT_PRECISION and STDERR_PRINT_PRECISION (both with default 4) to enable many decimal places.
 
@@ -337,7 +339,9 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     so the -1.info file could not be generated.
     ```
 
-[^gemma]: Note on compiling from source
+[^gemma]: **gemma**
+
+    Note on compiling from source
 
     A considerably smaller (1,097,256 vs 22,721,624) executable, /usr/local/Cluster-Apps/ceuadmin/GEMMA/0.98.5/bin, is generated under CSD3 but the original distribution is used by default.
 
@@ -346,19 +350,35 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     make
     ```
 
-[^fcgene]: Alternative site
+[^fcgene]: **fcgene**
+
+    Alternative site
 
     See [https://github.com/dr-roshyara/fcgene](https://github.com/dr-roshyara/fcgene)
 
-[^qtltools]: The long version number is 1.3.1-25-g6e49f85f20.
-[^lemma]: The documentation indicates a requirement of gcc/9.4, boost/1.78, OpenMP/3.1 and/or Intel MKL Library 2019 Update 1 but it is possible to proceed with gcc/11, cmake-3.19.7-gcc-5.4-5gbsejo, boost-1.66.0-gcc-5.4.0-slpq3un, ceuadmin/bgen/1.1.7.
-[^openms]: When the OpenMS module is loaded, pyopenms and alphapept also become available.
-[^lz]: locuszoom
+[^qtltools]: **qtltools**
+
+    The long version number is 1.3.1-25-g6e49f85f20.
+
+[^lemma]: **lemma**
+
+    The documentation indicates a requirement of gcc/9.4, boost/1.78, OpenMP/3.1 and/or Intel MKL Library 2019 Update 1 but it is possible to proceed with gcc/11, cmake-3.19.7-gcc-5.4-5gbsejo, boost-1.66.0-gcc-5.4.0-slpq3un, ceuadmin/bgen/1.1.7.
+
+[^openms]: **openms**
+
+    When the OpenMS module is loaded, pyopenms and alphapept also become available.
+
+[^lz]: **locuszoom**
 
     The version adds chromosome X data and will have options using INTERVAL data.
 
-[^pwcoco]: It compiles under gcc/9. Upon release of 1.1, this snapshot is removed.
-[^regenie]: Building regenie 3.2.7
+[^pwcoco]: **pwcoco**
+
+    It compiles under gcc/9. Upon release of 1.1, this snapshot is removed.
+
+[^regenie]: **regenie**
+
+    Building regenie 3.2.7
 
     ```bash
     cd ~/rds/public_databases/software/
@@ -379,11 +399,15 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
 
 [^gdc]: It also includes gdc_dtt-ui 1.0.0
 
-[^regtools]: gcc/6 is required for C++11.
+[^regtools]: **regtools**
 
-[^varscan]: Simply call `java -jar $VARSCAN_HOME/VarScan.v2.4.6.jar` after `module load ceuadmin/VarScan/2.4.6`.
+    gcc/6 is required for C++11.
 
-[^fraposa]:
+[^varscan]: **varscan**
+
+    Simply call `java -jar $VARSCAN_HOME/VarScan.v2.4.6.jar` after `module load ceuadmin/VarScan/2.4.6`.
+
+[^fraposa]: **fraposa**
 
     Several packages, including poetry, poetry-plugin-export and fraposa_pgsc, will be installed as follows,
 
@@ -402,7 +426,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     libraries and dependencies outlined in that file. If the file does not
     exist it will look for pyproject.toml and do the same.
 
-[^pgsc_calc]:
+[^pgsc_calc]: **pgsc_calc**
 
     Application, <https://pgsc-calc.readthedocs.io/en/latest/index.html>
 
