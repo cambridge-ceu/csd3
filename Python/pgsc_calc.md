@@ -6,11 +6,6 @@ sort: 4
 
 Web: <https://pgsc-calc.readthedocs.io/en/latest/> ([GitHub](https://github.com/PGScatalog/pgsc_calc), [ftp](https://ftp.ebi.ac.uk/pub/databases/spot/pgs/))
 
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
-</script>
-
 ## Installation
 
 This is furnished by a number of modules,
@@ -39,6 +34,11 @@ nextflow run pgscatalog/pgsc_calc -profile test,singularity
 ```
 
 ### Directed acyclic graph (DAG)
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
 
 Shown here is from left to right instead,
 
