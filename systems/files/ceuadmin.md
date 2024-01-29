@@ -315,7 +315,7 @@ They are ordered chronologically.
 | ""          | singularity/4.0.3                | Generic[^singularity]|
 | ""          | libseccomp/2.5.5                 | Generic              |
 | 2024-01-24  | fraposa_pgsc/0.1.0               | Genetics[^fraposa]   |
-| 2024-01-24  | pgsc_calc/2.0.0-alpha.4          | Genetics[^pgsc_calc] |
+| ""          | pgsc_calc/2.0.0-alpha.4          | Genetics[^pgsc_calc] |
 | 2024-01-27  | glibc/2.18                       | Generic              |
 | ""          | glibc/2.26                       | Generic              |
 | ""          | deno/1.40.2                      | Generic[^deno]       |
