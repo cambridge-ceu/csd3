@@ -225,6 +225,22 @@ pip install jupyter --user
 
 installs libraries at `$HOME/.local`. To install package to a specific directory, use the `--target=` (or `--install-option="--prefix=$PREFIX_PATH"`) option and flag in PYTHONPATH environmental variable.
 
+There might be problem with pip,
+
+```
+pip install --upgrade mkdocs
+Traceback (most recent call last):
+  File "/rds/project/jmmh2/rds-jmmh2-public_databases/software/py38/bin/pip", line 6, in <module>
+    from pip._internal.cli.main import main
+```
+
+so we can get around with
+
+```bash
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+```
+
 Recent version of packages such as fastapi-0.104.1 would complain about lack of `setup.py` but one can get around with `pip install .` which uses its `pyproject.toml`.
 
 It is advised to use virual environments, i.e.,
