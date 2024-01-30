@@ -179,9 +179,10 @@ flowchart LR
 ### Screen output
 
 ```
-nextflow run pgscatalog/pgsc_calc -profile test,singularity -c ${CEUADMIN}/pgsc_calc/tests/b.config
 N E X T F L O W  ~  version 23.10.1
-Launching `https://github.com/pgscatalog/pgsc_calc` [infallible_leakey] DSL2 - revision: 83326a1e60 [main]
+Pulling pgscatalog/pgsc_calc ...
+ downloaded from https://github.com/PGScatalog/pgsc_calc.git
+Launching `https://github.com/pgscatalog/pgsc_calc` [stupefied_cray] DSL2 - revision: 83326a1e60 [main]
 
 WARN: Found unexpected parameters:
 * --config_profile_description: Minimal test dataset to check pipeline function
@@ -197,10 +198,10 @@ WARN: Found unexpected parameters:
 ------------------------------------------------------
 Core Nextflow options
   revision          : main
-  runName           : infallible_leakey
+  runName           : stupefied_cray
   containerEngine   : singularity
-  launchDir         : /home/jhz22
-  workDir           : /home/jhz22/work
+  launchDir         : /rds/user/jhz22/hpc-work/work
+  workDir           : /rds/user/jhz22/hpc-work/work/work
   projectDir        : /rds/user/jhz22/hpc-work/work/assets/pgscatalog/pgsc_calc
   userName          : jhz22
   profile           : test,singularity
@@ -245,18 +246,46 @@ If you use pgscatalog/pgsc_calc for your analysis please cite:
 * Software dependencies
   https://github.com/pgscatalog/pgsc_calc/blob/master/CITATIONS.md
 ------------------------------------------------------
+[-        ] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON       -
+executor >  local (1)
+executor >  local (2)
+executor >  local (2)
+executor >  local (3)
+executor >  local (4)
+executor >  local (4)
+executor >  local (5)
+executor >  local (6)
+executor >  local (7)
+executor >  local (7)
+[c6/45eaa6] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON (samplesheet.csv)                         [100%] 1 of 1 ✔
+executor >  local (7)
+[c6/45eaa6] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON (samplesheet.csv)                         [100%] 1 of 1 ✔
+executor >  local (8)
+[c6/45eaa6] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON (samplesheet.csv)                         [100%] 1 of 1 ✔
+executor >  local (8)
+[c6/45eaa6] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON (samplesheet.csv)                         [100%] 1 of 1 ✔
 executor >  local (9)
-[57/207b20] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON (samplesheet.csv)                         [100%] 1 of 1 ✔
-[10/8d9a3e] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                     [100%] 1 of 1 ✔
+[c6/45eaa6] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON (samplesheet.csv)                         [100%] 1 of 1 ✔
+executor >  local (9)
+[c6/45eaa6] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON (samplesheet.csv)                         [100%] 1 of 1 ✔
+executor >  local (9)
+[c6/45eaa6] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON (samplesheet.csv)                         [100%] 1 of 1 ✔
+executor >  local (9)
+[c6/45eaa6] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON (samplesheet.csv)                         [100%] 1 of 1 ✔
+[25/1dbd87] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                     [100%] 1 of 1 ✔
 [-        ] process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM                                      -
-[01/392cac] process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR (cineca chromosome 22)              [100%] 1 of 1 ✔
+[5d/8952b5] process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR (cineca chromosome 22)              [100%] 1 of 1 ✔
 [-        ] process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_VCF                                             -
-[74/2ebc22] process > PGSCATALOG_PGSCALC:PGSCALC:MATCH:MATCH_VARIANTS (cineca chromosome 22)                            [100%] 1 of 1 ✔
-[34/c1b6b3] process > PGSCATALOG_PGSCALC:PGSCALC:MATCH:MATCH_COMBINE (cineca)                                           [100%] 1 of 1 ✔
-[d9/ec2010] process > PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:PLINK2_SCORE (cineca chromosome 22 effect type additive 0) [100%] 1 of 1 ✔
-[a7/64535e] process > PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_AGGREGATE (cineca)                                   [100%] 1 of 1 ✔
-[2f/cc61ec] process > PGSCATALOG_PGSCALC:PGSCALC:REPORT:SCORE_REPORT (cineca)                                           [100%] 1 of 1 ✔
-[51/6edb30] process > PGSCATALOG_PGSCALC:PGSCALC:DUMPSOFTWAREVERSIONS (1)                                               [100%] 1 of 1 ✔
+[0b/b2699f] process > PGSCATALOG_PGSCALC:PGSCALC:MATCH:MATCH_VARIANTS (cineca chromosome 22)                            [100%] 1 of 1 ✔
+[12/113b82] process > PGSCATALOG_PGSCALC:PGSCALC:MATCH:MATCH_COMBINE (cineca)                                           [100%] 1 of 1 ✔
+[e2/e5866c] process > PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:PLINK2_SCORE (cineca chromosome 22 effect type additive 0) [100%] 1 of 1 ✔
+[58/28ad9d] process > PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_AGGREGATE (cineca)                                   [100%] 1 of 1 ✔
+[4c/32e9ee] process > PGSCATALOG_PGSCALC:PGSCALC:REPORT:SCORE_REPORT (cineca)                                           [100%] 1 of 1 ✔
+[38/951766] process > PGSCATALOG_PGSCALC:PGSCALC:DUMPSOFTWAREVERSIONS (1)                                               [100%] 1 of 1 ✔
+Pulling Singularity image oras://ghcr.io/pgscatalog/pgscatalog_utils:v0.4.3-singularity [cache /rds/user/jhz22/hpc-work/work/ghcr.io-pgscatalog-pgscatalog_utils-v0.4.3-singularity.img]
+Pulling Singularity image oras://ghcr.io/pgscatalog/plink2:2.00a3.3-singularity [cache /rds/user/jhz22/hpc-work/work/ghcr.io-pgscatalog-plink2-2.00a3.3-singularity.img]
+Pulling Singularity image oras://dockerhub.ebi.ac.uk/gdp-public/pgsc_calc/singularity/report:2.0 [cache /rds/user/jhz22/hpc-work/work/dockerhub.ebi.ac.uk-gdp-public-pgsc_calc-singularity-report-2.0.img]
+Pulling Singularity image oras://ghcr.io/pgscatalog/pyyaml:6.0-singularity [cache /rds/user/jhz22/hpc-work/work/ghcr.io-pgscatalog-pyyaml-6.0-singularity.img]
 -[pgscatalog/pgsc_calc] Pipeline completed successfully-
 Please remember to cite polygenic score authors if you publish with them!
 Check the output report for citation details
