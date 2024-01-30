@@ -180,13 +180,13 @@ flowchart LR
 
 ```
 N E X T F L O W  ~  version 23.10.1
-Launching `https://github.com/pgscatalog/pgsc_calc` [soggy_volhard] DSL2 - revision: 83326a1e60 [main]
+Launching `https://github.com/pgscatalog/pgsc_calc` [nauseous_payne] DSL2 - revision: 83326a1e60 [main]
 
 WARN: Found unexpected parameters:
 * --config_profile_description: Minimal test dataset to check pipeline function
 * --config_profile_name: Test profile
 * --ref_format_version: v0.1
-* --ancestry_checksums: /home/jhz22/.nextflow/assets/pgscatalog/pgsc_calc/assets/ancestry/checksums.txt
+* --ancestry_checksums: /rds/user/jhz22/hpc-work/work/assets/pgscatalog/pgsc_calc/assets/ancestry/checksums.txt
 - Ignore this warning: params.schema_ignore_params = "config_profile_description,config_profile_name,ref_format_version,ancestry_checksums"
 
 
@@ -196,26 +196,26 @@ WARN: Found unexpected parameters:
 ------------------------------------------------------
 Core Nextflow options
   revision          : main
-  runName           : soggy_volhard
+  runName           : nauseous_payne
   containerEngine   : singularity
-  launchDir         : /home/jhz22
-  workDir           : /home/jhz22/work
-  projectDir        : /home/jhz22/.nextflow/assets/pgscatalog/pgsc_calc
+  launchDir         : /usr/local/Cluster-Apps/ceuadmin/pgsc_calc/tests
+  workDir           : /usr/local/Cluster-Apps/ceuadmin/pgsc_calc/tests/work
+  projectDir        : /rds/user/jhz22/hpc-work/work/assets/pgscatalog/pgsc_calc
   userName          : jhz22
   profile           : test,singularity
-  configFiles       : /home/jhz22/.nextflow/assets/pgscatalog/pgsc_calc/nextflow.config
+  configFiles       : /rds/user/jhz22/hpc-work/work/assets/pgscatalog/pgsc_calc/nextflow.config, /usr/local/Cluster-Apps/ceuadmin/pgsc_calc/tests/b.config
 
 Input/output options
-  input             : /home/jhz22/.nextflow/assets/pgscatalog/pgsc_calc/assets/examples/samplesheet.csv
-  scorefile         : /home/jhz22/.nextflow/assets/pgscatalog/pgsc_calc/assets/examples/scorefiles/PGS001229_22.txt
+  input             : /rds/user/jhz22/hpc-work/work/assets/pgscatalog/pgsc_calc/assets/examples/samplesheet.csv
+  scorefile         : /rds/user/jhz22/hpc-work/work/assets/pgscatalog/pgsc_calc/assets/examples/scorefiles/PGS001229_22.txt
   genotypes_cache   : null
-  outdir            : /home/jhz22/.nextflow/assets/pgscatalog/pgsc_calc/results
+  outdir            : /rds/user/jhz22/hpc-work/work/assets/pgscatalog/pgsc_calc/results
 
 Reference options
   run_ancestry      : null
-  ref_samplesheet   : /home/jhz22/.nextflow/assets/pgscatalog/pgsc_calc/assets/ancestry/reference.csv
-  ld_grch37         : /home/jhz22/.nextflow/assets/pgscatalog/pgsc_calc/assets/ancestry/high-LD-regions-hg19-GRCh37.txt
-  ld_grch38         : /home/jhz22/.nextflow/assets/pgscatalog/pgsc_calc/assets/ancestry/high-LD-regions-hg38-GRCh38.txt
+  ref_samplesheet   : /rds/user/jhz22/hpc-work/work/assets/pgscatalog/pgsc_calc/assets/ancestry/reference.csv
+  ld_grch37         : /rds/user/jhz22/hpc-work/work/assets/pgscatalog/pgsc_calc/assets/ancestry/high-LD-regions-hg19-GRCh37.txt
+  ld_grch38         : /rds/user/jhz22/hpc-work/work/assets/pgscatalog/pgsc_calc/assets/ancestry/high-LD-regions-hg38-GRCh38.txt
 
 Compatibility options
   target_build      : GRCh37
@@ -229,7 +229,7 @@ Generic options
   tracedir          : ./results/pipeline_info
 
 Other parameters
-  ancestry_checksums: /home/jhz22/.nextflow/assets/pgscatalog/pgsc_calc/assets/ancestry/checksums.txt
+  ancestry_checksums: /rds/user/jhz22/hpc-work/work/assets/pgscatalog/pgsc_calc/assets/ancestry/checksums.txt
 
 !! Only displaying parameters that differ from the pipeline defaults !!
 ------------------------------------------------------
@@ -244,18 +244,19 @@ If you use pgscatalog/pgsc_calc for your analysis please cite:
 * Software dependencies
   https://github.com/pgscatalog/pgsc_calc/blob/master/CITATIONS.md
 ------------------------------------------------------
-executor >  local (9)
-[62/2fd11c] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON (samplesheet.csv)                         [100%] 1 of 1 ✔
-[a3/41cbab] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                     [100%] 1 of 1 ✔
+executor >  local (8)
+[f8/627f6d] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON (samplesheet.csv)                         [100%] 1 of 1 ✔
+[6c/43eea2] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                     [100%] 1 of 1 ✔
 [-        ] process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM                                      -
-[83/dbf870] process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR (cineca chromosome 22)              [100%] 1 of 1 ✔
+[skipped  ] process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR (cineca chromosome 22)              [100%] 1 of 1, stored: 1 ✔
 [-        ] process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_VCF                                             -
-[f2/b2b534] process > PGSCATALOG_PGSCALC:PGSCALC:MATCH:MATCH_VARIANTS (cineca chromosome 22)                            [100%] 1 of 1 ✔
-[dc/de0a47] process > PGSCATALOG_PGSCALC:PGSCALC:MATCH:MATCH_COMBINE (cineca)                                           [100%] 1 of 1 ✔
-[8e/fcf1cd] process > PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:PLINK2_SCORE (cineca chromosome 22 effect type additive 0) [100%] 1 of 1 ✔
-[ba/ea50cd] process > PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_AGGREGATE (cineca)                                   [100%] 1 of 1 ✔
-[08/5ef276] process > PGSCATALOG_PGSCALC:PGSCALC:REPORT:SCORE_REPORT (cineca)                                           [100%] 1 of 1 ✔
-[d6/4e7a76] process > PGSCATALOG_PGSCALC:PGSCALC:DUMPSOFTWAREVERSIONS (1)                                               [100%] 1 of 1 ✔
+[d2/0c1e84] process > PGSCATALOG_PGSCALC:PGSCALC:MATCH:MATCH_VARIANTS (cineca chromosome 22)                            [100%] 1 of 1 ✔
+[8d/4a5017] process > PGSCATALOG_PGSCALC:PGSCALC:MATCH:MATCH_COMBINE (cineca)                                           [100%] 1 of 1 ✔
+[ba/e8f84d] process > PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:PLINK2_SCORE (cineca chromosome 22 effect type additive 0) [100%] 1 of 1 ✔
+[af/fa3907] process > PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_AGGREGATE (cineca)                                   [100%] 1 of 1 ✔
+[08/baa5c7] process > PGSCATALOG_PGSCALC:PGSCALC:REPORT:SCORE_REPORT (cineca)                                           [100%] 1 of 1 ✔
+[8a/bc0d94] process > PGSCATALOG_PGSCALC:PGSCALC:DUMPSOFTWAREVERSIONS (1)                                               [100%] 1 of 1 ✔
+[skipping] Stored process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR (1)
 -[pgscatalog/pgsc_calc] Pipeline completed successfully-
 Please remember to cite polygenic score authors if you publish with them!
 Check the output report for citation details
