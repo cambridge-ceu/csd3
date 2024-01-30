@@ -30,6 +30,10 @@ Currently, 2.0.0-alpha.4 is the latest.
 
 ```
 module load ceuadmin/pgsc_calc
+export NXF_HOME=/rds/user/$USER/hpc-work/work
+export DENO_HOME=/home/$USER/.cache/deno/gen
+export QUARTO_HOME=/home/$USER/.cache/quarto
+cd $NXF_HOME
 nextflow run pgscatalog/pgsc_calc -profile test,singularity
 nextflow run pgscatalog/pgsc_calc -profile test,singularity -c b.config
 ```
@@ -43,6 +47,8 @@ singularity {
   runOptions = '-B $NXF_HOME -B $DENO_HOME -B $QUARTO_HOME'
 }
 ```
+
+For convenience, the three environmental variables have been defined with the module.
 
 ### Directed acyclic graph (DAG)
 
@@ -376,10 +382,7 @@ It is handy to have all options of quarto render listed here,
 
 [^config]: **config**
 
-    By default, it works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but
-    - NXF_HOME. /home/$USER/.nextflow (could be the same as $NXF_SINGULARY_CACHEDIR).
-    - DENO_HOME. /home/$USER/.cache/deno/gen
-    - QUARTO_HOME /home/$USER/.cache/quarto
+    By default, it works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but NXF_HOME=/home/$USER/.nextflow (could be the same as $NXF_SINGULARY_CACHEDIR).
 
 [^report]: **report**
 
