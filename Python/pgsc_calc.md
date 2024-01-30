@@ -21,16 +21,27 @@ module load ceuadmin/quarto/1.4.549
 module load ceuadmin/singularity/4.0.3
 ```
 
-Under icelake, one can also use `ceuadmin/quarto/1.3.450-icelake`. Specific handling of individual module is documented on the ceuadmin
+Under icelake, one can also use `ceuadmin/quarto/1.3.450-icelake`[^issue]. Specific handling of individual module is documented on the ceuadmin
 section when appropriate.
 
 ## Usage
 
-Currently, 2.0.0-alpha.4 is the latest[^issue].
+Currently, 2.0.0-alpha.4 is the latest.
 
 ```
 module load ceuadmin/pgsc_calc
 nextflow run pgscatalog/pgsc_calc -profile test,singularity
+nextflow run pgscatalog/pgsc_calc -profile test,singularity -c b.config
+```
+
+NXF_HOME=/home/$USER/.nextflow without the -c option, which allows for additional configurations[^config], e.g.:
+
+```
+singularity {
+  enabled = true
+  autoMounts = true
+  runOptions = '-B $NXF_HOME -B $DENO_HOME -B $QUARTO_HOME'
+}
 ```
 
 ### Directed acyclic graph (DAG)
@@ -311,11 +322,9 @@ It is handy to have all options of quarto render listed here,
 
 ```
 
-[^issue]:
+[^issue]: **issues**
 
-    As of 27/1/2024, it works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but NXF_HOME must be /home/$USER/.nextflow.
-
-    However, it appears problematic with the Internet under icelake. There was problem with GLIBC_2.18 due to deno, which is now available as `ceuadmin/deno/1.40.2` and `ceuadmin/deno/1.40.2-icelake`.
+    It appears problematic with the Internet under icelake and with GLIBC_2.18 due to deno, which is now available as `ceuadmin/deno/1.40.2` and `ceuadmin/deno/1.40.2-icelake`.
 
     An attempt was made for `ceuadmin/glibc/2.18|2.55`, but this could be very complex.
 
@@ -335,7 +344,14 @@ It is handy to have all options of quarto render listed here,
 
     The usual `prepend-path` for modules somehow will purge modules, so `append-path` is used instead (effectively dysfunctional but providing the information) in definition of the module file.
 
-[^report]:
+[^config]: **config**
+
+    By default, it works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but
+    - NXF_HOME. /home/$USER/.nextflow (could be the same as $NXF_SINGULARY_CACHEDIR).
+    - DENO_HOME. /home/$USER/.cache/deno/gen
+    - QUARTO_HOME /home/$USER/.cache/quarto
+
+[^report]: **report**
 
     It requires at least vctrs 0.6.4 and [report.html](files/report.html) is manually rendered from [report.qmd](files/report.qmd) at `assets/pgscatalog/pgsc_calc/assets/report/*`.
 
