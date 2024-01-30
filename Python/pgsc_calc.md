@@ -179,8 +179,9 @@ flowchart LR
 ### Screen output
 
 ```
+nextflow run pgscatalog/pgsc_calc -profile test,singularity -c ${CEUADMIN}/pgsc_calc/tests/b.config
 N E X T F L O W  ~  version 23.10.1
-Launching `https://github.com/pgscatalog/pgsc_calc` [nauseous_payne] DSL2 - revision: 83326a1e60 [main]
+Launching `https://github.com/pgscatalog/pgsc_calc` [infallible_leakey] DSL2 - revision: 83326a1e60 [main]
 
 WARN: Found unexpected parameters:
 * --config_profile_description: Minimal test dataset to check pipeline function
@@ -196,10 +197,10 @@ WARN: Found unexpected parameters:
 ------------------------------------------------------
 Core Nextflow options
   revision          : main
-  runName           : nauseous_payne
+  runName           : infallible_leakey
   containerEngine   : singularity
-  launchDir         : /usr/local/Cluster-Apps/ceuadmin/pgsc_calc/tests
-  workDir           : /usr/local/Cluster-Apps/ceuadmin/pgsc_calc/tests/work
+  launchDir         : /home/jhz22
+  workDir           : /home/jhz22/work
   projectDir        : /rds/user/jhz22/hpc-work/work/assets/pgscatalog/pgsc_calc
   userName          : jhz22
   profile           : test,singularity
@@ -244,19 +245,18 @@ If you use pgscatalog/pgsc_calc for your analysis please cite:
 * Software dependencies
   https://github.com/pgscatalog/pgsc_calc/blob/master/CITATIONS.md
 ------------------------------------------------------
-executor >  local (8)
-[f8/627f6d] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON (samplesheet.csv)                         [100%] 1 of 1 ✔
-[6c/43eea2] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                     [100%] 1 of 1 ✔
+executor >  local (9)
+[57/207b20] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:SAMPLESHEET_JSON (samplesheet.csv)                         [100%] 1 of 1 ✔
+[10/8d9a3e] process > PGSCATALOG_PGSCALC:PGSCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                     [100%] 1 of 1 ✔
 [-        ] process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM                                      -
-[skipped  ] process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR (cineca chromosome 22)              [100%] 1 of 1, stored: 1 ✔
+[01/392cac] process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR (cineca chromosome 22)              [100%] 1 of 1 ✔
 [-        ] process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_VCF                                             -
-[d2/0c1e84] process > PGSCATALOG_PGSCALC:PGSCALC:MATCH:MATCH_VARIANTS (cineca chromosome 22)                            [100%] 1 of 1 ✔
-[8d/4a5017] process > PGSCATALOG_PGSCALC:PGSCALC:MATCH:MATCH_COMBINE (cineca)                                           [100%] 1 of 1 ✔
-[ba/e8f84d] process > PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:PLINK2_SCORE (cineca chromosome 22 effect type additive 0) [100%] 1 of 1 ✔
-[af/fa3907] process > PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_AGGREGATE (cineca)                                   [100%] 1 of 1 ✔
-[08/baa5c7] process > PGSCATALOG_PGSCALC:PGSCALC:REPORT:SCORE_REPORT (cineca)                                           [100%] 1 of 1 ✔
-[8a/bc0d94] process > PGSCATALOG_PGSCALC:PGSCALC:DUMPSOFTWAREVERSIONS (1)                                               [100%] 1 of 1 ✔
-[skipping] Stored process > PGSCATALOG_PGSCALC:PGSCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR (1)
+[74/2ebc22] process > PGSCATALOG_PGSCALC:PGSCALC:MATCH:MATCH_VARIANTS (cineca chromosome 22)                            [100%] 1 of 1 ✔
+[34/c1b6b3] process > PGSCATALOG_PGSCALC:PGSCALC:MATCH:MATCH_COMBINE (cineca)                                           [100%] 1 of 1 ✔
+[d9/ec2010] process > PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:PLINK2_SCORE (cineca chromosome 22 effect type additive 0) [100%] 1 of 1 ✔
+[a7/64535e] process > PGSCATALOG_PGSCALC:PGSCALC:APPLY_SCORE:SCORE_AGGREGATE (cineca)                                   [100%] 1 of 1 ✔
+[2f/cc61ec] process > PGSCATALOG_PGSCALC:PGSCALC:REPORT:SCORE_REPORT (cineca)                                           [100%] 1 of 1 ✔
+[51/6edb30] process > PGSCATALOG_PGSCALC:PGSCALC:DUMPSOFTWAREVERSIONS (1)                                               [100%] 1 of 1 ✔
 -[pgscatalog/pgsc_calc] Pipeline completed successfully-
 Please remember to cite polygenic score authors if you publish with them!
 Check the output report for citation details
