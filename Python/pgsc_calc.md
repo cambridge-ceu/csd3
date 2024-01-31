@@ -21,12 +21,11 @@ module load ceuadmin/quarto/1.4.549
 module load ceuadmin/singularity/4.0.3
 ```
 
-Under icelake, one can also use `ceuadmin/quarto/1.3.450-icelake`[^issue]. Specific handling of individual module is documented on the ceuadmin
-section when appropriate.
+Under icelake, one can also use `ceuadmin/quarto/1.3.450-icelake`[^issue]. Handling of specific modules is documented on the ceuadmin section when appropriate.
 
 ## Usage
 
-Currently, 2.0.0-alpha.4 is the latest.
+As of 31 January 2024, 2.0.0-alpha.4 is the latest.
 
 ```
 module load ceuadmin/pgsc_calc
@@ -38,7 +37,7 @@ nextflow run pgscatalog/pgsc_calc -profile test,singularity
 nextflow run pgscatalog/pgsc_calc -profile test,singularity -c b.config
 ```
 
-NXF_HOME=/home/$USER/.nextflow without the -c option, which allows for additional configurations[^config], e.g.:
+NXF_HOME=/home/$USER/.nextflow[^config] without the -c option, which allows for additional configurations, e.g.:
 
 ```
 singularity {
@@ -360,7 +359,7 @@ It is handy to have all options of quarto render listed here,
 
 [^issue]: **issues**
 
-    It appears problematic with the Internet under icelake and with GLIBC_2.18 due to deno, which is now available as `ceuadmin/deno/1.40.2` and `ceuadmin/deno/1.40.2-icelake`.
+    It appears problematic with the Internet under icelake and with GLIBC_2.18 due to deno as in `ceuadmin/deno/1.40.2-icelake`, but now fixed as `ceuadmin/deno/1.40.2`.
 
     An attempt was made for `ceuadmin/glibc/2.18|2.55`, but this could be very complex.
 
@@ -382,11 +381,11 @@ It is handy to have all options of quarto render listed here,
 
 [^config]: **config**
 
-    By default, it works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work but NXF_HOME=/home/$USER/.nextflow (could be the same as $NXF_SINGULARY_CACHEDIR).
+    By default, NXF_HOME=/home/$USER/.nextflow but works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work (could be used as NXF_HOME as well).
 
 [^report]: **report**
 
-    It requires at least vctrs 0.6.4 and [report.html](files/report.html) is manually rendered from [report.qmd](files/report.qmd) at `assets/pgscatalog/pgsc_calc/assets/report/*`.
+    At least vctrs 0.6.4 is required and [report.html](files/report.html) is rendered from [report.qmd](files/report.qmd) at `assets/pgscatalog/pgsc_calc/assets/report/*`.
 
     ```bash
     quarto render report.qmd -M "self-contained:true" -P score_path:aggregated_scores.txt.gz -P sampleset:cineca -P run_ancestry:false -P reference_panel_name:NO_PANEL
