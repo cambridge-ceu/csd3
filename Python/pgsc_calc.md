@@ -40,9 +40,9 @@ mv pgsc_calc-2.0.0-alpha.4/ 2.0.0-alpha.4/
 
 This is module built from the two steps above.
 
-## Usage
+## Usage: benchmark
 
-We start with the benchmark.
+This is done as follows,
 
 ```
 module load ceuadmin/pgsc_calc
