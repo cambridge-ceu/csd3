@@ -73,7 +73,7 @@ For convenience, the three environmental variables have been defined with the mo
   mermaid.initialize({ startOnLoad: true });
 </script>
 
-Shown here is from left to right instead,
+Shown here is from left to right instead -- refresh screen to fit if necessary,
 
 ```mermaid
 flowchart LR
