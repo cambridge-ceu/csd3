@@ -14,6 +14,8 @@ v8 12.1.285.6
 typescript 5.3.3
 ```
 
+See also bun, <https://bun.sh/>: `curl -fsSL https://bun.sh/install | bash`.
+
 ## Ada
 
 Web: <https://www.adaic.org/>
