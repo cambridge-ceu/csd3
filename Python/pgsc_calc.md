@@ -8,7 +8,7 @@ Web: <https://pgsc-calc.readthedocs.io/en/latest/> ([GitHub](https://github.com/
 
 ## Installation
 
-### Prerequiistes
+### Prerequistes
 
 This is furnished by a number of modules,
 
