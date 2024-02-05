@@ -42,6 +42,8 @@ This is module built from the two steps above.
 
 ## Usage
 
+We start with the benchmark.
+
 ```
 module load ceuadmin/pgsc_calc
 export NXF_HOME=/rds/user/$USER/hpc-work/work
