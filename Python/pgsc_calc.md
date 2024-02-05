@@ -8,6 +8,8 @@ Web: <https://pgsc-calc.readthedocs.io/en/latest/> ([GitHub](https://github.com/
 
 ## Installation
 
+### Prerequiistes
+
 This is furnished by a number of modules,
 
 ```bash
@@ -23,9 +25,22 @@ module load ceuadmin/singularity/4.0.3
 
 Under icelake, one can also use `ceuadmin/quarto/1.3.450-icelake`[^issue]. Handling of specific modules is documented on the ceuadmin section when appropriate.
 
-## Usage
+### pgsc_calc
 
 As of 31 January 2024, 2.0.0-alpha.4 is the latest.
+
+```bash
+mkdir -p $CEUADMIN/pgsc_calc && cd $CEUADMIN/pgsc_calc
+wget -qO- https://github.com/PGScatalog/pgsc_calc/archive/refs/tags/v2.0.0-alpha.4.tar.gz | \
+tar xvfz -
+mv pgsc_calc-2.0.0-alpha.4/ 2.0.0-alpha.4/
+```
+
+### pgsc_calc/2.0.0-alpha.4
+
+This is module built from the two steps above.
+
+## Usage
 
 ```
 module load ceuadmin/pgsc_calc
