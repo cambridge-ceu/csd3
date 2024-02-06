@@ -1,5 +1,5 @@
 ---
-sort: 4
+sort: 33
 ---
 
 # pgsc_calc
@@ -371,8 +371,11 @@ It is handy to have all options of quarto render listed here,
     Render w/ Metadata: quarto render document.qmd -M echo:false
                         quarto render document.qmd -M code-fold:true
     Render to Stdout:   quarto render document.qmd --output -
-
 ```
+
+## References
+
+Lambert, S. A., et al. (2021). "The Polygenic Score Catalog as an open database for reproducibility and systematic evaluation." Nature Genetics 53(4): 420-425, <https://doi.org/10.1038/s41588-021-00783-5>
 
 [^issue]: **issues**
 
