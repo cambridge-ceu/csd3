@@ -313,7 +313,7 @@ Please remember to cite polygenic score authors if you publish with them!
 Check the output report for citation details
 ```
 
-### report.html
+### Report
 
 This is [report.html](files/report.html)[^report],  which is rendered from [report.qmd](files/report.qmd) at `assets/pgscatalog/pgsc_calc/assets/report/*`.
 
