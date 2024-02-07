@@ -14,8 +14,8 @@ This is furnished by a number of modules,
 
 ```bash
 module load ceuadmin/Anaconda3/2023.09-0
-module load ceuadmin/go/1.21.6
 module load ceuadmin/fraposa_pgsc/0.1.0
+module load ceuadmin/go/1.21.6
 module load ceuadmin/nextflow/23.10.1
 module load ceuadmin/openjdk/11.0.20+8
 module load ceuadmin/plink/2.00a3.3
