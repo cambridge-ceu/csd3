@@ -20,10 +20,11 @@ module load ceuadmin/nextflow/23.10.1
 module load ceuadmin/openjdk/11.0.20+8
 module load ceuadmin/plink/2.00a3.3
 module load ceuadmin/quarto/1.4.549
+module load ceuadmin/R/latest
 module load ceuadmin/singularity/4.0.3
 ```
 
-Under icelake, one can also use `ceuadmin/quarto/1.3.450-icelake`[^issue]. Handling of specific modules is documented on the ceuadmin section when appropriate.
+Under icelake, one can use `ceuadmin/quarto/1.3.450-icelake`[^issue] and `R/4.3.1-icelake`. Handling of specific modules is documented on the ceuadmin section when appropriate.
 
 ### pgsc_calc
 
