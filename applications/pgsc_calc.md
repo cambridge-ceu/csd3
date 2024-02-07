@@ -315,7 +315,11 @@ Check the output report for citation details
 
 ### report.html
 
-This is [report.html](files/report.html)[^report].
+This is [report.html](files/report.html)[^report],  which is rendered from [report.qmd](files/report.qmd) at `assets/pgscatalog/pgsc_calc/assets/report/*`.
+
+```bash
+quarto render report.qmd -M "self-contained:true" -P score_path:aggregated_scores.txt.gz -P sampleset:cineca -P run_ancestry:false -P reference_panel_name:NO_PANEL
+```
 
 It is handy to have all options of quarto render listed here,
 
@@ -405,8 +409,4 @@ Lambert, S. A., et al. (2021). "The Polygenic Score Catalog as an open database 
 
 [^report]: **report**
 
-    At least vctrs 0.6.4 is required and [report.html](files/report.html) is rendered from [report.qmd](files/report.qmd) at `assets/pgscatalog/pgsc_calc/assets/report/*`.
-
-    ```bash
-    quarto render report.qmd -M "self-contained:true" -P score_path:aggregated_scores.txt.gz -P sampleset:cineca -P run_ancestry:false -P reference_panel_name:NO_PANEL
-    ```
+    At least vctrs 0.6.4 is required.
