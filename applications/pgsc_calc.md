@@ -37,9 +37,9 @@ tar xvfz -
 mv pgsc_calc-2.0.0-alpha.4/ 2.0.0-alpha.4/
 ```
 
-### pgsc_calc/2.0.0-alpha.4
+### CSD3 modules
 
-This is module built from the two steps above.
+These are `pgsc_calc/2.0.0-alpha.4` and `pgsc_calc/2.0.0-alpha.4-icelake` (experimental)  built from the two steps above; the icelake version allows for the possibility to use an indepeendent collection of R packages via `$R_LIBS`, say vctrs[^vctrs].
 
 ## Usage: benchmark
 
@@ -407,6 +407,10 @@ Lambert, S. A., et al. (2021). "The Polygenic Score Catalog as an open database 
 [^config]: **config**
 
     By default, NXF_HOME=/home/$USER/.nextflow but works well with NXF_SINGULARITY_CACHEDIR=/rds/user/$USER/hpc-work/work (could be used as NXF_HOME as well).
+
+[^vctrs]: **vctrs**
+
+    Vector Helpers: <https://vctrs.r-lib.org/> ([CRAN](https://cran.r-project.org/web/packages/vctrs/index.html))
 
 [^report]: **report**
 
