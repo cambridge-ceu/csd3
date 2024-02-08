@@ -37,7 +37,7 @@ tar xvfz -
 mv pgsc_calc-2.0.0-alpha.4/ 2.0.0-alpha.4/
 ```
 
-### CSD3 modules
+### CSD3 (ceuadmin) modules
 
 These are `pgsc_calc/2.0.0-alpha.4` and `pgsc_calc/2.0.0-alpha.4-icelake` (experimental)  built from the two steps above; the icelake version allows for the possibility to use an indepeendent collection of R packages via `$R_LIBS`, say vctrs[^vctrs].
 
