@@ -5,7 +5,7 @@
 ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
 ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
 
-This repository details use of many software for generic purpose and genetic analysis; over time they largely become entries of the ceuadmin modules which are ready to use.
+This repository details use of many software for generic purpose and genetic analysis; over time they largely become entries of the [ceuadmin modules](systems/ceuadmin.md) which are ready to use.
 
 ```mermaid
 graph LR;
