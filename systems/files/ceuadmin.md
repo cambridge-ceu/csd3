@@ -360,11 +360,11 @@ Rscript -e '
   set.seed(1234321)
   generic <- scan("generic.lst",what="")
   genetics <- scan("genetics.lst",what="")
-  wc(modules,"ceuadmin.png")
   wc(generic,"generic.png")
   wc(genetics,"genetics.png")
   unlink(c("generic.lst","genetics.lst"))
-  modules <- setdiff(dir(ceuadmin),c("doc","lib","misc","sources"))
+  modules <- setdiff(dir(ceuadmin),c("doc","lib","misc","sources","generic.png","genetics.png"))
+  wc(modules,"ceuadmin.png")
   print(modules)
 '
 ```
