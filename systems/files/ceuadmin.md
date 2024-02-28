@@ -357,8 +357,6 @@ Rscript -e '
     wordcloud(names(words), freq, min.freq = 1, max.words=200, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
     dev.off()
   }
-  modules <- setdiff(dir(ceuadmin),c("doc","lib","misc","sources","generic.lst","genetics.lst"))
-  print(modules)
   set.seed(1234321)
   generic <- scan("generic.lst",what="")
   genetics <- scan("genetics.lst",what="")
@@ -366,6 +364,8 @@ Rscript -e '
   wc(generic,"generic.png")
   wc(genetics,"genetics.png")
   unlink(c("generic.lst","genetics.lst"))
+  modules <- setdiff(dir(ceuadmin),c("doc","lib","misc","sources"))
+  print(modules)
 '
 ```
 
