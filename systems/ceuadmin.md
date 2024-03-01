@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=207$$, $$\lambda=3$$.
+noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=208$$, $$\lambda=3$$.
 
 ## Entries
 
@@ -32,41 +32,41 @@ The current list is as follows,
  [57] "GEMMA"                 "Genotype-Harmonizer"   "gettext"               "gh"
  [61] "ghc"                   "ghostscript"           "git"                   "git-extras"
  [65] "GitKraken"             "glib"                  "glibc"                 "globusconnectpersonal"
- [69] "gmp"                   "gnutls"                "go"                    "googletest"
- [73] "graphene"              "GraphicsMagick"        "GreenAlgorithms4HPC"   "gsl"
- [77] "gtk+"                  "gtksourceview"         "gtool"                 "hpg"
- [81] "htslib"                "hunspell"              "icu"                   "ImageJ"
- [85] "impute"                "JabRef"                "JAGS"                  "jq"
- [89] "KentUtils"             "KING"                  "lapack"                "ldc2"
- [93] "ldsc"                  "LDstore"               "LEMMA"                 "libcares"
- [97] "libgit2"               "libglvnd"              "libiconv"              "libidn2"
-[101] "libntlm"               "libpng"                "libseccomp"            "libsodium"
-[105] "libssh2"               "libuv"                 "libxml2"               "libxslt"
-[109] "locuszoom"             "MAGENTA"               "magma"                 "Mango"
-[113] "Mega2"                 "metal"                 "MONSTER"               "MORGAN"
-[117] "MR-MEGA"               "MsCAVIAR"              "nano"                  "ncbi-vdb"
-[121] "ncurses"               "netbeans"              "nettle"                "nextflow"
-[125] "NLopt"                 "node"                  "nspr"                  "oniguruma"
-[129] "openjdk"               "OpenMS"                "openssl"               "osca"
-[133] "PAINTOR"               "pandoc"                "pandoc-citeproc"       "pango"
-[137] "parallel"              "Pascal"                "pcre2"                 "pdf2djvu"
-[141] "pdfjam"                "pgsc_calc"             "phenoscanner"          "PhySO"
-[145] "picard"                "plink"                 "plink-bgi"             "plinkseq"
-[149] "PoGo"                  "polyphen"              "poppler"               "proj"
-[153] "PRSice"                "pspp"                  "PWCoCo"                "qctool"
-[157] "qpdf"                  "qt"                    "qtcreator"             "QTLtools"
-[161] "quarto"                "quicktest"             "R"                     "raremetal"
-[165] "rclone"                "readline"              "regenie"               "regtools"
-[169] "RHHsoftware"           "rst2pdf"               "rstudio"               "ruby"
-[173] "rust"                  "samtools"              "shapeit"               "singularity"
-[177] "SMR"                   "snakemake"             "SNP2HLA"               "snptest"
-[181] "spread-sheet-widget"   "sqlite"                "sra-tools"             "ssw"
-[185] "STAR"                  "stata"                 "SurvivalAnalysis"      "SurvivalKit"
-[189] "tabix"                 "tatami"                "thunderbird"           "tidy"
-[193] "trinculo"              "trousers"              "Typora"                "unbound"
-[197] "vala"                  "VarScan"               "vcftools"              "VEGAS2"
-[201] "verifyBamID"           "VSCode"                "vte"                   "xpdf"
-[205] "yaml-cpp"              "Zotero"                "zstd"
+ [69] "glpk"                  "gmp"                   "gnutls"                "go"
+ [73] "googletest"            "graphene"              "GraphicsMagick"        "GreenAlgorithms4HPC"
+ [77] "gsl"                   "gtk+"                  "gtksourceview"         "gtool"
+ [81] "hpg"                   "htslib"                "hunspell"              "icu"
+ [85] "ImageJ"                "impute"                "JabRef"                "JAGS"
+ [89] "jq"                    "KentUtils"             "KING"                  "lapack"
+ [93] "ldc2"                  "ldsc"                  "LDstore"               "LEMMA"
+ [97] "libcares"              "libgit2"               "libglvnd"              "libiconv"
+[101] "libidn2"               "libntlm"               "libpng"                "libseccomp"
+[105] "libsodium"             "libssh2"               "libuv"                 "libxml2"
+[109] "libxslt"               "locuszoom"             "MAGENTA"               "magma"
+[113] "Mango"                 "Mega2"                 "metal"                 "MONSTER"
+[117] "MORGAN"                "MR-MEGA"               "MsCAVIAR"              "nano"
+[121] "ncbi-vdb"              "ncurses"               "netbeans"              "nettle"
+[125] "nextflow"              "NLopt"                 "node"                  "nspr"
+[129] "oniguruma"             "openjdk"               "OpenMS"                "openssl"
+[133] "osca"                  "PAINTOR"               "pandoc"                "pandoc-citeproc"
+[137] "pango"                 "parallel"              "Pascal"                "pcre2"
+[141] "pdf2djvu"              "pdfjam"                "pgsc_calc"             "phenoscanner"
+[145] "PhySO"                 "picard"                "plink"                 "plink-bgi"
+[149] "plinkseq"              "PoGo"                  "polyphen"              "poppler"
+[153] "proj"                  "PRSice"                "pspp"                  "PWCoCo"
+[157] "qctool"                "qpdf"                  "qt"                    "qtcreator"
+[161] "QTLtools"              "quarto"                "quicktest"             "R"
+[165] "raremetal"             "rclone"                "readline"              "regenie"
+[169] "regtools"              "RHHsoftware"           "rst2pdf"               "rstudio"
+[173] "ruby"                  "rust"                  "samtools"              "shapeit"
+[177] "singularity"           "SMR"                   "snakemake"             "SNP2HLA"
+[181] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"
+[185] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"
+[189] "SurvivalKit"           "tabix"                 "tatami"                "thunderbird"
+[193] "tidy"                  "trinculo"              "trousers"              "Typora"
+[197] "unbound"               "vala"                  "VarScan"               "vcftools"
+[201] "VEGAS2"                "verifyBamID"           "VSCode"                "vte"
+[205] "xpdf"                  "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -113,15 +113,15 @@ available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmm
 largely be seen as sources which are used to build the reoository given above.
 
 CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom`
-linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,385 as of 18/1/2024)
-is linked with the latest R distribution, 4.3.2.
+linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,408 as of 1/3/2024)
+is linked with the latest R distribution, 4.3.3.
 
 For CEU users, it is easy to point to them, e.g.,
 
 ```bash
 export HPC_WORK=/rds/user/$USER/hpc-work/
 export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-export R_LIBS=${RDS}/R:${RDS}/R-4.3.2/library
+export R_LIBS=${RDS}/R:${RDS}/R-4.3.3/library
 ```
 
 or possible to have your own installations based on these, e.g., through creation of a modified `Makefile` with altered prefix followed
@@ -131,8 +131,8 @@ The following script tests for loading of `dplyr`:
 
 ```bash
 export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-export PATH=${PATH}:${RDS}/R-4.3.2/bin
-export R_LIBS=${RDS}/R-4.3.2/library:${RDS}/R
+export PATH=${PATH}:${RDS}/R-4.3.3/bin
+export R_LIBS=${RDS}/R-4.3.3/library:${RDS}/R
 Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
 ```
 

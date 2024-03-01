@@ -29,7 +29,7 @@ ERROR: compilation failed for package ‘DescTools’
 which indicates that C++17 is required; it turns out specification via `.R/Makevars` is insufficient and we proceed with
 
 ```bash
-module lost gcc/8
+module load gcc/8
 tar xvfz DescTools_0.99.52.tar.gz
 sed -i '/LinkingTo/i\SystemRequirements: C++17' DescTools/DESCRIPTION
 R CMD INSTALL DescTools
