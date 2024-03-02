@@ -322,6 +322,7 @@ They are ordered chronologically.
 | ""          | deno/1.40.2-icelake              | Generic              |
 | ""          | quarto/1.4.549                   | Generic              |
 ! 2024-03-01  | glpk/5.0                         | Generic              |
+! 2024-03-02  | glpk/4.57                        | Generic              |
 
 \* CEU or approved users only.
 
