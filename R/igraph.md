@@ -18,7 +18,7 @@ mv configure configure.sav
 R CMD INSTALL igraph
 ```
 
-Unfortunately manual work is needed, involving adding into`Makevars` `-I/usr/local/Cluster-Apps/ceuadmin/glpk/4.57/include` and `-L/usr/local/Cluster-Apps/ceuadmin/glpk/4.57/lib`.
+Unfortunately, unlike stated in the package, manual work is still needed, involving adding into`Makevars` `-I/usr/local/Cluster-Apps/ceuadmin/glpk/4.57/include` and `-L/usr/local/Cluster-Apps/ceuadmin/glpk/4.57/lib`.
 
 ```
 # Generated from Makevars.in, do not edit by hand
