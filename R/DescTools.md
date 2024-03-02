@@ -36,3 +36,49 @@ R CMD INSTALL DescTools
 ```
 
 where file `DESCRIPTION` is modified adding `SystemRequirements: C++17` before the `LinkingTo` directive.
+
+## 0.99.54
+
+The much-needed statement `SystemRequirements: C++17` is now available from `DESCRIPTION`.
+
+Moreover, `strings /usr/local/software/master/gcc/9/lib64/libstdc++.so.6.0.28 | grep GLIBCXX` gives
+
+```
+GLIBCXX_3.4
+GLIBCXX_3.4.1
+GLIBCXX_3.4.2
+GLIBCXX_3.4.3
+GLIBCXX_3.4.4
+GLIBCXX_3.4.5
+GLIBCXX_3.4.6
+GLIBCXX_3.4.7
+GLIBCXX_3.4.8
+GLIBCXX_3.4.9
+GLIBCXX_3.4.10
+GLIBCXX_3.4.11
+GLIBCXX_3.4.12
+GLIBCXX_3.4.13
+GLIBCXX_3.4.14
+GLIBCXX_3.4.15
+GLIBCXX_3.4.16
+GLIBCXX_3.4.17
+GLIBCXX_3.4.18
+GLIBCXX_3.4.19
+GLIBCXX_3.4.20
+GLIBCXX_3.4.21
+GLIBCXX_3.4.22
+GLIBCXX_3.4.23
+GLIBCXX_3.4.24
+GLIBCXX_3.4.25
+GLIBCXX_3.4.26
+GLIBCXX_3.4.27
+GLIBCXX_3.4.28
+```
+
+indicating that gcc/9 is needed but the error message indicates that an earlier one is used.
+
+```
+  /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-6.5.0-dtb6lagchexqdijlx6xgkin3zlfddpzi/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /rds/project/jmmh2/rds-jmmh2-public_databases/software/R/00LOCK-DescTools/00new/DescTools/libs/DescTools.so)
+```
+
+It would work out if R itsefl was built from gcc/9 instead of gcc/6.
