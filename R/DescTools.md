@@ -81,4 +81,9 @@ indicating that gcc/9 is needed but the error message indicates that an earlier 
   /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-6.5.0-dtb6lagchexqdijlx6xgkin3zlfddpzi/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /rds/project/jmmh2/rds-jmmh2-public_databases/software/R/00LOCK-DescTools/00new/DescTools/libs/DescTools.so)
 ```
 
-It would work out if R itsefl was built from gcc/9 instead of gcc/6.
+It would work out if R itsefl was built from gcc/9 instead of gcc/6. A get around is to modify `./Makevars`, adding,
+
+```
+CC=/usr/local/software/master/gcc/9/bin/gcc
+CXX=/usr/local/software/master/gcc/9/bin/g++
+```

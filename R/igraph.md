@@ -13,9 +13,10 @@ Rscript -e 'download.packages("igraph",".")'
 tar xvfz igraph_2.0.2.tar.gz
 cd igraph
 ./configure
-mv configure configure.sav
+# mv configure configure.sav
 # modify src/Makevars
-R CMD INSTALL igraph
+# export LD_LIBRARY_PATH=/usr/local/software/master/gcc/9/lib64:$LD_LIBRARY_PATH
+R CMD INSTALL --no-configure igraph
 ```
 
 Unfortunately, unlike stated in the package, manual work is still needed, involving adding into`Makevars` `-I/usr/local/Cluster-Apps/ceuadmin/glpk/4.57/include` and `-L/usr/local/Cluster-Apps/ceuadmin/glpk/4.57/lib`.
