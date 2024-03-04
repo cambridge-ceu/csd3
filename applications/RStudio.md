@@ -87,6 +87,10 @@ We now use a modified call. The original command is available as `rstudio-defaul
 
 module `ceuadmin/rstudio/2023.03.0+386` is now available; there is no need to load gcc/6 and ceuadmin/R/4.2.2. There is also `rstudio-default`.
 
+font color="red"><b>4/3/2024 Update</b></font>
+
+module `ceuadmin/rstudio/2023.12.1+402` is now available, so there is no prompt to update upon start.
+
 ## Building from source (incomplete)
 
 Version 2022.12.0+353 dependencies from `rstudio --version-json` are as follows,
