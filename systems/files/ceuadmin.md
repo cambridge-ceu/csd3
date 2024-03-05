@@ -322,6 +322,7 @@ They are ordered chronologically.
 | ""          | deno/1.40.2                      | Generic[^deno]       |
 | ""          | deno/1.40.2-icelake              | Generic              |
 | ""          | quarto/1.4.549                   | Generic              |
+| 2024-02-29  | R/4.3.3                          | Generic[^R]          |
 ! 2024-03-01  | glpk/5.0                         | Generic              |
 ! 2024-03-02  | glpk/4.57                        | Generic              |
 ! 2024-03-04  | rstudio/2023.12.1-402            | Generic              |
@@ -786,6 +787,10 @@ Rscript -e '
     unzip deno.conda
     tar --use-compress-program=unzstd -xvf pkg-deno-1.40.2-hfc7925d_0.tar.zst
     ```
+
+[^R]: **R**
+
+    This replaces R/4.3.2. It is also R/latest.
 
 [^gitkraken]: **GitKraken**
 
