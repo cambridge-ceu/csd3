@@ -323,6 +323,8 @@ They are ordered chronologically.
 | ""          | quarto/1.4.549                   | Generic              |
 ! 2024-03-01  | glpk/5.0                         | Generic              |
 ! 2024-03-02  | glpk/4.57                        | Generic              |
+! 2024-03-04  | rstudio/2023.12.1-402            | Generic              |
+! 2024-03-05  | GitKraken/9.12.0                 | Generic[^gitkraken]  |
 
 \* CEU or approved users only.
 
@@ -545,6 +547,8 @@ Rscript -e '
 [^rstudio]: **rstudio**
 
     This is replacement of the module by HPC (no longer working) with the RStudio itself unchanged.
+
+    To save space, 2023.06.1+524 is removed upon installation of 2023.12.1+402.
 
 [^pwcoco]: **pwcoco**
 
@@ -779,3 +783,7 @@ Rscript -e '
     unzip deno.conda
     tar --use-compress-program=unzstd -xvf pkg-deno-1.40.2-hfc7925d_0.tar.zst
     ```
+
+[^gitkraken]: **GitKraken**
+
+    This replaces 8.1.0.
