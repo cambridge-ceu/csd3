@@ -245,8 +245,8 @@ cd perl-module && /usr/bin/perl Makefile.PL    OPTIMIZE="-g -O2 -DGCC_LINT \
    -I/rds-d4/user/jhz22/hpc-work/include/fribidi -I/usr/include/cairo -I/usr/include/glib-2.0 \
    -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/uuid -I/usr/include/libdrm \
    -I/usr/include/pango-1.0 -I/usr/include/harfbuzz   -Wno-error"    LD="`/usr/bin/perl -e 'use Config::Perl::V;print Config::Perl::V::myconfig()->{config}{ld};'` -lreadline -ltinfo"
-cd perl-module/
 gcc -c  -I"/usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0/pspp-2.0.0" -I"/usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0/pspp-2.0.0/src" -I"/usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0/pspp-2.0.0/gl" -I"/usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0/pspp-2.0.0/gl" -I"/usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0/pspp-2.0.0" -D_REENTRANT -D_GNU_SOURCE -fno-strict-aliasing -pipe -fstack-protector -I/usr/local/include -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g -O2 -DGCC_LINT    -I/usr/local/software/archive/linux-scientific7-x86_64/gcc-9/zlib-1.2.11-lnf7bswyozdhprbg7jo6n5ha5633ftj2/include    -I/rds/user/jhz22/hpc-work/include/libpng15 -I/rds/user/jhz22/hpc-work/include    -I/rds-d4/user/jhz22/hpc-work/include/fribidi -I/usr/include/cairo -I/usr/include/glib-2.0    -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/uuid -I/usr/include/libdrm    -I/usr/include/pango-1.0 -I/usr/include/harfbuzz   -Wno-error   -DVERSION=\"2.0.0\" -DXS_VERSION=\"2.0.0\" -fPIC "-I/usr/lib64/perl5/CORE" -std=gnu99 -Wno-implicit-function-declaration PSPP.c
+cd -
 ```
 
 ## flatpak
