@@ -384,12 +384,16 @@ Template-Rcpp, <https://github.com/stsds/Template-Rcpp> (LinkedIn [post](https:/
 
 ## ruby
 
+Web: <https://www.ruby-lang.org/en/>
+
 ```bash
 module load ceuadmin/ruby
 ruby --version
 ```
 
 ## Rust
+
+Web: <https://www.rust-lang.org/>
 
 ```bash
 module load ceuadmin/rust
@@ -398,7 +402,7 @@ rustc --version
 
 ## Scala
 
-Web < https://www.scala-lang.org>:
+Web <https://www.scala-lang.org>
 
 ```bash
 module load ceuadmin/Scala
