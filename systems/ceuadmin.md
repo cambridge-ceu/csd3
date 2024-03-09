@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=209$$, $$\lambda=3$$.
+noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=210$$, $$\lambda=3$$.
 
 ## Entries
 
@@ -59,15 +59,15 @@ The current list is as follows,
 [165] "R"                     "raremetal"             "rclone"                "readline"
 [169] "regenie"               "regtools"              "RHHsoftware"           "rst2pdf"
 [173] "rstudio"               "ruby"                  "rust"                  "samtools"
-[177] "shapeit"               "singularity"           "SMR"                   "snakemake"
-[181] "SNP2HLA"               "snptest"               "spread-sheet-widget"   "sqlite"
-[185] "sra-tools"             "ssw"                   "STAR"                  "stata"
-[189] "SurvivalAnalysis"      "SurvivalKit"           "tabix"                 "tatami"
-[193] "thunderbird"           "tidy"                  "trinculo"              "trousers"
-[197] "Typora"                "unbound"               "vala"                  "VarScan"
-[201] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
-[205] "vte"                   "xpdf"                  "yaml-cpp"              "Zotero"
-[209] "zstd"
+[177] "Scala"                 "shapeit"               "singularity"           "SMR"
+[181] "snakemake"             "SNP2HLA"               "snptest"               "spread-sheet-widget"
+[185] "sqlite"                "sra-tools"             "ssw"                   "STAR"
+[189] "stata"                 "SurvivalAnalysis"      "SurvivalKit"           "tabix"
+[193] "tatami"                "thunderbird"           "tidy"                  "trinculo"
+[197] "trousers"              "Typora"                "unbound"               "vala"
+[201] "VarScan"               "vcftools"              "VEGAS2"                "verifyBamID"
+[205] "VSCode"                "vte"                   "xpdf"                  "yaml-cpp"
+[209] "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
