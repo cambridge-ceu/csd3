@@ -396,6 +396,15 @@ module load ceuadmin/rust
 rustc --version
 ```
 
+## Scala
+
+Web < https://www.scala-lang.org>:
+
+```bash
+module load ceuadmin/Scala
+amm
+```
+
 ## TypeScript
 
 Web: <https://www.typescriptlang.org/>
