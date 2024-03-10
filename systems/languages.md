@@ -452,6 +452,8 @@ Web: <https://www.swift.org/>
 ```bash
 module load ceuadmin/Swift
 wsift --version
+swift repl
+1> print("Hello, World!")
 ```
 
 ## TypeScript
