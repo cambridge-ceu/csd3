@@ -134,6 +134,8 @@ Sorted array: 5 6 7 11 12 13 14:40
 
 ## Fortran
 
+Web: <https://fortran-lang.org/>
+
 ```bash
 gfortran --version
 ```
@@ -163,6 +165,8 @@ The Glasgow Haskell Compiler is seen from `module avail ghc`, e.g.,
 module load ghc/8.2.2
 ghc --version
 ```
+
+There is also module `ceuadmin/ghc/8.6.5`.
 
 ## Java
 
