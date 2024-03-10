@@ -138,17 +138,6 @@ Sorted array: 5 6 7 11 12 13 14:40
 gfortran --version
 ```
 
-## GHC
-
-Web: <https://www.haskell.org/ghc/>
-
-The Glasgow Haskell Compiler is seen from `module avail ghc`, e.g.,
-
-```bash
-module load ghc/8.2.2
-ghc --version
-```
-
 ## Go
 
 Web: <https://go.dev/>
@@ -163,6 +152,17 @@ go version
 ```
 
 giving `go version go1.21.6 linux/amd64`.
+
+## Haskell
+
+Web: <https://www.haskell.org/ghc/>
+
+The Glasgow Haskell Compiler is seen from `module avail ghc`, e.g.,
+
+```bash
+module load ghc/8.2.2
+ghc --version
+```
 
 ## Java
 
@@ -216,6 +216,15 @@ julia> println("Hello World")
 Hello World
 
 julia>
+```
+
+## Pascal
+
+Web: <https://www.freepascal.org/>
+
+```bash
+module load ceuadmin/fpc
+fpc -help
 ```
 
 ## Python
