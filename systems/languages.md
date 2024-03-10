@@ -140,6 +140,8 @@ gfortran --version
 
 ## GHC
 
+Web: <https://www.haskell.org/ghc/>
+
 The Glasgow Haskell Compiler is seen from `module avail ghc`, e.g.,
 
 ```bash
@@ -148,6 +150,8 @@ ghc --version
 ```
 
 ## Go
+
+Web: <https://go.dev/>
 
 It is avail from `/usr/bin/go` and also visible from `module avail go`.
 
@@ -187,6 +191,8 @@ and we get `Hello World!`.
 
 ## Julia
 
+Web: <https://julialang.org/>
+
 The Julia compiler is visible from `module avail julia`, and by default it loads 1.6.2
 
 ```bash
@@ -214,7 +220,7 @@ julia>
 
 ## Python
 
-Official website: [https://www.python.org/](https://www.python.org/).
+Web: <https://www.python.org/>
 
 This can be invoked from a CSD3 console via `python` and `python3`. Libraries can be installed via `pip` and `pip3` (or equivalently `python -m pip install` and `python3 -m pip install`), e.g., the script
 
@@ -309,7 +315,7 @@ See [HPC docuementation](https://docs.hpc.cam.ac.uk/hpc/) for additional informa
 
 ## R
 
-Official website: [https://www.r-project.org/](https://www.r-project.org/) and also [https://bioconductor.org/](https://bioconductor.org/).
+Web: <https://www.r-project.org/> and also <https://bioconductor.org/>
 
 Under HPC, the default version is 3.3.3 with /usr/bin/R; alternatively choose the desired version of R from
 
