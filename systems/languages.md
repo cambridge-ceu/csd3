@@ -428,12 +428,12 @@ module load ceuadmin/Scala
 amm
 ```
 
-## swift
+## Swift
 
 Web: <https://www.swift.org/>
 
 ```bash
-module load ceuadmin/swift
+module load ceuadmin/Swift
 wsift --version
 ```
 

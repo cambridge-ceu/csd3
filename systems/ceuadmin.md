@@ -63,7 +63,7 @@ The current list is as follows,
 [181] "SMR"                   "snakemake"             "SNP2HLA"               "snptest"
 [185] "spread-sheet-widget"   "sqlite"                "sra-tools"             "ssw"
 [189] "STAR"                  "stata"                 "SurvivalAnalysis"      "SurvivalKit"
-[193] "swift"                 "tabix"                 "tatami"                "thunderbird"
+[193] "Swift"                 "tabix"                 "tatami"                "thunderbird"
 [197] "tidy"                  "trinculo"              "trousers"              "Typora"
 [201] "unbound"               "vala"                  "VarScan"               "vcftools"
 [205] "VEGAS2"                "verifyBamID"           "VSCode"                "vte"

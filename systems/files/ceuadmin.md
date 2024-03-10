@@ -53,7 +53,7 @@ The current list is as follows[^ls],
 [181] "SMR"                   "snakemake"             "SNP2HLA"               "snptest"
 [185] "spread-sheet-widget"   "sqlite"                "sra-tools"             "ssw"
 [189] "STAR"                  "stata"                 "SurvivalAnalysis"      "SurvivalKit"
-[193] "swift"                 "tabix"                 "tatami"                "thunderbird"
+[193] "Swift"                 "tabix"                 "tatami"                "thunderbird"
 [197] "tidy"                  "trinculo"              "trousers"              "Typora"
 [201] "unbound"               "vala"                  "VarScan"               "vcftools"
 [205] "VEGAS2"                "verifyBamID"           "VSCode"                "vte"
@@ -331,7 +331,7 @@ They are ordered chronologically.
 ! ""          | pspp/2.0.0                       | Generic              |
 ! 2024-03-09  | Scala/3.3.3                      | Generic              |
 ! 2024-03-10  | fpc/3.2.2                        | Generic              |
-! ""          | swift/5.10                       | Generic              |
+! ""          | Swift/5.10                       | Generic              |
 
 \* CEU or approved users only.
 
