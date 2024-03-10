@@ -428,6 +428,12 @@ module load ceuadmin/Scala
 amm
 ```
 
+Assuming our Scala 3 program `hello.sc` containing `@main def hello() = println("Hello, World!")`, the code is run with
+
+```bash
+amm hello.sc
+```
+
 ## Swift
 
 Web: <https://www.swift.org/>
