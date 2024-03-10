@@ -44,20 +44,21 @@ The current list is as follows[^ls],
 [145] "pgsc_calc"             "phenoscanner"          "PhySO"                 "picard"
 [149] "plink"                 "plink-bgi"             "plinkseq"              "PoGo"
 [153] "polyphen"              "poppler"               "proj"                  "PRSice"
-[157] "pspp"                  "PWCoCo"                "qctool"                "qpdf"
-[161] "qt"                    "qtcreator"             "QTLtools"              "quarto"
-[165] "quicktest"             "R"                     "raremetal"             "rclone"
-[169] "readline"              "regenie"               "regtools"              "RHHsoftware"
-[173] "rst2pdf"               "rstudio"               "ruby"                  "rust"
-[177] "samtools"              "Scala"                 "shapeit"               "singularity"
-[181] "SMR"                   "snakemake"             "SNP2HLA"               "snptest"
-[185] "spread-sheet-widget"   "sqlite"                "sra-tools"             "ssw"
-[189] "STAR"                  "stata"                 "SurvivalAnalysis"      "SurvivalKit"
-[193] "Swift"                 "tabix"                 "tatami"                "thunderbird"
-[197] "tidy"                  "trinculo"              "trousers"              "Typora"
-[201] "unbound"               "vala"                  "VarScan"               "vcftools"
-[205] "VEGAS2"                "verifyBamID"           "VSCode"                "vte"
-[209] "xpdf"                  "yaml-cpp"              "Zotero"                "zstd"
+[157] "pspp"                  "pulsar"                "PWCoCo"                "qctool"
+[161] "qpdf"                  "qt"                    "qtcreator"             "QTLtools"
+[165] "quarto"                "quicktest"             "R"                     "raremetal"
+[169] "rclone"                "readline"              "regenie"               "regtools"
+[173] "RHHsoftware"           "rst2pdf"               "rstudio"               "ruby"
+[177] "rust"                  "samtools"              "Scala"                 "shapeit"
+[181] "singularity"           "SMR"                   "snakemake"             "SNP2HLA"
+[185] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"
+[189] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"
+[193] "SurvivalKit"           "Swift"                 "tabix"                 "tatami"
+[197] "thunderbird"           "tidy"                  "trinculo"              "trousers"
+[201] "Typora"                "unbound"               "vala"                  "VarScan"
+[205] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
+[209] "VSCodium"              "vte"                   "xpdf"                  "yaml-cpp"
+[213] "Zotero"                "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -332,6 +333,8 @@ They are ordered chronologically.
 ! 2024-03-09  | Scala/3.3.3                      | Generic              |
 ! 2024-03-10  | fpc/3.2.2                        | Generic              |
 ! ""          | Swift/5.10                       | Generic              |
+! ""          | pulsar/1.114.0                   | Generic              |
+! ""          | VSCodium/1.87.1.24068            | Generic              |
 
 \* CEU or approved users only.
 
