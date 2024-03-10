@@ -428,6 +428,15 @@ module load ceuadmin/Scala
 amm
 ```
 
+## swift
+
+Web: <https://www.swift.org/>
+
+```bash
+module load ceuadmin/swift
+wsift --version
+```
+
 ## TypeScript
 
 Web: <https://www.typescriptlang.org/>
