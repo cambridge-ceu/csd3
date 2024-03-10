@@ -421,18 +421,29 @@ rustc --version
 
 ## Scala
 
-Web <https://www.scala-lang.org>
+Web <https://www.scala-lang.org>, <https://ammonite.io/>
 
 ```bash
 module load ceuadmin/Scala
-amm
 ```
 
 Assuming our Scala 3 program `hello.sc` containing `@main def hello() = println("Hello, World!")`, the code is run with
 
+### amm
+
 ```bash
 amm hello.sc
 ```
+
+### scalac/scala
+
+```bash
+scalac hello.sc
+ls -l
+scala hello.sc
+```
+
+where `scalac` is analogous to Java's `javac`.
 
 ## Swift
 
