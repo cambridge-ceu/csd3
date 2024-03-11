@@ -22,3 +22,7 @@ It is available from CRAN, so it can be installed with `install.packages()`. Her
 ```
 
 In case of compilng error, it is necessary to use the developmental version of rstan (2.21.3 at the time of writing), see below.
+
+## 2.20.4
+
+It turns out that this version compiles well under module `ceuadmin/R/4.3.3`.

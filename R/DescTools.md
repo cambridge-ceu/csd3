@@ -64,40 +64,8 @@ make: *** [aux_fct.o] Error 1
 ERROR: compilation failed for package ‘DescTools’
 ```
 
-so `gcc/9` is needed but `GLIBCXX_3.4.26` is missing, however we see from `strings /usr/local/software/master/gcc/9/lib64/libstdc++.so.6.0.28 | grep GLIBCXX` that
+so `gcc/9` is needed but `GLIBCXX_3.4.26` is absolete from `strings /usr/local/software/master/gcc/9/lib64/libstdc++.so.6.0.28 | grep GLIBCXX`.
 
-```
-GLIBCXX_3.4
-GLIBCXX_3.4.1
-GLIBCXX_3.4.2
-GLIBCXX_3.4.3
-GLIBCXX_3.4.4
-GLIBCXX_3.4.5
-GLIBCXX_3.4.6
-GLIBCXX_3.4.7
-GLIBCXX_3.4.8
-GLIBCXX_3.4.9
-GLIBCXX_3.4.10
-GLIBCXX_3.4.11
-GLIBCXX_3.4.12
-GLIBCXX_3.4.13
-GLIBCXX_3.4.14
-GLIBCXX_3.4.15
-GLIBCXX_3.4.16
-GLIBCXX_3.4.17
-GLIBCXX_3.4.18
-GLIBCXX_3.4.19
-GLIBCXX_3.4.20
-GLIBCXX_3.4.21
-GLIBCXX_3.4.22
-GLIBCXX_3.4.23
-GLIBCXX_3.4.24
-GLIBCXX_3.4.25
-GLIBCXX_3.4.26
-GLIBCXX_3.4.27
-GLIBCXX_3.4.28
-```
-
-It is apparent that with the `gcc/9` available it is impossible to get it work, so we recompile R under gcc/11 which does not need specification of C++17 from ~/R./Makevars.
+It is possible to get around by recompile R under gcc/9 but we opt for gcc/11 which does not need specification of C++17 from ~/R./Makevars.
 
 Unfortunately, the package compiled could not be loaded into R build under gcc/6.
