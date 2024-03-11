@@ -45,6 +45,8 @@ With this setup, `R CMD check --as-cran` for a CRAN package check can be run smo
 
 Package reinstallation could be done with `update.packages(checkBuilt = TRUE, ask = FALSE)`.
 
+Additional amemendments are necessary, e.g., package igraph 2.0.2 requires glpk/4.57 while DescTools 0.99.54 requires gcc/11 (there is problem with gcc/9 on CSD3) and to get around we also created `R/4.3.3-gcc11`.
+
 ## libiconv
 
 It may complain about `libiconv.so.2`,
