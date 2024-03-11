@@ -41,7 +41,7 @@ where file `DESCRIPTION` is modified adding `SystemRequirements: C++17` before t
 
 The much-needed statement `SystemRequirements: C++17` is now available from `DESCRIPTION`.
 
-Moreover, `strings /usr/local/software/master/gcc/9/lib64/libstdc++.so.6.0.28 | grep GLIBCXX` gives
+We see from `strings /usr/local/software/master/gcc/9/lib64/libstdc++.so.6.0.28 | grep GLIBCXX` that
 
 ```
 GLIBCXX_3.4
@@ -75,15 +75,6 @@ GLIBCXX_3.4.27
 GLIBCXX_3.4.28
 ```
 
-indicating that gcc/9 is needed but the error message indicates that an earlier one is used.
+however this is not the default library that gcc/9 is needed.
 
-```
-  /usr/local/software/archive/linux-scientific7-x86_64/gcc-9/gcc-6.5.0-dtb6lagchexqdijlx6xgkin3zlfddpzi/lib64/libstdc++.so.6: version `GLIBCXX_3.4.26' not found (required by /rds/project/jmmh2/rds-jmmh2-public_databases/software/R/00LOCK-DescTools/00new/DescTools/libs/DescTools.so)
-```
-
-It would work out if R itsefl was built from gcc/9 instead of gcc/6. A get around is to modify `./Makevars`, adding,
-
-```
-CC=/usr/local/software/master/gcc/9/bin/gcc
-CXX=/usr/local/software/master/gcc/9/bin/g++
-```
+It is apparent that with it is impossible to get it work, so we recompile R under gcc/11 which does not need specification of C++17 from ~/R./Makevars.
