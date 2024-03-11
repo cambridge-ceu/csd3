@@ -45,7 +45,7 @@ With this setup, `R CMD check --as-cran` for a CRAN package check can be run smo
 
 Package reinstallation could be done with `update.packages(checkBuilt = TRUE, ask = FALSE)`.
 
-Additional amemendments are necessary, e.g., package igraph 2.0.2 requires glpk/4.57 while DescTools 0.99.54 requires gcc/11 (there is problem with gcc/9 on CSD3) and to get around we also created `ceuadmin/R/4.3.3-gcc11`.
+Additional amemendments are necessary, e.g., package igraph 2.0.2 requires glpk/4.57 (see below).
 
 ## libiconv
 
@@ -91,7 +91,40 @@ make
 make install
 ```
 
-## R-4.3.3-gc11
+## 4.3.3[-gcc11]
+
+This is a lot messier,
+
+```bash
+#!/usr/bin/bash
+
+module load gcc/6 geos-3.6.2-gcc-5.4.0-vejexvy gettext-0.19.8.1-gcc-5.4.0-5iqkv5z pcre2-10.20-gcc-5.4.0-tcuhtrb texlive
+module load image-magick-7.0.5-9-gcc-5.4.0-d4lemcc
+module load ceuadmin/glpk/4.57
+
+export prefix=/rds-d4/user/$USER/hpc-work
+export prefix=/rds/project/jmmh2/rds-jmmh2-public_databases/software
+cd ${prefix}
+export version=4.3.3
+IFS=\. read major minor1 minor2 <<<${version}
+wget -qO- https://cran.r-project.org/src/base/R-${major}/R-${version}.tar.gz | \
+tar xvfz -
+cd R-${version}
+export gcc6=/usr/local/software/master/gcc/6
+export intl=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/gettext-0.19.8.1-5iqkv5zrractwd57vydu5czosgtrlwj2/
+export HPC_WORK=/rds/user/jhz22/hpc-work
+export include=${gcc6}/include:${intl}/include:${HPC_WORK}/include
+export ldflags=${gcc6}/lib64:${gcc6}/lib:${intl}/lib:${HPC_WORK}/lib64:${HPC_WORK}/lib
+./configure --prefix=${prefix} \
+            --with-pcre2 \
+            --enable-R-shlib CPPFLAGS=-I${include} LDFLAGS=-L${ldflags} LIBS=-ltinfo LIBS=-lintl
+make
+make install
+ln -sf  ${prefix}/R-${version}/bin/R $HOME/bin/R
+Rscript -e 'update.packages(checkBuilt=TRUE,ask=FALSE)'
+```
+
+Package DescTools 0.99.54 requires gcc/11 (there is problem with gcc/9 on CSD3) and to get around we also created `ceuadmin/R/4.3.3-gcc11`.
 
 This is created under gcc/11 to enable package such as DescTools 0.99.54.
 
