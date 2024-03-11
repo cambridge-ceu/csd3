@@ -65,7 +65,7 @@ make install
 
 We could also try from `module avail libiconv`.
 
-## R/4.2.2
+## 4.2.2
 
 The following script is used to generate `ceuadmin/R/4.2.2`
 
