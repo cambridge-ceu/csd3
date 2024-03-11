@@ -26,7 +26,14 @@ ERROR: compilation failed for package ‘DescTools’
 * removing ‘/rds/project/jmmh2/rds-jmmh2-public_databases/software/R/DescTools’
 ```
 
-which indicates that C++17 is required; it turns out specification via `.R/Makevars` is insufficient and we proceed with
+which indicates that C++17 is required; it turns out specification via `.R/Makevars`
+
+```
+CXX17FLAGS= -fPIC
+CXX17=g++ -std=gnu++17
+```
+
+and
 
 ```bash
 module load gcc/8
@@ -41,7 +48,23 @@ where file `DESCRIPTION` is modified adding `SystemRequirements: C++17` before t
 
 The much-needed statement `SystemRequirements: C++17` is now available from `DESCRIPTION`.
 
-We see from `strings /usr/local/software/master/gcc/9/lib64/libstdc++.so.6.0.28 | grep GLIBCXX` that
+We are not so lucky with `gcc/8` which has error,
+
+```
+g++ -std=gnu++17  -I"/rds/project/jmmh2/rds-jmmh2-public_databases/software/R-4.3.3/include" -DNDEBUG  -I'/rds/project/jmmh2/rds-jmmh2-public_databases/software/R/Rcpp/include' -I/usr/local/software/master/gcc/6/include:/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/gettext-0.19.8.1-5iqkv5zrractwd57vydu5czosgtrlwj2//include:/rds/user/jhz22/hpc-work/include      -fPIC -c aux_fct.cpp -o aux_fct.o
+aux_fct.cpp: In function 'Rcpp::List n_pow_sum(Rcpp::NumericVector)':
+aux_fct.cpp:205:23: error: 'reduce' is not a member of 'std'
+   double mean =  std::reduce(x.begin(), x.end(), 0.0, std::plus<double>()) / x.size();
+                       ^~~~~~
+aux_fct.cpp:205:23: note: suggested alternative: 'replace'
+   double mean =  std::reduce(x.begin(), x.end(), 0.0, std::plus<double>()) / x.size();
+                       ^~~~~~
+                       replace
+make: *** [aux_fct.o] Error 1
+ERROR: compilation failed for package ‘DescTools’
+```
+
+so `gcc/9` is needed but `GLIBCXX_3.4.26` is missing, however we see from `strings /usr/local/software/master/gcc/9/lib64/libstdc++.so.6.0.28 | grep GLIBCXX` that
 
 ```
 GLIBCXX_3.4
@@ -75,6 +98,6 @@ GLIBCXX_3.4.27
 GLIBCXX_3.4.28
 ```
 
-however this is not the default library that gcc/9 is needed.
-
 It is apparent that with it is impossible to get it work, so we recompile R under gcc/11 which does not need specification of C++17 from ~/R./Makevars.
+
+Unfortunately, the package compiled could not be loaded into R build under gcc/6.

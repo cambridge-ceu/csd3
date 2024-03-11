@@ -89,6 +89,10 @@ make
 make install
 ```
 
+## R-4.3.3-gc11
+
+This is created under gcc/11 to enable package such as DescTools 0.99.54.
+
 ## icelake
 
 <font color="red"><b>26/3/2022 Update</b></font> `module load R/4.1.0-icelake` <font color="blue"><b>will enable R 4.1.0 from icelake.</b></font>
