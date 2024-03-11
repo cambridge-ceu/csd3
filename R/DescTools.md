@@ -98,6 +98,6 @@ GLIBCXX_3.4.27
 GLIBCXX_3.4.28
 ```
 
-It is apparent that with it is impossible to get it work, so we recompile R under gcc/11 which does not need specification of C++17 from ~/R./Makevars.
+It is apparent that with the `gcc/9` available it is impossible to get it work, so we recompile R under gcc/11 which does not need specification of C++17 from ~/R./Makevars.
 
 Unfortunately, the package compiled could not be loaded into R build under gcc/6.
