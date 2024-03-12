@@ -50,4 +50,4 @@ install.packages("rstanarm", repos = c("https://mc-stan.org/r-packages/", getOpt
 
 ## 2.32.6
 
-This version is possible with a compatible `install.packages("StanHeaders")`. However, under R 4.3.3 built from gcc/6 there is still problem with GLIBCXX_3.4.26 seen from DescTools 0.99.54, so we switch to ceuadmin/R/4.3.3-gcc11 which installs smoothly.
+This version is possible with a compatible `install.packages("StanHeaders")`. However, under R 4.3.3 built from gcc/6 there is still problem with GLIBCXX_3.4.29 similarly seen from DescTools 0.99.54, so we switch to ceuadmin/R/4.3.3-gcc11 which installs smoothly.
