@@ -193,7 +193,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).
 > plot(conditional_effects(fit), ask = FALSE)
 ```
 
-We are also curious about fmaily=cox,
+We are also curious about family=cox,
 
 ```
 > fit <- brm(time | cens(censored) ~ age * sex + disease + (1|patient),
