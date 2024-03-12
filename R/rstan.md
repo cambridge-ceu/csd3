@@ -51,3 +51,57 @@ install.packages("rstanarm", repos = c("https://mc-stan.org/r-packages/", getOpt
 ## 2.32.6
 
 This version is possible with a compatible `install.packages("StanHeaders")`. However, under R 4.3.3 built from gcc/6 there is still problem with GLIBCXX_3.4.29 similarly seen from DescTools 0.99.54, so we switch to ceuadmin/R/4.3.3-gcc11 which installs smoothly.
+
+Simiarly, rstanarm 2.32.1 installation goes well under ceuadmin/R/4.3.3-gcc11.
+
+```r
+library(rstanarm)
+example(example_model)
+print(example_model, digits = 1)
+```
+
+giving
+
+```
+stan_glmer
+ family:       binomial [logit]
+ formula:      cbind(incidence, size - incidence) ~ size + period + (1 | herd)
+ observations: 56
+------
+            Median MAD_SD
+(Intercept) -1.5    0.6
+size         0.0    0.0
+period2     -1.0    0.3
+period3     -1.1    0.3
+period4     -1.6    0.4
+
+Error terms:
+ Groups Name        Std.Dev.
+ herd   (Intercept) 0.77
+Num. levels: herd 15
+
+------
+* For help interpreting the printed output see ?print.stanreg
+* For info on the priors used see ?prior_summary.stanreg
+>      print(example_model, digits = 1)
+stan_glmer
+ family:       binomial [logit]
+ formula:      cbind(incidence, size - incidence) ~ size + period + (1 | herd)
+ observations: 56
+------
+            Median MAD_SD
+(Intercept) -1.5    0.6
+size         0.0    0.0
+period2     -1.0    0.3
+period3     -1.1    0.3
+period4     -1.6    0.4
+
+Error terms:
+ Groups Name        Std.Dev.
+ herd   (Intercept) 0.77
+Num. levels: herd 15
+
+------
+* For help interpreting the printed output see ?print.stanreg
+* For info on the priors used see ?prior_summary.stanreg
+```
