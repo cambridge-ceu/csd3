@@ -126,7 +126,17 @@ Rscript -e 'update.packages(checkBuilt=TRUE,ask=FALSE)'
 
 Package DescTools 0.99.54 requires gcc/11 (there is problem with gcc/9 on CSD3) and to get around we also created `ceuadmin/R/4.3.3-gcc11`.
 
-This is created under gcc/11 to enable package such as DescTools 0.99.54.
+This is created under gcc/11 to enable package in the following list,
+
+```
+DescTools 0.99.54
+Rfast 2.1.0
+Rfast2 0.1.5.2
+RcppTOML 0.2.2
+rstanarm 2.32.1
+rstan 2.32.6
+StanHeaders 2.32.6
+```
 
 ## icelake
 
