@@ -68,4 +68,4 @@ so `gcc/9` is needed but `GLIBCXX_3.4.26` is absolete from `strings /usr/local/s
 
 It is possible to get around by recompile R under gcc/9 but we opt for gcc/11 which does not need specification of C++17 from ~/R./Makevars.
 
-Unfortunately, the package compiled could not be loaded into R build under gcc/6.
+Unfortunately, the package compiled could not be loaded into R build under gcc/6 and we resort to module `ceuadmin/R/4.3.3-gcc11` instead.
