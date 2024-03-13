@@ -87,3 +87,12 @@ The meta-analysis (metan) and Mendelian Randomisation (mrrobust) packages can be
 ssc install metan
 net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") replace
 ```
+
+It is now also possible systemwide, with `module avail stata` giving
+
+```
+-------------------------------------------------- /usr/local/Cluster-Config/modulefiles --------------------------------------------------
+stata/14 stata/17 stata/18
+```
+
+so as to use `module load stata; stata`
