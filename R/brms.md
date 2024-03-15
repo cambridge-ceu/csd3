@@ -30,7 +30,6 @@ It turns out that this version compiles well under module `ceuadmin/R/4.3.3` nev
 We proceed to run the example 3 from `brm` function under `ceuadmin/R/4.3.3-gcc11`,
 
 ```r
-
 # Survival regression modeling the time between the first
 # and second recurrence of an infection in kidney patients.
 
@@ -193,7 +192,7 @@ scale reduction factor on split chains (at convergence, Rhat = 1).
 > plot(conditional_effects(fit), ask = FALSE)
 ```
 
-We are also curious about family=cox,
+and with family=cox,
 
 ```
 > fit <- brm(time | cens(censored) ~ age * sex + disease + (1|patient),
