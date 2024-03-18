@@ -245,19 +245,18 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
     cd -
     mkdir qt_build
     cd qt_build
-    ../qt5/configure -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.7 -developer-build -opensource \
-                 -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
-    make
-    make install
+    ../qt5/configure -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.13 -developer-build -opensource -sqlite \
+                     -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
+    gmake
     ```
 
     The `Makefile` thus generated records the information at its header.
 
     ```
-    /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/qt_build/qtbase/bin/qmake -o Makefile /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/qt5/qt.pro -- -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.7 -developer-build -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
+    /rds/project/jmmh2/rds-jmmh2-public_databases/software/qt_build_5.15.13/qtbase/bin/qmake -o Makefile /rds/project/jmmh2/rds-jmmh2-public_databases/software/qt5/qt.pro -- -opensource -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.13 -developer-build -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
     ```
 
-    With error `qglobal_p.h: No such file or directory`, according to <https://github.com/alexzorin/lpass-ui/issues/1> we get around with
+    With error `qglobal_p.h: No such file or directory` (5.15.7), according to <https://github.com/alexzorin/lpass-ui/issues/1> we get around with
 
     ```bash
     ln -sf /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/qt5/qtbase/include/QtCore/5.15.7/QtCore/private /rds/user/jhz22/hpc-work/include/QtCore
@@ -269,16 +268,16 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
     [EffectivePaths]
     Prefix=..
     [DevicePaths]
-    Prefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.7
+    Prefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.13
     [Paths]
-    Prefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.7
-    HostPrefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.7
+    Prefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.13
+    HostPrefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.13
     Sysroot=
     SysrootifyPrefix=false
     TargetSpec=linux-g++
     HostSpec=linux-g++
     [EffectiveSourcePaths]
-    Prefix=/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/qt5/qtbase
+    Prefix=/rds/project/jmmh2/rds-jmmh2-public_databases/software/qt5/qtbase
     ```
 
     It requires ninja, `module load ninja;ninja --versions` gives 1.10.0 while `source py27/bin/activate;pip install ninja` uses 1.11.1.
