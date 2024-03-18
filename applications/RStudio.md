@@ -245,7 +245,7 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
     cd -
     mkdir qt_build
     cd qt_build
-    ../qt5/configure -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.13 -developer-build -opensource -sqlite \
+    ../qt5/configure -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.13 -developer-build -opensource -no-sql-mysql -sqlite \
                      -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
     gmake
     ```
