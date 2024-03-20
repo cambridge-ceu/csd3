@@ -11,12 +11,18 @@ This can be done with `mutt` from the console, which leads to a menu-driven sess
 Alternatively, to send a message one can follow these steps,
 
 ```bash
-mail <your-email address>
+mail <your email address>
 Subject: test
 This is another test.
 ```
 
 The message is furnished with a "Ctrl-D" from the console.
+
+For an attachment, this is done similarly
+
+```bash
+mutt <your email address> -s "Test" -a /path/to/file
+```
 
 ## thunderbird
 
