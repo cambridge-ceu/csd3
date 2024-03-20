@@ -16,7 +16,7 @@ It is available from CRAN, so it can be installed with `install.packages()`. Her
   plot(fit3, ask = FALSE)
   plot(conditional_effects(fit3), ask = FALSE)
   fit3cox <- brm(time | cens(censored) ~ age * sex + disease + (1|patient),
-                 data = kidney, family = family('cox'))
+                 data = kidney, family = cox)
   summary(fit3cox)
   plot(fit3cox, ask = FALSE)
 ```
