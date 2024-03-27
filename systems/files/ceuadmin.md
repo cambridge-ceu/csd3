@@ -822,7 +822,7 @@ Rscript -e '
 
 [^openssh]: **openssh**
 
-    OpenSSL is called first to use specific `openssl`, i.e.,
+    OpenSSL is called first to use the specific `openssl`, i.e.,
 
     ```bash
     module load ceuadmin/openssl/3.2.1-icelake
