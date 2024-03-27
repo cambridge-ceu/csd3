@@ -822,10 +822,13 @@ Rscript -e '
 
 [^openssh]: **openssh**
 
-    OpenSSL is disabled for now, i.e.,
+    OpenSSL is called first to use specific `openssl`, i.e.,
 
     ```bash
-    ./configure --prefix=$CEUADMIN//openssh/9.7p1-icelake --without-openssl
+    module load ceuadmin/openssl/3.2.1-icelake
+    ./configure --prefix=$CEUADMIN//openssh/9.7p1-icelake --with-ssl-dir=$CEUADMIN/openssl/3.2.1-icelake
     make
     make install
     ```
+
+    Check is made with `cat config.log | grep -i openssl`.
