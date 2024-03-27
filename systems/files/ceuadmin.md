@@ -826,7 +826,7 @@ Rscript -e '
 
     ```bash
     module load ceuadmin/openssl/3.2.1-icelake
-    ./configure --prefix=$CEUADMIN//openssh/9.7p1-icelake --with-ssl-dir=$CEUADMIN/openssl/3.2.1-icelake
+    ./configure --prefix=$CEUADMIN/openssh/9.7p1-icelake --with-ssl-dir=$CEUADMIN/openssl/3.2.1-icelake
     make
     make install
     ```
