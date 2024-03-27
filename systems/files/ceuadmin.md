@@ -38,27 +38,27 @@ The current list is as follows[^ls],
 [121] "MsCAVIAR"              "nano"                  "ncbi-vdb"              "ncurses"
 [125] "netbeans"              "nettle"                "nextflow"              "NLopt"
 [129] "node"                  "nspr"                  "oniguruma"             "openjdk"
-[133] "OpenMS"                "openssl"               "osca"                  "PAINTOR"
-[137] "pandoc"                "pandoc-citeproc"       "pango"                 "parallel"
-[141] "Pascal"                "pcre2"                 "pdf2djvu"              "pdfjam"
-[145] "pgsc_calc"             "phenoscanner"          "PhySO"                 "picard"
-[149] "plink"                 "plink-bgi"             "plinkseq"              "PoGo"
-[153] "polyphen"              "poppler"               "proj"                  "PRSice"
-[157] "pspp"                  "pulsar"                "PWCoCo"                "qctool"
-[161] "qpdf"                  "qt"                    "qtcreator"             "QTLtools"
-[165] "quarto"                "quicktest"             "R"                     "raremetal"
-[169] "rclone"                "readline"              "regenie"               "regtools"
-[173] "RHHsoftware"           "rst2pdf"               "rstudio"               "ruby"
-[177] "rust"                  "samtools"              "Scala"                 "shapeit"
-[181] "singularity"           "SMR"                   "snakemake"             "SNP2HLA"
-[185] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"
-[189] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"
-[193] "SurvivalKit"           "Swift"                 "tabix"                 "tatami"
-[197] "thunderbird"           "tidy"                  "trinculo"              "trousers"
-[201] "Typora"                "unbound"               "vala"                  "VarScan"
-[205] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
-[209] "VSCodium"              "vte"                   "xpdf"                  "yaml-cpp"
-[213] "Zotero"                "zstd"
+[133] "OpenMS"                "openssh"               "openssl"               "osca"
+[137] "PAINTOR"               "pandoc"                "pandoc-citeproc"       "pango"
+[141] "parallel"              "Pascal"                "pcre2"                 "pdf2djvu"
+[145] "pdfjam"                "pgsc_calc"             "phenoscanner"          "PhySO"
+[149] "picard"                "plink"                 "plink-bgi"             "plinkseq"
+[153] "PoGo"                  "polyphen"              "poppler"               "proj"
+[157] "PRSice"                "pspp"                  "pulsar"                "PWCoCo"
+[161] "qctool"                "qpdf"                  "qt"                    "qtcreator"
+[165] "QTLtools"              "quarto"                "quicktest"             "R"
+[169] "raremetal"             "rclone"                "readline"              "regenie"
+[173] "regtools"              "RHHsoftware"           "rst2pdf"               "rstudio"
+[177] "ruby"                  "rust"                  "samtools"              "Scala"
+[181] "shapeit"               "singularity"           "SMR"                   "snakemake"
+[185] "SNP2HLA"               "snptest"               "spread-sheet-widget"   "sqlite"
+[189] "sra-tools"             "ssw"                   "STAR"                  "stata"
+[193] "SurvivalAnalysis"      "SurvivalKit"           "Swift"                 "tabix"
+[197] "tatami"                "thunderbird"           "tidy"                  "trinculo"
+[201] "trousers"              "Typora"                "unbound"               "vala"
+[205] "VarScan"               "vcftools"              "VEGAS2"                "verifyBamID"
+[209] "VSCode"                "VSCodium"              "vte"                   "xpdf"
+[213] "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -335,6 +335,8 @@ They are ordered chronologically.
 ! ""          | Swift/5.10                       | Generic              |
 ! ""          | pulsar/1.114.0                   | Generic              |
 ! ""          | VSCodium/1.87.1.24068            | Generic              |
+! 2024-03-27  | openssl/3.2.1-icelake            | Generic[^openssl]    |
+! ""          | openssh/9.7p1-icelake            | Generic[^openssh]    |
 
 \* CEU or approved users only.
 
@@ -805,3 +807,24 @@ Rscript -e '
 [^automake]: **automake**
 
     This is required by pspp 2.0.0.
+
+[^openssk]: **openssl**
+
+    ```bash
+    wget -qO- https://www.openssl.org/source/openssl-3.2.1.tar.gz | \
+    tar xvfz -
+    cd openssl-3.2.1/
+    export PERL5LIB=
+    ./Configure --prefix=$CEUADMIN/openssl/3.2.1-icelake
+    make
+    make install
+    ```
+[^openssh]: **openssh**
+
+    OpenSSL is disabled for now, i.e.,
+
+    ```bash
+    ./configure --prefix=$CEUADMIN//openssh/9.7p1-icelake --without-openssl
+    make
+    make install
+    ```

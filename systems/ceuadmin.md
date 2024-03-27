@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=214$$, $$\lambda=3$$.
+noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=215$$, $$\lambda=3$$.
 
 ## Entries
 
@@ -48,27 +48,27 @@ The current list is as follows,
 [121] "MsCAVIAR"              "nano"                  "ncbi-vdb"              "ncurses"
 [125] "netbeans"              "nettle"                "nextflow"              "NLopt"
 [129] "node"                  "nspr"                  "oniguruma"             "openjdk"
-[133] "OpenMS"                "openssl"               "osca"                  "PAINTOR"
-[137] "pandoc"                "pandoc-citeproc"       "pango"                 "parallel"
-[141] "Pascal"                "pcre2"                 "pdf2djvu"              "pdfjam"
-[145] "pgsc_calc"             "phenoscanner"          "PhySO"                 "picard"
-[149] "plink"                 "plink-bgi"             "plinkseq"              "PoGo"
-[153] "polyphen"              "poppler"               "proj"                  "PRSice"
-[157] "pspp"                  "pulsar"                "PWCoCo"                "qctool"
-[161] "qpdf"                  "qt"                    "qtcreator"             "QTLtools"
-[165] "quarto"                "quicktest"             "R"                     "raremetal"
-[169] "rclone"                "readline"              "regenie"               "regtools"
-[173] "RHHsoftware"           "rst2pdf"               "rstudio"               "ruby"
-[177] "rust"                  "samtools"              "Scala"                 "shapeit"
-[181] "singularity"           "SMR"                   "snakemake"             "SNP2HLA"
-[185] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"
-[189] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"
-[193] "SurvivalKit"           "Swift"                 "tabix"                 "tatami"
-[197] "thunderbird"           "tidy"                  "trinculo"              "trousers"
-[201] "Typora"                "unbound"               "vala"                  "VarScan"
-[205] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
-[209] "VSCodium"              "vte"                   "xpdf"                  "yaml-cpp"
-[213] "Zotero"                "zstd"
+[133] "OpenMS"                "openssh"               "openssl"               "osca"
+[137] "PAINTOR"               "pandoc"                "pandoc-citeproc"       "pango"
+[141] "parallel"              "Pascal"                "pcre2"                 "pdf2djvu"
+[145] "pdfjam"                "pgsc_calc"             "phenoscanner"          "PhySO"
+[149] "picard"                "plink"                 "plink-bgi"             "plinkseq"
+[153] "PoGo"                  "polyphen"              "poppler"               "proj"
+[157] "PRSice"                "pspp"                  "pulsar"                "PWCoCo"
+[161] "qctool"                "qpdf"                  "qt"                    "qtcreator"
+[165] "QTLtools"              "quarto"                "quicktest"             "R"
+[169] "raremetal"             "rclone"                "readline"              "regenie"
+[173] "regtools"              "RHHsoftware"           "rst2pdf"               "rstudio"
+[177] "ruby"                  "rust"                  "samtools"              "Scala"
+[181] "shapeit"               "singularity"           "SMR"                   "snakemake"
+[185] "SNP2HLA"               "snptest"               "spread-sheet-widget"   "sqlite"
+[189] "sra-tools"             "ssw"                   "STAR"                  "stata"
+[193] "SurvivalAnalysis"      "SurvivalKit"           "Swift"                 "tabix"
+[197] "tatami"                "thunderbird"           "tidy"                  "trinculo"
+[201] "trousers"              "Typora"                "unbound"               "vala"
+[205] "VarScan"               "vcftools"              "VEGAS2"                "verifyBamID"
+[209] "VSCode"                "VSCodium"              "vte"                   "xpdf"
+[213] "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
