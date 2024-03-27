@@ -808,7 +808,7 @@ Rscript -e '
 
     This is required by pspp 2.0.0.
 
-[^openssk]: **openssl**
+[^openssl]: **openssl**
 
     ```bash
     wget -qO- https://www.openssl.org/source/openssl-3.2.1.tar.gz | \
