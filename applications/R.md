@@ -140,6 +140,43 @@ StanHeaders 2.32.6
 
 ## icelake
 
+A module called `ceuadmin/R/4.3.3-icelake` is now available, whose module is defined as follows,
+
+```
+#%Module -*- tcl -*-
+##
+## modulefile
+##
+proc ModulesHelp { } {
+
+  puts stderr "\tR: a free software environment for statistical computing and graphics\n"
+  puts stderr "\tInstalled under: /usr/local/Cluster-Apps/ceuadmin/R/4.3.3-icelake"
+  puts stderr "\tHomepage: https://www.r-project.org/"
+
+}
+
+module-whatis "A free software environment for statistical computing and graphics."
+
+module load gcc/8 texlive
+module load geos-3.6.2-gcc-5.4.0-vejexvy gettext-0.19.8.1-gcc-5.4.0-5iqkv5z pcre2-10.20-gcc-5.4.0-tcuhtrb
+module load image-magick-7.0.5-9-gcc-5.4.0-d4lemcc
+module load readline/8.1/gcc/bgw44yb2 curl/7.79.0/gcc/75dxv7ac
+module load ceuadmin/openssl/3.2.1-icelake ceuadmin/glpk/4.57 ceuadmin/icu/70.1 ceuadmin/nettle/2.7.1
+
+remove-path LD_LIBRARY_PATH /rds/user/jhz22/hpc-work/lib
+remove-path LD_LIBRARY_PATH /rds/user/jhz22/hpc-work/lib64
+remove-path LIBRARY_PATH /rds/user/jhz22/hpc-work/lib
+remove-path LIBRARY_PATH /rds/user/jhz22/hpc-work/lib64
+
+set               rds                   /rds/project/jmmh2/rds-jmmh2-public_databases/software
+set               root                  /usr/local/Cluster-Apps/ceuadmin/R/4.3.3-icelake
+prepend-path      PATH                  $root/bin
+prepend-path      INCLUDE               $rds/lib64/R/include
+prepend-path      MANPATH               $rds/share/man
+prepend-path      LD_LIBRARY_PATH       $root/lib
+setenv            R_LIBS                $rds/R-icelake:$rds/R:$root/library
+```
+
 <font color="red"><b>26/3/2022 Update</b></font> `module load R/4.1.0-icelake` <font color="blue"><b>will enable R 4.1.0 from icelake.</b></font>
 
 As CSD3 often experiences problem from the login nodes, it is then desirable to use `login-icelake.hpc.cam.ac.uk`.
