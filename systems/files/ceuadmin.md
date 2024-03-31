@@ -337,6 +337,7 @@ They are ordered chronologically.
 ! ""          | VSCodium/1.87.1.24068            | Generic              |
 ! 2024-03-27  | openssl/3.2.1-icelake            | Generic[^openssl]    |
 ! ""          | openssh/9.7p1-icelake            | Generic[^openssh]    |
+! 2024-03-31  | ensembl-vep/111-icelake          | Genetics[^vep]       |
 
 \* CEU or approved users only.
 
@@ -832,3 +833,14 @@ Rscript -e '
     ```
 
     Check is made with `cat config.log | grep -i openssl`.
+
+[^vep]: **ensembl-vep**
+
+    A test has been done as follows,
+
+    ```bash
+    export PERL5LIB=
+    git clone https://github.com/Ensembl/ensembl-vep.git
+    perl INSTALL.pl -l Bio -y GRCh37 -a acfp -g all -s homo_sapiens,homo_sapiens_merged --NO_TEST -c .vep
+    ./vep -i examples/homo_sapiens_GRCh38.vcf --cache .vep
+    ```
