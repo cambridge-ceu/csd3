@@ -140,7 +140,7 @@ StanHeaders 2.32.6
 
 ## icelake
 
-A module called `ceuadmin/R/4.3.3-icelake` is now available, whose module is defined as follows,
+A module called `ceuadmin/R/4.3.3-icelake` is now available, whose definition is as follows,
 
 ```
 #%Module -*- tcl -*-
