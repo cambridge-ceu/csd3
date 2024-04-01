@@ -868,5 +868,5 @@ Rscript -e '
 
     ```bash
     make device-mapper
-   'make install_device-mapper
+    make install_device-mapper
     ```
