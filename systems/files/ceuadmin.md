@@ -27,38 +27,38 @@ The current list is as follows[^ls],
  [77] "GraphicsMagick"        "GreenAlgorithms4HPC"   "gsl"                   "gtk+"
  [81] "gtksourceview"         "gtool"                 "hpg"                   "htslib"
  [85] "hunspell"              "icu"                   "ImageJ"                "impute"
- [89] "JabRef"                "JAGS"                  "jq"                    "KentUtils"
- [93] "KING"                  "lapack"                "ldc2"                  "ldsc"
- [97] "LDstore"               "LEMMA"                 "libcares"              "libgit2"
-[101] "libglvnd"              "libiconv"              "libidn2"               "libntlm"
-[105] "libpng"                "libseccomp"            "libsodium"             "libssh2"
-[109] "libuv"                 "libxml2"               "libxslt"               "locuszoom"
-[113] "MAGENTA"               "magma"                 "Mango"                 "Mega2"
-[117] "metal"                 "MONSTER"               "MORGAN"                "MR-MEGA"
-[121] "MsCAVIAR"              "nano"                  "ncbi-vdb"              "ncurses"
-[125] "netbeans"              "nettle"                "nextflow"              "NLopt"
-[129] "node"                  "nspr"                  "oniguruma"             "openjdk"
-[133] "OpenMS"                "openssh"               "openssl"               "osca"
-[137] "PAINTOR"               "pandoc"                "pandoc-citeproc"       "pango"
-[141] "parallel"              "Pascal"                "pcre2"                 "pdf2djvu"
-[145] "pdfjam"                "pgsc_calc"             "phenoscanner"          "PhySO"
-[149] "picard"                "plink"                 "plink-bgi"             "plinkseq"
-[153] "PoGo"                  "polyphen"              "poppler"               "proj"
-[157] "PRSice"                "pspp"                  "pulsar"                "PWCoCo"
-[161] "qctool"                "qpdf"                  "qt"                    "qtcreator"
-[165] "QTLtools"              "quarto"                "quicktest"             "R"
-[169] "raremetal"             "rclone"                "readline"              "regenie"
-[173] "regtools"              "RHHsoftware"           "rst2pdf"               "rstudio"
-[177] "ruby"                  "rust"                  "samtools"              "Scala"
-[181] "shapeit"               "singularity"           "SMR"                   "snakemake"
-[185] "SNP2HLA"               "snptest"               "spread-sheet-widget"   "sqlite"
-[189] "sra-tools"             "ssw"                   "STAR"                  "stata"
-[193] "SurvivalAnalysis"      "SurvivalKit"           "Swift"                 "tabix"
-[197] "tatami"                "thunderbird"           "tidy"                  "trinculo"
-[201] "trousers"              "Typora"                "unbound"               "vala"
-[205] "VarScan"               "vcftools"              "VEGAS2"                "verifyBamID"
-[209] "VSCode"                "VSCodium"              "vte"                   "xpdf"
-[213] "yaml-cpp"              "Zotero"                "zstd"
+ [89] "JabRef"                "JAGS"                  "jq"                    "json-c"
+ [93] "KentUtils"             "KING"                  "lapack"                "ldc2"
+ [97] "ldsc"                  "LDstore"               "LEMMA"                 "libcares"
+[101] "libgit2"               "libglvnd"              "libiconv"              "libidn2"
+[105] "libntlm"               "libpng"                "libseccomp"            "libsodium"
+[109] "libssh2"               "libuv"                 "libxml2"               "libxslt"
+[113] "locuszoom"             "MAGENTA"               "magma"                 "Mango"
+[117] "Mega2"                 "metal"                 "MONSTER"               "MORGAN"
+[121] "MR-MEGA"               "MsCAVIAR"              "nano"                  "ncbi-vdb"
+[125] "ncurses"               "netbeans"              "nettle"                "nextflow"
+[129] "NLopt"                 "node"                  "nspr"                  "oniguruma"
+[133] "openjdk"               "OpenMS"                "openssh"               "openssl"
+[137] "osca"                  "PAINTOR"               "pandoc"                "pandoc-citeproc"
+[141] "pango"                 "parallel"              "Pascal"                "pcre2"
+[145] "pdf2djvu"              "pdfjam"                "pgsc_calc"             "phenoscanner"
+[149] "PhySO"                 "picard"                "plink"                 "plink-bgi"
+[153] "plinkseq"              "PoGo"                  "polyphen"              "poppler"
+[157] "proj"                  "PRSice"                "pspp"                  "pulsar"
+[161] "PWCoCo"                "qctool"                "qpdf"                  "qt"
+[165] "qtcreator"             "QTLtools"              "quarto"                "quicktest"
+[169] "R"                     "raremetal"             "rclone"                "readline"
+[173] "regenie"               "regtools"              "RHHsoftware"           "rst2pdf"
+[177] "rstudio"               "ruby"                  "rust"                  "samtools"
+[181] "Scala"                 "shapeit"               "singularity"           "SMR"
+[185] "snakemake"             "SNP2HLA"               "snptest"               "spread-sheet-widget"
+[189] "sqlite"                "sra-tools"             "ssw"                   "STAR"
+[193] "stata"                 "SurvivalAnalysis"      "SurvivalKit"           "Swift"
+[197] "tabix"                 "tatami"                "thunderbird"           "tidy"
+[201] "trinculo"              "trousers"              "Typora"                "unbound"
+[205] "vala"                  "VarScan"               "vcftools"              "VEGAS2"
+[209] "verifyBamID"           "VSCode"                "VSCodium"              "vte"
+[213] "xpdf"                  "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -338,6 +338,7 @@ They are ordered chronologically.
 ! 2024-03-27  | openssl/3.2.1-icelake            | Generic[^openssl]    |
 ! ""          | openssh/9.7p1-icelake            | Generic[^openssh]    |
 ! 2024-03-31  | ensembl-vep/111-icelake          | Genetics[^vep]       |
+! 2024-04-01  | json-c/0.17-20230812-icelake     | Generic[^json-c]     |
 
 \* CEU or approved users only.
 
@@ -843,4 +844,18 @@ Rscript -e '
     git clone https://github.com/Ensembl/ensembl-vep.git
     perl INSTALL.pl -l Bio -y GRCh37 -a acfp -g all -s homo_sapiens,homo_sapiens_merged --NO_TEST -c .vep
     ./vep -i examples/homo_sapiens_GRCh38.vcf --cache .vep
+    ```
+
+[^json-c]: **json-c**
+
+    ```bash
+    export LD_LIBRARY_PATH=
+    wget -qO- https://github.com/json-c/json-c/archive/refs/tags/json-c-0.17-20230812.tar.gz | \
+    tar xvfz -
+    cd json-c-0.17-20230812
+    mkdir build && cd build
+    cmake -DCMAKE_INSTALL_PREFIX=/usr/local/Cluster-Apps/ceuadmin/json-c/0.17-20230812-icelake ..
+    ln -sf /usr/include/locale.h xlocale.h
+    make -I.
+    make install
     ```
