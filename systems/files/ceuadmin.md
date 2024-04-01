@@ -13,52 +13,53 @@ The current list is as follows[^ls],
  [21] "busybox"               "CaVEMaN"               "CAVIAR"                "CAVIARBF"
  [25] "ccal"                  "circos"                "citeproc"              "cmake"
  [29] "cppunit"               "crossmap"              "Cytoscape"             "deno"
- [33] "DEPICT"                "DjVuLibre"             "docbook2X"             "DosageConverter"
- [37] "Eagle"                 "enchant"               "ensembl-vep"           "exiv2"
- [41] "exomeplus"             "expat"                 "FastQTL"               "fcGENE"
- [45] "ffmpeg"                "fgwas"                 "finemap"               "fossil"
- [49] "fpc"                   "fraposa_pgsc"          "fribidi"               "GARFIELD"
- [53] "gatk"                  "gcta"                  "gdal"                  "gdc"
- [57] "geany"                 "GEM"                   "GEMMA"                 "Genotype-Harmonizer"
- [61] "gettext"               "gh"                    "ghc"                   "ghostscript"
- [65] "git"                   "git-extras"            "GitKraken"             "glib"
- [69] "glibc"                 "globusconnectpersonal" "glpk"                  "gmp"
- [73] "gnutls"                "go"                    "googletest"            "graphene"
- [77] "GraphicsMagick"        "GreenAlgorithms4HPC"   "gsl"                   "gtk+"
- [81] "gtksourceview"         "gtool"                 "hpg"                   "htslib"
- [85] "hunspell"              "icu"                   "ImageJ"                "impute"
- [89] "JabRef"                "JAGS"                  "jq"                    "json-c"
- [93] "KentUtils"             "KING"                  "lapack"                "ldc2"
- [97] "ldsc"                  "LDstore"               "LEMMA"                 "libcares"
-[101] "libgit2"               "libglvnd"              "libiconv"              "libidn2"
-[105] "libntlm"               "libpng"                "libseccomp"            "libsodium"
-[109] "libssh2"               "libuv"                 "libxml2"               "libxslt"
-[113] "locuszoom"             "MAGENTA"               "magma"                 "Mango"
-[117] "Mega2"                 "metal"                 "MONSTER"               "MORGAN"
-[121] "MR-MEGA"               "MsCAVIAR"              "nano"                  "ncbi-vdb"
-[125] "ncurses"               "netbeans"              "nettle"                "nextflow"
-[129] "NLopt"                 "node"                  "nspr"                  "oniguruma"
-[133] "openjdk"               "OpenMS"                "openssh"               "openssl"
-[137] "osca"                  "PAINTOR"               "pandoc"                "pandoc-citeproc"
-[141] "pango"                 "parallel"              "Pascal"                "pcre2"
-[145] "pdf2djvu"              "pdfjam"                "pgsc_calc"             "phenoscanner"
-[149] "PhySO"                 "picard"                "plink"                 "plink-bgi"
-[153] "plinkseq"              "PoGo"                  "polyphen"              "poppler"
-[157] "proj"                  "PRSice"                "pspp"                  "pulsar"
-[161] "PWCoCo"                "qctool"                "qpdf"                  "qt"
-[165] "qtcreator"             "QTLtools"              "quarto"                "quicktest"
-[169] "R"                     "raremetal"             "rclone"                "readline"
-[173] "regenie"               "regtools"              "RHHsoftware"           "rst2pdf"
-[177] "rstudio"               "ruby"                  "rust"                  "samtools"
-[181] "Scala"                 "shapeit"               "singularity"           "SMR"
-[185] "snakemake"             "SNP2HLA"               "snptest"               "spread-sheet-widget"
-[189] "sqlite"                "sra-tools"             "ssw"                   "STAR"
-[193] "stata"                 "SurvivalAnalysis"      "SurvivalKit"           "Swift"
-[197] "tabix"                 "tatami"                "thunderbird"           "tidy"
-[201] "trinculo"              "trousers"              "Typora"                "unbound"
-[205] "vala"                  "VarScan"               "vcftools"              "VEGAS2"
-[209] "verifyBamID"           "VSCode"                "VSCodium"              "vte"
-[213] "xpdf"                  "yaml-cpp"              "Zotero"                "zstd"
+ [33] "DEPICT"                "device-mapper"         "DjVuLibre"             "docbook2X"
+ [37] "DosageConverter"       "Eagle"                 "enchant"               "ensembl-vep"
+ [41] "exiv2"                 "exomeplus"             "expat"                 "FastQTL"
+ [45] "fcGENE"                "ffmpeg"                "fgwas"                 "finemap"
+ [49] "fossil"                "fpc"                   "fraposa_pgsc"          "fribidi"
+ [53] "GARFIELD"              "gatk"                  "gcta"                  "gdal"
+ [57] "gdc"                   "geany"                 "GEM"                   "GEMMA"
+ [61] "Genotype-Harmonizer"   "gettext"               "gh"                    "ghc"
+ [65] "ghostscript"           "git"                   "git-extras"            "GitKraken"
+ [69] "glib"                  "glibc"                 "globusconnectpersonal" "glpk"
+ [73] "gmp"                   "gnutls"                "go"                    "googletest"
+ [77] "graphene"              "GraphicsMagick"        "GreenAlgorithms4HPC"   "gsl"
+ [81] "gtk+"                  "gtksourceview"         "gtool"                 "hpg"
+ [85] "htslib"                "hunspell"              "icu"                   "ImageJ"
+ [89] "impute"                "JabRef"                "JAGS"                  "jq"
+ [93] "json-c"                "KentUtils"             "KING"                  "lapack"
+ [97] "ldc2"                  "ldsc"                  "LDstore"               "LEMMA"
+[101] "libcares"              "libgit2"               "libglvnd"              "libiconv"
+[105] "libidn2"               "libntlm"               "libpng"                "libseccomp"
+[109] "libsodium"             "libssh2"               "libuv"                 "libxml2"
+[113] "libxslt"               "locuszoom"             "LVM2"                  "MAGENTA"
+[117] "magma"                 "Mango"                 "Mega2"                 "metal"
+[121] "MONSTER"               "MORGAN"                "MR-MEGA"               "MsCAVIAR"
+[125] "nano"                  "ncbi-vdb"              "ncurses"               "netbeans"
+[129] "nettle"                "nextflow"              "NLopt"                 "node"
+[133] "nspr"                  "oniguruma"             "openjdk"               "OpenMS"
+[137] "openssh"               "openssl"               "osca"                  "PAINTOR"
+[141] "pandoc"                "pandoc-citeproc"       "pango"                 "parallel"
+[145] "Pascal"                "pcre2"                 "pdf2djvu"              "pdfjam"
+[149] "pgsc_calc"             "phenoscanner"          "PhySO"                 "picard"
+[153] "plink"                 "plink-bgi"             "plinkseq"              "PoGo"
+[157] "polyphen"              "poppler"               "proj"                  "PRSice"
+[161] "pspp"                  "pulsar"                "PWCoCo"                "qctool"
+[165] "qpdf"                  "qt"                    "qtcreator"             "QTLtools"
+[169] "quarto"                "quicktest"             "R"                     "raremetal"
+[173] "rclone"                "readline"              "regenie"               "regtools"
+[177] "RHHsoftware"           "rst2pdf"               "rstudio"               "ruby"
+[181] "rust"                  "samtools"              "Scala"                 "shapeit"
+[185] "singularity"           "SMR"                   "snakemake"             "SNP2HLA"
+[189] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"
+[193] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"
+[197] "SurvivalKit"           "Swift"                 "tabix"                 "tatami"
+[201] "thunderbird"           "tidy"                  "trinculo"              "trousers"
+[205] "Typora"                "unbound"               "vala"                  "VarScan"
+[209] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
+[213] "VSCodium"              "vte"                   "xpdf"                  "yaml-cpp"
+[217] "Zotero"                "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -339,6 +340,8 @@ They are ordered chronologically.
 ! ""          | openssh/9.7p1-icelake            | Generic[^openssh]    |
 ! 2024-03-31  | ensembl-vep/111-icelake          | Genetics[^vep]       |
 ! 2024-04-01  | json-c/0.17-20230812-icelake     | Generic[^json-c]     |
+! ""          | device-mapper/1.02.28-icelake    | Generic              |
+! ""          | LVM2/2.03.23-icelake             | Generic[^LVM2]       |
 
 \* CEU or approved users only.
 
@@ -386,7 +389,6 @@ Rscript -e '
   print(modules)
 '
 ```
-
 
 ---
 
@@ -858,4 +860,13 @@ Rscript -e '
     ln -sf /usr/include/locale.h xlocale.h
     make -I.
     make install
+    ```
+
+[^LVM2]: **LVM2**
+
+    Only device mapper is installed, i.e.,
+
+    ```bash
+    make device-mapper
+   'make install_device-mapper
     ```
