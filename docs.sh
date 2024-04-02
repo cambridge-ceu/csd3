@@ -41,6 +41,10 @@ make build
 ### Earlier experiment: https://readthedocs.org/projects/csd3/
 ### Earlier experiment: https://readthedocs.org/projects/csd3v2/
 
+if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-q" ]; then
+   module load ceuadmin/openssh/9.7p1-icelake
+fi
+
 for f in $(ls -a)
 do
    git add ${f}
