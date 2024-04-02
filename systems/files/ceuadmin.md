@@ -12,54 +12,54 @@ The current list is as follows[^ls],
  [17] "biobank"               "blat"                  "boltlmm"               "brotli"
  [21] "busybox"               "CaVEMaN"               "CAVIAR"                "CAVIARBF"
  [25] "ccal"                  "circos"                "citeproc"              "cmake"
- [29] "cppunit"               "crossmap"              "Cytoscape"             "deno"
- [33] "DEPICT"                "device-mapper"         "DjVuLibre"             "docbook2X"
- [37] "DosageConverter"       "Eagle"                 "enchant"               "ensembl-vep"
- [41] "exiv2"                 "exomeplus"             "expat"                 "FastQTL"
- [45] "fcGENE"                "ffmpeg"                "fgwas"                 "finemap"
- [49] "fossil"                "fpc"                   "fraposa_pgsc"          "fribidi"
- [53] "GARFIELD"              "gatk"                  "gcta"                  "gdal"
- [57] "gdc"                   "geany"                 "GEM"                   "GEMMA"
- [61] "Genotype-Harmonizer"   "gettext"               "gh"                    "ghc"
- [65] "ghostscript"           "git"                   "git-extras"            "GitKraken"
- [69] "glib"                  "glibc"                 "globusconnectpersonal" "glpk"
- [73] "gmp"                   "gnutls"                "go"                    "googletest"
- [77] "graphene"              "GraphicsMagick"        "GreenAlgorithms4HPC"   "gsl"
- [81] "gtk+"                  "gtksourceview"         "gtool"                 "hpg"
- [85] "htslib"                "hunspell"              "icu"                   "ImageJ"
- [89] "impute"                "JabRef"                "JAGS"                  "jq"
- [93] "json-c"                "KentUtils"             "KING"                  "lapack"
- [97] "ldc2"                  "ldsc"                  "LDstore"               "LEMMA"
-[101] "libcares"              "libgit2"               "libglvnd"              "libiconv"
-[105] "libidn2"               "libntlm"               "libpng"                "libseccomp"
-[109] "libsodium"             "libssh2"               "libuv"                 "libxml2"
-[113] "libxslt"               "locuszoom"             "LVM2"                  "MAGENTA"
-[117] "magma"                 "Mango"                 "Mega2"                 "metal"
-[121] "MONSTER"               "MORGAN"                "MR-MEGA"               "MsCAVIAR"
-[125] "nano"                  "ncbi-vdb"              "ncurses"               "netbeans"
-[129] "nettle"                "nextflow"              "NLopt"                 "node"
-[133] "nspr"                  "oniguruma"             "openjdk"               "OpenMS"
-[137] "openssh"               "openssl"               "osca"                  "PAINTOR"
-[141] "pandoc"                "pandoc-citeproc"       "pango"                 "parallel"
-[145] "Pascal"                "pcre2"                 "pdf2djvu"              "pdfjam"
-[149] "pgsc_calc"             "phenoscanner"          "PhySO"                 "picard"
-[153] "plink"                 "plink-bgi"             "plinkseq"              "PoGo"
-[157] "polyphen"              "poppler"               "proj"                  "PRSice"
-[161] "pspp"                  "pulsar"                "PWCoCo"                "qctool"
-[165] "qpdf"                  "qt"                    "qtcreator"             "QTLtools"
-[169] "quarto"                "quicktest"             "R"                     "raremetal"
-[173] "rclone"                "readline"              "regenie"               "regtools"
-[177] "RHHsoftware"           "rst2pdf"               "rstudio"               "ruby"
-[181] "rust"                  "samtools"              "Scala"                 "shapeit"
-[185] "singularity"           "SMR"                   "snakemake"             "SNP2HLA"
-[189] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"
-[193] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"
-[197] "SurvivalKit"           "Swift"                 "tabix"                 "tatami"
-[201] "thunderbird"           "tidy"                  "trinculo"              "trousers"
-[205] "Typora"                "unbound"               "vala"                  "VarScan"
-[209] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
-[213] "VSCodium"              "vte"                   "xpdf"                  "yaml-cpp"
-[217] "Zotero"                "zstd"
+ [29] "cppunit"               "crossmap"              "cryptsetup"            "Cytoscape"
+ [33] "deno"                  "DEPICT"                "device-mapper"         "DjVuLibre"
+ [37] "docbook2X"             "DosageConverter"       "Eagle"                 "enchant"
+ [41] "ensembl-vep"           "exiv2"                 "exomeplus"             "expat"
+ [45] "FastQTL"               "fcGENE"                "ffmpeg"                "fgwas"
+ [49] "finemap"               "fossil"                "fpc"                   "fraposa_pgsc"
+ [53] "fribidi"               "GARFIELD"              "gatk"                  "gcta"
+ [57] "gdal"                  "gdc"                   "geany"                 "GEM"
+ [61] "GEMMA"                 "Genotype-Harmonizer"   "gettext"               "gh"
+ [65] "ghc"                   "ghostscript"           "git"                   "git-extras"
+ [69] "GitKraken"             "glib"                  "glibc"                 "globusconnectpersonal"
+ [73] "glpk"                  "gmp"                   "gnutls"                "go"
+ [77] "googletest"            "graphene"              "GraphicsMagick"        "GreenAlgorithms4HPC"
+ [81] "gsl"                   "gtk+"                  "gtksourceview"         "gtool"
+ [85] "hpg"                   "htslib"                "hunspell"              "icu"
+ [89] "ImageJ"                "impute"                "JabRef"                "JAGS"
+ [93] "jq"                    "json-c"                "KentUtils"             "KING"
+ [97] "lapack"                "ldc2"                  "ldsc"                  "LDstore"
+[101] "LEMMA"                 "libcares"              "libgit2"               "libglvnd"
+[105] "libiconv"              "libidn2"               "libntlm"               "libpng"
+[109] "libseccomp"            "libsodium"             "libssh2"               "libuv"
+[113] "libxml2"               "libxslt"               "locuszoom"             "LVM2"
+[117] "MAGENTA"               "magma"                 "Mango"                 "Mega2"
+[121] "metal"                 "MONSTER"               "MORGAN"                "MR-MEGA"
+[125] "MsCAVIAR"              "nano"                  "ncbi-vdb"              "ncurses"
+[129] "netbeans"              "nettle"                "nextflow"              "NLopt"
+[133] "node"                  "nspr"                  "oniguruma"             "openjdk"
+[137] "OpenMS"                "openssh"               "openssl"               "osca"
+[141] "PAINTOR"               "pandoc"                "pandoc-citeproc"       "pango"
+[145] "parallel"              "Pascal"                "pcre2"                 "pdf2djvu"
+[149] "pdfjam"                "pgsc_calc"             "phenoscanner"          "PhySO"
+[153] "picard"                "plink"                 "plink-bgi"             "plinkseq"
+[157] "PoGo"                  "polyphen"              "poppler"               "popt"
+[161] "proj"                  "PRSice"                "pspp"                  "pulsar"
+[165] "PWCoCo"                "qctool"                "qpdf"                  "qt"
+[169] "qtcreator"             "QTLtools"              "quarto"                "quicktest"
+[173] "R"                     "raremetal"             "rclone"                "readline"
+[177] "regenie"               "regtools"              "RHHsoftware"           "rst2pdf"
+[181] "rstudio"               "ruby"                  "rust"                  "samtools"
+[185] "Scala"                 "shapeit"               "singularity"           "SMR"
+[189] "snakemake"             "SNP2HLA"               "snptest"               "spread-sheet-widget"
+[193] "sqlite"                "sra-tools"             "ssw"                   "STAR"
+[197] "stata"                 "SurvivalAnalysis"      "SurvivalKit"           "Swift"
+[201] "tabix"                 "tatami"                "thunderbird"           "tidy"
+[205] "trinculo"              "trousers"              "Typora"                "unbound"
+[209] "vala"                  "VarScan"               "vcftools"              "VEGAS2"
+[213] "verifyBamID"           "VSCode"                "VSCodium"              "vte"
+[217] "xpdf"                  "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -342,6 +342,7 @@ They are ordered chronologically.
 ! 2024-04-01  | json-c/0.17-20230812-icelake     | Generic[^json-c]     |
 ! ""          | device-mapper/1.02.28-icelake    | Generic              |
 ! ""          | LVM2/2.03.23-icelake             | Generic[^LVM2]       |
+! 2024-04-02  | cryptsetup/2.7.1-icelake         | Generic[^cryptsetup] |
 
 \* CEU or approved users only.
 
@@ -355,6 +356,11 @@ Three aspects are notable,
 A word cloud diagram is generated from the following script
 
 ```bash
+if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-p" ]; then
+   module load ceuadmin/R
+else
+   module load ceuadmin/R/4.3.3-icelake
+fi
 grep -e Generic ${CEUADMIN}/doc/ceuadmin.md | grep "^[|]" | awk '{print $4}' > generic.lst
 grep -e Genetics ${CEUADMIN}/doc/ceuadmin.md | grep "^[|]" | awk '{print $4}' > genetics.lst
 grep -e Genetics -e Generic ${CEUADMIN}/doc/ceuadmin.md | grep "^[|]" | awk '{print $4}' | wc -l
@@ -869,4 +875,23 @@ Rscript -e '
     ```bash
     make device-mapper
     make install_device-mapper
+    ```
+
+[^cryptsetup]: **cryptosetup**
+
+    ```bash
+    # incomplete libssh in need of a fix
+    module load cmake/3.21.3/intel/wce32356
+    wget -qO- https://www.libssh.org/files/0.10/libssh-0.10.6.tar.xz | \
+    tar xfJ -
+    cd libssh-0.10.6
+    mkdir build && cd build
+    cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/libssh/0.10.6-icelake  ..
+    make
+    module load ceuadmin/json-c/0.17-20230812-icelake 
+    module load ceuadmin/LVM2/2.03.23-icelake
+    module load ceuadmin/popt/1.19-icelake
+    module load gettext/0.21/gcc/qnrcglqo
+    CFLAGS="-I/usr/local/Cluster-Apps/ceuadmin/LVM2/2.03.23-icelake/include" \
+    configure --prefix=$CEUADMIN/cryptsetup/2.7.1-icelake --disable-ssh-token
     ```
