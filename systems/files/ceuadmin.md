@@ -29,37 +29,38 @@ The current list is as follows[^ls],
  [85] "hpg"                   "htslib"                "hunspell"              "icu"
  [89] "ImageJ"                "impute"                "JabRef"                "JAGS"
  [93] "jq"                    "json-c"                "KentUtils"             "KING"
- [97] "lapack"                "ldc2"                  "ldsc"                  "LDstore"
-[101] "LEMMA"                 "libcares"              "libgit2"               "libglvnd"
-[105] "libiconv"              "libidn2"               "libntlm"               "libpng"
-[109] "libseccomp"            "libsodium"             "libssh2"               "libuv"
-[113] "libxml2"               "libxslt"               "locuszoom"             "LVM2"
-[117] "MAGENTA"               "magma"                 "Mango"                 "Mega2"
-[121] "metal"                 "MONSTER"               "MORGAN"                "MR-MEGA"
-[125] "MsCAVIAR"              "nano"                  "ncbi-vdb"              "ncurses"
-[129] "netbeans"              "nettle"                "nextflow"              "NLopt"
-[133] "node"                  "nspr"                  "oniguruma"             "openjdk"
-[137] "OpenMS"                "openssh"               "openssl"               "osca"
-[141] "PAINTOR"               "pandoc"                "pandoc-citeproc"       "pango"
-[145] "parallel"              "Pascal"                "pcre2"                 "pdf2djvu"
-[149] "pdfjam"                "pgsc_calc"             "phenoscanner"          "PhySO"
-[153] "picard"                "plink"                 "plink-bgi"             "plinkseq"
-[157] "PoGo"                  "polyphen"              "poppler"               "popt"
-[161] "proj"                  "PRSice"                "pspp"                  "pulsar"
-[165] "PWCoCo"                "qctool"                "qpdf"                  "qt"
-[169] "qtcreator"             "QTLtools"              "quarto"                "quicktest"
-[173] "R"                     "raremetal"             "rclone"                "readline"
-[177] "regenie"               "regtools"              "RHHsoftware"           "rst2pdf"
-[181] "rstudio"               "ruby"                  "rust"                  "samtools"
-[185] "Scala"                 "shapeit"               "singularity"           "SMR"
-[189] "snakemake"             "SNP2HLA"               "snptest"               "spread-sheet-widget"
-[193] "sqlite"                "sra-tools"             "ssw"                   "STAR"
-[197] "stata"                 "SurvivalAnalysis"      "SurvivalKit"           "Swift"
-[201] "tabix"                 "tatami"                "thunderbird"           "tidy"
-[205] "trinculo"              "trousers"              "Typora"                "unbound"
-[209] "vala"                  "VarScan"               "vcftools"              "VEGAS2"
-[213] "verifyBamID"           "VSCode"                "VSCodium"              "vte"
-[217] "xpdf"                  "yaml-cpp"              "Zotero"                "zstd"
+ [97] "krb5"                  "lapack"                "ldc2"                  "ldsc"
+[101] "LDstore"               "LEMMA"                 "libcares"              "libgit2"
+[105] "libglvnd"              "libiconv"              "libidn2"               "libntlm"
+[109] "libpng"                "libseccomp"            "libsodium"             "libssh2"
+[113] "libuv"                 "libxml2"               "libxslt"               "locuszoom"
+[117] "LVM2"                  "MAGENTA"               "magma"                 "Mango"
+[121] "Mega2"                 "metal"                 "MONSTER"               "MORGAN"
+[125] "MR-MEGA"               "MsCAVIAR"              "nano"                  "ncbi-vdb"
+[129] "ncurses"               "netbeans"              "nettle"                "nextflow"
+[133] "NLopt"                 "node"                  "nspr"                  "oniguruma"
+[137] "openjdk"               "OpenMS"                "openssh"               "openssl"
+[141] "osca"                  "PAINTOR"               "pandoc"                "pandoc-citeproc"
+[145] "pango"                 "parallel"              "Pascal"                "pcre2"
+[149] "pdf2djvu"              "pdfjam"                "pgsc_calc"             "phenoscanner"
+[153] "PhySO"                 "picard"                "plink"                 "plink-bgi"
+[157] "plinkseq"              "PoGo"                  "polyphen"              "poppler"
+[161] "popt"                  "proj"                  "PRSice"                "pspp"
+[165] "pulsar"                "PWCoCo"                "qctool"                "qpdf"
+[169] "qt"                    "qtcreator"             "QTLtools"              "quarto"
+[173] "quicktest"             "R"                     "raremetal"             "rclone"
+[177] "readline"              "regenie"               "regtools"              "RHHsoftware"
+[181] "Rplots.pdf"            "rst2pdf"               "rstudio"               "ruby"
+[185] "rust"                  "samtools"              "Scala"                 "shapeit"
+[189] "singularity"           "SMR"                   "snakemake"             "SNP2HLA"
+[193] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"
+[197] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"
+[201] "SurvivalKit"           "Swift"                 "tabix"                 "tatami"
+[205] "thunderbird"           "tidy"                  "trinculo"              "trousers"
+[209] "Typora"                "unbound"               "vala"                  "VarScan"
+[213] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
+[217] "VSCodium"              "vte"                   "xpdf"                  "yaml-cpp"
+[221] "Zotero"                "zstd"
 ```
 
 Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
@@ -343,6 +344,8 @@ They are ordered chronologically.
 ! ""          | device-mapper/1.02.28-icelake    | Generic              |
 ! ""          | LVM2/2.03.23-icelake             | Generic[^LVM2]       |
 ! 2024-04-02  | cryptsetup/2.7.1-icelake         | Generic[^cryptsetup] |
+! 2024-04-05  | krb5/1.21.2-icelake              | Generic[^krb5]       |
+! ""          | git/1.44.0-icelake               | Generic[^git]        |
 
 \* CEU or approved users only.
 
@@ -832,7 +835,7 @@ Rscript -e '
 
 [^openssh]: **openssh**
 
-    OpenSSL is called first to use the specific `openssl`, i.e.,
+    OpenSSL is called first to use the specific `openssl`, e.g.,
 
     ```bash
     module load ceuadmin/openssl/3.2.1-icelake
@@ -841,7 +844,15 @@ Rscript -e '
     make install
     ```
 
-    Check is made with `cat config.log | grep -i openssl`.
+    Check is made with `cat config.log | grep -i openssl`. However, variable EVP_PKEY_bits is nonexistent. It turns out the default ssl is fine.
+
+    ```bash
+    configure --prefix=$CEUADMIN/openssh/9.7p1-icelake
+    make
+    make install
+    ```
+
+    However, `EVP_KDF_ctrl` is missing with git, so an icelake-specific git is necessary.
 
 [^vep]: **ensembl-vep**
 
@@ -895,3 +906,26 @@ Rscript -e '
     CFLAGS="-I/usr/local/Cluster-Apps/ceuadmin/LVM2/2.03.23-icelake/include" \
     configure --prefix=$CEUADMIN/cryptsetup/2.7.1-icelake --disable-ssh-token
     ```
+
+[^krb5]: **krb5-icelake**
+
+    It is possible to use the default ssh.
+
+    ```bash
+     configure --prefix=$CEUADMIN/krb5/1.21.2-icelake
+     make install
+    ```
+
+[^git]: **git-2.44.0-icelake**
+
+    ```bash
+    wget -qO- https://github.com/git/git/archive/refs/tags/v2.44.0.tar.gz | \
+    tar xvfz -
+    cd git-2.44.0
+    make configure
+    configure --prefix=${CEUADMIN}/git/2.44.0-icelake
+    make
+    make install
+    ```
+
+   There remains an error message `git-remote-https: symbol lookup error: /usr/lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b`.
