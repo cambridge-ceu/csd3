@@ -278,7 +278,7 @@ Three aspects are notable,
 
 ## Word cloud diagrams
 
-A diagram is generated from the following script,
+They are generated from the following script,
 
 ```bash
 if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-p" ]; then
