@@ -863,7 +863,7 @@ Rscript -e '
     make install
     ```
 
-    However, `EVP_KDF_ctrl` is missing with git, so an icelake-specific git is necessary.
+    However, `EVP_KDF_ctrl` is missing with git.
 
 [^vep]: **ensembl-vep**
 
