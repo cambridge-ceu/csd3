@@ -2,96 +2,9 @@
 sort: 13
 ---
 
-# setup of ceuadmin
+# Setup of ceuadmin
 
 Location at CSD3: /usr/local/Cluster-Apps/ceuadmin, (module files: /usr/local/Cluster-Config/modulefiles/ceuadmin)
-
-The current list is as follows[^ls],
-
-```
-  [1] "ABCtoolbox"            "akt"                   "allegro"               "alpine"
-  [5] "Anaconda3"             "annovar"               "aria2"                 "autoconf"
-  [9] "automake"              "axel"                  "bazel"                 "bcftools"
- [13] "Beagle"                "bedops"                "bedtools2"             "bgen"
- [17] "biobank"               "blat"                  "boltlmm"               "brotli"
- [21] "busybox"               "CaVEMaN"               "CAVIAR"                "CAVIARBF"
- [25] "ccal"                  "circos"                "citeproc"              "cmake"
- [29] "cppunit"               "crossmap"              "cryptsetup"            "Cytoscape"
- [33] "deno"                  "DEPICT"                "device-mapper"         "DjVuLibre"
- [37] "docbook2X"             "DosageConverter"       "Eagle"                 "enchant"
- [41] "ensembl-vep"           "exiv2"                 "exomeplus"             "expat"
- [45] "FastQTL"               "fcGENE"                "ffmpeg"                "fgwas"
- [49] "finemap"               "fossil"                "fpc"                   "fraposa_pgsc"
- [53] "fribidi"               "GARFIELD"              "gatk"                  "gcta"
- [57] "gdal"                  "gdc"                   "geany"                 "GEM"
- [61] "GEMMA"                 "Genotype-Harmonizer"   "gettext"               "gh"
- [65] "ghc"                   "ghostscript"           "git"                   "git-extras"
- [69] "GitKraken"             "glib"                  "glibc"                 "globusconnectpersonal"
- [73] "glpk"                  "gmp"                   "gnutls"                "go"
- [77] "googletest"            "graphene"              "GraphicsMagick"        "GreenAlgorithms4HPC"
- [81] "gsl"                   "gtk+"                  "gtksourceview"         "gtool"
- [85] "hpg"                   "htslib"                "hunspell"              "icu"
- [89] "ImageJ"                "impute"                "JabRef"                "JAGS"
- [93] "jq"                    "json-c"                "KentUtils"             "KING"
- [97] "krb5"                  "lapack"                "ldc2"                  "ldsc"
-[101] "LDstore"               "LEMMA"                 "libcares"              "libgit2"
-[105] "libglvnd"              "libiconv"              "libidn2"               "libntlm"
-[109] "libpng"                "libseccomp"            "libsodium"             "libssh2"
-[113] "libuv"                 "libxml2"               "libxslt"               "locuszoom"
-[117] "LVM2"                  "MAGENTA"               "magma"                 "Mango"
-[121] "Mega2"                 "metal"                 "MONSTER"               "MORGAN"
-[125] "MR-MEGA"               "MsCAVIAR"              "nano"                  "ncbi-vdb"
-[129] "ncurses"               "netbeans"              "nettle"                "nextflow"
-[133] "NLopt"                 "node"                  "nspr"                  "oniguruma"
-[137] "openjdk"               "OpenMS"                "openssh"               "openssl"
-[141] "osca"                  "PAINTOR"               "pandoc"                "pandoc-citeproc"
-[145] "pango"                 "parallel"              "Pascal"                "pcre2"
-[149] "pdf2djvu"              "pdfjam"                "pgsc_calc"             "phenoscanner"
-[153] "PhySO"                 "picard"                "plink"                 "plink-bgi"
-[157] "plinkseq"              "PoGo"                  "polyphen"              "poppler"
-[161] "popt"                  "proj"                  "PRSice"                "pspp"
-[165] "pulsar"                "PWCoCo"                "qctool"                "qpdf"
-[169] "qt"                    "qtcreator"             "QTLtools"              "quarto"
-[173] "quicktest"             "R"                     "raremetal"             "rclone"
-[177] "readline"              "regenie"               "regtools"              "RHHsoftware"
-[181] "Rplots.pdf"            "rst2pdf"               "rstudio"               "ruby"
-[185] "rust"                  "samtools"              "Scala"                 "shapeit"
-[189] "singularity"           "SMR"                   "snakemake"             "SNP2HLA"
-[193] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"
-[197] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"
-[201] "SurvivalKit"           "Swift"                 "tabix"                 "tatami"
-[205] "thunderbird"           "tidy"                  "trinculo"              "trousers"
-[209] "Typora"                "unbound"               "vala"                  "VarScan"
-[213] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
-[217] "VSCodium"              "vte"                   "xpdf"                  "yaml-cpp"
-[221] "Zotero"                "zstd"
-```
-
-Most should be available to all CSD3 users in the whole campus, e.g., for pspp, a brief description of a module is available with
-
-```bash
-module help ceuadmin/pspp
-```
-
-and the module is loaded and graphical user interface (GUI)[^gui] started with
-
-```bash
-module load ceuadmin/pspp
-psppire
-```
-
-for PSPP 1.6.0. Once the job is done, one can restore the previous environment with
-
-```bash
-module unload ceuadmin/pspp
-```
-
-A full list of module commands is available with `module help`.
-
-NB most software use gcc/6, which can be enabled with `module load gcc/6`.
-
-Due to limitation in size, a trade-off has been made to make some software available for CEU users by linking internal folders: ensembl-vep, ANNOVAR, polyphen, OpenMS, GARFIELD, KentUtils,
-(with large collection of packages), locuszoom (adding chromosome X data). Others which is in condieration include depict, fastenloc (with GTEx v8 reference data), tensorqtl, CookHLA, HLA-TAPAS, HATK. A desirable location is /rds/project/jmmh2/software.
 
 ## All recent entries
 
@@ -405,14 +318,6 @@ Rscript -e '
 ```
 
 ---
-
-[^ls]: **ls**
-
-    A larger collection of packages is deposited at /rds/project/jmmh2.
-
-[^gui]: **GUI**
-
-    As GUI-based programs claim more computing resources, it is recommended that they are only used occasionally, e.g., calling back GitHub sessions.
 
 [^metal]: **metal**
 
