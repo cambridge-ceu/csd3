@@ -346,6 +346,7 @@ They are ordered chronologically.
 ! 2024-04-02  | cryptsetup/2.7.1-icelake         | Generic[^cryptsetup] |
 ! 2024-04-05  | krb5/1.21.2-icelake              | Generic[^krb5]       |
 ! ""          | git/1.44.0-icelake               | Generic[^git]        |
+! ""          | openssl/1.1.1b-icelake           | Generic              |
 
 \* CEU or approved users only.
 
@@ -830,6 +831,16 @@ Rscript -e '
     export PERL5LIB=
     ./Configure --prefix=$CEUADMIN/openssl/3.2.1-icelake
     make
+    make install
+    ```
+
+    One can check version with `openssl version`. For 1.1.1b, it is the followiong,
+
+    ```bash
+    wget -qO- https://github.com/openssl/openssl/archive/refs/tags/OpenSSL_1_1_1b.tar.gz | \
+    tar xvfz -
+    cd openssl-OpenSSL_1_1_1b/
+    config --prefix=$CEUADMIN/openssl/1.1.1b-icelake
     make install
     ```
 
