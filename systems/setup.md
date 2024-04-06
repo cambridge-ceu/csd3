@@ -1,3 +1,7 @@
+---
+sort: 13
+---
+
 # A full list of ceuadmin modules
 
 Location at CSD3: /usr/local/Cluster-Apps/ceuadmin, (module files: /usr/local/Cluster-Config/modulefiles/ceuadmin)
