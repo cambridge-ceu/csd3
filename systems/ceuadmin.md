@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=221$$, $$\lambda=3$$.
+noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=222$$, $$\lambda=3$$.
 
 ## Entries
 
@@ -42,25 +42,25 @@ The current list is as follows,
  [97] "krb5"                  "lapack"                "ldc2"                  "ldsc"
 [101] "LDstore"               "LEMMA"                 "libcares"              "libgit2"
 [105] "libglvnd"              "libiconv"              "libidn2"               "libntlm"
-[109] "libpng"                "libseccomp"            "libsodium"             "libssh2"
-[113] "libuv"                 "libxml2"               "libxslt"               "locuszoom"
-[117] "LVM2"                  "MAGENTA"               "magma"                 "Mango"
-[121] "Mega2"                 "metal"                 "MONSTER"               "MORGAN"
-[125] "MR-MEGA"               "MsCAVIAR"              "nano"                  "ncbi-vdb"
-[129] "ncurses"               "netbeans"              "nettle"                "nextflow"
-[133] "NLopt"                 "node"                  "nspr"                  "oniguruma"
-[137] "openjdk"               "OpenMS"                "openssh"               "openssl"
-[141] "osca"                  "PAINTOR"               "pandoc"                "pandoc-citeproc"
-[145] "pango"                 "parallel"              "Pascal"                "pcre2"
-[149] "pdf2djvu"              "pdfjam"                "pgsc_calc"             "phenoscanner"
-[153] "PhySO"                 "picard"                "plink"                 "plink-bgi"
-[157] "plinkseq"              "PoGo"                  "polyphen"              "poppler"
-[161] "popt"                  "proj"                  "PRSice"                "pspp"
-[165] "pulsar"                "PWCoCo"                "qctool"                "qpdf"
-[169] "qt"                    "qtcreator"             "QTLtools"              "quarto"
-[173] "quicktest"             "R"                     "raremetal"             "rclone"
-[177] "readline"              "regenie"               "regtools"              "RHHsoftware"
-[181] "Rplots.pdf"            "rst2pdf"               "rstudio"               "ruby"
+[109] "libpng"                "libseccomp"            "libsodium"             "libssh"
+[113] "libssh2"               "libuv"                 "libxml2"               "libxslt"
+[117] "locuszoom"             "LVM2"                  "MAGENTA"               "magma"
+[121] "Mango"                 "Mega2"                 "metal"                 "MONSTER"
+[125] "MORGAN"                "MR-MEGA"               "MsCAVIAR"              "nano"
+[129] "ncbi-vdb"              "ncurses"               "netbeans"              "nettle"
+[133] "nextflow"              "NLopt"                 "node"                  "nspr"
+[137] "oniguruma"             "openjdk"               "OpenMS"                "openssh"
+[141] "openssl"               "osca"                  "PAINTOR"               "pandoc"
+[145] "pandoc-citeproc"       "pango"                 "parallel"              "Pascal"
+[149] "pcre2"                 "pdf2djvu"              "pdfjam"                "pgsc_calc"
+[153] "phenoscanner"          "PhySO"                 "picard"                "plink"
+[157] "plink-bgi"             "plinkseq"              "PoGo"                  "polyphen"
+[161] "poppler"               "popt"                  "proj"                  "PRSice"
+[165] "pspp"                  "pulsar"                "PWCoCo"                "qctool"
+[169] "qpdf"                  "qt"                    "qtcreator"             "QTLtools"
+[173] "quarto"                "quicktest"             "R"                     "raremetal"
+[177] "rclone"                "readline"              "regenie"               "regtools"
+[181] "RHHsoftware"           "rst2pdf"               "rstudio"               "ruby"
 [185] "rust"                  "samtools"              "Scala"                 "shapeit"
 [189] "singularity"           "SMR"                   "snakemake"             "SNP2HLA"
 [193] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"
