@@ -7,7 +7,9 @@ sort: 13
 - Location at CSD3: **/usr/local/Cluster-Apps/ceuadmin**
 - Module files: **/usr/local/Cluster-Config/modulefiles/ceuadmin**
 
-All recent entries are ordered chronologically.
+# Recent modules
+
+All entries are ordered chronologically.
 
 | Date        | Add ons                          | Category             |
 | :---------- | :------------------------------- | :------------------- |
@@ -274,8 +276,9 @@ Three aspects are notable,
 2. A symbolic link is generated when appropriate to simplify executable file name.
 3. The available source package is kept in the sources/ directory.
 
+## Word cloud diagrams
 
-A word cloud diagram is generated from the following script
+A diagram is generated from the following script,
 
 ```bash
 if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-p" ]; then
@@ -317,6 +320,8 @@ Rscript -e '
   print(modules)
 '
 ```
+
+## Footnotes
 
 ---
 
