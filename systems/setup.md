@@ -4,7 +4,8 @@ sort: 13
 
 # Setup of ceuadmin
 
-Location at CSD3: /usr/local/Cluster-Apps/ceuadmin, (module files: /usr/local/Cluster-Config/modulefiles/ceuadmin)
+- Location at CSD3: **/usr/local/Cluster-Apps/ceuadmin**
+- Module files: **/usr/local/Cluster-Config/modulefiles/ceuadmin**
 
 All recent entries are ordered chronologically.
 
