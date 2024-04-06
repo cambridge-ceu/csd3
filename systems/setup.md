@@ -6,9 +6,7 @@ sort: 13
 
 Location at CSD3: /usr/local/Cluster-Apps/ceuadmin, (module files: /usr/local/Cluster-Config/modulefiles/ceuadmin)
 
-## All recent entries
-
-They are ordered chronologically.
+All recent entries are ordered chronologically.
 
 | Date        | Add ons                          | Category             |
 | :---------- | :------------------------------- | :------------------- |
