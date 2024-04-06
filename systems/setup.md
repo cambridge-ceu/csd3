@@ -264,6 +264,8 @@ They are ordered chronologically.
 ! 2024-04-05  | krb5/1.21.2-icelake              | Generic[^krb5]       |
 ! ""          | git/1.44.0-icelake               | Generic[^git]        |
 ! ""          | openssl/1.1.1b-icelake           | Generic              |
+! ""          | libssh2/1.11.0-icelake           | Generic              |
+! ""          | libssh/0.10.6-icelake            | Generic              |
 
 \* CEU or approved users only.
 
@@ -282,9 +284,9 @@ if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-p" ]; then
 else
    module load ceuadmin/R/4.3.3-icelake
 fi
-grep -e Generic ${CEUADMIN}/doc/ceuadmin.md | grep "^[|]" | awk '{print $4}' > generic.lst
-grep -e Genetics ${CEUADMIN}/doc/ceuadmin.md | grep "^[|]" | awk '{print $4}' > genetics.lst
-grep -e Genetics -e Generic ${CEUADMIN}/doc/ceuadmin.md | grep "^[|]" | awk '{print $4}' | wc -l
+grep -e Generic ${CEUADMIN}/doc/setup.md | grep "^[|]" | awk '{print $4}' > generic.lst
+grep -e Genetics ${CEUADMIN}/doc/setup.md | grep "^[|]" | awk '{print $4}' > genetics.lst
+grep -e Genetics -e Generic ${CEUADMIN}/doc/setup.md | grep "^[|]" | awk '{print $4}' | wc -l
 rm -f ceuadmin.png generic.png genetics.png
 Rscript -e '
   library(RColorBrewer)
