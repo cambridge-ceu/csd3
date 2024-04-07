@@ -78,7 +78,7 @@ ${rds}/vep --input_file VEP_input.txt \
            --plugin LoF,loftee_path:.,gerp_bigwig:${LOFTEE38GERP},human_ancestor_fa:${LOFTEE38HA},conservation_file:${LOFTEE38SQL}
 ```
 
-### GRCh37
+#### GRCh37
 
 This mirrors GRCh37 based on 98.3 from /rds/rds-jmmh2-public_databases/software/ensembl-vep; see also [loftee-grch37/test.sh](loftee-grch37/test.sh).
 
@@ -89,7 +89,6 @@ export ENSEMBL=~/rds/rds-jmmh2-public_databases/ensembl-vep
 export PERL5LIB=${ENSEMBL}/Bio:${ENSEMBL}/perl5/lib/perl5:${ENSEMBL}/loftee-grch37:$HPC_WORK/bin
 export rds=..  # ~/rds/rds-jmmh2-public_databases/ensembl-vep will be user-specific
 
-#### GRCh37
 export LOFTEE37=${ENSEMBL}/loftee-grch37
 export LOFTEE37GERP=${LOFTEE37}/GERP_scores.final.sorted.txt.gz
 export LOFTEE37HA=${LOFTEE37}/human_ancestor.fa.rz
