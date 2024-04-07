@@ -2,7 +2,7 @@
 sort: 14
 ---
 
-# Appendix B. LoF via loftee
+# Appendix B. Notes on emsembl-vep
 
 ## Location
 
