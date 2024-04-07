@@ -23,7 +23,7 @@ but also referred without the `rds-jmmh2-` prefix (why?), as in
 * Perl modules as in perl5/
 * Plugins
 
-## Notes on plugins
+## Plugins
 
 ### --- clinvar ---
 
