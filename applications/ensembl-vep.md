@@ -37,7 +37,7 @@ The compressed VCF and index files for GRCh38 are `clinvar.vcf.gz` and `clinvar.
 
 This is in line with the VEP installation which only includes GRCh38 reference files.
 
-**Example code**
+#### GRCh38
 
 ```bash
 #!/usr/bin/bash
@@ -47,7 +47,6 @@ export PERL5LIB=${ENSEMBL}/Bio:${ENSEMBL}/perl5/lib/perl5:${ENSEMBL}/loftee:$HPC
 export rds=..  # ~/rds/rds-jmmh2-public_databases/ensembl-vep will be user-specific
 export outdir=..
 
-#### GRCh38
 export LOFTEE38=${ENSEMBL}/loftee/loftee_data/GRCh38
 export LOFTEE38GERP=${LOFTEE38}/gerp_conservation_scores.homo_sapiens.GRCh38.bw
 export LOFTEE38HA=${LOFTEE38}/human_ancestor.fa.gz
@@ -79,11 +78,9 @@ ${rds}/vep --input_file VEP_input.txt \
            --plugin LoF,loftee_path:.,gerp_bigwig:${LOFTEE38GERP},human_ancestor_fa:${LOFTEE38HA},conservation_file:${LOFTEE38SQL}
 ```
 
-### loftee-grch37
+### GRCh37
 
 This directory is appropriate with GRCh37 based on 98.3 from my ${HPC_work}/ensembl-vep; see also [loftee-grch37/test.sh](loftee-grch37/test.sh).
-
-**Example code**
 
 ```bash
 #!/usr/bin/bash
