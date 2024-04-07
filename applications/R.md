@@ -158,10 +158,11 @@ proc ModulesHelp { } {
 module-whatis "A free software environment for statistical computing and graphics."
 
 module load gcc/8 texlive
-module load geos-3.6.2-gcc-5.4.0-vejexvy gettext-0.19.8.1-gcc-5.4.0-5iqkv5z pcre2-10.20-gcc-5.4.0-tcuhtrb
-module load image-magick-7.0.5-9-gcc-5.4.0-d4lemcc
+module load geos-3.6.2-gcc-5.4.0-vejexvy libiconv/1.16/gcc/4miyzf3w gettext/0.21/gcc/qnrcglqo pcre2/10.36/gcc/sya23vzi
+module load image-magick-7.0.5-9-gcc-5.4.0-d4lemcc libpng/1.6.37/intel/jfrl6z6c
 module load readline/8.1/gcc/bgw44yb2 curl/7.79.0/gcc/75dxv7ac
 module load ceuadmin/openssl/3.2.1-icelake ceuadmin/glpk/4.57 ceuadmin/icu/70.1 ceuadmin/nettle/2.7.1
+module load ceuadmin/libssh/0.10.6-icelake ceuadmin/openssh/9.7p1-icelake
 
 remove-path LD_LIBRARY_PATH /rds/user/jhz22/hpc-work/lib
 remove-path LD_LIBRARY_PATH /rds/user/jhz22/hpc-work/lib64
