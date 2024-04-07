@@ -2,7 +2,7 @@
 sort: 13
 ---
 
-# Appendix: setup of modules
+# Appendix A. setup of modules
 
 - Location at CSD3: **/usr/local/Cluster-Apps/ceuadmin**
 - Module files: **/usr/local/Cluster-Config/modulefiles/ceuadmin**
@@ -286,9 +286,9 @@ if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-p" ]; then
 else
    module load ceuadmin/R/4.3.3-icelake
 fi
-grep -e Generic ${CEUADMIN}/doc/appendix.md | grep "^[|]" | awk '{print $4}' > generic.lst
-grep -e Genetics ${CEUADMIN}/doc/appendix.md | grep "^[|]" | awk '{print $4}' > genetics.lst
-grep -e Genetics -e Generic ${CEUADMIN}/doc/appendix.md | grep "^[|]" | awk '{print $4}' | wc -l
+grep -e Generic ${CEUADMIN}/doc/setup.md | grep "^[|]" | awk '{print $4}' > generic.lst
+grep -e Genetics ${CEUADMIN}/doc/setup.md | grep "^[|]" | awk '{print $4}' > genetics.lst
+grep -e Genetics -e Generic ${CEUADMIN}/doc/setup.md | grep "^[|]" | awk '{print $4}' | wc -l
 rm -f ceuadmin.png generic.png genetics.png
 Rscript -e '
   library(RColorBrewer)
