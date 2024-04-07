@@ -80,7 +80,7 @@ ${rds}/vep --input_file VEP_input.txt \
 
 #### GRCh37
 
-This mirrors GRCh37 based on 98.3 from /rds/rds-jmmh2-public_databases/software/ensembl-vep; see also [loftee-grch37/test.sh](loftee-grch37/test.sh).
+This mirrors GRCh37 based on 98.3 from **/rds/rds-jmmh2-public_databases/software/ensembl-vep**; see also [loftee-grch37/test.sh](loftee-grch37/test.sh).
 
 ```bash
 #!/usr/bin/bash
