@@ -12,7 +12,52 @@ The location of VEP is here on CSD3,
 
 The CSD3 module is named `ceuadmin/ensembl-vep/104`, `/usr/local/Cluster-Apps/ceuadmin/ensembl-vep/104` is a symbolic link to the CSD3 location above.
 
-Module `ceuadmin/ensembl-vep/111-icelake` is compiled under icelake.
+Module `ceuadmin/ensembl-vep/111-icelake` is compiled under icelake, so that
+
+```bash
+module load ceuadmin/ensembl-vep/111-icelake
+vep --help
+```
+
+wwe get
+
+```
+#----------------------------------#
+# ENSEMBL VARIANT EFFECT PREDICTOR #
+#----------------------------------#
+
+Versions:
+  ensembl              : 111.a6cc543
+  ensembl-funcgen      : 111.5327cdd
+  ensembl-io           : 111.dbba8d6
+  ensembl-variation    : 111.d616b1e
+  ensembl-vep          : 111.0
+
+Help: dev@ensembl.org , helpdesk@ensembl.org
+Twitter: @ensembl
+
+http://www.ensembl.org/info/docs/tools/vep/script/index.html
+
+Usage:
+./vep [--cache|--offline|--database] [arguments]
+
+Basic options
+=============
+
+--help                 Display this message and quit
+
+-i | --input_file      Input file
+-o | --output_file     Output file
+--force_overwrite      Force overwriting of output file
+--species [species]    Species to use [default: "human"]
+
+--everything           Shortcut switch to turn on commonly used options. See web
+                       documentation for details [default: off]
+--fork [num_forks]     Use forking to improve script runtime
+
+For full option documentation see:
+http://www.ensembl.org/info/docs/tools/vep/script/vep_options.html
+```
 
 ## Features
 
