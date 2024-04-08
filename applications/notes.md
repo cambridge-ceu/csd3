@@ -12,14 +12,14 @@ The location of VEP is here on CSD3,
 
 The CSD3 module is named `ceuadmin/ensembl-vep/104`, `/usr/local/Cluster-Apps/ceuadmin/ensembl-vep/104` is a symbolic link to the CSD3 location above.
 
-Module `ceuadmin/ensembl-vep/111-icelake` is compiled under icelake, so that
+Module `ceuadmin/ensembl-vep/111-icelake` is compiled under icelake, so that from
 
 ```bash
 module load ceuadmin/ensembl-vep/111-icelake
 vep --help
 ```
 
-wwe get
+we get
 
 ```
 #----------------------------------#
