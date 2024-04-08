@@ -10,10 +10,6 @@ The location of VEP is here on CSD3,
 
 `~/rds/rds-jmmh2-public_databases/ensembl-vep`
 
-but also referred without the `rds-jmmh2-` prefix (why?), as in
-
-[https://cambridge-ceu.github.io/csd3/systems/directories.html](https://cambridge-ceu.github.io/csd3/systems/directories.html)
-
 The CSD3 module is named `ceuadmin/ensembl-vep/104`, `/usr/local/Cluster-Apps/ceuadmin/ensembl-vep/104` is a symbolic link to the CSD3 location above.
 
 Module `ceuadmin/ensembl-vep/111-icelake` is compiled under icelake.
