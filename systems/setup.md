@@ -813,6 +813,24 @@ Rscript -e '
 
     to see `commit: wrote '/home/jhz22/.cpan/CPAN/MyConfig.pm'`. However, this is NOT the case here.
 
+    Our example data here is `442807041.vcf`,
+
+    ```
+    ##fileformat=VCFv4.0
+    #CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+    2	101332618	2:101332618_C_T	T	C	.	.	.
+    ```
+
+    and we run script,
+
+    ```bash
+    vep --input_file 442807041.vcf \
+        --output_file 442807041.tab --force_overwrite \
+        --offline --cache --dir_cache /usr/local/Cluster-Apps/ceuadmin/ensembl-vep/111-icelake/.vep \
+        --species homo_sapiens --assembly GRCh37 --pick --nearest symbol --symbol \
+        --tab
+    ```
+
     Further information, <https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html>.
 
 [^json-c]: **json-c**
