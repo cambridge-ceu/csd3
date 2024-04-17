@@ -795,6 +795,8 @@ Rscript -e '
 
     A log file is kept [here](https://github.com/cambridge-ceu/csd3/blob/master/systems/files/ensembl-vep-111-icelake.log).
 
+    Moreover, we could also add some plugin data, <https://github.com/Ensembl/VEP_plugins>.
+
 [^json-c]: **json-c**
 
     ```bash
