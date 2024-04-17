@@ -1,0 +1,334 @@
+The FASTA file should be automatically detected by the VEP when using --cache or --offline.
+If it is not, use "--fasta .vep/homo_sapiens_merged/111_GRCh37/Homo_sapiens.GRCh37.75.dna.primary_assembly.fa"
+
+ - downloading Homo_sapiens.GRCh37.75.dna.primary_assembly.fa.gz
+ - extracting data
+ - attempting to index
+Indexing failed - VEP will attempt to index the file the first time you use it
+
+The FASTA file should be automatically detected by the VEP when using --cache or --offline.
+If it is not, use "--fasta .vep/homo_sapiens/111_GRCh37/Homo_sapiens.GRCh37.75.dna.primary_assembly.fa"
+
+
+ - installing "AlphaMissense"
+ - This plugin requires data
+ - See .vep/Plugins/AlphaMissense.pm for details
+ - OK
+
+ - installing "AncestralAllele"
+ - This plugin requires data
+ - See .vep/Plugins/AncestralAllele.pm for details
+ - OK
+
+ - installing "BayesDel"
+ - This plugin requires data
+ - See .vep/Plugins/BayesDel.pm for details
+ - OK
+
+ - installing "Blosum62"
+ - add "--plugin Blosum62" to your VEP command to use this plugin
+ - OK
+
+ - installing "CADD"
+ - This plugin requires data
+ - See .vep/Plugins/CADD.pm for details
+ - OK
+
+ - installing "CAPICE"
+ - This plugin requires data
+ - See .vep/Plugins/CAPICE.pm for details
+ - OK
+
+ - installing "CSN"
+ - add "--plugin CSN" to your VEP command to use this plugin
+ - OK
+
+ - installing "Carol"
+ - This plugin requires installation
+ - See .vep/Plugins/Carol.pm for details
+ - OK
+
+ - installing "ClinPred"
+ - This plugin requires data
+ - See .vep/Plugins/ClinPred.pm for details
+ - OK
+
+ - installing "Condel"
+ - This plugin requires installation
+ - See .vep/Plugins/Condel.pm for details
+ - OK
+
+ - installing "Conservation"
+ - add "--plugin Conservation,[options]" to your VEP command to use this plugin
+ - OK
+
+ - installing "DeNovo"
+ - add "--plugin DeNovo" to your VEP command to use this plugin
+ - OK
+
+ - installing "DisGeNET"
+ - add "--plugin DisGeNET" to your VEP command to use this plugin
+ - OK
+
+ - installing "DosageSensitivity"
+ - This plugin requires data
+ - See .vep/Plugins/DosageSensitivity.pm for details
+ - OK
+
+ - installing "Downstream"
+ - add "--plugin Downstream" to your VEP command to use this plugin
+ - OK
+
+ - installing "Draw"
+ - This plugin requires installation
+ - See .vep/Plugins/Draw.pm for details
+ - OK
+
+ - installing "EVE"
+ - This plugin requires data
+ - See .vep/Plugins/EVE.pm for details
+ - OK
+
+ - installing "Enformer"
+ - This plugin requires data
+ - See .vep/Plugins/Enformer.pm for details
+ - OK
+
+ - installing "FATHMM"
+ - add "--plugin FATHMM" to your VEP command to use this plugin
+ - OK
+
+ - installing "FATHMM_MKL"
+ - This plugin requires data
+ - See .vep/Plugins/FATHMM_MKL.pm for details
+ - OK
+
+ - installing "FlagLRG"
+ - add "--plugin FlagLRG" to your VEP command to use this plugin
+ - OK
+
+ - installing "FunMotifs"
+ - add "--plugin FunMotifs" to your VEP command to use this plugin
+ - OK
+
+ - installing "G2P"
+ - This plugin requires data
+ - See .vep/Plugins/G2P.pm for details
+ - OK
+
+ - installing "GO"
+ - add "--plugin GO,[options]" to your VEP command to use this plugin
+ - OK
+
+ - installing "GWAS"
+ - add "--plugin GWAS" to your VEP command to use this plugin
+ - OK
+
+ - installing "GeneSplicer"
+ - This plugin requires installation
+ - See .vep/Plugins/GeneSplicer.pm for details
+ - OK
+
+ - installing "Geno2MP"
+ - This plugin requires data
+ - See .vep/Plugins/Geno2MP.pm for details
+ - OK
+
+ - installing "Gwava"
+ - This plugin requires data
+ - See .vep/Plugins/Gwava.pm for details
+ - OK
+
+ - installing "HGVSIntronOffset"
+ - add "--plugin HGVSIntronOffset" to your VEP command to use this plugin
+ - OK
+
+ - installing "IntAct"
+ - This plugin requires data
+ - See .vep/Plugins/IntAct.pm for details
+ - OK
+
+ - installing "LD"
+ - add "--plugin LD,[options]" to your VEP command to use this plugin
+ - OK
+
+ - installing "LOEUF"
+ - This plugin requires data
+ - See .vep/Plugins/LOEUF.pm for details
+ - OK
+
+ - installing "LOVD"
+ - add "--plugin LOVD" to your VEP command to use this plugin
+ - OK
+
+ - installing "LoF"
+ - This plugin requires installation
+ - This plugin requires data
+ - See .vep/Plugins/LoF.pm for details
+ - OK
+
+ - installing "LoFtool"
+ - This plugin requires data
+ - See .vep/Plugins/LoFtool.pm for details
+ - OK
+
+ - installing "LocalID"
+ - add "--plugin LocalID" to your VEP command to use this plugin
+ - OK
+
+ - installing "MPC"
+ - This plugin requires data
+ - See .vep/Plugins/MPC.pm for details
+ - OK
+
+ - installing "MTR"
+ - This plugin requires data
+ - See .vep/Plugins/MTR.pm for details
+ - OK
+
+ - installing "Mastermind"
+ - add "--plugin Mastermind" to your VEP command to use this plugin
+ - OK
+
+ - installing "MaveDB"
+ - This plugin requires data
+ - See .vep/Plugins/MaveDB.pm for details
+ - OK
+
+ - installing "MaxEntScan"
+ - This plugin requires installation
+ - See .vep/Plugins/MaxEntScan.pm for details
+ - OK
+
+ - installing "NMD"
+ - add "--plugin NMD" to your VEP command to use this plugin
+ - OK
+
+ - installing "NearestExonJB"
+ - add "--plugin NearestExonJB" to your VEP command to use this plugin
+ - OK
+
+ - installing "NearestGene"
+ - add "--plugin NearestGene" to your VEP command to use this plugin
+ - OK
+
+ - installing "OpenTargets"
+ - This plugin requires data
+ - See .vep/Plugins/OpenTargets.pm for details
+ - OK
+
+ - installing "PON_P2"
+ - add "--plugin PON_P2" to your VEP command to use this plugin
+ - OK
+
+ - installing "Phenotypes"
+ - This plugin requires data
+ - See .vep/Plugins/Phenotypes.pm for details
+ - OK
+
+ - installing "PostGAP"
+ - add "--plugin PostGAP" to your VEP command to use this plugin
+ - OK
+
+ - installing "PrimateAI"
+ - This plugin requires data
+ - See .vep/Plugins/PrimateAI.pm for details
+ - OK
+
+ - installing "ProteinSeqs"
+ - add "--plugin ProteinSeqs" to your VEP command to use this plugin
+ - OK
+
+ - installing "REVEL"
+ - This plugin requires data
+ - See .vep/Plugins/REVEL.pm for details
+ - OK
+
+ - installing "ReferenceQuality"
+ - add "--plugin ReferenceQuality" to your VEP command to use this plugin
+ - OK
+
+ - installing "SameCodon"
+ - add "--plugin SameCodon" to your VEP command to use this plugin
+ - OK
+
+ - installing "SingleLetterAA"
+ - add "--plugin SingleLetterAA" to your VEP command to use this plugin
+ - OK
+
+ - installing "SpliceAI"
+ - add "--plugin SpliceAI" to your VEP command to use this plugin
+ - OK
+
+ - installing "SpliceRegion"
+ - add "--plugin SpliceRegion" to your VEP command to use this plugin
+ - OK
+
+ - installing "SpliceVault"
+ - add "--plugin SpliceVault" to your VEP command to use this plugin
+ - OK
+
+ - installing "StructuralVariantOverlap"
+ - add "--plugin StructuralVariantOverlap" to your VEP command to use this plugin
+ - OK
+
+ - installing "SubsetVCF"
+ - add "--plugin SubsetVCF" to your VEP command to use this plugin
+ - OK
+
+ - installing "TSSDistance"
+ - add "--plugin TSSDistance" to your VEP command to use this plugin
+ - OK
+
+ - installing "TranscriptAnnotator"
+ - add "--plugin TranscriptAnnotator" to your VEP command to use this plugin
+ - OK
+
+ - installing "UTRAnnotator"
+ - add "--plugin UTRAnnotator" to your VEP command to use this plugin
+ - OK
+
+ - installing "VARITY"
+ - This plugin requires data
+ - See .vep/Plugins/VARITY.pm for details
+ - OK
+
+ - installing "dbNSFP"
+ - This plugin requires installation
+ - This plugin requires data
+ - See .vep/Plugins/dbNSFP.pm for details
+ - OK
+
+ - installing "dbscSNV"
+ - This plugin requires installation
+ - This plugin requires data
+ - See .vep/Plugins/dbscSNV.pm for details
+ - OK
+
+ - installing "gnomADc"
+ - This plugin requires data
+ - See .vep/Plugins/gnomADc.pm for details
+ - OK
+
+ - installing "mutfunc"
+ - This plugin requires data
+ - See .vep/Plugins/mutfunc.pm for details
+ - OK
+
+ - installing "neXtProt"
+ - This plugin requires data
+ - See .vep/Plugins/neXtProt.pm for details
+ - OK
+
+ - installing "pLI"
+ - This plugin requires data
+ - See .vep/Plugins/pLI.pm for details
+ - OK
+
+ - installing "satMutMPRA"
+ - add "--plugin satMutMPRA" to your VEP command to use this plugin
+ - OK
+
+NB: One or more plugins that you have installed will not work without installation or downloading data; see logs above
+
+All done

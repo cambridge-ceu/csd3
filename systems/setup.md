@@ -793,6 +793,8 @@ Rscript -e '
     ./vep -i examples/homo_sapiens_GRCh38.vcf --cache .vep
     ```
 
+    A log file is kept [here](https://github.com/cambridge-ceu/csd3/blob/master/systems/files/ensembl-vep-111-icelake.log).
+
 [^json-c]: **json-c**
 
     ```bash
