@@ -813,6 +813,8 @@ Rscript -e '
 
     to see `commit: wrote '/home/jhz22/.cpan/CPAN/MyConfig.pm'`. However, this is NOT the case here.
 
+    Further information, <https://www.ensembl.org/info/docs/tools/vep/script/vep_download.html>.
+
 [^json-c]: **json-c**
 
     ```bash
