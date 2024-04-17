@@ -797,6 +797,22 @@ Rscript -e '
 
     Moreover, we could also add some plugin data, <https://github.com/Ensembl/VEP_plugins>.
 
+    For the nearest gene, the Set::IntervalTree is required and is furnished as follows,
+
+    ```bash
+    cpanm -l /usr/local/Cluster-Apps/ceuadmin/ensembl-vep/111-icelake/Bio ExtUtils::CppGuess
+    cpanm -l /usr/local/Cluster-Apps/ceuadmin/ensembl-vep/111-icelake/Bio ExtUtils::CBuilder
+    cpanm -l /usr/local/Cluster-Apps/ceuadmin/ensembl-vep/111-icelake/Bio Set::IntervalTree
+    ```
+
+    In general, with `perl -MCPAN -e shell` we specify
+
+    > o conf makepl_arg "PREFIX=/usr/local/Cluster-Apps/ceuadmin/ensembl-vep/111-icelake/Bio"
+    > o conf makepl_arg "INSTALL_BASE=/usr/local/Cluster-Apps/ceuadmin/ensembl-vep/111-icelake/Bio"
+    > 'o conf commit'
+
+    to see `commit: wrote '/home/jhz22/.cpan/CPAN/MyConfig.pm'`. However, this is NOT the case here.
+
 [^json-c]: **json-c**
 
     ```bash
