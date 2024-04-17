@@ -786,7 +786,9 @@ Rscript -e '
 
     ```bash
     export PERL5LIB=
+    module load ceuadmin/libssh
     git clone https://github.com/Ensembl/ensembl-vep.git
+    cd ensembl-vep
     perl INSTALL.pl -l Bio -y GRCh37 -a acfp -g all -s homo_sapiens,homo_sapiens_merged --NO_TEST -c .vep
     ./vep -i examples/homo_sapiens_GRCh38.vcf --cache .vep
     ```
