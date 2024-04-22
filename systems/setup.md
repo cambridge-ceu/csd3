@@ -909,7 +909,7 @@ Rscript -e '
     module load miniconda/2
     export mypath=/rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3
     conda create --prefix=${mypath} -c conda-forge -c bioconda r-peer
-    conda activate /rds/project/jmmh2/rds-jmmh2-public_databases/peer/1.3
+    source activate ${mypath}
     conda init bash
     source ~/.bashrc
     source activate ${mypath}
