@@ -267,6 +267,7 @@ All entries are ordered chronologically.
 ! ""          | openssl/1.1.1b-icelake           | Generic              |
 ! ""          | libssh2/1.11.0-icelake           | Generic              |
 ! ""          | libssh/0.10.6-icelake            | Generic              |
+! 2024-04-22  | peer/1.3                         | Generic[^peer]       |
 
 \* CEU or approved users only.
 
@@ -896,4 +897,25 @@ Rscript -e '
     make install
     ```
 
-   There remains an error message `git-remote-https: symbol lookup error: /usr/lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b`.
+    There remains an error message `git-remote-https: symbol lookup error: /usr/lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b`.
+
+[^peer]: **peer**
+
+    An R package is associated with `ceuadmin/R`.
+
+    The following records its setup from conda, <https://www.biostars.org/p/9461665/>
+
+    ```bash
+    module load miniconda/2
+    export mypath=/rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3
+    conda create --prefix=${mypath} -c conda-forge -c bioconda r-peer
+    conda activate /rds/project/jmmh2/rds-jmmh2-public_databases/peer/1.3
+    conda init bash
+    source ~/.bashrc
+    source activate ${mypath}
+    ln -s ${mypath} $CEUADMIN/peer/1.3
+    # This mirrors snakemake
+    # conda install -c conda-forge mamba
+    # mamba repoquery depends -a r-peer
+    ```
+

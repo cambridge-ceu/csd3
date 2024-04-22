@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=222$$, $$\lambda=3$$.
+noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=223$$, $$\lambda=3$$.
 
 ## Entries
 
@@ -52,25 +52,25 @@ The current list is as follows,
 [137] "oniguruma"             "openjdk"               "OpenMS"                "openssh"
 [141] "openssl"               "osca"                  "PAINTOR"               "pandoc"
 [145] "pandoc-citeproc"       "pango"                 "parallel"              "Pascal"
-[149] "pcre2"                 "pdf2djvu"              "pdfjam"                "pgsc_calc"
-[153] "phenoscanner"          "PhySO"                 "picard"                "plink"
-[157] "plink-bgi"             "plinkseq"              "PoGo"                  "polyphen"
-[161] "poppler"               "popt"                  "proj"                  "PRSice"
-[165] "pspp"                  "pulsar"                "PWCoCo"                "qctool"
-[169] "qpdf"                  "qt"                    "qtcreator"             "QTLtools"
-[173] "quarto"                "quicktest"             "R"                     "raremetal"
-[177] "rclone"                "readline"              "regenie"               "regtools"
-[181] "RHHsoftware"           "rst2pdf"               "rstudio"               "ruby"
-[185] "rust"                  "samtools"              "Scala"                 "shapeit"
-[189] "singularity"           "SMR"                   "snakemake"             "SNP2HLA"
-[193] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"
-[197] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"
-[201] "SurvivalKit"           "Swift"                 "tabix"                 "tatami"
-[205] "thunderbird"           "tidy"                  "trinculo"              "trousers"
-[209] "Typora"                "unbound"               "vala"                  "VarScan"
-[213] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
-[217] "VSCodium"              "vte"                   "xpdf"                  "yaml-cpp"
-[221] "Zotero"                "zstd"
+[149] "pcre2"                 "pdf2djvu"              "pdfjam"                "peer"
+[153] "pgsc_calc"             "phenoscanner"          "PhySO"                 "picard"
+[157] "plink"                 "plink-bgi"             "plinkseq"              "PoGo"
+[161] "polyphen"              "poppler"               "popt"                  "proj"
+[165] "PRSice"                "pspp"                  "pulsar"                "PWCoCo"
+[169] "qctool"                "qpdf"                  "qt"                    "qtcreator"
+[173] "QTLtools"              "quarto"                "quicktest"             "R"
+[177] "raremetal"             "rclone"                "readline"              "regenie"
+[181] "regtools"              "RHHsoftware"           "rst2pdf"               "rstudio"
+[185] "ruby"                  "rust"                  "samtools"              "Scala"
+[189] "shapeit"               "singularity"           "SMR"                   "snakemake"
+[193] "SNP2HLA"               "snptest"               "spread-sheet-widget"   "sqlite"
+[197] "sra-tools"             "ssw"                   "STAR"                  "stata"
+[201] "SurvivalAnalysis"      "SurvivalKit"           "Swift"                 "tabix"
+[205] "tatami"                "thunderbird"           "tidy"                  "trinculo"
+[209] "trousers"              "Typora"                "unbound"               "vala"
+[213] "VarScan"               "vcftools"              "VEGAS2"                "verifyBamID"
+[217] "VSCode"                "VSCodium"              "vte"                   "xpdf"
+[221] "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -117,7 +117,7 @@ available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmm
 largely be seen as sources which are used to build the reoository given above.
 
 CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `phenoscanner`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom`
-linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,415 as of 21/4/2024)
+linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,419 as of 22/4/2024)
 is linked with the latest R distribution, 4.3.3; there are also 10 packages under 4.3.3-gcc11 as well as 18 packages under 4.3.3-icelake. The small number of add-on packages have problems either at the compiling stage (because of higher version of gcc is required) or loading (i.e., compiled under 4.3.3 for cclake but cannot be used under icelake).
 
 For CEU users, it is easy to point to them, e.g.,
@@ -317,6 +317,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2024-01-19 | htslib/1.19                 | Genetics            |
     | 2024-01-24 | fraposa_pgsc/0.1.0          | Genetics[^fraposa]  |
     | ""         | pgsc_calc/2.0.0-alpha.4     | Genetics[^pgsc_calc]|
+    | 2024-04-22 | peer/1.3                    | Genetics[^peer]     |
 
     \* CEU or approved users only.
 
@@ -442,3 +443,22 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
 
     It appears quarto is called so presumably under icelake.
 
+
+[^peer]: **peer**
+
+    An R package is associated with `ceuadmin/R`.
+
+    The following records its setup from conda, <https://www.biostars.org/p/9461665/>
+
+    ```bash
+    module load miniconda/2
+    export mypath=/rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3
+    conda create --prefix=${mypath} -c conda-forge -c bioconda r-peer
+    conda activate /rds/project/jmmh2/rds-jmmh2-public_databases/peer/1.3
+    conda init bash
+    source ~/.bashrc
+    source activate ${mypath}
+    ln -s ${mypath} $CEUADMIN/peer/1.3
+    # This mirrors snakemake
+    # conda install -c conda-forge mamba
+    # mamba repoquery depends -a r-peer
