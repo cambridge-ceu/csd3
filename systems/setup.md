@@ -901,7 +901,25 @@ Rscript -e '
 
 [^peer]: **peer**
 
-    An R package is associated with `ceuadmin/R`.
+    An R package is done as follows,
+
+    ```bash
+    git clone https://github.com/PMBio/peer PMBio
+    cd PMBio
+    module load cmake/2.8 python/2.7
+    mkdir build && cd build
+    module load R/3.4
+    cmake -DBUILD_R_PACKAGE=1 ..
+    make
+    ## build/ version
+    cd R
+    R CMD INSTALL peer -l ..
+    ## cran/ version
+    cd ../../cran
+    R CMD INSTALL peer -l ..
+    ```
+
+    Therefore the R package has to be called using module `R/3.4`, such as `library(peer,lib.loc='/rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/PMBio')`.
 
     The following records its setup from conda, <https://www.biostars.org/p/9461665/>
 
@@ -919,3 +937,4 @@ Rscript -e '
     # mamba repoquery depends -a r-peer
     ```
 
+    Overall, these appear to be outdated if other R packages are called unless they are also installed.

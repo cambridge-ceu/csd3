@@ -240,17 +240,17 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | ""         | samtools/1.11               | Genetics            |
     | ""         | bcftools/1.12               | Genetics            |
     | ""         | MORGAN/3.4                  | Genetics            |
-    | ""         | METAL/2020-05-05r           | Genetics[^metal]    |
+    | ""         | METAL/2020-05-05r           | Genetics            |
     | ""         | regenie/3.2.1               | Genetics            |
-    | ""         | GEMMA/0.98.5                | Genetics[^gemma]    |
+    | ""         | GEMMA/0.98.5                | Genetics            |
     | ""         | htslib/1.12                 | Genetics            |
-    | ""         | fcGENE/1.0.7                | Genetics[^fcgene]   |
+    | ""         | fcGENE/1.0.7                | Genetics            |
     | ""         | SMR/1.0.3                   | Genetics            |
     | ""         | FastQTL/2.165               | Genetics            |
     | 2022-10-26 | circos/0.69-9               | Genetics            |
     | ""         | bgen/1.1.7                  | Genetics            |
     | ""         | DosageConverter/1.0.0       | Genetics            |
-    | ""         | QTLtools/1.3.1-25           | Genetics[^qtltools] |
+    | ""         | QTLtools/1.3.1-25           | Genetics            |
     | ""         | blat/37x1                   | Genetics            |
     | ""         | bedtools2/2.29.2            | Genetics            |
     | ""         | bedops/2.4.41               | Genetics            |
@@ -265,7 +265,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | ""         | CAVIAR/2.2                  | Genetics            |
     | ""         | MONSTER/1.3                 | Genetics            |
     | ""         | osca/0.46                   | Genetics            |
-    | ""         | LEMMA/1.0.4                 | Genetics[^lemma]    |
+    | ""         | LEMMA/1.0.4                 | Genetics            |
     | ""         | CAVIARBF/0.2.1              | Genetics            |
     | 2022-11-11 | PAINTOR/3.0                 | Genetics            |
     | 2022-11-14 | MR-MEGA/0.2                 | Genetics            |
@@ -273,14 +273,14 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | ""         | STAR/2.7.10b                | Genetics            |
     | ""         | Mega2/6.0.0                 | Genetics            |
     | 2022-11-19 | ensembl-vep/104             | Genetics\*          |
-    | ""         | OpenMS/3.0.0                | Genetics\*[^openms] |
+    | ""         | OpenMS/3.0.0                | Genetics\*          |
     | ""         | polyphen/2.2.2              | Genetics\*          |
     | ""         | ANNOVAR/24Oct2019           | Genetics\*          |
     | ""         | MAGENTA/vs2_July2011        | Genetics\*          |
     | ""         | GARFIELD/v2                 | Genetics\*          |
     | ""         | KentUtils/2022-11-14        | Genetics\*          |
     | 2022-11-20 | Genotype-Harmonizer/1.4.25  | Genetics            |
-    | 2022-11-21 | locuszoom/1.4               | Genetics\*[^lz]     |
+    | 2022-11-21 | locuszoom/1.4               | Genetics\*          |
     | ""         | DEPICT/v1_rel194            | Genetics\*          |
     | ""         | MAGMA/1.10                  | Genetics\*          |
     | ""         | Pascal/v_debut              | Genetics\*          |
@@ -293,10 +293,10 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2023-02-01 | GENEHUNTER/2.1_r6           | Genetics            |
     | 2023-03-14 | regenie/3.2.5               | Genetics            |
     | 2023-03-24 | PoGo/1.0.0                  | Genetics            |
-    | 2023-03-31 | PWCoCo/2023-03-31           | Genetics[^pwcoco]   |
+    | 2023-03-31 | PWCoCo/2023-03-31           | Genetics            |
     | 2023-04-02 | regenie/3.2.5.3             | Genetics            |
     | 2023-04-04 | PWCoCo/1.0                  | Genetics            |
-    | 2023-06-02 | regenie/3.2.7               | Genetics[^regenie]  |
+    | 2023-06-02 | regenie/3.2.7               | Genetics            |
     | 2023-06-06 | allegro/2.0f                | Genetics            |
     | 2023-06-19 | plink-ng/2.00a3.3           | Genetics            |
     | 2023-06-26 | RHHsoftware/0.1             | Genetics            |
@@ -307,17 +307,17 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | ""         | sra-tools/3.0.8             | Genetics            |
     | ""         | gatk/4.4.0.0                | Genetics            |
     | 2023-11-24 | ldsc/1.0.1                  | Genetics            |
-    | 2023-11-30 | gdc/1.6.1-1.0.0             | Genetics[^gdc]      |
+    | 2023-11-30 | gdc/1.6.1-1.0.0             | Genetics            |
     | 2023-12-20 | verifyBamID/1.1.3           | Genetics            |
     | 2023-12-21 | verifyBamID/2.0.1           | Genetics            |
-    | 2023-12-27 | regtools/1.0.0              | Genetics[^regtools] |
-    | ""         | VarScan/2.4.6               | Genetics[^varscan]  |
+    | 2023-12-27 | regtools/1.0.0              | Genetics            |
+    | ""         | VarScan/2.4.6               | Genetics            |
     | 2024-01-08 | picard/3.1.1                | Genetics            |
     | ""         | plink/2.0_20240105          | Genetics            |
     | 2024-01-19 | htslib/1.19                 | Genetics            |
-    | 2024-01-24 | fraposa_pgsc/0.1.0          | Genetics[^fraposa]  |
-    | ""         | pgsc_calc/2.0.0-alpha.4     | Genetics[^pgsc_calc]|
-    | 2024-04-22 | peer/1.3                    | Genetics[^peer]     |
+    | 2024-01-24 | fraposa_pgsc/0.1.0          | Genetics            |
+    | ""         | pgsc_calc/2.0.0-alpha.4     | Genetics            |
+    | 2024-04-22 | peer/1.3                    | Genetics            |
 
     \* CEU or approved users only.
 
@@ -328,137 +328,3 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
 [^gui]: **GUI**
 
     As GUI-based programs claim more computing resources, it is recommended that they are only used occasionally, e.g., calling back GitHub sessions.
-
-[^metal]: **metal**
-
-    Notes on METAL 2020-05-05r
-
-    This version has options EFFECT_PRINT_PRECISION and STDERR_PRINT_PRECISION (both with default 4) to enable many decimal places.
-
-    The letter `r` as in `2020-05-05r` indicates a replacement of functions in `libsrc/MathStats.cpp` to ensure generality -- [details](files/complaint.pdf) have also been posted to the GitHub page, [https://github.com/statgen/METAL/issues/24](https://github.com/statgen/METAL/issues/24).
-
-    ```
-    FATAL ERROR -
-    a too large, ITMAX too small in gamma countinued fraction (gcf)
-
-    so the -1.info file could not be generated.
-    ```
-
-[^gemma]: **gemma**
-
-    Note on compiling from source
-
-    A considerably smaller (1,097,256 vs 22,721,624) executable, /usr/local/Cluster-Apps/ceuadmin/GEMMA/0.98.5/bin, is generated under CSD3 but the original distribution is used by default.
-
-    ```bash
-    module load openblas/0.2.15
-    make
-    ```
-
-[^fcgene]: **fcgene**
-
-    Alternative site
-
-    See [https://github.com/dr-roshyara/fcgene](https://github.com/dr-roshyara/fcgene)
-
-[^qtltools]: **qtltools**
-
-    The long version number is 1.3.1-25-g6e49f85f20.
-
-[^lemma]: **lemma**
-
-    The documentation indicates a requirement of gcc/9.4, boost/1.78, OpenMP/3.1 and/or Intel MKL Library 2019 Update 1 but it is possible to proceed with gcc/11, cmake-3.19.7-gcc-5.4-5gbsejo, boost-1.66.0-gcc-5.4.0-slpq3un, ceuadmin/bgen/1.1.7.
-
-[^openms]: **openms**
-
-    When the OpenMS module is loaded, pyopenms and alphapept also become available.
-
-[^lz]: **locuszoom**
-
-    The version adds chromosome X data and will have options using INTERVAL data.
-
-[^pwcoco]: **pwcoco**
-
-    It compiles under gcc/9. Upon release of 1.1, this snapshot is removed.
-
-[^regenie]: **regenie**
-
-    Building regenie 3.2.7
-
-    ```bash
-    cd ~/rds/public_databases/software/
-    wget -qO- https://github.com/rgcgithub/regenie/archive/refs/tags/v3.2.7.tar.gz | \
-    tar xvfz -
-    cd regenie-3.2.7/
-    export BGEN_PATH=~/rds/public_databases/software/bgen
-    module load zlib/1.2.11
-    export ZLIB_LIBRARY=/usr/local/Cluster-Apps/zlib/1.2.11
-    module load gcc/6
-    module load cmake-3.19.7-gcc-5.4-5gbsejo
-    module load intel/mkl/mic/2018.4
-    mkdir build
-    cd build
-    cmake ..
-    make
-    ```
-
-[^gdc]: **gdc**
-
-    It also includes gdc_dtt-ui 1.0.0
-
-[^regtools]: **regtools**
-
-    gcc/6 is required for C++11.
-
-[^varscan]: **varscan**
-
-    Simply call `java -jar $VARSCAN_HOME/VarScan.v2.4.6.jar` after `module load ceuadmin/VarScan/2.4.6`.
-
-[^fraposa]: **fraposa**
-
-    Several packages, including poetry, poetry-plugin-export and fraposa_pgsc, will be installed as follows,
-
-    ```bash
-    module load ceuadmin/Anaconda3/2023.09-0
-    pip install poetry
-    pip3 install poetry-plugin-export
-    pip install --use-feature=fast-deps .
-    scripts/run_example.sh
-    ```
-
-    This is necessay since by default `peotry install` will use user's home directory. As indicated from `poetry install --help`:
-
-    The install command reads the poetry.lock file from
-    the current directory, processes it, and downloads and installs all the
-    libraries and dependencies outlined in that file. If the file does not
-    exist it will look for pyproject.toml and do the same.
-
-[^pgsc_calc]: **pgsc_calc**
-
-    Application, <https://pgsc-calc.readthedocs.io/en/latest/index.html>
-
-    ```bash
-    nextflow run pgscatalog/pgsc_calc -profile test,singularity
-    ```
-
-    It appears quarto is called so presumably under icelake.
-
-
-[^peer]: **peer**
-
-    An R package is associated with `ceuadmin/R`.
-
-    The following records its setup from conda, <https://www.biostars.org/p/9461665/>
-
-    ```bash
-    module load miniconda/2
-    export mypath=/rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3
-    conda create --prefix=${mypath} -c conda-forge -c bioconda r-peer
-    source activate ${mypath}
-    conda init bash
-    source ~/.bashrc
-    source activate ${mypath}
-    ln -s ${mypath} $CEUADMIN/peer/1.3
-    # This mirrors snakemake
-    # conda install -c conda-forge mamba
-    # mamba repoquery depends -a r-peer
