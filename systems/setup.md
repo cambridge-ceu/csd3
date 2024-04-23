@@ -927,7 +927,6 @@ Rscript -e '
     module load miniconda/2
     export mypath=/rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3
     conda create --prefix=${mypath} -c conda-forge -c bioconda r-peer
-    source activate ${mypath}
     conda init bash
     source ~/.bashrc
     source activate ${mypath}
@@ -937,4 +936,6 @@ Rscript -e '
     # mamba repoquery depends -a r-peer
     ```
 
-    Overall, these appear to be outdated if other R packages are called unless they are also installed.
+    This is somewhat overshooting, which will be appropriate if a lot of R packages are also installed.
+
+    Overall, these appear to be outdated if other R packages are called unless they are also installed. In fact, `dyn.load("peer.so")` gives no error so advtange has been taken to make it available. Closely related is the OUTRIDER package, which demonstrates how to implement similar model, see, `vigette("OUTRIDER")`.
