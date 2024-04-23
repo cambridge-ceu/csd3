@@ -940,7 +940,7 @@ Rscript -e '
 
     In fact, `dyn.load("peer.so")` gives no error so advantage has been taken to make it available, i.e., under module `ceuadmin/R`. Closely related is the OUTRIDER package, which demonstrates how to implement similar model; the following script is extracted from `vigette("OUTRIDER")`.
 
-    `r
+    ```r
     library(OUTRIDER)
     library(beeswarm)
     ctsFile <- system.file('extdata', 'KremerNBaderSmall.tsv', package='OUTRIDER')
