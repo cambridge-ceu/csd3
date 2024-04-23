@@ -921,7 +921,7 @@ Rscript -e '
 
     Therefore the R package has to be called using module `R/3.4`, such as `library(peer,lib.loc='/rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/PMBio')`.
 
-    The following records its setup from conda, <https://www.biostars.org/p/9461665/>
+    The following records its setup using conda, <https://www.biostars.org/p/9461665/>
 
     ```bash
     module load miniconda/2
@@ -930,10 +930,11 @@ Rscript -e '
     conda init bash
     source ~/.bashrc
     source activate ${mypath}
-    ln -s ${mypath} $CEUADMIN/peer/1.3
     # This mirrors snakemake
     # conda install -c conda-forge mamba
     # mamba repoquery depends -a r-peer
+    # module
+    ln -s ${mypath} $CEUADMIN/peer/1.3
     ```
 
     This is somewhat overshooting, which will be appropriate if a lot of R packages are also installed.
