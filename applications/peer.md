@@ -1,33 +1,44 @@
 ---
-sort: 15
+sort: 33
 ---
 
 # peer
 
 Web: [GitHub](https://github.com/PMBio/peer) ([wiki](https://github.com/PMBio/peer/wiki))
 
-## R installation
+## ceuadmin/peer/full
 
 ```bash
 git clone https://github.com/PMBio/peer PMBio
 cd PMBio
-module load cmake/2.8 python/2.7 R/3.4
 mkdir build && cd build
-cmake -DBUILD_R_PACKAGE=1 ..
+export dest=/usr/local/Cluster-Apps/ceuadmin/peer/full
+module load cmake/2.8 python/2.7 R/3.4
+cmake -DBUILD_PEERTOOL=1 -DBUILD_R_PACKAGE=1 -DCMAKE_INSTALL_PREFIX=${dest} ..
 make
-## build/ version
+sed -i 's|/usr/local/Cluster-Apps/python/2.7.5/|/usr/local/Cluster-Apps/ceuadmin/peer/full|' python/cmake_install.cmake
+make install
+mkdir -p ${dest}/lib/R
+export R_LIBS=${dest}/lib/R
 cd R
-R CMD INSTALL peer -l ..
+R CMD INSTALL peer -l ${dest}/lib/R
 ## cran/ version
 cd ../../cran
-R CMD INSTALL peer -l ..
+R CMD INSTALL peer -l ${dest}/lib/R
 ```
 
-Therefore the R package has to be called using module `R/3.4`, such as `library(peer,lib.loc='/rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/PMBio')`.
+The `peertool`, R and python packages are accessible through module `ceuadmin/peer/full`, e.g., 
 
-One would attempt to have a full installation by -DCMAKE_INSTALL_PREFIX= but it appears not working.
+```bash
+cd examples
+sed 's|./peertool|peertool|' standalone_demo.sh | bash
+```
 
-We can check if it works under module `ceuadmin/R`. The following script is extracted from `vigette("OUTRIDER")`.
+leading to many files in 11 directories with prefix `peer_out*`.
+
+## ceuadmin/R
+
+We can also check if it works under the module we usually use. The following script is extracted from `vigette("OUTRIDER")`.
 
 ```r
 ctsFile <- system.file('extdata', 'KremerNBaderSmall.tsv', package='OUTRIDER')
@@ -70,9 +81,9 @@ ods <- OUTRIDER::plotCountCorHeatmap(ods, normalized=TRUE)
 
 which is rather confusing with so many uses of `ods`.
 
-## conda
+## ceuadmin/peer/1.3
 
-This follows <https://www.biostars.org/p/9461665/>,
+This is a Miniconda/2 installation which follows <https://www.biostars.org/p/9461665/>.
 
 ```bash
 module load miniconda/2
@@ -84,7 +95,8 @@ source activate ${mypath}
 # This mirrors snakemake but proves optional:
 # conda install -c conda-forge mamba
 # mamba repoquery depends -a r-peer
-# module
+# module ceuadmin/peer/1.3
+mkdir $CEUADMIN/peer
 ln -s ${mypath} $CEUADMIN/peer/1.3
 module load ceuadmin/peer/1.3
 cd examples
