@@ -6,6 +6,16 @@ sort: 33
 
 Web: [GitHub](https://github.com/PMBio/peer) ([wiki](https://github.com/PMBio/peer/wiki))
 
+## ceuadmin/peer/micromamba
+
+This enables many programs including micromamba, R package to be avaiable, e.g.,
+
+```bash
+micromamba --help
+python --version
+R --version
+```
+
 ## ceuadmin/peer/full
 
 ```bash
