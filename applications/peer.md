@@ -6,6 +6,8 @@ sort: 33
 
 Web: [GitHub](https://github.com/PMBio/peer) ([wiki](https://github.com/PMBio/peer/wiki))
 
+Three modules are described below.
+
 ## ceuadmin/peer/micromamba
 
 This enables many programs including micromamba, R package to be avaiable, e.g.,
@@ -49,6 +51,31 @@ R --no-save < r_demo.R
 The standalone tool produces files in 11 directories with prefix `peer_out*`.
 
 Later, `qtl` is installed and `r_demo.R` executed which generates `r_demo_covs.pdf`, `r_demo_nk.pdf`, and `r_demo.pdf`.
+
+## ceuadmin/peer/1.3
+
+This is a Miniconda/2 installation which follows <https://www.biostars.org/p/9461665/>.
+
+```bash
+module load miniconda/2
+export mypath=/rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3
+conda create --prefix=${mypath} -c conda-forge -c bioconda r-peer
+conda init bash
+source ~/.bashrc
+source activate ${mypath}
+# This mirrors snakemake but proves optional:
+# conda install -c conda-forge mamba
+# mamba repoquery depends -a r-peer
+# module ceuadmin/peer/1.3
+mkdir $CEUADMIN/peer
+ln -s ${mypath} $CEUADMIN/peer/1.3
+module load ceuadmin/peer/1.3
+cd examples
+Rscript -e 'install.packages("qtl")'
+R --no-save < r_demo.R
+```
+
+This is somewhat heavy going, ideally for other R packages to be installed.
 
 ## ceuadmin/R
 
@@ -94,28 +121,3 @@ ods <- OUTRIDER::plotCountCorHeatmap(ods, normalized=TRUE)
 ```
 
 which is rather confusing with so many uses of `ods`.
-
-## ceuadmin/peer/1.3
-
-This is a Miniconda/2 installation which follows <https://www.biostars.org/p/9461665/>.
-
-```bash
-module load miniconda/2
-export mypath=/rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3
-conda create --prefix=${mypath} -c conda-forge -c bioconda r-peer
-conda init bash
-source ~/.bashrc
-source activate ${mypath}
-# This mirrors snakemake but proves optional:
-# conda install -c conda-forge mamba
-# mamba repoquery depends -a r-peer
-# module ceuadmin/peer/1.3
-mkdir $CEUADMIN/peer
-ln -s ${mypath} $CEUADMIN/peer/1.3
-module load ceuadmin/peer/1.3
-cd examples
-Rscript -e 'install.packages("qtl")'
-R --no-save < r_demo.R
-```
-
-This is somewhat heavy going, ideally for other R packages to be installed.
