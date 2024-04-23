@@ -32,9 +32,13 @@ The `peertool`, R and python packages are accessible through module `ceuadmin/pe
 ```bash
 cd examples
 sed 's|./peertool|peertool|' standalone_demo.sh | bash
+Rscript -e 'install.packages("qtl")'
+R --no-save < r_demo.R
 ```
 
-leading to many files in 11 directories with prefix `peer_out*`.
+The standalone tool produces files in 11 directories with prefix `peer_out*`.
+
+Later, `qtl` is installed and `r_demo.R` executed which generates `r_demo_covs.pdf`, `r_demo_nk.pdf`, and `r_demo.pdf`.
 
 ## ceuadmin/R
 
@@ -104,4 +108,4 @@ Rscript -e 'install.packages("qtl")'
 R --no-save < r_demo.R
 ```
 
-This is somewhat heavy going, ideally for other R packages to be installed. In this case, `qtl` is installed and `r_demo.R` is executed and obtains `r_demo_covs.pdf`, `r_demo_nk.pdf`, and `r_demo.pdf`.
+This is somewhat heavy going, ideally for other R packages to be installed.
