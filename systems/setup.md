@@ -950,7 +950,7 @@ Rscript -e '
     # filter out non expressed genes
     ods <- filterExpression(ods, minCounts=TRUE, filterGenes=TRUE)
     # run full OUTRIDER pipeline (control, fit model, calculate P-values)
-    ods_full <- OUTRIDER(ods)
+    ods <- OUTRIDER(ods)
     peer <- function(ods, maxFactors=NA, maxItr=30)
     # PEER implementation
     {
@@ -959,9 +959,7 @@ Rscript -e '
                     "functionality.")
         }
         # default and recommendation by PEER: min(0.25*n, 100)
-        if(is.na(maxFactors)){
-            maxFactors <- min(as.integer(0.25* ncol(ods)), 100)
-        }
+        maxFactors <- min(as.integer(0.25*ncol(ods)), 100)
         logCts <- log2(t(t(counts(ods)+1)/sizeFactors(ods)))
         model <- PEER()
         PEER_setNmax_iterations(model, maxItr)
@@ -985,3 +983,5 @@ Rscript -e '
     ods <- computePvalues(ods)
     ods <- plotCountCorHeatmap(ods, normalized=TRUE)
     ```
+
+    which is rather confusing with so many uses of `ods`.
