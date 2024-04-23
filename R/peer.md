@@ -4,14 +4,15 @@ sort: 15
 
 # peer
 
-An R package is done as follows,
+Web: [GitHub](https://github.com/PMBio/peer) ([wiki](https://github.com/PMBio/peer/wiki))
+
+## R installation
 
 ```bash
 git clone https://github.com/PMBio/peer PMBio
 cd PMBio
-module load cmake/2.8 python/2.7
+module load cmake/2.8 python/2.7 R/3.4
 mkdir build && cd build
-module load R/3.4
 cmake -DBUILD_R_PACKAGE=1 ..
 make
 ## build/ version
@@ -23,6 +24,8 @@ R CMD INSTALL peer -l ..
 ```
 
 Therefore the R package has to be called using module `R/3.4`, such as `library(peer,lib.loc='/rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/PMBio')`.
+
+One would attempt to have a full installation by -DCMAKE_INSTALL_PREFIX= but it appears not working.
 
 We can check if it works under module `ceuadmin/R`. The following script is extracted from `vigette("OUTRIDER")`.
 
@@ -67,7 +70,9 @@ ods <- OUTRIDER::plotCountCorHeatmap(ods, normalized=TRUE)
 
 which is rather confusing with so many uses of `ods`.
 
-The following records its setup using conda, <https://www.biostars.org/p/9461665/>
+## conda
+
+This follows <https://www.biostars.org/p/9461665/>,
 
 ```bash
 module load miniconda/2
