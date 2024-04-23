@@ -938,4 +938,4 @@ Rscript -e '
 
     This is somewhat overshooting, which will be appropriate if a lot of R packages are also installed.
 
-    Overall, these appear to be outdated if other R packages are called unless they are also installed. In fact, `dyn.load("peer.so")` gives no error so advtange has been taken to make it available. Closely related is the OUTRIDER package, which demonstrates how to implement similar model, see, `vigette("OUTRIDER")`.
+    In fact, `dyn.load("peer.so")` gives no error so advtange has been taken to make it available. Closely related is the OUTRIDER package, which demonstrates how to implement similar model, see, `vigette("OUTRIDER")`.
