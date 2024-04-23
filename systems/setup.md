@@ -937,9 +937,9 @@ Rscript -e '
     ln -s ${mypath} $CEUADMIN/peer/1.3
     ```
 
-    This is somewhat overshooting, which will be appropriate if a lot of R packages are also installed.
+    This is somewhat heavy going, ideally for a lot of R packages to be also installed.
 
-    In fact, `dyn.load("peer.so")` gives no error so advantage has been taken to make it available, i.e., under module `ceuadmin/R`. Closely related is the OUTRIDER package, which demonstrates how to implement similar model; the following script is extracted from `vigette("OUTRIDER")`.
+    We can check if it works under module `ceuadmin/R`. The following script is extracted from `vigette("OUTRIDER")`.
 
     ```r
     library(OUTRIDER)
@@ -950,13 +950,10 @@ Rscript -e '
     # filter out non expressed genes
     ods <- filterExpression(ods, minCounts=TRUE, filterGenes=TRUE)
     # run full OUTRIDER pipeline (control, fit model, calculate P-values)
-    ods <- OUTRIDER(ods)
-    #'
-    #' PEER implementation
-    #'
-    peer <- function(ods, maxFactors=NA, maxItr=1000)
+    ods_full <- OUTRIDER(ods)
+    peer <- function(ods, maxFactors=NA, maxItr=30)
+    # PEER implementation
     {
-        # check for PEER
         if(!require(peer)){
             stop("Please install the 'peer' package from GitHub to use this ",
                     "functionality.")
@@ -965,20 +962,15 @@ Rscript -e '
         if(is.na(maxFactors)){
             maxFactors <- min(as.integer(0.25* ncol(ods)), 100)
         }
-        # log counts
         logCts <- log2(t(t(counts(ods)+1)/sizeFactors(ods)))
-        # prepare PEER model
         model <- PEER()
         PEER_setNmax_iterations(model, maxItr)
         PEER_setNk(model, maxFactors)
         PEER_setPhenoMean(model, logCts)
         PEER_setAdd_mean(model, TRUE)
-        # run fullpeer pipeline
         PEER_update(model)
-        # extract PEER data
         peerResiduals <- PEER_getResiduals(model)
         peerMean <- t(t(2^(logCts - peerResiduals)) * sizeFactors(ods))
-        # save model in object
         normalizationFactors(ods) <- pmax(peerMean, 1E-8)
         metadata(ods)[["PEER_model"]] <- list(
                 alpha     = PEER_getAlpha(model),
@@ -986,14 +978,10 @@ Rscript -e '
                 W         = PEER_getW(model))
         return(ods)
     }
-    # Control for confounders with PEER
     ods <- estimateSizeFactors(ods)
     ods <- peer(ods)
     ods <- fit(ods)
     ods <- computeZscores(ods, peerResiduals=TRUE)
     ods <- computePvalues(ods)
-    # Heatmap of the sample correlation after controlling
     ods <- plotCountCorHeatmap(ods, normalized=TRUE)
-    # P-values versus Mean Count
-    plotPowerAnalysis(ods)
     ```
