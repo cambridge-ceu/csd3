@@ -8,7 +8,7 @@ Web: [GitHub](https://github.com/PMBio/peer) ([wiki](https://github.com/PMBio/pe
 
 Three modules are described below.
 
-## ceuadmin/peer/micromamba
+## 1. ceuadmin/peer/micromamba
 
 This enables many programs including micromamba, R package to be avaiable, e.g.,
 
@@ -18,7 +18,7 @@ python --version
 R --version
 ```
 
-## ceuadmin/peer/full
+## 2. ceuadmin/peer/full
 
 ```bash
 git clone https://github.com/PMBio/peer PMBio
@@ -52,7 +52,7 @@ The standalone tool produces files in 11 directories with prefix `peer_out*`.
 
 Later, `qtl` is installed and `r_demo.R` executed which generates `r_demo_covs.pdf`, `r_demo_nk.pdf`, and `r_demo.pdf`.
 
-## ceuadmin/peer/1.3
+## 3. ceuadmin/peer/1.3
 
 This is a Miniconda/2 installation which follows <https://www.biostars.org/p/9461665/>.
 
