@@ -25,7 +25,7 @@ git clone https://github.com/PMBio/peer PMBio
 cd PMBio
 mkdir build && cd build
 export dest=/usr/local/Cluster-Apps/ceuadmin/peer/full
-module load cmake/2.8 python/2.7 R/3.4
+module load cmake/2.8 R/3.4 python/2.7
 cmake -DBUILD_PEERTOOL=1 -DBUILD_R_PACKAGE=1 -DCMAKE_INSTALL_PREFIX=${dest} ..
 make
 sed -i 's|/usr/local/Cluster-Apps/python/2.7.5|/usr/local/Cluster-Apps/ceuadmin/peer/full|' python/cmake_install.cmake
@@ -39,6 +39,8 @@ cd ../../cran
 R CMD INSTALL peer -l ${dest}/lib/R
 ```
 
+Note that R/3.4` (due to `/usr/local/software/master/R/3.4/bin/python` points to `/usr/local/software/master/R/3.4/bin/python3.7`) has to be loaded before `python/2.7`.
+
 The `peertool`, R and python packages are accessible through module `ceuadmin/peer/full`, e.g., 
 
 ```bash
@@ -51,6 +53,17 @@ R --no-save < r_demo.R
 The standalone tool produces files in 11 directories with prefix `peer_out*`.
 
 Later, `qtl` is installed and `r_demo.R` executed which generates `r_demo_covs.pdf`, `r_demo_nk.pdf`, and `r_demo.pdf`.
+
+We also also verify with `python`,
+
+```
+Python 2.7.18 (default, Apr 24 2020, 00:37:06)
+[GCC 9.3.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import peer
+>>> peer
+<module 'peer' from '/usr/local/Cluster-Apps/ceuadmin/peer/full/lib/python2.7/site-packages/peer.py'>
+```
 
 ## 3. ceuadmin/peer/1.3
 
