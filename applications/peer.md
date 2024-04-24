@@ -51,11 +51,13 @@ R --no-save < r_demo.R
 python python_demo.py
 ```
 
-The standalone tool produces files in 11 directories with prefix `peer_out*`.
+The output are briefly described here,
 
-Later, `qtl` is installed and `r_demo.R` executed which generates `r_demo_covs.pdf`, `r_demo_nk.pdf`, and `r_demo.pdf`.
+1. The standalone tool produces files in 11 directories with prefix `peer_out*`.
+2. Later, `qtl` is installed and `r_demo.R` executed which generates `r_demo_covs.pdf`, `r_demo_nk.pdf`, and `r_demo.pdf`.
+3. The Python counterpart gives `demo_simple.pdf`, `demo_covs.pdf`, and `demo_factors.pdf`.
 
-Somehow the Python counterpart is slow, though we can verify with `python`,
+The Python counterpart can also be verified with `python`,
 
 ```
 Python 2.7.18 (default, Apr 24 2020, 00:37:06)
