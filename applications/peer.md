@@ -79,7 +79,7 @@ This is somewhat heavy going, ideally for other R packages to be installed.
 
 ## OUTRIDER
 
-We can also check if it works under the module we usually use. The following script is extracted from `vigette("OUTRIDER")`.
+We can also check if it works under a module, e.g., `ceuadmin/R`, which we usually use. The following script is extracted from `vigette("OUTRIDER")`.
 
 ```r
 ctsFile <- system.file('extdata', 'KremerNBaderSmall.tsv', package='OUTRIDER')
