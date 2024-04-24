@@ -48,18 +48,21 @@ cd examples
 sed 's|./peertool|peertool|' standalone_demo.sh | bash
 Rscript -e 'install.packages("qtl")'
 R --no-save < r_demo.R
+python python_demo.py
 ```
 
 The standalone tool produces files in 11 directories with prefix `peer_out*`.
 
 Later, `qtl` is installed and `r_demo.R` executed which generates `r_demo_covs.pdf`, `r_demo_nk.pdf`, and `r_demo.pdf`.
 
-We also also verify with `python`,
+Somehow the Python counterpart is slow, though we can verify with `python`,
 
 ```
 Python 2.7.18 (default, Apr 24 2020, 00:37:06)
 [GCC 9.3.0] on linux2
 Type "help", "copyright", "credits" or "license" for more information.
+>>> import pylab
+>>> import scipy
 >>> import peer
 >>> peer
 <module 'peer' from '/usr/local/Cluster-Apps/ceuadmin/peer/full/lib/python2.7/site-packages/peer.py'>
@@ -88,7 +91,7 @@ Rscript -e 'install.packages("qtl")'
 R --no-save < r_demo.R
 ```
 
-This is somewhat heavy going, ideally for other R packages to be installed.
+This is somewhat heavy going, ideally for other R packages to be installed. Paradoxically, this is less appropriate for Python as packages such as `matplotlib` has to be installed to run `python_demo.py`.
 
 ## OUTRIDER
 
