@@ -28,7 +28,7 @@ export dest=/usr/local/Cluster-Apps/ceuadmin/peer/full
 module load cmake/2.8 python/2.7 R/3.4
 cmake -DBUILD_PEERTOOL=1 -DBUILD_R_PACKAGE=1 -DCMAKE_INSTALL_PREFIX=${dest} ..
 make
-sed -i 's|/usr/local/Cluster-Apps/python/2.7.5/|/usr/local/Cluster-Apps/ceuadmin/peer/full|' python/cmake_install.cmake
+sed -i 's|/usr/local/Cluster-Apps/python/2.7.5|/usr/local/Cluster-Apps/ceuadmin/peer/full|' python/cmake_install.cmake
 make install
 mkdir -p ${dest}/lib/R
 export R_LIBS=${dest}/lib/R
@@ -77,7 +77,7 @@ R --no-save < r_demo.R
 
 This is somewhat heavy going, ideally for other R packages to be installed.
 
-## ceuadmin/R
+## OUTRIDER
 
 We can also check if it works under the module we usually use. The following script is extracted from `vigette("OUTRIDER")`.
 
@@ -121,3 +121,23 @@ ods <- OUTRIDER::plotCountCorHeatmap(ods, normalized=TRUE)
 ```
 
 which is rather confusing with so many uses of `ods`.
+
+## References
+
+**DESeq2**
+
+Love MI, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. ***Genome Biol***. 2014;15(12):550. <doi: 10.1186/s13059-014-0550-8>. PMID: 25516281; PMCID: PMC4302049.
+
+**edgeR**
+
+Zhou X, Lindsay H, Robinson MD. Robustly detecting differential expression in RNA sequencing data using observation weights. ***Nucleic Acids Res***. 2014 Jun;42(11):e91. <doi: 10.1093/nar/gku310>. Epub 2014 Apr 20. PMID: 24753412; PMCID: PMC4066750.
+
+**OUTRIDER**
+
+Brechtmann F, Mertes C, Matusevičiūtė A, Yépez VA, Avsec Ž, Herzog M, Bader DM, Prokisch H, Gagneur J. OUTRIDER: A Statistical Method for Detecting Aberrantly Expressed Genes in RNA Sequencing Data. ***Am J Hum Genet***. 2018 Dec 6;103(6):907-917. <doi: 10.1016/j.ajhg.2018.10.025>. Epub 2018 Nov 29. PMID: 30503520; PMCID: PMC6288422.
+
+**peer**
+
+Stegle O, Parts L, Durbin R, Winn J. A Bayesian framework to account for complex non-genetic factors in gene expression levels greatly increases power in eQTL studies. ***PLoS Comput Biol***. 2010 May 6;6(5):e1000770. <doi: 10.1371/journal.pcbi.1000770>. PMID: 20463871; PMCID: PMC2865505.
+
+Parts L, Stegle O, Winn J, Durbin R. Joint genetic analysis of gene expression data with inferred cellular phenotypes. ***PLoS Genet***. 2011 Jan 20;7(1):e1001276. <doi: 10.1371/journal.pgen.1001276>. PMID: 21283789; PMCID: PMC3024309.

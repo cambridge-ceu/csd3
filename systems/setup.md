@@ -901,4 +901,4 @@ Rscript -e '
 
 [^peer]: **peer**
 
-    This is documented separately in the R section, <https://cambridge-ceu.github.io/csd3/R/peer.html>.
+    This is documented separately in the R section, <https://cambridge-ceu.github.io/csd3/applications/peer.html>.
