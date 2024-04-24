@@ -120,7 +120,7 @@ ods <- OUTRIDER::computePvalues(ods)
 ods <- OUTRIDER::plotCountCorHeatmap(ods, normalized=TRUE)
 ```
 
-which is rather confusing with so many uses of `ods`.
+the rather confusing uses of `ods` seem to illustrate whereabout a `peer` model works.
 
 ## References
 
