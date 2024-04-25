@@ -6,19 +6,24 @@ sort: 33
 
 Web: [GitHub](https://github.com/PMBio/peer) ([wiki](https://github.com/PMBio/peer/wiki))
 
-Three modules are described below.
+Three modules ceuadmin are described below.
 
-## 1. ceuadmin/peer/micromamba
+## 1. micromamba
 
 This enables many programs including micromamba, R package to be avaiable, e.g.,
 
 ```bash
+module load ceuadmin/peer/micromamba
 micromamba --help
 python --version
 R --version
 ```
 
-## 2. ceuadmin/peer/full
+from theR seesion, we start `library(peer)`.
+
+## 2. full
+
+This is activated with `module load ceuadmin/peer/full`, which is set up as follows,
 
 ```bash
 git clone https://github.com/PMBio/peer PMBio
@@ -57,6 +62,12 @@ The output are briefly described here,
 2. Later, `qtl` is installed and `r_demo.R` executed which generates `r_demo_covs.pdf`, `r_demo_nk.pdf`, and `r_demo.pdf`.
 3. The Python counterpart gives `demo_simple.pdf`, `demo_covs.pdf`, and `demo_factors.pdf`.
 
+The versioning information of the standalone application is checked with
+
+`$CEUADMIN/peer/full/bin/peertool --version`
+
+> /usr/local/Cluster-Apps/ceuadmin/peer/full/bin/peertool  version: 1.0
+
 The Python counterpart can also be verified with `python`,
 
 ```
@@ -70,9 +81,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 <module 'peer' from '/usr/local/Cluster-Apps/ceuadmin/peer/full/lib/python2.7/site-packages/peer.py'>
 ```
 
-## 3. ceuadmin/peer/1.3
+## 3. 1.3
 
-This is a Miniconda/2 installation which follows <https://www.biostars.org/p/9461665/>.
+As shall be seen, really `Miniconda` is a platform to distribute the Linux binary and R package (No python package).
+
+It is called with `module load ceuadmin/peer/1.3`, a Miniconda/2 installation which follows <https://www.biostars.org/p/9461665/>.
 
 ```bash
 module load miniconda/2
@@ -81,6 +94,7 @@ conda create --prefix=${mypath} -c conda-forge -c bioconda r-peer
 conda init bash
 source ~/.bashrc
 source activate ${mypath}
+conda install peer
 # This mirrors snakemake but proves optional:
 # conda install -c conda-forge mamba
 # mamba repoquery depends -a r-peer
@@ -93,7 +107,17 @@ Rscript -e 'install.packages("qtl")'
 R --no-save < r_demo.R
 ```
 
-This is somewhat heavy going, ideally for other R packages to be installed. Paradoxically, this is less appropriate for Python as packages such as `matplotlib` has to be installed to run `python_demo.py`.
+This is somewhat heavy going, ideally for other R packages to be installed.
+
+Iit turns out `peertool` (<https://conda.anaconda.org/bioconda/linux-64/peer-1.3-hdbdd923_0.tar.bz2> according to `conda-meta/peer-1.3-hdbdd923_0.json`) instead of a Python package is installed.
+
+We also have the following information,
+
+> peer               bioconda/linux-64::peer-1.3-hdbdd923_0
+
+and `peertool --version` also gives,
+
+> peertool  version: 1.0
 
 ## OUTRIDER
 
