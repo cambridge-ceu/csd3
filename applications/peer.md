@@ -102,10 +102,11 @@ conda install peer
 # mamba repoquery depends -a r-peer
 # module ceuadmin/peer/1.3
 # All requested packages already installed:
-# conda install micromamba
-# micromamba install peer
-# micromamba activate /rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3
-# micromamba run -p /rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3 singlecommand
+conda install micromamba
+micromamba install peer
+#micromamba activate /rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3
+#micromamba run -p /rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3 peer
+micromamba repoquery depends r-peer
 mkdir $CEUADMIN/peer
 ln -s ${mypath} $CEUADMIN/peer/1.3
 module load ceuadmin/peer/1.3
@@ -128,6 +129,16 @@ and `peertool --version` also gives,
 
 ```
 peertool  version: 1.0
+``
+
+`micromamba repoquery depends r-peer` gives,
+
+```
+ Name      Version Build            Channel     Subdir
+─────────────────────────────────────────────────────────
+ libgcc-ng 13.2.0  hc881cc4_6       conda-forge linux-64
+ r-base    3.4.1   h4fe35fd_8       conda-forge linux-64
+ r-peer    1.3     r341h470a237_1   bioconda    linux-64
 ```
 
 ## OUTRIDER
