@@ -66,7 +66,9 @@ The versioning information of the standalone application is checked with
 
 `$CEUADMIN/peer/full/bin/peertool --version`
 
-> /usr/local/Cluster-Apps/ceuadmin/peer/full/bin/peertool  version: 1.0
+```
+/usr/local/Cluster-Apps/ceuadmin/peer/full/bin/peertool  version: 1.0
+```
 
 The Python counterpart can also be verified with `python`,
 
@@ -113,11 +115,15 @@ Iit turns out `peertool` (<https://conda.anaconda.org/bioconda/linux-64/peer-1.3
 
 We also have the following information,
 
-> peer               bioconda/linux-64::peer-1.3-hdbdd923_0
+```
+peer               bioconda/linux-64::peer-1.3-hdbdd923_0
+```
 
 and `peertool --version` also gives,
 
-> peertool  version: 1.0
+```
+peertool  version: 1.0
+```
 
 ## OUTRIDER
 
