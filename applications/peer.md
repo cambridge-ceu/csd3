@@ -19,7 +19,7 @@ python --version
 R --version
 ```
 
-from theR seesion, we start `library(peer)`.
+from the R seesion, we start `library(peer)`.
 
 ## 2. full
 
