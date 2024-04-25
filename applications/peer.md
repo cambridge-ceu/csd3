@@ -129,7 +129,7 @@ and `peertool --version` also gives,
 
 ```
 peertool  version: 1.0
-``
+```
 
 while `micromamba repoquery depends r-peer` gives,
 
