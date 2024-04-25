@@ -131,7 +131,7 @@ and `peertool --version` also gives,
 peertool  version: 1.0
 ``
 
-`micromamba repoquery depends r-peer` gives,
+while `micromamba repoquery depends r-peer` gives,
 
 ```
  Name      Version Build            Channel     Subdir
