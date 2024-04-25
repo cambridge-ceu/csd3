@@ -46,7 +46,7 @@ R CMD INSTALL peer -l ${dest}/lib/R
 
 Note that R/3.4` (due to `/usr/local/software/master/R/3.4/bin/python` points to `/usr/local/software/master/R/3.4/bin/python3.7`) has to be loaded before `python/2.7`.
 
-The `peertool`, R and python packages are accessible through module `ceuadmin/peer/full`, e.g., 
+The `peertool`, R and python packages are accessible, e.g., 
 
 ```bash
 cd examples
