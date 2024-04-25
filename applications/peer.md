@@ -14,12 +14,23 @@ This enables many programs including micromamba, R package to be avaiable, e.g.,
 
 ```bash
 module load ceuadmin/peer/micromamba
+micromamba repoquery depends r-peer,
 micromamba --help
 python --version
 R --version
 ```
 
-from the R seesion, we start `library(peer)`.
+The first `micromama` command gives,
+
+```
+ Name      Version Build            Channel     Subdir
+─────────────────────────────────────────────────────────
+ libgcc-ng 13.2.0  hc881cc4_6       conda-forge linux-64
+ r-base    3.4.1   h4fe35fd_8       conda-forge linux-64
+ r-peer    1.3     r341h470a237_1   bioconda    linux-64
+```
+
+From the R seesion, we can use `library(peer)`.
 
 ## 2. full
 
@@ -129,16 +140,6 @@ and `peertool --version` also gives,
 
 ```
 peertool  version: 1.0
-```
-
-while `micromamba repoquery depends r-peer` gives,
-
-```
- Name      Version Build            Channel     Subdir
-─────────────────────────────────────────────────────────
- libgcc-ng 13.2.0  hc881cc4_6       conda-forge linux-64
- r-base    3.4.1   h4fe35fd_8       conda-forge linux-64
- r-peer    1.3     r341h470a237_1   bioconda    linux-64
 ```
 
 ## OUTRIDER
