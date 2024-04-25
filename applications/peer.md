@@ -101,6 +101,11 @@ conda install peer
 # conda install -c conda-forge mamba
 # mamba repoquery depends -a r-peer
 # module ceuadmin/peer/1.3
+# All requested packages already installed:
+# conda install micromamba
+# micromamba install peer
+# micromamba activate /rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3
+# micromamba run -p /rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3 singlecommand
 mkdir $CEUADMIN/peer
 ln -s ${mypath} $CEUADMIN/peer/1.3
 module load ceuadmin/peer/1.3
