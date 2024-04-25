@@ -6,7 +6,7 @@ sort: 33
 
 Web: [GitHub](https://github.com/PMBio/peer) ([wiki](https://github.com/PMBio/peer/wiki))
 
-Three modules ceuadmin are described below.
+Three modules `ceuadmin/peer/[micromamba|full|1.3]` are described below.
 
 ## 1. micromamba
 
