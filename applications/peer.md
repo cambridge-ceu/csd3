@@ -4,7 +4,7 @@ sort: 33
 
 # peer
 
-Web: [GitHub](https://github.com/PMBio/peer) ([wiki](https://github.com/PMBio/peer/wiki))
+Web: GitHub, <https://github.com/PMBio/peer> ([wiki](https://github.com/PMBio/peer/wiki))
 
 Three modules `ceuadmin/peer/[micromamba|full|1.3]` are described below.
 
