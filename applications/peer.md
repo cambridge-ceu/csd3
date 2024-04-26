@@ -96,9 +96,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## 3. 1.3
 
-As shall be seen, really `Miniconda` is a platform to distribute the Linux binary and R package (No python package).
-
 It is called with `module load ceuadmin/peer/1.3`, a Miniconda/2 installation which follows <https://www.biostars.org/p/9461665/> and <https://bioconda.github.io/recipes/peer/README.html#package-peer>.
+
+As shall be seen, really `Miniconda` is a platform to distribute the Linux binary and R package (No python package).
 
 ```bash
 module load miniconda/2
