@@ -14,7 +14,7 @@ This enables many programs including micromamba, R package to be avaiable, e.g.,
 
 ```bash
 module load ceuadmin/peer/micromamba
-micromamba repoquery depends r-peer,
+micromamba repoquery depends r-peer
 micromamba --help
 python --version
 R --version
@@ -108,7 +108,9 @@ conda init bash
 source ~/.bashrc
 source activate ${mypath}
 conda install peer
+conda config --show-sources
 # This mirrors snakemake but proves optional:
+# conda config --remove-key channels
 # conda install -c conda-forge mamba
 # mamba repoquery depends -a r-peer
 # module ceuadmin/peer/1.3
@@ -117,6 +119,8 @@ conda install micromamba
 micromamba install peer
 #micromamba activate /rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3
 #micromamba run -p /rds/project/jmmh2/rds-jmmh2-public_databases/software/peer/1.3 peer
+micromamba repoquery search peer
+micromamba repoquery search r-peer
 micromamba repoquery depends r-peer
 mkdir $CEUADMIN/peer
 ln -s ${mypath} $CEUADMIN/peer/1.3
