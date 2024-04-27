@@ -740,6 +740,8 @@ Rscript -e '
 
 [^openssl]: **openssl**
 
+    Archive, <https://www.openssl.org/source/old/>
+
     ```bash
     wget -qO- https://www.openssl.org/source/openssl-3.2.1.tar.gz | \
     tar xvfz -
