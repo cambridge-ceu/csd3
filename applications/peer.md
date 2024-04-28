@@ -96,7 +96,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 ## 3. 1.3
 
-It is called with `module load ceuadmin/peer/1.3`, a Miniconda/2 installation which follows <https://www.biostars.org/p/9461665/> and <https://bioconda.github.io/recipes/peer/README.html#package-peer>.
+It is called with `module load ceuadmin/peer/1.3`, a Miniconda/2 installation which follows <https://www.biostars.org/p/9461665/> (mamba is too slow to get going) and <https://bioconda.github.io/recipes/peer/README.html#package-peer>.
 
 As shall be seen, really `Miniconda` is a platform to distribute the Linux binary and R package (No python package).
 
@@ -109,11 +109,6 @@ source ~/.bashrc
 source activate ${mypath}
 conda install peer
 conda config --show-sources
-# This mirrors snakemake but proves optional:
-# conda config --remove-key channels
-# conda install -c conda-forge mamba
-# mamba repoquery depends -a r-peer
-# module ceuadmin/peer/1.3
 # All requested packages already installed:
 conda install micromamba
 micromamba install peer
