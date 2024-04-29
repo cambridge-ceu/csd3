@@ -66,3 +66,36 @@ Rscript -e 'download.packages("jqr",".")'
 R CMD INSTALL --configure-vars='INCLUDE_DIR=/rds/user/jhz22/hpc-work/include LIB_DIR=/rds/user/jhz22/hpc-work/lib' jqr_1.3.0.tar.gz
 rm jqr_*
 ```
+
+### 1.3.3
+
+This mirrors efforts above.
+
+```bash
+# download.packages("jqr",".")
+tar xvfz jqr_1.3.3.tar.gz
+cd jqr
+mv configure configure.sav
+cd -
+```
+
+but with src/Makevars as follows,
+
+```
+# Use C++17 standard
+CXX_STD = CXX17
+
+# Compiler flags
+CXXFLAGS = -Wall -O3
+
+# Linker flags
+LDFLAGS = -shared
+
+# Include directories
+PKG_CPPFLAGS = -I/usr/local/Cluster-Apps/ceuadmin/jq/1.6/include
+
+# Libraries to link against
+PKG_LIBS = -L/usr/local/Cluster-Apps/ceuadmin/jq/1.6/lib -ljq
+```
+
+followd by `R CMD INSTALL jqr`.
