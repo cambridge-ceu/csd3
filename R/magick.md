@@ -6,6 +6,8 @@ sort: 12
 
 > The magick package provide a modern and simple toolkit for image processing in R. It wraps the ImageMagick STL which is the most comprehensive open-source image processing library available today.
 
+## 2.7.1
+
 When installing the package we have error message,
 
 ```
@@ -59,4 +61,29 @@ it turned out that the required ImageMick needs to be loaded as follows,
 
 ```bash
 module load image-magick-7.0.5-9-gcc-5.4.0-d4lemcc
+```
+
+## 2.8.3
+
+It turned out gcc/6 is required for module `image-magick-7.0.5-9-gcc-5.4.0-d4lemcc`, coupling with C++11 via ~/.R/Makevars.
+
+```
+CC=gcc
+CXX=g++ -std=gnu++11
+PKG_CXXFLAGS= -std=c++11
+CFLAGS = -std=c99 -I/usr/include -g -O2 -Wall -pedantic -mtune=native -Wno-ignored-attributes -Wno-deprecated-declarations -Wno-parentheses -Wimplicit-function-declaration
+CXXFLAGS = -std=c++11
+```
+
+The setup is appropriate for module `ceuadmin/ImageMagick/7.1.1-31` with `src/Makevars` and a disabled `configure`,
+
+```
+PKG_CPPFLAGS=-fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -DMAGICKCORE_CHANNEL_MASK_DEPTH=32 -I/usr/local/Cluster-Apps/ceuadmin/ImageMagick/7.1.1-31/include/ImageMagick-7
+PKG_CXXFLAGS=$(C_VISIBILITY)
+PKG_LIBS=-L/usr/local/Cluster-Apps/ceuadmin/ImageMagick/7.1.1-31/lib -lm -lMagick++-7.Q16HDRI -lMagickWand-7.Q16HDRI -lMagickCore-7.Q16HDRI
+
+all:
+
+clean:
+	rm -f $(SHLIB) $(OBJECTS)
 ```

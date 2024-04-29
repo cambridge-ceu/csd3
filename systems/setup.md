@@ -268,6 +268,7 @@ All entries are ordered chronologically.
 ! ""          | libssh2/1.11.0-icelake           | Generic              |
 ! ""          | libssh/0.10.6-icelake            | Generic              |
 ! 2024-04-22  | peer/1.3                         | Generic[^peer]       |
+! 2024-04-29  | ImageMagick/7.1.1-31             | Generic[^ImageMagick]|
 
 \* CEU or approved users only.
 
@@ -285,7 +286,7 @@ They are generated from the following script,
 if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-p" ]; then
    module load ceuadmin/R
 else
-   module load ceuadmin/R/4.3.3-icelake
+   module load ceuadmin/R/4.4.0-icelake
 fi
 grep -e Generic ${CEUADMIN}/doc/setup.md | grep "^[|]" | awk '{print $4}' > generic.lst
 grep -e Genetics ${CEUADMIN}/doc/setup.md | grep "^[|]" | awk '{print $4}' > genetics.lst
@@ -904,3 +905,14 @@ Rscript -e '
 [^peer]: **peer**
 
     This is documented separately in the R section, <https://cambridge-ceu.github.io/csd3/applications/peer.html>.
+
+[^ImageMagick]: **ImageMagick**
+
+    ```bash
+    wget -qO- https://github.com/ImageMagick/ImageMagick/archive/refs/tags/7.1.1-31.tar.gz | \
+    tar xvfz -
+    cd ImageMagick-7.1.1-31/
+    ./configure --prefix=$CEUADMIN/ImageMagick/7.1.1-31
+    make
+    make install
+    ```

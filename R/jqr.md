@@ -72,7 +72,7 @@ rm jqr_*
 This mirrors efforts above.
 
 ```bash
-# download.packages("jqr",".")
+# Rscript -e 'download.packages("jqr",".")'
 tar xvfz jqr_1.3.3.tar.gz
 cd jqr
 mv configure configure.sav
