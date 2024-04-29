@@ -4,6 +4,8 @@ sort: 46
 
 # R
 
+<font color="red"><b>29/2/2024 Update</b></font>: R 4.3.3 has been installed on icelake.
+
 ## Installed modules
 
 From the console we check its availability with `module avail R` and see
