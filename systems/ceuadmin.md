@@ -110,7 +110,7 @@ java -jar ${PICARD_HOME}/picard.jar --help
 ```
 
 A full list of module subcommands is available with `module help` as detailed here for
-[3.2.9](https://linux.die.net/man/4/modulefile) -- CSD3 uses version 3.2.10 dated 2012-12-21. In particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of function (LoF)
+[3.2.9](https://linux.die.net/man/4/modulefile) -- cclake uses version 3.2.10 (2012-12-21) while icelake uses 4.5.2 (2020-07-30). In particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of function (LoF)
 annotation.
 
 Most software are available for all CSD3 users, only limited by software with excessive size / reference data -- which ideally will be
