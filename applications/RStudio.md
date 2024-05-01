@@ -4,7 +4,7 @@ sort: 47
 
 # RStudio
 
-Web: [https://www.rstudio.com/](https://www.rstudio.com/)
+Web: <https://www.rstudio.com/> ([IDE trouble-shooting](https://support.posit.co/hc/en-us/articles/200488508-RStudio-Desktop-IDE-Will-Not-Start))
 
 ## CSD3 modules
 
