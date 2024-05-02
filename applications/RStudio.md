@@ -6,6 +6,21 @@ sort: 47
 
 Web: <https://posit.co/> ([IDE trouble-shooting](https://support.posit.co/hc/en-us/articles/200488508-RStudio-Desktop-IDE-Will-Not-Start), [Posit Signed Builds](https://posit.co/code-signing/))
 
+## CSD3 modules
+
+We first check its availability,
+
+```bash
+module avail rstudio
+```
+
+so we could use
+
+```bash
+module load rstudio/1.1.383
+rstudio
+```
+
 <font color="red"><b>2/5/2024 Update</b></font>
 
 module `ceuadmin/rstudio/2024.04.0-735-icelake is now available`.
@@ -72,28 +87,6 @@ module load rstudio/1.3.1093
 ```
 
 and also see below[^legacy]. Another environmental variable is QT_QPA_PLATFORM_PLUGIN_PATH, which should point to the `plugins/platforms` directory when a particular QT module is loaded.
-
-## CSD3 modules
-
-We first check its availability,
-
-```bash
-module avail rstudio
-```
-
-and it obtains
-
-```
----------------------------------------------------------- /usr/local/Cluster-Config/modulefiles -----------------------------------------------------------
-rstudio/0.99/rstudio-0.99    rstudio/1.1.383              rstudio/1.3.1093             rstudio-server/2021.09.0-351
-```
-
-so we could use
-
-```bash
-module load rstudio/1.1.383
-rstudio
-```
 
 ## Building from source (incomplete)
 
