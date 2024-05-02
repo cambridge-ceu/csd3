@@ -6,6 +6,45 @@ sort: 47
 
 Web: <https://posit.co/> ([IDE trouble-shooting](https://support.posit.co/hc/en-us/articles/200488508-RStudio-Desktop-IDE-Will-Not-Start), [Posit Signed Builds](https://posit.co/code-signing/))
 
+<font color="red"><b>4/3/2024 Update</b></font>
+
+module `ceuadmin/rstudio/2023.12.1+402` is now available, so there is no prompt to update upon start.
+
+<font color="red"><b>22/3/2023 Update</b></font>
+
+module `ceuadmin/rstudio/2023.03.0+386` is now available; there is no need to load gcc/6 and ceuadmin/R/4.2.2. There is also `rstudio-default`.
+
+<font color="red"><b>31/12/2022 Update</b></font>
+
+module `ceuadmin/rstudio/2022.12.0+353` is now available. Since there are issues with libstdc++.so[^libstdc], it loads gcc/6 and ceuadmin/R/4.2.2.
+
+We now use a modified call. The original command is available as `rstudio-default`, with which we see error,
+
+```
+[102106:0323/213152.555182:ERROR:bus.cc(398)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
+```
+
+<font color="red"><b>27/11/2022 Update</b></font>`module load rstudio/1.3.1093` fails with error messages <font color="blue"><b> and a way forward is as follows,
+
+```bash
+# of primary importance
+export QT_QPA_PLATFORM=xcb
+export QT_PLUGIN_PATH=/usr/lib64/qt5/plugins
+# effective by default
+export QTDIR=/usr/lib64/qt-3.3
+export QTINC=/usr/lib64/qt-3.3/include
+export QTLIB=/usr/lib64/qt-3.3/lib
+export QT_GRAPHICSSYSTEM_CHECKED=1
+# gcc/6 is necessary here, since it is used to build R
+# We also take advantage of R's TeX-awareness
+module load gcc/6 texlive
+rstudio --no-sandbox
+```
+
+A fix is provided which is available from `module load ceuadmin/rstudio/1.3.1093`.
+
+The 2022.07.2+576 release is packaged and can be loaded with `module load ceuadmin/rstudio/2022.07.2+576; rstudio`.
+
 ## CSD3 modules
 
 We first check its availability,
@@ -51,45 +90,6 @@ module load rstudio/1.3.1093
 ```
 
 and also see below[^legacy]. Another environmental variable is QT_QPA_PLATFORM_PLUGIN_PATH, which should point to the `plugins/platforms` directory when a particular QT module is loaded.
-
-<font color="red"><b>27/11/2022 Update</b></font>`module load rstudio/1.3.1093` fails with error messages <font color="blue"><b> and a way forward is as follows,
-
-```bash
-# of primary importance
-export QT_QPA_PLATFORM=xcb
-export QT_PLUGIN_PATH=/usr/lib64/qt5/plugins
-# effective by default
-export QTDIR=/usr/lib64/qt-3.3
-export QTINC=/usr/lib64/qt-3.3/include
-export QTLIB=/usr/lib64/qt-3.3/lib
-export QT_GRAPHICSSYSTEM_CHECKED=1
-# gcc/6 is necessary here, since it is used to build R
-# We also take advantage of R's TeX-awareness
-module load gcc/6 texlive
-rstudio --no-sandbox
-```
-
-A fix is provided which is available from `module load ceuadmin/rstudio/1.3.1093`.
-
-The 2022.07.2+576 release is packaged and can be loaded with `module load ceuadmin/rstudio/2022.07.2+576; rstudio`.
-
-<font color="red"><b>31/12/2022 Update</b></font>
-
-module `ceuadmin/rstudio/2022.12.0+353` is now available. Since there are issues with libstdc++.so[^libstdc], it loads gcc/6 and ceuadmin/R/4.2.2.
-
-We now use a modified call. The original command is available as `rstudio-default`, with which we see error,
-
-```
-[102106:0323/213152.555182:ERROR:bus.cc(398)] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are "tcp" and on UNIX "unix")
-```
-
-<font color="red"><b>22/3/2023 Update</b></font>
-
-module `ceuadmin/rstudio/2023.03.0+386` is now available; there is no need to load gcc/6 and ceuadmin/R/4.2.2. There is also `rstudio-default`.
-
-<font color="red"><b>4/3/2024 Update</b></font>
-
-module `ceuadmin/rstudio/2023.12.1+402` is now available, so there is no prompt to update upon start.
 
 ## Building from source (incomplete)
 
