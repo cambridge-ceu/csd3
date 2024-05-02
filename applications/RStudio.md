@@ -23,7 +23,7 @@ rstudio
 
 <font color="red"><b>2/5/2024 Update</b></font>
 
-module `ceuadmin/rstudio/2024.04.0-735-icelake is now available`.
+module `ceuadmin/rstudio/2024.04.0-735-icelake` is now available.
 
 <font color="red"><b>4/3/2024 Update</b></font>
 
