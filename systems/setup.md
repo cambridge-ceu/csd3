@@ -801,7 +801,7 @@ Rscript -e '
 
     Moreover, we could also add some plugin data, <https://github.com/Ensembl/VEP_plugins>.
 
-    For the nearest gene, the Set::IntervalTree is required and is furnished as follows,
+    For the nearest gene, the `Set::IntervalTree` is required and is furnished as follows,
 
     ```bash
     cpanm -l /usr/local/Cluster-Apps/ceuadmin/ensembl-vep/111-icelake/Bio ExtUtils::CppGuess
