@@ -4,7 +4,7 @@ sort: 47
 
 # RStudio
 
-Web: <https://posit.co/> ([GitHub](https://github.com/rstudio/rstudio), [IDE trouble-shooting](https://support.posit.co/hc/en-us/articles/200488508-RStudio-Desktop-IDE-Will-Not-Start), [Latest builds](https://dailies.rstudio.com/), [Posit signed builds](https://posit.co/code-signing/))
+Web: <https://posit.co/> ([GitHub](https://github.com/rstudio/rstudio), [IDE trouble-shooting](https://support.posit.co/hc/en-us/articles/200488508-RStudio-Desktop-IDE-Will-Not-Start), [Latest builds](https://dailies.rstudio.com/rstudio/), [Posit signed builds](https://posit.co/code-signing/))
 
 ## CSD3 modules
 
