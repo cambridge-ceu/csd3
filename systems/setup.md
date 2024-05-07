@@ -786,7 +786,7 @@ Rscript -e '
 
 [^vep]: **ensembl-vep**
 
-    A test has been done as follows,
+    Note that a nextflow pipeline is now available from `nextflow/`. A test has been done as follows,
 
     ```bash
     export PERL5LIB=
@@ -816,6 +816,8 @@ Rscript -e '
     > 'o conf commit'
 
     to see `commit: wrote '/home/jhz22/.cpan/CPAN/MyConfig.pm'`. However, this is NOT the case here.
+
+    Our module has `PERL5LIB=$root/Bio:$root/Bio/lib/perl5/x86_64-linux-thread-multi/`.
 
     Our example data here is `442807041.vcf`,
 
