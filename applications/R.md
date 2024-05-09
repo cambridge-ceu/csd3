@@ -12,9 +12,9 @@ There are three ceuadmin modules with the latest R 4.4.0.
 
 Module        | gcc version| Packages  | Comments
 --------------|------------|-----------|------------------------------
-4.4.0         | gcc/6      | R/        | also called ceuadmin/R/latest
-4.4.0-gcc11   | gcc/11     | R-gcc11/  | Rfast, DRMR, etc. 
-4.4.0-icelake | gcc/8.5.0  | R-icelake/| 
+4.4.0         | 6.5.0      | R/        | also called ceuadmin/R/latest
+4.4.0-gcc11   | 11.2.0     | R-gcc11/  | Rfast, DRMR, etc. 
+4.4.0-icelake | 8.5.0      | R-icelake/| 
 
 The packages are at `/rds/project/jmmh2/rds-jmmh2-public_databases/software`
 
