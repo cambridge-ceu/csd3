@@ -22,7 +22,18 @@ rstudio/0.99/rstudio-0.99    rstudio/1.3.1093             rstudio-server/2023.06
 rstudio/1.1.383              rstudio-server/2021.09.0-351 rstudio-server/2023.09.1-494
 ```
 
-so we could use
+and
+
+```
+----------------------------- /usr/local/software/spack/spack-modules/icelake-20211027/linux-centos8-icelake -----------------------------
+rstudio/1.4.1717/gcc/intel-oneapi-mkl/dlvykrma
+
+------------------------------------------------- /usr/local/Cluster-Config/modulefiles --------------------------------------------------
+rstudio-server/2021.09.0-351  rstudio-server/2023.09.1-494  rstudio/1.1.383
+rstudio-server/2023.06.0-421  rstudio/0.99/rstudio-0.99     rstudio/1.3.1093
+```
+
+on cclake and icelake, respectively. The two desktop modules do not work on icelake, and on cclake we could use
 
 ```bash
 module load rstudio/1.1.383
@@ -33,11 +44,11 @@ This module actually works quite well with `ceuadmin/R/latest`, to be able to re
 
 <font color="red"><b>2/5/2024 Update</b></font>
 
-module `ceuadmin/rstudio/2024.04.0-735-icelake` is now available.
+module `ceuadmin/rstudio/2024.04.0-735-icelake` is now available, which can work with R/4.3.3 on CSD3.
 
 <font color="red"><b>4/3/2024 Update</b></font>
 
-module `ceuadmin/rstudio/2023.12.1+402` is now available, so there is no prompt to update upon start.
+module `ceuadmin/rstudio/2023.12.1+402` is now available, which can work with R/4.2.2 on CSD3.
 
 <font color="red"><b>22/3/2023 Update</b></font>
 
