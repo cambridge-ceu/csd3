@@ -16,7 +16,7 @@ Module        | gcc version| Packages  | Comments
 4.4.0-gcc11   | gcc/11     | R-gcc11/  | Rfast, DRMR, etc. 
 4.4.0-icelake | gcc/8.5.0  | R-icelake/| 
 
-The packages are at `/rds/project/jmmh2/rds-jmmh2-public_databases/`
+The packages are at `/rds/project/jmmh2/rds-jmmh2-public_databases/software`
 
 The latest versions on cclake and icelake are 4.2.2 and 4.3.3, respectively; they work with `rstudio/1.1.383` and `ceuadmin/rstudio/1.3.1093` on cclake and `ceuadmin/rstudio/2023.09.2-508-icelake` on icelake; to accommodate the available packages the `R_LIBS` environment variables are set in the module definition.
 
