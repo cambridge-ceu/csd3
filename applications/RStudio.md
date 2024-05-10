@@ -51,7 +51,7 @@ r <- qtl3dplotly(d,zmax=300)
 r
 ```
 
-in that it crashes on the last call tries to display `r`.
+in that it crashes on the last call trying to display `r`.
 
 Moreover, `rstudio/1.3.1093` cannot be loaded and a fix is available as `ceuadmin/rstudio/1.3.1093` which is also able to work with `ceuadmin/R/latest` but not WebGL.
 
