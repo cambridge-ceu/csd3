@@ -40,7 +40,20 @@ module load rstudio/1.1.383
 rstudio
 ```
 
-This module actually works quite well with `ceuadmin/R/latest`, to be able to render WebGL as required by R/plotly. However, `rstudio/1.3.1093` cannot be loaded and a fix is available as `ceuadmin/rstudio/1.3.1093` which is also able to work with `ceuadmin/R/latest` but not WebGL.
+This module actually works quite well with `ceuadmin/R/latest`, to be able to render WebGL as required by R/plotly. Nevertheless, the module fails the following test,
+
+```r
+suppressMessages(library(dplyr))
+INF <- "/rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/INF"
+d <- read.csv(file.path(INF,"work","INF1.merge.cis.vs.trans"),as.is=TRUE) %>%
+     mutate(log10p=-log10p)
+r <- qtl3dplotly(d,zmax=300)
+r
+```
+
+in that it crashes on the last call tries to display `r`.
+
+Moreover, `rstudio/1.3.1093` cannot be loaded and a fix is available as `ceuadmin/rstudio/1.3.1093` which is also able to work with `ceuadmin/R/latest` but not WebGL.
 
 <font color="red"><b>10/5/2024 Update</b></font>
 
