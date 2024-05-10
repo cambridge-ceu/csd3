@@ -44,7 +44,7 @@ This module actually works quite well with `ceuadmin/R/latest`, to be able to re
 
 <font color="red"><b>9/5/2024 Update</b></font>
 
-Module `2023.09.2-508-icelake/` works with `ceuadmin/R/4.4.0-icelake` which is significantly better than `rstudio/1.1.383`.
+Module `2023.09.2-508-icelake/` works with `ceuadmin/R/4.4.0-icelake` which is a significant update from `rstudio/1.1.383`.
 
 <font color="red"><b>2/5/2024 Update</b></font>
 
