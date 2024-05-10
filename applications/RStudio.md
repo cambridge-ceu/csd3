@@ -42,6 +42,15 @@ rstudio
 
 This module actually works quite well with `ceuadmin/R/latest`, to be able to render WebGL as required by R/plotly. However, `rstudio/1.3.1093` cannot be loaded and a fix is available as `ceuadmin/rstudio/1.3.1093` which is also able to work with `ceuadmin/R/latest` but not WebGL.
 
+<font color="red"><b>10/5/2024 Update</b></font>
+
+Module `2023.09.2-508/` is added which works with `ceuadmin/R/4.4.0-icelake`. We have `module avail ceuadmin/rstudio`
+
+```
+-------------------------------------------------- /usr/local/Cluster-Config/modulefiles --------------------------------------------------
+ceuadmin/rstudio/1.3.1093              ceuadmin/rstudio/2023.09.2-508         ceuadmin/rstudio/2023.09.2-508-icelake
+```
+
 <font color="red"><b>9/5/2024 Update</b></font>
 
 Module `2023.09.2-508-icelake/` works with `ceuadmin/R/4.4.0-icelake` which is a significant update from `rstudio/1.1.383`.
