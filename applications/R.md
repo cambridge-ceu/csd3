@@ -10,11 +10,13 @@ There is a dedicatws section here, <https://cambridge-ceu.github.io/csd3/systems
 
 There are three ceuadmin modules with the latest R 4.4.0.
 
-Module        | gcc version| Packages  | Comments
---------------|------------|-----------|------------------------------
-4.4.0         | 6.5.0      | R/        | also called ceuadmin/R/latest
-4.4.0-gcc11   | 11.2.0     | R-gcc11/  | Rfast, DRMR, etc. 
-4.4.0-icelake | 8.5.0      | R-icelake/| 
+Module        | gcc version| Packages  | R_LIBS<sup>+</sup>        | Comments
+--------------|------------|-----------|---------------------------|----------------------------
+4.4.0         | 6.5.0      | R/        | R:library:R-gcc11       | also called ceuadmin/R/latest
+4.4.0-gcc11   | 11.2.0     | R-gcc11/  | R-gcc11:library:R       | Rfast, DRMR, etc. 
+4.4.0-icelake | 8.5.0      | R-icelake/| R-icelake:library:R
+
+<sup>+</sup> If there is a user-defined R_LIBS, it will have priority over all others. The `library` refers to the path of R recommended packages
 
 The packages are at `/rds/project/jmmh2/rds-jmmh2-public_databases/software`
 
