@@ -16,7 +16,7 @@ Module        | gcc version| Packages  | R_LIBS<sup>+</sup>        | Comments
 4.4.0-gcc11   | 11.2.0     | R-gcc11/  | R-gcc11:library:R       | Rfast, DRMR, etc. 
 4.4.0-icelake | 8.5.0      | R-icelake/| R-icelake:library:R
 
-<sup>+</sup> If there is a user-defined R_LIBS, it will have priority over all others. The `library` refers to the path of R recommended packages
+<sup>+</sup> Priority will be given to a user-defined R_LIBS, or `/home/$USER/R`. The `library` refers to the path of R recommended packages
 
 The packages are at `/rds/project/jmmh2/rds-jmmh2-public_databases/software`
 
