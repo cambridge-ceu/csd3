@@ -341,7 +341,7 @@ module avail rstudio
 
 e.g., `module load r-3.6.0-gcc-5.4.0-bzuuksv rstudio/1.1.383`.
 
-For information about Bioconductor installation, see [https://bioconductor.org/install/](https://bioconductor.org/install/).
+For information about Bioconductor installation, see <https://bioconductor.org/install/>.
 
 ### Package installation
 
