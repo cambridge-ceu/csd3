@@ -57,3 +57,12 @@ We now can furnish the installation with
 ```bash
 R CMD INSTALL nloptr
 ```
+
+## R/nloptr 2.0.4
+
+It proceeds smoothly as follows,
+
+```bash
+module load ceuadmin/NLopt/2.7.1
+Rscript -e 'remotes::install_github("astamm/nloptr")'
+```
