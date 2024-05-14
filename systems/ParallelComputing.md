@@ -53,6 +53,8 @@ Note that the two options are preceded with `parallel --record-env` and `env_par
 
 Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).
 
+CSD3 User guide, <https://docs.hpc.cam.ac.uk/hpc/user-guide/batch.html>
+
 Location at csd3: `/usr/local/Cluster-Docs/SLURM/`.
 
 The directory `/usr/local/software/slurm/current/bin/` contains all the executables..
@@ -74,6 +76,8 @@ scontrol show partition
 The skylakes have been decommissioned, [https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html) and [https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html). For Ampere GPU, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html).
 
 ### An interactive job
+
+CSD3 user guide for an interactive session, <https://docs.hpc.cam.ac.uk/hpc/user-guide/interactive.html>
 
 ```bash
 sintr -A MYPROJECT -p skylake -N2 -n2 -t 1:0:0 --qos=INTR
