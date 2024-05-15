@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=225$$, $$\lambda=3$$.
+noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=226$$, $$\lambda=3$$.
 
 ## Entries
 
@@ -61,17 +61,17 @@ The current list is as follows,
 [173] "qt"                    "qtcreator"             "QTLtools"              "quarto"
 [177] "quicktest"             "R"                     "raremetal"             "rclone"
 [181] "readline"              "regenie"               "regtools"              "RHHsoftware"
-[185] "rst2pdf"               "rstudio"               "ruby"                  "rust"
-[189] "samtools"              "Scala"                 "shapeit"               "singularity"
-[193] "SMR"                   "snakemake"             "SNP2HLA"               "snptest"
-[197] "spread-sheet-widget"   "sqlite"                "sra-tools"             "ssw"
-[201] "STAR"                  "stata"                 "SurvivalAnalysis"      "SurvivalKit"
-[205] "Swift"                 "tabix"                 "tatami"                "thunderbird"
-[209] "tidy"                  "trinculo"              "trousers"              "Typora"
-[213] "unbound"               "vala"                  "VarScan"               "vcftools"
-[217] "VEGAS2"                "verifyBamID"           "VSCode"                "VSCodium"
-[221] "vte"                   "xpdf"                  "yaml-cpp"              "Zotero"
-[225] "zstd"
+[185] "rst2pdf"               "rstudio"               "rtmpdump"              "ruby"
+[189] "rust"                  "samtools"              "Scala"                 "shapeit"
+[193] "singularity"           "SMR"                   "snakemake"             "SNP2HLA"
+[197] "snptest"               "spread-sheet-widget"   "sqlite"                "sra-tools"
+[201] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"
+[205] "SurvivalKit"           "Swift"                 "tabix"                 "tatami"
+[209] "thunderbird"           "tidy"                  "trinculo"              "trousers"
+[213] "Typora"                "unbound"               "vala"                  "VarScan"
+[217] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
+[221] "VSCodium"              "vte"                   "xpdf"                  "yaml-cpp"
+[225] "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.

@@ -244,31 +244,33 @@ All entries are ordered chronologically.
 | ""          | deno/1.40.2-icelake              | Generic              |
 | ""          | quarto/1.4.549                   | Generic              |
 | 2024-02-29  | R/4.3.3                          | Generic[^R]          |
-! 2024-03-01  | glpk/5.0                         | Generic              |
-! 2024-03-02  | glpk/4.57                        | Generic              |
-! 2024-03-04  | rstudio/2023.12.1-402            | Generic              |
-! 2024-03-05  | GitKraken/9.12.0                 | Generic[^gitkraken]  |
-! ""          | automake/1.16.5                  | Generic[^automake]   |
-! ""          | pspp/2.0.0                       | Generic              |
-! 2024-03-09  | Scala/3.3.3                      | Generic              |
-! 2024-03-10  | fpc/3.2.2                        | Generic              |
-! ""          | Swift/5.10                       | Generic              |
-! ""          | pulsar/1.114.0                   | Generic              |
-! ""          | VSCodium/1.87.1.24068            | Generic              |
-! 2024-03-27  | openssl/3.2.1-icelake            | Generic[^openssl]    |
-! ""          | openssh/9.7p1-icelake            | Generic[^openssh]    |
-! 2024-03-31  | ensembl-vep/111-icelake          | Genetics[^vep]       |
-! 2024-04-01  | json-c/0.17-20230812-icelake     | Generic[^json-c]     |
-! ""          | device-mapper/1.02.28-icelake    | Generic              |
-! ""          | LVM2/2.03.23-icelake             | Generic[^LVM2]       |
-! 2024-04-02  | cryptsetup/2.7.1-icelake         | Generic[^cryptsetup] |
-! 2024-04-05  | krb5/1.21.2-icelake              | Generic[^krb5]       |
-! ""          | git/1.44.0-icelake               | Generic[^git]        |
-! ""          | openssl/1.1.1b-icelake           | Generic              |
-! ""          | libssh2/1.11.0-icelake           | Generic              |
-! ""          | libssh/0.10.6-icelake            | Generic              |
-! 2024-04-22  | peer/1.3                         | Generic[^peer]       |
-! 2024-04-29  | ImageMagick/7.1.1-31             | Generic[^ImageMagick]|
+| 2024-03-01  | glpk/5.0                         | Generic              |
+| 2024-03-02  | glpk/4.57                        | Generic              |
+| 2024-03-04  | rstudio/2023.12.1-402            | Generic              |
+| 2024-03-05  | GitKraken/9.12.0                 | Generic[^gitkraken]  |
+| ""          | automake/1.16.5                  | Generic[^automake]   |
+| ""          | pspp/2.0.0                       | Generic              |
+| 2024-03-09  | Scala/3.3.3                      | Generic              |
+| 2024-03-10  | fpc/3.2.2                        | Generic              |
+| ""          | Swift/5.10                       | Generic              |
+| ""          | pulsar/1.114.0                   | Generic              |
+| ""          | VSCodium/1.87.1.24068            | Generic              |
+| 2024-03-27  | openssl/3.2.1-icelake            | Generic[^openssl]    |
+| ""          | openssh/9.7p1-icelake            | Generic[^openssh]    |
+| 2024-03-31  | ensembl-vep/111-icelake          | Genetics[^vep]       |
+| 2024-04-01  | json-c/0.17-20230812-icelake     | Generic[^json-c]     |
+| ""          | device-mapper/1.02.28-icelake    | Generic              |
+| ""          | LVM2/2.03.23-icelake             | Generic[^LVM2]       |
+| 2024-04-02  | cryptsetup/2.7.1-icelake         | Generic[^cryptsetup] |
+| 2024-04-05  | krb5/1.21.2-icelake              | Generic[^krb5]       |
+| ""          | git/1.44.0-icelake               | Generic[^git]        |
+| ""          | openssl/1.1.1b-icelake           | Generic              |
+| ""          | libssh2/1.11.0-icelake           | Generic              |
+| ""          | libssh/0.10.6-icelake            | Generic              |
+| 2024-04-22  | peer/1.3                         | Generic[^peer]       |
+| 2024-04-29  | ImageMagick/7.1.1-31             | Generic[^ImageMagick]|
+| 2024-05-15  | rtmpdump/2.3                     | Generic[^rtmnpdump]  |
+
 
 \* CEU or approved users only.
 
@@ -917,4 +919,19 @@ Rscript -e '
     ./configure --prefix=$CEUADMIN/ImageMagick/7.1.1-31
     make
     make install
+    ```
+[^rtmpdump]: **rtmpdump**
+
+    It is necessary for `RCurl 1.98-1.14`. With `curl-7.63.0-gcc-5.4.0-4uswlql` we could also install `rtracklayer 1.94.0`.
+
+    ```bash
+    wget -qO- https://rtmpdump.mplayerhq.hu/download/rtmpdump-2.3.tgz |\
+    tar xvfz -
+    cd rtmpdump-2.3
+    sed -i 's|/usr/local|/usr/local/Cluster-Apps/ceuadmin/rtmpdump/2.3|' Makefile
+    sed -i 's|/usr/local|/usr/local/Cluster-Apps/ceuadmin/rtmpdump/2.3|' librtmp/Makefile
+    make
+    make install
+    Rscript -e 'install.packages("RCurl")'
+    Rscript -e 'BiocManager::install("rtracklayer")'
     ```
