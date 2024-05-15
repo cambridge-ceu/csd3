@@ -6,7 +6,7 @@ sort: 29
 
 Under cclake, modules `ceuadmin/rtmpdump/2.3` and `curl-7.63.0-gcc-5.4.0-4uswlql` are both required, since `librtmp.so.0` is needed for `RCurl 1.98-1.14` and the latter for `rtracklayer 1.64.0`.
 
-Quoting from <https://cambridge-ceu.github.io/csd3/systems/setup.html>, the details are as follows,
+Quoting from <https://cambridge-ceu.github.io/csd3/systems/setup.html#fn:rtmpdump>, the details are as follows,
 
 ```bash
 wget -qO- https://rtmpdump.mplayerhq.hu/download/rtmpdump-2.3.tgz |\
