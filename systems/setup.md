@@ -922,7 +922,7 @@ Rscript -e '
     ```
 [^rtmpdump]: **rtmpdump**
 
-    It is necessary for `RCurl 1.98-1.14`. With `curl-7.63.0-gcc-5.4.0-4uswlql` we could also install `rtracklayer 1.94.0`.
+    It is necessary for `RCurl 1.98-1.14`. With `curl-7.63.0-gcc-5.4.0-4uswlql` we could also install `rtracklayer 1.64.0`.
 
     ```bash
     wget -qO- https://rtmpdump.mplayerhq.hu/download/rtmpdump-2.3.tgz |\
