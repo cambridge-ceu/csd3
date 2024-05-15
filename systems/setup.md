@@ -269,7 +269,7 @@ All entries are ordered chronologically.
 | ""          | libssh/0.10.6-icelake            | Generic              |
 | 2024-04-22  | peer/1.3                         | Generic[^peer]       |
 | 2024-04-29  | ImageMagick/7.1.1-31             | Generic[^ImageMagick]|
-| 2024-05-15  | rtmpdump/2.3                     | Generic[^rtmnpdump]  |
+| 2024-05-15  | rtmpdump/2.3                     | Generic[^rtmpdump]   |
 
 
 \* CEU or approved users only.
