@@ -188,8 +188,24 @@ find /usr -iname "*libGL.so*" -exec ls -l {} \;
 find /usr -iname "*libGLX*.so*" -exec ls -l {} \;
 ```
 
-[^cpu]: login-skylake.hpc.cam.ac.uk, namely login-e-[9-16], is removed on 25-26/7/2023 and is replaced with `login-cascadelake`.
-[^cclake]: see footnote[^cpu] above and some capacity is due to retire after 30 June 2024.
-[^gpu]: Currently, it is login-e-[1-4] (login.hpc), login-e-1 is also the license server. The so-called 3D viz/startgfx nodes are login-gpu-e-[1-7].
-[^icelake]: Applications such as R/nloptr package require to be recompiled. In this case, we run `download.packages("nloptr",".")` inside `R` on an Internet-enabled node and compile the package with `R CMD INSTALL nloptr_1.2.2.3.tar.gz`, say.
-[^autologin]: This appears subject to the system setup.
+[^cpu]: **cpu**
+
+    login-skylake.hpc.cam.ac.uk, namely login-e-[9-16], is removed on 25-26/7/2023 and is replaced with `login-cascadelake`.
+
+[^cclake]: **cclake**
+
+    see footnote[^cpu] above and some capacity is due to retire after 30 June 2024.
+
+[^gpu]: **gpu**
+
+    Currently, it is login-e-[1-4] (login.hpc), login-e-1 is also the license server. The so-called 3D viz/startgfx nodes are login-gpu-e-[1-7].
+
+[^icelake]: **icelake**
+
+    Applications such as R/nloptr package require to be recompiled. In this case, we run `download.packages("nloptr",".")` inside `R` on an Internet-enabled node and compile the package with `R CMD INSTALL nloptr_1.2.2.3.tar.gz`, say.
+
+    On icelake, we could emulate lynx-style web browser with syntax such as `xfce4-terminal -x /usr/bin/links https://www.bbc.co.uk &`.
+
+[^autologin]: **autologin**
+
+    This appears subject to the system setup.
