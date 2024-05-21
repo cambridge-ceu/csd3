@@ -36,7 +36,7 @@ and can switch to a CPU environment with
 
 ```bash
 module purge
-module load rhel7/default-peta4
+module load rhel7/default-ccl
 ```
 
 Our module list is now
@@ -55,6 +55,13 @@ Finally, with icelake we have
 Currently Loaded Modulefiles:
  1) dot           3) singularity/current   5) cuda/11.4      7) intel-oneapi-compilers/2022.1.0/gcc/b6zld2mz   9) rhel8/default-icl
  2) rhel8/slurm   4) rhel8/global          6) vgl/2.5.1/64   8) intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
+```
+
+and can be checked with
+
+```
+module purge
+module load rhel8/default-icl
 ```
 
 The quota is more readily seen as well,
