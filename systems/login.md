@@ -53,9 +53,8 @@ Finally, with icelake we have
 
 ```
 Currently Loaded Modulefiles:
- 1) dot                   4) rhel8/global             7) intel/mkl/2020.2         10) intel/libs/tbb/2020.2   13) intel/bundles/complib/2020.2
- 2) rhel8/slurm           5) cuda/11.4                8) intel/impi/2020.2/intel  11) intel/libs/ipp/2020.2   14) rhel8/default-icl
- 3) singularity/current   6) intel/compilers/2020.2   9) intel/libs/idb/2020.2    12) intel/libs/daal/2020.2
+ 1) dot           3) singularity/current   5) cuda/11.4      7) intel-oneapi-compilers/2022.1.0/gcc/b6zld2mz   9) rhel8/default-icl
+ 2) rhel8/slurm   4) rhel8/global          6) vgl/2.5.1/64   8) intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
 ```
 
 The quota is more readily seen as well,
