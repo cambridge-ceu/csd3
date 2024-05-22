@@ -270,6 +270,7 @@ All entries are ordered chronologically.
 | 2024-04-22  | peer/1.3                         | Generic[^peer]       |
 | 2024-04-29  | ImageMagick/7.1.1-31             | Generic[^ImageMagick]|
 | 2024-05-15  | rtmpdump/2.3                     | Generic[^rtmpdump]   |
+| 2024-05-22  | spyder/5.5.4                     | Generic[^spyder]     |
 
 
 \* CEU or approved users only.
@@ -935,4 +936,12 @@ Rscript -e '
     make install
     Rscript -e 'install.packages("RCurl")'
     Rscript -e 'BiocManager::install("rtracklayer")'
+    ```
+
+[^spyder]: **spyder**
+
+    ```bash
+    cd /rds/project/jmmh2/rds-jmmh2-public_databases/software
+    wget https://github.com/spyder-ide/spyder/releases/download/v5.5.4/EXPERIMENTAL-Spyder-5.5.4-Linux-x86_64.sh
+    bash EXPERIMENTAL-Spyder-5.5.4-Linux-x86_64.sh
     ```
