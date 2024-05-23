@@ -10,13 +10,14 @@ To download the latest utilitiess, try `rsync -aP rsync://hgdownload.soe.ucsc.ed
 
 The most notable is liftOver from UCSC here, [https://genome.ucsc.edu/cgi-bin/hgLiftOver](https://genome.ucsc.edu/cgi-bin/hgLiftOver).
 
-## bigWigToBedGraph
+## bigWig utilities
 
 Description, <https://genome.ucsc.edu/goldenPath/help/bigWig.html>
 
 This is used to view bigWig file, e.g.,
 
 ```bash
+bigWigInfo LINSIGHT.bw
 bigWigToBedGraph -chrom=chr1 -start=11200 -end=20000 LINSIGHT.bw chr1:11200-20000.txt
 ```
 
