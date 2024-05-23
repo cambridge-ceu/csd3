@@ -10,7 +10,19 @@ To download the latest utilitiess, try `rsync -aP rsync://hgdownload.soe.ucsc.ed
 
 The most notable is liftOver from UCSC here, [https://genome.ucsc.edu/cgi-bin/hgLiftOver](https://genome.ucsc.edu/cgi-bin/hgLiftOver).
 
-## A toy example
+## bigWigToBedGraph
+
+Description, <https://genome.ucsc.edu/goldenPath/help/bigWig.html>
+
+This is used to view bigWig file, e.g.,
+
+```bash
+bigWigToBedGraph -chrom=chr1 -start=11200 -end=20000 LINSIGHT.bw chr1:11200-20000.txt
+```
+
+## liftOver
+
+### A toy example
 
 Suppose we have `r6-b38-A2.bed`,
 
@@ -47,7 +59,7 @@ chr1	801535	801536	1:866156:T:G
 chr1	801660	801661	1:866281:C:T
 ```
 
-## A real application
+### A real application
 
 The first few lines of our input file, `gtex_cis_etls_alltissues_b38.gz`, are listed as follows,
 
