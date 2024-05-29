@@ -14,6 +14,7 @@ Go to **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://self
 hpc-work -> /rds/user/$USER/hpc-work/
 genetics_resources -> /rds/project/jmmh2/rds-jmmh2-genetics_resources/
 legacy_projects -> /rds/project/jmmh2/rds-jmmh2-legacy_projects/
+post_qc_data -> /rds/project/jmmh2/rds-jmmh2-post_qc_data/
 pre_qc_data -> /rds/project/jmmh2/rds-jmmh2-pre_qc_data/
 projects -> /rds/project/jmmh2/rds-jmmh2-projects/
 public_databases -> /rds/project/jmmh2/rds-jmmh2-public_databases/
@@ -30,6 +31,19 @@ for d in $(ls $rt | xargs -l basename | sed 's/rds-jmmh2-//g'); do ln -sf $rt/rd
 ```
 
 Note to list the directories you need postfix them with '/'.
+
+On 7/5/2024, the symbolic links to the new location of data storage are as follows,
+
+```
+rds-jmmh2-genetics_resources -> /rds/project/rds-5WRcpwFaaWc/
+rds-jmmh2-hes_data -> /rds/project/rds-fsbcZmj92Ko/
+rds-jmmh2-legacy_projects -> /rds/project/rds-iH9xqwiahLo/
+rds-jmmh2-post_qc_data -> /rds/project/rds-pNR2rM6BWWA/
+rds-jmmh2-pre_qc_data -> /rds/project/rds-MkfvQMuSUxk/
+rds-jmmh2-projects -> /rds/project/rds-zuZwCZMsS0w/
+rds-jmmh2-public_databases -> /rds/project/rds-4o5vpvAowP0/
+rds-jmmh2-results -> /rds/project/rds-C1Ph08tkaOA/
+```
 
 ## Data managers
 
