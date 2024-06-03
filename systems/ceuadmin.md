@@ -118,7 +118,7 @@ available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmm
 largely be seen as sources which are used to build the reoository given above.
 
 CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `phenoscanner`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom`
-linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,476 as of 31/5/2024)
+linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,478 as of 3/6/2024)
 is linked with the latest R distribution, 4.4.0; there are also 16 packages under 4.4.0-gcc11 as well as 20 packages under 4.4.0-icelake. The small number of add-on packages have problems either at the compiling stage (because of higher version of gcc is required) or loading (i.e., compiled under 4.4.0 for cclake but cannot be used under icelake).
 
 For CEU users, it is easy to point to them, e.g.,
