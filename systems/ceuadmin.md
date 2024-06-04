@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=227$$, $$\lambda=3$$.
+noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=228$$, $$\lambda=3$$.
 
 ## Entries
 
@@ -57,21 +57,21 @@ The current list is as follows,
 [157] "PhySO"                 "picard"                "plink"                 "plink-bgi"
 [161] "plinkseq"              "PoGo"                  "polyphen"              "poppler"
 [165] "popt"                  "proj"                  "PRSice"                "pspp"
-[169] "pulsar"                "PWCoCo"                "qctool"                "qpdf"
-[173] "qt"                    "qtcreator"             "QTLtools"              "quarto"
-[177] "quicktest"             "R"                     "raremetal"             "rclone"
-[181] "readline"              "regenie"               "regtools"              "RHHsoftware"
-[185] "rst2pdf"               "rstudio"               "rtmpdump"              "ruby"
-[189] "rust"                  "samtools"              "Scala"                 "shapeit"
-[193] "singularity"           "SMR"                   "snakemake"             "SNP2HLA"
-[197] "snptest"               "spread-sheet-widget"   "spyder"                "sqlite"
-[201] "sra-tools"             "ssw"                   "STAR"                  "stata"
-[205] "SurvivalAnalysis"      "SurvivalKit"           "Swift"                 "tabix"
-[209] "tatami"                "thunderbird"           "tidy"                  "trinculo"
-[213] "trousers"              "Typora"                "unbound"               "vala"
-[217] "VarScan"               "vcftools"              "VEGAS2"                "verifyBamID"
-[221] "VSCode"                "VSCodium"              "vte"                   "xpdf"
-[225] "yaml-cpp"              "Zotero"                "zstd"
+[169] "pulsar"                "PWCoCo"                "pwiz"                  "qctool"
+[173] "qpdf"                  "qt"                    "qtcreator"             "QTLtools"
+[177] "quarto"                "quicktest"             "R"                     "raremetal"
+[181] "rclone"                "readline"              "regenie"               "regtools"
+[185] "RHHsoftware"           "rst2pdf"               "rstudio"               "rtmpdump"
+[189] "ruby"                  "rust"                  "samtools"              "Scala"
+[193] "shapeit"               "singularity"           "SMR"                   "snakemake"
+[197] "SNP2HLA"               "snptest"               "spread-sheet-widget"   "spyder"
+[201] "sqlite"                "sra-tools"             "ssw"                   "STAR"
+[205] "stata"                 "SurvivalAnalysis"      "SurvivalKit"           "Swift"
+[209] "tabix"                 "tatami"                "thunderbird"           "tidy"
+[213] "trinculo"              "trousers"              "Typora"                "unbound"
+[217] "vala"                  "VarScan"               "vcftools"              "VEGAS2"
+[221] "verifyBamID"           "VSCode"                "VSCodium"              "vte"
+[225] "xpdf"                  "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.

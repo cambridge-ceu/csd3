@@ -271,7 +271,7 @@ All entries are ordered chronologically.
 | 2024-04-29  | ImageMagick/7.1.1-31             | Generic[^ImageMagick]|
 | 2024-05-15  | rtmpdump/2.3                     | Generic[^rtmpdump]   |
 | 2024-05-22  | spyder/5.5.4                     | Generic[^spyder]     |
-
+| 2024-06-04  | pwiz/3_0_24156_80747de           | Genetics             |
 
 \* CEU or approved users only.
 
