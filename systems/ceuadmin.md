@@ -320,6 +320,9 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2024-01-24 | fraposa_pgsc/0.1.0          | Genetics            |
     | ""         | pgsc_calc/2.0.0-alpha.4     | Genetics            |
     | 2024-04-22 | peer/1.3                    | Genetics            |
+    | 2024-06-04 | pwiz/3_0_24156_80747de      | Genetics            |
+    | 2024-06-09 | crux/4.2                    | Genetics            |
+    | ""         | DIA-NN/1.8.1                | Generics            |
 
     \* CEU or approved users only.
 
