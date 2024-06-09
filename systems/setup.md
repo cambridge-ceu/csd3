@@ -273,7 +273,8 @@ All entries are ordered chronologically.
 | 2024-05-22  | spyder/5.5.4                     | Generic[^spyder]     |
 | 2024-06-04  | pwiz/3_0_24156_80747de           | Genetics             |
 | 2024-06-09  | crux/4.2                         | Genetics[^crux]      |
-| ""          | p7zip-zstd/17.05                 | Generic[^p7zip-zstd  |
+| ""          | p7zip-zstd/17.05                 | Generic[^p7zip-zstd] |
+| ""          | DIA-NN/1.8.1                     | Generics             |
 
 \* CEU or approved users only.
 
