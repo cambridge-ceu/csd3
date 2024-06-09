@@ -272,6 +272,8 @@ All entries are ordered chronologically.
 | 2024-05-15  | rtmpdump/2.3                     | Generic[^rtmpdump]   |
 | 2024-05-22  | spyder/5.5.4                     | Generic[^spyder]     |
 | 2024-06-04  | pwiz/3_0_24156_80747de           | Genetics             |
+| 2024-06-09  | crux/4.2                         | Genetics[^crux]      |
+| ""          | p7zip-zstd/17.05                 | Generic[^p7zip-zstd  |
 
 \* CEU or approved users only.
 
@@ -945,3 +947,13 @@ Rscript -e '
     wget https://github.com/spyder-ide/spyder/releases/download/v5.5.4/EXPERIMENTAL-Spyder-5.5.4-Linux-x86_64.sh
     bash EXPERIMENTAL-Spyder-5.5.4-Linux-x86_64.sh
     ```
+
+[^%cruz]: **cruz""
+
+    The binary provided requires GLIBC_2.29 which is not avaiable yet problematic with ceuadmin/glibc/2.29-icelake.
+
+    Under CentOS 7, it cannot access `https://noble.gs.washington.edu/crux-downloads/pwiz-src-3_0_24044_fd6604f.tar.bz2`.
+
+[^p7zip-zstd]: **p7zip-zstd**
+
+    A simple `make` is sufficient but it is necessary to implement a minor revision of `install.sh`, line 19, so that `DEST_HOME=/usr/local/Cluster-Apps/ceuadmin/p7zip-zstd/17.05`. 
