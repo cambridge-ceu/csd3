@@ -967,7 +967,7 @@ They are generated from script [setup.sh](setup.sh),
 
     A simple `make` is sufficient but it is necessary to implement a minor revision of `install.sh`, line 19, so that `DEST_HOME=/usr/local/Cluster-Apps/ceuadmin/p7zip-zstd/17.05`. 
 
-[^wine]: **wine""
+[^wine]: **wine**
 
     ```bash
     module load ceuadmin/krb5/1.21.2-icelake
