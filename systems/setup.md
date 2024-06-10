@@ -276,8 +276,8 @@ All entries are ordered chronologically.
 | ""          | p7zip-zstd/17.05                 | Generic[^p7zip-zstd] |
 | ""          | DIA-NN/1.8.1                     | Generics             |
 | 2024-06-10  | patchelf/0.18.0                  | Generic              |
-| ""          | wine/8.21                        | Generic[^wine]       |
 | ""          | boost/1.76.0                     | Generic[^boost]      |
+| ""          | wine/8.21                        | Generic[^wine]       |
 
 \* CEU or approved users only.
 
@@ -911,7 +911,7 @@ They are generated from script [setup.sh](setup.sh),
     bash EXPERIMENTAL-Spyder-5.5.4-Linux-x86_64.sh
     ```
 
-[^crux]: **cruz**
+[^crux]: **crux**
 
     The binary provided requires GLIBC_2.29 which is not avaiable yet problematic with ceuadmin/glibc/2.29-icelake.
 
@@ -957,6 +957,7 @@ They are generated from script [setup.sh](setup.sh),
 [^boost]: **boost**
 
     ```bash
+    module load python/3.8.11/gcc/pqdmnzmw
     wget -qO- http://sourceforge.net/projects/boost/files/boost/1.76.0/boost_1_76_0.tar.gz | \
     tar xvzf -
     cd boost_1_76_0
