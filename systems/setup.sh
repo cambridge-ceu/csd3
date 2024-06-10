@@ -6,6 +6,8 @@ else
    module load ceuadmin/R/4.4.0-icelake
 fi
 export csd3=~/cambridge-ceu/csd3
+cd ${CEUADMIN}
+rm *.png
 grep -e Generic ${csd3}/systems/setup.md | grep "^[|]" | awk '{print $4}' > generic.lst
 grep -e Genetics ${csd3}/systems/setup.md | grep "^[|]" | awk '{print $4}' > genetics.lst
 grep -e Genetics -e Generic ${csd3}/systems/setup.md | grep "^[|]" | awk '{print $4}' | wc -l
@@ -39,3 +41,4 @@ Rscript -e '
   wc(modules,"ceuadmin.png")
   print(modules)
 '
+mv *.png ${csd3}/systems

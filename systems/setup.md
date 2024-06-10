@@ -277,6 +277,7 @@ All entries are ordered chronologically.
 | ""          | DIA-NN/1.8.1                     | Generics             |
 | 2024-06-10  | patchelf/0.18.0                  | Generic              |
 | ""          | wine/8.21                        | Generic[^wine]       |
+| ""          | boost/1.76.0                     | Generic[^boost]      |
 
 \* CEU or approved users only.
 
@@ -921,6 +922,8 @@ They are generated from script [setup.sh](setup.sh),
     export PERL5LIB=
     module load ceuadmin/openssh/9.7p1-icelake \
                 ceuadmin/openssl/3.2.1-icelake \
+                ceuadmin/libssh/0.10.6-icelake \
+                ceuadmin/boost/1.76.0 \
                 ceuadmin/krb5/1.21.2-icelake ceuadmin/p7zip-zstd/17.05
     cmake .
     make
@@ -949,19 +952,19 @@ They are generated from script [setup.sh](setup.sh),
 
     See `build/src/ProteoWizard/libraries`. Under CentOS 7, it cannot access `https://noble.gs.washington.edu/crux-downloads/pwiz-src-3_0_24044_fd6604f.tar.bz2`.
 
-    There is a FAQ section from PrteoWizard (<https://raw.githubusercontent.com/ProteoWizard/pwiz/981c7c70bfed46a145931dbea4da9e2edde72cf5/scripts/autotools/FAQ>) on boost which is copied here,
+    There is a FAQ section from PrteoWizard (<https://raw.githubusercontent.com/ProteoWizard/pwiz/981c7c70bfed46a145931dbea4da9e2edde72cf5/scripts/autotools/FAQ>),
+
+[^boost]: **boost**
 
     ```bash
-    cd /usr/local/src/
-    wget http://sourceforge.net/projects/boost/files/boost/1.49.0/boost_1_49_0.tar.gz/download
-    tar xvzf boost_1_49_0.tar.gz
-    cd boost_1_49_0
+    wget -qO- http://sourceforge.net/projects/boost/files/boost/1.76.0/boost_1_76_0.tar.gz | \
+    tar xvzf -
+    cd boost_1_76_0
     ./bootstrap.sh
+    ./b2 --prefix=$CEUADMIN/boost/1.76.0 install
     ./bjam --with-regex --with-filesystem --with-iostreams --with-thread --with-program_options --with-serialization --with-system --with-date_time install
-    export BOOST_ROOT=/usr/local/src/boost_1_49_0
+    export BOOST_ROOT=/usr/local/src/boost_1_76_0
     ```
-
-     where the relevant version here is 1_76_0.
 
 [^p7zip-zstd]: **p7zip-zstd**
 
