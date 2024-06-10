@@ -275,6 +275,8 @@ All entries are ordered chronologically.
 | 2024-06-09  | crux/4.2                         | Genetics[^crux]      |
 | ""          | p7zip-zstd/17.05                 | Generic[^p7zip-zstd] |
 | ""          | DIA-NN/1.8.1                     | Generics             |
+| 2024-06-10  | patchelf/0.18.0                  | Generic              |
+| ""          | wine/8.21                        | Generic[^wine]       |
 
 \* CEU or approved users only.
 
@@ -286,48 +288,7 @@ Three aspects are notable,
 
 ## Word cloud diagrams
 
-They are generated from the following script,
-
-```bash
-if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-p" ]; then
-   module load ceuadmin/R
-else
-   module load ceuadmin/R/4.4.0-icelake
-fi
-grep -e Generic ${CEUADMIN}/doc/setup.md | grep "^[|]" | awk '{print $4}' > generic.lst
-grep -e Genetics ${CEUADMIN}/doc/setup.md | grep "^[|]" | awk '{print $4}' > genetics.lst
-grep -e Genetics -e Generic ${CEUADMIN}/doc/setup.md | grep "^[|]" | awk '{print $4}' | wc -l
-rm -f ceuadmin.png generic.png genetics.png
-Rscript -e '
-  library(RColorBrewer)
-  library(dplyr)
-  library(tm)
-  library(wordcloud)
-  options(width=110);
-  ceuadmin <- Sys.getenv("CEUADMIN")
-  wc <- function(modules,png)
-  {
-    print(length(modules))
-    docs <- Corpus(VectorSource(modules))
-    m <- TermDocumentMatrix(docs) %>%
-         as.matrix()
-    words <- sort(rowSums(m),decreasing=TRUE)
-    freq <- rpois(length(words),lambda=3)
-    png(png,,res=300,height=10,width=10,units="in")
-    wordcloud(names(words), freq, min.freq = 1, max.words=200, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
-    dev.off()
-  }
-  set.seed(1234321)
-  generic <- scan("generic.lst",what="")
-  genetics <- scan("genetics.lst",what="")
-  wc(generic,"generic.png")
-  wc(genetics,"genetics.png")
-  unlink(c("generic.lst","genetics.lst"))
-  modules <- setdiff(dir(ceuadmin),c("doc","lib","misc","sources","generic.png","genetics.png"))
-  wc(modules,"ceuadmin.png")
-  print(modules)
-'
-```
+They are generated from script [setup.sh](setup.sh),
 
 ## Footnotes
 
@@ -953,8 +914,63 @@ Rscript -e '
 
     The binary provided requires GLIBC_2.29 which is not avaiable yet problematic with ceuadmin/glibc/2.29-icelake.
 
-    Under CentOS 7, it cannot access `https://noble.gs.washington.edu/crux-downloads/pwiz-src-3_0_24044_fd6604f.tar.bz2`.
+    Ab attempt is made under CentOS 8 as follows,
+
+    ```bash
+    git clone https://github.com/crux-toolkit && cd crux-toolkit
+    export PERL5LIB=
+    module load ceuadmin/openssh/9.7p1-icelake \
+                ceuadmin/openssl/3.2.1-icelake \
+                ceuadmin/krb5/1.21.2-icelake ceuadmin/p7zip-zstd/17.05
+    cmake .
+    make
+    ```
+
+    Under ext/, comment the last line of `build_pwiz.cmake` will enable the whole process with the following errors on pwiz
+
+    ```
+    /usr/bin/ld: cannot find -lpwiz_data_msdata
+    /usr/bin/ld: cannot find -lpwiz_data_msdata_mz5
+    /usr/bin/ld: cannot find -lpwiz_data_msdata_mzmlb
+    /usr/bin/ld: cannot find -lpwiz_data_msdata_core
+    /usr/bin/ld: cannot find -lpwiz_data_identdata
+    /usr/bin/ld: cannot find -lhdf5pp
+    collect2: error: ld returned 1 exit status
+    ```
+
+    related to ProteoWizard, <https://github.com/ProteoWizard/pwiz/>, i.e.,
+
+    ```
+    ...failed updating 10 targets...
+    ...skipped 376 targets...
+    ...updated 836 targets...
+    At least one pwiz target failed to build.
+    ```
+
+    See `build/src/ProteoWizard/libraries`. Under CentOS 7, it cannot access `https://noble.gs.washington.edu/crux-downloads/pwiz-src-3_0_24044_fd6604f.tar.bz2`.
+
+    There is a FAQ section from PrteoWizard (<https://raw.githubusercontent.com/ProteoWizard/pwiz/981c7c70bfed46a145931dbea4da9e2edde72cf5/scripts/autotools/FAQ>) on boost which is copied here,
+
+    ```bash
+    cd /usr/local/src/
+    wget http://sourceforge.net/projects/boost/files/boost/1.49.0/boost_1_49_0.tar.gz/download
+    tar xvzf boost_1_49_0.tar.gz
+    cd boost_1_49_0
+    ./bootstrap.sh
+    ./bjam --with-regex --with-filesystem --with-iostreams --with-thread --with-program_options --with-serialization --with-system --with-date_time install
+    export BOOST_ROOT=/usr/local/src/boost_1_49_0
+    ```
+
+     where the relevant version here is 1_76_0.
 
 [^p7zip-zstd]: **p7zip-zstd**
 
     A simple `make` is sufficient but it is necessary to implement a minor revision of `install.sh`, line 19, so that `DEST_HOME=/usr/local/Cluster-Apps/ceuadmin/p7zip-zstd/17.05`. 
+
+[^wine]: **wine""
+
+    ```bash
+    module load ceuadmin/krb5/1.21.2-icelake
+    configure --prefix=${CEUADMIN}/wine/8.21 --enable-win64
+    make install
+    ```
