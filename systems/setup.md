@@ -954,6 +954,16 @@ They are generated from script [setup.sh](setup.sh),
 
     There is a FAQ section from PrteoWizard (<https://raw.githubusercontent.com/ProteoWizard/pwiz/981c7c70bfed46a145931dbea4da9e2edde72cf5/scripts/autotools/FAQ>),
 
+    pwiz-skyline docker: <https://hub.docker.com/r/chambm/pwiz-skyline-i-agree-to-the-vendor-licenses>
+
+    ```bash
+    docker pull chambm/pwiz-skyline-i-agree-to-the-vendor-licenses
+    docker run -it --rm chambm/pwiz-skyline-i-agree-to-the-vendor-licenses wine msconvert --help
+    docker run -it --rm chambm/pwiz-skyline-i-agree-to-the-vendor-licenses wine SkylineCmd --help
+    docker run -it --rm -e WINEDEBUG=-all -v /your/data:/data chambm/pwiz-skyline-i-agree-to-the-vendor-licenses \
+           wine msconvert /data/file.raw
+    ```
+
 [^boost]: **boost**
 
     ```bash
@@ -963,7 +973,8 @@ They are generated from script [setup.sh](setup.sh),
     cd boost_1_76_0
     ./bootstrap.sh
     ./b2 --prefix=$CEUADMIN/boost/1.76.0 install
-    ./bjam --with-regex --with-filesystem --with-iostreams --with-thread --with-program_options --with-serialization --with-system --with-date_time install
+    ./bjam --with-regex --with-filesystem --with-iostreams --with-thread --with-program_options \
+            --with-serialization --with-system --with-date_time install
     export BOOST_ROOT=/usr/local/src/boost_1_76_0
     ```
 
