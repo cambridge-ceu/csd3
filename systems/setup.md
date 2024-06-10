@@ -910,7 +910,7 @@ They are generated from script [setup.sh](setup.sh),
     bash EXPERIMENTAL-Spyder-5.5.4-Linux-x86_64.sh
     ```
 
-[^%cruz]: **cruz""
+[^crux]: **cruz""
 
     The binary provided requires GLIBC_2.29 which is not avaiable yet problematic with ceuadmin/glibc/2.29-icelake.
 
