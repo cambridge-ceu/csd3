@@ -913,9 +913,12 @@ They are generated from script [setup.sh](setup.sh),
 
 [^crux]: **crux**
 
+    Web: <https://crux.ms/> (<https://github.com/crux-toolkit>)
+
     The binary provided requires GLIBC_2.29 which is not avaiable yet problematic with ceuadmin/glibc/2.29-icelake.
 
-    Ab attempt is made under CentOS 8 as follows,
+    Under CentOS 7, it cannot access `https://noble.gs.washington.edu/crux-downloads/pwiz-src-3_0_24044_fd6604f.tar.bz2`.
+    Under CentOS 8 we proceed with
 
     ```bash
     git clone https://github.com/crux-toolkit && cd crux-toolkit
@@ -929,7 +932,8 @@ They are generated from script [setup.sh](setup.sh),
     make
     ```
 
-    Under ext/, comment the last line of `build_pwiz.cmake` will enable the whole process with the following errors on pwiz
+    but fail due to the same reason since ld -lrt requires librt which is part of GLIBC_2.29. Nevertheless under ext/,
+    comment the last line of `build_pwiz.cmake` will enable the whole process with the following errors on pwiz
 
     ```
     /usr/bin/ld: cannot find -lpwiz_data_msdata
@@ -950,11 +954,11 @@ They are generated from script [setup.sh](setup.sh),
     At least one pwiz target failed to build.
     ```
 
-    See `build/src/ProteoWizard/libraries`. Under CentOS 7, it cannot access `https://noble.gs.washington.edu/crux-downloads/pwiz-src-3_0_24044_fd6604f.tar.bz2`.
+    See `build/src/ProteoWizard/libraries`.
 
     There is a FAQ section from PrteoWizard (<https://raw.githubusercontent.com/ProteoWizard/pwiz/981c7c70bfed46a145931dbea4da9e2edde72cf5/scripts/autotools/FAQ>),
 
-    pwiz-skyline docker: <https://hub.docker.com/r/chambm/pwiz-skyline-i-agree-to-the-vendor-licenses>
+    Standalone pwiz is available from <https://github.com/ProteoWizard/pwiz> and from pwiz-skyline docker: <https://hub.docker.com/r/chambm/pwiz-skyline-i-agree-to-the-vendor-licenses>
 
     ```bash
     docker pull chambm/pwiz-skyline-i-agree-to-the-vendor-licenses
