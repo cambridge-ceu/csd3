@@ -278,6 +278,7 @@ All entries are ordered chronologically.
 | 2024-06-10  | patchelf/0.18.0                  | Generic              |
 | ""          | boost/1.76.0                     | Generic[^boost]      |
 | ""          | wine/8.21                        | Generic[^wine]       |
+| 2024-06-11  | crux/4.1                         | Genetics             |
 
 \* CEU or approved users only.
 

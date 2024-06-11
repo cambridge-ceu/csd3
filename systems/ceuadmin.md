@@ -324,6 +324,8 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2024-06-04 | pwiz/3_0_24156_80747de      | Genetics            |
     | 2024-06-09 | crux/4.2                    | Genetics            |
     | ""         | DIA-NN/1.8.1                | Generics            |
+    | 2024-06-11 | crux/4.1                    | Genetics            |
+    | ""         | pwiz/3_0_24163_9bfa69a-wine | Genetics            |
 
     \* CEU or approved users only.
 
