@@ -958,7 +958,7 @@ They are generated from script [setup.sh](setup.sh),
 
     There is a FAQ section from PrteoWizard (<https://raw.githubusercontent.com/ProteoWizard/pwiz/981c7c70bfed46a145931dbea4da9e2edde72cf5/scripts/autotools/FAQ>),
 
-    Standalone pwiz is available from <https://github.com/ProteoWizard/pwiz> and from pwiz-skyline docker: <https://hub.docker.com/r/chambm/pwiz-skyline-i-agree-to-the-vendor-licenses>
+    Standalone pwiz is available from <https://proteowizard.sourceforge.io/download.html> or <https://github.com/ProteoWizard/pwiz> and from pwiz-skyline docker: <https://hub.docker.com/r/chambm/pwiz-skyline-i-agree-to-the-vendor-licenses>
 
     ```bash
     docker pull chambm/pwiz-skyline-i-agree-to-the-vendor-licenses
