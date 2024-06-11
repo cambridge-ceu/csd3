@@ -227,4 +227,4 @@ make
 make install
 ```
 
-Nevertheless it fails to install since root permission is required.
+but it fails to install since root permission is required.

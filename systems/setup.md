@@ -279,6 +279,7 @@ All entries are ordered chronologically.
 | ""          | boost/1.76.0                     | Generic[^boost]      |
 | ""          | wine/8.21                        | Generic[^wine]       |
 | 2024-06-11  | crux/4.1                         | Genetics             |
+| ""          | pwiz/3_0_24163_9bfa69a-wine      | Genetics             |
 
 \* CEU or approved users only.
 
