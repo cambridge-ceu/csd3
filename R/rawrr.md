@@ -21,7 +21,7 @@ Package 'rawrr' version 1.12.0 using
 RawFileReader reading tool. Copyright © 2016 by Thermo Fisher Scientific, Inc. All rights reserved.
 ```
 
-The error messages can be supressed with `installRawFileReaderDLLs()`
+The error messages can be suppressed with `installRawFileReaderDLLs()`
 
 ```
 > if (isFALSE(rawrr::.checkDllInMonoPath())){
