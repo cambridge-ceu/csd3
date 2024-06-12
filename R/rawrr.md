@@ -4,6 +4,8 @@ sort: 19
 
 # rawrr
 
+Web: [Bioconductor](https://bioconductor.org/packages/release/bioc/vignettes/rawrr/inst/doc/rawrr.html) (<https://bioc.r-universe.dev/rawrr>) 
+
 ## Installation
 
 We can start with `BiocManager::install("rawrr")` or `install.packages("rawrr", repos = c("https://bioc.r-universe.dev", "https://cloud.r-project.org"))` from R, and get the following messages,
@@ -63,6 +65,10 @@ ThermoFisher.CommonCore.MassPrecisionEstimator.dll
                                                  0
          ThermoFisher.CommonCore.RawFileReader.dll
                                                  0
+>
+> if (isFALSE(file.exists(rawrr:::.rawrrAssembly()))){
++  rawrr::installRawrrExe()
++ }
 >
 > library(rawrr)
 Package 'rawrr' version 1.12.0 using
@@ -161,3 +167,40 @@ attr(,"class")
 ```
 
 as shown here, ![](files/sz.png).
+
+## MsBackendRawFileReader
+
+This is closely related; for the example above we try
+
+```
+>      beRaw <- Spectra::backendInitialize(MsBackendRawFileReader::MsBackendRawFileReader(),
++        files = dir(patt="raw"))
+> class(beRaw)
+[1] "MsBackendRawFileReader"
+attr(,"package")
+[1] "MsBackendRawFileReader"
+> beRaw
+MsBackendRawFileReader with 1935241 spectra
+          msLevel      rtime scanIndex
+        <integer>  <numeric> <integer>
+1               1 0.00280752         1
+2               2 0.00977762         2
+3               2 0.01136105         3
+4               1 0.01378255         4
+5               1 0.01998046         5
+...           ...        ...       ...
+1935237         1    52.4772     24262
+1935238         1    52.4829     24263
+1935239         1    52.4886     24264
+1935240         1    52.4942     24265
+1935241         1    52.4999     24266
+ ... 30 more variables/columns.
+
+file(s):
+szwk021704i19101xms1.raw
+szwk021704i19101xms2.raw
+szwk021704i19101xms3.raw
+ ... 77 more files
+```
+
+See [MsBackendRawFileReader.html](https://bioconductor.org/packages/release/bioc/vignettes/MsBackendRawFileReader/inst/doc/MsBackendRawFileReader.html) for additional information.
