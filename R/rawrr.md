@@ -155,9 +155,9 @@ attr(,"class")
 > sz1 <- readSpectrum("szwk901104i19901xms1.raw",scan=1)
   x$centroidStream is not TRUE
 > setwd(cwd)
-> pdf("sz.pdf",height=6,width=6)
+> png("sz.png",res=300,height=6,width=6,units="in")
 > plot(sz1[[1]], centroid=FALSE)
 > dev.off()
 ```
 
-the plot is visible, [sz.pdf](files/sz.pdf).
+as shown here, ![](files/sz.png).
