@@ -132,6 +132,22 @@ Original array: 12 11 13 5 6 7
 Sorted array: 5 6 7 11 12 13 14:40
 ```
 
+## C#
+
+This is done as follows,
+
+```bash
+module load mono/5.0.1.1
+csc
+```
+
+to give
+
+```
+Microsoft (R) Visual C# Compiler version 2.0.0.61404
+Copyright (C) Microsoft Corporation. All rights reserved.
+```
+
 ## Fortran
 
 Web: <https://fortran-lang.org/>

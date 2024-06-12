@@ -27,7 +27,6 @@ function _packages()
   '
 }
 
-module load gcc/6
 # bundle install
 # bundle info jekyll-rtd-theme
 # make install
