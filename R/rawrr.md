@@ -201,6 +201,24 @@ szwk021704i19101xms1.raw
 szwk021704i19101xms2.raw
 szwk021704i19101xms3.raw
  ... 77 more files
+> beRaw |> Spectra::spectraVariables()
+ [1] "msLevel"                 "rtime"
+ [3] "acquisitionNum"          "scanIndex"
+ [5] "mz"                      "intensity"
+ [7] "dataStorage"             "dataOrigin"
+ [9] "centroided"              "smoothed"
+[11] "polarity"                "precScanNum"
+[13] "precursorMz"             "precursorIntensity"
+[15] "precursorCharge"         "collisionEnergy"
+[17] "isolationWindowLowerMz"  "isolationWindowTargetMz"
+[19] "isolationWindowUpperMz"  "scanType"
+[21] "charge"                  "masterScan"
+[23] "dependencyType"          "monoisotopicMz"
+[25] "AGC"                     "injectionTime"
+[27] "resolution"              "isolationWidth"
+[29] "isolationOffset"         "AGCTarget"
+[31] "collisionEnergyList"     "AGCFill"
+[33] "isStepped"
 ```
 
 See [MsBackendRawFileReader.html](https://bioconductor.org/packages/release/bioc/vignettes/MsBackendRawFileReader/inst/doc/MsBackendRawFileReader.html) for additional information.
