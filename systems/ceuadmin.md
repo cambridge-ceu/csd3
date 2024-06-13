@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=237$$, $$\lambda=3$$.
+noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=238$$, $$\lambda=3$$.
 
 ## Entries
 
@@ -47,34 +47,34 @@ The current list is as follows,
 [117] "libsodium"             "libssh"                "libssh2"               "libuv"
 [121] "libxml2"               "libxslt"               "locuszoom"             "LVM2"
 [125] "MAGENTA"               "magma"                 "Mango"                 "Mega2"
-[129] "metal"                 "MONSTER"               "MORGAN"                "MR-MEGA"
-[133] "MsCAVIAR"              "nano"                  "ncbi-vdb"              "ncurses"
-[137] "netbeans"              "nettle"                "nextflow"              "nlopt"
-[141] "NLopt"                 "node"                  "nspr"                  "oniguruma"
-[145] "openjdk"               "OpenMS"                "openssh"               "openssl"
-[149] "osca"                  "p7zip-zstd"            "PAINTOR"               "pandoc"
-[153] "pandoc-citeproc"       "pango"                 "parallel"              "Pascal"
-[157] "patchelf"              "pcre2"                 "pdf2djvu"              "pdfjam"
-[161] "peer"                  "pgsc_calc"             "phenoscanner"          "PhySO"
-[165] "picard"                "plink"                 "plink-bgi"             "plinkseq"
-[169] "PoGo"                  "polyphen"              "poppler"               "popt"
-[173] "proj"                  "PRSice"                "pspp"                  "pulsar"
-[177] "PWCoCo"                "pwiz"                  "qctool"                "qpdf"
-[181] "qt"                    "qtcreator"             "QTLtools"              "quarto"
-[185] "quicktest"             "R"                     "raremetal"             "rclone"
-[189] "readline"              "regenie"               "regtools"              "RHHsoftware"
-[193] "rst2pdf"               "rstudio"               "rtmpdump"              "ruby"
-[197] "rust"                  "samtools"              "Scala"                 "seqkit"
-[201] "shapeit"               "singularity"           "SMR"                   "snakemake"
-[205] "SNP2HLA"               "snptest"               "spread-sheet-widget"   "spyder"
-[209] "sqlite"                "sra-tools"             "ssw"                   "STAR"
-[213] "stata"                 "SurvivalAnalysis"      "SurvivalKit"           "Swift"
-[217] "tabix"                 "tatami"                "thunderbird"           "tidy"
-[221] "trinculo"              "trousers"              "Typora"                "unbound"
-[225] "vala"                  "VarScan"               "vcftools"              "VEGAS2"
-[229] "verifyBamID"           "VSCode"                "VSCodium"              "vte"
-[233] "wine"                  "xpdf"                  "yaml-cpp"              "Zotero"
-[237] "zstd"
+[129] "metal"                 "MetaMorpheus"          "MONSTER"               "MORGAN"
+[133] "MR-MEGA"               "MsCAVIAR"              "nano"                  "ncbi-vdb"
+[137] "ncurses"               "netbeans"              "nettle"                "nextflow"
+[141] "nlopt"                 "NLopt"                 "node"                  "nspr"
+[145] "oniguruma"             "openjdk"               "OpenMS"                "openssh"
+[149] "openssl"               "osca"                  "p7zip-zstd"            "PAINTOR"
+[153] "pandoc"                "pandoc-citeproc"       "pango"                 "parallel"
+[157] "Pascal"                "patchelf"              "pcre2"                 "pdf2djvu"
+[161] "pdfjam"                "peer"                  "pgsc_calc"             "phenoscanner"
+[165] "PhySO"                 "picard"                "plink"                 "plink-bgi"
+[169] "plinkseq"              "PoGo"                  "polyphen"              "poppler"
+[173] "popt"                  "proj"                  "PRSice"                "pspp"
+[177] "pulsar"                "PWCoCo"                "pwiz"                  "qctool"
+[181] "qpdf"                  "qt"                    "qtcreator"             "QTLtools"
+[185] "quarto"                "quicktest"             "R"                     "raremetal"
+[189] "rclone"                "readline"              "regenie"               "regtools"
+[193] "RHHsoftware"           "rst2pdf"               "rstudio"               "rtmpdump"
+[197] "ruby"                  "rust"                  "samtools"              "Scala"
+[201] "seqkit"                "shapeit"               "singularity"           "SMR"
+[205] "snakemake"             "SNP2HLA"               "snptest"               "spread-sheet-widget"
+[209] "spyder"                "sqlite"                "sra-tools"             "ssw"
+[213] "STAR"                  "stata"                 "SurvivalAnalysis"      "SurvivalKit"
+[217] "Swift"                 "tabix"                 "tatami"                "thunderbird"
+[221] "tidy"                  "trinculo"              "trousers"              "Typora"
+[225] "unbound"               "vala"                  "VarScan"               "vcftools"
+[229] "VEGAS2"                "verifyBamID"           "VSCode"                "VSCodium"
+[233] "vte"                   "wine"                  "xpdf"                  "yaml-cpp"
+[237] "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -121,8 +121,8 @@ available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmm
 largely be seen as sources which are used to build the reoository given above.
 
 CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `phenoscanner`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom`
-linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,518 as of 13/6/2024)
-is linked with the latest R distribution, 4.4.0; there are also 17 packages under 4.4.0-gcc11 as well as 20 packages under 4.4.0-icelake. The small number of add-on packages have problems either at the compiling stage (because of higher version of gcc is required) or loading (i.e., compiled under 4.4.0 for cclake but cannot be used under icelake).
+linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,521 as of 13/6/2024)
+is linked with the latest R distribution, 4.4.0; there are also 21 packages under 4.4.0-gcc11 as well as 20 packages under 4.4.0-icelake. The small number of add-on packages have problems either at the compiling stage (because of higher version of gcc is required) or loading (i.e., compiled under 4.4.0 for cclake but cannot be used under icelake).
 
 For CEU users, it is easy to point to them, e.g.,
 
@@ -329,6 +329,8 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | ""         | pwiz/3_0_24163_9bfa69a-wine | Proteomics          |
     | 2024-06-11 | seqkit/2.8.2                | Proteomics          |
     | ""         | FlashLFQ/1.2.6              | Proteomics          |
+    | ""         | MetaMorpheus/1.0.5          | Proteomics          |
+
 
     \* CEU or approved users only.
 

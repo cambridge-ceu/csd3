@@ -284,6 +284,7 @@ All entries are ordered chronologically.
 | ""          | dotnet/8.0.304                   | Generic              |
 | ""          | dotnet/6.0.423                   | Generic              |
 | ""          | FlashLFQ/1.2.6                   | Proteomics[^FlashLFQ]|
+| ""          | MetaMorpheus/1.0.5               | Proteomics           |
 
 \* CEU or approved users only.
 

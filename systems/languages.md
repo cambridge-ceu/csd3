@@ -148,6 +148,54 @@ Microsoft (R) Visual C# Compiler version 2.0.0.61404
 Copyright (C) Microsoft Corporation. All rights reserved.
 ```
 
+A more desirable approach is via .NET as follows
+We first create a new console application:
+
+```bash
+module avail ceuadmin/dotnet
+module load ceuadmin/dotnet/6.0.423
+dotnet new console -n HelloWorldApp
+cd HelloWorldApp
+```
+
+in a new directory called `HelloWorldApp` containing a basic C# console application template.
+
+and edit the `Program.cs` file as this:
+
+```cs
+using System;
+
+namespace HelloWorldApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
+    }
+}
+```
+
+to be built and run as follows,
+
+```
+$ dotnet build
+MSBuild version 17.3.4+a400405ba for .NET
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  HelloWorldApp -> /rds/user/jhz22/hpc-work/genetics/HelloWorldApp/bin/Debug/net6.0/HelloWorldApp.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:03.80
+
+$ dotnet run
+Hello, World!
+```
+
 ## Fortran
 
 Web: <https://fortran-lang.org/>
