@@ -280,7 +280,7 @@ All entries are ordered chronologically.
 | ""          | wine/8.21                        | Generic[^wine]       |
 | 2024-06-11  | crux/4.1                         | Proteomics           |
 | ""          | pwiz/3_0_24163_9bfa69a-wine      | Proteomics           |
-| 2024-06-13  | seqkit/2.8.2                     | Proteomics           |
+| 2024-06-13  | seqkit/2.8.2                     | Proteomics[^seqkit]  |
 | ""          | dotnet/8.0.304                   | Generic              |
 | ""          | dotnet/6.0.423                   | Generic              |
 | ""          | FlashLFQ/1.2.6                   | Proteomics[^FlashLFQ]|
@@ -998,6 +998,27 @@ They are generated from script [setup.sh](setup.sh),
     module load ceuadmin/krb5/1.21.2-icelake
     configure --prefix=${CEUADMIN}/wine/8.21 --enable-win64
     make install
+    ```
+
+[^seqkit]: **seqkit**
+
+    An attempt is made with [UniProt](https://ftp.uniprot.org/pub/databases/uniprot/), `current_release/uniref/uniref100/`, `knowledgebase/genome_annotation_tracks/UP000005640_9606_beds`.
+
+    ```bash
+    #!/usr/bin/bash
+
+    export fasta=~/rds/public_databases/UniProt/uniref100.fasta.gz
+    export fasta=~/rds/public_databases/UniProt/uniprot_sprot.fasta.gz
+    export regions=UP000005640_9606_proteome.bed
+
+    module load ceuadmin/seqkit
+    seqkit subseq --bed ${regions} --seq-type protein --out-file output.fasta ${fasta}
+
+    awk '{print $4}' ${regions} | sort | uniq > protein_ids.txt
+    seqkit grep -f protein_ids.txt ${fasta} > output.fasta
+
+    # A contrast with the genomic counterpart
+    # bedtools getfasta -fo output.fasta -s -fullHeader -fi ${fasta} -bed ${regions}
     ```
 
 [^FlashLFQ]: **FlashLFQ**
