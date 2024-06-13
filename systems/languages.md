@@ -136,35 +136,7 @@ Sorted array: 5 6 7 11 12 13 14:40
 
 ### Mono
 
-This is done as follows,
-
-```bash
-module load mono/5.0.1.1
-csc
-```
-
-to give
-
-```
-Microsoft (R) Visual C# Compiler version 2.0.0.61404
-Copyright (C) Microsoft Corporation. All rights reserved.
-```
-
-### .NET
-
-This is more desirable and done as follows.
-
-We first create a new console application:
-
-```bash
-module avail ceuadmin/dotnet
-module load ceuadmin/dotnet/6.0.423
-dotnet new console -n HelloWorldApp
-cd HelloWorldApp
-```
-
-where we change into a new directory called `HelloWorldApp` with a basic C# console application template
-`Program.cs` which is edited as this,:
+Our program is called `Program.cs`
 
 ```cs
 using System;
@@ -181,7 +153,40 @@ namespace HelloWorldApp
 }
 ```
 
-The program is built and run as follows,
+which is compiled and run as follows,
+
+```bash
+module load mono/5.0.1.1
+csc Program.cs
+mono Program.exe
+```
+
+We see
+
+```
+$ csc Program.cs
+Microsoft (R) Visual C# Compiler version 2.0.0.61404
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+$ mono Program.exe
+Hello, World!
+```
+
+### .NET
+
+This is more desirable and done as follows.
+
+We first create a new console application:
+
+```bash
+module avail ceuadmin/dotnet
+module load ceuadmin/dotnet/6.0.423
+dotnet new console -n HelloWorldApp
+cd HelloWorldApp
+```
+
+where we change into a new directory called `HelloWorldApp` with a basic C# console application template but
+we continue our `Program.cs`, which is built and run as follows,
 
 ```
 $ dotnet build
