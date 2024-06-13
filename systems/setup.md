@@ -283,7 +283,7 @@ All entries are ordered chronologically.
 | 2024-06-13  | seqkit/2.8.2                     | Proteomics           |
 | ""          | dotnet/8.0.304                   | Generic              |
 | ""          | dotnet/6.0.423                   | Generic              |
-| ""          | FlashLFQ/1.2.6                   | Proteomics           |
+| ""          | FlashLFQ/1.2.6                   | Proteomics[^FlashLFQ]|
 
 \* CEU or approved users only.
 
@@ -999,3 +999,16 @@ They are generated from script [setup.sh](setup.sh),
     configure --prefix=${CEUADMIN}/wine/8.21 --enable-win64
     make install
     ```
+
+[^FlashLFQ]: **FlashLFQ**
+
+    Web: <https://github.com/smith-chem-wisc/FlashLFQ/wiki/Using-the-Command-Line>
+
+    In the script below, a benchmark provided by the software available from `${FLASHLFQ_ROOT}/src/Test/SampleFiles`.
+
+    ```bash
+    module load ceuadmin/FlashLFQ
+    flashlfq --idt MaxQuant/msms.txt --rep . --ppm 5 --chg
+    ```
+
+    which works on `MaxQuant/msms.txt` and generates `QuantifiedPeaks.tsv`, `QuantifiedPeptides.tsv` and  `QuantifiedProteins.tsv`.
