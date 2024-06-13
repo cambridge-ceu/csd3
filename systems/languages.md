@@ -134,6 +134,8 @@ Sorted array: 5 6 7 11 12 13 14:40
 
 ## C#
 
+### Mono
+
 This is done as follows,
 
 ```bash
@@ -148,7 +150,10 @@ Microsoft (R) Visual C# Compiler version 2.0.0.61404
 Copyright (C) Microsoft Corporation. All rights reserved.
 ```
 
-A more desirable approach is via .NET as follows
+### .NET
+
+This is more desirable and done as follows.
+
 We first create a new console application:
 
 ```bash
@@ -158,9 +163,8 @@ dotnet new console -n HelloWorldApp
 cd HelloWorldApp
 ```
 
-in a new directory called `HelloWorldApp` containing a basic C# console application template.
-
-and edit the `Program.cs` file as this:
+where we change into a new directory called `HelloWorldApp` with a basic C# console application template
+`Program.cs` which is edited as this,:
 
 ```cs
 using System;
@@ -177,7 +181,7 @@ namespace HelloWorldApp
 }
 ```
 
-to be built and run as follows,
+The program is built and run as follows,
 
 ```
 $ dotnet build
