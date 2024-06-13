@@ -281,6 +281,9 @@ All entries are ordered chronologically.
 | 2024-06-11  | crux/4.1                         | Proteomics           |
 | ""          | pwiz/3_0_24163_9bfa69a-wine      | Proteomics           |
 | 2024-06-13  | seqkit/2.8.2                     | Proteomics           |
+| ""          | dotnet/8.0.304                   | Generic              |
+| ""          | dotnet/6.0.423                   | Generic              |
+| ""          | FlashLFQ/1.2.6                   | Proteomics           |
 
 \* CEU or approved users only.
 
