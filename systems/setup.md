@@ -1032,4 +1032,4 @@ They are generated from script [setup.sh](setup.sh),
     flashlfq --idt MaxQuant/msms.txt --rep . --ppm 5 --chg
     ```
 
-    which works on `MaxQuant/msms.txt` and generates `QuantifiedPeaks.tsv`, `QuantifiedPeptides.tsv` and  `QuantifiedProteins.tsv`.
+    which works on `MaxQuant/msms.txt` and generates `FlashLfqSettings.toml`, `QuantifiedPeaks.tsv`, `QuantifiedPeptides.tsv` and  `QuantifiedProteins.tsv`.
