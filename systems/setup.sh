@@ -7,11 +7,10 @@ else
 fi
 export csd3=~/cambridge-ceu/csd3
 cd ${CEUADMIN}
-rm *.png
-grep -e Generic ${csd3}/systems/setup.md | grep "^[|]" | awk '{print $4}' > generic.lst
-grep -e Genetics ${csd3}/systems/setup.md | grep "^[|]" | awk '{print $4}' > genetics.lst
-grep -e Genetics -e Generic ${csd3}/systems/setup.md | grep "^[|]" | awk '{print $4}' | wc -l
 rm -f ceuadmin.png generic.png genetics.png
+grep -e Generic ${csd3}/systems/setup.md | grep "^[|]" | awk '{print $4}' > generic.lst
+grep -e Genetics -e Proteomics ${csd3}/systems/setup.md | grep "^[|]" | awk '{print $4}' > genetics.lst
+grep -e Genetics -e Generic -e Proteomics ${csd3}/systems/setup.md | grep "^[|]" | awk '{print $4}' | wc -l
 Rscript -e '
   library(RColorBrewer)
   library(dplyr)

@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=234$$, $$\lambda=3$$.
+noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=235$$, $$\lambda=3$$.
 
 ## Entries
 
@@ -64,16 +64,16 @@ The current list is as follows,
 [185] "raremetal"             "rclone"                "readline"              "regenie"
 [189] "regtools"              "RHHsoftware"           "rst2pdf"               "rstudio"
 [193] "rtmpdump"              "ruby"                  "rust"                  "samtools"
-[197] "Scala"                 "shapeit"               "singularity"           "SMR"
-[201] "snakemake"             "SNP2HLA"               "snptest"               "spread-sheet-widget"
-[205] "spyder"                "sqlite"                "sra-tools"             "ssw"
-[209] "STAR"                  "stata"                 "SurvivalAnalysis"      "SurvivalKit"
-[213] "Swift"                 "tabix"                 "tatami"                "thunderbird"
-[217] "tidy"                  "trinculo"              "trousers"              "Typora"
-[221] "unbound"               "vala"                  "VarScan"               "vcftools"
-[225] "VEGAS2"                "verifyBamID"           "VSCode"                "VSCodium"
-[229] "vte"                   "wine"                  "xpdf"                  "yaml-cpp"
-[233] "Zotero"                "zstd"
+[197] "Scala"                 "seqkit"                "shapeit"               "singularity"
+[201] "SMR"                   "snakemake"             "SNP2HLA"               "snptest"
+[205] "spread-sheet-widget"   "spyder"                "sqlite"                "sra-tools"
+[209] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"
+[213] "SurvivalKit"           "Swift"                 "tabix"                 "tatami"
+[217] "thunderbird"           "tidy"                  "trinculo"              "trousers"
+[221] "Typora"                "unbound"               "vala"                  "VarScan"
+[225] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
+[229] "VSCodium"              "vte"                   "wine"                  "xpdf"
+[233] "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -120,7 +120,7 @@ available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmm
 largely be seen as sources which are used to build the reoository given above.
 
 CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `phenoscanner`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom`
-linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,505 as of 12/6/2024)
+linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,506 as of 13/6/2024)
 is linked with the latest R distribution, 4.4.0; there are also 17 packages under 4.4.0-gcc11 as well as 20 packages under 4.4.0-icelake. The small number of add-on packages have problems either at the compiling stage (because of higher version of gcc is required) or loading (i.e., compiled under 4.4.0 for cclake but cannot be used under icelake).
 
 For CEU users, it is easy to point to them, e.g.,
@@ -227,7 +227,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     htslib/               metal_updated/                qctool_v1.4-linux-x86_64/     raremetal_BPGen/   snptest_2.5.4_beta3/
     ```
 
-    A grep of recent add-ons in the Genetics category is as follows,
+    A grep of recent add-ons in the Genetics/Proteomics category is as follows,
 
     | Date       | Add.ons                     | Category            |
     | :--------- | :-------------------------- | :------------------ |
@@ -321,11 +321,12 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2024-01-24 | fraposa_pgsc/0.1.0          | Genetics            |
     | ""         | pgsc_calc/2.0.0-alpha.4     | Genetics            |
     | 2024-04-22 | peer/1.3                    | Genetics            |
-    | 2024-06-04 | pwiz/3_0_24156_80747de      | Genetics            |
-    | 2024-06-09 | crux/4.2                    | Genetics            |
-    | ""         | DIA-NN/1.8.1                | Generics            |
-    | 2024-06-11 | crux/4.1                    | Genetics            |
-    | ""         | pwiz/3_0_24163_9bfa69a-wine | Genetics            |
+    | 2024-06-04 | pwiz/3_0_24156_80747de      | Proteomics          |
+    | 2024-06-09 | crux/4.2                    | Proteomics          |
+    | ""         | DIA-NN/1.8.1                | Proteomics          |
+    | 2024-06-11 | crux/4.1                    | Proteomics          |
+    | ""         | pwiz/3_0_24163_9bfa69a-wine | Proteomics          |
+    | 2024-06-11 | seqkit/2.8.2                | Proteomics          |
 
     \* CEU or approved users only.
 

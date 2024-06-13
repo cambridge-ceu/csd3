@@ -271,15 +271,16 @@ All entries are ordered chronologically.
 | 2024-04-29  | ImageMagick/7.1.1-31             | Generic[^ImageMagick]|
 | 2024-05-15  | rtmpdump/2.3                     | Generic[^rtmpdump]   |
 | 2024-05-22  | spyder/5.5.4                     | Generic[^spyder]     |
-| 2024-06-04  | pwiz/3_0_24156_80747de           | Genetics             |
-| 2024-06-09  | crux/4.2                         | Genetics[^crux]      |
+| 2024-06-04  | pwiz/3_0_24156_80747de           | Proteomics           |
+| 2024-06-09  | crux/4.2                         | Proteomics[^crux]    |
 | ""          | p7zip-zstd/17.05                 | Generic[^p7zip-zstd] |
-| ""          | DIA-NN/1.8.1                     | Generics             |
+| ""          | DIA-NN/1.8.1                     | Proteomics           |
 | 2024-06-10  | patchelf/0.18.0                  | Generic              |
 | ""          | boost/1.76.0                     | Generic[^boost]      |
 | ""          | wine/8.21                        | Generic[^wine]       |
-| 2024-06-11  | crux/4.1                         | Genetics             |
-| ""          | pwiz/3_0_24163_9bfa69a-wine      | Genetics             |
+| 2024-06-11  | crux/4.1                         | Proteomics           |
+| ""          | pwiz/3_0_24163_9bfa69a-wine      | Proteomics           |
+| 2024-06-13  | seqkit/2.8.2                     | Proteomics           |
 
 \* CEU or approved users only.
 
