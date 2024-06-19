@@ -8,6 +8,8 @@ sort: 2
 
 A common form of MFA, two-factor authentication (2FA), is through Time-based One-Time Passwords (TOTP), [https://www.twilio.com/docs/glossary/totp](https://www.twilio.com/docs/glossary/totp).
 
+<font color="red"><b>19/6/2024 Update</b></font>login.hpc.cam.ac.uk is now default to icelake ahead of the 30-6-2024 deadline.
+
 ## Login nodes
 
 The CSD3 login address is `login.hpc.cam.ac.uk` with a mapping table[^cpu]
