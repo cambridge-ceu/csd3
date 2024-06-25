@@ -6,7 +6,9 @@ sort: 8
 
 The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
-![ceuadmin](ceuadmin.png)
+More detailed diagrams on recently added genetics/proteomics and generic software are as follows,
+
+![Genetics](genetics.png) ![Generic](generic.png)
 
 noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=239$$, $$\lambda=3$$.
 
@@ -334,9 +336,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
 
     \* CEU or approved users only.
 
-    More detailed diagrams on recently added genetics (89) and generic (137) software are as follows,
-
-    ![Genetics](genetics.png) ![Generic](generic.png)
+    ![ceuadmin](ceuadmin.png)
 
 [^gui]: **GUI**
 
