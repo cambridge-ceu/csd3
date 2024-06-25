@@ -8,7 +8,7 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
-noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=238$$, $$\lambda=3$$.
+noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=239$$, $$\lambda=3$$.
 
 ## Entries
 
@@ -48,33 +48,33 @@ The current list is as follows,
 [121] "libxml2"               "libxslt"               "locuszoom"             "LVM2"
 [125] "MAGENTA"               "magma"                 "Mango"                 "Mega2"
 [129] "metal"                 "MetaMorpheus"          "MONSTER"               "MORGAN"
-[133] "MR-MEGA"               "MsCAVIAR"              "nano"                  "ncbi-vdb"
-[137] "ncurses"               "netbeans"              "nettle"                "nextflow"
-[141] "nlopt"                 "NLopt"                 "node"                  "nspr"
-[145] "oniguruma"             "openjdk"               "OpenMS"                "openssh"
-[149] "openssl"               "osca"                  "p7zip-zstd"            "PAINTOR"
-[153] "pandoc"                "pandoc-citeproc"       "pango"                 "parallel"
-[157] "Pascal"                "patchelf"              "pcre2"                 "pdf2djvu"
-[161] "pdfjam"                "peer"                  "pgsc_calc"             "phenoscanner"
-[165] "PhySO"                 "picard"                "plink"                 "plink-bgi"
-[169] "plinkseq"              "PoGo"                  "polyphen"              "poppler"
-[173] "popt"                  "proj"                  "PRSice"                "pspp"
-[177] "pulsar"                "PWCoCo"                "pwiz"                  "qctool"
-[181] "qpdf"                  "qt"                    "qtcreator"             "QTLtools"
-[185] "quarto"                "quicktest"             "R"                     "raremetal"
-[189] "rclone"                "readline"              "regenie"               "regtools"
-[193] "RHHsoftware"           "rst2pdf"               "rstudio"               "rtmpdump"
-[197] "ruby"                  "rust"                  "samtools"              "Scala"
-[201] "seqkit"                "shapeit"               "singularity"           "SMR"
-[205] "snakemake"             "SNP2HLA"               "snptest"               "spread-sheet-widget"
-[209] "spyder"                "sqlite"                "sra-tools"             "ssw"
-[213] "STAR"                  "stata"                 "SurvivalAnalysis"      "SurvivalKit"
-[217] "Swift"                 "tabix"                 "tatami"                "thunderbird"
-[221] "tidy"                  "trinculo"              "trousers"              "Typora"
-[225] "unbound"               "vala"                  "VarScan"               "vcftools"
-[229] "VEGAS2"                "verifyBamID"           "VSCode"                "VSCodium"
-[233] "vte"                   "wine"                  "xpdf"                  "yaml-cpp"
-[237] "Zotero"                "zstd"
+[133] "MR-MEGA"               "MsCAVIAR"              "msms"                  "nano"
+[137] "ncbi-vdb"              "ncurses"               "netbeans"              "nettle"
+[141] "nextflow"              "nlopt"                 "NLopt"                 "node"
+[145] "nspr"                  "oniguruma"             "openjdk"               "OpenMS"
+[149] "openssh"               "openssl"               "osca"                  "p7zip-zstd"
+[153] "PAINTOR"               "pandoc"                "pandoc-citeproc"       "pango"
+[157] "parallel"              "Pascal"                "patchelf"              "pcre2"
+[161] "pdf2djvu"              "pdfjam"                "peer"                  "pgsc_calc"
+[165] "phenoscanner"          "PhySO"                 "picard"                "plink"
+[169] "plink-bgi"             "plinkseq"              "PoGo"                  "polyphen"
+[173] "poppler"               "popt"                  "proj"                  "PRSice"
+[177] "pspp"                  "pulsar"                "PWCoCo"                "pwiz"
+[181] "qctool"                "qpdf"                  "qt"                    "qtcreator"
+[185] "QTLtools"              "quarto"                "quicktest"             "R"
+[189] "raremetal"             "rclone"                "readline"              "regenie"
+[193] "regtools"              "RHHsoftware"           "rst2pdf"               "rstudio"
+[197] "rtmpdump"              "ruby"                  "rust"                  "samtools"
+[201] "Scala"                 "seqkit"                "shapeit"               "singularity"
+[205] "SMR"                   "snakemake"             "SNP2HLA"               "snptest"
+[209] "spread-sheet-widget"   "spyder"                "sqlite"                "sra-tools"
+[213] "ssw"                   "STAR"                  "stata"                 "SurvivalAnalysis"
+[217] "SurvivalKit"           "Swift"                 "tabix"                 "tatami"
+[221] "thunderbird"           "tidy"                  "trinculo"              "trousers"
+[225] "Typora"                "unbound"               "vala"                  "VarScan"
+[229] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
+[233] "VSCodium"              "vte"                   "wine"                  "xpdf"
+[237] "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -330,7 +330,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2024-06-11 | seqkit/2.8.2                | Proteomics          |
     | ""         | FlashLFQ/1.2.6              | Proteomics          |
     | ""         | MetaMorpheus/1.0.5          | Proteomics          |
-
+    | 2024-06-25 | msms/3.2rc-b163             | Genetics            |
 
     \* CEU or approved users only.
 

@@ -286,6 +286,7 @@ All entries are ordered chronologically.
 | ""          | FlashLFQ/1.2.6                   | Proteomics[^FlashLFQ]|
 | ""          | MetaMorpheus/1.0.5               | Proteomics           |
 | 2024-06-14  | R/4.4.1                          | Generic              |
+| 2024-06-25  | msms/3.2rc-b163                  | Genetics             |
 
 \* CEU or approved users only.
 

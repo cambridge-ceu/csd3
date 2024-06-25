@@ -1,10 +1,6 @@
 #!/usr/bin/bash
 
-if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-p" ]; then
-   module load ceuadmin/R
-else
-   module load ceuadmin/R/4.4.0-icelake
-fi
+module load ceuadmin/R
 export csd3=~/cambridge-ceu/csd3
 cd ${CEUADMIN}
 rm -f ceuadmin.png generic.png genetics.png
@@ -36,7 +32,7 @@ Rscript -e '
   wc(generic,"generic.png")
   wc(genetics,"genetics.png")
   unlink(c("generic.lst","genetics.lst"))
-  modules <- setdiff(dir(ceuadmin),c("doc","lib","misc","sources","generic.png","genetics.png"))
+  modules <- setdiff(dir(ceuadmin),c("lib","misc","sources","generic.png","genetics.png"))
   wc(modules,"ceuadmin.png")
   print(modules)
 '
