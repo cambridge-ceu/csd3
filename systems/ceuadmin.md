@@ -10,7 +10,7 @@ More detailed diagrams on recently added genetics/proteomics and generic softwar
 
 ![Genetics](genetics.png) ![Generic](generic.png)
 
-noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N=239$$, $$\lambda=3$$.
+noting that the importance of software is purely random according to $$Poisson(N,\lambda)$$ where $$N$$ is the number of entries, $$\lambda=3$$.
 
 ## Entries
 
