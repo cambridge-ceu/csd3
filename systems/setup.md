@@ -287,6 +287,7 @@ All entries are ordered chronologically.
 | ""          | MetaMorpheus/1.0.5               | Proteomics           |
 | 2024-06-14  | R/4.4.1                          | Generic              |
 | 2024-06-25  | msms/3.2rc-b163                  | Genetics             |
+| 2024-06-30  | freesurfer/7.4.1                 | Generic              |
 
 \* CEU or approved users only.
 
