@@ -124,14 +124,14 @@ largely be seen as sources which are used to build the reoository given above.
 
 CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `phenoscanner`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom`
 linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,530 as of 1/7/2024)
-is linked with the latest R distribution, 4.4.1; there are also 21 packages under 4.4.0-gcc11.
+is linked with the latest R distribution, 4.4.1; there are also 21 packages under R-gcc11.
 
 For CEU users, it is easy to point to them, e.g.,
 
 ```bash
 export HPC_WORK=/rds/user/$USER/hpc-work/
 export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-export R_LIBS=${RDS}/R:${RDS}/R-4.4.0/library
+export R_LIBS=${RDS}/R:${RDS}/R-4.4.1/library
 ```
 
 or possible to have your own installations based on these, e.g., through creation of a modified `Makefile` with altered prefix followed
@@ -141,8 +141,8 @@ The following script tests for loading of `dplyr`:
 
 ```bash
 export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-export PATH=${PATH}:${RDS}/R-4.4.0/bin
-export R_LIBS=${RDS}/R-4.4.0/library:${RDS}/R
+export PATH=${PATH}:${RDS}/R-4.4.1/bin
+export R_LIBS=${RDS}/R-4.4.1/library:${RDS}/R
 Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
 ```
 
