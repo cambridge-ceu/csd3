@@ -978,6 +978,41 @@ They are generated from script [setup.sh](setup.sh),
            wine msconvert /data/file.raw
     ```
 
+    Syntax for the last docker command using a virtual Linux machine (not CSD3!) with file named `/home/$USER/D/Downloads/szwk901104i19801xms1.raw`:
+
+    ```bash
+    docker run -it --rm -e WINEDEBUG=-all -v /home/jhz22/D/Downloads:/data chambm/pwiz-skyline-i-agree-to-the-vendor-licenses \                                                                  
+           wine msconvert /data/szwk901104i19801xms1.raw --filter "peakPicking true 1-"
+    ```
+
+    The screen output is as follows,
+
+    ```
+    format: mzML
+        m/z: Compression-Zlib, 64-bit
+        intensity: Compression-Zlib, 32-bit
+        rt: Compression-Zlib, 64-bit
+    ByteOrder_LittleEndian
+     indexed="true"
+    outputPath: .
+    extension: .mzML
+    contactFilename:
+    runIndexSet:
+
+    spectrum list filters:
+      peakPicking true 1-
+
+    chromatogram list filters:
+
+    filenames:
+      /data\szwk901104i19801xms1.raw
+
+    processing file: /data\szwk901104i19801xms1.raw
+    calculating source file checksums
+
+    writing output file: .\szwk901104i19801xms1.mzML
+    ```
+
 [^boost]: **boost**
 
     ```bash
