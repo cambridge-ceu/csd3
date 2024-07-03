@@ -265,4 +265,4 @@ We also use `xargs`,
 squeue -u jhz22 | grep PD | awk '{print $1}' | xargs -l -I {} scancel {}
 ```
 
-To concel jobs on a specific partition, use -p <partition-name>.
+To concel jobs on a specific partition, use `-p <partition-name>`.
