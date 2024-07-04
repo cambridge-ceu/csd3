@@ -289,6 +289,7 @@ All entries are ordered chronologically.
 | 2024-06-25  | msms/3.2rc-b163                  | Genetics             |
 | 2024-06-30  | freesurfer/7.4.1                 | Generic              |
 | 2024-07-04  | docker/24.0.5                    | Generic[^docker]     |
+| ""          | docker/27.0.3                    | Generic              |
 
 \* CEU or approved users only.
 
@@ -1124,3 +1125,5 @@ They are generated from script [setup.sh](setup.sh),
     EOF
     ########## END ##########
     ```
+
+    In turned out considerably easier to get different distributions from <https://download.docker.com/linux/static/stable/x86_64/>.
