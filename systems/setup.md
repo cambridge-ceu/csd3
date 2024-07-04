@@ -1076,7 +1076,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^docker]: **docker**
 
-    This is only a place holder to inspect its options.
+    The module `docker/24.0.5` enables information such as command options to be available.
 
     ```bash
     export folder=$CEUADMIN/docker/24.0.5
@@ -1086,8 +1086,41 @@ They are generated from script [setup.sh](setup.sh),
     tar xzvf docker.tgz --strip 1
     export PATH=${folder}:$PATH
     export DOCKER_HOST=unix:///run/user/$(id -u)/docker.sock
+    # a normal run:
     dockerd --experimental --rootless
     systemctl --user enable docker
     systemctl --user start docker
     docker run hello-world
+    ```
+
+    A user-based set up of the rootless mode is necessary,
+
+    export mydocker=$CEUADMIN/docker/24.0.5
+    curl -fsSL https://raw.githubusercontent.com/docker/docker/master/contrib/dockerd-rootless-setuptool.sh \
+         -o $mydocker/dockerd-rootless-setuptool.sh
+    chmod +x $mydocker/dockerd-rootless-setuptool.sh
+    curl -fsSL https://raw.githubusercontent.com/docker/docker/master/contrib/dockerd-rootless.sh \
+         -o $mydocker/24.0.5/dockerd-rootless.sh
+    chmod +x $mydocker/dockerd-rootless.sh
+    ${mydocker}/dockerd-rootless-setuptool.sh install
+
+    echo "$USER:100000:65536" > ~/.subuid
+    echo "$USER:100000:65536" > ~/.subgid
+    export DOCKER_ROOTLESS_SUBUID=$(cat ~/.subuid)
+    export DOCKER_ROOTLESS_SUBGID=$(cat ~/.subgid)
+
+    wget -qO- https://github.com/rootless-containers/rootlesskit/releases/download/v2.1.0/rootlesskit-x86_64.tar.gz | tar xvfz -
+    ```
+
+    The process is modied slightly for the module. The use of ~/.subuid and ~/.subgid get around the error messages,
+
+    ```
+    ########## BEGIN ##########
+    sudo sh -eux <<EOF
+    # Add subuid entry for jhz22
+    echo "jhz22:100000:65536" >> /etc/subuid
+    # Add subgid entry for jhz22
+    echo "jhz22:100000:65536" >> /etc/subgid
+    EOF
+    ########## END ##########
     ```
