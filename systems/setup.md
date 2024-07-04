@@ -1112,7 +1112,7 @@ They are generated from script [setup.sh](setup.sh),
     ${mydocker}/dockerd-rootless-setuptool.sh install
     ```
 
-    The process is modied slightly for the module. The use of ~/.subuid and ~/.subgid get around the error messages,
+    The process is modified slightly for the module. The use of ~/.subuid and ~/.subgid get around the error messages,
 
     ```
     ########## BEGIN ##########
