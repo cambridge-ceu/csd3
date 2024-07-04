@@ -1095,6 +1095,7 @@ They are generated from script [setup.sh](setup.sh),
 
     A user-based set up of the rootless mode is necessary,
 
+    ```bash
     export mydocker=$CEUADMIN/docker/24.0.5
     curl -fsSL https://raw.githubusercontent.com/docker/docker/master/contrib/dockerd-rootless-setuptool.sh \
          -o $mydocker/dockerd-rootless-setuptool.sh
@@ -1113,11 +1114,13 @@ They are generated from script [setup.sh](setup.sh),
 
     The process is modied slightly for the module. The use of ~/.subuid and ~/.subgid get around the error messages,
 
-    > ########## BEGIN ##########
-    > sudo sh -eux <<EOF
-    > # Add subuid entry for jhz22
-    > echo "jhz22:100000:65536" >> /etc/subuid
-    > # Add subgid entry for jhz22
-    > echo "jhz22:100000:65536" >> /etc/subgid
-    > EOF
-    > ########## END ##########
+    ```
+    ########## BEGIN ##########
+    sudo sh -eux <<EOF
+    # Add subuid entry for jhz22
+    echo "jhz22:100000:65536" >> /etc/subuid
+    # Add subgid entry for jhz22
+    echo "jhz22:100000:65536" >> /etc/subgid
+    EOF
+    ########## END ##########
+    ```
