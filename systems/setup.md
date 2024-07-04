@@ -288,6 +288,7 @@ All entries are ordered chronologically.
 | 2024-06-14  | R/4.4.1                          | Generic              |
 | 2024-06-25  | msms/3.2rc-b163                  | Genetics             |
 | 2024-06-30  | freesurfer/7.4.1                 | Generic              |
+| 2024-07-04  | docker/24.0.5                    | Generic[^docker]     |
 
 \* CEU or approved users only.
 
@@ -1072,3 +1073,21 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     which works on `MaxQuant/msms.txt` and generates `FlashLfqSettings.toml`, `QuantifiedPeaks.tsv`, `QuantifiedPeptides.tsv` and  `QuantifiedProteins.tsv`.
+
+[^docker]: **docker**
+
+    This is only a place holder to inspect its options.
+
+    ```bash
+    export folder=$CEUADMIN/docker/24.0.5
+    mkdir -p ${folder}
+    cd ${folder}
+    curl -fsSL https://download.docker.com/linux/static/stable/x86_64/docker-24.0.5.tgz -o docker.tgz
+    tar xzvf docker.tgz --strip 1
+    export PATH=${folder}:$PATH
+    export DOCKER_HOST=unix:///run/user/$(id -u)/docker.sock
+    dockerd --experimental --rootless
+    systemctl --user enable docker
+    systemctl --user start docker
+    docker run hello-world
+    ```
