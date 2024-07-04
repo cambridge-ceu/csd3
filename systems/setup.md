@@ -1102,25 +1102,22 @@ They are generated from script [setup.sh](setup.sh),
     curl -fsSL https://raw.githubusercontent.com/docker/docker/master/contrib/dockerd-rootless.sh \
          -o $mydocker/24.0.5/dockerd-rootless.sh
     chmod +x $mydocker/dockerd-rootless.sh
-    ${mydocker}/dockerd-rootless-setuptool.sh install
-
+    wget -qO- https://github.com/rootless-containers/rootlesskit/releases/download/v2.1.0/rootlesskit-x86_64.tar.gz | \
+    tar xvfz -
     echo "$USER:100000:65536" > ~/.subuid
     echo "$USER:100000:65536" > ~/.subgid
     export DOCKER_ROOTLESS_SUBUID=$(cat ~/.subuid)
     export DOCKER_ROOTLESS_SUBGID=$(cat ~/.subgid)
-
-    wget -qO- https://github.com/rootless-containers/rootlesskit/releases/download/v2.1.0/rootlesskit-x86_64.tar.gz | tar xvfz -
+    ${mydocker}/dockerd-rootless-setuptool.sh install
     ```
 
     The process is modied slightly for the module. The use of ~/.subuid and ~/.subgid get around the error messages,
 
-    ```
-    ########## BEGIN ##########
-    sudo sh -eux <<EOF
-    # Add subuid entry for jhz22
-    echo "jhz22:100000:65536" >> /etc/subuid
-    # Add subgid entry for jhz22
-    echo "jhz22:100000:65536" >> /etc/subgid
-    EOF
-    ########## END ##########
-    ```
+    > ########## BEGIN ##########
+    > sudo sh -eux <<EOF
+    > # Add subuid entry for jhz22
+    > echo "jhz22:100000:65536" >> /etc/subuid
+    > # Add subgid entry for jhz22
+    > echo "jhz22:100000:65536" >> /etc/subgid
+    > EOF
+    > ########## END ##########
