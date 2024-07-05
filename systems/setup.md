@@ -1077,7 +1077,7 @@ They are generated from script [setup.sh](setup.sh),
 
     which works on `MaxQuant/msms.txt` and generates `FlashLfqSettings.toml`, `QuantifiedPeaks.tsv`, `QuantifiedPeptides.tsv` and  `QuantifiedProteins.tsv`.
 
-[^docker]: **docker**
+[^docker]: **docker** (to be amended)
 
     The module `docker/24.0.5` enables information such as command options to be available.
 
@@ -1139,7 +1139,7 @@ They are generated from script [setup.sh](setup.sh),
 
     In turned out considerably easier to get different distributions from <https://download.docker.com/linux/static/stable/x86_64/>.
 
-[^podman]: **podman**
+[^podman]: **podman** (to be amended)
 
     1. podman executable
 
