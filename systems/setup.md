@@ -1164,11 +1164,13 @@ They are generated from script [setup.sh](setup.sh),
     chmod +x slirp4netns
     cd ..
     mkdir containers
-    echo '[engine]' > containers/containers.conf
+    echo '[containers]' > containers/containers.conf
+    echo '[engine]' >> containers/containers.conf
     echo 'helper_binaries_dir = "/home/jhz22/podman-helpers"' >> containers/containers.conf
     echo 'events_logger = "file"' >> containers/containers.conf
     ln -sf ${PWD}/containers $HOME/.config/containers
+    pkill podman
     podman system service -t 0 &
     podman info
-    podman run --rm -it alpine sh
+    podman run quay.io/podman/hello
     ```
