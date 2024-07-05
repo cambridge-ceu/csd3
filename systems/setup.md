@@ -290,6 +290,7 @@ All entries are ordered chronologically.
 | 2024-06-30  | freesurfer/7.4.1                 | Generic              |
 | 2024-07-04  | docker/24.0.5                    | Generic[^docker]     |
 | ""          | docker/27.0.3                    | Generic              |
+| 2024-07-05  | sshpass/1.10                     | Generic              |
 
 \* CEU or approved users only.
 
@@ -1113,7 +1114,7 @@ They are generated from script [setup.sh](setup.sh),
     ${mydocker}/dockerd-rootless-setuptool.sh install
     ```
 
-    The process is modified slightly for the module. The use of ~/.subuid and ~/.subgid get around the error messages,
+    The process is modified slightly for the module. The use of ~/.subuid and ~/.subgid gets around the error messages,
 
     ```
     ########## BEGIN ##########
@@ -1125,5 +1126,14 @@ They are generated from script [setup.sh](setup.sh),
     EOF
     ########## END ##########
     ```
+
+    One can check user and group id's with
+
+    ```bash
+    id -u
+    id -g
+    ```
+
+    e.g., `chmod 644 ~/.subuid ~/.subgid`.
 
     In turned out considerably easier to get different distributions from <https://download.docker.com/linux/static/stable/x86_64/>.
