@@ -291,6 +291,7 @@ All entries are ordered chronologically.
 | 2024-07-04  | docker/24.0.5                    | Generic[^docker]     |
 | ""          | docker/27.0.3                    | Generic              |
 | 2024-07-05  | sshpass/1.10                     | Generic              |
+| ""          | podman/5.1.1                     | Generic[^podman]     |
 
 \* CEU or approved users only.
 
@@ -1137,3 +1138,38 @@ They are generated from script [setup.sh](setup.sh),
     e.g., `chmod 644 ~/.subuid ~/.subgid`.
 
     In turned out considerably easier to get different distributions from <https://download.docker.com/linux/static/stable/x86_64/>.
+
+[^podman]: **podman**
+
+    1. podman executable
+
+    ```bash
+    wget -qO- https://github.com/containers/podman/releases/download/v5.1.1/podman-remote-static-linux_amd64.tar.gz | tar xvfz -
+    cd bin
+    ln -s podman-remote-static-linux_amd64 podman
+    echo "$USER:100000:65536" > $HOME/.subuid
+    echo "$USER:100000:65536" > $HOME/.subgid
+    ```
+
+    2. podman-helpers/ and containers/
+
+    ```bash
+    mkdir podman-helpers && podman-helpers
+    wget https://github.com/containers/gvisor-tap-vsock/releases/download/v0.7.3/gvproxy-linux-amd64 -O gvproxy
+    chmod +x gvproxy
+    wget https://github.com/containers/fuse-overlayfs/releases/download/v1.14/fuse-overlayfs-x86_64
+    chmod +x fuse-overlayfs-x86_64
+    curl -o slirp4netns --fail -L https://github.com/rootless-containers/slirp4netns/releases/download/v1.3.1/slirp4netns-$(uname -m)
+    chmod +x slirp4netns
+    cd -
+    mkdir containers
+    echo '[engine]' > containers/containers.conf
+    echo 'helper_binaries_dir = "/home/jhz22/podman-helpers"' >> containers/containers.conf
+    echo 'events_logger = "file"' >> containers/containers.conf
+    ln -sf ${PWD}/containers $HOME/.config/containers
+    podman system service -t 0 &
+    podman info
+    podman run --rm -it alpine sh
+    podman machine init
+    podman machine start
+    ```
