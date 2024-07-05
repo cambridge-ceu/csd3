@@ -1155,6 +1155,7 @@ They are generated from script [setup.sh](setup.sh),
     2. podman-helpers/ and containers/
 
     ```bash
+    # podman-helpers
     mkdir podman-helpers && cd podman-helpers
     wget https://github.com/containers/gvisor-tap-vsock/releases/download/v0.7.3/gvproxy-linux-amd64 -O gvproxy
     chmod +x gvproxy
@@ -1163,14 +1164,18 @@ They are generated from script [setup.sh](setup.sh),
     curl -o slirp4netns --fail -L https://github.com/rootless-containers/slirp4netns/releases/download/v1.3.1/slirp4netns-$(uname -m)
     chmod +x slirp4netns
     cd ..
+    # containers
     mkdir containers
     echo '[containers]' > containers/containers.conf
     echo '[engine]' >> containers/containers.conf
     echo 'helper_binaries_dir = "/home/jhz22/podman-helpers"' >> containers/containers.conf
     echo 'events_logger = "file"' >> containers/containers.conf
     ln -sf ${PWD}/containers $HOME/.config/containers
+    # podman
     pkill podman
     podman system service -t 0 &
     podman info
     podman run quay.io/podman/hello
+    podman pull docker.io/library/hello-world
+    podman run --rm docker.io/library/hello-world
     ```
