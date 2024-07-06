@@ -37,11 +37,6 @@ _packages Python
 _packages R
 make build
 
-if [ "$(uname -n | sed 's/-[0-9]*$//')" == "login-q" ]; then
-   module load ceuadmin/libssh/0.10.6-icelake
-   module load ceuadmin/openssh/9.7p1-icelake
-fi
-
 ### Earlier experiment: https://readthedocs.org/projects/csd3/
 ### Earlier experiment: https://readthedocs.org/projects/csd3v2/
 
