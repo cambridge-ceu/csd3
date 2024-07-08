@@ -259,6 +259,8 @@ $ squeue -u jhz22
 
 ```
 
+or `squeue -u $USER --state=suspend -o "%.18i %.9P %.8j %.8u %.2t %.10M %.6D %R"`.
+
 We also use `xargs`,
 
 ```bash
