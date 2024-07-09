@@ -2,7 +2,7 @@
 sort: 58
 ---
 
-# Appendix B. Notes on emsembl-vep
+# B. Notes on emsembl-vep
 
 ## Location & module
 
