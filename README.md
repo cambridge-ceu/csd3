@@ -18,11 +18,11 @@ csd3 --> cardio["CARDIO (legacy materials)"]
 system --> System
 system --> sysdot["..."]
 system --> Acknowledgement
-system --> setup["Appendix A. Setup"]
+system --> setup["A. Setup"]
 applications --> ABCtoolbox
 applications --> appdot["..."]
 applications --> vsc["Visual Studio Code"]
-applications --> vep["Appendix B. ensmebl-vep"]
+applications --> vep["B. ensmebl-vep"]
 Python --> gwas2vcf
 Python --> Pythondot["..."]
 Python --> Synase
