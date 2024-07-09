@@ -297,6 +297,7 @@ All entries are ordered chronologically.
 | ""          | gnutls/3.8.4-icelake             | Generic              |
 | ""          | quarto/1.6.1-icelake             | Generic              |
 | ""          | gettext/0.22.5-icelake           | Generic              |
+| ""          | nettle/3.9-icelake               | Generic              |
 
 \* CEU or approved users only.
 
