@@ -292,6 +292,8 @@ All entries are ordered chronologically.
 | ""          | docker/27.0.3                    | Generic              |
 | 2024-07-05  | sshpass/1.10                     | Generic              |
 | ""          | podman/5.1.1                     | Generic[^podman]     |
+| 2024-07-09  | ntlm/1.6                         | Generic              |
+| 2024-07-09  | alpine/2.26-icelake              | Generic[^alpine]     |
 
 \* CEU or approved users only.
 
@@ -1181,3 +1183,7 @@ They are generated from script [setup.sh](setup.sh),
     podman pull docker.io/library/hello-world
     podman run --rm docker.io/library/hello-world
     ```
+
+[^alpine]: **alpine**
+
+    Module `ceuadmin/alpine/2.26-icelake` compiled using `gcc/11.2.0/gcc/rjvgspag`.
