@@ -295,6 +295,8 @@ All entries are ordered chronologically.
 | 2024-07-09  | ntlm/1.6                         | Generic              |
 | ""          | alpine/2.26-icelake              | Generic[^alpine]     |
 | ""          | gnutls/3.8.4-icelake             | Generic              |
+| ""          | quarto/1.6.1-icelake             | Generic              |
+| ""          | gettext/0.22.5-icelake           | Generic              |
 
 \* CEU or approved users only.
 
