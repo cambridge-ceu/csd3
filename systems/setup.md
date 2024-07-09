@@ -293,7 +293,8 @@ All entries are ordered chronologically.
 | 2024-07-05  | sshpass/1.10                     | Generic              |
 | ""          | podman/5.1.1                     | Generic[^podman]     |
 | 2024-07-09  | ntlm/1.6                         | Generic              |
-| 2024-07-09  | alpine/2.26-icelake              | Generic[^alpine]     |
+| ""          | alpine/2.26-icelake              | Generic[^alpine]     |
+| ""          | gnutls/3.8.4-icelake             | Generic              |
 
 \* CEU or approved users only.
 
