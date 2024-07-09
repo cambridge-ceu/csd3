@@ -8,10 +8,6 @@ sort: 2
 
 A common form of MFA, two-factor authentication (2FA), is through Time-based One-Time Passwords (TOTP), [https://www.twilio.com/docs/glossary/totp](https://www.twilio.com/docs/glossary/totp).
 
-<font color="red"><b>7/7/2024 Update</b></font>`login.hpc.cam.ac.uk` is reversed to CentOS 8 (?).
-
-<font color="red"><b>5/7/2024 Update</b></font>`login.hpc.cam.ac.uk` is now rocky8.
-
 <font color="red"><b>19/6/2024 Update</b></font>`login.hpc.cam.ac.uk` is now default to icelake ahead of the 30-6-2024 deadline.
 
 ## Login nodes
