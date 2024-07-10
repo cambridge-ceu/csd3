@@ -10,23 +10,23 @@ This repository details use of many software for generic purpose and genetic ana
 ```mermaid
 graph LR;
 jekyll-rtd-theme --> csd3
-csd3 --> system["THE SYSTEM"]
-csd3 --> Python["Python packages"]
-csd3 --> R["R packages"]
-csd3 --> applications["APPLICATIONS"]
-csd3 --> cardio["CARDIO (legacy materials)"]
-system [<a href="https://cambridge-ceu.github.io/csd3/systems/" style="font-size: 25px;font-size:90%"></a>] --> System
+csd3 --> system[<a href="https://cambridge-ceu.github.io/csd3/systems/" style="font-size: 25px;font-size:90%">THE SYSTEM</a>]]
+csd3 --> Python[<a href="https://cambridge-ceu.github.io/csd3/Python/" style="font-size: 25px;font-size:90%">Python packages</a>]
+csd3 --> R[<a href="https://cambridge-ceu.github.io/csd3/R/" style="font-size: 25px;font-size:90%">R packages</a>]
+csd3 --> applications[<a href="https://cambridge-ceu.github.io/csd3/applications/" style="font-size: 25px;font-size:90%">APPLICATIONS</a>]
+csd3 --> cardioAPPLICATIONS[<a href="https://cambridge-ceu.github.io/csd3/applications/" style="font-size: 25px;font-size:90%">CARDIO (legacy materials)</a>]
+system --> System
 system --> sysdot["..."]
 system --> Acknowledgement
 system --> setup["A. Setup"]
-applications [<a href="https://cambridge-ceu.github.io/csd3/applications/" style="font-size: 25px;font-size:90%"></a>] --> ABCtoolbox
+applications --> ABCtoolbox
 applications --> appdot["..."]
 applications --> vsc["Visual Studio Code"]
 applications --> vep["B. ensmebl-vep"]
-Python [<a href="https://cambridge-ceu.github.io/csd3/Python/" style="font-size: 25px;font-size:90%"></a>] --> gwas2vcf
+Python --> gwas2vcf
 Python --> Pythondot["..."]
 Python --> Synase
-R [<a href="https://cambridge-ceu.github.io/csd3/R/" style="font-size: 25px;font-size:90%"></a>] --> brms
+R --> brms
 R --> Rdot["..."]
 R --> xlsx
 ```
