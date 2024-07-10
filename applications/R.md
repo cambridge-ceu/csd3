@@ -4,7 +4,7 @@ sort: 46
 
 # R
 
-There is a dedicatws section here, <https://cambridge-ceu.github.io/csd3/systems/languages.html#r>.
+There is a dedicated section here, <https://cambridge-ceu.github.io/csd3/systems/languages.html#r>.
 
 <font color="red"><b>9/5/2024 Update</b></font>
 
