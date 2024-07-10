@@ -10,11 +10,11 @@ This repository details use of many software for generic purpose and genetic ana
 ```mermaid
 graph LR;
 jekyll-rtd-theme --> csd3
-csd3 --> system[<a href="https://cambridge-ceu.github.io/csd3/systems/" style="font-size: 25px;font-size:90%">THE SYSTEM</a>]]
+csd3 --> system[<a href="https://cambridge-ceu.github.io/csd3/systems/" style="font-size: 25px;font-size:90%">THE SYSTEM</a>]
 csd3 --> Python[<a href="https://cambridge-ceu.github.io/csd3/Python/" style="font-size: 25px;font-size:90%">Python packages</a>]
 csd3 --> R[<a href="https://cambridge-ceu.github.io/csd3/R/" style="font-size: 25px;font-size:90%">R packages</a>]
 csd3 --> applications[<a href="https://cambridge-ceu.github.io/csd3/applications/" style="font-size: 25px;font-size:90%">APPLICATIONS</a>]
-csd3 --> cardioAPPLICATIONS[<a href="https://cambridge-ceu.github.io/csd3/applications/" style="font-size: 25px;font-size:90%">CARDIO (legacy materials)</a>]
+csd3 --> cardio[<a href="https://cambridge-ceu.github.io/csd3/cardio//" style="font-size: 25px;font-size:90%">APPLICATIONS</a>CARDIO</a>]
 system --> System
 system --> sysdot["..."]
 system --> Acknowledgement
