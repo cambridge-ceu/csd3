@@ -298,7 +298,7 @@ All entries are ordered chronologically.
 | ""          | quarto/1.6.1-icelake             | Generic              |
 | ""          | gettext/0.22.5-icelake           | Generic              |
 | ""          | nettle/3.9-icelake               | Generic              |
-| 2024-07-11  | qemu/9.0.1                       | Generic[^qemu        |
+| 2024-07-11  | qemu/9.0.1                       | Generic[^qemu]       |
 
 \* CEU or approved users only.
 
