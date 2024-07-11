@@ -298,6 +298,7 @@ All entries are ordered chronologically.
 | ""          | quarto/1.6.1-icelake             | Generic              |
 | ""          | gettext/0.22.5-icelake           | Generic              |
 | ""          | nettle/3.9-icelake               | Generic              |
+| 2024-07-11  | qemu/9.0.1                       | Generic[^qemu        |
 
 \* CEU or approved users only.
 
@@ -453,6 +454,15 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     It is necessary to edit `lib/pkcs11_privkey.c` to make `ck_rsa_pkcs_pss_params` definition explicit. Then there is error with guile so we use --disable-guile.
+
+    Under icelake (CentOS 8), this configuration is used for `gnutls/3.8.4-icelake`,
+
+    ```bash
+    module load gettext/0.21/gcc/qnrcglqo
+    configure --prefix=$CEUADMIN/gnutls/3.8.4-icelake --with-included-unistring
+    make
+    make install
+    ```
 
 [^lemma]: **lemma**
 
@@ -1191,3 +1201,24 @@ They are generated from script [setup.sh](setup.sh),
 [^alpine]: **alpine**
 
     Module `ceuadmin/alpine/2.26-icelake` compiled using `gcc/11.2.0/gcc/rjvgspag`.
+
+[^qemu]: **qemu**
+
+    Web: <https://www.qemu.org/>
+
+    Attempts are made with these,
+
+    ```bash
+    wget -qO- https://download.qemu.org/qemu-9.0.1.tar.xz | \
+    tar vxJf -
+    cd qemu-9.0.1
+    mkdir build && cd build
+    module load ceuadmin/Anaconda3/2023.09-0
+    pip install sphinx
+    pip install sphinx_rtd_theme==1.1.1
+    module load ninja/1.10.2/gcc/s36yvrfz ncurses/6.2/gcc/givuz2aq libidn2/2.3.0/gcc/ph36ygoa gettext/0.21/gcc/qnrcglqo
+    module load ceuadmin/gnutls/3.8.4-icelake ceuadmin/nettle/3.9-icelake ceuadmin/krb5/1.21.2-icelake
+    ../configure --prefix=$CEUADMIN/qemu/9.0.1 LIBS=-lintl
+    make
+    make install
+    ```
