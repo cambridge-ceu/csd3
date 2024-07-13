@@ -299,6 +299,7 @@ All entries are ordered chronologically.
 | ""          | gettext/0.22.5-icelake           | Generic              |
 | ""          | nettle/3.9-icelake               | Generic              |
 | 2024-07-11  | qemu/9.0.1                       | Generic[^qemu]       |
+| 2024-07-13  | msamanda/3.0.21.532              | Proteomics           |
 
 \* CEU or approved users only.
 
