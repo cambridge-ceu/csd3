@@ -1228,11 +1228,18 @@ They are generated from script [setup.sh](setup.sh),
     Attempts are made with these,
 
     ```bash
+    export prefix=$CEUADMIN/qemu/
+    export ENV_DIR=$prefix/venv
     wget -qO- https://download.qemu.org/qemu-9.0.1.tar.xz | \
     tar vxJf -
     cd qemu-9.0.1
     mkdir build && cd build
-    module load ceuadmin/Anaconda3/2023.09-0
+    module load python/3.8.11/gcc/pqdmnzmw
+    python -m venv --system-site-packages ${ENV_DIR}
+    source $prefix/venv/bin/activate
+    pip install --prefix=${ENV_DIR} sphinx
+    pip install --prefix=${ENV_DIR} sphinx_rtd_theme==1.1.1
+    pip install --prefix=${ENV_DIR} ninja
     pip install sphinx
     pip install sphinx_rtd_theme==1.1.1
     pip install ninja
