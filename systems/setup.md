@@ -94,7 +94,7 @@ All entries are ordered chronologically.
 | ""          | nspr/4.35                        | Generic              |
 | ""          | nettle/2.7.1                     | Generic              |
 | 2022-11-05  | trinculo/0.96                    | Generic              |
-| ""          | ruby/2.7.5                       | Generic              |
+| ""          | ruby/2.7.5                       | Generic[^ruby]       |
 | 2022-11-06  | libpng/0.5.30                    | Generic              |
 | ""          | libgit2/1.1.0                    | Generic[^libgit2]    |
 | ""          | git-extras/6.5.0                 | Generic              |
@@ -420,6 +420,20 @@ They are generated from script [setup.sh](setup.sh),
 
     ```bash
     ./configure --prefix=$CEUADMIN/expat/2.4.7 --without-docbook
+    ```
+
+[^ruby]: **ruby**
+
+    Here is 2.7.7,
+
+    ```bash
+   curl -sSL https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.7.tar.gz -o ruby-2.7.7.tar.gz
+   tar -xzf ruby-2.7.7.tar.gz
+   cd ruby-2.7.7
+   ./configure --prefix=$HPC_WORK
+   make
+   make install
+   rvm reset
     ```
 
 [^libgit2]: **libgit2**
@@ -1220,7 +1234,8 @@ They are generated from script [setup.sh](setup.sh),
     module load ceuadmin/Anaconda3/2023.09-0
     pip install sphinx
     pip install sphinx_rtd_theme==1.1.1
-    module load ninja/1.10.2/gcc/s36yvrfz ncurses/6.2/gcc/givuz2aq libidn2/2.3.0/gcc/ph36ygoa gettext/0.21/gcc/qnrcglqo
+    pip install ninja
+    module load ncurses/6.2/gcc/givuz2aq libidn2/2.3.0/gcc/ph36ygoa gettext/0.21/gcc/qnrcglqo
     module load ceuadmin/gnutls/3.8.4-icelake ceuadmin/nettle/3.9-icelake ceuadmin/krb5/1.21.2-icelake
     ../configure --prefix=$CEUADMIN/qemu/9.0.1 LIBS=-lintl
     make
