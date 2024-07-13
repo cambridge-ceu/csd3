@@ -335,6 +335,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | ""         | FlashLFQ/1.2.6              | Proteomics          |
     | ""         | MetaMorpheus/1.0.5          | Proteomics          |
     | 2024-06-25 | msms/3.2rc-b163             | Genetics            |
+    | 2024-07-13 | msamanda/3.0.21.532         | Proteomics          |
 
     \* CEU or approved users only.
 
