@@ -425,16 +425,16 @@ They are generated from script [setup.sh](setup.sh),
 
 [^ruby]: **ruby**
 
-    Here is 2.7.7,
+    This is done as follows,
 
     ```bash
-   curl -sSL https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.5.tar.gz -o ruby-2.7.5.tar.gz
-   tar -xzf ruby-2.7.5.tar.gz
-   cd ruby-2.7.5
-   ./configure --prefix=$CEUADMIN/ruby/2.7.5
-   make
-   make install
-   rvm reset
+    curl -sSL https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.5.tar.gz -o ruby-2.7.5.tar.gz
+    tar -xzf ruby-2.7.5.tar.gz
+    cd ruby-2.7.5
+    ./configure --prefix=$CEUADMIN/ruby/2.7.5
+    make
+    make install
+    rvm reset
     ```
 
 [^libgit2]: **libgit2**
