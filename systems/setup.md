@@ -1253,3 +1253,33 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     Without the `--taget-list` option all will be built.
+
+    **Examples**
+
+    See <https://github.com/guillem-riera/podman-machine-x86_64>
+
+    ```bash
+    export EXTRA_ARGS=${EXTRA_ARGS:-$@}
+    ## Fedora CoreOS image for x86_64 (QEMU)
+    export PODMAN_X86_64_MACHINE_NAME=${PODMAN_X86_64_MACHINE_NAME:-x86_64}
+    export PODMAN_X86_64_MACHINE_NAME_EXISTS=$(podman machine list | grep ${PODMAN_X86_64_MACHINE_NAME} | wc -l | tr -d '[:space:]')
+    export PODMAN_QEMU_IMAGE="fedora-coreos-39.20231101.3.0-qemu.x86_64.qcow2.xz"
+    export DOWNLOAD_DIR=${DOWNLOAD_DIR:-.}
+    if [ ${PODMAN_X86_64_MACHINE_NAME_EXISTS} -lt 1 ]; then
+        curl -C- -O "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/39.20231101.3.0/x86_64/${PODMAN_QEMU_IMAGE}"
+        podman machine init --image ${DOWNLOAD_DIR}/${PODMAN_QEMU_IMAGE} ${PODMAN_X86_64_MACHINE_NAME} ${EXTRA_ARGS}
+    else
+        echo "[Info] Machine ${PODMAN_X86_64_MACHINE_NAME} already exists. If you want to recreate it, run 'podman machine rm ${PODMAN_X86_64_MACHINE_NAME}'"
+    fi
+    podman machine list
+    lsmod
+    ## TCG (Tiny Code Generator)
+    xz -d ${PODMAN_QEMU_IMAGE}
+    qemu-system-x86_64 -m 2048 -cpu qemu64 -smp 2 -drive file=fedora-coreos-39.20231101.3.0-qemu.x86_64.qcow2,format=qcow2 -accel tcg
+    ## Change machine settings
+    ### Get the machine config file name
+    machineConfigFile="$(podman machine inspect ${PODMAN_X86_64_MACHINE_NAME} | jq -r '.[].ConfigPath.Path')"
+    ### https://docs.openstack.org/image-guide/obtain-images.html
+    wget https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img
+    qemu-system-x86_64 -m 2048 -cpu qemu64 -smp 2 -drive file=noble-server-cloudimg-amd64.img,format=qcow2 -accel tcg
+    ```
