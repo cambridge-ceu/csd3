@@ -1206,7 +1206,6 @@ They are generated from script [setup.sh](setup.sh),
     # podman
     pkill podman
     podman info
-    podman system service -t 0 &
     podman system connection list
     podman machine rm podman-machine-default
     podman system connection add --default podman-machine-default ssh://core@127.0.0.1:39137/run/user/10024/podman/podman.sock
