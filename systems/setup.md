@@ -1225,29 +1225,38 @@ They are generated from script [setup.sh](setup.sh),
 
     Web: <https://www.qemu.org/>
 
-    Attempts are made with these,
+    This is done as follows,
 
     ```bash
-    # Python
+    function init()
+    {
+      python -m venv --system-site-packages ${ENV_DIR}
+      module load python/3.8.11/gcc/pqdmnzmw
+      python -m venv --system-site-packages ${ENV_DIR}
+      source $prefix/venv/bin/activate
+      pip install --prefix=${ENV_DIR} sphinx
+      pip install --prefix=${ENV_DIR} sphinx_rtd_theme==1.1.1
+      pip install --prefix=${ENV_DIR} ninja
+      wget -qO- https://download.qemu.org/qemu-9.0.1.tar.xz | \
+      tar vxJf -
+      cd qemu-9.0.1
+    }
     export prefix=$CEUADMIN/qemu/
     export ENV_DIR=$prefix/venv
     module load python/3.8.11/gcc/pqdmnzmw
-    python -m venv --system-site-packages ${ENV_DIR}
+    # init
     source $prefix/venv/bin/activate
-    pip install --prefix=${ENV_DIR} sphinx
-    pip install --prefix=${ENV_DIR} sphinx_rtd_theme==1.1.1
-    pip install --prefix=${ENV_DIR} ninja
-    pip install sphinx
-    pip install sphinx_rtd_theme==1.1.1
-    pip install ninja
-    # qemu
-    wget -qO- https://download.qemu.org/qemu-9.0.1.tar.xz | \
-    tar vxJf -
-    cd qemu-9.0.1
     mkdir build && cd build
-    module load ncurses/6.2/gcc/givuz2aq libidn2/2.3.0/gcc/ph36ygoa gettext/0.21/gcc/qnrcglqo
+    module load ncurses/6.2/gcc/givuz2aq libidn2/2.3.0/gcc/ph36ygoa 
+    module load gettext/0.21/gcc/qnrcglqo
     module load ceuadmin/gnutls/3.8.4-icelake ceuadmin/nettle/3.9-icelake ceuadmin/krb5/1.21.2-icelake
-    ../configure --prefix=$prefix/9.0.1
-    make
+    export gettext=/usr/local/software/spack/spack-views/rhel8-icelake-20211027_2/gettext-0.21/gcc-11.2.0/qnrcglqov5au2zv56tumhhf4n6mds34n
+    ../configure --prefix=$prefix/9.0.1\
+                 --target-list=x86_64-softmmu \
+                 --extra-ldflags="-L4gettext -lintl" \
+                 --extra-cflags="-I$gettext/include"
+    make -j4
     make install
     ```
+
+    where function named `init` is used to set up a Python environment which only needs to be done once. Without the `--taget-list` option all will be built.
