@@ -6,9 +6,9 @@ sort: 13
 
 Web: <https://access.redhat.com/solutions/641193>
 
-QCOW2 is a storage format for virtual disks. QCOW stands for QEMU copy-on-write.
-For use in a KVM/QEMU hypervisor on a Red Hat Enterprise Linux machine, one must set a root password and disable the cloud-init service.
-One then may import the QCOW2 image using the `virt-manager` graphical user interface or the `virt-install` text command.
+> QCOW2 is a storage format for virtual disks. QCOW stands for QEMU copy-on-write.
+> For use in a KVM/QEMU hypervisor on a Red Hat Enterprise Linux machine, one must set a root password and disable the cloud-init service.
+> One then may import the QCOW2 image using the `virt-manager` graphical user interface or the `virt-install` text command.
 
 ```bash
 export src=/rds/project/rds-4o5vpvAowP0/software
