@@ -15,6 +15,7 @@ export src=/rds/project/rds-4o5vpvAowP0/software
 export qcow2=fedora-coreos-39.20231101.3.0-qemu.x86_64.qcow2
 export qcow2_passwd=$(cat ${HOME}/doc/qcow2_passwd)
 
+module load ceuadmin/qemu
 qemu-img info ${src}/${qcow2}
 virt-filesystems -a ${src}/${qcow2} --all --long -h
 virt-customize -a ${src}/${qcow2} --root-password password:${qcow2_passwd} --uninstall cloud-init
@@ -30,7 +31,6 @@ virt-install \
 ```
 
 ```
-module load ceuadmin/qemu
 qemu-system-x86_64 \
   -m 2048 \
   -cpu qemu64 \
