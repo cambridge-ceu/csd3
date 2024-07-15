@@ -1204,17 +1204,17 @@ They are generated from script [setup.sh](setup.sh),
     echo 'events_logger = "file"' >> containers/containers.conf
     ln -sf ${PWD}/containers $HOME/.config/containers
     # podman
-    pkill podman
-    podman info
-    podman system connection list
-    podman machine rm podman-machine-default
-    podman system connection add --default podman-machine-default ssh://core@127.0.0.1:39137/run/user/10024/podman/podman.sock
     module load ceuadmin/qemu
+    pkill podman
+    podman system connection list
     podman machine init
     podman machine start
     podman run quay.io/podman/hello
     podman pull docker.io/library/hello-world
     podman run --rm docker.io/library/hello-world
+    # additional notes
+    podman machine rm podman-machine-default
+    podman system connection add --default podman-machine-default ssh://core@127.0.0.1:39137/run/user/10024/podman/podman.sock
     ```
 
 [^alpine]: **alpine**
