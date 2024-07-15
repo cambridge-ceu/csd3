@@ -1210,6 +1210,7 @@ They are generated from script [setup.sh](setup.sh),
     podman system connection list
     podman machine rm podman-machine-default
     podman system connection add --default podman-machine-default ssh://core@127.0.0.1:39137/run/user/10024/podman/podman.sock
+    module load ceuadmin/qemu
     podman machine init
     podman machine start
     podman run quay.io/podman/hello
@@ -1259,4 +1260,4 @@ They are generated from script [setup.sh](setup.sh),
     make install
     ```
 
-    where function named `init` is used to set up a Python environment which only needs to be done once. Without the `--taget-list` option all will be built.
+    where function named `init` sets up a Python environment which only needs to be done once. Without the `--taget-list` option all will be built.
