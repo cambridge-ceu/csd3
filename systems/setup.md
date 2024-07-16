@@ -1282,4 +1282,8 @@ They are generated from script [setup.sh](setup.sh),
     ### https://docs.openstack.org/image-guide/obtain-images.html
     wget https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img
     qemu-system-x86_64 -m 2048 -cpu qemu64 -smp 2 -drive file=noble-server-cloudimg-amd64.img,format=qcow2 -accel tcg
+    ### No GUI
+    qemu-system-x86_64 -m 2048 -cpu qemu64 -smp 2 -drive file=fedora-coreos-39.20231101.3.0-qemu.x86_64.qcow2,format=qcow2,cache=writeback -nographic
     ```
+
+    where `format=raw` appears considerably faster but can make the image less flexible (e.g., no snapshots).
