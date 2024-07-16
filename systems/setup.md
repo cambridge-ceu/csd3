@@ -301,10 +301,11 @@ All entries are ordered chronologically.
 | 2024-07-11  | qemu/9.0.1                       | Generic[^qemu]       |
 | 2024-07-13  | msamanda/3.0.21.532              | Proteomics           |
 | 2024-07-16  | augeas/1.14.1                    | Generic              |
-| ""          | libguestfs/1.48.6                | Generic[^libguestfs] |
 | ""          | hivex/1.3.23                     | Generic[^hivex]      |
 | ""          | ocaml/4.14.2                     | Generic              |
 | ""          | findlib/1.9.6                    | Generic[^findlib]    |
+| ""          | opam/2.2.0                       | Generic[^opam]       |
+| ""          | libguestfs/1.48.6                | Generic[^libguestfs] |
 
 \* CEU or approved users only.
 
@@ -1293,21 +1294,16 @@ They are generated from script [setup.sh](setup.sh),
 
     where `format=raw` appears considerably faster but can make the image less flexible (e.g., no snapshots).
 
-[^libguestfs]: **libguestfs**
-
-    ```bash
-    export JANSSON_CFLAGS="-I$CEUADMIN/augeas/1.14.1/include"
-    export JANSSON_LIBS="-L$CEUADMIN/augeas/1.14.1/lib -laugeas"
-    export HIVEX_CFLAGS="-I$CEUADMIN/hivex/1.3.23/include"
-    export HIVEX_LIBS="-L$CEUADMIN/hivex/1.3.23/lib -lhivex"
-    ./configure --prefix=$CEUADMIN/libguestfs/1.48.6
-    ```
-
 [^hivex]: **hivex**
 
     ```bash
     wget -qO- https://download.libguestfs.org/hivex/hivex-1.3.23.tar.gz | tar xfz -
     cd hivex-1.3.23
+    module load ceuadmin/ocaml/4.14.2
+    module load ceuadmin/ruby/2.7.5
+    export PERLB5LIB=
+    autoreconf -i --force
+    ./generator/generator.ml
     ./configure --prefix=$CEUADMIN/hivex/1.3.23
     make
     cd perl
@@ -1317,7 +1313,11 @@ They are generated from script [setup.sh](setup.sh),
     make install
     ```
 
-    Note that to avoid OCaml, the release version has to be used instead of the GitHub release (no `hivex.h`). The `INSTALL_PREFIX` is replaced with `INSTALL_BASE`. Also for now, Python binding is not enabled.
+    The release version has `hivex.h` but GitHub releases doesn't; however since ocaml is available it can be generated from `generator/generator.ml`.. The `INSTALL_PREFIX` is replaced with `INSTALL_BASE`. Moreover, ocaml, Perl and ruby are enabled. Due to permission issue, Python binding is not enabled.
+
+    ```
+    /usr/bin/install: cannot create regular file '/usr/local/software/spack/spack-views/._rhel8-icelake-20211027_2/uxqqj4xcjrltatqgtuoi2hp46uabtzom/python-3.8.11/gcc-11.2.0/pqdmnzmwkrtp4e3gjibmcxho7g6ekpat/lib/python3.8/site-packages/libhivexmod.cpython-38-x86_64-linux-gnu.so': Permission denied
+    ```
 
 [^findlib]: **findlib**
 
@@ -1327,4 +1327,24 @@ They are generated from script [setup.sh](setup.sh),
     configure -bindir $CEUADMIN/findlib/1.9.6/bin -mandir $CEUADMIN/findlib/1.9.6/man
     make
     make install
+    ```
+
+[^opam]: **opam**
+
+   ```bash
+   opam init
+   opam switch list
+   opam switch list-available
+   opam switch create ocaml-4.14
+   opam install -y hivex --destdir $CEUADMIN/hivex/1.3.23
+   ```
+
+[^libguestfs]: **libguestfs**
+
+    ```bash
+    wget -qO- https://download.libguestfs.org/1.52-stable/libguestfs-1.52.2.tar.gz | tar xfz -
+    cd libguestfs-1.52.2
+    ./configure --prefix=$CEUADMIN/libguestfs/1.48.6 \
+                --with-extra="findlib=$CEUADMIN/findlib/1.9.6" \
+                --with-extra="hivex=$CEUADMIN/hivex/1.3.23"
     ```
