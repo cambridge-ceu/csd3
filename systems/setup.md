@@ -1331,13 +1331,13 @@ They are generated from script [setup.sh](setup.sh),
 
 [^opam]: **opam**
 
-   ```bash
-   opam init
-   opam switch list
-   opam switch list-available
-   opam switch create ocaml-4.14
-   opam install -y hivex --destdir $CEUADMIN/hivex/1.3.23
-   ```
+    ```bash
+    opam init
+    opam switch list
+    opam switch list-available
+    opam switch create ocaml-4.14
+    opam install -y hivex --destdir $CEUADMIN/hivex/1.3.23
+    ```
 
 [^libguestfs]: **libguestfs**
 
@@ -1348,3 +1348,5 @@ They are generated from script [setup.sh](setup.sh),
                 --with-extra="findlib=$CEUADMIN/findlib/1.9.6" \
                 --with-extra="hivex=$CEUADMIN/hivex/1.3.23"
     ```
+
+    It appears `export LIBGUESTFS_BACKEND=direct` is working.
