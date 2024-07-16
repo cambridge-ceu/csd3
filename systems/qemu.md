@@ -14,6 +14,8 @@ Web: <https://cloud-images.ubuntu.com/noble/current/>
 mv -i noble-server-cloudimg-amd64.img ubuntu-24-server.qcow2
 qemu-img convert -f qcow2 -O qcow2 ubuntu-24-server.qcow2 root-disk.qcow2
 qemu-img resize root-disk.qcow2 +10G
+# VDI
+qemu-img convert -O vdi ubuntu-24.04-minimal-cloudimg-amd64.img disk.vdi
 ```
 
 ## CentOS

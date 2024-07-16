@@ -300,6 +300,11 @@ All entries are ordered chronologically.
 | ""          | nettle/3.9-icelake               | Generic              |
 | 2024-07-11  | qemu/9.0.1                       | Generic[^qemu]       |
 | 2024-07-13  | msamanda/3.0.21.532              | Proteomics           |
+| 2024-07-16  | augeas/1.14.1                    | Generic              |
+| ""          | libguestfs/1.48.6                | Generic[^libguestfs] |
+| ""          | hivex/1.3.23                     | Generic[^hivex]      |
+| ""          | ocaml/4.14.2                     | Generic              |
+| ""          | findlib/1.9.6                    | Generic[^findlib]    |
 
 \* CEU or approved users only.
 
@@ -1287,3 +1292,39 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     where `format=raw` appears considerably faster but can make the image less flexible (e.g., no snapshots).
+
+[^libguestfs]: **libguestfs**
+
+    ```bash
+    export JANSSON_CFLAGS="-I$CEUADMIN/augeas/1.14.1/include"
+    export JANSSON_LIBS="-L$CEUADMIN/augeas/1.14.1/lib -laugeas"
+    export HIVEX_CFLAGS="-I$CEUADMIN/hivex/1.3.23/include"
+    export HIVEX_LIBS="-L$CEUADMIN/hivex/1.3.23/lib -lhivex"
+    ./configure --prefix=$CEUADMIN/libguestfs/1.48.6
+    ```
+
+[^hivex]: **hivex**
+
+    ```bash
+    wget -qO- https://download.libguestfs.org/hivex/hivex-1.3.23.tar.gz | tar xfz -
+    cd hivex-1.3.23
+    ./configure --prefix=$CEUADMIN/hivex/1.3.23
+    make
+    cd perl
+    perl Makefile.PL INSTALLDIRS=site INSTALL_BASE=/usr/local/Cluster-Apps/ceuadmin/hivex/1.3.23
+    cd ..
+    make
+    make install
+    ```
+
+    Note that to avoid OCaml, the release version has to be used instead of the GitHub release (no `hivex.h`). The `INSTALL_PREFIX` is replaced with `INSTALL_BASE`. Also for now, Python binding is not enabled.
+
+[^findlib]: **findlib**
+
+    ```bash
+    wget -qO- http://download.camlcity.org/download/findlib-1.9.6.tar.gz | tar xfz -
+    cd findlib-1.9.6
+    configure -bindir $CEUADMIN/findlib/1.9.6/bin -mandir $CEUADMIN/findlib/1.9.6/man
+    make
+    make install
+    ```
