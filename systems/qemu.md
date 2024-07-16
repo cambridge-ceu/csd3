@@ -63,6 +63,11 @@ deb http://security.ubuntu.com/ubuntu focal-security universe
 deb http://security.ubuntu.com/ubuntu focal-security multiverse
 sudo systemctl restart systemd-networkd
 sudo nano /etc/netplan/01-netcfg.yaml
+network:
+  version: 2
+  ethernets:
+    ens3:
+      dhcp4: true
 sudo netplan apply
 ip addr show ens3
 ping google.com
