@@ -4,7 +4,9 @@ sort: 14
 
 # QEMU (*experimental*)
 
- QCOW2 is a storage format for virtual disks. QCOW stands for QEMU copy-on-write.
+Web: <https://www.qemu.org/>
+
+QCOW2 is a storage format for virtual disks. QCOW stands for QEMU copy-on-write.
 
 ## Ubuntu
 

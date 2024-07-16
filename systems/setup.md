@@ -1229,8 +1229,6 @@ They are generated from script [setup.sh](setup.sh),
 
 [^qemu]: **qemu**
 
-    Web: <https://www.qemu.org/>
-
     This is done as follows,
 
     ```bash
