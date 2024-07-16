@@ -12,6 +12,7 @@ Web: <https://cloud-images.ubuntu.com/noble/current/>
 
 ```bash
 wget https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img
+module load ceuadmin/qemu
 qemu-img convert -f qcow2 -O qcow2 noble-server-cloudimg-amd64.img ubuntu-24.04.qcow2
 qemu-img resize ubuntu-24.04.qcow2 +10G
 export LIBGUESTFS_BACKEND=direct
@@ -20,10 +21,24 @@ virt-customize -a ubuntu-24.04.qcow2 \
   --mkdir /root \
   --chmod 0700:/root \
   --run-command 'useradd -m -G sudo -s /bin/bash jhz22' \
-  --run-command "echo 'jhz22:passwd' | chpasswd -e"
-# password
-openssl passwd -6 -salt jhz22 $(cat ~/doc/qcow2_passwd) > /home/jhz22/doc/fedora_passwd
-fedora_passwd=$(cat /home/jhz22/doc/fedora_passwd)
+  --run-command "echo 'jhz22:passwd' | chpasswd" \
+  --run-command 'apt-get update && apt-get install -y e2fsprogs grub-pc'
+# virt-rescue -a ubuntu-24.04.qcow2
+# fsck /dev/sda1
+virt-customize -a ubuntu-24.04.qcow2 --run-command 'grub-install /dev/sda'
+virt-customize -a ubuntu-24.04.qcow2 --run-command 'update-grub'
+qemu-system-x86_64 \
+  -m 2048 \
+  -cpu qemu64 \
+  -smp 2 \
+  -drive file=ubuntu-24.04.qcow2,format=qcow2,cache=writeback \
+  -nographic \
+  -serial mon:stdio \
+  -d guest_errors \
+  -no-fd-bootchk
+# Set encrypted password, adding -e to chpasswd above in this case
+openssl passwd -6 -salt jhz22 $(cat ~/doc/qcow2_passwd) > /home/jhz22/doc/ubuntu_passwd
+ubuntu_passwd=$(cat /home/jhz22/doc/fedora_passwd)
 
 # VDI
 qemu-img convert -O vdi ubuntu-24.04-minimal-cloudimg-amd64.img disk.vdi
