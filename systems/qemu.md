@@ -19,7 +19,7 @@ virt-customize -a ubuntu-24.04.qcow2 \
   --mkdir /home/jhz22 \
   --mkdir /root \
   --chmod 0700:/root \
-  --run-command 'useradd -m -G wheel -s /bin/bash jhz22' \
+  --run-command 'useradd -m -G sudo -s /bin/bash jhz22' \
   --run-command "echo 'jhz22:passwd' | chpasswd -e"
 # password
 openssl passwd -6 -salt jhz22 $(cat ~/doc/qcow2_passwd) > /home/jhz22/doc/fedora_passwd
