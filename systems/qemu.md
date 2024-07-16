@@ -70,14 +70,16 @@ sudo apt update
 sudo apt upgrade
 ```
 
-## CentOS
+## CentOS (*incomplete*)
 
 Web: <https://cloud.centos.org/centos/8/x86_64/images/>
 
-The following is based on <https://access.redhat.com/solutions/641193>.
+As noted at <https://access.redhat.com/solutions/641193>.
 
 > For use in a KVM/QEMU hypervisor on a Red Hat Enterprise Linux machine, one must set a root password and disable the cloud-init service.
 > One then may import the QCOW2 image using the `virt-manager` graphical user interface or the `virt-install` text command.
+
+Some operations could be added similarly to the setup for Ubuntu.
 
 ```bash
 export src=/rds/project/rds-4o5vpvAowP0/software
@@ -140,7 +142,7 @@ with `ignition.json` being
 }
 ```
 
-## libvirt
+## libvirt (*incomplete*)
 
 Web: <https://libvirt.org/> (<https://download.libvirt.org/>)
 
