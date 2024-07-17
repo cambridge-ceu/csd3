@@ -38,14 +38,6 @@ qemu-system-x86_64 \
   -serial mon:stdio \
   -d guest_errors \
   -no-fd-bootchk
-# Set encrypted password, adding -e to chpasswd above in this case
-openssl passwd -6 -salt jhz22 $(cat ~/doc/qcow2_passwd) > /home/jhz22/doc/ubuntu_passwd
-ubuntu_passwd=$(cat /home/jhz22/doc/fedora_passwd)
-# an plain version
-export vm_passwd=~/doc/vm.passwd
-chmod 600 ${centos_passwd}  # Secure the file
-# virt-customize -a <VM> -c "useradd -m -s /bin/bash jhz22" \
-#                -c "passwd jhz22 < ${vm_passwd}"
 
 # VDI
 qemu-img convert -O vdi ubuntu-24.04-minimal-cloudimg-amd64.img disk.vdi
@@ -138,9 +130,22 @@ configure --prefix=$CEUADMIN/libvirt/4.6.0 --with-storage-drivers=<path>
 
 Additional work is necessary.
 
-## Networking (*experimental*)
+## Notes
 
-This regards to DNS resolution where the Google public nameservers are used,
+This paragraph is concerned about encrypted and plain passwords,
+
+```
+# encrypted version, used as chpasswd -e or ignition
+openssl passwd -6 -salt jhz22 $(cat ~/doc/qcow2_passwd) > /home/jhz22/doc/ubuntu_passwd
+ubuntu_passwd=$(cat /home/jhz22/doc/ubuntu_passwd)
+# plain version
+export centos_passwd=~/doc/CentOS-8_passwd
+chmod 600 ${centos_passwd}  # Secure the file
+# virt-customize -a <VM> -c "useradd -m -s /bin/bash jhz22" \
+#                -c "passwd jhz22 < ${centos_passwd}"
+``
+
+This following relates to DNS resolution where the Google public nameservers are used,
 
 ```
 ping google.com
