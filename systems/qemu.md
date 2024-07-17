@@ -51,37 +51,6 @@ chmod 600 ${centos_passwd}  # Secure the file
 qemu-img convert -O vdi ubuntu-24.04-minimal-cloudimg-amd64.img disk.vdi
 ```
 
-Here are notes on DNS resolution,
-
-```
-sudo nano /etc/resolv.conf
-nameserver 8.8.8.8
-nameserver 8.8.4.4
-sudo nano /etc/apt/sources.list
-deb http://archive.ubuntu.com/ubuntu focal main restricted
-deb http://archive.ubuntu.com/ubuntu focal-updates main restricted
-deb http://archive.ubuntu.com/ubuntu focal universe
-deb http://archive.ubuntu.com/ubuntu focal-updates universe
-deb http://archive.ubuntu.com/ubuntu focal multiverse
-deb http://archive.ubuntu.com/ubuntu focal-updates multiverse
-deb http://archive.ubuntu.com/ubuntu focal-backports main restricted universe multiverse
-deb http://security.ubuntu.com/ubuntu focal-security main restricted
-deb http://security.ubuntu.com/ubuntu focal-security universe
-deb http://security.ubuntu.com/ubuntu focal-security multiverse
-sudo systemctl restart systemd-networkd
-sudo nano /etc/netplan/01-netcfg.yaml
-network:
-  version: 2
-  ethernets:
-    ens3:
-      dhcp4: true
-sudo netplan apply
-ip addr show ens3
-ping google.com
-sudo apt update
-sudo apt upgrade
-```
-
 ## CentOS
 
 Web: <https://cloud.centos.org/centos/8/x86_64/images/>
@@ -168,3 +137,37 @@ configure --prefix=$CEUADMIN/libvirt/4.6.0 --with-storage-drivers=<path>
 ```
 
 Additional work is necessary.
+
+## Networking (*experimental*)
+
+This regards to DNS resolution where the Google public nameservers are used,
+
+```
+ping google.com
+sudo nano /etc/resolv.conf
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+sudo nano /etc/apt/sources.list
+deb http://archive.ubuntu.com/ubuntu focal main restricted
+deb http://archive.ubuntu.com/ubuntu focal-updates main restricted
+deb http://archive.ubuntu.com/ubuntu focal universe
+deb http://archive.ubuntu.com/ubuntu focal-updates universe
+deb http://archive.ubuntu.com/ubuntu focal multiverse
+deb http://archive.ubuntu.com/ubuntu focal-updates multiverse
+deb http://archive.ubuntu.com/ubuntu focal-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu focal-security main restricted
+deb http://security.ubuntu.com/ubuntu focal-security universe
+deb http://security.ubuntu.com/ubuntu focal-security multiverse
+sudo systemctl restart systemd-networkd
+sudo nano /etc/netplan/01-netcfg.yaml
+network:
+  version: 2
+  ethernets:
+    ens3:
+      dhcp4: true
+sudo netplan apply
+ip addr show ens3
+ping google.com
+sudo apt update
+sudo apt upgrade
+```
