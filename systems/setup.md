@@ -721,6 +721,8 @@ They are generated from script [setup.sh](setup.sh),
 
     where `pull` generates `pwiz-skyline-i-agree-to-the-vendor-licenses_latest.sif` at current directory.
 
+    See <https://docs.sylabs.io/guides/2.6/user-guide/singularity_and_docker.html>.
+
 [^fraposa]: **fraposa**
 
     Several packages, including poetry, poetry-plugin-export and fraposa_pgsc, will be installed as follows,
