@@ -60,6 +60,14 @@ module load ceuadmin/pspp
 
 with command-line tool `pspp` and a GUI counterpart `psppire`.
 
+## singularity
+
+Web: <https://docs.sylabs.io/> ([User Guide](https://docs.sylabs.io/guides/3.5/user-guide/index.html#))
+
+```bash
+singularity --version
+```
+
 ## SLURM
 
 Due to increase of size, the entry is moved here, <https://cambridge-ceu.github.io/csd3/systems/ParallelComputing.html>.
