@@ -338,7 +338,7 @@ They are generated from script [setup.sh](setup.sh),
     so the -1.info file could not be generated.
     ```
 
-[^gemma]: **gema**
+[^gemma]: **gemma**
 
     Note on compiling from source
 
