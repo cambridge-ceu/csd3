@@ -707,7 +707,7 @@ They are generated from script [setup.sh](setup.sh),
     cd builddir & make
     ```
 
-    We now purse example for pwiz used later,
+    We now pursue a later example for pwiz,
 
     ```bash
     module load ceuadmin/pwiz/3_0_24163_9bfa69a-wine
