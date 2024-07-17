@@ -160,7 +160,7 @@ export centos_passwd=~/doc/CentOS-8_passwd
 chmod 600 ${centos_passwd}  # Secure the file
 # virt-customize -a <VM> -c "useradd -m -s /bin/bash jhz22" \
 #                -c "passwd jhz22 < ${centos_passwd}"
-``
+```
 
 This following relates to DNS resolution where the Google public nameservers are used,
 
