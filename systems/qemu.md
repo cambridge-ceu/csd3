@@ -116,9 +116,9 @@ with `ignition.json` being
 }
 ```
 
-## Linux kernel
+# kernel modules
 
-The Linux Kernel Archives, <https://www.kernel.org/> ([4.x](https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/))
+Web: <https://www.kernel.org/> ([4.x](https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/))
 
 The latest as of 17/7/2024 is 6.1. On icelake, `uname -r` shows `4.18.0-477.51.1.el8_8.x86_64`.
 
