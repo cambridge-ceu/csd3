@@ -125,6 +125,7 @@ The latest as of 17/7/2024 is 6.1. On icelake, `uname -r` shows `4.18.0-477.51.1
 ```bash
 wget -qO- https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.18.tar.gz | tar xvfz -
 cd linux-4.18
+# configure/build/install modules
 # Cryptographic API --> Module signature verification is enabled
 make menuconfig
 make oldconfig  # Or make defconfig if you're starting fresh
@@ -132,7 +133,7 @@ make modules
 make CFLAGS="-g" modules # debugging
 make modules_prepare
 make modules_install INSTALL_MOD_PATH=$CEUADMIN/linux/4.18
-sudo modprobe dm-mod
+modprobe dm-mod
 ```
 
 ## libvirt (*incomplete*)
@@ -144,7 +145,7 @@ The `virt-manager` in libvirt 3.2.0 above still uses -no-hpet option which is no
 ```bash
 wget -qO- https://download.libvirt.org/libvirt-4.6.0.tar.xz | tar xJf -
 cd libvrit-4.6.0
-configure --prefix=$CEUADMIN/libvirt/4.6.0 --with-storage-drivers=<path>
+configure --prefix=$CEUADMIN/libvirt/4.6.0 --with-storage-drivers=<path> --with-storage-mpath
 ```
 
 Additional work is necessary.
