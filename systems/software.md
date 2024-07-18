@@ -66,7 +66,19 @@ Web: <https://docs.sylabs.io/> ([User Guide](https://docs.sylabs.io/guides/3.5/u
 
 ```bash
 singularity --version
+# an example for pwiz,
+module load ceuadmin/pwiz/3_0_24163_9bfa69a-wine
+singularity pull --name pwiz-skyline-i-agree-to-the-vendor-licenses_latest.sif \
+        docker://chambm/pwiz-skyline-i-agree-to-the-vendor-licenses
+singularity exec --env WINEDEBUG=-all \
+                  -B /rds/project/rds-MkfvQMuSUxk/interval/caprion_proteomics/spectral_library_ZWK/:/data \
+                      pwiz-skyline-i-agree-to-the-vendor-licenses_latest.sif \
+                      wine msconvert /data/szwk901104i19901xms1.raw
 ```
+
+where `pull` generates `pwiz-skyline-i-agree-to-the-vendor-licenses_latest.sif` at current directory.
+
+See also <https://docs.sylabs.io/guides/2.6/user-guide/singularity_and_docker.html>.
 
 ## SLURM
 
