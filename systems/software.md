@@ -64,6 +64,10 @@ with command-line tool `pspp` and a GUI counterpart `psppire`.
 
 Web: <https://docs.sylabs.io/> ([User Guide](https://docs.sylabs.io/guides/3.5/user-guide/index.html#))
 
+Real applications in WES/WGS are given here, <https://jinghuazhao.github.io/SCALLOP-Seq/NOTES/>.
+
+Similarly for MS experiment, the following is also from an ongoing project.
+
 ```bash
 singularity --version
 # an example for pwiz,
