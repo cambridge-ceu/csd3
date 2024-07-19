@@ -70,13 +70,12 @@ Similarly for MS experiment, the following is also from an ongoing project.
 
 ```bash
 singularity --version
-# an example for pwiz,
 module load ceuadmin/pwiz/3_0_24163_9bfa69a-wine
-singularity pull --name pwiz-skyline-i-agree-to-the-vendor-licenses_latest.sif \
-        docker://chambm/pwiz-skyline-i-agree-to-the-vendor-licenses
+export SIF=pwiz-skyline-i-agree-to-the-vendor-licenses_latest.sif
+singularity pull --name ${SIF} docker://chambm/pwiz-skyline-i-agree-to-the-vendor-licenses
 singularity exec --env WINEDEBUG=-all \
                   -B /rds/project/rds-MkfvQMuSUxk/interval/caprion_proteomics/spectral_library_ZWK/:/data \
-                      pwiz-skyline-i-agree-to-the-vendor-licenses_latest.sif \
+                      ${SIF} \
                       wine msconvert /data/szwk901104i19901xms1.raw
 ```
 
