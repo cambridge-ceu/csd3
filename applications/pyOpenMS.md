@@ -44,6 +44,9 @@ The contributed libraries are set up as noted earlier,
 cd OpenMS-3.3.0
 # assuming files are ready from contrib/archives
 cmake -DBUILD_TYPE=ALL contrib
+cmake -DGIT_TRACKING=OFF -DENABLE_UPDATE_CHECK=OFF -DCMAKE_INSTALL_PREFIX=$CEUADMIN/OpenMS/3.0.0-icelake \
+      -DPYOPENMS=OFF -DOPENMS_COVERAGE=OFF ../OpenMS-3.0.0
+make edit_cache
 ```
 
 where the contrib/archives directory only needs to contain the following files,
@@ -62,9 +65,11 @@ Xerces-C_3_2_0.tar.gz
 zlib-1.2.11.tar
 ```
 
+and `make edit_cache` allows for manual editing.
+
 ### CSD3 location
 
-This is set as follows,
+The `ceuadmin/OpenMS/3.0.0-pre-develop-2022-09-28` module is at the follow location,
 
 ```bash
 export Caprion=/rds/project/jmmh2/rds-jmmh2-projects/Caprion_proteomics
