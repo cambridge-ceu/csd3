@@ -6,6 +6,60 @@ sort: 41
 
 The prerequisites involve CSD3 location, [GNU C](https://gcc.gnu.org/), [cmake](https://cmake.org/), [TeX Live](https://www.tug.org/texlive/) and [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
+## 3.3.0
+
+An attempt to set up pyOpenMS is as follows,
+
+```bash
+#!/bin/bash
+
+#SBATCH --job-name=_pyOpenMS
+#SBATCH --account=PETERS-SL3-CPU
+#SBATCH --partition=icelake-himem
+#SBATCH --mem=28800
+#SBATCH --time=12:00:00
+#SBATCH --cpus-per-task=4  # Use 4 cores per task
+
+##SBATCH --output=/home/jhz22/pyOpenMS.o
+##SBATCH --error=/home/jhz22/pyOpenMS.e
+
+. /etc/profile.d/modules.sh
+module purge
+module load rhel8/default-icl
+export PERL5LIB=
+
+module load ceuadmin/Anaconda3/2023.09-0
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+mkdir -p /usr/local/Cluster-Apps/ceuadmin/OpenMS/3.0.0/Anaconda3
+conda install -c openms --prefix=$CEUADMIN/OpenMS/3.0.0-icelake/Anaconda3 pyopenms
+```
+
+The contributed libraries are set up as noted earlier,
+
+```bash
+cd OpenMS-3.3.0
+# assuming files are ready from contrib/archives
+cmake -DBUILD_TYPE=ALL contrib
+```
+
+where the contrib/archives directory only needs to contain the following files,
+
+```
+boost_1_78_0.tar
+bzip2-1.0.5.tar.gz
+CoinMP-1.8.3-vs22.tar.gz
+eigen-3.3.4.tar
+glpk-4.46.tar
+hdf5-1.10.5.tar.gz
+kissfft-130.tar.gz
+libsvm-3.12.tar.gz
+openmp-12.0.1.src.tar.xz
+Xerces-C_3_2_0.tar.gz
+zlib-1.2.11.tar
+```
+
 ### CSD3 location
 
 This is set as follows,

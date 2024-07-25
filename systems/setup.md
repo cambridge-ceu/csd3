@@ -306,6 +306,8 @@ All entries are ordered chronologically.
 | ""          | findlib/1.9.6                    | Generic[^findlib]    |
 | ""          | opam/2.2.0                       | Generic[^opam]       |
 | ""          | libguestfs/1.48.6                | Generic[^libguestfs] |
+| 2024-07-23  | Miniconda3/22.9.0                | Generic              |
+| 2024-07-25  | pigz/2.8                         | Generic              |
 
 \* CEU or approved users only.
 
