@@ -34,7 +34,7 @@ module load ceuadmin/Anaconda3/2023.09-0
 conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
-mkdir -p /usr/local/Cluster-Apps/ceuadmin/OpenMS/3.0.0/Anaconda3
+mkdir -p /usr/local/Cluster-Apps/ceuadmin/OpenMS/3.0.0-icelake/Anaconda3
 conda install -c openms --prefix=$CEUADMIN/OpenMS/3.0.0-icelake/Anaconda3 pyopenms
 ```
 
