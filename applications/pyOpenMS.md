@@ -35,9 +35,8 @@ conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
 export ENVS=/usr/local/Cluster-Apps/ceuadmin/OpenMS/3.0.0-icelake/Anaconda3
-mkdir -p ${ENVS}
-conda create --prefix ${ENVS}
-conda install -c openms --prefix=${ENVS} pyopenms
+conda create --prefix ${ENVS} --yes
+conda install -c openms --prefix=${ENVS} pyopenms --yes
 ```
 
 The contributed libraries are set up as noted earlier,
