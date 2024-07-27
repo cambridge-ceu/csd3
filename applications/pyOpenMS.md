@@ -22,8 +22,8 @@ An attempt to set up pyOpenMS is as follows,
 #SBATCH --time=12:00:00
 #SBATCH --cpus-per-task=4  # Use 4 cores per task
 
-##SBATCH --output=/home/jhz22/pyOpenMS.o
-##SBATCH --error=/home/jhz22/pyOpenMS.e
+#SBATCH --output=/home/jhz22/pyOpenMS.o
+#SBATCH --error=/home/jhz22/pyOpenMS.e
 
 . /etc/profile.d/modules.sh
 module purge

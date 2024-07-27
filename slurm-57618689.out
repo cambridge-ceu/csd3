@@ -1,0 +1,14 @@
+Loading rhel8/default-icl
+  Loading requirement: dot rhel8/slurm singularity/current rhel8/global
+    cuda/11.4 vgl/2.5.1/64 intel-oneapi-compilers/2022.1.0/gcc/b6zld2mz
+    intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
+Warning: 'defaults' already in 'channels' list, moving to the top
+Warning: 'bioconda' already in 'channels' list, moving to the top
+Warning: 'conda-forge' already in 'channels' list, moving to the top
+Retrieving notices: ...working... done
+
+DirectoryNotACondaEnvironmentError: The target directory exists, but it is not a conda environment.
+Use 'conda create' to convert the directory to a conda environment.
+  target directory: /usr/local/Cluster-Apps/ceuadmin/OpenMS/3.0.0-icelake/Anaconda3
+
+

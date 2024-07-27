@@ -9,4 +9,4 @@ Collecting package metadata (current_repodata.json): ...working... done
 Solving environment: ...working... unsuccessful initial attempt using frozen solve. Retrying with flexible solve.
 Solving environment: ...working... unsuccessful attempt using repodata from current_repodata.json, retrying with next repodata source.
 Collecting package metadata (repodata.json): ...working... done
-Solving environment: ...working... 
+Solving environment: ...working... slurmstepd: error: *** JOB 57554457 ON cpu-q-368 CANCELLED AT 2024-07-26T20:02:36 DUE TO TIME LIMIT ***
