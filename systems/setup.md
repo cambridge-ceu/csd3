@@ -308,6 +308,7 @@ All entries are ordered chronologically.
 | ""          | libguestfs/1.48.6                | Generic[^libguestfs] |
 | 2024-07-23  | Miniconda3/22.9.0                | Generic              |
 | 2024-07-25  | pigz/2.8                         | Generic              |
+| 2024-07-31  | tandem/2017.2.1.4                | Proteomics           |
 
 \* CEU or approved users only.
 
