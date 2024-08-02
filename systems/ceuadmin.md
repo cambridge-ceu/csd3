@@ -127,7 +127,7 @@ available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmm
 largely be seen as sources which are used to build the reoository given above.
 
 CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `phenoscanner`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom`
-linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,540 as of 2/8/2024)
+linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,542 as of 2/8/2024)
 is linked with the latest R distribution, 4.4.1; there are also 19 packages under R-gcc11.
 
 For CEU users, it is easy to point to them, e.g.,
