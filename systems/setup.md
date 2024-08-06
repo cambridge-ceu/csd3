@@ -282,7 +282,7 @@ All entries are ordered chronologically.
 | ""          | pwiz/3_0_24163_9bfa69a-wine      | Proteomics           |
 | 2024-06-13  | seqkit/2.8.2                     | Proteomics[^seqkit]  |
 | ""          | dotnet/8.0.304                   | Generic              |
-| ""          | dotnet/6.0.423                   | Generic              |
+| ""          | dotnet/6.0.423                   | Generic[^dotnet]     |
 | ""          | FlashLFQ/1.2.6                   | Proteomics[^FlashLFQ]|
 | ""          | MetaMorpheus/1.0.5               | Proteomics           |
 | 2024-06-14  | R/4.4.1                          | Generic              |
@@ -1103,6 +1103,36 @@ They are generated from script [setup.sh](setup.sh),
 
     # A contrast with the genomic counterpart
     # bedtools getfasta -fo output.fasta -s -fullHeader -fi ${fasta} -bed ${regions}
+    ```
+
+[^dotnet]: **dotnet**
+
+    The paket tool is installed as follows,
+
+    ````bash
+    cd /usr/local/Cluster-Apps/ceuadmin/dotnet/6.0.423
+    dotnet new tool-manifest
+    dotnet tool install paket
+    dotnet paket
+    dotnet paket add Mono.Unix --version 7.1.0-final.1.21458.1
+    ```
+
+    The last line above is for OpenMS. We see `.config/dotnet-tools.json` and also
+
+    ```
+    Paket version 8.0.3+75b30cdcb8859e8d129f139444d9b9b600bfff07
+    Adding package 'Mono.Unix' 7.1.0-final.1.21458.1
+    Resolving dependency graph...
+     - Mono.Unix is pinned to 7.1.0-final.1.21458.1
+    Updated packages:
+      Group: Main
+        - Mono.Unix: 7.1.0-final.1.21458.1 (added)
+    Created dependency graph (1 packages in total)
+    Downloading Mono.Unix 7.1.0-final.1.21458.1
+    Download of Mono.Unix 7.1.0-final.1.21458.1 done in 249 milliseconds. (231504 kbit/s, 6 MB)
+     - Project GenerateDeps.proj needs to be restored
+    Resolved package 'Mono.Unix' to version 7.1.0-final.1.21458.1
+    Total time taken: 3 seconds
     ```
 
 [^FlashLFQ]: **FlashLFQ**
