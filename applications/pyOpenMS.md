@@ -8,7 +8,7 @@ The prerequisites involve CSD3 location, [GNU C](https://gcc.gnu.org/), [cmake](
 
 ## 3.3.0
 
-Web: <https://www.openms.org/documentation/html/install_linux.html>
+Web: <https://openms.readthedocs.io/en/release3.0.0/openms-applications-and-tools/installation.html>
 
 An attempt to set up pyOpenMS is as follows,
 
@@ -67,6 +67,22 @@ zlib-1.2.11.tar
 ```
 
 and `make edit_cache` allows for manual editing.
+
+### THIDPARTY
+
+```bash
+cd Open-3.0.0
+git clone https://github.com/OpenMS/THIRDPARTY/
+```
+
+### singularity
+
+```bash
+singularity pull docker://ghcr.io/openms/openms-library:3.0.0
+singularity pull docker://ghcr.io/openms/openms-executables::3.0.0
+```
+
+## 3.0.0-pre-develop-2022-09-28
 
 ### CSD3 location
 
@@ -168,6 +184,7 @@ cd -
 cmake -DBUILD_TYPE=ALL contrib
 cmake -DOPENMS_CONTRIB_LIBS=${Caprion}/miniconda3/lib -DCMAKE_PREFIX_PATH=contrib -DPYOPENMS=ON ../OpenMS
 make targets
+git clone https://github.com/OpenMS/THIRDPARTY/
 ```
 
 The second `wget` statement is much more efficient to download all the files.
