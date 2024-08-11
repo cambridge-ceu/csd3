@@ -309,6 +309,10 @@ All entries are ordered chronologically.
 | 2024-07-23  | Miniconda3/22.9.0                | Generic              |
 | 2024-07-25  | pigz/2.8                         | Generic              |
 | 2024-07-31  | tandem/2017.2.1.4                | Proteomics           |
+| 2024-08-11  | comet/2024.01.1                  | Proteomics           |
+| ""          | kojak/2.1.0                      | Proteomics           |
+| ""          | kojak/1.5.5                      | Proteomics           |
+| ""          | kojak/2.0.0a22                   | Proteomics           |
 
 \* CEU or approved users only.
 
