@@ -313,7 +313,7 @@ All entries are ordered chronologically.
 | ""          | kojak/2.1.0                      | Proteomics           |
 | ""          | kojak/1.5.5                      | Proteomics           |
 | ""          | kojak/2.0.0a22                   | Proteomics           |
-| 2024-08-12  | MS-GF+/2024.03.26                | Proteomics           |
+| 2024-08-12  | MS-GF+/2024.03.26                | Proteomics[^msgf]    |
 
 \* CEU or approved users only.
 
@@ -1386,3 +1386,16 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     It appears `export LIBGUESTFS_BACKEND=direct` is working.
+
+[^msgf]: **MS-GF+**
+
+    A `test.sh` using examples from the source (`msgfplus-2024.03.26.tar.gz` -- assuming it has bene untarred into `src/`),
+
+    ```bash
+    ln -s src/src/test/resources test
+    java -Xmx4000M -jar MSGFPlus.jar -s test/test.mgf -o test/test.mzid \
+         -d test/BSA.fasta -t 10ppm -m 0 -inst 1 -e 1 -ti -1,2 -ntt 1 -tda 1 -minLength 6 \
+         -maxLength 50 -n 1 -thread 7 -mod test/Mods.txt
+    java -Xmx4000M -jar MSGFPlus.jar -s test/test.mgf -o test/test.mzid \
+         -d  test/BSA.fasta -conf test/MSGFDB_Param.txt
+    ```
