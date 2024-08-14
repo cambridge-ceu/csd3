@@ -314,6 +314,7 @@ All entries are ordered chronologically.
 | ""          | kojak/1.5.5                      | Proteomics           |
 | ""          | kojak/2.0.0a22                   | Proteomics           |
 | 2024-08-12  | MS-GF+/2024.03.26                | Proteomics[^msgf]    |
+| 2024-08-14  | ThermoRawFileParser/1.4.4        | Proteomics           |
 
 \* CEU or approved users only.
 

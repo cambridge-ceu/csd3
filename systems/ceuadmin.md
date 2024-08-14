@@ -76,12 +76,12 @@ The current list is as follows,
 [225] "snptest"               "spread-sheet-widget"   "spyder"                "sqlite"
 [229] "sra-tools"             "sshpass"               "ssw"                   "STAR"
 [233] "stata"                 "SurvivalAnalysis"      "SurvivalKit"           "Swift"
-[237] "tabix"                 "tandem"                "tatami"                "thunderbird"
-[241] "tidy"                  "trinculo"              "trousers"              "Typora"
-[245] "unbound"               "vala"                  "VarScan"               "vcftools"
-[249] "VEGAS2"                "verifyBamID"           "VSCode"                "VSCodium"
-[253] "vte"                   "wine"                  "xpdf"                  "yaml-cpp"
-[257] "Zotero"                "zstd"
+[237] "tabix"                 "tandem"                "tatami"                "ThermoRawFileParser"
+[241] "thunderbird"           "tidy"                  "trinculo"              "trousers"
+[245] "Typora"                "unbound"               "vala"                  "VarScan"
+[249] "vcftools"              "VEGAS2"                "verifyBamID"           "VSCode"
+[253] "VSCodium"              "vte"                   "wine"                  "xpdf"
+[257] "yaml-cpp"              "Zotero"                "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -345,6 +345,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | ""         | kojak/1.5.5                 | Proteomics          |
     | ""         | kojak/2.0.0a22              | Proteomics          |
     | 2024-08-12 | MS-GF+/2024.03.26           | Proteomics          |
+    | 2024-08-14 | ThermoRawFileParser/1.4.4   | Proteomics          |
 
     \* CEU or approved users only.
 
