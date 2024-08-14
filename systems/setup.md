@@ -316,6 +316,7 @@ All entries are ordered chronologically.
 | 2024-08-12  | MS-GF+/2024.03.26                | Proteomics[^msgf]    |
 | 2024-08-14  | ThermoRawFileParser/1.4.4        | Proteomics           |
 | ""          | ThermoRawFileParserGUI/1.7.4     | Proteomics           |
+| ""          | FragPipe/22.0                    | Proteomics           |
 
 \* CEU or approved users only.
 
