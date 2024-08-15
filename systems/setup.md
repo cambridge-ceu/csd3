@@ -316,7 +316,9 @@ All entries are ordered chronologically.
 | 2024-08-12  | MS-GF+/2024.03.26                | Proteomics[^msgf]    |
 | 2024-08-14  | ThermoRawFileParser/1.4.4        | Proteomics           |
 | ""          | ThermoRawFileParserGUI/1.7.4     | Proteomics           |
-| ""          | FragPipe/22.0                    | Proteomics           |
+| ""          | FragPipe/22.0                    | Proteomics[^fragpipe]|
+| 2024-08-15  | MSFragger/4.1                    | Proteomics           |
+| ""          | IonQuant/1.10.27                 | Proteomics           |
 
 \* CEU or approved users only.
 
@@ -1402,3 +1404,14 @@ They are generated from script [setup.sh](setup.sh),
     java -Xmx4000M -jar MSGFPlus.jar -s test/test.mgf -o test/test.mzid \
          -d  test/BSA.fasta -conf test/MSGFDB_Param.txt
     ```
+
+[^fragpipe]: **FragPipe**
+
+    It does require Java 11, MSFragger 4.1, Python 3.9, and EasyPQp; to get around we use `openjdk/11.0.12_7/gcc/czpuqhmv`, `ceuadmin/MSFragger/4.1`, `ceuadmin/Anaconda3/2023.09-0`.
+
+    ```bash
+    source /usr/local/Cluster-Apps/ceuadmin/Anaconda3/2023.09-0/bin/activate
+    conda install git+https://github.com/grosenberger/easypqp.git@master
+    ```
+
+    IonQuant 1.10.27 is installed similarly.
