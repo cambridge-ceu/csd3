@@ -1414,4 +1414,4 @@ They are generated from script [setup.sh](setup.sh),
     pip install git+https://github.com/grosenberger/easypqp.git@master
     ```
 
-    IonQuant 1.10.27 is installed similarly.
+    IonQuant 1.10.27 is installed similarly. In fact, it is is straightforwad to select `Download Update` from the menu, so `IonQuant-1.10.27.jar`, `/MSFragger-4.1/`, and `diaTracer-1.1.5.jar` are available from the `tools/` directory.
