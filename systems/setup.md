@@ -1411,7 +1411,7 @@ They are generated from script [setup.sh](setup.sh),
 
     ```bash
     source /usr/local/Cluster-Apps/ceuadmin/Anaconda3/2023.09-0/bin/activate
-    conda install git+https://github.com/grosenberger/easypqp.git@master
+    pip install git+https://github.com/grosenberger/easypqp.git@master
     ```
 
     IonQuant 1.10.27 is installed similarly.
