@@ -27,11 +27,6 @@ configure --prefix=$CEUADMIN/bcftools/1.20
 make
 make install
 bcftools --version
-bcftools +score
-bcftools +munge
-bcftools +liftover
-bcftools +pgs
-bcftools +blup
 ```
 
 The setup of `bcftools +liftover` is detailed here,
@@ -90,6 +85,11 @@ We are now ready to liftover -- for normalized VCF only including bi-allelic var
 
 ```bash
 module load ceuadmin/bcftools/1.20
+bcftools +score
+bcftools +munge
+bcftools +liftover
+bcftools +pgs
+bcftools +blup
 bcftools norm --no-version -Ou -m+ 1kGP_high_coverage_Illumina.sites.vcf.gz | \
 bcftools +liftover --no-version -Ou -- \
   -s $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
