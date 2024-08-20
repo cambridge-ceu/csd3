@@ -8,6 +8,29 @@ Web: [http://www.htslib.org/download/](http://www.htslib.org/download/)
 
 On CSD3, `module list bcftools` gives a list of versions but none can query data from the web.
 
+## 1.20
+
+```bash
+wget -qO- https://github.com/samtools/htslib/archive/refs/tags/1.20.tar.gz | \
+tar xfz -
+export PERL5LIB=
+cd htslib-1.20/
+autoreconf -i
+configure --prefix=$CEUADMIN/bcftools/1.20
+make
+make install
+cd -
+wget https://github.com/samtools/bcftools/releases/download/1.20/bcftools-1.20.tar.bz2 | \
+tar xjf -
+cd bcftools-1.20/
+configure --prefix=$CEUADMIN/bcftools/1.20
+make
+make install
+bcftools --version
+```
+
+## 1.12
+
 However, the installation is straightforward.
 
 ```bash

@@ -348,9 +348,10 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2024-08-12 | MS-GF+/2024.03.26           | Proteomics          |
     | 2024-08-14 | ThermoRawFileParser/1.4.4   | Proteomics          |
     | ""         | ThermoRawFileParserGUI/1.7.4| Proteomics          |
-    |""          | FragPipe/22.0               | Proteomics          |
+    | ""         | FragPipe/22.0               | Proteomics          |
     |2024-08-15  | MSFragger/4.1               | Proteomics          |
-   | ""          | IonQuant/1.10.27            | Proteomics          |
+    | ""         | IonQuant/1.10.27            | Proteomics          |
+    |2024-08-20  | bcftools/1.20               | Genetics            |
 
     \* CEU or approved users only.
 

@@ -99,3 +99,7 @@ PKG_LIBS = -L/usr/local/Cluster-Apps/ceuadmin/jq/1.6/lib -ljq
 ```
 
 followd by `R CMD INSTALL jqr`.
+
+### 1.3.4
+
+Same as 1.3.3.
