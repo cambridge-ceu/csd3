@@ -30,11 +30,12 @@ make
 make install
 wget -P ../bin https://raw.githubusercontent.com/freeseek/score/master/assoc_plot.R
 chmod a+x ../bin/assoc_plot.R
+mkdir score && cd score
+wget https://software.broadinstitute.org/software/score/score_1.20-20240505.zip
 ```
 Some notes on coupling,
 
 ```bash
-# coupling
 wget -P bcftools-1.20 https://raw.githubusercontent.com/DrTimothyAldenDavis/SuiteSparse/stable/{SuiteSparse_config/SuiteSparse_config,CHOLMOD/Include/cholmod}.h
 /bin/rm -f plugins/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
 wget -P plugins https://raw.githubusercontent.com/freeseek/score/master/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
