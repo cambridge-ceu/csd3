@@ -11,6 +11,8 @@ Web: [http://www.htslib.org/download/](http://www.htslib.org/download/)
 Several plugins are now available, see <https://github.com/freeseek/score>. Information on linkage disequilibrium graphical models (LDGM) is here, <https://ldgm.readthedocs.io/en/latest/introduction.html>.
 
 ```bash
+if [ ! -d $CEUADMIN/bcftools/1.20 ]; then mkdir -p $CEUADMIN/bcftools/1.20; fi
+cd $CEUADMIN/bcftools/1.20
 wget -qO- https://github.com/samtools/htslib/archive/refs/tags/1.20.tar.gz | \
 tar xfz -
 export PERL5LIB=
@@ -26,6 +28,18 @@ cd bcftools-1.20/
 configure --prefix=$CEUADMIN/bcftools/1.20
 make
 make install
+wget -P ../bin https://raw.githubusercontent.com/freeseek/score/master/assoc_plot.R
+chmod a+x ../bin/assoc_plot.R
+```
+Some notes on coupling,
+
+```bash
+# coupling
+wget -P bcftools-1.20 https://raw.githubusercontent.com/DrTimothyAldenDavis/SuiteSparse/stable/{SuiteSparse_config/SuiteSparse_config,CHOLMOD/Include/cholmod}.h
+/bin/rm -f plugins/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
+wget -P plugins https://raw.githubusercontent.com/freeseek/score/master/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
+make
+# /bin/cp bcftools plugins/{munge,liftover,score,metal,pgs,blup}.so ../bin
 ```
 
 The setup of `bcftools +liftover` is detailed here,
@@ -35,18 +49,39 @@ module load bwa
 module load ceuadmin/samtools
 export public_databases=/rds/project/rds-4o5vpvAowP0
 export TMPDIR=/rds/user/jhz22/work
-cd dbsnp
-wget -O- ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz | \
+
+# GRCh37 human genome reference, cytoband and chain file
+cd $public_databases/GRCh37_reference_fasta
+wget https://hgdownload.cse.ucsc.edu/goldenPath/hs1/bigZips/hs1.fa.gz
+gunzip hs1.fa.gz
+cd $public_databases/dbsnp
+wget -O- ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/human_g1k_v37.fasta.gz | \
+gzip -d > human_g1k_v37.fasta
+samtools faidx human_g1k_v37.fasta
+bwa index human_g1k_v37.fasta
+wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/cytoBand.txt.gz
+wget http://hgdownload.cse.ucsc.edu/goldenpath/hg18/liftOver/hg18ToHg19.over.chain.gz
+
+# GRCh38 human genome reference, cytoband and chain files
+export url=ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids
+wget -O- $url/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz | \
 gzip -d > GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 samtools faidx GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
-# done via SLURM shown below
 bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 wget http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/cytoBand.txt.gz
 wget http://hgdownload.cse.ucsc.edu/goldenpath/hg18/liftOver/hg18ToHg38.over.chain.gz
 wget http://hgdownload.cse.ucsc.edu/goldenpath/hg19/liftOver/hg19ToHg38.over.chain.gz
 wget http://ftp.ensembl.org/pub/assembly_mapping/homo_sapiens/GRCh37_to_GRCh38.chain.gz
+wget https://hgdownload.cse.ucsc.edu/gbdb/hg38/liftOver/hg38ToHs1.over.chain.gz
 wget https://hgdownload.cse.ucsc.edu/goldenPath/hs1/liftOver/hs1ToHg38.over.chain.gz
 
+module load ceuadmin/bcftools/1.20
+bcftools --version
+bcftools +score
+bcftools +munge
+bcftools +liftover
+bcftools +pgs
+bcftools +blup
 wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.vcf.gz
 wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.vcf.gz.tbi
 bcftools +liftover --no-version \
@@ -82,24 +117,18 @@ module load rhel8/default-icl
 export TMPDIR=${HPC_WORK}/work
 
 module load bwa
+bwa index human_g1k_v37.fasta
 bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 ```
 
-We are now ready for liftover -- for a normalized VCF only including bi-allelic variants, form indels using 'bcftools norm -m+' followed by liftover
+For a normalized VCF only including bi-allelic variants, form indels using 'bcftools norm -m+' followed by liftover
 
 ```bash
-module load ceuadmin/bcftools/1.20
-bcftools --version
-bcftools +score
-bcftools +munge
-bcftools +liftover
-bcftools +pgs
-bcftools +blup
 bcftools norm --no-version -Ou -m+ 1kGP_high_coverage_Illumina.sites.vcf.gz | \
 bcftools +liftover --no-version -Ou -- \
   -c $public_databases/dbsnp/hg38ToHs1.over.chain.gz \
-  -f hs1.fa \
-  -s $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
+  -f $public_databases/GRCh37_reference_fasta/hs1.fa \
+  -s $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna | \
 bcftools sort -o 1kGP_high_coverage_Illumina.sites.hs1.bcf -Ob --write-index
 ```
 
