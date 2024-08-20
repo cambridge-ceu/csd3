@@ -28,8 +28,9 @@ cd bcftools-1.20/
 configure --prefix=$CEUADMIN/bcftools/1.20
 make
 make install
-wget -P ../bin https://raw.githubusercontent.com/freeseek/score/master/assoc_plot.R
-chmod a+x ../bin/assoc_plot.R
+cd -
+wget -P bin https://raw.githubusercontent.com/freeseek/score/master/assoc_plot.R
+chmod a+x bin/assoc_plot.R
 mkdir score && cd score
 wget https://software.broadinstitute.org/software/score/score_1.20-20240505.zip
 ```
@@ -116,7 +117,7 @@ bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 
 in a named file such as `bwa.sb` and executed with `sbatch bwa.sb`.
 
-Some notes on coupling are here (not used),
+Some notes on coupling are kept here (not used),
 
 ```bash
 wget -P bcftools-1.20 https://raw.githubusercontent.com/DrTimothyAldenDavis/SuiteSparse/stable/{SuiteSparse_config/SuiteSparse_config,CHOLMOD/Include/cholmod}.h
