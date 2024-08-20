@@ -133,12 +133,12 @@ cp -p $public_databases/ensembl-vep/examples/homo_sapiens_GRCh3?.vcf .
 sed  -i '1!s/^21/chr21/' homo_sapiens_GRCh37.vcf
 sed  -i '1!s/^22/chr22/' homo_sapiens_GRCh37.vcf
 bgzip homo_sapiens_GRCh37.vcf
-tabix -S1 -s 1 -b2 -e2 homo_sapiens_GRCh37.vcf.gz
+tabix -S1 -s1 -b2 -e2 homo_sapiens_GRCh37.vcf.gz
 # GRCh38
 sed  -i '1!s/^21/chr21/' homo_sapiens_GRCh38.vcf
 sed  -i '1!s/^22/chr22/' homo_sapiens_GRCh38.vcf
 bgzip homo_sapiens_GRCh38.vcf
-tabix -S1 -s 1 -b2 -e2 homo_sapiens_GRCh38.vcf.gz
+tabix -S1 -s1 -b2 -e2 homo_sapiens_GRCh38.vcf.gz
 
 bcftools norm --no-version -Ou -m+ homo_sapiens_GRCh37.vcf.gz | \
 bcftools +liftover --no-version -Ou -- \
