@@ -26,7 +26,6 @@ cd bcftools-1.20/
 configure --prefix=$CEUADMIN/bcftools/1.20
 make
 make install
-bcftools --version
 ```
 
 The setup of `bcftools +liftover` is detailed here,
@@ -85,6 +84,7 @@ We are now ready to liftover -- for normalized VCF only including bi-allelic var
 
 ```bash
 module load ceuadmin/bcftools/1.20
+bcftools --version
 bcftools +score
 bcftools +munge
 bcftools +liftover
