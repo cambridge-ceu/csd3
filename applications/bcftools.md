@@ -60,7 +60,7 @@ wget -O- ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/human_g1k_
 gzip -d > human_g1k_v37.fasta
 samtools faidx human_g1k_v37.fasta
 bwa index human_g1k_v37.fasta
-wget http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/cytoBand.txt.gz
+wget -P hg19 http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/cytoBand.txt.gz
 wget http://hgdownload.cse.ucsc.edu/goldenpath/hg18/liftOver/hg18ToHg19.over.chain.gz
 
 # GRCh38 human genome reference, cytoband and chain files
@@ -69,7 +69,7 @@ wget -O- $url/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz | \
 gzip -d > GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 samtools faidx GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
-wget http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/cytoBand.txt.gz
+wget -P hg38 http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/cytoBand.txt.gz
 wget http://hgdownload.cse.ucsc.edu/goldenpath/hg18/liftOver/hg18ToHg38.over.chain.gz
 wget http://hgdownload.cse.ucsc.edu/goldenpath/hg19/liftOver/hg19ToHg38.over.chain.gz
 wget http://ftp.ensembl.org/pub/assembly_mapping/homo_sapiens/GRCh37_to_GRCh38.chain.gz
@@ -77,6 +77,7 @@ wget https://hgdownload.cse.ucsc.edu/gbdb/hg38/liftOver/hg38ToHs1.over.chain.gz
 wget https://hgdownload.cse.ucsc.edu/goldenPath/hs1/liftOver/hs1ToHg38.over.chain.gz
 
 module load ceuadmin/bcftools/1.20
+bcftools plugin --list
 bcftools --version
 bcftools +score
 bcftools +munge
@@ -120,17 +121,6 @@ export TMPDIR=${HPC_WORK}/work
 module load bwa
 bwa index human_g1k_v37.fasta
 bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
-```
-
-For a normalized VCF only including bi-allelic variants, form indels using 'bcftools norm -m+' followed by liftover
-
-```bash
-bcftools norm --no-version -Ou -m+ 1kGP_high_coverage_Illumina.sites.vcf.gz | \
-bcftools +liftover --no-version -Ou -- \
-  -c $public_databases/dbsnp/hg38ToHs1.over.chain.gz \
-  -f $public_databases/GRCh37_reference_fasta/hs1.fa \
-  -s $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna | \
-bcftools sort -o 1kGP_high_coverage_Illumina.sites.hs1.bcf -Ob --write-index
 ```
 
 in a named file such as `bwa.sb` and executed with `sbatch bwa.sb`.
