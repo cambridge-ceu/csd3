@@ -117,7 +117,42 @@ bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 
 in a named file such as `bwa.sb` and executed with `sbatch bwa.sb`.
 
-Some notes on coupling are kept here (not used),
+### example
+
+This is according to `ensembl-vep/examples`,
+
+```bash
+#!/usr/bin/bash
+
+module load ceuadmin/bcftools/1.20
+
+export public_databases=/rds/project/rds-4o5vpvAowP0
+cp -p $public_databases/ensembl-vep/examples/homo_sapiens_GRCh3?.vcf .
+
+# GRCh37
+sed  -i '1!s/^21/chr21/' homo_sapiens_GRCh37.vcf
+sed  -i '1!s/^22/chr22/' homo_sapiens_GRCh37.vcf
+bgzip homo_sapiens_GRCh37.vcf
+tabix -S1 -s 1 -b2 -e2 homo_sapiens_GRCh37.vcf.gz
+# GRCh38
+sed  -i '1!s/^21/chr21/' homo_sapiens_GRCh38.vcf
+sed  -i '1!s/^22/chr22/' homo_sapiens_GRCh38.vcf
+bgzip homo_sapiens_GRCh38.vcf
+tabix -S1 -s 1 -b2 -e2 homo_sapiens_GRCh38.vcf.gz
+
+bcftools norm --no-version -Ou -m+ homo_sapiens_GRCh37.vcf.gz | \
+bcftools +liftover --no-version -Ou -- \
+  -s $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
+  -f $public_databases/GRCh37_reference_fasta/hs1.fa \
+  -c $public_databases/dbsnp/hg19ToHg38.over.chain.gz | \
+bcftools sort -o homo_sapiens_GRCh38.hs1.bcf -Ob --write-index
+sdiff -s <(bcftools query --format "%CHROM\t%POS\n" homo_sapiens_GRCh38.hs1.bcf -r chr21) \
+         <(bcftools query --format "%CHROM\t%POS\n" homo_sapiens_GRCh38.vcf.gz -r chr21)
+```
+
+where we first change chromosome names from 21. 22 to chr21, chr22. The bcftools liftover plugin generates a .bcf file which is used to contrast with the provided example; since the two files all have the same coordinates we don't see any output.
+
+Finally, some notes on coupling are kept here (for compiling from source but not used here),
 
 ```bash
 wget -P bcftools-1.20 https://raw.githubusercontent.com/DrTimothyAldenDavis/SuiteSparse/stable/{SuiteSparse_config/SuiteSparse_config,CHOLMOD/Include/cholmod}.h
