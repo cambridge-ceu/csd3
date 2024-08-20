@@ -6,8 +6,6 @@ sort: 6
 
 Web: [http://www.htslib.org/download/](http://www.htslib.org/download/)
 
-On CSD3, `module list bcftools` gives a list of versions but none can query data from the web.
-
 ## 1.20
 
 Several plugins are now available, see <https://github.com/freeseek/score>. Information on linkage disequilibrium graphical models (LDGM) is here, <https://ldgm.readthedocs.io/en/latest/introduction.html>.
@@ -103,6 +101,8 @@ bcftools sort -o 1kGP_high_coverage_Illumina.sites.hs1.bcf -Ob --write-index
 in a named file such as `bwa.sb` and executed with `sbatch bwa.sb`.
 
 ## 1.12
+
+On CSD3, `module avail bcftools` gives a list of versions but none can query data from the web.
 
 However, the installation is straightforward.
 
