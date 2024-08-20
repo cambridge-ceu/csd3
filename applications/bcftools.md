@@ -81,7 +81,7 @@ module load bwa
 bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 ```
 
-We are now ready to liftover -- for normalized VCF only including bi-allelic variants, form indels using 'bcftools norm -m+' followed by liftover
+We are now ready for liftover -- for a normalized VCF only including bi-allelic variants, form indels using 'bcftools norm -m+' followed by liftover
 
 ```bash
 module load ceuadmin/bcftools/1.20
@@ -93,9 +93,9 @@ bcftools +pgs
 bcftools +blup
 bcftools norm --no-version -Ou -m+ 1kGP_high_coverage_Illumina.sites.vcf.gz | \
 bcftools +liftover --no-version -Ou -- \
-  -s $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
-  -f hs1.fa \
   -c $public_databases/dbsnp/hg38ToHs1.over.chain.gz \
+  -f hs1.fa \
+  -s $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
 bcftools sort -o 1kGP_high_coverage_Illumina.sites.hs1.bcf -Ob --write-index
 ```
 
