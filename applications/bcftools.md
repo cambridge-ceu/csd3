@@ -153,7 +153,7 @@ sdiff -s <(bcftools query --format "%CHROM\t%POS\n" homo_sapiens_GRCh38.hs1.bcf 
 where there are two notable aspects:
 
 - We first change chromosome names from 21. 22 to chr21, chr22. The bcftools liftover plugin generates a .bcf file which is used to contrast with the provided example; since the two files all have the same coordinates we don't see any output.
-- Should indels be split into SNVs, then `bcftools norm -m+` would rebuild them for the liftover, after which they could also be split again to split into bi-allelic variants.
+- Should indels be split into SNVs, then `bcftools norm -m+` would rebuild them for the liftover, after which they could also be split again into bi-allelic variants.
 
 Finally, some notes on coupling are kept here (for compiling from source but not used here),
 
