@@ -117,7 +117,7 @@ bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 
 in a named file such as `bwa.sb` and executed with `sbatch bwa.sb`.
 
-### example
+### An example
 
 This is according to `ensembl-vep/examples`,
 
