@@ -10,6 +10,8 @@ On CSD3, `module list bcftools` gives a list of versions but none can query data
 
 ## 1.20
 
+Several plugins are now available, see <https://github.com/freeseek/score>. Information on linkage disequilibrium graphical models (LDGM) is here, <https://ldgm.readthedocs.io/en/latest/introduction.html>.
+
 ```bash
 wget -qO- https://github.com/samtools/htslib/archive/refs/tags/1.20.tar.gz | \
 tar xfz -
@@ -27,7 +29,78 @@ configure --prefix=$CEUADMIN/bcftools/1.20
 make
 make install
 bcftools --version
+bcftools +score
+bcftools +munge
+bcftools +liftover
+bcftools +pgs
+bcftools +blup
 ```
+
+The setup of `bcftools +liftover` is detailed here,
+
+```bash
+module load bwa
+module load ceuadmin/samtools
+export public_databases=/rds/project/rds-4o5vpvAowP0
+cd dbsnp
+wget -O- ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz | \
+gzip -d > GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
+samtools faidx GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
+# done by SLURM shown below
+bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
+wget http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/cytoBand.txt.gz
+wget http://hgdownload.cse.ucsc.edu/goldenpath/hg18/liftOver/hg18ToHg38.over.chain.gz
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.vcf.gz
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.vcf.gz.tbi
+bcftools +liftover --no-version \
+ -Ou $public_databases/dbsnp/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.vcf.gz -- \
+  -s $public_databases/GRCh37_reference_fasta//human_g1k_v37.fasta \
+  -f $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
+  -c $public_databases/dbsnp/hg18ToHg38.over.chain.gz \
+  --reject ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.reject.bcf \
+  --reject-type b \
+  --write-src | \
+bcftools sort -o ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.hg38.bcf -Ob --write-index
+cd -
+```
+
+The `bwa` will be killed from an interactive session, so needs to be replaced,
+
+```bash
+#!/bin/bash
+
+#SBATCH --job-name=_bwa
+#SBATCH --account=PETERS-SL3-CPU
+#SBATCH --partition=icelake-himem
+#SBATCH --mem=28800
+#SBATCH --time=12:00:00
+#SBATCH --cpus-per-task=4
+#SBATCH --output=bwa.o
+#SBATCH --error=bwa.e
+
+. /etc/profile.d/modules.sh
+module purge
+module load rhel8/default-icl
+
+export TMPDIR=${HPC_WORK}/work
+
+module load bwa
+bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
+```
+
+We are now ready to liftover -- for normalized VCF only including bi-allelic variants, form indels using 'bcftools norm -m+' followed by liftover
+
+```bash
+module load ceuadmin/bcftools/1.20
+bcftools norm --no-version -Ou -m+ 1kGP_high_coverage_Illumina.sites.vcf.gz | \
+bcftools +liftover --no-version -Ou -- \
+  -s $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
+  -f hs1.fa \
+  -c $public_databases/dbsnp/hg38ToHs1.over.chain.gz \
+bcftools sort -o 1kGP_high_coverage_Illumina.sites.hs1.bcf -Ob --write-index
+```
+
+in a named file such as `bwa.sb` and executed with `sbatch bwa.sb`.
 
 ## 1.12
 

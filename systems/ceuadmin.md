@@ -352,6 +352,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     |2024-08-15  | MSFragger/4.1               | Proteomics          |
     | ""         | IonQuant/1.10.27            | Proteomics          |
     |2024-08-20  | bcftools/1.20               | Genetics            |
+    | ""         | samtools/1.20               | Proteomics          |
 
     \* CEU or approved users only.
 
