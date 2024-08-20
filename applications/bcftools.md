@@ -34,11 +34,12 @@ The setup of `bcftools +liftover` is detailed here,
 module load bwa
 module load ceuadmin/samtools
 export public_databases=/rds/project/rds-4o5vpvAowP0
+export TMPDIR=/rds/user/jhz22/work
 cd dbsnp
 wget -O- ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/000/001/405/GCA_000001405.15_GRCh38/seqs_for_alignment_pipelines.ucsc_ids/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz | \
 gzip -d > GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 samtools faidx GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
-# done by SLURM shown below
+# done via SLURM shown below
 bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 wget http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/cytoBand.txt.gz
 wget http://hgdownload.cse.ucsc.edu/goldenpath/hg18/liftOver/hg18ToHg38.over.chain.gz
