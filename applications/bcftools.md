@@ -8,7 +8,7 @@ Web: [http://www.htslib.org/download/](http://www.htslib.org/download/)
 
 ## 1.20
 
-Several plugins are now available, see <https://github.com/freeseek/score>. Information on linkage disequilibrium graphical models (LDGM) is here, <https://ldgm.readthedocs.io/en/latest/introduction.html>.
+Several plugins are now available, see <https://github.com/freeseek/score>.
 
 ```bash
 if [ ! -d $CEUADMIN/bcftools/1.20 ]; then mkdir -p $CEUADMIN/bcftools/1.20; fi
@@ -32,15 +32,6 @@ wget -P ../bin https://raw.githubusercontent.com/freeseek/score/master/assoc_plo
 chmod a+x ../bin/assoc_plot.R
 mkdir score && cd score
 wget https://software.broadinstitute.org/software/score/score_1.20-20240505.zip
-```
-Some notes on coupling,
-
-```bash
-wget -P bcftools-1.20 https://raw.githubusercontent.com/DrTimothyAldenDavis/SuiteSparse/stable/{SuiteSparse_config/SuiteSparse_config,CHOLMOD/Include/cholmod}.h
-/bin/rm -f plugins/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
-wget -P plugins https://raw.githubusercontent.com/freeseek/score/master/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
-make
-# /bin/cp bcftools plugins/{munge,liftover,score,metal,pgs,blup}.so ../bin
 ```
 
 The setup of `bcftools +liftover` is detailed here,
@@ -124,6 +115,16 @@ bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 ```
 
 in a named file such as `bwa.sb` and executed with `sbatch bwa.sb`.
+
+Some notes on coupling are here (not used),
+
+```bash
+wget -P bcftools-1.20 https://raw.githubusercontent.com/DrTimothyAldenDavis/SuiteSparse/stable/{SuiteSparse_config/SuiteSparse_config,CHOLMOD/Include/cholmod}.h
+/bin/rm -f plugins/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
+wget -P plugins https://raw.githubusercontent.com/freeseek/score/master/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
+make
+# /bin/cp bcftools plugins/{munge,liftover,score,metal,pgs,blup}.so ../bin
+```
 
 ## 1.12
 
