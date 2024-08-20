@@ -12,16 +12,7 @@ Several plugins are now available, see <https://github.com/freeseek/score>.
 
 ```bash
 if [ ! -d $CEUADMIN/bcftools/1.20 ]; then mkdir -p $CEUADMIN/bcftools/1.20; fi
-cd $CEUADMIN/bcftools/1.20
-wget -qO- https://github.com/samtools/htslib/archive/refs/tags/1.20.tar.gz | \
-tar xfz -
 export PERL5LIB=
-cd htslib-1.20/
-autoreconf -i
-configure --prefix=$CEUADMIN/bcftools/1.20
-make
-make install
-cd -
 wget https://github.com/samtools/bcftools/releases/download/1.20/bcftools-1.20.tar.bz2 | \
 tar xjf -
 cd bcftools-1.20/
