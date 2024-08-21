@@ -149,11 +149,17 @@ where there are two notable aspects:
 Finally, some notes on coupling are kept here (for compiling from source but not used here),
 
 ```bash
+# cholmod for pgs
+# conda install bcftools 'libopenblas=*=*openmp*' suitesparse
+# conda install mkl llvm-openmp
 wget -P bcftools-1.20 https://raw.githubusercontent.com/DrTimothyAldenDavis/SuiteSparse/stable/{SuiteSparse_config/SuiteSparse_config,CHOLMOD/Include/cholmod}.h
+cd bcftools-1.20/
 /bin/rm -f plugins/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
 wget -P plugins https://raw.githubusercontent.com/freeseek/score/master/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
+# remove pgs if necessary
+# /bin/rm plugins/pgs.{c,mk}
 make
-# /bin/cp bcftools plugins/{munge,liftover,score,metal,pgs,blup}.so ../bin
+# /bin/cp bcftools plugins/{munge,liftover,score,metal,pgs,blup}.so bin
 ```
 
 ## 1.12
