@@ -25,6 +25,7 @@ wget -P bin https://raw.githubusercontent.com/freeseek/score/master/assoc_plot.R
 chmod a+x bin/assoc_plot.R
 mkdir score && cd score
 wget https://software.broadinstitute.org/software/score/score_1.20-20240505.zip
+cd -
 ```
 
 The setup of `bcftools +liftover` is detailed here,
