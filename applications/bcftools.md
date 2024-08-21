@@ -12,6 +12,7 @@ Several plugins are now available, see <https://github.com/freeseek/score>.
 
 ```bash
 if [ ! -d $CEUADMIN/bcftools/1.20 ]; then mkdir -p $CEUADMIN/bcftools/1.20; fi
+cd $CEUADMIN/bcftools/1.20
 export PERL5LIB=
 wget https://github.com/samtools/bcftools/releases/download/1.20/bcftools-1.20.tar.bz2 | \
 tar xjf -
@@ -32,7 +33,7 @@ The setup of `bcftools +liftover` is detailed here,
 module load bwa
 module load ceuadmin/samtools
 export public_databases=/rds/project/rds-4o5vpvAowP0
-export TMPDIR=/rds/user/jhz22/work
+export TMPDIR=/rds/user/$USER/work
 
 # GRCh37 human genome reference, cytoband and chain file
 cd $public_databases/GRCh37_reference_fasta
@@ -58,27 +59,6 @@ wget http://hgdownload.cse.ucsc.edu/goldenpath/hg19/liftOver/hg19ToHg38.over.cha
 wget http://ftp.ensembl.org/pub/assembly_mapping/homo_sapiens/GRCh37_to_GRCh38.chain.gz
 wget https://hgdownload.cse.ucsc.edu/gbdb/hg38/liftOver/hg38ToHs1.over.chain.gz
 wget https://hgdownload.cse.ucsc.edu/goldenPath/hs1/liftOver/hs1ToHg38.over.chain.gz
-
-module load ceuadmin/bcftools/1.20
-bcftools plugin --list
-bcftools --version
-bcftools +score
-bcftools +munge
-bcftools +liftover
-bcftools +pgs
-bcftools +blup
-wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.vcf.gz
-wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.vcf.gz.tbi
-bcftools +liftover --no-version \
- -Ou $public_databases/dbsnp/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.vcf.gz -- \
-  -s $public_databases/GRCh37_reference_fasta//human_g1k_v37.fasta \
-  -f $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
-  -c $public_databases/dbsnp/hg18ToHg38.over.chain.gz \
-  --reject ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.reject.bcf \
-  --reject-type b \
-  --write-src | \
-bcftools sort -o ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.hg38.bcf -Ob --write-index
-cd -
 ```
 
 The `bwa` will be killed from an interactive session, so needs to be replaced,
@@ -108,9 +88,36 @@ bwa index GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 
 in a named file such as `bwa.sb` and executed with `sbatch bwa.sb`.
 
-### An example
+### ceuadmin/qcftools/1.20
 
-This is according to `ensembl-vep/examples`,
+The module is shown as follows,
+
+```bash
+module load ceuadmin/bcftools/1.20
+bcftools plugin --list
+bcftools --version
+bcftools +score
+bcftools +munge
+bcftools +liftover
+bcftools +pgs
+bcftools +blup
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.vcf.gz
+wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.vcf.gz.tbi
+bcftools +liftover --no-version \
+ -Ou $public_databases/dbsnp/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.vcf.gz -- \
+  -s $public_databases/GRCh37_reference_fasta//human_g1k_v37.fasta \
+  -f $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
+  -c $public_databases/dbsnp/hg18ToHg38.over.chain.gz \
+  --reject ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.reject.bcf \
+  --reject-type b \
+  --write-src | \
+bcftools sort -o ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.hg38.bcf -Ob --write-index
+cd -
+```
+
+### An example application
+
+The data used here is from `ensembl-vep/examples`,
 
 ```bash
 #!/usr/bin/bash
@@ -146,7 +153,9 @@ where there are two notable aspects:
 - We first change chromosome names from 21. 22 to chr21, chr22. The bcftools liftover plugin generates a .bcf file which is used to contrast with the provided example; since the two files all have the same coordinates we don't see any output.
 - Should indels be split into SNVs, then `bcftools norm -m+` would rebuild them for the liftover, after which they could also be split again into bi-allelic variants.
 
-Finally, some notes on coupling are kept here (for compiling from source but not used here),
+### Notes on coupling
+
+They will be useful for compiling from source and it is easier to use conda for an end user,
 
 ```bash
 # cholmod for pgs
