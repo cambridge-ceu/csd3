@@ -14,7 +14,7 @@ Several plugins are now available, see <https://github.com/freeseek/score>.
 if [ ! -d $CEUADMIN/bcftools/1.20 ]; then mkdir -p $CEUADMIN/bcftools/1.20; fi
 cd $CEUADMIN/bcftools/1.20
 export PERL5LIB=
-wget https://github.com/samtools/bcftools/releases/download/1.20/bcftools-1.20.tar.bz2 | \
+wget -qO- https://github.com/samtools/bcftools/releases/download/1.20/bcftools-1.20.tar.bz2 | \
 tar xjf -
 cd bcftools-1.20/
 configure --prefix=$CEUADMIN/bcftools/1.20
