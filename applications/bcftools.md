@@ -113,12 +113,6 @@ bcftools +liftover --no-version \
   --reject-type b \
   --write-src | \
 bcftools sort -o ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.hg38.bcf -Ob --write-index
-cd -
-```
-
-Lastly,
-
-```bash
 bcftools norm --no-version -Ou -m+ 1kGP_high_coverage_Illumina.sites.vcf.gz | \
 bcftools +liftover --no-version -Ou -- \
   -s $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
@@ -127,7 +121,7 @@ bcftools +liftover --no-version -Ou -- \
 bcftools sort -o 1kGP_high_coverage_Illumina.sites.hs1.bcf -Ob --write-index
 ```
 
-where `1kGP_high_coverage_Illumina.sites.vcf.gz` is again generated via SLURM (based on author of bcftools/liftover),
+where `1kGP_high_coverage_Illumina.sites.vcf.gz` is also generated via SLURM (based on author of bcftools/liftover),
 
 ```bash
 #!/bin/bash
