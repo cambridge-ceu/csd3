@@ -94,8 +94,8 @@ in a named file such as `bwa.sb` and executed with `sbatch bwa.sb`.
 The module can be enabled in several ways,
 
 ```bash
-export BCFTOOLS_PLUGINS=$CEUADMIN/bcftools/1.20/plugins && bcftools +score
-export BCFTOOLS_PLUGINS=$CEUADMIN/bcftools/1.20/plugins && bcftools plugin score
+export BCFTOOLS_PLUGINS=$CEUADMIN/bcftools/1.20/score && bcftools +score
+export BCFTOOLS_PLUGINS=$CEUADMIN/bcftools/1.20/score && bcftools plugin score
 bcftools +$BCFTOOLS_PLUGINS/score.so
 bcftools plugin $BCFTOOLS_PLUGINS/score.so
 ```
@@ -130,7 +130,7 @@ bcftools +liftover --no-version -Ou -- \
 bcftools sort -o 1kGP_high_coverage_Illumina.sites.hs1.bcf -Ob --write-index
 ```
 
-which requires the following SLURM script (based on author of bcftools/liftover),
+whose input requires the following SLURM script (based on author of bcftools/liftover),
 
 ```bash
 #!/bin/bash
@@ -213,12 +213,12 @@ They will be useful for compiling from source and it is easier to use conda for 
 # conda install mkl llvm-openmp
 wget -P bcftools-1.20 https://raw.githubusercontent.com/DrTimothyAldenDavis/SuiteSparse/stable/{SuiteSparse_config/SuiteSparse_config,CHOLMOD/Include/cholmod}.h
 cd bcftools-1.20/
-/bin/rm -f plugins/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
-wget -P plugins https://raw.githubusercontent.com/freeseek/score/master/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
+/bin/rm -f score/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
+wget -P score https://raw.githubusercontent.com/freeseek/score/master/{score.{c,h},{munge,liftover,metal,blup}.c,pgs.{c,mk}}
 # remove pgs if necessary
-# /bin/rm plugins/pgs.{c,mk}
+# /bin/rm score/pgs.{c,mk}
 make
-# /bin/cp bcftools plugins/{munge,liftover,score,metal,pgs,blup}.so bin
+# /bin/cp bcftools score/{munge,liftover,score,metal,pgs,blup}.so bin
 ```
 
 ## 1.12
