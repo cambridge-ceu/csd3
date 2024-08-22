@@ -91,7 +91,16 @@ in a named file such as `bwa.sb` and executed with `sbatch bwa.sb`.
 
 ### ceuadmin/qcftools/1.20
 
-The module is shown as follows,
+The module can be enabled in several ways,
+
+```bash
+export BCFTOOLS_PLUGINS=$CEUADMIN/bcftools/1.20/plugins && bcftools +score
+export BCFTOOLS_PLUGINS=$CEUADMIN/bcftools/1.20/plugins && bcftools plugin score
+bcftools +$BCFTOOLS_PLUGINS/score.so
+bcftools plugin $BCFTOOLS_PLUGINS/score.so
+```
+
+Its use is shown as follows,
 
 ```bash
 module load ceuadmin/bcftools/1.20
@@ -121,7 +130,7 @@ bcftools +liftover --no-version -Ou -- \
 bcftools sort -o 1kGP_high_coverage_Illumina.sites.hs1.bcf -Ob --write-index
 ```
 
-where `1kGP\_\high_coverage\_Illumina.sites.vcf.gz` is also generated via SLURM (based on author of bcftools/liftover),
+which requires the following SLURM script (based on author of bcftools/liftover),
 
 ```bash
 #!/bin/bash
@@ -154,14 +163,6 @@ done
 
 bcftools concat --no-version -Ou 1kGP_high_coverage_Illumina.chr{{1..22},X}.bcf | \
 bcftools view --no-version -G -Ob -o 1kGP_high_coverage_Illumina.sites.bcf --write-index
-
-function enable_bcftools_liftover()
-{
-export BCFTOOLS_PLUGINS=$CEUADMIN/bcftools/1.20/plugins && bcftools +score
-export BCFTOOLS_PLUGINS=$CEUADMIN/bcftools/1.20/plugins && bcftools plugin score
-bcftools +$BCFTOOLS_PLUGINS/score.so
-bcftools plugin $BCFTOOLS_PLUGINS/score.so
-}
 ```
 
 ### An example application
