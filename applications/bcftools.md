@@ -127,7 +127,7 @@ bcftools +liftover --no-version -Ou -- \
 bcftools sort -o 1kGP_high_coverage_Illumina.sites.hs1.bcf -Ob --write-index
 ```
 
-where 1kGP_high_coverage_Illumina.sites.vcf.gz is again generated via SLURM (based on author of bcftools/liftover),
+where `1kGP_high_coverage_Illumina.sites.vcf.gz` is again generated via SLURM (based on author of bcftools/liftover),
 
 ```bash
 #!/bin/bash
