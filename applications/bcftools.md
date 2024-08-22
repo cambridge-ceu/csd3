@@ -163,8 +163,8 @@ bcftools view --no-version -G -Ob -o 1kGP_high_coverage_Illumina.sites.bcf --wri
 
 function enable_bcftools_liftover()
 {
-export BCFTOOLS_PLUGINS=/path/to/bcftools/plugins && bcftools +score
-export BCFTOOLS_PLUGINS=/path/to/bcftools/plugins && bcftools plugin score
+export BCFTOOLS_PLUGINS=$CEUADMIN/bcftools/1.20/plugins && bcftools +score
+export BCFTOOLS_PLUGINS=$CEUADMIN/bcftools/1.20/plugins && bcftools plugin score
 bcftools +$BCFTOOLS_PLUGINS/score.so
 bcftools plugin $BCFTOOLS_PLUGINS/score.so
 }
