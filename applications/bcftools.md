@@ -115,7 +115,7 @@ wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_sh
 wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.vcf.gz.tbi
 bcftools +liftover --no-version \
  -Ou $public_databases/dbsnp/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.vcf.gz -- \
-  -s $public_databases/GRCh37_reference_fasta//human_g1k_v37.fasta \
+  -s $public_databases/dbsnp/human_g1k_v37.fasta \
   -f $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
   -c $public_databases/dbsnp/hg18ToHg38.over.chain.gz \
   --reject ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.reject.bcf \
