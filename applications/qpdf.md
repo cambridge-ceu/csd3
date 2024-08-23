@@ -4,7 +4,27 @@ sort: 42
 
 # qpdf
 
-## GitHub
+## 11.9.1
+
+This is built under CentOS 8 (icelakte).
+
+```bash
+wget -qO- https://github.com/qpdf/qpdf/archive/refs/tags/v11.9.1.tar.gz | \
+tar xvfz -
+cd qpdf-11.9.1/
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/qpdf/11.9.1 ..
+make
+make install
+qpdf --version
+```
+
+## 10.4.0
+
+This is built under CentOS 7.
+
+### GitHub
 
 Web page [https://github.com/qpdf/qpdf](https://github.com/qpdf/qpdf).
 
@@ -17,7 +37,7 @@ make
 make install
 ```
 
-## Sourceforge
+### Sourceforge
 
 Web page: [https://sourceforge.net/projects/qpdf/](https://sourceforge.net/projects/qpdf/).
 
