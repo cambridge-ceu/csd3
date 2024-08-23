@@ -122,48 +122,9 @@ bcftools +liftover --no-version \
   --reject-type b \
   --write-src | \
 bcftools sort -o ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.hg38.bcf -Ob --write-index
-bcftools norm --no-version -Ou -m+ 1kGP_high_coverage_Illumina.sites.vcf.gz | \
-bcftools +liftover --no-version -Ou -- \
-  -s $public_databases/dbsnp/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
-  -f $public_databases/GRCh37_reference_fasta/hs1.fa \
-  -c $public_databases/dbsnp/hg38ToHs1.over.chain.gz \
-bcftools sort -o 1kGP_high_coverage_Illumina.sites.hs1.bcf -Ob --write-index
 ```
 
-whose input requires the following SLURM script (based on author of bcftools/liftover),
-
-```bash
-#!/bin/bash
-
-#SBATCH --job-name=_site
-#SBATCH --account=PETERS-SL3-CPU
-#SBATCH --partition=icelake-himem
-#SBATCH --mem=28800
-#SBATCH --time=12:00:00
-#SBATCH --cpus-per-task=4
-#SBATCH --output=site.o
-#SBATCH --error=site.e
-
-. /etc/profile.d/modules.sh
-module purge
-module load rhel8/default-icl
-
-module load ceuadmin/bcftools
-
-export TMPDIR=${HPC_WORK}/work
-
-export ebi=ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000G_2504_high_coverage/working/20220422_3202_phased_SNV_INDEL_SV
-wget $ebi/1kGP_high_coverage_Illumina.chr{{1..22}.filtered.SNV_INDEL_SV_phased_panel,X.filtered.SNV_INDEL_SV_phased_panel.v2}.vcf.gz
-for chr in {1..22} X; do
-    if [ $chr == "X" ]; then sfx=".v2"; else sfx=""; fi
-    bcftools view --no-version -Ou -c 2 1kGP_high_coverage_Illumina.chr$chr.filtered.SNV_INDEL_SV_phased_panel$sfx.vcf.gz | \
-    bcftools annotate --no-version -Ou -x ID,QUAL,FILTER,^INFO/AC,^INFO/AN,^INFO/END,^FMT/GT | \
-    bcftools sort -o 1kGP_high_coverage_Illumina.chr$chr.bcf -Ob -T ./bcftools. --write-index
-done
-
-bcftools concat --no-version -Ou 1kGP_high_coverage_Illumina.chr{{1..22},X}.bcf | \
-bcftools view --no-version -G -Ob -o 1kGP_high_coverage_Illumina.sites.bcf --write-index
-```
+and a `1kGP_high_coverage_Illumina.sites.bcf` uses SLURM script [site.sb](applications/files/site.sb) (based on author of bcftools/liftover),
 
 ### An example application
 
