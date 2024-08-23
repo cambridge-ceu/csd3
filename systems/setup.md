@@ -322,6 +322,7 @@ All entries are ordered chronologically.
 | 2024-08-20  | htslib/1.20                      | Genetics             |
 | ""          | bcftools/1.20                    | Genetics             |
 | ""          | samtools/1.20                    | Genetics             |
+| 2024-08-23  | qpdf/11.9.1                      | Generic              |
 
 \* CEU or approved users only.
 
