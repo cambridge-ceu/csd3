@@ -124,7 +124,7 @@ bcftools +liftover --no-version \
 bcftools sort -o ALL.wgs.phase3_shapeit2_mvncall_integrated_v5c.20130502.sites.hg38.bcf -Ob --write-index
 ```
 
-and a `1kGP_high_coverage_Illumina.sites.bcf` uses SLURM script [site.sb](applications/files/site.sb) (based on author of bcftools/liftover),
+and a `1kGP_high_coverage_Illumina.sites.bcf` uses SLURM script [site.sb](files/site.sb) (based on author of bcftools/liftover),
 
 ### An example application
 
