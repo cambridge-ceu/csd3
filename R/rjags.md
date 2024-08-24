@@ -45,7 +45,7 @@ g++ -std=gnu++14 -I"/home/jhz22/R-devel/include" -DNDEBUG -I/usr/local/include/J
 
 This is due to call such as `#include <rng/RNGFactory.h>` as in `parallel.cc` is within /usr/local/include/JAGS.
 
-## 4.6
+## 4-6
 
 It is known for sometime for its difficulty to install; here is what was done
 
