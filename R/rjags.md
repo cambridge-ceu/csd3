@@ -8,7 +8,7 @@ Web page: [https://sourceforge.net/projects/mcmc-jags/files/rjags/](https://sour
 
 ## 4.16
 
-This is furnished as follows,
+This is furnished as follows under icelake,
 
 ```bash
 module load jags-4.3.0-gcc-5.4.0-4z5shby
