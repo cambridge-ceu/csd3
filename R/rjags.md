@@ -6,7 +6,7 @@ sort: 26
 
 Web page: [https://sourceforge.net/projects/mcmc-jags/files/rjags/](https://sourceforge.net/projects/mcmc-jags/files/rjags/).
 
-## 4.16
+## 4-16
 
 This is furnished as follows under icelake,
 
@@ -33,6 +33,17 @@ R CMD INSTALL rjags
 say JAGS is with `/usr/local` -- this is generic since the script was for Fedora 38.
 
 Once this is done, `R2jags` can also be installed.
+
+## 4-13
+
+This following can be adapted from `rjags/src` under Fedora 37 for R-devel,
+
+```bash
+g++ -std=gnu++14 -I"/home/jhz22/R-devel/include" -DNDEBUG -I/usr/local/include/JAGS -fpic -g -O2 -c jags.cc -o jags.o
+g++ -std=gnu++14 -I"/home/jhz22/R-devel/include" -DNDEBUG -I/usr/local/include/JAGS -fpic -g -O2 -c parallel.cc -o parallel.o
+```
+
+This is due to call such as `#include <rng/RNGFactory.h>` as in `parallel.cc` is within /usr/local/include/JAGS.
 
 ## 4.6
 
@@ -73,14 +84,3 @@ ERROR: loading failed
 ```
 
 then this is due to different versions of compilers were used to build JAGS and rjags, so the former needs to be rebuilt.
-
-## 4_13
-
-This following can be adapted from `rjags/src` under Fedora 37 for R-devel,
-
-```bash
-g++ -std=gnu++14 -I"/home/jhz22/R-devel/include" -DNDEBUG -I/usr/local/include/JAGS -fpic -g -O2 -c jags.cc -o jags.o
-g++ -std=gnu++14 -I"/home/jhz22/R-devel/include" -DNDEBUG -I/usr/local/include/JAGS -fpic -g -O2 -c parallel.cc -o parallel.o
-```
-
-This is due to call such as `#include <rng/RNGFactory.h>` as in `parallel.cc` is within /usr/local/include/JAGS.
