@@ -6,6 +6,29 @@ sort: 26
 
 Web page: [https://sourceforge.net/projects/mcmc-jags/files/rjags/](https://sourceforge.net/projects/mcmc-jags/files/rjags/).
 
+## 4.16
+
+We still mask the default `configure` command and generate a customised `Makevars`,
+
+```
+Rscript -e 'download.packages"rjags",".")
+tar xvfz rjags_4-16.tar.gz
+cd rjags
+mv configure configure.sav
+cat << 'EOL' > src/Makevars
+PKG_CPPFLAGS=-I/usr/local/include/JAGS
+PKG_LIBS=-L:/usr/local/lib -ljags
+EOL
+cd -
+R CMD INSTALL rjags
+```
+
+say JAGS is with `/usr/local` -- this is generic since the script was for Fedora 38.
+
+Once this is done, `R2jags` can also be installed.
+
+## 4.6
+
 It is known for sometime for its difficulty to install; here is what was done
 
 ```bash
