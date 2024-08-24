@@ -8,7 +8,14 @@ Web page: [https://sourceforge.net/projects/mcmc-jags/files/rjags/](https://sour
 
 ## 4.16
 
-We still mask the default `configure` command and generate a customised `Makevars`,
+This is furnished as follows,
+
+```bash
+module load jags-4.3.0-gcc-5.4.0-4z5shby
+Rscript -e 'install.packages("rjags")'
+```
+
+Otherwise we still mask the default `configure` command and generate a customised `Makevars`,
 
 ```
 Rscript -e 'download.packages"rjags",".")
