@@ -323,6 +323,9 @@ All entries are ordered chronologically.
 | ""          | bcftools/1.20                    | Genetics             |
 | ""          | samtools/1.20                    | Genetics             |
 | 2024-08-23  | qpdf/11.9.1                      | Generic              |
+| 2024-08-23  | qpdf/11.9.1                      | Generic              |
+| 2024-09-01  | MaxQuant/2.6.4.0                 | Proteomics           |
+| ""          | Perseus/2.1.2.0                  | Proteomics           |
 
 \* CEU or approved users only.
 
