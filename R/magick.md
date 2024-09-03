@@ -8,7 +8,13 @@ sort: 12
 
 ## 2.8.3/2.8.4
 
-It turned out gcc/6 is required for module `image-magick-7.0.5-9-gcc-5.4.0-d4lemcc`, coupling with C++11 via ~/.R/Makevars.
+### gcc/8.5
+
+This is now smoothly done with `install.packages("magick")` under icelake after `ceuadmin/ImageMagick/7.1.1-31` was recompiled.
+
+### gcc/6
+
+It is required for module `image-magick-7.0.5-9-gcc-5.4.0-d4lemcc`, coupling with C++11 via ~/.R/Makevars.
 
 ```
 CC=gcc
