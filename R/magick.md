@@ -12,6 +12,8 @@ sort: 13
 
 This is now smoothly done with `install.packages("magick")` under icelake after `ceuadmin/ImageMagick/7.1.1-31` was recompiled.
 
+The latter has `module load libpng/1.6.37/gcc/bkdpz5q4 libxml2/2.9.12/gcc/eizlvpgn ceuadmin/readline` in the module file.
+
 ### gcc/6
 
 It is required for module `image-magick-7.0.5-9-gcc-5.4.0-d4lemcc`, coupling with C++11 via ~/.R/Makevars.
