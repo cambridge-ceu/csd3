@@ -79,11 +79,11 @@ The current list is as follows,
 [237] "STAR"                   "stata"                  "SurvivalAnalysis"       "SurvivalKit"
 [241] "Swift"                  "tabix"                  "tandem"                 "tatami"
 [245] "ThermoRawFileParser"    "ThermoRawFileParserGUI" "thunderbird"            "tidy"
-[249] "trinculo"               "trousers"               "Typora"                 "unbound"
-[253] "vala"                   "VarScan"                "vcftools"               "VEGAS2"
-[257] "verifyBamID"            "VSCode"                 "VSCodium"               "vte"
-[261] "wine"                   "xpdf"                   "yaml-cpp"               "Zotero"
-[265] "zstd"
+[249] "tiff"                   "trinculo"               "trousers"               "Typora"
+[253] "unbound"                "vala"                   "VarScan"                "vcftools"
+[257] "VEGAS2"                 "verifyBamID"            "VSCode"                 "VSCodium"
+[261] "vte"                    "wine"                   "xpdf"                   "yaml-cpp"
+[265] "Zotero"                 "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.

@@ -326,6 +326,8 @@ All entries are ordered chronologically.
 | 2024-08-23  | qpdf/11.9.1                      | Generic              |
 | 2024-09-01  | MaxQuant/2.6.4.0                 | Proteomics           |
 | ""          | Perseus/2.1.2.0                  | Proteomics           |
+| 2024-09-03  | tiff/4.0.4                       | Generic              |
+| ""          | tiff/4.6.0                       | Generic              |
 
 \* CEU or approved users only.
 
