@@ -492,6 +492,8 @@ module load ceuadmin/rust
 rustc --version
 ```
 
+This is necessary for package `gifski`.
+
 ## Scala
 
 Web <https://www.scala-lang.org>, <https://ammonite.io/>

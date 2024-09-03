@@ -48,7 +48,7 @@ export PKG_CONFIG_PATH=$HPC_WORK/lib/pkgconfig:$HPC_WORK/lib64/pkgconfig:$PKG_CO
 
 after which we could install R/pdftools from CRAN.
 
-Note also the packages `R/Rpoppler`, `pdftools` and `qpdf` from CRAN.
+Note also the packages `R/Rpoppler`, `pdftools` (for 3.4.0, 0.84 is called instead of 0.84.0, so a symbolic link is created there) and `qpdf` from CRAN.
 
 ## nspr
 
