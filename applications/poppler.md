@@ -8,9 +8,24 @@ Official page: [https://poppler.freedesktop.org/](https://poppler.freedesktop.or
 
 ## Updates on icelake
 
-The cmake/latest is version 3.26.5, whose `ccmake` is dysfunctional. We could resort to `cmake/3.21.3/gcc/6p22w6m2`.
+This mirrors earlier procedure for `cclake`.
 
-Since there is difficulty with tiff, it is disabled.
+```
+wget -qO- https://poppler.freedesktop.org/poppler-0.84.0.tar.xz | \
+tar Jxf -
+cd poppler-0.84.0
+module load boost/1.77.0/gcc/5i7wp5ky
+module load lcms/2.9/gcc/5pdbznpf
+module load libiconv/1.16/gcc/4miyzf3w
+module load openjpeg-2.1-gcc-5.4.0-myd2p3o
+make build && cd build
+cmake -DCMAKE_CXX_FLAGS="-liconv" -DCMAKE_INSTALL_PREFIX=$CEUADMIN/poppler/0.84.0 -DENABLE_UNSTABLE_API_ABI_HEADERS=ON -DTESTDATADIR=../test-data -Wno-dev ..
+ccmake .
+make
+make install
+```
+
+The cmake/latest is version 3.26.5, whose `ccmake` is dysfunctional. We could resort to `cmake/3.21.3/gcc/6p22w6m2`. Since there is difficulty with tiff, it is disabled from `ccmake`.
 
 ## Installation
 
@@ -19,7 +34,7 @@ We work on the latest version, 0.84.0.
 ```bash
 module load xz/5.2.2
 wget https://poppler.freedesktop.org/poppler-0.84.0.tar.xz
-tar xf poppler-0.84.0.tar.xz
+tar Jxf poppler-0.84.0.tar.xz
 cd poppler-0.84.0
 git clone git://git.freedesktop.org/git/poppler/test test-data
 mkdir build
