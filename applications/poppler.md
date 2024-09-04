@@ -6,6 +6,12 @@ sort: 37
 
 Official page: [https://poppler.freedesktop.org/](https://poppler.freedesktop.org/).
 
+## Updates on icelake
+
+The cmake/latest is version 3.26.5, whose `ccmake` is dysfunctional. We could resort to `cmake/3.21.3/gcc/6p22w6m2`.
+
+Since there is difficulty with tiff, it is disabled.
+
 ## Installation
 
 We work on the latest version, 0.84.0.
@@ -15,6 +21,7 @@ module load xz/5.2.2
 wget https://poppler.freedesktop.org/poppler-0.84.0.tar.xz
 tar xf poppler-0.84.0.tar.xz
 cd poppler-0.84.0
+git clone git://git.freedesktop.org/git/poppler/test test-data
 mkdir build
 cd build
 module load gcc/5
@@ -22,7 +29,7 @@ module load boost-1.58.0-gcc-5.4.0-onpiqcr
 module load libiconv-1.15-gcc-5.4.0-ymwv5vs
 module load lcms-2.8-gcc-5.4.0-oaipjmr
 module load openjpeg-2.1-gcc-5.4.0-myd2p3o
-cmake -DCMAKE_CXX_FLAGS="-liconv" -DCMAKE_INSTALL_PREFIX:PATH=/rds/user/$USER/hpc-work -DENABLE_UNSTABLE_API_ABI_HEADERS=ON ..
+cmake -DCMAKE_CXX_FLAGS="-liconv" -DCMAKE_INSTALL_PREFIX:PATH=/rds/user/$USER/hpc-work -DENABLE_UNSTABLE_API_ABI_HEADERS=ON -DTESTDATADIR=../test-data -Wno-dev ..
 make
 make install
 ```
