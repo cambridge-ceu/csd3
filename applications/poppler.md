@@ -18,8 +18,11 @@ module load boost/1.77.0/gcc/5i7wp5ky
 module load lcms/2.9/gcc/5pdbznpf
 module load libiconv/1.16/gcc/4miyzf3w
 module load openjpeg-2.1-gcc-5.4.0-myd2p3o
+git clone git://git.freedesktop.org/git/poppler/test test-data
 make build && cd build
-cmake -DCMAKE_CXX_FLAGS="-liconv" -DCMAKE_INSTALL_PREFIX=$CEUADMIN/poppler/0.84.0 -DENABLE_UNSTABLE_API_ABI_HEADERS=ON -DTESTDATADIR=../test-data -Wno-dev ..
+cmake -DCMAKE_CXX_FLAGS="-liconv" -DCMAKE_INSTALL_PREFIX=$CEUADMIN/poppler/0.84.0 \
+      -DENABLE_UNSTABLE_API_ABI_HEADERS=ON -DTESTDATADIR=../test-data -Wno-dev ..
+module load cmake/3.21.3/gcc/6p22w6m2
 ccmake .
 make
 make install
@@ -44,7 +47,8 @@ module load boost-1.58.0-gcc-5.4.0-onpiqcr
 module load libiconv-1.15-gcc-5.4.0-ymwv5vs
 module load lcms-2.8-gcc-5.4.0-oaipjmr
 module load openjpeg-2.1-gcc-5.4.0-myd2p3o
-cmake -DCMAKE_CXX_FLAGS="-liconv" -DCMAKE_INSTALL_PREFIX:PATH=/rds/user/$USER/hpc-work -DENABLE_UNSTABLE_API_ABI_HEADERS=ON -DTESTDATADIR=../test-data -Wno-dev ..
+cmake -DCMAKE_CXX_FLAGS="-liconv" -DCMAKE_INSTALL_PREFIX:PATH=/rds/user/$USER/hpc-work \
+      -DENABLE_UNSTABLE_API_ABI_HEADERS=ON -DTESTDATADIR=../test-data -Wno-dev ..
 make
 make install
 ```
