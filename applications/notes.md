@@ -70,6 +70,13 @@ http://www.ensembl.org/info/docs/tools/vep/script/vep_options.html
 
 ## Plugins
 
+The version check under `icelake` is furnised with
+
+```bash
+perl/5.26.3_system/gcc-8.4.1-4cl2czq
+perl INSTALL.pl -a p -g list
+```
+
 ### --- clinvar ---
 
 The compressed VCF and index files for GRCh38 are `clinvar.vcf.gz` and `clinvar.vcf.gz.tbi`, with counterparts for GRCh37 are `clinvar_GRCh37.vcf.gz` and `clinvar_GRCh37.vcf.gz.tbi`, respectively.
