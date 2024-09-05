@@ -328,6 +328,7 @@ All entries are ordered chronologically.
 | ""          | Perseus/2.1.2.0                  | Proteomics           |
 | 2024-09-03  | tiff/4.0.4                       | Generic              |
 | ""          | tiff/4.6.0                       | Generic              |
+| 2024-09-05  | libgit2/1.4.2                    | Generic              |
 
 \* CEU or approved users only.
 
