@@ -8,6 +8,10 @@ There is a dedicated section here, <https://cambridge-ceu.github.io/csd3/systems
 
 The latest is R 4.4.1 available form module `ceuadmin/R/4.4.1-icelake` which is also `ceuadmin/R`. The R packages are simplified in R/ and R-gcc11/ subdirectories.
 
+<font color="red"><b>9/9/2024 Update</b></font>
+
+By default, R is the latest, 4.4.1.
+
 <font color="red"><b>9/5/2024 Update</b></font>
 
 There are three ceuadmin modules with the latest R 4.4.0.
