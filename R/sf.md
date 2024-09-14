@@ -22,6 +22,43 @@ module load gcc/6
 Rscript -e "install.packages('sf')"
 ```
 
+## 1.0-17
+
+We use a number of modules
+
+```bash
+module load gdal/3.7.0-icl ceuadmin/libarchive/3.7.5 ceuadmin/tiff/4.6.0 ceuadmin/geos/3.8.4 ceuadmin/proj/7.2.1 ceuadmin/openssl/3.2.1
+```
+
+and also mask `configure` and create `src/Makevars`,
+
+```
+PKG_CPPFLAGS=-I/usr/local/Cluster-Apps/ceuadmin/proj/7.2.1/include \
+             -I/usr/local/Cluster-Apps/gdal/3.7.0-icl/include \
+             -I/usr/local/Cluster-Apps/ceuadmin/geos/3.8.4/include \
+             -I/usr/local/Cluster-Apps/ceuadmin/7.85.0/include \
+             -I/usr/local/Cluster-Apps/ceuadmin/libarchive/3.7.5/include \
+             -I/usr/local/Cluster-Apps/openssl/3.2.1/include
+
+PKG_LIBS=-L/usr/local/Cluster-Apps/ceuadmin/proj/7.2.1/lib \
+         -lproj \
+         -L/usr/local/Cluster-Apps/gdal/3.7.0-icl/lib64 \
+         -lgdal \
+         -L/usr/local/Cluster-Apps/ceuadmin/geos/3.8.4/lib \
+         -lgeos_c \
+         -L/usr/local/Cluster-Apps/ceuadmin/curl/7.85.0/lib \
+         -lcurl \
+         -L/usr/local/Cluster-Apps/ceuadmin/libarchive/3.7.5/lib \
+         -larchive \
+         -L/usr/local/Cluster-Apps/openssl/3.2.1/lib64 \
+         -lssl \
+         -lcrypto
+
+CXX_STD=CXX
+```
+
+then `R CMD INSTALL sf`.
+
 ## 1.0-10/11/12
 
 We have seen error

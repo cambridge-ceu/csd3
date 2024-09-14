@@ -333,6 +333,8 @@ All entries are ordered chronologically.
 | 2024-09-13  | geos/3.8.4                       | Generic              |
 | ""          | prof/7.2.1                       | Generic              |
 | 2024-09-14  | libarchive/3.7.5                 | Generic              |
+| ""          | openssl/3.2.1                    | Generic              |
+| ""          | curl/7.85.0                      | Generic[^curl]       |
 
 \* CEU or approved users only.
 
@@ -446,6 +448,32 @@ They are generated from script [setup.sh](setup.sh),
     # module load json-c-0.13.1-gcc-5.4.0-ffamohj
     # module load proj-6.2.0-gcc-5.4.0-iw4jbzs
     # --with-proj=/usr/local/software/spack/spack-git/opt/spack/linux-rhel7-broadwell/gcc-5.4.0/proj-6.2.0-iw4jbzsrjirypecjm4c7bmlhdvhgwjmx \
+    ```
+
+    An attempt on 3.7.0 is made as follows, see also <https://gdal.org/en/latest/development/building_from_source.html>
+
+    ```bash
+
+    wget -qO- https://github.com/OSGeo/gdal/releases/download/v3.7.0/gdal-3.7.0.tar.gz | \
+    tar xvfz -
+    cd gdal-3.7.0
+    mkdir build && cd build
+
+    module load ceuadmin/Anaconda3/2023.09-0
+    module load ceuadmin/curl/7.85.0
+    module load ceuadmin/tiff/4.6.0
+    module load ceuadmin/libarchive/3.7.5
+    module load ceuadmin/openssl/3.2.1
+
+    cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/gdal/3.7.0 \
+          -DCURL_INCLUDE_DIR=$CEUADMIN/curl/7.85.0 \
+          -DCURL_LIBRARY_RELEASE=$CEUADMIN/curl/7.85.0/libcurl.so \
+          -DCRYPTOPP_INCLUDE_DIR=$CEUADMIN/cryptopp/8.9.0 \
+          -DCRYPTOPP_LIBRARY_RELEASE=$CEUADMIN/cryptopp/8.9.0/libcryptopp.so \
+          -DGDAL_USE_GEOTIFF=OFF \
+          -DPROJ_LIBRARY=$CEUADMIN/proj/7.2.1/lib/libproj.so \
+          -DPROJ_INCLUDE_DIR=$CEUADMIN/proj/7.2.1/include ..
+    make
     ```
 
 [^expat]: **expat**
@@ -808,6 +836,8 @@ They are generated from script [setup.sh](setup.sh),
     config --prefix=$CEUADMIN/openssl/1.1.1b-icelake
     make install
     ```
+
+    Module `ceuadmin/openssl/3.2.1` actually points to `/usr/local/Cluster-Apps/openssl/3.2.1`.
 
 [^openssh]: **openssh**
 
@@ -1429,3 +1459,15 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     IonQuant 1.10.27 is installed similarly. In fact, it is is straightforwad to select `Download Update` from the menu, so `IonQuant-1.10.27.jar`, `/MSFragger-4.1/`, and `diaTracer-1.1.5.jar` are available from the `tools/` directory.
+
+[^curl]: **curl**
+
+    ```bash
+    wget -qO- wget https://curl.se/download/curl-7.85.0.tar.gz | \
+    tar xfz -
+    cd curl-7.85.0/
+    module load ceuadmin/openssl/3.2.1
+    configure --prefix=$CEUADMIN/curl/7.85.0 --with-openssl
+    make
+    make install
+    ```
