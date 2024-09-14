@@ -329,6 +329,10 @@ All entries are ordered chronologically.
 | 2024-09-03  | tiff/4.0.4                       | Generic              |
 | ""          | tiff/4.6.0                       | Generic              |
 | 2024-09-05  | libgit2/1.4.2                    | Generic              |
+| 2024-09-10  | jasper/3.0.4                     | Generic              |
+| 2024-09-13  | geos/3.8.4                       | Generic              |
+| ""          | prof/7.2.1                       | Generic              |
+| 2024-09-14  | libarchive/3.7.5                 | Generic              |
 
 \* CEU or approved users only.
 
