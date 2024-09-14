@@ -461,20 +461,30 @@ They are generated from script [setup.sh](setup.sh),
 
     module load ceuadmin/Anaconda3/2023.09-0
     module load ceuadmin/curl/7.85.0
+    module load ceuadmin/libiconv/1.17
     module load ceuadmin/tiff/4.6.0
     module load ceuadmin/libarchive/3.7.5
     module load ceuadmin/openssl/3.2.1
 
-    cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/gdal/3.7.0 \
-          -DCURL_INCLUDE_DIR=$CEUADMIN/curl/7.85.0 \
-          -DCURL_LIBRARY_RELEASE=$CEUADMIN/curl/7.85.0/libcurl.so \
+    cmake -DGDAL_ENABLE_CURL=ON -DGDAL_ENABLE_OGR=ON -DGDAL_ENABLE_LIBARCHIVE=ON -DGDAL_ENABLE_OPENSSL=ON \
+          -DCMAKE_INSTALL_PREFIX=$CEUADMIN/gdal/3.7.0 \
+          -DARCHIVE_INCLUDE_DIR=$CEUADMIN/libarchive/3.7.5/include \
+          -DARCHIVE_LIBRARY=$CEUADMIN/libarchive/3.7.5/lib/libarchive.so \
+          -DCURL_INCLUDE_DIR=$CEUADMIN/curl/7.85.0/include \
+          -DCURL_LIBRARY_RELEASE=$CEUADMIN/curl/7.85.0/lib/libcurl.so \
           -DCRYPTOPP_INCLUDE_DIR=$CEUADMIN/cryptopp/8.9.0 \
           -DCRYPTOPP_LIBRARY_RELEASE=$CEUADMIN/cryptopp/8.9.0/libcryptopp.so \
-          -DGDAL_USE_GEOTIFF=OFF \
+          -DIconv_INCLUDE_DIR=$CEUADMIN/libiconv/1.17/include \
+          -DIconv_LIBRARY=$CEUADMIN/libiconv/1.17lib \
           -DPROJ_LIBRARY=$CEUADMIN/proj/7.2.1/lib/libproj.so \
           -DPROJ_INCLUDE_DIR=$CEUADMIN/proj/7.2.1/include ..
     make
+    pip install rasterio
+    pip install geopandas
+    pip install gdal
     ```
+
+    where `pip install gdal` uses `libgdal.so` just built.
 
 [^expat]: **expat**
 
