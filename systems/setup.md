@@ -1489,6 +1489,7 @@ They are generated from script [setup.sh](setup.sh),
 
     Web: <https://gdal.org/en/latest/development/building_from_source.html>
 
+
     ```bash
     wget -qO- https://github.com/OSGeo/gdal/releases/download/v3.7.0/gdal-3.7.0.tar.gz | \
     tar xvfz -
