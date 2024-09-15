@@ -335,6 +335,7 @@ All entries are ordered chronologically.
 | 2024-09-14  | libarchive/3.7.5                 | Generic              |
 | ""          | openssl/3.2.1                    | Generic              |
 | ""          | curl/7.85.0                      | Generic[^curl]       |
+| 2024-09-15  | libgeotiff/1.7.3                 | Generic[^libgeotiff] |
 
 \* CEU or approved users only.
 
@@ -464,20 +465,31 @@ They are generated from script [setup.sh](setup.sh),
     module load ceuadmin/libiconv/1.17
     module load ceuadmin/tiff/4.6.0
     module load ceuadmin/libarchive/3.7.5
+    module load ceuadmin/libgeotiff/1.7.3
     module load ceuadmin/openssl/3.2.1
 
-    cmake -DGDAL_ENABLE_CURL=ON -DGDAL_ENABLE_OGR=ON -DGDAL_ENABLE_LIBARCHIVE=ON -DGDAL_ENABLE_OPENSSL=ON \
+    cmake -DGDAL_ENABLE_CURL=ON \
+          -DGDAL_ENABLE_OGR=ON \
+          -DGDAL_ENABLE_LIBARCHIVE=ON \
+          -DGDAL_ENABLE_OPENSSL=ON \
           -DCMAKE_INSTALL_PREFIX=$CEUADMIN/gdal/3.7.0 \
-          -DARCHIVE_INCLUDE_DIR=$CEUADMIN/libarchive/3.7.5/include \
-          -DARCHIVE_LIBRARY=$CEUADMIN/libarchive/3.7.5/lib/libarchive.so \
           -DCURL_INCLUDE_DIR=$CEUADMIN/curl/7.85.0/include \
           -DCURL_LIBRARY_RELEASE=$CEUADMIN/curl/7.85.0/lib/libcurl.so \
-          -DCRYPTOPP_INCLUDE_DIR=$CEUADMIN/cryptopp/8.9.0 \
-          -DCRYPTOPP_LIBRARY_RELEASE=$CEUADMIN/cryptopp/8.9.0/libcryptopp.so \
+          -DGEOTIFF_INCLUDE_DIR=$CEUADMIN/libgeotiff/1.7.3/include \
+          -DGEOTIFF_LIBRARY_RELEASE=$CEUADMIN/libgeotiff/1.7.3/lib/libgeotiff.so \
+          -DARCHIVE_INCLUDE_DIR=$CEUADMIN/libarchive/3.7.5/include \
+          -DARCHIVE_LIBRARY=$CEUADMIN/libarchive/3.7.5/lib/libarchive.so \
+          -DCRYPTOPP_INCLUDE_DIR=$CEUADMIN/cryptopp/8.9.0/include \
+          -DCRYPTOPP_LIBRARY_RELEASE=$CEUADMIN/cryptopp/8.9.0/lib/libcryptopp.so \
           -DIconv_INCLUDE_DIR=$CEUADMIN/libiconv/1.17/include \
-          -DIconv_LIBRARY=$CEUADMIN/libiconv/1.17lib \
+          -DIconv_LIBRARY=$CEUADMIN/libiconv/1.17/lib/libiconv.so \
+          -DOPENSSL_INCLUDE_DIR=$CEUADMIN/openssl/3.2.1/include \
+          -DOPENSSL_CRYPTO_LIBRARY=$CEUADMIN/openssl/3.2.1/lib/libcrypto.so \
+          -DOPENSSL_SSL_LIBRARY=$CEUADMIN/openssl/3.2.1/lib/libssl.so \
           -DPROJ_LIBRARY=$CEUADMIN/proj/7.2.1/lib/libproj.so \
-          -DPROJ_INCLUDE_DIR=$CEUADMIN/proj/7.2.1/include ..
+          -DPROJ_INCLUDE_DIR=$CEUADMIN/proj/7.2.1/include \
+          ..
+    make
     make
     pip install rasterio
     pip install geopandas
@@ -1478,6 +1490,28 @@ They are generated from script [setup.sh](setup.sh),
     cd curl-7.85.0/
     module load ceuadmin/openssl/3.2.1
     configure --prefix=$CEUADMIN/curl/7.85.0 --with-openssl
+    make
+    make install
+    ```
+
+[^libgeotiff]: **libgeotiff**
+
+    ```bash
+    module load ceuadmin/autoconf/2.72c.24-8e728
+    module load ceuadmin/proj/7.2.1
+    module load libjpeg-turbo/2.1.0/gcc/2smnepel
+    module load zlib/1.2.11
+    wget -qO- https://github.com/OSGeo/libgeotiff/archive/refs/tags/1.7.3.tar.gz | \
+    tar xvfz -
+    cd libgeotiff-1.7.3/
+    cd libgeotiff
+    autoupdate
+    autogen.sh
+    configure --prefix=$CEUADMIN/libgeotiff/1.7.3 \
+              --with-proj=$CEUADMIN/proj/7.2.1 \
+              --with-libtiff=$CEUADMIN/tiff/4.6.0 \
+              --with-jpeg=/usr/local/software/spack/spack-views/rhel8-icelake-20211027_2/libjpeg-turbo-2.1.0/gcc-11.2.0/2smnepeldoxghldyjyomr5wlhciwplw3 \
+              --with-zip=/usr/local/Cluster-Apps/zlib/1.2.11
     make
     make install
     ```
