@@ -335,7 +335,7 @@ All entries are ordered chronologically.
 | 2024-09-14  | libarchive/3.7.5                 | Generic              |
 | ""          | openssl/3.2.1                    | Generic              |
 | ""          | curl/7.85.0                      | Generic[^curl]       |
-| 2024-09-15  | libjpeg-turbo/3.0.4              | Genetic[^libjpeg]    |
+| 2024-09-15  | libjpeg-turbo/3.0.4              | Genetic[^libjpeg-turbo |
 | ""          | libgeotiff/1.7.3                 | Generic[^libgeotiff] |
 | ""          | gdal/3.7.0                       | Generic[^gdal370     |
 
