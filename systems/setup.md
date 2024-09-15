@@ -335,7 +335,9 @@ All entries are ordered chronologically.
 | 2024-09-14  | libarchive/3.7.5                 | Generic              |
 | ""          | openssl/3.2.1                    | Generic              |
 | ""          | curl/7.85.0                      | Generic[^curl]       |
-| 2024-09-15  | libgeotiff/1.7.3                 | Generic[^libgeotiff] |
+| 2024-09-15  | libjpeg-turbo/3.0.4              | Genetic[^libjpeg]    |
+| ""          | libgeotiff/1.7.3                 | Generic[^libgeotiff] |
+| ""          | gdal/3.7.0                       | Generic[^gdal370     |
 
 \* CEU or approved users only.
 
@@ -450,53 +452,6 @@ They are generated from script [setup.sh](setup.sh),
     # module load proj-6.2.0-gcc-5.4.0-iw4jbzs
     # --with-proj=/usr/local/software/spack/spack-git/opt/spack/linux-rhel7-broadwell/gcc-5.4.0/proj-6.2.0-iw4jbzsrjirypecjm4c7bmlhdvhgwjmx \
     ```
-
-    An attempt on 3.7.0 is made as follows, see also <https://gdal.org/en/latest/development/building_from_source.html>
-
-    ```bash
-
-    wget -qO- https://github.com/OSGeo/gdal/releases/download/v3.7.0/gdal-3.7.0.tar.gz | \
-    tar xvfz -
-    cd gdal-3.7.0
-    mkdir build && cd build
-
-    module load ceuadmin/Anaconda3/2023.09-0
-    module load ceuadmin/curl/7.85.0
-    module load ceuadmin/libiconv/1.17
-    module load ceuadmin/tiff/4.6.0
-    module load ceuadmin/libarchive/3.7.5
-    module load ceuadmin/libgeotiff/1.7.3
-    module load ceuadmin/openssl/3.2.1
-
-    cmake -DGDAL_ENABLE_CURL=ON \
-          -DGDAL_ENABLE_OGR=ON \
-          -DGDAL_ENABLE_LIBARCHIVE=ON \
-          -DGDAL_ENABLE_OPENSSL=ON \
-          -DCMAKE_INSTALL_PREFIX=$CEUADMIN/gdal/3.7.0 \
-          -DCURL_INCLUDE_DIR=$CEUADMIN/curl/7.85.0/include \
-          -DCURL_LIBRARY_RELEASE=$CEUADMIN/curl/7.85.0/lib/libcurl.so \
-          -DGEOTIFF_INCLUDE_DIR=$CEUADMIN/libgeotiff/1.7.3/include \
-          -DGEOTIFF_LIBRARY_RELEASE=$CEUADMIN/libgeotiff/1.7.3/lib/libgeotiff.so \
-          -DARCHIVE_INCLUDE_DIR=$CEUADMIN/libarchive/3.7.5/include \
-          -DARCHIVE_LIBRARY=$CEUADMIN/libarchive/3.7.5/lib/libarchive.so \
-          -DCRYPTOPP_INCLUDE_DIR=$CEUADMIN/cryptopp/8.9.0/include \
-          -DCRYPTOPP_LIBRARY_RELEASE=$CEUADMIN/cryptopp/8.9.0/lib/libcryptopp.so \
-          -DIconv_INCLUDE_DIR=$CEUADMIN/libiconv/1.17/include \
-          -DIconv_LIBRARY=$CEUADMIN/libiconv/1.17/lib/libiconv.so \
-          -DOPENSSL_INCLUDE_DIR=$CEUADMIN/openssl/3.2.1/include \
-          -DOPENSSL_CRYPTO_LIBRARY=$CEUADMIN/openssl/3.2.1/lib/libcrypto.so \
-          -DOPENSSL_SSL_LIBRARY=$CEUADMIN/openssl/3.2.1/lib/libssl.so \
-          -DPROJ_LIBRARY=$CEUADMIN/proj/7.2.1/lib/libproj.so \
-          -DPROJ_INCLUDE_DIR=$CEUADMIN/proj/7.2.1/include \
-          ..
-    make
-    make
-    pip install rasterio
-    pip install geopandas
-    pip install gdal
-    ```
-
-    where `pip install gdal` uses `libgdal.so` just built.
 
 [^expat]: **expat**
 
@@ -1494,12 +1449,25 @@ They are generated from script [setup.sh](setup.sh),
     make install
     ```
 
+[^libjpeg-turbo]: **libjpeg-turbo**
+
+    ```bash
+    wget -qO- https://github.com/libjpeg-turbo/libjpeg-turbo/archive/refs/tags/3.0.4.tar.gz | \
+    tar xvfz -
+    cd libjpeg-turbo-3.0.4/
+    mkdir build
+    cd build
+    cmake -G"Unix Makefiles" -DCMAKE_INSTALL_PREFIX=$CEUADMIN/libjpeg-turbo/3.0.4 ..
+    make
+    make install
+    ```
+
 [^libgeotiff]: **libgeotiff**
 
     ```bash
     module load ceuadmin/autoconf/2.72c.24-8e728
     module load ceuadmin/proj/7.2.1
-    module load libjpeg-turbo/2.1.0/gcc/2smnepel
+    module load ceuadmin/libjpeg-turbo/3.0.4
     module load zlib/1.2.11
     wget -qO- https://github.com/OSGeo/libgeotiff/archive/refs/tags/1.7.3.tar.gz | \
     tar xvfz -
@@ -1510,8 +1478,68 @@ They are generated from script [setup.sh](setup.sh),
     configure --prefix=$CEUADMIN/libgeotiff/1.7.3 \
               --with-proj=$CEUADMIN/proj/7.2.1 \
               --with-libtiff=$CEUADMIN/tiff/4.6.0 \
-              --with-jpeg=/usr/local/software/spack/spack-views/rhel8-icelake-20211027_2/libjpeg-turbo-2.1.0/gcc-11.2.0/2smnepeldoxghldyjyomr5wlhciwplw3 \
+              --with-jpeg=$CEUADMIN/libjpeg-turbo/3.0.4 \
               --with-zip=/usr/local/Cluster-Apps/zlib/1.2.11
-    make
+    make -j3
+    make check
     make install
     ```
+
+[^gdal370]: **gdal 3.7.0**
+
+    Web: <https://gdal.org/en/latest/development/building_from_source.html>
+
+    ```bash
+    wget -qO- https://github.com/OSGeo/gdal/releases/download/v3.7.0/gdal-3.7.0.tar.gz | \
+    tar xvfz -
+    cd gdal-3.7.0
+    mkdir build && cd build
+
+#   module load ceuadmin/Anaconda3/2023.09-0
+    module load ceuadmin/curl/7.85.0
+    module load ceuadmin/libiconv/1.17
+    module load ceuadmin/tiff/4.6.0
+    module load ceuadmin/libarchive/3.7.5
+    module load ceuadmin/libgeotiff/1.7.3
+    module load ceuadmin/libjpeg-turbo/3.0.4
+    module load ceuadmin/openssl/3.2.1
+    module load ceuadmin/libpng/1.5.30
+    module load ceuadmin/poppler/0.84.0
+
+    cmake -DGDAL_ENABLE_CURL=ON \
+          -DGDAL_ENABLE_OGR=ON \
+          -DGDAL_ENABLE_LIBARCHIVE=ON \
+          -DGDAL_ENABLE_OPENSSL=ON \
+          -DCMAKE_INSTALL_PREFIX=$CEUADMIN/gdal/3.7.0 \
+          -DCURL_INCLUDE_DIR=$CEUADMIN/curl/7.85.0/include \
+          -DCURL_LIBRARY_RELEASE=$CEUADMIN/curl/7.85.0/lib/libcurl.so \
+          -DGEOTIFF_INCLUDE_DIR=$CEUADMIN/libgeotiff/1.7.3/include \
+          -DGEOTIFF_LIBRARY_RELEASE=$CEUADMIN/libgeotiff/1.7.3/lib/libgeotiff.so \
+          -DARCHIVE_INCLUDE_DIR=$CEUADMIN/libarchive/3.7.5/include \
+          -DARCHIVE_LIBRARY=$CEUADMIN/libarchive/3.7.5/lib/libarchive.so \
+          -DCRYPTOPP_INCLUDE_DIR=$CEUADMIN/cryptopp/8.9.0/include \
+          -DCRYPTOPP_LIBRARY_RELEASE=$CEUADMIN/cryptopp/8.9.0/lib/libcryptopp.so \
+          -DIconv_INCLUDE_DIR=$CEUADMIN/libiconv/1.17/include \
+          -DIconv_LIBRARY=$CEUADMIN/libiconv/1.17/lib/libiconv.so \
+          -DJPEG_INCLUDE_DIR=$CEUADMIN/libjpeg-turbo/3.0.4/include \
+          -DJPEG_LIBRARY_RELEASE=$CEUADMIN/libjpeg-turbo/3.0.4/lib64/libjpeg.so \
+          -DOPENSSL_INCLUDE_DIR=$CEUADMIN/openssl/3.2.1/include \
+          -DOPENSSL_CRYPTO_LIBRARY=$CEUADMIN/openssl/3.2.1/lib/libcrypto.so \
+          -DOPENSSL_SSL_LIBRARY=$CEUADMIN/openssl/3.2.1/lib/libssl.so \
+          -DPNG_PNG_INCLUDE_DIR=$CEUADMIN/libpng/1.5.30/include \
+          -DPNG_LIBRARY_RELEAS=$CEUADMIN/libpng/1.5.30/lib \
+          -DPoppler_INCLUDE_DIR=$CEUADMIN//poppler/0.84.0/include \
+          -DPoppler_LIBRARY=$CEUADMIN/poppler/0.84.0/lib64/libpoppler.so \
+          -DPROJ_LIBRARY=$CEUADMIN/proj/7.2.1/lib/libproj.so \
+          -DPROJ_INCLUDE_DIR=$CEUADMIN/proj/7.2.1/include \
+          -DTIFF_LIBRARY=$CEUADMIN/tiff/4.6.0/lib/libtiff.so \
+          -DTIFF_INCLUDE_DIR=$CEUADMIN/tiff/4.6.0/include \
+          ..
+    make
+    module load ceuadmin/Anaconda3/2023.09-0
+    pip install rasterio
+    pip install geopandas
+    pip install gdal
+    ```
+
+    where `pip install gdal` uses `libgdal.so` just built.

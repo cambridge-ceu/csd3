@@ -27,14 +27,19 @@ Rscript -e "install.packages('sf')"
 We use a number of modules
 
 ```bash
-module load gdal/3.7.0-icl ceuadmin/libarchive/3.7.5 ceuadmin/tiff/4.6.0 ceuadmin/geos/3.8.4 ceuadmin/proj/7.2.1 ceuadmin/openssl/3.2.1
+module load ceuadmin/proj/7.2.1
+module load ceuadmin/gdal/3.7.0
+module load ceuadmin/geos/3.8.4
+module load ceuadmin/libiconv/1.17
+module load ceuadmin/openssl/3.2.1
+module load ceuadmin/tiff/4.6.0
 ```
 
 and also mask `configure` and create `src/Makevars`,
 
 ```
 PKG_CPPFLAGS=-I/usr/local/Cluster-Apps/ceuadmin/proj/7.2.1/include \
-             -I/usr/local/Cluster-Apps/gdal/3.7.0-icl/include \
+             -I/usr/local/Cluster-Apps/ceuadmin/gdal/3.7.0/include \
              -I/usr/local/Cluster-Apps/ceuadmin/geos/3.8.4/include \
              -I/usr/local/Cluster-Apps/ceuadmin/7.85.0/include \
              -I/usr/local/Cluster-Apps/ceuadmin/libarchive/3.7.5/include \
@@ -42,7 +47,7 @@ PKG_CPPFLAGS=-I/usr/local/Cluster-Apps/ceuadmin/proj/7.2.1/include \
 
 PKG_LIBS=-L/usr/local/Cluster-Apps/ceuadmin/proj/7.2.1/lib \
          -lproj \
-         -L/usr/local/Cluster-Apps/gdal/3.7.0-icl/lib64 \
+         -L/usr/local/Cluster-Apps/ceuadmin/gdal/3.7.0/lib64 \
          -lgdal \
          -L/usr/local/Cluster-Apps/ceuadmin/geos/3.8.4/lib \
          -lgeos_c \
