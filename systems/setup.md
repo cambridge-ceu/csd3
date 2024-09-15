@@ -335,9 +335,9 @@ All entries are ordered chronologically.
 | 2024-09-14  | libarchive/3.7.5                 | Generic              |
 | ""          | openssl/3.2.1                    | Generic              |
 | ""          | curl/7.85.0                      | Generic[^curl]       |
-| 2024-09-15  | libjpeg-turbo/3.0.4              | Genetic[^libjpeg-turbo |
+| 2024-09-15  | libjpeg-turbo/3.0.4              | Genetic[^libjpeg]    |
 | ""          | libgeotiff/1.7.3                 | Generic[^libgeotiff] |
-| ""          | gdal/3.7.0                       | Generic[^gdal370     |
+| ""          | gdal/3.7.0                       | Generic[^gdal370]    |
 
 \* CEU or approved users only.
 
@@ -1449,7 +1449,7 @@ They are generated from script [setup.sh](setup.sh),
     make install
     ```
 
-[^libjpeg-turbo]: **libjpeg-turbo**
+[^libjpeg]: **libjpeg-turbo**
 
     ```bash
     wget -qO- https://github.com/libjpeg-turbo/libjpeg-turbo/archive/refs/tags/3.0.4.tar.gz | \
