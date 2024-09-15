@@ -1489,14 +1489,12 @@ They are generated from script [setup.sh](setup.sh),
 
     Web: <https://gdal.org/en/latest/development/building_from_source.html>
 
-
     ```bash
     wget -qO- https://github.com/OSGeo/gdal/releases/download/v3.7.0/gdal-3.7.0.tar.gz | \
     tar xvfz -
     cd gdal-3.7.0
     mkdir build && cd build
 
-#   module load ceuadmin/Anaconda3/2023.09-0
     module load ceuadmin/curl/7.85.0
     module load ceuadmin/libiconv/1.17
     module load ceuadmin/tiff/4.6.0
