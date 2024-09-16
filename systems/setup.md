@@ -1538,7 +1538,7 @@ They are generated from script [setup.sh](setup.sh),
     module load ceuadmin/Anaconda3/2023.09-0
     pip install rasterio
     pip install geopandas
-    pip install gdal
+    pip install gdal==3.7.0
     ```
 
     where `pip install gdal` uses `libgdal.so` just built.
