@@ -1497,13 +1497,13 @@ They are generated from script [setup.sh](setup.sh),
 
     module load ceuadmin/curl/7.85.0
     module load ceuadmin/libiconv/1.17
-    module load ceuadmin/tiff/4.6.0
     module load ceuadmin/libarchive/3.7.5
     module load ceuadmin/libgeotiff/1.7.3
     module load ceuadmin/libjpeg-turbo/3.0.4
-    module load ceuadmin/openssl/3.2.1
     module load ceuadmin/libpng/1.5.30
+    module load ceuadmin/openssl/3.2.1
     module load ceuadmin/poppler/0.84.0
+    module load ceuadmin/tiff/4.6.0
 
     cmake -DGDAL_ENABLE_CURL=ON \
           -DGDAL_ENABLE_OGR=ON \
