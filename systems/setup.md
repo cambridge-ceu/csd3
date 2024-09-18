@@ -1476,10 +1476,10 @@ They are generated from script [setup.sh](setup.sh),
     autoupdate
     autogen.sh
     configure --prefix=$CEUADMIN/libgeotiff/1.7.3 \
-              --with-proj=$CEUADMIN/proj/7.2.1 \
-              --with-libtiff=$CEUADMIN/tiff/4.6.0 \
               --with-jpeg=$CEUADMIN/libjpeg-turbo/3.0.4 \
-              --with-zip=/usr/local/Cluster-Apps/zlib/1.2.11
+              --with-libtiff=$CEUADMIN/tiff/4.6.0 \
+              --with-proj=$CEUADMIN/proj/7.2.1 \
+              --with-zlib=/usr/local/Cluster-Apps/zlib/1.2.11
     make -j3
     make check
     make install
