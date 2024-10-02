@@ -424,9 +424,9 @@ Further information is available from cmake website [^python].
 
 ## References
 
-Strauss, M.T., et al., AlphaPept, a modern and open framework for MS-based proteomics. bioRxiv, 2021: p. 2021.07.23.453379. [https://www.biorxiv.org/content/10.1101/2021.07.23.453379v1](https://www.biorxiv.org/content/10.1101/2021.07.23.453379v1).
+Strauss MT, et al., AlphaPept: a modern and open framework for MS-based proteomics. *Nat Commun* 15, 2168 (2024). https://doi.org/10.1038/s41467-024-46485-4.
 
-Rost HL, et al., OpenMS: a flexible open-source software platform for mass spectrometry data analysis. Nat Meth. 2016; 13, 9: 741-748. doi:10.1038/nmeth.3959.
+Rost HL, et al., OpenMS: a flexible open-source software platform for mass spectrometry data analysis. *Nat Meth* 2016; 13, 9: 741-748. doi:10.1038/nmeth.3959.
 
 ## Other URLs
 
