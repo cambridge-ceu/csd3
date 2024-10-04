@@ -1,5 +1,5 @@
 ---
-sort: 3
+sort: 4
 ---
 
 # Directories
@@ -45,6 +45,8 @@ rds-jmmh2-public_databases -> /rds/project/rds-4o5vpvAowP0/
 rds-jmmh2-results -> /rds/project/rds-C1Ph08tkaOA/
 ```
 
+See "W:\Administration\CSD3 Data Users\Information for Users".
+
 ## Data managers
 
 Self-service storage, [https://selfservice.uis.cam.ac.uk/storage/project/303/](https://selfservice.uis.cam.ac.uk/storage/project/303/).
@@ -62,30 +64,9 @@ See also
   - [https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/](https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/).
   - [https://www.baeldung.com/linux/public-key-known_hosts](https://www.baeldung.com/linux/public-key-known_hosts)
 
-## Users
-
-See "W:\Administration\CSD3 Data Users\Information for Users".
-
 ## Cluster monitoring
 
 See "V:\Operations\GENERAL_CEU\CSD3\monitoring CSD3 usage".
-
-## SRCP
-
-NBR SRCP: <https://nbr.srcp.hpc.cam.ac.uk/>
-
-### Information
-
-- Acceptable Use and Information Security Policies, [https://docs.hpc.cam.ac.uk/srcp/isms-docs/index.html](https://docs.hpc.cam.ac.uk/srcp/isms-docs/index.html)
-- CAM:ID, <https://ide-cam.org.uk/>
-- Contact, <srcp@hpc.cam.ac.uk>
-- Ouick start guide to configure your device for first login, [https://docs.hpc.cam.ac.uk/srcp/2fa/get-token.html](https://docs.hpc.cam.ac.uk/srcp/2fa/get-token.html)
-- User Documentation, <https://docs.hpc.cam.ac.uk/srcp/>
-
-### Application
-
-- Request user access, <https://www.hpc.cam.ac.uk/srcp-request-user-access?check_logged_in=1>
-- User Onboarding ([SRCP Request User Access](https://www.hpc.cam.ac.uk/srcp-request-user-access)), [https://docs.hpc.cam.ac.uk/srcp/user-onboarding/index.html](https://docs.hpc.cam.ac.uk/srcp/user-onboarding/index.html) (project user, ID [e.g, dqsn9nrh442])
 
 ### Access
 

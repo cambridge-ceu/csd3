@@ -32,6 +32,7 @@ function _packages()
 # make install
 # make theme
 
+renum systems
 renum applications
 _packages Python
 _packages R
