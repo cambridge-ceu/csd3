@@ -4,6 +4,53 @@ sort: 11
 
 # jqr
 
+### 1.3.4
+
+Same as 1.3.3.
+
+### 1.3.3
+
+This mirrors efforts above.
+
+```bash
+# Rscript -e 'download.packages("jqr",".")'
+tar xvfz jqr_1.3.3.tar.gz
+cd jqr
+mv configure configure.sav
+cd -
+```
+
+but with src/Makevars as follows,
+
+```
+# Use C++17 standard
+CXX_STD = CXX17
+
+# Compiler flags
+CXXFLAGS = -Wall -O3
+
+# Linker flags
+LDFLAGS = -shared
+
+# Include directories
+PKG_CPPFLAGS = -I/usr/local/Cluster-Apps/ceuadmin/jq/1.6/include
+
+# Libraries to link against
+PKG_LIBS = -L/usr/local/Cluster-Apps/ceuadmin/jq/1.6/lib -ljq
+```
+
+followd by `R CMD INSTALL jqr`.
+
+### 1.3.0
+
+The error message is simiar, but we proceed with a relatively simpler syntax,
+
+```bash
+Rscript -e 'download.packages("jqr",".")'
+R CMD INSTALL --configure-vars='INCLUDE_DIR=/rds/user/jhz22/hpc-work/include LIB_DIR=/rds/user/jhz22/hpc-work/lib' jqr_1.3.0.tar.gz
+rm jqr_*
+```
+
 ## 1.2.3
 
 Under R 4.3.0, we see error as follows,
@@ -56,50 +103,3 @@ R CMD INSTALL jqr
 ```
 
 where the body of `Makevars` is duplicated from `Makevars.in` adding location of `jq.h` and `jq.so`.
-
-### 1.3.0
-
-The error message is simiar, but we proceed with a relatively simpler syntax,
-
-```bash
-Rscript -e 'download.packages("jqr",".")'
-R CMD INSTALL --configure-vars='INCLUDE_DIR=/rds/user/jhz22/hpc-work/include LIB_DIR=/rds/user/jhz22/hpc-work/lib' jqr_1.3.0.tar.gz
-rm jqr_*
-```
-
-### 1.3.3
-
-This mirrors efforts above.
-
-```bash
-# Rscript -e 'download.packages("jqr",".")'
-tar xvfz jqr_1.3.3.tar.gz
-cd jqr
-mv configure configure.sav
-cd -
-```
-
-but with src/Makevars as follows,
-
-```
-# Use C++17 standard
-CXX_STD = CXX17
-
-# Compiler flags
-CXXFLAGS = -Wall -O3
-
-# Linker flags
-LDFLAGS = -shared
-
-# Include directories
-PKG_CPPFLAGS = -I/usr/local/Cluster-Apps/ceuadmin/jq/1.6/include
-
-# Libraries to link against
-PKG_LIBS = -L/usr/local/Cluster-Apps/ceuadmin/jq/1.6/lib -ljq
-```
-
-followd by `R CMD INSTALL jqr`.
-
-### 1.3.4
-
-Same as 1.3.3.
