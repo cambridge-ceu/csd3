@@ -8,7 +8,10 @@ NBR SRCP: <https://nbr.srcp.hpc.cam.ac.uk/>
 
 ### Information
 
-- Acceptable Use and Information Security Policies, [https://docs.hpc.cam.ac.uk/srcp/isms-docs/index.html](https://docs.hpc.cam.ac.uk/srcp/isms-docs/index.html)
+- Acceptable Use and Information Security Policies, <https://docs.hpc.cam.ac.uk/srcp/isms-docs/index.html>
+- User Security Policy, <https://docs.hpc.cam.ac.uk/srcp/isms-docs/security-policy.html>
+- Information Security Policy, <https://docs.hpc.cam.ac.uk/srcp/isms-docs/information-policy.html>
+- Privacy Policy, <https://docs.hpc.cam.ac.uk/srcp/isms-docs/privacy-policy.html>
 - CAM:ID, <https://ide-cam.org.uk/>
 - Contact, <srcp@hpc.cam.ac.uk>
 - Ouick start guide to configure your device for first login, [https://docs.hpc.cam.ac.uk/srcp/2fa/get-token.html](https://docs.hpc.cam.ac.uk/srcp/2fa/get-token.html)
