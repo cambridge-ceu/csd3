@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 function renum()
+# grep sort -w *md  | sort -k2,2n
 {
   echo ${1}
   export folder=${1}
