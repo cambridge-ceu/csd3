@@ -72,13 +72,14 @@ See "V:\Operations\GENERAL_CEU\CSD3\monitoring CSD3 usage".
 
 ## SRCP
 
-Web: <https://docs.hpc.cam.ac.uk/srcp/>
+NBR SRCP: <https://nbr.srcp.hpc.cam.ac.uk/>
 
 ### Information
 
 - Acceptable Use and Information Security Policies, [https://docs.hpc.cam.ac.uk/srcp/isms-docs/index.html](https://docs.hpc.cam.ac.uk/srcp/isms-docs/index.html)
-- CAM:ID <https://ide-cam.org.uk/>
+- CAM:ID, <https://ide-cam.org.uk/>
 - Ouick start guide to configure your device for first login, [https://docs.hpc.cam.ac.uk/srcp/2fa/get-token.html](https://docs.hpc.cam.ac.uk/srcp/2fa/get-token.html)
+- User Documentation, <https://docs.hpc.cam.ac.uk/srcp/>
 
 ### Application
 
