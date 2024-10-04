@@ -339,6 +339,7 @@ All entries are ordered chronologically.
 | ""          | libgeotiff/1.7.3                 | Generic[^libgeotiff] |
 | ""          | gdal/3.7.0                       | Generic[^gdal370]    |
 | 2024-10-04  | libsodium/1.0.20                 | Genetic              |
+| ""          | SYMPHONY/3.6.17                  | Generic              |
 
 \* CEU or approved users only.
 
