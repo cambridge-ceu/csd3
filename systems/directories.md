@@ -85,7 +85,7 @@ NBR SRCP: <https://nbr.srcp.hpc.cam.ac.uk/>
 ### Application
 
 - Request user access, <https://www.hpc.cam.ac.uk/srcp-request-user-access?check_logged_in=1>
-- User Onboarding ([SRCP Request User Access](https://www.hpc.cam.ac.uk/srcp-request-user-access)), [https://docs.hpc.cam.ac.uk/srcp/user-onboarding/index.html](https://docs.hpc.cam.ac.uk/srcp/user-onboarding/index.html) (project user, ID)
+- User Onboarding ([SRCP Request User Access](https://www.hpc.cam.ac.uk/srcp-request-user-access)), [https://docs.hpc.cam.ac.uk/srcp/user-onboarding/index.html](https://docs.hpc.cam.ac.uk/srcp/user-onboarding/index.html) (project user, ID [e.g, dqsn9nrh442])
 
 ### Access
 
