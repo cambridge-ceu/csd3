@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# SRCP
+# Directories
 
 ## Users
 
