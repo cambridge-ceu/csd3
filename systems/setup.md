@@ -338,6 +338,7 @@ All entries are ordered chronologically.
 | 2024-09-15  | libjpeg-turbo/3.0.4              | Genetic[^libjpeg]    |
 | ""          | libgeotiff/1.7.3                 | Generic[^libgeotiff] |
 | ""          | gdal/3.7.0                       | Generic[^gdal370]    |
+| 2024-10-04  | libsodium/1.0.20                 | Genetic              |
 
 \* CEU or approved users only.
 
