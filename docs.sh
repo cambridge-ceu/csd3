@@ -1,5 +1,32 @@
 #!/usr/bin/bash
 
+function systems()
+{
+cat << 'EOL' | awk '{print NR,$1}' | parallel -j1 -C' ' '
+    echo {1} {2}
+    export line=2
+    export value={1}
+    sed -i "${line}s/\S\+/${value}/2" systems/{2}.md
+'
+system
+policies
+login
+directories
+email
+languages
+software
+ceuadmin
+ParallelComputing
+qemu
+SRCP
+GreenAlgorithms
+setup
+training
+contacts
+acknowledgement
+EOL
+}
+
 function renum()
 # grep sort -w *md  | sort -k2,2n
 {
@@ -13,7 +40,6 @@ function renum()
     export value={1}
     sed -i "${line}s/\S\+/${value}/2" ${folder}/{2}.md
   '
-  head -3 $1/*md | grep sort | sort -k2,2n
 }
 
 function _packages()
