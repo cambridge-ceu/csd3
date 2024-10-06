@@ -6,7 +6,7 @@ sort: 13
 
 ## 1.32.0
 
-As stated, the Bioconductor package comes with its version SYMPHONY; nevertheless it is actually easier to modify this.
+As stated, the Bioconductor package comes with its own SYMPHONY but it is actually easier to modify this.
 
 As usual, we mask the `configure` command,
 
