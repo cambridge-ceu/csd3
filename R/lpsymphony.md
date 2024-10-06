@@ -8,7 +8,7 @@ sort: 13
 
 As stated, the Bioconductor package comes with its version SYMPHONY; nevertheless it is actually easier to modify this.
 
-As usual, we mask the `configure` commnand,
+As usual, we mask the `configure` command,
 
 ```bash
 wget -qO- https://bioconductor.org/packages/release/bioc/src/contrib/lpsymphony_1.32.0.tar.gz | \
@@ -49,4 +49,7 @@ make install
 
 Now we do `R CMD INSTALL lpsymphony`.
 
-Packages `IHW` 1.32.0 and `scp` 1.14.0 are ready to install.
+## IHW & scp
+
+Packages `IHW` 1.32.0 and `scp` 1.14.0 are ready to install up availability of `lpsymphony` 1.32.0.
+.
