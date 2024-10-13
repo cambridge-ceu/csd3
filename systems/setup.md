@@ -340,6 +340,7 @@ All entries are ordered chronologically.
 | ""          | gdal/3.7.0                       | Generic[^gdal370]    |
 | 2024-10-04  | libsodium/1.0.20                 | Genetic              |
 | ""          | SYMPHONY/3.6.17                  | Generic              |
+| 2024-10-13  | sage/0.14.7                      | Proteomics           |
 
 \* CEU or approved users only.
 

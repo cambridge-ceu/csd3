@@ -73,19 +73,19 @@ The current list is as follows,
 [213] "QTLtools"               "quarto"                 "quicktest"              "R"
 [217] "raremetal"              "rclone"                 "readline"               "regenie"
 [221] "regtools"               "RHHsoftware"            "rst2pdf"                "rstudio"
-[225] "rtmpdump"               "ruby"                   "rust"                   "samtools"
-[229] "Scala"                  "seqkit"                 "shapeit"                "singularity"
-[233] "SMR"                    "snakemake"              "SNP2HLA"                "snptest"
-[237] "spread-sheet-widget"    "spyder"                 "sqlite"                 "sra-tools"
-[241] "sshpass"                "ssw"                    "STAR"                   "stata"
-[245] "SurvivalAnalysis"       "SurvivalKit"            "Swift"                  "SYMPHONY"
-[249] "tabix"                  "tandem"                 "tatami"                 "ThermoRawFileParser"
-[253] "ThermoRawFileParserGUI" "thunderbird"            "tidy"                   "tiff"
-[257] "trinculo"               "trousers"               "Typora"                 "unbound"
-[261] "vala"                   "VarScan"                "vcftools"               "VEGAS2"
-[265] "verifyBamID"            "VSCode"                 "VSCodium"               "vte"
-[269] "wine"                   "xpdf"                   "yaml-cpp"               "Zotero"
-[273] "zstd"
+[225] "rtmpdump"               "ruby"                   "rust"                   "sage"
+[229] "samtools"               "Scala"                  "seqkit"                 "shapeit"
+[233] "singularity"            "SMR"                    "snakemake"              "SNP2HLA"
+[237] "snptest"                "spread-sheet-widget"    "spyder"                 "sqlite"
+[241] "sra-tools"              "sshpass"                "ssw"                    "STAR"
+[245] "stata"                  "SurvivalAnalysis"       "SurvivalKit"            "Swift"
+[249] "SYMPHONY"               "tabix"                  "tandem"                 "tatami"
+[253] "ThermoRawFileParser"    "ThermoRawFileParserGUI" "thunderbird"            "tidy"
+[257] "tiff"                   "trinculo"               "trousers"               "Typora"
+[261] "unbound"                "vala"                   "VarScan"                "vcftools"
+[265] "VEGAS2"                 "verifyBamID"            "VSCode"                 "VSCodium"
+[269] "vte"                    "wine"                   "xpdf"                   "yaml-cpp"
+[273] "Zotero"                 "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -360,6 +360,8 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2024-08-23 | qpdf/11.9.1                 | Generic             |
     | 2024-09-01 | MaxQuant/2.6.4.0            | Proteomics          |
     | ""         | Perseus/2.1.2.0             | Proteomics          |
+    | 2024-10-13 | sage/0.14.7                 | Proteomics          |
+
 
     \* CEU or approved users only.
 
