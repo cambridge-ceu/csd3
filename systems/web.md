@@ -14,8 +14,9 @@ python -m http.server 8080 &
 assuming port number 8080 is avaiable. An attempt can be made with `Cytoscape`
 
 ```bash
+cd srcf
 module load ceuadmin/Cytoscape/3.9.1
 Cytoscape &
 ```
 
-using `Tools` --> `Open web page` for our page `http://127.0.0.1:8080`.
+using `Tools` --> `Open web page` for our pages hosted at `srcf/` via `http://127.0.0.1:8080`.
