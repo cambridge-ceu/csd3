@@ -4,7 +4,7 @@ sort: 12
 
 # Web testing
 
-This is surely among the simplest,
+This is likely the simplest,
 
 ```bash
 module load python/3.8.11/gcc/pqdmnzmw
