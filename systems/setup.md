@@ -1,5 +1,5 @@
 ---
-sort: 13
+sort: 14
 ---
 
 # A. Setup of modules
@@ -341,6 +341,10 @@ All entries are ordered chronologically.
 | 2024-10-04  | libsodium/1.0.20                 | Genetic              |
 | ""          | SYMPHONY/3.6.17                  | Generic              |
 | 2024-10-13  | sage/0.14.7                      | Proteomics           |
+| 2024-10-23  | caddy/2.7.5                      | Genetic              |
+| ""          | caddy/2.8.4                      | Generic              |
+| ""          | nginx/1.24.0                     | Generic              |
+| ""          | wrk/4.2.0                        | Generic              |
 
 \* CEU or approved users only.
 

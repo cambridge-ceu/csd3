@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+/#!/usr/bin/bash
 
 function systems()
 {
@@ -19,6 +19,7 @@ ceuadmin
 ParallelComputing
 qemu
 SRCP
+web
 GreenAlgorithms
 setup
 training
