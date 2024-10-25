@@ -345,6 +345,8 @@ All entries are ordered chronologically.
 | ""          | caddy/2.8.4                      | Generic              |
 | ""          | nginx/1.24.0                     | Generic              |
 | ""          | wrk/4.2.0                        | Generic              |
+| 2024-10-25  | firefox/131.0.3                  | Genetic              |
+| ""          | chrome/132.0.6798.0              | Generic              |
 
 \* CEU or approved users only.
 
