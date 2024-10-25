@@ -22,3 +22,5 @@ Cytoscape &
 ```
 
 using `Tools` --> `Open web page` for our pages hosted at `srcf/` via `http://127.0.0.1:8080`.
+
+This is somewhat clumsy, and we appear to be able to work with `ceuadmin/chrome`.
