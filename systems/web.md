@@ -11,7 +11,9 @@ module load python/3.8.11/gcc/pqdmnzmw
 python -m http.server 8080 &
 ```
 
-assuming port number 8080 is avaiable. An attempt can be made with `Cytoscape`
+assuming port number 8080 is avaiable, e.g. `lsof -i :8080` gives no output. 
+
+With a dysfunctional `firefox`, an attempt can be made with `Cytoscape`
 
 ```bash
 cd srcf
