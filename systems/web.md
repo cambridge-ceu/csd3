@@ -23,7 +23,7 @@ chrome http://localhost:8080
 
 in repleace of a dysfunctional `firefox`.
 
-An earlier attempt was with `Cytoscape`
+An earlier attempt was made with `Cytoscape`
 
 ```bash
 module load ceuadmin/Cytoscape/3.9.1
