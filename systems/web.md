@@ -21,7 +21,7 @@ module load ceuadmin/chrome
 chrome http://localhost:8080
 ```
 
-in repleace of a dysfunctional `firefox`.
+in replace of a dysfunctional `firefox`.
 
 An earlier attempt was made with `Cytoscape`
 
@@ -32,4 +32,4 @@ Cytoscape &
 
 using `Tools` --> `Open web page` for `http://127.0.0.1:8080`.
 
-This is somewhat clumsy.
+which is somewhat clumsy.
