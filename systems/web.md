@@ -6,7 +6,7 @@ sort: 12
 
 We set to browse our pages hosted at `srcf/`.
 
-Assuming port number 8080 is avaiable, e.g. `lsof -i :8080` gives no output, this is likely the simplest way to start the web service:
+Assuming port number 8080 is available, e.g. `lsof -i :8080` gives no output, this is likely the simplest way to start the web service:
 
 ```bash
 cd srcf
