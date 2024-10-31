@@ -6,7 +6,18 @@ sort: 7
 
 ## 0.35.0
 
-We first download and unpack the source package first, then mask the `configure` command and create `Makevars` at `src/` with the following contents,
+We first download and unpack the source package, then mask the `configure` command
+
+```bash
+wget -qO- https://cran.r-project.org/src/contrib/git2r_0.35.0.tar.gz | \
+tar xvfz -
+cd git2r
+mv configure configure.sav
+# create src/Makevars
+cd -
+```
+
+where we also create `Makevars` at `src/` with the following contents,
 
 ```
 # Use C++17 standard
