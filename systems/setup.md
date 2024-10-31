@@ -348,6 +348,7 @@ All entries are ordered chronologically.
 | 2024-10-25  | firefox/131.0.3                  | Genetic              |
 | ""          | chrome/132.0.6798.0              | Generic              |
 | 2024-10-29  | inetutils/2.5                    | Genetic[^inetutils]  |
+| 2024-10-31  | R/4.4.2                          | Generic              |
 
 
 \* CEU or approved users only.
