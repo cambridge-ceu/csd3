@@ -134,14 +134,14 @@ largely be seen as sources which are used to build the reoository given above.
 
 CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `phenoscanner`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom`
 linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,698 as of 26/10/2024, esp. with availability of major machine learning packages)
-is linked with the latest R distribution, 4.4.1; there are also 15 packages under R-gcc11.
+is linked with the latest R distribution, 4.4.2; there are also 15 packages under R-gcc11. Note that there are limitations with CSD3 so that `sf`, `terra` cannot be updated due to incomplete build of `gdal`/`proj`.
 
 For CEU users, it is easy to point to them, e.g.,
 
 ```bash
 export HPC_WORK=/rds/user/$USER/hpc-work/
 export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-export R_LIBS=${RDS}/R:${RDS}/R-4.4.1/library
+export R_LIBS=${RDS}/R:${RDS}/R-4.4.2/library
 ```
 
 or possible to have your own installations based on these, e.g., through creation of a modified `Makefile` with altered prefix followed
@@ -151,8 +151,8 @@ The following script tests for loading of `dplyr`:
 
 ```bash
 export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-export PATH=${PATH}:${RDS}/R-4.4.1/bin
-export R_LIBS=${RDS}/R-4.4.1/library:${RDS}/R
+export PATH=${PATH}:${RDS}/R-4.4.2/bin
+export R_LIBS=${RDS}/R-4.4.2/library:${RDS}/R
 Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
 ```
 
