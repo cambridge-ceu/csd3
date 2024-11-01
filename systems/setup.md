@@ -346,9 +346,10 @@ All entries are ordered chronologically.
 | ""          | nginx/1.24.0                     | Generic              |
 | ""          | wrk/4.2.0                        | Generic              |
 | 2024-10-25  | firefox/131.0.3                  | Genetic              |
-| ""          | chrome/132.0.6798.0              | Generic              |
+| ""          | chromium/132.0.6798.0            | Generic              |
 | 2024-10-29  | inetutils/2.5                    | Genetic[^inetutils]  |
 | 2024-10-31  | R/4.4.2                          | Generic              |
+| 2024-11-01  | edge/130.0.2849.56-1             | Generic              |
 
 
 \* CEU or approved users only.
