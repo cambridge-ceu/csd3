@@ -4,16 +4,17 @@ sort: 12
 
 # Web browsing
 
-`Browsing local files as web pages offers several advantages over plain files, including improved formatting and interactivity through HTML and CSS, enhanced navigation with menus and links, and dynamic content updates for a smoother experience. Web pages are cross-platform compatible, support multimedia integration, and include accessibility features. They also allow for easy content updates, better search functionality, and can implement security protocols, making them a more versatile and user-friendly option for accessing local content` (ChatGPT).
-
-We set browse files hosted at `srcf/`.
+Advantages of browsing local files as web pages over plain files include improved file formatting, multimedia integration, interactive
+and dynamic navigation. For instance, suppose our directory is part of a GitHub repository which contains a `README.md` which can be
+converted to `README.html` via `pandoc`. We would then have the option to keep our directory as files + web page with `README.html
+alone (allowing for file download), or a web page when `index.html` is created as a symbolic link to `README.html` (file download is
+possible only an explicit link is available).
 
 The `firefox` browser available at `/usr/bin/firefox` is dysfunctional, so several alternatives are described here.
 
-To proceed, we need to start the web service first, which is simply done as follows:
+To proceed, we first start the web service, which is simply done as follows:
 
 ```bash
-cd srcf
 module load python/3.8.11/gcc/pqdmnzmw
 python -m http.server 8080 &
 ```
