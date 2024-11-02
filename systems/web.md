@@ -44,7 +44,7 @@ module load ceuadmin/edge
 edge http://localhost:8080
 ```
 
-Aliases to `edge` is `microsoft-edge` and `microsoft-edge-stable`.
+where the customized `edge` works properly, unlike its aliases `microsoft-edge` and `microsoft-edge-stable`.
 
 ## Cytoscape
 
