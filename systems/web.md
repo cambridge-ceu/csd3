@@ -5,10 +5,10 @@ sort: 12
 # Web browsing
 
 Advantages of browsing local files as web pages over plain files include improved file formatting, multimedia integration, interactive
-and dynamic navigation. For instance, suppose our directory is part of a GitHub repository which contains a `README.md` which can be
-converted to `README.html` via `pandoc`. We would then have the option to keep our directory as files + web page with `README.html`
-alone (allowing for file download), or a web page when `index.html` is created as a symbolic link to `README.html` (file download is
-possible only an explicit link is available).
+and dynamic navigation. For instance, suppose our directory contains a `README.md` (as in a GitHub repository) which can be converted to
+`README.html` via `pandoc`. We would then be able to keep our directory as files + web page with `README.html` alone (allowing for
+explicit file download), or a web page when `index.html` is created as a symbolic link to `README.html` (files are invisible unless
+explicit links are available in it).
 
 The `firefox` browser available at `/usr/bin/firefox` is dysfunctional, so several alternatives are described here.
 
