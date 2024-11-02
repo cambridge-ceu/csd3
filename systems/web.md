@@ -29,7 +29,7 @@ module load ceuadmin/chromium
 chrome http://localhost:8080
 ```
 
-It might be helpful to clear browse history when chrome is repeatedly used, or to start a new profile, e.g.,
+It might be helpful to clear browse history when `chrome` is repeatedly used, or to start a new profile, e.g.,
 
 ```bash
 chrome --user-data-dir=/tmp/jhz22
