@@ -6,7 +6,7 @@ sort: 12
 
 Advantages of browsing local files as web pages over plain files include improved file formatting, multimedia integration, interactive
 and dynamic navigation. For instance, suppose our directory is part of a GitHub repository which contains a `README.md` which can be
-converted to `README.html` via `pandoc`. We would then have the option to keep our directory as files + web page with `README.html
+converted to `README.html` via `pandoc`. We would then have the option to keep our directory as files + web page with `README.html`
 alone (allowing for file download), or a web page when `index.html` is created as a symbolic link to `README.html` (file download is
 possible only an explicit link is available).
 
