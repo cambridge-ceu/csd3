@@ -4,11 +4,13 @@ sort: 12
 
 # Web browsing
 
-We set to browse our pages hosted at `srcf/`. The `firefox` browser available at `/usr/bin/firefox` is dysfunctional, so several alternatives are described here.
+`Browsing local files as web pages offers several advantages over plain files, including improved formatting and interactivity through HTML and CSS, enhanced navigation with menus and links, and dynamic content updates for a smoother experience. Web pages are cross-platform compatible, support multimedia integration, and include accessibility features. They also allow for easy content updates, better search functionality, and can implement security protocols, making them a more versatile and user-friendly option for accessing local content` (ChatGPT).
 
-## Web service
+We set browse files hosted at `srcf/`.
 
-This is required but not started by default, here is likely the simplest way to start:
+The `firefox` browser available at `/usr/bin/firefox` is dysfunctional, so several alternatives are described here.
+
+To proceed, we need to start the web service first, which is simply done as follows:
 
 ```bash
 cd srcf
