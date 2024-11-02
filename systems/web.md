@@ -10,8 +10,6 @@ and dynamic navigation. For instance, suppose our directory contains a `README.m
 explicit file download), or a web page when `index.html` is created as a symbolic link to `README.html` (files are invisible unless
 explicit links are given inside).
 
-The `firefox` browser available at `/usr/bin/firefox` is dysfunctional, so several alternatives are described here.
-
 To proceed, we first start the web service, which is simply done as follows:
 
 ```bash
@@ -20,6 +18,8 @@ python -m http.server 8080 &
 ```
 
 sssuming port number 8080 is available, e.g. `lsof -i :8080` gives no output.
+
+The `firefox` browser available at `/usr/bin/firefox` is dysfunctional, so several alternatives are described below.
 
 ## chromium
 
