@@ -17,7 +17,7 @@ module load python/3.8.11/gcc/pqdmnzmw
 python -m http.server 8080 &
 ```
 
-sssuming port number 8080 is available, e.g. `lsof -i :8080` gives no output.
+assuming port number 8080 is available, e.g. `lsof -i :8080` gives no output.
 
 The `firefox` browser available at `/usr/bin/firefox` is dysfunctional, so several alternatives are described below.
 
