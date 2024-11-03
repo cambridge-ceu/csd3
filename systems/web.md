@@ -27,13 +27,13 @@ We are then capable to work with `ceuadmin/chromium`:
 
 ```bash
 module load ceuadmin/chromium
-chrome http://localhost:8080
+chrome http://localhost:8080 &
 ```
 
 It might be helpful to clear browse history when `chrome` is repeatedly used, or to start a new profile, e.g.,
 
 ```bash
-chrome --user-data-dir=/tmp/jhz22
+chrome --user-data-dir=/tmp/jhz22 http://localhost:8080 &
 ```
 
 ## edge
