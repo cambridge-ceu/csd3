@@ -5,10 +5,10 @@ sort: 12
 # Web browsing
 
 Advantages of browsing local files as web pages over plain files include improved file formatting, multimedia integration, interactive
-and dynamic navigation. For instance, suppose our directory contains a `README.md` (as in a GitHub repository) which can be converted to
-`README.html` via `pandoc`. We would then be able to browse our directory as files + web page with `README.html` alone (allowing for
-explicit file download), or a web page when `index.html` is created as a symbolic link to `README.html` (files are invisible unless
-explicit links are given inside).
+and dynamic navigation. Suppose for instance our directory contains a `README.md` (as in a GitHub repository) which can be converted to
+`README.html` via `pandoc`, then we can browse our directory as files + web page with `README.html` (allowing for explicit file
+download), or a web page when `index.html` is created as a symbolic link to `README.html` (files are invisible unless explicit links are
+given inside).
 
 To proceed, we first start the web service, which is simply done as follows:
 
