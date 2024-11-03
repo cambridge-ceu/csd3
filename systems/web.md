@@ -42,7 +42,7 @@ This is also ready to use,
 
 ```bash
 module load ceuadmin/edge
-edge http://localhost:8080
+edge http://localhost:8080 &
 ```
 
 where the customized `edge` works properly, unlike its aliases `microsoft-edge` and `microsoft-edge-stable`.
