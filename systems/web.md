@@ -36,7 +36,7 @@ It might be helpful to clear browse history when `chrome` is repeatedly used, or
 chrome --user-data-dir=/tmp/jhz22 http://localhost:8080 &
 ```
 
-## edge
+## Microsoft Edge
 
 This is also ready to use,
 
