@@ -2,7 +2,7 @@
 sort: 12
 ---
 
-# Web browsing
+# Local web browsing
 
 Advantages of browsing local files as web pages over plain files include improved file formatting, multimedia integration, interactive
 and dynamic navigation. Suppose for instance our directory contains a `README.md` (as in a GitHub repository) which can be converted to
