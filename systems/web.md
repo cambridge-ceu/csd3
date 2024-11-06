@@ -21,7 +21,7 @@ assuming port number 8080 is available, e.g. `lsof -i :8080` gives no output.
 
 The `firefox` browser available at `/usr/bin/firefox` is dysfunctional, so several alternatives are described below.
 
-## chromium
+## Chromium
 
 We are then capable to work with `ceuadmin/chromium`:
 
@@ -45,7 +45,7 @@ module load ceuadmin/edge
 edge http://localhost:8080 &
 ```
 
-where the customized `edge` works properly, unlike its aliases `microsoft-edge` and `microsoft-edge-stable`.
+where the customized `edge` works properly, unlike its aliases `microsoft-edge` and `microsoft-edge-stable`. Note further that the option `--user-data-dir` also applies since it is also based on Chromium.
 
 ## Cytoscape
 
