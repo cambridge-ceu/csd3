@@ -10,11 +10,10 @@ and dynamic navigation. Suppose for instance our directory contains a `README.md
 download), or a web page when `index.html` is created as a symbolic link to `README.html` (files are invisible unless explicit links are
 given inside).
 
-To proceed, we first start the web service, which is simply done as follows:
+To proceed, we first start the web service, which is simply done (through the default Python 3.6.8) as follows:
 
 ```bash
-module load python/3.8.11/gcc/pqdmnzmw
-python -m http.server 8080 &
+python3 -m http.server 8080 &
 ```
 
 assuming port number 8080 is available, e.g. `lsof -i :8080` gives no output.
