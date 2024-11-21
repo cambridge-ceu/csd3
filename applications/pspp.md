@@ -259,7 +259,9 @@ The use of flatpak is possible with these operations,
 # https://wiki.archlinux.org/title/Bubblewrap
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo --user
-flatpak install flathub org.gnu.pspp
+mkdir -p $CEUADMIN/pspp/2.0.0
+export FLATPAK_USER_DIR=$CEUADMIN/pspp/2.0.0
+flatpak install --user flathub org.gnu.pspp
 flatpak list
 flatpak run org.gnu.pspp
 ```
