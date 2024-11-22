@@ -266,6 +266,19 @@ flatpak list
 flatpak run org.gnu.pspp
 ```
 
+## 2.0.1
+
+The installation from flatpak above was successful but the required storage is too much / kernel is too high.
+
+but copy `ceuadmin/[gettext/0.20, libiconv/1.17, libxml2/2.9.10]` to ${HPC_WORK} together with the prerequistes,
+
+```bash
+module load ceuadmin/gtksourceview/4.0.3
+module load ceuadmin/spread-sheet-widget
+```
+
+then it proceeds smoothly. The module `ceuadmin/pspp/2.0.1` still needs `ceuadmin/libiconv` loaded first though.
+
 [^gsv]: gtksourceview 4.6.0 installation
 
     ```bash

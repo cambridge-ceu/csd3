@@ -109,7 +109,7 @@ module load ceuadmin/pspp
 psppire
 ```
 
-for version 2.0.0-pre1. Once the job is done, one can restore the previous environment with
+for version 2.0.1. Once the job is done, one can restore the previous environment with
 
 ```bash
 module unload ceuadmin/pspp
