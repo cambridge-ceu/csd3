@@ -50,7 +50,7 @@ gcc -c  -I"/usr/local/Cluster-Apps/ceuadmin/pspp/2.0.0/pspp-2.0.0" -I"/usr/local
 cd -
 ```
 
-## flatpak
+### flatpak
 
 The use of flatpak is possible with these operations,
 
