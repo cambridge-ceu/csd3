@@ -8,6 +8,8 @@ Official page: [https://www.gnu.org/software/pspp/](https://www.gnu.org/software
 
 ## 2.0.1
 
+This build is now for icelake, or CentOS 8 rather than CentOS 7 for building 2.0.0 and earlier (1.6.0 still works though).
+
 The installation from `flatpak` as before was successful but the required storage is too much / kernel is too high.
 
 We copy `ceuadmin/[gettext/0.20, libiconv/1.17, libxml2/2.9.10]` to ${HPC_WORK} together with the prerequistes,
