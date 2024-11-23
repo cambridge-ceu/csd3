@@ -8,7 +8,7 @@ Official page: [https://www.gnu.org/software/pspp/](https://www.gnu.org/software
 
 ## 2.0.1
 
-This build is now for icelake, or CentOS 8 rather than CentOS 7 for building 2.0.0 and earlier (1.6.0 still works though).
+This build is now for icelake, or CentOS 8 rather than CentOS 7 for building 2.0.0 and earlier.
 
 The installation from `flatpak` as before was successful but the required storage is too much / kernel is too high.
 
