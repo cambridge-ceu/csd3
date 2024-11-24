@@ -56,3 +56,15 @@ Cytoscape &
 ```
 
 using `Tools` --> `Open web page` for `http://127.0.0.1:8080`.
+
+## Dfault browser
+
+A list of options is as follows,
+
+```bash
+xdg-settings set default-web-browser chromium.desktop
+xdg-settings set default-web-browser microsoft-edge.desktop
+xdg-settings set default-web-browser firefox.desktop
+xdg-settings set default-web-browser google-chrome.desktop
+```
+
