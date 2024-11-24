@@ -19,40 +19,6 @@ module load ceuadmin/spread-sheet-widget
 
 then it proceeds smoothly. The module `ceuadmin/pspp/2.0.1` still needs `ceuadmin/libiconv/1.17` loaded first though.
 
-Once the GUI is started, we can open `/usr/local/Cluster-Apps/ceuadmin/pspp/2.0.1/share/pspp/examples/regress_categorical.sps`
-
-```spss
-set decimal=dot.
-
-title 'Demonstrate REGRESSION procedure'.
-/*      run this syntax file with the command:
-/*                 pspp example.stat
-/*
-/*      Output is written to the file "pspp.list".
-
-data list / v0 1-2 (A) v1 v2 3-22 (10).
-begin data.
-b  7.735648 -23.97588
-b  6.142625 -19.63854
-a  7.651430 -25.26557
-c  6.125125 -16.57090
-a  8.245789 -25.80001
-c  6.031540 -17.56743
-a  9.832291 -28.35977
-c  5.343832 -16.79548
-a  8.838262 -29.25689
-b  6.200189 -18.58219
-end data.
-
-list.
-
-freq /variables=v0 v1 v2.
-
-regression /variables= v1 v2 /statistics defaults /dependent=v2 /method=enter.
-```
-
-and excute thee code.
-
 ## 2.0.0
 
 ```bash
@@ -183,6 +149,40 @@ where we drop `PREFIX=/rds/user/jhz22/hpc-work` after `Makefile.PL` and furnish 
 Note that the Windows version is available from [https://caeis.etech.fh-augsburg.de/downloads/windows/pspp-win-daily/1.6.0-ge6b96c/](https://caeis.etech.fh-augsburg.de/downloads/windows/pspp-win-daily/1.6.0-ge6b96c/).
 
 The software package is available with `module load ceuadmin/pspp/1.6.0`.
+
+Once the GUI is started, we can open `/usr/local/Cluster-Apps/ceuadmin/pspp/2.0.1/share/pspp/examples/regress_categorical.sps`
+
+```spss
+set decimal=dot.
+
+title 'Demonstrate REGRESSION procedure'.
+/*      run this syntax file with the command:
+/*                 pspp example.stat
+/*
+/*      Output is written to the file "pspp.list".
+
+data list / v0 1-2 (A) v1 v2 3-22 (10).
+begin data.
+b  7.735648 -23.97588
+b  6.142625 -19.63854
+a  7.651430 -25.26557
+c  6.125125 -16.57090
+a  8.245789 -25.80001
+c  6.031540 -17.56743
+a  9.832291 -28.35977
+c  5.343832 -16.79548
+a  8.838262 -29.25689
+b  6.200189 -18.58219
+end data.
+
+list.
+
+freq /variables=v0 v1 v2.
+
+regression /variables= v1 v2 /statistics defaults /dependent=v2 /method=enter.
+```
+
+and excute thee code.
 
 ## 1.4.1
 
