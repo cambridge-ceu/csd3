@@ -42,140 +42,6 @@ The latest versions on cclake and icelake are 4.2.2 and 4.3.3, respectively; the
 
 R 4.3.3 has become default on icelake.
 
-## Installed modules
-
-From the console we check its availability with `module avail R` and see
-
-```
-------------------------------------------------------------- /usr/local/software/modulefiles --------------------------------------------------------------
-R/3.4           R/3.5           R/3.6           R/4.0.3         R/4.0.5-icelake R/4.1.0-icelake
-```
-
-so we can proceed with
-
-```bash
-module load R/4.0.3
-R
-```
-
-The second line calls `/usr/local/Cluster-Apps/R/R.4.0.3/bin/R`.
-
-## Compiling from source
-
-To compile all the PDF documentations, load texlive.
-
-```bash
-module load gcc/6
-module load pcre/8.38
-module load texlive
-wget https://cran.r-project.org/src/base/R-4/R-4.0.0.tar.gz
-tar xvfz R-4.0.0.tar.gz
-cd R-4.0.0
-export prefix=/rds-d4/user/$USER/hpc-work
-./configure --prefix=${prefix} \
-            --with-pcre1 \
-            --enable-R-shlib CPPFLAGS=-I${prefix}/include LDFLAGS=-L${prefix}/lib
-make
-make install
-```
-
-With this setup, `R CMD check --as-cran` for a CRAN package check can be run smoothly.
-
-Package reinstallation could be done with `update.packages(checkBuilt = TRUE, ask = FALSE)`.
-
-Additional amemendments are necessary, e.g., package igraph 2.0.2 requires glpk/4.57 (see below).
-
-## libiconv
-
-It may complain about `libiconv.so.2`,
-
-> ... R: error while loading shared libraries: libiconv.so.2: cannot open shared object file: No such file or directory
-
-which can be installed as follows,
-
-```bash
-wget -qO- https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.16.tar.gz | tar xvfz -
-cd libiconv-1.16
-./configure --prefix=${HPC_WORK}
-make
-make install
-```
-
-We could also try from `module avail libiconv`.
-
-## 4.2.2
-
-The following script is used to generate `ceuadmin/R/4.2.2`
-
-```bash
-#!/usr/bin/bash
-
-module load gcc/6 geos-3.6.2-gcc-5.4.0-vejexvy gettext-0.19.8.1-gcc-5.4.0-5iqkv5z pcre2-10.20-gcc-5.4.0-tcuhtrb texlive
-export prefix=/usr/local/Cluster-Apps/ceuadmin/R/4.2.2
-cd ${prefix}
-export version=4.2.2
-wget -qO- https://cran.r-project.org/src/base/R-${major}/R-${version}.tar.gz | \
-tar xvfz -
-cd R-${version}
-export gcc6=/usr/local/software/master/gcc/6
-export intl=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/gettext-0.19.8.1-5iqkv5zrractwd57vydu5czosgtrlwj2/
-export HPC_WORK=/rds/user/jhz22/hpc-work
-export include=${gcc6}/include:${intl}/include:${HPC_WORK}/include
-export ldflags=${gcc6}/lib64:${gcc6}/lib:${intl}/lib:${HPC_WORK}/lib64:${HPC_WORK}/lib
-./configure --prefix=${prefix} \
-            --with-pcre2 \
-            --enable-R-shlib CPPFLAGS=-I${include} LDFLAGS=-L${ldflags} LIBS=-ltinfo LIBS=-lintl
-make
-make install
-```
-
-## 4.3.3[-gcc11]
-
-This is a lot messier,
-
-```bash
-#!/usr/bin/bash
-
-module load gcc/6 geos-3.6.2-gcc-5.4.0-vejexvy gettext-0.19.8.1-gcc-5.4.0-5iqkv5z pcre2-10.20-gcc-5.4.0-tcuhtrb texlive
-module load image-magick-7.0.5-9-gcc-5.4.0-d4lemcc
-module load ceuadmin/glpk/4.57
-
-export prefix=/rds-d4/user/$USER/hpc-work
-export prefix=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-cd ${prefix}
-export version=4.3.3
-IFS=\. read major minor1 minor2 <<<${version}
-wget -qO- https://cran.r-project.org/src/base/R-${major}/R-${version}.tar.gz | \
-tar xvfz -
-cd R-${version}
-export gcc6=/usr/local/software/master/gcc/6
-export intl=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/gettext-0.19.8.1-5iqkv5zrractwd57vydu5czosgtrlwj2/
-export HPC_WORK=/rds/user/jhz22/hpc-work
-export include=${gcc6}/include:${intl}/include:${HPC_WORK}/include
-export ldflags=${gcc6}/lib64:${gcc6}/lib:${intl}/lib:${HPC_WORK}/lib64:${HPC_WORK}/lib
-./configure --prefix=${prefix} \
-            --with-pcre2 \
-            --enable-R-shlib CPPFLAGS=-I${include} LDFLAGS=-L${ldflags} LIBS=-ltinfo LIBS=-lintl
-make
-make install
-ln -sf  ${prefix}/R-${version}/bin/R $HOME/bin/R
-Rscript -e 'update.packages(checkBuilt=TRUE,ask=FALSE)'
-```
-
-Package DescTools 0.99.54 requires gcc/11 (there is problem with gcc/9 on CSD3) and to get around we also created `ceuadmin/R/4.3.3-gcc11`.
-
-This is created under gcc/11 to enable package in the following list,
-
-```
-DescTools 0.99.54
-Rfast 2.1.0
-Rfast2 0.1.5.2
-RcppTOML 0.2.2
-rstanarm 2.32.1
-rstan 2.32.6
-StanHeaders 2.32.6
-```
-
 ## icelake
 
 A module called `ceuadmin/R/4.3.3-icelake` is now available, whose definition is as follows,
@@ -295,6 +161,97 @@ make
 make install
 ```
 
+## 4.3.3[-gcc11]
+
+This is a lot messier,
+
+```bash
+#!/usr/bin/bash
+
+module load gcc/6 geos-3.6.2-gcc-5.4.0-vejexvy gettext-0.19.8.1-gcc-5.4.0-5iqkv5z pcre2-10.20-gcc-5.4.0-tcuhtrb texlive
+module load image-magick-7.0.5-9-gcc-5.4.0-d4lemcc
+module load ceuadmin/glpk/4.57
+
+export prefix=/rds-d4/user/$USER/hpc-work
+export prefix=/rds/project/jmmh2/rds-jmmh2-public_databases/software
+cd ${prefix}
+export version=4.3.3
+IFS=\. read major minor1 minor2 <<<${version}
+wget -qO- https://cran.r-project.org/src/base/R-${major}/R-${version}.tar.gz | \
+tar xvfz -
+cd R-${version}
+export gcc6=/usr/local/software/master/gcc/6
+export intl=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/gettext-0.19.8.1-5iqkv5zrractwd57vydu5czosgtrlwj2/
+export HPC_WORK=/rds/user/jhz22/hpc-work
+export include=${gcc6}/include:${intl}/include:${HPC_WORK}/include
+export ldflags=${gcc6}/lib64:${gcc6}/lib:${intl}/lib:${HPC_WORK}/lib64:${HPC_WORK}/lib
+./configure --prefix=${prefix} \
+            --with-pcre2 \
+            --enable-R-shlib CPPFLAGS=-I${include} LDFLAGS=-L${ldflags} LIBS=-ltinfo LIBS=-lintl
+make
+make install
+ln -sf  ${prefix}/R-${version}/bin/R $HOME/bin/R
+Rscript -e 'update.packages(checkBuilt=TRUE,ask=FALSE)'
+```
+
+Package DescTools 0.99.54 requires gcc/11 (there is problem with gcc/9 on CSD3) and to get around we also created `ceuadmin/R/4.3.3-gcc11`.
+
+This is created under gcc/11 to enable package in the following list,
+
+```
+DescTools 0.99.54
+Rfast 2.1.0
+Rfast2 0.1.5.2
+RcppTOML 0.2.2
+rstanarm 2.32.1
+rstan 2.32.6
+StanHeaders 2.32.6
+```
+
+## 4.2.2
+
+The following script is used to generate `ceuadmin/R/4.2.2`
+
+```bash
+#!/usr/bin/bash
+
+module load gcc/6 geos-3.6.2-gcc-5.4.0-vejexvy gettext-0.19.8.1-gcc-5.4.0-5iqkv5z pcre2-10.20-gcc-5.4.0-tcuhtrb texlive
+export prefix=/usr/local/Cluster-Apps/ceuadmin/R/4.2.2
+cd ${prefix}
+export version=4.2.2
+wget -qO- https://cran.r-project.org/src/base/R-${major}/R-${version}.tar.gz | \
+tar xvfz -
+cd R-${version}
+export gcc6=/usr/local/software/master/gcc/6
+export intl=/usr/local/software/spack/spack-0.11.2/opt/spack/linux-rhel7-x86_64/gcc-5.4.0/gettext-0.19.8.1-5iqkv5zrractwd57vydu5czosgtrlwj2/
+export HPC_WORK=/rds/user/jhz22/hpc-work
+export include=${gcc6}/include:${intl}/include:${HPC_WORK}/include
+export ldflags=${gcc6}/lib64:${gcc6}/lib:${intl}/lib:${HPC_WORK}/lib64:${HPC_WORK}/lib
+./configure --prefix=${prefix} \
+            --with-pcre2 \
+            --enable-R-shlib CPPFLAGS=-I${include} LDFLAGS=-L${ldflags} LIBS=-ltinfo LIBS=-lintl
+make
+make install
+```
+
+## Installed modules
+
+From the console we check its availability with `module avail R` and see
+
+```
+------------------------------------------------------------- /usr/local/software/modulefiles --------------------------------------------------------------
+R/3.4           R/3.5           R/3.6           R/4.0.3         R/4.0.5-icelake R/4.1.0-icelake
+```
+
+so we can proceed with
+
+```bash
+module load R/4.0.3
+R
+```
+
+The second line calls `/usr/local/Cluster-Apps/R/R.4.0.3/bin/R`.
+
 ### nano editor
 
 It is relatively easy to set up `nano`, but one has to use the usual login node,
@@ -310,6 +267,49 @@ make install
 ```
 
 The executable thus obtained also runs under icelake.
+
+## Compiling from source
+
+To compile all the PDF documentations, load texlive.
+
+```bash
+module load gcc/6
+module load pcre/8.38
+module load texlive
+wget https://cran.r-project.org/src/base/R-4/R-4.0.0.tar.gz
+tar xvfz R-4.0.0.tar.gz
+cd R-4.0.0
+export prefix=/rds-d4/user/$USER/hpc-work
+./configure --prefix=${prefix} \
+            --with-pcre1 \
+            --enable-R-shlib CPPFLAGS=-I${prefix}/include LDFLAGS=-L${prefix}/lib
+make
+make install
+```
+
+With this setup, `R CMD check --as-cran` for a CRAN package check can be run smoothly.
+
+Package reinstallation could be done with `update.packages(checkBuilt = TRUE, ask = FALSE)`.
+
+Additional amemendments are necessary, e.g., package igraph 2.0.2 requires glpk/4.57 (see below).
+
+## libiconv
+
+It may complain about `libiconv.so.2`,
+
+> ... R: error while loading shared libraries: libiconv.so.2: cannot open shared object file: No such file or directory
+
+which can be installed as follows,
+
+```bash
+wget -qO- https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.16.tar.gz | tar xvfz -
+cd libiconv-1.16
+./configure --prefix=${HPC_WORK}
+make
+make install
+```
+
+We could also try from `module avail libiconv`.
 
 ### alpine
 
