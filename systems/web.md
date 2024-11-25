@@ -57,7 +57,7 @@ Cytoscape &
 
 using `Tools` --> `Open web page` for `http://127.0.0.1:8080`.
 
-## Dfault browser
+## Default browser(s)
 
 A list of options is as follows,
 
