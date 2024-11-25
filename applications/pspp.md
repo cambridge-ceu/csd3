@@ -17,7 +17,9 @@ module load ceuadmin/spread-sheet-widget
 
 then it proceeds smoothly. The module `ceuadmin/pspp/2.0.1` still needs `ceuadmin/libiconv/1.17` loaded first though.
 
-The installation from `flatpak` as before was successful but the required storage is too much / kernel is too high.
+### flatpak
+
+The installation was successful as before but the required storage is too much / kernel is too high.
 
 ## 2.0.0
 
