@@ -8,9 +8,7 @@ Official page: [https://www.gnu.org/software/pspp/](https://www.gnu.org/software
 
 ## 2.0.1
 
-The installation from `flatpak` as before was successful but the required storage is too much / kernel is too high.
-
-We copy `ceuadmin/[gettext/0.20, libiconv/1.17, libxml2/2.9.10]` to ${HPC_WORK} together with the prerequistes,
+To compfile from source, we copy `ceuadmin/[gettext/0.20, libiconv/1.17, libxml2/2.9.10]` to ${HPC_WORK} together with the prerequistes,
 
 ```bash
 module load ceuadmin/gtksourceview/4.0.3
@@ -18,6 +16,8 @@ module load ceuadmin/spread-sheet-widget
 ```
 
 then it proceeds smoothly. The module `ceuadmin/pspp/2.0.1` still needs `ceuadmin/libiconv/1.17` loaded first though.
+
+The installation from `flatpak` as before was successful but the required storage is too much / kernel is too high.
 
 ## 2.0.0
 
