@@ -6,7 +6,33 @@ sort: 34
 
 Web: <https://pgsc-calc.readthedocs.io/en/latest/> ([GitHub](https://github.com/PGScatalog/pgsc_calc), [ftp](https://ftp.ebi.ac.uk/pub/databases/spot/pgs/))
 
-## Installation
+## 2.0.3
+
+This is experimental -- note that recent changes at CSD3 require the long-missed prefix `./`.
+
+```bash
+cd $CEUADMIN/pgsc_calc
+mkdir 2.0.3
+wget -qO- https://github.com/PGScatalog/pgsc_calc/archive/refs/tags/v2.0.0.tar.gz | \
+tar xvz -C 2.0.3 --strip-components=1
+module load python/3.11.0-icl
+virtualenv venv
+source venv/bin/activate
+pip install hypothesis pytest-workflow pandas requests
+module load ceuadmin/singularity/4.0.3
+module load ceuadmin/ncurses/6.3
+module load curl/7.79.0/gcc/75dxv7ac
+curl -s https://get.nextflow.io | bash
+./nextflow pull pgscatalog/pgsc_calc
+export NXF_SINGULARITY_CACHEDIR=work
+./nextflow run pgscatalog/pgsc_calc -profile test,singularity
+nextflow run pgscatalog/pgsc_calc -profile singularity --input samplesheet.csv --pgs_id PGS001229 --target_build GRCh37
+deactivate
+```
+
+where `curl -s` line get `nextflow`, which obtains the singularity module. The source package has a `Makefile` which sets default to `docker`.
+
+## 2.0.0-alpha.4
 
 ### Prerequistes
 
