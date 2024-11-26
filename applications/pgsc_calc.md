@@ -32,6 +32,8 @@ deactivate
 
 where `curl -s` line get `nextflow`, which obtains the singularity module. The source package has a `Makefile` which sets default to `docker`.
 
+The execution fails since extraction of the image file, `ghcr.io-pgscatalog-pygscatalog-pgscatalog-utils-1.4.4-singularity.img` requires too much space at `/tmp`.
+
 ## 2.0.0-alpha.4
 
 ### Prerequistes
