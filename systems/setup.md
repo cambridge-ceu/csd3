@@ -350,7 +350,8 @@ All entries are ordered chronologically.
 | 2024-10-29  | inetutils/2.5                    | Genetic[^inetutils]  |
 | 2024-10-31  | R/4.4.2                          | Generic              |
 | 2024-11-01  | edge/130.0.2849.56-1             | Generic              |
-| 2022-11-22  | pspp/2.0.1                       | Generic
+| 2022-11-22  | pspp/2.0.1                       | Generic              |
+| 2022-11-26  | pgsc_calc/2.0.3                  | Generic              |
 
 \* CEU or approved users only.
 
@@ -780,6 +781,8 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     It appears quarto is called so presumably under icelake.
+
+    For 2.0.3, we try the conda option.
 
 [^deno]: **deno**
 
