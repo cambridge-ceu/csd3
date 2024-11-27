@@ -8,7 +8,7 @@ Web: <https://pgsc-calc.readthedocs.io/en/latest/> ([GitHub](https://github.com/
 
 ## 2.0.3
 
-This is experimental -- note that recent changes at CSD3 require the long-missed prefix `./`.
+The `ceuamdin/pgsc_calc/2.0.3` module is built as follows,
 
 ```bash
 cd $CEUADMIN/pgsc_calc
@@ -30,9 +30,119 @@ nextflow run pgscatalog/pgsc_calc -profile singularity --input samplesheet.csv -
 deactivate
 ```
 
-where `curl -s` line get `nextflow`, which obtains the singularity module. The source package has a `Makefile` which sets default to `docker`.
+The source package has a `Makefile` which sets default to `docker`, but on CSD3 it is more straightforward with `singularity` pulled
+by `nextflow` via `curl`. Note that during setup, recent changes at CSD3 require the long-missed prefix `./` but it is unnecessary later.
 
-The execution fails since extraction of the image file, `ghcr.io-pgscatalog-pygscatalog-pgscatalog-utils-1.4.4-singularity.img` requires too much space at `/tmp`.
+Screen output form the test run is again pasted here,
+
+```
+nextflow run pgscatalog/pgsc_calc -profile test,singularity
+
+ N E X T F L O W   ~  version 24.10.1
+
+Pulling pgscatalog/pgsc_calc ...
+ downloaded from https://github.com/PGScatalog/pgsc_calc.git
+Launching `https://github.com/pgscatalog/pgsc_calc` [mad_galileo] DSL2 - revision: 205cbfd1f5 [main]
+
+Downloading plugin nf-schema@2.0.0
+Downloading plugin nf-prov@1.2.2
+
+INFO: The test profile is used to install the workflow and verify the software is working correctly on your system.
+INFO: Test input data and results are are only useful as examples of outputs, and are not biologically meaningful.
+
+
+
+------------------------------------------------------
+  pgscatalog/pgsc_calc v2.0.0-g205cbfd
+------------------------------------------------------
+Core Nextflow options
+  revision       : main
+  runName        : mad_galileo
+  containerEngine: singularity
+  launchDir      : /rds/user/jhz22/hpc-work/work
+  workDir        : /rds/user/jhz22/hpc-work/work/work
+  projectDir     : /rds/user/jhz22/hpc-work/work/assets/pgscatalog/pgsc_calc
+  userName       : jhz22
+  profile        : test,singularity
+  configFiles    :
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+------------------------------------------------------
+If you use pgscatalog/pgsc_calc for your analysis please cite:
+
+* The Polygenic Score Catalog
+  https://doi.org/10.1101/2024.05.29.24307783
+  https://doi.org/10.1038/s41588-021-00783-5
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/pgscatalog/pgsc_calc/blob/main/CITATIONS.md
+
+[-        ] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES     -
+[-        ] PGSCATALOG_PGSCCALC:PGSCCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM  -
+[-        ] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES     -
+[-        ] PGSCATALOG_PGSCCALC:PGSCCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM  -
+executor >  local (1)
+[-        ] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES                            -
+executor >  local (1)
+[-        ] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES                            -
+executor >  local (2)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                        [  0%] 0 of 1
+executor >  local (3)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                        [100%] 1 of 1 ✔
+executor >  local (3)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                        [100%] 1 of 1 ✔
+executor >  local (3)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                        [100%] 1 of 1 ✔
+executor >  local (4)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                        [100%] 1 of 1 ✔
+executor >  local (5)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                [100%] 1 of 1 ✔
+executor >  local (6)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                [100%] 1 of 1 ✔
+executor >  local (6)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                [100%] 1 of 1 ✔
+executor >  local (7)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                [100%] 1 of 1 ✔
+executor >  local (7)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                [100%] 1 of 1 ✔
+[-        ] PGSCATALOG_PGSCCALC:PGSCCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM                                 -
+[ad/e17692] PGSCATALOG_PGSCCALC:PGSCCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR (cineca chromosome 22)         [100%] 1 of 1 ✔
+executor >  local (8)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                [100%] 1 of 1 ✔
+[-        ] PGSCATALOG_PGSCCALC:PGSCCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM                                 -
+[ad/e17692] PGSCATALOG_PGSCCALC:PGSCCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR (cineca chromosome 22)         [100%] 1 of 1 ✔
+executor >  local (8)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                [100%] 1 of 1 ✔
+[-        ] PGSCATALOG_PGSCCALC:PGSCCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM                                 -
+[ad/e17692] PGSCATALOG_PGSCCALC:PGSCCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR (cineca chromosome 22)         [100%] 1 of 1 ✔
+executor >  local (9)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                [100%] 1 of 1 ✔
+executor >  local (9)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                [100%] 1 of 1 ✔
+executor >  local (9)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                [100%] 1 of 1 ✔
+executor >  local (9)
+[ed/1ea035] PGSCATALOG_PGSCCALC:PGSCCALC:INPUT_CHECK:COMBINE_SCOREFILES (1)                                [100%] 1 of 1 ✔
+[-        ] PGSCATALOG_PGSCCALC:PGSCCALC:MAKE_COMPATIBLE:PLINK2_RELABELBIM                                 -
+[ad/e17692] PGSCATALOG_PGSCCALC:PGSCCALC:MAKE_COMPATIBLE:PLINK2_RELABELPVAR (cineca chromosome 22)         [100%] 1 of 1 ✔
+[-        ] PGSCATALOG_PGSCCALC:PGSCCALC:MAKE_COMPATIBLE:PLINK2_VCF                                        -
+[59/d4a83e] PGSCATALOG_PGSCCALC:PGSCCALC:MATCH:MATCH_VARIANTS (cineca chromosome 22)                       [100%] 1 of 1 ✔
+[e3/ec2a3c] PGSCATALOG_PGSCCALC:PGSCCALC:MATCH:MATCH_COMBINE (cineca)                                      [100%] 1 of 1 ✔
+[d3/19be98] PGS…G_PGSCCALC:PGSCCALC:APPLY_SCORE:PLINK2_SCORE (cineca chromosome 22 effect type additive 0) [100%] 2 of 2 ✔
+[ab/d57ff4] PGSCATALOG_PGSCCALC:PGSCCALC:APPLY_SCORE:SCORE_AGGREGATE (cineca)                              [100%] 1 of 1 ✔
+[ca/289259] PGSCATALOG_PGSCCALC:PGSCCALC:REPORT:SCORE_REPORT (cineca)                                      [100%] 1 of 1 ✔
+[02/588836] PGSCATALOG_PGSCCALC:PGSCCALC:DUMPSOFTWAREVERSIONS (1)                                          [100%] 1 of 1 ✔
+Pulling Singularity image oras://ghcr.io/pgscatalog/report:2-beta-singularity [cache /rds/user/jhz22/hpc-work/work/ghcr.io-pgscatalog-report-2-beta-singularity.img]
+Pulling Singularity image oras://ghcr.io/pgscatalog/pyyaml:6.0-singularity [cache /rds/user/jhz22/hpc-work/work/ghcr.io-pgscatalog-pyyaml-6.0-singularity.img]
+-[pgscatalog/pgsc_calc] Pipeline completed successfully-
+Completed at: 27-Nov-2024 08:04:14
+Duration    : 1m 6s
+CPU hours   : (a few seconds)
+Succeeded   : 9
+```
 
 ## 2.0.0-alpha.4
 
