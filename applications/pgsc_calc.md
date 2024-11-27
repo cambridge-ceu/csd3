@@ -6,15 +6,15 @@ sort: 34
 
 Web: <https://pgsc-calc.readthedocs.io/en/latest/> ([GitHub](https://github.com/PGScatalog/pgsc_calc), [ftp](https://ftp.ebi.ac.uk/pub/databases/spot/pgs/))
 
-## 2.0.3
+## 2.0.0
 
 The `ceuamdin/pgsc_calc/2.0.3` module is built as follows,
 
 ```bash
 cd $CEUADMIN/pgsc_calc
-mkdir 2.0.3
+mkdir 2.0.0
 wget -qO- https://github.com/PGScatalog/pgsc_calc/archive/refs/tags/v2.0.0.tar.gz | \
-tar xvz -C 2.0.3 --strip-components=1
+tar xvz -C 2.0.0 --strip-components=1
 module load python/3.11.0-icl
 virtualenv venv
 source venv/bin/activate
@@ -144,7 +144,7 @@ CPU hours   : (a few seconds)
 Succeeded   : 9
 ```
 
-Note the working directory is `/rds/user/CRSid/hpc-work/work`. A copy of the [report.html](files/report-2.0.3.html) is also made available.
+Note the working directory is `/rds/user/CRSid/hpc-work/work`. A copy of the [report.html](files/report-2.0.0.html) is also made available.
 
 ## 2.0.0-alpha.4
 
