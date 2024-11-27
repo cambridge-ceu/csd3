@@ -144,7 +144,7 @@ CPU hours   : (a few seconds)
 Succeeded   : 9
 ```
 
-Note the working directory is `/rds/user/CRSid/hpc-work/work`.
+Note the working directory is `/rds/user/CRSid/hpc-work/work`. A copy of the [report.html](files/report-2.0.3.html) is also made available.
 
 ## 2.0.0-alpha.4
 
