@@ -33,7 +33,7 @@ deactivate
 The source package has a `Makefile` which sets default to `docker`, but on CSD3 it is more straightforward with `singularity` pulled
 by `nextflow` via `curl`. Note that during setup, recent changes at CSD3 require the long-missed prefix `./` but it is unnecessary later.
 
-Screen output form the test run is again pasted here,
+Screen output form the test run (`nextflow run pgscatalog/pgsc_calc -profile test,singularity`) is again pasted here,
 
 ```
 nextflow run pgscatalog/pgsc_calc -profile test,singularity
@@ -143,6 +143,8 @@ Duration    : 1m 6s
 CPU hours   : (a few seconds)
 Succeeded   : 9
 ```
+
+Note the working directory is `/rds/user/CRSid/hpc-work/work`.
 
 ## 2.0.0-alpha.4
 
