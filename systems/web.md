@@ -68,3 +68,19 @@ xdg-settings set default-web-browser firefox.desktop
 xdg-settings set default-web-browser google-chrome.desktop
 ```
 
+## Non-CSD3 browser(s)
+
+This approach seems less problematic with `user-data-dir` mentioned above. We can again set up tunneling from CSD3 with
+
+```bash
+python3 -m http.server 8000 &
+hostname
+```
+
+Once succeeded, we establish the connection elsewhere.
+
+```bash
+ssh -4 -L 8080:127.0.0.1:8000 -fN jhz22@${hostname}.hpc.cam.ac.uk
+```
+
+where hostname from CSD3 and ${hostname} have to be the same. We can then browse `http://127.0.0.1:8080`.
