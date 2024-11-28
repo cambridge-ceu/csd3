@@ -15,6 +15,7 @@ cd $CEUADMIN/pgsc_calc
 mkdir 2.0.0
 wget -qO- https://github.com/PGScatalog/pgsc_calc/archive/refs/tags/v2.0.0.tar.gz | \
 tar xvz -C 2.0.0 --strip-components=1
+cd 2.0.0
 module load python/3.11.0-icl
 virtualenv venv
 source venv/bin/activate
