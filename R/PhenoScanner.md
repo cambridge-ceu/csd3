@@ -15,6 +15,18 @@ cd /usr/local/Cluster-Apps/ceuadmin/phenoscanner/v2
 Rscript -e 'install.packages(dir("lib"),"lib-4.4.1")'
 ```
 
+## R 4.2.2
+
+<font color="red"><b>4/12/2022 Update</b></font>module `ceuadmin/phenoscanner/v2` <font color="blue"><b>implements changes mentioned below.</b></font>
+
+```bash
+module load ceuadmin/phenoscanner/v2
+phenoscanner -h
+phenoscanner -s chr5:29439275
+```
+
+which also uses ceuadmin/R/4.2.2.
+
 ## R 4.x.x
 
 Section above would fail under R 4.x.x; to get around, make a copy of phenoscanner according to
@@ -47,18 +59,6 @@ phenoscanner -s chr5:29439275
 ```
 
 and we have `chr5:29439275_PhenoScanner_SNP_Info.tsv` and `chr5:29439275_PhenoScanner_GWAS.tsv` for variant annotation and GWAS lookup, respectively; one can add `-c None` to the last command and get the SNP annotation only.
-
-## R 4.2.2
-
-<font color="red"><b>4/12/2022 Update</b></font>module `ceuadmin/phenoscanner/v2` <font color="blue"><b>implements changes aforementioned.</b></font>
-
-```bash
-module load ceuadmin/phenoscanner/v2
-phenoscanner -h
-phenoscanner -s chr5:29439275
-```
-
-which also uses ceuadmin/R/4.2.2.
 
 ## R package setup
 
