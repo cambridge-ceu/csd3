@@ -4,6 +4,62 @@ sort: 18
 
 # PhenoScanner
 
+## R 4.4.1
+
+At the time of writing, 29/11/2024, this is the default.
+
+We work on ceuadmin/phenoscanner/v2 to reflect changes to this.
+
+```bash
+cd /usr/local/Cluster-Apps/ceuadmin/phenoscanner/v2
+Rscript -e 'install.packages(dir("lib"),"lib-4.4.1")'
+```
+
+## R 4.x.x
+
+Section above would fail under R 4.x.x; to get around, make a copy of phenoscanner according to
+
+```bash
+module load ceuadmin/phenoscanner
+which phenoscanner
+# /rds/project/jmmh2/rds-jmmh2-projects/phenoscanner/mrcatalogue/mrcatalogue/phenoscanner_v2/phenoscanner
+```
+
+and edit the header to call packages at the default R_LIBS location,
+
+```r
+#!/rds/user/jhz22/hpc-work/bin/Rscript
+suppressPackageStartupMessages(library(getopt))
+suppressPackageStartupMessages(library(optparse))
+suppressPackageStartupMessages(library(DBI))
+suppressPackageStartupMessages(library(RMySQL))
+suppressPackageStartupMessages(library(reshape2))
+suppressPackageStartupMessages(library(plyr))
+suppressPackageStartupMessages(library(stringi))
+```
+
+then deposit this to a directory on the search path and invoke,
+
+```bash
+module load gcc/6
+phenoscanner -h
+phenoscanner -s chr5:29439275
+```
+
+and we have `chr5:29439275_PhenoScanner_SNP_Info.tsv` and `chr5:29439275_PhenoScanner_GWAS.tsv` for variant annotation and GWAS lookup, respectively; one can add `-c None` to the last command and get the SNP annotation only.
+
+## R 4.2.2
+
+<font color="red"><b>4/12/2022 Update</b></font>module `ceuadmin/phenoscanner/v2` <font color="blue"><b>implements changes aforementioned.</b></font>
+
+```bash
+module load ceuadmin/phenoscanner/v2
+phenoscanner -h
+phenoscanner -s chr5:29439275
+```
+
+which also uses ceuadmin/R/4.2.2.
+
 ## R package setup
 
 ```bash
@@ -53,48 +109,3 @@ export MODULEPATH=${MODULEPATH}:/usr/local/Cluster-Config/modulefiles/ceuadmin/
 ```
 
 via `source ~/.bashrc` or a new login.
-
-## R 4.x.x
-
-Section above would fail under R 4.x.x; to get around, make a copy of phenoscanner according to
-
-```bash
-module load ceuadmin/phenoscanner
-which phenoscanner
-# /rds/project/jmmh2/rds-jmmh2-projects/phenoscanner/mrcatalogue/mrcatalogue/phenoscanner_v2/phenoscanner
-```
-
-and edit the header to call packages at the default R_LIBS location,
-
-```r
-#!/rds/user/jhz22/hpc-work/bin/Rscript
-suppressPackageStartupMessages(library(getopt))
-suppressPackageStartupMessages(library(optparse))
-suppressPackageStartupMessages(library(DBI))
-suppressPackageStartupMessages(library(RMySQL))
-suppressPackageStartupMessages(library(reshape2))
-suppressPackageStartupMessages(library(plyr))
-suppressPackageStartupMessages(library(stringi))
-```
-
-then deposit this to a directory on the search path and invoke,
-
-```bash
-module load gcc/6
-phenoscanner -h
-phenoscanner -s chr5:29439275
-```
-
-and we have `chr5:29439275_PhenoScanner_SNP_Info.tsv` and `chr5:29439275_PhenoScanner_GWAS.tsv` for variant annotation and GWAS lookup, respectively; one can add `-c None` to the last command and get the SNP annotation only.
-
-## R 4.2.2
-
-<font color="red"><b>4/12/2022 Update</b></font>module `ceuadmin/phenoscanner/v2` <font color="blue"><b>implements changes aforementioned.</b></font>
-
-```bash
-module load ceuadmin/phenoscanner/v2
-phenoscanner -h
-phenoscanner -s chr5:29439275
-```
-
-which also uses ceuadmin/R/4.2.2.
