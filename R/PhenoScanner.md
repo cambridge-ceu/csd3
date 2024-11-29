@@ -15,6 +15,22 @@ cd /usr/local/Cluster-Apps/ceuadmin/phenoscanner/v2
 Rscript -e 'install.packages(dir("lib"),"lib-4.4.1")'
 ```
 
+These tables need to be revised as `login-e-1` retires,
+
+```
+phenoscanner_v2/modules/new/phenoscanner_1000G.R:  ld.info <- "ld_tables"
+phenoscanner_v2/modules/new/phenoscanner_dbSNP_old.R:  dbsnp <- "dbsnp"
+phenoscanner_v2/modules/new/phenoscanner_dbSNP_old.R:  dbsnp <- "dbsnp"
+phenoscanner_v2/modules/new/phenoscanner_dbSNP.R:  dbsnp <- "dbsnp"
+phenoscanner_v2/modules/new/phenoscanner_dbSNP.R:  ld_tables <- "ld_tables"
+phenoscanner_v2/modules/new/phenoscanner_dbSNP.R:  dbsnp <- "dbsnp"
+phenoscanner_v2/modules/new/phenoscanner_EFO.R:      database <- "PhenoScanner_V2"
+phenoscanner_v2/modules/new/phenoscanner_Gene.R:      database <- "PhenoScanner_V2"
+phenoscanner_v2/modules/new/phenoscanner_Location.R:      database <- "PhenoScanner_V2"
+phenoscanner_v2/modules/new/phenoscanner_rsID.R:    dbsnp <- "dbsnp"
+phenoscanner_v2/modules/new/phenoscanner_SNP.R:      database <- "PhenoScanner_V2"
+```
+
 ## R 4.2.2
 
 <font color="red"><b>4/12/2022 Update</b></font>module `ceuadmin/phenoscanner/v2` <font color="blue"><b>implements changes mentioned below.</b></font>
