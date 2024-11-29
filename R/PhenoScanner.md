@@ -8,7 +8,7 @@ sort: 18
 
 At the time of writing, 29/11/2024, this is the default.
 
-We work on ceuadmin/phenoscanner/v2 to reflect changes to this.
+We work on `ceuadmin/phenoscanner/v2` to reflect changes to this.
 
 ```bash
 cd /usr/local/Cluster-Apps/ceuadmin/phenoscanner/v2
