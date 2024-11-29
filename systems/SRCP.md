@@ -23,3 +23,11 @@ NBR SRCP: <https://nbr.srcp.hpc.cam.ac.uk/>
 - Contact, <srcp@hpc.cam.ac.uk>
 - Ouick start guide to configure your device for first login, [https://docs.hpc.cam.ac.uk/srcp/2fa/get-token.html](https://docs.hpc.cam.ac.uk/srcp/2fa/get-token.html)
 - User Documentation, <https://docs.hpc.cam.ac.uk/srcp/>
+
+### X:\SRCP
+
+This is stated as
+
+```
+net use x: \\blue.cam.ac.uk\srcp
+```
