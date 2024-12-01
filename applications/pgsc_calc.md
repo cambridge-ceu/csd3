@@ -8,7 +8,7 @@ Web: <https://pgsc-calc.readthedocs.io/en/latest/> ([GitHub](https://github.com/
 
 ## 2.0.0
 
-The `ceuamdin/pgsc_calc/2.0.3` module is built as follows,
+The `ceuamdin/pgsc_calc/2.0.0` module is built as follows,
 
 ```bash
 cd $CEUADMIN/pgsc_calc
