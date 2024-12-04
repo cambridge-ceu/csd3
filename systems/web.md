@@ -18,7 +18,14 @@ python3 -m http.server 8080 &
 
 assuming port number 8080 is available, e.g. `lsof -i :8080` gives no output.
 
-The `firefox` browser available at `/usr/bin/firefox` is dysfunctional, so several alternatives are described below.
+The `firefox` browser available at `/usr/bin/firefox` is dysfunctional, and when started many temporary files are generated which can be removed with
+
+```bash
+# only remove those dated on Dec 3:
+ll -rt | grep "Dec  3" | awk '{print "rm -fr "$NF}' | bash
+```
+
+Several alternatives are described below.
 
 ## Chromium
 
