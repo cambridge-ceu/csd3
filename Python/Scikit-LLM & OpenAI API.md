@@ -187,11 +187,15 @@ summaries = s.fit_transform(X)
 
 Web: Alice in Wonderland, <https://www.gutenberg.org/ebooks/11>
 
+We first have our OpenAI key,
+
 ```bash
 export OPENAI_API_KEY=$(grep sk ~/doc/OpenAI)
 ```
 
-````python
+and our scripts are as follows,
+
+```python
 # Initialisation
 
 ```python
