@@ -196,6 +196,7 @@ export OPENAI_API_KEY=$(grep sk ~/doc/OpenAI)
 
 ```python
 import openai
+import os
 import langchain
 from langchain import OpenAI
 from langchain.document_loaders import UnstructuredFileLoader
@@ -204,7 +205,7 @@ from langchain.chains import RetrievalQA
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Create a separate instance for the language model
 openai_lm = OpenAI()
