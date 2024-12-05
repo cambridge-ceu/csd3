@@ -36,6 +36,8 @@ module load ceuadmin/chromium
 chrome http://localhost:8080 &
 ```
 
+using profile at ~/.config/chromium.
+
 It might be helpful to clear browse history when `chrome` is repeatedly used, or to start a new profile, e.g.,
 
 ```bash
@@ -51,7 +53,9 @@ module load ceuadmin/edge
 edge http://localhost:8080 &
 ```
 
-where the customized `edge` works properly, unlike its aliases `microsoft-edge` and `microsoft-edge-stable`. Note further that the option `--user-data-dir` also applies since it is also based on Chromium.
+where the customized `edge` works properly, unlike its aliases `microsoft-edge` and `microsoft-edge-stable`.
+
+Note the profile is ~/.config/microsoft-edge, and the option `--user-data-dir` also applies since it is also based on Chromium.
 
 ## Cytoscape
 
