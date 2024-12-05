@@ -272,4 +272,4 @@ print("OpenAI Response:", qa_result)
 
 ## Reference
 
-Kulkarni A, Shivananda A, Kulkarni A, Gudivada D (2023). Applied Generative AI for Beginners. Apress, Berkeley, CA. <https://link.springer.com/book/10.1007/978-1-4842-9994-4> ([Amazon](https://www.amazon.co.uk/gp/reader/1484299930/?tag=ebookshare-21))
+Kulkarni A, Shivananda A, Kulkarni A, Gudivada D (2023). Applied Generative AI for Beginners. Apress, Berkeley, CA. <https://link.springer.com/book/10.1007/978-1-4842-9994-4> ([GitHub](https://github.com/Apress/Applied-Generative-AI-for-Beginners))
