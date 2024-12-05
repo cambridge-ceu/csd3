@@ -198,7 +198,6 @@ and our scripts are as follows,
 ```python
 # Initialisation
 
-```python
 import openai
 import os
 import langchain
@@ -269,7 +268,7 @@ user_query = input("Enter your query: ")
 # Run the QA using the provided query
 qa_result = chain.run(user_query)
 print("OpenAI Response:", qa_result)
-````
+```
 
 ## Reference
 
