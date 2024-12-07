@@ -353,6 +353,7 @@ All entries are ordered chronologically.
 | 2024-11-22  | pspp/2.0.1                       | Generic              |
 | 2024-11-26  | pgsc_calc/2.0.0                  | Generic              |
 | 2024-12-03  | firefox/133.0                    | Genetic              |
+| 2024-12-07  | firefox/nightly                  | Genetic[^firefox]    |
 
 \* CEU or approved users only.
 
@@ -1563,3 +1564,26 @@ They are generated from script [setup.sh](setup.sh),
 [^inetutils]: **inetutils**
 
     This is already in the list of decommissioned GNU packages, <https://www.gnu.org/software/software.en.html>; nevertheless `finger` is still useful from Fedora 28.
+
+[^firefox]: **firefox**
+
+    This is the nightly version, in an attempt to explore why the release to CentOS 8 crashes.
+
+    ```bash
+    git clone https://github.com/mozilla/gecko-dev.git
+    cd gecko-dev
+    module load python/3.8.11/gcc/pqdmnzmw
+    ./mach bootstrap
+    for f in $(ls ~/.local/bin); do ln -sf ~/.local/bin/$f ~/bin/$f; done
+    export TMPDIR=$HPC_WORK/work
+    export MOZ_DISABLE_GPU=1
+    ./mach help
+    ./mach configure --prefix=$CEUADMIN/firefox/nightly
+    ./mach build -j4
+    ./mach install
+    ./mach run --setpref="layers.acceleration.disabled=true"
+    ./mach run --disable-gpu
+    ./mach run --disable-e10s
+    ulimit -a
+    ./mach clean
+    ```
