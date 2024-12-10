@@ -354,6 +354,7 @@ All entries are ordered chronologically.
 | 2024-11-26  | pgsc_calc/2.0.0                  | Generic              |
 | 2024-12-03  | firefox/133.0                    | Genetic              |
 | 2024-12-07  | firefox/nightly                  | Genetic[^firefox]    |
+| 2024-12-10  | rstudio/2024.09.1+394            | Genetic              |
 
 \* CEU or approved users only.
 
