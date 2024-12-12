@@ -1583,8 +1583,9 @@ They are generated from script [setup.sh](setup.sh),
     ./mach build -j4
     ./mach install
     ./mach run --setpref="layers.acceleration.disabled=true"
-    ./mach run --disable-gpu
     ./mach run --disable-e10s
     ulimit -a
     ./mach clean
     ```
+
+    There is also `GNUmakefile` which can be used by `gmake`.
