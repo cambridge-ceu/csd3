@@ -3,7 +3,10 @@
 #
 # This file and all of its targets should not be used by anything important.
 
-all: clean configure build install
+all: clean pull configure build install
+
+pull:
+	git pull
 
 configure:
 	./mach configure --prefix=$CEUADMIN/firefox/nightly
@@ -17,4 +20,4 @@ install:
 clean:
 	./mach clobber
 
-.PHONY: all configure build install clean
+.PHONY: all pull configure build install clean
