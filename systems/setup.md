@@ -1588,4 +1588,4 @@ They are generated from script [setup.sh](setup.sh),
     ./mach clean
     ```
 
-    There is also `GNUmakefile` which can be used by `gmake`.
+    There is also `GNUmakefile` (extended version as in [here](files/GNUmakefile)) which can be used by `gmake`.
