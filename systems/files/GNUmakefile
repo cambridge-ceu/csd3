@@ -10,9 +10,10 @@ define load_modules
     . /etc/profile.d/modules.sh; \
     module purge; \
     module load rhel8/default-icl; \
-    module load python/3.8.11/gcc/pqdmnzmw; \
+    module load python/3.11.0-icl; \
   else \
     echo "Module system not available. Skipping module commands."; \
+    export PATH=/usr/local/Cluster-Apps/python/3.11.0-icl/bin/:$$PATH; \
   fi
 endef
 
