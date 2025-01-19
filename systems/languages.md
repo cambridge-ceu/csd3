@@ -304,6 +304,26 @@ module load ceuadmin/fpc
 fpc -help
 ```
 
+## PHP
+
+Web: <https://www.php.net/>
+
+```bash
+php --version
+php -r 'echo "Hello, World!\n";'
+```
+
+and we see that
+
+```
+PHP 8.0.30 (cli) (built: Aug  3 2023 17:13:08) ( NTS gcc x86_64 )
+Copyright (c) The PHP Group
+Zend Engine v4.0.30, Copyright (c) Zend Technologies
+
+Hello, World!
+
+```
+
 ## Python
 
 Web: <https://www.python.org/>
