@@ -79,6 +79,19 @@ xdg-settings set default-web-browser firefox.desktop
 xdg-settings set default-web-browser google-chrome.desktop
 ```
 
+For Microsoft Edge above, we see `microsoft-edge.desktop` at `/usr/share/applications`, and an attempt is made as follows,
+
+```bash
+export src=/usr/local/Cluster-Apps/ceuadmin/edge/130.0.2849.56-1/usr/share/applications/
+export dest=~/.local/share/applications
+cp ${src}/microsoft-edge.desktop ${dest}
+cd ${dest}
+sed -i "s|/usr/bin/microsoft-edge|${src}/microsoft-edge --no-sandbox|" ${dest}/microsoft.desktop
+export XDG_CURRENT_DESKTOP=GNOME
+xdg-settings set default-web-browser microsoft-edge.desktop
+xdg-settings get default-web-browser
+```
+
 ## Non-CSD3 browser(s)
 
 This approach seems less problematic with `user-data-dir` mentioned above. We can again set up tunneling from CSD3 with

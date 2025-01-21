@@ -1651,7 +1651,29 @@ They are generated from script [setup.sh](setup.sh),
     ```bash
     wget -qO- https://github.com/nodejs/node/archive/refs/tags/v18.20.5.tar.gz | \
     tar xvfz -
-    cd node-18.20.8
+    cd node-18.20.5
     ./configure --prefix=$CEUADMIN/node/18.20.5
     make
     ```
+
+    The location can be made aware in `${HOME}/.npmrc` in which
+
+    ```
+    prefix=${CEUADMIN}/node/18.20.5
+    ```
+
+    where one can proceed with `npm install -g @marp-team/marp-cli`. Alternatively, one can do the following,
+
+    ```bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+    rm -rf ~/.npm
+    nvm install 18
+    nvm use 18
+    source ~/.bashrc
+    nvm use --delete-prefix v18.20.6
+    node -v
+    npm -v
+    npm install -g @marp-team/marp-cli puppeteer-core
+    ```
+
+    and one can see the definition `export NVM_DIR="$HOME/.nvm"`.
