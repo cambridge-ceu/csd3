@@ -18,6 +18,13 @@ python3 -m http.server 8080 &
 
 assuming port number 8080 is available, e.g. `lsof -i :8080` gives no output.
 
+An almost equally simpler approach is also possible,
+
+```bash
+npm install -g http-server
+http-server &
+```
+
 The `firefox` browser available at `/usr/bin/firefox` is dysfunctional, and when started many temporary files are generated which can be removed with
 
 ```bash
