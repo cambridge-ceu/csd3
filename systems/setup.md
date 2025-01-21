@@ -355,6 +355,7 @@ All entries are ordered chronologically.
 | 2024-12-03  | firefox/133.0                    | Genetic              |
 | 2024-12-07  | firefox/nightly                  | Genetic[^firefox]    |
 | 2024-12-10  | rstudio/2024.09.1+394            | Genetic              |
+| 2025-01-21  | node/18.20.5                     | Genetic[^node]       |
 
 \* CEU or approved users only.
 
@@ -1641,4 +1642,16 @@ They are generated from script [setup.sh](setup.sh),
     
     # Mark targets that don't represent files
     .PHONY: all pull configure build install clean
+    ```
+
+[^node]: **node**
+
+    This is in accordance with the GNU software,
+
+    ```bash
+    wget -qO- https://github.com/nodejs/node/archive/refs/tags/v18.20.5.tar.gz | \
+    tar xvfz -
+    cd node-18.20.8
+    ./configure --prefix=$CEUADMIN/node/18.20.5
+    make
     ```
