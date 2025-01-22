@@ -1676,4 +1676,10 @@ They are generated from script [setup.sh](setup.sh),
     npm install -g @marp-team/marp-cli puppeteer-core
     ```
 
-    and one can see the definition `export NVM_DIR="$HOME/.nvm"`.
+    and one can see the definition `export NVM_DIR="$HOME/.nvm"`. The latest version is made available with,
+
+    ```bash
+    nvm install --lts
+    nvm use --lts
+    marp gaaw2.md
+    ```
