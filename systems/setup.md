@@ -1673,7 +1673,7 @@ They are generated from script [setup.sh](setup.sh),
     nvm use --delete-prefix v18.20.6
     node -v
     npm -v
-    npm install -g @marp-team/marp-cli puppeteer-core
+    npm install -g @marp-team/marp-cli puppeteer-core puppeteer
     ```
 
     and one can see the definition `export NVM_DIR="$HOME/.nvm"`. The latest version is made available with,
@@ -1682,4 +1682,26 @@ They are generated from script [setup.sh](setup.sh),
     nvm install --lts
     nvm use --lts
     marp gaaw2.md
+    ```
+
+    Example use,
+
+    ```js
+    const puppeteer = require('/home/jhz22/.nvm/versions/node/v22.13.1/lib/node_modules/puppeteer');
+    (async () => {
+      try {
+        const browser = await puppeteer.launch({
+          executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+          headless: 'new',
+          args: ['--no-sandbox', '--user-data-dir=/tmp']
+        });
+        const page = await browser.newPage();
+        await page.goto('https://www.google.com');
+        await page.screenshot({ path: 'example.png' });
+        console.log('Screenshot saved to example.png');
+        await browser.close();
+      } catch (error) {
+        console.error('Error launching Puppeteer:', error);
+      }
+    })();
     ```
