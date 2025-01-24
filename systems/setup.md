@@ -1705,3 +1705,11 @@ They are generated from script [setup.sh](setup.sh),
       }
     })();
     ```
+
+    Analogy can be made with `npm`,
+
+    ```bash
+    cd ~
+    curl -L https://www.npmjs.com/install.sh | sh
+    ```
+
