@@ -356,6 +356,7 @@ All entries are ordered chronologically.
 | 2024-12-07  | firefox/nightly                  | Genetic[^firefox]    |
 | 2024-12-10  | rstudio/2024.09.1+394            | Genetic              |
 | 2025-01-21  | node/18.20.5                     | Genetic[^node]       |
+| 2025-01-26  | node/20.18.2                     | Generic              |
 
 \* CEU or approved users only.
 
