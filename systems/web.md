@@ -34,6 +34,13 @@ ll -rt | grep "Dec  3" | awk '{print "rm -fr "$NF}' | bash
 
 Several alternatives are described below.
 
+## Chrome
+
+```bash
+module load ceuadmin/chrome
+chrome http://localhost:8080 &
+```
+
 ## Chromium
 
 We are then capable to work with `ceuadmin/chromium`:

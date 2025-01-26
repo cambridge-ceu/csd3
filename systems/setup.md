@@ -357,6 +357,7 @@ All entries are ordered chronologically.
 | 2024-12-10  | rstudio/2024.09.1+394            | Genetic              |
 | 2025-01-21  | node/18.20.5                     | Genetic[^node]       |
 | 2025-01-26  | node/20.18.2                     | Generic              |
+| 2025-01-26  | chrome/132.0.6834.110            | Generic[^chrome]     |
 
 \* CEU or approved users only.
 
@@ -1714,3 +1715,9 @@ They are generated from script [setup.sh](setup.sh),
     curl -L https://www.npmjs.com/install.sh | sh
     ```
 
+[^chrome]: **chrome**
+
+    ```bash
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+    rpm2cpio google-chrome-stable_current_x86_64.rpm | cpio -idmv
+    ```
