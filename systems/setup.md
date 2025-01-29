@@ -358,6 +358,7 @@ All entries are ordered chronologically.
 | 2025-01-21  | node/18.20.5                     | Genetic[^node]       |
 | 2025-01-26  | node/20.18.2                     | Generic              |
 | 2025-01-26  | chrome/132.0.6834.110            | Generic[^chrome]     |
+| 2025-01-29  | brotli/1.1.0                     | Generic[^brotli]     |
 
 \* CEU or approved users only.
 
@@ -1721,3 +1722,19 @@ They are generated from script [setup.sh](setup.sh),
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
     rpm2cpio google-chrome-stable_current_x86_64.rpm | cpio -idmv
     ```
+
+[^brotli]: **brotli**
+
+    There appears to be CMake-based, an overhaul of 1.0.9 as used for building RStudio earlier.
+
+    ```bash
+    wget -qO- https://github.com/google/brotli/archive/refs/tags/v1.1.0.tar.gz | \
+    tar xfz -
+    cd brotli-1.1.0
+    mkdir build && cd build
+    cmake -DCMAKE_INSTALL_PREFIX=${CEUADMIN}/brotli/1.1.0 ..
+    make
+    make install
+    ```
+
+    As it is used for building R 4.4.2-gcc11, it also does away with gcc/6 and miniconda3/4.5.1.
