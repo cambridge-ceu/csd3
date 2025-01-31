@@ -42,6 +42,18 @@ so the system is Scientific Linux 7 (SL7), see [http://www.scientificlinux.org/]
 
 On icelake, we have from `lsb_release -a`
 
+On 31/1/2025, we have
+
+```
+LSB Version:    :core-4.1-amd64:core-4.1-noarch:cxx-4.1-amd64:cxx-4.1-noarch:desktop-4.1-amd64:desktop-4.1-noarch:languages-4.1-amd64:languages-4.1-noarch:printing-4.1-amd64:printing-4.1-noarch
+Distributor ID: Rocky
+Description:    Rocky Linux release 8.10 (Green Obsidian)
+Release:        8.10
+Codename:       GreenObsidian
+```
+
+and earlier,
+
 ```
 LSB Version:	:core-4.1-amd64:core-4.1-noarch:cxx-4.1-amd64:cxx-4.1-noarch:desktop-4.1-amd64:desktop-4.1-noarch:languages-4.1-amd64:languages-4.1-noarch:printing-4.1-amd64:printing-4.1-noarch
 Distributor ID:	Rocky
