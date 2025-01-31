@@ -59,6 +59,10 @@ Location at csd3: `/usr/local/Cluster-Docs/SLURM/`.
 
 The directory `/usr/local/software/slurm/current/bin/` contains all the executables..
 
+### Updates
+
+<font color="red"><b>30/1/2025 Update</b></font> SLURM is now version 23.11.10.
+
 ### Account details
 
 ```bash
