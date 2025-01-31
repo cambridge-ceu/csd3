@@ -185,7 +185,34 @@ ssh -X -Y CRSid@login.hpc.cam.ac.uk
 xclock
 ```
 
-### X11 with OpenGL over SSH (3D graphics)
+## .snapshot
+
+These are copies of files on your ${HOME} directory, e.g.,
+
+```bash
+cd ~/work/.snapshot
+ls
+```
+
+and we see that
+
+```
+daily_2025-01-25_00:15/   hourly_2025-01-30_20:00/  hourly_2025-01-31_07:00/            monthly_2024-09-02_00:45/
+daily_2025-01-26_00:15/   hourly_2025-01-30_21:00/  hourly_2025-01-31_08:00/            monthly_2024-10-07_00:45/
+daily_2025-01-27_00:15/   hourly_2025-01-30_22:00/  hourly_2025-01-31_09:00/            monthly_2024-11-04_00:45/
+daily_2025-01-28_00:15/   hourly_2025-01-30_23:00/  hourly_2025-01-31_10:00/            monthly_2024-12-02_00:45/
+daily_2025-01-29_00:15/   hourly_2025-01-31_00:00/  hourly_2025-01-31_11:00/            monthly_2025-01-06_00:45/
+daily_2025-01-30_00:15/   hourly_2025-01-31_01:00/  hourly_2025-01-31_12:00/            SIQ-9c7664b34116bede7a4e1b520c0a179d-latest/
+daily_2025-01-31_00:15/   hourly_2025-01-31_02:00/  hourly_2025-01-31_13:00/            weekly_2025-01-05_00:30/
+hourly_2025-01-30_16:00/  hourly_2025-01-31_03:00/  hourly_2025-01-31_14:00/            weekly_2025-01-12_00:30/
+hourly_2025-01-30_17:00/  hourly_2025-01-31_04:00/  hourly_2025-01-31_15:00/            weekly_2025-01-19_00:30/
+hourly_2025-01-30_18:00/  hourly_2025-01-31_05:00/  Index-Snapshot-Current-1738321218/  weekly_2025-01-26_00:30/
+hourly_2025-01-30_19:00/  hourly_2025-01-31_06:00/  monthly_2024-08-05_00:45/
+```
+
+If you unintentionally made changes, you could call back earlier version.
+
+## X11 with OpenGL over SSH (3D graphics)
 
 ```bash
 glxgears
