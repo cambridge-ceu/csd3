@@ -359,7 +359,7 @@ All entries are ordered chronologically.
 | 2025-01-26  | node/20.18.2                     | Generic              |
 | 2025-01-26  | chrome/132.0.6834.110            | Generic[^chrome]     |
 | 2025-01-29  | brotli/1.1.0                     | Generic[^brotli]     |
-| 2025-01-31  | cargo/1.84.1                     | Generic[^cargo]      |
+| 2025-01-31  | rsut/1.84.1                      | Generic[^rust]       |
 
 \* CEU or approved users only.
 
@@ -1740,6 +1740,8 @@ They are generated from script [setup.sh](setup.sh),
 
     As it is used for building R 4.4.2-gcc11, it also does away with gcc/6 and miniconda3/4.5.1.
 
-[^cargo]: **cargo**
+[^cargo]: **rust**
 
     This is upgraded from 1.74.1 with `rustup default stable` at suggestion of gmake when compiling firefox/nightly.
+    To avoid duplication, a symbolic link is generated on `/usr/local/Cluster-Apps/ceuadmin/rust/1.74.1/cargo` as `${HOME}/.cargo`.
+    Naturally, both cargo and rustc use the directory above.
