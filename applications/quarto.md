@@ -10,6 +10,19 @@ It is an open-source scientific and technical publishing system; the Linux versi
 
 ## Installation
 
+### 1.7.13
+
+```bash
+wget -qO- https://github.com/quarto-dev/quarto-cli/releases/download/v1.7.13/quarto-1.7.13-linux-rhel7-amd64.tar.gz | \
+tar xfz -
+mv quarto-1.7.13/ 1.7.13
+wget https://raw.githubusercontent.com/quarto-dev/quarto-web/refs/heads/main/docs/presentations/revealjs/demo/index.qmd
+wget https://raw.githubusercontent.com/quarto-dev/quarto-web/refs/heads/main/docs/presentations/revealjs/demo/actors.js
+quarto render index.qmd --to html
+```
+
+therefore after installation therevealjs demo is downloaded and rendered [here](files/quarto).
+
 ### 1.4.549
 
 This fixed the problem on GLIBC_2.18 as in 1.3.450.
