@@ -16,13 +16,23 @@ It is an open-source scientific and technical publishing system; the Linux versi
 wget -qO- https://github.com/quarto-dev/quarto-cli/releases/download/v1.7.13/quarto-1.7.13-linux-rhel7-amd64.tar.gz | \
 tar xfz -
 mv quarto-1.7.13/ 1.7.13
+module load ceuadmin/R
 wget https://raw.githubusercontent.com/quarto-dev/quarto-web/refs/heads/main/docs/presentations/revealjs/demo/index.qmd
 wget https://raw.githubusercontent.com/quarto-dev/quarto-web/refs/heads/main/docs/presentations/revealjs/demo/actors.js
-module load ceuadmin/R
+wget https://raw.githubusercontent.com/quarto-dev/quarto-web/refs/heads/main/docs/presentations/revealjs/demo/styles.css
 quarto render index.qmd --to html
+module load ceuadmin/chrome
+chrome index.html &
 ```
 
-therefore after installation therevealjs demo is downloaded and rendered as [a web page](files/quarto) and [slides](files/quarto/slides.html).
+After installation therevealjs demo files are downloaded and rendered as [a web page](files/quarto).
+
+A whole repository is furnished as follows,
+
+```bash
+git clone https://raw.githubusercontent.com/quarto-dev/quarto-web
+cd docs/presentations/revealjs/demo
+```
 
 ### 1.4.549
 
