@@ -361,6 +361,7 @@ All entries are ordered chronologically.
 | 2025-01-29  | brotli/1.1.0                     | Generic[^brotli]     |
 | 2025-01-31  | rust/1.84.1                      | Generic[^rust]       |
 | 2025-02-04  | quarto/1.7.13                    | Generic              |
+| 2025-02-04  | pandoc/3.6.2                     | Generic              |
 
 \* CEU or approved users only.
 
