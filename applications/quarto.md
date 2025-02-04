@@ -27,7 +27,7 @@ chrome index.html &
 
 After installation therevealjs demo files are downloaded and rendered as [a web page](files/quarto).
 
-A whole repository is furnished as follows,
+Reproduction through the whole directory is furnished as follows,
 
 ```bash
 git clone https://raw.githubusercontent.com/quarto-dev/quarto-web
