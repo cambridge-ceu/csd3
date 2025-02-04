@@ -1,152 +1,225 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.13">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>Quarto Presentations</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-</style>
-
-
+<html lang="en"><head>
 <script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
 <script src="index_files/libs/quarto-html/popper.min.js"></script>
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting-66ab7fd5e73b7f0a764e0d49b3e29ab1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-fab5046e44d814aed33db37120a1c224.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="index_files/libs/quarto-contrib/kbd/kbd.js"></script>
-<link href="index_files/libs/quarto-contrib/kbd/kbd.css" rel="stylesheet">
-<script type="module" src="index_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="index_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-<link href="index_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-<script src="index_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="index_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="index_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
-<script src="index_files/libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="index_files/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
-<script src="index_files/libs/proj4-2.6.2/proj4.min.js"></script>
-<script src="index_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="index_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
-<script src="index_files/libs/leaflet-binding-2.2.2/leaflet.js"></script>
-<script type="ojs-define">
-{"contents":[{"name":"actors","value":{"x":[-1.1458,-0.173,0.8951,-0.9249,0.3751,-0.9265,-0.2657,-0.5284,0.7592,1.3457,-1.4319,-0.2926,-0.7901,-0.6482,-1.7057,1.6173,-0.511,1.6974,-0.0119,1.6744,-1.5659,-0.3366,-0.2033,1.6097,-1.4951,1.0627,0.6364,1.1799,0.2316,0.6349,-1.3591,-0.5015,0.4359,-0.6155,1.8908,0.1166,1.3444,-1.2889,1.9572,1.1513,-1.9567,0.1396,-0.9334,-0.8451,1.0685,-0.2669,-0.4738,-0.6806,-0.0455,-0.8729,-0.7198,1.5855,0.4084,-0.5195,0.1802,-1.3823,-1.0951,-0.8582,-0.6657,1.3032,-0.6124,0.9308,0.8496,-1.6744,-0.2752,-0.5321,0.9064,0.7241,0.0173,-1.5939,-1.6933,-0.8751,-1.6103,0.2483,0.2477,-0.2403,0.2339,1.6452,1.5906,1.6217,-0.0783,-0.5536,0.0872,-1.0576,0.2191,0.1096,-0.4954,0.235,0.5554,-1.082,-0.1238,0.7793,-0.5542,-0.5171,0.1555,0.4972,-0.7864,-0.5848,-0.7347,0.9874],"y":[-0.1804,-1.636,-0.34,-0.7165,-0.4622,-0.3019,-0.371,-0.0454,1.3681,-0.4571,-2.4184,0.8563,-0.126,0.053,1.0524,-0.8091,-1.2301,0.091,0.3091,-1.508,-1.0566,-0.2364,0.3201,0.2224,0.4588,0.021,-1.5097,0.0168,-1.8293,0.2139,0.2497,-2.1717,-0.7125,-0.9252,1.2874,0.665,0.5262,0.411,-0.1,1.2784,1.1119,0.2361,-0.1592,0.7005,1.3904,0.5066,1.0338,-0.0177,1.1277,0.3043,-0.3405,1.5942,0.0426,0.4471,-0.1729,0.5227,-0.476,-0.9952,-0.936,-1.5248,-0.4354,0.3106,0.3193,-1.3134,0.1778,0.0455,-0.761,2.1173,-0.6505,-2.1095,0.2039,0.5431,-0.2241,0.6186,2.2334,-1.3734,-1.0535,0.3498,-0.4424,0.4312,0.367,0.3793,0.2115,-1.2178,-0.317,-0.6846,0.406,-1.6067,-1.2264,-0.6754,2.0318,-0.0744,0.4347,1.2366,-1.305,-0.1769,-0.2978,1.0877,-0.1593,0.3379]}}]}
-</script>
+<link href="index_files/libs/quarto-contrib/kbd/kbd.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.13">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
+  <title>Quarto Presentations</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
     }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-bbe7401fe57d4b791b917637bb662036.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script type="module" src="index_files/libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+  <link href="index_files/libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+  <link href="index_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+  <script src="index_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  <script src="index_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="index_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+  <script src="index_files/libs/leaflet-1.3.1/leaflet.js"></script>
+  <link href="index_files/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+  <script src="index_files/libs/proj4-2.6.2/proj4.min.js"></script>
+  <script src="index_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+  <link href="index_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+  <script src="index_files/libs/leaflet-binding-2.2.2/leaflet.js"></script>
+  <script type="ojs-define">
+  {"contents":[{"name":"actors","value":{"x":[0.8428,-2.0226,1.0661,0.6178,-0.255,-0.3474,-0.0165,0.4957,0.7979,0.5429,-1.672,1.0594,0.2155,1.1654,0.0931,-0.7636,0.7179,0.4716,0.0313,-1.1796,0.4781,-0.1585,-0.1838,0.25,-0.0268,0.4752,1.3454,-0.4448,-0.0685,-0.8669,-0.4058,-0.4856,0.2481,2.0795,-0.4219,0.6816,1.5511,-0.5605,1.0519,-0.1346,-0.0484,-0.8603,-0.4185,-0.4811,-0.5072,-0.1086,2.2989,1.7511,0.2846,1.3094,-0.2012,0.9483,1.321,0.2431,0.0684,0.6288,-0.7818,0.0281,0.8132,0.4607,-0.4764,1.4045,1.0779,-0.0191,0.9589,1.5838,1.226,1.9682,-0.7458,0.9703,-1.2835,1.2494,0.5404,1.7393,-0.042,0.8021,-1.1579,-0.1844,0.7835,0.7586,2.4169,0.6739,1.472,0.2285,2.0442,-0.0054,1.8806,-0.9449,0.2041,-0.8259,-0.3801,0.7111,-0.935,1.2975,-0.8169,-0.1856,2.2235,-0.8221,0.6453,0.5487],"y":[-0.2017,0.5819,0.2025,0.8893,1.1584,1.109,-0.7286,-0.1634,1.8962,-0.4327,-1.257,0.8507,-1.4747,-0.2834,-0.5291,-1.3166,0.5643,-0.6807,0.4311,1.3027,-0.8489,-0.4655,-0.9299,0.1925,-1.0003,0.4745,-0.7203,0.9637,1.1086,1.8964,0.4611,1.0824,0.0143,1.0731,-1.1023,-0.1236,-0.0518,-0.6727,0.8372,0.2985,0.1928,-1.6081,-1.2033,1.1693,-0.5637,-1.8922,-0.3046,-0.6409,-1.4401,-0.1741,1.0418,0.8548,-1.4233,0.2797,0.0836,0.6117,0.8305,-0.5019,0.1076,3.3911,-0.0148,0.0555,0.0228,0.9526,0.5774,-0.335,-0.4016,-0.761,0.3902,1.0851,0.13,-1.061,-2.044,1.368,1.8422,-1.3901,-0.8816,-0.9368,-2.1723,-1.6873,-1.4945,1.6066,0.2326,-1.1751,-0.1454,-0.2937,-1.3476,-1.6126,1.5429,-0.4855,0.5117,0.3068,1.091,-0.5481,-0.5535,-0.186,-1.5357,1.9464,-2.0116,-0.008]}}]}
+  </script>
 </head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
 
-<body>
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Quarto Presentations</h1>
+  <p class="subtitle">Create beautiful interactive slide decks with Reveal.js</p>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></div>
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Quarto Presentations</h1>
-<p class="subtitle lead">Create beautiful interactive slide decks with Reveal.js</p>
+<div class="quarto-title-authors">
 </div>
 
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="hello-there" class="level2">
-<h2 class="anchored" data-anchor-id="hello-there">Hello, There</h2>
+</section>
+<section id="hello-there" class="slide level2">
+<h2>Hello, There</h2>
 <p>This presentation will show you examples of what you can do with Quarto and <a href="https://revealjs.com">Reveal.js</a>, including:</p>
 <ul>
 <li>Presenting code and LaTeX equations</li>
@@ -157,109 +230,95 @@ window.Quarto = {
 </ul>
 <p>…and much more</p>
 </section>
-<section id="pretty-code" class="level2" data-auto-animate="true">
-<h2 data-auto-animate="true" class="anchored" data-anchor-id="pretty-code">Pretty Code</h2>
+<section id="pretty-code" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Pretty Code</h2>
 <ul>
 <li>Over 20 syntax highlighting themes available</li>
 <li>Default theme optimized for accessibility</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a server for the Shiny app</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">function</span>(input, output) {</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Render a barplot</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb1-1" class="hljs-ln-code"><a href=""></a><span class="co"># Define a server for the Shiny app</span></span>
+<span id="cb1-2" class="hljs-ln-code"><a href=""></a><span class="cf">function</span>(input, output) {</span>
+<span id="cb1-3" class="hljs-ln-code"><a href=""></a>  </span>
+<span id="cb1-4" class="hljs-ln-code"><a href=""></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
+<span id="cb1-5" class="hljs-ln-code"><a href=""></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb1-6" class="hljs-ln-code"><a href=""></a>    <span class="co"># Render a barplot</span></span>
+<span id="cb1-7" class="hljs-ln-code"><a href=""></a>  })</span>
+<span id="cb1-8" class="hljs-ln-code"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/output-formats/html-code.html#highlighting">Syntax Highlighting</a></p>
 </div>
 </section>
-<section id="code-animations" class="level2" data-auto-animate="true">
-<h2 data-auto-animate="true" class="anchored" data-anchor-id="code-animations">Code Animations</h2>
+<section id="code-animations" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Code Animations</h2>
 <ul>
 <li>Over 20 syntax highlighting themes available</li>
 <li>Default theme optimized for accessibility</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a server for the Shiny app</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">function</span>(input, output) {</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Render a barplot</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">barplot</span>(WorldPhones[,input<span class="sc">$</span>region]<span class="sc">*</span><span class="dv">1000</span>, </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">main=</span>input<span class="sc">$</span>region,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb2-1" class="hljs-ln-code"><a href=""></a><span class="co"># Define a server for the Shiny app</span></span>
+<span id="cb2-2" class="hljs-ln-code"><a href=""></a><span class="cf">function</span>(input, output) {</span>
+<span id="cb2-3" class="hljs-ln-code"><a href=""></a>  </span>
+<span id="cb2-4" class="hljs-ln-code"><a href=""></a>  <span class="co"># Fill in the spot we created for a plot</span></span>
+<span id="cb2-5" class="hljs-ln-code"><a href=""></a>  output<span class="sc">$</span>phonePlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb2-6" class="hljs-ln-code"><a href=""></a>    <span class="co"># Render a barplot</span></span>
+<span id="cb2-7" class="hljs-ln-code"><a href=""></a>    <span class="fu">barplot</span>(WorldPhones[,input<span class="sc">$</span>region]<span class="sc">*</span><span class="dv">1000</span>, </span>
+<span id="cb2-8" class="hljs-ln-code"><a href=""></a>            <span class="at">main=</span>input<span class="sc">$</span>region,</span>
+<span id="cb2-9" class="hljs-ln-code"><a href=""></a>            <span class="at">ylab=</span><span class="st">"Number of Telephones"</span>,</span>
+<span id="cb2-10" class="hljs-ln-code"><a href=""></a>            <span class="at">xlab=</span><span class="st">"Year"</span>)</span>
+<span id="cb2-11" class="hljs-ln-code"><a href=""></a>  })</span>
+<span id="cb2-12" class="hljs-ln-code"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/advanced.html#code-animations">Code Animations</a></p>
 </div>
 </section>
-<section id="line-highlighting" class="level2">
-<h2 class="anchored" data-anchor-id="line-highlighting">Line Highlighting</h2>
+<section id="line-highlighting" class="slide level2">
+<h2>Line Highlighting</h2>
 <ul>
 <li>Highlight specific lines for emphasis</li>
 <li>Incrementally highlight additional lines</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
-<span id="cb3-5"><a href="#cb3-5"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
-<span id="cb3-6"><a href="#cb3-6"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
-<span id="cb3-7"><a href="#cb3-7"></a>ax.plot(theta, r)</span>
-<span id="cb3-8"><a href="#cb3-8"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
-<span id="cb3-9"><a href="#cb3-9"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb3-10"><a href="#cb3-10"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" data-code-line-numbers="4-5|7|10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href=""></a></span>
+<span id="cb3-4"><a href=""></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb3-5"><a href=""></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb3-6"><a href=""></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
+<span id="cb3-7"><a href=""></a>ax.plot(theta, r)</span>
+<span id="cb3-8"><a href=""></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb3-9"><a href=""></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb3-10"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/#line-highlighting">Line Highlighting</a></p>
 </div>
 </section>
-<section id="executable-code" class="level2">
-<h2 class="anchored" data-anchor-id="executable-code">Executable Code</h2>
+<section id="executable-code" class="slide level2">
+<h2>Executable Code</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(hp, mpg, <span class="at">color =</span> am)) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The following aesthetics were dropped during statistical transformation:
-colour.
-ℹ This can happen when ggplot fails to infer the correct grouping structure in
-  the data.
-ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
-  variable into a factor?</code></pre>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-2"><a href=""></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(hp, mpg, <span class="at">color =</span> am)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href=""></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-4"><a href=""></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="footer">
+<img data-src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"><div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/#executable-code">Executable Code</a></p>
 </div>
 </section>
-<section id="latex-equations" class="level2">
-<h2 class="anchored" data-anchor-id="latex-equations">LaTeX Equations</h2>
+<section id="latex-equations" class="slide level2">
+<h2>LaTeX Equations</h2>
 <p><a href="https://www.mathjax.org/">MathJax</a> rendering of equations to HTML</p>
 <div class="columns">
 <div class="column" style="width:40%;">
-<div class="sourceCode" id="cb6"><pre class="sourceCode tex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">gather*</span>}</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ss">a_1=b_1+c_1</span><span class="sc">\\</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ss">a_2=b_2+c_2-d_2+e_2</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">gather*</span>}</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="ss">a_{11}&amp; =b_{11}&amp;</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="ss">  a_{12}&amp; =b_{12}</span><span class="sc">\\</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="ss">a_{21}&amp; =b_{21}&amp;</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ss">  a_{22}&amp; =b_{22}+c_{22}</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource tex number-lines code-with-copy"><code class="sourceCode latex"><span id="cb5-1"><a href=""></a><span class="kw">\begin</span>{<span class="ex">gather*</span>}</span>
+<span id="cb5-2"><a href=""></a><span class="ss">a_1=b_1+c_1</span><span class="sc">\\</span></span>
+<span id="cb5-3"><a href=""></a><span class="ss">a_2=b_2+c_2-d_2+e_2</span></span>
+<span id="cb5-4"><a href=""></a><span class="kw">\end</span>{<span class="ex">gather*</span>}</span>
+<span id="cb5-5"><a href=""></a></span>
+<span id="cb5-6"><a href=""></a><span class="kw">\begin</span>{<span class="ex">align</span>}</span>
+<span id="cb5-7"><a href=""></a><span class="ss">a_{11}&amp; =b_{11}&amp;</span></span>
+<span id="cb5-8"><a href=""></a><span class="ss">  a_{12}&amp; =b_{12}</span><span class="sc">\\</span></span>
+<span id="cb5-9"><a href=""></a><span class="ss">a_{21}&amp; =b_{21}&amp;</span></span>
+<span id="cb5-10"><a href=""></a><span class="ss">  a_{22}&amp; =b_{22}+c_{22}</span></span>
+<span id="cb5-11"><a href=""></a><span class="kw">\end</span>{<span class="ex">align</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column" style="width:60%;">
 <span class="math display">\[\begin{gather*}
 a_1=b_1+c_1\\
@@ -271,28 +330,24 @@ a_{11}&amp; =b_{11}&amp;
 a_{21}&amp; =b_{21}&amp;
   a_{22}&amp; =b_{22}+c_{22}
 \end{align}\]</span>
-</div>
-</div>
+</div></div>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/authoring/markdown-basics.html#equations">LaTeX Equations</a></p>
 </div>
 </section>
-<section id="column-layout" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="column-layout">Column Layout</h2>
+<section id="column-layout" class="slide level2 smaller">
+<h2>Column Layout</h2>
 <p>Arrange content into columns of varying widths:</p>
 <div class="columns">
 <div class="column" style="width:35%;">
-<section id="motor-trend-car-road-tests" class="level4">
-<h4 class="anchored" data-anchor-id="motor-trend-car-road-tests">Motor Trend Car Road Tests</h4>
+<h4 id="motor-trend-car-road-tests">Motor Trend Car Road Tests</h4>
 <p>The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles.</p>
-</section>
 </div><div class="column" style="width:3%;">
 
 </div><div class="column" style="width:62%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(mtcars)[,<span class="fu">c</span>(<span class="st">"mpg"</span>, <span class="st">"cyl"</span>, <span class="st">"disp"</span>, <span class="st">"hp"</span>, <span class="st">"wt"</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -356,30 +411,30 @@ a_{21}&amp; =b_{21}&amp;
 </table>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/#multiple-columns">Multiple Columns</a></p>
 </div>
 </section>
-<section id="incremental-lists" class="level2">
-<h2 class="anchored" data-anchor-id="incremental-lists">Incremental Lists</h2>
+<section id="incremental-lists" class="slide level2">
+<h2>Incremental Lists</h2>
 <p>Lists can optionally be displayed incrementally:</p>
-<div class="incremental">
-<ul class="incremental">
-<li>First item</li>
-<li>Second item</li>
-<li>Third item</li>
+<div>
+<ul>
+<li class="fragment">First item</li>
+<li class="fragment">Second item</li>
+<li class="fragment">Third item</li>
 </ul>
 </div>
-<p>. . .</p>
+<div class="fragment">
 <p><br> Insert pauses to make other types of content display incrementally.</p>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/#incremental-lists">Incremental Lists</a></p>
 </div>
+</div>
 </section>
-<section id="fragments" class="level2">
-<h2 class="anchored" data-anchor-id="fragments">Fragments</h2>
+<section id="fragments" class="slide level2">
+<h2>Fragments</h2>
 <p>Incremental text display and animation with fragments:</p>
 <p><br></p>
 <div class="fragment fade-in">
@@ -394,7 +449,7 @@ a_{21}&amp; =b_{21}&amp;
 <div class="fragment fade-in-then-semi-out">
 <p>Fade in then semi out</p>
 </div>
-<p>. . .</p>
+<div class="fragment">
 <div class="fragment strike">
 <p>Strike</p>
 </div>
@@ -404,17 +459,18 @@ a_{21}&amp; =b_{21}&amp;
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/advanced.html#fragments">Fragments</a></p>
 </div>
+</div>
 </section>
-<section id="slide-backgrounds" class="level2" data-background="#43464B">
-<h2 data-background="#43464B" class="anchored" data-anchor-id="slide-backgrounds">Slide Backgrounds</h2>
+<section id="slide-backgrounds" class="slide level2" data-background="#43464B">
+<h2>Slide Backgrounds</h2>
 <p>Set the <code>background</code> attribute on a slide to change the background color (all CSS color formats are supported).</p>
 <p>Different background transitions are available via the <code>background-transition</code> option.</p>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/#color-backgrounds">Slide Backgrounds</a></p>
 </div>
 </section>
-<section id="media-backgrounds" class="level2" data-background="#43464B" data-background-image="images/milky-way.jpeg">
-<h2 data-background="#43464B" data-background-image="images/milky-way.jpeg" class="anchored" data-anchor-id="media-backgrounds">Media Backgrounds</h2>
+<section id="media-backgrounds" class="slide level2" data-background="#43464B" data-background-image="images/milky-way.jpeg">
+<h2>Media Backgrounds</h2>
 <p>You can also use the following as a slide background:</p>
 <ul>
 <li><p>An image: <code>background-image</code></p></li>
@@ -425,18 +481,18 @@ a_{21}&amp; =b_{21}&amp;
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/#image-backgrounds">Media Backgrounds</a></p>
 </div>
 </section>
-<section id="absolute-position" class="level2">
-<h2 class="anchored" data-anchor-id="absolute-position">Absolute Position</h2>
+<section id="absolute-position" class="slide level2">
+<h2>Absolute Position</h2>
 <p>Position images or other elements at precise locations</p>
-<p><img src="mini/images/kitten-400-350.jpeg" class="absolute" data-top="170" data-left="30" width="400" height="400"></p>
-<p><img src="mini/images/kitten-450-250.jpeg" class="absolute fragment img-fluid" data-top="150" data-right="80" width="450"></p>
-<p><img src="mini/images/kitten-300-200.jpeg" class="absolute fragment img-fluid" data-bottom="110" data-right="130" width="300"></p>
+<p><img data-src="mini/images/kitten-400-350.jpeg" class="absolute" style="top: 170px; left: 30px; width: 400px; height: 400px; "></p>
+<p><img data-src="mini/images/kitten-450-250.jpeg" class="absolute fragment" style="top: 150px; right: 80px; width: 450px; "></p>
+<p><img data-src="mini/images/kitten-300-200.jpeg" class="absolute fragment" style="bottom: 110px; right: 130px; width: 300px; "></p>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/advanced.html#absolute-position">Absolute Position</a></p>
 </div>
 </section>
-<section id="auto-animate" class="level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
-<h2 data-auto-animate="true" data-auto-animate-easing="ease-in-out" class="anchored" data-anchor-id="auto-animate">Auto-Animate</h2>
+<section id="auto-animate" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Auto-Animate</h2>
 <p>Automatically animate matching elements across slides with Auto-Animate.</p>
 <div class="r-hstack">
 <div data-id="box1" data-auto-animate-delay="0" style="background: #2780e3; width: 200px; height: 150px; margin: 10px;">
@@ -453,8 +509,8 @@ a_{21}&amp; =b_{21}&amp;
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/advanced.html#auto-animate">Auto-Animate</a></p>
 </div>
 </section>
-<section id="auto-animate-1" class="level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
-<h2 data-auto-animate="true" data-auto-animate-easing="ease-in-out" class="anchored" data-anchor-id="auto-animate-1">Auto-Animate</h2>
+<section id="auto-animate-1" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Auto-Animate</h2>
 <p>Automatically animate matching elements across slides with Auto-Animate.</p>
 <div class="r-stack">
 <div data-id="box1" style="background: #2780e3; width: 350px; height: 350px; border-radius: 200px;">
@@ -471,10 +527,10 @@ a_{21}&amp; =b_{21}&amp;
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/advanced.html#auto-animate">Auto-Animate</a></p>
 </div>
 </section>
-<section id="slide-transitions" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="slide-transitions">Slide Transitions</h2>
+<section id="slide-transitions" class="slide level2 smaller">
+<h2>Slide Transitions</h2>
 <p>The next few slides will transition using the <code>slide</code> transition</p>
-<table class="caption-top table">
+<table class="caption-top">
 <colgroup>
 <col style="width: 14%">
 <col style="width: 85%">
@@ -516,39 +572,26 @@ a_{21}&amp; =b_{21}&amp;
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/advanced.html#slide-transitions">Slide Transitions</a></p>
 </div>
 </section>
-<section id="tabsets" class="level2 smaller scrollable" data-transition="slide">
-<h2 class="smaller scrollable anchored" data-transition="slide" data-anchor-id="tabsets">Tabsets</h2>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Data</a></li></ul>
+<section id="tabsets" class="slide level2 smaller scrollable" data-transition="slide">
+<h2>Tabsets</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Plot</a></li><li><a href="#tabset-1-2">Data</a></li></ul>
 <div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="tabset-1-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(hp, mpg, <span class="at">color =</span> am)) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The following aesthetics were dropped during statistical transformation:
-colour.
-ℹ This can happen when ggplot fails to infer the correct grouping structure in
-  the data.
-ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
-  variable into a factor?</code></pre>
-</div>
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="tabset-1-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
+<table class="caption-top" style="width:100%;">
 <colgroup>
 <col style="width: 27%">
 <col style="width: 6%">
@@ -1039,33 +1082,27 @@ colour.
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/#tabsets">Tabsets</a></p>
 </div>
 </section>
-<section id="interactive-slides" class="level2 smaller" data-transition="slide">
-<h2 class="smaller anchored" data-transition="slide" data-anchor-id="interactive-slides">Interactive Slides</h2>
+<section id="interactive-slides" class="slide level2 smaller" data-transition="slide">
+<h2>Interactive Slides</h2>
 <p>Include Jupyter widgets and htmlwidgets in your presentations</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-e3a632a7db113182b662" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-e3a632a7db113182b662">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-77870bb202307b96b67f" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-77870bb202307b96b67f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/interactive/widgets/jupyter.html">Jupyter widgets</a>, <a href="https://?meta:prerelease-subdomainquarto.org/docs/interactive/widgets/htmlwidgets.html">htmlwidgets</a></p>
 </div>
 </section>
-<section id="interactive-slides-1" class="level2 smaller" data-transition="slide">
-<h2 class="smaller anchored" data-transition="slide" data-anchor-id="interactive-slides-1">Interactive Slides</h2>
+<section id="interactive-slides-1" class="slide level2 smaller" data-transition="slide">
+<h2>Interactive Slides</h2>
 <p>Turn presentations into applications with Observable and Shiny. Use component layout to position inputs and outputs.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ojs_define</span>(<span class="at">actors =</span> <span class="fu">data.frame</span>(</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>),</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="panel-grid layout-sidebar ms-md-0 layout-sidebar-left">
-<div class="cell panel-sidebar card bg-light p-2 g-col-24 g-col-lg-7">
-<div class="sourceCode cell-code" id="cb12" data-startfrom="379" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 378;"><span id="cb12-379"><a href="#cb12-379" aria-hidden="true" tabindex="-1"></a>viewof talentWeight <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span>]<span class="op">,</span> { <span class="dt">value</span><span class="op">:</span> <span class="fl">0.7</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"talent weight"</span> })</span>
-<span id="cb12-380"><a href="#cb12-380" aria-hidden="true" tabindex="-1"></a>viewof looksWeight <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span>]<span class="op">,</span> { <span class="dt">value</span><span class="op">:</span> <span class="fl">0.7</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"looks weight"</span> })</span>
-<span id="cb12-381"><a href="#cb12-381" aria-hidden="true" tabindex="-1"></a>viewof minimum <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span>]<span class="op">,</span> { <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"min fame"</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="layout-sidebar layout-sidebar-left">
+<div class="cell panel-sidebar">
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="379" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 378;"><span id="cb6-379"><a href=""></a>viewof talentWeight <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span>]<span class="op">,</span> { <span class="dt">value</span><span class="op">:</span> <span class="fl">0.7</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"talent weight"</span> })</span>
+<span id="cb6-380"><a href=""></a>viewof looksWeight <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span>]<span class="op">,</span> { <span class="dt">value</span><span class="op">:</span> <span class="fl">0.7</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"looks weight"</span> })</span>
+<span id="cb6-381"><a href=""></a>viewof minimum <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="op">-</span><span class="dv">2</span><span class="op">,</span> <span class="dv">2</span>]<span class="op">,</span> { <span class="dt">value</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">step</span><span class="op">:</span> <span class="fl">0.01</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"min fame"</span> })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -1088,11 +1125,9 @@ colour.
 </div>
 </div>
 </div>
-<div class="panel-fill panel-grid g-col-24 g-col-lg-17 pt-3 pt-lg-0">
-<div class="g-col-24">
 <div class="cell panel-fill">
-<div class="sourceCode cell-code" id="cb13" data-startfrom="386" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 385;"><span id="cb13-386"><a href="#cb13-386" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { plotActors } <span class="im">from</span> <span class="st">'./actors.js'</span><span class="op">;</span></span>
-<span id="cb13-387"><a href="#cb13-387" aria-hidden="true" tabindex="-1"></a><span class="fu">plotActors</span>(actors<span class="op">,</span> talentWeight<span class="op">,</span> looksWeight<span class="op">,</span> minimum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="386" data-source-offset="-0"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 385;"><span id="cb7-386"><a href=""></a><span class="im">import</span> { plotActors } <span class="im">from</span> <span class="st">'./actors.js'</span><span class="op">;</span></span>
+<span id="cb7-387"><a href=""></a><span class="fu">plotActors</span>(actors<span class="op">,</span> talentWeight<span class="op">,</span> looksWeight<span class="op">,</span> minimum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="declaration">
@@ -1109,14 +1144,12 @@ colour.
 </div>
 </div>
 </div>
-</div>
-</div>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/interactive/ojs/">Observable</a>, <a href="https://?meta:prerelease-subdomainquarto.org/docs/interactive/shiny/">Shiny</a>, <a href="https://?meta:prerelease-subdomainquarto.org/docs/interactive/layout.html">Component Layout</a></p>
 </div>
 </section>
-<section id="preview-links" class="level2">
-<h2 class="anchored" data-anchor-id="preview-links">Preview Links</h2>
+<section id="preview-links" class="slide level2">
+<h2>Preview Links</h2>
 <p>Navigate to hyperlinks without disrupting the flow of your presentation.</p>
 <p>Use the <code>preview-links</code> option to open links in an iframe on top of your slides. Try clicking the link below for a demonstration:</p>
 <div style="text-align: center; margin-top: 1em">
@@ -1126,8 +1159,8 @@ colour.
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/presenting.html#preview-links">Preview Links</a></p>
 </div>
 </section>
-<section id="themes" class="level2">
-<h2 class="anchored" data-anchor-id="themes">Themes</h2>
+<section id="themes" class="slide level2">
+<h2>Themes</h2>
 <p>10 Built-in Themes (or <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/themes.html#creating-themes">create your own</a>)</p>
 <div>
 
@@ -1135,10 +1168,10 @@ colour.
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="images/moon.png" class="img-fluid"></p>
+<p><img data-src="images/moon.png"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img src="images/sky.png" class="img-fluid"></p>
+<p><img data-src="images/sky.png"></p>
 </div>
 </div>
 </div>
@@ -1146,8 +1179,8 @@ colour.
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/themes.html">Themes</a></p>
 </div>
 </section>
-<section id="easy-navigation" class="level2">
-<h2 class="anchored" data-anchor-id="easy-navigation">Easy Navigation</h2>
+<section id="easy-navigation" class="slide level2">
+<h2>Easy Navigation</h2>
 <div style="margin-bottom: 0.9em;">
 <p>Quickly jump to other parts of your presentation</p>
 </div>
@@ -1157,7 +1190,7 @@ colour.
 <div class="quarto-layout-panel" data-layout="[1, 20]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 4.8%;justify-content: center;">
-<p><img src="images/presentation-menu.png" class="img-fluid" width="41"></p>
+<p><img data-src="images/presentation-menu.png" width="41"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 95.2%;justify-content: flex-start;">
 <p>Toggle the slide menu with the menu button (bottom left of slide) to go to other slides and access presentation tools.</p>
@@ -1170,14 +1203,14 @@ colour.
 <p>Learn more: <a href="./docs/presentations/revealjs/presenting.qmd#navigation-menu">Navigation</a> / <a href="./docs/presentations/revealjs/presenting.qmd#jump-to-slide">Jump To Slide</a></p>
 </div>
 </section>
-<section id="jump-to-slide" class="level2">
-<h2 class="anchored" data-anchor-id="jump-to-slide">Jump To Slide</h2>
+<section id="jump-to-slide" class="slide level2">
+<h2>Jump To Slide</h2>
 <div style="margin-bottom: 0.9em;">
 <p>Quickly jump to other parts of your presentation</p>
 </div>
 </section>
-<section id="chalkboard" class="level2" data-chalkboard-buttons="true">
-<h2 data-chalkboard-buttons="true" class="anchored" data-anchor-id="chalkboard">Chalkboard</h2>
+<section id="chalkboard" class="slide level2" data-chalkboard-buttons="true">
+<h2>Chalkboard</h2>
 <div style="margin-bottom: 0.9em;">
 <p>Free form drawing and slide annotations</p>
 </div>
@@ -1187,7 +1220,7 @@ colour.
 <div class="quarto-layout-panel" data-layout="[1, 20]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 4.8%;justify-content: center;">
-<p><img src="images/presentation-chalkboard.png" class="img-fluid" width="41"></p>
+<p><img data-src="images/presentation-chalkboard.png" width="41"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 95.2%;justify-content: flex-start;">
 <p>Use the chalkboard button at the bottom left of the slide to toggle the chalkboard.</p>
@@ -1200,7 +1233,7 @@ colour.
 <div class="quarto-layout-panel" data-layout="[1, 20]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 4.8%;justify-content: center;">
-<p><img src="images/presentation-notes-canvas.png" class="img-fluid" width="41"></p>
+<p><img data-src="images/presentation-notes-canvas.png" width="41"></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 95.2%;justify-content: flex-start;">
 <p>Use the notes canvas button at the bottom left of the slide to toggle drawing on top of the current slide.</p>
@@ -1212,60 +1245,59 @@ colour.
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/presenting.html#chalkboard">Chalkboard</a></p>
 </div>
 </section>
-<section id="point-of-view" class="level2">
-<h2 class="anchored" data-anchor-id="point-of-view">Point of View</h2>
+<section id="point-of-view" class="slide level2">
+<h2>Point of View</h2>
 <p>press <kbd aria-hidden="true">o</kbd><span class="visually-hidden">o</span> to toggle overview mode:</p>
-<p><img src="images/overview-mode.png" class="border img-fluid"></p>
-<p>Hold down the <kbd aria-hidden="true" data-linux="Ctrl">Alt</kbd><span class="visually-hidden">Alt</span> and click on any element to zoom towards it—try it now on this slide.</p>
+
+<img data-src="images/overview-mode.png" class="border r-stretch"><p>Hold down the <kbd aria-hidden="true" data-linux="Ctrl">Alt</kbd><span class="visually-hidden">Alt</span> and click on any element to zoom towards it—try it now on this slide.</p>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/presenting.html#overview-mode">Overview Mode</a>, <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/presenting.html#slide-zoom">Slide Zoom</a></p>
 </div>
 </section>
-<section id="speaker-view" class="level2">
-<h2 class="anchored" data-anchor-id="speaker-view">Speaker View</h2>
-<p>press <kbd aria-hidden="true">s</kbd><span class="visually-hidden">s</span> (or use the tools in presentation menu <img src="../images/navigation-menu-icon.png" style="padding-bottom: 1px; margin: 0;width:0.5em;height:0.5em">) to open speaker view</p>
+<section id="speaker-view" class="slide level2">
+<h2>Speaker View</h2>
+<p>press <kbd aria-hidden="true">s</kbd><span class="visually-hidden">s</span> (or use the tools in presentation menu <img data-src="../images/navigation-menu-icon.png" style="padding-bottom: 1px; margin: 0;width:0.5em;height:0.5em">) to open speaker view</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/speaker-view.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="border: 3px solid #dee2e6;" width="780"></p>
+<figure>
+<p><img data-src="images/speaker-view.png" class="quarto-figure quarto-figure-center" style="border: 3px solid #dee2e6;" width="780"></p>
 </figure>
 </div>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/presenting.html#speaker-view">Speaker View</a></p>
 </div>
 </section>
-<section id="scroll-view" class="level2">
-<h2 class="anchored" data-anchor-id="scroll-view">Scroll View</h2>
-<p>Press <kbd aria-hidden="true">r</kbd><span class="visually-hidden">r</span> (or use the tools in presentation menu <img src="../images/navigation-menu-icon.png" style="padding-bottom: 1px; margin: 0;width:0.5em;height:0.5em">) to open scroll view</p>
+<section id="scroll-view" class="slide level2">
+<h2>Scroll View</h2>
+<p>Press <kbd aria-hidden="true">r</kbd><span class="visually-hidden">r</span> (or use the tools in presentation menu <img data-src="../images/navigation-menu-icon.png" style="padding-bottom: 1px; margin: 0;width:0.5em;height:0.5em">) to open scroll view</p>
 <p>Try it now on this slide — You’ll see a scroll bar on the right and you can scroll down the presentation using your mouse.</p>
 <p>Scroll view behavior can be configured using <code>scroll-view</code> configuration.</p>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/presenting.html#scroll-view">Scroll View</a></p>
 </div>
 </section>
-<section id="authoring-tools" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="authoring-tools">Authoring Tools</h2>
+<section id="authoring-tools" class="slide level2 smaller">
+<h2>Authoring Tools</h2>
 <p>Live side-by-side preview for any notebook or text editor including Jupyter and VS Code</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img src="images/jupyter-edit.png" class="border border-thick img-fluid"></p>
+<p><img data-src="images/jupyter-edit.png" class="border border-thick"></p>
 </div><div class="column" style="width:50%;">
-<p><img src="images/jupyter-preview.png" class="border border-thick img-fluid"></p>
-</div>
-</div>
+<p><img data-src="images/jupyter-preview.png" class="border border-thick"></p>
+</div></div>
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/tools/jupyter-lab.html">Jupyter</a>, <a href="https://?meta:prerelease-subdomainquarto.org/docs/tools/vscode.html">VS Code</a>, <a href="https://?meta:prerelease-subdomainquarto.org/docs/tools/text-editors.html">Text Editors</a></p>
 </div>
 </section>
-<section id="authoring-tools-1" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="authoring-tools-1">Authoring Tools</h2>
+<section id="authoring-tools-1" class="slide level2 smaller">
+<h2>Authoring Tools</h2>
 <p>RStudio includes an integrated presentation preview pane</p>
-<p><img src="images/rstudio.png" class="border img-fluid" width="900"></p>
-<div class="footer">
+
+<img data-src="images/rstudio.png" class="border r-stretch" width="900"><div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/tools/rstudio.html">RStudio</a></p>
 </div>
 </section>
-<section id="and-more" class="level2">
-<h2 class="anchored" data-anchor-id="and-more">And More…</h2>
+<section id="and-more" class="slide level2">
+<h2>And More…</h2>
 <ul>
 <li><a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/advanced.html#touch-navigation">Touch</a> optimized (presentations look great on mobile, swipe to navigate slides)</li>
 <li><a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/#footer-logo">Footer &amp; Logo</a> (optionally specify custom footer per-slide or hide global footer)</li>
@@ -1275,441 +1307,460 @@ colour.
 <div class="footer">
 <p>Learn more: <a href="https://?meta:prerelease-subdomainquarto.org/docs/presentations/revealjs/">Quarto Presentations</a></p>
 </div>
-</section>
 
-</main>
-<!-- /main column -->
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB0YWxlbnRXZWlnaHQgPSBJbnB1dHMucmFuZ2UoWy0yLCAyXSwgeyB2YWx1ZTogMC43LCBzdGVwOiAwLjAxLCBsYWJlbDogXCJ0YWxlbnQgd2VpZ2h0XCIgfSlcbnZpZXdvZiBsb29rc1dlaWdodCA9IElucHV0cy5yYW5nZShbLTIsIDJdLCB7IHZhbHVlOiAwLjcsIHN0ZXA6IDAuMDEsIGxhYmVsOiBcImxvb2tzIHdlaWdodFwiIH0pXG52aWV3b2YgbWluaW11bSA9IElucHV0cy5yYW5nZShbLTIsIDJdLCB7IHZhbHVlOiAxLCBzdGVwOiAwLjAxLCBsYWJlbDogXCJtaW4gZmFtZVwiIH0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJpbXBvcnQgeyBwbG90QWN0b3JzIH0gZnJvbSAnLi9hY3RvcnMuanMnO1xucGxvdEFjdG9ycyhhY3RvcnMsIHRhbGVudFdlaWdodCwgbG9va3NXZWlnaHQsIG1pbmltdW0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3RhbGVudFdlaWdodCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdsb29rc1dlaWdodCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdtaW5pbXVtJykifV19
-</script>
-<script type="module">
-if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../../..";
-window._ojs.paths.runtimeToRoot = "../../..";
-window._ojs.paths.docToRoot = "";
-window._ojs.selfContained = false;
-window._ojs.runtime.interpretFromScriptTags();
-</script>
-<script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="images/quarto.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><a href="https://?meta:prerelease-subdomainquarto.org">https://<strong>?meta:prerelease-subdomain</strong>quarto.org</a></p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script type="ojs-module-contents">
+    eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB0YWxlbnRXZWlnaHQgPSBJbnB1dHMucmFuZ2UoWy0yLCAyXSwgeyB2YWx1ZTogMC43LCBzdGVwOiAwLjAxLCBsYWJlbDogXCJ0YWxlbnQgd2VpZ2h0XCIgfSlcbnZpZXdvZiBsb29rc1dlaWdodCA9IElucHV0cy5yYW5nZShbLTIsIDJdLCB7IHZhbHVlOiAwLjcsIHN0ZXA6IDAuMDEsIGxhYmVsOiBcImxvb2tzIHdlaWdodFwiIH0pXG52aWV3b2YgbWluaW11bSA9IElucHV0cy5yYW5nZShbLTIsIDJdLCB7IHZhbHVlOiAxLCBzdGVwOiAwLjAxLCBsYWJlbDogXCJtaW4gZmFtZVwiIH0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJpbXBvcnQgeyBwbG90QWN0b3JzIH0gZnJvbSAnLi9hY3RvcnMuanMnO1xucGxvdEFjdG9ycyhhY3RvcnMsIHRhbGVudFdlaWdodCwgbG9va3NXZWlnaHQsIG1pbmltdW0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3RhbGVudFdlaWdodCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdsb29rc1dlaWdodCcpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdtaW5pbXVtJykifV19
+    </script>
+    <script type="module">
+    if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+    window._ojs.paths.runtimeToDoc = "../../..";
+    window._ojs.paths.runtimeToRoot = "../../..";
+    window._ojs.paths.docToRoot = "";
+    window._ojs.selfContained = false;
+    window._ojs.runtime.interpretFromScriptTags();
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
         }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
         }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
       }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
       }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
       });
-    }
-  }
-});
-</script>
-</div> <!-- /content -->
-
-
-
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
 
 </body></html>
