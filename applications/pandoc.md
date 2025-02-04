@@ -10,6 +10,12 @@ We use this release: [https://github.com/jgm/pandoc/releases/tag/2.13](https://g
 
 Some applications requires the more recent version than those from CSD3; it is straightforward to install.
 
+## 3.6.2
+
+Little has been changed on the way to install, but from 3.0 it uses its own --citeproc which would require higher version of texlive.
+
+## 2.13
+
 ```bash
 cd ${HPC_WORK}
 wget -qO- https://github.com/jgm/pandoc/releases/download/2.13/pandoc-2.13-linux-amd64.tar.gz | tar xvfz - --strip-components=1
