@@ -18,10 +18,11 @@ tar xfz -
 mv quarto-1.7.13/ 1.7.13
 wget https://raw.githubusercontent.com/quarto-dev/quarto-web/refs/heads/main/docs/presentations/revealjs/demo/index.qmd
 wget https://raw.githubusercontent.com/quarto-dev/quarto-web/refs/heads/main/docs/presentations/revealjs/demo/actors.js
+module load ceuadmin/R
 quarto render index.qmd --to html
 ```
 
-therefore after installation therevealjs demo is downloaded and rendered [here](files/quarto).
+therefore after installation therevealjs demo is downloaded and rendered as [a web page](files/quarto) and [slides](files/quarto/slides.html).
 
 ### 1.4.549
 
