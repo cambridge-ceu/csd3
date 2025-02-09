@@ -1722,6 +1722,8 @@ They are generated from script [setup.sh](setup.sh),
     curl -L https://www.npmjs.com/install.sh | sh
     ```
 
+    The NODE_PATH variable is output from running `readlink -f ../lib/node_modules` at the `bin/` directory.
+
 [^chrome]: **chrome**
 
     ```bash
