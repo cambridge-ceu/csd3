@@ -1758,18 +1758,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^git2.48.1]: **git/2.48.1**
 
-    Web: <https://git-scm.com/downloads/linux>.
-
-    ```bash
-    wget -qO- https://www.kernel.org/pub/software/scm/git/git-2.48.1.tar.gz | \
-    tar xfz -
-    cd git-2.48.1
-    module load ceuadmin/libgcrypto ceuadmin/docbook2X
-    source ~/COVID-19/py37/bin/activate
-    make prefix=$CEUADMIN/git/2.48.1 install install-doc install-html
-    ```
-
-    The Python call sets default to `meson` but the `./configure --prefix=.` routine should also work after the `make` statement above. A lot of work is needed when adding `install-info` in the `make` statement above.
+    Now it has a separate entry in the Application section.
 
 [^libgcrypto]: **libgcrypto**
 
