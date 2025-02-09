@@ -1681,6 +1681,8 @@ They are generated from script [setup.sh](setup.sh),
     node -v
     npm -v
     npm install -g @marp-team/marp-cli puppeteer-core puppeteer
+    npm list -g @marp-team/marp-cli
+    npm cache clean --force
     ```
 
     and one can see the definition `export NVM_DIR="$HOME/.nvm"`. The latest version is made available with,
