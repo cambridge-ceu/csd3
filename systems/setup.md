@@ -1756,7 +1756,7 @@ They are generated from script [setup.sh](setup.sh),
     To avoid duplication, a symbolic link is generated on `/usr/local/Cluster-Apps/ceuadmin/rust/1.74.1/cargo` as `${HOME}/.cargo`.
     Naturally, both cargo and rustc use the directory above.
 
-[^git2.48.1]: **git/2.48.1**
+[^git2.48.1]: **git2.48.1**
 
     Now it has a separate entry in the Application section.
 
