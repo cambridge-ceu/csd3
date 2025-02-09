@@ -362,7 +362,7 @@ All entries are ordered chronologically.
 | 2025-01-31  | rust/1.84.1                      | Generic[^rust]       |
 | 2025-02-04  | quarto/1.7.13                    | Generic              |
 | 2025-02-04  | pandoc/3.6.2                     | Generic              |
-| 2024-01-05  | rstudio/2025.04.0+278            | Genetic              |
+| 2025-02-05  | rstudio/2025.04.0+278            | Genetic              |
 
 \* CEU or approved users only.
 
