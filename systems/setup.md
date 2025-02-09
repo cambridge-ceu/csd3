@@ -1758,7 +1758,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^git2481]: **git/2.48.1**
 
-    Now it has a separate entry in the Application section.
+    Now it has a separate entry in the Applications section, <https://cambridge-ceu.github.io/csd3/applications/git.html>.
 
 [^libgcrypto]: **libgcrypto**
 
