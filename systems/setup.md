@@ -363,7 +363,7 @@ All entries are ordered chronologically.
 | 2025-02-04  | quarto/1.7.13                    | Generic              |
 | 2025-02-04  | pandoc/3.6.2                     | Generic              |
 | 2025-02-05  | rstudio/2025.04.0+278            | Genetic              |
-| ""          | git/2.48.1                       | Generic[^git2.48.1]  |
+| ""          | git/2.48.1                       | Generic[^git2481]    |
 | ""          | libgcrypto/1.5.3                 | Generic[^libgcrypto] |
 | ""          | texinfo/7.2                      | Generic[^texinfo]    |
 
@@ -1756,7 +1756,7 @@ They are generated from script [setup.sh](setup.sh),
     To avoid duplication, a symbolic link is generated on `/usr/local/Cluster-Apps/ceuadmin/rust/1.74.1/cargo` as `${HOME}/.cargo`.
     Naturally, both cargo and rustc use the directory above.
 
-[^git2.48.1]: **git2.48.1**
+[^git2481]: **git/2.48.1**
 
     Now it has a separate entry in the Application section.
 
