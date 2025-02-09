@@ -364,6 +364,8 @@ All entries are ordered chronologically.
 | 2025-02-04  | pandoc/3.6.2                     | Generic              |
 | 2025-02-05  | rstudio/2025.04.0+278            | Genetic              |
 | ""          | git/2.48.1                       | Generic[^git2.48.1]  |
+| ""          | libgcrypto/1.5.3                 | Generic[^libgcrypto] |
+| ""          | texinfo/7.2                      | Generic[^texinfo]    |
 
 \* CEU or approved users only.
 
@@ -1762,8 +1764,31 @@ They are generated from script [setup.sh](setup.sh),
     wget -qO- https://www.kernel.org/pub/software/scm/git/git-2.48.1.tar.gz | \
     tar xfz -
     cd git-2.48.1
+    module load ceuadmin/libgcrypto ceuadmin/docbook2X
     source ~/COVID-19/py37/bin/activate
-    make prefix=$CEUADMIN/git/2.48.1 install install-doc
+    make prefix=$CEUADMIN/git/2.48.1 install install-doc install-html
     ```
 
-    The Python call sets default to `meson` but the `./configure --prefix=.` routine should also work after the `make` statement above. A slight more work to do when adding `install-html` and `install-info`.
+    The Python call sets default to `meson` but the `./configure --prefix=.` routine should also work after the `make` statement above. A lot of work is needed when adding `install-info` in the `make` statement above.
+
+[^libgcrypto]: **libgcrypto**
+
+    ```bash
+    wget -qO- https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.5.3.tar.bz2 | x
+    tar xjf -
+    mv libgcrypt-1.5.3/ src
+    cd src
+    ./configure --prefix=$CEUADMIN/libgcrypto/1.5.3
+    make
+    make install
+    ```
+
+[^texinfo]: **texinfo**
+
+    ```bash
+    wget -qO- https://ftp.gnu.org/gnu/texinfo/texinfo-7.2.tar.xz | \
+    tar Jxf -
+    mv texinfo-7.2/ src
+    cd src
+    make && make install
+    ```
