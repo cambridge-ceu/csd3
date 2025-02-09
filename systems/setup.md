@@ -363,6 +363,7 @@ All entries are ordered chronologically.
 | 2025-02-04  | quarto/1.7.13                    | Generic              |
 | 2025-02-04  | pandoc/3.6.2                     | Generic              |
 | 2025-02-05  | rstudio/2025.04.0+278            | Genetic              |
+| ""          | git/2.48.1                       | Generic[^git2.48.1]  |
 
 \* CEU or approved users only.
 
@@ -1752,3 +1753,17 @@ They are generated from script [setup.sh](setup.sh),
     This is upgraded from 1.74.1 with `rustup default stable` at suggestion of gmake when compiling firefox/nightly.
     To avoid duplication, a symbolic link is generated on `/usr/local/Cluster-Apps/ceuadmin/rust/1.74.1/cargo` as `${HOME}/.cargo`.
     Naturally, both cargo and rustc use the directory above.
+
+[^git2.48.1]: **git/2.48.1**
+
+    Web: <https://git-scm.com/downloads/linux>.
+
+    ```bash
+    wget -qO- https://www.kernel.org/pub/software/scm/git/git-2.48.1.tar.gz | \
+    tar xfz -
+    cd git-2.48.1
+    source ~/COVID-19/py37/bin/activate
+    make prefix=$CEUADMIN/git/2.48.1 install install-doc
+    ```
+
+    The Python call sets default to `meson` but the `./configure --prefix=.` routine should also work after the `make` statement above. A slight more work to do when adding `install-html` and `install-info`.
