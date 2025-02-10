@@ -364,7 +364,7 @@ All entries are ordered chronologically.
 | 2025-02-04  | pandoc/3.6.2                     | Generic              |
 | 2025-02-05  | rstudio/2025.04.0+278            | Genetic              |
 | ""          | git/2.48.1                       | Generic[^git2481]    |
-| ""          | libgcrypto/1.5.3                 | Generic[^libgcrypto] |
+| ""          | libgcrypt/1.5.3                  | Generic[^libgcrypt]  |
 | ""          | texinfo/7.2                      | Generic[^texinfo]    |
 
 \* CEU or approved users only.
@@ -1760,14 +1760,14 @@ They are generated from script [setup.sh](setup.sh),
 
     Now it has a separate entry in the Applications section, <https://cambridge-ceu.github.io/csd3/applications/git.html>.
 
-[^libgcrypto]: **libgcrypto**
+[^libgcrypt]: **libgcrypto**
 
     ```bash
     wget -qO- https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.5.3.tar.bz2 | x
     tar xjf -
     mv libgcrypt-1.5.3/ src
     cd src
-    ./configure --prefix=$CEUADMIN/libgcrypto/1.5.3
+    ./configure --prefix=$CEUADMIN/libgcrypt/1.5.3
     make
     make install
     ```

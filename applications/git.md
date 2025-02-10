@@ -16,7 +16,7 @@ Module `ceuadmin/git/2.48.1` is now available, which takes advantage of the mode
 wget -qO- https://www.kernel.org/pub/software/scm/git/git-2.48.1.tar.gz | \
 tar xfz -
 cd git-2.48.1
-module load ceuadmin/libgcrypto ceuadmin/docbook2X
+module load ceuadmin/libgcrypt ceuadmin/docbook2X
 source ~/COVID-19/py37/bin/activate
 make prefix=$CEUADMIN/git/2.48.1 install install-doc install-html
 ```

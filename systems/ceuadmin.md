@@ -49,7 +49,7 @@ The current list is as follows,
 [117] "jq"                     "json-c"                 "KentUtils"              "KING"
 [121] "kojak"                  "krb5"                   "lapack"                 "ldc2"
 [125] "ldsc"                   "LDstore"                "LEMMA"                  "libarchive"
-[129] "libcares"               "libgcrypto"             "libgeotiff"             "libgit2"
+[129] "libcares"               "libgcrypt"              "libgeotiff"             "libgit2"
 [133] "libglvnd"               "libiconv"               "libidn2"                "libjpeg-turbo"
 [137] "libntlm"                "libpng"                 "libseccomp"             "libsodium"
 [141] "libssh"                 "libssh2"                "libuv"                  "libxml2"
