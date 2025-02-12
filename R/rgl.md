@@ -4,7 +4,11 @@ sort: 27
 
 # rgl
 
-# 1.1.3
+## 1.3.17
+
+This compiles smoothly after `module load ceuadmin/libpng`.
+
+## 1.1.3
 
 The usual `install.package("rgl")` would fail with error message,
 
@@ -46,6 +50,6 @@ z <- rnorm(1000) + atan2(x, y)
 plot3d(x, y, z, col = rainbow(1000))
 ```
 
-# 1.2.1
+## 1.2.1
 
 It compiles and loads smoothly.
