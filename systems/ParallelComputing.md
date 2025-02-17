@@ -49,6 +49,8 @@ where function `turboman` is exported and called by `parallel`. The `--env _` op
 
 Note that the two options are preceded with `parallel --record-env` and `env_parallel --install`, respectively.
 
+To kill processes with a pattern, we use `pkill -f "pattern"`.
+
 ## SLURM
 
 Official website: [https://slurm.schedmd.com/](https://slurm.schedmd.com/).

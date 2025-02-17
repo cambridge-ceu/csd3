@@ -245,4 +245,10 @@ find /usr -iname "*libGLX*.so*" -exec ls -l {} \;
 
 [^autologin]: **autologin**
 
-    This appears subject to the system setup.
+    This appears subject to the system setup. A way to use noninteractive session is via sshpass, e.g.,
+
+    `sshpass -p $(cat my_passwd) user@host`
+
+    A quick way to generate hash SHA256 (256-bit) checksums,
+
+    `sha256sum --binary your_file | tee your_file_hash.log`
