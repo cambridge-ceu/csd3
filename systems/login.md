@@ -247,7 +247,7 @@ find /usr -iname "*libGLX*.so*" -exec ls -l {} \;
 
     This appears subject to the system setup. A way to use noninteractive session is via sshpass, e.g.,
 
-    `sshpass -p $(cat my_passwd) user@host`
+    `sshpass -p $(cat my_passwd_file) user@host`
 
     A quick way to generate hash SHA256 (256-bit) checksums,
 
