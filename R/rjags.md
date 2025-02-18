@@ -15,7 +15,14 @@ module load jags-4.3.0-gcc-5.4.0-4z5shby
 Rscript -e 'install.packages("rjags")'
 ```
 
-Otherwise we still mask the default `configure` command and generate a customised `Makevars`,
+Under Fedora 38, we need
+
+```bash
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+R-devel CMD INSTALL --configure-args='--enable-rpath' rjags
+```
+
+An earlier attempt is to mask the default `configure` command and generate a customised `Makevars`,
 
 ```
 Rscript -e 'download.packages"rjags",".")
