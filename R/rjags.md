@@ -18,6 +18,7 @@ Rscript -e 'install.packages("rjags")'
 Under Fedora 38, we need
 
 ```bash
+export R_HOME=/home/jhz22/R-devel
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 R-devel CMD INSTALL --configure-args='--enable-rpath' rjags
 ```
