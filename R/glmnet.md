@@ -6,6 +6,62 @@ sort: 8
 
 Web: [https://glmnet.stanford.edu/](https://glmnet.stanford.edu/).
 
+## icelake
+
+### Latest information
+
+After software update on 27/4/2022, the R 4.2.0 installed from login nodes also works nicely with glmnet installed there.
+
+### R/4.1.0-icelake
+
+The Matrix package is also required to recompile.
+
+```bash
+module load R/4.1.0-icelake
+wget https://cran.r-project.org/src/contrib/Matrix_1.4-1.tar.gz
+wget https://cran.r-project.org/src/contrib/glmnet_4.1-4.tar.gz
+R CMD INSTALL Matrix_1.4-1.tar.gz
+R CMD INSTALL glmnet_4.1-4.tar.gz
+R CMD INSTALL Matrix_1.4-1.tar.gz -l .
+```
+
+so that the Matrix package is installed first to get going with glmnet but then made available locally to avoid conflict with the login nodes.
+
+```r
+library(Matrix,lib.loc=".")
+library(glmnet)
+```
+
+The Matrix package is then reinstalled from the usual login node.
+
+## 4.1-8
+
+Besides ~/.R/Makevars, the following is necessary
+
+```bash
+module switch gcc/7
+```
+
+## 4.1-7
+
+Released on 23/3/2023, it requires C++17 so the Makevars as above becomes
+
+```bash
+CXX17 = g++ -std=gnu++17 -fPIC
+```
+
+## 4.1-4
+
+### login node
+
+It requires C++14, so we proceed with
+
+```bash
+echo "CXX14 = g++ -std=gnu++14 -fPIC" > ~/.R/Makevars
+module load gcc/7
+Rscript -e 'install.packages("glmnet")'
+```
+
 ### 4.1-3
 
 The 'install.packages("glmnet")' command under R 4.1.3 gave the following error,
@@ -38,62 +94,6 @@ Our final step is then
 ```bash
 R CMD INSTALL glmnet
 ```
-
-## 4.1-4
-
-### login node
-
-It requires C++14, so we proceed with
-
-```bash
-echo "CXX14 = g++ -std=gnu++14 -fPIC" > ~/.R/Makevars
-module load gcc/7
-Rscript -e 'install.packages("glmnet")'
-```
-
-## 4.1-7
-
-Released on 23/3/2023, it requires C++17 so the Makevars as above becomes
-
-```bash
-CXX17 = g++ -std=gnu++17 -fPIC
-```
-
-## 4.1-8
-
-Besides ~/.R/Makevars, the following is necessary
-
-```bash
-module switch gcc/7
-```
-
-### icelake
-
-#### Latest information
-
-After software update on 27/4/2022, the R 4.2.0 installed from login nodes also works nicely with glmnet installed there.
-
-#### R/4.1.0-icelake
-
-The Matrix package is also required to recompile.
-
-```bash
-module load R/4.1.0-icelake
-wget https://cran.r-project.org/src/contrib/Matrix_1.4-1.tar.gz
-wget https://cran.r-project.org/src/contrib/glmnet_4.1-4.tar.gz
-R CMD INSTALL Matrix_1.4-1.tar.gz
-R CMD INSTALL glmnet_4.1-4.tar.gz
-R CMD INSTALL Matrix_1.4-1.tar.gz -l .
-```
-
-so that the Matrix package is installed first to get going with glmnet but then made available locally to avoid conflict with the login nodes.
-
-```r
-library(Matrix,lib.loc=".")
-library(glmnet)
-```
-
-The Matrix package is then reinstalled from the usual login node.
 
 ---
 
