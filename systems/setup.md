@@ -366,6 +366,7 @@ All entries are ordered chronologically.
 | ""          | git/2.48.1                       | Generic[^git2481]    |
 | ""          | libgcrypt/1.5.3                  | Generic[^libgcrypt]  |
 | ""          | texinfo/7.2                      | Generic[^texinfo]    |
+| 2025-02-24  | VSCode/1.97.2                    | Genetic              |
 
 \* CEU or approved users only.
 
