@@ -6,7 +6,7 @@ sort: 59
 
 Web: [https://code.visualstudio.com/](https://code.visualstudio.com/).
 
-<font color="red"><b>5/2/2025 Update</b></font>
+<font color="red"><b>24/2/2025 Update</b></font>
 
 Module `ceuadmin/VSCode/1.97.2` is now available with Copilot.
 
