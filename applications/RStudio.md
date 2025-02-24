@@ -6,6 +6,10 @@ sort: 49
 
 Web: <https://posit.co/> ([GitHub](https://github.com/rstudio/rstudio), [IDE trouble-shooting](https://support.posit.co/hc/en-us/articles/200488508-RStudio-Desktop-IDE-Will-Not-Start), [Latest builds](https://dailies.rstudio.com/rstudio/), [Posit signed builds](https://posit.co/code-signing/))
 
+<font color="red"><b>5/2/2025 Update</b></font>
+
+Module `ceuadmin/rstudio/2025.04.0-278` is now available replacing `rstudio/2024.04.2+764`.
+
 <font color="red"><b>9/9/2024 Update</b></font>
 
 Module `rstudio/2024.04.2+764` now works with R 4.4.1 (from its standard location).
