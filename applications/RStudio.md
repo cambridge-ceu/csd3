@@ -8,7 +8,7 @@ Web: <https://posit.co/> ([GitHub](https://github.com/rstudio/rstudio), [IDE tro
 
 <font color="red"><b>5/2/2025 Update</b></font>
 
-Module `ceuadmin/rstudio/2025.04.0-278` is now available replacing `rstudio/2024.04.2+764`.
+Module `ceuadmin/rstudio/2025.04.0-278` is now available.
 
 <font color="red"><b>9/9/2024 Update</b></font>
 
