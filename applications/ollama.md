@@ -36,7 +36,7 @@ chrome 127.0.0.1:11434 &
 
 so upon visiting <http://127.0.0.1:11434/>, we see the message: `Ollama is running`.
 
-## Chat
+## REST API: /api/generate
 
 From the information given above, our benchmark query is 
 
@@ -112,7 +112,20 @@ for
 ...
 ```
 
-Equialently from the CLI,
+## Chat: /api/chat
+
+From
+
+```bash
+curl http://localhost:11434/api/chat -d '{
+  "model": "vicuna",
+  "messages": [
+    { "role": "user", "content": "why is the sky blue?" }
+  ]
+}' > answers.json
+```
+
+We get a json output, or equialently from the CLI,
 
 ```
 >>> /?
