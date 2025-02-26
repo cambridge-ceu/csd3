@@ -14,17 +14,31 @@ As of 26/2/2025, the current version is 0.5.12.
 curl -L https://ollama.com/download/ollama-linux-amd64.tgz -o ollama-linux-amd64.tgz
 tar tvfz ollama-linux-amd64.tgz
 ollama --help
-ollama list
 ollama serve &
+ollama list
 ollama pull vicuna
 ollama run vicuna
 ```
 
-We see that it is listening at 127.0.0.1:11434 and that the particular module is 3.8GB.
+We see that it is listening at 127.0.0.1:11434 and the list gives,
+
+```
+NAME             ID              SIZE      MODIFIED
+vicuna:latest    370739dc897b    3.8 GB    About an hour ago
+```
+
+For information, we start
+
+```bash
+module load ceuadmin/chrome
+chrome 127.0.0.1:11434 &
+```
+
+so upon visiting <http://127.0.0.1:11434/>, we see the message: `Ollama is running`.
 
 ## Chat
 
-From the port given above, our benchmark query is 
+From the information given above, our benchmark query is 
 
 ```bash
 curl http://localhost:11434/api/generate -d '{
@@ -101,8 +115,49 @@ for
 Equialently from the CLI,
 
 ```
->>> why the sky is blue
+>>> /?
+Available Commands:
+  /set            Set session variables
+  /show           Show model information
+  /load <model>   Load a session or model
+  /save <model>   Save your current session
+  /clear          Clear session context
+  /bye            Exit
+  /?, /help       Help for a command
+  /? shortcuts    Help for keyboard shortcuts
+
+Use """ to begin a multi-line message.
+
+>>> /show info
+
+  Model
+    architecture        llama
+    parameters          6.7B
+    context length      4096
+    embedding length    4096
+    quantization        Q4_0
+
+  Parameters
+    stop    "USER:"
+    stop    "ASSISTANT:"
+
+  System
+    A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful,
+      detailed, and polite answers to the user's questions.
+
+>>>  why the sky is blue
 ```
 
-> The sky appears blue because of a phenomenon called Rayleigh scattering. When sunlight enters Earth's atmosphere
-> encounters tiny gas molecules such as nitrogen and oxygen. These molecules scatter the light ...
+> The sky appears blue because of a phenomenon called Rayleigh scattering. This occurs when shorter wavelengths of light, like blue and
+> violet, are scattered in all directions by tiny molecules of gases such as nitrogen and oxygen that make up the Earth's atmosphere. The
+> scattering of these wavelengths causes them to be spread out over the entire visible spectrum, making the sky appear white or bright.
+>
+> However, the sun's rays are mainly blue during daylight hours, so when the sun is in the sky, the blue light from the sun is scattered
+> all around and reaches our eyes, which makes the sky appear blue.
+
+The answer could be slightly different in form, e.g.,
+
+> The color of the sky appears blue because the Earth's atmosphere scatters sunlight in all directions and blue light is scattered more
+> than other colors because it travels as shorter, smaller waves. This scattering of light makes it appear as if the sky is blue,
+> especially during the daytime when the Sun is high in the sky. The color of the sky can also be affected by the amount of water vapor and
+> dust particles in the atmosphere, which can make the sky appear more hazy or gray.
