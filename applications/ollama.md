@@ -174,3 +174,13 @@ The answer could be slightly different in form, e.g.,
 > than other colors because it travels as shorter, smaller waves. This scattering of light makes it appear as if the sky is blue,
 > especially during the daytime when the Sun is high in the sky. The color of the sky can also be affected by the amount of water vapor and
 > dust particles in the atmosphere, which can make the sky appear more hazy or gray.
+
+## A lot of models
+
+We could use the same trick elsewhere, e.g.,
+
+```bash
+export OLLAMA_MODELS=/rds/usr/$USER/hpc-work/ollama
+ln -sf ${OLLAMA_MODELS} $HOME/.ollama
+```
+
