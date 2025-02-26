@@ -20,7 +20,7 @@ ollama pull vicuna
 ollama run vicuna
 ```
 
-We see that it is listening at 127.0.0.1:11434 and the list gives,
+We see that it is listening on 127.0.0.1:11434 and the list gives,
 
 ```
 NAME             ID              SIZE      MODIFIED
