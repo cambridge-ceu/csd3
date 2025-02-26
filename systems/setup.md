@@ -367,6 +367,7 @@ All entries are ordered chronologically.
 | ""          | libgcrypt/1.5.3                  | Generic[^libgcrypt]  |
 | ""          | texinfo/7.2                      | Generic[^texinfo]    |
 | 2025-02-24  | VSCode/1.97.2                    | Genetic              |
+| 2025-02-26  | ollama/0.5.12                    | Genetic[^ollama]     |
 
 \* CEU or approved users only.
 
@@ -1781,4 +1782,13 @@ They are generated from script [setup.sh](setup.sh),
     mv texinfo-7.2/ src
     cd src
     make && make install
+    ```
+
+[^ollama]: **ollama**
+
+    It is rather standard,
+
+    ```bash
+    curl -L https://ollama.com/download/ollama-linux-amd64.tgz -o ollama-linux-amd64.tgz
+    tar tvfz ollama-linux-amd64.tgz
     ```
