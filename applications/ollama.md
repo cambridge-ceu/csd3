@@ -24,7 +24,7 @@ We see that it is listening at 127.0.0.1:11434 and that the particular module is
 
 ## Chat
 
-From the port given above, our query benchmark is 
+From the port given above, our benchmark query is 
 
 ```bash
 curl http://localhost:11434/api/generate -d '{
