@@ -125,7 +125,7 @@ curl http://localhost:11434/api/chat -d '{
 }' > answers.json
 ```
 
-We get a json output, or equialently from the CLI,
+We get a json output, or equivalently from the CLI,
 
 ```
 >>> /?
@@ -184,3 +184,9 @@ export OLLAMA_MODELS=/rds/usr/$USER/hpc-work/ollama
 ln -sf ${OLLAMA_MODELS} $HOME/.ollama
 ```
 
+This is from deepseek-r1.32b,
+
+> The sky appears blue due to Rayleigh scattering. Sunlight consists of various colors, each with different wavelengths. Blue light has a shorter wavelength and is scattered more by
+> molecules in the atmosphere, like nitrogen and oxygen. This scattering occurs predominantly during the day when the sun is high, making the sky appear blue. At sunrise or sunset,
+> longer paths through the atmosphere scatter out much of the blue light, revealing reds and oranges. Additionally, higher altitudes with thinner air result in a deeper blue sky due to
+> reduced scattering.
