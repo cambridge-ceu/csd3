@@ -1792,4 +1792,5 @@ They are generated from script [setup.sh](setup.sh),
     curl -L https://ollama.com/download/ollama-linux-amd64.tgz -o ollama-linux-amd64.tgz
     tar tvfz ollama-linux-amd64.tgz
     ollama --help
+    ollama list
     ```
