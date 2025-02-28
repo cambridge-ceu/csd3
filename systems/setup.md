@@ -368,6 +368,7 @@ All entries are ordered chronologically.
 | ""          | texinfo/7.2                      | Generic[^texinfo]    |
 | 2025-02-24  | VSCode/1.97.2                    | Genetic              |
 | 2025-02-26  | ollama/0.5.12                    | Genetic[^ollama]     |
+| 2025-02-28  | R/4.4.3                          | Generic              |
 
 \* CEU or approved users only.
 
