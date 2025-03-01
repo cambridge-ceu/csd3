@@ -126,20 +126,24 @@ A full list of module subcommands is available with `module help` as detailed he
 [3.2.9](https://linux.die.net/man/4/modulefile) -- cclake uses version 3.2.10 (2012-12-21) while icelake uses 4.5.2 (2020-07-30). In particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of function (LoF)
 annotation.
 
-Most software are available for all CSD3 users, only limited by software with excessive size / reference data -- which ideally will be
-available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmmh2-public_databases/software` as a trade-off. These can
-largely be seen as sources which are used to build the reoository given above.
+## CEU users
 
-CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `phenoscanner`, `polyphen`, `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom`
-linking internal projects/personal space (additional requests need to be made). A large collection of R packages (1,719 as of 28/2/2025, esp. with availability of major machine learning packages)
-is linked with the latest R distribution, 4.4.3; there are also 4 packages (DescTools, Rfast, Rfast2, rcompanion) under R-gcc11. Note that there are limitations with CSD3 so that `sf`, `terra`, `raster` and `stars` cannot be updated due to incomplete build of `gdal`/`proj`.
+CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `phenoscanner`, `polyphen`, 
+`KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom` linking internal projects/personal space (additional requests need to be 
+made).
 
-For CEU users, it is easy to point to them, e.g.,
+### R
+
+A large collection of R packages (1,719 as of 28/2/2025, esp. with availability of major machine learning packages) is linked with the 
+latest R distribution, 4.4.3; there are also 4 packages (DescTools, Rfast, Rfast2, rcompanion) under R-gcc11. Note that there are 
+limitations with CSD3 so that `sf`, `terra`, `raster` and `stars` cannot be updated due to incomplete build of `gdal`/`proj`.
+
+It is easy to point to them, e.g.,
 
 ```bash
 export HPC_WORK=/rds/user/$USER/hpc-work/
 export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-export R_LIBS=${RDS}/R:${RDS}/R-4.4.2/library
+export R_LIBS=${RDS}/R:${RDS}/R-gcc11
 ```
 
 or possible to have your own installations based on these, e.g., through creation of a modified `Makefile` with altered prefix followed
@@ -149,8 +153,8 @@ The following script tests for loading of `dplyr`:
 
 ```bash
 export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-export PATH=${PATH}:${RDS}/R-4.4.2/bin
-export R_LIBS=${RDS}/R-4.4.2/library:${RDS}/R
+export PATH=${PATH}
+export R_LIBS=${RDS}:${RDS}/R
 Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
 ```
 
@@ -163,7 +167,23 @@ echo $R_LIBS
 Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
 ```
 
-For non-CEU users, please drop an email to <jhz22@medschl.cam.ac.uk> for access.
+### Python
+
+There are three sources,
+
+1. miniconda37/
+2. py27
+3. py38
+
+One can use `source` command to load/install packages, e.g., `source ${RDS}/py38/bin/activate`.
+
+## Non-CEU users
+
+Most software are available for all CSD3 users, only limited by software with excessive size / reference data -- which ideally will be
+available from `/rds/project/jmmh2/software` but now `/rds/project/jmmh2/rds-jmmh2-public_databases/software` as a trade-off. These can
+largely be seen as sources which are used to build the reoository given above.
+
+Please drop an email to <jhz22@medschl.cam.ac.uk> for access.
 
 ## Module creation
 
