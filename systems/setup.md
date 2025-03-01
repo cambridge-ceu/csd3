@@ -357,11 +357,11 @@ All entries are ordered chronologically.
 | 2024-12-10  | rstudio/2024.09.1+394            | Genetic              |
 | 2025-01-21  | node/18.20.5                     | Genetic[^node]       |
 | 2025-01-26  | node/20.18.2                     | Generic              |
-| 2025-01-26  | chrome/132.0.6834.110            | Generic[^chrome]     |
+| ""          | chrome/132.0.6834.110            | Generic[^chrome]     |
 | 2025-01-29  | brotli/1.1.0                     | Generic[^brotli]     |
 | 2025-01-31  | rust/1.84.1                      | Generic[^rust]       |
 | 2025-02-04  | quarto/1.7.13                    | Generic              |
-| 2025-02-04  | pandoc/3.6.2                     | Generic              |
+| ""          | pandoc/3.6.2                     | Generic              |
 | 2025-02-05  | rstudio/2025.04.0+278            | Genetic              |
 | ""          | git/2.48.1                       | Generic[^git2481]    |
 | ""          | libgcrypt/1.5.3                  | Generic[^libgcrypt]  |
