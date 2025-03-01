@@ -369,6 +369,8 @@ All entries are ordered chronologically.
 | 2025-02-24  | VSCode/1.97.2                    | Genetic              |
 | 2025-02-26  | ollama/0.5.12                    | Genetic[^ollama]     |
 | 2025-02-28  | R/4.4.3                          | Generic              |
+| 2025-03-01  | leptonica/1.85.0                 | Generic              |
+| ""          | tesseract/5.5.0                  | Generic[^tesseract]  |
 
 \* CEU or approved users only.
 
@@ -1794,4 +1796,18 @@ They are generated from script [setup.sh](setup.sh),
     tar tvfz ollama-linux-amd64.tgz
     ollama --help
     ollama list
+    ```
+
+[^tesseract]: **tesseract**
+
+    ```bash
+    module load ceuadmin/leptonica/1.85.0
+    module load ceuadmin/libgcrypt
+    module load ceuadmin/autoconf
+    wget -qO- https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.5.0.tar.gz | \
+    tar xvfz -
+    cd tesseract-5.5.0/
+    ./autogen.sh
+    ./configure --prefix=$CEUADMIN/tesseract/5.5.0 CXXFLAGS="-std=c++17" LDFLAGS="-lstdc++fs"
+    make && make install
     ```
