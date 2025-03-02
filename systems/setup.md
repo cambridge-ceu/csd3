@@ -371,6 +371,7 @@ All entries are ordered chronologically.
 | 2025-02-28  | R/4.4.3                          | Generic              |
 | 2025-03-01  | leptonica/1.85.0                 | Generic              |
 | ""          | tesseract/5.5.0                  | Generic[^tesseract]  |
+| 2025-03-02  | apidog/latest                    | Generic[^apidog]     |
 
 \* CEU or approved users only.
 
@@ -1810,4 +1811,13 @@ They are generated from script [setup.sh](setup.sh),
     ./autogen.sh
     ./configure --prefix=$CEUADMIN/tesseract/5.5.0 CXXFLAGS="-std=c++17" LDFLAGS="-lstdc++fs"
     make && make install
+    ```
+
+[^apidog]: **apidog**
+
+    ```bash
+    wget https://file-assets.apidog.com/download/Apidog-linux-latest.zip
+    unzip  Apidog-linux-latest.zip
+    ./Apidog.AppImage  --appimage-extract
+    ./apidog --no-sandbox --help
     ```
