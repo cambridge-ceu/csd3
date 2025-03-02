@@ -4,6 +4,8 @@ sort: 8
 
 # Software
 
+Software-specific configurations can often be found from `~/.config` and `~/.local`.
+
 ## ceuadmin
 
 See [https://cambridge-ceu.github.io/csd3/systems/ceuadmin.html](https://cambridge-ceu.github.io/csd3/systems/ceuadmin.html) for additional information.
