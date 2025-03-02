@@ -374,6 +374,17 @@ An alternative syntax is `python3 -m venv py37`
 
 Note that when this is set up, one only needs to restart from the `source` command. The `pip` is appropriate for installing small number of package; otherwise Anaconda ([https://www.anaconda.com/](https://www.anaconda.com/)) and Jupyter notebook ([https://jupyter.org/](https://jupyter.org/)) are useful.
 
+A somewhat more recent instance using Python 3.11 is as follows,
+
+```bash
+module load python/3.11.0-icl
+python -m venv py3.11
+source py3.11/bin/activate
+pip install streamlit langchain-community langchain_experimental
+pip install langchain-ollama
+pip install sentence-transformers
+```
+
 ### Miniconda
 
 We first load Miniconda and create virtual environments,
@@ -399,12 +410,6 @@ source activate miniconda37
 
 and follow [Autoencoder in Keras tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial) on
 data from <http://yann.lecun.com/exdb/mnist/>. The following attempts to install `longchain-community`.
-
-```bash
-conda config --add channels conda-forge
-conda config --set channel_priority strict
-conda install langchain-community
-```
 
 ### Jupyter notebook
 
