@@ -385,7 +385,7 @@ conda create -n miniconda27 python=2.7 ipykernel
 source activate miniconda27
 ```
 
-Related operations include `conda clean --all` and `conda update conda` to clear the cache and to use the latest conda, respectively.
+Related operations include `conda clean --all`, `conda config --set use_only_tar_bz2 true` and `conda update conda` to clear the cache, use `repodata.json` from an older or different source, and to use the latest conda, respectively.
 
 for Python 2.7 at `/home/$USER/.conda/envs/miniconda27`, where envs could be replaced with the `--prefix` option. These are only required once.
 
