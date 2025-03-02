@@ -8,6 +8,8 @@ The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
 
 ![ceuadmin](ceuadmin.png)
 
+Some source packages are kept at `/rds/project/rds-4o5vpvAowP0/software`.
+
 ## Entries
 
 The current list is as follows,
