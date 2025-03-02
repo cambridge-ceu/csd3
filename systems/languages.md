@@ -361,9 +361,9 @@ It is advised to use virual environments, i.e.,
 
 ```bash
 # inherit system-wide packages as well
-module load python/3.5
-virtualenv --system-site-packages py35
-source py35/bin/activate
+module load python/3.7
+virtualenv --system-site-packages py37
+source py37/bin/activate
 # pip new packages
 deactivate
 ```
@@ -377,18 +377,20 @@ We first load Anaconda and create virtual environments,
 ```bash
 module avail miniconda
 module load miniconda/2
-conda create -n py27 python=2.7 ipykernel
-source activate py27
+conda create -n miniconda27 python=2.7 ipykernel
+source activate miniconda27
 ```
 
-for Python 2.7 at `/home/$USER/.conda/envs/py27`, where envs could be replaced with the `--prefix` option. These are only required once.
+Related operations include `conda clean --all` and `conda update conda` to clear the cache and to use the latest conda, respectively.
 
-We can also load Anaconda and activate Python 3.5[^venv],
+for Python 2.7 at `/home/$USER/.conda/envs/miniconda27`, where envs could be replaced with the `--prefix` option. These are only required once.
+
+We can also load Anaconda and activate Python 3.7[^venv],
 
 ```bash
 module load miniconda/3
-conda create -n py35 python=3.5 ipykernel
-source activate py35
+conda create -n miniconda37 python=3.7 ipykernel
+source activate miniconda37
 ```
 
 and follow [Autoencoder in Keras tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial) on
