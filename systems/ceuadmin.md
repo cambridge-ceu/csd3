@@ -172,11 +172,12 @@ Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
 
 ### Python
 
-There are three sources,
+There are many sources,
 
 1. miniconda37/. Collections for Miniconda3 which is appropriate for a variety of software including its distribution of R.
 2. py27/. Collections for Python 2.7.
 3. py38/. Collections for Python 3.8.
+4. py3.11/. Collections for Python 3.11.
 
 One can use `source` command to load/install packages, e.g., `source ${RDS}/py38/bin/activate`.
 

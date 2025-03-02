@@ -398,7 +398,13 @@ source activate miniconda37
 ```
 
 and follow [Autoencoder in Keras tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial) on
-data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/)
+data from <http://yann.lecun.com/exdb/mnist/>. The following attempts to install `longchain-community`.
+
+```bash
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+conda install langchain-community
+```
 
 ### Jupyter notebook
 
