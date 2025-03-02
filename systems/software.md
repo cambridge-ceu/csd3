@@ -4,7 +4,7 @@ sort: 8
 
 # Software
 
-Software-specific configurations can often be found from `~/.config` and `~/.local`.
+Software-specific configurations can often be found from `~/.config` and `~/.local` or other `.*` locations such as `.vscode`.
 
 ## ceuadmin
 
