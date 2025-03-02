@@ -328,6 +328,8 @@ Hello, World!
 
 Web: <https://www.python.org/>
 
+### Python
+
 This can be invoked from a CSD3 console via `python` and `python3`. Libraries can be installed via `pip` and `pip3` (or equivalently `python -m pip install` and `python3 -m pip install`), e.g., the script
 
 ```bash
@@ -372,7 +374,9 @@ An alternative syntax is `python3 -m venv py37`
 
 Note that when this is set up, one only needs to restart from the `source` command. The `pip` is appropriate for installing small number of package; otherwise Anaconda ([https://www.anaconda.com/](https://www.anaconda.com/)) and Jupyter notebook ([https://jupyter.org/](https://jupyter.org/)) are useful.
 
-We first load Anaconda and create virtual environments,
+### Miniconda
+
+We first load Miniconda and create virtual environments,
 
 ```bash
 module avail miniconda
@@ -396,7 +400,9 @@ source activate miniconda37
 and follow [Autoencoder in Keras tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial) on
 data from [http://yann.lecun.com/exdb/mnist/](http://yann.lecun.com/exdb/mnist/)
 
-The Jupyter notebook can be started as follows,
+### Jupyter notebook
+
+It can be started as follows,
 
 ```bash
 hostname
