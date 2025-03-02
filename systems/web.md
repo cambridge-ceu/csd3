@@ -87,13 +87,19 @@ using `Tools` --> `Open web page` for `http://127.0.0.1:8080`.
 A list of options is as follows,
 
 ```bash
+xdg-settings --list
+xdg-settings --manual
+xdg-settings get default-web-browser
+xdg-settings check default-web-browser firefox.desktop
+xdg-settings set default-web-browser firefox.desktop
 xdg-settings set default-web-browser chromium.desktop
 xdg-settings set default-web-browser microsoft-edge.desktop
-xdg-settings set default-web-browser firefox.desktop
 xdg-settings set default-web-browser google-chrome.desktop
 ```
 
-For Microsoft Edge above, we see `microsoft-edge.desktop` at `/usr/share/applications`, and an attempt is made as follows,
+System-wide and user-specific .desktop files are at `/usr/share/applications` and `~/.local/share/applications/`, respectively.
+
+For Microsoft Edge above, we see `microsoft-edge.desktop`, and an attempt is made as follows,
 
 ```bash
 export src=/usr/local/Cluster-Apps/ceuadmin/edge/130.0.2849.56-1/usr/share/applications/
