@@ -411,6 +411,21 @@ source activate miniconda37
 and follow [Autoencoder in Keras tutorial](https://www.datacamp.com/community/tutorials/autoencoder-keras-tutorial) on
 data from <http://yann.lecun.com/exdb/mnist/>. The following attempts to install `longchain-community`.
 
+### Micromamba
+
+An attempt has been made with respect to 2.0.5 and Python/3.13,
+
+```bash
+module load ceuadmin/micromamba
+# currect shell
+eval "$(micromamba shell hook --shell bash)"
+micromamba activate
+micromamba deactivate
+# or
+micromamba create -n micromamba xtensor -c conda-forge
+micromamba activate micromamba
+```
+
 ### Jupyter notebook
 
 It can be started as follows,

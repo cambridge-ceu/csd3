@@ -372,6 +372,7 @@ All entries are ordered chronologically.
 | 2025-03-01  | leptonica/1.85.0                 | Generic              |
 | ""          | tesseract/5.5.0                  | Generic[^tesseract]  |
 | 2025-03-02  | apidog/latest                    | Generic[^apidog]     |
+| 2025-03-03  | micromamba/2.0.5                 | Generic[^micromamba] |
 
 \* CEU or approved users only.
 
@@ -1836,4 +1837,35 @@ They are generated from script [setup.sh](setup.sh),
     unzip  Apidog-linux-latest.zip
     ./Apidog.AppImage  --appimage-extract
     ./apidog --no-sandbox --help
+    ```
+
+[^micromamba]: **micromamba**
+
+    Web: <https://mamba.readthedocs.io/en/latest/index.html>
+
+    ```bash
+    export dst=/rds/project/rds-4o5vpvAowP0/software/micromamba/2.0.5
+    mkdir -p $dst && cd $dst
+    curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | \
+    tar -xvj bin/micromamba
+    export MAMBA_ROOT_PREFIX=$dst
+    eval "$(./bin/micromamba shell hook -s posix)"
+    micromamba activate
+    micromamba install python=3.13 jupyter -c conda-forge
+    export MAMBA_ROOT_PREFIX=$CEUADMIN/micromamba/2.0.5
+    mkdir $CEUADMIN/micromamba
+    ln -sf $dst $CEUADMIN/micromamba/2.0.5
+    # current shell
+    eval "$(micromamba shell hook --shell bash)"
+    micromamba activate
+    micromamba deactivate
+    ```
+
+    Note that to save space, a symbolic link is created from the project space. The usual environment creation also works,
+
+    ```bash
+    micromamba create -n micromamba xtensor -c conda-forge
+    micromamba activate micromamba
+    micromamba config append channels conda-forge
+    micromamba config set channel_priority strict
     ```
