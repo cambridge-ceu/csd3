@@ -1813,6 +1813,18 @@ They are generated from script [setup.sh](setup.sh),
     make && make install
     ```
 
+    It is necessary to set up the languages,
+
+    ```bash
+    wget -qO- https://github.com/tesseract-ocr/tessdata_best/archive/refs/tags/4.1.0.tar.gz | \
+    tar xvfz -
+    export TESSDATA_PREFIX="/usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0"
+    tesseract --list-langs
+    tesseract lang.jpeg lang -l eng
+    ```
+
+    where the last line extract text from `lang.jpeg` into `lang.txt`.
+
 [^apidog]: **apidog**
 
     ```bash
