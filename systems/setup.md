@@ -1796,8 +1796,12 @@ They are generated from script [setup.sh](setup.sh),
     curl -L https://ollama.com/download/ollama-linux-amd64.tgz -o ollama-linux-amd64.tgz
     tar tvfz ollama-linux-amd64.tgz
     ollama --help
+    ollama serve &
     ollama list
     ```
+
+    Note that `ollama serve` command procedes `ollama list` for available models, and the `--help` option will list environment variables such as OLLAMA_HOST (default 127.0.0.1:11434).
+
 
 [^tesseract]: **tesseract**
 
