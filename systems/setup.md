@@ -1734,6 +1734,35 @@ They are generated from script [setup.sh](setup.sh),
 
     The NODE_PATH variable is output from running `readlink -f ../lib/node_modules` at the `bin/` directory.
 
+    The useful `codedown` module can be made available as follows,
+
+    ```bash
+    module load ceuadmin/node
+    npm install -g codedown
+    ```
+
+    We see that
+
+    ```
+    added 8 packages in 5s
+    npm notice
+    npm notice New major version of npm available! 10.8.2 -> 11.1.0
+    npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.1.0
+    npm notice To update run: npm install -g npm@11.1.0
+    npm notice
+    ```
+
+    As suggesteed, we issue `npm install -g npm@11.1.0` to see
+
+    ```
+    removed 8 packages, and changed 100 packages in 19s
+
+    24 packages are looking for funding
+      run `npm fund` for details
+    ```
+
+    We can extract Python code as `cat DeepSeek.md | codedown python`.
+
 [^chrome]: **chrome**
 
     ```bash
