@@ -179,7 +179,11 @@ There are many sources,
 3. py38/. Collections for Python 3.8.
 4. py3.11/. Collections for Python 3.11.
 
-One can use `source` command to load/install packages, e.g., `source ${RDS}/py38/bin/activate`.
+One can use `source` command to load/install packages, e.g., `source ${RDS}/py38/bin/activate`. A list of modules can be checked with
+
+```bash
+pip list
+```
 
 ## Non-CEU users
 
