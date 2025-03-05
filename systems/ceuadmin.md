@@ -182,8 +182,11 @@ There are many sources,
 One can use `source` command to load/install packages, e.g., `source ${RDS}/py38/bin/activate`. A list of modules can be checked with
 
 ```bash
+conda list
 pip list
 ```
+
+for Minicoda and Python, respectively.
 
 ## Non-CEU users
 
