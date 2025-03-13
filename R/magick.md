@@ -6,6 +6,10 @@ sort: 15
 
 > The magick package provide a modern and simple toolkit for image processing in R. It wraps the ImageMagick STL which is the most comprehensive open-source image processing library available today.
 
+## 2.8.5
+
+Module `ceuadmin/DjVuLibre` is used to recompile `ceuadmin/ImageMagick/7.1.1-31`; as before `install.packages("magick")` goes smoothly.
+
 ## 2.8.3/2.8.4
 
 ### gcc/8.5
