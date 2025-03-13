@@ -373,6 +373,7 @@ All entries are ordered chronologically.
 | ""          | tesseract/5.5.0                  | Generic[^tesseract]  |
 | 2025-03-02  | apidog/latest                    | Generic[^apidog]     |
 | 2025-03-03  | micromamba/2.0.5                 | Generic[^micromamba] |
+| 2025-03-13  | DjVuLibre/3.5.28                 | Generic              |
 
 \* CEU or approved users only.
 
