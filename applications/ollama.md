@@ -190,3 +190,36 @@ This is from deepseek-r1.32b,
 > molecules in the atmosphere, like nitrogen and oxygen. This scattering occurs predominantly during the day when the sun is high, making the sky appear blue. At sunrise or sunset,
 > longer paths through the atmosphere scatter out much of the blue light, revealing reds and oranges. Additionally, higher altitudes with thinner air result in a deeper blue sky due to
 > reduced scattering.
+
+## SLURM
+
+It is lengthy from the login session, so an attempt is made for a batch job,
+
+```bash
+#!/usr/bin/bash
+
+#SBATCH --job-name=_ollama
+#SBATCH --account PETERS-SL3-CPU
+#SBATCH --partition icelake-himem
+#SBATCH --mem=28800
+#SBATCH --time=12:00:00
+#SBATCH --error=/rds/user/jhz22/hpc-work/ollama/_ollama_%A_%a.err
+#SBATCH --output=/rds/user/jhz22/hpc-work/ollama/_ollama_%A_%a.out
+#SBATCH --export ALL
+
+. /etc/profile.d/modules.sh
+module purge
+module load rhel8/default-icl
+module load ceuadmin/ollama
+
+export TMPDIR=/rds/user/jhz22/hpc-work/work
+export output=/rds/user/jhz22/hpc-work/ollama/gemma3.txt
+
+ollama serve &
+sleep 1m
+touch $output
+ollama run gemma3 "Why the sky is blue?" >> $output
+export OLLAMA_HOST=127.0.0.1:8000
+```
+
+where 1 minute is granted to establish the server, followed by a call with our prompt as a command-line argument.
