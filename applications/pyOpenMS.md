@@ -8,7 +8,7 @@ The prerequisites involve CSD3 location, [GNU C](https://gcc.gnu.org/), [cmake](
 
 ## 3.3.0
 
-Web: <https://openms.readthedocs.io/en/release3.0.0/openms-applications-and-tools/installation.html>
+Web: <https://openms.readthedocs.io/en/latest/about/installation.html>
 
 An attempt to set up pyOpenMS is as follows,
 
@@ -34,19 +34,20 @@ module load ceuadmin/Anaconda3/2023.09-0
 conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
-export ENVS=/usr/local/Cluster-Apps/ceuadmin/OpenMS/3.0.0-icelake/Anaconda3
+export ENVS=/usr/local/Cluster-Apps/ceuadmin/OpenMS/3.3.0-icelake/Anaconda3
 conda create --prefix ${ENVS} --yes
 conda install -c openms --prefix=${ENVS} pyopenms --yes
 ```
 
-The contributed libraries are set up as noted earlier,
+The contributed libraries and non-GitHub installation are set up as noted earlier,
 
 ```bash
 cd OpenMS-3.3.0
+module load gcc/11
 # assuming files are ready from contrib/archives
 cmake -DBUILD_TYPE=ALL contrib
-cmake -DGIT_TRACKING=OFF -DENABLE_UPDATE_CHECK=OFF -DCMAKE_INSTALL_PREFIX=$CEUADMIN/OpenMS/3.0.0-icelake \
-      -DPYOPENMS=OFF -DOPENMS_COVERAGE=OFF ../OpenMS-3.0.0
+cmake -DGIT_TRACKING=OFF -DENABLE_UPDATE_CHECK=OFF -DCMAKE_INSTALL_PREFIX=$CEUADMIN/OpenMS/3.3.0-icelake \
+      -DPYOPENMS=OFF -DOPENMS_COVERAGE=OFF ../OpenMS-3.3.0
 make edit_cache
 ```
 
@@ -71,7 +72,7 @@ and `make edit_cache` allows for manual editing.
 ### THIDPARTY
 
 ```bash
-cd Open-3.0.0
+cd Open-3.3.0
 git clone https://github.com/OpenMS/THIRDPARTY/
 ```
 
