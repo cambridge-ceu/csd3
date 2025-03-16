@@ -375,6 +375,7 @@ All entries are ordered chronologically.
 | 2025-03-03  | micromamba/2.0.5                 | Generic[^micromamba] |
 | 2025-03-13  | DjVuLibre/3.5.28                 | Generic              |
 | ""          | ollama/0.6.0                     | Generic              |
+| 2025-03-16  | qt/6.8.2                         | Generic              |
 
 \* CEU or approved users only.
 
