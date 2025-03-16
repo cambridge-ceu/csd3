@@ -8,7 +8,7 @@ The prerequisites involve CSD3 location, [GNU C](https://gcc.gnu.org/), [cmake](
 
 ## 3.3.0
 
-Web: <https://openms.readthedocs.io/en/latest/about/installation.html>
+Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
 
 An attempt to set up pyOpenMS is as follows,
 
