@@ -372,12 +372,12 @@ All entries are ordered chronologically.
 | 2025-03-01  | leptonica/1.85.0                 | Generic              |
 | ""          | tesseract/5.5.0                  | Generic[^tesseract]  |
 | 2025-03-02  | apidog/latest                    | Generic[^apidog]     |
-| 2025-03-03  | micromamba/2.0.5                 | Generic[^micromamba] |
+| 2025-03-03  | micromamba/2.0.5                 | Generic              |
 | 2025-03-13  | DjVuLibre/3.5.28                 | Generic              |
 | ""          | ollama/0.6.0                     | Generic              |
 | 2025-03-16  | qt/6.8.2                         | Generic              |
 | ""          | Anaconda3/2024.10-1              | Generic[^Anaconda3]  |
-| 2025-03-17  | micromamba/2.0.7                 | Generic              |
+| 2025-03-17  | micromamba/2.0.7                 | Generic[^micromamba] |
 | ""          | binutils/2.44                    | Generic              |
 
 \* CEU or approved users only.
@@ -1897,7 +1897,8 @@ They are generated from script [setup.sh](setup.sh),
     Web: <https://mamba.readthedocs.io/en/latest/index.html>
 
     ```bash
-    export dst=/rds/project/rds-4o5vpvAowP0/software/micromamba/2.0.5
+    module load gcc/11.2.0/gcc/rjvgspag
+    export dst=/rds/project/rds-4o5vpvAowP0/software/micromamba/2.0.7
     mkdir -p $dst && cd $dst
     curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | \
     tar -xvj bin/micromamba
@@ -1905,9 +1906,9 @@ They are generated from script [setup.sh](setup.sh),
     eval "$(./bin/micromamba shell hook -s posix)"
     micromamba activate
     micromamba install python=3.13 jupyter -c conda-forge
-    export MAMBA_ROOT_PREFIX=$CEUADMIN/micromamba/2.0.5
+    export MAMBA_ROOT_PREFIX=$CEUADMIN/micromamba/2.0.7
     mkdir $CEUADMIN/micromamba
-    ln -sf $dst $CEUADMIN/micromamba/2.0.5
+    ln -sf $dst $CEUADMIN/micromamba/2.0.7
     # current shell
     eval "$(micromamba shell hook --shell bash)"
     micromamba activate
@@ -1923,4 +1924,4 @@ They are generated from script [setup.sh](setup.sh),
     micromamba config set channel_priority strict
     ```
 
-    Module `ceuadmin/micromamba/2.0.7` uses `gcc/11` as required by `OpenMS/3.3.0`.
+    Module `ceuadmin/micromamba/2.0.5` uses the default `gcc/8.5.0` but `OpenMS/3.3.0` requires higher version.
