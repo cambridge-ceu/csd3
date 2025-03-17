@@ -43,64 +43,42 @@ so `python pyopenms_test.py` responses. Note that currently it uses Python 3.9.6
 
 Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
 
-An attempt to set up pyOpenMS is as follows,
-
 ```bash
-#!/bin/bash
+## pyOpenMS
+module load ceuadmin/micromamba
+micromamba install -c openms pyopenms
+micromamba search qt
+micromamba install qt==6.7.2
+micromamba activate base
 
-#SBATCH --job-name=_pyOpenMS
-#SBATCH --account=PETERS-SL3-CPU
-#SBATCH --partition=icelake-himem
-#SBATCH --mem=28800
-#SBATCH --time=12:00:00
-#SBATCH --cpus-per-task=4  # Use 4 cores per task
-
-#SBATCH --output=/home/jhz22/pyOpenMS.o
-#SBATCH --error=/home/jhz22/pyOpenMS.e
-
-. /etc/profile.d/modules.sh
-module purge
-module load rhel8/default-icl
-export PERL5LIB=
-
-module load ceuadmin/Anaconda3/2023.09-0
-conda config --add channels defaults
-conda config --add channels bioconda
-conda config --add channels conda-forge
-export ENVS=/usr/local/Cluster-Apps/ceuadmin/OpenMS/3.3.0-icelake/Anaconda3
-conda create --prefix ${ENVS} --yes
-conda install -c openms --prefix=${ENVS} pyopenms --yes
-```
-
-The contributed libraries and non-GitHub installation are set up as noted earlier,
-
-```bash
-cd OpenMS-3.3.0
-module load gcc/11
-# assuming files are ready from contrib/archives
+## GitHub
+module load gcc/11.2.0/gcc/rjvgspag
+module load texlive
+git clone https://github.com/OpenMS/OpenMS
+cd OpenMS/
+mkdir contrib
+git submodule update --init contrib
+module list
 cmake -DBUILD_TYPE=ALL contrib
-cmake -DGIT_TRACKING=OFF -DENABLE_UPDATE_CHECK=OFF -DCMAKE_INSTALL_PREFIX=$CEUADMIN/OpenMS/3.3.0-icelake \
-      -DPYOPENMS=OFF -DOPENMS_COVERAGE=OFF ../OpenMS-3.3.0
+git clone https://github.com/OpenMS/THIRDPARTY/
 make edit_cache
+
+cmake -DCMAKE_BUILD_TYPE=Release -DOPENMS_CONTRIB_LIBS=$CEUADMIN/micromamba/2.0.7/lib  -DCMAKE_PREFIX_PATH=contrib \
+      -DPYOPENMS=ON -DCMAKE_INSTALL_PREFIX=$CEUADMIN/OpenMS/3.3.0 -Wno-dev .
 ```
 
-where the contrib/archives directory only needs to contain the following files,
+where `make edit_cache` allows for manual editing and the `archives` directory contains the following files,
 
 ```
-boost_1_78_0.tar
+boost_1_78_0.tar.gz
 bzip2-1.0.5.tar.gz
 CoinMP-1.8.3-vs22.tar.gz
-eigen-3.3.4.tar
-glpk-4.46.tar
-hdf5-1.10.5.tar.gz
-kissfft-130.tar.gz
+eigen-3.4.0.tar.gz
+hdf5-1_14_3.tar.gz
 libsvm-3.12.tar.gz
-openmp-12.0.1.src.tar.xz
 Xerces-C_3_2_0.tar.gz
-zlib-1.2.11.tar
+zlib-1.2.11.tar.gz
 ```
-
-and `make edit_cache` allows for manual editing.
 
 ### THIDPARTY
 
