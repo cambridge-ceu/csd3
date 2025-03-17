@@ -376,6 +376,7 @@ All entries are ordered chronologically.
 | 2025-03-13  | DjVuLibre/3.5.28                 | Generic              |
 | ""          | ollama/0.6.0                     | Generic              |
 | 2025-03-16  | qt/6.8.2                         | Generic              |
+| ""          | Anaconda3/2024.10-1              | Generic[^Anaconda3]  |
 | 2025-03-17  | micromamba/2.0.7                 | Generic              |
 
 \* CEU or approved users only.
@@ -1871,6 +1872,24 @@ They are generated from script [setup.sh](setup.sh),
     ./Apidog.AppImage  --appimage-extract
     ./apidog --no-sandbox --help
     ```
+
+[^Anaconda3]: **Anaconda3**
+
+    Only some relevant information is kept here,
+
+    ```
+    https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
+    PREFIX=/usr/local/Cluster-Apps/ceuadmin/Anaconda3/2024.10-1
+    conda config --set auto_activate_base false
+    # PyOpenMS
+    source /rds/project/rds-4o5vpvAowP0/software/Anaconda3-2024.10-1/bin/activate
+    conda config --add channels defaults
+    conda config --add channels bioconda
+    conda config --add channels conda-forge
+    conda install -c openms pyopenms --yes
+    ```
+
+    However, it is prohibitive to furnish installation of `pyopenms` therefore is be abandoned and replaced with `micromamba` below.
 
 [^micromamba]: **micromamba**
 
