@@ -378,6 +378,7 @@ All entries are ordered chronologically.
 | 2025-03-16  | qt/6.8.2                         | Generic              |
 | ""          | Anaconda3/2024.10-1              | Generic[^Anaconda3]  |
 | 2025-03-17  | micromamba/2.0.7                 | Generic              |
+| ""          | binutils/2.44                    | Generic              |
 
 \* CEU or approved users only.
 
