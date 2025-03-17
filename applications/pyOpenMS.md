@@ -2,11 +2,44 @@
 sort: 44
 ---
 
-# AlphaPept and PyOpenMS
+# AlphaPept and pyOpenMS
 
 The prerequisites involve CSD3 location, [GNU C](https://gcc.gnu.org/), [cmake](https://cmake.org/), [TeX Live](https://www.tug.org/texlive/) and [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
-## 3.3.0
+## AlphaPept
+
+Web: [https://github.com/MannLabs/alphapept](https://github.com/MannLabs/alphapept) ([latest installer](https://github.com/MannLabs/alphapept/releases/latest)).
+
+After loading the Miniconda environment, we proceed with
+
+```bash
+pip install "alphapept[stable,gui-stable]"
+```
+
+Script for testing is called `alphapept_test.py` [^benchmark] which takes the following arguments,
+
+| Name                                                                               | Description                                                                          |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `alphapept_settings.yaml`                                                          | A configuratino file containing relevant information, e.g., paths and `n_processes`. |
+| `szwk021704i19101xms1.raw`, `szwk021704i19101xms3.raw`, `szwk021704i19101xms5.raw` | Raw spectra                                                                          |
+| `2022-07-05-reviewed-contam-UP000005640.fasta`                                     | Database of protein sequences:                                                       |
+
+## pyOpenMS
+
+Web: <https://pyopenms.readthedocs.io/en/latest/index.html>
+
+### Miniconda installation
+
+```bash
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+conda install -c openms pyopenms
+```
+
+so `python pyopenms_test.py` responses. Note that currently it uses Python 3.9.6 therefore a slight backtrack which could be remedied by compiling from OpenMS in the next section.
+
+## OpenMS/3.3.0
 
 Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
 
@@ -83,7 +116,7 @@ singularity pull docker://ghcr.io/openms/openms-library:3.0.0
 singularity pull docker://ghcr.io/openms/openms-executables::3.0.0
 ```
 
-## 3.0.0-pre-develop-2022-09-28
+## OpenMS/3.0.0-pre-develop-2022-09-28
 
 ### CSD3 location
 
@@ -132,39 +165,6 @@ export PYTHONPATH=${Caprion}/miniconda3/lib/python3.9/site-packages:${PYTHONPATH
 Note that Python 3.9.12 is installed, and in all cases the current environtal variables are carried over.
 
 Only Step 2 is necessary in later calls.
-
-## AlphaPept
-
-Web: [https://github.com/MannLabs/alphapept](https://github.com/MannLabs/alphapept) ([latest installer](https://github.com/MannLabs/alphapept/releases/latest)).
-
-After loading the Miniconda environment, we proceed with
-
-```bash
-pip install "alphapept[stable,gui-stable]"
-```
-
-Script for testing is called `alphapept_test.py` [^benchmark] which takes the following arguments,
-
-| Name                                                                               | Description                                                                          |
-| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `alphapept_settings.yaml`                                                          | A configuratino file containing relevant information, e.g., paths and `n_processes`. |
-| `szwk021704i19101xms1.raw`, `szwk021704i19101xms3.raw`, `szwk021704i19101xms5.raw` | Raw spectra                                                                          |
-| `2022-07-05-reviewed-contam-UP000005640.fasta`                                     | Database of protein sequences:                                                       |
-
-## pyOpenMS
-
-Web: [https://pyopenms.readthedocs.io/en/latest/index.html](https://pyopenms.readthedocs.io/en/latest/index.html)
-
-### Miniconda installation
-
-```bash
-conda config --add channels defaults
-conda config --add channels bioconda
-conda config --add channels conda-forge
-conda install -c openms pyopenms
-```
-
-so `python pyopenms_test.py` responses. Note that currently it uses Python 3.9.6 therefore a slight backtrack which could be remedied by compiling from OpenMS in the next section.
 
 ### OpenMS
 
@@ -437,7 +437,7 @@ Rost HL, et al., OpenMS: a flexible open-source software platform for mass spect
 ---
 
 [^python]:
-    The website [https://cmake.org/cmake/help/latest/module/FindPython.html](https://cmake.org/cmake/help/latest/module/FindPython.html) explains several options which appear unnecessary for cmake 3.19.
+    The website <https://cmake.org/cmake/help/latest/module/FindPython.html> explains several options which appear unnecessary for cmake 3.19.
 
     ```bash
     export Python_LIBRARY_DIRS=${Caprion}/miniconda3/lib
