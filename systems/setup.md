@@ -1889,7 +1889,7 @@ They are generated from script [setup.sh](setup.sh),
     conda install -c openms pyopenms --yes
     ```
 
-    As it is prohibitive to furnish installation of `pyopenms` therefore is be abandoned and replaced with `micromamba` above.
+    As it is prohibitive to furnish installation of `pyopenms` therefore abandoned and replaced with `micromamba` above.
 
 [^micromamba]: **micromamba**
 
