@@ -376,6 +376,7 @@ All entries are ordered chronologically.
 | 2025-03-13  | DjVuLibre/3.5.28                 | Generic              |
 | ""          | ollama/0.6.0                     | Generic              |
 | 2025-03-16  | qt/6.8.2                         | Generic              |
+| 2025-03-17  | micromamba/2.0.7                 | Generic              |
 
 \* CEU or approved users only.
 
@@ -1901,3 +1902,5 @@ They are generated from script [setup.sh](setup.sh),
     micromamba config append channels conda-forge
     micromamba config set channel_priority strict
     ```
+
+    Module `ceuadmin/micromamba/2.0.7` uses `gcc/11` as required by `OpenMS/3.3.0`.
