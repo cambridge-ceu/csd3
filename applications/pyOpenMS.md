@@ -74,8 +74,11 @@ boost_1_78_0.tar.gz
 bzip2-1.0.5.tar.gz
 CoinMP-1.8.3-vs22.tar.gz
 eigen-3.4.0.tar.gz
+glpk-4.46.tar.gz
 hdf5-1_14_3.tar.gz
+kissfft-130.tar.gz
 libsvm-3.12.tar.gz
+openmp-12.0.1.src.tar.xz
 Xerces-C_3_2_0.tar.gz
 zlib-1.2.11.tar.gz
 ```
