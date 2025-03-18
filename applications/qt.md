@@ -24,7 +24,7 @@ module load gcc/11.2.0/gcc/rjvgspag
 module load ninja/1.10.2/gcc/s36yvrfz
 module load ceuadmin/node/18.20.5
 source $root/py3.11/bin/activate
-pip install html2lib
+pip install html5lib
 ./init-repository
 git submodule update --init --recursive
 ./configure -prefix $PWD/qtbase
@@ -74,7 +74,7 @@ export LLVM_INSTALL_DIR=${HPC_WORK}/llvm
 cd -
 mkdir qt_build
 cd qt_build
-../qt5/configure -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.13 -developer-build -opensource -no-sql-mysql -sqlite \
+../qt5/configure -prefix /usr/local/Cluster-Apps/ceuadmin/qt/6.8.2 -developer-build -opensource -no-sql-mysql -sqlite \
                  -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
 gmake
 ```
