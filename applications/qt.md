@@ -31,13 +31,15 @@ cmake --build . --parallel 4
 cmake --install .
 ```
 
-Alternatively, from <https://account.qt.io/> we obtain and start
+and download `qlitehtml` directly, as `https://github.com/playground/qlitehtml` is no longer available.
+
+Alternatively, from <https://account.qt.io/> we login, obtain and start
 
 ```bash
 ./qt-online-installer-linux-x64-4.8.1.run
 ```
 
-and login to extract to qt-6.8.2.
+to extract to qt-6.8.2.
 
 ## 5.15.13
 
