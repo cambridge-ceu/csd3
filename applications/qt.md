@@ -8,7 +8,17 @@ Web: <https://wiki.qt.io/Main>
 
 ## 6.8.2
 
-Our working directory is as follows,
+### Personal account
+
+Fom <https://account.qt.io/> we login, obtain and start
+
+```bash
+./qt-online-installer-linux-x64-4.8.1.run
+```
+
+to extract to qt-6.8.2. It turns out this is the best option!
+
+Our working directory below is as follows,
 
 ```bash
 export root=/rds/project/rds-4o5vpvAowP0/software
@@ -64,16 +74,6 @@ rm -f config.status config.log Makefile
 rm -rf CMakeCache.txt CMakeFiles/
 rm -rf autom4te.cache
 ```
-
-### Personal account
-
-Fom <https://account.qt.io/> we login, obtain and start
-
-```bash
-./qt-online-installer-linux-x64-4.8.1.run
-```
-
-to extract to qt-6.8.2.
 
 ## 5.15.13
 

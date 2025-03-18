@@ -391,6 +391,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2024-09-01 | MaxQuant/2.6.4.0            | Proteomics          |
     | ""         | Perseus/2.1.2.0             | Proteomics          |
     | 2024-10-13 | sage/0.14.7                 | Proteomics          |
+    | 2025-03-18 | OpenMS/3.4.0                | Proteomics          |
 
 
     \* CEU or approved users only.

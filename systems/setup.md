@@ -379,6 +379,7 @@ All entries are ordered chronologically.
 | ""          | Anaconda3/2024.10-1              | Generic[^Anaconda3]  |
 | 2025-03-17  | micromamba/2.0.7                 | Generic[^micromamba] |
 | ""          | binutils/2.44                    | Generic              |
+| 2025-03-18  | OpenMS/3.4.0                     | Proteomics           |
 
 \* CEU or approved users only.
 

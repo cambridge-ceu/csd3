@@ -28,7 +28,7 @@ Script for testing is called `alphapept_test.py` [^benchmark] which takes the fo
 
 Web: <https://pyopenms.readthedocs.io/en/latest/index.html>
 
-### Miniconda installation
+We stick to Miniconda installation,
 
 ```bash
 conda config --add channels defaults
@@ -39,7 +39,7 @@ conda install -c openms pyopenms
 
 so `python pyopenms_test.py` responses. Note that currently it uses Python 3.9.6 therefore a slight backtrack which could be remedied by compiling from OpenMS in the next section.
 
-## OpenMS/3.3.0
+## OpenMS/3.4.0
 
 Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
 
@@ -52,6 +52,8 @@ micromamba search qt
 micromamba install qt==6.7.2
 micromamba activate base
 ```
+
+Note that we also install Qt 6.7.2, which can be used by OpenMS but somewhat scattered into different directories.
 
 ### OpenMS
 
@@ -76,30 +78,31 @@ cmake -DBUILD_TYPE=ALL -DNUMBER_OF_JOBS=4 -Wno-dev ../OpenMS/contrib
 cd $root
 mkdir OpenMS-build
 cd OpenMS-build
+module load ceuadmin/qt/6.8.2
 cmake -DCMAKE_BUILD_TYPE=Release -DOPENMS_CONTRIB_LIBS=$root/contrib-build \
-      -DBOOST_USE_STATIC=ON -DQt6_DIR=$root/qt-6.8.2/6.8.2/Src ../OpenMS
+      -DBOOST_USE_STATIC=ON -DQt6_DIR=$CEUADMIN/6.8.2 -DPYOPENMS=On \
+      -DSEARCH_ENGINES_DIRECTORY=$root/OpenMS/THIRDPARTY/Linux/64bit \
+      -DCMAKE_INSTALL_PREFIX=$CEUADMIN/OpenMS/3.4.0 ../OpenMS
 make targets
-make edit_cache
-
-cmake -DCMAKE_BUILD_TYPE=Release -DOPENMS_CONTRIB_LIBS=$CEUADMIN/micromamba/2.0.7/lib  -DCMAKE_PREFIX_PATH=contrib \
-      -DPYOPENMS=ON -DCMAKE_INSTALL_PREFIX=$CEUADMIN/OpenMS/3.3.0 -Wno-dev .
 ```
 
-where `make edit_cache` allows for manual editing and the `archives` directory contains the following files,
+where the `archives` directory contains the following files (* = to obtain from -DBUILD_TYPE=).
 
 ```
 boost_1_78_0.tar.gz
 bzip2-1.0.5.tar.gz
 CoinMP-1.8.3-vs22.tar.gz
 eigen-3.4.0.tar.gz
-glpk-4.46.tar.gz
+glpk-4.46.tar.gz*
 hdf5-1_14_3.tar.gz
-kissfft-130.tar.gz
+kissfft-130.tar.gz*
 libsvm-3.12.tar.gz
-openmp-12.0.1.src.tar.xz
+openmp-12.0.1.src.tar.xz*
 Xerces-C_3_2_0.tar.gz
 zlib-1.2.11.tar.gz
 ```
+
+and the module `ceuadmin/qt/6.8.2` is used instead for its compactness, especially `CMAKE_MODULE_PATH` is set.
 
 ### THIDPARTY
 
