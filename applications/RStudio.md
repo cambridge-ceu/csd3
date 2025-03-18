@@ -134,7 +134,7 @@ Aborted
 
 Additional information could also be seen from `export QT_DEBUG_PLUGINS=1` and run `rstudio` again.
 
-The error messages above can be bypassed with[^qt5]
+The error messages above can be bypassed with
 
 ```bash
 export QT_PLUGIN_PATH=/usr/lib64/qt5/plugins
@@ -282,58 +282,6 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
 
     and invoke with `source ~/.bashrc` from current session or automatically from the next onwards.
 
-[^qt5]: **qt/5**
-
-    Web: <https://doc.qt.io/qt-5/configure-options.html>, <https://github.com/qt>
-
-    The following are side notes on installation of Qt5 according to <https://forums.linuxmint.com/viewtopic.php?t=306738>, though no longer necessary for reasons above.
-
-    ```bash
-    git clone git://code.qt.io/qt/qt5.git
-    cd qt5
-    git checkout 5.15
-    perl init-repository
-    export LLVM_INSTALL_DIR=${HPC_WORK}/llvm
-    cd -
-    mkdir qt_build
-    cd qt_build
-    ../qt5/configure -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.13 -developer-build -opensource -no-sql-mysql -sqlite \
-                     -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
-    gmake
-    ```
-
-    The `Makefile` thus generated records the information at its header.
-
-    ```
-    /rds/project/jmmh2/rds-jmmh2-public_databases/software/qt_build_5.15.13/qtbase/bin/qmake -o Makefile /rds/project/jmmh2/rds-jmmh2-public_databases/software/qt5/qt.pro -- -opensource -prefix /usr/local/Cluster-Apps/ceuadmin/qt/5.15.13 -developer-build -opensource -nomake examples -nomake tests -Wno-unused-function -Wno-pragmas -Wno-unused-result -Wno-attributes
-    ```
-
-    With error `qglobal_p.h: No such file or directory` (5.15.7), according to <https://github.com/alexzorin/lpass-ui/issues/1> we get around with
-
-    ```bash
-    ln -sf /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/qt5/qtbase/include/QtCore/5.15.7/QtCore/private /rds/user/jhz22/hpc-work/include/QtCore
-    ```
-
-    The installation directory is visible/specified in `qtbase/bin/qt.conf`, namely,
-
-    ```
-    [EffectivePaths]
-    Prefix=..
-    [DevicePaths]
-    Prefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.13
-    [Paths]
-    Prefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.13
-    HostPrefix=/usr/local/Cluster-Apps/ceuadmin/qt/5.15.13
-    Sysroot=
-    SysrootifyPrefix=false
-    TargetSpec=linux-g++
-    HostSpec=linux-g++
-    [EffectiveSourcePaths]
-    Prefix=/rds/project/jmmh2/rds-jmmh2-public_databases/software/qt5/qtbase
-    ```
-
-    It requires ninja, `module load ninja;ninja --versions` gives 1.10.0 while `source py27/bin/activate;pip install ninja` uses 1.11.1.
-
     It also calls NSPR, which is installed as follows,
 
     ```bash
@@ -346,7 +294,6 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
               $([ $(uname -m) = x86_64 ] && echo --enable-64bit) &&
     make
     ```
-
 [^libstdc]: **libstdc++**
 
     A version which satisfies this can be furnished as follows,
