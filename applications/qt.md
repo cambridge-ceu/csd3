@@ -31,7 +31,7 @@ cmake --build . --parallel 4
 cmake --install .
 ```
 
-From <https://account.qt.io/>, we obtain and start with
+Alternatively, from <https://account.qt.io/> we obtain and start
 
 ```bash
 ./qt-online-installer-linux-x64-4.8.1.run
