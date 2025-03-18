@@ -23,7 +23,7 @@ git switch 6.8.2
 module load gcc/11.2.0/gcc/rjvgspag
 module load ninja/1.10.2/gcc/s36yvrfz
 module load ceuadmin/node/18.20.5
-source ~/rds/public_databases/software/py3.11/bin/activate
+source $root/py3.11/bin/activate
 pip install html2lib
 ./init-repository
 git submodule update --init --recursive
