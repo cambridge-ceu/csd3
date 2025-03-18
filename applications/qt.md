@@ -18,7 +18,8 @@ cd qt6
 git switch 6.8.2
 module load ninja/1.10.2/gcc/s36yvrfz
 module load node-js/14.15.1/gcc/5dha4niw
-module load python/3.8.11/gcc/pqdmnzmw
+source ~/rds/public_databases/software/py3.11/bin/activate
+pip install html2lib
 ./init-repository
 git submodule update --init --recursive
 ./configure -prefix $PWD/qtbase
