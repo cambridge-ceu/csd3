@@ -37,7 +37,7 @@ cmake --build . --parallel 4
 cmake --install .
 ```
 
-and download `qlitehtml` directly from <https://download.qt.io/archive/qt/6.8/6.8.2/submodules/>, as `https://github.com/playground/qlitehtml` is no longer available.
+and download `qlitehtml` directly from <https://download.qt.io/archive/qt/6.8/6.8.2/submodules/> followed by changes in qttools/config, etc., as `https://github.com/playground/qlitehtml` is no longer available.
 
 Since it is expected to be amended in the process, the following script is used to clearn partial configuration files,
 
