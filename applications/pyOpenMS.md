@@ -43,24 +43,65 @@ so `python pyopenms_test.py` responses. Note that currently it uses Python 3.9.6
 
 Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
 
+### pyOpenMS
+
 ```bash
-## pyOpenMS
 module load ceuadmin/micromamba
 micromamba install -c openms pyopenms
 micromamba search qt
 micromamba install qt==6.7.2
 micromamba activate base
+```
 
-## GitHub
+### qt/6.8.2
+
+GitHub: <https://github.com/qt/qt5> ([instructions](https://wiki.qt.io/Building_Qt_6_from_Git))
+
+```bash
+export root=/rds/project/rds-4o5vpvAowP0/software
+cd $root
+git clone https://github.com/qt/qt5 qt6
+cd qt6
+git switch 6.8.2
+module load ninja/1.10.2/gcc/s36yvrfz
+module load node-js/14.15.1/gcc/5dha4niw
+module load python/3.8.11/gcc/pqdmnzmw
+./init-repository
+./configure -prefix $PWD/qtbase
+cd $root
+mkdir qt6-build
+cd qt6-build
+../qt6/configure -prefix $CEUADMIN/qt/6.8.2
+../qt6./configure --prefix=. -skip qtdoc -skip qttranslations -skip qttools
+cmake --build . --parallel 4
+cmake --install .
+```
+
+### OpenMS
+
+The documentation keeps the GitHub clone intact.
+
+```bash
 module load gcc/11.2.0/gcc/rjvgspag
 module load texlive
+cd $root
 git clone https://github.com/OpenMS/OpenMS
 cd OpenMS/
-mkdir contrib
 git submodule update --init contrib
-module list
-cmake -DBUILD_TYPE=ALL contrib
 git clone https://github.com/OpenMS/THIRDPARTY/
+git submodule update --init THIRDPARTY
+cd $root
+# build contrib
+mkdir contrib-build
+cd contrib-build
+cmake -DBUILD_TYPE=ALL -DNUMBER_OF_JOBS=4 -Wno-dev ../OpenMS/contrib
+# build OpenMS
+cd $root
+mkdir OpenMS-build
+cd OpenMS-build
+cmake -DCMAKE_BUILD_TYPE=Release -DOPENMS_CONTRIB_LIBS=$root/contrib-build \
+      -DBOOST_USE_STATIC=ON -DQt6_DIR=$root/qt-6.8.2/6.8.2/Src ../OpenMS
+make targets
 make edit_cache
 
 cmake -DCMAKE_BUILD_TYPE=Release -DOPENMS_CONTRIB_LIBS=$CEUADMIN/micromamba/2.0.7/lib  -DCMAKE_PREFIX_PATH=contrib \
