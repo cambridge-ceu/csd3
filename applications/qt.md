@@ -12,7 +12,7 @@ Web: <https://wiki.qt.io/Main>
 
 Web: <https://github.com/qt/qt5> ([instructions](https://wiki.qt.io/Building_Qt_6_from_Git))
 
-By default, QtWebEngine/QtPdf requires gcc/10.0 or above, and Python3/html2lib.
+By default, QtWebEngine/QtPdf requires >gcc/10.0, Python3/html2lib, and node >14.19.
 
 ```bash
 export root=/rds/project/rds-4o5vpvAowP0/software
@@ -22,7 +22,7 @@ cd qt6
 git switch 6.8.2
 module load gcc/11.2.0/gcc/rjvgspag
 module load ninja/1.10.2/gcc/s36yvrfz
-module load node-js/14.15.1/gcc/5dha4niw
+module load ceuadmin/node/18.20.5
 source ~/rds/public_databases/software/py3.11/bin/activate
 pip install html2lib
 ./init-repository
