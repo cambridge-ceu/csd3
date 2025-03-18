@@ -10,12 +10,15 @@ Web: <https://wiki.qt.io/Main>
 
 GitHub: <https://github.com/qt/qt5> ([instructions](https://wiki.qt.io/Building_Qt_6_from_Git))
 
+By default, QtWebengine requires gcc/10.0 or above, and Python3/html2lib.
+
 ```bash
 export root=/rds/project/rds-4o5vpvAowP0/software
 cd $root
 git clone https://github.com/qt/qt5 qt6
 cd qt6
 git switch 6.8.2
+module load gcc/11.2.0/gcc/rjvgspag
 module load ninja/1.10.2/gcc/s36yvrfz
 module load node-js/14.15.1/gcc/5dha4niw
 source ~/rds/public_databases/software/py3.11/bin/activate
@@ -32,7 +35,7 @@ cmake --build . --parallel 4
 cmake --install .
 ```
 
-and download `qlitehtml` directly, as `https://github.com/playground/qlitehtml` is no longer available.
+and download `qlitehtml` directly from <https://download.qt.io/archive/qt/6.8/6.8.2/submodules/>, as `https://github.com/playground/qlitehtml` is no longer available.
 
 Alternatively, from <https://account.qt.io/> we login, obtain and start
 
