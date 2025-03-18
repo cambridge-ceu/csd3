@@ -31,11 +31,6 @@ cmake --build . --parallel 4
 cmake --install .
 ```
 
-Notes
-
-- litehtml,  <https://github.com/litehtml/litehtml>, is here <https://doc.qt.io/qt-6/qtassistant-attribution-litehtml.html>.
-- qlitehtml, <git clone https://gitee.com/suomier/qlitehtml.git>
-
 From <https://account.qt.io/>, we obtain and start with
 
 ```bash
