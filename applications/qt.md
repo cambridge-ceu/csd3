@@ -12,7 +12,7 @@ Web: <https://wiki.qt.io/Main>
 
 Web: <https://github.com/qt/qt5> ([instructions](https://wiki.qt.io/Building_Qt_6_from_Git))
 
-By default, QtWebengine requires gcc/10.0 or above, and Python3/html2lib.
+By default, QtWebEngine/QtPdf requires gcc/10.0 or above, and Python3/html2lib.
 
 ```bash
 export root=/rds/project/rds-4o5vpvAowP0/software
