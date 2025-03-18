@@ -8,23 +8,41 @@ Web: <https://wiki.qt.io/Main>
 
 ## 6.8.2
 
-### GitHub
-
-Web: <https://github.com/qt/qt5> ([instructions](https://wiki.qt.io/Building_Qt_6_from_Git))
-
-By default, QtWebEngine/QtPdf requires >gcc/10.0, Python3/html5lib 1.1, and node >14.19.
+Our working directory is as follows,
 
 ```bash
 export root=/rds/project/rds-4o5vpvAowP0/software
 cd $root
-git clone https://github.com/qt/qt5 qt6
-cd qt6
-git switch 6.8.2
 module load gcc/11.2.0/gcc/rjvgspag
 module load ninja/1.10.2/gcc/s36yvrfz
 module load ceuadmin/node/18.20.5
 source $root/py3.11/bin/activate
 pip install html5lib
+```
+
+By default, QtWebEngine/QtPdf requires >gcc/10.0, Python3/html5lib 1.1, and node >14.19.
+
+### Official release
+
+This turns to be easier than GitHub (see below) especially as the latter is problematic with `qttools`.
+
+```bash
+wget -qO- https://download.qt.io/official_releases/qt/6.8/6.8.2/single/qt-everywhere-src-6.8.2.tar.xz | \
+tar xJf -
+cd qt-everywhere-src-6.8.2/
+./configure --prefix=. -skip qtdoc -skip qttranslations -skip qttools
+cmake --build . --parallel 4
+cmake --install .
+```
+
+### GitHub
+
+Web: <https://github.com/qt/qt5> ([instructions](https://wiki.qt.io/Building_Qt_6_from_Git))
+
+```bash
+git clone https://github.com/qt/qt5 qt6
+cd qt6
+git switch 6.8.2
 ./init-repository
 git submodule update --init --recursive
 ./configure -prefix $PWD/qtbase
