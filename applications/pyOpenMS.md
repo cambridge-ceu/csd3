@@ -39,7 +39,7 @@ conda install -c openms pyopenms
 
 so `python pyopenms_test.py` responses. Note that currently it uses Python 3.9.6 therefore a slight backtrack which could be remedied by compiling from OpenMS in the next section.
 
-## OpenMS/3.3.0
+## OpenMS/3.4.0
 
 Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
 
@@ -87,7 +87,7 @@ cmake -DCMAKE_BUILD_TYPE=Release -DOPENMS_CONTRIB_LIBS=$root/contrib-build \
       -DNUMBER_OF_JOBS=4 \
       -DBOOST_USE_STATIC=ON -DQt6_DIR=$CEUADMIN/6.8.2 -DPYOPENMS=On \
       -DSEARCH_ENGINES_DIRECTORY=$root/OpenMS/THIRDPARTY/Linux/64bit \
-      -DCMAKE_INSTALL_PREFIX=$CEUADMIN/OpenMS/3.3.0 ../OpenMS
+      -DCMAKE_INSTALL_PREFIX=$CEUADMIN/OpenMS/3.4.0 ../OpenMS
 make targets
 ```
 
@@ -121,6 +121,45 @@ git clone https://github.com/OpenMS/THIRDPARTY/
 ```bash
 singularity pull docker://ghcr.io/openms/openms-library:3.0.0
 singularity pull docker://ghcr.io/openms/openms-executables::3.0.0
+```
+
+### Screen shots
+
+```
+$ OpenMSInfo
+
+Full documentation: http://www.openms.de/doxygen/release/3.4.0/html/TOPP_OpenMSInfo.html
+To cite OpenMS:
+ + Pfeuffer, J., Bielow, C., Wein, S. et al.. OpenMS 3 enables reproducible analysis of large-scale mass spectrometry data. Nat Methods (2024
+   ). doi:10.1038/s41592-024-02197-7.
+
+<< OpenMS Version >>
+Version      : 3.4.0
+Build time   : Mar 19 2025, 09:52:16
+Git sha1     : 20ead3d
+Git branch   : heads/release/3.3.0
+
+<< Installation information >>
+Data path    : /rds/project/rds-4o5vpvAowP0/software/OpenMS/share/OpenMS
+Temp path    : /rds/user/jhz22/hpc-work/work
+Userdata path: /home/jhz22/
+
+<< Build information >>
+Source path  : /rds/project/rds-4o5vpvAowP0/software/OpenMS/src/openms
+Binary path  : /rds/project/rds-4o5vpvAowP0/software/OpenMS-build/src/openms
+Binary arch  : 64 bit
+Build type   : Release
+LP-Solver    : COIN-OR
+OpenMP       : enabled (maxThreads = 1)
+SIMD extensions : SSE, SSE2, SSE3
+Extra CXX flags : <none>
+
+<< OS Information >>
+Name: Linux
+Version: 8.10
+Architecture: 64 bit
+
+OpenMSInfo took 0.13 s (wall), 0.00 s (CPU), 0.00 s (system), 0.00 s (user); Peak Memory Usage: 28 MB.
 ```
 
 ## OpenMS/3.0.0-pre-develop-2022-09-28
