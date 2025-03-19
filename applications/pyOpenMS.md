@@ -84,6 +84,7 @@ mkdir OpenMS-build
 cd OpenMS-build
 module load ceuadmin/qt/6.8.2
 cmake -DCMAKE_BUILD_TYPE=Release -DOPENMS_CONTRIB_LIBS=$root/contrib-build \
+      -DNUMBER_OF_JOBS=4 \
       -DBOOST_USE_STATIC=ON -DQt6_DIR=$CEUADMIN/6.8.2 -DPYOPENMS=On \
       -DSEARCH_ENGINES_DIRECTORY=$root/OpenMS/THIRDPARTY/Linux/64bit \
       -DCMAKE_INSTALL_PREFIX=$CEUADMIN/OpenMS/3.3.0 ../OpenMS
