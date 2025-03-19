@@ -9,6 +9,8 @@ The [Research Computing Services](https://www.csd3.cam.ac.uk/) provies an excell
 of the [Cardiovascular Epidemiology Unit](https://www.phpc.cam.ac.uk/ceu/) (CEU), where all information about procedures and access 
 requests can be found from **W:\Administration\CSD3 Data Users\Information for Users**.
 
+Here are some getting started on CSD3 tutorials, <https://www.hpc.cam.ac.uk/getting-started-csd3-tutorials>.
+
 Basic information is available from a CSD3 console
 
 ```bash
