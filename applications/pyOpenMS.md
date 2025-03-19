@@ -43,17 +43,19 @@ so `python pyopenms_test.py` responses. Note that currently it uses Python 3.9.6
 
 Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
 
+```bash
+export root=/rds/project/rds-4o5vpvAowP0/software
+cd $root
+```
+
 ### pyOpenMS
 
 ```bash
-module load ceuadmin/micromamba
-micromamba install -c openms pyopenms
-micromamba search qt
-micromamba install qt==6.7.2
-micromamba activate base
+source $root/py3.11/bin/activate
+pip install pyopenms
 ```
 
-Note that we also install Qt 6.7.2, which can be used by OpenMS but somewhat scattered into different directories.
+which installs pyOpenMS 3.3.0.
 
 ### OpenMS
 
@@ -62,8 +64,6 @@ The documentation keeps the GitHub clone intact.
 ```bash
 module load gcc/11.2.0/gcc/rjvgspag
 module load texlive
-export root=/rds/project/rds-4o5vpvAowP0/software
-cd $root
 git clone https://github.com/OpenMS/OpenMS
 cd OpenMS/
 git submodule update --init contrib
