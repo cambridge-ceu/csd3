@@ -39,7 +39,7 @@ conda install -c openms pyopenms
 
 so `python pyopenms_test.py` responses. Note that currently it uses Python 3.9.6 therefore a slight backtrack which could be remedied by compiling from OpenMS in the next section.
 
-## OpenMS/3.4.0
+## OpenMS/3.3.0
 
 Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
 
@@ -66,6 +66,7 @@ module load gcc/11.2.0/gcc/rjvgspag
 module load texlive
 git clone https://github.com/OpenMS/OpenMS
 cd OpenMS/
+git branch release/3.3.0
 git submodule update --init contrib
 git clone https://github.com/OpenMS/THIRDPARTY/
 git submodule update --init THIRDPARTY
@@ -82,7 +83,7 @@ module load ceuadmin/qt/6.8.2
 cmake -DCMAKE_BUILD_TYPE=Release -DOPENMS_CONTRIB_LIBS=$root/contrib-build \
       -DBOOST_USE_STATIC=ON -DQt6_DIR=$CEUADMIN/6.8.2 -DPYOPENMS=On \
       -DSEARCH_ENGINES_DIRECTORY=$root/OpenMS/THIRDPARTY/Linux/64bit \
-      -DCMAKE_INSTALL_PREFIX=$CEUADMIN/OpenMS/3.4.0 ../OpenMS
+      -DCMAKE_INSTALL_PREFIX=$CEUADMIN/OpenMS/3.3.0 ../OpenMS
 make targets
 ```
 
