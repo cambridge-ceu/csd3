@@ -91,7 +91,7 @@ cmake -DCMAKE_BUILD_TYPE=Release -DOPENMS_CONTRIB_LIBS=$root/contrib-build \
 make targets
 ```
 
-where the `archives` directory contains the following files (* = to obtain from -DBUILD_TYPE=).
+where the `contrib-build/archives` directory contains the following files (* = to obtain from -DBUILD_TYPE=).
 
 ```
 boost_1_78_0.tar.gz
