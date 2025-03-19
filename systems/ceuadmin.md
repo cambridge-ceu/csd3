@@ -131,7 +131,7 @@ annotation.
 
 ## CEU users
 
-CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS`, `phenoscanner`, `polyphen`, 
+CEU users will be able to use `ANNOVAR`, `ensembl-vep`, `OpenMS` (ceuadmin/OpenMS/3.4.0 now available for CSD3 users), `phenoscanner` (MySQL server yet to resolve), `polyphen`,
 `KentUtils`/`MAGMA`/`Pascal`/`VEGASV2`/`fgwas`/`locuszoom` linking internal projects/personal space (additional requests need to be 
 made).
 
