@@ -1898,7 +1898,6 @@ They are generated from script [setup.sh](setup.sh),
     Web: <https://mamba.readthedocs.io/en/latest/index.html>
 
     ```bash
-    module load gcc/11.2.0/gcc/rjvgspag
     export dst=/rds/project/rds-4o5vpvAowP0/software/micromamba/2.0.7
     mkdir -p $dst && cd $dst
     curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | \
@@ -1924,5 +1923,3 @@ They are generated from script [setup.sh](setup.sh),
     micromamba config append channels conda-forge
     micromamba config set channel_priority strict
     ```
-
-    Module `ceuadmin/micromamba/2.0.5` uses the default `gcc/8.5.0` but `OpenMS/3.3.0` requires higher version.
