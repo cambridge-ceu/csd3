@@ -80,13 +80,7 @@ zlib-1.2.11.tar.gz
 ```
 
 and the module `ceuadmin/qt/6.8.2` is used instead for its compactness, especially `CMAKE_MODULE_PATH` is set.
-
-### THIDPARTY
-
-```bash
-cd Open-3.3.0
-git clone https://github.com/OpenMS/THIRDPARTY/
-```
+The command `git clone https://github.com/OpenMS/THIRDPARTY/` downloads third-party files into the THIRDPARTY directory.
 
 ### singularity
 
