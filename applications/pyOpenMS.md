@@ -27,7 +27,7 @@ Script for testing is called `alphapept_test.py` [^benchmark] which takes the fo
 | `szwk021704i19101xms1.raw`, `szwk021704i19101xms3.raw`, `szwk021704i19101xms5.raw` | Raw spectra                                                                          |
 | `2022-07-05-reviewed-contam-UP000005640.fasta`                                     | Database of protein sequences:                                                       |
 
-A more recent example is available from Google CoLab as in Strauss, et al. (2024).
+A more recent example is available from Google CoLab ([AlphaPept.ipynb](files/AlphaPept.ipynb)) as in Strauss, et al. (2024).
 
 ## OpenMS/3.4.0
 
