@@ -6,13 +6,11 @@ sort: 32
 
 Web: <https://ollama.com/>.
 
-As of 26/2/2025, the current version is 0.5.12.
-
 ## Installation
 
 ```bash
-curl -L https://ollama.com/download/ollama-linux-amd64.tgz -o ollama-linux-amd64.tgz
-tar tvfz ollama-linux-amd64.tgz
+curl -L https://ollama.com/download/ollama-linux-amd64.tgz | \
+tar xvfz -
 ollama --help
 ollama serve &
 ollama list
