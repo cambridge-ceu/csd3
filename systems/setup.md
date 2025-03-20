@@ -380,6 +380,7 @@ All entries are ordered chronologically.
 | 2025-03-17  | micromamba/2.0.7                 | Generic[^micromamba] |
 | ""          | binutils/2.44                    | Generic              |
 | 2025-03-18  | OpenMS/3.4.0                     | Proteomics           |
+| 2025-03-20  | ollama/0.6.2                     | Generic              |
 
 \* CEU or approved users only.
 
@@ -1830,8 +1831,8 @@ They are generated from script [setup.sh](setup.sh),
     It is rather standard,
 
     ```bash
-    curl -L https://ollama.com/download/ollama-linux-amd64.tgz -o ollama-linux-amd64.tgz
-    tar tvfz ollama-linux-amd64.tgz
+    curl -L https://ollama.com/download/ollama-linux-amd64.tgz | \
+    tar xvfz -
     ollama --help
     ollama serve &
     ollama list
@@ -1877,21 +1878,25 @@ They are generated from script [setup.sh](setup.sh),
 
 [^Anaconda3]: **Anaconda3**
 
-    Only some relevant information is kept here,
+    We start with
 
-    ```
+    ```bash
     https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
     PREFIX=/usr/local/Cluster-Apps/ceuadmin/Anaconda3/2024.10-1
     conda config --set auto_activate_base false
-    # PyOpenMS
+    ```
+
+    Due to its complex environment, it is prohibitive to furnish any installation therefore preferable to create new environment from this.
+
+    ```bash
     source /rds/project/rds-4o5vpvAowP0/software/Anaconda3-2024.10-1/bin/activate
+    conda create --name new_env python=3.9
+    conda activate new_env
     conda config --add channels defaults
     conda config --add channels bioconda
     conda config --add channels conda-forge
     conda install -c openms pyopenms --yes
     ```
-
-    As it is prohibitive to furnish installation of `pyopenms` therefore abandoned and replaced with `micromamba` above.
 
 [^micromamba]: **micromamba**
 
