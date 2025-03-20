@@ -33,7 +33,7 @@ Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
 
 ### OpenMS
 
-The documentation keeps the GitHub clone intact.
+We keep the GitHub clone intact.
 
 ```bash
 module load gcc/11.2.0/gcc/rjvgspag
