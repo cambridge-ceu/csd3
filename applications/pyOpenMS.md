@@ -11,7 +11,7 @@ The prerequisites involve CSD3 location, [GNU C](https://gcc.gnu.org/), [cmake](
 ```bash
 export root=/rds/project/rds-4o5vpvAowP0/software
 source $root/py3.11/bin/activate
-pip install "alphapept[stable,gui-stable]"
+pip install alphapept
 pip install pyopenms
 pip install autowrap
 pip install pytest
