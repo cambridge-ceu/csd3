@@ -15,10 +15,9 @@ pip install "alphapept[stable,gui-stable]"
 pip install pyopenms
 pip install autowrap
 pip install pytest
-pip install numpy==2.0
 ```
 
-which installs alphapept 0.4.8 and pyopenms 3.3.0.
+which installs alphapept 0.5.3 and pyopenms 3.3.0.
 
 Script for testing is called `alphapept_test.py` [^benchmark] which takes the following arguments,
 
