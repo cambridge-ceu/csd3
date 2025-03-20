@@ -82,7 +82,18 @@ zlib-1.2.11.tar.gz
 and the module `ceuadmin/qt/6.8.2` is used instead for its compactness, especially `CMAKE_MODULE_PATH` is set.
 The command `git clone https://github.com/OpenMS/THIRDPARTY/` downloads third-party files into the THIRDPARTY directory.
 
-Upon completion, we see the following screen shots:
+The option -DPYOPENMS=On in fact builds `pyopenms` as well, which can be loaded as follows,
+
+```python
+import sys
+import os
+
+root = os.getenv('root')
+sys.path.append(os.path.join(root, 'pyOpenMS'))
+import pyopenms
+```
+
+More importantly, we can have the following screenshot:
 
 ```
 $ OpenMSInfo
