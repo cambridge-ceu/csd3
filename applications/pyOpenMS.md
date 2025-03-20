@@ -4,9 +4,7 @@ sort: 43
 
 # AlphaPept and pyOpenMS
 
-Web for AlphaPept: [https://github.com/MannLabs/alphapept](https://github.com/MannLabs/alphapept) ([latest installer](https://github.com/MannLabs/alphapept/releases/latest)).
-
-Web for pyOpenMS: <https://pyopenms.readthedocs.io/en/latest/index.html>
+Web: AlphaPept: [https://github.com/MannLabs/alphapept](https://github.com/MannLabs/alphapept) ([latest installer](https://github.com/MannLabs/alphapept/releases/latest)), pyOpenMS: <https://pyopenms.readthedocs.io/en/latest/index.html>
 
 The prerequisites involve CSD3 location, [GNU C](https://gcc.gnu.org/), [cmake](https://cmake.org/), [TeX Live](https://www.tug.org/texlive/) and [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
