@@ -27,6 +27,8 @@ Script for testing is called `alphapept_test.py` [^benchmark] which takes the fo
 | `szwk021704i19101xms1.raw`, `szwk021704i19101xms3.raw`, `szwk021704i19101xms5.raw` | Raw spectra                                                                          |
 | `2022-07-05-reviewed-contam-UP000005640.fasta`                                     | Database of protein sequences:                                                       |
 
+A more recent example is available from Google CoLab as in Strauss, et al. (2024).
+
 ## OpenMS/3.4.0
 
 Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
@@ -430,7 +432,9 @@ Further information is available from cmake website [^python].
 
 Strauss MT, et al., AlphaPept: a modern and open framework for MS-based proteomics. *Nat Commun* 15, 2168 (2024). <https://doi.org/10.1038/s41467-024-46485-4>.
 
-Rost HL, et al., OpenMS: a flexible open-source software platform for mass spectrometry data analysis. *Nat Meth* 2016; 13, 9: 741-748. [doi:10.1038/nmeth.3959](https://www.nature.com/articles/nmeth.3959).
+Rost HL, et al., OpenMS: a flexible open-source software platform for mass spectrometry data analysis. *Nat Methods* 13, 9: 741-748 (2016). [doi:10.1038/nmeth.3959](https://www.nature.com/articles/nmeth.3959).
+
+Pfeuffer J, et al. OpenMS 3 enables reproducible analysis of large-scale mass spectrometry data. *Nat Methods* 21, 365–367 (2024). <https://doi.org/10.1038/s41592-024-02197-7>
 
 ## Other URLs
 
