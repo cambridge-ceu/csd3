@@ -31,6 +31,15 @@ Web: <https://pyopenms.readthedocs.io/en/latest/index.html>
 We stick to Miniconda installation,
 
 ```bash
+module load miniconda/3
+conda create -n miniconda38 python=3.8 ipykernel
+conda activate miniconda38
+conda deactivate
+```
+
+where `conda create` is unnecessary in later calls.
+
+```bash
 conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
@@ -324,19 +333,6 @@ source py38/bin/activate
 ```
 
 Note the `virtualenv py3[7|8]` lines are unnecessary after the installations.
-
-### Miniconda3
-
-This is in regard to use of module on CSD3.
-
-```bash
-module load miniconda/3
-conda create -n miniconda38 python=3.8 ipykernel
-conda activate miniconda38
-conda deactivate
-```
-
-where `conda create` is unnecessary in later calls.
 
 ### AlphaPept
 
