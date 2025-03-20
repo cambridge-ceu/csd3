@@ -82,14 +82,7 @@ zlib-1.2.11.tar.gz
 and the module `ceuadmin/qt/6.8.2` is used instead for its compactness, especially `CMAKE_MODULE_PATH` is set.
 The command `git clone https://github.com/OpenMS/THIRDPARTY/` downloads third-party files into the THIRDPARTY directory.
 
-### Singularity
-
-```bash
-singularity run ghcr.io/openms/openms-library-sif
-singularity run ghcr.io/openms/openms-executables-sif
-```
-
-### Screen shots
+Upon completion, we see the following screen shots:
 
 ```
 $ OpenMSInfo
@@ -126,6 +119,13 @@ Version: 8.10
 Architecture: 64 bit
 
 OpenMSInfo took 0.13 s (wall), 0.00 s (CPU), 0.00 s (system), 0.00 s (user); Peak Memory Usage: 28 MB.
+```
+
+### Singularity
+
+```bash
+singularity run ghcr.io/openms/openms-library-sif
+singularity run ghcr.io/openms/openms-executables-sif
 ```
 
 ## OpenMS/3.0.0-pre-develop-2022-09-28
