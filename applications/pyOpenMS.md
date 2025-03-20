@@ -29,11 +29,11 @@ Script for testing is called `alphapept_test.py` [^benchmark] which takes the fo
 
 A more recent example is available from Google CoLab ([AlphaPept.ipynb](files/AlphaPept.ipynb)) as in Strauss, et al. (2024).
 
-## OpenMS/3.4.0
+## OpenMS
 
 Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
 
-### OpenMS
+### 3.4.0
 
 We keep the GitHub clone intact.
 
