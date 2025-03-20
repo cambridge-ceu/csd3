@@ -4,17 +4,23 @@ sort: 43
 
 # AlphaPept and pyOpenMS
 
+Web for AlphaPept: [https://github.com/MannLabs/alphapept](https://github.com/MannLabs/alphapept) ([latest installer](https://github.com/MannLabs/alphapept/releases/latest)).
+
+Web for pyOpenMS: <https://pyopenms.readthedocs.io/en/latest/index.html>
+
 The prerequisites involve CSD3 location, [GNU C](https://gcc.gnu.org/), [cmake](https://cmake.org/), [TeX Live](https://www.tug.org/texlive/) and [Miniconda](https://docs.conda.io/en/latest/miniconda.html).
 
-## AlphaPept
-
-Web: [https://github.com/MannLabs/alphapept](https://github.com/MannLabs/alphapept) ([latest installer](https://github.com/MannLabs/alphapept/releases/latest)).
-
-After loading the Miniconda environment, we proceed with
-
 ```bash
+export root=/rds/project/rds-4o5vpvAowP0/software
+source $root/py3.11/bin/activate
 pip install "alphapept[stable,gui-stable]"
+pip install pyopenms
+pip install autowrap
+pip install pytest
+pip install numpy==2.0
 ```
+
+which installs alphapept 0.4.8 and pyopenms 3.3.0.
 
 Script for testing is called `alphapept_test.py` [^benchmark] which takes the following arguments,
 
@@ -24,50 +30,9 @@ Script for testing is called `alphapept_test.py` [^benchmark] which takes the fo
 | `szwk021704i19101xms1.raw`, `szwk021704i19101xms3.raw`, `szwk021704i19101xms5.raw` | Raw spectra                                                                          |
 | `2022-07-05-reviewed-contam-UP000005640.fasta`                                     | Database of protein sequences:                                                       |
 
-## pyOpenMS
-
-Web: <https://pyopenms.readthedocs.io/en/latest/index.html>
-
-We stick to Miniconda installation,
-
-```bash
-module load miniconda/3
-conda create -n miniconda38 python=3.8 ipykernel
-conda activate miniconda38
-conda deactivate
-```
-
-where `conda create` is unnecessary in later calls.
-
-```bash
-conda config --add channels defaults
-conda config --add channels bioconda
-conda config --add channels conda-forge
-conda install -c openms pyopenms
-```
-
-so `python pyopenms_test.py` responses. Note that currently it uses Python 3.9.6 therefore a slight backtrack which could be remedied by compiling from OpenMS in the next section.
-
 ## OpenMS/3.4.0
 
 Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
-
-```bash
-export root=/rds/project/rds-4o5vpvAowP0/software
-cd $root
-```
-
-### pyOpenMS
-
-```bash
-source $root/py3.11/bin/activate
-pip install pyopenms
-pip install autowrap
-pip install pytest
-pip install numpy==2.0
-```
-
-which installs pyOpenMS 3.3.0.
 
 ### OpenMS
 
