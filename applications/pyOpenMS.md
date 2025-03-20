@@ -82,11 +82,11 @@ zlib-1.2.11.tar.gz
 and the module `ceuadmin/qt/6.8.2` is used instead for its compactness, especially `CMAKE_MODULE_PATH` is set.
 The command `git clone https://github.com/OpenMS/THIRDPARTY/` downloads third-party files into the THIRDPARTY directory.
 
-### singularity
+### Singularity
 
 ```bash
-singularity pull docker://ghcr.io/openms/openms-library:3.0.0
-singularity pull docker://ghcr.io/openms/openms-executables::3.0.0
+singularity run ghcr.io/openms/openms-library-sif
+singularity run ghcr.io/openms/openms-executables-sif
 ```
 
 ### Screen shots
@@ -261,6 +261,13 @@ cd -
 cmake -DBUILD_TYPE=ALL contrib
 cmake -DGIT_TRACKING=OFF -DENABLE_UPDATE_CHECK=OFF -DOPENMS_CONTRIB_LIBS=contrib \
       -DPYOPENMS=OFF -DOPENMS_COVERAGE=OFF ../OpenMS-${version}
+```
+
+### Sigularity
+
+```bash
+singularity pull docker://ghcr.io/openms/openms-library:3.0.0
+singularity pull docker://ghcr.io/openms/openms-executables::3.0.0
 ```
 
 ---
