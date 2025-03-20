@@ -41,7 +41,6 @@ module load gcc/11.2.0/gcc/rjvgspag
 module load texlive
 git clone https://github.com/OpenMS/OpenMS
 cd OpenMS/
-git switch release/3.3.0
 git submodule update --init contrib
 git clone https://github.com/OpenMS/THIRDPARTY/
 git submodule update --init THIRDPARTY
