@@ -2,7 +2,11 @@
 sort: 43
 ---
 
-# AlphaPept and pyOpenMS
+## OpenMS
+
+Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
+
+## AlphaPept and pyOpenMS
 
 Web: AlphaPept: [https://github.com/MannLabs/alphapept](https://github.com/MannLabs/alphapept) ([latest installer](https://github.com/MannLabs/alphapept/releases/latest)), pyOpenMS: <https://pyopenms.readthedocs.io/en/latest/index.html>
 
@@ -28,10 +32,6 @@ Script for testing is called `alphapept_test.py` [^benchmark] which takes the fo
 | `2022-07-05-reviewed-contam-UP000005640.fasta`                                     | Database of protein sequences:                                                       |
 
 A more recent example is available from Google CoLab ([AlphaPept.ipynb](files/AlphaPept.ipynb)) as in Strauss, et al. (2024).
-
-## OpenMS
-
-Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
 
 ### 3.4.0
 
