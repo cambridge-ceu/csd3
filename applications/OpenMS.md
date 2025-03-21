@@ -2,7 +2,7 @@
 sort: 43
 ---
 
-## OpenMS
+# OpenMS
 
 Web: <https://openms.de/>, <https://openms.readthedocs.io/en/latest/>
 
