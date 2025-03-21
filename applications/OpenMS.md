@@ -33,7 +33,7 @@ Script for testing is called `alphapept_test.py` [^benchmark] which takes the fo
 
 A more recent example is available from Google CoLab ([AlphaPept.ipynb](files/AlphaPept.ipynb)) as in Strauss, et al. (2024).
 
-### 3.4.0
+## 3.4.0
 
 We keep the GitHub clone intact.
 
@@ -132,7 +132,7 @@ Architecture: 64 bit
 OpenMSInfo took 0.13 s (wall), 0.00 s (CPU), 0.00 s (system), 0.00 s (user); Peak Memory Usage: 28 MB.
 ```
 
-### Singularity
+## Singularity
 
 ```bash
 singularity run ghcr.io/openms/openms-library-sif
