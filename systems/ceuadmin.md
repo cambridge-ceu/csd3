@@ -392,7 +392,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | ""         | Perseus/2.1.2.0             | Proteomics          |
     | 2024-10-13 | sage/0.14.7                 | Proteomics          |
     | 2025-03-18 | OpenMS/3.4.0                | Proteomics          |
-
+    | 2025-03-22 | diann/2.0.2                 | Proteomics          |
 
     \* CEU or approved users only.
 

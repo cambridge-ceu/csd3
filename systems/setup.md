@@ -381,6 +381,7 @@ All entries are ordered chronologically.
 | ""          | binutils/2.44                    | Generic              |
 | 2025-03-18  | OpenMS/3.4.0                     | Proteomics           |
 | 2025-03-20  | ollama/0.6.2                     | Generic              |
+| 2025-03-22  | diann/2.0.2                      | Proteomics[^diann]   |
 
 \* CEU or approved users only.
 
@@ -1928,3 +1929,23 @@ They are generated from script [setup.sh](setup.sh),
     micromamba config append channels conda-forge
     micromamba config set channel_priority strict
     ```
+
+[^diann]: **DIA-NN 2.0.2**
+
+    We see 
+
+    ```
+    ./diann
+    ./diann: /lib64/libm.so.6: version `GLIBC_2.29' not found (required by ./diann)
+    ./diann: /lib64/libc.so.6: version `GLIBC_2.32' not found (required by ./diann)
+    ./diann: /lib64/libc.so.6: version `GLIBC_2.34' not found (required by ./diann)
+    ./diann: /lib64/libc.so.6: version `GLIBC_2.33' not found (required by ./diann)
+    ```
+
+    and resort to singularity
+
+    ```bash
+    singularrity build diann.sif diann.def
+    singularity run diann.sif
+    ```
+

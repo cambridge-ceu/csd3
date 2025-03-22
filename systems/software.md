@@ -85,6 +85,49 @@ where `pull` generates `pwiz-skyline-i-agree-to-the-vendor-licenses_latest.sif` 
 
 See also <https://docs.sylabs.io/guides/2.6/user-guide/singularity_and_docker.html>.
 
+An example is ready from `diann.def` for `diann/2.0.2`,
+
+```
+BootStrap: docker
+From: ubuntu:22.04
+
+%files
+    diann-linux  /usr/local/bin/diann-linux
+    libc10.so    /usr/lib/
+    libgomp-98b21ff3.so.1  /usr/lib/
+    libtimsdata.so  /usr/lib/
+    libtorch_cpu.so  /usr/lib/
+    libtorch.so  /usr/lib/
+
+%post
+    # Set timezone
+    ln -fs /usr/share/zoneinfo/UTC /etc/localtime
+
+    # Update package lists and install dependencies
+    apt-get update
+    apt-get install -y libgomp1 libstdc++6 libc6 locales
+
+    # Configure locales
+    locale-gen en_US.UTF-8
+    echo "LANG=en_US.UTF-8" > /etc/locale.conf
+    echo "LC_ALL=en_US.UTF-8" >> /etc/locale.conf
+
+    # Clean up apt cache
+    rm -rf /var/lib/apt/lists/*
+
+    # Ensure diann-linux is executable and create a symlink
+    chmod +x /usr/local/bin/diann-linux
+    ln -sf /usr/local/bin/diann-linux /usr/local/bin/diann
+
+%runscript
+    exec /usr/local/bin/diann "$@"
+
+%labels
+    Author YourName
+    Version 2.0.2
+    Description "DiaNN container for proteomics analysis"
+```
+
 ## SLURM
 
 Due to increase of size, the entry is moved here, <https://cambridge-ceu.github.io/csd3/systems/ParallelComputing.html>.
