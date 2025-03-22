@@ -1948,4 +1948,3 @@ They are generated from script [setup.sh](setup.sh),
     singularrity build diann.sif diann.def
     singularity run diann.sif
     ```
-
