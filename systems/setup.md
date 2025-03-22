@@ -1946,5 +1946,5 @@ They are generated from script [setup.sh](setup.sh),
 
     ```bash
     singularrity build diann.sif diann.def
-    singularity run diann.sif
+    singularity run diann.sif --fasta /path/to/human_proteome.fasta --dir /path/to/data/ --out output.txt
     ```
