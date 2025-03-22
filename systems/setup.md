@@ -1056,7 +1056,7 @@ They are generated from script [setup.sh](setup.sh),
     singularity run crux.sif
     ```
 
-    where [`crux.def`](applications/files/crux.def) is rather simple.
+    where [`crux.def`](files/crux.def) is rather simple.
 
     ---
 
@@ -1953,7 +1953,7 @@ They are generated from script [setup.sh](setup.sh),
     ./diann: /lib64/libc.so.6: version `GLIBC_2.33' not found (required by ./diann)
     ```
 
-    and resort to singularity with [diann.def](applications/files/diann.def)
+    and resort to singularity with [diann.def](files/diann.def)
 
     ```bash
     singularrity build diann.sif diann.def
