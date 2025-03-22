@@ -1049,6 +1049,17 @@ They are generated from script [setup.sh](setup.sh),
 
     The binary provided requires GLIBC_2.29 which is not avaiable yet problematic with ceuadmin/glibc/2.29-icelake.
 
+    We get around with issue through singularity (apptainer version 1.3.6-1.el8),
+
+    ```bash
+    singularity build crux.sif crux.def
+    singularity run crux.sif
+    ```
+
+    where [`crux.def`](applications/files/crux.def) is rather simple.
+
+    ---
+
     Under CentOS 7, it cannot access `https://noble.gs.washington.edu/crux-downloads/pwiz-src-3_0_24044_fd6604f.tar.bz2`.
     Under CentOS 8 we proceed with
 
@@ -1942,7 +1953,7 @@ They are generated from script [setup.sh](setup.sh),
     ./diann: /lib64/libc.so.6: version `GLIBC_2.33' not found (required by ./diann)
     ```
 
-    and resort to singularity
+    and resort to singularity with [diann.def](applications/files/diann.def)
 
     ```bash
     singularrity build diann.sif diann.def
