@@ -382,6 +382,7 @@ All entries are ordered chronologically.
 | 2025-03-18  | OpenMS/3.4.0                     | Proteomics           |
 | 2025-03-20  | ollama/0.6.2                     | Generic              |
 | 2025-03-22  | diann/2.0.2                      | Proteomics[^diann]   |
+| 2025-03-25  | firefox/60.5.1.esr               | Generic              |
 
 \* CEU or approved users only.
 

@@ -34,6 +34,13 @@ ll -rt | grep "Dec  3" | awk '{print "rm -fr "$NF}' | bash
 
 Several alternatives are described below.
 
+A singularity get-around is possible with this,
+
+```bash
+module load ceuadmin/firefox/60.5.1esr
+firefox &
+```
+
 ## Chrome
 
 ```bash
