@@ -41,6 +41,13 @@ module load ceuadmin/firefox/60.5.1esr
 firefox &
 ```
 
+A near attempt is with [20.04.def](files/20.04.def) but remains problematic even with
+
+```bash
+singularity build 20.04.sif 20.04.def
+singularity run --bind $HPC_WORK/work:/mnt/tmp 20.04.sif`
+```
+
 ## Chrome
 
 ```bash
