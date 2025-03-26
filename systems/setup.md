@@ -382,7 +382,8 @@ All entries are ordered chronologically.
 | 2025-03-18  | OpenMS/3.4.0                     | Proteomics           |
 | 2025-03-20  | ollama/0.6.2                     | Generic              |
 | 2025-03-22  | diann/2.0.2                      | Proteomics[^diann]   |
-| 2025-03-25  | firefox/60.5.1.esr               | Generic              |
+| 2025-03-25  | firefox/60.5.1.esr               | Generic[^esr]        |
+| 2025-03-26  | firefox/136.0                    | Generic              |
 
 \* CEU or approved users only.
 
@@ -1960,3 +1961,7 @@ They are generated from script [setup.sh](setup.sh),
     singularrity build diann.sif diann.def
     singularity run diann.sif --fasta /path/to/human_proteome.fasta --dir /path/to/data/ --out output.txt
     ```
+
+[^esr]: **firefox/60.5.1esr**
+
+    This is actually the only version (from shub://nuitrcs/singularity-firefox) which works on CSD3.

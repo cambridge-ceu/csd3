@@ -32,20 +32,31 @@ The `firefox` browser available at `/usr/bin/firefox` is dysfunctional, and when
 ll -rt | grep "Dec  3" | awk '{print "rm -fr "$NF}' | bash
 ```
 
+A close attempt is with [20.04.def](files/20.04.def) but remains problematic.
+
+```bash
+# firefox/136.0 (64-bit) as of 26/3/2025
+singularity build 20.04.sif 20.04.def
+singularity run --bind $HPC_WORK/work:/mnt/tmp 20.04.sif`
+# A showcase of instance
+singularity instance start 20.04.sif 20.04
+singularity instance list
+## quit with 'exit'
+singularity shell instance://20.04
+## exec take commands such as 'bash', 'ls', 'apt-get'
+singularity exec instance://20.04 firefox
+singularity instance stop 20.04
+```
+
 Several alternatives are described below.
+
+## Firefox/60.5
 
 A singularity get-around is possible with this,
 
 ```bash
 module load ceuadmin/firefox/60.5.1esr
 firefox &
-```
-
-A near attempt is with [20.04.def](files/20.04.def) but remains problematic even with
-
-```bash
-singularity build 20.04.sif 20.04.def
-singularity run --bind $HPC_WORK/work:/mnt/tmp 20.04.sif`
 ```
 
 ## Chrome
