@@ -48,6 +48,17 @@ singularity exec instance://20.04 firefox
 singularity instance stop 20.04
 ```
 
+Alternatively, a pre-made container can be used,
+
+```bash
+singularity pull docker://ubuntu:20.04
+singularity build --fakeroot --sandbox ubuntu_20.04_sandbox/ ubuntu_20.04.sif
+singularity shell --fakeroot --writable ubuntu_20.04_sandbox/
+# apt update
+# apt install -y firefox
+singularity exec ubuntu_20.04_sandbox/ /usr/bin/firefox
+```
+
 Several alternatives are described below.
 
 ## Firefox/60.5
