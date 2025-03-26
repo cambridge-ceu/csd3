@@ -54,8 +54,12 @@ Alternatively, it can be added to an existing container as follows,
 singularity pull docker://ubuntu:20.04
 singularity build --fakeroot --sandbox ubuntu_20.04_sandbox/ ubuntu_20.04.sif
 singularity shell --fakeroot --writable ubuntu_20.04_sandbox/
+# export LANG=en_US.UTF-8
+# export LANGUAGE=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
 # apt update
 # apt install -y firefox
+# exit
 singularity exec ubuntu_20.04_sandbox/ /usr/bin/firefox
 singularity build 20.04.sif ubuntu_20.04_sandbox/
 singularity exec 20.04.sif /usr/bin/firefox
