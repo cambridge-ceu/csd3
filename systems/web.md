@@ -67,7 +67,7 @@ singularity exec 20.04.sif /usr/bin/firefox
 
 Several alternatives are described below.
 
-## Firefox/60.5
+## Firefox
 
 A singularity get-around is possible with this,
 
