@@ -135,6 +135,8 @@ singularrity build diann.sif diann.def
 singularity run diann.sif --fasta /path/to/human_proteome.fasta --dir /path/to/data/ --out output.txt
 ```
 
+See <https://www.bioconductor.org/help/docker/> on bioconductor.
+
 ## SLURM
 
 Due to increase of size, the entry is moved here, <https://cambridge-ceu.github.io/csd3/systems/ParallelComputing.html>.
