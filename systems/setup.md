@@ -1969,6 +1969,8 @@ They are generated from script [setup.sh](setup.sh),
 
 [^llama.cpp]: **llama.cpp**
 
+    GitHub: <https://github.com/ggml-org/llama.cpp>
+
     ```bash
     git clone https://github.com/ggerganov/llama.cpp.git
     cd llama.cpp
