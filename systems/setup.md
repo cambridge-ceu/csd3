@@ -384,6 +384,7 @@ All entries are ordered chronologically.
 | 2025-03-22  | diann/2.0.2                      | Proteomics[^diann]   |
 | 2025-03-25  | firefox/60.5.1-1.el7             | Generic[^60.5]       |
 | 2025-03-26  | firefox/136.0                    | Generic              |
+| 2025-03-29  | llama.cpp/0.0.4991               | Generic[^llama.cpp]  |
 
 \* CEU or approved users only.
 
@@ -1965,3 +1966,25 @@ They are generated from script [setup.sh](setup.sh),
 [^60.5]: **firefox/60.5.1-1.el7**
 
     This is actually the only version (from shub://nuitrcs/singularity-firefox) which works on CSD3.
+
+[^llama.cpp]: **llama.cpp**
+
+    ```bash
+    git clone https://github.com/ggerganov/llama.cpp.git
+    cd llama.cpp
+    mkdir build && cd build
+    cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/0.0.4991 ..
+    make && make install
+    ```
+
+    An example with `/DeepSeek-V3-0324`,
+
+    ```bash
+    module load ceuadmin/llama.cpp/0.0.4991
+    wget https://huggingface.co/unsloth/DeepSeek-V3-0324-GGUF/resolve/main/UD-IQ2_XXS/DeepSeek-V3-0324-UD-IQ2_XXS-00001-of-00005.gguf
+    wget https://huggingface.co/unsloth/DeepSeek-V3-0324-GGUF/resolve/main/UD-IQ2_XXS/DeepSeek-V3-0324-UD-IQ2_XXS-00002-of-00005.gguf
+    wget https://huggingface.co/unsloth/DeepSeek-V3-0324-GGUF/resolve/main/UD-IQ2_XXS/DeepSeek-V3-0324-UD-IQ2_XXS-00003-of-00005.gguf
+    wget https://huggingface.co/unsloth/DeepSeek-V3-0324-GGUF/resolve/main/UD-IQ2_XXS/DeepSeek-V3-0324-UD-IQ2_XXS-00004-of-00005.gguf
+    wget https://huggingface.co/unsloth/DeepSeek-V3-0324-GGUF/resolve/main/UD-IQ2_XXS/DeepSeek-V3-0324-UD-IQ2_XXS-00005-of-00005.gguf
+    llama-gguf-split --merge DeepSeek-V3-0324-UD-IQ2_XXS-00001-of-00005.gguf DeepSeek-V3-0324-UD-IQ2_XXS.gguf
+    ```

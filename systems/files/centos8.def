@@ -1,0 +1,25 @@
+Bootstrap: docker
+From: centos:centos8
+
+%help
+Based on https://github.com/touala/WhatsHap
+
+%post
+    dnf check-update && dnf upgrade -y && dnf install -y \
+        "langpacks-en" \
+        "glibc-all-langpacks"
+
+    mkdir /home/whatshap
+    cd /home/whatshap
+
+    cat > /.singularity.d/env/99-custom.sh <<EOF
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]WhatsHap:\[\033[33;1m\]\w\[\033[m\]$ "
+SINGULARITY_SHELL=/bin/bash
+EOF
+
+%environment
+    export HOME=/home/whatshap
+
+%runscript
+    cd /home/whatshap
+    exec /bin/bash
