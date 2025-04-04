@@ -385,6 +385,7 @@ All entries are ordered chronologically.
 | 2025-03-25  | firefox/60.5.1-1.el7             | Generic[^esr]        |
 | 2025-03-26  | firefox/136.0                    | Generic              |
 | 2025-03-29  | llama.cpp/0.0.4991               | Generic[^llama_cpp]  |
+| 2025-04-04  | InstaNovo/1.1.1                  | Proteomics[^insnovo] |
 
 \* CEU or approved users only.
 
@@ -1990,3 +1991,16 @@ They are generated from script [setup.sh](setup.sh),
     module load ceuadmin/llama.cpp/0.0.4991
     llama-gguf-split --merge DeepSeek-V3-0324-UD-IQ2_XXS-00001-of-00005.gguf DeepSeek-V3-0324-UD-IQ2_XXS.gguf
     ```
+
+[^insnovo]: **InstaNovo**
+
+    Web: <https://github.com/instadeepai/InstaNovo>
+
+    ```bash
+    module load python/3.11.0-icl
+    python -m venv InstaNovo
+    source InstaNovo/bin/activate
+    pip install instanovo
+    ```
+
+    Note the standard installation is CPU-oriented.
