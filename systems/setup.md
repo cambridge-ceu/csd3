@@ -1996,11 +1996,11 @@ They are generated from script [setup.sh](setup.sh),
 
     Web: <https://github.com/instadeepai/InstaNovo>
 
+    The installation is standard.
+
     ```bash
     module load python/3.11.0-icl
     python -m venv InstaNovo
     source InstaNovo/bin/activate
     pip install instanovo
     ```
-
-    Note the standard installation is CPU-oriented.
