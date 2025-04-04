@@ -2006,4 +2006,4 @@ They are generated from script [setup.sh](setup.sh),
     instanovo predict --data-path=sample_data/*mgf --output-path=sample_data/spectra.csv
     ```
 
-    The last line uses the toy data provided, downloading `instanovoplus-v1.1.0-alpha.ckpt` and instanovo-v1.1.0.ckpt` to `~/.cache/instanovo`.
+    The last line uses the toy data provided, downloading `instanovoplus-v1.1.0-alpha.ckpt` and `instanovo-v1.1.0.ckpt` to `~/.cache/instanovo`.
