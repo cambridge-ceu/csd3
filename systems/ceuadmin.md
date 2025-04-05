@@ -395,6 +395,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2025-03-18 | OpenMS/3.4.0                | Proteomics          |
     | 2025-03-22 | diann/2.0.2                 | Proteomics          |
     | 2025-04-04 | InstaNovo/1.1.1             | Proteomics          |
+    | 2025-04-05 | InstaNovo/1.1.1-GPU         | Proteomics          |
 
     \* CEU or approved users only.
 
