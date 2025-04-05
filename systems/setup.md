@@ -386,6 +386,7 @@ All entries are ordered chronologically.
 | 2025-03-26  | firefox/136.0                    | Generic              |
 | 2025-03-29  | llama.cpp/0.0.4991               | Generic[^llama_cpp]  |
 | 2025-04-04  | InstaNovo/1.1.1                  | Proteomics[^insnovo] |
+| 2025-04-05  | InstaNovo/1.1.1-GPU              | Proteomics           |
 
 \* CEU or approved users only.
 
@@ -2004,7 +2005,7 @@ They are generated from script [setup.sh](setup.sh),
     module load python/3.11.0-icl
     python -m venv InstaNovo
     source InstaNovo/bin/activate
-    pip install instanovo
+    pip install "instanovo[cpu]"
     instanovo predict --data-path=sample_data/*mgf --output-path=sample_data/spectra.csv
     ```
 
