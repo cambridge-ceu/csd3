@@ -2006,7 +2006,31 @@ They are generated from script [setup.sh](setup.sh),
     python -m venv InstaNovo
     source InstaNovo/bin/activate
     pip install "instanovo[cpu]"
+    instanovo version
     instanovo predict --data-path=sample_data/*mgf --output-path=sample_data/spectra.csv
+    ```
+
+    The versioning for CPU and GPU from `instanovo version` is as follows.
+
+    ```
+    ┏━━━━━━━━━━━━┳━━━━━━━━━━━━━┓
+    ┃ Package    ┃ Version     ┃
+    ┡━━━━━━━━━━━━╇━━━━━━━━━━━━━┩
+    │ InstaNovo  │ 1.1.1       │
+    │ InstaNovo+ │ 1.1.1       │
+    │ NumPy      │ 2.0.2       │
+    │ PyTorch    │ 2.4.1+cu121 │
+    │ Lightning  │ 2.5.1       │
+    └────────────┴─────────────┘
+    ┏━━━━━━━━━━━━┳━━━━━━━━━━━━━┓
+    ┃ Package    ┃ Version     ┃
+    ┡━━━━━━━━━━━━╇━━━━━━━━━━━━━┩
+    │ InstaNovo  │ 1.1.1       │
+    │ InstaNovo+ │ 1.1.1       │
+    │ NumPy      │ 2.0.2       │
+    │ PyTorch    │ 2.6.0+cu124 │
+    │ Lightning  │ 2.5.1       │
+    └────────────┴─────────────┘
     ```
 
     The last line uses the toy data provided, downloading `instanovoplus-v1.1.0-alpha.ckpt` and `instanovo-v1.1.0.ckpt` to `~/.cache/instanovo`.
