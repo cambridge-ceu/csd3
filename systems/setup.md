@@ -388,6 +388,7 @@ All entries are ordered chronologically.
 | 2025-04-04  | InstaNovo/1.1.1                  | Proteomics[^insnovo] |
 | 2025-04-05  | InstaNovo/1.1.1-GPU              | Proteomics           |
 | 2025-04-07  | scGPT/0.2.4                      | Single cell[^scGPT]  |
+| ""          | scanpy/1.11.1                    | Single cell[^scanpy] |
 
 \* CEU or approved users only.
 
@@ -2070,6 +2071,15 @@ They are generated from script [setup.sh](setup.sh),
     >>> import torchvision
     >>> print(torchvision.__version__)
     0.15.2+cu117
+    ```
+
+[^scanpy]: **scanpy**
+
+    GitHub: <https://github.com/scverse/scanpy>
+
+    This is a side-product of scGPT (above).
+
+    ```
     >>> import scanpy
     >>> print(scanpy.__version__)
     1.11.1
