@@ -2049,7 +2049,7 @@ They are generated from script [setup.sh](setup.sh),
     source scGPT-models/bin/activate
     pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
     pip install packaging
-    pip install ipython
+    pip install ipython ipykernel
     pip install scgpt "flash-attn<1.0.5"
     pip install wandb
     ```
