@@ -387,6 +387,7 @@ All entries are ordered chronologically.
 | 2025-03-29  | llama.cpp/0.0.4991               | Generic[^llama_cpp]  |
 | 2025-04-04  | InstaNovo/1.1.1                  | Proteomics[^insnovo] |
 | 2025-04-05  | InstaNovo/1.1.1-GPU              | Proteomics           |
+| 2025-04-07  | scGPT/0.2.4                      | Single cell[^scGPT]  |
 
 \* CEU or approved users only.
 
@@ -2034,3 +2035,39 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     The last line uses the toy data provided, downloading `instanovoplus-v1.1.0-alpha.ckpt` and `instanovo-v1.1.0.ckpt` to `~/.cache/instanovo`.
+
+[^scGPT]: **scGPT**
+
+    GitHub: <https://github.com/bowang-lab/scGPT>
+
+    The installation is done as follows,
+
+    ```bash
+    module load python/3.11.0-icl
+    python -m venv scGPT-models
+    source scGPT-models/bin/activate
+    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+    pip install packaging
+    pip install scgpt "flash-attn<1.0.5"
+    pip install ipython
+    ```
+
+    In particular, we have the following information,
+
+    ```
+    >>> import scgpt
+    >>> print(scgpt.__version__)
+    0.2.4
+    >>> import torch
+    >>> print(torch.__version__)
+    2.0.1+cu117
+    >>> import torchaudio
+    >>> print(torchaudio.__version__)
+    2.0.2+cu117
+    >>> import torchtext
+    >>> print(torchtext.__version__)
+    0.15.2+cpu
+    >>> import torchvision
+    >>> print(torchvision.__version__)
+    0.15.2+cu117
+    ```
