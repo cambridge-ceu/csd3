@@ -2041,40 +2041,42 @@ They are generated from script [setup.sh](setup.sh),
 
     GitHub: <https://github.com/bowang-lab/scGPT>
 
-    The installation is done as follows,
+    The installation is done as follows ([scGPT.sh](files/scGPT.sh)),
 
     ```bash
     module load python/3.11.0-icl
     python -m venv scGPT-models
     source scGPT-models/bin/activate
-    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
     pip install packaging
-    pip install ipython ipykernel
-    pip install scgpt "flash-attn<1.0.5"
+    pip install ipykernel
+    pip install scgpt flash-attn==1.0.4 pybind11>=2.12
+    pip uninstall numpy
+    pip install numpy===1.25.2
+    pip install scvi-tools==0.20.3 anndata==0.9.2 scanpy==1.9.3
     pip install wandb
+
+    import pkg_resources
+    packages = ['scgpt', 'torch', 'torchaudio', 'torchtext', 'torchvision', 'scanpy', 'wandb']
+    for package_name in packages:
+        try:
+            dist = pkg_resources.get_distribution(package_name)
+            print(f'{package_name}: {dist.version}')
+        except pkg_resources.DistributionNotFound:
+            print(f'{package_name} is not installed.')
+    
     ```
 
-    In particular, we have the following information,
+    As it happens, `numpy` 2.1.2 causes issues with `scvi-tools` and a compatible one is chosen.
 
     ```
-    >>> import scgpt
-    >>> print(scgpt.__version__)
-    0.2.4
-    >>> import torch
-    >>> print(torch.__version__)
-    2.0.1+cu117
-    >>> import torchaudio
-    >>> print(torchaudio.__version__)
-    2.0.2+cu117
-    >>> import torchtext
-    >>> print(torchtext.__version__)
-    0.15.2+cpu
-    >>> import torchvision
-    >>> print(torchvision.__version__)
-    0.15.2+cu117
-    >>> import wandb
-    >>> print(wandb.__version__)
-    0.19.9
+    scgpt: 0.2.4
+    torch: 2.0.1+cu117
+    torchaudio: 2.0.2+cu117
+    torchtext: 0.15.2
+    torchvision: 0.15.2+cu117
+    scanpy: 1.9.3
+    wandb: 0.19.9
     ```
 
 [^scanpy]: **scanpy**
@@ -2082,9 +2084,3 @@ They are generated from script [setup.sh](setup.sh),
     GitHub: <https://github.com/scverse/scanpy>
 
     This is a side-product of scGPT (above).
-
-    ```
-    >>> import scanpy
-    >>> print(scanpy.__version__)
-    1.11.1
-    ```
