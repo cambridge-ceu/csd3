@@ -2049,8 +2049,9 @@ They are generated from script [setup.sh](setup.sh),
     source scGPT-models/bin/activate
     pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
     pip install packaging
-    pip install scgpt "flash-attn<1.0.5"
     pip install ipython
+    pip install scgpt "flash-attn<1.0.5"
+    pip install wandb
     ```
 
     In particular, we have the following information,
