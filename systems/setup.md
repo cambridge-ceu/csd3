@@ -2072,6 +2072,9 @@ They are generated from script [setup.sh](setup.sh),
     >>> import torchvision
     >>> print(torchvision.__version__)
     0.15.2+cu117
+    >>> import wandb
+    >>> print(wandb.__version__)
+    0.19.9
     ```
 
 [^scanpy]: **scanpy**
