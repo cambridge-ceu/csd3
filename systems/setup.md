@@ -2080,4 +2080,13 @@ They are generated from script [setup.sh](setup.sh),
 
     GitHub: <https://github.com/scverse/scanpy>
 
-    This is a side-product of scGPT (above).
+    This is a side-product of scGPT (above). We intend to run tutorials as in <https://github.com/scverse/scanpy-tutorials> but gets 
+    error, so we set for an update of 1.11.1.
+
+    ```bash
+    pip uninstall scanpy -y
+    pip install scanpy
+    pip list | grep scanpy
+    ```
+
+    It turns out it does not introduce any conflicts.
