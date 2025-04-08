@@ -2080,7 +2080,8 @@ They are generated from script [setup.sh](setup.sh),
 
     GitHub: <https://github.com/scverse/scanpy>
 
-    This is a side-product of scGPT (above). We intend to run tutorials as in <https://github.com/scverse/scanpy-tutorials> but gets 
+
+    This is a side-product of scGPT (above). We intend to run tutorials `tutorial_pearson_residuals.ipynb` as in <https://github.com/scverse/scanpy-tutorials> but gets 
     error, so we set for an update of 1.11.1.
 
     ```bash
@@ -2089,4 +2090,4 @@ They are generated from script [setup.sh](setup.sh),
     pip list | grep scanpy
     ```
 
-    It turns out it does not introduce any conflicts.
+    It turns out it does not introduce any conflicts. For this tutorial have added additionally `tqdm` 4.67.1 and `iprogress` 1.17.0.
