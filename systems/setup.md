@@ -2050,8 +2050,8 @@ They are generated from script [setup.sh](setup.sh),
     pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
     pip install packaging
     pip install ipykernel
-    pip install scgpt flash-attn==1.0.4 pybind11>=2.12
-    pip uninstall numpy
+    pip install scgpt flash-attn==1.0.4
+    pip uninstall numpy -y
     pip install numpy===1.25.2
     pip install scvi-tools==0.20.3 anndata==0.9.2 scanpy==1.9.3
     pip install wandb
