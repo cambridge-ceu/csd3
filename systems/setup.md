@@ -2041,7 +2041,7 @@ They are generated from script [setup.sh](setup.sh),
 
     GitHub: <https://github.com/bowang-lab/scGPT>
 
-    The installation is done as follows ([scGPT.sh](files/scGPT.sh)),
+    The installation is done as follows ([scGPT.sh](files/scGPT.sh) with additional verification inside Python),
 
     ```bash
     module load python/3.11.0-icl
