@@ -2090,4 +2090,4 @@ They are generated from script [setup.sh](setup.sh),
     pip list | grep scanpy
     ```
 
-    It turns out it does not introduce any conflicts. For this tutorial have added additionally `tqdm` 4.67.1 and `iprogress` 1.17.0.
+    It turns out it does not introduce any conflicts. For this tutorial we additionally have `tqdm` 4.67.1 and `iprogress` 1.17.0.
