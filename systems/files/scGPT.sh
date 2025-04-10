@@ -46,5 +46,6 @@ function releases()
   pip uninstall numpy -y
   pip install numpy===1.25.2
   pip install wandb
+  pip install iprogress
   pip list | awk '/scanpy|scib|scvi|scgpt|flash-attn|torch|wandb/'
 }
