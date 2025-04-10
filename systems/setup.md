@@ -2079,22 +2079,41 @@ They are generated from script [setup.sh](setup.sh),
     A separate attempt to use a release version is done as follows,
 
     ```bash
+    module load python/3.9.12/gcc/pdcqf4o5
+    python -m venv scGPT-release
+    source scGPT-release/bin/activate
     wget -qO- https://github.com/bowang-lab/scGPT/archive/refs/tags/v0.2.4.tar.gz | tar xvfz -
-    python -m venv scGPT-docs
-    source scGPT-docs/bin/activate
     cd scGPT-0.2.4/
     pip install -e .
+    pip install ipykernel
+    pip install gseapy
+    pip install torch.geometric
+    pip install einops
     pip list
     cd ..
     cd scGPT-tests
     code tutorials/ &
-    # Adjustment in accordance with VS Code.
-    pip show scanpy matplotlib
-    pip install "matplotlib<3.7"
-    pip list | grep attn
-    pip install gseapy
-    pip install torch.geometric
+    pip uninstall torch torchtext -y
+    pip install torch==2.1.0 torchtext==0.16.0
+    pip uninstall numpy -y
+    pip install numpy===1.25.2
     pip install wandb
+    pip list | awk '/scanpy|scib|scvi|scgpt|flash-attn|torch|wandb/'
+    ```
+
+    giving
+
+    ```
+    pytorch-lightning        1.9.5
+    scanpy                   1.10.3
+    scib                     1.1.7
+    scvi-tools               0.20.3
+    torch                    2.1.0
+    torch-geometric          2.6.1
+    torchdata                0.7.0
+    torchmetrics             1.7.1
+    torchtext                0.16.0
+    wandb                    0.19.9
     ```
 
 [^scanpy]: **scanpy**
