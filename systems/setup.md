@@ -2076,6 +2076,27 @@ They are generated from script [setup.sh](setup.sh),
     wandb                   0.19.9
     ```
 
+    A separate attempt to use a release version is done as follows,
+
+    ```bash
+    wget -qO- https://github.com/bowang-lab/scGPT/archive/refs/tags/v0.2.4.tar.gz | tar xvfz -
+    python -m venv scGPT-docs
+    source scGPT-docs/bin/activate
+    cd scGPT-0.2.4/
+    pip install -e .
+    pip list
+    cd ..
+    cd scGPT-tests
+    code tutorials/ &
+    # Adjustment in accordance with VS Code.
+    pip show scanpy matplotlib
+    pip install "matplotlib<3.7"
+    pip list | grep attn
+    pip install gseapy
+    pip install torch.geometric
+    pip install wandb
+    ```
+
 [^scanpy]: **scanpy**
 
     GitHub: <https://github.com/scverse/scanpy>

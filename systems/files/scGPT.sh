@@ -24,3 +24,21 @@ for package_name in packages:
         print(f'{package_name} is not installed.')
 
 END
+
+function releases()
+{
+  wget -qO- https://github.com/bowang-lab/scGPT/archive/refs/tags/v0.2.4.tar.gz | tar xvfz -
+  python -m venv scGPT-docs
+  source scGPT-docs/bin/activate
+  cd scGPT-0.2.4/
+  pip install -e .
+  pip list
+  cd ..
+  cd scGPT-tests
+  code tutorials/ &
+  pip show scanpy matplotlib
+  pip install "matplotlib<3.7"
+  pip list | grep attn
+  pip install gseapy
+  pip install torch.geometric
+}
