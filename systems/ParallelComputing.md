@@ -215,6 +215,8 @@ To embed SLURM call in a bash script, one can use `sbatch --wait <SLURM scripts>
 
 ## Other approaches
 
+### xargs
+
 The following script moves all files a day earlier to directory old/,
 
 ```bash
@@ -275,7 +277,9 @@ squeue -u jhz22 | grep PD | awk '{print $1}' | xargs -l -I {} scancel {}
 
 To cancel jobs on a specific partition, use `-p <partition-name>`. Moreover, we have `cat urls.txt | xargs -n 1 -P 8 wget` where `-n 1` ensures that each Wget command processes one URL at a time, and `-P 8` allows up to 8 parallel processes.
 
-For this example, one can loop over enumeration as follows,
+### Enumeration
+
+This example shows loop by enumeration as follows,
 
 ```bash
 wget https://huggingface.co/unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF/resolve/main/Q8_0/Llama-4-Maverick-17B-128E-Instruct-Q8_0-0000{1..9}-of-00009.gguf
