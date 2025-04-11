@@ -384,12 +384,13 @@ All entries are ordered chronologically.
 | 2025-03-22  | diann/2.0.2                      | Proteomics[^diann]   |
 | 2025-03-25  | firefox/60.5.1-1.el7             | Generic[^esr]        |
 | 2025-03-26  | firefox/136.0                    | Generic              |
-| 2025-03-29  | llama.cpp/0.0.4991               | Generic[^llama_cpp]  |
+| 2025-03-29  | llama.cpp/4991                   | Generic[^llama_cpp]  |
 | 2025-04-04  | InstaNovo/1.1.1                  | Proteomics[^insnovo] |
 | 2025-04-05  | InstaNovo/1.1.1-GPU              | Proteomics           |
 | 2025-04-07  | scGPT/0.2.4                      | Single cell[^scGPT]  |
 | ""          | scanpy/1.11.1                    | Single cell[^scanpy] |
 | 2025-04-11  | R/4.5.0                          | Generic              |
+| ""          | llama.cpp/5121                   | Generic              |
 
 \* CEU or approved users only.
 
@@ -1994,7 +1995,7 @@ They are generated from script [setup.sh](setup.sh),
     wget https://huggingface.co/unsloth/DeepSeek-V3-0324-GGUF/resolve/main/UD-IQ2_XXS/DeepSeek-V3-0324-UD-IQ2_XXS-00003-of-00005.gguf
     wget https://huggingface.co/unsloth/DeepSeek-V3-0324-GGUF/resolve/main/UD-IQ2_XXS/DeepSeek-V3-0324-UD-IQ2_XXS-00004-of-00005.gguf
     wget https://huggingface.co/unsloth/DeepSeek-V3-0324-GGUF/resolve/main/UD-IQ2_XXS/DeepSeek-V3-0324-UD-IQ2_XXS-00005-of-00005.gguf
-    module load ceuadmin/llama.cpp/0.0.4991
+    module load ceuadmin/llama.cpp/4991
     llama-gguf-split --merge DeepSeek-V3-0324-UD-IQ2_XXS-00001-of-00005.gguf DeepSeek-V3-0324-UD-IQ2_XXS.gguf
     ```
 

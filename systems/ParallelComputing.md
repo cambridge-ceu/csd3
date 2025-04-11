@@ -283,7 +283,7 @@ This example shows loop by enumeration as follows,
 
 ```bash
 wget https://huggingface.co/unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF/resolve/main/Q8_0/Llama-4-Maverick-17B-128E-Instruct-Q8_0-0000{1..9}-of-00009.gguf
-module load ceuadmin/llama.cpp/0.0.4991
+module load ceuadmin/llama.cpp/4991
 llama-gguf-split --merge Llama-4-Maverick-17B-128E-Instruct-Q8_0-00001-of-00009.gguf Llama-4-Maverick-17B-128E-Instruct.gguf
 ```
 
