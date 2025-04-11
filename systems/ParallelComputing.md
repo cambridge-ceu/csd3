@@ -273,4 +273,14 @@ We also use `xargs`,
 squeue -u jhz22 | grep PD | awk '{print $1}' | xargs -l -I {} scancel {}
 ```
 
-To concel jobs on a specific partition, use `-p <partition-name>`.
+To cancel jobs on a specific partition, use `-p <partition-name>`. Moreover, we have `cat urls.txt | xargs -n 1 -P 8 wget` where `-n 1` ensures that each Wget command processes one URL at a time, and `-P 8` allows up to 8 parallel processes.
+
+For this example, one can loop over enumeration as follows,
+
+```bash
+wget https://huggingface.co/unsloth/Llama-4-Maverick-17B-128E-Instruct-GGUF/resolve/main/Q8_0/Llama-4-Maverick-17B-128E-Instruct-Q8_0-0000{1..9}-of-00009.gguf
+module load ceuadmin/llama.cpp/0.0.4991
+llama-gguf-split --merge Llama-4-Maverick-17B-128E-Instruct-Q8_0-00001-of-00009.gguf Llama-4-Maverick-17B-128E-Instruct.gguf
+```
+
+which actually downloads all 9 files sequentially. If it is preferable to parallelise within each file, one can resort to `aria2c -x 16 -s 16 [URL]` where `-x 8` sets the maximum number of connections per server, and `-s 8` splits the download into 8 segments, respectively. On the other hand, `curl` allows for particular chunks in a file to be downloaded.
