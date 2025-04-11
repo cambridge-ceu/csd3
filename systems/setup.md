@@ -389,6 +389,7 @@ All entries are ordered chronologically.
 | 2025-04-05  | InstaNovo/1.1.1-GPU              | Proteomics           |
 | 2025-04-07  | scGPT/0.2.4                      | Single cell[^scGPT]  |
 | ""          | scanpy/1.11.1                    | Single cell[^scanpy] |
+| 2025-04-11  | R/4.5.0                          | Generic              |
 
 \* CEU or approved users only.
 
