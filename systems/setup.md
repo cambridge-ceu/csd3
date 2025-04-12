@@ -391,6 +391,7 @@ All entries are ordered chronologically.
 | ""          | scanpy/1.11.1                    | Single cell[^scanpy] |
 | 2025-04-11  | R/4.5.0                          | Generic              |
 | ""          | llama.cpp/5121                   | Generic              |
+| 2025-03-12  | ollama/0.6.5                     | Generic              |
 
 \* CEU or approved users only.
 
