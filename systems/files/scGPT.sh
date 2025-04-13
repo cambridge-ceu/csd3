@@ -38,9 +38,6 @@ function releases()
   pip install torch.geometric
   pip install einops
   pip list
-  cd ..
-  cd scGPT-tests
-  code tutorials/ &
   pip uninstall torch torchtext -y
   pip install torch==2.1.0 torchtext==0.16.0
   pip uninstall numpy -y
