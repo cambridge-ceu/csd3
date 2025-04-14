@@ -2081,7 +2081,7 @@ They are generated from script [setup.sh](setup.sh),
     wandb                   0.19.9
     ```
 
-    A separate attempt to use a release version is made but appears to have issues with `anndata` and `mudata`, which is resolved by mirroring modules (`mudata`==0.2.3 and `anndata`=0.9.2) and again with the trick for `torch`, etc. as above.
+    A separate attempt to use a released version is made but appears to have issues with `anndata` and `mudata`, which is resolved by mirroring modules (`mudata`==0.2.3 and `anndata`==0.9.2) and the trick for `torch`, etc. as above.
 
     ```bash
     module load python/3.9.12/gcc/pdcqf4o5
