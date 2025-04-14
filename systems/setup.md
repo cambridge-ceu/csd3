@@ -2081,7 +2081,7 @@ They are generated from script [setup.sh](setup.sh),
     wandb                   0.19.9
     ```
 
-    A separate attempt to use a release version is possible but appears to have issues with `anndata` and `mudata`,
+    A separate attempt to use a release version is made but appears to have issues with `anndata` and `mudata`, which is resolved by mirroring modules (`mudata`==0.2.3 and `anndata`=0.9.2) and again with the trick for `torch`, etc. as above.
 
     ```bash
     module load python/3.9.12/gcc/pdcqf4o5
@@ -2095,8 +2095,9 @@ They are generated from script [setup.sh](setup.sh),
     pip install torch.geometric
     pip install einops
     pip list
-    pip uninstall torch torchtext -y
-    pip install torch==2.1.0 torchtext==0.16.0
+    pip uninstall torch -y
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+    pip install flash-attn==1.0.4
     pip uninstall numpy -y
     pip install numpy===1.25.2
     pip install wandb
@@ -2107,15 +2108,16 @@ They are generated from script [setup.sh](setup.sh),
     giving
 
     ```
+    flash-attn               1.0.4
     pytorch-lightning        1.9.5
     scanpy                   1.10.3
     scib                     1.1.7
     scvi-tools               0.20.3
-    torch                    2.1.0
+    torch                    2.0.1+cu117
     torch-geometric          2.6.1
-    torchdata                0.7.0
+    torchaudio               2.0.2+cu117
     torchmetrics             1.7.1
-    torchtext                0.16.0
+    torchvision              0.15.2+cu117
     wandb                    0.19.9
     ```
 

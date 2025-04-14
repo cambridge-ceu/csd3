@@ -38,8 +38,9 @@ function releases()
   pip install torch.geometric
   pip install einops
   pip list
-  pip uninstall torch torchtext -y
-  pip install torch==2.1.0 torchtext==0.16.0
+  pip uninstall torch -y
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+  pip install scgpt flash-attn==1.0.4
   pip uninstall numpy -y
   pip install numpy===1.25.2
   pip install wandb
