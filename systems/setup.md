@@ -2043,6 +2043,8 @@ They are generated from script [setup.sh](setup.sh),
 
     GitHub: <https://github.com/bowang-lab/scGPT>
 
+    The procedures are posted on scGPT site, <https://github.com/bowang-lab/scGPT/issues/306>.
+
     The installation is done as follows ([scGPT.sh](files/scGPT.sh) with additional verification inside Python),
 
     ```bash
