@@ -2078,7 +2078,7 @@ They are generated from script [setup.sh](setup.sh),
     wandb                   0.19.9
     ```
 
-    A separate attempt to use a release version is done as follows,
+    A separate attempt to use a release version is possible but appears to have issues with `anndata` and `mudata`,
 
     ```bash
     module load python/3.9.12/gcc/pdcqf4o5
