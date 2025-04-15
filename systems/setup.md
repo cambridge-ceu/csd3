@@ -2154,7 +2154,7 @@ They are generated from script [setup.sh](setup.sh),
     pip install packaging
     pip install torch==2.0.1
     pip install scipy==1.8.0
-    sed -i 's/^scipy==.*$/scipy==1.8.0/' requirements.txt
+    sed -i '/torch/d;s/^scipy==.*$/scipy==1.8.0/' requirements.txt
     pip install -r requirements.txt
     huggingface-cli login
 
