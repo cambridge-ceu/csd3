@@ -21,10 +21,10 @@ ParallelComputing
 qemu
 SRCP
 GreenAlgorithms
-setup
 training
 contacts
 acknowledgement
+setup
 EOL
 }
 
@@ -59,8 +59,7 @@ function _packages()
 # bundle info jekyll-rtd-theme
 # make install
 # make theme
-
-renum systems
+# systems
 renum applications
 _packages Python
 _packages R
