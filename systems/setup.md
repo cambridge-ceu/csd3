@@ -2054,6 +2054,22 @@ They are generated from script [setup.sh](setup.sh),
 
     The last line uses the toy data provided, downloading `instanovoplus-v1.1.0-alpha.ckpt` and `instanovo-v1.1.0.ckpt` to `~/.cache/instanovo`.
 
+    We reuse `tensorflow/`[^singularity] which contains Python 3.11 and InstaNovo 1.1.1 and `singularity exec tensorflow/ /usr/local/bin/instanovo version` gives
+
+    ```
+    ┏━━━━━━━━━━━━┳━━━━━━━━━━━━━┓
+    ┃ Package    ┃ Version     ┃
+    ┡━━━━━━━━━━━━╇━━━━━━━━━━━━━┩
+    │ InstaNovo  │ 1.1.1       │
+    │ InstaNovo+ │ 1.1.1       │
+    │ NumPy      │ 2.0.2       │
+    │ PyTorch    │ 2.6.0+cu124 │
+    │ Lightning  │ 2.5.1       │
+    └────────────┴─────────────┘
+    ```
+`
+    but `singularity exec tensorflow/ /usr/local/bin/instanovo predict --data-path=InstaNovo/src/sample_data/*.mgf --output-path=spectra.csv` still requires GPU though it is still viable with `singularity build --sandbox tensorflow/ instanovo-1.1.1.sif`.
+
 [^scGPT]: **scGPT**
 
     GitHub: <https://github.com/bowang-lab/scGPT>
