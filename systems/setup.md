@@ -393,6 +393,7 @@ All entries are ordered chronologically.
 | ""          | llama.cpp/5121                   | Generic              |
 | 2025-03-12  | ollama/0.6.5                     | Generic              |
 | 2025-03-15  | DrugAssist/latest                | Generic[^DrugAssist] |
+| 2025-03-16  | uv/0.6.14                        | Generic[^uv]         |
 
 \* CEU or approved users only.
 
@@ -2201,3 +2202,9 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     Note that the original `requirements.txt` uses `scipy==1.4.1` but with issues.
+
+[^uv]: **uv**
+
+    ```bash
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    ```

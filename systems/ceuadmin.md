@@ -85,10 +85,10 @@ The current list is as follows,
 [269] "tandem"                 "tatami"                 "tesseract"              "texinfo"
 [273] "ThermoRawFileParser"    "ThermoRawFileParserGUI" "thunderbird"            "tidy"
 [277] "tiff"                   "trinculo"               "trousers"               "Typora"
-[281] "unbound"                "vala"                   "VarScan"                "vcftools"
-[285] "VEGAS2"                 "verifyBamID"            "VSCode"                 "VSCodium"
-[289] "vte"                    "wine"                   "wrk"                    "xpdf"
-[293] "yaml-cpp"               "Zotero"                 "zstd"
+[281] "unbound"                "uv"                     "vala"                   "VarScan"
+[285] "vcftools"               "VEGAS2"                 "verifyBamID"            "VSCode"
+[289] "VSCodium"               "vte"                    "wine"                   "wrk"
+[293] "xpdf"                   "yaml-cpp"               "Zotero"                 "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
