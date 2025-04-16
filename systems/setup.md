@@ -2067,8 +2067,8 @@ They are generated from script [setup.sh](setup.sh),
     │ Lightning  │ 2.5.1       │
     └────────────┴─────────────┘
     ```
-`
-    but `singularity exec tensorflow/ /usr/local/bin/instanovo predict --data-path=InstaNovo/src/sample_data/*.mgf --output-path=spectra.csv` still requires GPU though it is still viable with `singularity build --sandbox tensorflow/ instanovo-1.1.1.sif`.
+
+    but `singularity exec tensorflow/ /usr/local/bin/instanovo predict --data-path=InstaNovo/src/sample_data/*.mgf --output-path=spectra.csv` still requires GPU though one can proceed with `singularity build --sandbox tensorflow/ instanovo-1.1.1.sif`.
 
 [^scGPT]: **scGPT**
 
