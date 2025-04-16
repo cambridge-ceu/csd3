@@ -390,10 +390,11 @@ All entries are ordered chronologically.
 | ""          | scanpy/1.11.1                    | Single cell[^scanpy] |
 | 2025-04-11  | R/4.5.0                          | Generic              |
 | ""          | llama.cpp/5121                   | Generic              |
-| 2025-03-12  | ollama/0.6.5                     | Generic              |
-| 2025-03-15  | DrugAssist/latest                | Generic[^DrugAssist] |
-| 2025-03-16  | uv/0.6.14                        | Generic[^uv]         |
+| 2025-04-12  | ollama/0.6.5                     | Generic              |
+| 2025-04-15  | DrugAssist/latest                | Generic[^DrugAssist] |
+| 2025-04-16  | uv/0.6.14                        | Generic[^uv]         |
 | ""          | InstaNovo/1.1.1                  | Proteomics           |
+| ""          | diann/2.1.0                      | Proteomics           |
 
 \* CEU or approved users only.
 
@@ -1970,6 +1971,8 @@ They are generated from script [setup.sh](setup.sh),
 
 [^diann]: **DIA-NN 2.0.2**
 
+    GitHub, <https://github.com/vdemichev/DiaNN>
+
     We see 
 
     ```
@@ -1980,10 +1983,10 @@ They are generated from script [setup.sh](setup.sh),
     ./diann: /lib64/libc.so.6: version `GLIBC_2.33' not found (required by ./diann)
     ```
 
-    and resort to singularity with [diann.def](files/diann.def)
+    and resort to singularity with [diann-2.0.2.def](files/diann-2.0.2.def)
 
     ```bash
-    singularrity build diann.sif diann.def
+    singularity build diann.sif diann.def
     singularity run diann.sif --fasta /path/to/human_proteome.fasta --dir /path/to/data/ --out output.txt
     ```
 
