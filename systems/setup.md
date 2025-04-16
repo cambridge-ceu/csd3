@@ -2201,6 +2201,8 @@ They are generated from script [setup.sh](setup.sh),
 
 [^uv]: **uv**
 
+    Web, <https://docs.astral.sh/uv/>
+
     ```bash
     curl -LsSf https://astral.sh/uv/install.sh | sh
     ```
