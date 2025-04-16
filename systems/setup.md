@@ -792,12 +792,16 @@ They are generated from script [setup.sh](setup.sh),
     The singularity module in place is already very useful, e.g.,
 
     ```bash
+    singularity pull tensorflow_latest_gpu.sif docker://tensorflow/tensorflow:latest-gpu
     singularity build --sandbox tensorflow docker://tensorflow/tensorflow:latest-gpu
     singularity run tensorflow
-    singularity pull tensorflow_latest_gpu.sif docker://tensorflow/tensorflow:latest-gpu
+    python -c '
+    from tensorflow.python.client import device_lib
+    print(device_lib.list_local_devices())
+    '
     ```
 
-    where we pull the container both in a directory and a sif. However, we now have
+    where we pull the container both in Singularity Image Format (SIF) format and into a directory. However, we now have
 
     ```bash
     mconfig --prefix=$CEUADMIN/singularity/4.0.3 --without-seccomp --without-conmon --without-suid
