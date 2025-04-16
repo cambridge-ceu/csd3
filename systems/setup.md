@@ -2046,10 +2046,18 @@ They are generated from script [setup.sh](setup.sh),
 
     The last line uses the toy data provided, downloading `instanovoplus-v1.1.0-alpha.ckpt` and `instanovo-v1.1.0.ckpt` to `~/.cache/instanovo`.
 
-    We reuse `tensorflow/`[^singularity] which contains Python 3.11 and InstaNovo 1.1.1 and `singularity exec tensorflow/ /usr/local/bin/instanovo version` gives the same information
-    but `singularity exec tensorflow/ /usr/local/bin/instanovo predict --data-path=InstaNovo/src/sample_data/*.mgf --output-path=spectra.csv` still requires GPU though one can proceed with `singularity build instanovo-1.1.1.sif tensorflow/`.
+    We reuse `tensorflow/`[^singularity] which contains `Python` 3.11 and `InstaNovo` 1.1.1,
 
-    The CPU version is by `uv`, designed for development,
+    ```bash
+    singularity exec tensorflow/ /usr/local/bin/instanovo version
+    singularity exec tensorflow/ /usr/local/bin/instanovo predict --data-path=InstaNovo/src/sample_data/*.mgf --output-path=spectra.csv
+    singularity build instanovo-1.1.1.sif tensorflow/
+    singularity run instanovo-1.1.1.sif /usr/local/bin/instanovo predict --data-path=sample_data/*mgf --output-path=new.csv
+    ```
+
+    which gives the same versioning information and uses GPU.
+
+    The CPU version is furnished with CPU-specific `PyTorch` via `uv`, designed for development,
 
     ```bash
     git clone https://github.com/instadeepai/InstaNovo.git
