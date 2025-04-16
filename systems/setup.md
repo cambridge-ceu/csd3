@@ -385,8 +385,7 @@ All entries are ordered chronologically.
 | 2025-03-25  | firefox/60.5.1-1.el7             | Generic[^esr]        |
 | 2025-03-26  | firefox/136.0                    | Generic              |
 | 2025-03-29  | llama.cpp/4991                   | Generic[^llama_cpp]  |
-| 2025-04-04  | InstaNovo/1.1.1                  | Proteomics[^insnovo] |
-| 2025-04-05  | InstaNovo/1.1.1-GPU              | Proteomics           |
+| 2025-04-05  | InstaNovo/1.1.1-GPU              | Proteomics[^insnovo] |
 | 2025-04-07  | scGPT/0.2.4                      | Single cell[^scGPT]  |
 | ""          | scanpy/1.11.1                    | Single cell[^scanpy] |
 | 2025-04-11  | R/4.5.0                          | Generic              |
@@ -394,6 +393,7 @@ All entries are ordered chronologically.
 | 2025-03-12  | ollama/0.6.5                     | Generic              |
 | 2025-03-15  | DrugAssist/latest                | Generic[^DrugAssist] |
 | 2025-03-16  | uv/0.6.14                        | Generic[^uv]         |
+| ""          | InstaNovo/1.1.1                  | Proteomics           |
 
 \* CEU or approved users only.
 
@@ -2025,23 +2025,14 @@ They are generated from script [setup.sh](setup.sh),
     module load python/3.11.0-icl
     python -m venv InstaNovo
     source InstaNovo/bin/activate
-    pip install "instanovo[cpu]"
+    pip install "instanovo"
     instanovo version
     instanovo predict --data-path=sample_data/*mgf --output-path=sample_data/spectra.csv
     ```
 
-    The versioning for CPU and GPU from `instanovo version` is as follows.
+    The versioning for GPU from `instanovo version` is as follows.
 
     ```
-    ┏━━━━━━━━━━━━┳━━━━━━━━━━━━━┓
-    ┃ Package    ┃ Version     ┃
-    ┡━━━━━━━━━━━━╇━━━━━━━━━━━━━┩
-    │ InstaNovo  │ 1.1.1       │
-    │ InstaNovo+ │ 1.1.1       │
-    │ NumPy      │ 2.0.2       │
-    │ PyTorch    │ 2.4.1+cu121 │
-    │ Lightning  │ 2.5.1       │
-    └────────────┴─────────────┘
     ┏━━━━━━━━━━━━┳━━━━━━━━━━━━━┓
     ┃ Package    ┃ Version     ┃
     ┡━━━━━━━━━━━━╇━━━━━━━━━━━━━┩
@@ -2055,21 +2046,26 @@ They are generated from script [setup.sh](setup.sh),
 
     The last line uses the toy data provided, downloading `instanovoplus-v1.1.0-alpha.ckpt` and `instanovo-v1.1.0.ckpt` to `~/.cache/instanovo`.
 
-    We reuse `tensorflow/`[^singularity] which contains Python 3.11 and InstaNovo 1.1.1 and `singularity exec tensorflow/ /usr/local/bin/instanovo version` gives
-
-    ```
-    ┏━━━━━━━━━━━━┳━━━━━━━━━━━━━┓
-    ┃ Package    ┃ Version     ┃
-    ┡━━━━━━━━━━━━╇━━━━━━━━━━━━━┩
-    │ InstaNovo  │ 1.1.1       │
-    │ InstaNovo+ │ 1.1.1       │
-    │ NumPy      │ 2.0.2       │
-    │ PyTorch    │ 2.6.0+cu124 │
-    │ Lightning  │ 2.5.1       │
-    └────────────┴─────────────┘
-    ```
-
+    We reuse `tensorflow/`[^singularity] which contains Python 3.11 and InstaNovo 1.1.1 and `singularity exec tensorflow/ /usr/local/bin/instanovo version` gives the same information
     but `singularity exec tensorflow/ /usr/local/bin/instanovo predict --data-path=InstaNovo/src/sample_data/*.mgf --output-path=spectra.csv` still requires GPU though one can proceed with `singularity build instanovo-1.1.1.sif tensorflow/`.
+
+    The CPU version is by `uv`, designed for development,
+
+    ```bash
+    git clone https://github.com/YOUR-USERNAME/InstaNovo.git
+    cd InstaNovo
+    module load ceuadmin/uv/0.6.14
+    uv sync --extra cpu
+    uv run pre-commit install
+    source .venv/bin/activate
+    instanovo predict --data-path=sample_data/*mgf --output-path=spectrum.csv
+    ```
+    giving `spectrum.csv`
+
+    ```
+    scan_number,precursor_mz,precursor_charge,experiment_name,spectrum_id,diffusion_predictions_tokenised,diffusion_predictions,diffusion_log_probabilities,transformer_predictions,transformer_predictions_tokenised,transformer_log_probabilities,transformer_token_log_probabilities
+    0,451.25348,2,spectra,spectra:0,"['Y', 'A', 'H', 'Y', 'K', 'R']",YAHYKR,-0.05671021342277527,LAHYNKR,"L, A, H, Y, N, K, R",-1.7666722536087036,"[-0.030482856556773186, -0.001450797077268362, -5.352353764465079e-05, -0.0014650813536718488, -0.022426443174481392, -0.5744566917419434, -0.25638389587402344]"
+    ```
 
 [^scGPT]: **scGPT**
 
