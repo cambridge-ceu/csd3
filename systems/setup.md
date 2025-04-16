@@ -789,6 +789,16 @@ They are generated from script [setup.sh](setup.sh),
 
 [^singularity]: **singularity**
 
+    The singularity module in place is already very useful, e.g.,
+
+    ```bash
+    singularity build --sandbox tensorflow docker://tensorflow/tensorflow:latest-gpu
+    singularity run tensorflow
+    singularity pull tensorflow_latest_gpu.sif docker://tensorflow/tensorflow:latest-gpu
+    ```
+
+    where we pull the container both in a directory and a sif. However, we now have
+
     ```bash
     mconfig --prefix=$CEUADMIN/singularity/4.0.3 --without-seccomp --without-conmon --without-suid
     cd builddir & make
