@@ -2214,3 +2214,6 @@ They are generated from script [setup.sh](setup.sh),
     ```bash
     curl -LsSf https://astral.sh/uv/install.sh | sh
     ```
+
+    extracts `uv`/`uvx` to `$HOME/.local/bin` and adds `. "$HOME/.local/bin/env"` to `$HOME/.bashrc` but might as well customise.
+
