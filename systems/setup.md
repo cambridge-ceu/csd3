@@ -2052,7 +2052,7 @@ They are generated from script [setup.sh](setup.sh),
     The CPU version is by `uv`, designed for development,
 
     ```bash
-    git clone https://github.com/YOUR-USERNAME/InstaNovo.git
+    git clone https://github.com/instadeepai/InstaNovo.git
     cd InstaNovo
     module load ceuadmin/uv/0.6.14
     uv sync --extra cpu
