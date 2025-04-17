@@ -2257,9 +2257,10 @@ They are generated from script [setup.sh](setup.sh),
     module load ceuadmin/BitNet
     cd $BITNET_ROOT
     run_inference -p "Write an essay about precision medicine" -n 900 -p 256 -t 8
+    run_inference -p "Why the sky is blue" -n 900 -t 1
     ```
 
-    We have the essay [precision-medicine.md](files/precision-medicine.md). The usage is also quoted here,
+    We have the essay [precision-medicine.md](files/precision-medicine.md) and an updated answer [why-the-sky-is-blue.md](files/why-the-sky-is-blue.md). The usage is also quoted here,
 
     ```
     usage: run_inference.py [-h] [-m MODEL] [-n N_PREDICT] -p PROMPT [-t THREADS] [-c CTX_SIZE] [-temp TEMPERATURE] [-cnv]
