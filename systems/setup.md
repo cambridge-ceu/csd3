@@ -395,6 +395,7 @@ All entries are ordered chronologically.
 | 2025-04-16  | uv/0.6.14                        | Generic[^uv]         |
 | ""          | InstaNovo/1.1.1                  | Proteomics           |
 | ""          | diann/2.1.0                      | Proteomics           |
+| 2025-04-17  | BitNet/b1.58-2B-4T               | Generic[^bitnet]     |
 
 \* CEU or approved users only.
 
@@ -2220,3 +2221,63 @@ They are generated from script [setup.sh](setup.sh),
 
     extracts `uv`/`uvx` to `$HOME/.local/bin` and adds `. "$HOME/.local/bin/env"` to `$HOME/.bashrc` but we might as well customise.
 
+[^bitnet]: **BitNet**
+
+    GitHub, <https://github.com/microsoft/BitNet>
+
+    ```bash
+    git clone --recursive https://github.com/microsoft/BitNet.git
+    cd BitNet/
+    module load python/3.9.12/gcc/pdcqf4o5
+    python -m venv BitNet
+    source BitNet/bin/activate
+    pip install -r requirements.txt
+    huggingface-cli download microsoft/BitNet-b1.58-2B-4T-gguf --local-dir models/BitNet-b1.58-2B-4T
+    python setup_env.py -md models/BitNet-b1.58-2B-4T -q i2_s
+    python run_inference.py -m models/BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf -p "You are a helpful assistant" -cnv
+    ```
+
+    The last line allows for prompt engineering,
+
+    ```
+    > why the sky is blue
+
+    The sky appears blue due to a phenomenon called Rayleigh scattering. This effect occurs when sunlight, which appears white, passes through Earth's atmosphere and interacts with molecules and small particles in the air.
+
+    Sunlight is made up of many different wavelengths of light, each with its own specific color. Blue light has a shorter wavelength than red light. When sunlight enters the Earth's atmosphere, it collides with these molecules and small particles. The shorter blue light waves are scattered in all directions by the molecules and particles much more than the longer red light waves. This scattering of shorter wavelengths is
+
+    > what is the result of 10 + 45
+
+    The result of 10 + 45 is 55.
+    ```
+
+    The module is much simplier to use, however,
+
+    ```bash
+    module load ceuadmin/BitNet
+    cd $BITNET_ROOT
+    run_inference -p "Write an essay about precision medicine" -n 900 -p 256 -t 8
+    ```
+
+    We have the essay [precision-medicine.md](files/precision-medicine.md). The usage is also quoted here,
+
+    > usage: run_inference.py [-h] [-m MODEL] [-n N_PREDICT] -p PROMPT [-t THREADS] [-c CTX_SIZE] [-temp TEMPERATURE] [-cnv]
+
+    > Run inference
+
+    > optional arguments:
+    >  -h, --help           show this help message and exit
+    >  -m MODEL, --model MODEL
+    >                       Path to model file
+    >  -n N_PREDICT, --n-predict N_PREDICT
+    >                       Number of tokens to predict when generating text
+    >  -p PROMPT, --prompt PROMPT
+    >                       Prompt to generate text from
+    >  -t THREADS, --threads THREADS
+    >                       Number of threads to use
+    >  -c CTX_SIZE, --ctx-size CTX_SIZE
+    >                       Size of the prompt context
+    >  -temp TEMPERATURE, --temperature TEMPERATURE
+    >                       Temperature, a hyperparameter that controls the randomness of the generated text
+    >  -cnv, --conversation  Whether to enable chat mode or not (for instruct models.)
+    >                       (When this option is turned on, the prompt specified by -p will be used as the system prompt.)
