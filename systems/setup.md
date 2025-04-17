@@ -2261,23 +2261,25 @@ They are generated from script [setup.sh](setup.sh),
 
     We have the essay [precision-medicine.md](files/precision-medicine.md). The usage is also quoted here,
 
-    > usage: run_inference.py [-h] [-m MODEL] [-n N_PREDICT] -p PROMPT [-t THREADS] [-c CTX_SIZE] [-temp TEMPERATURE] [-cnv]
+    ```
+    usage: run_inference.py [-h] [-m MODEL] [-n N_PREDICT] -p PROMPT [-t THREADS] [-c CTX_SIZE] [-temp TEMPERATURE] [-cnv]
 
-    > Run inference
+    Run inference
 
-    > optional arguments:
-    >  -h, --help           show this help message and exit
-    >  -m MODEL, --model MODEL
-    >                       Path to model file
-    >  -n N_PREDICT, --n-predict N_PREDICT
-    >                       Number of tokens to predict when generating text
-    >  -p PROMPT, --prompt PROMPT
-    >                       Prompt to generate text from
-    >  -t THREADS, --threads THREADS
-    >                       Number of threads to use
-    >  -c CTX_SIZE, --ctx-size CTX_SIZE
-    >                       Size of the prompt context
-    >  -temp TEMPERATURE, --temperature TEMPERATURE
-    >                       Temperature, a hyperparameter that controls the randomness of the generated text
-    >  -cnv, --conversation  Whether to enable chat mode or not (for instruct models.)
-    >                       (When this option is turned on, the prompt specified by -p will be used as the system prompt.)
+    optional arguments:
+     -h, --help           show this help message and exit
+     -m MODEL, --model MODEL
+                          Path to model file
+     -n N_PREDICT, --n-predict N_PREDICT
+                          Number of tokens to predict when generating text
+      -p PROMPT, --prompt PROMPT
+                          Prompt to generate text from
+     -t THREADS, --threads THREADS
+                          Number of threads to use
+     -c CTX_SIZE, --ctx-size CTX_SIZE
+                          Size of the prompt context
+     -temp TEMPERATURE, --temperature TEMPERATURE
+                          Temperature, a hyperparameter that controls the randomness of the generated text
+     -cnv, --conversation  Whether to enable chat mode or not (for instruct models.)
+                          (When this option is turned on, the prompt specified by -p will be used as the system prompt.)
+    ```
