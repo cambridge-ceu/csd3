@@ -2297,4 +2297,5 @@ They are generated from script [setup.sh](setup.sh),
     python -m venv cell2sentence
     source cell2sentence/bin/activate
     make install
+    pip install flash-attn --no-build-isolation
     ```
