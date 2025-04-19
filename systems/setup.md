@@ -396,6 +396,7 @@ All entries are ordered chronologically.
 | ""          | InstaNovo/1.1.1                  | Proteomics           |
 | ""          | diann/2.1.0                      | Proteomics           |
 | 2025-04-17  | BitNet/b1.58-2B-4T               | Generic[^bitnet]     |
+| 2025-04-19  | C2S-Scale/0.0.2                  | Single cell[^C2S]    |
 
 \* CEU or approved users only.
 
@@ -2273,7 +2274,7 @@ They are generated from script [setup.sh](setup.sh),
                           Path to model file
      -n N_PREDICT, --n-predict N_PREDICT
                           Number of tokens to predict when generating text
-      -p PROMPT, --prompt PROMPT
+     -p PROMPT, --prompt PROMPT
                           Prompt to generate text from
      -t THREADS, --threads THREADS
                           Number of threads to use
@@ -2283,4 +2284,17 @@ They are generated from script [setup.sh](setup.sh),
                           Temperature, a hyperparameter that controls the randomness of the generated text
      -cnv, --conversation  Whether to enable chat mode or not (for instruct models.)
                           (When this option is turned on, the prompt specified by -p will be used as the system prompt.)
+    ```
+
+[^C2S]: **C2S-Scale**
+
+    The setup is as usual,
+
+    ```bash
+    git clone https://github.com/vandijklab/cell2sentence.git
+    cd cell2sentence/
+    module load python/3.9.12/gcc/pdcqf4o5
+    python -m venv cell2sentence
+    source cell2sentence/bin/activate
+    make install
     ```
