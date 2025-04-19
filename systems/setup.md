@@ -2288,7 +2288,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^C2S]: **C2S-Scale**
 
-    Web, <https://research.google/blog/teaching-machines-the-language-of-biology-scaling-large-language-models-for-next-generation-single-cell-analysis/>
+    Blog, <https://research.google/blog/teaching-machines-the-language-of-biology-scaling-large-language-models-for-next-generation-single-cell-analysis/>
 
     The setup is as usual,
 
