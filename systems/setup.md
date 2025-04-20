@@ -397,6 +397,7 @@ All entries are ordered chronologically.
 | ""          | diann/2.1.0                      | Proteomics           |
 | 2025-04-17  | BitNet/b1.58-2B-4T               | Generic[^bitnet]     |
 | 2025-04-19  | C2S-Scale/0.0.2                  | Single cell[^C2S]    |
+| 2025-04-20  | VSCode/1.99.3                    | Generic              |
 
 \* CEU or approved users only.
 
