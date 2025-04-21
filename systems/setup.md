@@ -2305,7 +2305,7 @@ They are generated from script [setup.sh](setup.sh),
 
     Usage notes on tutorials 1-3, posted at <https://github.com/vandijklab/cell2sentence/issues/14>:
 
-    1. `src/cell2sentence/utils.py`, line 280: "r_squared": [r_squared_score.item()], -->  "r_squared": [r_squared_score];
+    1). `src/cell2sentence/utils.py`, line 280: "r_squared": [r_squared_score.item()], -->  "r_squared": [r_squared_score];
 
        ```python
        reconstructed_adata = anndata.AnnData(
@@ -2329,7 +2329,7 @@ They are generated from script [setup.sh](setup.sh),
        var=adata.var.copy()
        )
        ```
-    2. `cell_type_prediction_model_path` needs to be changed, e.g.,
+    2). `cell_type_prediction_model_path` needs to be changed, e.g.,
 
        ```python
        # Define CSModel object
@@ -2342,7 +2342,7 @@ They are generated from script [setup.sh](setup.sh),
            save_name=save_name
        )
        ```
-    3. Note that `eval_strategy="steps"` instead of `evaluation_strategy="steps"` below,
+    3). Note that `eval_strategy="steps"` instead of `evaluation_strategy="steps"` below,
 
        ```python
        train_args = TrainingArguments(
