@@ -2303,7 +2303,7 @@ They are generated from script [setup.sh](setup.sh),
     pip install flash-attn==1.0.4 --no-build-isolation
     ```
 
-    Usage notes on tutorials 1-3:
+    Usage notes on tutorials 1-3, posted at <https://github.com/vandijklab/cell2sentence/issues/14>:
 
     1. `src/cell2sentence/utils.py`, line 280: "r_squared": [r_squared_score.item()], -->  "r_squared": [r_squared_score];
 
