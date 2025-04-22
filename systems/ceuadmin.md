@@ -139,9 +139,10 @@ made).
 
 ### R
 
-A large collection of R packages (1,741 as of 17/4/2025, esp. with availability of major machine learning packages) is linked with the 
-latest R distribution, 4.5.0; there are also 4 packages (DescTools, Rfast, Rfast2, rcompanion) under R-gcc11. Note that there are 
-limitations with CSD3 so that `sf`, `terra`, `raster` and `stars` cannot be updated due to incomplete build of `gdal`/`proj`.
+A large collection of R packages (1,742 as of 22/4/2025, esp. with availability of major machine learning packages) is linked with the
+latest R distribution, 4.5.0; there are also packages (CRAN: DescTools, Rfast, Rfast2, rcompanion, rms -- which requires stringi
+herein; Bioconductor: BiocSingular, DropletUtils, beachmat, scater, scuttle) under 4.5.0-gcc11. Note that there are limitations with
+CSD3 so that `sf`, `terra`, `raster`, and `stars` cannot be updated due to incomplete build of `gdal`/`proj`.
 
 It is easy to point to them, e.g.,
 

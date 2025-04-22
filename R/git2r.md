@@ -4,6 +4,10 @@ sort: 7
 
 # git2r
 
+## 0.36.2
+
+The issue and solution remain the same as 0.35.0.
+
 ## 0.35.0
 
 We first download and unpack the source package, then mask the `configure` command

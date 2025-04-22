@@ -2102,6 +2102,7 @@ They are generated from script [setup.sh](setup.sh),
     pip install scvi-tools==0.20.3 anndata==0.9.2 scanpy==1.9.3
     pip install wandb
     pip install faiss-cpu
+    pip install nbformat
     pip list | awk '/scanpy|scib|scvi|scgpt|flash-attn|torch|wandb/'
     ```
 
@@ -2144,6 +2145,7 @@ They are generated from script [setup.sh](setup.sh),
     pip install numpy==1.25.2
     pip install wandb
     pip install iprogress
+    pip install nbformat
     pip list | awk '/scanpy|scib|scvi|scgpt|flash-attn|torch|wandb/'
     ```
 
