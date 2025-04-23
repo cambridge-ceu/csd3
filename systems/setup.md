@@ -398,6 +398,7 @@ All entries are ordered chronologically.
 | 2025-04-17  | BitNet/b1.58-2B-4T               | Generic[^bitnet]     |
 | 2025-04-19  | C2S-Scale/0.0.2                  | Single cell[^C2S]    |
 | 2025-04-20  | VSCode/1.99.3                    | Generic              |
+| 2025-04-23  | gcta/1.94.4                      | Genetics             |
 
 \* CEU or approved users only.
 

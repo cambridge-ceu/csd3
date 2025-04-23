@@ -401,7 +401,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2025-04-07 | scGPT/0.2.4                 | Single cell         |
     | ""         | scanpy/1.11.1               | Single cell         |
     | 2025-04-16 | diann/2.1.0                 | Proteomics          |
-
+    | 2025-04-23 | gcta/1.94.4                 | Genetics            |
 
     \* CEU or approved users only.
 
