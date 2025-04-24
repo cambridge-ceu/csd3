@@ -1718,6 +1718,29 @@ They are generated from script [setup.sh](setup.sh),
     .PHONY: all pull configure build install clean
     ```
 
+    By default, the compile takes all the resources so it is a good idea to make it manageable.
+
+    ```bash
+    ulimit -v 20971520  # Set virtual memory limit to 20 GB
+    export MOZCONFIG=/rds/project/rds-4o5vpvAowP0/software/gecko-dev/mozconfig
+    ```
+
+    with `mzconfig` containing these lines
+
+    ```mozconfig
+    # Set the number of parallel jobs
+    mk_add_options MOZ_MAKE_FLAGS="-j5"
+    # Set the object directory
+    mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-@CONFIG_GUESS@
+    # Enable application (Firefox)
+    ac_add_options --enable-application=browser
+    # Enable optimization and disable debugging
+    ac_add_options --enable-optimize
+    ac_add_options --disable-debug
+    ```
+
+    for instance, we see it translates to ` /usr/bin/gmake -C . -j5 -s -w install` near the end.
+
 [^node]: **node**
 
     This is in accordance with the GNU software,
