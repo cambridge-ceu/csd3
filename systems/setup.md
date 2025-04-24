@@ -2402,4 +2402,4 @@ They are generated from script [setup.sh](setup.sh),
 
 [^mozbuild]: **mozbuild**
 
-    These includes `cbindgen/0.28.0`, `clang/19.1.7`, `dump_syms/2.3.4`, `nasm/2.16.03`, `node/18.19.0` and `pkg-config/1.8.0` from compiling mozilla Firefox nightly. By default, the directory is `$HOME/.mozbuild` which could also be symbolic to a designated directory.
+    The cluster includes `cbindgen/0.28.0`, `clang/19.1.7`, `dump_syms/2.3.4`, `nasm/2.16.03`, `node/18.19.0` and `pkg-config/1.8.0` from compiling mozilla Firefox nightly. By default, the directory is `$HOME/.mozbuild` which could also be symbolic to a designated directory.
