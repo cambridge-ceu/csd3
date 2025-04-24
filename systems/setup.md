@@ -399,7 +399,7 @@ All entries are ordered chronologically.
 | 2025-04-19  | C2S-Scale/0.0.2                  | Single cell[^C2S]    |
 | 2025-04-20  | VSCode/1.99.3                    | Generic              |
 | 2025-04-23  | gcta/1.94.4                      | Genetics             |
-| 2025-04-24  | cbindgen/0.28.0                  | Generic[^cbindgen]   |
+| 2025-04-24  | cbindgen/0.28.0                  | Generic[^mozbuild]   |
 | ""          | clang/19.1.7                     | Generic              |
 | ""          | dump_syms/2.3.4                  | Generic              |
 | ""          | nasm/2.16.03                     | Generic              |
@@ -2377,7 +2377,6 @@ They are generated from script [setup.sh](setup.sh),
       )
       ```
 
-[^cbindgen]: **cbindgen**
+[^mozbuild]: **mozbuild**
 
-
-    The setup of `cbindgen/0.28.0`, `clang/19.1.7`, `dump_syms/2.3.4`, `nasm/2.16.03`, `node/18.19.0` and `pkg-config/1.8.0` takes advantage of mozilla Firefox building.
+    These includes `cbindgen/0.28.0`, `clang/19.1.7`, `dump_syms/2.3.4`, `nasm/2.16.03`, `node/18.19.0` and `pkg-config/1.8.0` from compiling mozilla Firefox building. By default, the directory is `$HOME/.mozbuild`.
