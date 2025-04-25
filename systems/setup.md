@@ -1721,7 +1721,7 @@ They are generated from script [setup.sh](setup.sh),
     By default, the compile takes all the resources so it is a good idea to make it manageable.
 
     ```bash
-    ulimit -v 20971520 # Set virtual memory limit to 20 GB
+    ulimit -v 15728640 # Set virtual memory limit to 15 GB
     export MOZCONFIG=/rds/project/rds-4o5vpvAowP0/software/gecko-dev/mozconfig
     ```
 
