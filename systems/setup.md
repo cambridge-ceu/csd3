@@ -2290,11 +2290,24 @@ They are generated from script [setup.sh](setup.sh),
     ```bash
     module load ceuadmin/BitNet
     cd $BITNET_ROOT
+    run_inference -p "In this chapter, we'll discuss first steps with generative AI in Python."
     run_inference -p "Write an essay about precision medicine" -n 900 -p 256 -t 8
     run_inference -p "Why the sky is blue" -n 900 -t 1
     ```
 
-    We have the essay [precision-medicine.md](files/precision-medicine.md) and an updated answer [why-the-sky-is-blue.md](files/why-the-sky-is-blue.md). The usage is also quoted here,
+    We have the first output as follows,
+
+    ---
+
+    In this chapter, we'll discuss first steps with generative AI in Python. You will learn how to create and train a simple AI model using PyTorch, a deep learning library. This is a basic introduction to the topic and will not cover advanced topics. If you're new to machine learning, you might want to start with more basic tutorials. But, if you're interested in learning more about generative AI, this chapter will give you a good foundation.
+
+    ## 1. Introduction
+
+    Generative AI refers to a class of AI systems that generate new data. These systems can produce text, images, audio, and more. They can be used in various applications, such as content creation, data augmentation,
+
+    ---
+
+    We then have the essay [precision-medicine.md](files/precision-medicine.md) and an updated answer [why-the-sky-is-blue.md](files/why-the-sky-is-blue.md). The usage is also quoted here,
 
     ```
     usage: run_inference.py [-h] [-m MODEL] [-n N_PREDICT] -p PROMPT [-t THREADS] [-c CTX_SIZE] [-temp TEMPERATURE] [-cnv]
