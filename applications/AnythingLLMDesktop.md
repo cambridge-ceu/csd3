@@ -25,6 +25,7 @@ Our batch script is `start.sh` indead of the `start` provided,
 ```bash
 export STORAGE_DIR=root=/rds/project/rds-4o5vpvAowP0/software/AnythingLLMDesktop
 export desktop=anythingllm-desktop
+cd ${STORAGE_DIR}
 $desktop/$desktop --no-sandbox > /dev/null 2>&1
 ```
 
