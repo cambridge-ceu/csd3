@@ -1,5 +1,5 @@
 ---
-sort: 30
+sort: 5
 ---
 
 # AnythingLLM Desktop
