@@ -405,6 +405,7 @@ All entries are ordered chronologically.
 | ""          | nasm/2.16.03                     | Generic              |
 | ""          | node/18.19.0                     | Generic              |
 | ""          | pkg-config/1.8.0                 | Generic              |
+| 2025-04-29  | AnythingLLMDesktop/latest        | Generic              |
 
 \* CEU or approved users only.
 
