@@ -22,12 +22,6 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
 
-nav_external_links:
-  - title: "Policies"
-    url: "https://docs.hpc.cam.ac.uk/hpc/user-guide/policies.html#acknowledging-csd3"
-    hide_icon: false
-    opens_in_new_tab: true
-
 readme_index:
   with_frontmatter: true
   show_sorted: false
