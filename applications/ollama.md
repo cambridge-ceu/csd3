@@ -252,3 +252,30 @@ ollama run "$OUTPUT_MODEL"
 kill $OLLAMA_PID
 ```
 
+Next, we build Llama-4-Maverick-17B-128E as described in <https://cambridge-ceu.github.io/csd3/systems/setup.html#fn:llama_cpp>
+
+```bash
+echo FROM ./Llama-4-Maverick-17B-128E-Instruct.gguf > Modelfile
+ollama create llama4maverick -f Modelfile
+ollama list
+```
+
+to get
+
+```
+NAME                                                       ID              SIZE      MODIFIED
+llama4maverick:latest                                      46d3f0108969    425 GB    About an hour ago
+mistrallite:latest                                         19594c72ecfd    4.4 GB    2 hours ago
+llama3.2:3b-instruct-q4_K_M                                a80c4f17acd5    2.0 GB    12 days ago
+gemma3:latest                                              c0494fe00251    3.3 GB    6 weeks ago
+hf.co/unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF:Q3_K_M    f24fb6af4e5f    34 GB     6 weeks ago
+qwen:latest                                                d53d04290064    2.3 GB    7 weeks ago
+mistral:latest                                             f974a74358d6    4.1 GB    7 weeks ago
+r1-1776:latest                                             140ea940f21d    42 GB     2 months ago
+gemma2:latest                                              ff02c3702f32    5.4 GB    2 months ago
+gemma2:27b                                                 53261bc9c192    15 GB     2 months ago
+phi4:latest                                                ac896e5b8b34    9.1 GB    2 months ago
+llama3.3:latest                                            a6eb4748fd29    42 GB     2 months ago
+deepseek-r1:32b                                            38056bbcbb2d    19 GB     2 months ago
+vicuna:latest                                              370739dc897b    3.8 GB    2 months ago
+```
