@@ -226,32 +226,6 @@ where 1 minute is granted to establish the server, followed by a call with our p
 
 > ​GGUF, which stands for Generic GPT Unified Format, is a binary file format designed for efficiently storing and loading large language models (LLMs). Developed as an extension of the GGML format, GGUF addresses the need for scalable and efficient deployment of extensive models, particularly those exceeding 100GB in size.
 
-A way to handle .gguf format is as follows,
-
-```bash
-#!/usr/bin/env bash
-
-module load ceuadmin/ollama
-ollama serve &
-OLLAMA_PID=$!
-sleep 10
-if [ -z "$1" ]; then
-    INPUT_FILE="Llama-4-Maverick-17B-128E-Instruct.gguf"
-    OUTPUT_MODEL="llama4maverick"
-else
-    INPUT_FILE="$1"
-    OUTPUT_MODEL="$2"
-fi
-if [ ! -f "$INPUT_FILE" ]; then
-    echo "Error: Input file '$INPUT_FILE' not found."
-    kill $OLLAMA_PID
-    exit 1
-fi
-echo "FROM ./$INPUT_FILE" | ollama create "$OUTPUT_MODEL" -f -
-ollama run "$OUTPUT_MODEL"
-kill $OLLAMA_PID
-```
-
 Next, we build Llama-4-Maverick-17B-128E as described in <https://cambridge-ceu.github.io/csd3/systems/setup.html#fn:llama_cpp>
 
 ```bash
@@ -278,4 +252,31 @@ phi4:latest                                                ac896e5b8b34    9.1 G
 llama3.3:latest                                            a6eb4748fd29    42 GB     2 months ago
 deepseek-r1:32b                                            38056bbcbb2d    19 GB     2 months ago
 vicuna:latest                                              370739dc897b    3.8 GB    2 months ago
+```
+
+One can also avoid explicitly using a `Modelfile`,
+
+```bash
+#!/usr/bin/env bash
+
+module load ceuadmin/ollama
+ollama serve &
+OLLAMA_PID=$!
+sleep 10
+if [ -z "$1" ]; then
+    INPUT_FILE="DeepSeek-V3-0324-UD-IQ2_XXS.gguf"
+    OUTPUT_MODEL="deepseekv3"
+else
+    INPUT_FILE="$1"
+    OUTPUT_MODEL="$2"
+fi
+if [ ! -f "$INPUT_FILE" ]; then
+    echo "Error: Input file '$INPUT_FILE' not found."
+    kill $OLLAMA_PID
+    exit 1
+fi
+echo "FROM ./$INPUT_FILE" | \
+ollama create "$OUTPUT_MODEL" -f -
+ollama run "$OUTPUT_MODEL"
+kill $OLLAMA_PID
 ```
