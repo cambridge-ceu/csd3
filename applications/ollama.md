@@ -34,6 +34,12 @@ chrome 127.0.0.1:11434 &
 
 so upon visiting <http://127.0.0.1:11434/>, we see the message: `Ollama is running`.
 
+The port number can be reset as follows,
+
+```bash
+export OLLAMA_HOST=127.0.0.1:8000
+```
+
 ## REST API: /api/generate
 
 From the information given above, our benchmark query is 
@@ -217,7 +223,6 @@ ollama serve &
 sleep 1m
 touch $output
 ollama run gemma3 "Why the sky is blue?" >> $output
-export OLLAMA_HOST=127.0.0.1:8000
 ```
 
 where 1 minute is granted to establish the server, followed by a call with our prompt as a command-line argument.
