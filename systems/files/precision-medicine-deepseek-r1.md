@@ -46,6 +46,8 @@ I think I've covered all the main points. Now, I'll start writing the essay, mak
 
 </think>
 
+---
+
 **Essay on Precision Medicine: A New Era in Healthcare**
 
 **Introduction**
