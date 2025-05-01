@@ -2191,7 +2191,7 @@ They are generated from script [setup.sh](setup.sh),
     ```bash
     module load ceuadmin/BitNet
     run_inference -p "In this chapter, we'll discuss first steps with generative AI in Python."
-    run_inference -p "Write an essay about precision medicine" -n 900 -p 256 -t 8
+    run_inference -p "Write an essay about precision medicine" -n 900 -t 8
     run_inference -p "Why the sky is blue" -n 900 -t 1
     ```
 
