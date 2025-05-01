@@ -2161,8 +2161,8 @@ They are generated from script [setup.sh](setup.sh),
     GitHub, <https://github.com/microsoft/BitNet>
 
     ```bash
-    git clone --recursive https://github.com/microsoft/BitNet.git
-    cd BitNet/
+    git clone --recursive https://github.com/microsoft/BitNet.git b1.58-2B-4T
+    cd b1.58-2B-4T/
     module load python/3.9.12/gcc/pdcqf4o5
     python -m venv BitNet
     source BitNet/bin/activate
@@ -2190,7 +2190,6 @@ They are generated from script [setup.sh](setup.sh),
 
     ```bash
     module load ceuadmin/BitNet
-    cd $BITNET_ROOT
     run_inference -p "In this chapter, we'll discuss first steps with generative AI in Python."
     run_inference -p "Write an essay about precision medicine" -n 900 -p 256 -t 8
     run_inference -p "Why the sky is blue" -n 900 -t 1
