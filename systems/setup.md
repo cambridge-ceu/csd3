@@ -1952,7 +1952,7 @@ They are generated from script [setup.sh](setup.sh),
     llama-gguf-split --merge DeepSeek-V3-0324-UD-IQ2_XXS-00001-of-00005.gguf DeepSeek-V3-0324-UD-IQ2_XXS.gguf
     ```
 
-    We have a considerable faster session, `llama-run vicuna`
+    We have a considerable faster session, `llama-run vicuna`,
 
     > why the sky is blue
 
@@ -1969,6 +1969,8 @@ They are generated from script [setup.sh](setup.sh),
     Precision medicine has the potential to revolutionize healthcare by improving treatment outcomes and reducing side effects. It has already been used to develop highly effective targeted therapies for a range of diseases, including cancer, heart disease, and diabetes. In the future, precision medicine has the potential to be used to develop personalized medications, which could be tailored to an individual's specific needs and could be taken orally, rather than through invasive procedures such as injections.
 
     In conclusion, precision medicine is an approach to healthcare that involves using advanced technologies to develop highly targeted therapies that can improve treatment outcomes and reduce side effects. It has the potential to revolutionize healthcare by improving treatment outcomes and reducing side effects, and could be used to develop personalized medications in the future.
+
+    ---
 
     This is from `llama-run deepseek-r1`, [precision-medicine-deepseek-r1.md](files/precision-medicine-deepseek-r1.md).
 
