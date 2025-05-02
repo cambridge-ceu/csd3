@@ -6,6 +6,8 @@ sort: 5
 
 Web: <https://anythingllm.com/>
 
+The environment suppresses the usual screen outputs, keeps query histories and allows for document embedding.
+
 ## Installation
 
 ```bash
@@ -61,5 +63,3 @@ Since it is extremely slow from the console, this is considered on two aspects:
 
 1. No use of AnythingLLM Desktop, e.g., `llama-run deepseek-r1`. The speed is very impressive.
 2. Multithreading under AnythingLLM Desktop, e.g., `llama-server -m deepseek-r1 --port 8080 -t 8`. This is furnished by selecting `Local AI` and the right end point, e.g., `http://localhost:8080/v1`.
-
-As always, option 2 suppresses the usual screen outputs.
