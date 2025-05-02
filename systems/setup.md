@@ -406,6 +406,7 @@ All entries are ordered chronologically.
 | ""          | node/18.19.0                     | Generic              |
 | ""          | pkg-config/1.8.0                 | Generic              |
 | 2025-04-29  | AnythingLLMDesktop/latest        | Generic              |
+| 2025-05-02  | llama.cpp/5259                   | Generic              |
 
 \* CEU or approved users only.
 
