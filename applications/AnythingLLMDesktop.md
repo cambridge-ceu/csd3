@@ -59,7 +59,7 @@ ollama list
 
 Since it is extremely slow from the console, this is considered on two aspects:
 
-1. llama-run. It is already very impressive, e.g., `llama-run deepseek-r1`.
-2. multithreading. This is particularly relevant in this context, e.g., `llama-server -m deepseek-r1 --port 8080 -t 8`. A prerequiste is that in the workspace `Local AI` has to be chosen and make sure the right end point is used, e.g., `http://localhost:8080/v1`.
+1. No use of AnythingLLM Desktop, e.g., `llama-run deepseek-r1`. The speed is very impressive.
+2. Multithreading under AnythingLLM Desktop, e.g., `llama-server -m deepseek-r1 --port 8080 -t 8`. This is furnished by selecting `Local AI` and the right end point, e.g., `http://localhost:8080/v1`.
 
-A minor benefit is that the screen is considerably cleaner without the usual screen outputs.
+As always, option 2 suppresses the usual screen outputs.
