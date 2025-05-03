@@ -2349,4 +2349,5 @@ They are generated from script [setup.sh](setup.sh),
     git checkout v1.1.1
     mkdir 1.1.1 && cd 1.1.1
     cmake ..
+    make
     ```
