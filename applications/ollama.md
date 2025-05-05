@@ -179,6 +179,17 @@ The answer could be slightly different in form, e.g.,
 > especially during the daytime when the Sun is high in the sky. The color of the sky can also be affected by the amount of water vapor and
 > dust particles in the atmosphere, which can make the sky appear more hazy or gray.
 
+## Llama4
+
+Web, <https://ollama.com/library/llama4>
+
+This requires a recent version of ollama, nevertheless can be more specific,
+
+```bash
+ollama run llama4:scout
+ollama run llama4:maverick
+```
+
 ## A lot of models
 
 We could use the same trick elsewhere, e.g.,
@@ -284,15 +295,4 @@ echo "FROM ./$INPUT_FILE" | \
 ollama create "$OUTPUT_MODEL" -f -
 ollama run "$OUTPUT_MODEL"
 kill $OLLAMA_PID
-```
-
-## Llama4
-
-Web, <https://ollama.com/library/llama4>
-
-This requires a recent version of ollama, nevertheless more specific,
-
-```bash
-ollama run llama4:scout
-ollama run llama4:maverick
 ```
