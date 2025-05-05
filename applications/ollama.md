@@ -179,7 +179,7 @@ The answer could be slightly different in form, e.g.,
 > especially during the daytime when the Sun is high in the sky. The color of the sky can also be affected by the amount of water vapor and
 > dust particles in the atmosphere, which can make the sky appear more hazy or gray.
 
-## Llama4
+## Llama 4
 
 Web, <https://ollama.com/library/llama4>
 
