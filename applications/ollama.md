@@ -285,3 +285,14 @@ ollama create "$OUTPUT_MODEL" -f -
 ollama run "$OUTPUT_MODEL"
 kill $OLLAMA_PID
 ```
+
+## Llama4
+
+Web, <https://ollama.com/library/llama4>
+
+This requires a recent version of ollama, nevertheless more specific,
+
+```bash
+ollama run llama4:scout
+ollama run llama4:maverick
+```
