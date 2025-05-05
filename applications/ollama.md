@@ -195,7 +195,7 @@ ollama run llama4:maverick
 We could use the same trick elsewhere, e.g.,
 
 ```bash
-export OLLAMA_MODELS=/rds/usr/$USER/hpc-work/ollama
+export OLLAMA_MODELS=/rds/usr/$USER/hpc-work/HuggingFace
 ln -sf ${OLLAMA_MODELS} $HOME/.ollama
 ```
 
