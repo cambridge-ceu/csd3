@@ -190,7 +190,7 @@ ollama run llama4:scout
 ollama run llama4:maverick
 ```
 
-## A lot of models
+## A big or many model(s)
 
 We could use the same trick elsewhere, e.g.,
 
