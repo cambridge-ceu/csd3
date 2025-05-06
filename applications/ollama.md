@@ -6,7 +6,7 @@ sort: 35
 
 Web: <https://ollama.com/>.
 
-## Installation
+## Setup
 
 ```bash
 curl -L https://ollama.com/download/ollama-linux-amd64.tgz | \
@@ -39,6 +39,12 @@ The port number can be reset as follows,
 ```bash
 export OLLAMA_HOST=127.0.0.1:8000
 ```
+
+Lastly, use
+
+`ollama serve > ollama.log 2>&1 &`
+
+to run `ollama serve` in the background with proper output redirection and without control characters.
 
 ## REST API: /api/generate
 
