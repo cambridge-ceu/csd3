@@ -409,6 +409,7 @@ All entries are ordered chronologically.
 | 2025-05-02  | llama.cpp/5259                   | Generic              |
 | 2025-05-03  | GENIE/1.1.1                      | Genetics[^genie]     |
 | 2025-05-05  | ollama/0.6.8                     | Generic              |
+| 2025-05-06  | SuSiEx/1.1.2                     | Genetics             |
 
 \* CEU or approved users only.
 

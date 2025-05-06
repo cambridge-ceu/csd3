@@ -83,15 +83,15 @@ The current list is as follows,
 [261] "singularity"            "SMR"                    "snakemake"              "SNP2HLA"
 [265] "snptest"                "spread-sheet-widget"    "spyder"                 "sqlite"
 [269] "sra-tools"              "sshpass"                "ssw"                    "STAR"
-[273] "stata"                  "SurvivalAnalysis"       "SurvivalKit"            "Swift"
-[277] "SYMPHONY"               "tabix"                  "tandem"                 "tatami"
-[281] "tesseract"              "texinfo"                "ThermoRawFileParser"    "ThermoRawFileParserGUI"
-[285] "thunderbird"            "tidy"                   "tiff"                   "trinculo"
-[289] "trousers"               "Typora"                 "unbound"                "uv"
-[293] "vala"                   "VarScan"                "vcftools"               "VEGAS2"
-[297] "verifyBamID"            "VSCode"                 "VSCodium"               "vte"
-[301] "wine"                   "wrk"                    "xpdf"                   "yaml-cpp"
-[305] "Zotero"                 "zstd"
+[273] "stata"                  "SurvivalAnalysis"       "SurvivalKit"            "SuSiEx"
+[277] "Swift"                  "SYMPHONY"               "tabix"                  "tandem"
+[281] "tatami"                 "tesseract"              "texinfo"                "ThermoRawFileParser"
+[285] "ThermoRawFileParserGUI" "thunderbird"            "tidy"                   "tiff"
+[289] "trinculo"               "trousers"               "Typora"                 "unbound"
+[293] "uv"                     "vala"                   "VarScan"                "vcftools"
+[297] "VEGAS2"                 "verifyBamID"            "VSCode"                 "VSCodium"
+[301] "vte"                    "wine"                   "wrk"                    "xpdf"
+[305] "yaml-cpp"               "Zotero"                 "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -405,6 +405,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2025-04-16 | diann/2.1.0                 | Proteomics          |
     | 2025-04-23 | gcta/1.94.4                 | Genetics            |
     | 2025-05-03 | GENIE/1.1.1                 | Genetics            |
+    | 2025-05-06 | SuSiEx/1.1.2                | Genetics            |
 
     \* CEU or approved users only.
 
