@@ -59,7 +59,7 @@ ollama list
 
 ## llama.cpp
 
-Since it is extremely slow from the console, this is considered on two aspects:
+Since ollama is extremely slow from the console, this is considered on two aspects:
 
 1. No use of AnythingLLM Desktop, e.g., `llama-run deepseek-r1`. The speed is very impressive.
 2. Multithreading under AnythingLLM Desktop, e.g., `llama-server -m deepseek-r1 --port 8080 -t 8`. This is furnished by selecting `Local AI` and the right end point, e.g., `http://localhost:8080/v1`.
