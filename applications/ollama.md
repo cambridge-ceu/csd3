@@ -179,6 +179,13 @@ The answer could be slightly different in form, e.g.,
 > especially during the daytime when the Sun is high in the sky. The color of the sky can also be affected by the amount of water vapor and
 > dust particles in the atmosphere, which can make the sky appear more hazy or gray.
 
+This is from deepseek-r1.32b,
+
+> The sky appears blue due to Rayleigh scattering. Sunlight consists of various colors, each with different wavelengths. Blue light has a shorter wavelength and is scattered more by
+> molecules in the atmosphere, like nitrogen and oxygen. This scattering occurs predominantly during the day when the sun is high, making the sky appear blue. At sunrise or sunset,
+> longer paths through the atmosphere scatter out much of the blue light, revealing reds and oranges. Additionally, higher altitudes with thinner air result in a deeper blue sky due to
+> reduced scattering.
+
 ## Llama 4
 
 Web, <https://ollama.com/library/llama4>
@@ -198,13 +205,6 @@ We could use the same trick elsewhere, e.g.,
 export OLLAMA_MODELS=/rds/usr/$USER/hpc-work/HuggingFace
 ln -sf ${OLLAMA_MODELS} $HOME/.ollama
 ```
-
-This is from deepseek-r1.32b,
-
-> The sky appears blue due to Rayleigh scattering. Sunlight consists of various colors, each with different wavelengths. Blue light has a shorter wavelength and is scattered more by
-> molecules in the atmosphere, like nitrogen and oxygen. This scattering occurs predominantly during the day when the sun is high, making the sky appear blue. At sunrise or sunset,
-> longer paths through the atmosphere scatter out much of the blue light, revealing reds and oranges. Additionally, higher altitudes with thinner air result in a deeper blue sky due to
-> reduced scattering.
 
 ## SLURM
 
