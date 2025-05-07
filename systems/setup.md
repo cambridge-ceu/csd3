@@ -384,12 +384,12 @@ All entries are ordered chronologically.
 | 2025-03-22  | diann/2.0.2                      | Proteomics[^diann]   |
 | 2025-03-25  | firefox/60.5.1-1.el7             | Generic[^esr]        |
 | 2025-03-26  | firefox/136.0                    | Generic              |
-| 2025-03-29  | llama.cpp/4991                   | Generic[^llama_cpp]  |
+| 2025-03-29  | llama.cpp/b4991                  | Generic[^llama_cpp]  |
 | 2025-04-05  | InstaNovo/1.1.1-GPU              | Proteomics[^insnovo] |
 | 2025-04-07  | scGPT/0.2.4                      | Single cell[^scGPT]  |
 | ""          | scanpy/1.11.1                    | Single cell[^scanpy] |
 | 2025-04-11  | R/4.5.0                          | Generic              |
-| ""          | llama.cpp/5121                   | Generic              |
+| ""          | llama.cpp/b5121                  | Generic              |
 | 2025-04-12  | ollama/0.6.5                     | Generic              |
 | 2025-04-15  | DrugAssist/latest                | Generic[^DrugAssist] |
 | 2025-04-16  | uv/0.6.14                        | Generic[^uv]         |
@@ -406,7 +406,7 @@ All entries are ordered chronologically.
 | ""          | node/18.19.0                     | Generic              |
 | ""          | pkg-config/1.8.0                 | Generic              |
 | 2025-04-29  | AnythingLLMDesktop/latest        | Generic              |
-| 2025-05-02  | llama.cpp/5259                   | Generic              |
+| 2025-05-02  | llama.cpp/b5259                  | Generic              |
 | 2025-05-03  | GENIE/1.1.1                      | Genetics[^genie]     |
 | 2025-05-05  | ollama/0.6.8                     | Generic              |
 | 2025-05-06  | SuSiEx/1.1.2                     | Genetics             |
@@ -1943,7 +1943,7 @@ They are generated from script [setup.sh](setup.sh),
     git clone https://github.com/ggerganov/llama.cpp.git
     cd llama.cpp
     mkdir build && cd build
-    cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/0.0.4991 ..
+    cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b4991 ..
     make && make install
     # It is recommended to build from release to avoid possible intermediate updates
     wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/b5303.tar.gz | tar xvfz -
