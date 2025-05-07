@@ -410,6 +410,7 @@ All entries are ordered chronologically.
 | 2025-05-03  | GENIE/1.1.1                      | Genetics[^genie]     |
 | 2025-05-05  | ollama/0.6.8                     | Generic              |
 | 2025-05-06  | SuSiEx/1.1.2                     | Genetics             |
+| 2025-05-07  | Synapse/4.8.0                    | Generic              |
 
 \* CEU or approved users only.
 

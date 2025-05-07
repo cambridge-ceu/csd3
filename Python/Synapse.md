@@ -8,6 +8,24 @@ Web: <https://www.synapse.org> ([GitHub](https://github.com/Sage-Bionetworks/))\
 Token: <https://www.synapse.org/#!PersonalAccessTokens:>\
 Help forum: <https://www.synapse.org/#!SynapseForum:default>
 
+## ceuadmin/Synapse/4.8.0
+
+The very slim setup is done as follows,
+
+```bash
+module load python/3.9.12/gcc/pdcqf4o5
+python -m venv 4.8.0
+source 4.8.0/bin/activate
+pip install synapseclient
+pip install synapse
+pip cache purge
+synapse get -r syn51761394
+```
+
+where the last line for the Fenland SomaLogic pGWAS, <https://www.synapse.org/#!Synapse:syn51761394/wiki/622766>.
+
+---
+
 ## CSD3 modules
 
 As will be seen below, it is available as companion of both snakemake and Anaconda, namely,
@@ -404,7 +422,3 @@ tabix -S1 -s1 -b2 -e2 -f "${dst}/${population}/${protein}.bgz"
 ```
 
 where we finally use the file extension name `.bgz` (by `bgzip`) to differentiate from the usual `.gz` (by `gzip`).
-
-## 5. Related projects
-
-Fenland SomaLogic pGWAS, <https://www.synapse.org/#!Synapse:syn51761394/wiki/622766>
