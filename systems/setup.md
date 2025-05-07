@@ -411,6 +411,7 @@ All entries are ordered chronologically.
 | 2025-05-05  | ollama/0.6.8                     | Generic              |
 | 2025-05-06  | SuSiEx/1.1.2                     | Genetics             |
 | 2025-05-07  | Synapse/4.8.0                    | Generic              |
+| ""          | llama.cpp/b5305                  | Generic              |
 
 \* CEU or approved users only.
 
@@ -1938,10 +1939,17 @@ They are generated from script [setup.sh](setup.sh),
     GitHub: <https://github.com/ggml-org/llama.cpp>
 
     ```bash
+    # Initially, we build from GitHub
     git clone https://github.com/ggerganov/llama.cpp.git
     cd llama.cpp
     mkdir build && cd build
     cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/0.0.4991 ..
+    make && make install
+    # It is recommended to build from release to avoid possible intermediate updates
+    wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/b5303.tar.gz | tar xvfz -
+    cd llama.cpp-b5303/
+    mkdir build && cd build
+    cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b5303 ..
     make && make install
     ```
 
