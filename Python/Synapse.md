@@ -22,7 +22,7 @@ pip cache purge
 synapse get -r syn51761394
 ```
 
-where the last line for the Fenland SomaLogic pGWAS, <https://www.synapse.org/#!Synapse:syn51761394/wiki/622766>.
+where the last line is for the Fenland SomaLogic pGWAS, <https://www.synapse.org/#!Synapse:syn51761394/wiki/622766>.
 
 ---
 
