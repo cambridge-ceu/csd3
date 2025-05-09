@@ -412,6 +412,7 @@ All entries are ordered chronologically.
 | 2025-05-06  | SuSiEx/1.1.2                     | Genetics             |
 | 2025-05-07  | Synapse/4.8.0                    | Generic              |
 | ""          | llama.cpp/b5305                  | Generic              |
+| 2025-05-09  | PGS-CSx/1.1.0                    | Genetics[pgs_csx]    |
 
 \* CEU or approved users only.
 
@@ -2361,4 +2362,25 @@ They are generated from script [setup.sh](setup.sh),
     mkdir 1.1.1 && cd 1.1.1
     cmake ..
     make
+    ```
+
+[^pgs_csx]: **PGS-CSx**
+
+    Web: <https://github.com/getian107/PRScsx>
+
+    The Python packages numpy and scipy are required, which are conveniently derived from ceuadmin/scGPT, and the documenetation example is used as follows,
+
+    ```bash
+    #!/usr/bin/bash
+    module load ceuadmin/PGS-CSx
+    python ${PGS_CSx_ROOT}/PRScsx.py
+           --ref_dir=${LD_UKBB} \
+           --bim_prefix=test_data/test \
+           --sst_file=test_data/EUR_sumstats.txt,test_data/EAS_sumstats.txt \
+           --n_gwas=200000,100000 \
+           --pop=EUR,EAS \
+           --chrom=22 \
+           --phi=1e-2 \
+           --out_dir=. \
+           --out_name=test
     ```

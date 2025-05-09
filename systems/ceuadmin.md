@@ -68,30 +68,31 @@ The current list is as follows,
 [201] "osca"                   "p7zip-zstd"             "PAINTOR"                "pandoc"
 [205] "pandoc-citeproc"        "pango"                  "parallel"               "Pascal"
 [209] "patchelf"               "pcre2"                  "pdf2djvu"               "pdfjam"
-[213] "peer"                   "Perseus"                "pgsc_calc"              "phenoscanner"
-[217] "PhySO"                  "picard"                 "pigz"                   "pkg-config"
-[221] "plink"                  "plink-bgi"              "plinkseq"               "podman"
-[225] "PoGo"                   "polyphen"               "poppler"                "popt"
-[229] "proj"                   "PRSice"                 "pspp"                   "pulsar"
-[233] "PWCoCo"                 "pwiz"                   "qctool"                 "qemu"
-[237] "qpdf"                   "qt"                     "qtcreator"              "QTLtools"
-[241] "quarto"                 "quicktest"              "R"                      "raremetal"
-[245] "rclone"                 "readline"               "regenie"                "regtools"
-[249] "RHHsoftware"            "rst2pdf"                "rstudio"                "rtmpdump"
-[253] "ruby"                   "rust"                   "sage"                   "samtools"
-[257] "Scala"                  "scGPT"                  "seqkit"                 "shapeit"
-[261] "singularity"            "SMR"                    "snakemake"              "SNP2HLA"
-[265] "snptest"                "spread-sheet-widget"    "spyder"                 "sqlite"
-[269] "sra-tools"              "sshpass"                "ssw"                    "STAR"
-[273] "stata"                  "SurvivalAnalysis"       "SurvivalKit"            "SuSiEx"
-[277] "Swift"                  "SYMPHONY"               "tabix"                  "tandem"
-[281] "tatami"                 "tesseract"              "texinfo"                "ThermoRawFileParser"
-[285] "ThermoRawFileParserGUI" "thunderbird"            "tidy"                   "tiff"
-[289] "trinculo"               "trousers"               "Typora"                 "unbound"
-[293] "uv"                     "vala"                   "VarScan"                "vcftools"
-[297] "VEGAS2"                 "verifyBamID"            "VSCode"                 "VSCodium"
-[301] "vte"                    "wine"                   "wrk"                    "xpdf"
-[305] "yaml-cpp"               "Zotero"                 "zstd"
+[213] "peer"                   "Perseus"                "pgsc_calc"              "PGS-CSx"
+[217] "phenoscanner"           "PhySO"                  "picard"                 "pigz"
+[221] "pkg-config"             "plink"                  "plink-bgi"              "plinkseq"
+[225] "podman"                 "PoGo"                   "polyphen"               "poppler"
+[229] "popt"                   "proj"                   "PRSice"                 "pspp"
+[233] "pulsar"                 "PWCoCo"                 "pwiz"                   "qctool"
+[237] "qemu"                   "qpdf"                   "qt"                     "qtcreator"
+[241] "QTLtools"               "quarto"                 "quicktest"              "R"
+[245] "raremetal"              "rclone"                 "readline"               "regenie"
+[249] "regtools"               "RHHsoftware"            "rst2pdf"                "rstudio"
+[253] "rtmpdump"               "ruby"                   "rust"                   "sage"
+[257] "samtools"               "Scala"                  "scGPT"                  "seqkit"
+[261] "shapeit"                "singularity"            "SMR"                    "snakemake"
+[265] "SNP2HLA"                "snptest"                "spread-sheet-widget"    "spyder"
+[269] "sqlite"                 "sra-tools"              "sshpass"                "ssw"
+[273] "STAR"                   "stata"                  "SurvivalAnalysis"       "SurvivalKit"
+[277] "SuSiEx"                 "Swift"                  "SYMPHONY"               "Synapse"
+[281] "tabix"                  "tandem"                 "tatami"                 "tesseract"
+[285] "texinfo"                "ThermoRawFileParser"    "ThermoRawFileParserGUI" "thunderbird"
+[289] "tidy"                   "tiff"                   "trinculo"               "trousers"
+[293] "Typora"                 "unbound"                "uv"                     "vala"
+[297] "VarScan"                "vcftools"               "VEGAS2"                 "verifyBamID"
+[301] "VSCode"                 "VSCodium"               "vte"                    "wine"
+[305] "wrk"                    "xpdf"                   "yaml-cpp"               "Zotero"
+[309] "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -406,6 +407,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2025-04-23 | gcta/1.94.4                 | Genetics            |
     | 2025-05-03 | GENIE/1.1.1                 | Genetics            |
     | 2025-05-06 | SuSiEx/1.1.2                | Genetics            |
+    | 2025-05-09 | PGS-CSx/1.1.0               | Genetics            |
 
     \* CEU or approved users only.
 
