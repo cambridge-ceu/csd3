@@ -2384,3 +2384,7 @@ They are generated from script [setup.sh](setup.sh),
            --out_dir=. \
            --out_name=test
     ```
+
+    to get `test_EAS_pst_eff_a1_b0.5_phi1e-02_chr22.txt` and `test_EUR_pst_eff_a1_b0.5_phi1e-02_chr22.txt`.
+
+    From `snpinfo_mult_ukbb_hm3` it is apparent that the software uses GRCh37/hg19 alignment.
