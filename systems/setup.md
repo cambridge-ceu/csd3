@@ -413,6 +413,7 @@ All entries are ordered chronologically.
 | 2025-05-07  | Synapse/4.8.0                    | Generic              |
 | ""          | llama.cpp/b5305                  | Generic              |
 | 2025-05-09  | PGS-CSx/1.1.0                    | Genetics[^pgs_csx]   |
+| 2025-05-10  | VSCODE/1.100                     | Generic              |
 
 \* CEU or approved users only.
 
