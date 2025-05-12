@@ -1299,6 +1299,8 @@ They are generated from script [setup.sh](setup.sh),
     systemctl --user enable docker
     systemctl --user start docker
     docker run hello-world
+    wget https://github.com/docker/compose/releases/download/v2.36.0/docker-compose-linux-x86_64 -O docker-compose
+    chmod +x docker-compose
     ```
 
     A user-based set up of the rootless mode is necessary,
