@@ -4,6 +4,10 @@ sort: 19
 
 # firefox
 
+As of 13/5/2025, firefox is moved from gecko-dev to <https://github.com/mozilla-firefox/firefox>.
+
+## gecko-dev
+
 (Experimental)
 
 This is the nightly version, in an attempt to explore why the release to CentOS 8 crashes.
