@@ -77,22 +77,22 @@ The current list is as follows,
 [237] "qemu"                   "qpdf"                   "qt"                     "qtcreator"
 [241] "QTLtools"               "quarto"                 "quicktest"              "R"
 [245] "raremetal"              "rclone"                 "readline"               "regenie"
-[249] "regtools"               "RHHsoftware"            "rst2pdf"                "rstudio"
-[253] "rtmpdump"               "ruby"                   "rust"                   "sage"
-[257] "samtools"               "Scala"                  "scGPT"                  "seqkit"
-[261] "shapeit"                "singularity"            "SMR"                    "snakemake"
-[265] "SNP2HLA"                "snptest"                "spread-sheet-widget"    "spyder"
-[269] "sqlite"                 "sra-tools"              "sshpass"                "ssw"
-[273] "STAR"                   "stata"                  "SurvivalAnalysis"       "SurvivalKit"
-[277] "SuSiEx"                 "Swift"                  "SYMPHONY"               "Synapse"
-[281] "tabix"                  "tandem"                 "tatami"                 "tesseract"
-[285] "texinfo"                "ThermoRawFileParser"    "ThermoRawFileParserGUI" "thunderbird"
-[289] "tidy"                   "tiff"                   "trinculo"               "trousers"
-[293] "Typora"                 "unbound"                "uv"                     "vala"
-[297] "VarScan"                "vcftools"               "VEGAS2"                 "verifyBamID"
-[301] "VSCode"                 "VSCodium"               "vte"                    "wine"
-[305] "wrk"                    "xpdf"                   "yaml-cpp"               "Zotero"
-[309] "zstd"
+[249] "regtools"               "RHHsoftware"            "RSEM"                   "rst2pdf"
+[253] "rstudio"                "rtmpdump"               "ruby"                   "rust"
+[257] "sage"                   "samtools"               "Scala"                  "scGPT"
+[261] "seqkit"                 "shapeit"                "singularity"            "SMR"
+[265] "snakemake"              "SNP2HLA"                "snptest"                "spread-sheet-widget"
+[269] "spyder"                 "sqlite"                 "sra-tools"              "sshpass"
+[273] "ssw"                    "STAR"                   "stata"                  "SurvivalAnalysis"
+[277] "SurvivalKit"            "SuSiEx"                 "Swift"                  "SYMPHONY"
+[281] "Synapse"                "tabix"                  "tandem"                 "tatami"
+[285] "tesseract"              "texinfo"                "ThermoRawFileParser"    "ThermoRawFileParserGUI"
+[289] "thunderbird"            "tidy"                   "tiff"                   "trinculo"
+[293] "trousers"               "Typora"                 "unbound"                "uv"
+[297] "vala"                   "VarScan"                "vcftools"               "VEGAS2"
+[301] "verifyBamID"            "VSCode"                 "VSCodium"               "vte"
+[305] "wine"                   "wrk"                    "xpdf"                   "yaml-cpp"
+[309] "Zotero"                 "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -408,6 +408,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2025-05-03 | GENIE/1.1.1                 | Genetics            |
     | 2025-05-06 | SuSiEx/1.1.2                | Genetics            |
     | 2025-05-09 | PGS-CSx/1.1.0               | Genetics            |
+    | 2025-05-14 | RSEM/1.3.3                  | Genetics            |
 
     \* CEU or approved users only.
 

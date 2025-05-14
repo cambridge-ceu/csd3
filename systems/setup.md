@@ -414,6 +414,7 @@ All entries are ordered chronologically.
 | ""          | llama.cpp/b5305                  | Generic              |
 | 2025-05-09  | PGS-CSx/1.1.0                    | Genetics[^pgs_csx]   |
 | 2025-05-10  | VSCODE/1.100.0                   | Generic              |
+| 2025-05-14  | RSEM/1.3.3                       | Genetics             |
 
 \* CEU or approved users only.
 
