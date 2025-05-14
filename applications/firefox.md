@@ -6,6 +6,16 @@ sort: 19
 
 As of 13/5/2025, firefox is moved from gecko-dev to <https://github.com/mozilla-firefox/firefox>.
 
+The usual `git clone https://github.com/mozilla-firefox/firefox` gives error message:
+
+>  fatal: fetch-pack: invalid index-pack output
+
+and we use SSH instead.
+
+```bash
+git clone git@github.com:mozilla/firefox.git
+```
+
 ## gecko-dev
 
 (Experimental)
