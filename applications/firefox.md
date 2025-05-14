@@ -14,7 +14,9 @@ and we use SSH instead.
 
 ```bash
 git clone git@github.com:mozilla/firefox.git
+git clone --depth 1 git@github.com:mozilla/firefox.git
 ```
+where the second statement only downloads the latest commits.
 
 ## gecko-dev
 
