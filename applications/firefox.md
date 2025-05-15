@@ -24,6 +24,8 @@ git clone --depth 1 git@github.com:mozilla/firefox.git
 cd firefox
 export MOZCONFIG=/rds/project/rds-4o5vpvAowP0/software/firefox/mozconfig
 ./mach configure --prefix=$CEUADMIN/firefox/nightly
+make
+./mach install
 ```
 
 We have
