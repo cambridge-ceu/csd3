@@ -8,7 +8,7 @@ sort: 19
 
 As of 13/5/2025, firefox is moved from gecko-dev (see below) to <https://github.com/mozilla-firefox/firefox>.
 It also provides a `GNUmakefile`, which is simpler than the one described earlier,  for immediate use but it remains necessary to prevent
-it from occupying all CPUs by adding flag `j4`.
+it from occupying all CPUs by adding flag `j5` as in `mozconfig` earlier.
 
 The usual `git clone https://github.com/mozilla-firefox/firefox` gives error message:
 
@@ -17,6 +17,7 @@ The usual `git clone https://github.com/mozilla-firefox/firefox` gives error mes
 and we use SSH instead.
 
 ```bash
+export MOZCONFIG=/rds/project/rds-4o5vpvAowP0/software/firefox/mozconfig
 git clone git@github.com:mozilla/firefox.git
 ```
 
