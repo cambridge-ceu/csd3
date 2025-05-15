@@ -14,9 +14,24 @@ and we use SSH instead.
 
 ```bash
 git clone git@github.com:mozilla/firefox.git
-git clone --depth 1 git@github.com:mozilla/firefox.git
 ```
-where the second statement only downloads the latest commits.
+
+We have
+
+```
+$ git clone git@github.com:mozilla/firefox.git
+Cloning into 'firefox'...
+X11 forwarding request failed on channel 0
+remote: Enumerating objects: 11863463, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 11863463 (delta 15), reused 13 (delta 13), pack-reused 11863442 (from 2)
+Receiving objects: 100% (11863463/11863463), 3.64 GiB | 22.37 MiB/s, done.
+Resolving deltas: 100% (9503284/9503284), done.
+Updating files: 100% (385169/385169), done.
+```
+
+Alternnatively, we use `git clone --depth 1 git@github.com:mozilla/firefox.git` to only downloads the latest commits.
 
 ## gecko-dev
 
