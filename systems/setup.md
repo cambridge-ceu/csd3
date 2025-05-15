@@ -2396,11 +2396,10 @@ They are generated from script [setup.sh](setup.sh),
 
 [^rsem]: **RSEM**
 
-    One can directly use `Makefile`, whose `prefix` is changed to `/usr/local/Cluster-Apps/ceuadmin/RSEM/1.3.3`,
+    One can directly use `Makefile`,
 
     ```bash
-    make
-    make install
+    make install prefix=/usr/local/Cluster-Apps/ceuadmin/RSEM/1.3.3
     make clean
     ```
-    The R/EBSeq package is provided but the latest version can be installed with `BiocManager::install("EBSeq")` from R.
+    The R/EBSeq package is provided but the latest version can be installed with `BiocManager::install("EBSeq")` from R. The pRSEM/ directory is somewhat outdated.

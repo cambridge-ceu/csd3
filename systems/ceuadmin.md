@@ -142,9 +142,9 @@ made).
 
 ### R
 
-A large collection of R packages (1,742 as of 22/4/2025, esp. with availability of major machine learning packages) is linked with the
+A large collection of R packages (1,745 as of 15/5/2025, esp. with availability of major machine learning packages) is linked with the
 latest R distribution, 4.5.0; there are also packages (CRAN: DescTools, Rfast, Rfast2, rcompanion, rms -- which requires stringi
-herein; Bioconductor: BiocSingular, DropletUtils, beachmat, scater, scuttle) under 4.5.0-gcc11. Note that there are limitations with
+herein, tmap; Bioconductor: BiocSingular, DropletUtils, beachmat, scater, scuttle) under 4.5.0-gcc11. Note that there are limitations with
 CSD3 so that `sf`, `terra`, `raster`, and `stars` cannot be updated due to incomplete build of `gdal`/`proj`.
 
 It is easy to point to them, e.g.,
@@ -175,6 +175,8 @@ which R
 echo $R_LIBS
 Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
 ```
+
+Inside R, one can check paths with `.libPaths()`. It is also handy to re-install the small number of packages in R-gcc11 with `install.packages(dir())` at its folder.
 
 ### Python
 

@@ -4,7 +4,11 @@ sort: 19
 
 # firefox
 
-As of 13/5/2025, firefox is moved from gecko-dev to <https://github.com/mozilla-firefox/firefox>.
+## mozilla-firefox
+
+As of 13/5/2025, firefox is moved from gecko-dev (see below) to <https://github.com/mozilla-firefox/firefox>.
+It also provides a `GNUmakefile`, which is simpler than the one described earlier,  for immediate use but it remains necessary to prevent
+it from occupying all CPUs by adding flag `j4`.
 
 The usual `git clone https://github.com/mozilla-firefox/firefox` gives error message:
 
