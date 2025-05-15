@@ -17,8 +17,13 @@ The usual `git clone https://github.com/mozilla-firefox/firefox` gives error mes
 and we use SSH instead.
 
 ```bash
-export MOZCONFIG=/rds/project/rds-4o5vpvAowP0/software/firefox/mozconfig
+# SSH
 git clone git@github.com:mozilla/firefox.git
+# the latest commits
+git clone --depth 1 git@github.com:mozilla/firefox.git
+cd firefox
+export MOZCONFIG=/rds/project/rds-4o5vpvAowP0/software/firefox/mozconfig
+./mach configure --prefix=$CEUADMIN/firefox/nightly
 ```
 
 We have
@@ -34,9 +39,9 @@ remote: Total 11863463 (delta 15), reused 13 (delta 13), pack-reused 11863442 (f
 Receiving objects: 100% (11863463/11863463), 3.64 GiB | 22.37 MiB/s, done.
 Resolving deltas: 100% (9503284/9503284), done.
 Updating files: 100% (385169/385169), done.
+...
+Adding configure options from /rds/project/rds-4o5vpvAowP0/software/firefox/mozconfig
 ```
-
-Alternnatively, we use `git clone --depth 1 git@github.com:mozilla/firefox.git` to only downloads the latest commits.
 
 ## gecko-dev
 
