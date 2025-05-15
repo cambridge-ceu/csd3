@@ -176,7 +176,8 @@ echo $R_LIBS
 Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
 ```
 
-Inside R, one can check paths with `.libPaths()`. It is also handy to re-install the small number of packages in R-gcc11 with `install.packages(dir())` at its folder.
+Inside R, one can check paths with `.libPaths()`. It is also handy to re-install the small number of packages in R-gcc11 with `install.packages(dir())` at its folder but
+`BiocManager::install(c("beachmat", "BiocSingular", "DropletUtils", "scater", "scuttle"))`.
 
 ### Python
 
