@@ -414,7 +414,8 @@ All entries are ordered chronologically.
 | ""          | llama.cpp/b5305                  | Generic              |
 | 2025-05-09  | PGS-CSx/1.1.0                    | Genetics[^pgs_csx]   |
 | 2025-05-10  | VSCODE/1.100.0                   | Generic              |
-| 2025-05-14  | RSEM/1.3.3                       | Genetics             |
+| 2025-05-14  | RSEM/1.3.3                       | Genetics[^rsem]      |
+| 2025-05-15  | BWA/0.7.19                       | Genetics             |
 
 \* CEU or approved users only.
 
@@ -2392,3 +2393,14 @@ They are generated from script [setup.sh](setup.sh),
     to get `test_EAS_pst_eff_a1_b0.5_phi1e-02_chr22.txt` and `test_EUR_pst_eff_a1_b0.5_phi1e-02_chr22.txt`.
 
     From `snpinfo_mult_ukbb_hm3` it is apparent that the software uses GRCh37/hg19 alignment.
+
+[^rsem]: **RSEM**
+
+    One can directly use `Makefile`, whose `prefix` is changed to `/usr/local/Cluster-Apps/ceuadmin/RSEM/1.3.3`,
+
+    ```bash
+    make
+    make install
+    make clean
+    ```
+    The R/EBSeq package is provided but the latest version can be installed with `BiocManager::install("EBSeq")` from R.
