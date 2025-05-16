@@ -416,6 +416,7 @@ All entries are ordered chronologically.
 | 2025-05-10  | VSCODE/1.100.0                   | Generic              |
 | 2025-05-14  | RSEM/1.3.3                       | Genetics[^rsem]      |
 | 2025-05-15  | BWA/0.7.19                       | Genetics             |
+| 2025-05-16  | ollama/0.7.0                     | Generic              |
 
 \* CEU or approved users only.
 
