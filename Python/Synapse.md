@@ -385,7 +385,7 @@ On reflection, it is somewhat clumsy so we adopt a fuzzy approach to handle Olin
 #SBATCH --time=12:00:00
 
 #SBATCH --account PETERS-SL3-CPU
-#SBATCH --partition cclake-himem
+#SBATCH --partition icelake
 
 #SBATCH --export ALL
 #SBATCH --array=1-2940
