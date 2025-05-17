@@ -26,6 +26,10 @@ where the last line is for the Fenland SomaLogic pGWAS, <https://www.synapse.org
 
 ---
 
+# Legacy materials
+
+While Synapse is well-developed as above, the reformatting section remains valid.
+
 ## CSD3 modules
 
 As will be seen below, it is available as companion of both snakemake and Anaconda, namely,
@@ -387,6 +391,11 @@ On reflection, it is somewhat clumsy so we adopt a fuzzy approach to handle Olin
 #SBATCH --array=1-2940
 #SBATCH --output=_reformat_%A_%a.o
 #SBATCH --error=_reformat_%A_%a.e
+
+. /etc/profile.d/modules.sh
+module purge
+module load rhel8/default-icl
+module load ceuadmin/htslib/1.20
 
 export sun23=~/rds/results/public/proteomics/UKB-PPP/sun23
 export UKB_PPP="UKB-PPP pGWAS summary statistics"
