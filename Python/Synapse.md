@@ -8,7 +8,11 @@ Web: <https://www.synapse.org> ([GitHub](https://github.com/Sage-Bionetworks/))\
 Token: <https://www.synapse.org/#!PersonalAccessTokens:>\
 Help forum: <https://www.synapse.org/#!SynapseForum:default>
 
+## CSD3 modules
+
 From 7/5/2025, one can now use the dedicated module `ceuadmin/Synapse/4.8.0`.
+
+## Setup and usage
 
 The very slim setup is done as follows,
 
