@@ -329,7 +329,7 @@ All entries are ordered chronologically.
 | 2024-09-03  | tiff/4.0.4                       | Generic              |
 | ""          | tiff/4.6.0                       | Generic              |
 | 2024-09-05  | libgit2/1.4.2                    | Generic              |
-| 2024-09-10  | jasper/3.0.4                     | Generic              |
+| 2024-09-10  | jasper/4.2.4                     | Generic[^jasper]     |
 | 2024-09-13  | geos/3.8.4                       | Generic              |
 | ""          | prof/7.2.1                       | Generic              |
 | 2024-09-14  | libarchive/3.7.5                 | Generic              |
@@ -1545,6 +1545,16 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     IonQuant 1.10.27 is installed similarly. In fact, it is is straightforwad to select `Download Update` from the menu, so `IonQuant-1.10.27.jar`, `/MSFragger-4.1/`, and `diaTracer-1.1.5.jar` are available from the `tools/` directory.
+
+[^jasper]: **jasper**
+
+   ```bash
+    wget -qO- https://github.com/jasper-software/jasper/archive/version-4.2.4/jasper-4.2.4.tar.gz | \
+    tar -xvzf -
+    module load texlive
+    cd jasper-version-4.2.4/build && ./build_all
+    ll ../tmp_cmake/release-1 -rt
+    ```
 
 [^curl]: **curl**
 
