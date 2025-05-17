@@ -173,3 +173,7 @@ stata/14 stata/17 stata/18
 ```
 
 so as to use `module load stata; stata`
+
+## Workflows
+
+Two of them are highlighted here, i.e., `ceuadmin/snakemake/7.19.1` and `ceuadmin/nextflow/23.10.1`.
