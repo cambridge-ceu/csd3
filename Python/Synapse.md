@@ -32,7 +32,7 @@ where the last line is for the Fenland SomaLogic pGWAS, <https://www.synapse.org
 
 # Legacy materials
 
-While Synapse is well-developed as above, the reformatting section remains valid.
+While Synapse itself is well-developed and used as above, the reformatting section below has been updated.
 
 ## CSD3 modules
 
