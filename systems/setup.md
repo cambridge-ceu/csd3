@@ -417,6 +417,7 @@ All entries are ordered chronologically.
 | 2025-05-14  | RSEM/1.3.3                       | Genetics[^rsem]      |
 | 2025-05-15  | BWA/0.7.19                       | Genetics             |
 | 2025-05-16  | ollama/0.7.0                     | Generic              |
+| 2025-05-17  | VirtualBox/7.1-7.1.8_168469      | Generic[^virtualbox] |
 
 \* CEU or approved users only.
 
@@ -2404,3 +2405,7 @@ They are generated from script [setup.sh](setup.sh),
     make clean
     ```
     The R/EBSeq package is provided but the latest version can be installed with `BiocManager::install("EBSeq")` from R. The pRSEM/ directory is somewhat outdated.
+
+[^virtualbox]: **VirtualBox/7.1-7.1.8_168469**
+
+    This is purely experimental.
