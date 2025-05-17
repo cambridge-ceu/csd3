@@ -10,7 +10,9 @@ Help forum: <https://www.synapse.org/#!SynapseForum:default>
 
 ## CSD3 modules
 
-From 7/5/2025, one can now use the dedicated module `ceuadmin/Synapse/4.8.0`.
+From 7/5/2025, one can now use the dedicated Synapse module `ceuadmin/Synapse/4.8.0`.
+
+For data reformatting, module `ceuadmin/htslib/1.20` is ready to use.
 
 ## Setup and usage
 
