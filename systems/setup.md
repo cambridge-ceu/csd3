@@ -514,6 +514,9 @@ They are generated from script [setup.sh](setup.sh),
     This involves many libraries; an expeeriment has been done as follows,
 
     ```bash
+    wget -qO- https://github.com/OSGeo/gdal/archive/refs/tags/v3.0.4.tar.gz | \
+    tar xvfz -
+    cd gdal-3.0.4/gdal
     module load gcc/6
     module load cfitsio-3.450-gcc-5.4.0-colpo6h
     module load geos-3.6.2-gcc-5.4.0-vejexvy
@@ -531,6 +534,19 @@ They are generated from script [setup.sh](setup.sh),
     # module load json-c-0.13.1-gcc-5.4.0-ffamohj
     # module load proj-6.2.0-gcc-5.4.0-iw4jbzs
     # --with-proj=/usr/local/software/spack/spack-git/opt/spack/linux-rhel7-broadwell/gcc-5.4.0/proj-6.2.0-iw4jbzsrjirypecjm4c7bmlhdvhgwjmx \
+    ```
+
+    On icelake, this is updated as follows,
+
+    ```bash
+    module load ceuadmin/proj/6.3.0
+    module load ceuadmin/jasper/4.2.4
+    module load libxml2/2.9.13/gcc/fww2yzpt
+    module load ceuadmin/json-c/0.17-20230812-icelake
+    ./configure --prefix=$CEUADMIN/gdal/3.0.4 --with-libjson-c=$CEUADMIN/json-c/0.17-20230812-icelake \
+                --with-proj=/usr/local/Cluster-Apps/ceuadmin/proj/6.3.0 \
+                --without-sqlite3
+    make
     ```
 
 [^expat]: **expat**
