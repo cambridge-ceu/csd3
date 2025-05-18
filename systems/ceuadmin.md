@@ -142,10 +142,10 @@ made).
 
 ### R
 
-A large collection of R packages (1,744 as of 15/5/2025, esp. with availability of major machine learning packages) is linked with the
+A large collection of R packages (1,746 as of 18/5/2025, esp. with availability of major machine learning packages) is linked with the
 latest R distribution, 4.5.0; there are also packages (CRAN: DescTools, Rfast, Rfast2, rcompanion, rms -- which requires stringi
-herein; Bioconductor: BiocSingular, DropletUtils, beachmat, scater, scuttle) under 4.5.0-gcc11. Note that there are limitations with
-CSD3 so that `sf`, `terra`, `raster`, and `stars` cannot be updated while `tmap` cannot be installed due to incomplete build of `gdal`/`proj`.
+herein; Bioconductor: BiocSingular, DropletUtils, beachmat, scater, scuttle) under 4.5.0-gcc11. Note that with recent work on gdal/3.0.4,
+sf 0.1-21 has been compiled enabling raster 3.6-32, stars 0.6-8, terra 1.8-50, maptiles 0.10.0 / tmap 4.1.
 
 It is easy to point to them, e.g.,
 

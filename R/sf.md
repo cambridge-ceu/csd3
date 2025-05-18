@@ -4,6 +4,20 @@ sort: 36
 
 # sf
 
+## 1.0-21
+
+```bash
+module load ceuadmin/R
+module load ceuadmin/gdal/3.0.4
+module load ceuadmin/geos/3.8.4
+module load ceuadmin/proj/6.3.0
+Rscript -e "install.packages('sf')"
+```
+
+We are also successful with raster 3.6-32, stars 0.6-8, terra 1.8-50, maptiles 0.10.0 / tmap 4.1.
+
+---
+
 A number of packages use it as dependency and there might be error such as this,
 
 ```
