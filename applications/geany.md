@@ -12,7 +12,7 @@ Plugins: <https://plugins.geany.org/>
 
 ## geany 2.0-icelake
 
-<font color="red"><b>19/5/2025 Update</b></font>This is an attempt to revice CentOS 7 (below) but also adds the PDF documentation.
+<font color="red"><b>19/5/2025 Update</b></font>This is an attempt to revive CentOS 7 (below) but also adds the PDF documentation.
 
 ```bash
 wget -qO- https://github.com/geany/geany/releases/download/2.0.0/geany-2.0.tar.gz | \
