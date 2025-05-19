@@ -35,7 +35,7 @@ cd geany-plugins-2.0/
 module load ceuadmin/enchant/2.2.0
 module load ceuadmin/gtk+/3.24.0
 module load glib-2.56.2-gcc-5.4.0-4rjjizl
-./configure --prefix=$CEUADMIN/geany/2.0-icelake --with-geany-libdir=$CEUADMIN/geany/2.0/lib \
+./configure --prefix=$CEUADMIN/geany/2.0-icelake --with-geany-libdir=$CEUADMIN/geany/2.0-icelake/lib \
           --enable-spellcheck \
           PKG_CONFIG_PATH=${CEUADMIN}/enchant/2.2.0/lib/pkgconfig:${CEUADMIN}/gtk+/3.24.0/lib/pkgconfig
 make
