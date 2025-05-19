@@ -10,6 +10,41 @@ Plugins: <https://plugins.geany.org/>
 
 > Geany is a powerful, stable and lightweight programmer's text editor that provides tons of useful features without bogging down your workflow. It runs on Linux, Windows and macOS, is translated into over 40 languages, and has built-in support for more than 50 programming languages.
 
+## geany 2.0-icelake
+
+<font color="red"><b>19/5/2025 Update</b></font>. This is an attempt to revice CentOS 7 (below) but also adds the PDF documentation.
+
+```bash
+wget -qO- https://github.com/geany/geany/releases/download/2.0.0/geany-2.0.tar.gz | \
+tar xvfz -
+cd geany-2.0
+module load ceuadmin/rst2pdf
+module load ceuadmin/gtk+/3.24.0
+module load glib-2.56.2-gcc-5.4.0-4rjjizl
+./configure --prefix=$CEUADMIN/geany/2.0-icelake --enable-binreloc=yes --enable-pdf-docs PKG_CONFIG_PATH=$CEUADMIN/gtk+/3.24.0/lib/pkgconfig
+make
+make install
+```
+
+The plugins are more involved.
+
+```bash
+wget -qO- https://github.com/geany/geany-plugins/releases/download/2.0.0/geany-plugins-2.0.tar.gz | \
+tar xfz -
+cd geany-plugins-2.0/
+module load ceuadmin/enchant/2.2.0
+module load ceuadmin/gtk+/3.24.0
+module load glib-2.56.2-gcc-5.4.0-4rjjizl
+./configure --prefix=$CEUADMIN/geany/2.0-icelake --with-geany-libdir=$CEUADMIN/geany/2.0/lib \
+          --enable-spellcheck \
+          PKG_CONFIG_PATH=${CEUADMIN}/enchant/2.2.0/lib/pkgconfig:${CEUADMIN}/gtk+/3.24.0/lib/pkgconfig
+make
+make check
+make install
+```
+
+We now have the plugins which can be seen from Tools --> Plugin Manager.
+
 ## Prerequistes
 
 `rst2pdf` (<https://rst2pdf.org/>) which requires Python>=3.8, is prepared for PDF documentation
