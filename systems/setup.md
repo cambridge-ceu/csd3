@@ -1029,6 +1029,7 @@ They are generated from script [setup.sh](setup.sh),
     wget -qO-  https://sourceware.org/ftp/lvm2/LVM2.2.03.23.tgz | \
     tar xvfz -
     cd LVM2.2.03.23
+    ./configure --prefix=$CEUAMIN/LVM2/2.03.23-icelake --with-vdo=none
     make device-mapper
     make install_device-mapper
     ```
@@ -2452,9 +2453,8 @@ They are generated from script [setup.sh](setup.sh),
     cd vdo-8.3.1.1/
     make
     make install DESTDIR=$CEUADMIN/vdo/8.3.1.1 INSTALLOWNER= defaultdocdir= defaultlicensedir=
-    # LVM2 as above but into vdo/usr
+    # LVM2 as above but into vdo/8.3.1.1
     module load ceuadmin/vdo
     cd LVM2.2.03.23
-    ./configure --prefix=$CEUADMIN/LVM2/2.03.23-icelake
+    ./configure
     ```
-
