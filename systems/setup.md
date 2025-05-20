@@ -1814,7 +1814,7 @@ They are generated from script [setup.sh](setup.sh),
 
     As it is used for building R 4.4.2-gcc11, it also does away with gcc/6 and miniconda3/4.5.1.
 
-[^rust]: **rust**
+[^rust]: **Rust**
 
     This is upgraded from 1.74.1 with `rustup default stable` at suggestion of gmake when compiling firefox/nightly.
     To avoid duplication, a symbolic link is generated on `/usr/local/Cluster-Apps/ceuadmin/rust/1.74.1/cargo` as `${HOME}/.cargo`.
