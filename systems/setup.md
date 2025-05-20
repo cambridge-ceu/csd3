@@ -420,6 +420,7 @@ All entries are ordered chronologically.
 | 2025-05-17  | VirtualBox/7.1-7.1.8_168469      | Generic[^virtualbox] |
 | 2025-05-18  | VSCODE/1.100.2                   | Generic              |
 | 2025-05-19  | geany/2.0-icelake                | Generic              |
+| 2025-05-20  | vdo/8.3.1.1                      | Generic[^vdo]        |
 
 \* CEU or approved users only.
 
@@ -1025,9 +1026,16 @@ They are generated from script [setup.sh](setup.sh),
     Only device mapper is installed, i.e.,
 
     ```bash
+    wget -qO-  https://sourceware.org/ftp/lvm2/LVM2.2.03.23.tgz | \
+    tar xvfz -
+    cd LVM2.2.03.23
     make device-mapper
     make install_device-mapper
+    module load ceuadmin/vdo
+    ./configure --prefix=/usr/local/Cluster-Apps/ceuadmin/LVM2/2.03.23-icelake
     ```
+
+    The last two lines actually get it installed into `vdo/usr/`.
 
 [^cryptsetup]: **cryptosetup**
 
@@ -2436,4 +2444,16 @@ They are generated from script [setup.sh](setup.sh),
 
 [^virtualbox]: **VirtualBox/7.1-7.1.8_168469**
 
-    This is purely experimental.
+    This is purely experimental and half-way done.
+
+[^vdo]: **vdo**
+
+    There is no immediate use of this but a patch to `LVM2/2.03.23-icelake` mysteriously built earlier.
+
+    ```bash
+    wget -qO- https://github.com/dm-vdo/vdo/archive/refs/tags/8.3.1.1.tar.gz | \
+    tar xfz -
+    cd vdo-8.3.1.1/
+    make
+    make install INSTALLOWNER= defaultdocdir= defaultlicensedir=
+    ```
