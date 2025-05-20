@@ -1031,11 +1031,7 @@ They are generated from script [setup.sh](setup.sh),
     cd LVM2.2.03.23
     make device-mapper
     make install_device-mapper
-    module load ceuadmin/vdo
-    ./configure --prefix=/usr/local/Cluster-Apps/ceuadmin/LVM2/2.03.23-icelake
     ```
-
-    The last two lines actually get it installed into `vdo/usr/`.
 
 [^cryptsetup]: **cryptosetup**
 
@@ -2455,5 +2451,10 @@ They are generated from script [setup.sh](setup.sh),
     tar xfz -
     cd vdo-8.3.1.1/
     make
-    make install INSTALLOWNER= defaultdocdir= defaultlicensedir=
+    make install DESTDIR=$CEUADMIN/vdo/8.3.1.1 INSTALLOWNER= defaultdocdir= defaultlicensedir=
+    # LVM2 as above but into vdo/usr
+    module load ceuadmin/vdo
+    cd LVM2.2.03.23
+    ./configure --prefix=$CEUADMIN/LVM2/2.03.23-icelake
     ```
+
