@@ -75,11 +75,27 @@ Note that after software updates on 26/4/2022, this command only works on non-lo
 
 ### Partition
 
+The skylakes have been decommissioned, <https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html> and <https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html>. For Ampere GPU, see <https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html>.
+
 ```bash
 scontrol show partition
+sinfo -p sapphire -o "%P %D %C %m %d %f %G %t %T %N"
 ```
 
-The skylakes have been decommissioned, [https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/cclake.html) and [https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/icelake.html). For Ampere GPU, see [https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html](https://docs.hpc.cam.ac.uk/hpc/user-guide/a100.html).
+which shows information on all partitions and a specific one, respectively.
+
+| Specifier | Description                                                                                                                                                |   |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
+| `%P`      | **Partition name**: The name of the partition.                                                                                                             |   |
+| `%D`      | **Number of nodes**: The total number of nodes in the partition.                                                                                           |   |
+| `%C`      | **CPUs by state**: Displays the number of CPUs in the format `allocated/idle/other/total`. This provides a breakdown of CPU usage across different states. |   |
+| `%m`      | **Memory per node**: The size of memory per node in megabytes.                                                                                             |   |
+| `%d`      | **Temporary disk space**: The size of temporary disk space per node in megabytes.                                                                          |   |
+| `%f`      | **Features**: Features associated with the nodes. These are typically hardware or software capabilities assigned to the nodes.                             |   |
+| `%G`      | **Generic resources (gres)**: Generic resources associated with the nodes. This includes specialized hardware like GPUs.                                   |   |
+| `%t`      | **State (compact)**: The state of nodes in a compact form. Possible states include `allocated`, `idle`, `mixed`, `down`, `drained`, `draining`.            |   |
+| `%T`      | **State (extended)**: The state of nodes in an extended form. Provides a more detailed description of the node's state.                                    |   |
+| `%N`      | **Node names**: List of node names.                                                                                                                        |   |
 
 ### An interactive job
 
