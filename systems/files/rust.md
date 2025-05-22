@@ -71,6 +71,4 @@ rustc --version
 
 This should display the version of `rustc` installed by `rustup`.
 
----
-
 [1]: https://stackoverflow.com/questions/46739842/where-does-rustup-install-itself-to?utm_source=chatgpt.com "rust - Where does rustup install itself to? - Stack Overflow"
