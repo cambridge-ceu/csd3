@@ -1,8 +1,8 @@
 # rust/nightly
 
-✅ Step-by-Step Guide to Install Rust Nightly to a Custom Directory:
+## ✅ Step-by-Step Guide to Installation
 
-## 1. Set Environment Variables
+### 1. Set Environment Variables
 
    Define the `CARGO_HOME` and `RUSTUP_HOME` environment variables to specify the installation directories ([Stack Overflow][1]):
 
@@ -21,7 +21,7 @@
 
 This configuration ensures that Rust's components are installed within the specified directory.
 
-## 2. Run the `rustup` Installer
+### 2. Run the `rustup` Installer
 
    Execute the following command to install Rust using the environment variables you've set:
 
@@ -31,7 +31,7 @@ This configuration ensures that Rust's components are installed within the speci
 
 During the installation, you can choose the default installation option. The installer will place Rust's binaries in `$CARGO_HOME/bin`, and the toolchains in `$RUSTUP_HOME`.
 
-## 3. Update Your Shell Configuration
+### 3. Update Your Shell Configuration
 
    To make the Rust binaries accessible, add the following line to your shell's configuration file (e.g., `~/.bashrc` or `~/.zshrc`):
 
@@ -41,7 +41,7 @@ During the installation, you can choose the default installation option. The ins
 
 This ensures that the Rust commands (`cargo`, `rustc`, etc.) are available in your shell session.
 
-## 4. Install the Nightly Toolchain
+### 4. Install the Nightly Toolchain
 
    With the environment variables set and the PATH updated, install the nightly toolchain:
 
@@ -51,7 +51,7 @@ This ensures that the Rust commands (`cargo`, `rustc`, etc.) are available in yo
 
 This command installs the latest nightly version of Rust into the directory you've specified.
 
-## 5. Set the Nightly Toolchain as Default (Optional)
+### 5. Set the Nightly Toolchain as Default (Optional)
 
    If you wish to use the nightly toolchain by default, run:
 
