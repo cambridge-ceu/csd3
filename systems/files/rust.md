@@ -1,4 +1,4 @@
-# rust/nightly
+# Rust/nightly
 
 ## ✅ Step-by-Step Guide to Installation
 
