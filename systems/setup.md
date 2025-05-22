@@ -2490,4 +2490,5 @@ They are generated from script [setup.sh](setup.sh),
     cargo build --config .cargo/release.toml --release
     ```
 
-    We have `target/release/edit`.
+    We have `target/release/edit`, which is from `$CEUADMIN/rust/nightly/cargo/bin/cargo` not from
+    `$CEUADMIN/rust/nightly/rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo`.
