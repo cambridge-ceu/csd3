@@ -1,6 +1,6 @@
-# $CEUADMIN/rust/nightly
+# rust/nightly
 
-### ✅ Step-by-Step Guide to Install Rust Nightly to a Custom Directory
+✅ Step-by-Step Guide to Install Rust Nightly to a Custom Directory:
 
 ## 1. Set Environment Variables
 
@@ -61,7 +61,7 @@ This command installs the latest nightly version of Rust into the directory you'
 
 This sets the nightly toolchain as the default for your user account.
 
-### ✅ Verifying the Installation
+## ✅ Verifying the Installation
 
 To confirm that Rust has been installed correctly, check the installed version of `rustc`:
 
