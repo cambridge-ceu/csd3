@@ -421,6 +421,8 @@ All entries are ordered chronologically.
 | 2025-05-18  | VSCODE/1.100.2                   | Generic              |
 | 2025-05-19  | geany/2.0-icelake                | Generic              |
 | 2025-05-20  | vdo/8.3.1.1                      | Generic[^vdo]        |
+| 2025-05-22  | rust/nightly                     | Generic[^rust]       |
+| ""          | edit/1.0.0                       | Generic[^edit]       |
 
 \* CEU or approved users only.
 
@@ -1820,6 +1822,21 @@ They are generated from script [setup.sh](setup.sh),
     To avoid duplication, a symbolic link is generated on `/usr/local/Cluster-Apps/ceuadmin/rust/1.74.1/cargo` as `${HOME}/.cargo`.
     Naturally, both cargo and rustc use the directory above.
 
+    For `ceuadmin/nightly`, the following steps are needed,
+
+    ```bash
+    export CARGO_HOME="$CEUADMIN/rust/nightly/cargo"
+    export RUSTUP_HOME="$CEUADMIN/rust/nightly/rustup"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    export PATH="$CARGO_HOME/bin:$PATH"
+    rustup toolchain install nightly
+    rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
+    rustup default nightly
+    rustc --version
+    ```
+
+    As of 22/5/2025, we have `rustc 1.89.0-nightly (bf64d66bd 2025-05-21)`.
+
 [^git2481]: **git/2.48.1**
 
     Now it has a separate entry in the Applications section, <https://cambridge-ceu.github.io/csd3/applications/git.html>.
@@ -2460,3 +2477,17 @@ They are generated from script [setup.sh](setup.sh),
     make
     make install
     ```
+
+[^edit]: **edit**
+
+    This is done as documented after `ceuadmin/rust/nightly`[^rust] is set up,
+
+    ```bash
+    wget -qO- https://github.com/microsoft/edit/archive/refs/tags/v1.0.0.tar.gz | \
+    tar xfz -
+    cd edit-1.0.0/
+    RUST_BACKTRACE=1
+    cargo build --config .cargo/release.toml --release
+    ```
+
+    We have `target/release/edit`.
