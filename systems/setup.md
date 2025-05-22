@@ -1822,7 +1822,7 @@ They are generated from script [setup.sh](setup.sh),
     To avoid duplication, a symbolic link is generated on `/usr/local/Cluster-Apps/ceuadmin/rust/1.74.1/cargo` as `${HOME}/.cargo`.
     Naturally, both cargo and rustc use the directory above.
 
-    For `ceuadmin/nightly`, the following steps are needed,
+    The following steps are sketched for `ceuadmin/nightly`,
 
     ```bash
     export CARGO_HOME="$CEUADMIN/rust/nightly/cargo"
@@ -1835,7 +1835,7 @@ They are generated from script [setup.sh](setup.sh),
     rustc --version
     ```
 
-    As of 22/5/2025, we have `rustc 1.89.0-nightly (bf64d66bd 2025-05-21)`.
+    As noted in [rust.md](files/rust.md) on 22/5/2025, we have `rustc 1.89.0-nightly (bf64d66bd 2025-05-21)`.
 
 [^git2481]: **git/2.48.1**
 
