@@ -423,6 +423,7 @@ All entries are ordered chronologically.
 | 2025-05-20  | vdo/8.3.1.1                      | Generic[^vdo]        |
 | 2025-05-22  | rust/nightly                     | Generic[^rust]       |
 | ""          | edit/1.0.0                       | Generic[^edit]       |
+| 2025-05-23  | Windsurf/1.6.5                   | Generic              |
 
 \* CEU or approved users only.
 
