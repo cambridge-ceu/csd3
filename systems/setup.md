@@ -424,6 +424,7 @@ All entries are ordered chronologically.
 | 2025-05-22  | rust/nightly                     | Generic[^rust]       |
 | ""          | edit/1.0.0                       | Generic[^edit]       |
 | 2025-05-23  | Windsurf/1.6.5                   | Generic              |
+| 2025-05-25  | ollama/0.7.1                     | Generic              |
 
 \* CEU or approved users only.
 
