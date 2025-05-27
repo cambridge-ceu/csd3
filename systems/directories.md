@@ -8,7 +8,7 @@ sort: 4
 
 This [section](https://docs.hpc.cam.ac.uk/hpc/user-guide/io_management.html#summary-of-available-filesystems) gives a summary of the file system.
 
-Go to **CSD3 portal**: [https://selfservice.uis.cam.ac.uk/account/](https://selfservice.uis.cam.ac.uk/account/) and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
+Go to **CSD3 portal**: <https://selfservice.uis.cam.ac.uk/account/> and accept the terms and conditions. An `rds/` directory should then be created with symbolic links as follows,
 
 ```
 hpc-work -> /rds/user/$USER/hpc-work/
@@ -19,6 +19,7 @@ pre_qc_data -> /rds/project/jmmh2/rds-jmmh2-pre_qc_data/
 projects -> /rds/project/jmmh2/rds-jmmh2-projects/
 public_databases -> /rds/project/jmmh2/rds-jmmh2-public_databases/
 results -> /rds/project/jmmh2/rds-jmmh2-results
+software -> /rds/project/jmmh2/rds-jmmh2-public_databases/software/
 ```
 
 Short shorter (without rds-jmmh2- prefix) names as on Cardio can be created equivalently with
@@ -49,7 +50,7 @@ See "W:\Administration\CSD3 Data Users\Information for Users".
 
 ## Data managers
 
-Self-service storage, [https://selfservice.uis.cam.ac.uk/storage/project/303/](https://selfservice.uis.cam.ac.uk/storage/project/303/).
+Self-service storage, <https://selfservice.uis.cam.ac.uk/storage/project/303/>.
 
 In the case of [Hospital Episode Statistics](https://digital.nhs.uk/data-and-information/data-tools-and-services/data-services/hospital-episode-statistics) (HES) data, add users from [https://selfservice.uis.cam.ac.uk/storage/project/306/](https://selfservice.uis.cam.ac.uk/storage/project/306/).
 
@@ -61,8 +62,8 @@ See also
     - Guide to CSD3.docx
   - audit, Access Audits\Programmes\CSD3 audit usergroup mappings\audit.R"
 - External links
-  - [https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/](https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/).
-  - [https://www.baeldung.com/linux/public-key-known_hosts](https://www.baeldung.com/linux/public-key-known_hosts)
+  - <https://www.golinuxcloud.com/setfacl-getfacl-command-in-linux/>.
+  - <https://www.baeldung.com/linux/public-key-known_hosts>.
 
 ## Cluster monitoring
 
@@ -71,4 +72,4 @@ See "V:\Operations\GENERAL_CEU\CSD3\monitoring CSD3 usage".
 ### Access
 
 - sftp, [sftp [crsid]@data-vhpc.srcp.hpc.cam.ac.uk](sftp [crsid]@data-vhpc.srcp.hpc.cam.ac.uk)
-- vHPC, [https://vhpc.srcp.hpc.cam.ac.uk](https://vhpc.srcp.hpc.cam.ac.uk) (Raven login followed by OTP/2FA)
+- vHPC, <https://vhpc.srcp.hpc.cam.ac.uk> (Raven login followed by OTP/2FA)
