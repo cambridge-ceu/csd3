@@ -6,13 +6,13 @@ sort: 63
 
 Web: [https://code.visualstudio.com/](https://code.visualstudio.com/).
 
-<font color="red"><b>24/2/2025 Update</b></font>
+<font color="red"><b>18/5/2025 Update</b></font>
 
-Module `ceuadmin/VSCode/1.97.2` is now available with Copilot.
+Module `ceuadmin/VSCode/1.100.2` replaces earlier version.
 
 ## Installation
 
-Download and extract a copy for Linux x64, e.g., for the latest version 1.58.0,
+Download and extract a copy for Linux x64, e.g., version 1.58.0,
 
 ```bash
 cd ${HPC_WORK}
@@ -42,10 +42,14 @@ code --no-sandbox
 This is called with
 
 ```bash
-module load ceuadmin/VSCode/1.76.2
+module load ceuadmin/VSCode/1.100.2
 ```
 
 which enables executation with relevant command-line arguments.
+
+## Extensions
+
+They are in the `~/.vscode` directory, while user settings can be traced from `~/.config/Code/User/settings.json`.
 
 ## Jupyter notebook
 
