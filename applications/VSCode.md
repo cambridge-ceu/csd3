@@ -52,8 +52,8 @@ Extensions are in the `~/.vscode` directory, while user settings can be traced f
 In fact, it is easier to make a customised Python virtual environment visible through evironmental variables, e.g.,
 
 ```
-export PYTHONPATH=~/rds/software/py3.11/lib/python3.9/site-packages
 export PATH=~/rds/software/py3.11/bin:$PATH
+export PYTHONPATH=~/rds/software/py3.11/lib/python3.9/site-packages
 code &
 ```
 
