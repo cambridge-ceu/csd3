@@ -78,6 +78,10 @@ The short cut key for preview is Ctrl-Shift-V, but will be automatically enabled
 
 A `Markdown All in One` extension is also an option.
 
+### HTML preview
+
+Again this is possible with extensions.
+
 ### CodeGPT
 
 From Visual Studio Code, install CodeGPT.
