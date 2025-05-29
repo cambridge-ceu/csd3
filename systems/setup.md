@@ -2503,7 +2503,7 @@ They are generated from script [setup.sh](setup.sh),
     ```bash
     wget https://www.sqlite.org/2025/sqlite-src-3490200.zip
     unzip sqlite-src-3490200.zip
-    cd cd sqlite-src-3490200
+    cd sqlite-src-3490200
     ./configure --enable-all --prefix=$CEUADMIN/sqlite/3.49.2  TCLLIBDIR=$CEUADMIN/sqlite/3.49.2/tcl8.6
     make && make install
     ```
