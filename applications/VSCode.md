@@ -57,7 +57,7 @@ export PYTHONPATH=~/rds/software/py3.11/lib/python3.9/site-packages
 code &
 ```
 
-## Jupyter notebook
+### Jupyter notebook
 
 We could start our virtual environment as described in `hail`, e.g.,
 
@@ -68,11 +68,15 @@ code --no-sandbox 01-genome-wide-association-study.ipynb &
 
 which greatly simplifies the procedure as described for `genebass`. MAKE sure various extensions/options suggesed from the session.
 
-## Markdown document
+### Markdown document
 
-It will be displayed by design.
+The short cut key for preview is Ctrl-Shift-V, but will be automatically enabled by changing `settings.json`,
 
-## CodeGPT
+"workbench.editorAssociations": {
+  "*.md": "vscode.markdown.preview.editor"
+}
+
+### CodeGPT
 
 From Visual Studio Code, install CodeGPT.
 
