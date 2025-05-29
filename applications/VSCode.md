@@ -76,6 +76,8 @@ The short cut key for preview is Ctrl-Shift-V, but will be automatically enabled
   "*.md": "vscode.markdown.preview.editor"
 }
 
+A `Markdown All in One` extension is also an option.
+
 ### CodeGPT
 
 From Visual Studio Code, install CodeGPT.
