@@ -425,6 +425,7 @@ All entries are ordered chronologically.
 | ""          | edit/1.0.0                       | Generic[^edit]       |
 | 2025-05-23  | Windsurf/1.6.5                   | Generic              |
 | 2025-05-25  | ollama/0.7.1                     | Generic              |
+| 2025-05-29  | sqlite/3.49.2                    | Generic[^sqlite]     |
 
 \* CEU or approved users only.
 
@@ -2494,3 +2495,15 @@ They are generated from script [setup.sh](setup.sh),
 
     We have `target/release/edit`, which is from `$CEUADMIN/rust/nightly/cargo/bin/cargo` not from
     `$CEUADMIN/rust/nightly/rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/cargo`.
+
+[^sqlite]: **SQLite**
+
+    It is standard, but TCLLIBDIR is needed to relocate `libtclsqlite3.so`.
+
+    ```bash
+    wget https://www.sqlite.org/2025/sqlite-src-3490200.zip
+    unzip sqlite-src-3490200.zip
+    cd cd sqlite-src-3490200
+    ./configure --enable-all --prefix=$CEUADMIN/sqlite/3.49.2  TCLLIBDIR=$CEUADMIN/sqlite/3.49.2/tcl8.6
+    make && make install
+    ```
