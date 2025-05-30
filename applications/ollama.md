@@ -45,9 +45,7 @@ Lastly, use
 
 `ollama serve > ollama.log 2>&1 &`
 
-to run `ollama serve` in the background with proper output redirection and without control characters.
-
-For `ollama run llava:7b cafe.png`, we have
+to run `ollama serve` in the background with proper output redirection; so for `ollama run llava:7b cafe.png > cafe.txt 2>&1 &`, we have `cafe.txt`,
 
 ```
 This image shows the interior of a café, with a focus on the counter and bar area. There is a menu board displaying various food and
