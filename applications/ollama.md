@@ -16,7 +16,7 @@ ollama serve &
 ollama list
 ollama pull vicuna
 ollama run vicuna
-ollama run llava:7b cafe.png
+ollama run llava:7b cafe.png > /dev/null 2>&1 &
 ```
 
 We see that it is listening on 127.0.0.1:11434 and the list gives,
