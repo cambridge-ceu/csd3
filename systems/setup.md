@@ -426,6 +426,7 @@ All entries are ordered chronologically.
 | 2025-05-23  | Windsurf/1.6.5                   | Generic              |
 | 2025-05-25  | ollama/0.7.1                     | Generic              |
 | 2025-05-29  | sqlite/3.49.2                    | Generic[^sqlite]     |
+| 2025-05-30  | ollama/0.9.0                     | Generic              |
 
 \* CEU or approved users only.
 
