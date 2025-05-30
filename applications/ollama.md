@@ -16,6 +16,7 @@ ollama serve &
 ollama list
 ollama pull vicuna
 ollama run vicuna
+ollama run llava:7b cafe.png
 ```
 
 We see that it is listening on 127.0.0.1:11434 and the list gives,
@@ -45,6 +46,15 @@ Lastly, use
 `ollama serve > ollama.log 2>&1 &`
 
 to run `ollama serve` in the background with proper output redirection and without control characters.
+
+For `ollama run llava:7b cafe.png`, we have
+
+```
+This image shows the interior of a café, with a focus on the counter and bar area. There is a menu board displaying various food and
+drink options, which suggests that this establishment offers a variety of beverages and possibly some light bites to its patrons. The
+atmosphere appears warm and inviting, with natural light filtering in through the windows. It's a common type of establishment found in
+many urban areas where people can relax, grab a coffee or tea, or have a quick meal while socializing with friends or colleagues.
+```
 
 ## REST API: /api/generate
 
