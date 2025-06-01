@@ -427,6 +427,7 @@ All entries are ordered chronologically.
 | 2025-05-25  | ollama/0.7.1                     | Generic              |
 | 2025-05-29  | sqlite/3.49.2                    | Generic[^sqlite]     |
 | 2025-05-30  | ollama/0.9.0                     | Generic              |
+| 2025-06-01  | llama.cpp/b5558                  | Generic[^llama_cpp]  |
 
 \* CEU or approved users only.
 
@@ -2012,6 +2013,13 @@ They are generated from script [setup.sh](setup.sh),
     cd llama.cpp-b5303/
     mkdir build && cd build
     cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b5303 ..
+    make && make install
+    # b5558 requires gcc/9 and above
+    module load 
+    cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b5558 ..
+    module load gcc/11.2.0/gcc/rjvgspag
+    wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/b5558.tar.gz | tar xvfz -
+    mkdir build && cd build
     make && make install
     ```
 
