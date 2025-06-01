@@ -2017,7 +2017,7 @@ They are generated from script [setup.sh](setup.sh),
     # b5558 requires gcc/9 and above
     module load 
     cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b5558 ..
-    module load gcc/11.2.0/gcc/rjvgspag
+    module load gcc/11.3.0/gcc/4zpip55j
     wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/b5558.tar.gz | tar xvfz -
     mkdir build && cd build
     make && make install
