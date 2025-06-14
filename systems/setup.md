@@ -430,6 +430,7 @@ All entries are ordered chronologically.
 | 2025-06-01  | llama.cpp/b5558                  | Generic[^llama_cpp]  |
 | 2025-05-30  | ollama/0.9.0                     | Generic              |
 | 2025-06-14  | edit/1.2.0                       | Generic              |
+| 2025-06-14  | VSCode/1.101.0                   | Generic              |
 
 \* CEU or approved users only.
 
