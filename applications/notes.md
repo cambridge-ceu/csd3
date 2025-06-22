@@ -1,8 +1,8 @@
 ---
-sort: 64
+sort: 64-B
 ---
 
-# B. Notes on emsembl-vep
+# Notes on emsembl-vep
 
 ## Location & module
 

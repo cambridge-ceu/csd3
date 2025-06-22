@@ -1,8 +1,8 @@
 ---
-sort: 17
+sort: 17-A
 ---
 
-# A. Setup of modules
+# Setup of modules
 
 - Location at CSD3: **/usr/local/Cluster-Apps/ceuadmin**
 - Module files: **/usr/local/Cluster-Config/modulefiles/ceuadmin**
