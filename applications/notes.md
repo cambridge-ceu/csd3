@@ -1,5 +1,5 @@
 ---
-sort: 64-B
+sort: 64
 ---
 
 # Notes on emsembl-vep

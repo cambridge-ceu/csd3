@@ -1,5 +1,5 @@
 ---
-sort: 17-A
+sort: 17
 ---
 
 # Setup of modules
