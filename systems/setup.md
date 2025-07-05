@@ -432,6 +432,7 @@ All entries are ordered chronologically.
 | 2025-06-14  | edit/1.2.0                       | Generic              |
 | ""          | VSCode/1.101.0                   | Generic              |
 | ""          | R/4.5.1-icelake                  | Generic              |
+| 2025-07-05  | Zettlr/3.5.1                     | Generic              |
 
 \* CEU or approved users only.
 
