@@ -432,7 +432,7 @@ All entries are ordered chronologically.
 | 2025-06-14  | edit/1.2.0                       | Generic              |
 | ""          | VSCode/1.101.0                   | Generic              |
 | ""          | R/4.5.1-icelake                  | Generic              |
-| 2025-07-05  | Zettlr/3.5.1                     | Generic              |
+| 2025-07-05  | Zettlr/3.5.1                     | Generic[^zettlr]     |
 
 \* CEU or approved users only.
 
@@ -2521,3 +2521,15 @@ They are generated from script [setup.sh](setup.sh),
     ./configure --enable-all --prefix=$CEUADMIN/sqlite/3.49.2  TCLLIBDIR=$CEUADMIN/sqlite/3.49.2/tcl8.6
     make && make install
     ```
+
+[^zettlr]: **Zettlr**
+
+    Relevant information on Zettlr and Better BibTex for Zotero plugin (<https://retorque.re/zotero-better-bibtex/index.html>) is as follows,
+
+    ```bash
+    wget https://github.com/Zettlr/Zettlr/releases/download/v3.5.1/Zettlr-3.5.1-x86_64.rpm
+    rpm2cpio Zettlr-3.5.1-x86_64.rpm | cpio -idmv
+    wget https://github.com/retorquere/zotero-better-bibtex/releases/download/v6.7.269/zotero6-better-bibtex-6.7.269.xpi
+    ```
+
+    Note that a Zotero 6 Plugin is used. See <https://docs.zettlr.com/en/core/citations/> for additional information.
