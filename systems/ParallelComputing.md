@@ -146,8 +146,10 @@ and also
 
 ```bash
 srun -N1 -n1 -c4 -p cclake-himem -t 12:0:0 --pty bash -i
-srun -A PETERS-SL3-CPU -p icelake-himem --qos=INTR -t 1:0:0 --pty bash -i
+srun -p icelake-himem --qos=INTR -t 1:0:0 --pty bash -i
 ```
+
+with -A to specify account name, e.g.,  -A PETERS-SL3-CPU.
 
 ### Batch job
 
