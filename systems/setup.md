@@ -433,6 +433,8 @@ All entries are ordered chronologically.
 | ""          | VSCode/1.101.0                   | Generic              |
 | ""          | R/4.5.1-icelake                  | Generic              |
 | 2025-07-05  | Zettlr/3.5.1                     | Generic[^zettlr]     |
+| 2025-07-14  | edlib/1.2.7                      | Genetics[^edlib]     |
+| ""          | MUMmer/4.0.1                     | Genetics             |
 
 \* CEU or approved users only.
 
@@ -2533,3 +2535,12 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     Note that a Zotero 6 Plugin is used. See <https://docs.zettlr.com/en/core/citations/> for additional information.
+
+[^edlib]: **edlib**
+
+    ```bash
+    wget -qO- https://github.com/Martinsos/edlib/archive/refs/tags/v1.2.7.tar.gz | tar tvfz -
+    cd edlib-1.2.7/
+    source ~/rds/software/py38/bin/activate
+    make
+    ```
