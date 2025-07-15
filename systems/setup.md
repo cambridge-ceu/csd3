@@ -435,6 +435,7 @@ All entries are ordered chronologically.
 | 2025-07-05  | Zettlr/3.5.1                     | Generic[^zettlr]     |
 | 2025-07-14  | edlib/1.2.7                      | Genetics[^edlib]     |
 | ""          | MUMmer/4.0.1                     | Genetics             |
+| 2025-07-15  | SVanalyzer/0.36                  | Genetics[^svanalyzer]|
 
 \* CEU or approved users only.
 
@@ -2544,3 +2545,31 @@ They are generated from script [setup.sh](setup.sh),
     source ~/rds/software/py38/bin/activate
     make
     ```
+
+[^svanalyzer]: **SVanalyzer**
+
+    Web: <https://svanalyzer.readthedocs.io/>
+
+    ```bash
+    module load ceuadmin/Miniconda3/22.9.0
+    mkdir SVanalyzer
+    cd SVanalyzer/
+    conda create -n 0.36
+    conda activate 0.36
+    conda install -c bioconda svanalyzer
+    svanalyzer benchmark
+    ```
+
+    The bundle includes bedtools/2.30.0, edlib/1.2.3, mummer/3.23, samtools/1.3.1. An attempt from source turned to be difficult with Log-Log4perl/1.57 and/or associates though the module does proceed,
+
+    ```bash
+    tar xvfz /home/jhz22/.cpan/sources/authors/id/E/ET/ETJ/Log-Log4perl-1.57.tar.gz
+    cd Log-Log4perl-1.57/
+    export PERL5LIB=/usr/local/Cluster-Apps/ceuadmin/lib/perl5
+    make install
+    perl Makefile.PL INSTALL_BASE=$PERL5LIB
+    make
+    make install
+    ```
+
+    By-products include newer modules bedtools/2.29.2, edlib/1.2.7, MUMmer/4.0.1, samtools/1.20.

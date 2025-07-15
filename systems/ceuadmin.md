@@ -85,16 +85,16 @@ The current list is as follows,
 [269] "snakemake"              "SNP2HLA"                "snptest"                "spread-sheet-widget"
 [273] "spyder"                 "sqlite"                 "sra-tools"              "sshpass"
 [277] "ssw"                    "STAR"                   "stata"                  "SurvivalAnalysis"
-[281] "SurvivalKit"            "SuSiEx"                 "Swift"                  "SYMPHONY"
-[285] "Synapse"                "tabix"                  "tandem"                 "tatami"
-[289] "tesseract"              "texinfo"                "ThermoRawFileParser"    "ThermoRawFileParserGUI"
-[293] "thunderbird"            "tidy"                   "tiff"                   "trinculo"
-[297] "trousers"               "Typora"                 "unbound"                "uv"
-[301] "vala"                   "VarScan"                "vcftools"               "vdo"
-[305] "VEGAS2"                 "verifyBamID"            "VirtualBox"             "VSCode"
-[309] "VSCodium"               "vte"                    "Windsurf"               "wine"
-[313] "wrk"                    "xpdf"                   "yaml-cpp"               "Zettlr"
-[317] "Zotero"                 "zstd"
+[281] "SurvivalKit"            "SuSiEx"                 "SVanalyzer"             "Swift"
+[285] "SYMPHONY"               "Synapse"                "tabix"                  "tandem"
+[289] "tatami"                 "tesseract"              "texinfo"                "ThermoRawFileParser"
+[293] "ThermoRawFileParserGUI" "thunderbird"            "tidy"                   "tiff"
+[297] "trinculo"               "trousers"               "Typora"                 "unbound"
+[301] "uv"                     "vala"                   "VarScan"                "vcftools"
+[305] "vdo"                    "VEGAS2"                 "verifyBamID"            "VirtualBox"
+[309] "VSCode"                 "VSCodium"               "vte"                    "Windsurf"
+[313] "wine"                   "wrk"                    "xpdf"                   "yaml-cpp"
+[317] "Zettlr"                 "Zotero"                 "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -422,6 +422,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2025-05-15 | BWA/0.7.19                  | Genetics            |
     | 2025-07-14 | edlib/1.2.7                 | Genetics            |
     | ""         | MUMmer/4.0.1                | Genetics            |
+    | 2025-07-15 | SVanalyzer/0.36             | Genetics            |
 
     \* CEU or approved users only.
 
