@@ -81,21 +81,21 @@ The current list is as follows,
 [253] "regenie"                "regtools"               "RHHsoftware"            "RSEM"
 [257] "rst2pdf"                "rstudio"                "rtmpdump"               "ruby"
 [261] "rust"                   "sage"                   "samtools"               "Scala"
-[265] "scGPT"                  "seqkit"                 "shapeit"                "singularity"
-[269] "SMR"                    "snakemake"              "sniffles"               "SNP2HLA"
-[273] "snptest"                "spread-sheet-widget"    "spyder"                 "sqlite"
-[277] "sra-tools"              "sshpass"                "ssw"                    "STAR"
-[281] "stata"                  "SurvivalAnalysis"       "SurvivalKit"            "SuSiEx"
-[285] "SVanalyzer"             "Swift"                  "SYMPHONY"               "Synapse"
-[289] "tabix"                  "tandem"                 "tatami"                 "tesseract"
-[293] "texinfo"                "ThermoRawFileParser"    "ThermoRawFileParserGUI" "thunderbird"
-[297] "tidy"                   "tiff"                   "trinculo"               "trousers"
-[301] "Typora"                 "unbound"                "uv"                     "vala"
-[305] "VarScan"                "vcftools"               "vdo"                    "VEGAS2"
-[309] "verifyBamID"            "VirtualBox"             "VSCode"                 "VSCodium"
-[313] "vte"                    "Windsurf"               "wine"                   "wrk"
-[317] "xpdf"                   "yaml-cpp"               "Zettlr"                 "Zotero"
-[321] "zstd"
+[265] "scGPT"                  "seqkit"                 "SEQPower"               "shapeit"
+[269] "singularity"            "SMR"                    "snakemake"              "sniffles"
+[273] "SNP2HLA"                "snptest"                "spread-sheet-widget"    "spyder"
+[277] "sqlite"                 "sra-tools"              "sshpass"                "ssw"
+[281] "STAR"                   "stata"                  "SurvivalAnalysis"       "SurvivalKit"
+[285] "SuSiEx"                 "SVanalyzer"             "Swift"                  "SYMPHONY"
+[289] "Synapse"                "tabix"                  "tandem"                 "tatami"
+[293] "tesseract"              "texinfo"                "ThermoRawFileParser"    "ThermoRawFileParserGUI"
+[297] "thunderbird"            "tidy"                   "tiff"                   "trinculo"
+[301] "trousers"               "Typora"                 "unbound"                "uv"
+[305] "vala"                   "VarScan"                "vcftools"               "vdo"
+[309] "VEGAS2"                 "verifyBamID"            "VirtualBox"             "VSCode"
+[313] "VSCodium"               "vte"                    "Windsurf"               "wine"
+[317] "wrk"                    "xpdf"                   "yaml-cpp"               "Zettlr"
+[321] "Zotero"                 "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -192,7 +192,7 @@ Inside R, one can check paths with `.libPaths()`. It is also handy to re-install
 There are many sources,
 
 1. miniconda37/. Collections for Miniconda3 which is appropriate for a variety of software including its distribution of R.
-2. py27/. Collections for Python 2.7.
+2. py2.7/. Collections for Python 2.7.
 3. py38/. Collections for Python 3.8.
 4. py3.11/. Collections for Python 3.11.
 
@@ -425,6 +425,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | ""         | MUMmer/4.0.1                | Genetics            |
     | 2025-07-15 | SVanalyzer/0.36             | Genetics            |
     | 2025-07-16 | sniffles/2.2                | Genetics            |
+    | ""         | SEQPower/1.1.0              | Genetics            |
 
     \* CEU or approved users only.
 
