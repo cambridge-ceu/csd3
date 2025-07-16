@@ -436,6 +436,7 @@ All entries are ordered chronologically.
 | 2025-07-14  | edlib/1.2.7                      | Genetics[^edlib]     |
 | ""          | MUMmer/4.0.1                     | Genetics             |
 | 2025-07-15  | SVanalyzer/0.36                  | Genetics[^svanalyzer]|
+| 2025-07-16  | sniffles/2.2                     | Genetics[^sniffles]  |
 
 \* CEU or approved users only.
 
@@ -2573,3 +2574,15 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     By-products include newer modules bedtools/2.29.2, edlib/1.2.7, MUMmer/4.0.1, samtools/1.20.
+
+[^sniffles]: **sniffles**
+
+    GitHub: <https://github.com/fritzsedlazeck/Sniffles>
+
+    This Python package takes advantage of SVanalyzer[^svanalyzer], i.e.,
+
+    ```bash
+    module load ceuadmin/SVanalyzer
+    conda install sniffles=2.6.3
+    sniffles --version
+    ```

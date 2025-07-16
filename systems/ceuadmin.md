@@ -82,19 +82,19 @@ The current list is as follows,
 [257] "rstudio"                "rtmpdump"               "ruby"                   "rust"
 [261] "sage"                   "samtools"               "Scala"                  "scGPT"
 [265] "seqkit"                 "shapeit"                "singularity"            "SMR"
-[269] "snakemake"              "SNP2HLA"                "snptest"                "spread-sheet-widget"
-[273] "spyder"                 "sqlite"                 "sra-tools"              "sshpass"
-[277] "ssw"                    "STAR"                   "stata"                  "SurvivalAnalysis"
-[281] "SurvivalKit"            "SuSiEx"                 "SVanalyzer"             "Swift"
-[285] "SYMPHONY"               "Synapse"                "tabix"                  "tandem"
-[289] "tatami"                 "tesseract"              "texinfo"                "ThermoRawFileParser"
-[293] "ThermoRawFileParserGUI" "thunderbird"            "tidy"                   "tiff"
-[297] "trinculo"               "trousers"               "Typora"                 "unbound"
-[301] "uv"                     "vala"                   "VarScan"                "vcftools"
-[305] "vdo"                    "VEGAS2"                 "verifyBamID"            "VirtualBox"
-[309] "VSCode"                 "VSCodium"               "vte"                    "Windsurf"
-[313] "wine"                   "wrk"                    "xpdf"                   "yaml-cpp"
-[317] "Zettlr"                 "Zotero"                 "zstd"
+[269] "snakemake"              "sniffles"               "SNP2HLA"                "snptest"
+[273] "spread-sheet-widget"    "spyder"                 "sqlite"                 "sra-tools"
+[277] "sshpass"                "ssw"                    "STAR"                   "stata"
+[281] "SurvivalAnalysis"       "SurvivalKit"            "SuSiEx"                 "SVanalyzer"
+[285] "Swift"                  "SYMPHONY"               "Synapse"                "tabix"
+[289] "tandem"                 "tatami"                 "tesseract"              "texinfo"
+[293] "ThermoRawFileParser"    "ThermoRawFileParserGUI" "thunderbird"            "tidy"
+[297] "tiff"                   "trinculo"               "trousers"               "Typora"
+[301] "unbound"                "uv"                     "vala"                   "VarScan"
+[305] "vcftools"               "vdo"                    "VEGAS2"                 "verifyBamID"
+[309] "VirtualBox"             "VSCode"                 "VSCodium"               "vte"
+[313] "Windsurf"               "wine"                   "wrk"                    "xpdf"
+[317] "yaml-cpp"               "Zettlr"                 "Zotero"                 "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -423,6 +423,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2025-07-14 | edlib/1.2.7                 | Genetics            |
     | ""         | MUMmer/4.0.1                | Genetics            |
     | 2025-07-15 | SVanalyzer/0.36             | Genetics            |
+    | 2025-07-16 | sniffles/2.6.2              | Genetics            |
 
     \* CEU or approved users only.
 
