@@ -2583,6 +2583,6 @@ They are generated from script [setup.sh](setup.sh),
 
     ```bash
     module load ceuadmin/SVanalyzer
-    conda install sniffles=2.6.3
+    conda install sniffles
     sniffles --version
     ```

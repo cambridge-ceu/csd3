@@ -423,7 +423,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2025-07-14 | edlib/1.2.7                 | Genetics            |
     | ""         | MUMmer/4.0.1                | Genetics            |
     | 2025-07-15 | SVanalyzer/0.36             | Genetics            |
-    | 2025-07-16 | sniffles/2.6.2              | Genetics            |
+    | 2025-07-16 | sniffles/2.2                | Genetics            |
 
     \* CEU or approved users only.
 
