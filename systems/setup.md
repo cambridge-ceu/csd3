@@ -437,6 +437,7 @@ All entries are ordered chronologically.
 | ""          | MUMmer/4.0.1                     | Genetics             |
 | 2025-07-15  | SVanalyzer/0.36                  | Genetics[^svanalyzer]|
 | 2025-07-16  | sniffles/2.2                     | Genetics[^sniffles]  |
+| ""          | awscli/2.27.52                   | Generic[^awscli]     |
 
 \* CEU or approved users only.
 
@@ -2585,4 +2586,20 @@ They are generated from script [setup.sh](setup.sh),
     module load ceuadmin/SVanalyzer
     conda install sniffles
     sniffles --version
+    ```
+
+[^awscli]: **awscli**
+
+    Web: <https://docs.aws.amazon.com/cli/latest/>
+
+    ```bash
+    curl -Lo awscli-src.tar.gz https://awscli.amazonaws.com/awscli.tar.gz
+    tar xvfz awscli-src.tar.gz
+    cd awscli-2.27.52/
+    ./configure --prefix=$CEUADMIN/awscli/2.27.52 --with-download-deps
+    make
+    make install
+    aws configure set default.region eu-west-1
+    aws s3 ls s3://ont-open-data/ --no-sign-request
+    aws s3 sync --no-sign-request s3://ont-open-data/giab_2025.01/ giab_2025.01/
     ```
