@@ -2621,6 +2621,7 @@ They are generated from script [setup.sh](setup.sh),
     ```bash
     git clone https://github.com/gaow/SEQPower.git
     cd SEQPower
+    module load gcc/5
     source ~/rds/software/py2.7/bin/activate
     python setup.py build
     python setup.py install
