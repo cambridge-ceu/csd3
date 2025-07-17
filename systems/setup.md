@@ -2655,4 +2655,19 @@ They are generated from script [setup.sh](setup.sh),
     wheel           0.37.1
     ```
 
-    The definition files are available: <http://bioinformatics.org/spower/download/data/SRV/sfs.tar.gz>.
+    Sample definitions are provided from <http://bioinformatics.org/spower/download/data/SRV/sfs.tar.gz>, e.g., 
+
+    ```bash
+    spower LOGIT Kryukov2009European1800.sfs --sample_size 1000 --OR_rare_detrimental 1.5 --method CFisher \
+           -r 1000 -j 4 -l 1 -o exercise
+    spower LOGIT Kryukov2009European1800.sfs \
+    --def_rare 0.01 --def_neutral -0.0001 0.0001 --moi A \
+    --proportion_detrimental 1 --proportion_protective 0 \
+    --OR_rare_detrimental 1.5 --OR_common_detrimental 1 --baseline_effect 0.01 \
+    --sample_size 1000 --p1 0.5 --limit 1 \
+    --alpha 0.05 \
+    --method \
+    "KBAC --name K1 --mafupper 0.01 --maflower 0 --alternative 1 --moi additive --permutations 1000 --adaptive 0.1" \
+    --replicates 1000 \
+    --jobs 4 -o exercise-simul
+    ```
