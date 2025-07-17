@@ -2654,3 +2654,5 @@ They are generated from script [setup.sh](setup.sh),
     tables          3.5.2
     wheel           0.37.1
     ```
+
+    The definition files are available: <http://bioinformatics.org/spower/download/data/SRV/sfs.tar.gz>.
