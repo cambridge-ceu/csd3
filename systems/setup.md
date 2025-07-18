@@ -2675,4 +2675,4 @@ They are generated from script [setup.sh](setup.sh),
 
 [^truvari]: **truvari**
 
-    This is analogous to sniffles but from `pip install Truvari`.
+    This is analogous to sniffles but from `conda install Truvari`.
