@@ -439,6 +439,7 @@ All entries are ordered chronologically.
 | 2025-07-16  | sniffles/2.2                     | Genetics[^sniffles]  |
 | ""          | awscli/2.27.52                   | Generic[^awscli]     |
 | ""          | SEQPower/1.1.0                   | Genetics[^seqpower]  |
+| 2025-07-18  | truvari/5.3.0                    | Genetics[^truvari]   |
 
 \* CEU or approved users only.
 
@@ -2671,3 +2672,7 @@ They are generated from script [setup.sh](setup.sh),
     --replicates 1000 \
     --jobs 4 -o exercise-simul
     ```
+
+[^truvari]: **truvari**
+
+    This is analogous to sniffles but from `pip install Truvari`.

@@ -90,12 +90,12 @@ The current list is as follows,
 [289] "Synapse"                "tabix"                  "tandem"                 "tatami"
 [293] "tesseract"              "texinfo"                "ThermoRawFileParser"    "ThermoRawFileParserGUI"
 [297] "thunderbird"            "tidy"                   "tiff"                   "trinculo"
-[301] "trousers"               "Typora"                 "unbound"                "uv"
-[305] "vala"                   "VarScan"                "vcftools"               "vdo"
-[309] "VEGAS2"                 "verifyBamID"            "VirtualBox"             "VSCode"
-[313] "VSCodium"               "vte"                    "Windsurf"               "wine"
-[317] "wrk"                    "xpdf"                   "yaml-cpp"               "Zettlr"
-[321] "Zotero"                 "zstd"
+[301] "trousers"               "truvari"                "Typora"                 "unbound"
+[305] "uv"                     "vala"                   "VarScan"                "vcftools"
+[309] "vdo"                    "VEGAS2"                 "verifyBamID"            "VirtualBox"
+[313] "VSCode"                 "VSCodium"               "vte"                    "Windsurf"
+[317] "wine"                   "wrk"                    "xpdf"                   "yaml-cpp"
+[321] "Zettlr"                 "Zotero"                 "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -426,6 +426,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2025-07-15 | SVanalyzer/0.36             | Genetics            |
     | 2025-07-16 | sniffles/2.2                | Genetics            |
     | ""         | SEQPower/1.1.0              | Genetics            |
+    | 2025-07-18 | truvari/5.3.0               | Genetics            |
 
     \* CEU or approved users only.
 
