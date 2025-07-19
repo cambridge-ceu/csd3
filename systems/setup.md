@@ -440,6 +440,7 @@ All entries are ordered chronologically.
 | ""          | awscli/2.27.52                   | Generic[^awscli]     |
 | ""          | SEQPower/1.1.0                   | Genetics[^seqpower]  |
 | 2025-07-18  | truvari/5.3.0                    | Genetics[^truvari]   |
+| 2025-07-19  | hap.py/0.3.15                    | Genetics[^happy]     |
 
 \* CEU or approved users only.
 
@@ -2676,3 +2677,16 @@ They are generated from script [setup.sh](setup.sh),
 [^truvari]: **truvari**
 
     This is analogous to sniffles but from `conda install Truvari`.
+
+[^happy]: **hap.py**
+
+    Web: <https://github.com/Illumina/hap.py>
+
+    ```bash
+    wget -qO- https://github.com/Illumina/hap.py/archive/refs/tags/v0.3.15.tar.gz | tar xvfz -
+    cd hap.py-0.3.15/
+    module load gcc/6
+    source ~/rds/software/py2.7/bin/activate
+    export HG19=~/rds/public_databases/lib64/giab_lsk114_2022.12/analysis/hg002_truvari_svs/human_g1k_v37.fasta
+    python install.py $CEUADMIN/hap.py/0.3.15
+    ```
