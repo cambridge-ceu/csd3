@@ -2690,3 +2690,35 @@ They are generated from script [setup.sh](setup.sh),
     export HG19=~/rds/public_databases/lib64/giab_lsk114_2022.12/analysis/hg002_truvari_svs/human_g1k_v37.fasta
     python install.py $CEUADMIN/hap.py/0.3.15 --with-rtgtools
     ```
+
+    Now we set to replicate ONT benchmarks,
+
+    ```bash
+    module load ceuadmin/awscli
+    aws s3 ls --no-sign-request s3://ont-open-data/giab_lsk114_2022.12/
+    aws s3 sync --no-sign-request s3://ont-open-data/giab_lsk114_2022.12/ giab_lsk114_2022.12
+    cd giab_lsk114_2022.12/benchmarking
+    mkdir truthset && cd truthset
+    ftp ftp-trace.ncbi.nlm.nih.gov <<EOF
+    anonymous
+    s@
+    cd ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/
+    mget *
+    EOF
+    bash hap.py.sh 002 hac
+    ```
+
+    which contains `analysis/run-happy.sh`, to be modified as [`hap.py.sh`](files/hap.py.sh) and when running gives
+
+    ```
+    Hap.py
+    [W] overlapping records at chr6:29747433 for sample 0
+    [W] Variants that overlap on the reference allele: 5
+    [I] Total VCF records:         4048342
+    [I] Non-reference VCF records: 4048342
+    [W] overlapping records at chr1:151482 for sample 0
+    [W] Variants that overlap on the reference allele: 5359
+    [I] Total VCF records:         6084932
+    [I] Non-reference VCF records: 6084932
+    ...
+    ```
