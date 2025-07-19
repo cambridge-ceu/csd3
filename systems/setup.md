@@ -2688,5 +2688,5 @@ They are generated from script [setup.sh](setup.sh),
     module load gcc/6
     source ~/rds/software/py2.7/bin/activate
     export HG19=~/rds/public_databases/lib64/giab_lsk114_2022.12/analysis/hg002_truvari_svs/human_g1k_v37.fasta
-    python install.py $CEUADMIN/hap.py/0.3.15
+    python install.py $CEUADMIN/hap.py/0.3.15 --with-rtgtools
     ```
