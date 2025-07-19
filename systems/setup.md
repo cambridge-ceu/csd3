@@ -2724,7 +2724,7 @@ They are generated from script [setup.sh](setup.sh),
     ...
     ```
 
-[^rtg]: **rtg-toolss**
+[^rtg]: **rtg-tools**
 
     It is very straightforward,
 
