@@ -441,6 +441,7 @@ All entries are ordered chronologically.
 | ""          | SEQPower/1.1.0                   | Genetics[^seqpower]  |
 | 2025-07-18  | truvari/5.3.0                    | Genetics[^truvari]   |
 | 2025-07-19  | hap.py/0.3.15                    | Genetics[^happy]     |
+| ""          | rtg-tools/3.13                   | Genetics[^rtg]       |
 
 \* CEU or approved users only.
 
@@ -2721,4 +2722,14 @@ They are generated from script [setup.sh](setup.sh),
     [I] Total VCF records:         6084932
     [I] Non-reference VCF records: 6084932
     ...
+    ```
+
+[^rtg]: **rtg-toolss**
+
+    It is very straightforward,
+
+    ```bash
+    wget https://github.com/RealTimeGenomics/rtg-tools/releases/download/3.13/rtg-tools-3.13-linux-x64.zip
+    unzip rtg-tools-3.13-linux-x64.zip
+    rtg
     ```
