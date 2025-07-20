@@ -1,6 +1,26 @@
-#!/bin/bash
-genome=$1  # 002/3/4
-caller=$2  # hac/sup
+#!/usr/bin/bash
+
+#SBATCH --account PETERS-SL3-CPU
+#SBATCH --partition icelake
+#SBATCH --mem=58800
+#SBATCH --time=12:00:00
+#SBATCH --job-name=_happy
+#SBATCH --output=happy.o
+#SBATCH --error=happy.e
+
+. /etc/profile.d/modules.sh
+module purge
+module load rhel8/default-icl
+module load ceuadmin/hap.py ceuadmin/rtg-tools
+cd benchmarking/
+FA=GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
+SDF=GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.sdf
+rtg format -o "$SDF" "$FA"
+
+export TMPDIR=${HPC_WORK}/work
+
+genome=002  # 002/3/4
+caller=hac  # hac/sup
 
 dataset="hg${genome}_${caller}"
 home=${PWD}

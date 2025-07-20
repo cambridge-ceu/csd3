@@ -2706,10 +2706,10 @@ They are generated from script [setup.sh](setup.sh),
     cd ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/
     mget *
     EOF
-    bash hap.py.sh 002 hac
+    bash happy.sb 002 hac
     ```
 
-    which contains `analysis/run-happy.sh`, to be modified as [`hap.py.sh`](files/hap.py.sh) and when running gives
+    which contains `analysis/run-happy.sh`, to be modified as [`happy.sb`](files/happy.sb) and when running gives
 
     ```
     Hap.py
@@ -2731,5 +2731,8 @@ They are generated from script [setup.sh](setup.sh),
     ```bash
     wget https://github.com/RealTimeGenomics/rtg-tools/releases/download/3.13/rtg-tools-3.13-linux-x64.zip
     unzip rtg-tools-3.13-linux-x64.zip
-    rtg
+    cd benchmarking
+    FA=GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
+    SDF=GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.sdf
+    rtg format -o "$SDF" "$FA"
     ```
