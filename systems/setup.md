@@ -2736,3 +2736,5 @@ They are generated from script [setup.sh](setup.sh),
     SDF=GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.sdf
     rtg format -o "$SDF" "$FA"
     ```
+
+    which is part of [`happy.sb`](files/happy.sb)[^happy] from above.
