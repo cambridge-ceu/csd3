@@ -2737,4 +2737,4 @@ They are generated from script [setup.sh](setup.sh),
     rtg format -o "$SDF" "$FA"
     ```
 
-    which is part of [`happy.sb`](files/happy.sb)[^happy] from above.
+    which contains part of [`happy.sb`](files/happy.sb)[^happy] from above.
