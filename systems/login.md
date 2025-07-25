@@ -239,8 +239,6 @@ find /usr -iname "*libGLX*.so*" -exec ls -l {} \;
 
 [^icelake]: **icelake**
 
-    On 25/7/2025, the node retires.
-
     Applications such as R/nloptr package require to be recompiled. In this case, we run `download.packages("nloptr",".")` inside `R` on an Internet-enabled node and compile the package with `R CMD INSTALL nloptr_1.2.2.3.tar.gz`, say.
 
     On icelake, we could emulate lynx-style web browser with syntax such as `xfce4-terminal -x /usr/bin/links https://www.bbc.co.uk &`.
