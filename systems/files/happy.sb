@@ -12,30 +12,25 @@
 module purge
 module load rhel8/default-icl
 module load ceuadmin/hap.py ceuadmin/rtg-tools
-cd benchmarking/
-FA=GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
-SDF=GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.sdf
-rtg format -o "$SDF" "$FA"
-
 export TMPDIR=${HPC_WORK}/work
+home=${PWD}
 
 genome=002  # 002/3/4
 caller=hac  # hac/sup
-
 dataset="hg${genome}_${caller}"
-home=${PWD}
 
-rm -rf ${dataset}_happy_out
-export output=small_variants_happy/${dataset}_happy_out
-mkdir ${output}
-pushd ${output}
-module load ceuadmin/hap.py
+cd benchmarking/
+FA=GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
+SDF=GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.sdf
+rm -rf ${SDF}
+rtg format -o "$SDF" "$FA"
+
 hap.py \
-    ${home}/benchmarking/truthset/HG${genome}_GRCh38_1_22_v4.2.1_benchmark.vcf.gz \
+    truthset/HG${genome}_GRCh38_1_22_v4.2.1_benchmark.vcf.gz \
     ${home}/wf-human-var-output/${dataset}_v4/hg${genome}.wf_snp.vcf.gz \
-    -f ${home}/benchmarking/truthset/HG${genome}_GRCh38_1_22_v4.2.1_benchmark_noinconsistent.bed \
-    -r ${home}/benchmarking/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
+    -f truthset/HG${genome}_GRCh38_1_22_v4.2.1_benchmark_noinconsistent.bed \
+    -r GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
     -o ${caller}_happy_out \
     --pass-only --engine=vcfeval --threads=16 \
     --engine-vcfeval-template ${home}/benchmarking/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.sdf
-popd
+
