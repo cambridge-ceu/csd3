@@ -134,7 +134,7 @@ which shows information on all partitions and a specific one, respectively.
 A SLURM partition checking script by Campbell Wolford, [slurm_partition_checking.sh](files/slurm_partition_checking.sh).
 
 
-### An interactive job
+### Interactive job
 
 CSD3 user guide for an interactive session, <https://docs.hpc.cam.ac.uk/hpc/user-guide/interactive.html>
 
