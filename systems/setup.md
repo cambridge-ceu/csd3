@@ -2759,6 +2759,8 @@ They are generated from script [setup.sh](setup.sh),
        SNP   PASS      3365127   3361205      3922      4783865      7749    1413355   1385   3124       0.998835          0.997701        0.295442         0.998267                2.100128                1.668217                   1.581196                   1.671398
     ```
 
+    NB only HG002 is tested here.
+
 [^rtg]: **rtg-tools**
 
     It is very straightforward,

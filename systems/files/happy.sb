@@ -15,22 +15,21 @@ module load ceuadmin/hap.py ceuadmin/rtg-tools
 export TMPDIR=${HPC_WORK}/work
 home=${PWD}
 
-genome=002  # 002/3/4
-caller=hac  # hac/sup
-dataset="hg${genome}_${caller}"
-
-cd benchmarking/
 FA=GCA_000001405.15_GRCh38_no_alt_analysis_set.fna
 SDF=GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.sdf
+cd benchmarking/
 rm -rf ${SDF}
 rtg format -o "$SDF" "$FA"
 
-hap.py \
+caller=hac  # hac/sup
+for genome in 002 003 004; do
+  dataset=hg${genome}_${caller}
+  output=${dataset}_happy_out
+  hap.py \
     truthset/HG${genome}_GRCh38_1_22_v4.2.1_benchmark.vcf.gz \
     ${home}/wf-human-var-output/${dataset}_v4/hg${genome}.wf_snp.vcf.gz \
     -f truthset/HG${genome}_GRCh38_1_22_v4.2.1_benchmark_noinconsistent.bed \
     -r GCA_000001405.15_GRCh38_no_alt_analysis_set.fna \
-    -o ${caller}_happy_out \
-    --pass-only --engine=vcfeval --threads=16 \
-    --engine-vcfeval-template ${home}/benchmarking/GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.sdf
-
+    -o ${output} \
+    --pass-only --engine=vcfeval --threads=16 --engine-vcfeval-template ${SDF}
+done
