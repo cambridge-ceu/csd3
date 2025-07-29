@@ -2711,6 +2711,20 @@ They are generated from script [setup.sh](setup.sh),
 
     This is analogous to sniffles but from `conda install Truvari`.
 
+    ```bash
+    wget ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/analysis/NIST_SVs_Integration_v0.6/HG002_SVs_Tier1_v0.6.vcf.gz
+    wget ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/analysis/NIST_SVs_Integration_v0.6/HG002_SVs_Tier1_v0.6.vcf.gz.tbi
+    wget ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/AshkenazimTrio/analysis/NIST_SVs_Integration_v0.6/HG002_SVs_Tier1_v0.6.bed
+    truvari bench --base HG002_SVs_Tier1_v0.6.vcf.gz \
+                  --comp HG002_PacBio-HiFi-Revio_20231031_48x_GRCh38-GIABv3.vcf.gz \
+                  --reference GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta.gz \
+                  --includebed HG002_SVs_Tier1_v0.6.bed \
+                  --output truvari_HG002_bench \
+                  --giabreport --passonly --multimatch --refdist 2000 --chunksize 2000 --pctsize 0.70 --pctovl 0.0
+    ```
+
+    the output is in truvari_HG002_bench/.
+
 [^happy]: **hap.py**
 
     Web: <https://github.com/Illumina/hap.py>
