@@ -2746,13 +2746,8 @@ They are generated from script [setup.sh](setup.sh),
     aws s3 sync --no-sign-request s3://ont-open-data/giab_lsk114_2022.12/ giab_lsk114_2022.12
     cd giab_lsk114_2022.12/benchmarking
     mkdir truthset && cd truthset
-    ftp ftp-trace.ncbi.nlm.nih.gov <<EOF
-    anonymous
-    s@
-    cd ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/
-    binary
-    mget *
-    EOF
+    wget ftp://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/GRCh38/*
+    cd ../..
     bash happy.sb 002 hac
     ```
 
