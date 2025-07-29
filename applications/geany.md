@@ -54,7 +54,7 @@ module load texlive
 module load python/3.8
 cd /usr/local/Cluster-Apps/ceuadmin/rst2pdf/0.101/
 virtualenv py38
-source /usr/local/Cluster-Apps/ceuadmin/rst2pdf/0.101//py38/bin/activate
+source /usr/local/Cluster-Apps/ceuadmin/rst2pdf/0.101/py38/bin/activate
 pip install PyPI
 pip install rst2pdf[aafiguresupport,mathsupport,plantumlsupport,rawhtmlsupport,sphinx,svgsupport]
 rst2pdf --version
