@@ -2592,6 +2592,31 @@ They are generated from script [setup.sh](setup.sh),
     sniffles --version
     ```
 
+    For the GIAB PackBio Hi-Fi Ashkenazi Trio data,
+
+    ```bash
+    # wget (-c to resume)
+    wget ftp://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/PacBio_HiFi-Revio_20231031/HG002_PacBio-HiFi-Revio_20231031_48x_GRCh38-GIABv3.bam*
+    # rsync can check directory
+    rsync --partial --progress -av \
+      rsync://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/data/AshkenazimTrio/HG002_NA24385_son/PacBio_HiFi-Revio_20231031/* .
+    wget ftp://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/references/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta.gz*
+    sniffles \
+      --input HG002_PacBio-HiFi-Revio_20231031_48x_GRCh38-GIABv3.bam  \
+      --reference GCA_000001405.15_GRCh38_no_alt_analysis_set.fasta.gz \
+      --vcf HG002_PacBio-HiFi-Revio_20231031_48x_GRCh38-GIABv3.vcf.gz \
+      --threads 8
+    ```
+
+    We see
+
+    ```
+    Generating index for HG002_PacBio-HiFi-Revio_20231031_48x_GRCh38-GIABv3.vcf.gz...
+    Indexing VCF output took 0.15s.
+    Done.
+    Wrote 28267 called SVs to HG002_PacBio-HiFi-Revio_20231031_48x_GRCh38-GIABv3.vcf.gz (single-sample, sorted, bgzipped, tabix-indexed)
+    ```
+
 [^awscli]: **awscli**
 
     Web: <https://docs.aws.amazon.com/cli/latest/>
@@ -2704,6 +2729,7 @@ They are generated from script [setup.sh](setup.sh),
     anonymous
     s@
     cd ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/
+    binary
     mget *
     EOF
     bash happy.sb 002 hac
