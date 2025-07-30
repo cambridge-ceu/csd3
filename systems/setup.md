@@ -2748,10 +2748,9 @@ They are generated from script [setup.sh](setup.sh),
     mkdir truthset && cd truthset
     wget ftp://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/NISTv4.2.1/GRCh38/*
     cd ../..
-    bash happy.sb 002 hac
     ```
 
-    which contains `analysis/run-happy.sh`, to be modified as [`happy.sb`](files/happy.sb) and when running gives
+    which contains `analysis/run-happy.sh`, when modified as [`happy.sb`](files/happy.sb) and after running gives
 
     ```
     Hap.py
