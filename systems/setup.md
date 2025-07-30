@@ -935,7 +935,7 @@ They are generated from script [setup.sh](setup.sh),
     tar xvfz -
     cd openssl-3.2.1/
     export PERL5LIB=
-    ./Configure --prefix=$CEUADMIN/openssl/3.2.1-icelake
+    ./Configure --prefix=$CEUADMIN/openssl/3.2.1-icelake --openssldir=$CEUADMIN/openssl/3.2.1-icelake/ssl
     make
     make install
     ```
@@ -946,7 +946,7 @@ They are generated from script [setup.sh](setup.sh),
     wget -qO- https://github.com/openssl/openssl/archive/refs/tags/OpenSSL_1_1_1b.tar.gz | \
     tar xvfz -
     cd openssl-OpenSSL_1_1_1b/
-    config --prefix=$CEUADMIN/openssl/1.1.1b-icelake
+    config --prefix=$CEUADMIN/openssl/1.1.1b-icelake --openssldir=$CEUADMIN/openssl/1.1.1b-icelake/ssl
     make install
     ```
 
