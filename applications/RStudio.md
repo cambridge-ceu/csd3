@@ -72,6 +72,16 @@ Module `2023.09.2-508/` is added which works with `ceuadmin/R/4.4.0-icelake`. We
 ceuadmin/rstudio/1.3.1093              ceuadmin/rstudio/2023.09.2-508         ceuadmin/rstudio/2023.09.2-508-icelake
 ```
 
+There are issues with R/4.5.x for `ceuadmin/rstudio/2023.09.2-508-icelake`, but could get around with
+
+```bash
+#!/bin/bash
+unset DBUS_SESSION_BUS_ADDRESS
+unset $(env | grep -E 'DBUS|XDG_RUNTIME_DIR' | cut -d= -f1)
+module load R/4.3.1-icelake
+rstudio --no-sandbox "$@"
+```
+
 <font color="red"><b>9/5/2024 Update</b></font>
 
 Module `2023.09.2-508-icelake/` works with `ceuadmin/R/4.4.0-icelake` which is a significant update from `rstudio/1.1.383`.
