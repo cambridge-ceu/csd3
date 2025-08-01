@@ -442,6 +442,8 @@ All entries are ordered chronologically.
 | 2025-07-18  | truvari/5.3.0                    | Genetics[^truvari]   |
 | 2025-07-19  | hap.py/0.3.15                    | Genetics[^happy]     |
 | ""          | rtg-tools/3.13                   | Genetics[^rtg]       |
+| 2025-08-01  | ollama/0.10.1                    | Generic              |
+| ""          | llama.cpp/b6059                  | Generic              |
 
 \* CEU or approved users only.
 
@@ -2029,11 +2031,11 @@ They are generated from script [setup.sh](setup.sh),
     cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b5303 ..
     make && make install
     # b5558 requires gcc/9 and above
-    module load 
-    cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b5558 ..
     module load gcc/11.3.0/gcc/4zpip55j
     wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/b5558.tar.gz | tar xvfz -
+    cd llama.cpp-b5558
     mkdir build && cd build
+    cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b5558 ..
     make && make install
     ```
 
