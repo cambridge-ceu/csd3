@@ -444,6 +444,7 @@ All entries are ordered chronologically.
 | ""          | rtg-tools/3.13                   | Genetics[^rtg]       |
 | 2025-08-01  | ollama/0.10.1                    | Generic              |
 | ""          | llama.cpp/b6059                  | Generic              |
+| ""          | fly/0.3.164                      | Generic[^fly]        |
 
 \* CEU or approved users only.
 
@@ -2818,3 +2819,24 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     which contains part of [`happy.sb`](files/happy.sb)[^happy] from above.
+
+[^fly]: **fly**
+
+    Web: <https://fly.io/>
+
+    This attempt for a user,
+
+    ```bash
+    cd ~/rsd/software
+    mkdir fly && cd fly
+    ln -s /rds/project/rds-4o5vpvAowP0/software/fly ~/.fly
+    curl -L https://fly.io/install.sh | sh
+    export FLYCTL_INSTALL=/rds/project/rds-4o5vpvAowP0/software/fly
+    export PATH="$FLYCTL_INSTALL/bin:$PATH"
+    flyctl --help
+    flyctl version
+    fly volumes create coffeeshop_vol --size 1
+    fly deploy
+    ```
+
+    The last two lines are per <https://jinghuazhao@github.com/pavelanni/pythonicadventure-code>.
