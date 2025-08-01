@@ -2824,14 +2824,14 @@ They are generated from script [setup.sh](setup.sh),
 
     Web: <https://fly.io/>
 
-    This attempt for a user,
+    The module is built around attempt for a user,
 
     ```bash
     cd ~/rsd/software
     mkdir fly && cd fly
     ln -s /rds/project/rds-4o5vpvAowP0/software/fly ~/.fly
     curl -L https://fly.io/install.sh | sh
-    export FLYCTL_INSTALL=/rds/project/rds-4o5vpvAowP0/software/fly
+    export FLYCTL_INSTALL=~/.fly
     export PATH="$FLYCTL_INSTALL/bin:$PATH"
     flyctl --help
     flyctl version
