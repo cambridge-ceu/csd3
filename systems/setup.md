@@ -445,6 +445,7 @@ All entries are ordered chronologically.
 | 2025-08-01  | ollama/0.10.1                    | Generic              |
 | ""          | llama.cpp/b6059                  | Generic              |
 | ""          | fly/0.3.164                      | Generic[^fly]        |
+| ""          | node/22.16.0                     | Generic              |
 
 \* CEU or approved users only.
 
