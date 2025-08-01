@@ -2839,4 +2839,4 @@ They are generated from script [setup.sh](setup.sh),
     fly deploy
     ```
 
-    The last two lines are per <https://jinghuazhao@github.com/pavelanni/pythonicadventure-code>.
+    The last two lines are per <https://github.com/pavelanni/pythonicadventure-code>.
