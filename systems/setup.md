@@ -2843,7 +2843,7 @@ They are generated from script [setup.sh](setup.sh),
 
     The last two lines are per <https://github.com/pavelanni/pythonicadventure-code>.
 
-[^cli]: **cli**
+[^cli]: **cli (GitHub CLI)**
 
     Web: <https://cli.github.com/>
 
