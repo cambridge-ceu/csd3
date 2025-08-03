@@ -2870,4 +2870,4 @@ They are generated from script [setup.sh](setup.sh),
     git push --set-upstream origin jhz
     ```
 
-    We could follow instructions to create a branch, correct the typos, modify file paths and download the image data.
+    We could follow instructions to create a branch, correct the typos, modify file paths and download the image data. The forked repository is available, <https://github.com/cambridge-ceu/Ultimate-Neural-Network-Programming-with-Python>.
