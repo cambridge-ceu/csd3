@@ -2845,6 +2845,8 @@ They are generated from script [setup.sh](setup.sh),
 
 [^cli]: **cli**
 
+    Web: <https://cli.github.com/>
+
     This is done as follows,
 
     ```bash
