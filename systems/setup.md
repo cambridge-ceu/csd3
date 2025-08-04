@@ -2863,11 +2863,12 @@ They are generated from script [setup.sh](setup.sh),
     gh auth login
     gh auth status
     gh repo fork OrangeAVA/Ultimate-Neural-Network-Programming-with-Python --org cambridge-ceu
-    ...
+    cd Ultimate-Neural-Network-Programming-with-Python
+    git checkout -b jhz
+    # correct typos, modify file paths, rename model/att_net.py, ...
+    git push --set-upstream origin jhz
     wget -qO- https://thor.robots.ox.ac.uk/~vgg/data/pets/annotations.tar.gz | tar xfz -
     wget -qO- https://thor.robots.ox.ac.uk/~vgg/data/pets/images.tar.gz | tar xfz -
-    git checkout -b jhz
-    git push --set-upstream origin jhz
     ```
 
-    We could follow instructions to create a branch, correct the typos, modify file paths and download the image data. The forked repository is available, <https://github.com/cambridge-ceu/Ultimate-Neural-Network-Programming-with-Python>.
+    We fork a repository. create a branch, and send a pull request. The forked repository is available, <https://github.com/cambridge-ceu/Ultimate-Neural-Network-Programming-with-Python>, which has been merged into the author's master branch.
