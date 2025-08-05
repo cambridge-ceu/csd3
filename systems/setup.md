@@ -448,6 +448,7 @@ All entries are ordered chronologically.
 | ""          | node/22.16.0                     | Generic              |
 | 2025-08-03  | cli/2.76.2                       | Generic[^cli]        |
 | 2025-08-05  | qctool/2.2.5                     | Genetics             |
+| ""          | MToolBox/1.2.1                   | Genetics[^mtoolbox]  |
 
 \* CEU or approved users only.
 
@@ -2873,3 +2874,19 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     We fork a repository. create a branch, and send a pull request. The forked repository is available, <https://github.com/cambridge-ceu/Ultimate-Neural-Network-Programming-with-Python>, which has been merged into the author's master branch.
+
+[^mtoolbox]: **MToolBox**
+
+    GitHub: <https://github.com/mitoNGS/MToolBox>
+
+    The default URLs for depenencies Anaconda2, samtools 1.3, zlib 1.2.11 require slight changes, namely
+
+    ```bash
+    wget -qO- https://github.com/mitoNGS/MToolBox/archive/refs/tags/v1.2.1.tar.gz | tar xvfz -
+    cd MToolBox-1.2.1/bin
+    wget https://mirrors.sustech.edu.cn/anaconda/archive/Anaconda2-2.5.0-Linux-x86_64.sh
+    wget https://sourceforge.net/projects/samtools/files/samtools/1.3/samtools-1.3.tar.bz2/
+    wget https://download.videolan.org/pub/contrib/zlib/zlib-1.2.11.tar.gz
+    bash Anaconda2-2.5.0-Linux-x86_64.sh # install to anaconda
+    ./install.sh
+    ```
