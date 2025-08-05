@@ -430,6 +430,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2025-07-18 | truvari/5.3.0               | Genetics            |
     | 2025-07-19 | hap.py/0.3.15               | Genetics            |
     | ""         | rtg-tools/3.13              | Genetics            |
+    | 2025-08-05 | qctool/2.2.5                | Genetics            |
 
     \* CEU or approved users only.
 

@@ -447,6 +447,7 @@ All entries are ordered chronologically.
 | ""          | fly/0.3.164                      | Generic[^fly]        |
 | ""          | node/22.16.0                     | Generic              |
 | 2025-08-03  | cli/2.76.2                       | Generic[^cli]        |
+| 2025-08-05  | qctool/2.2.5                     | Genetics             |
 
 \* CEU or approved users only.
 
