@@ -2891,4 +2891,4 @@ They are generated from script [setup.sh](setup.sh),
     ./install.sh
     ```
 
-    However, GSNP 2015-12-31 and muscle 3.8.31_i86linux64 remain intact. One can invoke `./install.sh -i gsnap_db` alone upon interruption.
+    However, locations of gsnap 2015-12-31 and muscle 3.8.31_i86linux64 remain intact. One can invoke `./install.sh -i gsnap_db` alone upon interruption.
