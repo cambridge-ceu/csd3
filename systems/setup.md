@@ -2890,3 +2890,5 @@ They are generated from script [setup.sh](setup.sh),
     bash Anaconda2-2.5.0-Linux-x86_64.sh # install to anaconda
     ./install.sh
     ```
+
+    However, GSNP 2015-12-31 and muscle 3.8.31_i86linux64 remain intact.
