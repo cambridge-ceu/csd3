@@ -2889,6 +2889,8 @@ They are generated from script [setup.sh](setup.sh),
     wget https://download.videolan.org/pub/contrib/zlib/zlib-1.2.11.tar.gz
     bash Anaconda2-2.5.0-Linux-x86_64.sh # install to anaconda
     ./install.sh
+    MToolBox.sh -h
+    MToolBox.sh -i test_rCRS_config.sh
     ```
 
     However, locations of gsnap 2015-12-31 and muscle 3.8.31_i86linux64 remain intact. One can invoke `./install.sh -i gsnap_db` alone upon interruption.

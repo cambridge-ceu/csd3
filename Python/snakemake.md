@@ -81,6 +81,8 @@ Note the `zip` argument which prevents expanding every combinations.
 
 ## Examples
 
+See <https://github.com/mitoNGS/MToolBox_snakemake> for use on CSD3; other variety is as follows.
+
 ### 1. hello world
 
 ```bash
