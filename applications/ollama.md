@@ -310,3 +310,12 @@ ollama create "$OUTPUT_MODEL" -f -
 ollama run "$OUTPUT_MODEL"
 kill $OLLAMA_PID
 ```
+
+To get the latest (as of 6/8/2025) models from OpenAI,
+
+```bash
+ollama run gpt-oss:20b
+ollama run gpt-oss:120b
+```
+
+as in <https://ollama.com/blog/gpt-oss>.
