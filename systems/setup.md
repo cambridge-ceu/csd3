@@ -2894,3 +2894,23 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     However, locations of gsnap 2015-12-31 and muscle 3.8.31_i86linux64 remain intact. One can invoke `./install.sh -i gsnap_db` alone upon interruption.
+
+    A recent attempt from the developers regards snakemake workflow,
+
+    ```bash
+    git clone https://github.com/mitoNGS/MToolBox_snakemake
+    cd MToolBox_snakemake
+    module load ceuadmin/micromamba
+    micromamba env create -f envs/mtoolbox.yaml -n mtoolbox
+    eval "$(micromamba shell hook --shell bash)"
+    micromamba activate mtoolbox
+    micromamba install sqlalchemy
+    micromamba deactivate
+    snakemake -s Snakefile --reason \
+     --printshellcmds \
+     --keep-going \
+     --cores 100 \
+     --cluster-config cluster.yaml --latency-wait 60 \
+     --cluster 'sbatch -A PETERS-SL3-CPU -p core -n {cluster.threads} -t 7:00:00 -o {cluster.stdout}' \
+     --dryrun
+    ```
