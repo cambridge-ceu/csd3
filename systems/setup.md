@@ -2909,6 +2909,10 @@ They are generated from script [setup.sh](setup.sh),
     cd mtoolnote-0.2.0/
     pip uninstall requests
     pip install .
+    micromamba list | grep -e gmap -e pyvcf -e requests -e samtools
+    pip list | grep -e requests -e mtoolnote
+    mtoolnote --help
+    cd ..
     snakemake -s Snakefile --reason \
      --printshellcmds \
      --keep-going \
@@ -2919,7 +2923,7 @@ They are generated from script [setup.sh](setup.sh),
     micromamba deactivate
     ```
 
-    Note the workflow uses a dedicated annotation tool, mtoolnote, <https://github.com/mitoNGS/mtoolnote> whose installation has a conflict with the Python package requests 2.28.1, which needs to be uninstalled to allow for. Consequently, from `micromamba list | grep -e gmap -e pyvcf -e requests -e samtools` and `pip list | grep -e requests -e mtoolnote`, we have
+    The workflow uses a dedicated annotation tool, mtoolnote, <https://github.com/mitoNGS/mtoolnote> whose installation involves a conflict with the Python package requests 2.28.1. Consequently, from `micromamba list` and `pip list`, we have
 
     ```
     gmap                           2020.04.08    pl526h2f06484_1         bioconda
@@ -2936,3 +2940,32 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     respectively.
+
+    ```
+    Usage: mtoolnote [OPTIONS] INPUT_VCF OUTPUT_VCF
+
+      Annotate a VCF file using mtoolnote.
+
+    Options:
+      --version                       Show the version and exit.
+      -s, --species [human|oaries|ptroglodytes|scerevisiae|ecaballus|fcatus|cfamiliaris|pabelii|ggallus|mmulatta|rnorvegicus|btaurus|oanatinus|sscrofa|nleucogenys|chircus|mmusculus|tguttata|tnigroviridis|mgallopavo|mdomestica|drerio]
+                                      Species to use for annotation  [default:
+                                      human]
+      -c, --csv                       Create an additional annotated CSV file
+                                      [default: False]
+      --crossref / --no-crossref      Add cross-reference annotations  [default:
+                                      crossref]
+      --predict / --no-predict        Add pathogenicity prediction annotations
+                                      [default: predict]
+      --variab / --no-variab          Add nucleotide variability annotations
+                                      [default: variab]
+      --haplos / --no-haplos          Add haplogroup-specific allele frequency
+                                      annotations  [default: haplos]
+      --help                          Show this message and exit.
+
+    Building DAG of jobs...
+    MissingInputException in line 180 of /rds/project/rds-4o5vpvAowP0/software/MToolBox_snakemake/Snakefile:
+    Missing input files for rule trimmomatic:
+    data/reads/5517_hypo_1_R2_001.fastq.gz
+    data/reads/5517_hypo_1_R1_001.fastq.gz
+    ```
