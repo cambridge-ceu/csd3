@@ -2895,7 +2895,7 @@ They are generated from script [setup.sh](setup.sh),
 
     However, locations of gsnap 2015-12-31 and muscle 3.8.31_i86linux64 remain intact. One can invoke `./install.sh -i gsnap_db` alone upon interruption.
 
-    A recent attempt from the developers regards snakemake workflow, <https://github.com/mitoNGS/MToolBox_snakemake>, 
+    A workflow is available, <https://github.com/mitoNGS/MToolBox_snakemake> & <https://mtoolbox-snakemake.readthedocs.io/en/sept_2020_doc/index.html>,
 
     ```bash
     git clone https://github.com/mitoNGS/MToolBox_snakemake
@@ -2905,12 +2905,13 @@ They are generated from script [setup.sh](setup.sh),
     eval "$(micromamba shell hook --shell bash)"
     micromamba activate mtoolbox
     micromamba install sqlalchemy
+    micromamba install pytest
     wget -qO- https://github.com/mitoNGS/mtoolnote/archive/refs/tags/v0.2.0.tar.gz | tar xfz -
     cd mtoolnote-0.2.0/
     pip uninstall requests
     pip install .
-    micromamba list | grep -e gmap -e pyvcf -e requests -e samtools
-    pip list | grep -e requests -e mtoolnote
+    micromamba list | grep -e bcftools -e gatk -e gmap -e picard -e pyvcf -e requests -e samtools
+    pip list | grep -e mtoolnote -e requests -e pytest
     mtoolnote --help
     cd ..
     snakemake -s Snakefile --reason \
@@ -2926,7 +2927,10 @@ They are generated from script [setup.sh](setup.sh),
     The workflow uses a dedicated annotation tool, mtoolnote, <https://github.com/mitoNGS/mtoolnote> whose installation involves a conflict with the Python package requests 2.28.1. Consequently, from `micromamba list` and `pip list`, we have
 
     ```
+    bcftools                       1.11          h7c999a4_0              bioconda
+    gatk-framework                 3.6.24        hdfd78af_6              bioconda
     gmap                           2020.04.08    pl526h2f06484_1         bioconda
+    picard                         2.23.7        0                       bioconda
     pyvcf                          0.6.7         py36_0                  bioconda
     requests                       2.28.1        pyhd8ed1ab_0            conda-forge
     samtools                       1.11          h6270b1f_0              bioconda
@@ -2936,6 +2940,7 @@ They are generated from script [setup.sh](setup.sh),
 
     ```
     mtoolnote                     0.2.0
+    pytest                        7.0.1
     requests                      2.27.1
     ```
 
