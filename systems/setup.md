@@ -2895,7 +2895,7 @@ They are generated from script [setup.sh](setup.sh),
 
     However, locations of gsnap 2015-12-31 and muscle 3.8.31_i86linux64 remain intact. One can invoke `./install.sh -i gsnap_db` alone upon interruption.
 
-    A recent attempt from the developers regards snakemake workflow,
+    A recent attempt from the developers regards snakemake workflow, <https://github.com/mitoNGS/MToolBox_snakemake>, 
 
     ```bash
     git clone https://github.com/mitoNGS/MToolBox_snakemake
@@ -2919,7 +2919,7 @@ They are generated from script [setup.sh](setup.sh),
     micromamba deactivate
     ```
 
-    There is a conflict with requests 2.28.1. From `micromamba list | grep -e gmap -e pyvcf -e requests -e samtools` and `pip list | grep -e requests -e mtoolnote`, we have
+    Note the workflow uses a dedicated annotation tool, mtoolnote, <https://github.com/mitoNGS/mtoolnote>. There is a conflict with the Python package requests 2.28.1, which needs to be uninstalled to allow. Consequently, from `micromamba list | grep -e gmap -e pyvcf -e requests -e samtools` and `pip list | grep -e requests -e mtoolnote`, we have
 
     ```
     gmap                           2020.04.08    pl526h2f06484_1         bioconda
