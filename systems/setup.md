@@ -2905,7 +2905,10 @@ They are generated from script [setup.sh](setup.sh),
     eval "$(micromamba shell hook --shell bash)"
     micromamba activate mtoolbox
     micromamba install sqlalchemy
-    micromamba deactivate
+    wget -qO- https://github.com/mitoNGS/mtoolnote/archive/refs/tags/v0.2.0.tar.gz | tar xfz -
+    cd mtoolnote-0.2.0/
+    pip uninstall requests
+    pip install .
     snakemake -s Snakefile --reason \
      --printshellcmds \
      --keep-going \
@@ -2913,4 +2916,23 @@ They are generated from script [setup.sh](setup.sh),
      --cluster-config cluster.yaml --latency-wait 60 \
      --cluster 'sbatch -A PETERS-SL3-CPU -p core -n {cluster.threads} -t 7:00:00 -o {cluster.stdout}' \
      --dryrun
+    micromamba deactivate
     ```
+
+    There is a conflict with requests 2.28.1. From `micromamba list | grep -e gmap -e pyvcf -e requests -e samtools` and `pip list | grep -e requests -e mtoolnote`, we have
+
+    ```
+    gmap                           2020.04.08    pl526h2f06484_1         bioconda
+    pyvcf                          0.6.7         py36_0                  bioconda
+    requests                       2.28.1        pyhd8ed1ab_0            conda-forge
+    samtools                       1.11          h6270b1f_0              bioconda
+    ```
+
+    but
+
+    ```
+    mtoolnote                     0.2.0
+    requests                      2.27.1
+    ```
+
+    respectively.
