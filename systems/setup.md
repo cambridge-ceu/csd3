@@ -2924,6 +2924,7 @@ They are generated from script [setup.sh](setup.sh),
      --cluster-config cluster.yaml --latency-wait 60 \
      --cluster 'sbatch -A PETERS-SL3-CPU -p core -n {cluster.threads} -t 7:00:00 -o {cluster.stdout}' \
      --dryrun
+    micromamba clean --all --yes
     micromamba deactivate
     ```
 
