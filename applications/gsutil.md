@@ -4,7 +4,11 @@ sort: 25
 
 # gsutil
 
-## 5.35
+## Installation
+
+Web site: [https://cloud.google.com/storage/docs/gsutil_install#linux](https://cloud.google.com/storage/docs/gsutil_install#linux)
+
+### 5.35
 
 This release is similar to earlier counterparts but has a generic naming.
 
@@ -19,9 +23,7 @@ bin/gsutil --version
 bin/gsutil ls gs://covid19-hg-upload-uk--blood-donors-cohort
 ```
 
-## Installation
-
-Web site: [https://cloud.google.com/storage/docs/gsutil_install#linux](https://cloud.google.com/storage/docs/gsutil_install#linux)
+### 301.0.0
 
 the authentification is achieved via Google SDK (e.g. [301.0.0](https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-301.0.0-linux-x86_64.tar.gz))
 
@@ -61,7 +63,7 @@ python setup.py install --prefix=$HPC_WORK
 
 ## Examples
 
-## FinnGen
+### FinnGen
 
 Web: [https://www.finngen.fi/en/access_results](https://www.finngen.fi/en/access_results)
 
