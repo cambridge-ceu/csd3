@@ -451,6 +451,7 @@ All entries are ordered chronologically.
 | ""          | MToolBox/1.2.1                   | Genetics[^mtoolbox]  |
 | 2025-08-08  | ollama/0.11.4                    | Generic              |
 | ""          | VSCode/1.103.0                   | Genetic[^vscode]     |
+| ""          | LLM/0.26                         | Genetic[^llm]        |
 
 \* CEU or approved users only.
 
@@ -2986,4 +2987,14 @@ They are generated from script [setup.sh](setup.sh),
     tar -xzf -
     cd VSCode-linux-x64
     ./code
+    ```
+
+[^llm]: **LLM**
+
+    Web: <https://llm.datasette.io/en/stable/>
+
+    ```bash
+    export UV_TOOL_DIR=$CEUADMIN/llm/0.26
+    uv tool install llm
+    uv tool dir
     ```
