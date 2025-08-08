@@ -2977,7 +2977,7 @@ They are generated from script [setup.sh](setup.sh),
     data/reads/5517_hypo_1_R1_001.fastq.gz
     ```
 
-[^vscode]: ** VS Code**
+[^vscode]: **VS Code**
 
     It is possible from CLI
 
