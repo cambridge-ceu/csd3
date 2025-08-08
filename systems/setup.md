@@ -2909,11 +2909,13 @@ They are generated from script [setup.sh](setup.sh),
     micromamba activate mtoolbox
     micromamba install sqlalchemy
     micromamba install pytest
+    micromamba clean --all --yes
+    micromamba list | grep -e bcftools -e gatk -e gmap -e picard -e pyvcf -e requests -e samtools
     wget -qO- https://github.com/mitoNGS/mtoolnote/archive/refs/tags/v0.2.0.tar.gz | tar xfz -
     cd mtoolnote-0.2.0/
     pip uninstall requests
     pip install .
-    micromamba list | grep -e bcftools -e gatk -e gmap -e picard -e pyvcf -e requests -e samtools
+    pip cache purge
     pip list | grep -e mtoolnote -e requests -e pytest
     mtoolnote --help
     cd ..
@@ -2924,7 +2926,6 @@ They are generated from script [setup.sh](setup.sh),
      --cluster-config cluster.yaml --latency-wait 60 \
      --cluster 'sbatch -A PETERS-SL3-CPU -p core -n {cluster.threads} -t 7:00:00 -o {cluster.stdout}' \
      --dryrun
-    micromamba clean --all --yes
     micromamba deactivate
     ```
 
