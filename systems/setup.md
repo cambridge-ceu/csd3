@@ -452,6 +452,7 @@ All entries are ordered chronologically.
 | 2025-08-08  | ollama/0.11.4                    | Generic              |
 | ""          | VSCode/1.103.0                   | Genetic[^vscode]     |
 | ""          | LLM/0.26                         | Genetic[^llm]        |
+| ""          | llama.cpp/b6119                  | Genetic              |
 
 \* CEU or approved users only.
 
