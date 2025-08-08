@@ -6,7 +6,7 @@ sort: 25
 
 ## 5.35
 
-This is similar to earlier version but generic in versioning.
+This release is similar to earlier counterparts but has a generic naming.
 
 ```bash
 wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz
