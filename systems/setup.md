@@ -454,6 +454,7 @@ All entries are ordered chronologically.
 | ""          | LLM/0.26                         | Genetic[^llm]        |
 | ""          | llama.cpp/b6119                  | Genetic              |
 | ""          | gsutil/5.35                      | Generic              |
+| ""          | python/3.12.10                   | Generic              |
 
 \* CEU or approved users only.
 

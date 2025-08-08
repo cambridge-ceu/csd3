@@ -10,7 +10,7 @@ Web site: <https://cloud.google.com/storage/docs/gsutil_install#linux>
 
 ### 5.35
 
-This release has a generic naming.
+This release has a generic naming with embedded python 3.12.10, which can be accessed independely with ceuadmin/python/3.12.10.
 
 ```bash
 wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-linux-x86_64.tar.gz
