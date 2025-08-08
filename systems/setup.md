@@ -449,6 +449,8 @@ All entries are ordered chronologically.
 | 2025-08-03  | cli/2.76.2                       | Generic[^cli]        |
 | 2025-08-05  | qctool/2.2.5                     | Genetics             |
 | ""          | MToolBox/1.2.1                   | Genetics[^mtoolbox]  |
+| 2025-08-08  | ollama/0.11.4                    | Generic              |
+| ""          | VSCode/1.103.0                   | Genetic[^vscode]     |
 
 \* CEU or approved users only.
 
@@ -2973,4 +2975,15 @@ They are generated from script [setup.sh](setup.sh),
     Missing input files for rule trimmomatic:
     data/reads/5517_hypo_1_R2_001.fastq.gz
     data/reads/5517_hypo_1_R1_001.fastq.gz
+    ```
+
+[^vscode]: ** VS Code**
+
+    It is possible from CLI
+
+    ```bash
+    wget -qO- https://update.code.visualstudio.com/latest/linux-x64/stable | \
+    tar -xzf -
+    cd VSCode-linux-x64
+    ./code
     ```
