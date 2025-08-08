@@ -4,9 +4,9 @@ sort: 25
 
 # gsutil
 
-## Installation
+Web site: <https://cloud.google.com/storage/docs/gsutil_install#linux>
 
-Web site: [https://cloud.google.com/storage/docs/gsutil_install#linux](https://cloud.google.com/storage/docs/gsutil_install#linux)
+## Installation
 
 ### 5.35
 
