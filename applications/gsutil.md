@@ -42,16 +42,16 @@ followed by `gsutil config` where `gsutil` is installed via `virtualenv` as foll
 
 ```bash
 module load python/3.7
+cd /rds/project/rds-zuZwCZMsS0w/olink_proteomics/scallop
 virtualenv py37
 source py37/bin/activate
-pip install gsutil==4.50
-cd ${dir}/py37/bin
+pip install gsutil==4.51
 gsutil ls
 # gsutil cp test gs::/covid19-hg-upload-bugbank
 gsutil cp test gs://covid19-hg-upload-uk--blood-donors-cohort
 ```
 
-Less useful is the usual way to install.
+It is also possible from the source.
 
 ```bash
 wget https://storage.googleapis.com/pub/gsutil.tar.gz
