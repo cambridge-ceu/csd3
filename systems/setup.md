@@ -453,6 +453,7 @@ All entries are ordered chronologically.
 | ""          | VSCode/1.103.0                   | Genetic[^vscode]     |
 | ""          | LLM/0.26                         | Genetic[^llm]        |
 | ""          | llama.cpp/b6119                  | Genetic              |
+| ""          | gsutil/5.35                      | Generic              |
 
 \* CEU or approved users only.
 
