@@ -316,6 +316,7 @@ To get the latest (as of 6/8/2025) GPT-oss models from OpenAI,
 ```bash
 ollama run gpt-oss:20b
 ollama run gpt-oss:120b
+ollama run gpt-oss:20b --enable-web-search
 ```
 
 as in <https://ollama.com/blog/gpt-oss> and/or <https://simonwillison.net/2025/Aug/5/gpt-oss/>.
