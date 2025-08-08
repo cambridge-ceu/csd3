@@ -16,7 +16,7 @@ tar xfz google-cloud-sdk-301.0.0-linux-x86_64.tar.gz
 cd google-cloud-sdk
 ./install.sh
 # to gain a bit flexibility by not using the awkward browser (Konqueror) at CSD3
-gcloud auto login --no-launch-browser
+gcloud auth login --no-launch-browser
 # to set PROJECT_ID=divine-aegis-278909
 gcloud config set divine-aegis-278909
 ```
