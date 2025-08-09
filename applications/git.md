@@ -24,9 +24,7 @@ make prefix=$CEUADMIN/git/2.48.1 install install-doc install-html
 The Python call sets default to `meson` but the `./configure --prefix=.` routine should also work after the `make` statement above.
 Additional work is needed when adding `install-info` in the `make` statement above in relation to `ceuadmin/docbook2X`.
 
-## A list of packages
-
-This is from the Python virtual enivonment above, which can be obtained with `module load ceuadmin/gsutil/4.51;pip list`.
+A list of packages from the Python virtual enivonment above is obtained with `module load ceuadmin/gsutil/4.51;pip list`.
 
 ```
 Package                       Version
