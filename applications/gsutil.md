@@ -23,7 +23,7 @@ bin/gsutil --version
 bin/gsutil ls gs://covid19-hg-upload-uk--blood-donors-cohort
 ```
 
-### 301.0.0
+### 4.51
 
 the authentification is achieved via Google SDK (e.g. [301.0.0](https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-301.0.0-linux-x86_64.tar.gz))
 
