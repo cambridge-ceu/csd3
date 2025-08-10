@@ -3020,4 +3020,13 @@ They are generated from script [setup.sh](setup.sh),
     ./haplogrep classify --in HG00097.vcf.gz --format vcf --out haplogroups.txt
     ```
 
-    See also <https://haplogrep.readthedocs.io/en/latest/> & <https://haplogrep.i-med.ac.at/>.
+    See also <https://haplogrep.readthedocs.io/en/latest/>, <https://haplogrep.i-med.ac.at/> & <https://genepi.github.io/haplogrep-trees/>.
+
+    ```bash
+    haplogrep3 server --config haplogrep3.yaml
+    haplogrep3 trees
+    haplogrep3 classify --in data/examples/example-microarray.vcf --out microarray.txt --tree=phylotree-rsrs@17.0
+    haplogrep3 classify --in data/examples/example-wgs.vcf --out wgs.txt --tree=phylotree-rsrs@17.0
+    wget https://raw.githubusercontent.com/genepi/phylotree-rsrs-17/refs/heads/main/src/rsrs.fasta
+    haplogrep3 classify --in rsrs.fasta --out rsrs.txt --tree phylotree-rsrs@17.0
+    ```
