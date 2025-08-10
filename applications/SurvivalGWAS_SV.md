@@ -1,5 +1,5 @@
 ---
-sort: 60
+sort: 58
 ---
 
 # SurvivalGWAS_SV

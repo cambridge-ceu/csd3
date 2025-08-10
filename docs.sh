@@ -34,7 +34,7 @@ function renum()
   echo ${1}
   export folder=${1}
   ls $1/*md  | \
-  grep -v -e README -e files | sort | xargs -I {} basename {} .md | awk '{print NR,$1}' | \
+  grep -v -e README -e files | sort | xargs -I {} basename {} .md | grep -v -w notes | awk '{print NR,$1}' | \
   parallel -j1 -C' ' --env folder '
     echo {1} {2}
     export line=2
@@ -61,6 +61,7 @@ function _packages()
 # make theme
 # systems
 renum applications
+sed -i 's/\(sort:[[:space:]]*\)[0-9]\+/\162/' applications/notes.md
 _packages Python
 _packages R
 make build
