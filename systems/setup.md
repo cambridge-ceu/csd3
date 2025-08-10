@@ -3036,6 +3036,9 @@ They are generated from script [setup.sh](setup.sh),
     gs://gcp-public-data--gnomad/release/3.1.2/mt/genomes/gnomad.genomes.v3.1.2.hgdp_1kg_subset_sparse.mt .
     mt = hl.read_matrix_table("gnomad.genomes.v3.1.2.hgdp_1kg_subset_sparse.mt")
     hl.export_vcf(mt, "chrM.vcf.bgz")
+    mt_small = mt.sample_rows(0.1)  # Keep 10% of variants
+    mt_small = mt_small.sample_cols(0.01)  # Keep 1% of samples
+    hl.export_vcf(mt_small, "chrM_subset.vcf.bgz")
     END
     haplogrep3 classify --in chrM.vcf.bgz --out haplogrep_output.txt --tree phylotree-rsrs@17.0
     ```
