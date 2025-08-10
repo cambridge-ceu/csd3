@@ -455,6 +455,8 @@ All entries are ordered chronologically.
 | ""          | llama.cpp/b6119                  | Genetic              |
 | ""          | gsutil/5.35                      | Generic              |
 | ""          | python/3.12.10                   | Generic              |
+| 2025-08-10  | haplogrep/2.4.0                  | Genetics[^haplogrep] |
+| ""          | haplogrep/3.2.2                  | Genetics             |
 
 \* CEU or approved users only.
 
@@ -3003,3 +3005,19 @@ They are generated from script [setup.sh](setup.sh),
     uv tool install llm
     uv tool dir
     ```
+
+[^haplogrep]: **haplogrep**
+
+    ```bash
+    # cmd only
+    curl -sL haplogrep.now.sh | bash
+    # GitHub
+    wget -qO- https://github.com/seppinho/haplogrep-cmd/archive/refs/tags/v2.4.0.tar.gz | tar xfz -
+    cd haplogrep-cmd-2.4.0/
+    bash install/github-downloader.sh
+    # test
+    wget https://github.com/seppinho/haplogrep-cmd/raw/master/test-data/vcf/HG00097.vcf.gz
+    ./haplogrep classify --in HG00097.vcf.gz --format vcf --out haplogroups.txt
+    ```
+
+    See also <https://haplogrep.readthedocs.io/en/latest/> & <https://haplogrep.i-med.ac.at/>.
