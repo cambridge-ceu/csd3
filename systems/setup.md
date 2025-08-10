@@ -3029,4 +3029,13 @@ They are generated from script [setup.sh](setup.sh),
     haplogrep3 classify --in data/examples/example-wgs.vcf --out wgs.txt --tree=phylotree-rsrs@17.0
     wget https://raw.githubusercontent.com/genepi/phylotree-rsrs-17/refs/heads/main/src/rsrs.fasta
     haplogrep3 classify --in rsrs.fasta --out rsrs.txt --tree phylotree-rsrs@17.0
+    # hail dense/sparse -- too large to be tested!
+    module load openjdk/11.0.12_7/gcc/czpuqhmv
+    python <<END
+    gsutil -m cp -r \
+    gs://gcp-public-data--gnomad/release/3.1.2/mt/genomes/gnomad.genomes.v3.1.2.hgdp_1kg_subset_sparse.mt .
+    mt = hl.read_matrix_table("gnomad.genomes.v3.1.2.hgdp_1kg_subset_sparse.mt")
+    hl.export_vcf(mt, "chrM.vcf.bgz")
+    END
+    haplogrep3 classify --in chrM.vcf.bgz --out haplogrep_output.txt --tree phylotree-rsrs@17.0
     ```
