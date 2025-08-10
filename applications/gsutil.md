@@ -51,7 +51,7 @@ gsutil ls
 gsutil cp test gs://covid19-hg-upload-uk--blood-donors-cohort
 ```
 
-It is also possible from the source.
+which is now not recommended nevertheless useful due to many other packages available. It is also possible from the source.
 
 ```bash
 wget https://storage.googleapis.com/pub/gsutil.tar.gz
