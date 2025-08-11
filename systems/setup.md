@@ -1,5 +1,6 @@
 ---
 sort: 17
+mathjax: true
 ---
 
 # Setup of modules
@@ -3049,7 +3050,7 @@ They are generated from script [setup.sh](setup.sh),
     haplogrep3 classify --in chrM.vcf.bgz --out haplogrep_output.txt --tree phylotree-rsrs@17.0
     ```
 
-    The following offers glimpse of findings from sloan, et al. (2015), <https://royalsocietypublishing.org/doi/suppl/10.1098/rspb.2015.1704>. For instance, with $r^2$ we have minimum 0.019 and maximum 0.024.
+    The following offers glimpse of findings from sloan, et al. (2015), <https://royalsocietypublishing.org/doi/suppl/10.1098/rspb.2015.1704>. For instance, we have $0.019 \ge r^2 \le 0.024$.
 
     ```bash
     python3 < hgdp.py
