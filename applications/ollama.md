@@ -56,7 +56,7 @@ many urban areas where people can relax, grab a coffee or tea, or have a quick m
 
 ## REST API: /api/generate
 
-From the information given above, our benchmark query is 
+From the information given above, our benchmark query is
 
 ```bash
 curl http://localhost:11434/api/generate -d '{

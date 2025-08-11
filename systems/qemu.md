@@ -136,7 +136,7 @@ make modules_install INSTALL_MOD_PATH=$CEUADMIN/linux/4.18
 modprobe dm-mod
 ```
 
-## libvirt (*incomplete*)
+## libvirt (_incomplete_)
 
 Web: <https://libvirt.org/> (<https://download.libvirt.org/>)
 

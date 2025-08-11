@@ -86,53 +86,52 @@ which shows information on all partitions and a specific one, respectively.
 
 **Partition-Level Information**
 
-| Specifier | Description                                                                                                                                                |   |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
-| `%P`      | **Partition name**: The name of the partition.                                                                                                             |   |
-| `%D`      | **Number of nodes**: The total number of nodes in the partition.                                                                                           |   |
-| `%C`      | **CPUs by state**: Displays the number of CPUs in the format `allocated/idle/other/total`. This provides a breakdown of CPU usage across different states. |   |
-| `%m`      | **Memory per node**: The size of memory per node in megabytes.                                                                                             |   |
-| `%d`      | **Temporary disk space**: The size of temporary disk space per node in megabytes.                                                                          |   |
-| `%f`      | **Features**: Features associated with the nodes. These are typically hardware or software capabilities assigned to the nodes.                             |   |
-| `%G`      | **Generic resources (gres)**: Generic resources associated with the nodes. This includes specialized hardware like GPUs.                                   |   |
-| `%t`      | **State (compact)**: The state of nodes in a compact form. Possible states include `allocated`, `idle`, `mixed`, `down`, `drained`, `draining`.            |   |
-| `%T`      | **State (extended)**: The state of nodes in an extended form. Provides a more detailed description of the node's state.                                    |   |
-| `%N`      | **Node names**: List of node names.                                                                                                                        |   |
+| Specifier | Description                                                                                                                                                |     |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| `%P`      | **Partition name**: The name of the partition.                                                                                                             |     |
+| `%D`      | **Number of nodes**: The total number of nodes in the partition.                                                                                           |     |
+| `%C`      | **CPUs by state**: Displays the number of CPUs in the format `allocated/idle/other/total`. This provides a breakdown of CPU usage across different states. |     |
+| `%m`      | **Memory per node**: The size of memory per node in megabytes.                                                                                             |     |
+| `%d`      | **Temporary disk space**: The size of temporary disk space per node in megabytes.                                                                          |     |
+| `%f`      | **Features**: Features associated with the nodes. These are typically hardware or software capabilities assigned to the nodes.                             |     |
+| `%G`      | **Generic resources (gres)**: Generic resources associated with the nodes. This includes specialized hardware like GPUs.                                   |     |
+| `%t`      | **State (compact)**: The state of nodes in a compact form. Possible states include `allocated`, `idle`, `mixed`, `down`, `drained`, `draining`.            |     |
+| `%T`      | **State (extended)**: The state of nodes in an extended form. Provides a more detailed description of the node's state.                                    |     |
+| `%N`      | **Node names**: List of node names.                                                                                                                        |     |
 
 **Additional Useful Specifiers**
 
-| Specifier | Description                                                                                                                                              |   |
-| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
-| `%a`      | **State/availability of a partition**: Indicates whether the partition is available (`yes`) or not (`no`).                                               |   |
-| `%A`      | **Number of nodes by state**: Displays the number of nodes in the format `allocated/idle`.                                                               |   |
-| `%B`      | **Max CPUs per node**: Shows the maximum number of CPUs per node available to jobs in the partition.                                                     |   |
-| `%c`      | **CPUs per node**: Displays the number of CPUs per node.                                                                                                 |   |
-| `%e`      | **Free memory**: Displays the total memory, in MB, currently free on the node as reported by the OS.                                                     |   |
-| `%E`      | **Node unavailability reason**: Provides the reason a node is unavailable (e.g., down, drained, or draining states).                                     |   |
-| `%g`      | **Groups**: Lists groups which may use the nodes.                                                                                                        |   |
-| `%h`      | **Oversubscription setting**: Indicates if jobs may oversubscribe compute resources (i.e., CPUs), with values like `yes`, `no`, `exclusive`, or `force`. |   |
-| `%I`      | **Partition job priority weighting factor**: Displays the partition job priority weighting factor.                                                       |   |
-| `%l`      | **Maximum job time**: Shows the maximum time for any job in the format `days-hours:minutes:seconds`.                                                     |   |
-| `%L`      | **Default job time**: Displays the default time for any job in the format `days-hours:minutes:seconds`.                                                  |   |
-| `%M`      | **Preemption mode**: Shows the preemption mode.                                                                                                          |   |
-| `%n`      | **Node hostnames**: Lists the node hostnames.                                                                                                            |   |
-| `%o`      | **Node communication addresses**: Lists the node communication addresses.                                                                                |   |
-| `%O`      | **CPU load**: Displays the CPU load of a node as reported by the OS.                                                                                     |   |
-| `%p`      | **Partition scheduling tier priority**: Shows the partition scheduling tier priority.                                                                    |   |
-| `%r`      | **Root user job initiation**: Indicates if only the root user may initiate jobs, with values `yes` or `no`.                                              |   |
-| `%s`      | **Maximum job size**: Shows the maximum job size in nodes.                                                                                               |   |
-| `%S`      | **Allowed allocating nodes**: Lists the allowed allocating nodes.                                                                                        |   |
-| `%u`      | **User who set unavailability**: Prints the username of who set the reason a node is unavailable.                                                        |   |
-| `%U`      | **User and UID who set unavailability**: Prints the username and UID of who set the reason a node is unavailable.                                        |   |
-| `%v`      | **Slurmd version**: Prints the version of the running `slurmd` daemon.                                                                                   |   |
-| `%w`      | **Scheduling weight**: Displays the scheduling weight of the nodes.                                                                                      |   |
-| `%X`      | **Sockets per node**: Shows the number of sockets per node.                                                                                              |   |
-| `%Y`      | **Cores per socket**: Displays the number of cores per socket.                                                                                           |   |
-| `%Z`      | **Threads per core**: Shows the number of threads per core.                                                                                              |   |
-| `%z`      | **Processor information**: Provides extended processor information in the format `sockets:cores:threads` per node.                                       |   |
+| Specifier | Description                                                                                                                                              |     |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| `%a`      | **State/availability of a partition**: Indicates whether the partition is available (`yes`) or not (`no`).                                               |     |
+| `%A`      | **Number of nodes by state**: Displays the number of nodes in the format `allocated/idle`.                                                               |     |
+| `%B`      | **Max CPUs per node**: Shows the maximum number of CPUs per node available to jobs in the partition.                                                     |     |
+| `%c`      | **CPUs per node**: Displays the number of CPUs per node.                                                                                                 |     |
+| `%e`      | **Free memory**: Displays the total memory, in MB, currently free on the node as reported by the OS.                                                     |     |
+| `%E`      | **Node unavailability reason**: Provides the reason a node is unavailable (e.g., down, drained, or draining states).                                     |     |
+| `%g`      | **Groups**: Lists groups which may use the nodes.                                                                                                        |     |
+| `%h`      | **Oversubscription setting**: Indicates if jobs may oversubscribe compute resources (i.e., CPUs), with values like `yes`, `no`, `exclusive`, or `force`. |     |
+| `%I`      | **Partition job priority weighting factor**: Displays the partition job priority weighting factor.                                                       |     |
+| `%l`      | **Maximum job time**: Shows the maximum time for any job in the format `days-hours:minutes:seconds`.                                                     |     |
+| `%L`      | **Default job time**: Displays the default time for any job in the format `days-hours:minutes:seconds`.                                                  |     |
+| `%M`      | **Preemption mode**: Shows the preemption mode.                                                                                                          |     |
+| `%n`      | **Node hostnames**: Lists the node hostnames.                                                                                                            |     |
+| `%o`      | **Node communication addresses**: Lists the node communication addresses.                                                                                |     |
+| `%O`      | **CPU load**: Displays the CPU load of a node as reported by the OS.                                                                                     |     |
+| `%p`      | **Partition scheduling tier priority**: Shows the partition scheduling tier priority.                                                                    |     |
+| `%r`      | **Root user job initiation**: Indicates if only the root user may initiate jobs, with values `yes` or `no`.                                              |     |
+| `%s`      | **Maximum job size**: Shows the maximum job size in nodes.                                                                                               |     |
+| `%S`      | **Allowed allocating nodes**: Lists the allowed allocating nodes.                                                                                        |     |
+| `%u`      | **User who set unavailability**: Prints the username of who set the reason a node is unavailable.                                                        |     |
+| `%U`      | **User and UID who set unavailability**: Prints the username and UID of who set the reason a node is unavailable.                                        |     |
+| `%v`      | **Slurmd version**: Prints the version of the running `slurmd` daemon.                                                                                   |     |
+| `%w`      | **Scheduling weight**: Displays the scheduling weight of the nodes.                                                                                      |     |
+| `%X`      | **Sockets per node**: Shows the number of sockets per node.                                                                                              |     |
+| `%Y`      | **Cores per socket**: Displays the number of cores per socket.                                                                                           |     |
+| `%Z`      | **Threads per core**: Shows the number of threads per core.                                                                                              |     |
+| `%z`      | **Processor information**: Provides extended processor information in the format `sockets:cores:threads` per node.                                       |     |
 
 A SLURM partition checking script by Campbell Wolford, [slurm_partition_checking.sh](files/slurm_partition_checking.sh).
-
 
 ### Interactive job
 
@@ -149,7 +148,7 @@ srun -N1 -n1 -c4 -p cclake-himem -t 12:0:0 --pty bash -i
 srun -p icelake-himem --qos=INTR -t 1:0:0 --pty bash -i
 ```
 
-with -A to specify account name, e.g.,  -A PETERS-SL3-CPU.
+with -A to specify account name, e.g., -A PETERS-SL3-CPU.
 
 ### Batch job
 

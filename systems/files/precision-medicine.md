@@ -1,4 +1,3 @@
-
 Write an assay on precision medicine and its relation to cancer treatment, highlighting the potential benefits and challenges, and discussing the role of biomarkers in precision cancer treatment.
 
 #### Precision Medicine and Cancer Treatment

@@ -55,9 +55,9 @@ cd ../../cran
 R CMD INSTALL peer -l ${dest}/lib/R
 ```
 
-Note that R/3.4` (due to `/usr/local/software/master/R/3.4/bin/python` points to `/usr/local/software/master/R/3.4/bin/python3.7`) has to be loaded before `python/2.7`.
+Note that R/3.4`(due to`/usr/local/software/master/R/3.4/bin/python`points to`/usr/local/software/master/R/3.4/bin/python3.7`) has to be loaded before `python/2.7`.
 
-The `peertool`, R and python packages are accessible, e.g., 
+The `peertool`, R and python packages are accessible, e.g.,
 
 ```bash
 cd examples
@@ -190,18 +190,18 @@ the rather confusing uses of `ods` seem to illustrate whereabout a `peer` model 
 
 **DESeq2**
 
-Love MI, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. ***Genome Biol***. 2014;15(12):550. <https://doi.org/10.1186/s13059-014-0550-8>. PMID: 25516281; PMCID: PMC4302049.
+Love MI, Huber W, Anders S. Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. **_Genome Biol_**. 2014;15(12):550. <https://doi.org/10.1186/s13059-014-0550-8>. PMID: 25516281; PMCID: PMC4302049.
 
 **edgeR**
 
-Zhou X, Lindsay H, Robinson MD. Robustly detecting differential expression in RNA sequencing data using observation weights. ***Nucleic Acids Res***. 2014 Jun;42(11):e91. <https://doi.org/10.1093/nar/gku310>. Epub 2014 Apr 20. PMID: 24753412; PMCID: PMC4066750.
+Zhou X, Lindsay H, Robinson MD. Robustly detecting differential expression in RNA sequencing data using observation weights. **_Nucleic Acids Res_**. 2014 Jun;42(11):e91. <https://doi.org/10.1093/nar/gku310>. Epub 2014 Apr 20. PMID: 24753412; PMCID: PMC4066750.
 
 **OUTRIDER**
 
-Brechtmann F, Mertes C, Matusevičiūtė A, Yépez VA, Avsec Ž, Herzog M, Bader DM, Prokisch H, Gagneur J. OUTRIDER: A Statistical Method for Detecting Aberrantly Expressed Genes in RNA Sequencing Data. ***Am J Hum Genet***. 2018 Dec 6;103(6):907-917. <https://doi.org/10.1016/j.ajhg.2018.10.025>. Epub 2018 Nov 29. PMID: 30503520; PMCID: PMC6288422.
+Brechtmann F, Mertes C, Matusevičiūtė A, Yépez VA, Avsec Ž, Herzog M, Bader DM, Prokisch H, Gagneur J. OUTRIDER: A Statistical Method for Detecting Aberrantly Expressed Genes in RNA Sequencing Data. **_Am J Hum Genet_**. 2018 Dec 6;103(6):907-917. <https://doi.org/10.1016/j.ajhg.2018.10.025>. Epub 2018 Nov 29. PMID: 30503520; PMCID: PMC6288422.
 
 **peer**
 
-Stegle O, Parts L, Durbin R, Winn J. A Bayesian framework to account for complex non-genetic factors in gene expression levels greatly increases power in eQTL studies. ***PLoS Comput Biol***. 2010 May 6;6(5):e1000770. <https://doi.org/10.1371/journal.pcbi.1000770>. PMID: 20463871; PMCID: PMC2865505.
+Stegle O, Parts L, Durbin R, Winn J. A Bayesian framework to account for complex non-genetic factors in gene expression levels greatly increases power in eQTL studies. **_PLoS Comput Biol_**. 2010 May 6;6(5):e1000770. <https://doi.org/10.1371/journal.pcbi.1000770>. PMID: 20463871; PMCID: PMC2865505.
 
-Parts L, Stegle O, Winn J, Durbin R. Joint genetic analysis of gene expression data with inferred cellular phenotypes. ***PLoS Genet***. 2011 Jan 20;7(1):e1001276. <https://doi.org/10.1371/journal.pgen.1001276>. PMID: 21283789; PMCID: PMC3024309.
+Parts L, Stegle O, Winn J, Durbin R. Joint genetic analysis of gene expression data with inferred cellular phenotypes. **_PLoS Genet_**. 2011 Jan 20;7(1):e1001276. <https://doi.org/10.1371/journal.pgen.1001276>. PMID: 21283789; PMCID: PMC3024309.

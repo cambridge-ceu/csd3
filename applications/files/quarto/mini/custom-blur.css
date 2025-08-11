@@ -3,5 +3,5 @@
 }
 
 .reveal .slides section .fragment.blur.visible {
-  filter: none
+  filter: none;
 }

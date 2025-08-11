@@ -128,4 +128,3 @@ Prefix=/rds/project/jmmh2/rds-jmmh2-public_databases/software/qt5/qtbase
 ```
 
 It requires ninja, `module load ninja;ninja --versions` gives 1.10.0 while `source py27/bin/activate;pip install ninja` uses 1.11.1.
-

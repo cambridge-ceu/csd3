@@ -8,7 +8,7 @@ There is a dedicated section here, <https://cambridge-ceu.github.io/csd3/systems
 
 <font color="red"><b>11/4/2025 Update</b></font>
 
-The latest is now 4.5.0,  available from module `ceuadmin/R/4.5.0-icelake` which is also `ceuadmin/R`. The R packages are simplified in R/ and R-gcc11/ subdirectories.
+The latest is now 4.5.0, available from module `ceuadmin/R/4.5.0-icelake` which is also `ceuadmin/R`. The R packages are simplified in R/ and R-gcc11/ subdirectories.
 
 With `.libPaths()` inside R, we see that
 
@@ -32,11 +32,11 @@ By default, R is the latest, 4.4.1.
 
 There are three ceuadmin modules with the latest R 4.4.0.
 
-Module        | gcc version| Packages  | R_LIBS<sup>+</sup>        | Comments
---------------|------------|-----------|---------------------------|----------------------------
-4.4.0         | 6.5.0      | R/        | R:library:R-gcc11       | also called ceuadmin/R/latest
-4.4.0-gcc11   | 11.2.0     | R-gcc11/  | R-gcc11:library:R       | Rfast, DRMR, etc. 
-4.4.0-icelake | 8.5.0      | R-icelake/| R-icelake:library:R
+| Module        | gcc version | Packages   | R_LIBS<sup>+</sup>  | Comments                      |
+| ------------- | ----------- | ---------- | ------------------- | ----------------------------- |
+| 4.4.0         | 6.5.0       | R/         | R:library:R-gcc11   | also called ceuadmin/R/latest |
+| 4.4.0-gcc11   | 11.2.0      | R-gcc11/   | R-gcc11:library:R   | Rfast, DRMR, etc.             |
+| 4.4.0-icelake | 8.5.0       | R-icelake/ | R-icelake:library:R |
 
 <sup>+</sup> The `library` refers to the path of R recommended packages
 

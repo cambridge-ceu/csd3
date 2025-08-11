@@ -19,7 +19,7 @@ ERROR: loading failed
 * restoring previous ‘/rds/project/rds-4o5vpvAowP0/software/R/igraph’
 ```
 
-Somehow we use the default modules, 
+Somehow we use the default modules,
 
 ```
 Currently Loaded Modulefiles:

@@ -4,9 +4,9 @@ sort: 1
 
 # System
 
-The [Research Computing Services](https://www.csd3.cam.ac.uk/) provies an excellent [documentation](https://docs.hpc.cam.ac.uk/hpc/) and 
-[Cambridge Research Cloud](https://www.hpc.cam.ac.uk/cambridge-research-cloud). Here some aspects are highlighted from the perspectives 
-of the [Cardiovascular Epidemiology Unit](https://www.phpc.cam.ac.uk/ceu/) (CEU), where all information about procedures and access 
+The [Research Computing Services](https://www.csd3.cam.ac.uk/) provies an excellent [documentation](https://docs.hpc.cam.ac.uk/hpc/) and
+[Cambridge Research Cloud](https://www.hpc.cam.ac.uk/cambridge-research-cloud). Here some aspects are highlighted from the perspectives
+of the [Cardiovascular Epidemiology Unit](https://www.phpc.cam.ac.uk/ceu/) (CEU), where all information about procedures and access
 requests can be found from **W:\Administration\CSD3 Data Users\Information for Users**.
 
 Here are some getting started on CSD3 tutorials, <https://www.hpc.cam.ac.uk/getting-started-csd3-tutorials>.

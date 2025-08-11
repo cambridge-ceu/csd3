@@ -254,7 +254,7 @@ Given `hello.js` containing these
 
 ```javascript
 // hello world
-console.log('Hello World!');
+console.log("Hello World!");
 ```
 
 called by

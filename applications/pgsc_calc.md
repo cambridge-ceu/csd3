@@ -180,7 +180,7 @@ mv pgsc_calc-2.0.0-alpha.4/ 2.0.0-alpha.4/
 
 ### CSD3 (ceuadmin) modules
 
-These are `pgsc_calc/2.0.0-alpha.4` and `pgsc_calc/2.0.0-alpha.4-icelake` (experimental)  built from the two steps above; the icelake version allows for the possibility to use an indepeendent collection of R packages via `$R_LIBS`, say vctrs[^vctrs].
+These are `pgsc_calc/2.0.0-alpha.4` and `pgsc_calc/2.0.0-alpha.4-icelake` (experimental) built from the two steps above; the icelake version allows for the possibility to use an indepeendent collection of R packages via `$R_LIBS`, say vctrs[^vctrs].
 
 ## Usage: benchmark
 
@@ -457,7 +457,7 @@ Check the output report for citation details
 
 ### Report
 
-This is [report.html](files/report.html)[^report],  which is rendered from [report.qmd](files/report.qmd) at `assets/pgscatalog/pgsc_calc/assets/report/*`.
+This is [report.html](files/report.html)[^report], which is rendered from [report.qmd](files/report.qmd) at `assets/pgscatalog/pgsc_calc/assets/report/*`.
 
 ```bash
 quarto render report.qmd -M "self-contained:true" -P score_path:aggregated_scores.txt.gz -P sampleset:cineca -P run_ancestry:false -P reference_panel_name:NO_PANEL

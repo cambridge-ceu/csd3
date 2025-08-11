@@ -304,7 +304,8 @@ cmake -DRSTUDIO_TARGET=Desktop -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_INSTALL_PREFIX=
               $([ $(uname -m) = x86_64 ] && echo --enable-64bit) &&
     make
     ```
-[^libstdc]: **libstdc++**
+
+    [^libstdc]: **libstdc++**
 
     A version which satisfies this can be furnished as follows,
 

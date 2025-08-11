@@ -1,5 +1,5 @@
 .slide-menu-wrapper {
-  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
 
 .slide-menu-wrapper .slide-menu {
@@ -293,8 +293,8 @@
  * Theme and Transitions buttons
  */
 
-.slide-menu-wrapper div[data-panel='Themes'] li,
-.slide-menu-wrapper div[data-panel='Transitions'] li {
+.slide-menu-wrapper div[data-panel="Themes"] li,
+.slide-menu-wrapper div[data-panel="Transitions"] li {
   display: block;
   text-align: left;
   cursor: pointer;

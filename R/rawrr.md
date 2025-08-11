@@ -4,7 +4,7 @@ sort: 23
 
 # rawrr
 
-Web: [Bioconductor](https://bioconductor.org/packages/release/bioc/vignettes/rawrr/inst/doc/rawrr.html) (<https://bioc.r-universe.dev/rawrr>) 
+Web: [Bioconductor](https://bioconductor.org/packages/release/bioc/vignettes/rawrr/inst/doc/rawrr.html) (<https://bioc.r-universe.dev/rawrr>)
 
 ## Installation
 
@@ -78,7 +78,7 @@ RawFileReader reading tool. Copyright © 2016 by Thermo Fisher Scientific, Inc. 
 
 ## Testing
 
-We use a real data here, 
+We use a real data here,
 
 ```
 > cwd <- getwd()

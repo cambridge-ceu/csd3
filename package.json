@@ -21,11 +21,26 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^5.0.0",
     "lighthouse": "^6.4.1",
-    "mini-css-extract-plugin": "^1.2.1",
+    "mini-css-extract-plugin": "^1.6.2",
     "prettier": "^2.1.2",
     "sass": "^1.27.1",
     "sass-loader": "^10.0.4",
     "webpack": "^5.3.0",
     "webpack-cli": "^4.1.0"
-  }
+  },
+  "name": "csd3",
+  "version": "1.0.0",
+  "description": "<a href=\"https://www.top500.org/\"><img src=\"https://www.top500.org/static//images/Top500_logo.png\" align=\"right\"></a>",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cambridge-ceu/csd3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cambridge-ceu/csd3/issues"
+  },
+  "homepage": "https://github.com/cambridge-ceu/csd3#readme"
 }

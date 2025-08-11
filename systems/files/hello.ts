@@ -1,4 +1,3 @@
 #!/usr/bin/env ts-node
 
-console.log('Hello from TypeScript!');
-
+console.log("Hello from TypeScript!");

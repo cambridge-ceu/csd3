@@ -14,13 +14,13 @@ A common form of MFA, two-factor authentication (2FA), is through Time-based One
 
 The CSD3 login address is `login.hpc.cam.ac.uk` with a mapping table[^cpu]
 
-| Collective name                 | Node name     | Comments            |
-| ------------------------------- | ------------- | ------------------- |
-| login-cascadelake.hpc.cam.ac.uk | login-p-[1-4] | CentOS7[^cclake]    |
-| login-cpu.hpc.cam.ac.uk         | login-p-[1-4] | CPU                 |
-| login-gpu.hpc.cam.ac.uk         | login-e-[1-4] | GPU[^gpu]           |
+| Collective name                 | Node name     | Comments                  |
+| ------------------------------- | ------------- | ------------------------- |
+| login-cascadelake.hpc.cam.ac.uk | login-p-[1-4] | CentOS7[^cclake]          |
+| login-cpu.hpc.cam.ac.uk         | login-p-[1-4] | CPU                       |
+| login-gpu.hpc.cam.ac.uk         | login-e-[1-4] | GPU[^gpu]                 |
 | &nbsp;                          | gpu-r-[1-9]   | Visualisation (viz) Nodes |
-| login-icelake.hpc.cam.ac.uk     | login-q-[1-4] | CentOS8[^icelake]   |
+| login-icelake.hpc.cam.ac.uk     | login-q-[1-4] | CentOS8[^icelake]         |
 
 Additional information is available with `sinfo`, `scontrol show node` in the case of SLURM.
 
@@ -235,7 +235,7 @@ find /usr -iname "*libGLX*.so*" -exec ls -l {} \;
 
     Currently, it is login-e-[1-4] (login.hpc), login-e-1 is also the license server. The so-called 3D viz/startgfx nodes are login-gpu-e-[1-7].
 
-    They will be retired, and `login-gpu.hpc.cam.ac.uk`  will be redistributed to login-q nodes.
+    They will be retired, and `login-gpu.hpc.cam.ac.uk` will be redistributed to login-q nodes.
 
 [^icelake]: **icelake**
 

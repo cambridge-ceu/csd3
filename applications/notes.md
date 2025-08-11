@@ -61,12 +61,12 @@ http://www.ensembl.org/info/docs/tools/vep/script/vep_options.html
 
 ## Features
 
-* VEP version 104
-* GRCh38 assembly
-* homo_sapiends/homo_sapiends_merged species
-* kent-335_base/ as required by setup for perl5/ Bio::DB::BigFile below
-* Perl modules as in perl5/
-* Plugins
+- VEP version 104
+- GRCh38 assembly
+- homo_sapiends/homo_sapiends_merged species
+- kent-335_base/ as required by setup for perl5/ Bio::DB::BigFile below
+- Perl modules as in perl5/
+- Plugins
 
 ## Plugins
 

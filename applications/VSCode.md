@@ -73,7 +73,7 @@ which greatly simplifies the procedure as described for `genebass`. MAKE sure va
 The short cut key for preview is Ctrl-Shift-V, but will be automatically enabled by changing `settings.json`,
 
 "workbench.editorAssociations": {
-  "*.md": "vscode.markdown.preview.editor"
+"\*.md": "vscode.markdown.preview.editor"
 }
 
 A `Markdown All in One` extension is also an option.

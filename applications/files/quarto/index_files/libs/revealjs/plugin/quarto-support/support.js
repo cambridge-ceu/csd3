@@ -1,20 +1,23 @@
 // catch all plugin for various quarto features
 window.QuartoSupport = function () {
   function isPrintView() {
-    return /print-pdf/gi.test(window.location.search) || /view=print/gi.test(window.location.search);
+    return (
+      /print-pdf/gi.test(window.location.search) ||
+      /view=print/gi.test(window.location.search)
+    );
   }
 
   // helper for theme toggling
   function toggleBackgroundTheme(el, onDarkBackground, onLightBackground) {
     if (onDarkBackground) {
-      el.classList.add('has-dark-background')
+      el.classList.add("has-dark-background");
     } else {
-      el.classList.remove('has-dark-background')
+      el.classList.remove("has-dark-background");
     }
     if (onLightBackground) {
-      el.classList.add('has-light-background')
+      el.classList.add("has-light-background");
     } else {
-      el.classList.remove('has-light-background')
+      el.classList.remove("has-light-background");
     }
   }
 
@@ -129,39 +132,53 @@ window.QuartoSupport = function () {
   function tweakSlideNumber(deck) {
     deck.on("slidechanged", function (ev) {
       // No slide number in scroll view
-      if (deck.isScrollView()) { return }
+      if (deck.isScrollView()) {
+        return;
+      }
       const revealParent = deck.getRevealElement();
       const slideNumberEl = revealParent.querySelector(".slide-number");
       const slideBackground = Reveal.getSlideBackground(ev.currentSlide);
-      const onDarkBackground = slideBackground.classList.contains('has-dark-background')
-      const onLightBackground = slideBackground.classList.contains('has-light-background')
+      const onDarkBackground = slideBackground.classList.contains(
+        "has-dark-background"
+      );
+      const onLightBackground = slideBackground.classList.contains(
+        "has-light-background"
+      );
       toggleBackgroundTheme(slideNumberEl, onDarkBackground, onLightBackground);
-    })
+    });
   }
 
   // add footer text
   function addFooter(deck) {
     const revealParent = deck.getRevealElement();
     const defaultFooterDiv = document.querySelector(".footer-default");
-    // Set per slide footer if any defined, 
+    // Set per slide footer if any defined,
     // or show default unless data-footer="false" for no footer on this slide
     const setSlideFooter = (ev, defaultFooterDiv) => {
       const currentSlideFooter = ev.currentSlide.querySelector(".footer");
-      const onDarkBackground = deck.getSlideBackground(ev.currentSlide).classList.contains('has-dark-background')
-      const onLightBackground = deck.getSlideBackground(ev.currentSlide).classList.contains('has-light-background')
+      const onDarkBackground = deck
+        .getSlideBackground(ev.currentSlide)
+        .classList.contains("has-dark-background");
+      const onLightBackground = deck
+        .getSlideBackground(ev.currentSlide)
+        .classList.contains("has-light-background");
       if (currentSlideFooter) {
         defaultFooterDiv.style.display = "none";
         const slideFooter = currentSlideFooter.cloneNode(true);
         handleLinkClickEvents(deck, slideFooter);
         deck.getRevealElement().appendChild(slideFooter);
-        toggleBackgroundTheme(slideFooter, onDarkBackground, onLightBackground)
+        toggleBackgroundTheme(slideFooter, onDarkBackground, onLightBackground);
       } else if (ev.currentSlide.getAttribute("data-footer") === "false") {
         defaultFooterDiv.style.display = "none";
       } else {
         defaultFooterDiv.style.display = "block";
-        toggleBackgroundTheme(defaultFooterDiv, onDarkBackground, onLightBackground)
+        toggleBackgroundTheme(
+          defaultFooterDiv,
+          onDarkBackground,
+          onLightBackground
+        );
       }
-    }
+    };
     if (defaultFooterDiv) {
       // move default footnote to the div.reveal element
       revealParent.appendChild(defaultFooterDiv);
@@ -169,9 +186,9 @@ window.QuartoSupport = function () {
 
       if (!isPrintView()) {
         // Ready even is needed so that footer customization applies on first loaded slide
-        deck.on('ready', (ev) => {
+        deck.on("ready", (ev) => {
           // Set footer (custom, default or none)
-          setSlideFooter(ev, defaultFooterDiv)
+          setSlideFooter(ev, defaultFooterDiv);
         });
         // Any new navigated new slide will get the custom footnote check
         deck.on("slidechanged", function (ev) {
@@ -183,7 +200,7 @@ window.QuartoSupport = function () {
             prevSlideFooter.remove();
           }
           // Set new one (custom, default or none)
-          setSlideFooter(ev, defaultFooterDiv)
+          setSlideFooter(ev, defaultFooterDiv);
         });
       }
     }
@@ -326,7 +343,7 @@ window.QuartoSupport = function () {
       // remove all whitespace text nodes
       // whitespace nodes cause the columns to be misaligned
       // since they have inline-block layout
-      // 
+      //
       // Quarto emits no whitespace nodes, but third-party tooling
       // has bugs that can cause whitespace nodes to be emitted.
       // See https://github.com/quarto-dev/quarto-cli/issues/8382
@@ -339,9 +356,9 @@ window.QuartoSupport = function () {
   }
 
   function cleanEmptyAutoGeneratedContent(deck) {
-    const div = document.querySelector('div.quarto-auto-generated-content')
-    if (div && div.textContent.trim() === '') {
-      div.remove()
+    const div = document.querySelector("div.quarto-auto-generated-content");
+    if (div && div.textContent.trim() === "") {
+      div.remove();
     }
   }
 
@@ -351,12 +368,14 @@ window.QuartoSupport = function () {
   class ScrollViewToggler {
     constructor(deck) {
       this.deck = deck;
-      this.oldScrollActivationWidth = deck.getConfig()['scrollActivationWidth'];
+      this.oldScrollActivationWidth = deck.getConfig()["scrollActivationWidth"];
     }
-  
+
     toggleScrollViewWrapper() {
       if (this.deck.isScrollView() === true) {
-        this.deck.configure({ scrollActivationWidth: this.oldScrollActivationWidth });
+        this.deck.configure({
+          scrollActivationWidth: this.oldScrollActivationWidth,
+        });
         this.deck.toggleScrollView(false);
       } else if (this.deck.isScrollView() === false) {
         this.deck.configure({ scrollActivationWidth: null });
@@ -368,14 +387,19 @@ window.QuartoSupport = function () {
   let scrollViewToggler;
 
   function installScollViewKeyBindings(deck) {
-		var config = deck.getConfig();
-		var shortcut = config.scrollViewShortcut || 'R';
-		Reveal.addKeyBinding({
-			keyCode: shortcut.toUpperCase().charCodeAt( 0 ),
-			key: shortcut.toUpperCase(),
-			description: 'Scroll View Mode'
-		}, () => { scrollViewToggler.toggleScrollViewWrapper() } );
-	}
+    var config = deck.getConfig();
+    var shortcut = config.scrollViewShortcut || "R";
+    Reveal.addKeyBinding(
+      {
+        keyCode: shortcut.toUpperCase().charCodeAt(0),
+        key: shortcut.toUpperCase(),
+        description: "Scroll View Mode",
+      },
+      () => {
+        scrollViewToggler.toggleScrollViewWrapper();
+      }
+    );
+  }
 
   return {
     id: "quarto-support",
@@ -398,8 +422,8 @@ window.QuartoSupport = function () {
       cleanEmptyAutoGeneratedContent(deck);
     },
     // Export for adding in menu
-    toggleScrollView: function() {
+    toggleScrollView: function () {
       scrollViewToggler.toggleScrollViewWrapper();
-    }
+    },
   };
 };

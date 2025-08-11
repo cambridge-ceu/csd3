@@ -1,28 +1,29 @@
-div.palette, div.boardhandle {
+div.palette,
+div.boardhandle {
   position: absolute;
-/*
+  /*
   height: 260px;
   margin: -130px 0 0 0px;
-*/  
+*/
   top: 50%;
   transform: translateY(-50%);
   font-size: 24px;
   border-radius: 10px;
-  border-top:    4px solid #222; 
-  border-right:  4px solid #222; 
+  border-top: 4px solid #222;
+  border-right: 4px solid #222;
   border-bottom: 4px solid #222;
   background: black;
   transition: transform 0.3s;
 }
 
-div.palette  {
+div.palette {
   left: -10px;
-  padding-left:10px;
+  padding-left: 10px;
 }
 
 div.boardhandle {
   right: -10px;
-  padding-right:10px;
+  padding-right: 10px;
 }
 
 div.palette > ul,
@@ -38,7 +39,8 @@ div.boardhandle > ul > li {
 }
 
 @media print {
-	div.palette, div.boardhandle { 
-		display: none!important; 
-	}
+  div.palette,
+  div.boardhandle {
+    display: none !important;
+  }
 }
