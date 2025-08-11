@@ -3049,15 +3049,20 @@ They are generated from script [setup.sh](setup.sh),
     haplogrep3 classify --in chrM.vcf.bgz --out haplogrep_output.txt --tree phylotree-rsrs@17.0
     ```
 
-    Application is ready with sloan, et al. (2015), <https://royalsocietypublishing.org/doi/suppl/10.1098/rspb.2015.1704>.
+    The following offers glimpse of findings from sloan, et al. (2015), <https://royalsocietypublishing.org/doi/suppl/10.1098/rspb.2015.1704>. For instance, with $r^2$ we have minimum 0.019 and maximum 0.024.
 
     ```bash
     python3 < hgdp.py
     module load ceuadmin/haplogrep/2.4.0
     haplogrep classify --in data/examples/example-wgs.vcf --out hg.txt --format=vcf
+    # suppress double quote, asterisk and plus ("*+)
     sed -i 's/"//g' hg.txt
     awk '{ gsub(/[^a-zA-Z0-9]/,"", $2); print $1 "\t" $2 }' hg.txt > hg_simple_clean.txt
-    sloan15.pl sloan15_input.txt hg_simple_clean.txt
+    sloan15.pl sloan15_input.txt hg_simple_clean.txt > sloan15.tsv
+    Rscript -e '
+     ld <- read.delim("sloan15.tsv",check=FALSE)
+     summary(ld)
+    '
     ```
 
     where [hgdp.py](files/hgdp.py) is used to reformat the data to a required format by [sloan15.pl](files/sloan15.pl).
