@@ -458,6 +458,7 @@ All entries are ordered chronologically.
 | ""         | python/3.12.10                   | Generic               |
 | 2025-08-10 | haplogrep/2.4.0                  | Genetics[^haplogrep]  |
 | ""         | haplogrep/3.2.2                  | Genetics              |
+| 2025-08-11 | flashpca/2.0                     | Genetics[^flashpca]   |
 
 \* CEU or approved users only.
 
@@ -3073,3 +3074,7 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     where [hgdp.py](files/hgdp.py) is used to reformat the data to a required format by [sloan15.pl](files/sloan15.pl).
+
+[^flashpca]: **flashpca**
+
+    This module is built to mirror flashpca2/2 which has been linked to personal home folder.
