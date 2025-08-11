@@ -3008,6 +3008,8 @@ They are generated from script [setup.sh](setup.sh),
 
 [^haplogrep]: **haplogrep**
 
+    Web: <https://haplogrep.i-med.ac.at/> ([haplogrep2](https://haplogrep.i-med.ac.at/haplogrep2/index.html)) <https://haplogrep.readthedocs.io/en/latest/>
+
     ```bash
     # cmd only
     curl -sL haplogrep.now.sh | bash
@@ -3018,17 +3020,20 @@ They are generated from script [setup.sh](setup.sh),
     # test
     wget https://github.com/seppinho/haplogrep-cmd/raw/master/test-data/vcf/HG00097.vcf.gz
     ./haplogrep classify --in HG00097.vcf.gz --format vcf --out haplogroups.txt
-    ```
-
-    See also <https://haplogrep.readthedocs.io/en/latest/>, <https://haplogrep.i-med.ac.at/> & <https://genepi.github.io/haplogrep-trees/>.
-
-    ```bash
+    # haplogrep3
+    wget https://github.com/genepi/haplogrep3/releases/download/v3.2.2/haplogrep3-3.2.2-linux.zip
+    unzip haplogrep3-3.2.2-linux.zip
     haplogrep3 server --config haplogrep3.yaml
     haplogrep3 trees
     haplogrep3 classify --in data/examples/example-microarray.vcf --out microarray.txt --tree=phylotree-rsrs@17.0
     haplogrep3 classify --in data/examples/example-wgs.vcf --out wgs.txt --tree=phylotree-rsrs@17.0
     wget https://raw.githubusercontent.com/genepi/phylotree-rsrs-17/refs/heads/main/src/rsrs.fasta
     haplogrep3 classify --in rsrs.fasta --out rsrs.txt --tree phylotree-rsrs@17.0
+    ```
+
+    See also <https://genepi.github.io/haplogrep-trees/>.
+
+    ```bash
     # hail dense/sparse -- too large to be tested!
     module load openjdk/11.0.12_7/gcc/czpuqhmv
     python <<END
