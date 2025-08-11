@@ -3008,7 +3008,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^haplogrep]: **haplogrep**
 
-    Web: <https://haplogrep.i-med.ac.at/> ([haplogrep2](https://haplogrep.i-med.ac.at/haplogrep2/index.html)) <https://haplogrep.readthedocs.io/en/latest/>
+    Web: <https://haplogrep.i-med.ac.at/> ([haplogrep2](https://haplogrep.i-med.ac.at/haplogrep2/index.html)) & <https://haplogrep.readthedocs.io/en/latest/>
 
     ```bash
     # cmd only
@@ -3048,3 +3048,16 @@ They are generated from script [setup.sh](setup.sh),
     END
     haplogrep3 classify --in chrM.vcf.bgz --out haplogrep_output.txt --tree phylotree-rsrs@17.0
     ```
+
+    Application is ready with sloan, et al. (2015), <https://royalsocietypublishing.org/doi/suppl/10.1098/rspb.2015.1704>.
+
+    ```bash
+    python3 < hgdp.py
+    module load ceuadmin/haplogrep/2.4.0
+    haplogrep classify --in data/examples/example-wgs.vcf --out hg.txt --format=vcf
+    sed -i 's/"//g' hg.txt
+    awk '{ gsub(/[^a-zA-Z0-9]/,"", $2); print $1 "\t" $2 }' hg.txt > hg_simple_clean.txt
+    sloan15.pl sloan15_input.txt hg_simple_clean.txt
+    ```
+
+    where [hgdp.py](files/hgdp.py) is used to reformat the data to a required format by [sloan15.pl](files/sloan15.pl).
