@@ -741,6 +741,7 @@ They are generated from script [setup.sh](setup.sh),
     fontFile Symbol                /usr/share/fonts/urw-base35/StandardSymbolsPS.t1
     fontFile ZapfDingbats          /usr/share/fonts/urw-base35/D050000L.t1
     ```
+
 [^pspp]: **pspp**
 
     See <https://cambridge-ceu.github.io/csd3/applications/pspp.html>.
