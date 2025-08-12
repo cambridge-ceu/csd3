@@ -2605,7 +2605,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^sniffles]: **sniffles**
 
-    see <https://cambridge-ceu.github.io/csd3/applications/Sniffles.html>.
+    see <https://cambridge-ceu.github.io/csd3/Python/Sniffles.html>.
 
 [^awscli]: **awscli**
 
