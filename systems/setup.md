@@ -1933,7 +1933,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^llama_cpp]: **llama.cpp**
 
-    See <https://cambridge-ceu.github.io/csd3/Python/llama.cpp.html>.
+    See <https://cambridge-ceu.github.io/csd3/applications/llama.cpp.html>.
 
 [^insnovo]: **InstaNovo**
 
