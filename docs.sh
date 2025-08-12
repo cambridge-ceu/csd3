@@ -61,7 +61,8 @@ function _packages()
 # make theme
 # systems
 renum applications
-sed -i 's/\(sort:[[:space:]]*\)[0-9]\+/\162/' applications/notes.md
+export n=$(ls applications/*md|grep -v -e README -e files | sort | xargs -I {} basename {} .md|wc -l)
+sed -i "s/\(sort:[[:space:]]*\).*/\1$n/" applications/notes.md
 _packages Python
 _packages R
 make build
