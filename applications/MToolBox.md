@@ -6,6 +6,10 @@ sort: 33
 
 GitHub: <https://github.com/mitoNGS/MToolBox>
 
+## MToolBox 1.2.1
+
+### Installation
+
 The default URLs for depenencies Anaconda2, samtools 1.3, zlib 1.2.11 require slight changes, namely
 
 ```bash
@@ -17,12 +21,22 @@ wget https://download.videolan.org/pub/contrib/zlib/zlib-1.2.11.tar.gz
 bash Anaconda2-2.5.0-Linux-x86_64.sh # install to anaconda
 ./install.sh
 ./install.sh -i gsnap_db # when interrupted, resume for chrM.fa.gz, chrRSRS.fa.gz, hg19RCRS.fa.gz, hg19RSRS.fa.gz
+```
+
+However, locations of gsnap 2015-12-31 and muscle 3.8.31_i86linux64 remain intact.
+
+### Docuementation example
+
+It has been furnished as follows.
+
+```bash
+module load ceuadmin/MToolBox
+cd MToolBox-1.2.1/
 gunzip *fa.gz
 samtools faidx hg19RCRS.fa
 samtools faidx hg19RSRS.fa
 samtools faidx chrM.fa
 samtools faidx chrRSRS.fa
-module load ceuadmin/MToolBox
 MToolBox.sh -h
 cd test/HG00119_example
 ln -s ../../chrM.fa
@@ -39,9 +53,11 @@ zcat SRR043366_R1.fastq.gz > SRR043366.fastq # or SRR043366_R2.fastq.gz?
 MToolBox.sh -c HG00119.conf &> HG00119.log &# upon minor changes on HG00119.conf
 ```
 
-However, locations of gsnap 2015-12-31 and muscle 3.8.31_i86linux64 remain intact.
+## MTooBox_snakemake
 
-A workflow is available, <https://github.com/mitoNGS/MToolBox_snakemake> & <https://mtoolbox-snakemake.readthedocs.io/en/sept_2020_doc/index.html>,
+Web:, <https://github.com/mitoNGS/MToolBox_snakemake> & <https://mtoolbox-snakemake.readthedocs.io/en/sept_2020_doc/index.html>
+
+### Installation
 
 ```bash
 git clone https://github.com/mitoNGS/MToolBox_snakemake
@@ -62,6 +78,18 @@ pip cache purge
 pip list | grep -e mtoolnote -e requests -e pytest
 mtoolnote --help
 cd ..
+micromamba deactivate
+```
+
+### workflow
+
+It is available from the micromamba environment as above,
+
+```bash
+module load ceuadmin/micromamba
+cd mtoolnote-0.2.0/
+eval "$(micromamba shell hook --shell bash)"
+micromamba activate mtoolbox
 snakemake -s Snakefile --reason \
  --printshellcmds \
  --keep-going \
@@ -72,7 +100,13 @@ snakemake -s Snakefile --reason \
 micromamba deactivate
 ```
 
-The workflow uses a dedicated annotation tool, mtoolnote, <https://github.com/mitoNGS/mtoolnote> whose installation involves a conflict with the Python package requests 2.28.1. Consequently, from `micromamba list` and `pip list`, we have
+## mtoolnote
+
+Web: <https://github.com/mitoNGS/mtoolnote>
+
+### Installation
+
+It has a conflict with the Python package requests 2.28.1. Consequently, from `micromamba list` and `pip list`, we have
 
 ```
 bcftools                       1.11          h7c999a4_0              bioconda
@@ -93,6 +127,8 @@ requests                      2.27.1
 ```
 
 respectively.
+
+### Usage
 
 ```
 Usage: mtoolnote [OPTIONS] INPUT_VCF OUTPUT_VCF
