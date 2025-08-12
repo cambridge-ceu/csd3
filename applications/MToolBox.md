@@ -6,7 +6,7 @@ sort: 33
 
 GitHub: <https://github.com/mitoNGS/MToolBox>
 
-## MToolBox 1.2.1
+## 1.2.1
 
 ### Installation
 
