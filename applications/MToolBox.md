@@ -1,5 +1,5 @@
 ---
-sort: 33
+sort: 34
 ---
 
 # MToolBox
@@ -81,7 +81,7 @@ cd ..
 micromamba deactivate
 ```
 
-### workflow
+### Workflow
 
 It is available from the micromamba environment as above,
 
