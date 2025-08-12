@@ -25,9 +25,9 @@ bash Anaconda2-2.5.0-Linux-x86_64.sh # install to anaconda
 
 However, locations of gsnap 2015-12-31 and muscle 3.8.31_i86linux64 remain intact.
 
-### Docuementation example
+### Example
 
-It has been furnished as follows.
+The documentation example can be furnished as follows.
 
 ```bash
 module load ceuadmin/MToolBox
