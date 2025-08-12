@@ -2905,11 +2905,16 @@ They are generated from script [setup.sh](setup.sh),
     wget https://download.videolan.org/pub/contrib/zlib/zlib-1.2.11.tar.gz
     bash Anaconda2-2.5.0-Linux-x86_64.sh # install to anaconda
     ./install.sh
+    ./install.sh -i gsnap_db # when interrupted, resume for chrM.fa.gz, chrRSRS.fa.gz, hg19RCRS.fa.gz, hg19RSRS.fa.gz
+    module load ceuadmin/MToolBox
     MToolBox.sh -h
-    MToolBox.sh -i test_rCRS_config.sh
+    cd test/HG00119_example
+    wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR043/SRR043366/SRR043366_1.fastq.gz -O SRR043366_R1.fastq.gz
+    wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR043/SRR043366/SRR043366_2.fastq.gz -O SRR043366_R2.fastq.gz
+    MToolBox.sh -c HG00119.conf # upon minor changes on HG00119.conf
     ```
 
-    However, locations of gsnap 2015-12-31 and muscle 3.8.31_i86linux64 remain intact. One can invoke `./install.sh -i gsnap_db` alone upon interruption.
+    However, locations of gsnap 2015-12-31 and muscle 3.8.31_i86linux64 remain intact.
 
     A workflow is available, <https://github.com/mitoNGS/MToolBox_snakemake> & <https://mtoolbox-snakemake.readthedocs.io/en/sept_2020_doc/index.html>,
 
@@ -2935,7 +2940,7 @@ They are generated from script [setup.sh](setup.sh),
     snakemake -s Snakefile --reason \
      --printshellcmds \
      --keep-going \
-     --cores 100 \
+     --cores 15 \
      --cluster-config cluster.yaml --latency-wait 60 \
      --cluster 'sbatch -A PETERS-SL3-CPU -p core -n {cluster.threads} -t 7:00:00 -o {cluster.stdout}' \
      --dryrun
