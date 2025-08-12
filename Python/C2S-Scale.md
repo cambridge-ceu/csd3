@@ -4,7 +4,7 @@ sort: 1
 
 # C2S-Scale
 
-Blog, <https://research.google/blog/teaching-machines-the-language-of-biology-scaling-large-language-models-for-next-generation-single-cell-analysis/>
+Blog, [Teaching machines the language of biology: Scaling large language models for next-generation single-cell analysis](https://research.google/blog/teaching-machines-the-language-of-biology-scaling-large-language-models-for-next-generation-single-cell-analysis/)
 
 The setup is as usual,
 
