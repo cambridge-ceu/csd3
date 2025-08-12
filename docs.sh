@@ -28,7 +28,7 @@ setup
 EOL
 }
 
-function renum()
+function _renum()
 # grep sort -w *md  | sort -k2,2n
 {
   echo ${1}
@@ -60,7 +60,7 @@ function _packages()
 # make install
 # make theme
 # systems
-renum applications
+_renum applications
 export n=$(ls applications/*md|grep -v -e README -e files | sort | xargs -I {} basename {} .md|wc -l)
 sed -i "s/\(sort:[[:space:]]*\).*/\1$n/" applications/notes.md
 _packages Python

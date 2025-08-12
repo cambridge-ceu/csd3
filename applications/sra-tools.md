@@ -1,5 +1,5 @@
 ---
-sort: 64
+sort: 63
 ---
 
 # sra-tools
