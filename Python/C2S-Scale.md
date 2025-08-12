@@ -1,5 +1,5 @@
 ---
-sort: 1
+sort: 2
 ---
 
 # C2S-Scale
