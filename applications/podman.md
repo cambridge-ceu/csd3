@@ -6,7 +6,7 @@ sort: 47
 
 (to be amended)
 
-1. podman executable
+## 1. podman executable
 
 ```bash
 wget -qO- https://github.com/containers/podman/releases/download/v5.1.1/podman-remote-static-linux_amd64.tar.gz | tar xvfz -
@@ -17,7 +17,7 @@ echo "$USER:100000:65536" > $HOME/.subgid
 cd ..
 ```
 
-2. podman-helpers/ and containers/
+## 2. podman-helpers/ and containers/
 
 ```bash
 # podman-helpers
