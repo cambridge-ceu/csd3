@@ -2,7 +2,9 @@
 sort: 47
 ---
 
-# podman (experimental)
+# podman
+
+(to be amended)
 
 1. podman executable
 

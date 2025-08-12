@@ -2,7 +2,9 @@
 sort: 19
 ---
 
-# docker (experimental)
+# docker
+
+(to be amended)
 
 The module `docker/24.0.5` enables information such as command options to be available.
 
