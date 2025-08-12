@@ -718,64 +718,12 @@ They are generated from script [setup.sh](setup.sh),
 
 [^quarto]: **quarto**
 
-    It requires CentOS 8 (icelake, or login-q-\*); otherwise it fails with message: `GLIBC_2.18` not found.
-
-    Upon installation, we supplement `jupyter` (python3 -m pip install jupyter --target=${PWD}/python; set PYTHONPATH in the module) and `knitr` (R_LIBS is set in the module). Furthermore, to allow for generality, python and R directories are symbollically linked.
-
-    To enable `rmarkdown`, we need to get around issue of no Internet on icelake with the following,
-
-    ```r
-    packages <- c("base64enc","bslib","cachem","cli","digest",
-                  "ellipsis","evaluate","fastmap","fontawesome","fs",
-                  "glue","htmltools","jquerylib","jsonlite","knitr",
-                  "lifecycle","memoise","mime","R6","rappdirs",
-                  "rlang","rmarkdown","sass","stringi","stringr",
-                  "tinytex","vctrs","xfun","yaml")
-    download.packages(packages,".")
-    install.packages(dir(pattern="tar.gz"),lib="R",repos=NULL)
-    ```
-
-    somewhat repetitive nonetheless successful since some are package dependencies.
-
-    $ quarto check
-
-    ```
-    [✓] Checking versions of quarto binary dependencies...
-          Pandoc version 3.1.1: OK
-          Dart Sass version 1.55.0: OK
-    [✓] Checking versions of quarto dependencies......OK
-    [✓] Checking Quarto installation......OK
-          Version: 1.3.450
-          Path: /usr/local/Cluster-Apps/ceuadmin/quarto/1.3.450-icelake/bin
-
-    [✓] Checking basic markdown render....OK
-
-    [✓] Checking Python 3 installation....OK
-          Version: 3.8.11
-          Path: /usr/local/software/spack/spack-views/rhel8-icelake-20211027_2/python-3.8.11/gcc-11.2.0/pqdmnzmwkrtp4e3gjibmcxho7g6ekpat/bin/python3
-          Jupyter: 5.3.1
-          Kernels: python3
-
-    [✓] Checking Jupyter engine render....OK
-
-    [✓] Checking R installation...........OK
-          Version: 4.3.1
-          Path: /usr/local/Cluster-Apps/R/4.3.1-icelake/lib64/R
-          LibPaths:
-            - /usr/local/Cluster-Apps/ceuadmin/quarto/R
-            - /usr/local/Cluster-Apps/R/4.3.1-icelake/lib64/R/library
-            - /rds/project/jmmh2/rds-jmmh2-public_databases/software/R
-            - /rds/project/jmmh2/rds-jmmh2-public_databases/software/R-4.3.1/library
-          knitr: 1.43
-          rmarkdown: 2.23
-
-    [✓] Checking Knitr engine render......OK
-    ```
+    See <https://cambridge-ceu.github.io/csd3/applications/quarto.html>.
 
 [^xpdf]: **xpdf**
-
+    
     To enable display fonts as in login-e-[1-4] in /etc/xpdfrc or ~/.xpdfrc
-
+    
     ```
     # SJR addition
     fontFile Times-Roman           /usr/share/fonts/urw-base35/NimbusRoman-Regular.t1
@@ -793,7 +741,6 @@ They are generated from script [setup.sh](setup.sh),
     fontFile Symbol                /usr/share/fonts/urw-base35/StandardSymbolsPS.t1
     fontFile ZapfDingbats          /usr/share/fonts/urw-base35/D050000L.t1
     ```
-
 [^pspp]: **pspp**
 
     Makeinfo
@@ -1316,49 +1263,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^podman]: **podman** (to be amended)
 
-    1. podman executable
-
-    ```bash
-    wget -qO- https://github.com/containers/podman/releases/download/v5.1.1/podman-remote-static-linux_amd64.tar.gz | tar xvfz -
-    cd bin
-    ln -s podman-remote-static-linux_amd64 podman
-    echo "$USER:100000:65536" > $HOME/.subuid
-    echo "$USER:100000:65536" > $HOME/.subgid
-    cd ..
-    ```
-
-    2. podman-helpers/ and containers/
-
-    ```bash
-    # podman-helpers
-    mkdir podman-helpers && cd podman-helpers
-    wget https://github.com/containers/gvisor-tap-vsock/releases/download/v0.7.3/gvproxy-linux-amd64 -O gvproxy
-    chmod +x gvproxy
-    wget https://github.com/containers/fuse-overlayfs/releases/download/v1.14/fuse-overlayfs-x86_64
-    chmod +x fuse-overlayfs-x86_64
-    curl -o slirp4netns --fail -L https://github.com/rootless-containers/slirp4netns/releases/download/v1.3.1/slirp4netns-$(uname -m)
-    chmod +x slirp4netns
-    cd ..
-    # containers
-    mkdir containers
-    echo '[containers]' > containers/containers.conf
-    echo '[engine]' >> containers/containers.conf
-    echo 'helper_binaries_dir = "/home/jhz22/podman-helpers"' >> containers/containers.conf
-    echo 'events_logger = "file"' >> containers/containers.conf
-    ln -sf ${PWD}/containers $HOME/.config/containers
-    # podman
-    module load ceuadmin/qemu
-    pkill podman
-    podman system connection list
-    podman machine init
-    podman machine start
-    podman run quay.io/podman/hello
-    podman pull docker.io/library/hello-world
-    podman run --rm docker.io/library/hello-world
-    # additional notes
-    podman machine rm podman-machine-default
-    podman system connection add --default podman-machine-default ssh://core@127.0.0.1:39137/run/user/10024/podman/podman.sock
-    ```
+    See <https://cambridge-ceu.github.io/csd3/applications/podman.html>.
 
 [^alpine]: **alpine**
 
@@ -1366,68 +1271,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^qemu]: **qemu**
 
-    This is done as follows,
-
-    ```bash
-    export prefix=$CEUADMIN/qemu/
-    export ENV_DIR=$prefix/venv
-    mkdir build && cd build
-    module load python/3.8.11/gcc/pqdmnzmw
-    python -m venv --system-site-packages ${ENV_DIR}
-    source $prefix/venv/bin/activate
-    pip install --prefix=${ENV_DIR} sphinx
-    pip install --prefix=${ENV_DIR} sphinx_rtd_theme==1.1.1
-    pip install --prefix=${ENV_DIR} ninja
-    wget -qO- https://download.qemu.org/qemu-9.0.1.tar.xz | \
-    tar vxJf -
-    cd qemu-9.0.1
-    module load ncurses/6.2/gcc/givuz2aq libidn2/2.3.0/gcc/ph36ygoa
-    module load gettext/0.21/gcc/qnrcglqo
-    module load ceuadmin/gnutls/3.8.4-icelake ceuadmin/nettle/3.9-icelake ceuadmin/krb5/1.21.2-icelake
-    export gettext=/usr/local/software/spack/spack-views/rhel8-icelake-20211027_2/gettext-0.21/gcc-11.2.0/qnrcglqov5au2zv56tumhhf4n6mds34n
-    ../configure --prefix=$prefix/9.0.1\
-                 --target-list=x86_64-softmmu \
-                 --extra-ldflags="-L4gettext -lintl" \
-                 --extra-cflags="-I$gettext/include"
-    make -j4
-    make install
-    ```
-
-    Without the `--taget-list` option all will be built.
-
-    **Examples**
-
-    See <https://github.com/guillem-riera/podman-machine-x86_64>
-
-    ```bash
-    export EXTRA_ARGS=${EXTRA_ARGS:-$@}
-    ## Fedora CoreOS image for x86_64 (QEMU)
-    export PODMAN_X86_64_MACHINE_NAME=${PODMAN_X86_64_MACHINE_NAME:-x86_64}
-    export PODMAN_X86_64_MACHINE_NAME_EXISTS=$(podman machine list | grep ${PODMAN_X86_64_MACHINE_NAME} | wc -l | tr -d '[:space:]')
-    export PODMAN_QEMU_IMAGE="fedora-coreos-39.20231101.3.0-qemu.x86_64.qcow2.xz"
-    export DOWNLOAD_DIR=${DOWNLOAD_DIR:-.}
-    if [ ${PODMAN_X86_64_MACHINE_NAME_EXISTS} -lt 1 ]; then
-        curl -C- -O "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/39.20231101.3.0/x86_64/${PODMAN_QEMU_IMAGE}"
-        podman machine init --image ${DOWNLOAD_DIR}/${PODMAN_QEMU_IMAGE} ${PODMAN_X86_64_MACHINE_NAME} ${EXTRA_ARGS}
-    else
-        echo "[Info] Machine ${PODMAN_X86_64_MACHINE_NAME} already exists. If you want to recreate it, run 'podman machine rm ${PODMAN_X86_64_MACHINE_NAME}'"
-    fi
-    podman machine list
-    lsmod
-    ## TCG (Tiny Code Generator)
-    xz -d ${PODMAN_QEMU_IMAGE}
-    qemu-system-x86_64 -m 2048 -cpu qemu64 -smp 2 -drive file=fedora-coreos-39.20231101.3.0-qemu.x86_64.qcow2,format=qcow2 -accel tcg
-    ## Change machine settings
-    ### Get the machine config file name
-    machineConfigFile="$(podman machine inspect ${PODMAN_X86_64_MACHINE_NAME} | jq -r '.[].ConfigPath.Path')"
-    ### https://docs.openstack.org/image-guide/obtain-images.html
-    wget https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img
-    qemu-system-x86_64 -m 2048 -cpu qemu64 -smp 2 -drive file=noble-server-cloudimg-amd64.img,format=qcow2 -accel tcg
-    ### No GUI
-    qemu-system-x86_64 -m 2048 -cpu qemu64 -smp 2 -drive file=fedora-coreos-39.20231101.3.0-qemu.x86_64.qcow2,format=qcow2,cache=writeback -nographic
-    ```
-
-    where `format=raw` appears considerably faster but can make the image less flexible (e.g., no snapshots).
+    See <https://cambridge-ceu.github.io/csd3/applications/qemu.html>.
 
 [^hivex]: **hivex**
 
@@ -1632,105 +1476,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^node]: **node**
 
-    This is in accordance with the GNU software,
-
-    ```bash
-    wget -qO- https://github.com/nodejs/node/archive/refs/tags/v18.20.5.tar.gz | \
-    tar xvfz -
-    cd node-18.20.5
-    ./configure --prefix=$CEUADMIN/node/18.20.5
-    make
-    ```
-
-    The location can be made aware in `${HOME}/.npmrc` in which
-
-    ```
-    prefix=${CEUADMIN}/node/18.20.5
-    ```
-
-    where one can proceed with `npm install -g @marp-team/marp-cli`. Alternatively, one can do the following,
-
-    ```bash
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-    rm -rf ~/.npm
-    nvm install 18
-    nvm use 18
-    source ~/.bashrc
-    nvm use --delete-prefix v18.20.6
-    node -v
-    npm -v
-    npm install -g @marp-team/marp-cli puppeteer-core puppeteer
-    npm list -g @marp-team/marp-cli
-    npm cache clean --force
-    ```
-
-    and one can see the definition `export NVM_DIR="$HOME/.nvm"`. The latest version is made available with,
-
-    ```bash
-    nvm install --lts
-    nvm use --lts
-    marp gaaw2.md
-    ```
-
-    Example use,
-
-    ```js
-    const puppeteer = require("/home/jhz22/.nvm/versions/node/v22.13.1/lib/node_modules/puppeteer");
-    (async () => {
-      try {
-        const browser = await puppeteer.launch({
-          executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
-          headless: "new",
-          args: ["--no-sandbox", "--user-data-dir=/tmp"],
-        });
-        const page = await browser.newPage();
-        await page.goto("https://www.google.com");
-        await page.screenshot({ path: "example.png" });
-        console.log("Screenshot saved to example.png");
-        await browser.close();
-      } catch (error) {
-        console.error("Error launching Puppeteer:", error);
-      }
-    })();
-    ```
-
-    Analogy can be made with `npm`,
-
-    ```bash
-    cd ~
-    curl -L https://www.npmjs.com/install.sh | sh
-    ```
-
-    The NODE_PATH variable is output from running `readlink -f ../lib/node_modules` at the `bin/` directory.
-
-    The useful `codedown` module can be made available as follows,
-
-    ```bash
-    module load ceuadmin/node
-    npm install -g codedown
-    ```
-
-    We see that
-
-    ```
-    added 8 packages in 5s
-    npm notice
-    npm notice New major version of npm available! 10.8.2 -> 11.1.0
-    npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.1.0
-    npm notice To update run: npm install -g npm@11.1.0
-    npm notice
-    ```
-
-    As suggesteed, we issue `npm install -g npm@11.1.0` to see
-
-    ```
-    removed 8 packages, and changed 100 packages in 19s
-
-    24 packages are looking for funding
-      run `npm fund` for details
-    ```
-
-    We can extract Python code as `cat DeepSeek.md | codedown python`.
+    See <https://cambridge-ceu.github.io/csd3/applications/node.html>.
 
 [^chrome]: **chrome**
 
