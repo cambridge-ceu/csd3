@@ -19,7 +19,7 @@ with data from UniProt, e.g., APOB and A1BG, whose setup is as follows,
 ```bash
 wget https://rest.uniprot.org/uniprotkb/P04114.txt
 wget https://rest.uniprot.org/uniprotkb/P04217.fasta
-source ~/rds/public_databases/software/py38/bin/activate
+source ~/rds/software/py38/bin/activate
 ```
 
 Our Python script to handle them is listed below.
