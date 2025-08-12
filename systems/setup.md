@@ -1156,7 +1156,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^crux]: **crux**
 
-    See <<https://cambridge-ceu.github.io/csd3/applications/crux.html>.
+    See <https://cambridge-ceu.github.io/csd3/applications/crux.html>.
 
 [^p7zip_zstd]: **p7zip-zstd**
 
