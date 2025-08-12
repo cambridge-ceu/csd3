@@ -2911,6 +2911,7 @@ They are generated from script [setup.sh](setup.sh),
     cd test/HG00119_example
     wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR043/SRR043366/SRR043366_1.fastq.gz -O SRR043366_R1.fastq.gz
     wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR043/SRR043366/SRR043366_2.fastq.gz -O SRR043366_R2.fastq.gz
+    zcat SRR043366_R1.fastq.gz > SRR043366.fastq # or SRR043366_R2.fastq.gz?
     MToolBox.sh -c HG00119.conf # upon minor changes on HG00119.conf
     ```
 
