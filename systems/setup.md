@@ -743,7 +743,9 @@ They are generated from script [setup.sh](setup.sh),
     ```
 [^pspp]: **pspp**
 
-    Makeinfo
+    See <https://cambridge-ceu.github.io/csd3/applications/pspp.html>.
+
+    **Makeinfo**
 
     The following replacement is used.
 
