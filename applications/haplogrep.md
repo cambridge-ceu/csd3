@@ -39,7 +39,7 @@ mt_small = mt.sample_rows(0.1)  # Keep 10% of variants
 mt_small = mt_small.sample_cols(0.01)  # Keep 1% of samples
 hl.export_vcf(mt_small, "chrM_subset.vcf.bgz")
 END
-gnomAD 3.1 has chrM.vcf.bgz
+# gnomAD 3.1 has chrM.vcf.bgz
 haplogrep3 classify --in chrM.vcf.bgz --out haplogrep_output.txt --tree phylotree-rsrs@17.0
 ```
 
