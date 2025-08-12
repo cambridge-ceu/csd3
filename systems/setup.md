@@ -2906,13 +2906,18 @@ They are generated from script [setup.sh](setup.sh),
     bash Anaconda2-2.5.0-Linux-x86_64.sh # install to anaconda
     ./install.sh
     ./install.sh -i gsnap_db # when interrupted, resume for chrM.fa.gz, chrRSRS.fa.gz, hg19RCRS.fa.gz, hg19RSRS.fa.gz
+    gunzip *fa.gz
     module load ceuadmin/MToolBox
     MToolBox.sh -h
     cd test/HG00119_example
+    ln -s ../../chrM.fa
+    ln -s ../../chrRSRS.fa
+    ln -s ../../hg19RCRS.fa
+    ln -s ../../hg19RSRS.fa
     wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR043/SRR043366/SRR043366_1.fastq.gz -O SRR043366_R1.fastq.gz
     wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR043/SRR043366/SRR043366_2.fastq.gz -O SRR043366_R2.fastq.gz
     zcat SRR043366_R1.fastq.gz > SRR043366.fastq # or SRR043366_R2.fastq.gz?
-    MToolBox.sh -c HG00119.conf # upon minor changes on HG00119.conf
+    MToolBox.sh -c HG00119.conf &> HG00119.log &# upon minor changes on HG00119.conf
     ```
 
     However, locations of gsnap 2015-12-31 and muscle 3.8.31_i86linux64 remain intact.
