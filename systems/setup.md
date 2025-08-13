@@ -461,6 +461,7 @@ All entries are ordered chronologically.
 | 2025-08-11 | flashpca/2.0                     | Genetics[^flashpca]   |
 | 2025-08-13 | fNUMT/1.1                        | Genetics[^fnumt]      |
 | ""         | NUMTFinder/0.5.5                 | Genetics              |
+| ""         | simNGS/1.7                       | Genetics              |
 
 \* CEU or approved users only.
 
