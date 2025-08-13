@@ -461,7 +461,7 @@ All entries are ordered chronologically.
 | 2025-08-11 | flashpca/2.0                     | Genetics[^flashpca]   |
 | 2025-08-13 | fNUMT/1.1                        | Genetics[^fnumt]      |
 | ""         | NUMTFinder/0.5.5                 | Genetics              |
-| ""         | simNGS/1.7                       | Genetics              |
+| ""         | simNGS/1.7                       | Genetics[^simngs]     |
 
 \* CEU or approved users only.
 
@@ -1907,3 +1907,16 @@ They are generated from script [setup.sh](setup.sh),
 [^fnumt]: **fNUMT**
 
     This suite includes blastn 2.13.0+, samtools 1.10 and cap3 02/10/15.
+
+[^simngs]: **simNGS**
+
+    Case study from
+
+    Zhuang X, et al. Leveraging new methods for comprehensive characterization of mitochondrial DNA in esophageal squamous cell carcinoma. *Genome Med* 16, 50 (2024). <https://doi.org/10.1186/s13073-024-01319-2>.
+
+    ```bash
+    cat mutated_rCRS.fa | simLibrary -x 5 -r 150 --seed 12 > chrM_mut_5x.fasta
+    cat wide_rCRS.fa | simLibrary-x 4995 -r 150 --seed 12 > chrM_wide_4995x.fasta
+    cat chrM_mut_5x.fasta chrM_wide_4995x.fasta > chrM_sim_5000x_mut5x.fasta
+    simNGS -p "paired" -O "chrM_sim_5000x_mut5x_PE150" -o "fastq" -s 12 runfile chrM_sim_5000x_mut5x.fasta
+    ```
