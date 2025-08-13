@@ -441,7 +441,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | ""         | NUMTFinder/0.5.5             | Genetics    |
     | ""         | simNGS/1.7                   | Genetics    |
 
-    \* CEU or approved users only.
+    \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
 More detailed diagrams on recently added genetics/proteomics and generic software are as follows,
 
