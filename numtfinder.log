@@ -1,0 +1,8 @@
+#~~#	#~+~~+~#	#~~#
+#LOG	00:00:00	Activity Log for NUMTFinder V0.5.5: Wed Aug 13 12:33:53 2025
+#DIR	00:00:00	Run from directory: /rds/user/jhz22/hpc-work/cambridge-ceu/csd3
+#ARG	00:00:00	Commandline arguments: 
+#CMD	00:00:00	Full Command List: log=numtfinder.log
+#VIO	00:00:00	Verbosity: 1; Interactivity: 0.
+#NOTE	00:00:00	Interactivity could cause problems for queued HPC jobs etc. If so, set i=-1.
+#ERR	00:00:03	NUMTFinder.loadSeq error: <type 'KeyboardInterrupt'> (choice line 2752)   

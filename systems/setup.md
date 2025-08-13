@@ -460,6 +460,7 @@ All entries are ordered chronologically.
 | ""         | haplogrep/3.2.2                  | Genetics              |
 | 2025-08-11 | flashpca/2.0                     | Genetics[^flashpca]   |
 | 2025-08-13 | fNUMT/1.1                        | Genetics[^fnumt]      |
+| ""         | NUMTFinder/0.5.5                 | Genetics              |
 
 \* CEU or approved users only.
 
