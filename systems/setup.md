@@ -459,6 +459,7 @@ All entries are ordered chronologically.
 | 2025-08-10 | haplogrep/2.4.0                  | Genetics[^haplogrep]  |
 | ""         | haplogrep/3.2.2                  | Genetics              |
 | 2025-08-11 | flashpca/2.0                     | Genetics[^flashpca]   |
+| 2025-08-13 | fNUMT/1.1                        | Genetics[^fnumt]      |
 
 \* CEU or approved users only.
 
@@ -1900,3 +1901,7 @@ They are generated from script [setup.sh](setup.sh),
 [^flashpca]: **flashpca**
 
     This module is built to mirror flashpca2/2 which has been linked to personal home folder.
+
+[^fnumt]: **fNUMT**
+
+    This suite includes blastn 2.13.0+, samtools 1.10 and cap3 02/10/15.
