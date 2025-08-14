@@ -77,4 +77,17 @@ Rscript -e '
 '
 ```
 
-where [hgdp.py](files/hgdp.py) is used to reformat the data to a required format by [sloan15.pl](files/sloan15.pl).
+where [hgdp.py](files/hgdp.py) is used to reformat the data to a required format by [sloan15.pl](files/sloan15.pl). A slightly more involved is the ability to handle vcf.gz as with [vcf.gz.py](files/vcf.gz.py),
+
+```bash
+python vcf.gz.py UKBB_shortIDs.vcf.gz sloan15_input.txt &
+
+module load ceuadmin/haplogrep
+export UKB=~/rds/post_qc_data/uk_biobank/mtdna/imputed/imputed
+haplogrep3 classify --in $UKB/UKBB_UKBL_binary.vcf.gz --out UKBB_binary --tree=phylotree-rsrs@17.0
+sed 's/"//g' UKBB_binary | \
+awk '{ gsub(/[^a-zA-Z0-9]/,"", $2); print $1 "\t" $2 }' > hg_simple_clean.txt
+sloan15.pl sloan15_input.txt hg_simple_clean.txt > sloan15.tsv
+```
+
+A way to rename sample IDs in this case it possible with [renum.sh](files/renum.sh) so `sloan15.pl sloan15_input.txt hg_simple_clean_shortIDs.txt`.
