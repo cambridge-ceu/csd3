@@ -61,7 +61,7 @@ wget https://github.com/seppinho/haplogrep-cmd/raw/master/test-data/vcf/HG00097.
 
 ### Example
 
-The following offers glimpse of findings from sloan, et al. (2015), <https://royalsocietypublishing.org/doi/suppl/10.1098/rspb.2015.1704>. For instance, we have $0.019 \ge r^2 \le 0.024$.
+The following offers glimpse of findings from sloan, et al. (2015), <https://royalsocietypublishing.org/doi/suppl/10.1098/rspb.2015.1704>. For instance, we have $0.019 \ge r^2 \le 0.024$ nevertheless only on mtDNA.
 
 ```bash
 python3 < hgdp.py
