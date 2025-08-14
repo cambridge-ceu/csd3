@@ -91,3 +91,17 @@ sloan15.pl sloan15_input.txt hg_simple_clean.txt > sloan15.tsv
 ```
 
 A way to rename sample IDs in this case it possible with [renum.sh](files/renum.sh) so `sloan15.pl sloan15_input.txt hg_simple_clean_shortIDs.txt`.
+
+LD for two specific SNPs can be done with --snp option (c.f. --extract a list from files) as follows,
+
+```bash
+#!/usr/bin/bash
+
+export autosomes=~/rds/post_qc_data/uk_biobank/genotype/genotype/affy_ukbiobank_array/QCd_data/
+export mtdna=~/rds/post_qc_data/uk_biobank/mtdna/genotyped/genotyped/
+
+plink --bfile $autosomes/QCd_Eur --snp 1:723307_C_G --make-bed --out 1
+plink --bfile $mtdna/UKBB_recaled_clean_4753out --snp Affx-79504644 --make-bed --out 2
+plink --bfile 1 --bmerge 2 --make-bed --out 12
+plink --bfile 12 --ld 1:723307_C_G Affx-79504644
+```
