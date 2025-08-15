@@ -61,7 +61,11 @@ wget https://github.com/seppinho/haplogrep-cmd/raw/master/test-data/vcf/HG00097.
 
 ### Example
 
-The following offers glimpse of findings from sloan, et al. (2015), <https://royalsocietypublishing.org/doi/suppl/10.1098/rspb.2015.1704>. For instance, we have $0.019 \ge r^2 \le 0.024$ nevertheless only on mtDNA.
+The following examples concern about LDs on mtDNA and nDNA with mtDNA, which offer glimpse of findings from sloan, et al. (2015), <https://royalsocietypublishing.org/doi/suppl/10.1098/rspb.2015.1704> as well as a generic implementation via PLINK.
+
+#### 1. vcf
+
+This is also the documentation example, for which we have $0.019 \ge r^2 \le 0.024$.
 
 ```bash
 python3 < hgdp.py
@@ -77,7 +81,11 @@ Rscript -e '
 '
 ```
 
-where [hgdp.py](files/hgdp.py) is used to reformat the data to a required format by [sloan15.pl](files/sloan15.pl). A slightly more involved is the ability to handle vcf.gz as with [vcf.gz.py](files/vcf.gz.py),
+where [hgdp.py](files/hgdp.py) is used to reformat the data to a required format by [sloan15.pl](files/sloan15.pl).
+
+#### 2. vcf.gz
+
+A slightly more involved is the ability to handle vcf.gz via [vcf.gz.py](files/vcf.gz.py), saving much spaces in this case (N=358,916),
 
 ```bash
 module load ceuadmin/haplogrep
@@ -120,12 +128,14 @@ export UKB=~/rds/post_qc_data/uk_biobank/mtdna/imputed/imputed
 haplogrep3 classify --in $UKB/UKBB_UKBL_binary.vcf.gz --out UKBL_binary --tree=phylotree-rcrs@17.2
 ```
 
-A way to rename sample IDs in this case it possible with [renum.sh](files/renum.sh) so we now have
+Equally, lengthy sample are shortened with [renum.sh](files/renum.sh) and we now have
 
 ```
     Min.  1st Qu.   Median     Mean  3rd Qu.     Max.     NA's
 0.000003 0.000285 0.001771 0.005593 0.007300 0.048756        7
 ```
+
+#### 3. LD between nDNA-mtDNA
 
 LD for two specific SNPs can be done with --snp option (c.f. --extract a list from files) as follows,
 
