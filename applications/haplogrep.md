@@ -93,6 +93,7 @@ sloan15.pl sloan15_input.txt clean_haplogroups.txt > sloan15.tsv
  ld <- read.delim("sloan15.tsv",check=FALSE)
  summary(ld$r2)
 '
+deactivate
 ```
 
 The haplogrep3 step is time-consuming and a SLURM job is used,
