@@ -82,11 +82,17 @@ where [hgdp.py](files/hgdp.py) is used to reformat the data to a required format
 ```bash
 module load ceuadmin/haplogrep
 export UKB=~/rds/post_qc_data/uk_biobank/mtdna/imputed/imputed
-haplogrep3 classify --in $UKB/UKBB_UKBL_binary.vcf.gz --out UKBB_binary --tree=phylotree-rcrs@17.2
+haplogrep3 classify --in $UKB/UKBB_UKBL_binary.vcf.gz --out UKBL_binary --tree=phylotree-rcrs@17.2
+aource ~/rds/software/py3.11/bin/activate
 python vcf.gz.py UKBB_shortIDs.vcf.gz sloan15_input.txt &
 sed 's/"//g' UKBB_binary | \
-awk '{ gsub(/[^a-zA-Z0-9]/,"", $2); print $1 "\t" $2 }' > hg_simple_clean.txt
-sloan15.pl sloan15_input.txt hg_simple_clean.txt > sloan15.tsv
+awk '{ gsub(/[^a-zA-Z0-9]/,"", $2); print $1 "\t" $2 }' | \
+sed 's/ \+/\t/'> clean_haplogroups.txt
+sloan15.pl sloan15_input.txt clean_haplogroups.txt > sloan15.tsv
+ Rscript -e '
+ ld <- read.delim("sloan15.tsv",check=FALSE)
+ summary(ld$r2)
+'
 ```
 
 The haplogrep3 step is time-consuming and a SLURM job is used,
@@ -113,7 +119,12 @@ export UKB=~/rds/post_qc_data/uk_biobank/mtdna/imputed/imputed
 haplogrep3 classify --in $UKB/UKBB_UKBL_binary.vcf.gz --out UKBL_binary --tree=phylotree-rcrs@17.2
 ```
 
-A way to rename sample IDs in this case it possible with [renum.sh](files/renum.sh) so `sloan15.pl sloan15_input.txt hg_simple_clean_shortIDs.txt`.
+A way to rename sample IDs in this case it possible with [renum.sh](files/renum.sh) so we now have
+
+```
+    Min.  1st Qu.   Median     Mean  3rd Qu.     Max.     NA's
+0.000003 0.000285 0.001771 0.005593 0.007300 0.048756        7
+```
 
 LD for two specific SNPs can be done with --snp option (c.f. --extract a list from files) as follows,
 
