@@ -23,9 +23,9 @@ haplogrep3 trees
 #### 1. Documentation data
 
 ```bash
-haplogrep3 classify --in data/examples/example-microarray.vcf --out microarray.txt --tree=phylotree-rsrs@17.0
-haplogrep3 classify --in data/examples/example-wgs.vcf --out wgs.txt --tree=phylotree-rsrs@17.0
-haplogrep3 classify --in trees/phylotree-rcrs/17.2/rcrs.fasta --out rcrs.txt --tree phylotree-rsrs@17.2
+haplogrep3 classify --in data/examples/example-microarray.vcf --out microarray.txt --tree=phylotree-rcrs@17.0
+haplogrep3 classify --in data/examples/example-wgs.vcf --out wgs.txt --tree=phylotree-rcrs@17.0
+haplogrep3 classify --in trees/phylotree-rcrs/17.2/rcrs.fasta --out rcrs.txt --tree phylotree-rcrs@17.2
 ```
 
 See also <https://genepi.github.io/haplogrep-trees/>.
@@ -34,7 +34,7 @@ See also <https://genepi.github.io/haplogrep-trees/>.
 
 ```bash
 # gnomAD 3.1 chrM.vcf.bgz
-haplogrep3 classify --in chrM.vcf.bgz --out haplogrep_output.txt --tree phylotree-rsrs@17.0
+haplogrep3 classify --in chrM.vcf.bgz --out haplogrep_output.txt --tree phylotree-rcrs@17.0
 # hail dense/sparse MatrixTable -- conceptual steps, too large to be tested!
 module load openjdk/11.0.12_7/gcc/czpuqhmv
 python <<END
