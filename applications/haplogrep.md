@@ -33,8 +33,9 @@ See also <https://genepi.github.io/haplogrep-trees/>.
 #### 2. gnomAD
 
 ```bash
-# gnomAD 3.1 chrM.vcf.bgz
-haplogrep3 classify --in chrM.vcf.bgz --out haplogrep_output.txt --tree phylotree-rcrs@17.0
+# gnomAD 3.1 chrM.vcf.bgz has no samples
+gunzip -c gnomad.genomes.v3.1.sites.chrM.vcf.bgz > chrM.vcf
+haplogrep3 classify --in chrM.vcf --out haplogrep_output.txt --tree phylotree-rcrs@17.0
 # hail dense/sparse MatrixTable -- conceptual steps, too large to be tested!
 module load openjdk/11.0.12_7/gcc/czpuqhmv
 python <<END
