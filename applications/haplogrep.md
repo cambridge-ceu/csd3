@@ -128,6 +128,23 @@ export UKB=~/rds/post_qc_data/uk_biobank/mtdna/imputed/imputed
 haplogrep3 classify --in $UKB/UKBB_UKBL_binary.vcf.gz --out UKBL_binary --tree=phylotree-rcrs@17.2
 ```
 
+We see a fine-grid haplogroupings, which can be collapsed by [collapse.R](files/collapse.R) such that
+
+```
+> hg <- read.delim("clean_haplogroups.txt")
+> hg2 <- hg %>%
+  mutate(Macro = vapply(Haplogroup, collapse_haplo, character(1), map = macro_map))
+> table(hg2$Macro)
+
+     L      M      N      R
+   143    202  25588 332976
+>
+> table(hg2$Macro)/sum(table(hg2$Macro))
+
+           L            M            N            R
+0.0003984297 0.0005628168 0.0712938377 0.9277449158
+```
+
 Equally, lengthy sample are shortened with [renum.sh](files/renum.sh) and we now have
 
 ```
