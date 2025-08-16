@@ -32,10 +32,10 @@ See also <https://genepi.github.io/haplogrep-trees/>.
 
 #### 2. gnomAD
 
-(to be tested)
-
 ```bash
-# hail dense/sparse MatrixTable -- too large to be tested!
+# gnomAD 3.1 chrM.vcf.bgz
+haplogrep3 classify --in chrM.vcf.bgz --out haplogrep_output.txt --tree phylotree-rsrs@17.0
+# hail dense/sparse MatrixTable -- conceptual steps, too large to be tested!
 module load openjdk/11.0.12_7/gcc/czpuqhmv
 python <<END
 gsutil -m cp -r \
@@ -47,8 +47,6 @@ mt_small = mt.sample_rows(0.1)  # Keep 10% of variants
 mt_small = mt_small.sample_cols(0.01)  # Keep 1% of samples
 hl.export_vcf(mt_small, "chrM_subset.vcf.bgz")
 END
-# gnomAD 3.1 chrM.vcf.bgz
-haplogrep3 classify --in chrM.vcf.bgz --out haplogrep_output.txt --tree phylotree-rsrs@17.0
 ```
 
 ## 2.4.0
