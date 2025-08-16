@@ -16,15 +16,23 @@ wget https://github.com/genepi/haplogrep3/releases/download/v3.2.2/haplogrep3-3.
 unzip haplogrep3-3.2.2-linux.zip
 haplogrep3 server --config haplogrep3.yaml
 haplogrep3 trees
+```
+
+### Example
+
+#### 1. Documentation data
+
+```bash
 haplogrep3 classify --in data/examples/example-microarray.vcf --out microarray.txt --tree=phylotree-rsrs@17.0
 haplogrep3 classify --in data/examples/example-wgs.vcf --out wgs.txt --tree=phylotree-rsrs@17.0
-wget https://raw.githubusercontent.com/genepi/phylotree-rsrs-17/refs/heads/main/src/rsrs.fasta
-haplogrep3 classify --in rsrs.fasta --out rsrs.txt --tree phylotree-rsrs@17.0
+haplogrep3 classify --in trees/phylotree-rcrs/17.2/rcrs.fasta --out rcrs.txt --tree phylotree-rsrs@17.2
 ```
 
 See also <https://genepi.github.io/haplogrep-trees/>.
 
-### Hail MatrixTable
+#### 2. gnomAD
+
+(to be tested)
 
 ```bash
 # hail dense/sparse MatrixTable -- too large to be tested!
@@ -39,7 +47,7 @@ mt_small = mt.sample_rows(0.1)  # Keep 10% of variants
 mt_small = mt_small.sample_cols(0.01)  # Keep 1% of samples
 hl.export_vcf(mt_small, "chrM_subset.vcf.bgz")
 END
-# gnomAD 3.1 has chrM.vcf.bgz
+# gnomAD 3.1 chrM.vcf.bgz
 haplogrep3 classify --in chrM.vcf.bgz --out haplogrep_output.txt --tree phylotree-rsrs@17.0
 ```
 
