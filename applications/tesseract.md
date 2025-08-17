@@ -31,4 +31,3 @@ tesseract lang.jpeg lang -l eng
 where the last line extract text from `lang.jpeg` into `lang.txt`.
 
 Note further that Chrome/Edge/Firefox extension `OCR Image Reader` calls `tesseract.js`
-

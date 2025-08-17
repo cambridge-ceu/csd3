@@ -67,4 +67,3 @@ id -g
 e.g., `chmod 644 ~/.subuid ~/.subgid`.
 
 In turned out considerably easier to get different distributions from <https://download.docker.com/linux/static/stable/x86_64/>.
-

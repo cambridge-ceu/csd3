@@ -2579,11 +2579,8 @@ function element(name, attributes) {
       if (i >= 0 && (prefix = key.slice(0, i)) !== "xmlns")
         key = key.slice(i + 1);
       if (namespaces.hasOwnProperty(prefix))
-        element.setAttributeNS(
-          namespaces[prefix],
-          key,
-          value
-        ); // eslint-disable-line no-prototype-builtins
+        element.setAttributeNS(namespaces[prefix], key, value);
+      // eslint-disable-line no-prototype-builtins
       else element.setAttribute(key, value);
     }
   return element;

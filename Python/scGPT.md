@@ -85,4 +85,3 @@ torchmetrics             1.7.1
 torchvision              0.15.2+cu117
 wandb                    0.19.9
 ```
-

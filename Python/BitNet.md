@@ -77,4 +77,3 @@ optional arguments:
  -cnv, --conversation  Whether to enable chat mode or not (for instruct models.)
                       (When this option is turned on, the prompt specified by -p will be used as the system prompt.)
 ```
-

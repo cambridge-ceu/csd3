@@ -61,4 +61,3 @@ spower LOGIT Kryukov2009European1800.sfs \
 --replicates 1000 \
 --jobs 4 -o exercise-simul
 ```
-

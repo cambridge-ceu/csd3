@@ -31,4 +31,3 @@ wget -qO- https://thor.robots.ox.ac.uk/~vgg/data/pets/images.tar.gz | tar xfz -
 ```
 
 We fork a repository. create a branch, and send a pull request. The forked repository is available, <https://github.com/cambridge-ceu/Ultimate-Neural-Network-Programming-with-Python>, which has been merged into the author's master branch.
-

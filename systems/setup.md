@@ -724,9 +724,9 @@ They are generated from script [setup.sh](setup.sh),
     See <https://cambridge-ceu.github.io/csd3/applications/quarto.html>.
 
 [^xpdf]: **xpdf**
-    
+
     To enable display fonts as in login-e-[1-4] in /etc/xpdfrc or ~/.xpdfrc
-    
+
     ```
     # SJR addition
     fontFile Times-Roman           /usr/share/fonts/urw-base35/NimbusRoman-Regular.t1
@@ -1912,7 +1912,7 @@ They are generated from script [setup.sh](setup.sh),
 
     Case study from
 
-    Zhuang X, et al. Leveraging new methods for comprehensive characterization of mitochondrial DNA in esophageal squamous cell carcinoma. *Genome Med* 16, 50 (2024). <https://doi.org/10.1186/s13073-024-01319-2>.
+    Zhuang X, et al. Leveraging new methods for comprehensive characterization of mitochondrial DNA in esophageal squamous cell carcinoma. _Genome Med_ 16, 50 (2024). <https://doi.org/10.1186/s13073-024-01319-2>.
 
     ```bash
     cat mutated_rCRS.fa | simLibrary -x 5 -r 150 --seed 12 > chrM_mut_5x.fasta
