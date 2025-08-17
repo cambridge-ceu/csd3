@@ -18,15 +18,6 @@ incremental: false
 highlighter: rouge
 gist:
   noscript: false
-markdown: kramdown
-kramdown:
-  math_engine: mathjax
-  parse_block_html: true
-  syntax_highlighter: rouge
-mathjax:
-  enable: true # Activates MathJax
-  combo: "tex-mml-chtml" # Rendering mode (optional)
-  tags: "ams" # Equation numbering: "ams", "all", or "none"
 
 readme_index:
   with_frontmatter: true
