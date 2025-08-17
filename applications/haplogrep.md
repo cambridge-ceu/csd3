@@ -1,5 +1,6 @@
 ---
 sort: 30
+mathjax: true
 ---
 
 # haplogrep
