@@ -28,6 +28,15 @@ haplogrep3 classify --in data/examples/example-wgs.vcf --out wgs.txt --tree=phyl
 haplogrep3 classify --in trees/phylotree-rcrs/17.2/rcrs.fasta --out rcrs.txt --tree phylotree-rcrs@17.2
 ```
 
+We now can work on macro-haplogroups.
+
+```bash
+# already installed
+haplogrep install-tree phylotree-rcrs@17.2
+# macro groups
+haplogrep3 cluster-haplogroups --output macro-rcrs.txt --tree phylotree-rcrs@17.2
+```
+
 See also <https://genepi.github.io/haplogrep-trees/>.
 
 #### 2. gnomAD
@@ -135,23 +144,7 @@ export UKB=~/rds/post_qc_data/uk_biobank/mtdna/imputed/imputed
 haplogrep3 classify --in $UKB/UKBB_UKBL_binary.vcf.gz --out UKBL_binary --tree=phylotree-rcrs@17.2
 ```
 
-We see a fine-grid haplogroupings, which can be collapsed by [collapse.R](files/collapse.R) such that
-
-```
-> hg <- read.delim("clean_haplogroups.txt")
-> hg2 <- hg %>%
-  mutate(Macro = vapply(Haplogroup, collapse_haplo, character(1), map = macro_map))
-> table(hg2$Macro)
-
-     L      M      N      R
-   143    202  25588 332976
->
-> table(hg2$Macro)/sum(table(hg2$Macro))
-
-           L            M            N            R
-0.0003984297 0.0005628168 0.0712938377 0.9277449158
-```
-
+We see a fine-grid haplogroupings, which can be collapsed by [collapse.R](files/collapse.R).
 Equally, lengthy sample are shortened with [renum.sh](files/renum.sh) and we now have
 
 ```
