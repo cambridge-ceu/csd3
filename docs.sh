@@ -57,6 +57,7 @@ function _packages()
 
 # bundle install
 # bundle info jekyll-rtd-theme
+# gem install jekyll-rtd-theme
 # make install
 # make theme
 # systems

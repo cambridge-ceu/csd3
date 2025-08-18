@@ -462,6 +462,7 @@ All entries are ordered chronologically.
 | 2025-08-13 | fNUMT/1.1                        | Genetics[^fnumt]      |
 | ""         | NUMTFinder/0.5.5                 | Genetics              |
 | ""         | simNGS/1.7                       | Genetics[^simngs]     |
+| 2025-08-18 | Anaconda2/2.5.0                  | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
