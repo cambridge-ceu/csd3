@@ -463,6 +463,8 @@ All entries are ordered chronologically.
 | ""         | NUMTFinder/0.5.5                 | Genetics              |
 | ""         | simNGS/1.7                       | Genetics[^simngs]     |
 | 2025-08-18 | Anaconda2/2.5.0                  | Generic               |
+| ""         | impute5/1.2.0                    | Genetics              |
+| ""         | shapeit5/5.1.1                   | Genetics              |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
