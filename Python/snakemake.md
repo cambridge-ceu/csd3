@@ -10,6 +10,23 @@ It is a python-based workflow management system.
 
 :star: **[https://github.com/troycomi/snakemake-training](https://github.com/troycomi/snakemake-training)**
 
+## Updates
+
+This is to get around conda 4.5.5 issue with mamba; the earlier directory is replaced to save space.
+
+```bash
+module load ceuadmin/Miniconda3/22.9.0
+export prefix=/usr/local/Cluster-Apps/ceuadmin/snakemake/7.19.1
+conda create --prefix ${prefix} ipykernel
+# conda update -n base -c defaults conda
+# source activate /usr/local/Cluster-Apps/ceuadmin/snakemake/7.19.1
+# source deactivate
+conda activate ${prefix}
+conda install -c conda-forge mamba
+conda install -c bioconda snakemake
+conda install -c bioconda fastqc
+```
+
 ## Installation
 
 We illustrate installation through `fastqc` and `mamba` at designated location.
