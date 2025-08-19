@@ -148,7 +148,7 @@ whose counts and proportions are obtained,
     0.01     0.03     0.02
 ```
 
-and we now have
+and for $r^2$ we now have
 
 ```
     Min.  1st Qu.   Median     Mean  3rd Qu.     Max.     NA's
