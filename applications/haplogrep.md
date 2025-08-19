@@ -22,10 +22,11 @@ haplogrep3 server --config haplogrep3.yaml
 Web: <https://genepi.github.io/haplogrep-trees/>.
 
 ```bash
+# check available trees
 haplogrep3 trees
-# already installed
+# add a tree
 haplogrep install-tree phylotree-rcrs@17.2
-# macrohaplogroups
+# show macrohaplogroups
 haplogrep3 cluster-haplogroups --output macro-rcrs.txt --tree phylotree-rcrs@17.2
 ```
 
@@ -102,7 +103,7 @@ export UKB=~/rds/post_qc_data/uk_biobank/mtdna/imputed/imputed
 haplogrep3 classify --in $UKB/UKBB_UKBL_binary.vcf.gz --out UKBL_binary --tree=phylotree-rcrs@17.2
 ```
 
-We see a fine-grid haplogroupings, which can be collapsed into macrohaplogroups as follows.
+We see a fine-grid haplogroupings (UKBL_binary), with lengthy sample IDs shortened according to vcf.gz with [renum.sh](files/renum.sh), are collapsed into macrohaplogroups as follows.
 
 ```r
 library(dplyr)
@@ -117,7 +118,7 @@ hg2 <- hg %>%
 hg2$Macro[is.na(hg2$Macro)] <- "Unmapped"
 
 print(table(hg2$Macro))
-print(prop.table(table(hg2$Macro)))
+print(round((prop.table(table(hg2$Macro))*100+0.5)/100, 2))
 write.table(hg2, "haplogroups_with_macro.txt", sep = "\t", row.names = FALSE)
 ```
 
@@ -134,21 +135,20 @@ whose counts and proportions are obtained,
       47      161        7        1       85    31210    36329    36737
        V        W        X
     3005     7293     5141
-> print(prop.table(table(hg2$Macro)))
 
-           B            C            D            F            G            H
-2.228934e-05 8.358502e-05 9.751585e-05 2.507551e-05 1.950317e-05 4.263226e-01
-          HV            I            J            K           L0           L1
-3.390766e-03 3.534810e-02 1.148932e-01 8.511741e-02 9.751585e-05 2.786167e-06
-          L2           L3           L4           L5            M            N
-7.522652e-05 5.015101e-05 8.358502e-06 6.129568e-05 1.309499e-04 4.485729e-04
-           P            Q            R            T            U     Unmapped
-1.950317e-05 2.786167e-06 2.368242e-04 8.695628e-02 1.012187e-01 1.023554e-01
-           V            W            X
-8.372433e-03 2.031952e-02 1.432369e-02
+> print(round((prop.table(table(hg2$Macro))*100+0.5)/100, 2))
+
+       B        C        D        F        G        H       HV        I
+    0.01     0.01     0.01     0.01     0.01     0.43     0.01     0.04
+       J        K       L0       L1       L2       L3       L4       L5
+    0.12     0.09     0.01     0.01     0.01     0.01     0.01     0.01
+       M        N        P        Q        R        T        U Unmapped
+    0.01     0.01     0.01     0.01     0.01     0.09     0.11     0.11
+       V        W        X
+    0.01     0.03     0.02
 ```
 
-Equally, lengthy sample are shortened with [renum.sh](files/renum.sh) and we now have
+and we now have
 
 ```
     Min.  1st Qu.   Median     Mean  3rd Qu.     Max.     NA's
