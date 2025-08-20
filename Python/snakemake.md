@@ -10,21 +10,58 @@ It is a python-based workflow management system.
 
 :star: **[https://github.com/troycomi/snakemake-training](https://github.com/troycomi/snakemake-training)**
 
-## Updates
+## 9.9.0
 
-This is to get around conda 4.5.5 issue with mamba; the earlier directory is replaced to save space.
+(20/8/2025)
+
+Owing to many issues with Miniconda3 currently, we resort to Anaconda3 by the following steps,
 
 ```bash
-module load ceuadmin/Miniconda3/22.9.0
-export prefix=/usr/local/Cluster-Apps/ceuadmin/snakemake/7.19.1
-conda create --prefix ${prefix} ipykernel
-# conda update -n base -c defaults conda
-# source activate /usr/local/Cluster-Apps/ceuadmin/snakemake/7.19.1
-# source deactivate
-conda activate ${prefix}
-conda install -c conda-forge mamba
-conda install -c bioconda snakemake
-conda install -c bioconda fastqc
+#!/bin/bash
+set -e
+
+# 1. Load the system-wide Anaconda module
+module load ceuadmin/Anaconda3/2024.10-1
+
+# 2. Initialize conda for shell
+export CONDA_PREFIX=$CEUADMIN/Anaconda3/2024.10-1
+source "${CONDA_PREFIX}/etc/profile.d/conda.sh"
+conda activate base
+
+# 3. Configure channels with strict priority
+conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --add channels bioconda
+conda config --set channel_priority strict
+
+# 4. Create isolated snakemake env with mamba included
+PREFIX="/usr/local/Cluster-Apps/ceuadmin/snakemake/9.9.0"
+conda create --yes --prefix "$PREFIX" -c conda-forge -c bioconda snakemake mamba
+
+# 5. Verify version to confirm successful installation
+source "${CONDA_PREFIX}/etc/profile.d/conda.sh"
+conda activate "$PREFIX"
+conda install fastqc
+conda list | grep -e snakemake -e mamba -e fastqc
+#
+# To activate this environment, use
+#
+#     $ conda activate /usr/local/Cluster-Apps/ceuadmin/snakemake/5.26.1
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+# packages in environment at /usr/local/Cluster-Apps/ceuadmin/snakemake/9.9.0:
+fastqc                    0.12.1               hdfd78af_0    bioconda
+libmamba                  2.3.1                hae34dd5_1    conda-forge
+mamba                     2.3.1                hf857f84_1    conda-forge
+snakemake                 9.9.0                hdfd78af_0    bioconda
+snakemake-interface-common 1.21.0             pyhdfd78af_0    bioconda
+snakemake-interface-executor-plugins 9.3.9              pyhdfd78af_0    bioconda
+snakemake-interface-logger-plugins 1.2.4              pyhdfd78af_0    bioconda
+snakemake-interface-report-plugins 1.2.0              pyhdfd78af_0    bioconda
+snakemake-interface-storage-plugins 4.2.2              pyhdfd78af_0    bioconda
+snakemake-minimal         9.9.0              pyhdfd78af_0    bioconda
 ```
 
 ## Installation

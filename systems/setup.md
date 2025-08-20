@@ -465,6 +465,7 @@ All entries are ordered chronologically.
 | 2025-08-18 | Anaconda2/2.5.0                  | Generic               |
 | ""         | impute5/1.2.0                    | Genetics              |
 | ""         | shapeit5/5.1.1                   | Genetics              |
+| 2025-08-20 | snakemake/9.9.0                  | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
