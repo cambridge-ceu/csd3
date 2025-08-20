@@ -64,7 +64,9 @@ snakemake-interface-storage-plugins 4.2.2              pyhdfd78af_0    bioconda
 snakemake-minimal         9.9.0              pyhdfd78af_0    bioconda
 ```
 
-## Installation
+## 7.19.1
+
+### Installation
 
 We illustrate installation through `fastqc` and `mamba` at designated location.
 
@@ -93,7 +95,7 @@ export mypath=${HOME}/COVID-19/miniconda37
 source activate ${mypath}
 ```
 
-## CSD3 module
+### CSD3 module
 
 This is available with
 
@@ -111,11 +113,11 @@ snakemake --help
 source deactivate
 ```
 
-## slurm
+### slurm
 
 The `--cluster-config` specification has been extended several ways, e.g., [https://github.com/Snakemake-Profiles/slurm](https://github.com/Snakemake-Profiles/slurm).
 
-## Python functions
+### Python functions
 
 The mysterious `expand()` function can be explicitly exploited,
 
