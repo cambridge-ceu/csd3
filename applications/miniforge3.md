@@ -24,6 +24,7 @@ conda --version
 ## Application
 
 ```bash
+module load ceuadmin/snakemake/9.9.0-miniforge3
 conda activate $CEUADMIN/snakemake/9.9.0-miniforge3
 git clone https://github.com/sjfandrews/MitoImpute
 cd MitoImpute
