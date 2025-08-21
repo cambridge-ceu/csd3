@@ -138,7 +138,7 @@ Note the `zip` argument which prevents expanding every combinations.
 ## Examples
 
 - <https://github.com/mitoNGS/MToolBox_snakemake> for use on CSD3.
-- MitoImpute, <https://github.com/sjfandrews/MitoImpute>. We build snakemake/9.9.0 with `gcc/6` and start with `CONDA_SOLVER=classic snakemake -j3 --use-conda`.
+- MitoImpute, <https://github.com/sjfandrews/MitoImpute>. We start with `CONDA_SOLVER=classic snakemake -j3 --use-conda`.
 
 Other variety is as follows.
 
