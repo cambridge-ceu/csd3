@@ -1,0 +1,205 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: login-q-4
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however important for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Creating conda environment workflow/envs/r.yaml...
+Downloading and installing remote packages.
+Cleaning up conda package tarballs.
+Environment for /rds/project/rds-4o5vpvAowP0/software/MitoImpute/workflow/envs/r.yaml created (location: .snakemake/conda/affd7974118e8caa2383ed3025b8c69b_)
+Using shell: /usr/bin/bash
+Provided cores: 3
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+FixChromName         1
+Impute2              1
+all                  1
+bplink2oxford        1
+bplink2plink         1
+oxford2bed           1
+oxford2ped           1
+oxford2vcf           1
+plots                1
+yri2rcrs_flip        1
+total               10
+
+Select jobs to execute...
+Execute 1 jobs...
+[Thu Aug 21 12:58:23 2025]
+localrule yri2rcrs_flip:
+    input: resources/ReferencePanel_v1_example/ReferencePanelSNPs_MAFexample.txt, results/example/chrMT_example.bim
+    output: results/example/chrMT_example_rcrsFlipped.bim
+    log: results/example/logs/yri2rcrs_flip.log
+    jobid: 7
+    reason: Missing output files: results/example/chrMT_example_rcrsFlipped.bim
+    wildcards: dataout=results, sample=example
+    resources: tmpdir=/rds/user/jhz22/hpc-work/work
+Activating conda environment: .snakemake/conda/affd7974118e8caa2383ed3025b8c69b_
+[Thu Aug 21 12:58:28 2025]
+Finished jobid: 7 (Rule: yri2rcrs_flip)
+1 of 10 steps (10%) done
+Select jobs to execute...
+Execute 2 jobs...
+[Thu Aug 21 12:58:28 2025]
+localrule bplink2plink:
+    input: results/example/chrMT_example.bed, results/example/chrMT_example.bim, results/example/chrMT_example.fam, results/example/chrMT_example_rcrsFlipped.bim
+    output: results/example/example_typedOnly.map, results/example/example_typedOnly.ped
+    log: results/example/logs/bplink2plink.log
+    jobid: 11
+    reason: Missing output files: results/example/example_typedOnly.ped, results/example/example_typedOnly.map; Input files updated by another job: results/example/chrMT_example_rcrsFlipped.bim
+    wildcards: dataout=results, sample=example
+    resources: tmpdir=/rds/user/jhz22/hpc-work/work
+Activating conda environment: .snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109
+[Thu Aug 21 12:58:28 2025]
+localrule bplink2oxford:
+    input: results/example/chrMT_example.bed, results/example/chrMT_example.bim, results/example/chrMT_example.fam, results/example/chrMT_example_rcrsFlipped.bim
+    output: results/example/example.gen, results/example/example.sample
+    log: results/example/logs/bplink2oxford.log
+    jobid: 4
+    reason: Missing output files: results/example/example.gen, results/example/example.sample; Input files updated by another job: results/example/chrMT_example_rcrsFlipped.bim
+    wildcards: dataout=results, sample=example
+    resources: tmpdir=/rds/user/jhz22/hpc-work/work
+Activating conda environment: .snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109
+[Thu Aug 21 12:58:29 2025]
+Finished jobid: 11 (Rule: bplink2plink)
+2 of 10 steps (20%) done
+[Thu Aug 21 12:58:29 2025]
+Finished jobid: 4 (Rule: bplink2oxford)
+3 of 10 steps (30%) done
+Removing temporary output results/example/chrMT_example.fam.
+Removing temporary output results/example/chrMT_example.bim.
+Removing temporary output results/example/chrMT_example.bed.
+Removing temporary output results/example/chrMT_example_rcrsFlipped.bim.
+Select jobs to execute...
+Execute 1 jobs...
+[Thu Aug 21 12:58:29 2025]
+localrule Impute2:
+    input: resources/ReferencePanel_v1_example/ReferencePanel_v1_example_MtMap.txt, resources/ReferencePanel_v1_example/ReferencePanel_v1_example.hap.gz, resources/ReferencePanel_v1_example/ReferencePanel_v1_example.legend.gz, results/example/example.gen, results/example/example.sample
+    output: results/example/example_imputed, results/example/example_imputed_samples, results/example/example_imputed_info
+    log: results/example/logs/Impute2.log
+    jobid: 3
+    reason: Missing output files: results/example/example_imputed_samples, results/example/example_imputed, results/example/example_imputed_info; Input files updated by another job: results/example/example.gen, results/example/example.sample
+    wildcards: dataout=results, sample=example
+    resources: tmpdir=/rds/user/jhz22/hpc-work/work
+Activating conda environment: .snakemake/conda/64a7633ce7105593cfd2eba11fe76683
+[Thu Aug 21 12:58:40 2025]
+Finished jobid: 3 (Rule: Impute2)
+4 of 10 steps (40%) done
+Removing temporary output results/example/example.gen.
+Removing temporary output results/example/example.sample.
+Select jobs to execute...
+Execute 1 jobs...
+[Thu Aug 21 12:58:40 2025]
+localrule FixChromName:
+    input: results/example/example_imputed
+    output: results/example/example_imputed_ChromFixed
+    jobid: 2
+    reason: Missing output files: results/example/example_imputed_ChromFixed; Input files updated by another job: results/example/example_imputed
+    wildcards: dataout=results, sample=example
+    resources: tmpdir=/rds/user/jhz22/hpc-work/work
+Activating conda environment: .snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109
+[Thu Aug 21 12:58:40 2025]
+Finished jobid: 2 (Rule: FixChromName)
+5 of 10 steps (50%) done
+Select jobs to execute...
+Execute 3 jobs...
+[Thu Aug 21 12:58:40 2025]
+localrule oxford2bed:
+    input: results/example/example_imputed_ChromFixed, results/example/example_imputed_samples
+    output: results/example/Imputed_example.bed, results/example/Imputed_example.bim, results/example/Imputed_example.fam
+    log: results/example/logs/oxford2bed.log
+    jobid: 1
+    reason: Missing output files: results/example/Imputed_example.bim, results/example/Imputed_example.bed, results/example/Imputed_example.fam; Input files updated by another job: results/example/example_imputed_ChromFixed, results/example/example_imputed_samples
+    wildcards: dataout=results, sample=example
+    resources: tmpdir=/rds/user/jhz22/hpc-work/work
+Activating conda environment: .snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109
+[Thu Aug 21 12:58:40 2025]
+localrule oxford2ped:
+    input: results/example/example_imputed_ChromFixed, results/example/example_imputed_samples
+    output: results/example/Imputed_example.map, results/example/Imputed_example.ped
+    log: results/example/logs/oxford2ped.log
+    jobid: 8
+    reason: Missing output files: results/example/Imputed_example.map, results/example/Imputed_example.ped; Input files updated by another job: results/example/example_imputed_ChromFixed, results/example/example_imputed_samples
+    wildcards: dataout=results, sample=example
+    resources: tmpdir=/rds/user/jhz22/hpc-work/work
+Activating conda environment: .snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109
+[Thu Aug 21 12:58:40 2025]
+localrule oxford2vcf:
+    input: results/example/example_imputed_ChromFixed, results/example/example_imputed_samples
+    output: results/example/Imputed_example.vcf
+    log: results/example/logs/oxford2vcf.log
+    jobid: 9
+    reason: Missing output files: results/example/Imputed_example.vcf; Input files updated by another job: results/example/example_imputed_ChromFixed, results/example/example_imputed_samples
+    wildcards: dataout=results, sample=example
+    resources: tmpdir=/rds/user/jhz22/hpc-work/work
+Activating conda environment: .snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109
+RuleException:
+CalledProcessError in file "/rds/project/rds-4o5vpvAowP0/software/MitoImpute/workflow/Snakefile", line 189:
+Command 'source /usr/local/Cluster-Apps/ceuadmin/miniforge3/bin/activate '/rds/project/rds-4o5vpvAowP0/software/MitoImpute/.snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109'; set -euo pipefail;  
+        plink --gen results/example/example_imputed_ChromFixed --sample results/example/example_imputed_samples --hard-call-threshold 0.49         --keep-allele-order --output-chr 26 --recode --out results/example/Imputed_example &> results/example/logs/oxford2ped.log' returned non-zero exit status 3.
+[Thu Aug 21 12:58:41 2025]
+Error in rule oxford2ped:
+    message: None
+    jobid: 8
+    input: results/example/example_imputed_ChromFixed, results/example/example_imputed_samples
+    output: results/example/Imputed_example.map, results/example/Imputed_example.ped
+    log: results/example/logs/oxford2ped.log (check log file(s) for error details)
+    conda-env: /rds/project/rds-4o5vpvAowP0/software/MitoImpute/.snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109
+    shell:
+        
+        plink --gen results/example/example_imputed_ChromFixed --sample results/example/example_imputed_samples --hard-call-threshold 0.49         --keep-allele-order --output-chr 26 --recode --out results/example/Imputed_example &> results/example/logs/oxford2ped.log
+        
+        (command exited with non-zero exit code)
+RuleException:
+CalledProcessError in file "/rds/project/rds-4o5vpvAowP0/software/MitoImpute/workflow/Snakefile", line 208:
+Command 'source /usr/local/Cluster-Apps/ceuadmin/miniforge3/bin/activate '/rds/project/rds-4o5vpvAowP0/software/MitoImpute/.snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109'; set -euo pipefail;  
+        plink --gen results/example/example_imputed_ChromFixed --sample results/example/example_imputed_samples --hard-call-threshold 0.49         --keep-allele-order --output-chr 26 --recode vcf --out results/example/Imputed_example &> results/example/logs/oxford2vcf.log' returned non-zero exit status 2.
+[Thu Aug 21 12:58:41 2025]
+Error in rule oxford2vcf:
+    message: None
+    jobid: 9
+    input: results/example/example_imputed_ChromFixed, results/example/example_imputed_samples
+    output: results/example/Imputed_example.vcf
+    log: results/example/logs/oxford2vcf.log (check log file(s) for error details)
+    conda-env: /rds/project/rds-4o5vpvAowP0/software/MitoImpute/.snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109
+    shell:
+        
+        plink --gen results/example/example_imputed_ChromFixed --sample results/example/example_imputed_samples --hard-call-threshold 0.49         --keep-allele-order --output-chr 26 --recode vcf --out results/example/Imputed_example &> results/example/logs/oxford2vcf.log
+        
+        (command exited with non-zero exit code)
+[Thu Aug 21 12:58:41 2025]
+Finished jobid: 1 (Rule: oxford2bed)
+6 of 10 steps (60%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Thu Aug 21 12:58:41 2025]
+Error in rule oxford2ped:
+    message: None
+    jobid: 8
+    input: results/example/example_imputed_ChromFixed, results/example/example_imputed_samples
+    output: results/example/Imputed_example.map, results/example/Imputed_example.ped
+    log: results/example/logs/oxford2ped.log (check log file(s) for error details)
+    conda-env: /rds/project/rds-4o5vpvAowP0/software/MitoImpute/.snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109
+    shell:
+        
+        plink --gen results/example/example_imputed_ChromFixed --sample results/example/example_imputed_samples --hard-call-threshold 0.49         --keep-allele-order --output-chr 26 --recode --out results/example/Imputed_example &> results/example/logs/oxford2ped.log
+        
+        (command exited with non-zero exit code)
+[Thu Aug 21 12:58:41 2025]
+Error in rule oxford2vcf:
+    message: None
+    jobid: 9
+    input: results/example/example_imputed_ChromFixed, results/example/example_imputed_samples
+    output: results/example/Imputed_example.vcf
+    log: results/example/logs/oxford2vcf.log (check log file(s) for error details)
+    conda-env: /rds/project/rds-4o5vpvAowP0/software/MitoImpute/.snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109
+    shell:
+        
+        plink --gen results/example/example_imputed_ChromFixed --sample results/example/example_imputed_samples --hard-call-threshold 0.49         --keep-allele-order --output-chr 26 --recode vcf --out results/example/Imputed_example &> results/example/logs/oxford2vcf.log
+        
+        (command exited with non-zero exit code)
+Complete log(s): /rds/project/rds-4o5vpvAowP0/software/MitoImpute/.snakemake/log/2025-08-21T125037.881663.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

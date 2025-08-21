@@ -466,6 +466,7 @@ All entries are ordered chronologically.
 | ""         | impute5/1.2.0                    | Genetics              |
 | ""         | shapeit5/5.1.1                   | Genetics              |
 | 2025-08-20 | snakemake/9.9.0                  | Generic               |
+| 2025-08-21 | miniforge3/25.3.1-0              | Generic[^miniforge3]  |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -1924,3 +1925,7 @@ They are generated from script [setup.sh](setup.sh),
     cat chrM_mut_5x.fasta chrM_wide_4995x.fasta > chrM_sim_5000x_mut5x.fasta
     simNGS -p "paired" -O "chrM_sim_5000x_mut5x_PE150" -o "fastq" -s 12 runfile chrM_sim_5000x_mut5x.fasta
     ```
+
+[^miniforge3]: **miniforge3**
+
+    See <https://cambridge-ceu.github.io/csd3/applications/miniforge3.html>

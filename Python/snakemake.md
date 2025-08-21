@@ -10,9 +10,36 @@ It is a python-based workflow management system.
 
 :star: **[https://github.com/troycomi/snakemake-training](https://github.com/troycomi/snakemake-training)**
 
-## 9.9.0
+## 9.9.0-miniforge3
 
-(20/8/2025)
+(21/8/2025)
+
+This turns to be ideal for the benchmark of MitoImpute.
+
+```bash
+module load ceuadmin/miniforge3
+export PREFIX=/usr/local/Cluster-Apps/ceuadmin/snakemake/9.9.0-miniforge3
+conda create --prefix=$PREFIX snakemake mamba fastqc
+conda list | grep -e snakemake -e mamba -e fastqc
+```
+
+We see similar output as before.
+
+```
+# packages in environment at /usr/local/Cluster-Apps/ceuadmin/snakemake/9.9.0-miniforge3:
+fastqc                    0.12.1               hdfd78af_0    bioconda
+libmamba                  2.3.1                hae34dd5_1    conda-forge
+mamba                     2.3.1                hf857f84_1    conda-forge
+snakemake                 9.9.0                hdfd78af_0    bioconda
+snakemake-interface-common 1.21.0             pyhdfd78af_0    bioconda
+snakemake-interface-executor-plugins 9.3.9              pyhdfd78af_0    bioconda
+snakemake-interface-logger-plugins 1.2.4              pyhdfd78af_0    bioconda
+snakemake-interface-report-plugins 1.2.0              pyhdfd78af_0    bioconda
+snakemake-interface-storage-plugins 4.2.2              pyhdfd78af_0    bioconda
+snakemake-minimal         9.9.0              pyhdfd78af_0    bioconda
+```
+
+## 9.9.0
 
 Owing to many issues with Miniconda3 currently, we resort to Anaconda3 by the following steps,
 
@@ -36,13 +63,17 @@ conda config --env --set channel_priority strict
 
 # 4. Create isolated snakemake env with mamba included
 PREFIX="/usr/local/Cluster-Apps/ceuadmin/snakemake/9.9.0"
-conda create --yes --prefix "$PREFIX" -c conda-forge -c bioconda snakemake mamba
+conda create --yes --prefix "$PREFIX" -c conda-forge -c bioconda snakemake mamba fastqc
 
 # 5. Verify version to confirm successful installation
 source "${CONDA_PREFIX}/etc/profile.d/conda.sh"
 conda activate "$PREFIX"
-conda install --yes fastqc
 conda list | grep -e snakemake -e mamba -e fastqc
+```
+
+We see that
+
+```
 #
 # To activate this environment, use
 #

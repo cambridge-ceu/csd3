@@ -1,0 +1,72 @@
+Assuming unrestricted shared filesystem usage.
+None
+host: login-q-4
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however important for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Using shell: /usr/bin/bash
+Provided cores: 3
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+all               1
+oxford2ped        1
+oxford2vcf        1
+plots             1
+total             4
+
+Select jobs to execute...
+Execute 2 jobs...
+[Thu Aug 21 15:57:14 2025]
+localrule oxford2ped:
+    input: results/example/example_imputed_ChromFixed, results/example/example_imputed_samples
+    output: results/example/Imputed_example.map, results/example/Imputed_example.ped
+    log: results/example/logs/oxford2ped.log
+    jobid: 8
+    reason: Missing output files: results/example/Imputed_example.ped, results/example/Imputed_example.map
+    wildcards: dataout=results, sample=example
+    resources: tmpdir=/rds/user/jhz22/hpc-work/work
+Activating conda environment: .snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109
+[Thu Aug 21 15:57:15 2025]
+localrule oxford2vcf:
+    input: results/example/example_imputed_ChromFixed, results/example/example_imputed_samples
+    output: results/example/Imputed_example.vcf
+    log: results/example/logs/oxford2vcf.log
+    jobid: 9
+    reason: Missing output files: results/example/Imputed_example.vcf
+    wildcards: dataout=results, sample=example
+    resources: tmpdir=/rds/user/jhz22/hpc-work/work
+Activating conda environment: .snakemake/conda/f1f716d4caa09fcf1c22c007af0ac109
+[Thu Aug 21 15:57:25 2025]
+Finished jobid: 8 (Rule: oxford2ped)
+1 of 4 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Thu Aug 21 15:57:25 2025]
+localrule plots:
+    input: results/example/example_typedOnly.map, results/example/example_typedOnly.ped, results/example/Imputed_example.map, results/example/Imputed_example.ped, results/example/example_imputed_info
+    output: results/example/stats/example_Info.png, results/example/stats/example_InfoHiMC.png, results/example/stats/example_Haplogroups.txt, results/example/stats/example_HaplogroupMatch.png
+    log: results/example/logs/plots.log
+    jobid: 10
+    reason: Missing output files: results/example/stats/example_Haplogroups.txt, results/example/stats/example_HaplogroupMatch.png, results/example/stats/example_InfoHiMC.png, results/example/stats/example_Info.png; Input files updated by another job: results/example/Imputed_example.ped, results/example/Imputed_example.map
+    wildcards: dataout=results, sample=example
+    resources: tmpdir=/rds/user/jhz22/hpc-work/work
+[Thu Aug 21 15:57:25 2025]
+Finished jobid: 9 (Rule: oxford2vcf)
+2 of 4 steps (50%) done
+Activating conda environment: .snakemake/conda/affd7974118e8caa2383ed3025b8c69b_
+[Thu Aug 21 15:59:16 2025]
+Finished jobid: 10 (Rule: plots)
+3 of 4 steps (75%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Thu Aug 21 15:59:16 2025]
+localrule all:
+    input: results/example/Imputed_example.bed, results/example/Imputed_example.bim, results/example/Imputed_example.fam, results/example/Imputed_example.map, results/example/Imputed_example.ped, results/example/Imputed_example.vcf, results/example/stats/example_Info.png, results/example/stats/example_InfoHiMC.png, results/example/stats/example_Haplogroups.txt, results/example/stats/example_HaplogroupMatch.png
+    jobid: 0
+    reason: Input files updated by another job: results/example/Imputed_example.vcf, results/example/stats/example_Info.png, results/example/stats/example_Haplogroups.txt, results/example/stats/example_HaplogroupMatch.png, results/example/Imputed_example.ped, results/example/stats/example_InfoHiMC.png, results/example/Imputed_example.map
+    resources: tmpdir=/rds/user/jhz22/hpc-work/work
+[Thu Aug 21 15:59:16 2025]
+Finished jobid: 0 (Rule: all)
+4 of 4 steps (100%) done
+Complete log(s): /rds/project/rds-4o5vpvAowP0/software/MitoImpute/.snakemake/log/2025-08-21T155619.469952.snakemake.log
