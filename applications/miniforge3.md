@@ -4,6 +4,8 @@ sort: 39
 
 # miniforge3
 
+Web: <https://conda-forge.org/>
+
 ## Installation
 
 ```bash
