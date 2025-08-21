@@ -41,7 +41,7 @@ conda create --yes --prefix "$PREFIX" -c conda-forge -c bioconda snakemake mamba
 # 5. Verify version to confirm successful installation
 source "${CONDA_PREFIX}/etc/profile.d/conda.sh"
 conda activate "$PREFIX"
-conda install fastqc
+conda install --yes fastqc
 conda list | grep -e snakemake -e mamba -e fastqc
 #
 # To activate this environment, use
@@ -137,8 +137,8 @@ Note the `zip` argument which prevents expanding every combinations.
 
 ## Examples
 
-- <https://github.com/mitoNGS/MToolBox_snakemake> for use on CSD3
-- MitoImpute, <https://github.com/sjfandrews/MitoImpute>
+- <https://github.com/mitoNGS/MToolBox_snakemake> for use on CSD3.
+- MitoImpute, <https://github.com/sjfandrews/MitoImpute>. We build snakemake/9.9.0 with `gcc/6` and start with `CONDA_SOLVER=classic snakemake -j3 --use-conda`.
 
 Other variety is as follows.
 
