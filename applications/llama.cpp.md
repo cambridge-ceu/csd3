@@ -6,6 +6,8 @@ sort: 35
 
 GitHub: <https://github.com/ggml-org/llama.cpp>
 
+## Installation[^macOS]
+
 ```bash
 # Initially, we build from GitHub
 git clone https://github.com/ggerganov/llama.cpp.git
@@ -28,6 +30,10 @@ cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b5558 ..
 make && make install
 ```
 
+We can the use `module load ceuadmin/llama.cpp` for operations below.
+
+## GGUF
+
 An example with `/DeepSeek-V3-0324`,
 
 ```bash
@@ -39,6 +45,10 @@ wget https://huggingface.co/unsloth/DeepSeek-V3-0324-GGUF/resolve/main/UD-IQ2_XX
 module load ceuadmin/llama.cpp
 llama-gguf-split --merge DeepSeek-V3-0324-UD-IQ2_XXS-00001-of-00005.gguf DeepSeek-V3-0324-UD-IQ2_XXS.gguf
 ```
+
+## llama-run
+
+### vicuna
 
 We have a considerable faster session, `llama-run vicuna`,
 
@@ -58,6 +68,24 @@ Precision medicine has the potential to revolutionize healthcare by improving tr
 
 In conclusion, precision medicine is an approach to healthcare that involves using advanced technologies to develop highly targeted therapies that can improve treatment outcomes and reduce side effects. It has the potential to revolutionize healthcare by improving treatment outcomes and reducing side effects, and could be used to develop personalized medications in the future.
 
----
+### deepseek-r1
 
 This is from `llama-run deepseek-r1`, [precision-medicine-deepseek-r1.md](files/precision-medicine-deepseek-r1.md).
+
+## llama-server
+
+### gpt-oss-20b
+
+A 12GB model is downloaded from [ggml-org/gpt-oss-20b-GGUF](https://huggingface.co/ggml-org/gpt-oss-20b-GGUF/)
+
+```bash
+llama-server -hf ggml-org/gpt-oss-20b-GGUF --ctx-size 0 --jinja -ub 2048 -b 2048 -ngl 99 -fa
+module load ceuadmin/chrome
+chrome [--user-data-dir=/tmp/chrome] http://localhost:8080/
+```
+
+where is [.] is optional such that it is used when Chrome fails to start.
+
+[^macOS]: **macOS**
+
+    `brew install llama.cpp`.

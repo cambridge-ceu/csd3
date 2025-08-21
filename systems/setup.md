@@ -467,6 +467,8 @@ All entries are ordered chronologically.
 | ""         | shapeit5/5.1.1                   | Genetics              |
 | 2025-08-20 | snakemake/9.9.0                  | Generic               |
 | 2025-08-21 | miniforge3/25.3.1-0              | Generic[^miniforge3]  |
+| ""         | cmocka/1.1.5                     | Generic[^cmocka]      |
+| ""         | scl-utils/2.0.3                  | Generic[^scl]         |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -1929,3 +1931,36 @@ They are generated from script [setup.sh](setup.sh),
 [^miniforge3]: **miniforge3**
 
     See <https://cambridge-ceu.github.io/csd3/applications/miniforge3.html>
+
+[^cmocka]: **cmocka**
+
+    ```bash
+    wget -qO- https://github.com/clibs/cmocka/archive/refs/tags/1.1.5.tar.gz | tar xvfz -
+    cd cmocka-1.1.5
+    cmake -DUNIT_TESTING=ON -DCMAKE_INSTALL_PREFIX=$CEUADMIN/cmocka/1.1.5 -DCMAKE_BUILD_TYPE=Release ..
+    make
+    make install
+    ```
+
+[^scl]: **scl-utils**
+
+    ```bash
+    wget -qO- https://github.com/sclorg/scl-utils/archive/refs/tags/2.0.3.tar.gz | tar xvfz -
+    cd scl-utils-2.0.3
+    mkdir build && cd build
+    cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/scl-utils/2.0.3 -DCMAKE_BUILD_TYPE=Release ..
+    # cp mocka.h from mocka/1.1.5/include to tests; add several #include <below> to it; and #inlude "cmocka.h" from test_scllib.c
+    #include <stdarg.h>
+    #include <stddef.h>
+    #include <stdint.h>
+    #include <setjmp.h>
+    module load cmocka/1.1.5
+    make
+    make staging
+    # handling system folders
+    make install DESTDIR=staging
+    cd staging
+    mv usr/local/Cluster-Apps/ceuadmin/scl-utils/2.0.3/*
+    rm -rf usr
+    cp -r * $CEUADMIN/scl-utils/2.0.3
+    ```
