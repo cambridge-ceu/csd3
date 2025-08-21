@@ -1,0 +1,24 @@
+---
+sort: 30
+---
+
+# miniforge3
+
+This offers a 
+
+## Installation
+
+```bash
+# Set install location (adjust if needed)
+INSTALL_DIR=$CEUADMIN/miniforge3
+
+# Download and install Miniforge (comes with conda-forge & mamba support)
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+bash Miniforge3-Linux-x86_64.sh -b -p $INSTALL_DIR
+
+# Activate the environment
+source $CEUADMIN/miniforge3/bin/activate
+
+# Confirm new conda
+conda --version  # should be 23.x or 24.x
+```
