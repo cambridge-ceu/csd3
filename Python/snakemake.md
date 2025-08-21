@@ -29,10 +29,10 @@ source "${CONDA_PREFIX}/etc/profile.d/conda.sh"
 conda activate base
 
 # 3. Configure channels with strict priority
-conda config --add channels defaults
-conda config --add channels conda-forge
-conda config --add channels bioconda
-conda config --set channel_priority strict
+conda config --env --add channels defaults
+conda config --env --add channels conda-forge
+conda config --env --add channels bioconda
+conda config --env --set channel_priority strict
 
 # 4. Create isolated snakemake env with mamba included
 PREFIX="/usr/local/Cluster-Apps/ceuadmin/snakemake/9.9.0"
