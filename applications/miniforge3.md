@@ -34,4 +34,3 @@ snakemake --use-conda --conda-frontend mamba -j3
 
 giving [.snakemake/log/2025-08-21T125037.881663.snakemake.log](../Python/files/2025-08-21T125037.881663.snakemake.log) & [.snakemake/log/2025-08-21T155619.469952.snakemake.log
 ](../Python/files/2025-08-21T155619.469952.snakemake.log), respectively (order effect?).
-)
