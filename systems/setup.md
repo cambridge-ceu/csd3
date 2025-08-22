@@ -467,6 +467,7 @@ All entries are ordered chronologically.
 | ""         | shapeit5/5.1.1                   | Genetics              |
 | 2025-08-20 | snakemake/9.9.0                  | Generic               |
 | 2025-08-21 | miniforge3/25.3.1-0              | Generic[^miniforge3]  |
+| ""         | snakemake/9.9.0-miniforge3       | Generic               |
 | ""         | cmocka/1.1.5                     | Generic[^cmocka]      |
 | ""         | scl-utils/2.0.3                  | Generic[^scl]         |
 | 2025-08-22 | gcc-toolset/12                   | Generic[^gcc_toolset] |
