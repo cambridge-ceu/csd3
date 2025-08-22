@@ -469,7 +469,7 @@ All entries are ordered chronologically.
 | 2025-08-21 | miniforge3/25.3.1-0              | Generic[^miniforge3]  |
 | ""         | cmocka/1.1.5                     | Generic[^cmocka]      |
 | ""         | scl-utils/2.0.3                  | Generic[^scl]         |
-| 2025-08-22 | gcc-toolset/12                   | Generic[^gcc_toolset  |
+| 2025-08-22 | gcc-toolset/12                   | Generic[^gcc_toolset] |
 | ""         | llama.cpp/b6243                  | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
