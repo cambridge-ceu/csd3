@@ -470,6 +470,7 @@ All entries are ordered chronologically.
 | ""         | cmocka/1.1.5                     | Generic[^cmocka]      |
 | ""         | scl-utils/2.0.3                  | Generic[^scl]         |
 | 2025-08-22 | gcc-toolset/12                   | Generic[^gcc_toolset  |
+| ""         | llama.cpp/b6243                  | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
