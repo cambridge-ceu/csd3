@@ -79,7 +79,7 @@ This is from `llama-run deepseek-r1`, [precision-medicine-deepseek-r1.md](files/
 A 12GB model is downloaded from [ggml-org/gpt-oss-20b-GGUF](https://huggingface.co/ggml-org/gpt-oss-20b-GGUF/)
 
 ```bash
-ln -sf /rds/user/$USER/hpc-work/HuggingFace/cache ~/.cache/llama.cpp
+ln -sf /rds/user/$USER/hpc-work/HuggingFace/cache/llama.cpp ~/.cache/llama.cpp
 llama-server -hf ggml-org/gpt-oss-20b-GGUF --ctx-size 0 --jinja -ub 2048 -b 2048 -ngl 99 -fa
 module load ceuadmin/chrome
 chrome [--user-data-dir=/tmp/chrome] http://localhost:8080/
