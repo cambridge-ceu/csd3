@@ -469,6 +469,7 @@ All entries are ordered chronologically.
 | 2025-08-21 | miniforge3/25.3.1-0              | Generic[^miniforge3]  |
 | ""         | cmocka/1.1.5                     | Generic[^cmocka]      |
 | ""         | scl-utils/2.0.3                  | Generic[^scl]         |
+| 2025-08-22 | gcc-toolset/12                   | Generic[^gcc_toolset  |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -1964,3 +1965,9 @@ They are generated from script [setup.sh](setup.sh),
     rm -rf usr
     cp -r * $CEUADMIN/scl-utils/2.0.3
     ```
+
+[^gcc_toolset]: **gcc_toolset**
+
+    Web: <https://dl.rockylinux.org/vault/centos/8-stream/AppStream/x86_64/os/Packages/>
+
+    Files are downloaded and extracted via [gcc-toolset-12.sh](files/gcc-toolset-12.sh), and post-processed with `cd gcc-toolset-12;rsync -a --exclude='opt/' opt/rh/gcc-toolset-12/root/ .`.
