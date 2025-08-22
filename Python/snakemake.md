@@ -27,16 +27,16 @@ We see similar output as before.
 
 ```
 # packages in environment at /usr/local/Cluster-Apps/ceuadmin/snakemake/9.9.0-miniforge3:
-fastqc                    0.12.1               hdfd78af_0    bioconda
-libmamba                  2.3.1                hae34dd5_1    conda-forge
-mamba                     2.3.1                hf857f84_1    conda-forge
-snakemake                 9.9.0                hdfd78af_0    bioconda
-snakemake-interface-common 1.21.0             pyhdfd78af_0    bioconda
-snakemake-interface-executor-plugins 9.3.9              pyhdfd78af_0    bioconda
-snakemake-interface-logger-plugins 1.2.4              pyhdfd78af_0    bioconda
-snakemake-interface-report-plugins 1.2.0              pyhdfd78af_0    bioconda
-snakemake-interface-storage-plugins 4.2.2              pyhdfd78af_0    bioconda
-snakemake-minimal         9.9.0              pyhdfd78af_0    bioconda
+fastqc                                  0.12.1           hdfd78af_0            bioconda
+libmamba                                2.3.1            hae34dd5_1            conda-forge
+mamba                                   2.3.1            hf857f84_1            conda-forge
+snakemake                               9.9.0            hdfd78af_0            bioconda
+snakemake-interface-common              1.21.0           pyhdfd78af_0          bioconda
+snakemake-interface-executor-plugins    9.3.9            pyhdfd78af_0          bioconda
+snakemake-interface-logger-plugins      1.2.4            pyhdfd78af_0          bioconda
+snakemake-interface-report-plugins      1.2.0            pyhdfd78af_0          bioconda
+snakemake-interface-storage-plugins     4.2.2            pyhdfd78af_0          bioconda
+snakemake-minimal                       9.9.0            pyhdfd78af_0          bioconda
 ```
 
 ## 9.9.0
@@ -83,16 +83,16 @@ We see that
 #
 #     $ conda deactivate
 # packages in environment at /usr/local/Cluster-Apps/ceuadmin/snakemake/9.9.0:
-fastqc                    0.12.1               hdfd78af_0    bioconda
-libmamba                  2.3.1                hae34dd5_1    conda-forge
-mamba                     2.3.1                hf857f84_1    conda-forge
-snakemake                 9.9.0                hdfd78af_0    bioconda
-snakemake-interface-common 1.21.0             pyhdfd78af_0    bioconda
-snakemake-interface-executor-plugins 9.3.9              pyhdfd78af_0    bioconda
-snakemake-interface-logger-plugins 1.2.4              pyhdfd78af_0    bioconda
-snakemake-interface-report-plugins 1.2.0              pyhdfd78af_0    bioconda
-snakemake-interface-storage-plugins 4.2.2              pyhdfd78af_0    bioconda
-snakemake-minimal         9.9.0              pyhdfd78af_0    bioconda
+fastqc                                  0.12.1           hdfd78af_0            bioconda
+libmamba                                2.3.1            hae34dd5_1            conda-forge
+mamba                                   2.3.1            hf857f84_1            conda-forge
+snakemake                               9.9.0            hdfd78af_0            bioconda
+snakemake-interface-common              1.21.0           pyhdfd78af_0          bioconda
+snakemake-interface-executor-plugins    9.3.9            pyhdfd78af_0          bioconda
+snakemake-interface-logger-plugins      1.2.4            pyhdfd78af_0          bioconda
+snakemake-interface-report-plugins      1.2.0            pyhdfd78af_0          bioconda
+snakemake-interface-storage-plugins     4.2.2            pyhdfd78af_0          bioconda
+snakemake-minimal                       9.9.0            pyhdfd78af_0          bioconda
 ```
 
 ## 7.19.1
