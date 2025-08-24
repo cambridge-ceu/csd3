@@ -5,8 +5,8 @@ mathjax: true
 
 # Setup of modules
 
-- Location at CSD3 (CEUADMIN): **/usr/local/Cluster-Apps/ceuadmin**
-- Module files (CEUMODULES): **/usr/local/Cluster-Config/modulefiles/ceuadmin**
+- Location at CSD3: **/usr/local/Cluster-Apps/ceuadmin** (CEUADMIN)
+- Module files: **/usr/local/Cluster-Config/modulefiles/ceuadmin** (CEUMODULES)
 
 ## Recent modules
 
