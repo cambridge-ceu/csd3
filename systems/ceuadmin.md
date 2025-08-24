@@ -4,11 +4,11 @@ sort: 9
 
 # ceuadmin
 
-The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/**.
+The CEU software repository is here, **/usr/local/Cluster-Apps/ceuadmin/** (CEUADMIN).
 
 ![ceuadmin](ceuadmin.png)
 
-Some source packages are kept at `/rds/project/rds-4o5vpvAowP0/software`.
+Some source packages are kept at `/rds/project/rds-4o5vpvAowP0/software` (~/rds/software if defined).
 
 ## Entries
 
