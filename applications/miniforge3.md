@@ -26,10 +26,10 @@ conda --version
 ## Application
 
 ```bash
-source $CEUADMIN/miniforge3/25.3.1-0/etc/profile.d/conda.sh
-conda activate $CEUADMIN/snakemake/9.9.0-miniforge3
 git clone https://github.com/sjfandrews/MitoImpute
 cd MitoImpute
+source $CEUADMIN/miniforge3/25.3.1-0/etc/profile.d/conda.sh
+conda activate $CEUADMIN/snakemake/9.9.0-miniforge3
 snakemake -j3 --use-conda
 snakemake --use-conda --conda-frontend mamba -j3
 conda deactivate
