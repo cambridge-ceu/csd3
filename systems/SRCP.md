@@ -4,7 +4,8 @@ sort: 12
 
 # SRCP
 
-NBR SRCP: <https://nbr.srcp.hpc.cam.ac.uk/>
+- Epidemiology Unit SRCP, <https://srcp-docs.readthedocs.io/en/latest/>
+- NBR SRCP: <https://nbr.srcp.hpc.cam.ac.uk/>
 
 ### Application
 
