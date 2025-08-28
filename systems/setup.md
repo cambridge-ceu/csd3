@@ -473,6 +473,7 @@ All entries are ordered chronologically.
 | 2025-08-22 | gcc-toolset/12                   | Generic[^gcc_toolset] |
 | ""         | llama.cpp/b6243                  | Generic               |
 | 2025-08-27 | ollama/0.11.7                    | Generic               |
+| 2025-08-28 | Zettlr/3.6.0                     | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -1764,8 +1765,9 @@ They are generated from script [setup.sh](setup.sh),
     Relevant information on Zettlr (<https://www.zettlr.com/>) is as follows,
 
     ```bash
-    wget https://github.com/Zettlr/Zettlr/releases/download/v3.5.1/Zettlr-3.5.1-x86_64.rpm
-    rpm2cpio Zettlr-3.5.1-x86_64.rpm | cpio -idmv
+    wget -qO- https://github.com/Zettlr/Zettlr/releases/download/v3.5.1/Zettlr-3.5.1-x86_64.rpm | \
+    rpm2cpio - | \
+    cpio -idmv
     wget https://github.com/retorquere/zotero-better-bibtex/releases/download/v6.7.269/zotero6-better-bibtex-6.7.269.xpi
     ```
 
