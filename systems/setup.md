@@ -1761,7 +1761,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^zettlr]: **Zettlr**
 
-    Relevant information on Zettlr and Better BibTex for Zotero plugin (<https://retorque.re/zotero-better-bibtex/index.html>) is as follows,
+    Relevant information on Zettlr (<https://www.zettlr.com/>) is as follows,
 
     ```bash
     wget https://github.com/Zettlr/Zettlr/releases/download/v3.5.1/Zettlr-3.5.1-x86_64.rpm
@@ -1769,7 +1769,7 @@ They are generated from script [setup.sh](setup.sh),
     wget https://github.com/retorquere/zotero-better-bibtex/releases/download/v6.7.269/zotero6-better-bibtex-6.7.269.xpi
     ```
 
-    Note that a Zotero 6 Plugin is used. See <https://docs.zettlr.com/en/core/citations/> for additional information.
+    Note that a Zotero 6 Plugin is used. See <https://docs.zettlr.com/en/core/citations/> for additional information. See also Better BibTex for Zotero plugin (<https://retorque.re/zotero-better-bibtex/index.html>).
 
 [^edlib]: **edlib**
 
