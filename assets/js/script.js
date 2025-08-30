@@ -2,26 +2,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.querySelector(".sidebar");
   if (!sidebar) return;
 
-  // Find all section headers (with class 'caption')
+  // Select all section headers with class 'caption'
   const captions = sidebar.querySelectorAll("a.caption");
 
   captions.forEach((caption) => {
-    let submenu = caption.nextElementSibling;
-
-    // If submenu is missing or not <ul>, optionally create one (uncomment if needed)
-    // if (!submenu || submenu.tagName.toLowerCase() !== "ul") {
-    //   submenu = document.createElement("ul");
-    //   caption.parentNode.insertBefore(submenu, caption.nextSibling);
-    // }
+    const submenu = caption.nextElementSibling;
 
     if (submenu && submenu.tagName.toLowerCase() === "ul") {
-      // Hide submenu initially
-      submenu.style.display = "none";
+      // Check if any submenu item is active (adjust selectors as needed)
+      const activeItem = submenu.querySelector(
+        "li.active, li.current, a.active, a.current"
+      );
 
-      // Make caption look clickable
+      if (activeItem) {
+        // If active submenu item exists, show submenu by default and add 'open' class
+        submenu.style.display = "block";
+        caption.classList.add("open");
+      } else {
+        // Otherwise, hide submenu
+        submenu.style.display = "none";
+      }
+
+      // Make caption clickable and toggle submenu visibility on click
       caption.style.cursor = "pointer";
-
-      // Add click toggle behavior
       caption.addEventListener("click", (e) => {
         e.preventDefault();
         const isHidden = submenu.style.display === "none";
@@ -29,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         caption.classList.toggle("open", isHidden);
       });
     } else {
-      // No submenu - disable pointer cursor (or style differently)
+      // If no submenu, normal cursor
       caption.style.cursor = "default";
     }
   });
