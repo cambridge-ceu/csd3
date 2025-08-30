@@ -12,21 +12,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   sections.forEach((section) => {
     const headerLink = Array.from(sidebar.querySelectorAll("a")).find(
-      (a) => a.textContent.trim() === section
+      (a) => a.textContent.trim().toUpperCase() === section.toUpperCase()
     );
 
     if (headerLink) {
       const parentLi = headerLink.closest("li");
-      const subList = parentLi.querySelector("ul");
+      if (!parentLi) return;
 
+      const subList = parentLi.querySelector("ul");
       if (subList) {
-        subList.style.display = "none";
         headerLink.style.cursor = "pointer";
 
         headerLink.addEventListener("click", function (e) {
           e.preventDefault();
-          const isOpen = parentLi.classList.toggle("open");
-          subList.style.display = isOpen ? "block" : "none";
+          parentLi.classList.toggle("open");
         });
       }
     }
