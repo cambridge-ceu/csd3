@@ -2,7 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.querySelector(".sidebar");
   if (!sidebar) return;
 
-  // Find all section headers with class 'caption' (these are clickable section titles)
+  // Get current page URL path to detect active link
+  const currentPath = window.location.pathname;
+
+  // All section headers with submenu
   const captions = sidebar.querySelectorAll("a.caption");
 
   captions.forEach((caption) => {
@@ -10,25 +13,41 @@ document.addEventListener("DOMContentLoaded", () => {
     const sectionKey = `sidebar-section-${caption.textContent.trim()}`;
 
     if (submenu && submenu.tagName.toLowerCase() === "ul") {
-      // Restore saved open/closed state for this section
-      const wasOpen = localStorage.getItem(sectionKey) === "true";
-      if (wasOpen) {
+      // Check if submenu contains an active link (including README.md)
+      const activeLink = submenu.querySelector(`a[href="${currentPath}"]`);
+
+      // If current page is inside this section, open it by default
+      if (activeLink) {
         submenu.style.display = "block";
         caption.classList.add("open");
+        localStorage.setItem(sectionKey, "true");
       } else {
-        submenu.style.display = "none";
+        // Otherwise, restore from localStorage or collapse
+        const wasOpen = localStorage.getItem(sectionKey) === "true";
+        if (wasOpen) {
+          submenu.style.display = "block";
+          caption.classList.add("open");
+        } else {
+          submenu.style.display = "none";
+          caption.classList.remove("open");
+        }
       }
 
-      // Make the caption clickable
+      // Make caption clickable to toggle submenu
       caption.style.cursor = "pointer";
-
       caption.addEventListener("click", (e) => {
         e.preventDefault();
-        const isVisible = submenu.style.display === "block";
-        submenu.style.display = isVisible ? "none" : "block";
-        caption.classList.toggle("open", !isVisible);
-        // Save current state to localStorage
-        localStorage.setItem(sectionKey, !isVisible);
+
+        const isOpen = submenu.style.display === "block";
+        if (isOpen) {
+          submenu.style.display = "none";
+          caption.classList.remove("open");
+          localStorage.setItem(sectionKey, "false");
+        } else {
+          submenu.style.display = "block";
+          caption.classList.add("open");
+          localStorage.setItem(sectionKey, "true");
+        }
       });
     }
   });
