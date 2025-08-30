@@ -1,33 +1,31 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.querySelector(".sidebar");
   if (!sidebar) return;
 
-  const sections = [
-    "THE SYSTEMS",
-    "PYTHON PACKAGES",
-    "R PACKAGES",
-    "APPLICATIONS",
-    "CARDIO",
-  ];
+  // Find all section headers (with class 'caption') that have a submenu <ul> next to them
+  const captions = sidebar.querySelectorAll("a.caption");
 
-  sections.forEach((section) => {
-    const headerLink = Array.from(sidebar.querySelectorAll("a")).find(
-      (a) => a.textContent.trim().toUpperCase() === section.toUpperCase()
-    );
+  captions.forEach((caption) => {
+    const submenu = caption.nextElementSibling;
+    if (submenu && submenu.tagName.toLowerCase() === "ul") {
+      // Initially hide submenu
+      submenu.style.display = "none";
 
-    if (headerLink) {
-      const parentLi = headerLink.closest("li");
-      if (!parentLi) return;
+      // Make caption look clickable
+      caption.style.cursor = "pointer";
 
-      const subList = parentLi.querySelector("ul");
-      if (subList) {
-        headerLink.style.cursor = "pointer";
+      // Add click toggle
+      caption.addEventListener("click", (e) => {
+        e.preventDefault();
 
-        headerLink.addEventListener("click", function (e) {
-          e.preventDefault();
-          parentLi.classList.toggle("open");
-        });
-      }
+        if (submenu.style.display === "none") {
+          submenu.style.display = "block";
+          caption.classList.add("open");
+        } else {
+          submenu.style.display = "none";
+          caption.classList.remove("open");
+        }
+      });
     }
   });
 });
