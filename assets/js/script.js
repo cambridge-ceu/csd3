@@ -2,46 +2,56 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.querySelector(".sidebar");
   if (!sidebar) return;
 
+  const currentPath = window.location.pathname;
+
+  // Select all section headers with class 'caption'
   const captions = sidebar.querySelectorAll("a.caption");
 
   captions.forEach((caption) => {
     const submenu = caption.nextElementSibling;
-    const hasSubmenu = submenu && submenu.tagName.toLowerCase() === "ul";
+    const sectionKey = `sidebar-section-${caption.textContent.trim()}`;
 
-    if (hasSubmenu) {
-      // Check if any submenu item is active
-      const activeItem = submenu.querySelector(
-        "li.active, li.current, a.active, a.current"
-      );
+    if (submenu && submenu.tagName.toLowerCase() === "ul") {
+      // Check if the submenu contains an active link (including README.md)
+      const activeLink = submenu.querySelector(`a[href="${currentPath}"]`);
 
-      if (activeItem) {
-        // Show submenu if active item found
+      if (activeLink) {
+        // If current page is inside this section, open it by default and save state
         submenu.style.display = "block";
         caption.classList.add("open");
+        localStorage.setItem(sectionKey, "true");
       } else {
-        submenu.style.display = "none";
+        // Otherwise, restore open/closed state from localStorage or collapse by default
+        const wasOpen = localStorage.getItem(sectionKey) === "true";
+        if (wasOpen) {
+          submenu.style.display = "block";
+          caption.classList.add("open");
+        } else {
+          submenu.style.display = "none";
+          caption.classList.remove("open");
+        }
       }
 
-      // Toggle submenu on caption click
+      // Make caption clickable to toggle submenu open/closed
       caption.style.cursor = "pointer";
       caption.addEventListener("click", (e) => {
         e.preventDefault();
-        const isHidden = submenu.style.display === "none";
-        submenu.style.display = isHidden ? "block" : "none";
-        caption.classList.toggle("open", isHidden);
+
+        const isOpen = submenu.style.display === "block";
+        if (isOpen) {
+          submenu.style.display = "none";
+          caption.classList.remove("open");
+          localStorage.setItem(sectionKey, "false");
+        } else {
+          submenu.style.display = "block";
+          caption.classList.add("open");
+          localStorage.setItem(sectionKey, "true");
+        }
       });
     } else {
-      // No submenu — treat as normal link, cursor default
+      // For captions without submenu (like README.md-only sections),
+      // you can add extra logic here if needed
       caption.style.cursor = "pointer";
-
-      // Optional: if you want to expand/collapse README content when clicking this caption,
-      // you may implement that logic here if README content is hidden elsewhere.
-      // For example, open the README content panel or navigate as usual.
-      // If caption href points to README.md, no special toggle needed, just normal link.
     }
   });
-
-  // Ensure sections remain open after clicking submenu links
-  // For single-page app or dynamic loads, you might want to handle this differently
-  // For static site reloads, the active class should persist on the server side rendering
 });
