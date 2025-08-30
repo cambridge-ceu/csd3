@@ -1,8 +1,10 @@
-For enabling collapsible sidebar sections on Jekyll site with the jeky-rtd-theme:
+(with jekyll-rtd-theme) to have sidebar sections collapsed by default and toggle open/close on click **visible link texts**.
 
 ---
 
-## 1. `_layouts/default.liquid`
+## 1. Update `_layouts/default.liquid`
+
+Add the custom CSS and load your custom JS file.
 
 ```liquid
 ---
@@ -34,6 +36,24 @@ layout: tasks/compress
         height: auto;
         margin-top: 20px;
       }
+
+      /* Sidebar collapsed submenu */
+      .sidebar ul {
+        margin-left: 1em;
+      }
+      .sidebar a {
+        text-decoration: none;
+      }
+      .sidebar ul li a {
+        display: block;
+        cursor: pointer;
+      }
+      .sidebar ul li ul {
+        display: none; /* collapsed by default */
+      }
+      .sidebar ul li.open > ul {
+        display: block;
+      }
     </style>
   </head>
 
@@ -58,30 +78,40 @@ layout: tasks/compress
 
 ---
 
-## 2. `assets/js/script.js`
+## 2. Create `assets/js/script.js`
+
+Put this JavaScript that finds your sidebar sections by their visible link text, hides their sublists, and toggles them on click:
 
 ```js
 document.addEventListener("DOMContentLoaded", function () {
-  const sidebar = document.querySelector(".sidebar"); // Adjust this selector if needed
+  const sidebar = document.querySelector(".sidebar");
   if (!sidebar) return;
 
-  // List your sidebar section titles exactly as they appear in the sidebar links
+  // Use the exact sidebar link text for your sections here:
   const sections = ["systems", "Python", "R", "applications", "cardio"];
 
   sections.forEach((section) => {
+    // Find the sidebar link by matching the exact trimmed text content
     const headerLink = Array.from(sidebar.querySelectorAll("a")).find(
-      (a) => a.textContent.trim() === section
+      (a) => a.textContent.trim().toLowerCase() === section.toLowerCase()
     );
+
     if (headerLink) {
       const parentLi = headerLink.closest("li");
       const subList = parentLi.querySelector("ul");
+
       if (subList) {
-        subList.style.display = "none"; // Start collapsed
-        headerLink.style.cursor = "pointer";
+        // Initially collapsed (handled by CSS), but you can explicitly hide here if needed:
+        subList.style.display = "none";
+
+        // Add cursor style to header links via CSS above
+
         headerLink.addEventListener("click", function (e) {
           e.preventDefault();
-          subList.style.display =
-            subList.style.display === "none" ? "" : "none";
+          const isOpen = parentLi.classList.toggle("open");
+
+          // Toggle display of submenu ul
+          subList.style.display = isOpen ? "block" : "none";
         });
       }
     }
@@ -91,7 +121,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 ---
 
-## 3. `assets/css/style.css`
+## 3. Optional: `assets/css/style.css`
+
+You can keep this minimal or empty if all styles are inlined in default.liquid. But if you want a separate CSS file, copy the styles there and include it in your layout as shown.
 
 ```css
 .sidebar ul {
@@ -104,20 +136,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 .sidebar ul li a {
   display: block;
+  cursor: pointer;
 }
 
-/* Optional: style for cursor on clickable headers */
-.sidebar a {
-  cursor: pointer;
+.sidebar ul li ul {
+  display: none; /* collapsed by default */
+}
+
+.sidebar ul li.open > ul {
+  display: block;
 }
 ```
 
 ---
 
-### How to proceed:
+## Recap of what this does:
 
-1. Place the JS file in `assets/js/script.js`
-2. Place the CSS file in `assets/css/style.css` (or compile your `.scss` to CSS here)
-3. Confirm `_layouts/default.liquid` includes these files as above.
-4. Run `jekyll build` or `make build` to regenerate.
-5. Refresh your site, and you should see the sidebar sections collapsed initially, expandable on click.
+- Starts with all sidebar subsections collapsed (`display:none`).
+- Clicking a section title toggles that section open or closed.
+- It matches sidebar link text **case-insensitively** to your folder names or section labels.
+- Minimal CSS to style cursor and indentation.
+
+---
+
+## What to check/do next
+
+- Confirm exact sidebar link text in the page (use your browser’s dev tools).
+- Update the `sections` array in `script.js` with those exact texts.
+- Run `make build` or whatever you do to build your site.
+- Clear cache or do a hard refresh in browser.
+
+---
