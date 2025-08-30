@@ -19,6 +19,8 @@ highlighter: rouge
 gist:
   noscript: false
 
+mathjax: {}
+
 readme_index:
   with_frontmatter: true
   show_sorted: false
