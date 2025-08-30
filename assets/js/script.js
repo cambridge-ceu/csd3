@@ -2,9 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.querySelector(".sidebar");
   if (!sidebar) return;
 
-  const currentPath = window.location.pathname;
+  // Normalize URL: remove trailing slash for consistent comparison
+  function normalizeUrl(url) {
+    return url.replace(/\/$/, "");
+  }
 
-  // Select all section headers with class 'caption'
+  const currentPath = normalizeUrl(window.location.pathname);
+
   const captions = sidebar.querySelectorAll("a.caption");
 
   captions.forEach((caption) => {
@@ -12,16 +16,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const sectionKey = `sidebar-section-${caption.textContent.trim()}`;
 
     if (submenu && submenu.tagName.toLowerCase() === "ul") {
-      // Check if the submenu contains an active link (including README.md)
-      const activeLink = submenu.querySelector(`a[href="${currentPath}"]`);
+      // Check if any link in submenu matches currentPath exactly
+      let activeLink = null;
+
+      // Try exact match first
+      activeLink = Array.from(submenu.querySelectorAll("a")).find((link) => {
+        return normalizeUrl(link.getAttribute("href")) === currentPath;
+      });
+
+      // If no exact match, check if currentPath is the directory index for README.md
+      if (!activeLink) {
+        activeLink = Array.from(submenu.querySelectorAll("a")).find((link) => {
+          const href = normalizeUrl(link.getAttribute("href"));
+          // For example, if currentPath = "/Python" and href = "/Python/README"
+          return (
+            href.endsWith("/README") &&
+            currentPath === href.replace(/\/README$/, "")
+          );
+        });
+      }
 
       if (activeLink) {
-        // If current page is inside this section, open it by default and save state
         submenu.style.display = "block";
         caption.classList.add("open");
         localStorage.setItem(sectionKey, "true");
       } else {
-        // Otherwise, restore open/closed state from localStorage or collapse by default
         const wasOpen = localStorage.getItem(sectionKey) === "true";
         if (wasOpen) {
           submenu.style.display = "block";
@@ -32,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // Make caption clickable to toggle submenu open/closed
       caption.style.cursor = "pointer";
       caption.addEventListener("click", (e) => {
         e.preventDefault();
@@ -49,8 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     } else {
-      // For captions without submenu (like README.md-only sections),
-      // you can add extra logic here if needed
       caption.style.cursor = "pointer";
     }
   });
