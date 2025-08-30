@@ -1,5 +1,6 @@
 ---
 sort: 30
+layout: default
 ---
 
 # haplogrep
@@ -214,11 +215,3 @@ Rscript -e '
 ```
 
 where [hgdp.py](files/hgdp.py) is used to reformat the data to a required format by [sloan15.pl](files/sloan15.pl).
-
-<!-- MathJax config and script -->
-<script>
-  window.MathJax = {
-    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
-  };
-</script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
