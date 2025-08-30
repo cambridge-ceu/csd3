@@ -1,4 +1,11 @@
+{%- assign has_math = false -%}
+{%- if page.content contains "$$" or page.content contains "\\(" or page.content contains "\\[" or page.content contains "$" -%}
+  {%- assign has_math = true -%}
+{%- endif -%}
+
+{%- if has_math -%}
 <script>
-  window.MathJax = {% if site.mathjax %}{{ site.mathjax | jsonify }}{% else %}{}{% endif %};
+  window.MathJax = {{ site.mathjax | jsonify }};
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax/es5/tex-svg-full.js"></script>
+{%- endif -%}

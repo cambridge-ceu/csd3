@@ -19,7 +19,13 @@ highlighter: rouge
 gist:
   noscript: false
 
-mathjax: {}
+mathjax:
+  tex:
+    inlineMath:
+      - ["$", "$"]
+      - ['\\(', '\\)']
+  svg:
+    fontCache: "global"
 
 readme_index:
   with_frontmatter: true
