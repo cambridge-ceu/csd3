@@ -28,8 +28,12 @@ mathjax:
     fontCache: "global"
 
 readme_index:
-  with_frontmatter: true
-  show_sorted: false
+  enabled: true # Ensures the plugin is active
+  with_frontmatter: true # Only treat README.md as index if it contains YAML front matter (like your `sort: 2`)
+  show_sorted: false # Do NOT automatically list directory contents below README content
+  remove_originals: false # Keep the original README.md file accessible as /Python/README.html (optional)
+  auto_title: false # Prevents auto-generating a title from the first heading in README.md
+  auto_description: false # Prevents auto-generating meta description from README.md content
 
 plugins:
   - jekyll-default-layout
