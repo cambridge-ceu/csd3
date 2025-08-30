@@ -1,0 +1,20 @@
+.sidebar ul {
+  margin-left: 1em;
+}
+
+.sidebar a {
+  text-decoration: none;
+}
+
+.sidebar ul li a {
+  display: block;
+  cursor: pointer;
+}
+
+.sidebar ul li ul {
+  display: none; /* collapsed by default */
+}
+
+.sidebar ul li.open > ul {
+  display: block;
+}
