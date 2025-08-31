@@ -176,4 +176,4 @@ so as to use `module load stata; stata`
 
 ## Workflows
 
-Two of them are highlighted here, i.e., `ceuadmin/snakemake/7.19.1` and `ceuadmin/nextflow/23.10.1`.
+Two of them are highlighted here, i.e., `ceuadmin/snakemake/9.9.0-miniforge3` and `ceuadmin/nextflow/23.10.1`.
