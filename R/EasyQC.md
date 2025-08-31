@@ -14,7 +14,7 @@ Rscript -e "install.packages('https://homepages.uni-regensburg.de/~wit59712/easy
 
 ## Documentation example
 
-With installation at `${HPC_WORK}` (`/rds/user/$USER/hpc-work/R/EasyQC`) we could modify the example script
+With installation at \${HPC\_WORK}\ (/rds/user/\$USER/hpc-work/R/EasyQC) we could modify the example script
 
 ```bash
 sed -i "s|EASY_INSTALL_DIR|/rds/user/$USER/hpc-work/R/EasyQC/extdata/|" /rds/user/$USER/hpc-work/R/EasyQC/extdata/example_qc.ecf
