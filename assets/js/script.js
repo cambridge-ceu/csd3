@@ -2,35 +2,44 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.querySelector(".sidebar");
   if (!sidebar) return;
 
-  // Find all section headers (with class 'caption')
-  const captions = sidebar.querySelectorAll("a.caption");
+  const normalize = (url) => url.replace(/\/$/, "");
+  const current = normalize(window.location.pathname);
 
-  captions.forEach((caption) => {
-    let submenu = caption.nextElementSibling;
-
-    // If submenu is missing or not <ul>, optionally create one (uncomment if needed)
-    // if (!submenu || submenu.tagName.toLowerCase() !== "ul") {
-    //   submenu = document.createElement("ul");
-    //   caption.parentNode.insertBefore(submenu, caption.nextSibling);
-    // }
+  sidebar.querySelectorAll("a.caption").forEach((caption) => {
+    const submenu = caption.nextElementSibling;
+    const sectionKey =
+      "sidebar-" +
+      normalize(caption.getAttribute("href") || "").replace(/\//g, "_");
 
     if (submenu && submenu.tagName.toLowerCase() === "ul") {
-      // Hide submenu initially
-      submenu.style.display = "none";
+      const links = Array.from(submenu.querySelectorAll("a"));
+      const activeLink = links.find((link) => {
+        const href = normalize(link.getAttribute("href"));
+        return (
+          href === current ||
+          href === current + "/README" ||
+          (href.endsWith("/README") &&
+            current === href.replace(/\/README$/, ""))
+        );
+      });
 
-      // Make caption look clickable
+      if (activeLink) {
+        submenu.style.display = "block";
+        caption.classList.add("open");
+        localStorage.setItem(sectionKey, "true");
+      } else if (localStorage.getItem(sectionKey) === "true") {
+        submenu.style.display = "block";
+        caption.classList.add("open");
+      }
+
       caption.style.cursor = "pointer";
-
-      // Add click toggle behavior
       caption.addEventListener("click", (e) => {
         e.preventDefault();
-        const isHidden = submenu.style.display === "none";
-        submenu.style.display = isHidden ? "block" : "none";
-        caption.classList.toggle("open", isHidden);
+        const isOpen = submenu.style.display === "block";
+        submenu.style.display = isOpen ? "none" : "block";
+        caption.classList.toggle("open", !isOpen);
+        localStorage.setItem(sectionKey, !isOpen);
       });
-    } else {
-      // No submenu - disable pointer cursor (or style differently)
-      caption.style.cursor = "default";
     }
   });
 });
