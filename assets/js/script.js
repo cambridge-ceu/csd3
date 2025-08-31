@@ -2,50 +2,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.querySelector(".sidebar");
   if (!sidebar) return;
 
-  const currentPath = window.location.pathname;
+  const current = normalize(window.location.pathname);
 
-  const captions = sidebar.querySelectorAll("a.caption");
-
-  captions.forEach((caption) => {
+  sidebar.querySelectorAll("a.caption").forEach((caption) => {
     const submenu = caption.nextElementSibling;
-    const hasSubmenu = submenu && submenu.tagName.toLowerCase() === "ul";
+    const href = normalize(caption.getAttribute("href") || "");
 
-    const captionHref = caption.getAttribute("href");
+    let isActive = false;
 
-    const isActive =
-      caption.classList.contains("active") ||
-      (captionHref && currentPath === captionHref) ||
-      (hasSubmenu && submenu.querySelector(`a[href="${currentPath}"]`));
+    if (current === href) {
+      isActive = true;
+    } else if (submenu && submenu.tagName.toLowerCase() === "ul") {
+      isActive = Array.from(submenu.querySelectorAll("a")).some(
+        (link) => normalize(link.getAttribute("href") || "") === current
+      );
+    }
 
-    if (hasSubmenu) {
-      // Keep open if active
+    if (submenu && submenu.tagName.toLowerCase() === "ul") {
       submenu.style.display = isActive ? "block" : "none";
-      if (isActive) caption.classList.add("open");
-
+      caption.classList.toggle("open", isActive);
       caption.style.cursor = "pointer";
 
-      // Toggle submenu on click (without preventing navigation)
-      caption.addEventListener("click", (e) => {
-        // Do not preventDefault — allow navigation to README.md
-        const isHidden = submenu.style.display === "none";
-        submenu.style.display = isHidden ? "block" : "none";
-        caption.classList.toggle("open", isHidden);
+      caption.addEventListener("click", () => {
+        const nowOpen = submenu.style.display === "none";
+        submenu.style.display = nowOpen ? "block" : "none";
+        caption.classList.toggle("open", nowOpen);
+        // navigation still works through the href
       });
     }
   });
 
-  // Keep submenu open when any submenu link is clicked
-  const submenuLinks = sidebar.querySelectorAll("ul li a");
-  submenuLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      const parentSubmenu = link.closest("ul");
-      if (parentSubmenu) {
-        parentSubmenu.style.display = "block";
-        const parentCaption = parentSubmenu.previousElementSibling;
-        if (parentCaption && parentCaption.classList.contains("caption")) {
-          parentCaption.classList.add("open");
-        }
-      }
-    });
-  });
+  // Helper function:
+  function normalize(url) {
+    return url.replace(/\/$/, "");
+  }
 });
