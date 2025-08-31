@@ -2,52 +2,35 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.querySelector(".sidebar");
   if (!sidebar) return;
 
-  const currentPath = window.location.pathname.replace(/\/$/, ""); // trim trailing slash for consistency
-
+  // Find all section headers (with class 'caption')
   const captions = sidebar.querySelectorAll("a.caption");
 
   captions.forEach((caption) => {
-    const submenu = caption.nextElementSibling;
-    const sectionKey = `sidebar-section-${caption.textContent.trim()}`;
+    let submenu = caption.nextElementSibling;
+
+    // If submenu is missing or not <ul>, optionally create one (uncomment if needed)
+    // if (!submenu || submenu.tagName.toLowerCase() !== "ul") {
+    //   submenu = document.createElement("ul");
+    //   caption.parentNode.insertBefore(submenu, caption.nextSibling);
+    // }
 
     if (submenu && submenu.tagName.toLowerCase() === "ul") {
-      // Check for README.md or directory active link in submenu
-      const links = Array.from(submenu.querySelectorAll("a"));
-      const activeLink = links.find((link) => {
-        const href = link.getAttribute("href").replace(/\/$/, "");
-        return href === currentPath || href === currentPath + "/README.md";
-      });
+      // Hide submenu initially
+      submenu.style.display = "none";
 
-      if (activeLink) {
-        submenu.style.display = "block";
-        caption.classList.add("open");
-        localStorage.setItem(sectionKey, "true");
-      } else {
-        const wasOpen = localStorage.getItem(sectionKey) === "true";
-        if (wasOpen) {
-          submenu.style.display = "block";
-          caption.classList.add("open");
-        } else {
-          submenu.style.display = "none";
-          caption.classList.remove("open");
-        }
-      }
-
+      // Make caption look clickable
       caption.style.cursor = "pointer";
+
+      // Add click toggle behavior
       caption.addEventListener("click", (e) => {
         e.preventDefault();
-
-        const isOpen = submenu.style.display === "block";
-        if (isOpen) {
-          submenu.style.display = "none";
-          caption.classList.remove("open");
-          localStorage.setItem(sectionKey, "false");
-        } else {
-          submenu.style.display = "block";
-          caption.classList.add("open");
-          localStorage.setItem(sectionKey, "true");
-        }
+        const isHidden = submenu.style.display === "none";
+        submenu.style.display = isHidden ? "block" : "none";
+        caption.classList.toggle("open", isHidden);
       });
+    } else {
+      // No submenu - disable pointer cursor (or style differently)
+      caption.style.cursor = "default";
     }
   });
 });
