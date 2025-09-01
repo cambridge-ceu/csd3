@@ -1987,9 +1987,11 @@ They are generated from script [setup.sh](setup.sh),
     tar xf -
     cd htslib
     make # install prefix=$CEUADMIN/angsd/0.940
+    make clean
     cd -    
     cd angsd
-    make HTSSRC=../htslib install prefix=$CEUADMIN/angsd/0.940    
+    make HTSSRC=../htslib install prefix=$CEUADMIN/angsd/0.940
+    make clean
     ```
 
     Note that .tar.gz file is actually NOT gzipped, and the make command for htslib can also give a complete bin/include/lib/share set.
