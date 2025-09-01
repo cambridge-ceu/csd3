@@ -78,9 +78,9 @@ thetaStat do_stat test.thetas.idx \
   -outnames test.thetasWindow.gz
 ```
 
-Relevant plots theta_[w|pi|tajimasD]_sliding_window.png hare made with [angsd.R](files/angsd.R), and also ![Tajima's D extremes](files/tajimasD_extremes.png)
+Relevant plots `theta_[w|pi|tajimasD]_sliding_window.png` hare made with [angsd.R](files/angsd.R), and also Tajima's D extremes: ![](files/tajimasD_extremes.png)
 
-It is also useful to obtain the statistics,
+Lastly, it is useful to obtain the statistics,
 
 ```r
 library(dplyr)
@@ -90,7 +90,7 @@ df <- read.table("test.thetasWindow.gz.pestPG", header = FALSE, comment.char = "
 head(df)
 ```
 
-giving,
+giving
 
 ```
 > head(df)
