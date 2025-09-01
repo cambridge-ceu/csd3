@@ -100,7 +100,7 @@ plt.show()
 
 for ![](files/xpehh.png).
 
-### verification pipeline
+### Verification pipeline
 
 This is implemented in snakemke but minor changes are necessary.
 
