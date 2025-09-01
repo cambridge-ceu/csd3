@@ -27,7 +27,7 @@ Note that
 1. angsd0.940.tar.gz file is actually a tar file (NOT gzipped).
 2. The make command for htslib can also give a complete bin/include/lib/share set.
 3. Once installed, object files are cleaned in both cases.
-4. The package is associated withhtslib/1.16, and for 1.20 we use `make HTSSRC=/usr/local/Cluster-Apps/ceuadmin/htslib/1.20/lib`.
+4. The package is associated with htslib/1.16, and for 1.20 we use `make HTSSRC=/usr/local/Cluster-Apps/ceuadmin/htslib/1.20/lib`.
 
 ### docker / singularity
 
@@ -119,4 +119,4 @@ giving
 
 ## Reference
 
-Korneliussen, T.S., Albrechtsen, A. & Nielsen, R. ANGSD: Analysis of Next Generation Sequencing Data. BMC Bioinformatics 15, 356 (2014). <https://doi.org/10.1186/s12859-014-0356-4>
+Korneliussen, T.S., Albrechtsen, A. & Nielsen, R. ANGSD: Analysis of Next Generation Sequencing Data. *BMC Bioinformatics* 15, 356 (2014). <https://doi.org/10.1186/s12859-014-0356-4>

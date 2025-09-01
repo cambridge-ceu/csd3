@@ -119,4 +119,4 @@ giving output_sb/, output_sc/ and output/ containing files on ihs and nsl.
 
 Rahman A, Smith TQ, Szpiech ZA.
 Fast and Memory-Efficient Dynamic Programming Approach for Large-Scale EHH-Based Selection Scans.
-bioRxiv 2025.04.09.647986; doi: <https://doi.org/10.1101/2025.04.09.647986> 
+*bioRxiv* 2025.04.09.647986; doi: <https://doi.org/10.1101/2025.04.09.647986> 
