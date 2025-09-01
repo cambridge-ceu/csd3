@@ -80,6 +80,43 @@ thetaStat do_stat test.thetas.idx \
 
 Relevant plots theta_[w|pi|tajimasD]_sliding_window.png hare made with [angsd.R](files/angsd.R), and also ![Tajima's D extremes](files/tajimasD_extremes.png)
 
+It is also useful to obtain the statistics,
+
+```r
+library(dplyr)
+df <- read.table("test.thetasWindow.gz.pestPG", header = FALSE, comment.char = "#", sep = "\t", stringsAsFactors = FALSE) %>%
+      setNames(c("region_info", "chr", "WinCenter","tW", "tP", "tF", "tH", "tL","Tajima", "Fuli_F", "Fuli_D", "Fay_H", "Zeng_E","nSites")) %>%
+      mutate(chr = as.factor(chr),across(c(WinCenter, tW, tP, Tajima, nSites), as.numeric))
+head(df)
+```
+
+giving,
+
+```
+> head(df)
+                                          region_info chr WinCenter       tW
+1  (9133,58824)(14010000,14060000)(14010000,14060000)   1  14035000 17.40882
+2 (19114,68810)(14020000,14070000)(14020000,14070000)   1  14045000 15.10332
+3 (29008,78588)(14030000,14080000)(14030000,14080000)   1  14055000 14.71373
+4 (38985,88565)(14040000,14090000)(14040000,14090000)   1  14065000 13.05415
+5 (48845,98103)(14050000,14100000)(14050000,14100000)   1  14075000 13.99150
+6    (94,49056)(14000000,14050000)(14000000,14050000)  10  14025000 47.43012
+        tP        tF        tH       tL   Tajima   Fuli_F   Fuli_D     Fay_H
+1 21.13990  8.648461  24.89316 23.01653 0.869206 1.215710 1.053432 -0.211839
+2 18.08242  8.307945  22.39525 20.23884 0.795927 1.084410 0.930077 -0.279917
+3 16.49796 10.587703  19.05194 17.77494 0.488821 0.671592 0.578241 -0.170071
+4 13.43570 11.578619  14.67066 14.05318 0.117243 0.235333 0.230283 -0.092477
+5 14.36870 13.135692  16.18976 15.27923 0.108459 0.146702 0.125507 -0.127405
+6 50.88491 15.418646 111.74806 81.31649 0.301847 1.330259 1.494204 -1.273443
+    Zeng_E nSites
+1 0.343773  49691
+2 0.361323  49696
+3 0.220893  49580
+4 0.080912  49580
+5 0.097551  49258
+6 0.776548  48962
+```
+
 ## Reference
 
 Korneliussen, T.S., Albrechtsen, A. & Nielsen, R. ANGSD: Analysis of Next Generation Sequencing Data. BMC Bioinformatics 15, 356 (2014). <https://doi.org/10.1186/s12859-014-0356-4>
