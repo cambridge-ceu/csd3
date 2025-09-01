@@ -474,7 +474,7 @@ All entries are ordered chronologically.
 | ""         | llama.cpp/b6243                  | Generic               |
 | 2025-08-27 | ollama/0.11.7                    | Generic               |
 | 2025-08-28 | Zettlr/3.6.0                     | Generic               |
-| 2025-09-01 | selscan/2.1                      | Genetics              |
+| 2025-09-01 | selscan/2.1                      | Genetics[^selscan]    |
 | ""         | angsd/0.940                      | Genetics[^angsd]      |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
@@ -1979,6 +1979,10 @@ They are generated from script [setup.sh](setup.sh),
 
     Files are downloaded and extracted via [gcc-toolset-12.sh](files/gcc-toolset-12.sh), and post-processed with `cd gcc-toolset-12;rsync -a --exclude='opt/' opt/rh/gcc-toolset-12/root/ .`.
 
+[^selscan]: **selscan**
+
+    See <https://cambridge-ceu.github.io/csd3/applications/selscan.html>.
+
 [^angsd]: **angsd**
 
 
@@ -1994,4 +1998,4 @@ They are generated from script [setup.sh](setup.sh),
     make clean
     ```
 
-    Note that .tar.gz file is actually NOT gzipped, and the make command for htslib can also give a complete bin/include/lib/share set.
+    Note that .tar.gz file is actually NOT gzipped, and the make command for htslib can also give a complete bin/include/lib/share set. Once installed, object files are cleaned in both cases.
