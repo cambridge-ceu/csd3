@@ -1985,17 +1985,4 @@ They are generated from script [setup.sh](setup.sh),
 
 [^angsd]: **angsd**
 
-
-    ```bash
-    wget -oQ- https://github.com/ANGSD/angsd/releases/download/0.940/angsd0.940.tar.gz | \
-    tar xf -
-    cd htslib
-    make # install prefix=$CEUADMIN/angsd/0.940
-    make clean
-    cd -    
-    cd angsd
-    make HTSSRC=../htslib install prefix=$CEUADMIN/angsd/0.940
-    make clean
-    ```
-
-    Note that .tar.gz file is actually NOT gzipped, and the make command for htslib can also give a complete bin/include/lib/share set. Once installed, object files are cleaned in both cases.
+    See <https://cambridge-ceu.github.io/csd3/applications/angsd.html>.
