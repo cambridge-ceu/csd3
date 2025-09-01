@@ -474,6 +474,7 @@ All entries are ordered chronologically.
 | ""         | llama.cpp/b6243                  | Generic               |
 | 2025-08-27 | ollama/0.11.7                    | Generic               |
 | 2025-08-28 | Zettlr/3.6.0                     | Generic               |
+| 2025-09-01 | selscan/2.1                      | Genetics              |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 

@@ -85,22 +85,22 @@ The current list is as follows,
 [269] "regenie"                "regtools"               "RHHsoftware"            "RSEM"
 [273] "rst2pdf"                "rstudio"                "rtg-tools"              "rtmpdump"
 [277] "ruby"                   "rust"                   "sage"                   "samtools"
-[281] "Scala"                  "scGPT"                  "scl-utils"              "seqkit"
-[285] "SEQPower"               "shapeit"                "shapeit5"               "simNGS"
-[289] "singularity"            "SMR"                    "snakemake"              "sniffles"
-[293] "SNP2HLA"                "snptest"                "spread-sheet-widget"    "spyder"
-[297] "sqlite"                 "sra-tools"              "sshpass"                "ssw"
-[301] "STAR"                   "stata"                  "SurvivalAnalysis"       "SurvivalKit"
-[305] "SuSiEx"                 "SVanalyzer"             "Swift"                  "SYMPHONY"
-[309] "Synapse"                "tabix"                  "tandem"                 "tatami"
-[313] "tesseract"              "texinfo"                "ThermoRawFileParser"    "ThermoRawFileParserGUI"
-[317] "thunderbird"            "tidy"                   "tiff"                   "trinculo"
-[321] "trousers"               "truvari"                "Typora"                 "unbound"
-[325] "uv"                     "vala"                   "VarScan"                "vcftools"
-[329] "vdo"                    "VEGAS2"                 "verifyBamID"            "VirtualBox"
-[333] "VSCode"                 "VSCodium"               "vte"                    "Windsurf"
-[337] "wine"                   "wrk"                    "xpdf"                   "yaml-cpp"
-[341] "Zettlr"                 "Zotero"                 "zstd"
+[281] "Scala"                  "scGPT"                  "scl-utils"              "selscan"
+[285] "seqkit"                 "SEQPower"               "shapeit"                "shapeit5"
+[289] "simNGS"                 "singularity"            "SMR"                    "snakemake"
+[293] "sniffles"               "SNP2HLA"                "snptest"                "spread-sheet-widget"
+[297] "spyder"                 "sqlite"                 "sra-tools"              "sshpass"
+[301] "ssw"                    "STAR"                   "stata"                  "SurvivalAnalysis"
+[305] "SurvivalKit"            "SuSiEx"                 "SVanalyzer"             "Swift"
+[309] "SYMPHONY"               "Synapse"                "tabix"                  "tandem"
+[313] "tatami"                 "tesseract"              "texinfo"                "ThermoRawFileParser"
+[317] "ThermoRawFileParserGUI" "thunderbird"            "tidy"                   "tiff"
+[321] "trinculo"               "trousers"               "truvari"                "Typora"
+[325] "unbound"                "uv"                     "vala"                   "VarScan"
+[329] "vcftools"               "vdo"                    "VEGAS2"                 "verifyBamID"
+[333] "VirtualBox"             "VSCode"                 "VSCodium"               "vte"
+[337] "Windsurf"               "wine"                   "wrk"                    "xpdf"
+[341] "yaml-cpp"               "Zettlr"                 "Zotero"                 "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -444,6 +444,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | ""         | simNGS/1.7                   | Genetics    |
     | 2025-08-18 | impute5/1.2.0                | Genetics    |
     | ""         | shapeit5/5.1.1               | Genetics    |
+    | 2025-09-01 | selscan/2.1                  | Genetics    |
 
     \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 

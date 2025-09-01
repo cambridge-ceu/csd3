@@ -28,6 +28,18 @@ setup
 EOL
 }
 
+function _packages()
+{
+  export dir=$1
+  ls ${dir}/*md | grep -v -e README | sort | xargs -I {} basename {} .md | awk '{print NR,$1}' | \
+  parallel -j1 --env dir -C' ' '
+    echo {1} {2}
+    export line=2
+    export value={1}
+    sed -i "${line}s/\S\+/${value}/2" ${dir}/{2}.md
+  '
+}
+
 function _renum()
 # grep sort -w *md  | sort -k2,2n
 {
@@ -40,18 +52,6 @@ function _renum()
     export line=2
     export value={1}
     sed -i "${line}s/\S\+/${value}/2" ${folder}/{2}.md
-  '
-}
-
-function _packages()
-{
-  export dir=$1
-  ls ${dir}/*md | grep -v -e README | sort | xargs -I {} basename {} .md | awk '{print NR,$1}' | \
-  parallel -j1 --env dir -C' ' '
-    echo {1} {2}
-    export line=2
-    export value={1}
-    sed -i "${line}s/\S\+/${value}/2" ${dir}/{2}.md
   '
 }
 
