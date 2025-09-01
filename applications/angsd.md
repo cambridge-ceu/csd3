@@ -78,7 +78,7 @@ thetaStat do_stat test.thetas.idx \
   -outnames test.thetasWindow.gz
 ```
 
-Relevant plots are made with [angsd.R](files/angsd.R).
+Relevant plots theta_[w|pi|tajimasD]_sliding_window.png hare made with [angsd.R](files/angsd.R), and also ![Tajima's D extremes](files/tajimasD_extremes.png)
 
 ## Reference
 
