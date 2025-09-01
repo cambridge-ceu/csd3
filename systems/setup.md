@@ -475,6 +475,7 @@ All entries are ordered chronologically.
 | 2025-08-27 | ollama/0.11.7                    | Generic               |
 | 2025-08-28 | Zettlr/3.6.0                     | Generic               |
 | 2025-09-01 | selscan/2.1                      | Genetics              |
+| ""         | angsd/0.940                      | Genetics[^angsd]      |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -1977,3 +1978,15 @@ They are generated from script [setup.sh](setup.sh),
     Web: <https://dl.rockylinux.org/vault/centos/8-stream/AppStream/x86_64/os/Packages/>
 
     Files are downloaded and extracted via [gcc-toolset-12.sh](files/gcc-toolset-12.sh), and post-processed with `cd gcc-toolset-12;rsync -a --exclude='opt/' opt/rh/gcc-toolset-12/root/ .`.
+
+[^angsd]: **angsd**
+
+
+    ```bash
+    wget -oQ- https://github.com/ANGSD/angsd/releases/download/0.940/angsd0.940.tar.gz | \
+    tar xf -
+    cd angsd
+    make install prefix=$CEUADMIN/angsd/0.940
+    ```
+
+    Note that .tar.gz file is actually NOT gzipped.
