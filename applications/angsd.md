@@ -56,7 +56,7 @@ samtools faidx chimpHg19.fa.gz
 wget http://popgen.dk/software/download/angsd/bams.tar.gz
 tar xf bams.tar.gz
 ls bams/*.bam > bam.filelist
-# SAF
+# Site Allele Frequency (SAF)
 angsd -b bam.filelist \
       -ref hg19.nochr.fa \
       -anc chimpHg19.fa.gz \
