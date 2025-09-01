@@ -99,3 +99,18 @@ plt.show()
 ```
 
 for ![](files/xpehh.png).
+
+### verification pipeline
+
+This is implemented in snakemke but minor changes are necessary.
+
+```bash
+module load ceuadmin/snakemake/9.9.0-miniforge3
+module load ceuadmin/R
+cd verification_pipeline
+sed -i 's|/Users/amatur/code/selscan/|~/rds/software/selscan-2.1/|' config.yaml
+sed -i 's|/Users/amatur/code/selscan-amatur-main/bin/macos/||' Snakefile
+snakemake --cores 4
+```
+
+giving output_sb/, output_sc/ and output/ containing files on ihs and nsl.
