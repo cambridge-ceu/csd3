@@ -1985,8 +1985,11 @@ They are generated from script [setup.sh](setup.sh),
     ```bash
     wget -oQ- https://github.com/ANGSD/angsd/releases/download/0.940/angsd0.940.tar.gz | \
     tar xf -
+    cd htslib
+    make # install prefix=$CEUADMIN/angsd/0.940
+    cd -    
     cd angsd
-    make install prefix=$CEUADMIN/angsd/0.940
+    make HTSSRC=../htslib install prefix=$CEUADMIN/angsd/0.940    
     ```
 
-    Note that .tar.gz file is actually NOT gzipped.
+    Note that .tar.gz file is actually NOT gzipped, and the make command for htslib can also give a complete bin/include/lib/share set.
