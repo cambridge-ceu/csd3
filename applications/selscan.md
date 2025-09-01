@@ -2,7 +2,7 @@
 sort: 64
 ---
 
-# bcftools
+# selscan
 
 GitHub: <https://github.com/szpiech/selscan>
 
