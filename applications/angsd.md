@@ -91,7 +91,7 @@ thetaStat do_stat test.thetas.idx \
   -outnames test.thetasWindow.gz
 ```
 
-Relevant plots `theta_[w|pi|tajimasD]_sliding_window.png` hare made with [angsd.R](files/angsd.R), and also Tajima's D extremes: ![](files/tajimasD_extremes.png)
+Relevant plots [`theta_[w|pi|tajimasD]_sliding_window.png`](https://github.com/cambridge-ceu/csd3/tree/master/applications/files) are made with [angsd.R](files/angsd.R), including Tajima's D extremes: ![](files/tajimasD_extremes.png)
 
 Lastly, it is useful to obtain the statistics,
 
