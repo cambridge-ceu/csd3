@@ -27,7 +27,19 @@ Note that
 1. angsd0.940.tar.gz file is actually a tar file (NOT gzipped).
 2. The make command for htslib can also give a complete bin/include/lib/share set.
 3. Once installed, object files are cleaned in both cases.
-4. The package is associated with htslib/1.16, and for 1.20 we use `make HTSSRC=/usr/local/Cluster-Apps/ceuadmin/htslib/1.20/lib`.
+
+### ceuadmin/htslib/1.20
+
+The package is associated with htslib/1.16, and for 1.20 we use 
+
+```bash
+wget -qO- https://github.com/ANGSD/angsd/archive/refs/tags/0.940.tar.gz | tar xfz -
+cd angsd-0.940/
+export CPATH=/usr/local/Cluster-Apps/ceuadmin/htslib/1.20/include:$CPATH
+make HTSSRC=/usr/local/Cluster-Apps/ceuadmin/htslib/1.20/lib prefix=$CEUADMIN/angsd/0.940
+```
+
+which are less confusing with .tar.gz and with a more recent htslib.
 
 ### docker / singularity
 
