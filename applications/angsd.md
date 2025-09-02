@@ -35,8 +35,8 @@ The package is associated with htslib/1.16, and for 1.20 we use
 ```bash
 wget -qO- https://github.com/ANGSD/angsd/archive/refs/tags/0.940.tar.gz | tar xfz -
 cd angsd-0.940/
-export CPATH=/usr/local/Cluster-Apps/ceuadmin/htslib/1.20/include:$CPATH
-make HTSSRC=/usr/local/Cluster-Apps/ceuadmin/htslib/1.20/lib install prefix=$CEUADMIN/angsd/0.940
+export CPATH=$CEUADMIN/htslib/1.20/include:$CPATH
+make HTSSRC=$CEUADMIN/htslib/1.20/lib install prefix=$CEUADMIN/angsd/0.940
 make clean
 ```
 
