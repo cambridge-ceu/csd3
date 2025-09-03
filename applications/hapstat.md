@@ -19,7 +19,7 @@ singularity build --arch 386 hapstat.sif hapstat.def
 singularity exec hapstat.sif hapstat --help
 ```
 
-and the last command shows
+according to [hapstat.def](files/hapstat.def) and the last command shows
 
 ```
 hapstat v3.0 (01 August 2008)
@@ -41,7 +41,7 @@ Options:
     -o result                 output file or directory
 ```
 
-Nevertheless, the .sif thus created has difficulties in taking data and a Bash script is created.
+Nevertheless, the .sif thus created has difficulties in taking data and a Bash script [hapstat](files/hapstat)is created.
 
 ## Testing
 
