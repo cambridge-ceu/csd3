@@ -41,7 +41,7 @@ Options:
     -o result                 output file or directory
 ```
 
-Nevertheless, the .sif thus created has difficulties in taking data and a Bash script [hapstat](files/hapstat)is created.
+Nevertheless, the .sif thus created has difficulties in taking data and a Bash script [hapstat](files/hapstat) is created.
 
 ## Testing
 
