@@ -476,6 +476,7 @@ All entries are ordered chronologically.
 | 2025-08-28 | Zettlr/3.6.0                     | Generic               |
 | 2025-09-01 | selscan/2.1                      | Genetics[^selscan]    |
 | ""         | angsd/0.940                      | Genetics[^angsd]      |
+| 2025-09-03 | hapstat/3.0                      | Genetics[^hapstat]    |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -1986,3 +1987,7 @@ They are generated from script [setup.sh](setup.sh),
 [^angsd]: **angsd**
 
     See <https://cambridge-ceu.github.io/csd3/applications/angsd.html>.
+
+[^hapstat]: **hapstat**
+
+    See <https://cambridge-ceu.github.io/csd3/applications/hapstat.html>.

@@ -1,0 +1,116 @@
+#!/bin/bash
+
+set -e
+
+if [ $# -lt 2 ]; then
+  echo "Usage: $0 <study_file:type> <spec_file> [hapstat options]" >&2
+  exit 1
+fi
+
+study_type_arg="$1"
+spec_file="$2"
+shift 2
+
+IFS=':' read -r study_file study_type <<< "$study_type_arg"
+if [[ -z "$study_file" || -z "$study_type" ]]; then
+  echo "Error: first argument must be in format study_file:type" >&2
+  exit 1
+fi
+
+study_file_base="${study_file%.*}"
+container_path="$CEUADMIN/hapstat/3.0/hapstat.sif"
+user_args=("$@")
+
+# Default output file
+output_file="${study_file_base}.new"
+
+# Check if user supplied -o option
+has_o=0
+for ((i=0; i < ${#user_args[@]}; i++)); do
+  if [[ "${user_args[i]}" == "-o" ]]; then
+    has_o=1
+    break
+  fi
+done
+
+# Add default output file if missing -o
+if [[ $has_o -eq 0 ]]; then
+  user_args+=("-o" "$output_file")
+fi
+
+log_file="${study_file_base}.log"
+
+echo "[INFO] Running hapstat for study '$study_file_base', appending logs to '$log_file'"
+
+echo "[INFO] Running singularity with command:" | tee -a "$log_file"
+echo "singularity exec --bind \"$(pwd):/data\" \"$container_path\" /bin/bash <temp_script> \"$study_file\" \"$study_type\" \"$spec_file\" \"$study_file_base\" ${user_args[*]}" | tee -a "$log_file"
+
+# Create temp script file
+tmp_script=$(mktemp)
+chmod +x "$tmp_script"
+
+cat > "$tmp_script" << 'EOF'
+set -e
+
+study_file="$1"
+study_type="$2"
+spec_file="$3"
+study_file_base="$4"
+shift 4
+
+cd /tmp
+workdir="hapstat-work-$(date +%s)-$RANDOM"
+mkdir -p "$workdir"
+cd "$workdir"
+
+echo "[INFO] Container CWD: $(pwd)"
+echo "[INFO] Copying files from /data: $study_file, $spec_file"
+
+cp "/data/$study_file" .
+cp "/data/$spec_file" .
+
+# Compose and print hapstat command inside container
+hapstat_cmd=(hapstat "${study_file}:${study_type}" "$spec_file" "$@")
+echo "[INFO] Running hapstat command inside container:"
+echo "  ${hapstat_cmd[*]}"
+
+# Run hapstat
+"${hapstat_cmd[@]}"
+
+# Clean up temporary working directory inside container
+echo "[INFO] Cleaning up container workdir $workdir"
+cd /tmp
+rm -rf "$workdir"
+EOF
+
+# Run singularity with the temp script, capture output via tee
+singularity exec --bind "$(pwd):/data" "$container_path" /bin/bash "$tmp_script" \
+  "$study_file" "$study_type" "$spec_file" "$study_file_base" "${user_args[@]}" 2>&1 | tee -a "$log_file"
+
+rm "$tmp_script"
+
+# Parse last occurrence of container CWD and output file from the appended log
+workdir=$(tac "$log_file" | grep -m1 'Container CWD' | awk '{print $NF}')
+outfile=$(tac "$log_file" | grep -m1 'result saved to' | sed -E "s/.*result saved to '([^']+)'.*/\1/")
+
+if [[ -z "$workdir" ]]; then
+  echo "[ERROR] Could not find container workdir in log '$log_file'"
+  exit 1
+fi
+
+if [[ -z "$outfile" ]]; then
+  echo "[ERROR] Could not find output file name in log '$log_file'"
+  exit 1
+fi
+
+if [[ -f "$workdir/$outfile" ]]; then
+  echo "[INFO] Copying output file '$outfile' from container workdir '$workdir' to current directory"
+  cp "$workdir/$outfile" .
+else
+  echo "[ERROR] Output file '$outfile' not found in container workdir '$workdir'"
+  exit 1
+fi
+
+# Safety cleanup of any leftover /tmp/hapstat-work-* for this user
+echo "[INFO] Cleaning up any leftover /tmp/hapstat-work-* directories owned by user $USER"
+find /tmp -maxdepth 1 -type d -name 'hapstat-work-*' -user "$USER" -exec rm -rf {} +

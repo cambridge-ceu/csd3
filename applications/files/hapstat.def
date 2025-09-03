@@ -1,0 +1,14 @@
+Bootstrap: docker
+From: i386/debian:stable-slim
+
+%files
+  hapstat /opt/hapstat/
+  libstdc++.so.5 /usr/lib/i386-linux-gnu/libstdc++.so.5
+  libstdc++.so.5.0.7 /usr/lib/i386-linux-gnu/libstdc++.so.5.0.7
+
+%environment
+  export PATH=/opt/hapstat:$PATH
+  export LD_LIBRARY_PATH=/usr/lib/i386-linux-gnu:$LD_LIBRARY_PATH
+
+%runscript
+  exec /opt/hapstat/hapstat "$@"
