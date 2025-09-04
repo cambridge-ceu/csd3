@@ -4,7 +4,7 @@ sort: 4
 
 # angsd
 
-Web, <https://www.popgen.dk/angsd/index.php/ANGSD>
+Web: <https://www.popgen.dk/angsd/index.php/ANGSD>
 
 ## 0.940
 
