@@ -83,25 +83,25 @@ The current list is as follows,
 [261] "qpdf"                   "qt"                     "qtcreator"              "QTLtools"
 [265] "quarto"                 "quicktest"              "R"                      "raremetal"
 [269] "rclone"                 "readline"               "regenie"                "regtools"
-[273] "RHHsoftware"            "RSEM"                   "rst2pdf"                "rstudio"
-[277] "rtg-tools"              "rtmpdump"               "ruby"                   "rust"
-[281] "sage"                   "samtools"               "Scala"                  "scGPT"
-[285] "scl-utils"              "selscan"                "seqkit"                 "SEQPower"
-[289] "shapeit"                "shapeit5"               "simNGS"                 "singularity"
-[293] "SMR"                    "snakemake"              "sniffles"               "SNP2HLA"
-[297] "snptest"                "spread-sheet-widget"    "spyder"                 "sqlite"
-[301] "sra-tools"              "sshpass"                "ssw"                    "STAR"
-[305] "stata"                  "SurvivalAnalysis"       "SurvivalKit"            "SuSiEx"
-[309] "SVanalyzer"             "Swift"                  "SYMPHONY"               "Synapse"
-[313] "tabix"                  "tandem"                 "tatami"                 "tesseract"
-[317] "texinfo"                "ThermoRawFileParser"    "ThermoRawFileParserGUI" "thunderbird"
-[321] "tidy"                   "tiff"                   "trinculo"               "trousers"
-[325] "truvari"                "Typora"                 "unbound"                "uv"
-[329] "vala"                   "VarScan"                "vcftools"               "vdo"
-[333] "VEGAS2"                 "verifyBamID"            "VirtualBox"             "VSCode"
-[337] "VSCodium"               "vte"                    "Windsurf"               "wine"
-[341] "wrk"                    "xpdf"                   "yaml-cpp"               "Zettlr"
-[345] "Zotero"                 "zstd"
+[273] "relate"                 "RHHsoftware"            "RSEM"                   "rst2pdf"
+[277] "rstudio"                "rtg-tools"              "rtmpdump"               "ruby"
+[281] "rust"                   "sage"                   "samtools"               "Scala"
+[285] "scGPT"                  "scl-utils"              "selscan"                "seqkit"
+[289] "SEQPower"               "shapeit"                "shapeit5"               "simNGS"
+[293] "singularity"            "SMR"                    "snakemake"              "sniffles"
+[297] "SNP2HLA"                "snptest"                "spread-sheet-widget"    "spyder"
+[301] "sqlite"                 "sra-tools"              "sshpass"                "ssw"
+[305] "STAR"                   "stata"                  "SurvivalAnalysis"       "SurvivalKit"
+[309] "SuSiEx"                 "SVanalyzer"             "Swift"                  "SYMPHONY"
+[313] "Synapse"                "tabix"                  "tandem"                 "tatami"
+[317] "tesseract"              "texinfo"                "ThermoRawFileParser"    "ThermoRawFileParserGUI"
+[321] "thunderbird"            "tidy"                   "tiff"                   "trinculo"
+[325] "trousers"               "truvari"                "Typora"                 "unbound"
+[329] "uv"                     "vala"                   "VarScan"                "vcftools"
+[333] "vdo"                    "VEGAS2"                 "verifyBamID"            "VirtualBox"
+[337] "VSCode"                 "VSCodium"               "vte"                    "Windsurf"
+[341] "wine"                   "wrk"                    "xpdf"                   "yaml-cpp"
+[345] "Zettlr"                 "Zotero"                 "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -448,6 +448,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2025-09-01 | selscan/2.1                  | Genetics    |
     | ""         | angsd/0.940                  | Genetics    |
     | 2025-09-03 | hapstat/3.0                  | Genetics    |
+    | 2025-09-04 | relate/1.2.3                 | Genetics    |
 
     \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 

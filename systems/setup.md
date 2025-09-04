@@ -477,6 +477,7 @@ All entries are ordered chronologically.
 | 2025-09-01 | selscan/2.1                      | Genetics[^selscan]    |
 | ""         | angsd/0.940                      | Genetics[^angsd]      |
 | 2025-09-03 | hapstat/3.0                      | Genetics[^hapstat]    |
+| 2025-09-04 | relate/1.2.3                     | Genetics[^relate]     |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -1991,3 +1992,7 @@ They are generated from script [setup.sh](setup.sh),
 [^hapstat]: **hapstat**
 
     See <https://cambridge-ceu.github.io/csd3/applications/hapstat.html>.
+
+[^relate]: **relate**
+
+    See <https://cambridge-ceu.github.io/csd3/applications/relate.html>.
