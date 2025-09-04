@@ -1,15 +1,15 @@
 ---
-sort: 63
+sort: 64
 layout: default
 ---
 
 # relate
 
-Web, <https://myersgroup.github.io/relate/>
+Web: <https://myersgroup.github.io/relate/>
 
 ## 1.2.3
 
-Firefox / 142.0 would lose part of the files, and chrome is used instead. Both dynamic and static distributions work well under CSD3.
+Firefox / 142.0 would lose part of the files, and Chrome is used instead. Both dynamic and static distributions work well under CSD3.
 
 ## Testing
 

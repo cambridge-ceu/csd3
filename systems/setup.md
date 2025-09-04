@@ -478,6 +478,7 @@ All entries are ordered chronologically.
 | ""         | angsd/0.940                      | Genetics[^angsd]      |
 | 2025-09-03 | hapstat/3.0                      | Genetics[^hapstat]    |
 | 2025-09-04 | relate/1.2.3                     | Genetics[^relate]     |
+| ""         | clues2/github                    | Genetics[^clues2]     |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -1996,3 +1997,7 @@ They are generated from script [setup.sh](setup.sh),
 [^relate]: **relate**
 
     See <https://cambridge-ceu.github.io/csd3/applications/relate.html>.
+
+[^clues2]: **clues2**
+
+    Somewhat confusing, the software has been called CLUES2 and detailed in <https://cambridge-ceu.github.io/csd3/applications/clues2.html>.
