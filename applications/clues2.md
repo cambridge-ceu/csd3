@@ -5,7 +5,7 @@ layout: default
 
 # CLUES2
 
-Web: <https://github.com/avaughn271/CLUES2>
+GitHub: <https://github.com/avaughn271/CLUES2>
 
 ## Installation
 
