@@ -3,7 +3,7 @@ sort: 64
 layout: default
 ---
 
-# relate
+# Relate
 
 Web: <https://myersgroup.github.io/relate/>
 
