@@ -15,10 +15,10 @@ Firefox / 142.0 would lose part of the files, and Chrome is used instead. Both d
 
 A well-organised `run-relate.sh` can be started from example/ directory.
 
-## Reference
+## References
 
 Liu X, et al. Selection at the *GSDMC* locus in horses and its implications for human mobility. *Science* 389: 925-930 (2025). <https://www.science.org/doi/10.1126/science.adp4581>.
 
 Speidel, L, et al. A method for genome-wide genealogy estimation for thousands of samples. *Nat Genet* 51: 1321–1329 (2019). <https://doi.org/10.1038/s41588-019-0484-x>
 
-Speidel L, et al., Inferring Population Histories for Ancient Genomes Using Genome-Wide Genealogies. *Mol Biol Evol* 38 (9): 3497–3511, 2021, <https://doi.org/10.1093/molbev/msab174>
+Speidel L, et al., Inferring population histories for ancient genomes Using genome-Wide genealogies. *Mol Biol Evol* 38 (9): 3497–3511, 2021, <https://doi.org/10.1093/molbev/msab174>

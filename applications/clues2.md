@@ -112,4 +112,4 @@ See src/examples/ directory.
 Stern AJ, Wilton PR, Nielsen R. An approximate full-likelihood method for inferring selection and allele frequency trajectories from
 DNA sequence data. *PLoS Genet* 2019, 15(9):1–32. <https://doi.org/10.1371/journal.pgen.1008384>.
 
-Vaughn AH, Nielsen R, Fast and Accurate Estimation of Selection Coefficients and Allele Histories from Ancient and Modern DNA, *Mol Biol Evol* 2024, 41(8): msae156, <https://doi.org/10.1093/molbev/msae156>.
+Vaughn AH, Nielsen R, Fast and accurate estimation of selection coefficients and allele histories from ancient and modern DNA, *Mol Biol Evol* 2024, 41(8): msae156, <https://doi.org/10.1093/molbev/msae156>.
