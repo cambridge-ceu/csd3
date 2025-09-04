@@ -52,7 +52,7 @@ singularity pull docker://quay.io/biocontainers/angsd:0.940--h13024bc_4
 singularity exec angsd_0.940--h13024bc_4.sif angsd --help
 ```
 
-### Test
+### Testing
 
 ```bash
 module load ceuadmin/samtools
