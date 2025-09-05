@@ -38,9 +38,10 @@ ${PATH_TO_RELATE}/scripts/TreeView/TreeViewSample.sh \
         --poplabels ./data/example.poplabels \
         --dist example_bypop_sampled.dist \
         -o plot
+convert plot.pdf relate-plot.png
 ```
 
-where the module mirrors the definition in `run-relate.sh` with the named global variable `PATH_TO_RELATE`.
+where the module mirrors the definition in `run-relate.sh` with the named global variable `PATH_TO_RELATE`. Internally, the second chunk here calls R/ggplot2 for plot.pdf, which is converted by ImageMagick to [relate-plot.png](files/relate-plot.png).
 
 ## References
 
