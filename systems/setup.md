@@ -2016,3 +2016,5 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     which gives command line options.
+
+    Excoffier L, et al. fastsimcoal2: demographic inference under complex evolutionary scenarios. *Bioinformatics* 37 (24):4882–4885, 2021, <https://doi.org/10.1093/bioinformatics/btab468>
