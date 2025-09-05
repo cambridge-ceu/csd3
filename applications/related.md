@@ -11,6 +11,8 @@ Web: <https://myersgroup.github.io/relate/>
 
 Firefox / 142.0 would lose part of the files, and Chrome is used instead. Both dynamic and static distributions work well under CSD3.
 
+Besides defining an evironmental variable PATH_TO_RELATE, `ceuadmin/R/latest` is also called in the module definition.
+
 ## Testing
 
 A well-organised `run-relate.sh` can be started from example/ directory; the last two code chunks are used here.
