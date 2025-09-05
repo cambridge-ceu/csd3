@@ -13,7 +13,34 @@ Firefox / 142.0 would lose part of the files, and Chrome is used instead. Both d
 
 ## Testing
 
-A well-organised `run-relate.sh` can be started from example/ directory.
+A well-organised `run-relate.sh` can be started from example/ directory; the last two code chunks are used here.
+
+```bash
+module load ceuadmin/relate
+cd example
+${PATH_TO_RELATE}/scripts/SampleBranchLengths/SampleBranchLengths.sh \
+        -i example \
+        -o example_bypop_sampled \
+        -m 1.25e-8 \
+        --coal example_bypop.coal \
+        --first_bp 199990000 \
+        --last_bp 200010000 \
+        --seed 1 \
+        --num_samples 100
+
+${PATH_TO_RELATE}/scripts/TreeView/TreeViewSample.sh \
+        --haps ./data/example.haps.gz \
+        --sample ./data/example.sample.gz \
+        --anc example_bypop_sampled.anc \
+        --mut example_bypop_sampled.mut \
+        --bp_of_interest 200000000 \
+        --years_per_gen 28 \
+        --poplabels ./data/example.poplabels \
+        --dist example_bypop_sampled.dist \
+        -o plot
+```
+
+where the module mirrors the definition in `run-relate.sh` with the named global variable `PATH_TO_RELATE`.
 
 ## References
 

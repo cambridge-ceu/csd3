@@ -107,6 +107,24 @@ ls -lh results_test*
 
 See src/examples/ directory.
 
+```bash
+python3 inference.py \
+    --N 30000 \
+    --popFreq 0.52 \
+    --times examples/MCM6_times.txt \
+    --df 600 \
+    --tCutoff 536 \
+    --noAlleleTraj \
+    --out examples/ALL_MCM6
+```
+
+giving `examples/ALL_MCM6_inference.txt`:
+
+```
+logLR   -log10(p-value) Epoch1_start    Epoch1_end      SelectionMLE1
+31.2746 14.59   0       536     0.01223
+```
+
 ## References
 
 Stern AJ, Wilton PR, Nielsen R. An approximate full-likelihood method for inferring selection and allele frequency trajectories from
