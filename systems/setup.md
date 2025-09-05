@@ -479,6 +479,7 @@ All entries are ordered chronologically.
 | 2025-09-03 | hapstat/3.0                      | Genetics[^hapstat]    |
 | 2025-09-04 | relate/1.2.3                     | Genetics[^relate]     |
 | ""         | clues2/github                    | Genetics[^clues2]     |
+| 2025-09-05 | fsc2/2.8.0                       | Genetics[^fsc2]       |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2001,3 +2002,17 @@ They are generated from script [setup.sh](setup.sh),
 [^clues2]: **clues2**
 
     Somewhat confusing, the software has been called CLUES2 and detailed in <https://cambridge-ceu.github.io/csd3/applications/clues2.html>.
+
+[^fsc2]: **fastsimcoal2**
+
+    Web: <https://cmpg.unibe.ch/software/fastsimcoal2/>
+
+    ```bash
+    wget https://cmpg.unibe.ch/software/fastsimcoal2/downloads/fsc28_linux64.zip
+    unzip fsc28_linux64.zip
+    cd fsc28_linux64/
+    chmod +x fsc28
+    ./fsc28
+    ```
+
+    which gives command line options.
