@@ -6,7 +6,7 @@ sort: 60
 
 ## 11.9.1
 
-This is built under CentOS 8 (icelakte).
+This is built under CentOS 8 (icelake).
 
 ```bash
 wget -qO- https://github.com/qpdf/qpdf/archive/refs/tags/v11.9.1.tar.gz | \
