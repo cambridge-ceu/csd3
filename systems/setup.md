@@ -2005,22 +2005,4 @@ They are generated from script [setup.sh](setup.sh),
 
 [^fsc2]: **fastsimcoal2**
 
-    Web: <https://cmpg.unibe.ch/software/fastsimcoal2/>
-
-    ```bash
-    wget https://cmpg.unibe.ch/software/fastsimcoal2/downloads/fsc28_linux64.zip
-    unzip fsc28_linux64.zip
-    cd fsc28_linux64/
-    chmod +x fsc28
-    ./fsc28
-    ```
-
-    which gives command line options. When the module is built, one can use this script.
-
-    ```bash
-    module load ceuadmin/fsc2/2.8.0
-    cd examples
-    fsc28 -i 1PopDNA.par -n 1 -d -e
-    ```
-
-    Excoffier L, et al. fastsimcoal2: demographic inference under complex evolutionary scenarios. *Bioinformatics* 37 (24):4882–4885, 2021, <https://doi.org/10.1093/bioinformatics/btab468>
+    See <https://cambridge-ceu.github.io/csd3/applications/fsc2.html>.
