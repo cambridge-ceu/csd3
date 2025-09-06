@@ -4,7 +4,7 @@ sort: 57
 
 # PRSoS
 
-Web page: https://github.com/MeaneyLab/PRSoS.
+Web: <https://github.com/MeaneyLab/PRSoS>
 
 ```bash
 git clone https://github.com/MeaneyLab/PRSoS.git
