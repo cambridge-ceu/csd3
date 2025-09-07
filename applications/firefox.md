@@ -6,7 +6,7 @@ sort: 25
 
 <font color="red"><b>7/9/2025 Update</b></font>
 
-firefox/143.0a1 finally starts browsing normally with MOZ_FORCE_DISABLE_E10S=1.
+Module ceuadmin/firefox/nightly (143.0a1) finally starts browsing normally (as defined with MOZ_FORCE_DISABLE_E10S=1).
 
 ## mozilla-firefox
 
