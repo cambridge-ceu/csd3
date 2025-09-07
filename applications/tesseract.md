@@ -18,31 +18,25 @@ cd tesseract-5.5.0/
 ./autogen.sh
 ./configure --prefix=$CEUADMIN/tesseract/5.5.0 CXXFLAGS="-std=c++17" LDFLAGS="-lstdc++fs"
 make && make install
-# now defined as /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata/configs which contains hocr, pdf, etc.
-# more on hocr: configs is a symbolic link
-# ls -l /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0/configs
-# /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0/configs -> tessconfigs/configs
-# mkdir /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0/tessconfigs/configs
-# echo "hocr" > /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0/configs/hocr
-# echo "tessedit_create_hocr 1" > /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0/tessconfigs/configs/hocr
-```
-
-## Testing
-
-It is necessary to set up the languages,
-
-```bash
+# Languages
 wget -qO- https://github.com/tesseract-ocr/tessdata_best/archive/refs/tags/4.1.0.tar.gz | \
 tar xvfz -
 export TESSDATA_PREFIX="/usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0"
-mkdir -p ~/tessdata
-cd ~/tessdata
+cd $TESSDATA_PREFIX
+ln -s /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata/configs
 # Modern Greek
 wget https://github.com/tesseract-ocr/tessdata_best/raw/main/ell.traineddata
 # Ancient Greek
 wget https://github.com/tesseract-ocr/tessdata_best/raw/main/grc.traineddata
 # Equation detection
 wget https://github.com/tesseract-ocr/tessdata_best/raw/main/equ.traineddata
+```
+
+## Testing
+
+A list of languages can be viewed and used for OCR from image,
+
+```bash
 tesseract --list-langs
 tesseract lang.jpeg lang -l eng
 ```
@@ -53,7 +47,7 @@ Note further that Chrome/Edge/Firefox extension `OCR Image Reader` calls `tesser
 
 ## Tesseract + OCRmyPDF + ghostscript / img2pdf for vector-based text
 
-A variety of experiments are conducted below,
+Several experiments are conducted below,
 
 ```bash
 module load ceuadmin/tesseract
@@ -132,7 +126,7 @@ Total file size ratio: 0.98 savings: -1.6%                                      
 Output file is a PDF/A-2B (as expected)                                                                                        _common.py:474
 ```
 
-out.pdf keeps all the bookmarks, and is smaller which contrasts to no bookmarks and much larger out2.pdf. In both cases we can check the pdf, e.g.,
+out.pdf keeps all the bookmarks, and is smaller which contrasts to out2.pdf with no bookmarks and much larger. In both cases we can check the pdf, e.g.,
 
 ```bash
 pdffonts out.pdf
