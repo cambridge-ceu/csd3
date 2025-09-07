@@ -79,7 +79,7 @@ gs -o out.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress temp_ocr.pdf
 ## 2nd attempt
 pdftoppm -r 450 Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf page -png
 img2pdf page-*.png -o image_only.pdf
-ocrmypdf -j 5 --optimize 3 -l eng+ell image_only.pdf out2.pdf
+ocrmypdf -j 5 --optimize 3 --tesseract-timeout 300 -l eng+ell image_only.pdf out2.pdf
 ```
 
 We see that
