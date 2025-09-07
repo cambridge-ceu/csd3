@@ -132,4 +132,9 @@ Total file size ratio: 0.98 savings: -1.6%                                      
 Output file is a PDF/A-2B (as expected)                                                                                        _common.py:474
 ```
 
-out.pdf keeps all the bookmarks, and is smaller which contrasts to no bookmarks and much larger out2.pdf.
+out.pdf keeps all the bookmarks, and is smaller which contrasts to no bookmarks and much larger out2.pdf. In both cases we can check the pdf, e.g.,
+
+```bash
+pdffonts out.pdf
+pdftotext out.pdf - | less
+```
