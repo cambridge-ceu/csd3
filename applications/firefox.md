@@ -4,6 +4,10 @@ sort: 25
 
 # firefox
 
+<font color="red"><b>7/9/2025 Update</b></font>
+
+firefox/143.0a1 finally starts browsing normally with MOZ_FORCE_DISABLE_E10S=1.
+
 ## mozilla-firefox
 
 As of 13/5/2025, firefox is moved from gecko-dev (see below) to <https://github.com/mozilla-firefox/firefox>.
@@ -25,6 +29,8 @@ cd firefox
 export MOZCONFIG=/rds/project/rds-4o5vpvAowP0/software/firefox/mozconfig
 ./mach configure --prefix=$CEUADMIN/firefox/nightly
 make
+MOZ_FORCE_DISABLE_E10S=1 ./mach run
+./mach package
 ./mach install
 ```
 
@@ -43,6 +49,7 @@ Resolving deltas: 100% (9503284/9503284), done.
 Updating files: 100% (385169/385169), done.
 ...
 Adding configure options from /rds/project/rds-4o5vpvAowP0/software/firefox/mozconfig
+Created package: /rds/project/rds-4o5vpvAowP0/software/firefox/obj-x86_64-pc-linux-gnu/dist/firefox-143.0a1.en-US.linux-x86_64.tar.xz
 ```
 
 ## gecko-dev
