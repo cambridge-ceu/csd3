@@ -67,14 +67,14 @@ pdffonts ucam.pdf
 # alpha channel on png
 convert ucam.png -alpha remove -alpha off ucam_noalpha.png
 convert ucam_noalpha.png ucam_noalpha.pdf
-ocrmypdf -j 5 --tesseract-config hocr -l eng+ell ucam_noalpha.pdf ucam_ocr.pdf
+ocrmypdf --tesseract-config hocr -l eng+ell ucam_noalpha.pdf ucam_ocr.pdf
 # 
 module load ceuadmin/ghostscript/9.56.1
 module load ceuadmin/jbig2enc/0.30
 module load ceuadmin/pngquant/3.0.3
 ## 1st attempt
-ocrmypdf --force-ocr -l eng+ell \
-         Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf temp_ocr.pdf && \
+ocrmypdf -j 5 --force-ocr --optimize 3 --tesseract-timeout 300  -l eng+ell \
+         Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf temp_ocr.pdf
 gs -o out.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress temp_ocr.pdf
 ## 2nd attempt
 pdftoppm -r 450 Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf page -png
@@ -82,12 +82,54 @@ img2pdf page-*.png -o image_only.pdf
 ocrmypdf -j 5 --force-ocr --optimize 3 --tesseract-timeout 300 -l eng+ell image_only.pdf out2.pdf
 ```
 
-We see that
+where and jbig2enc leads to smarter text compression and pngquant for color image compression. We see that
 
 ```
+$ pdffonts ucam.pdf
 name                                 type              encoding         emb sub uni object ID
 ------------------------------------ ----------------- ---------------- --- --- --- ---------
 GlyphLessFont                        CID TrueType      Identity-H       yes no  yes      3  0
+$ ocrmypdf -j 5 --force-ocr --optimize 3 --tesseract-timeout 300  -l eng+ell \
+          Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf temp_ocr.pdf
+Scanning contents     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 516/516 0:00:00
+Start processing 5 pages concurrently                                                                                               ocr.py:96
+...
+
+OCR                   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 516/516 0:00:00
+Postprocessing...                                                                                                                  ocr.py:144
+PDF/A conversion      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 516/516 0:00:00
+Some input metadata could not be copied because it is not permitted in PDF/A. You may wish to examine the output PDF's XMP    _metadata.py:63
+metadata.
+Linearizing           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 100/100 0:00:00
+Recompressing JPEGs   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 1/1 0:00:00
+Deflating JPEGs       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 1/1 0:00:00
+PNGs                  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   0% 0/0 -:--:--
+JBIG2                 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 514/514 0:00:00
+Image optimization ratio: 1.19 savings: 16.1%                                                                               _pipeline.py:1002
+Total file size ratio: 2.06 savings: 51.4%                                                                                  _pipeline.py:1005
+Output file is a PDF/A-2B (as expected)                                                                                        _common.py:474
+GPL Ghostscript 9.56.1 (2022-04-04)
+Copyright (C) 2022 Artifex Software, Inc.  All rights reserved.
+This software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:
+see the file COPYING for details.
+Processing pages 1 through 516.
+$ gs -o out.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress temp_ocr.pdf
+
+$ocrmypdf -j 5 --force-ocr --optimize 3 --tesseract-timeout 300 -l eng+ell image_only.pdf out2.pdf
+Scanning contents     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 526/526 0:00:00
+Start processing 5 pages concurrently                                                                                               ocr.py:96    3 [tesseract] read_params_file: Can't open txt                                                                           tesseract.py:257
+...
+OCR                   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 526/526 0:00:00
+Postprocessing...                                                                                                                  ocr.py:144
+PDF/A conversion      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 526/526 0:00:00
+Linearizing           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 100/100 0:00:00
+Recompressing JPEGs   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 4/4 0:00:00
+Deflating JPEGs       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 4/4 0:00:00
+PNGs                  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   0% 0/0 -:--:--
+JBIG2                 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   0% 0/0 -:--:--
+Image optimization ratio: 1.01 savings: 0.7%                                                                                _pipeline.py:1002
+Total file size ratio: 0.98 savings: -1.6%                                                                                  _pipeline.py:1005
+Output file is a PDF/A-2B (as expected)                                                                                        _common.py:474
 ```
 
-and jbig2enc leads to smarter text compression and pngquant for color image compression.
+out.pdf keeps all the bookmarks, and is smaller which contrasts to no bookmarks and much larger out2.pdf.
