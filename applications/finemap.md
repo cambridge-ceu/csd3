@@ -80,6 +80,6 @@ We have
 
 ## References
 
-Benner C, Spencer CC, Havulinna AS, Salomaa V, Ripatti S, Pirinen M. FINEMAP: efficient variable selection using summary data from genome-wide association studies. Bioinformatics. 2016 May 15;32(10):1493-501. doi: 10.1093/bioinformatics/btw018. Epub 2016 Jan 14. PMID: 26773131; PMCID: PMC4866522.
+Benner C, Spencer CC, Havulinna AS, Salomaa V, Ripatti S, Pirinen M. FINEMAP: efficient variable selection using summary data from genome-wide association studies. *Bioinformatics* 2016 May 15;32(10):1493-501. doi: 10.1093/bioinformatics/btw018. Epub 2016 Jan 14. PMID: 26773131; PMCID: PMC4866522.
 
-Benner C, Havulinna AS, Järvelin MR, Salomaa V, Ripatti S, Pirinen M. Prospects of Fine-Mapping Trait-Associated Genomic Regions by Using Summary Statistics from Genome-wide Association Studies. Am J Hum Genet. 2017 Oct 5;101(4):539-551. doi: 10.1016/j.ajhg.2017.08.012. Epub 2017 Sep 21. PMID: 28942963; PMCID: PMC5630179.
+Benner C, Havulinna AS, Järvelin MR, Salomaa V, Ripatti S, Pirinen M. Prospects of Fine-Mapping Trait-Associated Genomic Regions by Using Summary Statistics from Genome-wide Association Studies. *Am J Hum Genet* 2017 Oct 5;101(4):539-551. doi: 10.1016/j.ajhg.2017.08.012. Epub 2017 Sep 21. PMID: 28942963; PMCID: PMC5630179.
