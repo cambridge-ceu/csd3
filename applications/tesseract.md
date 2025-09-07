@@ -62,16 +62,16 @@ convert ucam_noalpha.png ucam_noalpha.pdf
 ocrmypdf --tesseract-config hocr -l eng ucam_noalpha.pdf ucam_ocr.pdf
 # 
 module load ceuadmin/ghostscript/9.56.1
+module load ceuadmin/jbig2enc/0.30
+module load ceuadmin/pngquant/3.0.3
 ## 1st attempt
 ocrmypdf --force-ocr -l eng \
          Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf temp_ocr.pdf && \
 gs -o out.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress temp_ocr.pdf
 ## 2nd attempt
-module load ceuadmin/jbig2enc/0.30
-module load ceuadmin/pngquant/3.0.3
-pdftoppm -r 400 Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf page -png
+pdftoppm -r 450 Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf page -png
 img2pdf page-*.png -o image_only.pdf
-ocrmypdf --jbig2-lossless --optimize 3 -l eng+equ+gre image_only.pdf out.pdf
+ocrmypdf --optimize 3 -l eng image_only.pdf out2.pdf
 ```
 
 We see that
