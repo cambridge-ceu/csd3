@@ -34,6 +34,14 @@ It is necessary to set up the languages,
 wget -qO- https://github.com/tesseract-ocr/tessdata_best/archive/refs/tags/4.1.0.tar.gz | \
 tar xvfz -
 export TESSDATA_PREFIX="/usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0"
+mkdir -p ~/tessdata
+cd ~/tessdata
+# Modern Greek
+wget https://github.com/tesseract-ocr/tessdata_best/raw/main/ell.traineddata
+# Ancient Greek
+wget https://github.com/tesseract-ocr/tessdata_best/raw/main/grc.traineddata
+# Equation detection
+wget https://github.com/tesseract-ocr/tessdata_best/raw/main/equ.traineddata
 tesseract --list-langs
 tesseract lang.jpeg lang -l eng
 ```
@@ -59,7 +67,7 @@ pdffonts ucam.pdf
 # alpha channel on png
 convert ucam.png -alpha remove -alpha off ucam_noalpha.png
 convert ucam_noalpha.png ucam_noalpha.pdf
-ocrmypdf --tesseract-config hocr -l eng ucam_noalpha.pdf ucam_ocr.pdf
+ocrmypdf --tesseract-config hocr -l eng+ell ucam_noalpha.pdf ucam_ocr.pdf
 # 
 module load ceuadmin/ghostscript/9.56.1
 module load ceuadmin/jbig2enc/0.30
@@ -71,7 +79,7 @@ gs -o out.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress temp_ocr.pdf
 ## 2nd attempt
 pdftoppm -r 450 Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf page -png
 img2pdf page-*.png -o image_only.pdf
-ocrmypdf --optimize 3 -l eng image_only.pdf out2.pdf
+ocrmypdf --optimize 3 -l eng+ell image_only.pdf out2.pdf
 ```
 
 We see that
