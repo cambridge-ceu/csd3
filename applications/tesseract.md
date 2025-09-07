@@ -114,8 +114,7 @@ This software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:
 see the file COPYING for details.
 Processing pages 1 through 516.
 $ gs -o out.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress temp_ocr.pdf
-
-$ocrmypdf -j 5 --force-ocr --optimize 3 --tesseract-timeout 300 -l eng+ell image_only.pdf out2.pdf
+$ ocrmypdf -j 5 --force-ocr --optimize 3 --tesseract-timeout 300 -l eng+ell image_only.pdf out2.pdf
 Scanning contents     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 526/526 0:00:00
 Start processing 5 pages concurrently                                                                                               ocr.py:96    3 [tesseract] read_params_file: Can't open txt                                                                           tesseract.py:257
 ...
