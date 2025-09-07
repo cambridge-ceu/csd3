@@ -67,7 +67,7 @@ pdffonts ucam.pdf
 # alpha channel on png
 convert ucam.png -alpha remove -alpha off ucam_noalpha.png
 convert ucam_noalpha.png ucam_noalpha.pdf
-ocrmypdf --tesseract-config hocr -l eng+ell ucam_noalpha.pdf ucam_ocr.pdf
+ocrmypdf -j 5 --tesseract-config hocr -l eng+ell ucam_noalpha.pdf ucam_ocr.pdf
 # 
 module load ceuadmin/ghostscript/9.56.1
 module load ceuadmin/jbig2enc/0.30
@@ -79,7 +79,7 @@ gs -o out.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress temp_ocr.pdf
 ## 2nd attempt
 pdftoppm -r 450 Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf page -png
 img2pdf page-*.png -o image_only.pdf
-ocrmypdf --optimize 3 -l eng+ell image_only.pdf out2.pdf
+ocrmypdf -j 5 --optimize 3 -l eng+ell image_only.pdf out2.pdf
 ```
 
 We see that

@@ -6,7 +6,14 @@ sort: 25
 
 <font color="red"><b>7/9/2025 Update</b></font>
 
-Module ceuadmin/firefox/nightly (143.0a1) finally starts browsing normally (as defined with MOZ_FORCE_DISABLE_E10S=1).
+Module ceuadmin/firefox/nightly (143.0a1) finally starts browsing normally.
+
+Certainly, this works when call with `MOZ_FORCE_DISABLE_E10S=1 firefox` but set to 3 on balance for speed in the module definition by default
+
+```bash
+module load euadmin/firefox/nightly
+firefox &
+```
 
 ## mozilla-firefox
 
