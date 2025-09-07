@@ -42,7 +42,7 @@ where the last line extract text from `lang.jpeg` into `lang.txt`.
 
 Note further that Chrome/Edge/Firefox extension `OCR Image Reader` calls `tesseract.js`
 
-## Tesseract + OCRmyPDF + ghostscript for Vector-based text
+## Tesseract + OCRmyPDF + ghostscript / img2pdf for Vector-based text
 
 A variety of experiments are conducted below,
 
@@ -61,24 +61,17 @@ convert ucam.png -alpha remove -alpha off ucam_noalpha.png
 convert ucam_noalpha.png ucam_noalpha.pdf
 ocrmypdf --tesseract-config hocr -l eng ucam_noalpha.pdf ucam_ocr.pdf
 # 
-module load ceuadmin/ghostscript/
+module load ceuadmin/ghostscript/9.56.1
 ## 1st attempt
 ocrmypdf --force-ocr -l eng \
-         A\ Companion\ to\ Analysis-A\ Second\ First\ and\ First\ Second\ Course\ in\ Analysis.pdf temp_ocr.pdf && \
+         Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf temp_ocr.pdf && \
 gs -o out.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress temp_ocr.pdf
 ## 2nd attempt
-gs -o rasterized.pdf -sDEVICE=pdfwrite -dFILTERTEXT -dFILTERIMAGE \
-   -dColorImageDownsampleType=/Average -dColorImageResolution=300 \
-   -dGrayImageDownsampleType=/Average -dGrayImageResolution=300 \
-   -dMonoImageDownsampleType=/Subsample -dMonoImageResolution=300 \
-    A\ Companion\ to\ Analysis-A\ Second\ First\ and\ First\ Second\ Course\ in\ Analysis.pdf temp_ocr.pdf 
-ocrmypdf -l eng rasterized.pdf out.pdf
-## 3rd attempt
 module load ceuadmin/jbig2enc/0.30
 module load ceuadmin/pngquant/3.0.3
-pdftoppm -r 300 A\ Companion\ to\ Analysis-A\ Second\ First\ and\ First\ Second\ Course\ in\ Analysis.pdf  page -png
+pdftoppm -r 400 Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf page -png
 img2pdf page-*.png -o image_only.pdf
-ocrmypdf --jbig2-lossless -l eng image_only.pdf out.pdf
+ocrmypdf --jbig2-lossless --optimize 3 -l eng+equ+gre image_only.pdf out.pdf
 ```
 
 We see that
