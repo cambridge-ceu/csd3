@@ -18,12 +18,13 @@ cd tesseract-5.5.0/
 ./autogen.sh
 ./configure --prefix=$CEUADMIN/tesseract/5.5.0 CXXFLAGS="-std=c++17" LDFLAGS="-lstdc++fs"
 make && make install
+# now defined as /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata/configs which contains hocr, pdf, etc.
 # more on hocr: configs is a symbolic link
 # ls -l /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0/configs
 # /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0/configs -> tessconfigs/configs
-mkdir /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0/tessconfigs/configs
-echo "hocr" > /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0/configs/hocr
-echo "tessedit_create_hocr 1" > /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0/tessconfigs/configs/hocr
+# mkdir /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0/tessconfigs/configs
+# echo "hocr" > /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0/configs/hocr
+# echo "tessedit_create_hocr 1" > /usr/local/Cluster-Apps/ceuadmin/tesseract/5.5.0/share/tessdata_best-4.1.0/tessconfigs/configs/hocr
 ```
 
 ## Testing
