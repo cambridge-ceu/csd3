@@ -42,7 +42,7 @@ where the last line extract text from `lang.jpeg` into `lang.txt`.
 
 Note further that Chrome/Edge/Firefox extension `OCR Image Reader` calls `tesseract.js`
 
-## Tesseract + OCRmyPDF + ghostscript / img2pdf for Vector-based text
+## Tesseract + OCRmyPDF + ghostscript / img2pdf for vector-based text
 
 A variety of experiments are conducted below,
 
