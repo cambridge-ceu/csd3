@@ -2024,7 +2024,7 @@ They are generated from script [setup.sh](setup.sh),
     make install
     ```
 
-    Note that 1. A more recent autoconf is required, 2. although ceuadmin/leptonica has the correct setup, the -I flag still requires specified explicitly -- the easiest is to create a symbolic link and modify jbig2enc.cc at line 26 to use it locally.
+    Note that 1. A more recent autoconf is required, 2. Although ceuadmin/leptonica has the correct setup, the -I flag still requires specified explicitly -- the easiest is to create a symbolic link and modify jbig2enc.cc at line 26 to use it locally.
 
 [^pngquant]: **pngquant**
 
