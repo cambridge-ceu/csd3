@@ -68,7 +68,7 @@ pdffonts ucam.pdf
 convert ucam.png -alpha remove -alpha off ucam_noalpha.png
 convert ucam_noalpha.png ucam_noalpha.pdf
 ocrmypdf --tesseract-config hocr -l eng+ell ucam_noalpha.pdf ucam_ocr.pdf
-# 
+# ghostscript, img2pdf
 module load ceuadmin/ghostscript/9.56.1
 module load ceuadmin/jbig2enc/0.30
 module load ceuadmin/pngquant/3.0.3
