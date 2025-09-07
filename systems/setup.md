@@ -480,6 +480,8 @@ All entries are ordered chronologically.
 | 2025-09-04 | relate/1.2.3                     | Genetics[^relate]     |
 | ""         | clues2/github                    | Genetics[^clues2]     |
 | 2025-09-05 | fsc2/2.8.0                       | Genetics[^fsc2]       |
+| 2025-09-06 | jbig2enc/0.39                    | Generic[^jbig2enc]    |
+| ""         | pngquant/3.0.3                   | Generic[^pngquant]    |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2006,3 +2008,26 @@ They are generated from script [setup.sh](setup.sh),
 [^fsc2]: **fastsimcoal2**
 
     See <https://cambridge-ceu.github.io/csd3/applications/fsc2.html>.
+
+[^jbig2enc]: **jbig2enc**
+
+    ```bash
+    module load ceuadmin/leptonica/1.85.0
+    wget -qO- https://github.com/agl/jbig2enc/archive/refs/tags/0.30.tar.gz | tar xvfz -
+    cd jbig2enc-0.30/src
+    ln -s $INCLUDE/loptonica
+    cd -
+    module load ceuadmin/autoconf/2.72c.24-8e728
+    ./autogen.sh
+    ./configure --prefix=$CEUADMIN/jbig2enc/0.30
+    make
+    make install
+    ```
+
+    Note that 1. A more recent autoconf is required, 2. although ceuadmin/leptonica has the correct setup, the -I flag still requires specified explicitly -- the easiest is to create a symbolic link and modify jbig2enc.cc at line 26 to use it locally.
+
+[^pngquant]: **pngquant**
+
+    ```bash
+    wget -qO- https://pngquant.org/pngquant-linux.tar.bz2 | tar xjf -
+    ```
