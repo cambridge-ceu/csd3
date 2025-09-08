@@ -15,7 +15,7 @@ module load euadmin/firefox/nightly
 firefox &
 ```
 
-which uses only one CPU which is appropriate on the login node under heavy load by many users; one may check the definition (hard to remember!) and increase the number as well to improve the performance.
+which uses only one CPU which is appropriate on the login node with heavy load from many users; one may check the definition (hard to remember!) and increase the number as well to improve the performance.
 
 ```bash
 alias firefox
