@@ -15,7 +15,7 @@ module load euadmin/firefox/nightly
 firefox &
 ```
 
-which uses only one CPU which is appropriate on the login node with heavy load from many users; one may check the definition (hard to remember!) and increase the number as well to improve the performance.
+which uses only one CPU, which is appropriate on a login node with heavy load (many users and/or processes). One may also check the definition (a way to facilitate) and increase the number to improve the performance.
 
 ```bash
 alias firefox
@@ -24,8 +24,6 @@ unalias firefox
 # call with three CPUs
 MOZ_FORCE_DISABLE_E10S=3 firefox > /dev/null 2>&1 &
 ```
-
-instead.
 
 ## mozilla-firefox
 
