@@ -8,14 +8,14 @@ sort: 25
 
 Module ceuadmin/firefox/nightly (143.0a1) finally starts browsing normally.
 
-By default, it is aliased to `MOZ_FORCE_DISABLE_E10S=3 firefox` on balance for speed in the module definition
+The definition can be examined as follows,
 
 ```bash
 module load euadmin/firefox/nightly
 alias firefox
 ```
 
-giving `alias firefox='MOZ_FORCE_DISABLE_E10S=3 firefox > /dev/null 2>&1'` and when the number of CPUs is low we do
+giving `alias firefox='MOZ_FORCE_DISABLE_E10S=3 firefox > /dev/null 2>&1'` so when the number of CPUs is low we do
 
 ```bash
 unalias firefox
