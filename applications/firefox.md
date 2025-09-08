@@ -8,7 +8,7 @@ sort: 25
 
 Module ceuadmin/firefox/nightly (143.0a1) finally starts browsing normally.
 
-It can be load as follows,
+It can be started as follows,
 
 ```bash
 module load euadmin/firefox/nightly
