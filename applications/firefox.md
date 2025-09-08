@@ -8,18 +8,21 @@ sort: 25
 
 Module ceuadmin/firefox/nightly (143.0a1) finally starts browsing normally.
 
-The definition can be examined as follows,
+It can be load as follows,
 
 ```bash
 module load euadmin/firefox/nightly
-alias firefox
+firefox &
 ```
 
-giving `alias firefox='MOZ_FORCE_DISABLE_E10S=3 firefox > /dev/null 2>&1'` so when the number of CPUs is low we do
+which uses only one CPU which is appropriate under heavy use by many users on the login node; one may check the definition and increase the number as well to improve the performance.
 
 ```bash
+alias firefox
+# showing `alias firefox='MOZ_FORCE_DISABLE_E10S=1 firefox > /dev/null 2>&1'` 
 unalias firefox
-MOZ_FORCE_DISABLE_E10S=1 firefox > /dev/null 2>&1 &
+# call with three CPUs
+MOZ_FORCE_DISABLE_E10S=3 firefox > /dev/null 2>&1 &
 ```
 
 instead.
