@@ -71,6 +71,7 @@ module load ceuadmin/pngquant/3.0.3
 ocrmypdf -j 5 --force-ocr --optimize 3 --tesseract-timeout 300  -l eng+ell \
          Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf temp_ocr.pdf
 gs -o out.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress temp_ocr.pdf
+pdffonts temp_ocr.pdf
 ## 2nd attempt
 pdftoppm -r 450 Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf page -png
 img2pdf page-*.png -o image_only.pdf
@@ -84,6 +85,7 @@ $ pdffonts ucam.pdf
 name                                 type              encoding         emb sub uni object ID
 ------------------------------------ ----------------- ---------------- --- --- --- ---------
 GlyphLessFont                        CID TrueType      Identity-H       yes no  yes      3  0
+
 $ ocrmypdf -j 5 --force-ocr --optimize 3 --tesseract-timeout 300  -l eng+ell \
           Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf temp_ocr.pdf
 Scanning contents     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 516/516 0:00:00
@@ -109,6 +111,16 @@ This software is supplied under the GNU AGPLv3 and comes with NO WARRANTY:
 see the file COPYING for details.
 Processing pages 1 through 516.
 $ gs -o out.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress temp_ocr.pdf
+$ pdffonts temp_ocr.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+NVDUUB+GlyphLessFont                 CID TrueType      Identity-H       yes yes yes   2034  0
+ZJFOCW+GlyphLessFont                 CID TrueType      Identity-H       yes yes yes   1631  0
+PHSYEO+GlyphLessFont                 CID TrueType      Identity-H       yes yes yes   1734  0
+QXKYDM+GlyphLessFont                 CID TrueType      Identity-H       yes yes yes   1838  0
+EHRHOZ+GlyphLessFont                 CID TrueType      Identity-H       yes yes yes   1943  0
+ORTKYM+GlyphLessFont                 CID TrueType      Identity-H       yes yes yes   2133  0
+
 $ ocrmypdf -j 5 --force-ocr --optimize 3 --tesseract-timeout 300 -l eng+ell image_only.pdf out2.pdf
 Scanning contents     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 526/526 0:00:00
 Start processing 5 pages concurrently                                                                                               ocr.py:96    3 [tesseract] read_params_file: Can't open txt                                                                           tesseract.py:257
@@ -132,3 +144,5 @@ out.pdf keeps all the bookmarks, and is smaller which contrasts to out2.pdf with
 pdffonts out.pdf
 pdftotext out.pdf - | less
 ```
+
+Nevertheless according to `pdffonts temp_ocr.pdf`, one might as well not to use ghostscript at all.
