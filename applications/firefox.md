@@ -8,12 +8,21 @@ sort: 25
 
 Module ceuadmin/firefox/nightly (143.0a1) finally starts browsing normally.
 
-Certainly, this works when call with `MOZ_FORCE_DISABLE_E10S=1 firefox` but set to 3 on balance for speed in the module definition by default
+By default, it is aliased to `MOZ_FORCE_DISABLE_E10S=3 firefox` on balance for speed in the module definition
 
 ```bash
 module load euadmin/firefox/nightly
-firefox &
+alias firefox
 ```
+
+giving `alias firefox='MOZ_FORCE_DISABLE_E10S=3 firefox > /dev/null 2>&1'` and when the number of CPUs is low we do
+
+```bash
+unalias firefox
+MOZ_FORCE_DISABLE_E10S=1 firefox > /dev/null 2>&1 &
+```
+
+instead.
 
 ## mozilla-firefox
 
