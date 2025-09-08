@@ -6,6 +6,8 @@ sort: 78
 
 Web: <https://tesseract-ocr.github.io/>
 
+Note: Chrome/Edge/Firefox extension `OCR Image Reader` calls `tesseract.js`
+
 ## Installation
 
 ```bash
@@ -37,28 +39,34 @@ wget https://github.com/tesseract-ocr/tessdata_best/raw/main/equ.traineddata
 A list of languages can be viewed and used for OCR from image,
 
 ```bash
-tesseract --list-langs
-tesseract lang.jpeg lang -l eng
-```
-
-where the last line extract text from `lang.jpeg` into `lang.txt`.
-
-Note further that Chrome/Edge/Firefox extension `OCR Image Reader` calls `tesseract.js`
-
-## Tesseract + OCRmyPDF + ghostscript / img2pdf
-
-Several experiments are conducted below,
-
-```bash
 module load ceuadmin/tesseract
-source ~/rds/software/py3.11/bin/activate
-pip install ocrmypdf
+tesseract --list-langs
+# ==> ucam.txt
+tesseract ucam.jpeg ucam -l eng
 # ==> ucam.hocr
 tesseract ucam.png ucam -l eng --psm 3 -c tessedit_create_hocr=1
 # ==> ucam.pdf
 tesseract ucam.png ucam -l eng --psm 3 -c tessedit_create_pdf=1
 module load ceuadmin/libiconv ceuadmin/poppler/0.84.0
 pdffonts ucam.pdf
+```
+
+The last command gives,
+
+```
+$ pdffonts ucam.pdf
+name                                 type              encoding         emb sub uni object ID
+------------------------------------ ----------------- ---------------- --- --- --- ---------
+GlyphLessFont                        CID TrueType      Identity-H       yes no  yes      3  0
+```
+
+## Tesseract + OCRmyPDF + ghostscript / img2pdf
+
+Several experiments are conducted below,
+
+```bash
+source ~/rds/software/py3.11/bin/activate
+pip install ocrmypdf
 # alpha channel on png
 convert ucam.png -alpha remove -alpha off ucam_noalpha.png
 convert ucam_noalpha.png ucam_noalpha.pdf
@@ -81,11 +89,7 @@ ocrmypdf -j 5 --force-ocr --optimize 3 --tesseract-timeout 300 -l eng+ell image_
 where and jbig2enc leads to smarter text compression and pngquant for color image compression. We see that
 
 ```
-$ pdffonts ucam.pdf
-name                                 type              encoding         emb sub uni object ID
------------------------------------- ----------------- ---------------- --- --- --- ---------
-GlyphLessFont                        CID TrueType      Identity-H       yes no  yes      3  0
-
+## 1st attempt
 $ ocrmypdf -j 5 --force-ocr --optimize 3 --tesseract-timeout 300  -l eng+ell \
           Formulas\ and\ Theorems\ for\ the\ Special\ Functions\ of\ Mathematical\ Physics\,\ 3e.pdf temp_ocr.pdf
 Scanning contents     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 516/516 0:00:00
@@ -120,7 +124,7 @@ PHSYEO+GlyphLessFont                 CID TrueType      Identity-H       yes yes 
 QXKYDM+GlyphLessFont                 CID TrueType      Identity-H       yes yes yes   1838  0
 EHRHOZ+GlyphLessFont                 CID TrueType      Identity-H       yes yes yes   1943  0
 ORTKYM+GlyphLessFont                 CID TrueType      Identity-H       yes yes yes   2133  0
-
+## 2nd attempt
 $ ocrmypdf -j 5 --force-ocr --optimize 3 --tesseract-timeout 300 -l eng+ell image_only.pdf out2.pdf
 Scanning contents     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 526/526 0:00:00
 Start processing 5 pages concurrently                                                                                               ocr.py:96    3 [tesseract] read_params_file: Can't open txt                                                                           tesseract.py:257
@@ -138,7 +142,7 @@ Total file size ratio: 0.98 savings: -1.6%                                      
 Output file is a PDF/A-2B (as expected)                                                                                        _common.py:474
 ```
 
-out.pdf keeps all the bookmarks, and is smaller which contrasts to out2.pdf with no bookmarks and much larger. In both cases we can check the pdf, e.g.,
+out.pdf keeps all the bookmarks, and is smaller in contrast to out2.pdf with no bookmarks and much larger. In both cases we can check the pdf, e.g.,
 
 ```bash
 pdffonts out.pdf
