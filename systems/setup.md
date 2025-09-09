@@ -41,7 +41,7 @@ All entries are ordered chronologically.
 | ""         | citeproc/0.8.0.2                 | Generic               |
 | 2022-10-26 | circos/0.69-9                    | Genetics              |
 | ""         | DjVuLibre/3.5.27.1-14            | Generic               |
-| ""         | ghostscript/9.56.1               | Generic               |
+| ""         | ghostscript/9.56.1               | Generic[^gs]          |
 | ""         | bgen/1.1.7                       | Genetics              |
 | 2022-10-27 | sqlite/3.39.4                    | Generic               |
 | 2022-10-28 | poppler/0.84.0                   | Generic               |
@@ -530,6 +530,10 @@ They are generated from script [setup.sh](setup.sh),
     Alternative site
 
     See [https://github.com/dr-roshyara/fcgene](https://github.com/dr-roshyara/fcgene)
+
+[^gs]: **ghostscript**
+
+    To produce high-resolution png, try `gs -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -sDEVICE=pngalpha -r600 -sOutputFile=output.png input.eps`.
 
 [^jq]: **jq**
 
@@ -1102,6 +1106,8 @@ They are generated from script [setup.sh](setup.sh),
     make
     make install
     ```
+
+    This version comes with magick, e.g., `magick -density 600 -colorspace RGB -alpha on -background none input.eps output.png` which produces high-resolution png file.
 
 [^rtmpdump]: **rtmpdump**
 
