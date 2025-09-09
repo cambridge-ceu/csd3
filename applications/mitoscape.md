@@ -53,8 +53,6 @@ $ /home/jhz22/.local/share/coursier/bin/sbt run
 
 ```
 
-Here is the citation in **Chicago style (author-date format)** and **Chicago style (notes and bibliography)** for the article you referenced:
-
 ## References
 
 > Saunders, M. A., T. A. Schwarz, L. E. Colleoni, A. L. Drong, D. D. A. MacArthur, C. E. T. Halldorsson, D. I. Chanda, et al. 2021. *“MitoScape: A Big-Data, Machine-Learning Platform for Obtaining Mitochondrial DNA from Next-Generation Sequencing Data.”* *PLoS Computational Biology* 17 (11): e1009594. [https://doi.org/10.1371/journal.pcbi.1009594](https://doi.org/10.1371/journal.pcbi.1009594).
