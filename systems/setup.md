@@ -2041,4 +2041,4 @@ They are generated from script [setup.sh](setup.sh),
 
 [^mitoscape]: **MitoScape**
 
-    See <https://cambridge-ceu.github.io/csd3/applications/MitoScape.html>.
+    See <https://cambridge-ceu.github.io/csd3/applications/mitoscape.html>.
