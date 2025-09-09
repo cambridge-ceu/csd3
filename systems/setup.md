@@ -482,6 +482,7 @@ All entries are ordered chronologically.
 | 2025-09-05 | fsc2/2.8.0                       | Genetics[^fsc2]       |
 | 2025-09-06 | jbig2enc/0.39                    | Generic[^jbig2enc]    |
 | ""         | pngquant/3.0.3                   | Generic[^pngquant]    |
+| 2025-09-09 | MitoScape/1.0                    | Generic[^mitoscape]   |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2037,3 +2038,7 @@ They are generated from script [setup.sh](setup.sh),
     ```bash
     wget -qO- https://pngquant.org/pngquant-linux.tar.bz2 | tar xjf -
     ```
+
+[^mitoscape]: **MitoScape**
+
+    See <https://cambridge-ceu.github.io/csd3/applications/MitoScape.html>.
