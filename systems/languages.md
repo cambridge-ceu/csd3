@@ -554,6 +554,8 @@ Web <https://www.scala-lang.org>, <https://ammonite.io/>
 
 ```bash
 module load ceuadmin/Scala
+# ~/bin is already on $PATH
+cs install --dir ~/bin scala sbt
 ```
 
 Assuming our Scala 3 program `hello.sc` containing `@main def hello() = println("Hello, World!")`, the code is run with
