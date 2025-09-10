@@ -6,17 +6,30 @@ sort: 44
 
 GitHub: <https://github.com/CHOP-CMEM/MitoScape>
 
-### assembly
-
-As documented, Scale build tool (sbt) is invoked.
+## Preparations
 
 ```bash
 wget -qO- https://github.com/CHOP-CMEM/MitoScape/archive/refs/tags/v1.0.tar.gz | tar xvfz -
 cd MitoScape-1.0/
+mv build.sbt build.sbt.save
 module load ceuadmin/Scala
-# to overwrite /home/$USER/.local/share/coursier/
 cs install --dir ~/bin sbt
 module load openjdk/11.0.12_7/gcc/czpuqhmv
+```
+
+## assembly
+
+Several changes are necessary:
+
+- [project/plugins.sbt](files/MitoScape-1.0/project/plugins.sbt).
+- [project/MergeStrategies.scala](files/MitoScape-1.0/project/MergeStrategies.scala)
+- [an updated build.sbt](files/MitoScape-1.0/build.sbt)
+
+Only the first file is generated on the fly below and the other two provided directly for legibility here.
+
+As documented, Scale build tool (sbt) is invoked.
+
+```bash
 echo $JAVA_HOME
 cat << 'EOF' > project/plugins.sbt
 addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.8.1")
@@ -25,21 +38,24 @@ EOF
 ~/bin/sbt assembly
 ```
 
-showing
+It shows that
 
 ```
 $ ~/bin/sbt assembly
-[info] welcome to sbt 1.11.6 (Red Hat, Inc. Java 1.8.0_462)
+[info] welcome to sbt 1.11.6 (Eclipse Foundation Java 11.0.12)
 [info] loading settings for project mitoscape-1-0-build from plugins.sbt...
-[info] loading project definition from /rds/project/rds-4o5vpvAowP0/software/MitoScape-1.0/project
+[info] loading project definition from /home/jhz22/MitoScape-1.0/project
+[info] compiling 1 Scala source to /home/jhz22/MitoScape-1.0/project/target/scala-2.12/sbt-1.0/classes ...
 [info] loading settings for project mitoscape-1-0 from build.sbt...
-[info] set current project to MitoScape (in build file:/rds/project/rds-4o5vpvAowP0/software/MitoScape-1.0/)
-[info] compiling 6 Scala sources to /rds/project/rds-4o5vpvAowP0/software/MitoScape-1.0/target/scala-2.12/classes ...
-[info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.12. Compiling...
-[info]   Compilation completed in 5.965s.
+[info] set current project to MitoScape (in build file:/home/jhz22/MitoScape-1.0/)
+[success] Total time: 223 s (0:03:43.0), completed Sep 10, 2025, 5:00:36 PM
+[info] compiling 6 Scala sources to /home/jhz22/MitoScape-1.0/target/scala-2.12/classes ...
+[info] Strategy 'discard' was applied to 5 files (Run the task at debug level to see details)
+[info] Strategy 'first' was applied to 1134 files (Run the task at debug level to see details)
+[success] Total time: 294 s (0:04:54.0), completed Sep 10, 2025, 5:05:29 PM
 ```
 
-## In details
+## Additional details
 
 ```bash
 ~/bin/sbt clean compile
