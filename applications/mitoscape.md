@@ -6,6 +6,16 @@ sort: 44
 
 GitHub: <https://github.com/CHOP-CMEM/MitoScape>
 
+## GitHub
+
+This follows similar steps as before.
+
+```bash
+git clone https://github.com/CHOP-CMEM/MitoScape
+cd MitoScape
+sbt assembly
+```
+
 ## 1.0
 
 ```bash
