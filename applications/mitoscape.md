@@ -22,8 +22,8 @@ module load openjdk/11.0.12_7/gcc/czpuqhmv
 Several changes are necessary:
 
 - [project/plugins.sbt](files/MitoScape-1.0/project/plugins.sbt).
-- [project/MergeStrategies.scala](files/MitoScape-1.0/project/MergeStrategies.scala)
-- [an updated build.sbt](files/MitoScape-1.0/build.sbt)
+- [project/MergeStrategies.scala](files/MitoScape-1.0/project/MergeStrategies.scala).
+- [an updated build.sbt](files/MitoScape-1.0/build.sbt).
 
 Only the first file is generated on the fly below and the other two provided directly for legibility here.
 
