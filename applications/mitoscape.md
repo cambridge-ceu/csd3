@@ -6,7 +6,7 @@ sort: 44
 
 GitHub: <https://github.com/CHOP-CMEM/MitoScape>
 
-## Preparations
+## 1.0
 
 ```bash
 wget -qO- https://github.com/CHOP-CMEM/MitoScape/archive/refs/tags/v1.0.tar.gz | tar xvfz -
@@ -17,7 +17,7 @@ cs install --dir ~/bin sbt
 module load openjdk/11.0.12_7/gcc/czpuqhmv
 ```
 
-## assembly
+### assembly
 
 Several changes are necessary:
 
@@ -59,7 +59,7 @@ total 210128
 -rw-rw-r-- 1 jhz22 jhz22 185703796 Sep 10 17:05 MitoScapeClassify.jar
 ```
 
-## Additional details
+### Additional details
 
 ```bash
 ~/bin/sbt clean compile
