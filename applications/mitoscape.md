@@ -36,9 +36,10 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.8.1")
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "1.1.0")
 EOF
 ~/bin/sbt assembly
+ll target/scala-2.12/
 ```
 
-It shows that
+which gives
 
 ```
 $ ~/bin/sbt assembly
@@ -53,6 +54,9 @@ $ ~/bin/sbt assembly
 [info] Strategy 'discard' was applied to 5 files (Run the task at debug level to see details)
 [info] Strategy 'first' was applied to 1134 files (Run the task at debug level to see details)
 [success] Total time: 294 s (0:04:54.0), completed Sep 10, 2025, 5:05:29 PM
+$ ll target/scala-2.12/
+total 210128
+-rw-rw-r-- 1 jhz22 jhz22 185703796 Sep 10 17:05 MitoScapeClassify.jar
 ```
 
 ## Additional details
