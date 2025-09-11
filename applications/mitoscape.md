@@ -13,36 +13,37 @@ This follows similar steps as before.
 ```bash
 git clone https://github.com/CHOP-CMEM/MitoScape
 cd MitoScape
-module load openjdk/11.0.12_7/gcc/czpuqhmv
+java -version
 sbt assembly
+java -Xmx16G -jar target/scala-2.12/MitoScapeClassify.jar \
+     --threads 4 \
+     --prob 0.9 \
+     --ld mitomap.ld \
+     --numt NUMTs_hg38.txt \
+     --classifier MTClassifierModel.RF \
+     --prefix sample123 \
+     --out sample123_output
 ```
 
 We have
 
 ```
+$ java -version
+openjdk version "1.8.0_462"
+OpenJDK Runtime Environment (build 1.8.0_462-b08)
+OpenJDK 64-Bit Server VM (build 25.462-b08, mixed mode)
 $ sbt assembly
 [info] Loading settings for project mitoscape-build from plugins.sbt ...
-[info] Loading project definition from /home/jhz22/MitoScape/project
+[info] Loading project definition from /home/jhz22/work/MitoScape/project
 [info] Loading settings for project mitoscape from build.sbt ...
-[info] Set current project to MitoScape (in build file:/home/jhz22/MitoScape/)
+[info] Set current project to MitoScape (in build file:/home/jhz22/work/MitoScape/)
 [info] Updating ...
-[info] downloading https://repo1.maven.org/maven2/org/apache/avro/avro-ipc/1.8.2/avro-ipc-1.8.2.jar ...
-[info] downloading https://repo1.maven.org/maven2/org/apache/avro/avro/1.8.2/avro-1.8.2.jar ...
-[info]  [SUCCESSFUL ] org.apache.avro#avro-ipc;1.8.2!avro-ipc.jar (2404ms)
-[info]  [SUCCESSFUL ] org.apache.avro#avro;1.8.2!avro.jar (4094ms)
 [info] Done updating.
 [warn] There may be incompatibilities among your library dependencies.
 [warn] Run 'evicted' to see detailed eviction warnings
-[info] Compiling 6 Scala sources to /home/jhz22/MitoScape/target/scala-2.12/classes ...
-[info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.12. Compiling...
-[info]   Compilation completed in 10.985s.
+[info] Compiling 6 Scala sources to /home/jhz22/work/MitoScape/target/scala-2.12/classes ...
 [info] Done compiling.
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (file:/home/jhz22/.sbt/boot/scala-2.12.6/org.scala-sbt/sbt/1.2.3/protobuf-java-3.3.1.jar) to field java.nio.Buffer.address
-WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
-[info] Packaging /home/jhz22/MitoScape/target/scala-2.12/mitoscape_2.12-0.1.jar ...
+[info] Packaging /home/jhz22/work/MitoScape/target/scala-2.12/mitoscape_2.12-0.1.jar ...
 [info] Done packaging.
 [info] Strategy 'concat' was applied to 12 files (Run the task at debug level to see details)
 [info] Strategy 'deduplicate' was applied to 9 files (Run the task at debug level to see details)
@@ -50,12 +51,10 @@ WARNING: All illegal access operations will be denied in a future release
 [info] Strategy 'first' was applied to 201 files (Run the task at debug level to see details)
 [info] Strategy 'last' was applied to 3 files (Run the task at debug level to see details)
 [info] Strategy 'rename' was applied to 19 files (Run the task at debug level to see details)
-[info] Packaging /home/jhz22/MitoScape/target/scala-2.12/MitoScapeClassify.jar ...
+[info] Packaging /home/jhz22/work/MitoScape/target/scala-2.12/MitoScapeClassify.jar ...
 [info] Done packaging.
-[success] Total time: 347 s, completed Sep 10, 2025, 8:49:18 PM
+[success] Total time: 325 s, completed Sep 11, 2025 10:16:02 AM
 ```
-
-so it largely goes through smoothly.
 
 ## 1.0
 
