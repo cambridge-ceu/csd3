@@ -483,6 +483,7 @@ All entries are ordered chronologically.
 | 2025-09-06 | jbig2enc/0.39                    | Generic[^jbig2enc]    |
 | ""         | pngquant/3.0.3                   | Generic[^pngquant]    |
 | 2025-09-09 | MitoScape/1.0                    | Generic[^mitoscape]   |
+| 2025-09-11 | mity/2.0.1                       | Genetics[^mity]       |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2042,3 +2043,7 @@ They are generated from script [setup.sh](setup.sh),
 [^mitoscape]: **MitoScape**
 
     See <https://cambridge-ceu.github.io/csd3/applications/mitoscape.html>.
+
+[^mity]: **mity**
+
+    See <https://cambridge-ceu.github.io/csd3/applications/mity.html>.
