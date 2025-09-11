@@ -16,7 +16,7 @@ The default URLs for depenencies Anaconda2, samtools 1.3, zlib 1.2.11 require sl
 wget -qO- https://github.com/mitoNGS/MToolBox/archive/refs/tags/v1.2.1.tar.gz | tar xvfz -
 cd MToolBox-1.2.1/bin
 wget https://mirrors.sustech.edu.cn/anaconda/archive/Anaconda2-2.5.0-Linux-x86_64.sh
-wget https://sourceforge.net/projects/samtools/files/samtools/1.3/samtools-1.3.tar.bz2/
+wget https://sourceforge.net/projects/samtools/files/samtools/1.3/samtools-1.3.tar.bz2
 wget https://download.videolan.org/pub/contrib/zlib/zlib-1.2.11.tar.gz
 bash Anaconda2-2.5.0-Linux-x86_64.sh # install to anaconda
 ./install.sh
