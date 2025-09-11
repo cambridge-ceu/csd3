@@ -1,5 +1,5 @@
 ---
-sort: 72
+sort: 71
 ---
 
 # SEQPower
