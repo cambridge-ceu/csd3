@@ -6,12 +6,13 @@ sort: 10
 
 GitHub: <http://github.com/KCCG/mity>
 
-## Installation & testing
+## Installation
 
 ```bash
 singularity pull docker://drmjc/mity
-singularity run mity_latest.sif -h
 ```
+
+shows
 
 ```
 $ singularity pull docker://drmjc/mity
@@ -32,7 +33,17 @@ INFO:    Inserting Apptainer configuration...
 INFO:    Creating SIF file...
 [-------------------------------------------------------------------------------------------------------------------------------------] 0 % 0s
 [===================================================================================================================================] 100 % 0s
+```
 
+## Testing
+
+```bash
+singularity run mity_latest.sif -h
+```
+
+shows
+
+```
 $ singularity run mity_latest.sif -h
 usage: mity [-h] {call,normalise,report,merge,runall,version} ...
 
