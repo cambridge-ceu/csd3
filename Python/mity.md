@@ -67,3 +67,11 @@ Authors: Clare Puttick, Mark Cowley, Trent Zeng, Christian Fares
 License: MIT
 Version: 2.0.1
 ```
+
+## ceuadmin/mity/2.0.1
+
+```bash
+module load ceuadmin/mity/2.0.1
+alias mity
+mity -h
+```
