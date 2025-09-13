@@ -4,30 +4,62 @@ sort: 21
 
 # DNAnexus
 
-Web: <https://www.dnanexus.com/> ([documentation](https://documentation.dnanexus.com/), [WebUI](https://platform.dnanexus.com/login))
+Web: <https://www.dnanexus.com/> ([documentation](https://documentation.dnanexus.com/), [WebUI](https://platform.dnanexus.com/login)), [YouTube](https://www.youtube.com/@Dnanexus/playlists)
 
 UKBioBank: [landing](https://ukbiobank.dnanexus.com/landing), [partnership](https://www.dnanexus.com/partnerships/ukbiobank)
 
 Organisation: <https://documentation.dnanexus.com/getting-started/key-concepts/organizations> and [Member Guide](https://documentation.dnanexus.com/user/organization-member-guide)
 
-NOTE: To facilitate the upcoming training courses by DNAnexus, the resource is made available for CEU users[^1].
-
 ## Platform SDK
 
-This follows <https://documentation.dnanexus.com/downloads>,
+This follows <https://documentation.dnanexus.com/downloads>.
+
+📌 **Note**: To facilitate a raining courses by DNAnexus, the resource is made available for CEU users[^csd3] so users can jump to usage.
+
+### Python virual environment
+
+This creates a virtual environment at `py3.7/`,
 
 ```bash
 module avail python
 module load python/3.7
-source py37/bin/activate
+python -m venv ~/rds/software/py3.7
+```
+
+This only needs to be done once.
+
+### Package installation
+
+Once the virtual environment is available, we can install the relevant package as follows,
+
+```bash
+source ~/rds/software/py3.7/bin/activate
 pip install dxpy
 eval "$(register-python-argcomplete dx|sed 's/-o default//')"
 export PYTHONIOENCODING=UTF-8
 pip install --upgrade dxpy
-dx help ls
 ```
 
-using the Python virtual environment at `py37/`, say[^2].
+### Usage
+
+Some dx commands are shown here,
+
+```bash
+# only one option is sufficient
+# 1. environment from above
+source ~/rds/software/py3.7/bin/activate
+# 2. environment from the the CEU training course
+source /rds/project/rds-zuZwCZMsS0w/olink_proteomics/scallop/py37/bin/activate
+
+dx help ls
+dx login
+dx upload -r
+dx logout
+```
+
+Login can be conveniently done via a token[^token], as from <https://documentation.dnanexus.com/user/login-and-logout>.
+
+Some materials from training at CEU by DNAnexus are also kept here[^DNAnexus].
 
 > It is not unusual to have version compatibility issues, so doing this ahead of time is helpful for you. For issues, please contact Customer Care at [support@dnanexus.com](mailto:support@dnanexus.com) for help with installation.
 
@@ -36,7 +68,7 @@ using the Python virtual environment at `py37/`, say[^2].
 See [dx-download-agent](https://github.com/dnanexus/dxda/blob/master/README.md) and [releases](https://github.com/dnanexus/dxda/releases).
 
 ```bash
-export HPC_WORK=rds/user/$USER/hpc-work
+export HPC_WORK=/rds/user/$USER/hpc-work
 cd ${HPC_WORK}/bin
 wget https://github.com/dnanexus/dxda/releases/download/v0.5.9/dx-download-agent-linux -O dx-download-agent
 chmod +x dx-download-agent
@@ -85,7 +117,7 @@ where `create_manifest.py` is used to obtain a bz2-compressed JSON manifest file
 }
 ```
 
-The file thus obtained is used with a DNAnexus API token[^3] as contained in `~/doc/nexus` here.
+The file thus obtained is used with a DNAnexus API token[^token] as contained in `~/doc/nexus` here.
 
 ```bash
 export DX_API_TOKEN=$(cat ~/doc/nexus)
@@ -170,16 +202,16 @@ make check
 
 It also works with oniguruma 0.6.9.8 in lieu of its counterpart from GitHub.
 
-[^1]: CSD3
+[^csd3]: **CSD3**
 
-    Location: </rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/>
+    Location: </rds/project/rds-zuZwCZMsS0w/olink_proteomics/scallop/> (aka /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/)
 
     For instance one only needs to do these to use `dx` and apps in `dx-toolkit`,
 
     ```bash
     # dx:
     module load python/3.7
-    source /rds/project/jmmh2/rds-jmmh2-projects/olink_proteomics/scallop/py37/bin/activate
+    source /rds/project/rds-zuZwCZMsS0w/olink_proteomics/scallop/py37/bin/activate
     dx help ls
     # dx-toolkit:
     module load gcc/6 texlive python/2.7
@@ -188,7 +220,18 @@ It also works with oniguruma 0.6.9.8 in lieu of its counterpart from GitHub.
 
     Access to the [training sessions](https://platform.dnanexus.com/panx/projects/GBkP5QXK4v3jy5Gj4jXpG6y8/data/) is possible through [Richard Houghton](mailto:rh12@sanger.ac.uk).
 
-[^2]: DNAnexus
+[^token]: **Token**
+
+    Instead of the `dx login` and `dx logout` pair one can login with a token, i.e.,
+
+    ```bash
+    dx login --token $(cat ~/doc/nexus)
+    dx select --level VIEW
+    ```
+
+    The `--noprojects` option allows for non-interactive login. The `dx select` command allows for specific projects be selected.
+
+[^DNAnexus]: **DNAnexus**
 
     Billing, <https://documentation.dnanexus.com/admin/billing-and-account-management>, [three tiers](https://www.ukbiobank.ac.uk/enable-your-research/costs)
 
@@ -215,14 +258,3 @@ It also works with oniguruma 0.6.9.8 in lieu of its counterpart from GitHub.
     - Analyzing the UK Biobank Proteomics Data on the UK Biobank Research Analysis Platform, JUne 1, 2023, [slides](files/UKB RAP Proteomics - June 2023.pdf), [recording](https://www.youtube.com/watch?v=q57oai8gYvk)
 
     [UKB-RAP](https://github.com/dnanexus/UKB_RAP)
-
-[^3]: Token
-
-    Instead of the `dx login` and `dx logout` pair one can login with a token, i.e.,
-
-    ```bash
-    dx login --token $(cat ~/doc/nexus)
-    dx select --level VIEW`
-    ```
-
-    The `--noprojects` option allows for non-interactive login. The `dx select` command allows for specific projects be selected. See also <https://documentation.dnanexus.com/user/login-and-logout>.
