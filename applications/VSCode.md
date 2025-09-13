@@ -8,12 +8,13 @@ Web: <https://code.visualstudio.com/>.
 
 <font color="red"><b>13/9/2025 Update</b></font>
 
-Module `ceuadmin/VSCode/1.104` is available. Like 1.103, it is downloaded directly using CLI.
+Module `ceuadmin/VSCode/1.104.0` is available. Like 1.103, it is downloaded directly using CLI.
 
 ```bash
 wget -qO- https://update.code.visualstudio.com/latest/linux-x64/stable | \
 tar -xzf -
-cd VSCode-linux-x64
+mv VSCode-linux-x64 1.104.0
+cd 1.104.0
 ./code --no-sandbox
 ```
 

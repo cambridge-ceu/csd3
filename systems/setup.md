@@ -484,7 +484,7 @@ All entries are ordered chronologically.
 | ""         | pngquant/3.0.3                   | Generic[^pngquant]    |
 | 2025-09-09 | MitoScape/1.0                    | Generic[^mitoscape]   |
 | 2025-09-11 | mity/2.0.1                       | Genetics[^mity]       |
-| 2025-09-13 | VSCode/1.104                     | Genetic               |
+| 2025-09-13 | VSCode/1.104.0                   | Genetic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
