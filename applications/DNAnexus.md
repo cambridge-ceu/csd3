@@ -14,7 +14,7 @@ Organisation: <https://documentation.dnanexus.com/getting-started/key-concepts/o
 
 This follows <https://documentation.dnanexus.com/downloads>.
 
-📌 **Note**: To facilitate a raining courses by DNAnexus, the resource is made available[^csd3] so users can jump to usage.
+📌 **Note**: To facilitate a raining courses by DNAnexus and here, the resource is made available[^csd3] one can jump to usage.
 
 ### Python virual environment
 
@@ -47,7 +47,7 @@ Some dx commands are shown here,
 ```bash
 # only one option is sufficient
 # 1. environment from above
-source ~/rds/software/py3.7/bin/activate
+source /rds/project/rds-4o5vpvAowP0/software/py3.7/bin/activate
 # 2. environment from the the CEU training course
 source /rds/project/rds-zuZwCZMsS0w/olink_proteomics/scallop/py37/bin/activate
 
