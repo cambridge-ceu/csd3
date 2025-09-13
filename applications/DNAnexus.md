@@ -4,7 +4,7 @@ sort: 21
 
 # DNAnexus
 
-Web: <https://www.dnanexus.com/> ([documentation](https://documentation.dnanexus.com/), [WebUI](https://platform.dnanexus.com/login), [YouTube](https://www.youtube.com/@Dnanexus/playlists))\
+Web: <https://www.dnanexus.com/> ([documentation](https://documentation.dnanexus.com/), [GitHub](https://github.com/dnanexus), [WebUI](https://platform.dnanexus.com/login), [YouTube](https://www.youtube.com/@Dnanexus/playlists))\
 UKBioBank: [landing](https://ukbiobank.dnanexus.com/landing), [partnership](https://www.dnanexus.com/partnerships/ukbiobank)\
 Organisation: <https://documentation.dnanexus.com/getting-started/key-concepts/organizations> and [Member Guide](https://documentation.dnanexus.com/user/organization-member-guide)
 
