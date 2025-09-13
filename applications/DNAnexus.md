@@ -23,7 +23,7 @@ This creates a virtual environment at `py3.7/`,
 ```bash
 module avail python
 module load python/3.7
-python -m venv ~/rds/software/py3.7
+python -m venv /rds/project/rds-4o5vpvAowP0/software/py3.7
 ```
 
 This only needs to be done once.
@@ -33,9 +33,9 @@ This only needs to be done once.
 Once the virtual environment is available, we can install the relevant package as follows,
 
 ```bash
-source ~/rds/software/py3.7/bin/activate
+source /rds/project/rds-4o5vpvAowP0/software/py3.7/bin/activate
 pip install dxpy
-eval "$(register-python-argcomplete dx|sed 's/-o default//')"
+# eval "$(register-python-argcomplete dx|sed 's/-o default//')"
 export PYTHONIOENCODING=UTF-8
 pip install --upgrade dxpy
 ```
