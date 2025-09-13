@@ -33,7 +33,8 @@ Once the virtual environment is available, we can install the relevant package a
 ```bash
 source /rds/project/rds-4o5vpvAowP0/software/py3.7/bin/activate
 pip install dxpy
-# eval "$(register-python-argcomplete dx|sed 's/-o default//')"
+# non-Z shell (zsh), enable tab completion
+eval "$(register-python-argcomplete dx|sed 's/-o default//')"
 export PYTHONIOENCODING=UTF-8
 pip install --upgrade dxpy
 ```
