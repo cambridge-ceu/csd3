@@ -14,7 +14,7 @@ Organisation: <https://documentation.dnanexus.com/getting-started/key-concepts/o
 
 This follows <https://documentation.dnanexus.com/downloads>.
 
-📌 **Note**: To facilitate a raining courses by DNAnexus and here, the resource is made available[^csd3] one can jump to usage.
+📌 **Note**: To facilitate a raining courses by DNAnexus and here, the resource is made available[^csd3] so one can jump to usage.
 
 ### Python virual environment
 
