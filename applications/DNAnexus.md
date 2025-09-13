@@ -173,6 +173,8 @@ cd dx-toolkit && source environment
 
 ## jq
 
+📌 **NOTE**: module ceuadmin/jq/1.6 is now available.
+
 It is distributed with `dx-toolkit` above but the latest version is available from
 
 <https://stedolan.github.io/jq/>
