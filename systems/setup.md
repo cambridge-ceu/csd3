@@ -486,6 +486,7 @@ All entries are ordered chronologically.
 | 2025-09-11 | mity/2.0.1                       | Genetics[^mity]       |
 | 2025-09-13 | VSCode/1.104.0                   | Genetic               |
 | 2025-09-21 | ollama/0.12.0                    | Genetic               |
+| 2025-09-22 | delphi/github                    | Generic[^delphi]      |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2049,3 +2050,19 @@ They are generated from script [setup.sh](setup.sh),
 [^mity]: **mity**
 
     See <https://cambridge-ceu.github.io/csd3/applications/mity.html>.
+
+[^delphi]: **delphi**
+
+    GitHub: <https://github.com/gerstung-lab/delphi>
+
+    ```bash
+    module load ceuadmin/python/3.12.10
+    python -m venv github
+    source github/bin/activate
+    git clone https://github.com/gerstung-lab/delphi src
+    cd src
+    pip install -r requirements.txt
+    ```
+
+    **Shmatko, Artem, Alexander Wolfgang Jung, Kumar Gaurav, Søren Brunak, Laust Hvas Mortensen, Ewan Birney, Tom Fitzgerald, and Moritz Gerstung. 2025.** "Learning the Natural History of Human Disease with Generative Transformers." *Nature*. [https://doi.org/10.1038/s41586-025-09529-3](https://doi.org/10.1038/s41586-025-09529-3).
+
