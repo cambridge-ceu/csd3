@@ -2053,16 +2053,4 @@ They are generated from script [setup.sh](setup.sh),
 
 [^delphi]: **delphi**
 
-    GitHub: <https://github.com/gerstung-lab/delphi>
-
-    ```bash
-    module load ceuadmin/python/3.12.10
-    python -m venv github
-    source github/bin/activate
-    git clone https://github.com/gerstung-lab/delphi src
-    cd src
-    pip install -r requirements.txt
-    ```
-
-    **Shmatko, Artem, Alexander Wolfgang Jung, Kumar Gaurav, Søren Brunak, Laust Hvas Mortensen, Ewan Birney, Tom Fitzgerald, and Moritz Gerstung. 2025.** "Learning the Natural History of Human Disease with Generative Transformers." *Nature*. [https://doi.org/10.1038/s41586-025-09529-3](https://doi.org/10.1038/s41586-025-09529-3).
-
+    See <https://cambridge-ceu.github.io/csd3/Python/delphi.html>.
