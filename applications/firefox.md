@@ -4,7 +4,7 @@ sort: 25
 
 # firefox
 
-## ceuadmin/nightly (145.0a1)
+## ceuadmin/145.0a1
 
 (successful with option 1 but is not quite working)
 
@@ -67,7 +67,7 @@ mkdir -p ~/.mozbuild/sysroot-x86_64-linux-gnu/usr/include/sys ~/.mozbuild/sysroo
 ./mach bootstrap
 ```
 
-## ceuadmin/firefox/143.0a1
+## ceuadmin/firefox/nightly
 
 <font color="red"><b>7/9/2025 Update</b></font>
 
