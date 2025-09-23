@@ -90,31 +90,26 @@ ac_add_options --enable-optimize
 A test of bfd, as with necessary files from `dnf`:
 
 ```bash
+export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
+export SYSROOT=~/.mozbuild/sysroot-x86_64-linux-gnu
 echo 'int main() { return 0; }' > test.c
 gcc -o test test.c -fuse-ld=bfd
 gcc --sysroot=/home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu \
-    -B/home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu -o test test.c -fuse-ld=bfd
-# kernel-headers
+    -B$SYSROOT -o test test.c -fuse-ld=bfd
 dnf download kernel-headers
-# glibc
 dnf download glibc
-mkdir glibc-files
-cd glibc-files
-rpm2cpio ../glibc-*.rpm | cpio -idmv -D /home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu
-# glibc-headers
+dnf download glibc-common
 dnf download --resolve glibc-headers
-mkdir -p glibc-headers-extracted
-cd glibc-headers-extracted
-rpm2cpio ../glibc-headers*.rpm | cpio -idmv
-rpm2cpio glibc-headers*.rpm | cpio -idmv -D /home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu
-cp -rv ./usr/include/gnu ~/.mozbuild/sysroot-x86_64-linux-gnu/usr/include/
-# glibc-devel
 dnf download glibc-devel
-mkdir -p glibc-devel-extracted
-cd glibc-devel-extracted
-rpm2cpio ../glibc-devel*.rpm | cpio -idmv
-rpm2cpio glibc-devel*.rpm | cpio -idmv
-cp -v ./usr/lib*/crt*.o ~/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu/
+cd $SYSROOT
+for rpm in ~/rds/software/firefox/*x86_64.rpm; do
+    rpm2cpio "$rpm" | cpio -idmv -D .
+done
+for dir in lib lib64 libexec share; do
+    ln -s usr/$dir
+done
+module load ceuadmin/pkg-config
+./mach build
 ```
 
 ## ceuadmin/firefox/nightly

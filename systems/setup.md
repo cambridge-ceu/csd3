@@ -487,6 +487,7 @@ All entries are ordered chronologically.
 | 2025-09-13 | VSCode/1.104.0                   | Genetic               |
 | 2025-09-21 | ollama/0.12.0                    | Genetic               |
 | 2025-09-22 | delphi/github                    | Generic[^delphi]      |
+| 2025-09-23 | alsa-lib/1.2.14                  | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
