@@ -6,11 +6,11 @@ sort: 25
 
 ## ceuadmin/nightly (145.0a1)
 
-(experimental)
+(successful with option 1 but is not quite working)
 
 <font color="red"><b>23/9/2025 Update</b></font>
 
-It now requires gcc/10 or above, which is furnished as follows,
+It now requires gcc/10 or above as follows,
 
 ```bash
 module load gcc/11.3.0/gcc/4zpip55j
@@ -24,12 +24,33 @@ ls ~/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu/crt*.o
 ./mach install
 ```
 
-In line with this, file mozconfig is modified such that
+Command `./mach bootsrap` shows that
+
+```
+Please choose the version of Firefox you want to build (see note above):
+  1. Firefox for Desktop Artifact Mode [default]
+  2. Firefox for Desktop
+  3. GeckoView/Firefox for Android Artifact Mode
+  4. GeckoView/Firefox for Android
+  5. SpiderMonkey JavaScript engine
+Your choice: 1
+
+Would you like to run a few configuration steps to ensure Git is
+optimally configured? (Yn): y
+Configuring git...
+Set git config: "core.untrackedCache = true"
+```
+
+artifact, <https://firefox-source-docs.mozilla.org/contributing/build/artifact_builds.html>, can be furnished with mozconfig:
 
 ```
 # Use artifact build mode to download prebuilt Firefox binaries
 # ac_add_options --enable-artifact-builds
+```
 
+Option 2 is more involved and file mozconfig is modified such that
+
+```
 # Avoid complex build setup
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-artifact
 CC=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru/bin/gcc
