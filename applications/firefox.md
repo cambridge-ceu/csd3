@@ -4,6 +4,50 @@ sort: 25
 
 # firefox
 
+## ceuadmin/nightly (145.0a1)
+
+(experimental)
+
+<font color="red"><b>23/9/2025 Update</b></font>
+
+It now requires gcc/10 or above, which is furnished as follows,
+
+```bash
+module load gcc/11.3.0/gcc/4zpip55j
+module load ceuadmin/rust
+./mach bootstrap
+ls ~/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu/crt*.o
+./mach artifact install
+./mach clobber
+./mach configure --prefix=$CEUADMIN/firefox/nightly
+./mach build -j5
+./mach install
+```
+
+In line with this, file mozconfig is modified such that
+
+```
+# Use artifact build mode to download prebuilt Firefox binaries
+# ac_add_options --enable-artifact-builds
+
+# Avoid complex build setup
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-artifact
+CC=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru/bin/gcc
+CXX=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru/bin/g++
+```
+
+Test of ld.gold:
+
+```bash
+echo 'int main() { return 0; }' > test.c
+gcc --sysroot=/home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu -B/home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu -o test test.c -fuse-ld=bfd
+mkdir -p ~/.mozbuild/sysroot-x86_64-linux-gnu/usr/include/sys ~/.mozbuild/sysroot-x86_64-linux-gnu/usr/include/bits
+./mach artifact
+./mach bootstrap
+```
+
+## ceuadmin/firefox/143.0a1
+
 <font color="red"><b>7/9/2025 Update</b></font>
 
 Module ceuadmin/firefox/nightly (143.0a1) finally starts browsing normally.
