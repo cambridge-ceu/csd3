@@ -77,7 +77,16 @@ for dir in lib lib64 libexec share; do
     ln -s usr/$dir
 done
 module load ceuadmin/alsa-lib/1.2.14
-./mach build
+module load ceuadmin/gtk+/3.24.0
+# xproto, kbproto, renderproto
+# https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/
+# https://download.rockylinux.org/pub/rocky/8/PowerTools/x86_64/os/Packages/
+# https://download.rockylinux.org/pub/rocky/8/BaseOS/x86_64/os/Packages/
+mkdir -p ~/rpms && cd ~/rpms
+wget https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/x/xorg-x11-proto-devel-2020.1-3.el8.noarch.rpm
+wget https://download.rockylinux.org/pub/rocky/8/PowerTools/x86_64/os/Packages/x/xorg-x11-xtrans-devel-1.4.0-4.el8.noarch.rpm
+wget https://download.rockylinux.org/pub/rocky/8/PowerTools/x86_64/os/Packages/x/xcb-proto-1.13-4.el8.noarch.rpm
+make
 ```
 
 ## ceuadmin/firefox/nightly
