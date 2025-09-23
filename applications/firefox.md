@@ -6,11 +6,14 @@ sort: 25
 
 ## ceuadmin/145.0a1
 
-(successful with option 1 but is not quite working)
-
 <font color="red"><b>23/9/2025 Update</b></font>
+It now requires gcc/10 or above.
 
-It now requires gcc/10 or above as follows,
+### Artifact mode
+
+Web: <https://firefox-source-docs.mozilla.org/contributing/build/artifact_builds.html>
+
+(successful but not quite working)
 
 ```bash
 module load gcc/11.3.0/gcc/4zpip55j
@@ -19,7 +22,7 @@ module load ceuadmin/rust
 ls ~/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu/crt*.o
 ./mach artifact install
 ./mach clobber
-./mach configure --prefix=$CEUADMIN/firefox/nightly
+./mach configure --prefix=$CEUADMIN/firefox/145.0a1
 ./mach build -j5
 ./mach install
 ```
@@ -41,30 +44,77 @@ Configuring git...
 Set git config: "core.untrackedCache = true"
 ```
 
-artifact, <https://firefox-source-docs.mozilla.org/contributing/build/artifact_builds.html>, can be furnished with mozconfig:
+can be furnished with mozconfig:
 
 ```
 # Use artifact build mode to download prebuilt Firefox binaries
 # ac_add_options --enable-artifact-builds
 ```
 
-Option 2 is more involved and file mozconfig is modified such that
+### Desktop
+
+Option 2 is more involved and file `mozconfig` is modified
 
 ```
-# Avoid complex build setup
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-artifact
-CC=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru/bin/gcc
-CXX=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru/bin/g++
+# Set custom GCC and G++ paths
+export CC=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru/bin/gcc
+export CXX=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru/bin/g++
+
+# Use BFD linker explicitly
+ac_add_options --enable-linker=bfd
+
+# Use sysroot
+export SYSROOT=/home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu
+export BINDGEN_EXTRA_CLANG_ARGS="--sysroot=$SYSROOT -I/usr/include -I/usr/include/x86_64-linux-gnu"
+export CFLAGS="--sysroot=$SYSROOT -I$SYSROOT/usr/include -m64"
+export CXXFLAGS="--sysroot=$SYSROOT -I$SYSROOT/usr/include -m64"
+export LDFLAGS="--sysroot=$SYSROOT -L$SYSROOT/usr/lib/x86_64-linux-gnu -m64"
+
+# Set Rust linker to avoid mismatched architectures
+export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=$CC
+
+# Specify target platform explicitly (important!)
+ac_add_options --target=x86_64-unknown-linux-gnu
+
+# Set the object directory
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-source
+
+# Optional: use up to 5 cores for parallel build
+mk_add_options MOZ_MAKE_FLAGS="-j5"
+
+# Disable debug symbols and enable optimizations for faster build
+ac_add_options --disable-debug
+ac_add_options --enable-optimize
 ```
 
-Test of ld.gold:
+A test of bfd, as with necessary files from `dnf`:
 
 ```bash
 echo 'int main() { return 0; }' > test.c
-gcc --sysroot=/home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu -B/home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu -o test test.c -fuse-ld=bfd
-mkdir -p ~/.mozbuild/sysroot-x86_64-linux-gnu/usr/include/sys ~/.mozbuild/sysroot-x86_64-linux-gnu/usr/include/bits
-./mach artifact
-./mach bootstrap
+gcc -o test test.c -fuse-ld=bfd
+gcc --sysroot=/home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu \
+    -B/home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu -o test test.c -fuse-ld=bfd
+# kernel-headers
+dnf download kernel-headers
+# glibc
+dnf download glibc
+mkdir glibc-files
+cd glibc-files
+rpm2cpio ../glibc-*.rpm | cpio -idmv -D /home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu
+# glibc-headers
+dnf download --resolve glibc-headers
+mkdir -p glibc-headers-extracted
+cd glibc-headers-extracted
+rpm2cpio ../glibc-headers*.rpm | cpio -idmv
+rpm2cpio glibc-headers*.rpm | cpio -idmv -D /home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu
+cp -rv ./usr/include/gnu ~/.mozbuild/sysroot-x86_64-linux-gnu/usr/include/
+# glibc-devel
+dnf download glibc-devel
+mkdir -p glibc-devel-extracted
+cd glibc-devel-extracted
+rpm2cpio ../glibc-devel*.rpm | cpio -idmv
+rpm2cpio glibc-devel*.rpm | cpio -idmv
+cp -v ./usr/lib*/crt*.o ~/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu/
 ```
 
 ## ceuadmin/firefox/nightly
