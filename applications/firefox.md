@@ -53,39 +53,7 @@ can be furnished with mozconfig:
 
 ### Desktop
 
-Option 2 is more involved and file `mozconfig` is modified
-
-```
-# Set custom GCC and G++ paths
-export CC=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru/bin/gcc
-export CXX=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru/bin/g++
-
-# Use BFD linker explicitly
-ac_add_options --enable-linker=bfd
-
-# Use sysroot
-export SYSROOT=/home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu
-export BINDGEN_EXTRA_CLANG_ARGS="--sysroot=$SYSROOT -I/usr/include -I/usr/include/x86_64-linux-gnu"
-export CFLAGS="--sysroot=$SYSROOT -I$SYSROOT/usr/include -m64"
-export CXXFLAGS="--sysroot=$SYSROOT -I$SYSROOT/usr/include -m64"
-export LDFLAGS="--sysroot=$SYSROOT -L$SYSROOT/usr/lib/x86_64-linux-gnu -m64"
-
-# Set Rust linker to avoid mismatched architectures
-export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=$CC
-
-# Specify target platform explicitly (important!)
-ac_add_options --target=x86_64-unknown-linux-gnu
-
-# Set the object directory
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-source
-
-# Optional: use up to 5 cores for parallel build
-mk_add_options MOZ_MAKE_FLAGS="-j5"
-
-# Disable debug symbols and enable optimizations for faster build
-ac_add_options --disable-debug
-ac_add_options --enable-optimize
-```
+Option 2 is more involved and file [`mozconfig`](files/mozconfig) is modified
 
 A test of bfd, as with necessary files from `dnf`:
 
@@ -108,7 +76,7 @@ done
 for dir in lib lib64 libexec share; do
     ln -s usr/$dir
 done
-module load ceuadmin/pkg-config
+module load ceuadmin/alsa-lib/1.2.14
 ./mach build
 ```
 
