@@ -78,7 +78,7 @@ gcc --sysroot=$SYSROOT -B$SYSROOT -o test test.c -fuse-ld=bfd
 
 Option 2 is more involved and file [`mozconfig`](files/mozconfig) and [`build-firefox.sh`](files/build-firefox.sh) are created.
 
-It requires gtk+3 along with xproto, kbproto, renderproto, which are manually set up as follows,
+It requires gtk+-3.0 along with xproto, kbproto, renderproto, which are manually set up as follows,
 
 ```bash
 module load ceuadmin/gtk+/3.24.0
