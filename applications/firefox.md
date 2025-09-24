@@ -25,6 +25,7 @@ module load ceuadmin/rust
 ./mach build -j5
 ./mach run --version
 ./mach install
+./mach package
 ```
 
 Command `./mach bootsrap` shows that
@@ -50,7 +51,7 @@ and `mozconfig`:
 ac_add_options --enable-artifact-builds
 ```
 
-It is helpful to use `./mach run` for problems before installation with `./mach install`.
+It is helpful to use `./mach run` for problems before installation with `./mach install`. Finllay, `./mach package` generates `obj-x86_64-pc-linux-gnu/dist/firefox-145.0a1.en-US.linux-x86_64.tar.xz`.
 
 Files from `~/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib64/crt*.o` are built and tested as follows,
 
