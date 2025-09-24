@@ -6,11 +6,11 @@ sort: 25
 
 GitHub: <https://github.com/mozilla-firefox/firefox>
 
-## ceuadmin/firefox/nightly
+## ceuadmin/firefox
 
 <font color="red"><b>23/9/2025 Update</b></font>
 
-Module ceuadmin/145.0a1 is available and used as follows,
+Module **ceuadmin/145.0a1** is available and used as follows,
 
 ```bash
 module load euadmin/firefox/145.0a1
@@ -19,7 +19,7 @@ firefox &
 
 <font color="red"><b>7/9/2025 Update</b></font>
 
-Module ceuadmin/firefox/nightly (143.0a1) finally starts browsing normally.
+Module **ceuadmin/firefox/nightly** (143.0a1) finally starts browsing normally.
 
 It can be started as follows,
 
