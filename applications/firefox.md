@@ -21,11 +21,11 @@ Web: <https://firefox-source-docs.mozilla.org/contributing/build/artifact_builds
 module load gcc/11.3.0/gcc/4zpip55j
 module load ceuadmin/rust
 ./mach bootstrap
-ls ~/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu/crt*.o
 ./mach artifact install
 ./mach clobber
 ./mach configure --prefix=$CEUADMIN/firefox/145.0a1
 ./mach build -j5
+./mach run --version
 ./mach install
 ```
 
@@ -46,21 +46,17 @@ Configuring git...
 Set git config: "core.untrackedCache = true"
 ```
 
-can be furnished with mozconfig:
+can be furnished with `mozconfig`:
 
 ```
-# Use artifact build mode to download prebuilt Firefox binaries
-# ac_add_options --enable-artifact-builds
+ac_add_options --enable-artifact-builds
 ```
 
-### Desktop
+It is helpful to run `./mach run` for problems before installation with `./mach install`.
 
-Option 2 is more involved and file [`mozconfig`](files/mozconfig) and [`build-firefox.sh`](files/build-firefox.sh) are created.
-
-A test of bfd, as with necessary files from `dnf`:
+Files from `~/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib64/crt*.o` are built as follows,
 
 ```bash
-export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 export SYSROOT=~/.mozbuild/sysroot-x86_64-linux-gnu
 echo 'int main() { return 0; }' > test.c
 gcc -o test test.c -fuse-ld=bfd
@@ -78,11 +74,16 @@ done
 for dir in lib lib64 libexec share; do
     ln -s usr/$dir
 done
-module load gcc/11.3.0/gcc/4zpip55j
-module load ceuadmin/alsa-lib/1.2.14
-module load ceuadmin/rust
+```
+
+### Desktop
+
+Option 2 is more involved and file [`mozconfig`](files/mozconfig) and [`build-firefox.sh`](files/build-firefox.sh) are created.
+
+It requires gtk+3 along with xproto, kbproto, renderproto, which are manually set up as follows,
+
+```bash
 module load ceuadmin/gtk+/3.24.0
-# xproto, kbproto, renderproto
 # https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/
 # https://download.rockylinux.org/pub/rocky/8/PowerTools/x86_64/os/Packages/
 # https://download.rockylinux.org/pub/rocky/8/BaseOS/x86_64/os/Packages/
@@ -113,12 +114,21 @@ cat <<EOF > test.c
 int main() { return 0; }
 EOF
 gcc test.c -I/home/jhz22/rds/software/firefox/rpms/usr/include
+```
+
+which contains a test of bfd, as with necessary files from `dnf`. This is followed with
+
+```bash
+export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
+module load gcc/11.3.0/gcc/4zpip55j
+module load ceuadmin/alsa-lib/1.2.14
+module load ceuadmin/rust
 export PKG_CONFIG_PATH=/home/jhz22/rds/software/firefox/rpms/usr/share/pkgconfig
 ./mach configure
 ./mach build
 ```
 
-It remains problematic with a report of missing alsa though it is clearly defined.
+It remains problematic with a report of missing alsa though it is defined.
 
 ## ceuadmin/firefox/nightly
 
