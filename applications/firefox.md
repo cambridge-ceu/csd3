@@ -53,7 +53,7 @@ can be furnished with mozconfig:
 
 ### Desktop
 
-Option 2 is more involved and file [`mozconfig`](files/mozconfig) is modified
+Option 2 is more involved and file [`mozconfig`](files/mozconfig) and [`build-firefox.sh`](files/build-firefox.sh) are created.
 
 A test of bfd, as with necessary files from `dnf`:
 
@@ -76,7 +76,8 @@ done
 for dir in lib lib64 libexec share; do
     ln -s usr/$dir
 done
-module load ceuadmin/alsa-lib/1.2.14
+module load gcc/11.3.0/gcc/4zpip55j
+module load ceuadmin/rust
 module load ceuadmin/gtk+/3.24.0
 # xproto, kbproto, renderproto
 # https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/
@@ -86,8 +87,34 @@ mkdir -p ~/rpms && cd ~/rpms
 wget https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/x/xorg-x11-proto-devel-2020.1-3.el8.noarch.rpm
 wget https://download.rockylinux.org/pub/rocky/8/PowerTools/x86_64/os/Packages/x/xorg-x11-xtrans-devel-1.4.0-4.el8.noarch.rpm
 wget https://download.rockylinux.org/pub/rocky/8/PowerTools/x86_64/os/Packages/x/xcb-proto-1.13-4.el8.noarch.rpm
+# extract the rpm
+# fixing .pc + also ln -s usr/include, etc. from rpms
+PCDIR="/home/jhz22/rds/software/firefox/rpms/usr/share/pkgconfig"
+NEW_PREFIX="/home/jhz22/rds/software/firefox/rpms/usr"
+for pcfile in "$PCDIR"/*.pc; do
+  echo "Fixing $pcfile ..."
+  # Backup original just in case
+  cp "$pcfile" "$pcfile.bak"
+
+  # Replace prefix and includedir lines
+  sed -i "s|^prefix=/usr$|prefix=$NEW_PREFIX|g" "$pcfile"
+  sed -i "s|^exec_prefix=/usr$|exec_prefix=\${prefix}|g" "$pcfile"
+  sed -i "s|^includedir=/usr/include$|includedir=\${prefix}/include|g" "$pcfile"
+done
+echo "All .pc files fixed."
 make
+cd /tmp
+cat <<EOF > test.c
+#include <X11/Xproto.h>
+int main() { return 0; }
+EOF
+gcc test.c -I/home/jhz22/rds/software/firefox/rpms/usr/include
+export PKG_CONFIG_PATH=/home/jhz22/rds/software/firefox/rpms/usr/share/pkgconfig
+./mach configure
+./mach build
 ```
+
+It remains problematic with alsa.
 
 ## ceuadmin/firefox/nightly
 
