@@ -50,21 +50,17 @@ can be furnished with `mozconfig`:
 ac_add_options --enable-artifact-builds
 ```
 
-It is helpful to run `./mach run` for problems before installation with `./mach install`.
+It is helpful to use `./mach run` for problems before installation with `./mach install`.
 
-Files from `~/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib64/crt*.o` are built as follows,
+Files from `~/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib64/crt*.o` are built and tested as follows,
 
 ```bash
-export SYSROOT=~/.mozbuild/sysroot-x86_64-linux-gnu
-echo 'int main() { return 0; }' > test.c
-gcc -o test test.c -fuse-ld=bfd
-gcc --sysroot=/home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu \
-    -B$SYSROOT -o test test.c -fuse-ld=bfd
 dnf download kernel-headers
 dnf download glibc
 dnf download glibc-common
 dnf download --resolve glibc-headers
 dnf download glibc-devel
+export SYSROOT=~/.mozbuild/sysroot-x86_64-linux-gnu
 cd $SYSROOT
 for rpm in ~/rds/software/firefox/*x86_64.rpm; do
     rpm2cpio "$rpm" | cpio -idmv -D .
@@ -72,6 +68,9 @@ done
 for dir in lib lib64 libexec share; do
     ln -s usr/$dir
 done
+echo 'int main() { return 0; }' > test.c
+gcc -o test test.c -fuse-ld=bfd
+gcc --sysroot=$SYSROOT -B$SYSROOT -o test test.c -fuse-ld=bfd
 ```
 
 ### Desktop
@@ -90,10 +89,9 @@ wget https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/x/
 wget https://download.rockylinux.org/pub/rocky/8/PowerTools/x86_64/os/Packages/x/xorg-x11-xtrans-devel-1.4.0-4.el8.noarch.rpm
 wget https://download.rockylinux.org/pub/rocky/8/PowerTools/x86_64/os/Packages/x/xcb-proto-1.13-4.el8.noarch.rpm
 rpm2cpio *.rpm | cpio -idmv -D .
-# extract the rpm
 # fixing .pc + also ln -s usr/include, etc. from rpms
-PCDIR="/home/jhz22/rds/software/firefox/rpms/usr/share/pkgconfig"
-NEW_PREFIX="/home/jhz22/rds/software/firefox/rpms/usr"
+PCDIR="~//rds/software/firefox/rpms/usr/share/pkgconfig"
+NEW_PREFIX="~/rds/software/firefox/rpms/usr"
 for pcfile in "$PCDIR"/*.pc; do
   echo "Fixing $pcfile ..."
   # Backup original just in case
@@ -111,7 +109,7 @@ cat <<EOF > test.c
 #include <X11/Xproto.h>
 int main() { return 0; }
 EOF
-gcc test.c -I/home/jhz22/rds/software/firefox/rpms/usr/include
+gcc test.c -I~/rds/software/firefox/rpms/usr/include
 ```
 
 which contains a test of bfd, as with necessary files from `dnf`. This is followed with
@@ -121,7 +119,7 @@ export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 module load gcc/11.3.0/gcc/4zpip55j
 module load ceuadmin/alsa-lib/1.2.14
 module load ceuadmin/rust
-export PKG_CONFIG_PATH=/home/jhz22/rds/software/firefox/rpms/usr/share/pkgconfig
+export PKG_CONFIG_PATH=~/rds/software/firefox/rpms/usr/share/pkgconfig
 ./mach configure
 ./mach build
 ```
