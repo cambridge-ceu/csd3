@@ -4,6 +4,8 @@ sort: 25
 
 # firefox
 
+GitHub: <https://github.com/mozilla-firefox/firefox>
+
 ## ceuadmin/145.0a1
 
 <font color="red"><b>23/9/2025 Update</b></font>
@@ -77,6 +79,7 @@ for dir in lib lib64 libexec share; do
     ln -s usr/$dir
 done
 module load gcc/11.3.0/gcc/4zpip55j
+module load ceuadmin/alsa-lib/1.2.14
 module load ceuadmin/rust
 module load ceuadmin/gtk+/3.24.0
 # xproto, kbproto, renderproto
@@ -87,6 +90,7 @@ mkdir -p ~/rpms && cd ~/rpms
 wget https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/x/xorg-x11-proto-devel-2020.1-3.el8.noarch.rpm
 wget https://download.rockylinux.org/pub/rocky/8/PowerTools/x86_64/os/Packages/x/xorg-x11-xtrans-devel-1.4.0-4.el8.noarch.rpm
 wget https://download.rockylinux.org/pub/rocky/8/PowerTools/x86_64/os/Packages/x/xcb-proto-1.13-4.el8.noarch.rpm
+rpm2cpio *.rpm | cpio -idmv -D .
 # extract the rpm
 # fixing .pc + also ln -s usr/include, etc. from rpms
 PCDIR="/home/jhz22/rds/software/firefox/rpms/usr/share/pkgconfig"
@@ -114,7 +118,7 @@ export PKG_CONFIG_PATH=/home/jhz22/rds/software/firefox/rpms/usr/share/pkgconfig
 ./mach build
 ```
 
-It remains problematic with alsa.
+It remains problematic with a report of missing alsa though it is clearly defined.
 
 ## ceuadmin/firefox/nightly
 
