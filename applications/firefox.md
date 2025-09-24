@@ -44,7 +44,7 @@ Configuring git...
 Set git config: "core.untrackedCache = true"
 ```
 
-can be furnished with `mozconfig`:
+and `mozconfig`:
 
 ```
 ac_add_options --enable-artifact-builds
