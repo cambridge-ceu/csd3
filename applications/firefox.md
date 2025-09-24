@@ -15,8 +15,6 @@ It now requires gcc/10 or above.
 
 Web: <https://firefox-source-docs.mozilla.org/contributing/build/artifact_builds.html>
 
-(successful but not quite working)
-
 ```bash
 module load gcc/11.3.0/gcc/4zpip55j
 module load ceuadmin/rust
