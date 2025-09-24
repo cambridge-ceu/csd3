@@ -6,9 +6,40 @@ sort: 25
 
 GitHub: <https://github.com/mozilla-firefox/firefox>
 
-## ceuadmin/145.0a1
+## ceuadmin/firefox/nightly
 
 <font color="red"><b>23/9/2025 Update</b></font>
+
+Module ceuadmin/145.0a1 is available and used as follows,
+
+```bash
+module load euadmin/firefox/145.0a1
+firefox &
+```
+
+<font color="red"><b>7/9/2025 Update</b></font>
+
+Module ceuadmin/firefox/nightly (143.0a1) finally starts browsing normally.
+
+It can be started as follows,
+
+```bash
+module load euadmin/firefox/nightly
+firefox &
+```
+
+which uses only one CPU and is appropriate on a login node with heavy load (many users and/or processes). One may also check the definition (a way to facilitate) and increase the number to improve the performance.
+
+```bash
+alias firefox
+# showing `alias firefox='MOZ_FORCE_DISABLE_E10S=1 firefox > /dev/null 2>&1'` 
+unalias firefox
+# call with three CPUs
+MOZ_FORCE_DISABLE_E10S=3 firefox > /dev/null 2>&1 &
+```
+
+## ceuadmin/145.0a1
+
 It now requires gcc/10 or above.
 
 ### Artifact mode
@@ -126,29 +157,6 @@ export PKG_CONFIG_PATH=~/rds/software/firefox/rpms/usr/share/pkgconfig
 ```
 
 It remains problematic with a report of missing alsa though it is defined.
-
-## ceuadmin/firefox/nightly
-
-<font color="red"><b>7/9/2025 Update</b></font>
-
-Module ceuadmin/firefox/nightly (143.0a1) finally starts browsing normally.
-
-It can be started as follows,
-
-```bash
-module load euadmin/firefox/nightly
-firefox &
-```
-
-which uses only one CPU and is appropriate on a login node with heavy load (many users and/or processes). One may also check the definition (a way to facilitate) and increase the number to improve the performance.
-
-```bash
-alias firefox
-# showing `alias firefox='MOZ_FORCE_DISABLE_E10S=1 firefox > /dev/null 2>&1'` 
-unalias firefox
-# call with three CPUs
-MOZ_FORCE_DISABLE_E10S=3 firefox > /dev/null 2>&1 &
-```
 
 ## mozilla-firefox
 
