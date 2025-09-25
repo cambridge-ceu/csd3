@@ -112,7 +112,6 @@ Option 2 is more involved and file [`mozconfig`](files/mozconfig) and [`build-fi
 It requires gtk+-3.0 along with xproto, kbproto, renderproto, which are manually set up as follows,
 
 ```bash
-module load ceuadmin/gtk+/3.24.0
 # https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/
 # https://download.rockylinux.org/pub/rocky/8/PowerTools/x86_64/os/Packages/
 # https://download.rockylinux.org/pub/rocky/8/BaseOS/x86_64/os/Packages/
@@ -144,19 +143,18 @@ EOF
 gcc test.c -I~/rds/software/firefox/rpms/usr/include
 ```
 
-which contains a test of bfd, as with necessary files from `dnf`. This is followed with
+which contains a test of bfd, as with necessary files from `dnf`. It is now ready to proceed with
 
 ```bash
-export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 module load gcc/11.3.0/gcc/4zpip55j
-module load ceuadmin/alsa-lib/1.2.14
+module load ceuadmin/gtk+/3.24.0
 module load ceuadmin/rust
-export PKG_CONFIG_PATH=~/rds/software/firefox/rpms/usr/share/pkgconfig:$PKG_CONFIG_PATH
-./mach configure
+export PKG_CONFIG_PATH=~/rds/software/firefox/rpms/usr/share/pkgconfig:/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
+./mach configure --prefix=$CEUADMIN/firefox/145.0a1
 ./mach build
 ```
 
-It remains problematic with a report of missing alsa though it is defined.
+Note `/usr/lib64/pkgconfig` contains alsa.pc, which is reported missing nevertheless.
 
 ## mozilla-firefox
 
