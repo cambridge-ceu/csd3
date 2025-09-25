@@ -116,11 +116,11 @@ pkg-config --exists xproto && echo "xproto found" || echo "xproto NOT found"
 pkg-config --exists kbproto && echo "kbproto found" || echo "kbproto NOT found"
 pkg-config --exists xextproto && echo "xextproto found" || echo "xextproto NOT found"
 pkg-config --exists renderproto && echo "renderproto found" || echo "renderproto NOT found"
-module load gcc/11.3.0/gcc/4zpip55j
-module load ceuadmin/gtk+/3.24.0
-module load ceuadmin/rust
-module load ceuadmin/clang/19.1.7
-# Bash script pkg-config to enforce availability
+```
+
+and a pkg-config script is generated to enforce availability of alsa.pc.
+
+```bash
 export PKG_CONFIG_PATH=~/rds/software/firefox/rpms/usr/share/pkgconfig:$PKG_CONFIG_PATH
 mkdir -p ~/fakebin
 cat <<EOF > ~/fakebin/pkg-config
@@ -129,61 +129,70 @@ export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PAT
 exec /usr/bin/pkg-config "$@"
 EOF
 chmod +x ~/fakebin/pkg-config
+```
+
+However, it appears complicated to have both gcc/11 and clang.
+
+```bash
 ./mach bootstrap
-export LD=$(which ld.lld)
-export GCC_PATH=$(dirname $(dirname $(which gcc)))
+module load gcc/11.3.0/gcc/4zpip55j
+module load ceuadmin/gtk+/3.24.0
+module load ceuadmin/rust
+module load ceuadmin/clang/19.1.7
 export GCC_PATH=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru
 if [ -d "$GCC_PATH/lib64" ]; then
   export GCC_LIB_PATH="$GCC_PATH/lib64"
 else
   export GCC_LIB_PATH="$GCC_PATH/lib"
 fi
-echo 'int main() { return 0; }' > test.c
-clang --gcc-toolchain=$GCC_PATH/bin/gcc \
-  -fuse-ld=lld \
-  -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 \
-  -B$GCC_PATH/lib64 \
-  -L$GCC_PATH/lib \
-  -L$GCC_PATH/lib64 \
-  -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 \
-  test.c -o test.out
+echo '#include <stdio.h>' > test.c
+echo 'int main() { printf("Hello from Clang + GCC toolchain\\n"); return 0; }' >> test.c
+clang --gcc-toolchain=$GCC_PATH -fuse-ld=lld -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_PATH/lib64 test.c -o test.out
 ./test.out && echo "✅ Link test passed"
-export CC="clang --gcc-toolchain=$GCC_PATH"
-export CXX="clang++ --gcc-toolchain=$GCC_PATH"
-export CFLAGS="--gcc-toolchain=$GCC_PATH -fuse-ld=lld \
-  -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 \
-  -B$GCC_LIB_PATH -L$GCC_PATH/lib -L$GCC_LIB_PATH \
-  -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0"
+export MOZ_CLANG_TOOLCHAIN=$GCC_PATH
+export CLANG_PATH=/usr/local/Cluster-Apps/ceuadmin/clang/19.1.7
+export CC="$CLANG_PATH/bin/clang --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_PATH/lib64"
+export CXX="$CLANG_PATH/bin/clang++ --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_PATH/lib64"
+echo 'int main() { return 0; }' > test.c
+/usr/local/Cluster-Apps/ceuadmin/clang/19.1.7/bin/clang --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 \
+  -B$GCC_PATH/lib64  -fuse-ld=lld test.c -o test.out
+./test.out && echo "✅ Link test passed"
+COMMON_LINK_PATHS="-B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_LIB_PATH \
+  -L$GCC_PATH/lib -L$GCC_LIB_PATH -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0"
+export CFLAGS="-fuse-ld=lld $COMMON_LINK_PATHS"
 export CXXFLAGS="$CFLAGS"
-export LDFLAGS="-fuse-ld=lld \
-  -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 \
-  -B$GCC_LIB_PATH \
-  -L$GCC_PATH/lib \
-  -L$GCC_LIB_PATH \
-  -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0"
-ls -1 $GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 | grep crt
+export LDFLAGS="-fuse-ld=lld $COMMON_LINK_PATHS"
+export LIBRARY_PATH="$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0:$LIBRARY_PATH"
+export LD="$CLANG_PATH/bin/clang"
 export RUSTFLAGS="-C linker=$LD -C link-arg=-fuse-ld=lld"
 export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=$LD
 export MOZCONFIG=~/rds/software/firefox/mozconfig
+ln -s $GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtbeginS.o $SYSROOT/usr/lib64/crtbeginS.o
+ln -s $GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtendS.o $SYSROOT/usr/lib64/crtendS.o
+ls obj-x86_64-pc-linux-gnu/dist/system_wrappers/sys/
+ls -1 $GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 | grep crt
 ./mach clobber
 env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/145.0a1
-./mach build
+./mach build -v
 ./mach package
 ```
 
-Our `mozconfig` is as follows,
+where two `ln -s` commands compensates a lack of the two files from `--sysroot`, Our `mozconfig` is as follows,
 
 ```
-# Set the number of parallel jobs
+# mozconfig
 mk_add_options MOZ_MAKE_FLAGS="-j5"
-# Set the object directory
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-@CONFIG_GUESS@
-# Enable application (Firefox)
+
 ac_add_options --enable-application=browser
-# Enable optimization and disable debugging
 ac_add_options --enable-optimize
 ac_add_options --disable-debug
 ac_add_options --enable-linker=lld
+
+# Pass flags to linker and compiler
+mk_add_options CFLAGS="$COMMON_FLAGS"
+mk_add_options CXXFLAGS="$COMMON_FLAGS"
+mk_add_options LDFLAGS="$COMMON_FLAGS"
 ```
 
 NOTES:
