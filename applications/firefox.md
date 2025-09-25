@@ -151,7 +151,7 @@ export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
 module load gcc/11.3.0/gcc/4zpip55j
 module load ceuadmin/alsa-lib/1.2.14
 module load ceuadmin/rust
-export PKG_CONFIG_PATH=~/rds/software/firefox/rpms/usr/share/pkgconfig
+export PKG_CONFIG_PATH=~/rds/software/firefox/rpms/usr/share/pkgconfig:$PKG_CONFIG_PATH
 ./mach configure
 ./mach build
 ```
