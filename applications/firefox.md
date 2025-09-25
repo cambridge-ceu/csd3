@@ -151,8 +151,8 @@ export CC="$CLANG_PATH/bin/clang --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib/gcc/x
 export CXX="$CLANG_PATH/bin/clang++ --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_PATH/lib64"
 export CFLAGS="-fuse-ld=lld"
 export CXXFLAGS="$CFLAGS"
-export LDFLAGS="-fuse-ld=lld -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_LIB_PATH \
-  -L$GCC_PATH/lib -L$GCC_LIB_PATH -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0"
+export LDFLAGS="-fuse-ld=lld -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_LIB_PATH -L$GCC_LIB_PATH -L$GCC_PATH/lib \
+ -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0"
 export LIBRARY_PATH="$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0:$GCC_LIB_PATH:$LIBRARY_PATH"
 export LD_LIBRARY_PATH="$GCC_PATH/lib64:$GCC_PATH/lib:$LD_LIBRARY_PATH"
 export LD="$CLANG_PATH/bin/clang"
@@ -168,7 +168,7 @@ ls obj-x86_64-pc-linux-gnu/dist/system_wrappers/sys/
 ls -1 $GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 | grep crt
 ./mach clobber
 env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/145.0a1
-./mach build -v
+./mach build
 ./mach package
 ```
 
