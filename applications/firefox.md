@@ -2,7 +2,7 @@
 sort: 25
 ---
 
-# firefox
+# Firefox
 
 GitHub: <https://github.com/mozilla-firefox/firefox>
 
