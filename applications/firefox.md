@@ -150,10 +150,10 @@ clang --gcc-toolchain=$GCC_PATH/bin/gcc \
 ./test.out && echo "✅ Link test passed"
 export CC="clang --gcc-toolchain=$GCC_PATH"
 export CXX="clang++ --gcc-toolchain=$GCC_PATH"
-export CFLAGS="--gcc-toolchain=$GCC_PATH/bin/gcc -fuse-ld=lld \
+export CFLAGS="--gcc-toolchain=$GCC_PATH -fuse-ld=lld \
   -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 \
-  -B$GCC_PATH/lib64 -L$GCC_PATH/lib -L$GCC_PATH/lib64 -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0"
-export CFLAGS="--gcc-toolchain=$GCC_PATH"
+  -B$GCC_LIB_PATH -L$GCC_PATH/lib -L$GCC_LIB_PATH \
+  -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=lld \
   -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 \
@@ -161,6 +161,7 @@ export LDFLAGS="-fuse-ld=lld \
   -L$GCC_PATH/lib \
   -L$GCC_LIB_PATH \
   -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0"
+ls -1 $GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 | grep crt
 export RUSTFLAGS="-C linker=$LD -C link-arg=-fuse-ld=lld"
 export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=$LD
 export MOZCONFIG=~/rds/software/firefox/mozconfig
