@@ -149,20 +149,19 @@ export MOZ_CLANG_TOOLCHAIN=$GCC_PATH
 export CLANG_PATH=/usr/local/Cluster-Apps/ceuadmin/clang/19.1.7
 export CC="$CLANG_PATH/bin/clang --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_PATH/lib64"
 export CXX="$CLANG_PATH/bin/clang++ --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_PATH/lib64"
-echo 'int main() { return 0; }' > test.c
-$CLANG_PATH/bin/clang --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_PATH/lib64  -fuse-ld=lld test.c -o test
-./test && echo "✅ Link test passed"
-COMMON_LINK_PATHS="-B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_LIB_PATH \
-  -L$GCC_PATH/lib -L$GCC_LIB_PATH -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0"
-export CFLAGS="-fuse-ld=lld $COMMON_LINK_PATHS"
+export CFLAGS="-fuse-ld=lld"
 export CXXFLAGS="$CFLAGS"
-export LDFLAGS="-fuse-ld=lld $COMMON_LINK_PATHS"
+export LDFLAGS="-fuse-ld=lld -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_LIB_PATH \
+  -L$GCC_PATH/lib -L$GCC_LIB_PATH -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0"
 export LIBRARY_PATH="$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0:$GCC_LIB_PATH:$LIBRARY_PATH"
 export LD_LIBRARY_PATH="$GCC_PATH/lib64:$GCC_PATH/lib:$LD_LIBRARY_PATH"
 export LD="$CLANG_PATH/bin/clang"
 export RUSTFLAGS="-C linker=$LD -C link-arg=-fuse-ld=lld"
 export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=$LD
 export MOZCONFIG=~/rds/software/firefox/mozconfig
+echo 'int main() { return 0; }' > test.c
+$CLANG_PATH/bin/clang --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_PATH/lib64  -fuse-ld=lld test.c -o test
+./test && echo "✅ Link test passed"
 ln -s $GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtbeginS.o $SYSROOT/usr/lib64/crtbeginS.o
 ln -s $GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0/crtendS.o $SYSROOT/usr/lib64/crtendS.o
 ls obj-x86_64-pc-linux-gnu/dist/system_wrappers/sys/
