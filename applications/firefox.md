@@ -107,9 +107,88 @@ gcc --sysroot=$SYSROOT -B$SYSROOT -o test test.c -fuse-ld=bfd
 
 ### Desktop
 
-Option 2 is more involved and file [`mozconfig`](files/mozconfig) and [`build-firefox.sh`](files/build-firefox.sh) are created.
+Option 2 is more involved.
 
-It requires gtk+-3.0 along with xproto, kbproto, renderproto, which are manually set up as follows,
+It requires gtk+-3.0 along with xproto, kbproto, xextproto, renderproto, 
+
+```bash
+pkg-config --exists xproto && echo "xproto found" || echo "xproto NOT found"
+pkg-config --exists kbproto && echo "kbproto found" || echo "kbproto NOT found"
+pkg-config --exists xextproto && echo "xextproto found" || echo "xextproto NOT found"
+pkg-config --exists renderproto && echo "renderproto found" || echo "renderproto NOT found"
+module load gcc/11.3.0/gcc/4zpip55j
+module load ceuadmin/gtk+/3.24.0
+module load ceuadmin/rust
+module load ceuadmin/clang/19.1.7
+# Bash script pkg-config to enforce availability
+export PKG_CONFIG_PATH=~/rds/software/firefox/rpms/usr/share/pkgconfig:$PKG_CONFIG_PATH
+mkdir -p ~/fakebin
+cat <<EOF > ~/fakebin/pkg-config
+#!/bin/bash
+export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH
+exec /usr/bin/pkg-config "$@"
+EOF
+chmod +x ~/fakebin/pkg-config
+./mach bootstrap
+export LD=$(which ld.lld)
+export GCC_PATH=$(dirname $(dirname $(which gcc)))
+export GCC_PATH=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru
+if [ -d "$GCC_PATH/lib64" ]; then
+  export GCC_LIB_PATH="$GCC_PATH/lib64"
+else
+  export GCC_LIB_PATH="$GCC_PATH/lib"
+fi
+echo 'int main() { return 0; }' > test.c
+clang --gcc-toolchain=$GCC_PATH/bin/gcc \
+  -fuse-ld=lld \
+  -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 \
+  -B$GCC_PATH/lib64 \
+  -L$GCC_PATH/lib \
+  -L$GCC_PATH/lib64 \
+  -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 \
+  test.c -o test.out
+./test.out && echo "✅ Link test passed"
+export CC="clang --gcc-toolchain=$GCC_PATH"
+export CXX="clang++ --gcc-toolchain=$GCC_PATH"
+export CFLAGS="--gcc-toolchain=$GCC_PATH/bin/gcc -fuse-ld=lld \
+  -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 \
+  -B$GCC_PATH/lib64 -L$GCC_PATH/lib -L$GCC_PATH/lib64 -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0"
+export CFLAGS="--gcc-toolchain=$GCC_PATH"
+export CXXFLAGS="$CFLAGS"
+export LDFLAGS="-fuse-ld=lld \
+  -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 \
+  -B$GCC_LIB_PATH \
+  -L$GCC_PATH/lib \
+  -L$GCC_LIB_PATH \
+  -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0"
+export RUSTFLAGS="-C linker=$LD -C link-arg=-fuse-ld=lld"
+export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=$LD
+export MOZCONFIG=~/rds/software/firefox/mozconfig
+./mach clobber
+env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/145.0a1
+./mach build
+./mach package
+```
+
+Our `mozconfig` is as follows,
+
+```
+# Set the number of parallel jobs
+mk_add_options MOZ_MAKE_FLAGS="-j5"
+# Set the object directory
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-@CONFIG_GUESS@
+# Enable application (Firefox)
+ac_add_options --enable-application=browser
+# Enable optimization and disable debugging
+ac_add_options --enable-optimize
+ac_add_options --disable-debug
+ac_add_options --enable-linker=lld
+```
+
+NOTES:
+
+- `/usr/lib64/pkgconfig` contains alsa.pc but nevertheless cannot be found so `~/fakebin/pkg-config` is used instead.
+- proto, etc. can be manually set up as follows (defunct),
 
 ```bash
 # https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/
@@ -121,7 +200,7 @@ wget https://download.rockylinux.org/pub/rocky/8/PowerTools/x86_64/os/Packages/x
 wget https://download.rockylinux.org/pub/rocky/8/PowerTools/x86_64/os/Packages/x/xcb-proto-1.13-4.el8.noarch.rpm
 rpm2cpio *.rpm | cpio -idmv -D .
 # fixing .pc + also ln -s usr/include, etc. from rpms
-PCDIR="~//rds/software/firefox/rpms/usr/share/pkgconfig"
+PCDIR="~/rds/software/firefox/rpms/usr/share/pkgconfig"
 NEW_PREFIX="~/rds/software/firefox/rpms/usr"
 for pcfile in "$PCDIR"/*.pc; do
   echo "Fixing $pcfile ..."
@@ -144,17 +223,6 @@ gcc test.c -I~/rds/software/firefox/rpms/usr/include
 ```
 
 which contains a test of bfd, as with necessary files from `dnf`. It is now ready to proceed with
-
-```bash
-module load gcc/11.3.0/gcc/4zpip55j
-module load ceuadmin/gtk+/3.24.0
-module load ceuadmin/rust
-export PKG_CONFIG_PATH=~/rds/software/firefox/rpms/usr/share/pkgconfig:/usr/lib64/pkgconfig:$PKG_CONFIG_PATH
-./mach configure --prefix=$CEUADMIN/firefox/145.0a1
-./mach build
-```
-
-Note `/usr/lib64/pkgconfig` contains alsa.pc, which is reported missing nevertheless.
 
 ## mozilla-firefox
 
