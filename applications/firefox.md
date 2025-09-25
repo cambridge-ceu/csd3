@@ -151,7 +151,7 @@ export CLANG_PATH=/usr/local/Cluster-Apps/ceuadmin/clang/19.1.7
 export CLANG="$CLANG_PATH/bin/clang"
 export CC="$CLANG_PATH/bin/clang --gcc-toolchain=$GCC_PATH -B$GCC_X86_64 -B$GCC_PATH/lib64"
 export CXX="$CLANG_PATH/bin/clang++ --gcc-toolchain=$GCC_PATH -B$GCC_X86_84 -B$GCC_PATH/lib64"
-export CFLAGS="-fuse-ld=lld"
+export CFLAGS="-fuse-ld=lld -I$GCC_PATH/include/c++/11.3.0"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=lld -B$GCC_X86_64 -B$GCC_LIB_PATH -L$GCC_LIB_PATH -L$GCC_PATH/lib -L$GCC_X86_64"
 export LIBRARY_PATH="$GCC_X86_64:$GCC_LIB_PATH:$LIBRARY_PATH"
@@ -183,11 +183,6 @@ ac_add_options --enable-application=browser
 ac_add_options --enable-optimize
 ac_add_options --disable-debug
 ac_add_options --enable-linker=lld
-
-# Pass flags to linker and compiler
-mk_add_options CFLAGS="$COMMON_FLAGS"
-mk_add_options CXXFLAGS="$COMMON_FLAGS"
-mk_add_options LDFLAGS="$COMMON_FLAGS"
 ```
 
 NOTES proto, etc. can be manually set up as follows (defunct),
