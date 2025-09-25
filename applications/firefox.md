@@ -118,7 +118,7 @@ pkg-config --exists xextproto && echo "xextproto found" || echo "xextproto NOT f
 pkg-config --exists renderproto && echo "renderproto found" || echo "renderproto NOT found"
 ```
 
-and a pkg-config script is generated to enforce availability of alsa.pc.
+and `~/fakebin/pkg-config` is generated to enforce use alsa.pc from `/usr/lib64/pkgconfig`.
 
 ```bash
 export PKG_CONFIG_PATH=~/rds/software/firefox/rpms/usr/share/pkgconfig:$PKG_CONFIG_PATH
@@ -131,7 +131,7 @@ EOF
 chmod +x ~/fakebin/pkg-config
 ```
 
-However, it appears complicated to have both gcc/11 and clang.
+However, a hybrid of gcc/11 and clang is used.
 
 ```bash
 ./mach bootstrap
@@ -145,24 +145,20 @@ if [ -d "$GCC_PATH/lib64" ]; then
 else
   export GCC_LIB_PATH="$GCC_PATH/lib"
 fi
-echo '#include <stdio.h>' > test.c
-echo 'int main() { printf("Hello from Clang + GCC toolchain\\n"); return 0; }' >> test.c
-clang --gcc-toolchain=$GCC_PATH -fuse-ld=lld -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_PATH/lib64 test.c -o test.out
-./test.out && echo "✅ Link test passed"
 export MOZ_CLANG_TOOLCHAIN=$GCC_PATH
 export CLANG_PATH=/usr/local/Cluster-Apps/ceuadmin/clang/19.1.7
 export CC="$CLANG_PATH/bin/clang --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_PATH/lib64"
 export CXX="$CLANG_PATH/bin/clang++ --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_PATH/lib64"
 echo 'int main() { return 0; }' > test.c
-/usr/local/Cluster-Apps/ceuadmin/clang/19.1.7/bin/clang --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 \
-  -B$GCC_PATH/lib64  -fuse-ld=lld test.c -o test.out
-./test.out && echo "✅ Link test passed"
+$CLANG_PATH/bin/clang --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_PATH/lib64  -fuse-ld=lld test.c -o test
+./test && echo "✅ Link test passed"
 COMMON_LINK_PATHS="-B$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0 -B$GCC_LIB_PATH \
   -L$GCC_PATH/lib -L$GCC_LIB_PATH -L$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0"
 export CFLAGS="-fuse-ld=lld $COMMON_LINK_PATHS"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=lld $COMMON_LINK_PATHS"
-export LIBRARY_PATH="$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0:$LIBRARY_PATH"
+export LIBRARY_PATH="$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0:$GCC_LIB_PATH:$LIBRARY_PATH"
+export LD_LIBRARY_PATH="$GCC_PATH/lib64:$GCC_PATH/lib:$LD_LIBRARY_PATH"
 export LD="$CLANG_PATH/bin/clang"
 export RUSTFLAGS="-C linker=$LD -C link-arg=-fuse-ld=lld"
 export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=$LD
@@ -195,10 +191,7 @@ mk_add_options CXXFLAGS="$COMMON_FLAGS"
 mk_add_options LDFLAGS="$COMMON_FLAGS"
 ```
 
-NOTES:
-
-- `/usr/lib64/pkgconfig` contains alsa.pc but nevertheless cannot be found so `~/fakebin/pkg-config` is used instead.
-- proto, etc. can be manually set up as follows (defunct),
+NOTES proto, etc. can be manually set up as follows (defunct),
 
 ```bash
 # https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/
