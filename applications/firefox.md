@@ -129,9 +129,10 @@ export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PAT
 exec /usr/bin/pkg-config "$@"
 EOF
 chmod +x ~/fakebin/pkg-config
+export PATH=~/fakebin:$PATH
 ```
 
-However, a hybrid of gcc/11 and clang is used via [mozconfig](files/mozconfig) and [mozbuild.sh](files/mozbuild.sh).
+A hybrid of gcc/11 and clang (for newer libstdc++) is used via [mozconfig](files/mozconfig) and [mozbuild.sh](files/mozbuild.sh).
 
 ```bash
 ./mach bootstrap
