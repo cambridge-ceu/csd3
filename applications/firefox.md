@@ -131,62 +131,14 @@ EOF
 chmod +x ~/fakebin/pkg-config
 ```
 
-However, a hybrid of gcc/11 and clang is used.
+However, a hybrid of gcc/11 and clang is used via [mozconfig](files/mozconfig) and [mozbuild.sh](files/mozbuild.sh).
 
 ```bash
 ./mach bootstrap
-module load gcc/11.3.0/gcc/4zpip55j
-module load ceuadmin/gtk+/3.24.0
-module load ceuadmin/rust
-module load ceuadmin/clang/19.1.7
-export GCC_PATH=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru
-if [ -d "$GCC_PATH/lib64" ]; then
-  export GCC_LIB_PATH="$GCC_PATH/lib64"
-else
-  export GCC_LIB_PATH="$GCC_PATH/lib"
-fi
-export GCC_X86_64=$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0
-export MOZ_CLANG_TOOLCHAIN=$GCC_PATH
-export CLANG_PATH=/usr/local/Cluster-Apps/ceuadmin/clang/19.1.7
-export CLANG="$CLANG_PATH/bin/clang"
-export CC="$CLANG_PATH/bin/clang --gcc-toolchain=$GCC_PATH -B$GCC_X86_64 -B$GCC_PATH/lib64"
-export CXX="$CLANG_PATH/bin/clang++ --gcc-toolchain=$GCC_PATH -B$GCC_X86_64 -B$GCC_PATH/lib64"
-export CFLAGS="-I$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include -I/home/jhz22/.mozbuild/sysroot-x86_64-linux-gnu/usr/include"
-export CXXFLAGS="-I$GCC_PATH/include/c++/11.3.0 -I$GCC_PATH/include/c++/11.3.0/x86_64-pc-linux-gnu"
-export SYSROOT="$HOME/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib64"
-export LDFLAGS="-fuse-ld=lld -B$GCC_X86_64 -B$GCC_LIB_PATH -L$GCC_LIB_PATH -L$GCC_PATH/lib -L$GCC_X86_64 -L$SYSROOT"
-export LIBRARY_PATH="$GCC_X86_64:$GCC_LIB_PATH:$LIBRARY_PATH"
-export LD_LIBRARY_PATH="$GCC_PATH/lib64:$GCC_PATH/lib:$LD_LIBRARY_PATH"
-export RUSTFLAGS="-C linker=$CLANG -C link-arg=-fuse-ld=lld"
-export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=$CLANG
-export MOZCONFIG=~/rds/software/firefox/mozconfig
-echo 'int main() { return 0; }' > test.c
-$CLANG --gcc-toolchain=$GCC_PATH -B$GCC_X86_64 -B$GCC_PATH/lib64  -fuse-ld=lld test.c -o test
-./test && echo "✅ Link test passed"
-ln -s $GCC_X86_64/crtbeginS.o $SYSROOT/usr/lib64/crtbeginS.o
-ln -s $GCC_X86_64/crtendS.o $SYSROOT/usr/lib64/crtendS.o
-ls obj-x86_64-pc-linux-gnu/dist/system_wrappers/sys/
-ls -1 $GCC_X86_64 | grep crt
-./mach clobber
-env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/145.0a1
-./mach build
-./mach package
+source mozbuild.sh | tee mozbuild.log
 ```
 
-where two `ln -s` commands compensates a lack of the two files from `--sysroot`, Our `mozconfig` is as follows,
-
-```
-# mozconfig
-mk_add_options MOZ_MAKE_FLAGS="-j5"
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-@CONFIG_GUESS@
-
-ac_add_options --enable-application=browser
-ac_add_options --enable-optimize
-ac_add_options --disable-debug
-ac_add_options --enable-linker=lld
-```
-
-NOTES proto, etc. can be manually set up as follows (defunct),
+NOTES proto, etc. is initially set up as follows (defunct),
 
 ```bash
 # https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/
