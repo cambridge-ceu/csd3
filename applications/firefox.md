@@ -4,7 +4,9 @@ sort: 25
 
 # Firefox
 
-GitHub: <https://github.com/mozilla-firefox/firefox>
+Mercurial (hg): <https://hg.mozilla.org/mozilla-unified> ([releases](https://archive.mozilla.org/pub/firefox/releases/))
+
+Community-based version is from GitHub: <https://github.com/mozilla-firefox/firefox>
 
 ## ceuadmin/firefox
 
