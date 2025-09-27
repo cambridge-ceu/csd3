@@ -6,7 +6,20 @@ sort: 25
 
 Mercurial (hg): <https://hg.mozilla.org/mozilla-unified> ([releases](https://archive.mozilla.org/pub/firefox/releases/))
 
-Community-based version is from GitHub: <https://github.com/mozilla-firefox/firefox>
+## mozilla-firefox
+
+GitHub: <https://github.com/mozilla-firefox/firefox>
+
+```bash
+export version=143.0.1
+mkdir -p firefox-$version
+wget -qO- "https://archive.mozilla.org/pub/firefox/releases/$version/linux-x86_64/en-GB/firefox-$version.tar.xz" | \
+tar -xJ --strip-components=1 -C firefox-$version/
+cd firefox-$version/
+./firefox &
+```
+
+Similarly to /usr/bin/firefox (140.3.0esr), it generates a host of errors apart from the right icon.
 
 ## ceuadmin/firefox
 
