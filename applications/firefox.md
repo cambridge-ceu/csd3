@@ -4,24 +4,19 @@ sort: 25
 
 # Firefox
 
-Mercurial (hg): <https://hg.mozilla.org/mozilla-unified> ([releases](https://archive.mozilla.org/pub/firefox/releases/))
-
-## mozilla-firefox
-
+Mercurial (hg): <https://hg.mozilla.org/mozilla-unified> ([releases](https://archive.mozilla.org/pub/firefox/releases/))\
 GitHub: <https://github.com/mozilla-firefox/firefox>
 
-```bash
-export version=143.0.1
-mkdir -p firefox-$version
-wget -qO- "https://archive.mozilla.org/pub/firefox/releases/$version/linux-x86_64/en-GB/firefox-$version.tar.xz" | \
-tar -xJ --strip-components=1 -C firefox-$version/
-cd firefox-$version/
-./firefox &
-```
-
-Similarly to /usr/bin/firefox (140.3.0esr), it generates a host of errors apart from the right icon.
-
 ## ceuadmin/firefox
+
+<font color="red"><b>27/9/2025 Update</b></font>
+
+Module **ceuadmin/143.0.1** is available and used as follows,
+
+```bash
+module load euadmin/firefox/143.0.1
+firefox &
+```
 
 <font color="red"><b>23/9/2025 Update</b></font>
 
@@ -52,6 +47,19 @@ unalias firefox
 # call with three CPUs
 MOZ_FORCE_DISABLE_E10S=3 firefox > /dev/null 2>&1 &
 ```
+
+## ceuadmin/143.0.1
+
+```bash
+export version=143.0.1
+mkdir -p firefox-$version
+wget -qO- "https://archive.mozilla.org/pub/firefox/releases/$version/linux-x86_64/en-GB/firefox-$version.tar.xz" | \
+tar -xJ --strip-components=1 -C firefox-$version/
+cd firefox-$version/
+MOZ_FORCE_DISABLE_E10S=1 firefox > /dev/null 2>&1 &
+```
+
+This is slightly newer than `/usr/bin/firefox` (140.3.0esr).
 
 ## ceuadmin/145.0a1
 
