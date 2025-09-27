@@ -40,18 +40,12 @@ MOZ_FORCE_DISABLE_E10S=3 firefox > /dev/null 2>&1 &
 
 ## ceuadmin/145.0a1
 
-It now requires gcc/10 or above.
-
 ### Artifact mode
 
 Web: <https://firefox-source-docs.mozilla.org/contributing/build/artifact_builds.html>
 
 ```bash
-module load gcc/11.3.0/gcc/4zpip55j
-module load ceuadmin/rust
 ./mach bootstrap
-./mach artifact install
-./mach clobber
 ./mach configure --prefix=$CEUADMIN/firefox/145.0a1
 ./mach build -j5
 ./mach run --version
@@ -80,9 +74,10 @@ and `mozconfig`:
 
 ```
 ac_add_options --enable-artifact-builds
+ac_add_options --disable-tests
 ```
 
-It is helpful to use `./mach run` for problems before installation with `./mach install`. Finally, `./mach package` generates `obj-x86_64-pc-linux-gnu/dist/firefox-145.0a1.en-US.linux-x86_64.tar.xz`.
+It is helpful to use `./mach run` for problems before `./mach install`. Finally, `./mach package` generates `obj-x86_64-pc-linux-gnu/dist/firefox-145.0a1.en-US.linux-x86_64.tar.xz`.
 
 Files from `~/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib64/crt*.o` are built and tested as follows,
 
@@ -109,7 +104,7 @@ gcc --sysroot=$SYSROOT -B$SYSROOT -o test test.c -fuse-ld=bfd
 
 Option 2 is more involved.
 
-It requires gtk+-3.0 along with xproto, kbproto, xextproto, renderproto, 
+It now requires gcc/10 or above, and gtk+-3.0 along with xproto, kbproto, xextproto, renderproto, 
 
 ```bash
 pkg-config --exists xproto && echo "xproto found" || echo "xproto NOT found"
@@ -139,7 +134,7 @@ A hybrid of gcc/11 and clang (for newer libstdc++) is used via [mozconfig](files
 source mozbuild.sh | tee mozbuild.log
 ```
 
-NOTES proto, etc. is initially set up as follows (defunct),
+NOTES proto, etc. is similarly set up as follows (defunct),
 
 ```bash
 # https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/
@@ -173,7 +168,7 @@ EOF
 gcc test.c -I~/rds/software/firefox/rpms/usr/include
 ```
 
-which contains a test of bfd, as with necessary files from `dnf`. It is now ready to proceed with
+which contains a test of bfd, as with necessary files from `dnf`.
 
 ## mozilla-firefox
 
