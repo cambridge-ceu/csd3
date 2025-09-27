@@ -56,7 +56,7 @@ mkdir -p firefox-$version
 wget -qO- "https://archive.mozilla.org/pub/firefox/releases/$version/linux-x86_64/en-GB/firefox-$version.tar.xz" | \
 tar -xJ --strip-components=1 -C firefox-$version/
 cd firefox-$version/
-MOZ_FORCE_DISABLE_E10S=1 firefox > /dev/null 2>&1 &
+MOZ_DISABLE_CONTENT_SANDBOX=1 firefox > /dev/null 2>&1 &
 ```
 
 This is slightly newer than `/usr/bin/firefox` (140.3.0esr).
