@@ -127,7 +127,67 @@ chmod +x ~/fakebin/pkg-config
 export PATH=~/fakebin:$PATH
 ```
 
-A hybrid of gcc/11 and clang (for newer libstdc++) is used via [mozconfig](files/mozconfig) and [mozbuild.sh](files/mozbuild.sh).
+One attempt is additionally used customized `my-clang` and `my-clang++` as follows,
+
+```bash
+module load ceuadmin/gtk+/3.24.0
+
+export CC="$HOME/bin/my-clang"
+export CXX="$HOME/bin/my-clang++"
+export SPACK_VIEWS="/usr/local/software/spack/spack-views"
+export GCC_TOOLCHAIN="$SPACK_VIEWS/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru"
+export LIBSTDCPP_INCLUDE="$GCC_TOOLCHAIN/include/c++/11.3.0"
+export LIBSTDCPP_TARGET_INCLUDE="$LIBSTDCPP_INCLUDE/x86_64-pc-linux-gnu"
+export LIBGCC_LIB64="$GCC_TOOLCHAIN/lib64"
+export GTK_CFLAGS=$(pkg-config --cflags gtk+-3.0)
+export GLIB_CFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
+export STDCPP_CFLAGS="-isystem $LIBSTDCPP_INCLUDE -isystem $LIBSTDCPP_TARGET_INCLUDE"
+export COMMON_WARNINGS="-Wno-unused-command-line-argument"
+export CPPFLAGS="-I/usr/include $GLIB_CFLAGS $GTK_CFLAGS"
+export CFLAGS="--gcc-toolchain=$GCC_TOOLCHAIN $STDCPP_CFLAGS $CPPFLAGS $COMMON_WARNINGS"
+export CXXFLAGS="$CFLAGS"
+export CXXFLAGS="-include cmath $CXXFLAGS"
+GTK_LIBS=$(pkg-config --libs gtk+-3.0)
+GLIB_LIBS=$(pkg-config --libs glib-2.0)
+export LDFLAGS="--gcc-toolchain=$GCC_TOOLCHAIN -L$LIBGCC_LIB64 -L/usr/lib64 $GTK_LIBS $GLIB_LIBS"
+export LD_LIBRARY_PATH="$LIBGCC_LIB64:$LD_LIBRARY_PATH"
+chmod +x "$CC" "$CXX"
+env PKG_CONFIG="$HOME/fakebin/pkg-config" ./mach configure --prefix="$CEUADMIN/firefox/145.0a1"
+./mach build -j5
+```
+
+such that `my-clang` is defined as
+
+```bash
+#!/bin/bash
+GCC_PATH=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru
+
+if [[ "$@" == *"--target=wasm32-wasi"* ]]; then
+    exec /home/jhz22/.mozbuild/clang/bin/clang "$@"
+else
+    exec /home/jhz22/.mozbuild/clang/bin/clang --gcc-toolchain="$GCC_PATH" -L"$GCC_PATH/lib64" "$@"
+fi
+```
+
+and `my-clang++` as
+
+```bash
+#!/bin/bash
+GCC_PATH=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru
+
+# Check if compiling for WASM
+if [[ "$@" == *"--target=wasm32-wasi"* ]]; then
+    # Just call clang++ without linux-specific flags
+    exec /home/jhz22/.mozbuild/clang/bin/clang++ "$@"
+else
+    # Native build: add gcc toolchain and lib paths
+    exec /home/jhz22/.mozbuild/clang/bin/clang++ --gcc-toolchain="$GCC_PATH" -L"$GCC_PATH/lib64" "$@"
+fi
+```
+
+respectively.
+
+A hybrid of gcc/11 and clang (for newer libstdc++) is used via [mozconfig](files/mozconfig) and [mozbuild.sh](files/mozbuild.sh) but appears that higher version of gcc is preferable.
 
 ```bash
 ./mach bootstrap
