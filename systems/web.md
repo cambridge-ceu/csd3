@@ -25,49 +25,11 @@ npm install -g http-server
 http-server &
 ```
 
-The `firefox` browser available at `/usr/bin/firefox` is dysfunctional, and when started many temporary files are generated which can be removed with
-
-```bash
-# only remove those dated on Dec 3:
-ll -rt | grep "Dec  3" | awk '{print "rm -fr "$NF}' | bash
-```
-
-A close attempt is with [20.04.def](files/20.04.def) but remains problematic.
-
-```bash
-# firefox/136.0 (64-bit) as of 26/3/2025
-singularity build 20.04.sif 20.04.def
-singularity run --bind $HPC_WORK/work:/mnt/tmp 20.04.sif`
-# A showcase of instance
-singularity instance start 20.04.sif 20.04
-singularity instance list
-## quit with 'exit'
-singularity shell instance://20.04
-## exec take commands such as 'bash', 'ls', 'apt-get'
-singularity exec instance://20.04 firefox
-singularity instance stop 20.04
-```
-
-Alternatively, it can be added to an existing container as follows,
-
-```bash
-singularity pull docker://ubuntu:20.04
-singularity build --fakeroot --sandbox ubuntu_20.04_sandbox/ ubuntu_20.04.sif
-singularity shell --fakeroot --writable ubuntu_20.04_sandbox/
-# export LANG=en_US.UTF-8
-# export LANGUAGE=en_US.UTF-8
-# export LC_ALL=en_US.UTF-8
-# apt update
-# apt install -y firefox
-# exit
-singularity exec ubuntu_20.04_sandbox/ /usr/bin/firefox
-singularity build 20.04.sif ubuntu_20.04_sandbox/
-singularity exec 20.04.sif /usr/bin/firefox
-```
+How to start /usr/bin/firefox is described here, <https://cambridge-ceu.github.io/csd3/applications/firefox.html>.
 
 Several alternatives are described below.
 
-## Firefox
+## ceuadmin/firefox/60.5.1esr
 
 A singularity get-around is possible with this,
 
@@ -172,3 +134,45 @@ ssh -4 -L 8080:127.0.0.1:8000 -fN jhz22@${hostname}.hpc.cam.ac.uk
 ```
 
 where hostname from CSD3 and ${hostname} have to be the same. We can then browse `http://127.0.0.1:8080`.
+
+## Firefox (legacy)
+
+The `firefox` browser available at `/usr/bin/firefox` is dysfunctional when started, many temporary files are generated which can be removed with
+
+```bash
+# only remove those dated on Dec 3:
+ll -rt | grep "Dec  3" | awk '{print "rm -fr "$NF}' | bash
+```
+
+A close attempt is with [20.04.def](files/20.04.def) but remains problematic.
+
+```bash
+# firefox/136.0 (64-bit) as of 26/3/2025
+singularity build 20.04.sif 20.04.def
+singularity run --bind $HPC_WORK/work:/mnt/tmp 20.04.sif`
+# A showcase of instance
+singularity instance start 20.04.sif 20.04
+singularity instance list
+## quit with 'exit'
+singularity shell instance://20.04
+## exec take commands such as 'bash', 'ls', 'apt-get'
+singularity exec instance://20.04 firefox
+singularity instance stop 20.04
+```
+
+Alternatively, it can be added to an existing container as follows,
+
+```bash
+singularity pull docker://ubuntu:20.04
+singularity build --fakeroot --sandbox ubuntu_20.04_sandbox/ ubuntu_20.04.sif
+singularity shell --fakeroot --writable ubuntu_20.04_sandbox/
+# export LANG=en_US.UTF-8
+# export LANGUAGE=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
+# apt update
+# apt install -y firefox
+# exit
+singularity exec ubuntu_20.04_sandbox/ /usr/bin/firefox
+singularity build 20.04.sif ubuntu_20.04_sandbox/
+singularity exec 20.04.sif /usr/bin/firefox
+```
