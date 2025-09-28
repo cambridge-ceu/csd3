@@ -9,13 +9,13 @@ GitHub: <https://github.com/mozilla-firefox/firefox>
 
 ## ceuadmin/firefox
 
-<font color="red"><b>27/9/2025 Update</b></font>
-
 /usr/bin/firefox (140.3.0esr, Extended Support Release) actually works by setting in .bashrc.
 
 ```bash
 alias firefox='MOZ_DISABLE_CONTENT_SANDBOX=1 firefox > /dev/null 2>&1'
 ```
+
+<font color="red"><b>27/9/2025 Update</b></font>
 
 Module **ceuadmin/143.0.1** is available and used as follows,
 
