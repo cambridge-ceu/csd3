@@ -176,3 +176,38 @@ singularity exec ubuntu_20.04_sandbox/ /usr/bin/firefox
 singularity build 20.04.sif ubuntu_20.04_sandbox/
 singularity exec 20.04.sif /usr/bin/firefox
 ```
+
+File 136.0.def is now removed, but kept note here,
+
+```
+Bootstrap: docker
+From: ubuntu:20.04
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update && apt-get install -y \
+        build-essential \
+        firefox \
+        tzdata \
+        locales \
+        libpci-dev \
+        libegl1-mesa \
+        libgl1-mesa-glx \
+        dbus-x11 \
+        procps \
+        coreutils
+    ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime
+    dpkg-reconfigure --frontend noninteractive tzdata
+    locale-gen en_GB.UTF-8
+    update-locale LANG=en_GB.UTF-8
+    mkdir -p /mnt/tmp
+
+%environment
+    export TZ=Europe/London
+    export LANG=en_GB.UTF-8
+    export LC_ALL=en_GB.UTF-8
+    export TMPDIR=/mnt/tmp
+
+%runscript
+    exec /usr/bin/firefox "$@"
+```
