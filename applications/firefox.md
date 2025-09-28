@@ -225,7 +225,7 @@ A hybrid of gcc/11 and clang (for newer libstdc++) is used via [mozconfig](files
 source mozbuild.sh | tee mozbuild.log
 ```
 
-NOTES proto, etc. is similarly set up as follows (defunct),
+NOTES proto, etc. is similarly set up as follows (legacy),
 
 ```bash
 # https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/
