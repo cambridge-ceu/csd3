@@ -7,8 +7,6 @@ sort: 25
 Mercurial (hg): <https://hg.mozilla.org/mozilla-unified> ([releases](https://archive.mozilla.org/pub/firefox/releases/))\
 GitHub: <https://github.com/mozilla-firefox/firefox>
 
-## ceuadmin/firefox
-
 /usr/bin/firefox (140.3.0esr, Extended Support Release) actually works by setting in .bashrc.
 
 ```bash
@@ -16,6 +14,8 @@ alias firefox='MOZ_DISABLE_CONTENT_SANDBOX=1 firefox > /dev/null 2>&1'
 ```
 
 With its handling of sandbox, it looks better to use the nightly builds below.
+
+## ceuadmin/firefox
 
 <font color="red"><b>27/9/2025 Update</b></font>
 
