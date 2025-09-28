@@ -38,8 +38,6 @@ module load ceuadmin/firefox/60.5.1esr
 firefox &
 ```
 
-On 7/9/2025, ceuadmin/firefox/nightly (143.0a1) starts browsing normally with MOZ_FORCE_DISABLE_E10S=1.
-
 ## Chrome
 
 ```bash
