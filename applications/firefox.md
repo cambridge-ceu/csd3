@@ -56,7 +56,7 @@ unalias firefox
 MOZ_FORCE_DISABLE_E10S=3 firefox > /dev/null 2>&1 &
 ```
 
-## ceuadmin/143.0.1
+### ceuadmin/143.0.1
 
 ```bash
 export version=143.0.1
@@ -69,9 +69,9 @@ MOZ_DISABLE_CONTENT_SANDBOX=1 firefox > /dev/null 2>&1 &
 
 This is slightly newer than `/usr/bin/firefox` (140.3.0esr).
 
-## ceuadmin/145.0a1
+### ceuadmin/145.0a1
 
-### Artifact mode
+#### Artifact mode
 
 Web: <https://firefox-source-docs.mozilla.org/contributing/build/artifact_builds.html>
 
@@ -131,7 +131,7 @@ gcc -o test test.c -fuse-ld=bfd
 gcc --sysroot=$SYSROOT -B$SYSROOT -o test test.c -fuse-ld=bfd
 ```
 
-### Desktop
+#### Desktop
 
 Option 2 is more involved.
 
@@ -261,7 +261,7 @@ gcc test.c -I~/rds/software/firefox/rpms/usr/include
 
 which contains a test of bfd, as with necessary files from `dnf`.
 
-## mozilla-firefox
+### mozilla-firefox
 
 As of 13/5/2025, firefox is moved from gecko-dev (see below) to <https://github.com/mozilla-firefox/firefox>.
 It also provides a `GNUmakefile`, which is simpler than the one described earlier, for immediate use but it remains necessary to prevent
@@ -305,7 +305,7 @@ Adding configure options from /rds/project/rds-4o5vpvAowP0/software/firefox/mozc
 Created package: /rds/project/rds-4o5vpvAowP0/software/firefox/obj-x86_64-pc-linux-gnu/dist/firefox-143.0a1.en-US.linux-x86_64.tar.xz
 ```
 
-## gecko-dev
+### gecko-dev
 
 (Experimental)
 

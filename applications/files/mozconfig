@@ -13,3 +13,4 @@ ac_add_options --disable-debug
 
 # Use LLVM linker
 ac_add_options --enable-linker=lld
+ac_add_options --enable-default-toolkit=cairo-gtk3

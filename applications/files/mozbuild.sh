@@ -5,6 +5,9 @@ module load ceuadmin/gtk+/3.24.0
 module load ceuadmin/rust
 module load ceuadmin/clang/19.1.7
 
+export gcc_toolchain_path="/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru"
+export libstdcxx_include_path="$gcc_toolchain_path/include/c++/11.3.0"
+export libstdcxx_target_include_path="$libstdcxx_include_path/x86_64-pc-linux-gnu"
 export GCC_PATH=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru
 if [ -d "$GCC_PATH/lib64" ]; then
   export GCC_LIB_PATH="$GCC_PATH/lib64"
@@ -24,6 +27,9 @@ export GLIB_INCLUDE="/usr/include/glib-2.0"
 export GLIB_CONFIG_INCLUDE="/usr/lib64/glib-2.0/include"
 export CFLAGS="--gcc-toolchain=$GCC_PATH --sysroot=$SYSROOT -I$GCC_PATH/lib/gcc/x86_64-pc-linux-gnu/11.3.0/include"
 export CFLAGS="$CFLAGS -I$GLIB_INCLUDE -I$GLIB_CONFIG_INCLUDE"
+export GTK_INCLUDE="/usr/local/Cluster-Apps/ceuadmin/gtk+/3.24.0/include/gtk-3.0"
+export CFLAGS="$CFLAGS -I$GTK_INCLUDE"
+export CXXFLAGS="$CXXFLAGS -I$GTK_INCLUDE"
 export CXXFLAGS="--gcc-toolchain=$GCC_PATH --sysroot=$SYSROOT -I$GCC_PATH/include/c++/11.3.0 -I$GCC_PATH/include/c++/11.3.0/x86_64-pc-linux-gnu"
 export CXXFLAGS="$CXXFLAGS -I$GLIB_INCLUDE -I$GLIB_CONFIG_INCLUDE"
 export LDFLAGS="--sysroot=$SYSROOT -fuse-ld=lld -B$GCC_X86_64 -L$GCC_LIB_PATH -L$GCC_PATH/lib -L$GCC_X86_64 -L$SYSROOT/lib64"
