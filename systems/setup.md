@@ -490,6 +490,8 @@ All entries are ordered chronologically.
 | 2025-09-23 | alsa-lib/1.2.14                  | Generic               |
 | ""         | firefox/145.0a1                  | Generic               |
 | 2025-09-27 | firefox/143.0.1                  | Generic               |
+| 2025-10-01 | ollama/0.12.3                    | Generic               |
+| ""         | llama.cpp/b6653                  | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
