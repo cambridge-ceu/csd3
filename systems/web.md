@@ -113,7 +113,7 @@ Encoding=UTF-8
 Version=1.0
 Type=Application
 NoDisplay=true
-Exec=/usr/local/Cluster-Apps/ceuadmin/firefox/nightly/lib/firefox/firefox %u
+Exec=env MOZ_FORCE_DISABLE_E10S=1 /usr/local/Cluster-Apps/ceuadmin/firefox/nightly/lib/firefox/firefox %u
 Name=Nightly
 Comment=Custom definition for Nightly
 MimeType=x-scheme-handler/unknown;x-scheme-handler/about;x-scheme-handler/https;x-scheme-handler/http;text/html;
