@@ -103,7 +103,32 @@ xdg-settings set default-web-browser google-chrome.desktop
 
 System-wide and user-specific .desktop files are at `/usr/share/applications` and `~/.local/share/applications/`, respectively.
 
-For Microsoft Edge above, we see `microsoft-edge.desktop`, and an attempt is made as follows,
+### Firefox
+
+We have ~/.local/share/applications/userapp-Nightly.desktop
+
+```
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+NoDisplay=true
+Exec=/usr/local/Cluster-Apps/ceuadmin/firefox/nightly/lib/firefox/firefox %u
+Name=Nightly
+Comment=Custom definition for Nightly
+MimeType=x-scheme-handler/unknown;x-scheme-handler/about;x-scheme-handler/https;x-scheme-handler/http;text/html;
+```
+
+so that
+
+```bash
+xdg-settings set default-web-browser userapp-Nightly.desktop
+xdg-settings get default-web-browser
+```
+
+### Edge
+
+We see `microsoft-edge.desktop`, and an attempt is made as follows,
 
 ```bash
 export src=/usr/local/Cluster-Apps/ceuadmin/edge/130.0.2849.56-1/usr/share/applications/
