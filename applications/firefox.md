@@ -37,9 +37,12 @@ module load euadmin/firefox/145.0a1
 firefox &
 ```
 
+This is actually the nightly version.
+
 <font color="red"><b>7/9/2025 Update</b></font>
 
-Module **ceuadmin/firefox/nightly** (143.0a1) finally starts browsing normally.
+Module **ceuadmin/firefox/nightly** (143.0a1) finally starts browsing normally. Upon
+arrival of 145.0a1, this becomes a designated nightly.
 
 It can be started as follows,
 
