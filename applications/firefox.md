@@ -46,7 +46,7 @@ Module **ceuadmin/firefox/143.0a1** finally starts browsing normally.
 It can be started as follows,
 
 ```bash
-module load euadmin/firefox/nightly
+module load euadmin/firefox/143.0a1
 firefox &
 ```
 
