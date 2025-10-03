@@ -26,6 +26,8 @@ module load euadmin/firefox/143.0.1
 firefox &
 ```
 
+This is analogous to `/usr/bin/firefox` (140.3.0esr) described above yet more recent.
+
 <font color="red"><b>23/9/2025 Update</b></font>
 
 Module **ceuadmin/145.0a1** is available and used as follows,
@@ -66,8 +68,6 @@ tar -xJ --strip-components=1 -C firefox-$version/
 cd firefox-$version/
 MOZ_DISABLE_CONTENT_SANDBOX=1 firefox > /dev/null 2>&1 &
 ```
-
-This is analogous to `/usr/bin/firefox` (140.3.0esr) described above yet more recent.
 
 ### ceuadmin/145.0a1
 
