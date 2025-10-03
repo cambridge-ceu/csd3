@@ -67,7 +67,7 @@ cd firefox-$version/
 MOZ_DISABLE_CONTENT_SANDBOX=1 firefox > /dev/null 2>&1 &
 ```
 
-This is slightly newer than `/usr/bin/firefox` (140.3.0esr).
+This is analogous to `/usr/bin/firefox` (140.3.0esr) described above yet more recent.
 
 ### ceuadmin/145.0a1
 
