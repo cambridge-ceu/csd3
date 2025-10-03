@@ -62,3 +62,5 @@ giving `spectrum.csv`
 scan_number,precursor_mz,precursor_charge,experiment_name,spectrum_id,diffusion_predictions_tokenised,diffusion_predictions,diffusion_log_probabilities,transformer_predictions,transformer_predictions_tokenised,transformer_log_probabilities,transformer_token_log_probabilities
 0,451.25348,2,spectra,spectra:0,"['Y', 'A', 'H', 'Y', 'K', 'R']",YAHYKR,-0.05671021342277527,LAHYNKR,"L, A, H, Y, N, K, R",-1.7666722536087036,"[-0.030482856556773186, -0.001450797077268362, -5.352353764465079e-05, -0.0014650813536718488, -0.022426443174481392, -0.5744566917419434, -0.25638389587402344]"
 ```
+
+[^singularity]: *tensorflow/* here is path to a singularity container image directory, say `singularity build --sandbox tensorflow/ docker://tensorflow/tensorflow:latest`.
