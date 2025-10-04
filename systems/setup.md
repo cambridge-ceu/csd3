@@ -493,6 +493,7 @@ All entries are ordered chronologically.
 | 2025-10-01 | ollama/0.12.3                    | Generic               |
 | ""         | llama.cpp/b6653                  | Generic               |
 | 2025-10-02 | Windsurf/1.12.12                 | Generic               |
+| 2025-10-04 | gcc/12.1.0                       | Generic[^gcc]         |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2060,3 +2061,26 @@ They are generated from script [setup.sh](setup.sh),
 [^delphi]: **delphi**
 
     See <https://cambridge-ceu.github.io/csd3/Python/delphi.html>.
+
+[^gcc]: **gcc**
+
+    This is furnished as follows,
+
+    ```bash
+    wget https://mirrors.kernel.org/gcc/gcc-12.1.0/gcc-12.1.0.tar.xz
+    tar xf gcc-12.1.0.tar.xz
+    cd gcc-12.1.0
+    ./contrib/download_prerequisites
+    mkdir ../gcc-build
+    cd ../gcc-build
+    ../gcc-12.1.0/configure --prefix=$CEUADMIN/gcc/12.1.0 \
+      --disable-multilib \
+      --enable-languages=c,c++ \
+      --disable-bootstrap \
+      --disable-libssp \
+      --disable-libquadmath \
+      --disable-libvtv \
+      --disable-libsanitizer
+    module load gettext/0.21/gcc/qnrcglqo
+    make -j5
+    ```
