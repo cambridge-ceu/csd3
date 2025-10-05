@@ -153,8 +153,8 @@ mkdir -p $SYSROOT/usr/include/glib-2.0
 cp -r /usr/include/glib-2.0/* $SYSROOT/usr/include/glib-2.0/
 mkdir -p $SYSROOT/usr/lib64/glib-2.0/include
 cp -r /usr/lib64/glib-2.0/include/* $SYSROOT/usr/lib64/glib-2.0/include/
-export CC="clang --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib64 -B$SYSROOT"
-export CXX="clang++ --gcc-toolchain=$GCC_PATH -B$GCC_PATH/lib64 -B$SYSROOT"
+export CC="clang -B$GCC_PATH/lib64 -B$SYSROOT"
+export CXX="clang++ -B$GCC_PATH/lib64 -B$SYSROOT"
 export CFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include $CFLAGS"
 export CXXFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include $CXXFLAGS"
 export DBUS_CFLAGS="$(pkg-config --cflags dbus-1)"
