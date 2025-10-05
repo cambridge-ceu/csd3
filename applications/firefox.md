@@ -135,7 +135,62 @@ gcc --sysroot=$SYSROOT -B$SYSROOT -o test test.c -fuse-ld=bfd
 
 #### Desktop
 
-Option 2 is more involved.
+Option 2 is more involved. The following script takes advantage of modules such as gcc/12.1.0, clang/19.1.7, etc.
+
+```bash
+module load ceuadmin/gcc/12.1.0
+module load ceuadmin/gtk+/3.24.0
+module load ceuadmin/clang/19.1.7
+module load ceuadmin/rust
+
+export GCC_PATH="/usr/local/software/spack/spack-views/rocky8-icelake-20220710/ceuadmin/gcc/12.1.0"
+export PATH="$GCC_PATH/bin:$PATH"
+export LD_LIBRARY_PATH="$GCC_PATH/lib64:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/usr/lib64/pkgconfig:$PKG_CONFIG_PATH"
+
+export SYSROOT="$HOME/.mozbuild/sysroot-x86_64-linux-gnu"
+mkdir -p $SYSROOT/usr/include/glib-2.0
+cp -r /usr/include/glib-2.0/* $SYSROOT/usr/include/glib-2.0/
+mkdir -p $SYSROOT/usr/lib64/glib-2.0/include
+cp -r /usr/lib64/glib-2.0/include/* $SYSROOT/usr/lib64/glib-2.0/include/
+export CC=clang
+export CXX=clang++
+export CFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include $CFLAGS"
+export CXXFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include $CXXFLAGS"
+export DBUS_CFLAGS="$(pkg-config --cflags dbus-1)"
+export CFLAGS="$DBUS_CFLAGS $CFLAGS"
+export CXXFLAGS="$DBUS_CFLAGS $CXXFLAGS"
+export BINDGEN_EXTRA_CLANG_ARGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
+
+./mach clobber
+env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/145.0a1
+./mach build
+```
+
+in addition to a `mozconfig` containing,
+
+```
+# Parallel build
+mk_add_options MOZ_MAKE_FLAGS="-j5"
+
+# Object directory
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-@CONFIG_GUESS@
+
+# Application
+ac_add_options --enable-application=browser
+
+# Optimizations
+ac_add_options --enable-optimize
+ac_add_options --disable-debug
+
+# Use LLVM linker
+ac_add_options --enable-linker=lld
+ac_add_options --enable-default-toolkit=cairo-gtk3
+```
+
+**Experimental results**
+
+The following attempts become unnecessary with ceuadmin/gcc/12.1.0.
 
 It now requires gcc/10 or above, and gtk+-3.0 along with xproto, kbproto, xextproto, renderproto, 
 
@@ -220,14 +275,14 @@ fi
 
 respectively.
 
-A hybrid of gcc/11 and clang (for newer libstdc++) is used via [mozconfig](files/mozconfig) and [mozbuild.sh](files/mozbuild.sh) but appears that higher version of gcc is preferable.
+A hybrid of gcc/11 and clang (for newer libstdc++) is used via mozconfig above and [mozbuild.sh](files/mozbuild.sh) but appears that higher version of gcc is preferable.
 
 ```bash
 ./mach bootstrap
 source mozbuild.sh | tee mozbuild.log
 ```
 
-NOTES proto, etc. is similarly set up as follows (legacy),
+NOTES proto, etc. is similarly set up as follows,
 
 ```bash
 # https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/
