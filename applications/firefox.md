@@ -188,7 +188,7 @@ ac_add_options --enable-linker=lld
 ac_add_options --enable-default-toolkit=cairo-gtk3
 ```
 
-**Experimental results**
+**EXPERIMENTAL RESULTS**
 
 The following attempts become unnecessary with ceuadmin/gcc/12.1.0.
 
