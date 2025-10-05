@@ -143,7 +143,7 @@ module load ceuadmin/gtk+/3.24.0
 module load ceuadmin/clang/19.1.7
 module load ceuadmin/rust
 
-export GCC_PATH="/usr/local/software/spack/spack-views/rocky8-icelake-20220710/ceuadmin/gcc/12.1.0"
+export GCC_PATH="/usr/local/Cluster-Apps/ceuadmin/gcc/12.1.0"
 export PATH="$GCC_PATH/bin:$PATH"
 export LD_LIBRARY_PATH="$GCC_PATH/lib64:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="/usr/lib64/pkgconfig:$PKG_CONFIG_PATH"
