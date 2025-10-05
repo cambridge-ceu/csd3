@@ -2084,3 +2084,5 @@ They are generated from script [setup.sh](setup.sh),
     module load gettext/0.21/gcc/qnrcglqo
     make -j5
     ```
+
+    Note this module enables compilation of Firefox nightly (145.0a1) as dated here.
