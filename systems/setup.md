@@ -2090,7 +2090,7 @@ They are generated from script [setup.sh](setup.sh),
 
     Note this module enables compilation of Firefox nightly (145.0a1) as dated here.
 
-[^wasi-sdk]: **WASI-sdk**
+[^wasi]: **WASI-sdk**
 
     ```bash
     wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-20/wasi-sdk-20.0-linux.tar.gz
