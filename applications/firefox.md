@@ -144,7 +144,6 @@ mkdir -p $SYSROOT/usr/include/glib-2.0
 cp -r /usr/include/glib-2.0/* $SYSROOT/usr/include/glib-2.0/
 mkdir -p $SYSROOT/usr/lib64/glib-2.0/include
 cp -r /usr/lib64/glib-2.0/include/* $SYSROOT/usr/lib64/glib-2.0/include/
-module load gettext/0.21/gcc/lhdl4tbr
 module load ceuadmin/gcc/12.1.0
 module load ceuadmin/gtk+/3.24.0
 module load ceuadmin/rust
