@@ -77,6 +77,8 @@ MOZ_DISABLE_CONTENT_SANDBOX=1 firefox > /dev/null 2>&1 &
 
 Web: <https://firefox-source-docs.mozilla.org/contributing/build/artifact_builds.html>
 
+This approach takes advantage of precompiled objects but is less flexible compared to compiling from the source (Desktop).
+
 ```bash
 ./mach bootstrap
 ./mach configure --prefix=$CEUADMIN/firefox/145.0a1
@@ -111,27 +113,6 @@ ac_add_options --disable-tests
 ```
 
 It is helpful to use `./mach run` for problems before `./mach install`. Finally, `./mach package` generates `obj-x86_64-pc-linux-gnu/dist/firefox-145.0a1.en-US.linux-x86_64.tar.xz`.
-
-Files from `~/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib64/crt*.o` are built and tested as follows,
-
-```bash
-dnf download kernel-headers
-dnf download glibc
-dnf download glibc-common
-dnf download --resolve glibc-headers
-dnf download glibc-devel
-export SYSROOT=~/.mozbuild/sysroot-x86_64-linux-gnu
-cd $SYSROOT
-for rpm in ~/rds/software/firefox/*x86_64.rpm; do
-    rpm2cpio "$rpm" | cpio -idmv -D .
-done
-for dir in lib lib64 libexec share; do
-    ln -s usr/$dir
-done
-echo 'int main() { return 0; }' > test.c
-gcc -o test test.c -fuse-ld=bfd
-gcc --sysroot=$SYSROOT -B$SYSROOT -o test test.c -fuse-ld=bfd
-```
 
 #### Desktop
 
@@ -291,7 +272,28 @@ A hybrid of gcc/11 and clang (for newer libstdc++) is used via mozconfig above a
 source mozbuild.sh | tee mozbuild.log
 ```
 
-NOTES proto, etc. is similarly set up as follows,
+Files from `~/.mozbuild/sysroot-x86_64-linux-gnu/usr/lib64/crt*.o` are built and tested as follows,
+
+```bash
+dnf download kernel-headers
+dnf download glibc
+dnf download glibc-common
+dnf download --resolve glibc-headers
+dnf download glibc-devel
+export SYSROOT=~/.mozbuild/sysroot-x86_64-linux-gnu
+cd $SYSROOT
+for rpm in ~/rds/software/firefox/*x86_64.rpm; do
+    rpm2cpio "$rpm" | cpio -idmv -D .
+done
+for dir in lib lib64 libexec share; do
+    ln -s usr/$dir
+done
+echo 'int main() { return 0; }' > test.c
+gcc -o test test.c -fuse-ld=bfd
+gcc --sysroot=$SYSROOT -B$SYSROOT -o test test.c -fuse-ld=bfd
+```
+
+proto, etc. is similarly set up as follows,
 
 ```bash
 # https://download.rockylinux.org/pub/rocky/8/AppStream/x86_64/os/Packages/
