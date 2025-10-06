@@ -135,7 +135,7 @@ gcc --sysroot=$SYSROOT -B$SYSROOT -o test test.c -fuse-ld=bfd
 
 #### Desktop
 
-Option 2 is more involved. We take advantage of modules such as gcc/12.1.0, clang/19.1.7, etc.
+Option 2 is more involved. We take advantage of modules such as gcc/12.1.0, clang/19.1.7, esp. rust with `cbindgen`.
 
 ```bash
 ./mach boostrap
@@ -146,7 +146,7 @@ mkdir -p $SYSROOT/usr/lib64/glib-2.0/include
 cp -r /usr/lib64/glib-2.0/include/* $SYSROOT/usr/lib64/glib-2.0/include/
 module load ceuadmin/gcc/12.1.0
 module load ceuadmin/gtk+/3.24.0
-module load ceuadmin/rust
+module load ceuadmin/rust/nightly
 module load ceuadmin/clang/19.1.7
 export CC=clang
 export CXX=clang++
@@ -157,7 +157,8 @@ export CFLAGS="$DBUS_CFLAGS $CFLAGS"
 export CXXFLAGS="$DBUS_CFLAGS $CXXFLAGS"
 export BINDGEN_EXTRA_CLANG_ARGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
 ./mach clobber
-env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/145.0a1
+env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/145.0a1 \
+                --without-wasm-sandboxed-libraries
 ./mach build
 ```
 
