@@ -159,10 +159,22 @@ export BINDGEN_EXTRA_CLANG_ARGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/i
 ./mach clobber
 env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/145.0a1 \
                 --without-wasm-sandboxed-libraries
+./mach environment
 ./mach build
 ```
 
-in addition to a `mozconfig` containing,
+Somehow libstdc++.so.6 from ceuadmin/gcc/12.1.0 is not used, so a patch is made as follows,
+
+```bash
+./mach package
+cp /usr/local/Cluster-Apps/ceuadmin/gcc/12.1.0/lib64/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/firefox/
+MOZ_FORCE_DISABLE_E10S=1 ./mach run
+./mach install
+cd obj-x86_64-pc-linux-gnu/dist
+tar -cJf firefox-145.0a1.en-US.linux-x86_64.tar.xz firefox
+```
+
+The script uses a `mozconfig` which contains,
 
 ```
 # Parallel build
