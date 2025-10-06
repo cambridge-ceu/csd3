@@ -102,8 +102,9 @@ The current list is as follows,
 [337] "unbound"                "uv"                     "vala"                   "VarScan"
 [341] "vcftools"               "vdo"                    "VEGAS2"                 "verifyBamID"
 [345] "VirtualBox"             "VSCode"                 "VSCodium"               "vte"
-[349] "Windsurf"               "wine"                   "wrk"                    "xpdf"
-[353] "yaml-cpp"               "Zettlr"                 "Zotero"                 "zstd"
+[349] "wasi-sdk"               "Windsurf"               "wine"                   "wrk"
+[353] "xpdf"                   "yaml-cpp"               "Zettlr"                 "Zotero"
+[357] "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.

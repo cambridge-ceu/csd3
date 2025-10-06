@@ -494,6 +494,7 @@ All entries are ordered chronologically.
 | ""         | llama.cpp/b6653                  | Generic               |
 | 2025-10-02 | Windsurf/1.12.12                 | Generic               |
 | 2025-10-04 | gcc/12.1.0                       | Generic[^gcc]         |
+| 2025-10-06 | wasi-sdk/20.0                    | Generic[^wasi]        |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -1506,6 +1507,8 @@ They are generated from script [setup.sh](setup.sh),
 
     As noted in [rust.md](files/rust.md) on 22/5/2025, we have `rustc 1.89.0-nightly (bf64d66bd 2025-05-21)`.
 
+    To compile Firefox/nightly (145.0a1), cbindgen is required which can be installed with `cargo install cbindgen --root $CEUADMIN/rust/nightly/cargo`.
+
 [^git2481]: **git/2.48.1**
 
     Now it has a separate entry in the Applications section, <https://cambridge-ceu.github.io/csd3/applications/git.html>.
@@ -2086,3 +2089,10 @@ They are generated from script [setup.sh](setup.sh),
     ```
 
     Note this module enables compilation of Firefox nightly (145.0a1) as dated here.
+
+[^wasi-sdk]: **WASI-sdk**
+
+    ```bash
+    wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-20/wasi-sdk-20.0-linux.tar.gz
+    tar -xzf wasi-sdk-20.0-linux.tar.gz
+    ```
