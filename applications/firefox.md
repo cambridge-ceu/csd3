@@ -135,33 +135,28 @@ gcc --sysroot=$SYSROOT -B$SYSROOT -o test test.c -fuse-ld=bfd
 
 #### Desktop
 
-Option 2 is more involved. The following script takes advantage of modules such as gcc/12.1.0, clang/19.1.7, etc.
+Option 2 is more involved. We take advantage of modules such as gcc/12.1.0, clang/19.1.7, etc.
 
 ```bash
-module load ceuadmin/gcc/12.1.0
-module load ceuadmin/gtk+/3.24.0
-module load ceuadmin/clang/19.1.7
-module load ceuadmin/rust
-
-export GCC_PATH="/usr/local/Cluster-Apps/ceuadmin/gcc/12.1.0"
-export PATH="$GCC_PATH/bin:$PATH"
-export LD_LIBRARY_PATH="$GCC_PATH/lib64:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/usr/lib64/pkgconfig:$PKG_CONFIG_PATH"
-
+./mach boostrap
 export SYSROOT="$HOME/.mozbuild/sysroot-x86_64-linux-gnu"
 mkdir -p $SYSROOT/usr/include/glib-2.0
 cp -r /usr/include/glib-2.0/* $SYSROOT/usr/include/glib-2.0/
 mkdir -p $SYSROOT/usr/lib64/glib-2.0/include
 cp -r /usr/lib64/glib-2.0/include/* $SYSROOT/usr/lib64/glib-2.0/include/
-export CC="clang -B$GCC_PATH/lib64 -B$SYSROOT"
-export CXX="clang++ -B$GCC_PATH/lib64 -B$SYSROOT"
+
+module load ceuadmin/gcc/12.1.0
+module load ceuadmin/gtk+/3.24.0
+module load ceuadmin/rust
+module load ceuadmin/clang/19.1.7
+export CC=clang
+export CXX=clang++
 export CFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include $CFLAGS"
 export CXXFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include $CXXFLAGS"
 export DBUS_CFLAGS="$(pkg-config --cflags dbus-1)"
 export CFLAGS="$DBUS_CFLAGS $CFLAGS"
 export CXXFLAGS="$DBUS_CFLAGS $CXXFLAGS"
 export BINDGEN_EXTRA_CLANG_ARGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
-
 ./mach clobber
 env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/145.0a1
 ./mach build
@@ -189,6 +184,8 @@ ac_add_options --enable-default-toolkit=cairo-gtk3
 ```
 
 **EXPERIMENTAL RESULTS**
+
+Detailed configuration can be examined via `./mach configure > configure.log 2>&1`.
 
 The following attempts become unnecessary with ceuadmin/gcc/12.1.0.
 
