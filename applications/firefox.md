@@ -162,6 +162,7 @@ readelf -d obj-*/dist/bin/firefox | grep RPATH
 MOZ_FORCE_DISABLE_E10S=1 ./mach run
 ./mach install
 cp $SYSROOT/usr/lib/x86_64-linux-gnu/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/firefox/
+patchelf --force-rpath --set-rpath '$ORIGIN' obj-*/dist/firefox/firefox
 cd obj-x86_64-pc-linux-gnu/dist
 tar -cJf firefox-145.0a1.en-US.linux-x86_64.tar.xz firefox
 ```
