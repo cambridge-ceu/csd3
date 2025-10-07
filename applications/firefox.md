@@ -116,11 +116,32 @@ It is helpful to use `./mach run` for problems before `./mach install`.
 
 #### Desktop
 
-Option 2 is more involved. We take advantage of modules such as gcc/12.1.0, clang/19.1.7. Currently, ./mach is invisible of
+Option 2 is more involved.
+
+First, a `mozconfig` is created,
+
+```
+# Parallel build
+mk_add_options MOZ_MAKE_FLAGS="-j5"
+# Object directory
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-@CONFIG_GUESS@
+# Application
+ac_add_options --enable-application=browser
+# Optimizations
+ac_add_options --enable-optimize
+ac_add_options --disable-debug
+# Use LLVM linker
+ac_add_options --enable-linker=lld
+ac_add_options --enable-default-toolkit=cairo-gtk3
+```
+
+Currently, ./mach is invisible of
 
 - cbindgen from cbindgen/
 - glib.h from /usr/include|/usr/lib64
 - libstdc++.so.6 from sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu
+
+Therefore some preparations are made,
 
 ```bash
 ./mach boostrap
@@ -129,6 +150,11 @@ mkdir -p $SYSROOT/usr/include/glib-2.0
 cp -r /usr/include/glib-2.0/* $SYSROOT/usr/include/glib-2.0/
 mkdir -p $SYSROOT/usr/lib64/glib-2.0/include
 cp -r /usr/lib64/glib-2.0/include/* $SYSROOT/usr/lib64/glib-2.0/include/
+```
+
+The following version takes advantage of modules such as gcc/12.1.0, clang/19.1.7.
+
+```bash
 module load ceuadmin/gcc/12.1.0
 module load ceuadmin/gtk+/3.24.0
 module load ceuadmin/rust/nightly
@@ -151,8 +177,7 @@ env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/
 A patch regarding libstdc++.so.6, which surely works, is made as follows,
 
 ```bash
-export SYSROOT=$HOME/.mozbuild/sysroot-x86_64-linux-gnu
-cp $SYSROOT/usr/lib/x86_64-linux-gnu/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/bin/
+cp $CEUADMIN/gcc/12.1.0/lib64/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/bin/
 module load ceuadmin/patchelf/0.18.0
 patchelf --force-rpath --set-rpath '$ORIGIN' obj-*/dist/bin/firefox-bin
 readelf -d obj-*/dist/bin/firefox-bin | grep RPATH
@@ -161,48 +186,48 @@ readelf -d obj-*/dist/bin/firefox | grep RPATH
 MOZ_FORCE_DISABLE_E10S=1 ./mach run
 ./mach install
 ./mach package
-cp $SYSROOT/usr/lib/x86_64-linux-gnu/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/firefox/
+cp $CEUADMIN/gcc/12.1.0/lib64/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/firefox/
 patchelf --force-rpath --set-rpath '$ORIGIN' obj-*/dist/firefox/firefox
 cd obj-x86_64-pc-linux-gnu/dist
 tar -cJf firefox-145.0a1.en-US.linux-x86_64.tar.xz firefox
 ```
 
-where $ORIGIN is not a shell variable. It is a special token understood by the dynamic linker at runtime. `readelf -d obj-*/dist/bin/firefox | grep RPATH` gives
-
-```
- 0x000000000000000f (RPATH)              Library rpath: [$ORIGIN]
- 0x000000000000000f (RPATH)              Library rpath: [$ORIGIN]
-```
-
-The counterpart for ceuadmin/gcc/12.1.0 is
+The counterpart for `./mach boostrap` is
 
 ```bash
-cp /usr/local/Cluster-Apps/ceuadmin/gcc/12.1.0/lib64/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/bin/
-cp /usr/local/Cluster-Apps/ceuadmin/gcc/12.1.0/lib64/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/firefox/
+export SYSROOT=$HOME/.mozbuild/sysroot-x86_64-linux-gnu
+cp $SYSROOT/usr/lib/x86_64-linux-gnu/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/bin/
+cp $SYSROOT/usr/lib/x86_64-linux-gnu/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/firefox/
 ```
 
-The script uses a `mozconfig` which contains,
+where $ORIGIN is not a shell variable but a special token understood by the dynamic linker at runtime. `readelf -d obj-*/dist/bin/firefox | grep RPATH` gives
 
 ```
-# Parallel build
-mk_add_options MOZ_MAKE_FLAGS="-j5"
-
-# Object directory
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-@CONFIG_GUESS@
-
-# Application
-ac_add_options --enable-application=browser
-
-# Optimizations
-ac_add_options --enable-optimize
-ac_add_options --disable-debug
-
-# Use LLVM linker
-ac_add_options --enable-linker=lld
-ac_add_options --enable-default-toolkit=cairo-gtk3
+ 0x000000000000000f (RPATH)              Library rpath: [$ORIGIN]
+ 0x000000000000000f (RPATH)              Library rpath: [$ORIGIN]
 ```
 
 **EXPERIMENTAL RESULTS**
+
+A shorter version attempting to use `./mach boostrap` alone is also viable,
+
+```bash
+module load ceuadmin/rust/nightly
+
+export MOZBUILD=$HOME/.mozbuild
+export SYSROOT="$MOZBUILD/sysroot-x86_64-linux-gnu"
+export CC=$MOZBUILD/clang/bin/clang
+export CXX=$MOZBUILD/clang/bin/clang++
+export CFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I$SYSROOT/usr/include $CFLAGS"
+export CXXFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I$SYSROOT/usr/include $CXXFLAGS"
+export DBUS_CFLAGS="$(pkg-config --cflags dbus-1)"
+export CFLAGS="$DBUS_CFLAGS $CFLAGS"
+export CXXFLAGS="$DBUS_CFLAGS $CXXFLAGS"
+export LDFLAGS="-L$MOZBUILD/lib64 -L$SYSROOT/usr/lib64"
+export BINDGEN_EXTRA_CLANG_ARGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I$SYSROOT/usr/include"
+env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/145.0a1 --without-wasm-sandboxed-libraries
+./mach build
+```
 
 Detailed configuration can be examined via `./mach configure > configure.log 2>&1`.
 
