@@ -118,8 +118,8 @@ It is helpful to use `./mach run` for problems before `./mach install`. Finally,
 
 Option 2 is more involved. We take advantage of modules such as gcc/12.1.0, clang/19.1.7. Currently, a number of failures with ./mach is notable,
 
-- cbindgen is invisible from cbindgen
-- glib.h is invisible from sysroot-x86_64-linux-gnu/usr/include/glib-2.0/glib
+- cbindgen is invisible from cbindgen/ \
+- glib.h is invisible from sysroot-x86_64-linux-gnu/usr/include/glib-2.0/glib \
 - libstdc++.so.6 is invisible from sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu
 
 ```bash
