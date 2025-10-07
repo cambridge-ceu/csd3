@@ -116,7 +116,11 @@ It is helpful to use `./mach run` for problems before `./mach install`. Finally,
 
 #### Desktop
 
-Option 2 is more involved. We take advantage of modules such as gcc/12.1.0, clang/19.1.7, esp. rust with `cbindgen`.
+Option 2 is more involved. We take advantage of modules such as gcc/12.1.0, clang/19.1.7. Currently, a number of failures with ./mach is notable,
+
+- cbindgen is invisible from cbindgen
+- glib.h is invisible from sysroot-x86_64-linux-gnu/usr/include/glib-2.0/glib
+- libstdc++.so.6 is invisible from sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu
 
 ```bash
 ./mach boostrap
@@ -144,7 +148,7 @@ env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/
 ./mach build
 ```
 
-With recent changes, libstdc++.so.6 is invisible from sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu or ceuadmin/gcc/12.1.0, so a patch is made as follows,
+A patch regarding libstdc++.so.6 from ceuadmin/gcc/12.1.0 is made as follows,
 
 ```bash
 ./mach package
