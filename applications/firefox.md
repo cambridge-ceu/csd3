@@ -151,7 +151,6 @@ env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/
 A patch regarding libstdc++.so.6, which surely works, is made as follows,
 
 ```bash
-./mach package
 export SYSROOT=$HOME/.mozbuild/sysroot-x86_64-linux-gnu
 cp $SYSROOT/usr/lib/x86_64-linux-gnu/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/bin/
 module load ceuadmin/patchelf/0.18.0
@@ -161,6 +160,7 @@ patchelf --force-rpath --set-rpath '$ORIGIN' obj-*/dist/bin/firefox
 readelf -d obj-*/dist/bin/firefox | grep RPATH
 MOZ_FORCE_DISABLE_E10S=1 ./mach run
 ./mach install
+./mach package
 cp $SYSROOT/usr/lib/x86_64-linux-gnu/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/firefox/
 patchelf --force-rpath --set-rpath '$ORIGIN' obj-*/dist/firefox/firefox
 cd obj-x86_64-pc-linux-gnu/dist
