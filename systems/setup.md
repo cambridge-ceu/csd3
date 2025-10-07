@@ -2100,6 +2100,8 @@ They are generated from script [setup.sh](setup.sh),
 
 [^patchelf]: **patchelf**
 
+    This turns out to be a replica of module made on 10/06/2024.
+
     ```bash
     module load ceuadmin/autoconf
     wget -qO- https://github.com/NixOS/patchelf/releases/download/0.18.0/patchelf-0.18.0-x86_64.tar.gz | \
