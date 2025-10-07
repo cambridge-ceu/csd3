@@ -112,15 +112,15 @@ ac_add_options --enable-artifact-builds
 ac_add_options --disable-tests
 ```
 
-It is helpful to use `./mach run` for problems before `./mach install`. Finally, `./mach package` generates `obj-x86_64-pc-linux-gnu/dist/firefox-145.0a1.en-US.linux-x86_64.tar.xz`.
+It is helpful to use `./mach run` for problems before `./mach install`.
 
 #### Desktop
 
-Option 2 is more involved. We take advantage of modules such as gcc/12.1.0, clang/19.1.7. Currently, several failures with ./mach is notable,
+Option 2 is more involved. We take advantage of modules such as gcc/12.1.0, clang/19.1.7. Currently, ./mach is invisible of
 
-- cbindgen is invisible from cbindgen/
-- glib.h is invisible and created at sysroot-x86_64-linux-gnu/usr/include/glib-2.0/glib
-- libstdc++.so.6 is invisible from sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu
+- cbindgen from cbindgen/
+- glib.h from /usr/include|/usr/lib64
+- libstdc++.so.6 from sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu
 
 ```bash
 ./mach boostrap
@@ -148,15 +148,36 @@ env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/
 ./mach build
 ```
 
-A patch regarding libstdc++.so.6 (or from ceuadmin/gcc/12.1.0) is made as follows,
+A patch regarding libstdc++.so.6, which surely works, is made as follows,
 
 ```bash
 ./mach package
-cp /usr/local/Cluster-Apps/ceuadmin/gcc/12.1.0/lib64/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/firefox/
+export SYSROOT=$HOME/.mozbuild/sysroot-x86_64-linux-gnu
+cp $SYSROOT/usr/lib/x86_64-linux-gnu/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/bin/
+module load ceuadmin/patchelf/0.18.0
+patchelf --force-rpath --set-rpath '$ORIGIN' obj-*/dist/bin/firefox-bin
+readelf -d obj-*/dist/bin/firefox-bin | grep RPATH
+patchelf --force-rpath --set-rpath '$ORIGIN' obj-*/dist/bin/firefox
+readelf -d obj-*/dist/bin/firefox | grep RPATH
 MOZ_FORCE_DISABLE_E10S=1 ./mach run
 ./mach install
+cp $SYSROOT/usr/lib/x86_64-linux-gnu/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/firefox/
 cd obj-x86_64-pc-linux-gnu/dist
 tar -cJf firefox-145.0a1.en-US.linux-x86_64.tar.xz firefox
+```
+
+where $ORIGIN is not a shell variable. It is a special token understood by the dynamic linker at runtime. `readelf -d obj-*/dist/bin/firefox | grep RPATH` gives
+
+```
+ 0x000000000000000f (RPATH)              Library rpath: [$ORIGIN]
+ 0x000000000000000f (RPATH)              Library rpath: [$ORIGIN]
+```
+
+The counterpart for ceuadmin/gcc/12.1.0 is
+
+```bash
+cp /usr/local/Cluster-Apps/ceuadmin/gcc/12.1.0/lib64/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/bin/
+cp /usr/local/Cluster-Apps/ceuadmin/gcc/12.1.0/lib64/libstdc++.so.6 obj-x86_64-pc-linux-gnu/dist/firefox/
 ```
 
 The script uses a `mozconfig` which contains,

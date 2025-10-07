@@ -495,6 +495,7 @@ All entries are ordered chronologically.
 | 2025-10-02 | Windsurf/1.12.12                 | Generic               |
 | 2025-10-04 | gcc/12.1.0                       | Generic[^gcc]         |
 | 2025-10-06 | wasi-sdk/20.0                    | Generic[^wasi]        |
+| 2025-10-07 | patchelf/0.18.0                  | Generic[^patchelf]    |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2095,4 +2096,17 @@ They are generated from script [setup.sh](setup.sh),
     ```bash
     wget https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-20/wasi-sdk-20.0-linux.tar.gz
     tar -xzf wasi-sdk-20.0-linux.tar.gz
+    ```
+
+[^patchelf]: **patchelf**
+
+    ```bash
+    module load ceuadmin/autoconf
+    wget -qO- https://github.com/NixOS/patchelf/releases/download/0.18.0/patchelf-0.18.0-x86_64.tar.gz | \
+    tar -xzf -
+    cd patchelf-0.18.0
+    ./bootstrap.sh
+    ./configure --prefix=$CEUADMIN/patchelf/0.18.0
+    make -j4
+    make install
     ```
