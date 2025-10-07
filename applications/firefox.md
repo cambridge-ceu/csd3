@@ -144,7 +144,7 @@ env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/
 ./mach build
 ```
 
-Somehow libstdc++.so.6 from ceuadmin/gcc/12.1.0 is not used, so a patch is made as follows,
+With recent changes, libstdc++.so.6 is invisible from sysroot-x86_64-linux-gnu/usr/lib/x86_64-linux-gnu or ceuadmin/gcc/12.1.0, so a patch is made as follows,
 
 ```bash
 ./mach package
