@@ -54,6 +54,25 @@ atmosphere appears warm and inviting, with natural light filtering in through th
 many urban areas where people can relax, grab a coffee or tea, or have a quick meal while socializing with friends or colleagues.
 ```
 
+## Cloud models
+
+These are checked with
+
+```bash
+curl -s https://ollama.com/api/tags | \
+jq -r '.models[]|[.name,.modified_at,.size]|@tsv'|column -t
+```
+
+giving
+
+```
+kimi-k2:1t          2025-09-05T00:00:00Z  1118481408000
+qwen3-coder:480b    2025-07-22T00:00:00Z  510492157952
+deepseek-v3.1:671b  2025-08-21T00:00:00Z  688586727753
+gpt-oss:120b        2025-08-05T00:00:00Z  65290180781
+gpt-oss:20b         2025-08-05T00:00:00Z  13780162412
+```
+
 ## REST API: /api/generate
 
 From the information given above, our benchmark query is
