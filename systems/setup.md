@@ -496,6 +496,7 @@ All entries are ordered chronologically.
 | 2025-10-04 | gcc/12.1.0                       | Generic[^gcc]         |
 | 2025-10-06 | wasi-sdk/20.0                    | Generic[^wasi]        |
 | 2025-10-07 | patchelf/0.18.0                  | Generic[^patchelf]    |
+| 2025-10-10 | glibc/2.30-5                     | Generic[^glibc]       |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2111,4 +2112,13 @@ They are generated from script [setup.sh](setup.sh),
     ./configure --prefix=$CEUADMIN/patchelf/0.18.0
     make -j4
     make install
+    ```
+
+[^glibc]: **glibc**
+
+    ```bash
+    wget -qO- https://kojipkgs.fedoraproject.org/packages/glibc/2.30/5.fc31/x86_64/glibc-2.30-5.fc31.x86_64.rpm | \
+    mkdir glibc-2.30-5
+    cd glibc-2.30-5/
+    rpm2cpio ../glibc-2.30-5.fc31.x86_64.rpm | cpio -idmv
     ```
