@@ -1683,6 +1683,8 @@ They are generated from script [setup.sh](setup.sh),
 
     extracts `uv`/`uvx` to `$HOME/.local/bin` and adds `. "$HOME/.local/bin/env"` to `$HOME/.bashrc` but we might as well customise.
 
+    To implement `pip cache purge`, use `uv cache clean`.
+
 [^bitnet]: **BitNet**
 
     See <https://cambridge-ceu.github.io/csd3/Python/BitNet.html>.
