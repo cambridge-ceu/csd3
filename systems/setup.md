@@ -497,6 +497,7 @@ All entries are ordered chronologically.
 | 2025-10-06 | wasi-sdk/20.0                    | Generic[^wasi]        |
 | 2025-10-07 | patchelf/0.18.0                  | Generic[^patchelf]    |
 | 2025-10-10 | glibc/2.30-5                     | Generic[^glibc]       |
+| 2025-10-17 | ollama/0.12.6                    | Generic[^ollama]      |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
