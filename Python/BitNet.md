@@ -78,8 +78,8 @@ optional arguments:
                       (When this option is turned on, the prompt specified by -p will be used as the system prompt.)
 ```
 
-## Reference
+## References
 
-Wang, J., Zhou, H., Song, T., Mao, S., Ma, S., Wang, H., Xia, Y., & Wei, F. (2024, October 21). 1-bit AI Infra: Part 1.1, Fast and Lossless BitNet b1.58 Inference on CPUs (arXiv:2410.16144) [Preprint]. arXiv. <https://doi.org/10.48550/arXiv.2410.16144>
+Wang J, Zhou H, Song T, Mao S, Ma S, Wang H, Xia Y, Wei F (2024, October 21). 1-bit AI Infra: Part 1.1, Fast and Lossless BitNet b1.58 Inference on CPUs (arXiv:2410.16144) [Preprint]. arXiv. <https://doi.org/10.48550/arXiv.2410.16144>
 
-Wu, X., Huang, S., Wang, W., Song, T., Dong, L., Yan, X., & Wei, F. (2025, October 15). BitNet Distillation (BitDistill). arXiv. <https://arxiv.org/abs/2510.13998>
+Wu X, Huang S, Wang W, Song T, Dong L, Yan, X, Wei F (2025, October 15). BitNet Distillation (BitDistill). arXiv. <https://arxiv.org/abs/2510.13998>
