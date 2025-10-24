@@ -498,7 +498,7 @@ All entries are ordered chronologically.
 | 2025-10-07 | patchelf/0.18.0                  | Generic[^patchelf]    |
 | 2025-10-10 | glibc/2.30-5                     | Generic[^glibc]       |
 | 2025-10-17 | ollama/0.12.6                    | Generic[^ollama]      |
-| 2025-10-23 | ccphylo/0.8.5                    | Genetics              |
+| 2025-10-23 | ccphylo/0.8.5                    | Genetics[^ccphylo]    |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2125,4 +2125,19 @@ They are generated from script [setup.sh](setup.sh),
     mkdir glibc-2.30-5
     cd glibc-2.30-5/
     rpm2cpio ../glibc-2.30-5.fc31.x86_64.rpm | cpio -idmv
+    ```
+
+[^ccphylo]: **ccphylo**
+
+    ccphylo tree test.phy.gz > test.nwk
+
+    to be viewed ![](files/ccphylo.svg) from <https://itol.embl.de>, <https://phylo.io> or Python
+
+    ```python
+    from Bio import Phylo
+    import matplotlib.pyplot as plt
+
+    tree = Phylo.read("test.nwk", "newick")
+    Phylo.draw(tree)
+    plt.show()
     ```
