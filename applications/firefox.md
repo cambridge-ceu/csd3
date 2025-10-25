@@ -13,7 +13,10 @@ GitHub: <https://github.com/mozilla-firefox/firefox>
 alias firefox='MOZ_DISABLE_CONTENT_SANDBOX=1 firefox > /dev/null 2>&1'
 ```
 
-With its handling of sandbox, it looks better to use the nightly builds below.
+Note that
+
+1. With its handling of sandbox, it looks better to use the nightly builds below.
+2. Applications may call /usr/bin/firefox as default browser (e.g., postman), so it may be appropriate to start it BEFORE the application.
 
 ## ceuadmin/firefox
 

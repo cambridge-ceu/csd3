@@ -12,6 +12,8 @@ Web: <https://www.postman.com/>
 wget -qO- https://dl.pstmn.io/download/latest/linux64 -O latest.tar.gz
 ```
 
+but this requires GLIBC 2.34.
+
 ## 10.21.0
 
 This version works under GLIBC 2.28 but bundled with Electron -- some files are deleted to reduce the size from 1.2G to 914MB.
