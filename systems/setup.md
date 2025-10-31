@@ -500,6 +500,7 @@ All entries are ordered chronologically.
 | 2025-10-17 | ollama/0.12.6                    | Generic[^ollama]      |
 | 2025-10-23 | ccphylo/0.8.5                    | Genetics[^ccphylo]    |
 | 2025-10-25 | postman/10.21.0                  | Generic[^postman]     |
+| 2025-10-31 | R/4.5.2-icelake                  | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 

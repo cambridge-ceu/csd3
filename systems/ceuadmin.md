@@ -154,10 +154,10 @@ made).
 
 ### R
 
-A large collection of R packages (1,786 as of 8/10/2025, esp. with availability of major machine learning packages) is linked with the
-latest R distribution, 4.5.1; there are also packages (CRAN: DescTools, Rfast, Rfast2, rcompanion, rms -- which requires stringi
+A large collection of R packages (1,793 as of 31/10/2025, esp. with availability of major machine learning packages) is linked with the
+latest R distribution, 4.5.2; there are also packages (CRAN: DescTools, Rfast, Rfast2, rcompanion, rms -- which requires stringi
 herein, riskRegression -- which requires rms; Bioconductor: BiocSingular, DropletUtils, DSS, beachmat, bsseq, scater, scuttle) under
-4.5.1-gcc11. Earlier versions such as sf, terra, riskRegression, rms, scater, scuttle, SKAT were removed when they appear for 4.5.1-gcc11.
+4.5.1-gcc11. Earlier versions such as sf, terra, riskRegression, rms, scater, scuttle, SKAT were removed when they appear for 4.5.2-gcc11.
 For Rserve 1.8-15, openssl/3.3.0-dev appears working.
 
 Note that with recent work on gdal/3.0.4, sf 1.0-21 has been compiled enabling raster 3.6-32, stars 0.6-8, terra 1.8-50 (not 1.8-54 but

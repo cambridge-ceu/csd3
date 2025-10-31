@@ -6,9 +6,13 @@ sort: 68
 
 There is a dedicated section here, <https://cambridge-ceu.github.io/csd3/systems/languages.html#r>.
 
+<font color="red"><b>31/10/2025 Update</b></font>
+
+The latest is now 4.5.2, also `ceuadmin/R/latest`.
+
 <font color="red"><b>11/4/2025 Update</b></font>
 
-The latest is now 4.5.0, available from module `ceuadmin/R/4.5.0-icelake` which is also `ceuadmin/R`. The R packages are simplified in R/ and R-gcc11/ subdirectories.
+The latest is now 4.5.0, available from module `ceuadmin/R/4.5.0-icelake` which is also `ceuadmin/R/latest`. The R packages are simplified in R/ and R-gcc11/ subdirectories.
 
 With `.libPaths()` inside R, we see that
 
