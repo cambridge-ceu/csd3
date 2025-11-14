@@ -501,6 +501,7 @@ All entries are ordered chronologically.
 | 2025-10-23 | ccphylo/0.8.5                    | Genetics[^ccphylo]    |
 | 2025-10-25 | postman/10.21.0                  | Generic[^postman]     |
 | 2025-10-31 | R/4.5.2-icelake                  | Generic               |
+| 2025-11-14 | llama.cpp/b7058                  | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
