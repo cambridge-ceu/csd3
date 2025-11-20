@@ -6,10 +6,6 @@ sort: 47
 
 Web: <https://ollama.com/>.
 
-## Highlights
-
-- 0.13.0. It supports deepseek-ocr.
-
 ## Setup
 
 ```bash
@@ -58,6 +54,10 @@ atmosphere appears warm and inviting, with natural light filtering in through th
 many urban areas where people can relax, grab a coffee or tea, or have a quick meal while socializing with friends or colleagues.
 ```
 
+## Highlights
+
+- 0.13.0. It supports deepseek-ocr.
+
 ## Cloud models
 
 These are checked with
@@ -70,11 +70,18 @@ jq -r '.models[]|[.name,.modified_at,.size]|@tsv'|column -t
 giving
 
 ```
-kimi-k2:1t          2025-09-05T00:00:00Z  1118481408000
-qwen3-coder:480b    2025-07-22T00:00:00Z  510492157952
-deepseek-v3.1:671b  2025-08-21T00:00:00Z  688586727753
-gpt-oss:120b        2025-08-05T00:00:00Z  65290180781
-gpt-oss:20b         2025-08-05T00:00:00Z  13780162412
+cogito-2.1:671b         2025-11-19T00:00:00Z  688586727753
+glm-4.6                 2025-09-29T00:00:00Z  696060000000
+kimi-k2:1t              2025-09-05T00:00:00Z  1118481408000
+kimi-k2-thinking        2025-11-06T00:00:00Z  1118481408000
+qwen3-coder:480b        2025-07-22T00:00:00Z  510492157952
+deepseek-v3.1:671b      2025-08-21T00:00:00Z  688586727753
+gpt-oss:120b            2025-08-05T00:00:00Z  65290180781
+gpt-oss:20b             2025-08-05T00:00:00Z  13780162412
+qwen3-vl:235b-instruct  2025-09-22T00:00:00Z  470000000000
+qwen3-vl:235b           2025-09-22T00:00:00Z  470000000000
+minimax-m2              2025-10-27T00:00:00Z  230000000000
+gemini-3-pro-preview    2025-11-18T00:00:00Z  0
 ```
 
 ## REST API: /api/generate
