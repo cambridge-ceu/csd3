@@ -6,6 +6,10 @@ sort: 47
 
 Web: <https://ollama.com/>.
 
+## Highlights
+
+- 0.13.0. It supports deepseek-ocr.
+
 ## Setup
 
 ```bash
