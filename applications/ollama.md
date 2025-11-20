@@ -54,10 +54,6 @@ atmosphere appears warm and inviting, with natural light filtering in through th
 many urban areas where people can relax, grab a coffee or tea, or have a quick meal while socializing with friends or colleagues.
 ```
 
-## Highlights
-
-- 0.13.0. It supports deepseek-ocr.
-
 ## Cloud models
 
 These are checked with
@@ -83,6 +79,10 @@ qwen3-vl:235b           2025-09-22T00:00:00Z  470000000000
 minimax-m2              2025-10-27T00:00:00Z  230000000000
 gemini-3-pro-preview    2025-11-18T00:00:00Z  0
 ```
+
+## Highlights
+
+- 0.13.0. It supports deepseek-ocr.
 
 ## REST API: /api/generate
 
