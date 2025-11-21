@@ -82,7 +82,7 @@ gemini-3-pro-preview    2025-11-18T00:00:00Z  0
 
 ## Highlights
 
-- 0.13.0. It supports deepseek-ocr.
+- 0.13.0. It supports DeepSeek-OCR, <https://github.com/deepseek-ai/DeepSeek-OCR>
 
 ## REST API: /api/generate
 
