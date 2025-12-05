@@ -131,3 +131,41 @@ manhattan(gwas_results, chr=chr_col, p=pval_col)
 ```
 
 Replace `"my_gwas_results.txt"` with the actual name of your GWAS results file. Also, make sure to specify the correct column names for chromosome and p-value in `chr_col` and `pval_col`, respectively.
+
+## Zed
+
+This is one of the competitors, noted for flatpak:
+
+```bash
+#!/bin/bash
+# Custom Flatpak Zed installer for CentOS 8 / RHEL 8 without root
+
+# 1️⃣ Set custom install directory
+export FLATPAK_USER_DIR="$CEUADMIN/zed/0.215.3"
+export FLATPAK_USER_DIR="/rds/project/rds-4o5vpvAowP0/software/zed/0.215.3"
+mkdir -p "$FLATPAK_USER_DIR"
+export XDG_DATA_HOME="$FLATPAK_USER_DIR"
+
+# 2️⃣ Add Flathub remote if missing
+flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# 3️⃣ Install Zed
+flatpak install --user -y flathub dev.zed.Zed
+
+# 4️⃣ Run Zed to verify
+flatpak run --user dev.zed.Zed
+
+# 5️⃣ Optional: create a desktop launcher
+mkdir -p "$HOME/.local/share/applications"
+cat > "$HOME/.local/share/applications/zed.desktop" <<EOL
+[Desktop Entry]
+Name=Zed Editor
+Exec=flatpak run --user dev.zed.Zed
+Terminal=false
+Type=Application
+Icon=zed
+Categories=Development;IDE;
+EOL
+
+echo "✅ Zed installed in $FLATPAK_USER_DIR and desktop launcher created."
+```
