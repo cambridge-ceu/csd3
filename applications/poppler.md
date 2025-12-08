@@ -135,3 +135,12 @@ make install
 ```
 
 Note we explicitly enables shared libraries to be called.
+
+## xdg-open
+
+PDF and image files can be opened with this, e.g.,
+
+```bash
+xdg-open Illustrated\ Dictionary\ of\ Biology\,\ 3e.pdf
+xdg-open triangle.jpg
+```
