@@ -59,7 +59,7 @@ CSD3 User guide, <https://docs.hpc.cam.ac.uk/hpc/user-guide/batch.html>
 
 Location at csd3: `/usr/local/Cluster-Docs/SLURM/`.
 
-The directory `/usr/local/software/slurm/current/bin/` contains all the executables..
+The directory `/usr/local/software/slurm/current/bin/` contains all the executables.
 
 ### Updates
 
@@ -267,6 +267,10 @@ mv ${p}-000001.png INTERVAL.${p}.png
 ```
 
 To embed SLURM call in a bash script, one can use `sbatch --wait <SLURM scripts>`. SLURM scripts can also be inside the Bash counterpart.
+
+### Reference
+
+Sterling, T., Brodowicz, M., & Anderson, M. (2024). High performance computing: Modern systems and practices (2e). Morgan Kaufmann.
 
 ## Other approaches
 
