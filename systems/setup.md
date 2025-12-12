@@ -505,6 +505,7 @@ All entries are ordered chronologically.
 | 2025-11-20 | ollama/0.13.0                    | Generic[^ollama]      |
 | 2025-12-11 | ollama/0.13.2                    | Generic[^ollama]      |
 | ""         | fresh/0.1.39                     | Generic               |
+| 2025-12-12 | fresh/0.1.42                     | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
