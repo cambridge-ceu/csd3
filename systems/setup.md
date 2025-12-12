@@ -504,7 +504,7 @@ All entries are ordered chronologically.
 | 2025-11-14 | llama.cpp/b7058                  | Generic               |
 | 2025-11-20 | ollama/0.13.0                    | Generic[^ollama]      |
 | 2025-12-11 | ollama/0.13.2                    | Generic[^ollama]      |
-| ""         | fresh/0.1.39                     | Generic               |
+| ""         | fresh/0.1.39                     | Generic[^fresh]       |
 | 2025-12-12 | fresh/0.1.42                     | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
@@ -2152,3 +2152,7 @@ They are generated from script [setup.sh](setup.sh),
 [^postman]: **postman**
 
     See <https://cambridge-ceu.github.io/csd3/applications/postman.html>.
+
+[^fresh]: **fresh**
+
+    An apparent permission issue is reported (module load ceuadmin/fresh;which fresh; shows that fresh is not found) and fixed with `chmod -R a+r fresh/0.1.42`.
