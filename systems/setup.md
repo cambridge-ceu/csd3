@@ -504,8 +504,9 @@ All entries are ordered chronologically.
 | 2025-11-14 | llama.cpp/b7058                  | Generic               |
 | 2025-11-20 | ollama/0.13.0                    | Generic[^ollama]      |
 | 2025-12-11 | ollama/0.13.2                    | Generic[^ollama]      |
-| ""         | fresh/0.1.39                     | Generic[^fresh]       |
+| ""         | fresh/0.1.39                     | Generic               |
 | 2025-12-12 | fresh/0.1.42                     | Generic               |
+| 2025-12-14 | fresh/0.1.44                     | Generic[^fresh]       |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2156,3 +2157,18 @@ They are generated from script [setup.sh](setup.sh),
 [^fresh]: **fresh**
 
     An apparent permission issue is reported (module load ceuadmin/fresh;which fresh; shows that fresh is not found) and fixed with `chmod -R a+r fresh/0.1.42`.
+    One can get around via `--strip-components=1` and to have the plugins as well.
+
+    ```bash
+    wget -qO- "$(
+      curl -s https://api.github.com/repos/sinelaw/fresh/releases/latest \
+      | grep '"browser_download_url"' \
+      | grep 'x86_64-unknown-linux-gnu.tar.xz"' \
+      | head -n1 \
+      | cut -d '"' -f 4
+    )" | tar xJ --strip-components=1 -C . -f -
+    wget -qO- https://github.com/sinelaw/fresh/releases/download/v0.1.44/fresh-editor-no-plugins-x86_64-unknown-linux-musl.tar.gz \
+    | tar -xz --strip-components=1 -f -
+    ```
+
+    Since it requires higher version of GLIBC, it is overwritten with an explicit download afterwards.
