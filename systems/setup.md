@@ -2156,8 +2156,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^fresh]: **fresh**
 
-    An apparent permission issue is reported (module load ceuadmin/fresh;which fresh; shows that fresh is not found) and fixed with `chmod -R a+r fresh/0.1.42`.
-    One can get around via `--strip-components=1` and to have the plugins as well.
+    An apparent permission issue is reported (`module load ceuadmin/fresh;which fresh;` shows that fresh is not found) and fixed with `chmod -R a+r fresh/0.1.42`, suggesting that one can get around via `--strip-components=1`.
 
     ```bash
     wget -qO- "$(
@@ -2171,4 +2170,4 @@ They are generated from script [setup.sh](setup.sh),
     | tar -xz --strip-components=1 -f -
     ```
 
-    The download of the latest release comes with plugins/ but requires higher version of GLIBC so is overwritten with an explicit download afterwards.
+    The official syntax for download of the latest release comes with plugins/ but requires higher version of GLIBC; therefore the executable is overwritten with an explicit download.
