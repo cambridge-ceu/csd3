@@ -2171,4 +2171,4 @@ They are generated from script [setup.sh](setup.sh),
     | tar -xz --strip-components=1 -f -
     ```
 
-    Since it requires higher version of GLIBC, it is overwritten with an explicit download afterwards.
+    The download of the latest release comes with plugins/ but requires higher version of GLIBC so is overwritten with an explicit download afterwards.
