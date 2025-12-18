@@ -20,6 +20,21 @@ Note that
 
 ## ceuadmin/firefox
 
+<font color="red"><b>18/12/2025 Update</b></font>
+
+Module **ceuadmin/146.0.1** is available and overwrites alias from .bashrc via
+
+```
+# Remove any previous alias for firefox
+if {[info exists ::env.alias_firefox]} {
+    unset ::env.alias_firefox
+}
+```
+
+Since the version is more recent, 143.0a1, 145.0a1 and 143.0.1 are removed.
+
+The oneliner is `wget -qO- https://archive.mozilla.org/pub/firefox/releases/146.0.1/linux-x86_64/en-GB/firefox-146.0.1.tar.xz | tar xJ --strip-components=1 -C . -f -`.
+
 <font color="red"><b>27/9/2025 Update</b></font>
 
 Module **ceuadmin/143.0.1** is available and used as follows,

@@ -507,6 +507,7 @@ All entries are ordered chronologically.
 | ""         | fresh/0.1.39                     | Generic               |
 | 2025-12-12 | fresh/0.1.42                     | Generic               |
 | 2025-12-14 | fresh/0.1.44                     | Generic[^fresh]       |
+| 2025-12-18 | firefox/146.0.1                  | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
