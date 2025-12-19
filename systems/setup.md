@@ -2169,8 +2169,24 @@ They are generated from script [setup.sh](setup.sh),
       | head -n1 \
       | cut -d '"' -f 4
     )" | tar xJ --strip-components=1 -C . -f -
+    ```
+
+    The official syntax for download of the latest release comes with plugins/ but requires higher version of GLIBC; so we turn to an explicit no-plugin download:
+
+    ```bash
     wget -qO- https://github.com/sinelaw/fresh/releases/download/v0.1.44/fresh-editor-no-plugins-x86_64-unknown-linux-musl.tar.gz \
     | tar -xz --strip-components=1 -f -
     ```
 
-    The official syntax for download of the latest release comes with plugins/ but requires higher version of GLIBC; therefore the executable is overwritten with an explicit download.
+    It is therefore preferable to compile from source,
+
+    ```bash
+    wget -qO- https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.55.tar.gz | \
+    tar fvz -
+    cd fresh-0.1.55
+    module load ceuadmin/rust/nightly
+    export PREFIX=$CEUADMIN/fresh/0.1.55r
+    mkdir -p "$PREFIX"
+    cargo install --path . --root "$PREFIX"
+    rsync -av plugins themes queries types config.example.json $PREFIX/
+    ```
