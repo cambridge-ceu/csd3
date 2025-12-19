@@ -20,6 +20,37 @@ Note that
 
 ## ceuadmin/firefox
 
+<font color="red"><b>19/12/2025 Update</b></font>
+
+The ceuadmin/firefox/nightly is now 148.0a1. The build follows 145.0a1 (mzconfig, preparations and below) such that
+
+```bash
+git pull
+./mach clobber
+./mach bootstrap
+module amodule load ceuadmin/gcc/12.1.0
+module load ceuadmin/gtk+/3.24.0
+module load ceuadmin/rust/nightly
+module load ceuadmin/clang/19.1.7
+export CC=clang
+export CXX=clang++
+export CFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include $CFLAGS"
+export CXXFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include $CXXFLAGS"
+export DBUS_CFLAGS="$(pkg-config --cflags dbus-1)"
+export CFLAGS="$DBUS_CFLAGS $CFLAGS"
+export CXXFLAGS="$DBUS_CFLAGS $CXXFLAGS"
+export BINDGEN_EXTRA_CLANG_ARGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
+env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/148.0a1 \
+               --without-wasm-sandboxed-libraries
+./mach build -j5
+module purge
+module load rhel8/default-icl
+module load gcc/11.2.0/gcc/rjvgspag
+module load gettext/0.21/gcc/lhdl4tbr
+./mach run --version
+./mach install
+```
+
 <font color="red"><b>18/12/2025 Update</b></font>
 
 Module **ceuadmin/146.0.1** is available and overwrites alias from .bashrc via
