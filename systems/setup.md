@@ -2184,6 +2184,7 @@ They are generated from script [setup.sh](setup.sh),
     wget -qO- https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.55.tar.gz | \
     tar fvz -
     cd fresh-0.1.55
+    module load gcc/11.2.0/gcc/rjvgspag
     module load ceuadmin/rust/nightly
     export PREFIX=$CEUADMIN/fresh/0.1.55r
     mkdir -p "$PREFIX"
