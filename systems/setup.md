@@ -2160,34 +2160,4 @@ They are generated from script [setup.sh](setup.sh),
 
 [^fresh]: **fresh**
 
-    An apparent permission issue is reported (`module load ceuadmin/fresh;which fresh;` shows that fresh is not found) and fixed with `chmod -R a+r fresh/0.1.42`, suggesting that one can get around via `--strip-components=1`.
-
-    ```bash
-    wget -qO- "$(
-      curl -s https://api.github.com/repos/sinelaw/fresh/releases/latest \
-      | grep '"browser_download_url"' \
-      | grep 'x86_64-unknown-linux-gnu.tar.xz"' \
-      | head -n1 \
-      | cut -d '"' -f 4
-    )" | tar xJ --strip-components=1 -C . -f -
-    ```
-
-    The official syntax for download of the latest release comes with plugins/ but requires higher version of GLIBC; so we turn to an explicit no-plugin download:
-
-    ```bash
-    wget -qO- https://github.com/sinelaw/fresh/releases/download/v0.1.44/fresh-editor-no-plugins-x86_64-unknown-linux-musl.tar.gz \
-    | tar -xz --strip-components=1 -f -
-    ```
-
-    It is therefore preferable to compile from source,
-
-    ```bash
-    wget -qO- https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.55.tar.gz | \
-    tar fvz -
-    cd fresh-0.1.55
-    module load ceuadmin/rust/nightly
-    export PREFIX=$CEUADMIN/fresh/0.1.55r
-    mkdir -p "$PREFIX"
-    cargo install --path . --root "$PREFIX"
-    rsync -av plugins themes queries types config.example.json $PREFIX/
-    ```
+   See <https://cambridge-ceu.github.io/csd3/applications/fresh.html>.
