@@ -50,4 +50,4 @@ rsync -av plugins themes queries types config.example.json $PREFIX/
 
 ## Usage notes
 
-There are numerous features, such as opening files from a directory tree and Ctrl-P to bring up the command panel.
+There are numerous features, such as opening files from a directory tree (as in ceuadmin/edit), Ctrl-P to bring up the command panel, setting terminal display themes and key binding styles.
