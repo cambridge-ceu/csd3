@@ -20,7 +20,7 @@ wget -qO- "$(
 )" | tar xJ --strip-components=1 -C . -f -
 ```
 
-The official syntax for download of the latest release comes with plugins/ but requires higher version of GLIBC; so we turn to an explicit no-plugin download.
+The official syntax for download of the latest release comes with plugins/ but requires higher version of GLIBC; so we turn to an explicit no-plugin download (below), for which an apparent permission issue is reported (`module load ceuadmin/fresh;which fresh;` shows that fresh is not found) and fixed with `chmod -R a+r fresh/0.1.42`, so we get around via `--strip-components=1`.
 
 ### 2. No plugins
 
@@ -31,11 +31,9 @@ wget -qO- https://github.com/sinelaw/fresh/releases/download/v0.1.44/fresh-edito
 | tar -xz --strip-components=1 -f -
 ```
 
-An apparent permission issue is reported (`module load ceuadmin/fresh;which fresh;` shows that fresh is not found) and fixed with `chmod -R a+r fresh/0.1.42`, suggesting that one can get around via `--strip-components=1`.
-
 ## Compiling from source
 
-This preferable though slightly more involved.
+This is preferable though slightly more involved.
 
 ```bash
 wget -qO- https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.55.tar.gz | \
@@ -47,6 +45,8 @@ mkdir -p "$PREFIX"
 cargo install --path . --root "$PREFIX"
 rsync -av plugins themes queries types config.example.json $PREFIX/
 ```
+
+where several folders are copied.
 
 ## Usage notes
 
