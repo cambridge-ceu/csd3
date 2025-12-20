@@ -24,12 +24,14 @@ The official syntax for download of the latest release comes with plugins/ but r
 
 ### 2. No plugins
 
-An apparent permission issue is reported (`module load ceuadmin/fresh;which fresh;` shows that fresh is not found) and fixed with `chmod -R a+r fresh/0.1.42`, suggesting that one can get around via `--strip-components=1`.
+The GitHub releases provide stable executables with no support for plugins,
 
 ```bash
 wget -qO- https://github.com/sinelaw/fresh/releases/download/v0.1.44/fresh-editor-no-plugins-x86_64-unknown-linux-musl.tar.gz \
 | tar -xz --strip-components=1 -f -
 ```
+
+An apparent permission issue is reported (`module load ceuadmin/fresh;which fresh;` shows that fresh is not found) and fixed with `chmod -R a+r fresh/0.1.42`, suggesting that one can get around via `--strip-components=1`.
 
 ## Compiling from source
 
