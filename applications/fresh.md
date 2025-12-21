@@ -36,11 +36,12 @@ wget -qO- https://github.com/sinelaw/fresh/releases/download/v0.1.44/fresh-edito
 This is preferable though slightly more involved.
 
 ```bash
-wget -qO- https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.55.tar.gz | \
+export version=0.1.57
+wget -qO- https://github.com/sinelaw/fresh/archive/refs/tags/v${version}.tar.gz | \
 tar fvxz -
-cd fresh-0.1.55
+cd fresh-${version}
 module load ceuadmin/rust/nightly
-export PREFIX=$CEUADMIN/fresh/0.1.55r
+export PREFIX=$CEUADMIN/fresh/${version}
 mkdir -p "$PREFIX"
 cargo install --path . --root "$PREFIX"
 rsync -av plugins themes queries types config.example.json $PREFIX/
