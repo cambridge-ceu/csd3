@@ -4,7 +4,7 @@ sort: 26
 
 # fresh
 
-Web: <https://sinelaw.github.io/fresh/>
+Web: <https://sinelaw.github.io/fresh/> ([release](https://github.com/sinelaw/fresh/releases))
 
 ## Pre-built binaries
 
@@ -22,7 +22,7 @@ wget -qO- "$(
 
 The official syntax for download of the latest release comes with plugins/ but requires higher version of GLIBC; so we turn to an explicit no-plugin download (below), for which an apparent permission issue is reported (`module load ceuadmin/fresh;which fresh;` shows that fresh is not found) and fixed with `chmod -R a+r fresh/0.1.42`, so we get around via `--strip-components=1`.
 
-### 2. No plugins
+### 2. Release with no plugins
 
 The GitHub releases provide stable executables with no support for plugins,
 
@@ -75,6 +75,8 @@ setenv FRESH_QUERIES_DIR $root/queries
 setenv FRESH_TYPES_DIR   $root/types
 setenv FRESH_CONFIG $root/config.example.json
 ```
+
+It is handy to use `sed 's/0.1.57/0.1.58/' 0.1.57 > 0.1.58`, say.
 
 ## Usage notes
 
