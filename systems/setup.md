@@ -512,7 +512,7 @@ All entries are ordered chronologically.
 | ""         | fresh/0.1.55                     | Generic               |
 | ""         | fresh/0.1.55r                    | Generic               |
 | 2025-12-21 | fresh/0.1.56                     | Generic               |
-| ""         | fresh/0.1.57                     | Generic               |
+| ""         | fresh/0.1.57,0.1.58              | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 

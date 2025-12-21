@@ -36,7 +36,7 @@ wget -qO- https://github.com/sinelaw/fresh/releases/download/v0.1.44/fresh-edito
 This is preferable though slightly more involved.
 
 ```bash
-export version=0.1.57
+export version=0.1.58
 wget -qO- https://github.com/sinelaw/fresh/archive/refs/tags/v${version}.tar.gz | \
 tar fvxz -
 cd fresh-${version}
@@ -54,19 +54,19 @@ where several folders are copied.
 ```
 #%Module -*- tcl -*-
 ##
-## fresh 0.1.57
+## fresh 0.1.58
 ##
 proc ModulesHelp { } {
 
   puts stderr "\tfresh: The Terminal Text Editor\n"
-  puts stderr "\tInstalled under: /usr/local/Cluster-Apps/ceuadmin/fresh/0.1.57"
+  puts stderr "\tInstalled under: /usr/local/Cluster-Apps/ceuadmin/fresh/0.1.58"
   puts stderr "\tHomepage: https://sinelaw.github.io/fresh/"
 }
 
 module-whatis "The Terminal Text Editor."
 
 conflict fresh
-set root /usr/local/Cluster-Apps/ceuadmin/fresh/0.1.57
+set root /usr/local/Cluster-Apps/ceuadmin/fresh/0.1.58
 prepend-path PATH $root/bin
 setenv FRESH_HOME $root
 setenv FRESH_PLUGINS_DIR $root/plugins
