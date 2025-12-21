@@ -37,7 +37,7 @@ This is preferable though slightly more involved.
 
 ```bash
 wget -qO- https://github.com/sinelaw/fresh/archive/refs/tags/v0.1.55.tar.gz | \
-tar fvz -
+tar fvxz -
 cd fresh-0.1.55
 module load ceuadmin/rust/nightly
 export PREFIX=$CEUADMIN/fresh/0.1.55r
