@@ -6,7 +6,7 @@ sort: 26
 
 Web: <https://sinelaw.github.io/fresh/>
 
-## Pre-built executables
+## Pre-built binaries
 
 ### 1. The latest release
 
