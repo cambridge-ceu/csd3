@@ -6,9 +6,9 @@ sort: 26
 
 Web: <https://sinelaw.github.io/fresh/>
 
-## Precompiled
+## Pre-built executables
 
-### 1. Latest release
+### 1. The latest release
 
 ```bash
 wget -qO- "$(
@@ -48,6 +48,33 @@ rsync -av plugins themes queries types config.example.json $PREFIX/
 ```
 
 where several folders are copied.
+
+## Module file
+
+```
+#%Module -*- tcl -*-
+##
+## fresh 0.1.57
+##
+proc ModulesHelp { } {
+
+  puts stderr "\tfresh: The Terminal Text Editor\n"
+  puts stderr "\tInstalled under: /usr/local/Cluster-Apps/ceuadmin/fresh/0.1.57"
+  puts stderr "\tHomepage: https://sinelaw.github.io/fresh/"
+}
+
+module-whatis "The Terminal Text Editor."
+
+conflict fresh
+set root /usr/local/Cluster-Apps/ceuadmin/fresh/0.1.57
+prepend-path PATH $root/bin
+setenv FRESH_HOME $root
+setenv FRESH_PLUGINS_DIR $root/plugins
+setenv FRESH_THEMES_DIR  $root/themes
+setenv FRESH_QUERIES_DIR $root/queries
+setenv FRESH_TYPES_DIR   $root/types
+setenv FRESH_CONFIG $root/config.example.json
+```
 
 ## Usage notes
 
