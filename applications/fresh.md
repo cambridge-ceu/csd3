@@ -36,7 +36,7 @@ wget -qO- https://github.com/sinelaw/fresh/releases/download/v0.1.44/fresh-edito
 This is preferable though slightly more involved.
 
 ```bash
-export version=0.1.58
+export version=0.1.59
 wget -qO- https://github.com/sinelaw/fresh/archive/refs/tags/v${version}.tar.gz | \
 tar fvxz -
 cd fresh-${version}
@@ -76,7 +76,7 @@ setenv FRESH_TYPES_DIR   $root/types
 setenv FRESH_CONFIG $root/config.example.json
 ```
 
-It is handy to use `sed 's/0.1.57/0.1.58/' 0.1.57 > 0.1.58`, say.
+It is handy to use `sed 's/0.1.58/0.1.59/' 0.1.58 > 0.1.59`, say.
 
 ## Usage notes
 

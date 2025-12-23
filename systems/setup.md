@@ -511,6 +511,7 @@ All entries are ordered chronologically.
 | 2025-12-19 | firefox/148.0a1 (nightly)        | Generic               |
 | ""         | fresh/0.1.55, 0.1.55r            | Generic               |
 | 2025-12-21 | fresh/0.1.56-58                  | Generic               |
+| 2025-12-23 | fresh/0.1.59                     | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
