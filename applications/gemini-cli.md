@@ -29,7 +29,7 @@ Run `npm install -g @google/gemini-cli@latest` for the latest version.
 
 ```bash
 # Get your key from https://aistudio.google.com/apikey
-export GEMINI_API_KEY="YOUR_API_KEY"
+export GEMINI_API_KEY=$(cat $HOME/doc/gemini-cli)
 module load ceuadmin/node/22.16.0
 gemini
 ```
