@@ -514,6 +514,7 @@ All entries are ordered chronologically.
 | 2025-12-23 | fresh/0.1.59                     | Generic               |
 | 2025-12-26 | fresh/0.1.64                     | Generic               |
 | 2025-12-27 | gemini-cli/0.22.4                | Generic[^gemini]      |
+| 2025-12-28 | fresh/0.1.65                     | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
