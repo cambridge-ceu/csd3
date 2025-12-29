@@ -1,10 +1,10 @@
 ---
-sort: 34
+sort: 35
 ---
 
 # gsutil
 
-Web site: <https://cloud.google.com/storage/docs/gsutil_install#linux>
+Web: <https://cloud.google.com/storage/docs/gsutil_install#linux>
 
 ## Installation
 
