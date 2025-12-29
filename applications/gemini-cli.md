@@ -76,15 +76,17 @@ To switch model, use `/model` and `/settings`.
 
 ## gcloud
 
-The session may fail with message
+The session above may fail with message
 
 ```
 [API Error: You have exhausted your daily quota on this model.]
 ```
 
-We turn to
+We turn to gcloud; in this case the authentication is enabled via Firefox:
 
 ```bash
+module load ceuadmin/firefox
+firefox &
 gcloud auth login
 gcloud config set project PROJECT_ID
 gcloud auth print-access-token
