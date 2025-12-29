@@ -101,4 +101,4 @@ For more information on how to get started, please visit:
 
 ## Notes
 
-We have seen its presence at gsutil and also `gcloud config set disable_usage_reporting false` for usagge data.
+We have seen its presence at gsutil and also `gcloud config set disable_usage_reporting false` for usage data.
