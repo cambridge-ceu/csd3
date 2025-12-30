@@ -516,6 +516,7 @@ All entries are ordered chronologically.
 | 2025-12-27 | gemini-cli/0.22.4                | Generic[^gemini]      |
 | 2025-12-28 | fresh/0.1.65                     | Generic               |
 | 2025-12-29 | gcloud/550.0.0                   | Generic[^gcloud]      |
+| 2025-12-30 | fresh/0.1.67                     | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
