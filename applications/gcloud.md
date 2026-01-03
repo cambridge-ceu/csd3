@@ -101,4 +101,4 @@ For more information on how to get started, please visit:
 
 ## Notes
 
-In fact, the module is already in place via ceuadmin/gsutil/5.35; note also `gcloud config set disable_usage_reporting false` for usage data.
+In fact, the module is already in place via ceuadmin/gsutil/5.35 (from Google Cloud SDK 533.0.0); note also `gcloud config set disable_usage_reporting false` for usage data.
