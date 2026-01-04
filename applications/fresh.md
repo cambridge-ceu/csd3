@@ -80,4 +80,4 @@ It is handy to use `sed 's/0.1.67/0.1.69/' 0.1.67 > 0.1.69`, say.
 
 ## Usage notes
 
-There are numerous features, such as opening files from a directory tree (as in ceuadmin/edit), Ctrl-P to bring up the command panel, setting terminal display themes and key binding styles.
+There are numerous features, such as mouse cursor to set position, Ctrl-E to open files from a directory tree (as in ceuadmin/edit), Ctrl-P to bring up the command panel, setting terminal display themes and key binding styles.
