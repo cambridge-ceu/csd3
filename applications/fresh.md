@@ -27,7 +27,8 @@ The official syntax for download of the latest release comes with plugins/ but r
 The GitHub releases provide stable executables with no support for plugins,
 
 ```bash
-wget -qO- https://github.com/sinelaw/fresh/releases/download/v0.1.44/fresh-editor-no-plugins-x86_64-unknown-linux-musl.tar.gz \
+export version=0.1.70
+wget -qO- https://github.com/sinelaw/fresh/releases/download/v${version}/fresh-editor-no-plugins-x86_64-unknown-linux-musl.tar.gz \
 | tar -xz --strip-components=1 -f -
 ```
 
