@@ -64,7 +64,7 @@ where we point the default llama.cpp cache folder to a location with more space 
 
 ## llama-run/llama-cli/llama-mtmd-cli
 
-To proceed, we obtain a HuggingFace token from <https://huggingface.co/settings/tokens>.
+To proceed, we obtain a HuggingFace token from <https://huggingface.co/settings/tokens>, then login and down a model with vision projector.
 
 ```bash
 source ~/rds/software/py3.11/bin/activate
@@ -80,6 +80,8 @@ huggingface-cli download \
   llava-v1.5-7b-mmproj-model-f16.gguf \
   --local-dir models/llava
 ```
+
+and make an attempt to dicipher text in the image:
 
 ```bash
 module load ceuadmin/b7673
