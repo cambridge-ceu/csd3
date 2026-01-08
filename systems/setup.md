@@ -520,6 +520,7 @@ All entries are ordered chronologically.
 | 2026-01-02 | fresh/0.1.69                     | Generic               |
 | 2026-01-04 | fresh/0.1.70                     | Generic               |
 | 2026-01-06 | fresh/0.1.71                     | Generic               |
+| 2026-01-08 | fresh/0.1.74                     | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
