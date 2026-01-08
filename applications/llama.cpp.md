@@ -22,11 +22,12 @@ mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b5303 ..
 make && make install
 # b5558 requires gcc/9 and above
+export version=b7673
 module load gcc/11.3.0/gcc/4zpip55j
-wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/b5558.tar.gz | tar xvfz -
-cd llama.cpp-b5558
+wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/${version}.tar.gz | tar xvfz -
+cd llama.cpp-${version}
 mkdir build && cd build
-cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b5558 ..
+cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/${version} ..
 make && make install
 ```
 
