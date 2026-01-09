@@ -27,7 +27,7 @@ The official syntax for download of the latest release comes with plugins/ but r
 The GitHub releases provide stable executables with no support for plugins,
 
 ```bash
-export version=0.1.74
+export version=0.1.75
 wget -qO- https://github.com/sinelaw/fresh/releases/download/v${version}/fresh-editor-no-plugins-x86_64-unknown-linux-musl.tar.gz \
 | tar -xz --strip-components=1 -f -
 ```
@@ -37,7 +37,7 @@ wget -qO- https://github.com/sinelaw/fresh/releases/download/v${version}/fresh-e
 This is preferable though slightly more involved.
 
 ```bash
-export version=0.1.74
+export version=0.1.75
 wget -qO- https://github.com/sinelaw/fresh/archive/refs/tags/v${version}.tar.gz | \
 tar fvxz -
 cd fresh-${version}
@@ -55,19 +55,19 @@ where several folders are copied.
 ```
 #%Module -*- tcl -*-
 ##
-## fresh 0.1.71
+## fresh 0.1.74
 ##
 proc ModulesHelp { } {
 
   puts stderr "\tfresh: The Terminal Text Editor\n"
-  puts stderr "\tInstalled under: /usr/local/Cluster-Apps/ceuadmin/fresh/0.1.71"
+  puts stderr "\tInstalled under: /usr/local/Cluster-Apps/ceuadmin/fresh/0.1.74"
   puts stderr "\tHomepage: https://sinelaw.github.io/fresh/"
 }
 
 module-whatis "The Terminal Text Editor."
 
 conflict fresh
-set root /usr/local/Cluster-Apps/ceuadmin/fresh/0.1.71
+set root /usr/local/Cluster-Apps/ceuadmin/fresh/0.1.74
 prepend-path PATH $root/bin
 setenv FRESH_HOME $root
 setenv FRESH_PLUGINS_DIR $root/plugins
@@ -77,7 +77,7 @@ setenv FRESH_TYPES_DIR   $root/types
 setenv FRESH_CONFIG $root/config.example.json
 ```
 
-It is handy to use `sed 's/0.1.71/0.1.74/' 0.1.71 > 0.1.74`, say.
+It is handy to use `sed 's/0.1.74/0.1.75/' 0.1.74 > 0.1.75`, say.
 
 ## Usage notes
 
