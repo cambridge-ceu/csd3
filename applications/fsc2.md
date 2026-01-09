@@ -15,7 +15,7 @@ unzip fsc28_linux64.zip
 cd fsc28_linux64/
 chmod +x fsc28
 ./fsc28
-````
+```
 
 which gives command line options.
 
@@ -130,4 +130,4 @@ where an R utility is used to visually inspect the validity of modeled scenarios
 
 ## References
 
-Excoffier L, et al. *fastsimcoal2: demographic inference under complex evolutionary scenarios*. *Bioinformatics* 37 (24):4882–4885, 2021.
+Excoffier L, et al. _fastsimcoal2: demographic inference under complex evolutionary scenarios_. _Bioinformatics_ 37 (24):4882–4885, 2021.

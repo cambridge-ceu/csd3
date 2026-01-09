@@ -103,7 +103,7 @@ which uses only one CPU and is appropriate on a login node with heavy load (many
 
 ```bash
 alias firefox
-# showing `alias firefox='MOZ_FORCE_DISABLE_E10S=1 firefox > /dev/null 2>&1'` 
+# showing `alias firefox='MOZ_FORCE_DISABLE_E10S=1 firefox > /dev/null 2>&1'`
 unalias firefox
 # call with three CPUs
 MOZ_FORCE_DISABLE_E10S=3 firefox > /dev/null 2>&1 &
@@ -282,7 +282,7 @@ Detailed configuration can be examined via `./mach configure > configure.log 2>&
 
 The following attempts become unnecessary with ceuadmin/gcc/12.1.0.
 
-It now requires gcc/10 or above, and gtk+-3.0 along with xproto, kbproto, xextproto, renderproto, 
+It now requires gcc/10 or above, and gtk+-3.0 along with xproto, kbproto, xextproto, renderproto,
 
 ```bash
 pkg-config --exists xproto && echo "xproto found" || echo "xproto NOT found"

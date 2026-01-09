@@ -16,13 +16,13 @@ tar xf -
 cd htslib
 make # install prefix=$CEUADMIN/angsd/0.940
 make clean
-cd -    
+cd -
 cd angsd
 make HTSSRC=../htslib install prefix=$CEUADMIN/angsd/0.940
 make clean
 ```
 
-Note that 
+Note that
 
 1. angsd0.940.tar.gz file is actually a tar file (NOT gzipped).
 2. The make command for htslib can also give a complete bin/include/lib/share set.
@@ -30,7 +30,7 @@ Note that
 
 ### ceuadmin/htslib/1.20
 
-The package is associated with htslib/1.16, and for 1.20 we use 
+The package is associated with htslib/1.16, and for 1.20 we use
 
 ```bash
 wget -qO- https://github.com/ANGSD/angsd/archive/refs/tags/0.940.tar.gz | tar xfz -
@@ -132,4 +132,4 @@ giving
 
 ## Reference
 
-Korneliussen, T.S., Albrechtsen, A. & Nielsen, R. ANGSD: Analysis of Next Generation Sequencing Data. *BMC Bioinformatics* 15, 356 (2014). <https://doi.org/10.1186/s12859-014-0356-4>
+Korneliussen, T.S., Albrechtsen, A. & Nielsen, R. ANGSD: Analysis of Next Generation Sequencing Data. _BMC Bioinformatics_ 15, 356 (2014). <https://doi.org/10.1186/s12859-014-0356-4>
