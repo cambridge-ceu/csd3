@@ -523,6 +523,7 @@ All entries are ordered chronologically.
 | 2026-01-08 | fresh/0.1.74                     | Generic               |
 | ""         | llama.cpp/b7673                  | Generic               |
 | 2026-01-09 | fresh/0.1.75                     | Generic               |
+| 2026-01-10 | ollama/0.13.5                    | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
