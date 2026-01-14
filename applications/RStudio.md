@@ -15,7 +15,7 @@ Module `ceuadmin/rstudio/2025.04.0-278` is now available and works with the late
 ceuadmin/rstudio/1.3.1093  ceuadmin/rstudio/2023.09.2-508  ceuadmin/rstudio/2023.09.2-508-icelake  ceuadmin/rstudio/2025.04.0-278
 ```
 
-As with `rstudio/2024.04.2+764`, use `ceuadmin/rstudio/2023.09.2-508-icelake` with `R/4.3.1-icelake` to avoid Rf_countContexts error.
+Similar to `rstudio/2024.04.2+764`, use `ceuadmin/rstudio/2023.09.2-508-icelake` with `R/4.3.1-icelake` to avoid Rf_countContexts error.
 
 <font color="red"><b>9/9/2024 Update</b></font>
 
