@@ -15,7 +15,7 @@ Module `ceuadmin/rstudio/2025.04.0-278` is now available and works with the late
 ceuadmin/rstudio/1.3.1093  ceuadmin/rstudio/2023.09.2-508  ceuadmin/rstudio/2023.09.2-508-icelake  ceuadmin/rstudio/2025.04.0-278
 ```
 
-Use `ceuadmin/rstudio/2023.09.2-508-icelake` with `R/4.3.1-icelake`, in order to avoid Rf_countContexts error.
+As with `rstudio/2024.04.2+764`, use `ceuadmin/rstudio/2023.09.2-508-icelake` with `R/4.3.1-icelake` to avoid Rf_countContexts error.
 
 <font color="red"><b>9/9/2024 Update</b></font>
 
@@ -40,10 +40,13 @@ rstudio/1.1.383              rstudio-server/2021.09.0-351 rstudio-server/2023.09
 and
 
 ```
------------------------------ /usr/local/software/spack/spack-modules/icelake-20211027/linux-centos8-icelake -----------------------------
+------------------------------- /usr/local/software/spack/spack-modules/icelake-20211027/linux-centos8-icelake -------------------------------
 rstudio/1.4.1717/gcc/intel-oneapi-mkl/dlvykrma
 
-------------------------------------------------- /usr/local/Cluster-Config/modulefiles --------------------------------------------------
+------------------------------------------------------ /usr/local/software/modulefiles -------------------------------------------------------
+rstudio/2024.04.2+764
+
+--------------------------------------------------- /usr/local/Cluster-Config/modulefiles ----------------------------------------------------
 rstudio-server/2021.09.0-351  rstudio-server/2023.09.1-494  rstudio/1.1.383
 rstudio-server/2023.06.0-421  rstudio/0.99/rstudio-0.99     rstudio/1.3.1093
 ```
