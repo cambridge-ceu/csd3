@@ -8,7 +8,14 @@ Web: <https://posit.co/> ([GitHub](https://github.com/rstudio/rstudio), [IDE tro
 
 <font color="red"><b>5/2/2025 Update</b></font>
 
-Module `ceuadmin/rstudio/2025.04.0-278` is now available.
+Module `ceuadmin/rstudio/2025.04.0-278` is now available and works with the latest R.
+
+```
+--------------------------------------------------- /usr/local/Cluster-Config/modulefiles ----------------------------------------------------
+ceuadmin/rstudio/1.3.1093  ceuadmin/rstudio/2023.09.2-508  ceuadmin/rstudio/2023.09.2-508-icelake  ceuadmin/rstudio/2025.04.0-278
+```
+
+It is advisable that to use `ceuadmin/rstudio/2023.09.2-508-icelake` with `R/4.3.1-icelake`, avoiding Rf_countContexts error.
 
 <font color="red"><b>9/9/2024 Update</b></font>
 
