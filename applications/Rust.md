@@ -27,3 +27,7 @@ rustup default stable
 ```
 
 Note `.profile` and `.bash_profile` contain call to `$CEUADMIN/rust/1.74.1/cargo/env` which is unnecessary.
+
+## Real applications
+
+See [fresh](fresh.md).
