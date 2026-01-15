@@ -526,6 +526,7 @@ All entries are ordered chronologically.
 | 2026-01-10 | ollama/0.13.5                    | Generic               |
 | 2026-01-11 | fresh/0.1.76                     | Generic               |
 | 2026-01-13 | fresh/0.1.77                     | Generic               |
+| 2026-01-15 | VSCode/1.108.1                   | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
