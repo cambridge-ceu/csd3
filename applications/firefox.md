@@ -17,6 +17,12 @@ Note that
 
 1. With its handling of sandbox, it looks better to use the nightly builds below.
 2. Applications may call /usr/bin/firefox as default browser (e.g., postman), so it may be appropriate to start it BEFORE the application.
+3. Four bookmarks are available:
+
+   - Rocky Linux, <https://forums.rockylinux.org/>
+   - Rocky Linux Wiki, <https://wiki.rockylinux.org/>
+   - Rocky Foreums, <https://forums.rockylinux.org/>
+   - Rocky Mattermost, <https://chat.rockylinux.org/login>
 
 ## ceuadmin/firefox
 
