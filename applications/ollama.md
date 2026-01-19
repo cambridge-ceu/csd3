@@ -9,8 +9,11 @@ Web: <https://ollama.com/>.
 ## Setup
 
 ```bash
-curl -L https://ollama.com/download/ollama-linux-amd64.tgz | \
-tar xvfz -
+# 0.14.2
+curl -L https://ollama.com/download/ollama-linux-amd64.tar.zst | \
+tar --use-compress-program=unzstd -xvf -
+# 0.13.5 (10JAN2026)
+# curl -L https://ollama.com/download/ollama-linux-amd64.tgz | tar xvfz -
 ollama --help
 ollama serve &
 ollama list
