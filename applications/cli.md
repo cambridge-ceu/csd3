@@ -6,6 +6,20 @@ sort: 16
 
 Web: <https://cli.github.com/>
 
+## 2.85.0
+
+```bash
+export version=2.85.0
+wget -qO- https://github.com/cli/cli/archive/refs/tags/v${version}.tar.gz | tar xfvz -
+cd cli-${version}/
+make
+make install prefix=$CEUADMIN/cli/${version}
+```
+
+which actually uses go1.25.5.
+
+## 2.76.2
+
 This is done as follows,
 
 ```bash
@@ -31,3 +45,15 @@ wget -qO- https://thor.robots.ox.ac.uk/~vgg/data/pets/images.tar.gz | tar xfz -
 ```
 
 We fork a repository. create a branch, and send a pull request. The forked repository is available, <https://github.com/cambridge-ceu/Ultimate-Neural-Network-Programming-with-Python>, which has been merged into the author's master branch.
+
+## GitHub Copilot
+
+This is a by-product, namely `gh-copilot`; more generally per-user is set up as follows,
+
+```bash
+gh extension install github/gh-copilot
+gh extension list
+gh copilot version
+```
+
+However, it appears a GUI is more preferable now.
