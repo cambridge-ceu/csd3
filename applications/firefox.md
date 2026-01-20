@@ -26,6 +26,10 @@ Note that
 
 ## ceuadmin/firefox
 
+<font color="red"><b>20/1/2026 Update</b></font>
+
+Module **ceuadmin/147.0.1** is available.
+
 <font color="red"><b>19/12/2025 Update</b></font>
 
 The ceuadmin/firefox/nightly is now 148.0a1. The build follows 145.0a1 (mzconfig, preparations and below) such that
@@ -56,10 +60,6 @@ module load gettext/0.21/gcc/lhdl4tbr
 ./mach run --version
 ./mach install
 ```
-
-<font color="red"><b>20/1/2026 Update</b></font>
-
-Module **ceuadmin/147.0.1** is available.
 
 <font color="red"><b>18/12/2025 Update</b></font>
 
