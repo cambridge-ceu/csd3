@@ -532,6 +532,7 @@ All entries are ordered chronologically.
 | 2026-01-20 | fresh/0.1.83                     | Generic               |
 | ""         | go/1.25.6                        | Generic[^go]          |
 | ""         | jq/1.8.1                         | Generic[^jq]          |
+| ""         | firefox/147.0.1                  | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
