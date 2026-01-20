@@ -12,6 +12,7 @@ Web: <https://cli.github.com/>
 export version=2.85.0
 wget -qO- https://github.com/cli/cli/archive/refs/tags/v${version}.tar.gz | tar xfvz -
 cd cli-${version}/
+module load ceuadmin/go/1.21.6
 make
 make install prefix=$CEUADMIN/cli/${version}
 ```
