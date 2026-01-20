@@ -226,7 +226,7 @@ module load ceuadmin/go
 go version
 ```
 
-giving `go version go1.21.6 linux/amd64`.
+giving `go version go1.25.6 linux/amd64`.
 
 ## Haskell
 
