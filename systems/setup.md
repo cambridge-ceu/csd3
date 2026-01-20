@@ -530,6 +530,7 @@ All entries are ordered chronologically.
 | 2026-01-19 | ollama/0.14.2                    | Generic               |
 | ""         | cli/2.85.0                       | Generic[^cli]         |
 | 2026-01-20 | fresh/0.1.83                     | Generic               |
+| ""         | go/1.25.6                        | Generic[^go]          |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2188,3 +2189,11 @@ They are generated from script [setup.sh](setup.sh),
 [^gcloud]: **gcloud**
 
     See <https://cambridge-ceu.github.io/csd3/applications/gcloud.html>.
+
+[^go]: **go**
+
+    ```bash
+    wget -qO- https://go.dev/dl/go1.25.6.linux-amd64.tar.gz | \
+    tar xfz -
+    ```
+    so it is straightforward.
