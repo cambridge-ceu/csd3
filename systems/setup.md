@@ -531,6 +531,7 @@ All entries are ordered chronologically.
 | ""         | cli/2.85.0                       | Generic[^cli]         |
 | 2026-01-20 | fresh/0.1.83                     | Generic               |
 | ""         | go/1.25.6                        | Generic[^go]          |
+| ""         | jq/1.8.1                         | Generic[^jq]          |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -586,7 +587,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^jq]: **jq**
 
-    The executable points to the one available from the website.
+    The executable points to the one available from the website, e.g., `wget https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-linux-amd64 -O jq`.
 
     The bin/, include/, lib/, share/ directories are obtained from source with oniguruma also compiled independently.
 
