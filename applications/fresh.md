@@ -44,11 +44,11 @@ cd fresh-${version}
 module load ceuadmin/rust/nightly
 export PREFIX=$CEUADMIN/fresh/${version}
 mkdir -p "$PREFIX"
-cargo install --path . --root "$PREFIX"
-rsync -av plugins themes queries types config.example.json $PREFIX/
+cargo build --release
+# functional until 0.1.77
+# cargo install --path . --root "$PREFIX"
+# rsync -av plugins themes queries types config.example.json $PREFIX/
 ```
-
-where several folders are copied.
 
 ## Module file
 
