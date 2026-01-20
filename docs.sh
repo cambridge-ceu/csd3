@@ -72,8 +72,10 @@ make build
 ### Earlier experiment: https://readthedocs.org/projects/csd3/
 ### Earlier experiment: https://readthedocs.org/projects/csd3v2/
 
-for f in $(ls -a); do
+git diff --name-only -z | while IFS= read -r -d '' f; do
+   echo "Processing $f"
    git add ${f}
    git commit -m "${f}"
 done
 git push
+
