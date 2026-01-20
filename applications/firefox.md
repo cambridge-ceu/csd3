@@ -57,6 +57,10 @@ module load gettext/0.21/gcc/lhdl4tbr
 ./mach install
 ```
 
+<font color="red"><b>20/1/2026 Update</b></font>
+
+Module **ceuadmin/147.0.1** is available.
+
 <font color="red"><b>18/12/2025 Update</b></font>
 
 Module **ceuadmin/146.0.1** is available and overwrites alias from .bashrc via
