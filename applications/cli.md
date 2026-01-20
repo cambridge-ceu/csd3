@@ -45,7 +45,7 @@ wget -qO- https://thor.robots.ox.ac.uk/~vgg/data/pets/images.tar.gz | tar xfz -
 
 We fork a repository. create a branch, and send a pull request. The forked repository is available, <https://github.com/cambridge-ceu/Ultimate-Neural-Network-Programming-with-Python>, which has been merged into the author's master branch.
 
-## GitHub Copilot
+## GitHub Copilot CLI
 
 This is a by-product, namely `gh-copilot`; more generally per-user is set up as follows,
 
@@ -55,4 +55,4 @@ gh extension list
 gh copilot version
 ```
 
-However, it appears a GUI is more preferable now.
+However, it the CLI counterpart is due to expire so the GUI counterpart is more preferable.
