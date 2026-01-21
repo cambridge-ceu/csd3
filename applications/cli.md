@@ -55,4 +55,4 @@ gh extension list
 gh copilot version
 ```
 
-However, it the Copilot CLI is due to expire so its GUI counterpart is more preferable.
+However, the Copilot CLI is soon to expire so it is necessary to turn to its GUI counterpart.
