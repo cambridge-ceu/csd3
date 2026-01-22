@@ -534,6 +534,7 @@ All entries are ordered chronologically.
 | ""         | jq/1.8.1                         | Generic[^jq]          |
 | ""         | firefox/147.0.1                  | Generic               |
 | 2026-01-21 | fresh/0.1.86                     | Generic               |
+| 2026-01-22 | fresh/0.1.87                     | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
