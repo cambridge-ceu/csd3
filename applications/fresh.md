@@ -45,6 +45,7 @@ module load ceuadmin/rust/nightly
 export PREFIX=$CEUADMIN/fresh/${version}
 mkdir -p "$PREFIX"
 cargo build --release
+cp target/release/fresh ${PREFIX}
 # functional until 0.1.77
 # cargo install --path . --root "$PREFIX"
 # rsync -av plugins themes queries types config.example.json $PREFIX/
