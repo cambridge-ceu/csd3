@@ -22,7 +22,7 @@ wget -qO- "$(
 
 The official syntax for download of the latest release comes with plugins/ but requires higher version of GLIBC; so we turn to an explicit no-plugin download (below), for which an apparent permission issue is reported (`module load ceuadmin/fresh;which fresh;` shows that fresh is not found) and fixed with `chmod -R a+r fresh/0.1.42`, so we get around via `--strip-components=1`.
 
-### 2. Release
+### 2. Stable release
 
 The GitHub releases provide stable executables with no support for plugins,
 
