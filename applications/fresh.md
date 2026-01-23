@@ -22,14 +22,17 @@ wget -qO- "$(
 
 The official syntax for download of the latest release comes with plugins/ but requires higher version of GLIBC; so we turn to an explicit no-plugin download (below), for which an apparent permission issue is reported (`module load ceuadmin/fresh;which fresh;` shows that fresh is not found) and fixed with `chmod -R a+r fresh/0.1.42`, so we get around via `--strip-components=1`.
 
-### 2. Release with no plugins
+### 2. Release
 
 The GitHub releases provide stable executables with no support for plugins,
 
 ```bash
 export version=0.1.88
-wget -qO- https://github.com/sinelaw/fresh/releases/download/v${version}/fresh-editor-no-plugins-x86_64-unknown-linux-musl.tar.gz \
-| tar -xz --strip-components=1 -f -
+wget -qO- https://github.com/sinelaw/fresh/releases/download/v{version}/fresh-editor-x86_64-unknown-linux-musl.tar.gz | \
+tar -xz --strip-components=1 -f -
+# earlier versions with no plugins
+# wget -qO- https://github.com/sinelaw/fresh/releases/download/v${version}/fresh-editor-no-plugins-x86_64-unknown-linux-musl.tar.gz \
+# | tar -xz --strip-components=1 -f -
 ```
 
 ## Compiling from source
