@@ -24,7 +24,7 @@ The official syntax for download of the latest release comes with plugins/ but r
 
 ### 2. Stable release
 
-The GitHub releases provide stable executables with no support for plugins,
+The GitHub releases provide stable executables with support for plugins,
 
 ```bash
 export version=0.1.88
