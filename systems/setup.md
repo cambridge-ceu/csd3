@@ -538,6 +538,7 @@ All entries are ordered chronologically.
 | 2026-01-23 | fresh/0.1.88                     | Generic               |
 | 2026-01-25 | ollama/0.15.1                    | Generic               |
 | 2026-01-27 | fresh/0.1.90                     | Generic               |
+| ""         | libarrow/23.0.0                  | Generic[^libarrow]    |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2204,3 +2205,17 @@ They are generated from script [setup.sh](setup.sh),
     tar xfz -
     ```
     so it is straightforward.
+
+[^libarrow]: **libarrow**
+
+    ```bash
+    module load gcc/11.3.0/gcc/4zpip55j
+    wget -qO- https://github.com/apache/arrow/archive/refs/tags/apache-arrow-23.0.0.tar.gz | \
+    tar xfz -
+    cd arrow-apache-arrow-23.0.0/cpp
+    mkdir build && cd build
+    cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/libarrow/23.0.0 \
+          -DCMAKE_BUILD_TYPE=Release \
+          ..
+    make
+    ```
