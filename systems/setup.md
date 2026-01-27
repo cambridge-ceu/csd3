@@ -2221,11 +2221,15 @@ They are generated from script [setup.sh](setup.sh),
     make install
     ```
 
-    It goes well but when adding
+    Since arrow/23.0.0 requires C++20, we have
 
-    ```
-          -DARROW_CSV=ON \
-          -DARROW_FILESYSTEM=ON \
-          -DARROW_PARQUET=ON \
-          -DARROW_BUILD_SHARED=ON \
+    ```bash
+    cmake .. \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=$CEUADMIN/libarrow/23.0.0 \
+      -DARROW_CSV=ON \
+      -DARROW_FILESYSTEM=ON \
+      -DARROW_PARQUET=ON \
+      -DARROW_BUILD_SHARED=ON \
+      -DCMAKE_CXX_STANDARD=20
     ```
