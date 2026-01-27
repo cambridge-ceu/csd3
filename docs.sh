@@ -72,7 +72,7 @@ make build
 ### Earlier experiment: https://readthedocs.org/projects/csd3/
 ### Earlier experiment: https://readthedocs.org/projects/csd3v2/
 
-git diff --name-only -z | while IFS= read -r -d '' f; do
+git --no-pager diff --name-only -z | while IFS= read -r -d '' f; do
    echo "Processing $f"
    git add ${f}
    git commit -m "${f}"
