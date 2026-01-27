@@ -2217,5 +2217,15 @@ They are generated from script [setup.sh](setup.sh),
     cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/libarrow/23.0.0 \
           -DCMAKE_BUILD_TYPE=Release \
           ..
-    make
+    make -j4
+    make install
+    ```
+
+    It goes well but when adding
+
+    ```
+          -DARROW_CSV=ON \
+          -DARROW_FILESYSTEM=ON \
+          -DARROW_PARQUET=ON \
+          -DARROW_BUILD_SHARED=ON \
     ```
