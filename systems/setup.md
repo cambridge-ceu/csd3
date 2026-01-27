@@ -2224,6 +2224,7 @@ They are generated from script [setup.sh](setup.sh),
     Since arrow/23.0.0 requires C++20, we have
 
     ```bash
+    module load ceuadmin/gcc/12.1.0
     cmake .. \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_PREFIX=$CEUADMIN/libarrow/23.0.0 \
