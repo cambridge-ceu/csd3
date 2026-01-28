@@ -9,7 +9,7 @@ Web: <https://ollama.com/>.
 ## Setup
 
 ```bash
-# 0.14.2 (19/1/2026)
+# from 0.14.2 (19/1/2026)
 curl -L https://ollama.com/download/ollama-linux-amd64.tar.zst | \
 tar --use-compress-program=unzstd -xvf -
 # 0.13.5 (10/1/2026)
