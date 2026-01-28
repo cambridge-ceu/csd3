@@ -159,13 +159,17 @@ A large collection of R packages (1,805 as of 27/1/2026, esp. with availability 
 latest R distribution, 4.5.2; there are also packages (CRAN: DescTools, Rfast, Rfast2, SKAT, rcompanion, rms -- which requires stringi
 herein, riskRegression -- which requires rms; Bioconductor: BiocSingular, DropletUtils, DSS,  beachmat, bsseq, scater, scuttle, xcms,
 xgboost) under 4.5.2-gcc11. Earlier versions such as sf, terra, riskRegression, rms, scater, scuttle, SKAT were removed when they
-appear for 4.5.2-gcc11. For Rserve 1.8-15, openssl/3.3.0-dev appears working. Additionally,
+appear for 4.5.2-gcc11. For Rserve 1.8-15, openssl/3.3.0-dev appears working. Lately, 4.5.2-gcc12 is also created based on 
+ceuadmin/gcc/12.1.0 and ceuadmin/gcc-toolset/12.
+
+Additionally,
 
 - xcms also requires ncdf4 and associate module, e.g., `module load netcdf-c/4.8.1/gcc/intel-oneapi-mpi/2765z52t`.
 - with recent work on gdal/3.0.4, sf 1.0-21 has been compiled enabling raster 3.6-32, stars 0.6-8, terra 1.8-50 (not 1.8-54 but
 it appears working with module gdal/3.7.0-icl), maptiles 0.10.0 / tmap 4.1. Moreover, rgdal has been replaced with sf and withdrawn
 from CRAN according to information there.
-- arrow/22.0.0.1 is available for gcc/8.5 but not arrow/23.0.0 (C++20 compiler); see <https://arrow.apache.org/docs/r/articles/install.html>.
+- arrow/22.0.0.1 is available for gcc/8.5 but not arrow/23.0.0 (C++20 compiler OK with gcc/12.1.0 but GLIBC2.28 under CentOS 8 is too old);
+see <https://arrow.apache.org/docs/r/articles/install.html>.
 
 It is easy to point to them, e.g.,
 
