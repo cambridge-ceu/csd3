@@ -539,6 +539,7 @@ All entries are ordered chronologically.
 | 2026-01-25 | ollama/0.15.1                    | Generic               |
 | 2026-01-27 | fresh/0.1.90                     | Generic               |
 | ""         | libarrow/23.0.0                  | Generic[^libarrow]    |
+| 2026-01-28 | fresh/0.1.93                     | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
