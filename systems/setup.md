@@ -542,7 +542,7 @@ All entries are ordered chronologically.
 | 2026-01-28 | fresh/0.1.93                     | Generic               |
 | ""         | R/4.5.2-gcc12                    | Generic               |
 | ""         | ollama/0.15.2                    | Generic               |
-| 2026-01-28 | fresh/0.1.97                     | Generic               |
+| 2026-01-29 | fresh/0.1.97                     | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
