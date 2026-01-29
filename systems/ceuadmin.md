@@ -163,6 +163,7 @@ appear for 4.5.2-gcc11. For Rserve 1.8-15, openssl/3.3.0-dev appears working. It
 rms as in
 
 ```bash
+module load ceuadmin/R
 module load gcc/11.3.0/gcc/4zpip55j
 R CMD build --compact-vignettes=both --md5 --resave-data --log gaawr2
 ```
