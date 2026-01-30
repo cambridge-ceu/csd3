@@ -28,7 +28,7 @@ The GitHub releases provide stable executables with support for plugins,
 
 ```bash
 export version=0.1.97
-wget -qO - https://github.com/sinelaw/fresh/releases/download/v0.1.90/fresh-editor-x86_64-unknown-linux-musl.tar.gz | \
+wget -qO - https://github.com/sinelaw/fresh/releases/download/v${version}/fresh-editor-x86_64-unknown-linux-musl.tar.gz | \
 tar xz --strip-components=1
 # earlier versions with no plugins
 # wget -qO- https://github.com/sinelaw/fresh/releases/download/v${version}/fresh-editor-no-plugins-x86_64-unknown-linux-musl.tar.gz \
