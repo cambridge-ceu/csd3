@@ -46,6 +46,8 @@ export PREFIX=$CEUADMIN/fresh/${version}
 mkdir -p "$PREFIX"
 cargo build --release
 cp target/release/fresh ${PREFIX}
+# earlier version
+# cargo install --path . --root "$PREFIX"
 ```
 
 ## Environmental variables
@@ -53,12 +55,10 @@ cp target/release/fresh ${PREFIX}
 Until 0.1.77, the following chunks have been used.
 
 ```bash
-# build from source
-cargo install --path . --root "$PREFIX"
 rsync -av plugins themes queries types config.example.json $PREFIX/
 ```
 
-Module definitions are
+Module definitions use
 
 ```
 setenv FRESH_HOME $root
