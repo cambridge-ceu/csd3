@@ -27,7 +27,7 @@ The official syntax for download of the latest release comes with plugins/ but r
 The GitHub releases provide stable executables with support for plugins,
 
 ```bash
-export version=0.1.97
+export version=0.1.98
 wget -qO - https://github.com/sinelaw/fresh/releases/download/v${version}/fresh-editor-x86_64-unknown-linux-musl.tar.gz | \
 tar xz --strip-components=1
 # earlier versions with no plugins
@@ -42,7 +42,7 @@ In both cases, an apparent permission issue is reported (`module load ceuadmin/f
 This is preferable though slightly more involved.
 
 ```bash
-export version=0.1.97
+export version=0.1.98
 wget -qO- https://github.com/sinelaw/fresh/archive/refs/tags/v${version}.tar.gz | \
 tar fvxz -
 cd fresh-${version}
