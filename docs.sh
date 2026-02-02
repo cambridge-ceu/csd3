@@ -72,10 +72,15 @@ make build
 ### Earlier experiment: https://readthedocs.org/projects/csd3/
 ### Earlier experiment: https://readthedocs.org/projects/csd3v2/
 
+git ls-files --others --exclude-standard -z | while IFS= read -r -d '' f; do
+    echo "Adding new file $f"
+    git add "$f"
+    git commit -m "Add $f"
+done
+
 git --no-pager diff --name-only -z | while IFS= read -r -d '' f; do
    echo "Processing $f"
    git add ${f}
    git commit -m "${f}"
 done
 git push
-
