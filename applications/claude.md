@@ -143,7 +143,7 @@ vicuna:latest               370739dc897b    3.8 GB    11 months ago
 ```bash
 export ANTHROPIC_AUTH_TOKEN=ollama
 export ANTHROPIC_API_KEY=
-export NTHROPIC_BASE_URL="http://localhost:11434"
+export ANTHROPIC_BASE_URL="http://localhost:11434"
 claude --model gpt-oss:20b --allow-dangerously-skip-permissions
 claude --model qwen3-coder:480b-cloud --allow-dangerously-skip-permissions
 ```
