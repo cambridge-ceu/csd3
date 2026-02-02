@@ -173,3 +173,13 @@ $ claude --model gpt-oss:20b --allow-dangerously-skip-permissions
 
 · Reticulating…
 ```
+
+As expected, this is very slow and we resort to the second model above,
+
+```
+$ claude --model qwen3-coder:480b-cloud --allow-dangerously-skip-permissions
+
+>  create a kanban style app that allows the user to create/update tasks and move them between the TODO, In Progress and Completed
+   sections. The app should be contained in a single HTML file with CSS and
+   javascript that I can open in my browser
+```
