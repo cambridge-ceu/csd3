@@ -1,368 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kanban Board</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
 
-        body {
-            background-color: #f5f7fa;
-            padding: 20px;
-            color: #333;
-        }
+      body {
+        background-color: #f5f7fa;
+        padding: 20px;
+        color: #333;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-        }
+      header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 20px;
+      }
 
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
+      h1 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+      }
 
+      .board {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+      }
+
+      .column {
+        background-color: #ecf0f1;
+        border-radius: 8px;
+        padding: 15px;
+        flex: 1;
+        min-width: 300px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .column-header {
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        font-weight: bold;
+        color: white;
+      }
+
+      .todo .column-header {
+        background-color: #3498db;
+      }
+
+      .in-progress .column-header {
+        background-color: #f39c12;
+      }
+
+      .completed .column-header {
+        background-color: #2ecc71;
+      }
+
+      .tasks {
+        min-height: 400px;
+      }
+
+      .task {
+        background-color: white;
+        border-radius: 6px;
+        padding: 15px;
+        margin-bottom: 15px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        cursor: grab;
+        transition: transform 0.2s, box-shadow 0.2s;
+        position: relative;
+      }
+
+      .task:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .task h3 {
+        margin-bottom: 8px;
+        color: #2c3e50;
+      }
+
+      .task p {
+        color: #7f8c8d;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .task-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .task-actions button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 4px;
+        border-radius: 4px;
+      }
+
+      .task-actions button:hover {
+        background-color: #eee;
+      }
+
+      .add-task-form {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .form-group textarea {
+        min-height: 80px;
+        resize: vertical;
+      }
+
+      .btn {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #2980b9;
+      }
+
+      .btn-update {
+        background-color: #f39c12;
+      }
+
+      .btn-update:hover {
+        background-color: #e67e22;
+      }
+
+      .drag-over {
+        background-color: #d6eaf8;
+        border: 2px dashed #3498db;
+      }
+
+      @media (max-width: 768px) {
         .board {
-            display: flex;
-            gap: 20px;
-            justify-content: space-between;
+          flex-direction: column;
         }
 
         .column {
-            background-color: #ecf0f1;
-            border-radius: 8px;
-            padding: 15px;
-            flex: 1;
-            min-width: 300px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+          min-width: 100%;
         }
-
-        .column-header {
-            text-align: center;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            font-weight: bold;
-            color: white;
-        }
-
-        .todo .column-header {
-            background-color: #3498db;
-        }
-
-        .in-progress .column-header {
-            background-color: #f39c12;
-        }
-
-        .completed .column-header {
-            background-color: #2ecc71;
-        }
-
-        .tasks {
-            min-height: 400px;
-        }
-
-        .task {
-            background-color: white;
-            border-radius: 6px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            cursor: grab;
-            transition: transform 0.2s, box-shadow 0.2s;
-            position: relative;
-        }
-
-        .task:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-
-        .task h3 {
-            margin-bottom: 8px;
-            color: #2c3e50;
-        }
-
-        .task p {
-            color: #7f8c8d;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .task-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 8px;
-        }
-
-        .task-actions button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            padding: 4px;
-            border-radius: 4px;
-        }
-
-        .task-actions button:hover {
-            background-color: #eee;
-        }
-
-        .add-task-form {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        .form-group textarea {
-            min-height: 80px;
-            resize: vertical;
-        }
-
-        .btn {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #2980b9;
-        }
-
-        .btn-update {
-            background-color: #f39c12;
-        }
-
-        .btn-update:hover {
-            background-color: #e67e22;
-        }
-
-        .drag-over {
-            background-color: #d6eaf8;
-            border: 2px dashed #3498db;
-        }
-
-        @media (max-width: 768px) {
-            .board {
-                flex-direction: column;
-            }
-
-            .column {
-                min-width: 100%;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>Kanban Task Board</h1>
-            <p>Drag and drop tasks between columns or use the form to manage your tasks</p>
-        </header>
+      <header>
+        <h1>Kanban Task Board</h1>
+        <p>
+          Drag and drop tasks between columns or use the form to manage your
+          tasks
+        </p>
+      </header>
 
-        <div class="add-task-form">
-            <h2 id="form-title">Add New Task</h2>
-            <form id="task-form">
-                <input type="hidden" id="task-id">
-                <div class="form-group">
-                    <label for="task-title">Task Title</label>
-                    <input type="text" id="task-title" required placeholder="Enter task title">
-                </div>
-                <div class="form-group">
-                    <label for="task-description">Description</label>
-                    <textarea id="task-description" placeholder="Enter task description"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="task-column">Column</label>
-                    <select id="task-column">
-                        <option value="todo">To Do</option>
-                        <option value="in-progress">In Progress</option>
-                        <option value="completed">Completed</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn" id="submit-btn">Add Task</button>
-                <button type="button" id="cancel-btn" style="display: none; margin-left: 10px;">Cancel</button>
-            </form>
+      <div class="add-task-form">
+        <h2 id="form-title">Add New Task</h2>
+        <form id="task-form">
+          <input type="hidden" id="task-id" />
+          <div class="form-group">
+            <label for="task-title">Task Title</label>
+            <input
+              type="text"
+              id="task-title"
+              required
+              placeholder="Enter task title"
+            />
+          </div>
+          <div class="form-group">
+            <label for="task-description">Description</label>
+            <textarea
+              id="task-description"
+              placeholder="Enter task description"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="task-column">Column</label>
+            <select id="task-column">
+              <option value="todo">To Do</option>
+              <option value="in-progress">In Progress</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+          <button type="submit" class="btn" id="submit-btn">Add Task</button>
+          <button
+            type="button"
+            id="cancel-btn"
+            style="display: none; margin-left: 10px"
+          >
+            Cancel
+          </button>
+        </form>
+      </div>
+
+      <div class="board">
+        <div class="column todo">
+          <div class="column-header">To Do</div>
+          <div class="tasks" id="todo-tasks"></div>
         </div>
 
-        <div class="board">
-            <div class="column todo">
-                <div class="column-header">To Do</div>
-                <div class="tasks" id="todo-tasks"></div>
-            </div>
-
-            <div class="column in-progress">
-                <div class="column-header">In Progress</div>
-                <div class="tasks" id="in-progress-tasks"></div>
-            </div>
-
-            <div class="column completed">
-                <div class="column-header">Completed</div>
-                <div class="tasks" id="completed-tasks"></div>
-            </div>
+        <div class="column in-progress">
+          <div class="column-header">In Progress</div>
+          <div class="tasks" id="in-progress-tasks"></div>
         </div>
+
+        <div class="column completed">
+          <div class="column-header">Completed</div>
+          <div class="tasks" id="completed-tasks"></div>
+        </div>
+      </div>
     </div>
 
     <script>
-        // Task data structure
-        let tasks = JSON.parse(localStorage.getItem('kanbanTasks')) || [];
-        let currentEditId = null;
+      // Task data structure
+      let tasks = JSON.parse(localStorage.getItem("kanbanTasks")) || [];
+      let currentEditId = null;
 
-        // DOM Elements
-        const taskForm = document.getElementById('task-form');
-        const taskIdInput = document.getElementById('task-id');
-        const taskTitleInput = document.getElementById('task-title');
-        const taskDescriptionInput = document.getElementById('task-description');
-        const taskColumnInput = document.getElementById('task-column');
-        const formTitle = document.getElementById('form-title');
-        const submitBtn = document.getElementById('submit-btn');
-        const cancelBtn = document.getElementById('cancel-btn');
+      // DOM Elements
+      const taskForm = document.getElementById("task-form");
+      const taskIdInput = document.getElementById("task-id");
+      const taskTitleInput = document.getElementById("task-title");
+      const taskDescriptionInput = document.getElementById("task-description");
+      const taskColumnInput = document.getElementById("task-column");
+      const formTitle = document.getElementById("form-title");
+      const submitBtn = document.getElementById("submit-btn");
+      const cancelBtn = document.getElementById("cancel-btn");
 
-        // Initialize the app
-        function init() {
-            renderTasks();
-            setupEventListeners();
+      // Initialize the app
+      function init() {
+        renderTasks();
+        setupEventListeners();
+      }
+
+      // Set up event listeners
+      function setupEventListeners() {
+        taskForm.addEventListener("submit", handleFormSubmit);
+        cancelBtn.addEventListener("click", cancelEdit);
+
+        // Setup drag and drop for columns
+        document.querySelectorAll(".tasks").forEach((column) => {
+          column.addEventListener("dragover", handleDragOver);
+          column.addEventListener("dragleave", handleDragLeave);
+          column.addEventListener("drop", handleDrop);
+        });
+      }
+
+      // Handle form submission
+      function handleFormSubmit(e) {
+        e.preventDefault();
+
+        const taskData = {
+          id: taskIdInput.value || Date.now().toString(),
+          title: taskTitleInput.value,
+          description: taskDescriptionInput.value,
+          column: taskColumnInput.value,
+        };
+
+        if (currentEditId) {
+          updateTask(taskData);
+        } else {
+          addTask(taskData);
         }
 
-        // Set up event listeners
-        function setupEventListeners() {
-            taskForm.addEventListener('submit', handleFormSubmit);
-            cancelBtn.addEventListener('click', cancelEdit);
+        resetForm();
+      }
 
-            // Setup drag and drop for columns
-            document.querySelectorAll('.tasks').forEach(column => {
-                column.addEventListener('dragover', handleDragOver);
-                column.addEventListener('dragleave', handleDragLeave);
-                column.addEventListener('drop', handleDrop);
-            });
-        }
+      // Add a new task
+      function addTask(taskData) {
+        tasks.push({
+          ...taskData,
+          createdAt: new Date().toISOString(),
+        });
+        saveTasks();
+        renderTasks();
+      }
 
-        // Handle form submission
-        function handleFormSubmit(e) {
-            e.preventDefault();
+      // Update an existing task
+      function updateTask(updatedTask) {
+        tasks = tasks.map((task) =>
+          task.id === updatedTask.id ? updatedTask : task
+        );
+        saveTasks();
+        renderTasks();
+      }
 
-            const taskData = {
-                id: taskIdInput.value || Date.now().toString(),
-                title: taskTitleInput.value,
-                description: taskDescriptionInput.value,
-                column: taskColumnInput.value
-            };
+      // Delete a task
+      function deleteTask(id) {
+        tasks = tasks.filter((task) => task.id !== id);
+        saveTasks();
+        renderTasks();
+      }
 
-            if (currentEditId) {
-                updateTask(taskData);
-            } else {
-                addTask(taskData);
-            }
+      // Move task to a different column
+      function moveTask(id, newColumn) {
+        tasks = tasks.map((task) => {
+          if (task.id === id) {
+            return { ...task, column: newColumn };
+          }
+          return task;
+        });
+        saveTasks();
+        renderTasks();
+      }
 
-            resetForm();
-        }
+      // Save tasks to localStorage
+      function saveTasks() {
+        localStorage.setItem("kanbanTasks", JSON.stringify(tasks));
+      }
 
-        // Add a new task
-        function addTask(taskData) {
-            tasks.push({
-                ...taskData,
-                createdAt: new Date().toISOString()
-            });
-            saveTasks();
-            renderTasks();
-        }
-
-        // Update an existing task
-        function updateTask(updatedTask) {
-            tasks = tasks.map(task =>
-                task.id === updatedTask.id ? updatedTask : task
-            );
-            saveTasks();
-            renderTasks();
-        }
-
-        // Delete a task
-        function deleteTask(id) {
-            tasks = tasks.filter(task => task.id !== id);
-            saveTasks();
-            renderTasks();
-        }
-
-        // Move task to a different column
-        function moveTask(id, newColumn) {
-            tasks = tasks.map(task => {
-                if (task.id === id) {
-                    return {...task, column: newColumn};
-                }
-                return task;
-            });
-            saveTasks();
-            renderTasks();
-        }
-
-        // Save tasks to localStorage
-        function saveTasks() {
-            localStorage.setItem('kanbanTasks', JSON.stringify(tasks));
-        }
+      // Render tasks in their respective columns
+      function renderTasks() {
+        // Clear all columns
+        document.getElementById("todo-tasks").innerHTML = "";
+        document.getElementById("in-progress-tasks").innerHTML = "";
+        document.getElementById("completed-tasks").innerHTML = "";
 
         // Render tasks in their respective columns
-        function renderTasks() {
-            // Clear all columns
-            document.getElementById('todo-tasks').innerHTML = '';
-            document.getElementById('in-progress-tasks').innerHTML = '';
-            document.getElementById('completed-tasks').innerHTML = '';
+        tasks.forEach((task) => {
+          const taskElement = createTaskElement(task);
+          document
+            .getElementById(`${task.column}-tasks`)
+            .appendChild(taskElement);
+        });
+      }
 
-            // Render tasks in their respective columns
-            tasks.forEach(task => {
-                const taskElement = createTaskElement(task);
-                document.getElementById(`${task.column}-tasks`).appendChild(taskElement);
-            });
-        }
+      // Create a task element
+      function createTaskElement(task) {
+        const taskElement = document.createElement("div");
+        taskElement.className = "task";
+        taskElement.draggable = true;
+        taskElement.dataset.id = task.id;
 
-        // Create a task element
-        function createTaskElement(task) {
-            const taskElement = document.createElement('div');
-            taskElement.className = 'task';
-            taskElement.draggable = true;
-            taskElement.dataset.id = task.id;
-
-            taskElement.innerHTML = `
+        taskElement.innerHTML = `
                 <h3>${task.title}</h3>
                 <p>${task.description}</p>
                 <div class="task-actions">
@@ -371,91 +390,91 @@
                 </div>
             `;
 
-            // Add drag events
-            taskElement.addEventListener('dragstart', handleDragStart);
-            taskElement.addEventListener('dragend', handleDragEnd);
+        // Add drag events
+        taskElement.addEventListener("dragstart", handleDragStart);
+        taskElement.addEventListener("dragend", handleDragEnd);
 
-            // Add button events
-            const editBtn = taskElement.querySelector('.edit-btn');
-            const deleteBtn = taskElement.querySelector('.delete-btn');
+        // Add button events
+        const editBtn = taskElement.querySelector(".edit-btn");
+        const deleteBtn = taskElement.querySelector(".delete-btn");
 
-            editBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                editTask(task);
-            });
+        editBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          editTask(task);
+        });
 
-            deleteBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                deleteTask(task.id);
-            });
+        deleteBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          deleteTask(task.id);
+        });
 
-            return taskElement;
-        }
+        return taskElement;
+      }
 
-        // Edit task
-        function editTask(task) {
-            taskTitleInput.value = task.title;
-            taskDescriptionInput.value = task.description;
-            taskColumnInput.value = task.column;
-            taskIdInput.value = task.id;
+      // Edit task
+      function editTask(task) {
+        taskTitleInput.value = task.title;
+        taskDescriptionInput.value = task.description;
+        taskColumnInput.value = task.column;
+        taskIdInput.value = task.id;
 
-            formTitle.textContent = 'Edit Task';
-            submitBtn.textContent = 'Update Task';
-            submitBtn.className = 'btn btn-update';
-            cancelBtn.style.display = 'inline-block';
+        formTitle.textContent = "Edit Task";
+        submitBtn.textContent = "Update Task";
+        submitBtn.className = "btn btn-update";
+        cancelBtn.style.display = "inline-block";
 
-            currentEditId = task.id;
-        }
+        currentEditId = task.id;
+      }
 
-        // Cancel edit
-        function cancelEdit() {
-            resetForm();
-        }
+      // Cancel edit
+      function cancelEdit() {
+        resetForm();
+      }
 
-        // Reset form
-        function resetForm() {
-            taskForm.reset();
-            taskIdInput.value = '';
-            formTitle.textContent = 'Add New Task';
-            submitBtn.textContent = 'Add Task';
-            submitBtn.className = 'btn';
-            cancelBtn.style.display = 'none';
-            currentEditId = null;
-        }
+      // Reset form
+      function resetForm() {
+        taskForm.reset();
+        taskIdInput.value = "";
+        formTitle.textContent = "Add New Task";
+        submitBtn.textContent = "Add Task";
+        submitBtn.className = "btn";
+        cancelBtn.style.display = "none";
+        currentEditId = null;
+      }
 
-        // Drag and drop handlers
-        function handleDragStart(e) {
-            e.dataTransfer.setData('text/plain', e.target.dataset.id);
-            setTimeout(() => {
-                e.target.classList.add('dragging');
-            }, 0);
-        }
+      // Drag and drop handlers
+      function handleDragStart(e) {
+        e.dataTransfer.setData("text/plain", e.target.dataset.id);
+        setTimeout(() => {
+          e.target.classList.add("dragging");
+        }, 0);
+      }
 
-        function handleDragEnd(e) {
-            e.target.classList.remove('dragging');
-        }
+      function handleDragEnd(e) {
+        e.target.classList.remove("dragging");
+      }
 
-        function handleDragOver(e) {
-            e.preventDefault();
-            e.currentTarget.classList.add('drag-over');
-        }
+      function handleDragOver(e) {
+        e.preventDefault();
+        e.currentTarget.classList.add("drag-over");
+      }
 
-        function handleDragLeave(e) {
-            e.currentTarget.classList.remove('drag-over');
-        }
+      function handleDragLeave(e) {
+        e.currentTarget.classList.remove("drag-over");
+      }
 
-        function handleDrop(e) {
-            e.preventDefault();
-            e.currentTarget.classList.remove('drag-over');
+      function handleDrop(e) {
+        e.preventDefault();
+        e.currentTarget.classList.remove("drag-over");
 
-            const taskId = e.dataTransfer.getData('text/plain');
-            const columnId = e.currentTarget.id.replace('-tasks', '');
+        const taskId = e.dataTransfer.getData("text/plain");
+        const columnId = e.currentTarget.id.replace("-tasks", "");
 
-            moveTask(taskId, columnId);
-        }
+        moveTask(taskId, columnId);
+      }
 
-        // Initialize the app when the DOM is loaded
-        document.addEventListener('DOMContentLoaded', init);
+      // Initialize the app when the DOM is loaded
+      document.addEventListener("DOMContentLoaded", init);
     </script>
-</body>
+  </body>
 </html>
