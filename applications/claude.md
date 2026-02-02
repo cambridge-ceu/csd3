@@ -184,4 +184,91 @@ $ claude --model qwen3-coder:480b-cloud --allow-dangerously-skip-permissions
    javascript that I can open in my browser
 ```
 
+which gives,
+
+```
+ Overview
+
+ Create a single HTML file Kanban board application that allows users to manage tasks across three columns: TODO, In Progress, and Completed.
+
+ Features
+
+ 1. Create new tasks with titles
+ 2. Move tasks between columns by dragging
+ 3. Update task titles by clicking to edit
+ 4. Delete tasks
+ 5. Responsive design that works in any modern browser
+
+ Technical Approach
+
+ - Single HTML file containing HTML, CSS, and JavaScript
+ - Drag and drop functionality using HTML5 Drag and Drop API
+ - Local storage for persistence
+ - Clean, modern UI with CSS Grid/Flexbox
+ - Event delegation for efficient event handling
+
+ Detailed Implementation
+
+ HTML Structure
+
+ - Main container div
+ - Header with title and task creation form
+ - Three column containers (TODO, In Progress, Completed)
+ - Each column has:
+   - Column header
+   - Task list container
+   - Add task button/form
+
+ CSS Styling
+
+ - CSS variables for consistent colors
+ - Flexbox for main layout
+ - Card-style design for tasks
+ - Visual feedback for drag operations
+ - Responsive design with media queries
+
+ JavaScript Functionality
+
+ - Task data model with id, title, status
+ - DOM manipulation functions
+ - Drag and drop event handlers
+ - Local storage save/load functions
+ - Event listeners for user interactions
+
+ File Structure
+
+ - Single file: kanban.html (contains all HTML, CSS, and JavaScript)
+
+ Implementation Steps
+
+ 1. Create basic HTML structure with three columns
+ 2. Add CSS styling for layout and appearance
+ 3. Implement JavaScript functionality:
+   - Task creation
+   - Drag and drop between columns
+   - Task editing
+   - Task deletion
+   - Local storage persistence
+ 4. Add responsive design considerations
+ 5. Test functionality in browser
+
+ Verification
+
+ 1. Open file in browser
+ 2. Create several tasks
+ 3. Drag tasks between columns
+ 4. Edit task titles
+ 5. Delete tasks
+ 6. Refresh page to verify persistence
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+ Claude has written up a plan and is ready to execute. Would you like to proceed?
+
+ ❯ 1. Yes, clear context and bypass permissions
+   2. Yes, and bypass permissions
+   3. Yes, manually approve edits
+   4. Type here to tell Claude what to change
+
+ ctrl-g to edit in Pico · ~/.claude/plans/snoopy-coalescing-lemon.md
+```
 Note the prompt follows <https://towardsdatascience.com/run-claude-code-for-free-with-local-and-cloud-models-from-ollama/>, which gives [karban.html](files/karban.html).
