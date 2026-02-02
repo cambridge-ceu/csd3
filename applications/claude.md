@@ -115,12 +115,12 @@ Commands:
 
 Note that the installer syntax is `bash install.sh [stable|latest|VERSION]`.
 
-## Run for Free with Ollama
+## Anthropic API via Ollama
 
-From
+This section offers a flavour of Anthropic API from Ollama/0.15.2 onwards, whose local/cloud models can be used for free. From
 
 ```bash
-module load ceuadmin/ollama
+module load ceuadmin/ollama/0.15.2
 ollama serve &
 ollama list
 ```
@@ -183,3 +183,5 @@ $ claude --model qwen3-coder:480b-cloud --allow-dangerously-skip-permissions
    sections. The app should be contained in a single HTML file with CSS and
    javascript that I can open in my browser
 ```
+
+Note the prompt follows <https://towardsdatascience.com/run-claude-code-for-free-with-local-and-cloud-models-from-ollama/>, which gives [karban.html](files/karban.html).
