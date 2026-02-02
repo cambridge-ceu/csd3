@@ -56,13 +56,13 @@ cp target/release/fresh ${PREFIX}
 
 ## Environmental variables
 
-Until 0.1.77, the following chunks have been used.
+Until 0.1.77, the following chunk has been used.
 
 ```bash
 rsync -av plugins themes queries types config.example.json $PREFIX/
 ```
 
-Module definitions use
+where module definitions use
 
 ```
 setenv FRESH_HOME $root
