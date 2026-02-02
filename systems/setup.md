@@ -544,6 +544,7 @@ All entries are ordered chronologically.
 | ""         | ollama/0.15.2                    | Generic               |
 | 2026-01-29 | fresh/0.1.97                     | Generic               |
 | 2026-02-01 | fresh/0.1.98                     | Generic               |
+| 2026-02-02 | claude/2.1.29                    | Generic[^claude]      |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2241,3 +2242,7 @@ They are generated from script [setup.sh](setup.sh),
       -DARROW_BUILD_SHARED=ON \
       -DCMAKE_CXX_STANDARD=20
     ```
+
+[^claude]: **claude code**
+
+    See <https://cambridge-ceu.github.io/csd3/applications/claude.html>
