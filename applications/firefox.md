@@ -22,7 +22,7 @@ Note that
    - Rocky Linux Wiki, <https://wiki.rockylinux.org/>
    - Rocky Foreums, <https://forums.rockylinux.org/>
    - Rocky Mattermost, <https://chat.rockylinux.org/login>
-4. Many features are customisable via `about:config` from the address bar. 
+4. Many features are customisable via `about:config` from the address bar.
 
 ## ceuadmin/firefox
 
