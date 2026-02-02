@@ -1,4 +1,6 @@
 #!/usr/bin/bash
+# Earlier experiment: https://readthedocs.org/projects/csd3/
+# Earlier experiment: https://readthedocs.org/projects/csd3v2/
 
 function systems()
 {
@@ -68,9 +70,6 @@ _packages Python
 _packages R
 module load ceuadmin/node
 make build
-
-### Earlier experiment: https://readthedocs.org/projects/csd3/
-### Earlier experiment: https://readthedocs.org/projects/csd3v2/
 
 git ls-files --others --exclude-standard -z | while IFS= read -r -d '' f; do
     echo "Adding new file $f"
