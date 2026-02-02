@@ -2210,6 +2210,7 @@ They are generated from script [setup.sh](setup.sh),
     wget -qO- https://go.dev/dl/go1.25.6.linux-amd64.tar.gz | \
     tar xfz -
     ```
+
     so it is straightforward.
 
 [^libarrow]: **libarrow**
