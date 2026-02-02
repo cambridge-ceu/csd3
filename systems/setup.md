@@ -2213,6 +2213,8 @@ They are generated from script [setup.sh](setup.sh),
 
 [^libarrow]: **libarrow**
 
+    The skeleton for installation is as follows,
+
     ```bash
     module load gcc/11.3.0/gcc/4zpip55j
     wget -qO- https://github.com/apache/arrow/archive/refs/tags/apache-arrow-23.0.0.tar.gz | \
@@ -2226,7 +2228,7 @@ They are generated from script [setup.sh](setup.sh),
     make install
     ```
 
-    Since arrow/23.0.0 requires C++20, we have
+    Moreover, as arrow/23.0.0 requires C++20 we have
 
     ```bash
     module load ceuadmin/gcc/12.1.0
