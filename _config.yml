@@ -11,6 +11,9 @@ debug:
   compress: false
   dist: false
   shortcodes: true
+github: false
+jekyll_edit_link:
+  enabled: false
 
 lsi: false
 safe: true
