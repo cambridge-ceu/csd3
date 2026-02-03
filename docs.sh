@@ -69,6 +69,7 @@ sed -i "s/\(sort:[[:space:]]*\).*/\1$n/" applications/notes.md
 _packages Python
 _packages R
 module load ceuadmin/node
+export SASS_QUIET_DEPS=true
 make build
 
 git ls-files --others --exclude-standard -z | while IFS= read -r -d '' f; do
