@@ -10,6 +10,45 @@ The environment suppresses the usual screen outputs, keeps query histories and a
 
 ## Installation
 
+### 1.10.0
+
+```bash
+mkdir -p ~/rds/software/AnythingLLM
+export ANYTHING_LLM_INSTALL_DIR=$(pwd -P)
+curl -fsSL https://cdn.anythingllm.com/latest/installer.sh -o installer.sh
+chmod +x installer.sh
+./installer.sh
+./AnythingLLMDesktop.AppImage --appimage-extract
+```
+
+which shows Ollama is already embedded. To start, 
+
+```bash
+module load ceuadmin/node
+squashfs-root/anythingllm-desktop --no-sandbox
+```
+
+Enable agent from the GUI and then modify `~/.config/anythingllm-desktop/storage/plugins/anythingllm_mcp_servers.json` as follows,
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "/usr/local/Cluster-Apps/ceuadmin/node/22.16.0/bin/npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/jhz22/Desktop"
+      ]
+    }
+  }
+}
+```
+
+which should also enable Bash CLI.
+
+### 1.8.0
+
 ```bash
 export root=/rds/project/rds-4o5vpvAowP0/software
 mkdir -p ${root}/AnythingLLMDesktop
