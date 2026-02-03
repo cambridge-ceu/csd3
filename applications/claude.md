@@ -8,6 +8,8 @@ Official page: <https://claude.ai/install.sh>
 
 ## 2.1.29
 
+A Bash script can be started as `install.sh [stable|latest|VERSION]`, which is done as follows,
+
 ```bash
 curl -fsSL https://claude.ai/install.sh | env HOME="$CEUADMIN/claude/2.1.29" bash -s -- latest
 claude --help
@@ -16,7 +18,6 @@ claude --help
 with screen output
 
 ```
-
 Setting up Claude Code...
 
 ✔ Claude Code successfully installed!
@@ -113,8 +114,6 @@ Commands:
   update                                            Check for updates and install if available
 ```
 
-Note that the installer syntax is `bash install.sh [stable|latest|VERSION]`.
-
 ## Anthropic API via Ollama
 
 This section offers a flavour of Anthropic API from Ollama/0.15.2 onwards, whose local/cloud models can be used for free. From
@@ -140,6 +139,8 @@ mistral:latest              f974a74358d6    4.1 GB    10 months ago
 vicuna:latest               370739dc897b    3.8 GB    11 months ago
 ```
 
+so it is ready for
+
 ```bash
 export ANTHROPIC_AUTH_TOKEN=ollama
 export ANTHROPIC_API_KEY=
@@ -148,7 +149,7 @@ claude --model gpt-oss:20b --allow-dangerously-skip-permissions
 claude --model qwen3-coder:480b-cloud --allow-dangerously-skip-permissions
 ```
 
-The first of which gives,
+The first model gives,
 
 ```
 $ claude --model gpt-oss:20b --allow-dangerously-skip-permissions
@@ -174,14 +175,13 @@ $ claude --model gpt-oss:20b --allow-dangerously-skip-permissions
 · Reticulating…
 ```
 
-As expected, this is very slow and we resort to the second model above,
+As expected, this is very slow and we turn to the second model,
 
 ```
 $ claude --model qwen3-coder:480b-cloud --allow-dangerously-skip-permissions
 
 >  create a kanban style app that allows the user to create/update tasks and move them between the TODO, In Progress and Completed
-   sections. The app should be contained in a single HTML file with CSS and
-   javascript that I can open in my browser
+   sections. The app should be contained in a single HTML file with CSS and javascript that I can open in my browser
 
 ● I'll create a Kanban-style task management app in a single HTML file. Let me think through the structure and implementation.
 
@@ -236,11 +236,11 @@ $ claude --model qwen3-coder:480b-cloud --allow-dangerously-skip-permissions
 ❯ 
 ```
 
-From the working directory, one see [kanban-app.html](files/kanban-app.html).
+From the working directory, one sees [kanban-app.html](files/kanban-app.html).
 
-See also <https://towardsdatascience.com/run-claude-code-for-free-with-local-and-cloud-models-from-ollama/>, which gives [kanban.html](files/kanban.html).
+Additionally, <https://towardsdatascience.com/run-claude-code-for-free-with-local-and-cloud-models-from-ollama/> gives [kanban.html](files/kanban.html).
 
-On the first attempt is also gives,
+On the first attempt it also gives,
 
 ```
  Overview
