@@ -25,8 +25,10 @@ which shows Ollama is already embedded. To start,
 
 ```bash
 module load ceuadmin/node
-squashfs-root/anythingllm-desktop --no-sandbox
+$ANYTHINGLLM_ROOT/squashfs-root/anythingllm-desktop --no-sandbox
 ```
+
+where $ANYTHINGLLM_ROOT (/usr/local/Cluster-Apps/ceuadmin/AnythingLLMDesktop/1.10.0) is defined in the module file.
 
 Enable agent from the GUI and then modify `~/.config/anythingllm-desktop/storage/plugins/anythingllm_mcp_servers.json` as follows,
 
