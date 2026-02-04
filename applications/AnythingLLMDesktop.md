@@ -47,7 +47,7 @@ Enable agent from the GUI and then modify `~/.config/anythingllm-desktop/storage
 }
 ```
 
-which should also enable Bash CLI.
+which should also enable Bash CLI. The file is editable by the `MCP servers` icon where information is also available from <https://docs.anythingllm.com/mcp-compatibility/overview> from a prestart Firefox session.
 
 ### 1.8.0
 
