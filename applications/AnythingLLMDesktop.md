@@ -47,7 +47,7 @@ Enable agent from the GUI and then modify `~/.config/anythingllm-desktop/storage
 }
 ```
 
-which should also enable Bash CLI. The file is editable by the `MCP servers` icon where information is also available from <https://docs.anythingllm.com/mcp-compatibility/overview> from a prestart Firefox session.
+which should also enable Bash CLI. The file is editable by the `MCP servers` icon where information is also available from <https://docs.anythingllm.com/mcp-compatibility/overview> from a prestarted Firefox session -- as noted elsewhere this is because the default call to Firefox would fail on CSD3 without the necessary flags.
 
 ### 1.8.0
 
