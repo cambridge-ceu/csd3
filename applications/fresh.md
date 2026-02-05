@@ -6,6 +6,14 @@ sort: 27
 
 Web: <https://sinelaw.github.io/fresh/> ([release](https://github.com/sinelaw/fresh/releases))
 
+## version
+
+```bash
+export version=$(curl -s https://api.github.com/repos/sinelaw/fresh/releases/latest | \
+                 grep '"tag_name":' | head -n1 | cut -d '"' -f 4 | sed 's/^v//')
+mkdir -p "$CEUADMIN/fresh/$version" && cd "$CEUADMIN/fresh/$version"
+```
+
 ## Pre-built binaries
 
 The official syntax for download of the latest `fresh-editor` release is associated with `x86_64-unknown-linux-gnu.tar.xz`,
