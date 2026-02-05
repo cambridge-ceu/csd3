@@ -6,7 +6,9 @@ sort: 27
 
 Web: <https://sinelaw.github.io/fresh/> ([release](https://github.com/sinelaw/fresh/releases))
 
-## version
+## Version
+
+The following step creates a fresh/$version folder and goes there for installation, so only $CEUMODULES/fresh/$version is needed.
 
 ```bash
 export version=$(curl -s https://api.github.com/repos/sinelaw/fresh/releases/latest | \
