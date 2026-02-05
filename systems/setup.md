@@ -546,6 +546,7 @@ All entries are ordered chronologically.
 | 2026-02-01 | fresh/0.1.98                     | Generic               |
 | 2026-02-02 | claude/2.1.29                    | Generic[^claude]      |
 | 2026-02-03 | AnythingLLMDesktop/1.10.0        | Generic               |
+| 2026-02-05 | fresh/0.1.99                     | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
