@@ -14,6 +14,9 @@ curl -L https://ollama.com/download/ollama-linux-amd64.tar.zst | \
 tar --use-compress-program=unzstd -xvf -
 # 0.13.5 (10/1/2026)
 # curl -L https://ollama.com/download/ollama-linux-amd64.tgz | tar xvfz -
+# tidy up messy screen
+export TERM=xterm-256color
+export OLLAMA_NO_COLOR=1
 ollama --help
 ollama serve &
 ollama list
@@ -86,6 +89,7 @@ gemini-3-pro-preview    2025-11-18T00:00:00Z  0
 ## Highlights
 
 - 0.13.0. It supports DeepSeek-OCR, <https://github.com/deepseek-ai/DeepSeek-OCR>
+- 0.12.5. It supports Claude Code API.
 
 ## REST API: /api/generate
 
