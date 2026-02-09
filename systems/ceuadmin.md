@@ -155,7 +155,7 @@ made).
 
 ### R
 
-A large collection of R packages (1,805 as of 27/1/2026, esp. with availability of major machine learning packages) is linked with the
+A large collection of R packages (1,808 as of 9/2/2026, esp. with availability of major machine learning packages) is linked with the
 latest R distribution, 4.5.2; there are also packages (CRAN: DescTools, Rfast, Rfast2, SKAT, rcompanion, rms -- which requires stringi
 herein, riskRegression -- which requires rms; Bioconductor: BiocSingular, DropletUtils, DSS, beachmat, bsseq, scater, scuttle, xcms,
 xgboost) under 4.5.2-gcc11. Earlier versions such as sf, terra, riskRegression, rms, scater, scuttle, SKAT were removed when they
