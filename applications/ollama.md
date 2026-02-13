@@ -88,8 +88,9 @@ gemini-3-pro-preview    2025-11-18T00:00:00Z  0
 
 ## Highlights
 
-- 0.13.0. It supports DeepSeek-OCR, <https://github.com/deepseek-ai/DeepSeek-OCR>
-- 0.12.5. It supports Claude Code API.
+- 0.16.   Models for use with apps out-of-the-box, e.g., `ollama launch --model minimax-m2.5:cloud`.
+- 0.13.0. DeepSeek-OCR, <https://github.com/deepseek-ai/DeepSeek-OCR>
+- 0.12.5. Claude Code API.
 
 ## REST API: /api/generate
 
