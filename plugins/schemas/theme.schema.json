@@ -1,0 +1,815 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ThemeFile",
+  "description": "Serializable theme definition (matches JSON structure)",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "Theme name",
+      "type": "string"
+    },
+    "editor": {
+      "description": "Editor area colors",
+      "$ref": "#/$defs/EditorColors"
+    },
+    "ui": {
+      "description": "UI element colors (tabs, menus, status bar, etc.)",
+      "$ref": "#/$defs/UiColors"
+    },
+    "search": {
+      "description": "Search result highlighting colors",
+      "$ref": "#/$defs/SearchColors"
+    },
+    "diagnostic": {
+      "description": "LSP diagnostic colors (errors, warnings, etc.)",
+      "$ref": "#/$defs/DiagnosticColors"
+    },
+    "syntax": {
+      "description": "Syntax highlighting colors",
+      "$ref": "#/$defs/SyntaxColors"
+    }
+  },
+  "required": [
+    "name",
+    "editor",
+    "ui",
+    "search",
+    "diagnostic",
+    "syntax"
+  ],
+  "$defs": {
+    "EditorColors": {
+      "description": "Editor area colors",
+      "type": "object",
+      "properties": {
+        "bg": {
+          "description": "Editor background color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            30,
+            30,
+            30
+          ]
+        },
+        "fg": {
+          "description": "Default text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            212,
+            212,
+            212
+          ]
+        },
+        "cursor": {
+          "description": "Cursor color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            255,
+            255,
+            255
+          ]
+        },
+        "inactive_cursor": {
+          "description": "Cursor color in unfocused splits",
+          "$ref": "#/$defs/ColorDef",
+          "default": "DarkGray"
+        },
+        "selection_bg": {
+          "description": "Selected text background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            38,
+            79,
+            120
+          ]
+        },
+        "current_line_bg": {
+          "description": "Background of the line containing cursor",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            40,
+            40,
+            40
+          ]
+        },
+        "line_number_fg": {
+          "description": "Line number text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            100,
+            100,
+            100
+          ]
+        },
+        "line_number_bg": {
+          "description": "Line number gutter background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            30,
+            30,
+            30
+          ]
+        },
+        "diff_add_bg": {
+          "description": "Diff added line background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            35,
+            60,
+            35
+          ]
+        },
+        "diff_remove_bg": {
+          "description": "Diff removed line background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            70,
+            35,
+            35
+          ]
+        },
+        "diff_modify_bg": {
+          "description": "Diff modified line background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            40,
+            38,
+            30
+          ]
+        }
+      }
+    },
+    "ColorDef": {
+      "description": "Serializable color representation",
+      "anyOf": [
+        {
+          "description": "RGB color as [r, g, b]",
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer",
+              "format": "uint8",
+              "minimum": 0,
+              "maximum": 255
+            },
+            {
+              "type": "integer",
+              "format": "uint8",
+              "minimum": 0,
+              "maximum": 255
+            },
+            {
+              "type": "integer",
+              "format": "uint8",
+              "minimum": 0,
+              "maximum": 255
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3
+        },
+        {
+          "description": "Named color",
+          "type": "string"
+        }
+      ]
+    },
+    "UiColors": {
+      "description": "UI element colors (tabs, menus, status bar, etc.)",
+      "type": "object",
+      "properties": {
+        "tab_active_fg": {
+          "description": "Active tab text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Yellow"
+        },
+        "tab_active_bg": {
+          "description": "Active tab background color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Blue"
+        },
+        "tab_inactive_fg": {
+          "description": "Inactive tab text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "White"
+        },
+        "tab_inactive_bg": {
+          "description": "Inactive tab background color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "DarkGray"
+        },
+        "tab_separator_bg": {
+          "description": "Tab bar separator color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Black"
+        },
+        "tab_close_hover_fg": {
+          "description": "Tab close button hover color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            255,
+            100,
+            100
+          ]
+        },
+        "tab_hover_bg": {
+          "description": "Tab hover background color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            70,
+            70,
+            75
+          ]
+        },
+        "menu_bg": {
+          "description": "Menu bar background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            60,
+            60,
+            65
+          ]
+        },
+        "menu_fg": {
+          "description": "Menu bar text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            220,
+            220,
+            220
+          ]
+        },
+        "menu_active_bg": {
+          "description": "Active menu item background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            60,
+            60,
+            60
+          ]
+        },
+        "menu_active_fg": {
+          "description": "Active menu item text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            255,
+            255,
+            255
+          ]
+        },
+        "menu_dropdown_bg": {
+          "description": "Dropdown menu background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            50,
+            50,
+            50
+          ]
+        },
+        "menu_dropdown_fg": {
+          "description": "Dropdown menu text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            220,
+            220,
+            220
+          ]
+        },
+        "menu_highlight_bg": {
+          "description": "Highlighted menu item background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            70,
+            130,
+            180
+          ]
+        },
+        "menu_highlight_fg": {
+          "description": "Highlighted menu item text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            255,
+            255,
+            255
+          ]
+        },
+        "menu_border_fg": {
+          "description": "Menu border color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            100,
+            100,
+            100
+          ]
+        },
+        "menu_separator_fg": {
+          "description": "Menu separator line color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            80,
+            80,
+            80
+          ]
+        },
+        "menu_hover_bg": {
+          "description": "Menu item hover background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            55,
+            55,
+            55
+          ]
+        },
+        "menu_hover_fg": {
+          "description": "Menu item hover text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            255,
+            255,
+            255
+          ]
+        },
+        "menu_disabled_fg": {
+          "description": "Disabled menu item text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            100,
+            100,
+            100
+          ]
+        },
+        "menu_disabled_bg": {
+          "description": "Disabled menu item background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            50,
+            50,
+            50
+          ]
+        },
+        "status_bar_fg": {
+          "description": "Status bar text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "White"
+        },
+        "status_bar_bg": {
+          "description": "Status bar background color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "DarkGray"
+        },
+        "prompt_fg": {
+          "description": "Command prompt text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "White"
+        },
+        "prompt_bg": {
+          "description": "Command prompt background",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Black"
+        },
+        "prompt_selection_fg": {
+          "description": "Prompt selected text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "White"
+        },
+        "prompt_selection_bg": {
+          "description": "Prompt selection background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            58,
+            79,
+            120
+          ]
+        },
+        "popup_border_fg": {
+          "description": "Popup window border color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Gray"
+        },
+        "popup_bg": {
+          "description": "Popup window background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            30,
+            30,
+            30
+          ]
+        },
+        "popup_selection_bg": {
+          "description": "Popup selected item background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            58,
+            79,
+            120
+          ]
+        },
+        "popup_selection_fg": {
+          "description": "Popup selected item text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            255,
+            255,
+            255
+          ]
+        },
+        "popup_text_fg": {
+          "description": "Popup window text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "White"
+        },
+        "suggestion_bg": {
+          "description": "Autocomplete suggestion background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            30,
+            30,
+            30
+          ]
+        },
+        "suggestion_selected_bg": {
+          "description": "Selected suggestion background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            58,
+            79,
+            120
+          ]
+        },
+        "help_bg": {
+          "description": "Help panel background",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Black"
+        },
+        "help_fg": {
+          "description": "Help panel text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "White"
+        },
+        "help_key_fg": {
+          "description": "Help keybinding text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Cyan"
+        },
+        "help_separator_fg": {
+          "description": "Help panel separator color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "DarkGray"
+        },
+        "help_indicator_fg": {
+          "description": "Help indicator text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Red"
+        },
+        "help_indicator_bg": {
+          "description": "Help indicator background",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Black"
+        },
+        "inline_code_bg": {
+          "description": "Inline code block background",
+          "$ref": "#/$defs/ColorDef",
+          "default": "DarkGray"
+        },
+        "split_separator_fg": {
+          "description": "Split pane separator color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            100,
+            100,
+            100
+          ]
+        },
+        "split_separator_hover_fg": {
+          "description": "Split separator hover color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            100,
+            149,
+            237
+          ]
+        },
+        "scrollbar_track_fg": {
+          "description": "Scrollbar track color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "DarkGray"
+        },
+        "scrollbar_thumb_fg": {
+          "description": "Scrollbar thumb color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Gray"
+        },
+        "scrollbar_track_hover_fg": {
+          "description": "Scrollbar track hover color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Gray"
+        },
+        "scrollbar_thumb_hover_fg": {
+          "description": "Scrollbar thumb hover color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "White"
+        },
+        "compose_margin_bg": {
+          "description": "Compose mode margin background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            18,
+            18,
+            18
+          ]
+        },
+        "semantic_highlight_bg": {
+          "description": "Word under cursor highlight",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            60,
+            60,
+            80
+          ]
+        },
+        "terminal_bg": {
+          "description": "Embedded terminal background (use Default for transparency)",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Default"
+        },
+        "terminal_fg": {
+          "description": "Embedded terminal default text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Default"
+        },
+        "status_warning_indicator_bg": {
+          "description": "Warning indicator background in status bar",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            181,
+            137,
+            0
+          ]
+        },
+        "status_warning_indicator_fg": {
+          "description": "Warning indicator text color in status bar",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        "status_error_indicator_bg": {
+          "description": "Error indicator background in status bar",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            220,
+            50,
+            47
+          ]
+        },
+        "status_error_indicator_fg": {
+          "description": "Error indicator text color in status bar",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            255,
+            255,
+            255
+          ]
+        },
+        "status_warning_indicator_hover_bg": {
+          "description": "Warning indicator hover background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            211,
+            167,
+            30
+          ]
+        },
+        "status_warning_indicator_hover_fg": {
+          "description": "Warning indicator hover text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            0,
+            0,
+            0
+          ]
+        },
+        "status_error_indicator_hover_bg": {
+          "description": "Error indicator hover background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            250,
+            80,
+            77
+          ]
+        },
+        "status_error_indicator_hover_fg": {
+          "description": "Error indicator hover text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            255,
+            255,
+            255
+          ]
+        },
+        "tab_drop_zone_bg": {
+          "description": "Tab drop zone background during drag",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            70,
+            130,
+            180
+          ]
+        },
+        "tab_drop_zone_border": {
+          "description": "Tab drop zone border during drag",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            100,
+            149,
+            237
+          ]
+        },
+        "settings_selected_bg": {
+          "description": "Settings UI selected item background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            60,
+            60,
+            70
+          ]
+        },
+        "settings_selected_fg": {
+          "description": "Settings UI selected item foreground (text on selected background)",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            255,
+            255,
+            255
+          ]
+        }
+      }
+    },
+    "SearchColors": {
+      "description": "Search result highlighting colors",
+      "type": "object",
+      "properties": {
+        "match_bg": {
+          "description": "Search match background color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            100,
+            100,
+            20
+          ]
+        },
+        "match_fg": {
+          "description": "Search match text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            255,
+            255,
+            255
+          ]
+        }
+      }
+    },
+    "DiagnosticColors": {
+      "description": "LSP diagnostic colors (errors, warnings, etc.)",
+      "type": "object",
+      "properties": {
+        "error_fg": {
+          "description": "Error message text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Red"
+        },
+        "error_bg": {
+          "description": "Error highlight background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            60,
+            20,
+            20
+          ]
+        },
+        "warning_fg": {
+          "description": "Warning message text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Yellow"
+        },
+        "warning_bg": {
+          "description": "Warning highlight background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            60,
+            50,
+            0
+          ]
+        },
+        "info_fg": {
+          "description": "Info message text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Blue"
+        },
+        "info_bg": {
+          "description": "Info highlight background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            0,
+            30,
+            60
+          ]
+        },
+        "hint_fg": {
+          "description": "Hint message text color",
+          "$ref": "#/$defs/ColorDef",
+          "default": "Gray"
+        },
+        "hint_bg": {
+          "description": "Hint highlight background",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            30,
+            30,
+            30
+          ]
+        }
+      }
+    },
+    "SyntaxColors": {
+      "description": "Syntax highlighting colors",
+      "type": "object",
+      "properties": {
+        "keyword": {
+          "description": "Language keywords (if, for, fn, etc.)",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            86,
+            156,
+            214
+          ]
+        },
+        "string": {
+          "description": "String literals",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            206,
+            145,
+            120
+          ]
+        },
+        "comment": {
+          "description": "Code comments",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            106,
+            153,
+            85
+          ]
+        },
+        "function": {
+          "description": "Function names",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            220,
+            220,
+            170
+          ]
+        },
+        "type": {
+          "description": "Type names",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            78,
+            201,
+            176
+          ]
+        },
+        "variable": {
+          "description": "Variable names",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            156,
+            220,
+            254
+          ]
+        },
+        "constant": {
+          "description": "Constants and literals",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            79,
+            193,
+            255
+          ]
+        },
+        "operator": {
+          "description": "Operators (+, -, =, etc.)",
+          "$ref": "#/$defs/ColorDef",
+          "default": [
+            212,
+            212,
+            212
+          ]
+        }
+      }
+    }
+  }
+}
