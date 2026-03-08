@@ -550,6 +550,8 @@ All entries are ordered chronologically.
 | 2026-02-09 | fresh/0.2.1                      | Generic               |
 | 2026-02-13 | fresh/0.2.3                      | Generic               |
 | ""         | ollama/0.16.1                    | Generic               |
+| 2026-03-08 | fresh/0.2.14                     | Generic               |
+| ""         | ollama/0.17.7                    | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
