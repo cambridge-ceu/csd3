@@ -8,23 +8,7 @@ There is a dedicated section here, <https://cambridge-ceu.github.io/csd3/systems
 
 <font color="red"><b>31/10/2025 Update</b></font>
 
-The latest is now 4.5.2, also `ceuadmin/R/latest`.
-
-<font color="red"><b>11/4/2025 Update</b></font>
-
-The latest is now 4.5.0, available from module `ceuadmin/R/4.5.0-icelake` which is also `ceuadmin/R/latest`. The R packages are simplified in R/ and R-gcc11/ subdirectories.
-
-With `.libPaths()` inside R, we see that
-
-```
-[1] "/rds/project/rds-4o5vpvAowP0/software/R"
-[2] "/usr/local/Cluster-Apps/ceuadmin/R/4.5.2-icelake/library"
-[3] "/rds/project/rds-4o5vpvAowP0/software/R-gcc11"
-```
-
-as before to save space only the recommended packages in the second entry is systemwide.
-
-It is possible to use /usr/bin/R, for both are the same version:
+It is possible to use /usr/bin/R, whose version also 4.5.2 (as of 10/3/2026):
 
 ```bash
 module load ceuadmin/firefox
@@ -43,6 +27,22 @@ R
 ```
 
 and firefox starts pointing to `http://127.0.0.1:19107/doc/html/index.html`.
+
+The latest is now 4.5.2, also `ceuadmin/R/latest`.
+
+<font color="red"><b>11/4/2025 Update</b></font>
+
+The latest is now 4.5.0, available from module `ceuadmin/R/4.5.0-icelake` which is also `ceuadmin/R/latest`. The R packages are simplified in R/ and R-gcc11/ subdirectories.
+
+With `.libPaths()` inside R, we see that
+
+```
+[1] "/rds/project/rds-4o5vpvAowP0/software/R"
+[2] "/usr/local/Cluster-Apps/ceuadmin/R/4.5.2-icelake/library"
+[3] "/rds/project/rds-4o5vpvAowP0/software/R-gcc11"
+```
+
+as before to save space only the recommended packages in the second entry is systemwide.
 
 <font color="red"><b>28/2/2025 Update</b></font>
 
