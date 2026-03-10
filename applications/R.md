@@ -6,8 +6,6 @@ sort: 72
 
 There is a dedicated section here, <https://cambridge-ceu.github.io/csd3/systems/languages.html#r>.
 
-<font color="red"><b>31/10/2025 Update</b></font>
-
 It is possible to use /usr/bin/R, whose version also 4.5.2 (as of 10/3/2026):
 
 ```bash
@@ -27,6 +25,8 @@ R
 ```
 
 and firefox starts pointing to `http://127.0.0.1:19107/doc/html/index.html`.
+
+<font color="red"><b>31/10/2025 Update</b></font>
 
 The latest is now 4.5.2, also `ceuadmin/R/latest`.
 
