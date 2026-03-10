@@ -27,8 +27,10 @@ as before to save space only the recommended packages in the second entry is sys
 It is possible to use /usr/bin/R, for both are the same version:
 
 ```bash
+module load ceuadmin/firefox
 export R_LIBS=~/rds/software/R:~/rds/software/R-gcc11
 R
+> help.start()
 ```
 
 
@@ -39,6 +41,8 @@ R
 [3] "/usr/lib64/R/library"
 [4] "/usr/share/R/library"
 ```
+
+and firefox starts pointing to `http://127.0.0.1:19107/doc/html/index.html`.
 
 <font color="red"><b>28/2/2025 Update</b></font>
 
