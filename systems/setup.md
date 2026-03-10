@@ -2257,7 +2257,7 @@ They are generated from script [setup.sh](setup.sh),
 
     See <https://cambridge-ceu.github.io/csd3/applications/claude.html>
 
-[^libvps]: **libvips**
+[^libvips]: **libvips**
 
     ```bash
     source ~/rds/software/py3.11/bin/activate
