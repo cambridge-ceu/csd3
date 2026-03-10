@@ -552,6 +552,8 @@ All entries are ordered chronologically.
 | ""         | ollama/0.16.1                    | Generic               |
 | 2026-03-08 | fresh/0.2.14                     | Generic               |
 | ""         | ollama/0.17.7                    | Generic               |
+| 2026-03-10 | libvips/8.18.0                   | Generic[^libvips]     |
+| ""         | openclaw/2026.8.3                | Generic[^openclaw]    |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2254,3 +2256,32 @@ They are generated from script [setup.sh](setup.sh),
 [^claude]: **claude code**
 
     See <https://cambridge-ceu.github.io/csd3/applications/claude.html>
+
+[^libvps]: **libvips**
+
+    ```bash
+    source ~/rds/software/py3.11/bin/activate
+    pip list | grep -e meson -e ninja
+    pip install meson
+    module load ceuadmin/ImageMagick/7.1.1-31
+    wget -qO- https://github.com/libvips/libvips/archive/refs/tags/v8.18.0.tar.gz | tar xfz -
+    cd libvips-8.18.0/
+    meson setup build --prefix $CEUADMIN/libvips/8.18.0
+    cd build
+    meson compile
+    meson test
+    meson install
+    ```
+
+[^openclaw]: **OpenClaw**
+
+    ```bash
+    module load ceuadmin/libvips/8.18.0
+    module load ceuadmin/node/22.16.0
+    npm install -g node-gyp --prefix "$CEUADMIN/OpenClaw/2026.3.8"
+    NPM_CONFIG_PREFIX=$CEUADMIN/OpenClaw/2026.3.8 curl -fsSL https://openclaw.ai/install.sh | bash
+    # from source
+    # npm install -g openclaw --build-from-source --prefix "$CEUADMIN/OpenClaw/2026.3.8"
+    ```
+
+    OpenClaw is effectively installed as a node modules sitting with node/22.16.0 as a matter of convenience.
