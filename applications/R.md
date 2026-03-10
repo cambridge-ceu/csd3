@@ -6,7 +6,7 @@ sort: 72
 
 There is a dedicated section here, <https://cambridge-ceu.github.io/csd3/systems/languages.html#r>.
 
-It is possible to use /usr/bin/R, whose version also 4.5.2 (as of 10/3/2026):
+It is possible to use /usr/bin/R, whose version is also 4.5.2 (as of 10/3/2026):
 
 ```bash
 module load ceuadmin/firefox
