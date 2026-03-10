@@ -18,11 +18,27 @@ With `.libPaths()` inside R, we see that
 
 ```
 [1] "/rds/project/rds-4o5vpvAowP0/software/R"
-[2] "/usr/local/Cluster-Apps/ceuadmin/R/4.5.0-icelake/library"
+[2] "/usr/local/Cluster-Apps/ceuadmin/R/4.5.2-icelake/library"
 [3] "/rds/project/rds-4o5vpvAowP0/software/R-gcc11"
 ```
 
 as before to save space only the recommended packages in the second entry is systemwide.
+
+It is possible to use /usr/bin/R, for both are the same version:
+
+```bash
+export R_LIBS=~/rds/software/R:~/rds/software/R-gcc11
+R
+```
+
+
+```
+> .libPaths()
+[1] "/rds/project/rds-4o5vpvAowP0/software/R"
+[2] "/rds/project/rds-4o5vpvAowP0/software/R-gcc11"
+[3] "/usr/lib64/R/library"
+[4] "/usr/share/R/library"
+```
 
 <font color="red"><b>28/2/2025 Update</b></font>
 
