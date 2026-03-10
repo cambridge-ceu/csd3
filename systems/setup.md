@@ -553,7 +553,7 @@ All entries are ordered chronologically.
 | 2026-03-08 | fresh/0.2.14                     | Generic               |
 | ""         | ollama/0.17.7                    | Generic               |
 | 2026-03-10 | libvips/8.18.0                   | Generic[^libvips]     |
-| ""         | openclaw/2026.8.3                | Generic[^openclaw]    |
+| ""         | OpenClaw/2026.8.3                | Generic[^openclaw]    |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
