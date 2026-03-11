@@ -1,10 +1,10 @@
 ---
-sort: 78
+sort: 79
 ---
 
 # SMR
 
-Web: https://cnsgenomics.com/software/smr/
+Web: <https://cnsgenomics.com/software/smr/>
 
 ```bash
 wget https://cnsgenomics.com/software/smr/download/smr_1.03_src.zip
