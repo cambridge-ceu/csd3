@@ -154,3 +154,82 @@ where `openclaw onboard` sets up the environment and our instance of `openclaw g
 ```
 
 Surely, these are useful for letting web browsers point to the appropriate ports.
+
+Additionally, we have
+
+```bash
+# connect WhatsApp, Telegram, etc.
+openclaw configure --section channels
+# browse and install skills
+openclaw skills   
+```
+
+Now we try `ollama launch openclaw` again,
+
+```
+This will modify your OpenClaw configuration:
+  /home/jhz22/.openclaw/openclaw.json
+Backups will be saved to /rds/user/jhz22/hpc-work/work/ollama-backups/
+
+Added minimax-m2.5:cloud to OpenClaw
+
+Launching OpenClaw with minimax-m2.5:cloud...
+
+Security
+
+  OpenClaw can read files and run actions when tools are enabled.
+  A bad prompt can trick it into doing unsafe things.
+
+  Learn more: https://docs.openclaw.ai/gateway/security
+
+I understand the risks. Continue?
+
+   Yes    No
+  ✓ Installed web search plugin
+
+Preparing your assistant — this may take a moment...
+
+17:54:21 [reload] config change detected; evaluating reload (tools.web, plugins)
+17:54:21 [reload] config change requires gateway restart (plugins)
+17:54:21 [gateway] signal SIGUSR1 received
+17:54:21 [gateway] received SIGUSR1; restarting
+17:54:56 [gateway] shutdown timed out; exiting without full cleanup
+  Warning: gateway did not come back after restart
+Starting gateway...
+
+✓ OpenClaw is running
+
+  Open the Web UI:
+    http://localhost:18789/#token=ollama
+
+  Quick start:
+    /help             see all commands
+    openclaw configure --section channels   connect WhatsApp, Telegram, etc.
+    openclaw skills                         browse and install skills
+
+  The OpenClaw gateway is running in the background.
+  Stop it with: openclaw gateway stop
+
+
+🦞 OpenClaw 2026.3.8 (3caab92) — Half butler, half debugger, full crustacean.
+
+ openclaw tui - ws://127.0.0.1:18789 - agent main - session main
+
+ session agent:main:main
+
+
+ Wake up, my friend!
+
+
+ Morning! ☀️ I'm here. Nothing on the agenda per HEARTBEAT.md — what can I do for you?
+
+
+ how are you?
+
+
+ Doing well, thanks for asking! Freshly woken up and ready to go. What's up?
+ connected | idle
+ agent main | session main (openclaw-tui) | ollama/minimax-m2.5:cloud | think low | tokens 9.3k/205k (5%)
+```
+
+The web UI `http://localhost:18789/#token=ollama` (or `http://localhost:18789/chat?session=main`) actually provides gateway dashboard including a Chat and a variety of options.
