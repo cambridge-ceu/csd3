@@ -2255,7 +2255,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^claude]: **claude code**
 
-    See <https://cambridge-ceu.github.io/csd3/applications/claude.html>
+    See <https://cambridge-ceu.github.io/csd3/applications/claude.html>.
 
 [^libvips]: **libvips**
 
@@ -2278,4 +2278,4 @@ They are generated from script [setup.sh](setup.sh),
 
 [^openclaw]: **OpenClaw**
 
-   See <https://cambridge-ceu.github.io/csd3/applications/OpenClaw.html>
+    See <https://cambridge-ceu.github.io/csd3/applications/OpenClaw.html>.
