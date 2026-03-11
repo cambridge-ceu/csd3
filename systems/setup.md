@@ -2285,8 +2285,14 @@ They are generated from script [setup.sh](setup.sh),
     module load ceuadmin/node/22.16.0
     npm install -g node-gyp --prefix "$CEUADMIN/OpenClaw/2026.3.8"
     npm install -g openclaw --omit=optional --prefix "$CEUADMIN/OpenClaw/2026.3.8"
-    # Alternatives
-    # NPM_CONFIG_PREFIX=$CEUADMIN/OpenClaw/2026.3.8 curl -fsSL https://openclaw.ai/install.sh | bash
+    ```
+
+    so that the openclaw binary and packages are installed according to --prefix.
+
+    Alternatively,
+
+    ```bash
+    NPM_CONFIG_PREFIX=$CEUADMIN/OpenClaw/2026.3.8 curl -fsSL https://openclaw.ai/install.sh | bash
     # npm install -g openclaw --build-from-source --prefix "$CEUADMIN/OpenClaw/2026.3.8"
     ```
 
