@@ -232,4 +232,6 @@ openclaw configure --section channels
 openclaw skills   
 ```
 
-The web UI `http://localhost:18789/#token=ollama` (or `http://localhost:18789/chat?session=main`) actually provides a gateway dashboard ![](files/OpenClaw.png) shown below, which is more desirable.
+The web UI `http://localhost:18789/#token=ollama` (or `http://localhost:18789/chat?session=main`) actually provides a gateway dashboard shown below, which is more desirable.
+
+![](files/OpenClaw.png)
