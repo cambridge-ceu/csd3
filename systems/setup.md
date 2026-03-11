@@ -2278,22 +2278,4 @@ They are generated from script [setup.sh](setup.sh),
 
 [^openclaw]: **OpenClaw**
 
-    This follows libvips above.
-
-    ```bash
-    module load ceuadmin/libvips/8.18.0
-    module load ceuadmin/node/22.16.0
-    npm install -g node-gyp --prefix "$CEUADMIN/OpenClaw/2026.3.8"
-    npm install -g openclaw --omit=optional --prefix "$CEUADMIN/OpenClaw/2026.3.8"
-    ```
-
-    so that the openclaw binary and packages are installed according to --prefix.
-
-    Alternatively,
-
-    ```bash
-    NPM_CONFIG_PREFIX=$CEUADMIN/OpenClaw/2026.3.8 curl -fsSL https://openclaw.ai/install.sh | bash
-    # npm install -g openclaw --build-from-source --prefix "$CEUADMIN/OpenClaw/2026.3.8"
-    ```
-
-    OpenClaw is effectively installed as a node modules sitting with node/22.16.0 as a matter of convenience.
+   See <https://cambridge-ceu.github.io/csd3/applications/OpenClaw.html>

@@ -124,3 +124,28 @@ Examples:
 
 Docs: docs.openclaw.ai/cli
 ```
+
+## ollama
+
+```bash
+module load ceuadmin/ollama
+ollama > /dev/null 2>&1 &
+ollama list
+module load ceuadmin/OpenClaw
+openclaw onboard
+openclaw gateway &
+```
+
+where `openclaw onboard` sets up the environment and our instance of `openclaw gateway` gives,
+
+```
+🦞 OpenClaw 2026.3.8 (3caab92) — Your personal assistant, minus the passive-aggressive calendar reminders.
+
+15:53:10 [canvas] host mounted at http://127.0.0.1:18789/__openclaw__/canvas/ (root /home/jhz22/.openclaw/canvas)
+15:53:10 [heartbeat] started
+15:53:10 [health-monitor] started (interval: 300s, startup-grace: 60s, channel-connect-grace: 120s)
+15:53:10 [gateway] agent model: ollama/minimax-m2.5:cloud
+15:53:10 [gateway] listening on ws://127.0.0.1:18789 (PID 322663)
+15:53:10 [gateway] log file: /tmp/openclaw/openclaw-2026-03-11.log
+15:53:10 [browser/server] Browser control listening on http://127.0.0.1:18791/ (auth=token)
+```
