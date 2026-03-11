@@ -223,7 +223,7 @@ Starting gateway...
  agent main | session main (openclaw-tui) | ollama/minimax-m2.5:cloud | think low | tokens 9.3k/205k (5%)
 ```
 
-Note that dditionally, we have
+Note that additionally, we have
 
 ```bash
 # connect WhatsApp, Telegram, etc.
