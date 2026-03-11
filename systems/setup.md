@@ -2264,8 +2264,11 @@ They are generated from script [setup.sh](setup.sh),
     pip list | grep -e meson -e ninja
     pip install meson
     module load ceuadmin/ImageMagick/7.1.1-31
+    module load ceuadmin/poppler/0.84.0
+    module load gettext-0.19.8.1-gcc-5.4.0-zaldouz
     wget -qO- https://github.com/libvips/libvips/archive/refs/tags/v8.18.0.tar.gz | tar xfz -
     cd libvips-8.18.0/
+    export LDFLAGS="-lintl"
     meson setup build --prefix $CEUADMIN/libvips/8.18.0
     cd build
     meson compile
@@ -2275,12 +2278,15 @@ They are generated from script [setup.sh](setup.sh),
 
 [^openclaw]: **OpenClaw**
 
+    This follows libvips above.
+
     ```bash
     module load ceuadmin/libvips/8.18.0
     module load ceuadmin/node/22.16.0
     npm install -g node-gyp --prefix "$CEUADMIN/OpenClaw/2026.3.8"
-    NPM_CONFIG_PREFIX=$CEUADMIN/OpenClaw/2026.3.8 curl -fsSL https://openclaw.ai/install.sh | bash
-    # from source
+    npm install -g openclaw --omit=optional --prefix "$CEUADMIN/OpenClaw/2026.3.8"
+    # Alternatives
+    # NPM_CONFIG_PREFIX=$CEUADMIN/OpenClaw/2026.3.8 curl -fsSL https://openclaw.ai/install.sh | bash
     # npm install -g openclaw --build-from-source --prefix "$CEUADMIN/OpenClaw/2026.3.8"
     ```
 
