@@ -15,7 +15,7 @@ source ~/rds/software/py3.11/bin/activate
 module load ceuadmin/libvips/8.18.0
 module load ceuadmin/node/22.16.0
 npm install -g node-gyp --prefix "$CEUADMIN/OpenClaw/2026.3.8"
-npm install -g openclaw --omit=optional --prefix "$CEUADMIN/OpenClaw/2026.3.8"
+npm install -g openclaw --prefix "$CEUADMIN/OpenClaw/2026.3.8"
 ```
 
 so that the openclaw binary and packages are installed according to --prefix.
