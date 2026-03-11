@@ -149,3 +149,5 @@ where `openclaw onboard` sets up the environment and our instance of `openclaw g
 15:53:10 [gateway] log file: /tmp/openclaw/openclaw-2026-03-11.log
 15:53:10 [browser/server] Browser control listening on http://127.0.0.1:18791/ (auth=token)
 ```
+
+Needless to say, these are useful for letting firefox point to the appropriate ports.
