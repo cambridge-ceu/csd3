@@ -155,15 +155,6 @@ where `openclaw onboard` sets up the environment and our instance of `openclaw g
 
 Surely, these are useful for letting web browsers point to the appropriate ports.
 
-Additionally, we have
-
-```bash
-# connect WhatsApp, Telegram, etc.
-openclaw configure --section channels
-# browse and install skills
-openclaw skills   
-```
-
 Now we try `ollama launch openclaw` again,
 
 ```
@@ -230,6 +221,15 @@ Starting gateway...
  Doing well, thanks for asking! Freshly woken up and ready to go. What's up?
  connected | idle
  agent main | session main (openclaw-tui) | ollama/minimax-m2.5:cloud | think low | tokens 9.3k/205k (5%)
+```
+
+Note that dditionally, we have
+
+```bash
+# connect WhatsApp, Telegram, etc.
+openclaw configure --section channels
+# browse and install skills
+openclaw skills   
 ```
 
 The web UI `http://localhost:18789/#token=ollama` (or `http://localhost:18789/chat?session=main`) actually provides [a gateway dashboard](files/OpenClaw.png).
