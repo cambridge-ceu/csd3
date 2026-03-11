@@ -232,4 +232,4 @@ Starting gateway...
  agent main | session main (openclaw-tui) | ollama/minimax-m2.5:cloud | think low | tokens 9.3k/205k (5%)
 ```
 
-The web UI `http://localhost:18789/#token=ollama` (or `http://localhost:18789/chat?session=main`) actually provides gateway dashboard including a Chat and a variety of options.
+The web UI `http://localhost:18789/#token=ollama` (or `http://localhost:18789/chat?session=main`) actually provides [a gateway dashboard](files/OpenClaw.png).
