@@ -127,6 +127,9 @@ Docs: docs.openclaw.ai/cli
 
 ## ollama
 
+The official news on OpenClaw with ollama involves `ollama launch openclaw` where OpenClaw tries to install a systemd service, which 
+is not allowed on HPC login nodes, so we start manually.
+
 ```bash
 module load ceuadmin/ollama
 ollama serve > /dev/null 2>&1 &
