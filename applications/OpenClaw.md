@@ -129,7 +129,7 @@ Docs: docs.openclaw.ai/cli
 
 ```bash
 module load ceuadmin/ollama
-ollama > /dev/null 2>&1 &
+ollama serve > /dev/null 2>&1 &
 ollama list
 module load ceuadmin/OpenClaw
 openclaw onboard
