@@ -25,6 +25,8 @@ gemini --version
 
 Run `npm install -g @google/gemini-cli@latest` for the latest version.
 
+Optionally, it can be made available separately with --prefix specified.
+
 ## A session
 
 ```bash
