@@ -230,8 +230,11 @@ Note that additionally, we have
 openclaw configure --section channels
 # browse and install skills
 openclaw skills   
+# start a specific model
+ollama launch openclaw --model kimi-k2.5:cloud
 ```
 
 The web UI `http://localhost:18789/#token=ollama` (or `http://localhost:18789/chat?session=main`) actually provides a gateway dashboard shown below, which is more desirable.
 
 ![](files/OpenClaw.png)
+
