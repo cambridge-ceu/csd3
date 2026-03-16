@@ -2150,6 +2150,22 @@ They are generated from script [setup.sh](setup.sh),
 
     Note this module enables compilation of Firefox nightly (145.0a1) as dated here.
 
+    In fact, it is recommended to use 12.3+, e.g.,
+
+    ```bash
+    wget -qO- https://mirrors.kernel.org/gnu/gcc/gcc-12.5.0/gcc-12.5.0.tar.gz | \
+    tar xfz -
+    cd gcc-12.5.0
+    ../gcc-12.5.0/configure \
+      --prefix=$CEUADMIN/gcc/12.5.0 \
+      --disable-multilib \
+      --enable-languages=c,c++,fortran \
+      --disable-nls \
+      --enable-checking=release \
+      --with-system-zlib \
+      --disable-bootstrap
+    ```
+
 [^wasi]: **WASI-sdk**
 
     ```bash
