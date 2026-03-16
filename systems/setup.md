@@ -2134,19 +2134,15 @@ They are generated from script [setup.sh](setup.sh),
     ```bash
     wget https://mirrors.kernel.org/gcc/gcc-12.1.0/gcc-12.1.0.tar.xz
     tar xf gcc-12.1.0.tar.xz
+    module load gettext/0.21/gcc/qnrcglqo
     cd gcc-12.1.0
     ./contrib/download_prerequisites
     mkdir ../gcc-build
     cd ../gcc-build
     ../gcc-12.1.0/configure --prefix=$CEUADMIN/gcc/12.1.0 \
       --disable-multilib \
-      --enable-languages=c,c++ \
-      --disable-bootstrap \
-      --disable-libssp \
-      --disable-libquadmath \
-      --disable-libvtv \
-      --disable-libsanitizer
-    module load gettext/0.21/gcc/qnrcglqo
+      --enable-languages=c,c++,fortran \
+      --disable-nls
     make -j5
     ```
 
