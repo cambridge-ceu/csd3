@@ -88,9 +88,10 @@ gemini-3-pro-preview    2025-11-18T00:00:00Z  0
 
 ## Highlights
 
+- 0.18. Ollama is official provider for OpenClaw, i.e., `openclaw onboard --auth-choice ollama`.
 - 0.17. Support OpenClaw, e.g., `ollama launch openclaw`.
 - 0.16.   `ollama` command for different models and for use with apps out-of-the-box, e.g., `ollama launch --model minimax-m2.5:cloud`.
-- 0.13.0. DeepSeek-OCR, <https://github.com/deepseek-ai/DeepSeek-OCR>
+- 0.13.0. DeepSeek-OCR, <https://github.com/deepseek-ai/DeepSeek-OCR>.
 - 0.12.5. Claude Code API.
 
 ## REST API: /api/generate
