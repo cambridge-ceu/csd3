@@ -139,7 +139,7 @@ openclaw onboard
 openclaw gateway &
 ```
 
-where `openclaw onboard` sets up the environment and our instance of `openclaw gateway` gives,
+where `openclaw onboard` sets up the environment (from ollama 0.18, it is official provider for OpenClaw, i.e., `openclaw onboard --auth-choice ollama`) and our instance of `openclaw gateway` gives,
 
 ```
 🦞 OpenClaw 2026.3.8 (3caab92) — Your personal assistant, minus the passive-aggressive calendar reminders.
@@ -237,4 +237,3 @@ ollama launch openclaw --model kimi-k2.5:cloud
 The web UI `http://localhost:18789/#token=ollama` (or `http://localhost:18789/chat?session=main`) actually provides a gateway dashboard shown below, which is more desirable.
 
 ![](files/OpenClaw.png)
-
