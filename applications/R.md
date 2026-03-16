@@ -10,6 +10,43 @@ There is a dedicated section here, <https://cambridge-ceu.github.io/csd3/systems
 
 The latest is R 4.5.3.
 
+Note that packages in R/, R-gcc11/, R-gcc12/ directories now automatically find their locations, e.g.,
+
+```
+module load ceuadmin/R/4.5.3-gcc12
+Loading ceuadmin/R/4.5.3-gcc12
+  Loading requirement: libiconv/1.16/gcc/aa2kwjch libunistring/0.9.10/gcc/xcvpj2fv libidn2/2.3.0/gcc/ph36ygoa curl/7.83.0/gcc/ozlrq5hx
+    ceuadmin/gcc/12.1.0 openssl/3.3.0-dev texlive/2015 ceuadmin/glpk/4.57 ceuadmin/icu/70.1 ceuadmin/readline/8.0 geos-3.6.2-gcc-5.4.0-vejexvy
+    gettext-0.19.8.1-gcc-5.4.0-5iqkv5z pcre2-10.20-gcc-5.4.0-tcuhtrb image-magick-7.0.5-9-gcc-5.4.0-d4lemcc ceuadmin/krb5/1.21.2-icelake
+    python/3.7 ceuadmin/NLopt/2.7.1 ceuadmin/tiff/4.6.0 intel-oneapi-mpi/2021.6.0/gcc/2yn3govb libaec/1.0.6/gcc/2iuppgys
+    pkgconf/1.8.0/gcc/phdvt22w hdf5/1.10.8/gcc/intel-oneapi-mpi/xbjoagf5 netcdf-c/4.8.1/gcc/intel-oneapi-mpi/2765z52t
+09:44 jhz22@login-q-3 ~ $ R
+
+R version 4.5.3 (2026-03-11) -- "Reassured Reassurer"
+Copyright (C) 2026 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> update.packages(ask=F,checkBuilt=T)
+trying URL 'https://cran.r-project.org/src/contrib/Rfast2_0.1.5.6.tar.gz'
+trying URL 'https://cran.r-project.org/src/contrib/riskRegression_2026.03.11.tar.gz'
+trying URL 'https://cran.r-project.org/src/contrib/rms_8.1-1.tar.gz'
+trying URL 'https://cran.r-project.org/src/contrib/xgboost_3.2.0.1.tar.gz'
+```
+
 <font color="red"><b>10/3/2026 Update</b></font>
 
 It is possible to use /usr/bin/R, whose version is also 4.5.2:
