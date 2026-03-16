@@ -2156,6 +2156,9 @@ They are generated from script [setup.sh](setup.sh),
     wget -qO- https://mirrors.kernel.org/gnu/gcc/gcc-12.5.0/gcc-12.5.0.tar.gz | \
     tar xfz -
     cd gcc-12.5.0
+    ./contrib/download_prerequisites
+    mkdir ../gcc-build
+    cd ../gcc-build
     ../gcc-12.5.0/configure \
       --prefix=$CEUADMIN/gcc/12.5.0 \
       --disable-multilib \
@@ -2164,6 +2167,8 @@ They are generated from script [setup.sh](setup.sh),
       --enable-checking=release \
       --with-system-zlib \
       --disable-bootstrap
+    make -j5
+    make install
     ```
 
 [^wasi]: **WASI-sdk**
