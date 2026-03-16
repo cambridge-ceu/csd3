@@ -2144,6 +2144,8 @@ They are generated from script [setup.sh](setup.sh),
       --enable-languages=c,c++,fortran \
       --disable-nls
     make -j5
+    make install
+    strings /usr/local/Cluster-Apps/ceuadmin/gcc/12.1.0/lib64/libstdc++.so | grep intl
     ```
 
     Note this module enables compilation of Firefox nightly (145.0a1) as dated here.
