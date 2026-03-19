@@ -4,7 +4,7 @@ sort: 51
 
 # ollama
 
-Web: <https://ollama.com/>.
+Web: <https://ollama.com/>, Discord: <https://discord.com/invite/ollama>.
 
 ## Setup
 
