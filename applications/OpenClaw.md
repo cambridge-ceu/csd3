@@ -237,3 +237,23 @@ ollama launch openclaw --model kimi-k2.5:cloud
 The web UI `http://localhost:18789/#token=ollama` (or `http://localhost:18789/chat?session=main`) actually provides a gateway dashboard shown below, which is more desirable.
 
 ![](files/OpenClaw.png)
+
+## MiniMax-M2.7
+
+This model is designed to excel at completing end-to-end tasks in software engineering and office productivity while improving its character and emotional intelligence.
+M2.7 is also good at self-improvement using data from the web.
+
+`ollama launch openclaw --model minimax-m2.7:cloud`, or when OpenClaw is running, `/model ollama/minimax-m2.7:cloud`. An exemplar use of self-improvement and research can be done with
+
+> Teach yourself how to write financial research reports by studying examples from top analysts. Write a PPT presentation and Word document report on TSMC based on their latest earnings. Save your research framework as a skill so future reports follow the same process.
+
+To launch an agent non-interactively (--yes),
+
+```bash
+ollama launch openclaw \
+--model minimax-m2.7:cloud \
+--yes -- agent \
+--agent main \
+--local \
+--message "Prepare a pre-read for my next meeting"
+```
