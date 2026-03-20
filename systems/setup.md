@@ -554,7 +554,7 @@ All entries are ordered chronologically.
 | ""         | ollama/0.17.7                    | Generic               |
 | 2026-03-10 | libvips/8.18.0                   | Generic[^libvips]     |
 | 2026-03-11 | OpenClaw/2026.8.3                | Generic[^openclaw]    |
-| 2026-03-15 | R/4.5.3[-icelake|-gcc11|-gcc12]  | Generic               |
+| 2026-03-15 | R/4.5.3[-icelake\|-gcc11\|-gcc12]| Generic               |
 | 2026-03-20 | gemini-cli/0.34.0                | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
