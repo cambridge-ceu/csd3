@@ -4,7 +4,7 @@ sort: 33
 
 # gemini-cli
 
-Web: <https://geminicli.com/>
+Web: <https://geminicli.com/> ([GitHub](https://github.com/google-gemini/gemini-cli))
 
 ## Setup
 
