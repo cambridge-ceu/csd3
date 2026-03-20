@@ -129,7 +129,7 @@ with prompt, `why the sky is blue`
 
 > a short peom in Chinese?
 
-✦ 七色祥光下九霄，
+  七色祥光下九霄，
   微尘作弄舞风标。
   长波过隙无踪影，
   独留蔚蓝画碧涛。
@@ -152,6 +152,8 @@ npm install -g gemini-cli@0.34.0 --prefix $CEUADMIN/gemini-cli/0.34.0
 export GEMINI_API_KEY=$(cat $HOME/doc/gemini-cli)
 gemini "why the sky is blue; make a simple poem in Chinese"
 ```
+
+giving
 
 ```
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
