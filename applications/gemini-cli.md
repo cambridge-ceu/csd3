@@ -149,11 +149,17 @@ This showcases a more formal setup analogous to the OpenClaw module, say,
 ```bash
 module load ceuadmin/node/22.16.0
 npm install -g gemini-cli@0.34.0 --prefix $CEUADMIN/gemini-cli/0.34.0
+```
+
+so that
+
+```bash
 export GEMINI_API_KEY=$(cat $HOME/doc/gemini-cli)
+module load ceuadmin/gemini-cli/0.34.0
 gemini "why the sky is blue; make a simple poem in Chinese"
 ```
 
-giving
+gives
 
 ```
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
