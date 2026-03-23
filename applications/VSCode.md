@@ -6,18 +6,6 @@ sort: 87
 
 Web: <https://code.visualstudio.com/>.
 
-This is downloaded directly using CLI.
-
-```bash
-cd $CEUADMIN/VSCode || exit 1
-export url=https://update.code.visualstudio.com/api/update/linux-x64/stable/latest
-export version=$(curl -s $url | jq -r '.productVersion')
-wget -qO- https://update.code.visualstudio.com/latest/linux-x64/stable | tar -xzf -
-mv VSCode-linux-x64 "$version"
-cd "$version"
-./code --no-sandbox
-```
-
 <font color="red"><b>23/3/2026 Update</b></font>
 
 Module `ceuadmin/VSCode/1.112.0` is available.
@@ -32,7 +20,19 @@ Module `ceuadmin/VSCode/1.100.2` replaces earlier version.
 
 ## Installation
 
-Download and extract a copy for Linux x64, e.g., version 1.58.0,
+This is downloaded directly using CLI.
+
+```bash
+cd $CEUADMIN/VSCode || exit 1
+export url=https://update.code.visualstudio.com/api/update/linux-x64/stable/latest
+export version=$(curl -s $url | jq -r '.productVersion')
+wget -qO- https://update.code.visualstudio.com/latest/linux-x64/stable | tar -xzf -
+mv VSCode-linux-x64 "$version"
+cd "$version"
+./code --no-sandbox
+```
+
+which replaces earlier effort to download and extract a copy for Linux x64, e.g., version 1.58.0,
 
 ```bash
 cd ${HPC_WORK}
