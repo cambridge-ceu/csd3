@@ -26,6 +26,10 @@ Note that
 
 ## ceuadmin/firefox
 
+<font color="red"><b>26/3/2026 Update</b></font>
+
+Module **ceuadmin/149.0** is available.
+
 <font color="red"><b>20/1/2026 Update</b></font>
 
 Module **ceuadmin/147.0.1** is available.
