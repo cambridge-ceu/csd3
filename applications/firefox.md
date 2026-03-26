@@ -42,7 +42,7 @@ The ceuadmin/firefox/nightly is now 148.0a1. The build follows 145.0a1 (mzconfig
 git pull
 ./mach clobber
 ./mach bootstrap
-module load ceuadmin/gcc/12.5.0
+module load ceuadmin/gcc/12.1.0
 module load ceuadmin/gtk+/3.24.0
 module load ceuadmin/rust/nightly
 module load ceuadmin/clang/19.1.7
