@@ -28,7 +28,7 @@ Note that
 
 <font color="red"><b>26/3/2026 Update</b></font>
 
-Module **ceuadmin/149.0** is available.
+Module **ceuadmin/149.0** is available. The **ceuadmin/firefox/nightly** module points **ceuadmin/firefox/151.0a1**, which uses **ceuadmin/12.5.0** and the rest is unchanged from **ceuadmin/148.0a1**.
 
 <font color="red"><b>20/1/2026 Update</b></font>
 
