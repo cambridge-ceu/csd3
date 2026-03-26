@@ -558,6 +558,7 @@ All entries are ordered chronologically.
 | 2026-03-20 | gemini-cli/0.34.0                | Generic               |
 | 2025-03-23 | VSCode/1.112.0                   | Genetic               |
 | ""         | fresh/0.2.18                     | Genetic               |
+| 2026-03-26 | firefox/149.0                    | Genetic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
