@@ -68,6 +68,8 @@ Web: <https://docs.sylabs.io/> ([User Guide](https://docs.sylabs.io/guides/3.5/u
 
 Real applications in WES/WGS are given here, <https://jinghuazhao.github.io/SCALLOP-Seq/NOTES/>.
 
+Temporary/Cache location is ~/.singularity/cache (last dated 26/3/2025 and replaced with ~/.apptainer/cache).
+
 Similarly for MS experiment, the following is also from an ongoing project.
 
 ```bash
