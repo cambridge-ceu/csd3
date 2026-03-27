@@ -212,6 +212,8 @@ Rscript -e 'suppressMessages(library(dplyr));cat("OK!\n")'
 Inside R, one can check paths with `.libPaths()`. It is also handy to re-install the small number of packages in R-gcc11 with `install.packages(dir())` at its folder but
 `BiocManager::install(c("beachmat", "BiocSingular", "DropletUtils", "scater", "scuttle"))`.
 
+A final note regarding UBSAN-Clang like setup for `R CMD check --as-cran`, in the case of gap_1.15.tar.gz it is noted here: <https://github.com/jinghuazhao/R/tree/master/docs>.
+
 ### Python
 
 There are many sources,
