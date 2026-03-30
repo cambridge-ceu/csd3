@@ -6,6 +6,106 @@ sort: 52
 
 Web: <https://openclaw.ai/>
 
+## 2026.3.28
+
+We now have Pi (a minimal coding harness for workflows and coding agents) working as well.
+
+```bash
+# OpenClaw/2026.3.28
+module load ceuadmin/node/22.16.0
+export BASE="$CEUADMIN/OpenClaw/2026.3.28"
+npm view openclaw versions
+npm install -g openclaw@2026.3.28 --prefix "$BASE"
+# Extensions
+module load ceuadmin/OpenClaw/2026.3.28
+export OPENCLAW_STATE_DIR="$BASE/state"
+export OPENCLAW_CONFIG_PATH="$BASE/config.json"
+openclaw plugins install ollama
+# Pi & modules
+npm install -g @mariozechner/pi-coding-agent --prefix "$BASE"
+which pi
+pi --version
+mkdir "$BASE/pi"
+ln -s "$BASE/pi" ~/.pi
+npm install -g pi-subagents --prefix "$BASE"
+pi install "$BASE/lib/node_modules/pi-subagents"
+pi install https://github.com/davebcn87/pi-autoresearch
+pi list
+```
+
+Specifically, `pi --version` gives 0.64.0 and `pi list` ensures the location of modules is consistent,
+
+```
+User packages:
+  ../../../../usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.3.28/lib/node_modules/pi-subagents
+    /usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.3.28/lib/node_modules/pi-subagents
+  https://github.com/davebcn87/pi-autoresearch
+    /home/jhz22/.pi/agent/git/github.com/davebcn87/pi-autoresearch
+```
+
+We couple with Ollama,
+
+```bash
+module load ceuadmin/ollama
+ollama serve > /dev/null 2>&1 &
+ollama list
+module load ceuadmin/OpenClaw/2026.3.28
+ollama launch pi --model kimi-k2.5:cloud
+```
+The pi-autoresearch module enables /autoresearch.
+
+```
+→ autoresearch                 [u:git:github.com/davebcn87/pi-autoresearch] Start, stop, clear, or resume autoresearch mode
+  skill:autoresearch-create    [u:git:github.com/davebcn87/pi-autoresearch] Set up and run an autonomous experiment loop for any optimizatio
+  skill:autoresearch-finalize  [u:git:github.com/davebcn87/pi-autoresearch] Finalize an autoresearch session into clean, reviewable branches
+```
+
+An OpenClaw-native workflow has this sequence,
+
+```bash
+openclaw setup
+openclaw models
+openclaw agent --message "case-cohort power calculation"
+```
+
+or by YAML,
+
+```yaml
+ name: ccsize-analysis
+ steps:
+ - generate parameter grid
+ - call R (ccsize)
+ - summarize power
+ - output markdown table
+```
+
+The emerging `gent workflow` conventions are as follows,
+
+### plan.md
+
+```
+# Plan
+
+1. Implement power formula using subcohort size m = n*q
+2. Fix sample size equation
+3. Add Roxygen2 documentation
+4. Add testthat tests
+5. Validate against known examples
+```
+
+### content.md
+
+```
+# Context
+
+We are implementing ccsize() for case-cohort design.
+
+Constraints:
+- Must follow Cai & Zeng (2004)
+- Must support both power and sample size
+- Used in Shiny app
+```
+
 ## Setup
 
 It has a flavour of settings for libvips.
@@ -125,7 +225,7 @@ Examples:
 Docs: docs.openclaw.ai/cli
 ```
 
-## ollama
+## Ollama
 
 The official news on OpenClaw with ollama involves `ollama launch openclaw` where OpenClaw tries to install a systemd service, which 
 is not allowed on HPC login nodes, so we start manually.
@@ -238,7 +338,7 @@ The web UI `http://localhost:18789/#token=ollama` (or `http://localhost:18789/ch
 
 ![](files/OpenClaw.png)
 
-## MiniMax-M2.7
+### MiniMax-M2.7
 
 This model is designed to excel at completing end-to-end tasks in software engineering and office productivity while improving its character and emotional intelligence.
 M2.7 is also good at self-improvement using data from the web. Start the model with `ollama launch openclaw --model minimax-m2.7:cloud`, or when OpenClaw is running, `/model ollama/minimax-m2.7:cloud`. An exemplar use of self-improvement and research can be done with
