@@ -60,51 +60,7 @@ The pi-autoresearch module enables /autoresearch.
   skill:autoresearch-finalize  [u:git:github.com/davebcn87/pi-autoresearch] Finalize an autoresearch session into clean, reviewable branches
 ```
 
-An OpenClaw-native workflow has this sequence,
-
-```bash
-openclaw setup
-openclaw models
-openclaw agent --message "case-cohort power calculation"
-```
-
-or by YAML,
-
-```yaml
- name: ccsize-analysis
- steps:
- - generate parameter grid
- - call R (ccsize)
- - summarize power
- - output markdown table
-```
-
-The emerging `gent workflow` conventions are as follows,
-
-### plan.md
-
-```
-# Plan
-
-1. Implement power formula using subcohort size m = n*q
-2. Fix sample size equation
-3. Add Roxygen2 documentation
-4. Add testthat tests
-5. Validate against known examples
-```
-
-### content.md
-
-```
-# Context
-
-We are implementing ccsize() for case-cohort design.
-
-Constraints:
-- Must follow Cai & Zeng (2004)
-- Must support both power and sample size
-- Used in Shiny app
-```
+and use Ctrl+C to interrupt the process.
 
 ## Setup
 
