@@ -40,7 +40,7 @@ We couple with Ollama,
 module load ceuadmin/ollama
 ollama serve > /dev/null 2>&1 &
 ollama list
-module load ceuadmin/OpenClaw/2026.3.28
+module load ceuadmin/Pi/0.64.0
 ollama launch pi --model kimi-k2.5:cloud
 ```
 The pi-autoresearch module enables /autoresearch.
