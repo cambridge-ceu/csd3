@@ -47,6 +47,7 @@ function _renum()
 {
   echo ${1}
   export folder=${1}
+  find "$folder" -type f -name "*.md" -exec chmod -x {} +
   ls $1/*md  | \
   grep -v -e README -e files | sort | xargs -I {} basename {} .md | grep -v -w notes | awk '{print NR,$1}' | \
   parallel -j1 -C' ' --env folder '
