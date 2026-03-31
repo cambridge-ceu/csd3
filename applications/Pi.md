@@ -51,6 +51,6 @@ The pi-autoresearch module enables /autoresearch.
   skill:autoresearch-finalize  [u:git:github.com/davebcn87/pi-autoresearch] Finalize an autoresearch session into clean, reviewable branches
 ```
 
-and use Ctrl+C to interrupt the process.
+and use /quite to quite the session (Ctrl+C to interrupt the process).
 
 The gap/ccsize example is to be added.
