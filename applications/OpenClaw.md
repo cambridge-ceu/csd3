@@ -8,8 +8,6 @@ Web: <https://openclaw.ai/>
 
 ## 2026.3.28
 
-We now have Pi (a minimal coding harness for workflows and coding agents) working as well.
-
 ```bash
 # OpenClaw/2026.3.28
 module load ceuadmin/node/22.16.0
@@ -21,46 +19,7 @@ module load ceuadmin/OpenClaw/2026.3.28
 export OPENCLAW_STATE_DIR="$BASE/state"
 export OPENCLAW_CONFIG_PATH="$BASE/config.json"
 openclaw plugins install ollama
-# Pi & modules
-npm install -g @mariozechner/pi-coding-agent --prefix "$BASE"
-which pi
-pi --version
-mkdir "$BASE/pi"
-ln -s "$BASE/pi" ~/.pi
-npm install -g pi-subagents --prefix "$BASE"
-pi install "$BASE/lib/node_modules/pi-subagents"
-pi install https://github.com/davebcn87/pi-autoresearch
-pi list
 ```
-
-Specifically, `pi --version` gives 0.64.0 and `pi list` ensures the location of modules is consistent,
-
-```
-User packages:
-  ../../../../usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.3.28/lib/node_modules/pi-subagents
-    /usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.3.28/lib/node_modules/pi-subagents
-  https://github.com/davebcn87/pi-autoresearch
-    /home/jhz22/.pi/agent/git/github.com/davebcn87/pi-autoresearch
-```
-
-We couple with Ollama,
-
-```bash
-module load ceuadmin/ollama
-ollama serve > /dev/null 2>&1 &
-ollama list
-module load ceuadmin/OpenClaw/2026.3.28
-ollama launch pi --model kimi-k2.5:cloud
-```
-The pi-autoresearch module enables /autoresearch.
-
-```
-→ autoresearch                 [u:git:github.com/davebcn87/pi-autoresearch] Start, stop, clear, or resume autoresearch mode
-  skill:autoresearch-create    [u:git:github.com/davebcn87/pi-autoresearch] Set up and run an autonomous experiment loop for any optimizatio
-  skill:autoresearch-finalize  [u:git:github.com/davebcn87/pi-autoresearch] Finalize an autoresearch session into clean, reviewable branches
-```
-
-and use Ctrl+C to interrupt the process.
 
 ## Setup
 
