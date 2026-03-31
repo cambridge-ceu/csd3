@@ -88,6 +88,10 @@ gemini-3-pro-preview    2025-11-18T00:00:00Z  0
 
 ## Highlights
 
+- Support for Qwen3.5, <https://ollama.com/library/qwen3.5>, a family of open-source multimodal models:
+  - ollama launch claude --model qwen3.5:35b-a3b-coding-nvfp4
+  - ollama launch openclaw --model qwen3.5:35b-a3b-coding-nvfp4
+  - ollama run qwen3.5:35b-a3b-coding-nvfp4
 - 0.18. Ollama is official provider for OpenClaw, i.e., `openclaw onboard --auth-choice ollama`.
 - 0.17. Support OpenClaw, e.g., `ollama launch openclaw`.
 - 0.16.   `ollama` command for different models and for use with apps out-of-the-box, e.g., `ollama launch --model minimax-m2.5:cloud`.
