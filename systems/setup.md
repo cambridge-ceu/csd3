@@ -559,7 +559,8 @@ All entries are ordered chronologically.
 | 2025-03-23 | VSCode/1.112.0                   | Genetic               |
 | ""         | fresh/0.2.18                     | Genetic               |
 | 2026-03-26 | firefox/149.0\|firefox/151.0a1   | Genetic               |
-| 2026-03-28 | OpenClaw/2026.3.28               | Generic               |
+| 2026-03-30 | OpenClaw/2026.3.28               | Generic               |
+| 2026-03-31 | Pi/0.64.0                        | Generic[^pi]          |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2304,3 +2305,7 @@ They are generated from script [setup.sh](setup.sh),
 [^openclaw]: **OpenClaw**
 
     See <https://cambridge-ceu.github.io/csd3/applications/OpenClaw.html>.
+
+[^pi]: **Pi**
+
+    See <https://cambridge-ceu.github.io/csd3/applications/Pi.html>.
