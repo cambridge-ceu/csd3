@@ -32,6 +32,8 @@ User packages:
     /home/jhz22/.pi/agent/git/github.com/davebcn87/pi-autoresearch
 ```
 
+## Application
+
 We couple with Ollama,
 
 ```bash
@@ -50,7 +52,5 @@ The pi-autoresearch module enables /autoresearch.
 ```
 
 and use Ctrl+C to interrupt the process.
-
-## Application
 
 The gap/ccsize example is to be added.
