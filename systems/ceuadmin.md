@@ -475,6 +475,7 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2025-09-09 | mitoscape/1.0                | Genetics    |
     | 2025-09-11 | mity/2.0.1                   | Genetics    |
     | 2025-10-23 | ccphylo/0.8.5                | Genetics    |
+    | 2026-04-01 | gcta/1.95.1                  | Genetics    |
 
     \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
