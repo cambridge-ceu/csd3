@@ -10,7 +10,7 @@ Official page: <https://claude.ai/install.sh>
 
 Web, <https://www.npmjs.com/package/@anthropic-ai/claude-code>
 
-This is now in line with setup for OpenClaw, Pi, etc., which is more explicit.
+This following is is in line with setup for OpenClaw, Pi, etc., which is more explicit, but it appears the install.sh approach is now preferable.
 
 ```bash
 module load ceuadmin/node/22.16.0
