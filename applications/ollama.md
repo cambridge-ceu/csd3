@@ -88,8 +88,8 @@ gemini-3-pro-preview    2025-11-18T00:00:00Z  0
 
 ## Highlights
 
-- Support for Qwen3.5, <https://ollama.com/library/qwen3.5>, a family of open-source multimodal models:
-  - ollama launch claude --model qwen3.5:35b-a3b-coding-nvfp4
+- 0.19. [Support under MLX](https://ollama.com/blog/mlx) for Qwen3.5, <https://ollama.com/library/qwen3.5>, a family of open-source multimodal models:
+  - ollama launch claude --model qwen3.5:35b-a3b-coding-nvfp4 # ([NVFP4 format](https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/))
   - ollama launch openclaw --model qwen3.5:35b-a3b-coding-nvfp4
   - ollama run qwen3.5:35b-a3b-coding-nvfp4
 - 0.18. Ollama is official provider for OpenClaw, i.e., `openclaw onboard --auth-choice ollama`.
