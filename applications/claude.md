@@ -6,6 +6,17 @@ sort: 16
 
 Official page: <https://claude.ai/install.sh>
 
+## 2.1.89
+
+Web, <https://www.npmjs.com/package/@anthropic-ai/claude-code>
+
+This is now in line with setup for OpenClaw, Pi, etc., which is more explicit.
+
+```bash
+module load ceuadmin/node/22.16.0
+npm install -g @anthropic-ai/claude-code@2.1.89 --prefix $CEUADMIN/claude/2.1.89
+```
+
 ## 2.1.29
 
 A Bash script can be started as `install.sh [stable|latest|VERSION]`, which is done as follows,
