@@ -4,7 +4,7 @@ sort: 16
 
 # claude
 
-Official page: <https://claude.ai/install.sh>
+Official page: <https://claude.com/product/claude-code>
 
 ## 2.1.89
 
