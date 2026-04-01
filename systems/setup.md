@@ -556,12 +556,13 @@ All entries are ordered chronologically.
 | 2026-03-11 | OpenClaw/2026.3.8                | Generic[^openclaw]    |
 | 2026-03-15 | R/4.5.3[-icelake\|-gcc11\|-gcc12]| Generic               |
 | 2026-03-20 | gemini-cli/0.34.0                | Generic               |
-| 2025-03-23 | VSCode/1.112.0                   | Genetic               |
-| ""         | fresh/0.2.18                     | Genetic               |
-| 2026-03-26 | firefox/149.0\|firefox/151.0a1   | Genetic               |
+| 2025-03-23 | VSCode/1.112.0                   | Generic               |
+| ""         | fresh/0.2.18                     | Generic               |
+| 2026-03-26 | firefox/149.0\|firefox/151.0a1   | Generic               |
 | 2026-03-30 | OpenClaw/2026.3.28               | Generic               |
 | 2026-03-31 | Pi/0.64.0                        | Generic[^pi]          |
 | 2026-04-01 | claude/2.1.89                    | Generic               |
+| ""         | gcta/1.95.1                      | Genetics              |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
