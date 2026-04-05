@@ -563,6 +563,7 @@ All entries are ordered chronologically.
 | 2026-03-31 | Pi/0.64.0                        | Generic[^pi]          |
 | 2026-04-01 | claude/2.1.89                    | Generic               |
 | ""         | gcta/1.95.1                      | Genetics              |
+| 2026-04-05 | ollama/0.20.2                    | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
