@@ -88,7 +88,7 @@ gemini-3-pro-preview    2025-11-18T00:00:00Z  0
 
 ## Highlights
 
-- 0.20. Support Gemma4:e2b, e.g., `ollama run gemma4:e2b --think=false`.
+- 0.20. Support Gemma4:e2B, e.g., `ollama run gemma4:e2b --think=false`.
 - 0.19. [Support under MLX](https://ollama.com/blog/mlx) for Qwen3.5, <https://ollama.com/library/qwen3.5>, a family of open-source multimodal models:
   - ollama launch claude --model qwen3.5:35b-a3b-coding-nvfp4 # ([NVFP4 format](https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/))
   - ollama launch openclaw --model qwen3.5:35b-a3b-coding-nvfp4
