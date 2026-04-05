@@ -72,18 +72,24 @@ jq -r '.models[]|[.name,.modified_at,.size]|@tsv'|column -t
 giving
 
 ```
-cogito-2.1:671b         2025-11-19T00:00:00Z  688586727753
-glm-4.6                 2025-09-29T00:00:00Z  696060000000
-kimi-k2:1t              2025-09-05T00:00:00Z  1118481408000
-kimi-k2-thinking        2025-11-06T00:00:00Z  1118481408000
-qwen3-coder:480b        2025-07-22T00:00:00Z  510492157952
-deepseek-v3.1:671b      2025-08-21T00:00:00Z  688586727753
-gpt-oss:120b            2025-08-05T00:00:00Z  65290180781
-gpt-oss:20b             2025-08-05T00:00:00Z  13780162412
-qwen3-vl:235b-instruct  2025-09-22T00:00:00Z  470000000000
-qwen3-vl:235b           2025-09-22T00:00:00Z  470000000000
-minimax-m2              2025-10-27T00:00:00Z  230000000000
-gemini-3-pro-preview    2025-11-18T00:00:00Z  0
+NAME                        ID              SIZE      MODIFIED
+gemma4:e2B                  7fbdbf8f5e45    7.2 GB    2 minutes ago
+glm-4.7-flash:latest        d1a8a26252f1    19 GB     12 minutes ago
+gemma4:31b-cloud            c5272cd7f792    -         17 minutes ago
+qwen3.5:9b                  6488c96fa5fa    6.6 GB    3 days ago
+qwen3.5:27b                 7653528ba5cb    17 GB     3 days ago
+kimi-k2.5:cloud             6d1c3246c608    -         5 days ago
+minimax-m2.7:cloud          06daa293c105    -         2 weeks ago
+minimax-m2.5:cloud          c0d5751c800f    -         3 weeks ago
+qwen3-coder:480b-cloud      e30e45586389    -         5 months ago
+deepseek-v3.1:671b-cloud    d3749919e45f    -         6 months ago
+gpt-oss:20b                 aa4295ac10c3    13 GB     6 months ago
+llava:7b                    8dd30f6b0cb1    4.7 GB    10 months ago
+phi4:latest                 ac896e5b8b34    9.1 GB    11 months ago
+gemma3:latest               c0494fe00251    3.3 GB    12 months ago
+qwen:latest                 d53d04290064    2.3 GB    12 months ago
+mistral:latest              f974a74358d6    4.1 GB    12 months ago
+vicuna:latest               370739dc897b    3.8 GB    13 months ago
 ```
 
 ## Highlights
