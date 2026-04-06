@@ -8,26 +8,19 @@ GitHub: <https://github.com/ggml-org/llama.cpp>
 
 ## Installation[^macOS]
 
+Version b5558 or later requires gcc/9 and above; recent distributions require openssl.
+
 ```bash
-# Initially, we build from GitHub
-git clone https://github.com/ggerganov/llama.cpp.git
-cd llama.cpp
-mkdir build && cd build
-cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b4991 ..
-make && make install
-# It is recommended to build from release to avoid possible intermediate updates
-wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/b5303.tar.gz | tar xvfz -
-cd llama.cpp-b5303/
-mkdir build && cd build
-cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b5303 ..
-make && make install
-# b5558 requires gcc/9 and above
 export version=b8676
 wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/${version}.tar.gz | tar xvfz -
 cd llama.cpp-${version}
 module load gcc/11.3.0/gcc/4zpip55j
+# note there is a misnomer with openssl/3.3.0-dev
+module load openssl/3.3.0-dev
 mkdir build && cd build
-cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/${version} ..
+cmake .. -DLLAMA_OPENSSL=ON \
+  -DCMAKE_PREFIX_PATH=/usr/local/Cluster-Apps/openssl/3.2.1 \
+  -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/${version}
 make && make install
 ```
 
@@ -62,6 +55,7 @@ llama-gguf-split --merge DeepSeek-V3-0324-UD-IQ2_XXS-00001-of-00005.gguf DeepSee
 URL, <https://huggingface.co/collections/ggml-org/gemma-4>.
 
 ```bash
+export SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt
 llama-server -hf ggml-org/gemma-4-26B-A4B-it-GGUF
 ```
 
