@@ -75,7 +75,7 @@ then access `http://localhost:8080`.
 A 12GB model is downloaded from [ggml-org/gpt-oss-20b-GGUF](https://huggingface.co/ggml-org/gpt-oss-20b-GGUF/)
 
 ```bash
-llama-server -hf ggml-org/gpt-oss-20b-GGUF --ctx-size 0 --jinja -ub 2048 -b 2048 -ngl 99 -fa
+llama-server -hf ggml-org/gpt-oss-20b-GGUF --ctx-size 0 --jinja -ub 2048 -b 2048 -ngl 99
 module load ceuadmin/chrome
 chrome [--user-data-dir=/tmp/chrome] http://localhost:8080/
 ```
