@@ -8,7 +8,7 @@ GitHub: <https://github.com/ggml-org/llama.cpp>
 
 ## Installation[^macOS]
 
-Version b5558 or later requires gcc/9 and above; recent distributions require openssl.
+Version b5558 or later requires gcc/9 and above.
 
 ```bash
 export version=b8676
@@ -22,6 +22,13 @@ cmake .. -DLLAMA_OPENSSL=ON \
   -DCMAKE_PREFIX_PATH=/usr/local/Cluster-Apps/openssl/3.2.1 \
   -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/${version}
 make && make install
+```
+
+Recent distributions also require openssl; from above we see from `ldd ./bin/llama-server | grep ssl`:
+
+```
+libssl.so.3 => /usr/local/Cluster-Apps/openssl/3.2.1/lib64/libssl.so.3 (0x000014c78627c000)
+libcrypto.so.3 => /usr/local/Cluster-Apps/openssl/3.2.1/lib64/libcrypto.so.3 (0x000014c785b30000)
 ```
 
 We can the use `module load ceuadmin/llama.cpp` for operations below.
