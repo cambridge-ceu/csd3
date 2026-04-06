@@ -22,10 +22,10 @@ mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/b5303 ..
 make && make install
 # b5558 requires gcc/9 and above
-export version=b7673
-module load gcc/11.3.0/gcc/4zpip55j
+export version=b8676
 wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/${version}.tar.gz | tar xvfz -
 cd llama.cpp-${version}
+module load gcc/11.3.0/gcc/4zpip55j
 mkdir build && cd build
 cmake -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/${version} ..
 make && make install
@@ -34,6 +34,12 @@ make && make install
 We can the use `module load ceuadmin/llama.cpp` for operations below.
 
 ## GGUF
+
+It appears more efficient to use /rds/user/$USER/hpc-work/cache due to larger space, i.e.,
+
+```bash
+ln -sf /rds/user/$USER/hpc-work/cache ~/.cache
+```
 
 An example with `/DeepSeek-V3-0324`,
 
@@ -94,6 +100,16 @@ llama-mtmd-cli \
   -n 256 \
   --temp 0.95
 ```
+
+### Gemma 4
+
+URL, <https://huggingface.co/collections/ggml-org/gemma-4>.
+
+```bash
+llama-server -hf ggml-org/gemma-4-26B-A4B-it-GGUF
+```
+
+then access `http://localhost:8080`.
 
 ### Qwen3-4B
 
