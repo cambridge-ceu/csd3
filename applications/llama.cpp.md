@@ -39,6 +39,8 @@ It appears more efficient to use /rds/user/$USER/hpc-work/cache due to larger sp
 
 ```bash
 ln -sf /rds/user/$USER/hpc-work/cache ~/.cache
+# An earlier attempt is more restrictive
+ln -sf /rds/user/$USER/hpc-work/HuggingFace/cache/llama.cpp ~/.cache/llama.cpp
 ```
 
 An example with `/DeepSeek-V3-0324`,
@@ -55,12 +57,21 @@ llama-gguf-split --merge DeepSeek-V3-0324-UD-IQ2_XXS-00001-of-00005.gguf DeepSee
 
 ## llama-server
 
+### Gemma 4
+
+URL, <https://huggingface.co/collections/ggml-org/gemma-4>.
+
+```bash
+llama-server -hf ggml-org/gemma-4-26B-A4B-it-GGUF
+```
+
+then access `http://localhost:8080`.
+
 ### gpt-oss-20b
 
 A 12GB model is downloaded from [ggml-org/gpt-oss-20b-GGUF](https://huggingface.co/ggml-org/gpt-oss-20b-GGUF/)
 
 ```bash
-ln -sf /rds/user/$USER/hpc-work/HuggingFace/cache/llama.cpp ~/.cache/llama.cpp
 llama-server -hf ggml-org/gpt-oss-20b-GGUF --ctx-size 0 --jinja -ub 2048 -b 2048 -ngl 99 -fa
 module load ceuadmin/chrome
 chrome [--user-data-dir=/tmp/chrome] http://localhost:8080/
@@ -100,16 +111,6 @@ llama-mtmd-cli \
   -n 256 \
   --temp 0.95
 ```
-
-### Gemma 4
-
-URL, <https://huggingface.co/collections/ggml-org/gemma-4>.
-
-```bash
-llama-server -hf ggml-org/gemma-4-26B-A4B-it-GGUF
-```
-
-then access `http://localhost:8080`.
 
 ### Qwen3-4B
 
