@@ -28,6 +28,8 @@ We can the use `module load ceuadmin/llama.cpp` for operations below.
 
 ## GGUF
 
+GGML Unified Format (GGUF) is the binary model format used by llama.cpp and related tools.
+
 It appears more efficient to use /rds/user/$USER/hpc-work/cache due to larger space, i.e.,
 
 ```bash
