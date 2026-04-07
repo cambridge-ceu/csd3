@@ -247,6 +247,7 @@ openclaw configure --section channels
 openclaw skills   
 # start a specific model
 ollama launch openclaw --model kimi-k2.5:cloud
+ollama launch openclaw --model gemma4:31b-cloud
 ```
 
 The web UI `http://localhost:18789/#token=ollama` (or `http://localhost:18789/chat?session=main`) actually provides a gateway dashboard shown below, which is more desirable.
