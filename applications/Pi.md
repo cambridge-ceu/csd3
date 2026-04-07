@@ -38,7 +38,9 @@ We couple with Ollama,
 
 ```bash
 module load ceuadmin/ollama
-ollama serve > /dev/null 2>&1 &
+until ollama list > /dev/null 2>&1; do
+  sleep 1
+done
 ollama list
 module load ceuadmin/Pi/0.64.0
 ollama launch pi --model kimi-k2.5:cloud
