@@ -114,10 +114,10 @@ This section offers a flavour of Anthropic API from Ollama/0.15.2 onwards, whose
 
 ```bash
 module load ceuadmin/ollama/0.15.2
-until ollama list > /dev/null 2>&1; do
+ollama serve > /dev/null 2>&1 &
+until ollama list; do
   sleep 1
 done
-ollama list
 ```
 
 We see
