@@ -85,7 +85,7 @@ done
 ollama list
 module load ceuadmin/Pi/0.65.2
 ollama launch pi --model kimi-k2.5:cloud
-pi run --model gemma4:e2B @context.md
+pi run --provider ollama --model gemma4:e2B @context.md
 ```
 The pi-autoresearch module enables /autoresearch.
 
