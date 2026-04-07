@@ -12,6 +12,8 @@ Web, <https://pi.dev/>
 module load ceuadmin/node/22.16.0
 export version="0.65.2"
 export BASE="$CEUADMIN/Pi/${version}"
+export NPM_CONFIG_PREFIX="$BASE"
+export NODE_PATH="$BASE/lib/node_modules"
 export PATH="$BASE/bin:$PATH"
 npm install -g @mariozechner/pi-coding-agent@${version} --prefix "$BASE"
 export PATH="$BASE/bin:$PATH"
