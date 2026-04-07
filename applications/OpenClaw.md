@@ -147,10 +147,10 @@ is not allowed on HPC login nodes, so we start manually.
 
 ```bash
 module load ceuadmin/ollama
-until ollama list > /dev/null 2>&1; do
+ollama serve > /dev/null 2>&1 &
+until ollama list; do
   sleep 1
 done
-ollama list
 module load ceuadmin/OpenClaw
 openclaw onboard
 openclaw gateway &
