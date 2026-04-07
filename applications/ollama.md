@@ -14,11 +14,16 @@ curl -L https://ollama.com/download/ollama-linux-amd64.tar.zst | \
 tar --use-compress-program=unzstd -xvf -
 # 0.13.5 (10/1/2026)
 # curl -L https://ollama.com/download/ollama-linux-amd64.tgz | tar xvfz -
-# tidy up messy screen
+```
+
+which gives the backbone of ceuadmin/ollama module,
+
+```
+mpdule load ceuadmin/ollama
 export TERM=xterm-256color
 export OLLAMA_NO_COLOR=1
 ollama --help
-ollama serve > /dev/null 2>&1 &
+ollama serve &
 until ollama list; do
   sleep 1
 done
@@ -37,6 +42,8 @@ vicuna:latest    370739dc897b    3.8 GB    About an hour ago
 For information, we start
 
 ```bash
+# no messy screen
+# ollama serve > /dev/null 2>&1 &
 module load ceuadmin/chrome
 chrome 127.0.0.1:11434 &
 ```
