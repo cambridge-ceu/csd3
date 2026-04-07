@@ -35,7 +35,7 @@ User packages:
     /home/jhz22/.pi/agent/git/github.com/davebcn87/pi-autoresearch
 ```
 
-Note that ~/.pi is but a symbolic link; we can also get a simpler pi-autoresearch location similarly to pi-subagents, etc., e.g.,
+Note that ~/.pi is but a symbolic link though we can also get a simpler pi-autoresearch location similarly to pi-subagents, etc., e.g.,
 
 ```bash
 git clone https://github.com/davebcn87/pi-autoresearch $BASE/agent/pi-autoresearch
