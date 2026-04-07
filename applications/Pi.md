@@ -35,6 +35,13 @@ User packages:
     /home/jhz22/.pi/agent/git/github.com/davebcn87/pi-autoresearch
 ```
 
+Note that ~/.pi is but a symbolic link; we can also get a simpler pi-autoresearch location similarly to pi-subagents, etc., e.g.,
+
+```bash
+git clone https://github.com/davebcn87/pi-autoresearch $BASE/agent/pi-autoresearch
+pi install "$BASE/agent/pi-autoresearch"
+```
+
 ## Installation
 
 Pi is a minimal coding harness for workflows and coding agents.
