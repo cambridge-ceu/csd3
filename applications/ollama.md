@@ -18,7 +18,9 @@ tar --use-compress-program=unzstd -xvf -
 export TERM=xterm-256color
 export OLLAMA_NO_COLOR=1
 ollama --help
-ollama serve &
+until ollama list > /dev/null 2>&1; do
+  sleep 1
+done
 ollama list
 ollama pull vicuna
 ollama run vicuna
