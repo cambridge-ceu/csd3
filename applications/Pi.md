@@ -38,7 +38,8 @@ We couple with Ollama,
 
 ```bash
 module load ceuadmin/ollama
-until ollama serve > /dev/null 2>&1; do
+ollama serve > /dev/null 2>&1 &
+until ollama list; do
   sleep 1
 done
 ollama list
