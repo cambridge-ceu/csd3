@@ -94,7 +94,12 @@ vicuna:latest               370739dc897b    3.8 GB    13 months ago
 
 ## Highlights
 
-- 0.20. Support Gemma4:e2B (effective for edge device deployments), e.g., `ollama run gemma4:e2b --think=false`, which leads to faster run with ability to handle images.
+- 0.20. Support Gemma 4, where e as in 2eB is effective for edge device deployments and `ollama run gemma4:e2b --think=false` leads to faster run with ability to handle images.
+  - 2B, `ollama run gemma4:e2b`.
+  - 4B, `ollama run gemma4:e4b`.
+  - 26B, `ollama run gemma4:26b`.
+  - 31B, `ollama run gemma4:31b`.
+  - Cloud 31B, `ollama run gemma4:31b-cloud`.
 - 0.19. [Support under MLX](https://ollama.com/blog/mlx) for Qwen3.5, <https://ollama.com/library/qwen3.5>, a family of open-source multimodal models:
   - ollama launch claude --model qwen3.5:35b-a3b-coding-nvfp4 # ([NVFP4 format](https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/))
   - ollama launch openclaw --model qwen3.5:35b-a3b-coding-nvfp4
