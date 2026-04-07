@@ -18,10 +18,10 @@ tar --use-compress-program=unzstd -xvf -
 export TERM=xterm-256color
 export OLLAMA_NO_COLOR=1
 ollama --help
-until ollama list > /dev/null 2>&1; do
+ollama serve > /dev/null 2>&1 &
+until ollama list; do
   sleep 1
 done
-ollama list
 ollama pull vicuna
 ollama run vicuna
 ollama run llava:7b cafe.png > cafe.txt 2>&1 &
