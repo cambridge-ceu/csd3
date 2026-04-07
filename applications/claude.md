@@ -142,6 +142,7 @@ export ANTHROPIC_BASE_URL="http://localhost:11434"
 export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 claude --model gpt-oss:20b --allow-dangerously-skip-permissions
 claude --model qwen3-coder:480b-cloud --allow-dangerously-skip-permissions
+ollama launch claude --model gemma4:31b-cloud
 ```
 
 The first model gives,
