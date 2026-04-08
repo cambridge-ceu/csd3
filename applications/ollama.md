@@ -57,25 +57,7 @@ The port number can be reset as follows,
 export OLLAMA_HOST=127.0.0.1:8000
 ```
 
-Lastly, to run `ollama serve` in the background and redirect output,
-
-```bash
-ollama serve > /dev/null 2>&1 &
-until ollama list; do
-  sleep 1
-done
-```
-
-so for `ollama run llava:7b cafe.png > cafe.txt 2>&1 &`, we have `cafe.txt`,
-
-```
-This image shows the interior of a café, with a focus on the counter and bar area. There is a menu board displaying various food and
-drink options, which suggests that this establishment offers a variety of beverages and possibly some light bites to its patrons. The
-atmosphere appears warm and inviting, with natural light filtering in through the windows. It's a common type of establishment found in
-many urban areas where people can relax, grab a coffee or tea, or have a quick meal while socializing with friends or colleagues.
-```
-
-while `ollama list` giving
+We have from `ollama list`,
 
 ```
 NAME                        ID              SIZE      MODIFIED
@@ -96,6 +78,24 @@ gemma3:latest               c0494fe00251    3.3 GB    12 months ago
 qwen:latest                 d53d04290064    2.3 GB    12 months ago
 mistral:latest              f974a74358d6    4.1 GB    12 months ago
 vicuna:latest               370739dc897b    3.8 GB    13 months ago
+```
+
+Lastly, to run `ollama serve` in the background and redirect output,
+
+```bash
+ollama serve > /dev/null 2>&1 &
+until ollama list; do
+  sleep 1
+done
+```
+
+so for `ollama run llava:7b cafe.png > cafe.txt 2>&1 &`, we have `cafe.txt`,
+
+```
+This image shows the interior of a café, with a focus on the counter and bar area. There is a menu board displaying various food and
+drink options, which suggests that this establishment offers a variety of beverages and possibly some light bites to its patrons. The
+atmosphere appears warm and inviting, with natural light filtering in through the windows. It's a common type of establishment found in
+many urban areas where people can relax, grab a coffee or tea, or have a quick meal while socializing with friends or colleagues.
 ```
 
 ## Chat: /api/chat
