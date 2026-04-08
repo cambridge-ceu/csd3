@@ -168,54 +168,6 @@ This is from deepseek-r1.32b,
 > longer paths through the atmosphere scatter out much of the blue light, revealing reds and oranges. Additionally, higher altitudes with thinner air result in a deeper blue sky due to
 > reduced scattering.
 
-## Remote endpoint
-
-The list is obtained with
-
-```bash
-curl -s https://ollama.com/api/tags | \
-jq -r '.models[]|[.name,.modified_at,.size]|@tsv'|column -t
-```
-
-```
-glm-5.1                 2026-04-07T08:00:00-08:00  1507728316928
-deepseek-v3.2           2025-12-02T00:00:00Z       688586727753
-minimax-m2.1            2025-12-20T00:00:00Z       230000000000
-qwen3.5:397b            2026-02-16T00:00:00Z       397000000000
-kimi-k2:1t              2025-09-05T00:00:00Z       1118481408000
-qwen3-next:80b          2025-09-10T00:00:00Z       81800000000
-gpt-oss:120b            2025-08-05T00:00:00Z       65290180781
-qwen3-vl:235b           2025-09-22T00:00:00Z       470000000000
-minimax-m2              2025-10-27T00:00:00Z       230000000000
-ministral-3:3b          2025-12-02T00:00:00Z       4670000000
-ministral-3:14b         2025-12-02T00:00:00Z       15700000000
-devstral-2:123b         2025-12-08T00:00:00Z       128249391520
-glm-4.7                 2025-12-22T00:00:00Z       696060000000
-glm-5                   2026-02-11T00:00:00Z       756162687872
-kimi-k2.5               2026-01-26T00:00:00Z       1118481408000
-qwen3-vl:235b-instruct  2025-09-22T00:00:00Z       470000000000
-mistral-large-3:675b    2025-12-02T00:00:00Z       682000000000
-gemma3:4b               2025-03-12T00:00:00Z       8600000000
-gemma3:12b              2025-03-12T00:00:00Z       24000000000
-deepseek-v3.1:671b      2025-11-20T00:00:00Z       688586727753
-nemotron-3-nano:30b     2025-12-15T00:00:00Z       32645090390
-gemma4:31b              2026-04-02T09:00:00-08:00  62546177752
-rnj-1:8b                2025-12-09T00:00:00Z       16000000000
-glm-4.6                 2025-09-29T00:00:00Z       696060000000
-gpt-oss:20b             2025-08-05T00:00:00Z       13780162412
-devstral-small-2:24b    2025-12-09T00:00:00Z       51600000000
-nemotron-3-super        2026-03-11T00:00:00Z       230500000000
-cogito-2.1:671b         2025-11-19T00:00:00Z       688586727753
-kimi-k2-thinking        2025-11-06T00:00:00Z       1118481408000
-qwen3-coder:480b        2025-07-22T00:00:00Z       510492157952
-ministral-3:8b          2025-12-02T00:00:00Z       10400000000
-qwen3-coder-next        2025-02-04T00:00:00Z       81800000000
-minimax-m2.7            2026-03-18T00:00:00Z       0
-minimax-m2.5            2026-02-12T00:00:00Z       230000000000
-gemini-3-flash-preview  2025-12-17T00:00:00Z       0
-gemma3:27b              2025-03-12T00:00:00Z       55000000000
-```
-
 ## Big or many model(s)
 
 We could use the same trick elsewhere, e.g.,
@@ -397,6 +349,54 @@ for
 {"model":"vicuna","created_at":"2025-02-26T16:22:27.903756015Z","response":" visible","done":false}
 {"model":"vicuna","created_at":"2025-02-26T16:23:00.580469912Z","response":",","done":false}
 ...
+```
+
+## Remote endpoint
+
+The list is obtained with
+
+```bash
+curl -s https://ollama.com/api/tags | \
+jq -r '.models[]|[.name,.modified_at,.size]|@tsv'|column -t
+```
+
+```
+glm-5.1                 2026-04-07T08:00:00-08:00  1507728316928
+deepseek-v3.2           2025-12-02T00:00:00Z       688586727753
+minimax-m2.1            2025-12-20T00:00:00Z       230000000000
+qwen3.5:397b            2026-02-16T00:00:00Z       397000000000
+kimi-k2:1t              2025-09-05T00:00:00Z       1118481408000
+qwen3-next:80b          2025-09-10T00:00:00Z       81800000000
+gpt-oss:120b            2025-08-05T00:00:00Z       65290180781
+qwen3-vl:235b           2025-09-22T00:00:00Z       470000000000
+minimax-m2              2025-10-27T00:00:00Z       230000000000
+ministral-3:3b          2025-12-02T00:00:00Z       4670000000
+ministral-3:14b         2025-12-02T00:00:00Z       15700000000
+devstral-2:123b         2025-12-08T00:00:00Z       128249391520
+glm-4.7                 2025-12-22T00:00:00Z       696060000000
+glm-5                   2026-02-11T00:00:00Z       756162687872
+kimi-k2.5               2026-01-26T00:00:00Z       1118481408000
+qwen3-vl:235b-instruct  2025-09-22T00:00:00Z       470000000000
+mistral-large-3:675b    2025-12-02T00:00:00Z       682000000000
+gemma3:4b               2025-03-12T00:00:00Z       8600000000
+gemma3:12b              2025-03-12T00:00:00Z       24000000000
+deepseek-v3.1:671b      2025-11-20T00:00:00Z       688586727753
+nemotron-3-nano:30b     2025-12-15T00:00:00Z       32645090390
+gemma4:31b              2026-04-02T09:00:00-08:00  62546177752
+rnj-1:8b                2025-12-09T00:00:00Z       16000000000
+glm-4.6                 2025-09-29T00:00:00Z       696060000000
+gpt-oss:20b             2025-08-05T00:00:00Z       13780162412
+devstral-small-2:24b    2025-12-09T00:00:00Z       51600000000
+nemotron-3-super        2026-03-11T00:00:00Z       230500000000
+cogito-2.1:671b         2025-11-19T00:00:00Z       688586727753
+kimi-k2-thinking        2025-11-06T00:00:00Z       1118481408000
+qwen3-coder:480b        2025-07-22T00:00:00Z       510492157952
+ministral-3:8b          2025-12-02T00:00:00Z       10400000000
+qwen3-coder-next        2025-02-04T00:00:00Z       81800000000
+minimax-m2.7            2026-03-18T00:00:00Z       0
+minimax-m2.5            2026-02-12T00:00:00Z       230000000000
+gemini-3-flash-preview  2025-12-17T00:00:00Z       0
+gemma3:27b              2025-03-12T00:00:00Z       55000000000
 ```
 
 ## SLURM
