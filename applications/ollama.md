@@ -30,6 +30,7 @@ export TERM=xterm-256color
 export OLLAMA_NO_COLOR=1
 ollama serve &
 ollama pull vicuna
+ollama list
 ollama run vicuna
 ollama run llava:7b cafe.png > cafe.txt 2>&1 &
 ```
@@ -56,7 +57,7 @@ The port number can be reset as follows,
 export OLLAMA_HOST=127.0.0.1:8000
 ```
 
-Lastly, use
+Lastly, to run `ollama serve` in the background and redirect output,
 
 ```bash
 ollama serve > /dev/null 2>&1 &
@@ -65,7 +66,7 @@ until ollama list; do
 done
 ```
 
-to run `ollama serve` in the background with output redirection; so for `ollama run llava:7b cafe.png > cafe.txt 2>&1 &`, we have `cafe.txt`,
+so for `ollama run llava:7b cafe.png > cafe.txt 2>&1 &`, we have `cafe.txt`,
 
 ```
 This image shows the interior of a café, with a focus on the counter and bar area. There is a menu board displaying various food and
