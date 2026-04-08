@@ -6,27 +6,29 @@ sort: 51
 
 Web: <https://ollama.com/>, Discord: <https://discord.com/invite/ollama>.
 
-## Setup
+## Installation
 
 ```bash
+# 0.13.5 (10/1/2026)
+# curl -L https://ollama.com/download/ollama-linux-amd64.tgz | tar xvfz -
 # from 0.14.2 (19/1/2026)
 curl -L https://ollama.com/download/ollama-linux-amd64.tar.zst | \
 tar --use-compress-program=unzstd -xvf -
-# 0.13.5 (10/1/2026)
-# curl -L https://ollama.com/download/ollama-linux-amd64.tgz | tar xvfz -
+bin/ollama --help
 ```
 
-which gives the backbone of ceuadmin/ollama module,
+as the backbone of ceuadmin/ollama module.
+
+## Usage
 
 ```
-mpdule load ceuadmin/ollama
+VERSION=$(curl -s https://api.github.com/repos/ollama/ollama/releases/latest | \
+grep tag_name | cut -d '"' -f 4)
+version=${VERSION#v}
+module load ceuadmin/ollama/${version}
 export TERM=xterm-256color
 export OLLAMA_NO_COLOR=1
-ollama --help
 ollama serve &
-until ollama list; do
-  sleep 1
-done
 ollama pull vicuna
 ollama run vicuna
 ollama run llava:7b cafe.png > cafe.txt 2>&1 &
@@ -42,8 +44,6 @@ vicuna:latest    370739dc897b    3.8 GB    About an hour ago
 For information, we start
 
 ```bash
-# no messy screen
-# ollama serve > /dev/null 2>&1 &
 module load ceuadmin/chrome
 chrome 127.0.0.1:11434 &
 ```
@@ -58,9 +58,14 @@ export OLLAMA_HOST=127.0.0.1:8000
 
 Lastly, use
 
-`ollama serve > ollama.log 2>&1 &`
+```bash
+ollama serve > /dev/null 2>&1 &
+until ollama list; do
+  sleep 1
+done
+```
 
-to run `ollama serve` in the background with proper output redirection; so for `ollama run llava:7b cafe.png > cafe.txt 2>&1 &`, we have `cafe.txt`,
+to run `ollama serve` in the background with output redirection; so for `ollama run llava:7b cafe.png > cafe.txt 2>&1 &`, we have `cafe.txt`,
 
 ```
 This image shows the interior of a café, with a focus on the counter and bar area. There is a menu board displaying various food and
@@ -68,6 +73,76 @@ drink options, which suggests that this establishment offers a variety of bevera
 atmosphere appears warm and inviting, with natural light filtering in through the windows. It's a common type of establishment found in
 many urban areas where people can relax, grab a coffee or tea, or have a quick meal while socializing with friends or colleagues.
 ```
+
+## Chat: /api/chat
+
+From
+
+```bash
+curl http://localhost:11434/api/chat -d '{
+  "model": "vicuna",
+  "messages": [
+    { "role": "user", "content": "why is the sky blue?" }
+  ]
+}' > answers.json
+```
+
+We get a json output, or equivalently from the CLI,
+
+```
+>>> /?
+Available Commands:
+  /set            Set session variables
+  /show           Show model information
+  /load <model>   Load a session or model
+  /save <model>   Save your current session
+  /clear          Clear session context
+  /bye            Exit
+  /?, /help       Help for a command
+  /? shortcuts    Help for keyboard shortcuts
+
+Use """ to begin a multi-line message.
+
+>>> /show info
+
+  Model
+    architecture        llama
+    parameters          6.7B
+    context length      4096
+    embedding length    4096
+    quantization        Q4_0
+
+  Parameters
+    stop    "USER:"
+    stop    "ASSISTANT:"
+
+  System
+    A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful,
+      detailed, and polite answers to the user's questions.
+
+>>>  why the sky is blue
+```
+
+> The sky appears blue because of a phenomenon called Rayleigh scattering. This occurs when shorter wavelengths of light, like blue and
+> violet, are scattered in all directions by tiny molecules of gases such as nitrogen and oxygen that make up the Earth's atmosphere. The
+> scattering of these wavelengths causes them to be spread out over the entire visible spectrum, making the sky appear white or bright.
+>
+> However, the sun's rays are mainly blue during daylight hours, so when the sun is in the sky, the blue light from the sun is scattered
+> all around and reaches our eyes, which makes the sky appear blue.
+
+The answer could be slightly different in form, e.g.,
+
+> The color of the sky appears blue because the Earth's atmosphere scatters sunlight in all directions and blue light is scattered more
+> than other colors because it travels as shorter, smaller waves. This scattering of light makes it appear as if the sky is blue,
+> especially during the daytime when the Sun is high in the sky. The color of the sky can also be affected by the amount of water vapor and
+> dust particles in the atmosphere, which can make the sky appear more hazy or gray.
+
+This is from deepseek-r1.32b,
+
+> The sky appears blue due to Rayleigh scattering. Sunlight consists of various colors, each with different wavelengths. Blue light has a shorter wavelength and is scattered more by
+> molecules in the atmosphere, like nitrogen and oxygen. This scattering occurs predominantly during the day when the sun is high, making the sky appear blue. At sunrise or sunset,
+> longer paths through the atmosphere scatter out much of the blue light, revealing reds and oranges. Additionally, higher altitudes with thinner air result in a deeper blue sky due to
+> reduced scattering.
 
 ## Cloud models
 
@@ -99,6 +174,95 @@ gemma3:latest               c0494fe00251    3.3 GB    12 months ago
 qwen:latest                 d53d04290064    2.3 GB    12 months ago
 mistral:latest              f974a74358d6    4.1 GB    12 months ago
 vicuna:latest               370739dc897b    3.8 GB    13 months ago
+```
+
+## Big or many model(s)
+
+We could use the same trick elsewhere, e.g.,
+
+```bash
+export OLLAMA_MODELS=/rds/usr/$USER/hpc-work/HuggingFace
+ln -sf ${OLLAMA_MODELS} $HOME/.ollama
+```
+
+## GGUF
+
+> ​GGUF, which stands for Generic GPT Unified Format, is a binary file format designed for efficiently storing and loading large language models (LLMs). Developed as an extension of the GGML format, GGUF addresses the need for scalable and efficient deployment of extensive models, particularly those exceeding 100GB in size.
+
+Next, we build Llama-4-Maverick-17B-128E as described in <https://cambridge-ceu.github.io/csd3/systems/setup.html#fn:llama_cpp>
+
+```bash
+echo FROM ./Llama-4-Maverick-17B-128E-Instruct.gguf > Modelfile
+ollama create llama4maverick -f Modelfile
+ollama list
+```
+
+to get
+
+```
+NAME                                                       ID              SIZE      MODIFIED
+llama4maverick:latest                                      46d3f0108969    425 GB    About an hour ago
+mistrallite:latest                                         19594c72ecfd    4.4 GB    2 hours ago
+llama3.2:3b-instruct-q4_K_M                                a80c4f17acd5    2.0 GB    12 days ago
+gemma3:latest                                              c0494fe00251    3.3 GB    6 weeks ago
+hf.co/unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF:Q3_K_M    f24fb6af4e5f    34 GB     6 weeks ago
+qwen:latest                                                d53d04290064    2.3 GB    7 weeks ago
+mistral:latest                                             f974a74358d6    4.1 GB    7 weeks ago
+r1-1776:latest                                             140ea940f21d    42 GB     2 months ago
+gemma2:latest                                              ff02c3702f32    5.4 GB    2 months ago
+gemma2:27b                                                 53261bc9c192    15 GB     2 months ago
+phi4:latest                                                ac896e5b8b34    9.1 GB    2 months ago
+llama3.3:latest                                            a6eb4748fd29    42 GB     2 months ago
+deepseek-r1:32b                                            38056bbcbb2d    19 GB     2 months ago
+vicuna:latest                                              370739dc897b    3.8 GB    2 months ago
+```
+
+One can also avoid explicitly using a `Modelfile`,
+
+```bash
+#!/usr/bin/env bash
+
+module load ceuadmin/ollama
+ollama serve &
+OLLAMA_PID=$!
+sleep 10
+if [ -z "$1" ]; then
+    INPUT_FILE="DeepSeek-V3-0324-UD-IQ2_XXS.gguf"
+    OUTPUT_MODEL="deepseekv3"
+else
+    INPUT_FILE="$1"
+    OUTPUT_MODEL="$2"
+fi
+if [ ! -f "$INPUT_FILE" ]; then
+    echo "Error: Input file '$INPUT_FILE' not found."
+    kill $OLLAMA_PID
+    exit 1
+fi
+echo "FROM ./$INPUT_FILE" | \
+ollama create "$OUTPUT_MODEL" -f -
+ollama run "$OUTPUT_MODEL"
+kill $OLLAMA_PID
+```
+
+To get the latest (as of 6/8/2025) GPT-oss models from OpenAI,
+
+```bash
+ollama run gpt-oss:20b
+ollama run gpt-oss:120b
+ollama run gpt-oss:20b --enable-web-search
+```
+
+as in <https://ollama.com/blog/gpt-oss> and/or <https://simonwillison.net/2025/Aug/5/gpt-oss/>.
+
+## Llama 4
+
+Web, <https://ollama.com/library/llama4>
+
+This requires a recent version of ollama, nevertheless can be more specific,
+
+```bash
+ollama run llama4:scout
+ollama run llama4:maverick
 ```
 
 ## Highlights
@@ -195,96 +359,6 @@ for
 ...
 ```
 
-## Chat: /api/chat
-
-From
-
-```bash
-curl http://localhost:11434/api/chat -d '{
-  "model": "vicuna",
-  "messages": [
-    { "role": "user", "content": "why is the sky blue?" }
-  ]
-}' > answers.json
-```
-
-We get a json output, or equivalently from the CLI,
-
-```
->>> /?
-Available Commands:
-  /set            Set session variables
-  /show           Show model information
-  /load <model>   Load a session or model
-  /save <model>   Save your current session
-  /clear          Clear session context
-  /bye            Exit
-  /?, /help       Help for a command
-  /? shortcuts    Help for keyboard shortcuts
-
-Use """ to begin a multi-line message.
-
->>> /show info
-
-  Model
-    architecture        llama
-    parameters          6.7B
-    context length      4096
-    embedding length    4096
-    quantization        Q4_0
-
-  Parameters
-    stop    "USER:"
-    stop    "ASSISTANT:"
-
-  System
-    A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful,
-      detailed, and polite answers to the user's questions.
-
->>>  why the sky is blue
-```
-
-> The sky appears blue because of a phenomenon called Rayleigh scattering. This occurs when shorter wavelengths of light, like blue and
-> violet, are scattered in all directions by tiny molecules of gases such as nitrogen and oxygen that make up the Earth's atmosphere. The
-> scattering of these wavelengths causes them to be spread out over the entire visible spectrum, making the sky appear white or bright.
->
-> However, the sun's rays are mainly blue during daylight hours, so when the sun is in the sky, the blue light from the sun is scattered
-> all around and reaches our eyes, which makes the sky appear blue.
-
-The answer could be slightly different in form, e.g.,
-
-> The color of the sky appears blue because the Earth's atmosphere scatters sunlight in all directions and blue light is scattered more
-> than other colors because it travels as shorter, smaller waves. This scattering of light makes it appear as if the sky is blue,
-> especially during the daytime when the Sun is high in the sky. The color of the sky can also be affected by the amount of water vapor and
-> dust particles in the atmosphere, which can make the sky appear more hazy or gray.
-
-This is from deepseek-r1.32b,
-
-> The sky appears blue due to Rayleigh scattering. Sunlight consists of various colors, each with different wavelengths. Blue light has a shorter wavelength and is scattered more by
-> molecules in the atmosphere, like nitrogen and oxygen. This scattering occurs predominantly during the day when the sun is high, making the sky appear blue. At sunrise or sunset,
-> longer paths through the atmosphere scatter out much of the blue light, revealing reds and oranges. Additionally, higher altitudes with thinner air result in a deeper blue sky due to
-> reduced scattering.
-
-## Llama 4
-
-Web, <https://ollama.com/library/llama4>
-
-This requires a recent version of ollama, nevertheless can be more specific,
-
-```bash
-ollama run llama4:scout
-ollama run llama4:maverick
-```
-
-## A big or many model(s)
-
-We could use the same trick elsewhere, e.g.,
-
-```bash
-export OLLAMA_MODELS=/rds/usr/$USER/hpc-work/HuggingFace
-ln -sf ${OLLAMA_MODELS} $HOME/.ollama
-```
-
 ## SLURM
 
 It is lengthy from the login session, so an attempt is made for a batch job,
@@ -316,72 +390,3 @@ ollama run gemma3 "Why the sky is blue?" >> $output
 ```
 
 where 1 minute is granted to establish the server, followed by a call with our prompt as a command-line argument.
-
-## GGUF
-
-> ​GGUF, which stands for Generic GPT Unified Format, is a binary file format designed for efficiently storing and loading large language models (LLMs). Developed as an extension of the GGML format, GGUF addresses the need for scalable and efficient deployment of extensive models, particularly those exceeding 100GB in size.
-
-Next, we build Llama-4-Maverick-17B-128E as described in <https://cambridge-ceu.github.io/csd3/systems/setup.html#fn:llama_cpp>
-
-```bash
-echo FROM ./Llama-4-Maverick-17B-128E-Instruct.gguf > Modelfile
-ollama create llama4maverick -f Modelfile
-ollama list
-```
-
-to get
-
-```
-NAME                                                       ID              SIZE      MODIFIED
-llama4maverick:latest                                      46d3f0108969    425 GB    About an hour ago
-mistrallite:latest                                         19594c72ecfd    4.4 GB    2 hours ago
-llama3.2:3b-instruct-q4_K_M                                a80c4f17acd5    2.0 GB    12 days ago
-gemma3:latest                                              c0494fe00251    3.3 GB    6 weeks ago
-hf.co/unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF:Q3_K_M    f24fb6af4e5f    34 GB     6 weeks ago
-qwen:latest                                                d53d04290064    2.3 GB    7 weeks ago
-mistral:latest                                             f974a74358d6    4.1 GB    7 weeks ago
-r1-1776:latest                                             140ea940f21d    42 GB     2 months ago
-gemma2:latest                                              ff02c3702f32    5.4 GB    2 months ago
-gemma2:27b                                                 53261bc9c192    15 GB     2 months ago
-phi4:latest                                                ac896e5b8b34    9.1 GB    2 months ago
-llama3.3:latest                                            a6eb4748fd29    42 GB     2 months ago
-deepseek-r1:32b                                            38056bbcbb2d    19 GB     2 months ago
-vicuna:latest                                              370739dc897b    3.8 GB    2 months ago
-```
-
-One can also avoid explicitly using a `Modelfile`,
-
-```bash
-#!/usr/bin/env bash
-
-module load ceuadmin/ollama
-ollama serve &
-OLLAMA_PID=$!
-sleep 10
-if [ -z "$1" ]; then
-    INPUT_FILE="DeepSeek-V3-0324-UD-IQ2_XXS.gguf"
-    OUTPUT_MODEL="deepseekv3"
-else
-    INPUT_FILE="$1"
-    OUTPUT_MODEL="$2"
-fi
-if [ ! -f "$INPUT_FILE" ]; then
-    echo "Error: Input file '$INPUT_FILE' not found."
-    kill $OLLAMA_PID
-    exit 1
-fi
-echo "FROM ./$INPUT_FILE" | \
-ollama create "$OUTPUT_MODEL" -f -
-ollama run "$OUTPUT_MODEL"
-kill $OLLAMA_PID
-```
-
-To get the latest (as of 6/8/2025) GPT-oss models from OpenAI,
-
-```bash
-ollama run gpt-oss:20b
-ollama run gpt-oss:120b
-ollama run gpt-oss:20b --enable-web-search
-```
-
-as in <https://ollama.com/blog/gpt-oss> and/or <https://simonwillison.net/2025/Aug/5/gpt-oss/>.
