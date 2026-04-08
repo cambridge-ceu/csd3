@@ -6,6 +6,24 @@ sort: 51
 
 Web: <https://ollama.com/>, Discord: <https://discord.com/invite/ollama>.
 
+## Highlights
+
+- 0.20. Support Gemma 4, where e as in 2eB is effective for edge device deployments and `ollama run gemma4:e2b --think=false` leads to faster run with ability to handle images.
+  - 2B, `ollama run gemma4:e2b`.
+  - 4B, `ollama run gemma4:e4b`.
+  - 26B, `ollama run gemma4:26b`.
+  - 31B, `ollama run gemma4:31b`.
+  - Cloud 31B, `ollama run gemma4:31b-cloud`.
+- 0.19. [Support under MLX](https://ollama.com/blog/mlx) for Qwen3.5, <https://ollama.com/library/qwen3.5>, a family of open-source multimodal models:
+  - ollama launch claude --model qwen3.5:35b-a3b-coding-nvfp4 # ([NVFP4 format](https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/))
+  - ollama launch openclaw --model qwen3.5:35b-a3b-coding-nvfp4
+  - ollama run qwen3.5:35b-a3b-coding-nvfp4
+- 0.18. Ollama is official provider for OpenClaw, i.e., `openclaw onboard --auth-choice ollama`.
+- 0.17. Support OpenClaw, e.g., `ollama launch openclaw`.
+- 0.16.   `ollama` command for different models and for use with apps out-of-the-box, e.g., `ollama launch --model minimax-m2.5:cloud`.
+- 0.13.0. DeepSeek-OCR, <https://github.com/deepseek-ai/DeepSeek-OCR>.
+- 0.12.5. Claude Code API.
+
 ## Installation
 
 ```bash
@@ -256,24 +274,6 @@ This requires a recent version of ollama, nevertheless can be more specific,
 ollama run llama4:scout
 ollama run llama4:maverick
 ```
-
-## Highlights
-
-- 0.20. Support Gemma 4, where e as in 2eB is effective for edge device deployments and `ollama run gemma4:e2b --think=false` leads to faster run with ability to handle images.
-  - 2B, `ollama run gemma4:e2b`.
-  - 4B, `ollama run gemma4:e4b`.
-  - 26B, `ollama run gemma4:26b`.
-  - 31B, `ollama run gemma4:31b`.
-  - Cloud 31B, `ollama run gemma4:31b-cloud`.
-- 0.19. [Support under MLX](https://ollama.com/blog/mlx) for Qwen3.5, <https://ollama.com/library/qwen3.5>, a family of open-source multimodal models:
-  - ollama launch claude --model qwen3.5:35b-a3b-coding-nvfp4 # ([NVFP4 format](https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/))
-  - ollama launch openclaw --model qwen3.5:35b-a3b-coding-nvfp4
-  - ollama run qwen3.5:35b-a3b-coding-nvfp4
-- 0.18. Ollama is official provider for OpenClaw, i.e., `openclaw onboard --auth-choice ollama`.
-- 0.17. Support OpenClaw, e.g., `ollama launch openclaw`.
-- 0.16.   `ollama` command for different models and for use with apps out-of-the-box, e.g., `ollama launch --model minimax-m2.5:cloud`.
-- 0.13.0. DeepSeek-OCR, <https://github.com/deepseek-ai/DeepSeek-OCR>.
-- 0.12.5. Claude Code API.
 
 ## REST API: /api/generate
 
