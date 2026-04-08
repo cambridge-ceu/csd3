@@ -75,7 +75,7 @@ The port number can be reset as follows,
 export OLLAMA_HOST=127.0.0.1:8000
 ```
 
-We have from `ollama list`,
+The list can easily be extended, as shown,
 
 ```
 NAME                        ID              SIZE      MODIFIED
