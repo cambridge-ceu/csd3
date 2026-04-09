@@ -85,8 +85,14 @@ done
 ollama list
 module load ceuadmin/Pi/0.65.2
 ollama launch pi --model kimi-k2.5:cloud
-touch kimi2.5.txt
-ollama launch pi --yes --model kimi-k2.5:cloud -- @context.md >> kimi2.5.txt
+ollama launch pi --yes --model kimi-k2.5:cloud -- @context.md \
+| tr '\r' '\n' \
+| perl -pe 's/\e\[[0-9;?]*[ -\/]*[@-~]//g; s/\e\].*?(\a|\e\\)//g' \
+> kimi2.5.txt
+pi -p --mode text \
+  --provider ollama --model kimi-k2.5:cloud \
+  --system-prompt "Return only the final answer. No questions, no options, no explanations." \
+  @context.md > kim2.5.txt
 pi run --provider ollama --model gemma4:e2B @context.md
 ```
 The pi-autoresearch module enables /autoresearch.
