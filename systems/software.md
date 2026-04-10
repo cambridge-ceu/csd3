@@ -10,6 +10,13 @@ Software-specific configurations can often be found from `~/.config` and `~/.loc
 
 See [https://cambridge-ceu.github.io/csd3/systems/ceuadmin.html](https://cambridge-ceu.github.io/csd3/systems/ceuadmin.html) for additional information.
 
+## gimp
+
+```bash
+gimp --version
+gimp &
+```
+
 ## git
 
 The popular git can be loaded,
@@ -33,7 +40,7 @@ to load the Word document.
 
 ## MATLAB
 
-Official website: [https://www.mathworks.com/products/matlab.html](https://www.mathworks.com/products/matlab.html).
+Official website: <https://www.mathworks.com/products/matlab.html>.
 
 ```bash
 module avail matlab
