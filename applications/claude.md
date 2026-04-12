@@ -115,24 +115,36 @@ This section offers a flavour of Anthropic API from Ollama/0.15.2 onwards, whose
 ```bash
 module load ceuadmin/ollama/0.20.2
 ollama serve > /dev/null 2>&1 &
-until ollama list; do
+while ! curl -s http://localhost:11434/api/tags >/dev/null; do
   sleep 1
 done
+ollama list | (read header; echo "$header"; sort -f -k1,1)
 ```
 
 We see
 
 ```
 NAME                        ID              SIZE      MODIFIED
-qwen3-coder:480b-cloud      e30e45586389    -         3 months ago
-deepseek-v3.1:671b-cloud    d3749919e45f    -         4 months ago
-gpt-oss:20b                 aa4295ac10c3    13 GB     4 months ago
-llava:7b                    8dd30f6b0cb1    4.7 GB    8 months ago
-phi4:latest                 ac896e5b8b34    9.1 GB    9 months ago
-gemma3:latest               c0494fe00251    3.3 GB    10 months ago
-qwen:latest                 d53d04290064    2.3 GB    10 months ago
-mistral:latest              f974a74358d6    4.1 GB    10 months ago
-vicuna:latest               370739dc897b    3.8 GB    11 months ago
+deepseek-v3.1:671b-cloud    d3749919e45f    -         6 months ago
+gemma3:latest               c0494fe00251    3.3 GB    13 months ago
+gemma4:26b                  5571076f3d70    17 GB     5 minutes ago
+gemma4:31b-cloud            c5272cd7f792    -         7 days ago
+gemma4:e2B                  7fbdbf8f5e45    7.2 GB    7 days ago
+gemma4:e4b                  c6eb396dbd59    9.6 GB    5 days ago
+glm-4.7-flash:latest        d1a8a26252f1    19 GB     7 days ago
+glm-5.1:cloud               59472abf9d0a    -         3 days ago
+gpt-oss:20b                 aa4295ac10c3    13 GB     6 months ago
+kimi-k2.5:cloud             6d1c3246c608    -         12 days ago
+llava:7b                    8dd30f6b0cb1    4.7 GB    10 months ago
+minimax-m2.5:cloud          c0d5751c800f    -         4 weeks ago
+minimax-m2.7:cloud          06daa293c105    -         3 weeks ago
+mistral:latest              f974a74358d6    4.1 GB    13 months ago
+phi4:latest                 ac896e5b8b34    9.1 GB    11 months ago
+qwen3.5:27b                 7653528ba5cb    17 GB     11 days ago
+qwen3.5:9b                  6488c96fa5fa    6.6 GB    11 days ago
+qwen3-coder:480b-cloud      e30e45586389    -         5 months ago
+qwen:latest                 d53d04290064    2.3 GB    13 months ago
+vicuna:latest               370739dc897b    3.8 GB    13 months ago
 ```
 
 so it is ready for
@@ -329,16 +341,13 @@ On the first attempt it also gives,
 The following actually works,
 
 ```bash
-# Set environment variables
-export ANTHROPIC_MODEL="gemma4:e4b"
-export DEFAULT_MODEL="gemma4:e4b"
-export DEFAULT_CHAT_MODEL="gemma4:e4b"
-export DEFAULT_COMPLETION_MODEL="gemma4:e4b"
-export CLAUDE_CODE_SUBAGENT_MODEL="gemma4:e4b"
-
-# Adjust timeout settings (to handle slower local inference vs API)
+export ANTHROPIC_MODEL="gemma:26b"
+export DEFAULT_MODEL="gemma:26b"
+export DEFAULT_CHAT_MODEL="gemma:26b"
+export DEFAULT_COMPLETION_MODEL="gemma:26b"
+export CLAUDE_CODE_SUBAGENT_MODEL="gemma:26b"
 export CLAUDE_CODE_TIMEOUT=300
-ollama launch claude --model gemma4:e4b
+ollama launch claude --model gemma4:26b
 ```
 
-and the ccsize example is also more structured (omitted).
+Note the timeout settings for slower local inference vs API, and our ccsize example is also more structured (omitted).
