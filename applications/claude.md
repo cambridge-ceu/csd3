@@ -113,7 +113,7 @@ Commands:
 This section offers a flavour of Anthropic API from Ollama/0.15.2 onwards, whose local/cloud models can be used for free. From
 
 ```bash
-module load ceuadmin/ollama/0.15.2
+module load ceuadmin/ollama/0.20.2
 ollama serve > /dev/null 2>&1 &
 until ollama list; do
   sleep 1
@@ -145,6 +145,7 @@ export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 claude --model gpt-oss:20b --allow-dangerously-skip-permissions
 claude --model qwen3-coder:480b-cloud --allow-dangerously-skip-permissions
 ollama launch claude --model gemma4:31b-cloud
+ollama launch claude --model glm-5.1:cloud
 ```
 
 The first model gives,
@@ -323,3 +324,21 @@ On the first attempt it also gives,
 
  ctrl-g to edit in Pico · ~/.claude/plans/snoopy-coalescing-lemon.md
 ```
+## Local models
+
+The following actually works,
+
+```bash
+# Set environment variables
+export ANTHROPIC_MODEL="gemma4:e4b"
+export DEFAULT_MODEL="gemma4:e4b"
+export DEFAULT_CHAT_MODEL="gemma4:e4b"
+export DEFAULT_COMPLETION_MODEL="gemma4:e4b"
+export CLAUDE_CODE_SUBAGENT_MODEL="gemma4:e4b"
+
+# Adjust timeout settings (to handle slower local inference vs API)
+export CLAUDE_CODE_TIMEOUT=300
+ollama launch claude --model gemma:e4b
+```
+
+and the ccsize example is also more structured (omitted).
