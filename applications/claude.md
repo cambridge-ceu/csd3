@@ -341,11 +341,11 @@ On the first attempt it also gives,
 The following actually works,
 
 ```bash
-export ANTHROPIC_MODEL="gemma:26b"
-export DEFAULT_MODEL="gemma:26b"
-export DEFAULT_CHAT_MODEL="gemma:26b"
-export DEFAULT_COMPLETION_MODEL="gemma:26b"
-export CLAUDE_CODE_SUBAGENT_MODEL="gemma:26b"
+export ANTHROPIC_MODEL="gemma4:26b"
+export DEFAULT_MODEL="gemma4:26b"
+export DEFAULT_CHAT_MODEL="gemma4:26b"
+export DEFAULT_COMPLETION_MODEL="gemma4:26b"
+export CLAUDE_CODE_SUBAGENT_MODEL="gemma4:26b"
 export CLAUDE_CODE_TIMEOUT=300
 ollama launch claude --model gemma4:26b
 ```
