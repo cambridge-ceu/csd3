@@ -338,7 +338,7 @@ export CLAUDE_CODE_SUBAGENT_MODEL="gemma4:e4b"
 
 # Adjust timeout settings (to handle slower local inference vs API)
 export CLAUDE_CODE_TIMEOUT=300
-ollama launch claude --model gemma:e4b
+ollama launch claude --model gemma4:e4b
 ```
 
 and the ccsize example is also more structured (omitted).
