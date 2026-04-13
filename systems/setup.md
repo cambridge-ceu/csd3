@@ -567,6 +567,7 @@ All entries are ordered chronologically.
 | 2026-04-06 | llama.cpp/b8676                  | Generic               |
 | 2026-04-07 | Pi/0.65.2                        | Generic               |
 | 2026-04-10 | inkscape/1.4.2                   | Generic               |
+| 2026-04-13 | Codex/0.120.0                    | Generic[^codex]       |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2315,3 +2316,7 @@ They are generated from script [setup.sh](setup.sh),
 [^pi]: **Pi**
 
     See <https://cambridge-ceu.github.io/csd3/applications/Pi.html>.
+
+[^codex]: **Codex**
+
+    This slowly builds up at <https://cambridge-ceu.github.io/csd3/applications/Codex.html>
