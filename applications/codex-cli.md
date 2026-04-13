@@ -14,7 +14,7 @@ This following is is in line with setup for OpenClaw, Pi, etc., which is more ex
 
 ```bash
 module load ceuadmin/node/22.16.0
-npm i -g @openai/codex@0.120.0 --prefix=$CEUADMIN/Codex/0.120.0
+npm i -g @openai/codex@0.120.0 --prefix=$CEUADMIN/codex-cli/0.120.0
 ```
 
 ## Running Gemma 4
