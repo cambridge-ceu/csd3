@@ -199,7 +199,7 @@ ln -sf ${OLLAMA_MODELS} $HOME/.ollama
 
 > ​GGUF, which stands for Generic GPT Unified Format, is a binary file format designed for efficiently storing and loading large language models (LLMs). Developed as an extension of the GGML format, GGUF addresses the need for scalable and efficient deployment of extensive models, particularly those exceeding 100GB in size.
 
-Next, we build Llama-4-Maverick-17B-128E as described in <https://cambridge-ceu.github.io/csd3/systems/setup.html#fn:llama_cpp>
+Next, we build Llama-4-Maverick-17B-128E as described in <https://cambridge-ceu.github.io/csd3/applications/llama.cpp.html>
 
 ```bash
 echo FROM ./Llama-4-Maverick-17B-128E-Instruct.gguf > Modelfile
