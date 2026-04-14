@@ -13,7 +13,7 @@ GitHub: <https://github.com/mozilla-firefox/firefox>
 alias firefox='MOZ_DISABLE_CONTENT_SANDBOX=1 /usr/bin/firefox > /dev/null 2>&1'
 ```
 
-Note that
+Since `module unload ceuadmin/firefox` unsets the alias, it is useful to call `source ~/.bashrc` to restore this. Moreover, note that
 
 1. With its handling of sandbox, it looks better to use the nightly builds below.
 2. Applications may call /usr/bin/firefox as default browser (e.g., postman), so it may be appropriate to start it BEFORE the application.
