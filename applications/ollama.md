@@ -30,6 +30,12 @@ Web: <https://ollama.com/>, Discord: <https://discord.com/invite/ollama>.
 # 0.13.5 (10/1/2026)
 # curl -L https://ollama.com/download/ollama-linux-amd64.tgz | tar xvfz -
 # from 0.14.2 (19/1/2026)
+# Get latest version
+VERSION=$(curl -s https://api.github.com/repos/ollama/ollama/releases/latest \
+  | grep tag_name | cut -d '"' -f 4)
+version=${VERSION#v}
+INSTALL_DIR="${CEUADMIN}/ollama/${version}"
+mkdir -p "$INSTALL_DIR" && cd "$INSTALL_DIR"
 curl -L https://ollama.com/download/ollama-linux-amd64.tar.zst | \
 tar --use-compress-program=unzstd -xvf -
 bin/ollama --help
@@ -40,10 +46,7 @@ as the backbone of ceuadmin/ollama module.
 ## Usage
 
 ```
-VERSION=$(curl -s https://api.github.com/repos/ollama/ollama/releases/latest | \
-grep tag_name | cut -d '"' -f 4)
-version=${VERSION#v}
-module load ceuadmin/ollama/${version}
+module load ceuadmin/ollama
 export TERM=xterm-256color
 export OLLAMA_NO_COLOR=1
 ollama serve &
