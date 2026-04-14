@@ -17,18 +17,44 @@ module load ceuadmin/node/22.16.0
 npm i -g @openai/codex@0.120.0 --prefix=$CEUADMIN/codex-cli/0.120.0
 ```
 
-## Running Gemma 4
+A profile is with `~/.codex/config.toml`.
 
-This follows this [article](https://medium.com/google-cloud/i-ran-gemma-4-as-a-local-model-in-codex-cli-7fda754dc0d4),
+## Integration with Ollama & llama.cpp
 
-First, we have Ollama, tunning with the `ssh -L 11434:localhost:11434 <remote-machine>` trick.
+Web, <https://docs.ollama.com/integrations/codex>
+
+```
+[model_providers.ollama-launch]
+name = "Ollama"
+base_url = "http://localhost:11434/v1"
+
+[profiles.ollama-launch]
+model = "gpt-oss:120b"
+model_provider = "ollama-launch"
+
+[profiles.ollama-cloud]
+model = "gpt-oss:120b-cloud"
+model_provider = "ollama-launch"
+```
+
+which enables,
 
 ```bash
+codex --profile ollama-launch
+codex --profile ollama-cloud
+```
+
+The [article](https://medium.com/google-cloud/i-ran-gemma-4-as-a-local-model-in-codex-cli-7fda754dc0d4) recommeneds to use Ollama 0.20.5, 
+
+```bash
+ollama launch codex --config
+codex --oss -m gpt-oss:120b
+codex --oss -m gpt-oss:120b-cloud
 ollama pull gemma4:31b
 codex --oss -m gemma4:31b
 ```
 
-where it is recommened to use Ollama 0.20.5, and llama.cpp has these options.
+and llama.cpp with these options.
 
 ```bash
 llama-server \
