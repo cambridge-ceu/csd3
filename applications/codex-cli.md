@@ -44,7 +44,7 @@ codex --profile ollama-launch
 codex --profile ollama-cloud
 ```
 
-The [article](https://medium.com/google-cloud/i-ran-gemma-4-as-a-local-model-in-codex-cli-7fda754dc0d4) recommeneds to use Ollama 0.20.5, 
+The [article](https://medium.com/google-cloud/i-ran-gemma-4-as-a-local-model-in-codex-cli-7fda754dc0d4) recommeneds use of Ollama 0.20.5, 
 
 ```bash
 ollama launch codex --config
