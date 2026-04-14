@@ -86,3 +86,21 @@ setenv FRESH_CONFIG $root/config.example.json
 ## Usage notes
 
 There are numerous features, such as mouse cursor to set position, Ctrl-E to open files from a directory tree (as in ceuadmin/edit), Ctrl-P to bring up the command panel, setting terminal display themes and key binding styles.
+
+A LSP server for R is implemented as follows,
+
+1. Create ~/.config/fresh/settings.json
+
+```
+"r": {
+  "command": "R",
+  "args": "--slave -e languageserver::run()",
+  "filetypes": ["r", "R"]
+}
+```
+2. touch test.Rproj
+3. module load ceuadmin/R ceuadmin/fresh
+4. fresh test.r
+5. Restart LSP server, select `Show Completions` and hover the cursor.
+
+giving ![](files/LSP.png)
