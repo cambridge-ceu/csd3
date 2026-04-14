@@ -568,6 +568,7 @@ All entries are ordered chronologically.
 | 2026-04-07 | Pi/0.65.2                        | Generic               |
 | 2026-04-10 | inkscape/1.4.2                   | Generic               |
 | 2026-04-13 | codex-cli/0.120.0                | Generic[^codex]       |
+| 2026-04-14 | ollama/0.20.7                    | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
