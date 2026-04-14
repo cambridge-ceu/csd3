@@ -101,6 +101,12 @@ mistral:latest              f974a74358d6    4.1 GB    12 months ago
 vicuna:latest               370739dc897b    3.8 GB    13 months ago
 ```
 
+On central model cache (shared storage), we use:
+
+```bash
+export OLLAMA_MODELS=/shared/ollama/models
+```
+
 Lastly, to run `ollama serve` in the background and redirect output,
 
 ```bash
