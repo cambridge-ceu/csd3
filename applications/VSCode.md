@@ -163,6 +163,8 @@ To integrate with VS Code, we have "Preference: Open Settings (JSON)" (Ctrl +, )
 }
 ```
 
+A screenshot is given here, ![](files/VSCode.png)
+
 ## Zed
 
 This is one of the competitors, noted for flatpak:
