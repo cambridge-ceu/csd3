@@ -103,13 +103,7 @@ A LSP server for R is implemented as follows,
 
 giving ![](files/fresh-LSP-R.png)
 
-We also make bash-language-server available with
-
-```bash
-npm install -g bash-language-server --prefix $CEUADMIN/fresh/$version
-```
-
-and then amend both the fresh module file and ~/.config/settings.json as follows,
+We also make bash-language-server available and ~/.config/settings.json as follows,
 
 ```
 {
