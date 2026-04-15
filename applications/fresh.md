@@ -98,9 +98,8 @@ A LSP server for R is implemented as follows,
   "filetypes": ["r", "R"]
 }
 ```
-2. touch test.Rproj
-3. module load ceuadmin/R ceuadmin/fresh
-4. fresh test.r
-5. Restart LSP server, select `Show Completions` and hover the cursor.
+2. module load ceuadmin/R ceuadmin/fresh
+3. fresh test.r
+4. Restart LSP server, select `Show Completions` and hover the cursor.
 
 giving ![](files/LSP.png)
