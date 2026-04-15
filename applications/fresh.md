@@ -103,9 +103,7 @@ A LSP server for R is implemented as follows,
 
 giving ![](files/LSP.png)
 
-## bash-language-server
-
-We first make it available with
+We also make bash-language-server available with
 
 ```bash
 npm install -g bash-language-server --prefix $CEUADMIN/fresh/$version
