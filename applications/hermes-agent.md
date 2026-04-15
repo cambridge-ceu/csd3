@@ -6,7 +6,7 @@ sort: 40
 
 GitHub, <https://github.com/NousResearch/hermes-agent>
 
-## 2026.4.13
+## 2026.4.13 (0.9.0)
 
 ```bash
 VERSION=2026.4.13
