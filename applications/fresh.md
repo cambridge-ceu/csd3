@@ -101,7 +101,7 @@ A LSP server for R is implemented as follows,
 - fresh test.r
 - `LSP` --> `Restart Server` --> `Show Completions` and put cursor on a key word (`Show Hover Info`).
 
-giving ![](files/LSP.png)
+giving ![](files/fresh-LSP-R.png)
 
 We also make bash-language-server available with
 
@@ -125,3 +125,5 @@ and then amend both the fresh module file and ~/.config/settings.json as follows
   }
 }
 ```
+
+giving ![](files/fresh-LSP-Bash.png)
