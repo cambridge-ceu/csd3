@@ -55,6 +55,8 @@ hermes-agent --help
 
 ## Ollama
 
+URL, <https://docs.ollama.com/integrations/hermes>
+
 ```bash
 module load ceuadmin/ollama
 ollama serve > /dev/null 2>&1 &
