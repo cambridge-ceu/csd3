@@ -100,6 +100,6 @@ A LSP server for R is implemented as follows,
 ```
 2. module load ceuadmin/R ceuadmin/fresh
 3. fresh test.r
-4. Restart LSP server, select `Show Completions` and hover the cursor.
+4. `LSP` --> `Restart Server` --> `Show Completions` and put cursor on a key worda (`Show Hover Info`).
 
 giving ![](files/LSP.png)
