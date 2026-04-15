@@ -102,3 +102,28 @@ A LSP server for R is implemented as follows,
 - `LSP` --> `Restart Server` --> `Show Completions` and put cursor on a key word (`Show Hover Info`).
 
 giving ![](files/LSP.png)
+
+## bash-language-server
+
+We first make it available with
+
+```bash
+npm install -g bash-language-server --prefix $CEUADMIN/fresh/$version
+```
+
+and then amend both the fresh module file and ~/.config/settings.json as follows,
+
+```
+{
+  "r": {
+    "command": "R",
+    "args": ["--slave", "-e", "languageserver::run()"],
+    "filetypes": ["r", "R"]
+  },
+  "bash": {
+    "command": "bash-language-server",
+    "args": ["start"],
+    "filetypes": ["sh", "bash"]
+  }
+}
+```
