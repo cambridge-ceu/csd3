@@ -140,9 +140,9 @@ manhattan(gwas_results, chr=chr_col, p=pval_col)
 
 Replace `"my_gwas_results.txt"` with the actual name of your GWAS results file. Also, make sure to specify the correct column names for chromosome and p-value in `chr_col` and `pval_col`, respectively.
 
-## bash-language-server
+## Bash IDE
 
-As suggested, both ShellCheck and bash-language-server are enabled.
+The named extension requires both ShellCheck and bash-language-server to be enabled.
 
 To integrate with VS Code, we have "Preference: Open Settings (JSON)" (Ctrl +, ) as follows,
 
