@@ -4,7 +4,7 @@ sort: 54
 
 # OpenClaw
 
-Web: <https://openclaw.ai/>
+Web: <https://openclaw.ai/>, <https://clawhub.ai/>
 
 ## 2026.4.14
 
