@@ -21,6 +21,8 @@ export OPENCLAW_CONFIG_PATH="$BASE/config.json"
 openclaw plugins install ollama
 ```
 
+from which one finds $BASE/lib/node_modules/openclaw/dist/plugin-sdk/extensions /ollama.
+
 ## Setup
 
 It has a flavour of settings for libvips.
