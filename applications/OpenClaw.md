@@ -21,7 +21,10 @@ export OPENCLAW_CONFIG_PATH="$BASE/config.json"
 openclaw plugins install ollama
 ```
 
-from which one finds $BASE/lib/node_modules/openclaw/dist/plugin-sdk/extensions /ollama.
+from which one finds
+
+- $BASE/lib/node_modules/openclaw/dist/plugin-sdk/extensions/ollama
+- $BASE/lib/node_modules/openclaw/dist/extensions/ollama
 
 ## Setup
 
