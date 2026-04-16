@@ -44,7 +44,7 @@ prepend-path      PATH                 $root/bin
 setenv            VIRTUAL_ENV          $root
 ```
 
-Now, our installation is tested wich
+Now, our installation is tested with
 
 ```bash
 module load ceuadmin/hermes-agent
