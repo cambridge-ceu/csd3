@@ -4,6 +4,24 @@ sort: 52
 
 # node
 
+GitHub, <https://github.com/nodejs/node>
+
+## 24.15.0
+
+```bash
+export version=24.15.0
+wget -qO- https://github.com/nodejs/node/archive/refs/tags/v$version.tar.gz | \
+tar xvfz -
+cd node-$version
+module load ceuadmin/gcc/12.5.0
+./configure --prefix=$CEUADMIN/node/$version
+make
+```
+
+noting that gcc/12.5.0 is used.
+
+## 18.20.5
+
 This is in accordance with the GNU software,
 
 ```bash
