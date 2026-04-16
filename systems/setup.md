@@ -573,6 +573,7 @@ All entries are ordered chronologically.
 | 2026-04-15 | shellcheck/0.11.0                | Generic[^shellcheck]  |
 | ""         | bash-language-server/5.6.0       | Genetic[^bls]         |
 | ""         | hermes-agent/2026.4.13           | Genetic[^hermes]      |
+| 2026-04-16 | OpenClaw/2026.4.14               | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
