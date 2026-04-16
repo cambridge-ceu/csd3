@@ -10,12 +10,13 @@ Web: <https://openclaw.ai/>, <https://clawhub.ai/>
 
 ```bash
 # OpenClaw/2026.4.14
-module load ceuadmin/node/22.16.0
-export BASE="$CEUADMIN/OpenClaw/2026.4.14"
+module load ceuadmin/node/24.15.0
+export version=2026.4.14
+export BASE="$CEUADMIN/OpenClaw/$version"
 npm view openclaw versions
-npm install -g openclaw@2026.4.14 --prefix "$BASE"
+npm install -g "openclaw@$version" --prefix "$BASE"
 # Extensions
-module load ceuadmin/OpenClaw/2026.4.14
+module load ceuadmin/OpenClaw/$version
 export OPENCLAW_STATE_DIR="$BASE/state"
 export OPENCLAW_CONFIG_PATH="$BASE/config.json"
 openclaw plugins install ollama
@@ -25,6 +26,24 @@ from which one finds
 
 - $BASE/lib/node_modules/openclaw/dist/plugin-sdk/extensions/ollama
 - $BASE/lib/node_modules/openclaw/dist/extensions/ollama
+
+It turns out node/22.16.0 is a bit too old, so we resort to 24.15.0 (LTS).
+
+```
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: 'undici@8.0.2',
+npm warn EBADENGINE   required: { node: '>=22.19.0' },
+npm warn EBADENGINE   current: { node: 'v22.16.0', npm: '10.9.2' }
+npm warn EBADENGINE }
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated npmlog@5.0.1: This package is no longer supported.
+npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+npm warn deprecated are-we-there-yet@2.0.0: This package is no longer supported.
+npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm warn deprecated gauge@3.0.2: This package is no longer supported.
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+npm warn deprecated tar@6.2.1: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+```
 
 ## Setup
 
