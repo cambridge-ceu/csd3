@@ -6,16 +6,16 @@ sort: 54
 
 Web: <https://openclaw.ai/>
 
-## 2026.3.28
+## 2026.4.14
 
 ```bash
-# OpenClaw/2026.3.28
+# OpenClaw/2026.4.14
 module load ceuadmin/node/22.16.0
-export BASE="$CEUADMIN/OpenClaw/2026.3.28"
+export BASE="$CEUADMIN/OpenClaw/2026.4.14"
 npm view openclaw versions
-npm install -g openclaw@2026.3.28 --prefix "$BASE"
+npm install -g openclaw@2026.4.14 --prefix "$BASE"
 # Extensions
-module load ceuadmin/OpenClaw/2026.3.28
+module load ceuadmin/OpenClaw/2026.4.14
 export OPENCLAW_STATE_DIR="$BASE/state"
 export OPENCLAW_CONFIG_PATH="$BASE/config.json"
 openclaw plugins install ollama
