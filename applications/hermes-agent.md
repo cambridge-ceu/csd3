@@ -44,7 +44,7 @@ prepend-path      PATH                 $root/bin
 setenv            VIRTUAL_ENV          $root
 ```
 
-## Usage
+Now, our installation is tested wich
 
 ```bash
 module load ceuadmin/hermes-agent
@@ -53,7 +53,7 @@ hermes setup
 hermes-agent --help
 ```
 
-## Ollama
+## Integration with Ollama
 
 URL, <https://docs.ollama.com/integrations/hermes>
 
