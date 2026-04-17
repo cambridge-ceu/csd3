@@ -306,3 +306,113 @@ Session:        20260415_223117_c220bb
 Duration:       47s
 Messages:       2 (1 user, 0 tool calls)
 ```
+
+## hermes version/doctor
+
+```bash
+hermes version
+hermes doctor
+```
+
+```
+Hermes Agent v0.9.0 (2026.4.13)
+Project: /usr/local/Cluster-Apps/ceuadmin/hermes-agent/2026.4.13/venv/lib/python3.12/site-packages
+Python: 3.12.10
+OpenAI SDK: 2.31.0
+```
+
+and
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                 🩺 Hermes Doctor                         │
+└─────────────────────────────────────────────────────────┘
+
+◆ Python Environment
+  ✓ Python 3.12.10
+  ✓ Virtual environment active
+
+◆ Required Packages
+  ✓ OpenAI SDK
+  ✓ Rich (terminal UI)
+  ✓ python-dotenv
+  ✓ PyYAML
+  ✓ HTTPX
+  ⚠ Croniter (cron expressions) (optional, not installed)
+  ⚠ python-telegram-bot (optional, not installed)
+  ⚠ discord.py (optional, not installed)
+
+◆ Configuration Files
+  ✓ ~/.hermes/.env file exists
+  ⚠ No API key found in ~/.hermes/.env
+  ✓ ~/.hermes/config.yaml exists
+  ✓ Config version up to date (v17)
+
+◆ Auth Providers
+  ⚠ Nous Portal auth (not logged in)
+  ⚠ OpenAI Codex auth (not logged in)
+    → No Codex credentials stored. Run `hermes auth` to authenticate.
+  ⚠ codex CLI not found (required for openai-codex login)
+
+◆ Directory Structure
+  ✓ ~/.hermes directory exists
+  ✓ ~/.hermes/cron/ exists
+  ✓ ~/.hermes/sessions/ exists
+  ✓ ~/.hermes/logs/ exists
+  ⚠ ~/.hermes/skills/ not found (will be created on first use)
+  ✓ ~/.hermes/memories/ exists
+  ✓ ~/.hermes/SOUL.md exists (persona configured)
+  ✓ ~/.hermes/memories/ directory exists
+    → MEMORY.md not created yet (will be created when the agent first writes a memory)
+    → USER.md not created yet (will be created when the agent first writes a memory)
+  ✓ ~/.hermes/state.db exists (1 sessions)
+
+◆ External Tools
+  ✓ git
+  ⚠ ripgrep (rg) not found (file search uses grep fallback)
+    → Install for faster search: sudo apt install ripgrep
+  ⚠ docker not found (optional)
+  ⚠ Node.js not found (optional, needed for browser tools)
+
+◆ API Connectivity
+  ⚠ OpenRouter API (not configured)
+
+◆ Submodules
+  ⚠ tinker-atropos not found (run: git submodule update --init --recursive)
+
+◆ Tool Availability
+  ✓ terminal
+  ✓ file
+  ✓ vision
+  ✓ skills
+  ✓ cronjob
+  ✓ tts
+  ✓ todo
+  ✓ memory
+  ✓ session_search
+  ✓ clarify
+  ✓ code_execution
+  ✓ delegation
+  ⚠ web (missing EXA_API_KEY, PARALLEL_API_KEY, TAVILY_API_KEY, FIRECRAWL_API_KEY, FIRECRAWL_API_URL)
+  ⚠ moa (missing OPENROUTER_API_KEY)
+  ⚠ image_gen (system dependency not met)
+  ⚠ browser (system dependency not met)
+  ⚠ rl (missing TINKER_API_KEY, WANDB_API_KEY)
+  ⚠ messaging (system dependency not met)
+  ⚠ homeassistant (system dependency not met)
+
+◆ Skills Hub
+  ⚠ Skills Hub directory not initialized (run: hermes skills list)
+  ⚠ No GITHUB_TOKEN (60 req/hr rate limit — set in ~/.hermes/.env for better rates)
+
+◆ Memory Provider
+  ✓ Built-in memory active (no external provider configured — this is fine)
+
+────────────────────────────────────────────────────────────
+  Found 2 issue(s) to address:
+
+  1. Run 'hermes setup' to configure API keys
+  2. Run 'hermes setup' to configure missing API keys for full tool access
+
+  Tip: run 'hermes doctor --fix' to auto-fix what's possible.
+```
