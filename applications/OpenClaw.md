@@ -298,3 +298,18 @@ ollama launch openclaw \
 --local \
 --message "Prepare a pre-read for my next meeting"
 ```
+
+## ClawHub
+
+Some recommended skills are liisted below,
+
+```bash
+module load ceuadmin/node/24.15.0
+npx clawhub@latest install self-improving-agent
+npx clawhub@latest install tavily-search
+npx clawhub@latest install gog
+npx clawhub@latest install github
+npx clawhub@latest install summarize
+npx clawhub@latest install agent-browser
+npx clawhub@latest install find-skills
+```
