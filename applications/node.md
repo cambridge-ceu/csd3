@@ -16,6 +16,7 @@ cd node-$version
 module load ceuadmin/gcc/12.5.0
 ./configure --prefix=$CEUADMIN/node/$version
 make
+make install
 ```
 
 noting that ceuadmin/gcc/12.5.0 is used.
