@@ -313,3 +313,28 @@ npx clawhub@latest install summarize
 npx clawhub@latest install agent-browser
 npx clawhub@latest install find-skills
 ```
+
+Somehow the installation is destined to skills/skills, e.g.,
+
+```
+$ npx clawhub@latest install self-improving-agent
+
+✔ OK. Installed self-improving-agent -> /usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.4.15/lib/node_modules/openclaw/skills/skills/self-improving-agent
+16:58 jhz22@login-q-1 /usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.4.15/lib/node_modules/openclaw/skills $ openclaw skills list
+
+🦞 OpenClaw 2026.4.15 (041266a) — I've survived more breaking changes than your last three relationships.
+
+Skills (1/1 ready)
+┌──────────┬──────────────────────┬──────────────────────────────────────────────────────────────────────────────────────────┬──────────────────┐
+│ Status   │ Skill                │ Description                                                                              │ Source           │
+├──────────┼──────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────┼──────────────────┤
+│ ✓ ready  │ 📦 self-improvement  │ Captures learnings, errors, and corrections to enable continuous improvement. Use when:  │ openclaw-bundled │
+│          │                      │ (1) A command or operation fails unexpectedly, (2) User corrects Claude ('No, that's     │                  │
+│          │                      │ wrong...', 'Actually...'), (3) User requests a capability that doesn't exist, (4) An     │                  │
+│          │                      │ external API or tool fails, (5) Claude realizes its knowledge is outdated or incorrect,  │                  │
+│          │                      │ (6) A better approach is discovered for a recurring task. Also review learnings before   │                  │
+│          │                      │ major tasks.                                                                             │                  │
+└──────────┴──────────────────────┴──────────────────────────────────────────────────────────────────────────────────────────┴──────────────────┘
+
+Tip: use `openclaw skills search`, `openclaw skills install`, and `openclaw skills update` for ClawHub-backed skills.
+```
