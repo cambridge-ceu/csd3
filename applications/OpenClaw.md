@@ -316,7 +316,7 @@ npx clawhub@latest install agent-browser
 npx clawhub@latest install find-skills
 ```
 
-Somehow the installation is destined to skills/skills, nevertheless can be reset by mving skills to the right place, e.g.,
+Somehow the installation is destined to skills/skills, nevertheless can be reset manually by mving skills to the right place, e.g.,
 
 ```
 $ npx clawhub@latest install self-improving-agent
@@ -341,7 +341,7 @@ Skills (1/1 ready)
 Tip: use `openclaw skills search`, `openclaw skills install`, and `openclaw skills update` for ClawHub-backed skills.
 
 $ cd /usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.4.15/lib/node_modules/openclaw/skills
-$ mv mv skills/self-improving-agent/ .
+$ mv skills/self-improving-agent/ .
 $ rmdir skills
 $ openclaw skills list
 $ cd -
