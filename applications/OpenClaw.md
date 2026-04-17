@@ -6,12 +6,12 @@ sort: 54
 
 Web: <https://openclaw.ai/>, <https://clawhub.ai/>
 
-## 2026.4.14
+## 2026.4.15
 
 ```bash
-# OpenClaw/2026.4.14
+# OpenClaw/2026.4.15
 module load ceuadmin/node/24.15.0
-export version=2026.4.14
+export version=2026.4.15
 export BASE="$CEUADMIN/OpenClaw/$version"
 npm view openclaw versions
 npm install -g "openclaw@$version" --prefix "$BASE"
