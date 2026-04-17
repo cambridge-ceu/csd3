@@ -4,7 +4,7 @@ sort: 54
 
 # OpenClaw
 
-Web: <https://openclaw.ai/>, <https://clawhub.ai/>
+Web: <https://openclaw.ai/>
 
 ## 2026.4.15
 
@@ -164,7 +164,7 @@ Examples:
 Docs: docs.openclaw.ai/cli
 ```
 
-## Ollama
+## Integration with Ollama
 
 The official news on OpenClaw with ollama involves `ollama launch openclaw` where OpenClaw tries to install a systemd service, which 
 is not allowed on HPC login nodes, so we start manually.
@@ -300,6 +300,8 @@ ollama launch openclaw \
 ```
 
 ## ClawHub
+
+Web, <https://clawhub.ai/>
 
 Some recommended skills are liisted below,
 
