@@ -575,6 +575,7 @@ All entries are ordered chronologically.
 | ""         | hermes-agent/2026.4.13           | Genetic[^hermes]      |
 | 2026-04-16 | OpenClaw/2026.4.14               | Generic               |
 | ""         | node/24.15.0                     | Genetic               |
+| 2026-04-17 | OpenClaw/2026.4.15               | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
