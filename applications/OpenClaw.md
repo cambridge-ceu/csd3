@@ -303,7 +303,7 @@ ollama launch openclaw \
 
 Web, <https://clawhub.ai/>
 
-Some recommended skills are liisted below,
+Some notable skills are liisted below,
 
 ```bash
 module load ceuadmin/node/24.15.0
