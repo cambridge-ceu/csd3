@@ -18,7 +18,7 @@ module load ceuadmin/gcc/12.5.0
 make
 ```
 
-noting that gcc/12.5.0 is used.
+noting that ceuadmin/gcc/12.5.0 is used.
 
 ## 18.20.5
 
