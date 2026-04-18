@@ -8,6 +8,7 @@ Web: <https://ollama.com/>, Discord: <https://discord.com/invite/ollama>.
 
 ## Highlights
 
+- 0.21. Support hermes, i.e., `ollama launch hermes`.
 - 0.20. Support Gemma 4, where e as in 2eB is effective for edge device deployments and `ollama run gemma4:e2b --think=false` leads to faster run with ability to handle images.
   - 2B, `ollama run gemma4:e2b`.
   - 4B, `ollama run gemma4:e4b`.
