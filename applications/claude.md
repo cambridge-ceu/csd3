@@ -352,7 +352,9 @@ ollama launch claude --model gemma4:26b
 
 Note the timeout settings for slower local inference vs API, and our ccsize example is also more structured (omitted).
 
-## mcp
+## Playwright MCP
+
+URL, <https://playwright.dev/docs/getting-started-mcp>
 
 ```bash
 claude mcp add -s user playwright -- npx @playwright/mcp@latest
