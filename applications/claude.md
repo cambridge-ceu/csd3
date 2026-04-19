@@ -113,7 +113,7 @@ Commands:
 This section offers a flavour of Anthropic API from Ollama/0.15.2 onwards, whose local/cloud models can be used for free. From
 
 ```bash
-module load ceuadmin/ollama/0.20.2
+module load ceuadmin/ollama/0.21.0
 ollama serve > /dev/null 2>&1 &
 while ! curl -s http://localhost:11434/api/tags >/dev/null; do
   sleep 1
