@@ -351,3 +351,18 @@ ollama launch claude --model gemma4:26b
 ```
 
 Note the timeout settings for slower local inference vs API, and our ccsize example is also more structured (omitted).
+
+## mcp
+
+```bash
+claude mcp add -s user playwright -- npx @playwright/mcp@latest
+claude mcp list
+```
+
+which shows,
+
+```
+Checking MCP server health...
+
+playwright: npx @playwright/mcp@latest - ✓ Connected
+```
