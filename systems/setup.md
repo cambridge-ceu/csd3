@@ -577,6 +577,7 @@ All entries are ordered chronologically.
 | ""         | node/24.15.0                     | Genetic               |
 | 2026-04-17 | OpenClaw/2026.4.15               | Generic               |
 | 2026-04-18 | ollama/0.21.0                    | Generic               |
+| 2026-04-20 | github-copilot/1.0.32            | Generic[^copilot]     |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2350,3 +2351,7 @@ They are generated from script [setup.sh](setup.sh),
 [^hermes]: **hermes-agent**
 
     See <https://cambridge-ceu.github.io/csd3/applications/hermes-agent.html>.
+
+[^copilot]: **github-copilot**
+
+    See <https://cambridge-ceu.github.io/csd3/applications/github-copilot.html>.
