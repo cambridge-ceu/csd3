@@ -35,6 +35,8 @@ User packages:
     /usr/local/Cluster-Apps/ceuadmin/Pi/0.67.68/lib/node_modules/@ollama/pi-web-search
 ```
 
+Employ export NPM_CONFIG_PREFIX="destination" to reset destination for @ollama/pi-web-search.
+
 ## 0.65.2
 
 ```bash
