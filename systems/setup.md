@@ -578,6 +578,7 @@ All entries are ordered chronologically.
 | 2026-04-17 | OpenClaw/2026.4.15               | Generic               |
 | 2026-04-18 | ollama/0.21.0                    | Generic               |
 | 2026-04-20 | copilot-cli/1.0.32               | Generic[^copilot_cli] |
+| ""         | Pi/0.67.68                       | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
