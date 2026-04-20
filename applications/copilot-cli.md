@@ -54,4 +54,37 @@ setenv            NODE_PATH            $root/lib/node_modules
 
 ## Screenshot
 
+This is from `copilot` from CLI,
+
 ![](files/copilot-cli.png)
+
+## Integration with Ollama
+
+URL, <https://docs.ollama.com/integrations/copilot-cli>
+
+```bash
+ollama serve > /dev/null 2>&1 &
+until ollama list; do
+  sleep 1
+done
+ollama launch copilot --model kimi-k2.5:cloud
+ollama launch copilot --model kimi-k2.5:cloud --yes -- -p "how does this repository work?"
+```
+
+Manually,
+
+```bash
+export COPILOT_PROVIDER_BASE_URL=http://localhost:11434/v1
+export COPILOT_PROVIDER_API_KEY=
+export COPILOT_PROVIDER_WIRE_API=responses
+export COPILOT_MODEL=qwen3.5
+copilot
+```
+
+or effectively,
+
+```bash
+COPILOT_PROVIDER_BASE_URL=http://localhost:11434/v1 COPILOT_PROVIDER_API_KEY= COPILOT_PROVIDER_WIRE_API=responses COPILOT_MODEL=glm-5:cloud copilot
+```
+
+The cloud models can be checked via <https://ollama.com/search?c=cloud>.
