@@ -6,19 +6,46 @@ sort: 61
 
 Web, <https://pi.dev/>
 
+## 0.67.68
+
+```bash
+module load ceuadmin/node/22.16.0
+npm view @mariozechner/pi-coding-agent version
+export version="0.67.68"
+export BASE="$CEUADMIN/Pi/${version}"
+npm install -g @mariozechner/pi-coding-agent@${version} --prefix "$BASE"
+npm install -g pi-subagents @ollama/pi-web-search --prefix "$BASE"
+export PATH="$BASE/bin:$PATH"
+ln -fs "$BASE" ~/.pi
+pi install "$BASE/lib/node_modules/pi-subagents"
+pi install "$BASE/lib/node_modules/@ollama/pi-web-search"
+pi install https://github.com/davebcn87/pi-autoresearch
+pi list
+```
+
+which gives,
+
+```
+User packages:
+  https://github.com/davebcn87/pi-autoresearch
+    /home/jhz22/.pi/agent/git/github.com/davebcn87/pi-autoresearch
+  ../../../../usr/local/Cluster-Apps/ceuadmin/Pi/0.67.68/lib/node_modules/pi-subagents
+    /usr/local/Cluster-Apps/ceuadmin/Pi/0.67.68/lib/node_modules/pi-subagents
+  ../../../../usr/local/Cluster-Apps/ceuadmin/Pi/0.67.68/lib/node_modules/@ollama/pi-web-search
+    /usr/local/Cluster-Apps/ceuadmin/Pi/0.67.68/lib/node_modules/@ollama/pi-web-search
+```
+
 ## 0.65.2
 
 ```bash
 module load ceuadmin/node/22.16.0
+npm view @mariozechner/pi-coding-agent version
 export version="0.65.2"
 export BASE="$CEUADMIN/Pi/${version}"
-export NPM_CONFIG_PREFIX="$BASE"
-export NODE_PATH="$BASE/lib/node_modules"
-export PATH="$BASE/bin:$PATH"
 npm install -g @mariozechner/pi-coding-agent@${version} --prefix "$BASE"
+npm install -g pi-subagents @ollama/pi-web-search --prefix "$BASE"
 export PATH="$BASE/bin:$PATH"
 ln -fs "$BASE" ~/.pi
-npm install -g pi-subagents @ollama/pi-web-search --prefix "$BASE"
 pi install "$BASE/lib/node_modules/pi-subagents"
 pi install "$BASE/lib/node_modules/@ollama/pi-web-search"
 pi install https://github.com/davebcn87/pi-autoresearch
