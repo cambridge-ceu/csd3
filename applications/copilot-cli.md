@@ -54,7 +54,7 @@ setenv            NODE_PATH            $root/lib/node_modules
 
 ## Screenshot
 
-This is from `copilot` from CLI,
+We issue `copilot` and get
 
 ![](files/copilot-cli.png)
 
