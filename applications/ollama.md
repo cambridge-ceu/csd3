@@ -205,6 +205,26 @@ export OLLAMA_MODELS=/rds/usr/$USER/hpc-work/HuggingFace
 ln -sf ${OLLAMA_MODELS} $HOME/.ollama
 ```
 
+## Llama 4
+
+Web, <https://ollama.com/library/llama4>
+
+This requires a recent version of ollama, nevertheless can be more specific,
+
+```bash
+ollama run llama4:scout
+ollama run llama4:maverick
+```
+
+## kimi-k2.6:cloud
+
+```bash
+ollama launch claude --model kimi-k2.6:cloud
+ollama launch openclaw --model kimi-k2.6:cloud
+ollama launch hermes --model kimi-k2.6:cloud
+ollama run kimi-k2.6:cloud
+```
+
 ## GGUF
 
 > ​GGUF, which stands for Generic GPT Unified Format, is a binary file format designed for efficiently storing and loading large language models (LLMs). Developed as an extension of the GGML format, GGUF addresses the need for scalable and efficient deployment of extensive models, particularly those exceeding 100GB in size.
@@ -273,17 +293,6 @@ ollama run gpt-oss:20b --enable-web-search
 ```
 
 as in <https://ollama.com/blog/gpt-oss> and/or <https://simonwillison.net/2025/Aug/5/gpt-oss/>.
-
-## Llama 4
-
-Web, <https://ollama.com/library/llama4>
-
-This requires a recent version of ollama, nevertheless can be more specific,
-
-```bash
-ollama run llama4:scout
-ollama run llama4:maverick
-```
 
 ## REST API: /api/generate
 
