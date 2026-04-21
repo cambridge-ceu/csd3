@@ -416,3 +416,34 @@ and
 
   Tip: run 'hermes doctor --fix' to auto-fix what's possible.
 ```
+
+## hermes-web-ui
+
+GitHub, <https://github.com/EKKOLearnAI/hermes-web-ui>
+
+It is a wWeb dashboard for Hermes Agent, which can be set up as follows,
+
+```bash
+module load ceuadmin/node
+npx hermes-web-ui@0.4.1 --prefix=$CEUADMIN/hermes-agent/2026.4.13 && hermes-web-ui start
+```
+
+giving information
+
+```
+hermes-web-ui v0.4.1 starting...
+startall
+[bootstrap] gateway manager initialized
+[bootstrap] cors + bodyParser registered
+[bootstrap] routes registered
+Auth enabled — token: ---
+[bootstrap] SPA fallback registered
+[bootstrap] listening on port 8648
+[bootstrap] app.listen called
+[bootstrap] terminal websocket setup
+Server: http://localhost:8648 (LAN: http://10.43.77.231:8648)
+Upstream: http://127.0.0.1:8642
+Log: ~/.hermes-web-ui/logs/server.log
+```
+
+In our case, it is not dissimilar to the ollama-enabled setup.
