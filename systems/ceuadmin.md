@@ -26,7 +26,7 @@ The current list is as follows,
  [33] "BWA"                    "C2S-Scale"              "caddy"                  "CaVEMaN"
  [37] "CAVIAR"                 "CAVIARBF"               "cbindgen"               "ccal"
  [41] "ccphylo"                "chrome"                 "chromium"               "circos"
- [45] "citeproc"               "clang"                  "claude"                 "cli"
+ [45] "citeproc"               "clang"                  "claude-code"            "cli"
  [49] "clues2"                 "cmake"                  "cmocka"                 "codex-cli"
  [53] "comet"                  "copilot-cli"            "cppunit"                "crossmap"
  [57] "crux"                   "cryptopp"               "cryptsetup"             "curl"
