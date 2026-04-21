@@ -160,7 +160,15 @@ claude --model gpt-oss:20b --allow-dangerously-skip-permissions
 claude --model qwen3-coder:480b-cloud --allow-dangerously-skip-permissions
 ollama launch claude --model gemma4:31b-cloud
 ollama launch claude --model glm-5.1:cloud
+export ANTHROPIC_MODEL="gemma4:26b"
+export DEFAULT_MODEL="gemma4:26b"
+export DEFAULT_CHAT_MODEL="gemma4:26b"
+export DEFAULT_COMPLETION_MODEL="gemma4:26b"
+export CLAUDE_CODE_SUBAGENT_MODEL="gemma4:26b"
+export CLAUDE_CODE_TIMEOUT=300
 ```
+
+Note the timeout settings for slower local inference vs API, and our ccsize example is also more structured (omitted).
 
 The first model gives,
 
@@ -338,25 +346,6 @@ On the first attempt it also gives,
 
  ctrl-g to edit in Pico · ~/.claude/plans/snoopy-coalescing-lemon.md
 ```
-## Other options
-
-The following actually works,
-
-```bash
-export ANTHROPIC_AUTH_TOKEN=ollama
-export ANTHROPIC_API_KEY=""
-export ANTHROPIC_BASE_URL=http://localhost:11434
-# options
-export ANTHROPIC_MODEL="gemma4:26b"
-export DEFAULT_MODEL="gemma4:26b"
-export DEFAULT_CHAT_MODEL="gemma4:26b"
-export DEFAULT_COMPLETION_MODEL="gemma4:26b"
-export CLAUDE_CODE_SUBAGENT_MODEL="gemma4:26b"
-export CLAUDE_CODE_TIMEOUT=300
-claude --model gemma4:26b
-```
-
-Note the timeout settings for slower local inference vs API, and our ccsize example is also more structured (omitted).
 
 ## Playwright MCP
 
