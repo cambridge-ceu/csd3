@@ -544,7 +544,7 @@ All entries are ordered chronologically.
 | ""         | ollama/0.15.2                    | Generic               |
 | 2026-01-29 | fresh/0.1.97                     | Generic               |
 | 2026-02-01 | fresh/0.1.98                     | Generic               |
-| 2026-02-02 | claude/2.1.29                    | Generic[^claude]      |
+| 2026-02-02 | claude-code/2.1.29               | Generic[^claude]      |
 | 2026-02-03 | AnythingLLMDesktop/1.10.0        | Generic               |
 | 2026-02-05 | fresh/0.1.99                     | Generic               |
 | 2026-02-09 | fresh/0.2.1                      | Generic               |
@@ -561,7 +561,7 @@ All entries are ordered chronologically.
 | 2026-03-26 | firefox/149.0\|firefox/151.0a1   | Generic               |
 | 2026-03-30 | OpenClaw/2026.3.28               | Generic               |
 | 2026-03-31 | Pi/0.64.0                        | Generic[^pi]          |
-| 2026-04-01 | claude/2.1.89                    | Generic               |
+| 2026-04-01 | claude-code/2.1.89               | Generic               |
 | ""         | gcta/1.95.1                      | Genetics              |
 | 2026-04-05 | ollama/0.20.2                    | Generic               |
 | 2026-04-06 | llama.cpp/b8676                  | Generic               |
@@ -2299,7 +2299,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^claude]: **claude code**
 
-    See <https://cambridge-ceu.github.io/csd3/applications/claude.html>.
+    See <https://cambridge-ceu.github.io/csd3/applications/claude-code.html>.
 
 [^libvips]: **libvips**
 
