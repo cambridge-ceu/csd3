@@ -421,7 +421,7 @@ and
 
 GitHub, <https://github.com/EKKOLearnAI/hermes-web-ui>
 
-It is a wWeb dashboard for Hermes Agent, which can be set up as follows,
+It is a web dashboard for Hermes Agent, which can be set up as follows,
 
 ```bash
 module load ceuadmin/node
