@@ -24,6 +24,8 @@ export version=1.0.32
 curl -fsSL https://gh.io/copilot-install | VERSION="v$version" PREFIX="$CEUADMIN/copilot-cli/$version" bash
 ```
 
+which does not depend on node.
+
 ## Screenshot
 
 We issue `copilot` and get
