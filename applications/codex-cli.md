@@ -21,7 +21,7 @@ A profile is with `~/.codex/config.toml`.
 
 ## Integration with Ollama & llama.cpp
 
-Web, <https://docs.ollama.com/integrations/codex>
+URL, <https://docs.ollama.com/integrations/codex>
 
 ```
 [model_providers.ollama-launch]
