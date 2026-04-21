@@ -166,6 +166,8 @@ Docs: docs.openclaw.ai/cli
 
 ## Integration with Ollama
 
+URL, <https://docs.ollama.com/integrations/openclaw>
+
 The official news on OpenClaw with ollama involves `ollama launch openclaw` where OpenClaw tries to install a systemd service, which 
 is not allowed on HPC login nodes, so we start manually.
 
