@@ -111,6 +111,7 @@ export OLLAMA_MODELS=/shared/ollama/models
 Lastly, to run `ollama serve` in the background and redirect output,
 
 ```bash
+module load ceuadmin/ollama
 ollama serve > /dev/null 2>&1 &
 until ollama list; do
   sleep 1
