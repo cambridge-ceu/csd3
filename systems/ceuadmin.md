@@ -234,6 +234,8 @@ pip list
 
 for Minicoda and Python, respectively.
 
+Note that finally VIRTUAL_ENV is used to replace PYTHONPATH in earlier modules.
+
 ## Non-CEU users
 
 Most software are available for all CSD3 users, only limited by software with excessive size / reference data -- which ideally will be
