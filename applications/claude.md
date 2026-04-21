@@ -110,6 +110,8 @@ Commands:
 
 ## Anthropic API via Ollama
 
+URL, <https://docs.ollama.com/integrations/claude-code>
+
 This section offers a flavour of Anthropic API from Ollama/0.15.2 onwards, whose local/cloud models can be used for free. From
 
 ```bash
@@ -341,13 +343,17 @@ On the first attempt it also gives,
 The following actually works,
 
 ```bash
+export ANTHROPIC_AUTH_TOKEN=ollama
+export ANTHROPIC_API_KEY=""
+export ANTHROPIC_BASE_URL=http://localhost:11434
+# options
 export ANTHROPIC_MODEL="gemma4:26b"
 export DEFAULT_MODEL="gemma4:26b"
 export DEFAULT_CHAT_MODEL="gemma4:26b"
 export DEFAULT_COMPLETION_MODEL="gemma4:26b"
 export CLAUDE_CODE_SUBAGENT_MODEL="gemma4:26b"
 export CLAUDE_CODE_TIMEOUT=300
-ollama launch claude --model gemma4:26b
+claude --model gemma4:26b
 ```
 
 Note the timeout settings for slower local inference vs API, and our ccsize example is also more structured (omitted).
