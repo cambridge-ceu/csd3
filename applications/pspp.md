@@ -6,6 +6,35 @@ sort: 69
 
 Official page: [https://www.gnu.org/software/pspp/](https://www.gnu.org/software/pspp/) ([News](https://www.gnu.org/software/pspp/NEWS)).
 
+## 2.1.1
+
+This release requires spread-sheet-widge 0.10.
+
+```bash
+export ssw=0.10
+wget -qO- http://alpha.gnu.org/gnu/ssw/spread-sheet-widget-$ssw.tar.gz | tar xfz -
+cd spread-sheet-widget-$ssw
+./configure --prefix=$CEUADMIN/spread-sheet-widget/$ssw
+make
+make install
+```
+
+We now proceed with
+
+```bash
+module load ceuadmin/gtksourceview/4.0.3
+module load ceuadmin/spread-sheet-widget/0.10
+module load ceuadmin/gettext/0.22.5-icelake
+export version=2.1.1
+wget -qO- https://ftp.gnu.org/gnu/pspp/pspp-$version.tar.gz | tar xfz -
+cd pspp-$version
+./configure --prefix=/usr/local/Cluster-Apps/ceuadmin/pspp/$version
+make
+make install
+```
+
+At runtime though, psppire works with `module load gettext-0.19.8.1-gcc-5.4.0-227iq5m`.
+
 ## 2.0.1
 
 To compfile from source, we copy `ceuadmin/[gettext/0.20, libiconv/1.17, libxml2/2.9.10]` to ${HPC_WORK} together with the prerequistes,
