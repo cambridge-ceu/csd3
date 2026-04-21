@@ -20,7 +20,8 @@ or alternatively,
 ```bash
 module load ceuadmin/cli
 gh release list --repo github/copilot-cli
-curl -fsSL https://gh.io/copilot-install | VERSION="v1.0.32" PREFIX="$CEUADMIN/copilot-cli" bash
+export version=1.0.32
+curl -fsSL https://gh.io/copilot-install | VERSION="v$version" PREFIX="$CEUADMIN/copilot-cli/$version" bash
 ```
 
 ## Screenshot
