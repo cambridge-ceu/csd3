@@ -2,9 +2,9 @@ set decimal=dot.
 
 title 'Demonstrate REGRESSION procedure'.
 /*      run this syntax file with the command:
-/*                 pspp example.stat
+/*                 pspp regress_categorical.sps
 /*
-/*      Output is written to the file "pspp.list".
+/*      Output is written to the screen.
 
 data list / v0 1-2 (A) v1 v2 3-22 (10).
 begin data.
@@ -20,9 +20,9 @@ a  8.838262 -29.25689
 b  6.200189 -18.58219
 end data.
 
+freq /variables=v0.
+compute v0_bin = (v0 = "a").
+execute.
 list.
 
-freq /variables=v0 v1 v2.
-
-regression /variables= v1 v2 /statistics defaults /dependent=v2 /method=enter.
-
+logistic regression v0_bin with v1.
