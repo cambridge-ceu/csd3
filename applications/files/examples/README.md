@@ -1,6 +1,6 @@
 source: `{{ page.path }}`
 
-This directory contains the example files for pspp.
+This directory is a copy of pspp-2.1.1/examples, whose regression_categorical.sps appears inaccurate.
 
 {% include list.liquid all=true %}
 
