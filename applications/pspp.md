@@ -24,7 +24,7 @@ We now proceed with
 ```bash
 module load ceuadmin/gtksourceview/4.0.3
 module load ceuadmin/spread-sheet-widget/0.10
-module load ceuadmin/gettext/0.22.5-icelake
+module load gettext-0.19.8.1-gcc-5.4.0-227iq5m
 export version=2.1.1
 wget -qO- https://ftp.gnu.org/gnu/pspp/pspp-$version.tar.gz | tar xfz -
 cd pspp-$version
@@ -32,8 +32,6 @@ cd pspp-$version
 make
 make install
 ```
-
-At runtime though, psppire works with `module load gettext-0.19.8.1-gcc-5.4.0-227iq5m`.
 
 ## 2.0.1
 
