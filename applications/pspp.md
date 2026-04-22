@@ -345,16 +345,24 @@ More documentation examples are in the [examples](https://github.com/cambridge-c
 [^gsv]: gtksourceview 4.6.0 installation
 
     ```bash
-    source py37/bin/activate
+    source py3.7/bin/activate
+    python -m pip install --upgrade pip
     python -m pip install meson==0.63.3
-    python -m pip install --force-reinstall  ninja==1.10.0
+    python -m pip install --force-reinstall ninja==1.10.0
+    module load ceuadmin/vala/0.46.5
+    module load gettext-0.19.8.1-gcc-5.4.0-227iq5m
+    which vapigen
+    which msgfmt
+    export LDFLAGS="-lintl"
     wget -qO- https://github.com/GNOME/gtksourceview/archive/refs/tags/4.6.0.tar.gz | tar xfz -
     cd gtksourceview-4.6.0
-    mkdir build
-    meson configure --prefix=$CEUADMIN/gtksourcereview/4.6.0 --default-library=both
-    meson build
-    cd build
-    ninja install
+    rm -rf build
+    meson setup build \
+      --prefix=$CEUADMIN/gtksourceview/4.6.0 \
+      -Dgtk_doc=false \
+      -Ddefault_library=both
+    meson compile -C build
+    meson install -C build
     ```
 
-    where ninja releases are seen from [https://github.com/ninja-build/ninja/releases](https://github.com/ninja-build/ninja/releases). One may need to insert -L$HPC_WORK/lib -I$HPC_WORK/include to the command manually.
+    where ninja releases are seen from <https://github.com/ninja-build/ninja/releases>.
