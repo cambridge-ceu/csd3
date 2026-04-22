@@ -581,6 +581,7 @@ All entries are ordered chronologically.
 | ""         | Pi/0.67.68                       | Generic               |
 | 2026-04-21 | spread-sheet-widget/0.10         | Generic               |
 | ""         | pspp/2.1.1                       | Generic               |
+| 2026-04-22 | gtksourceview/4.6.0              | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
