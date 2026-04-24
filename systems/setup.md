@@ -583,6 +583,7 @@ All entries are ordered chronologically.
 | ""         | pspp/2.1.1                       | Generic               |
 | 2026-04-22 | gtksourceview/4.6.0              | Generic               |
 | 2026-04-23 | fresh/0.3.0                      | Generic               |
+| 2026-04-24 | marksman/2026.-02-08             | Generic[^marksman]    |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2360,3 +2361,15 @@ They are generated from script [setup.sh](setup.sh),
 [^copilot_cli]: **copilot-cli**
 
     See <https://cambridge-ceu.github.io/csd3/applications/copilot-cli.html>.
+
+[^marksman]: **marksman**
+
+    GitHub, <https://github.com/artempyanykh/marksman>
+
+    ```bash
+    version="2026-02-08"
+    dest="$CEUADMIN/marksman/$version"
+    mkdir -p "$dest" && cd "$dest"
+    wget -q -O marksman https://github.com/artempyanykh/marksman/releases/download/2026-02-08/marksman-linux-x64
+    chmod +x marksman
+    ```
