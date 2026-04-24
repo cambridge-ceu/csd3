@@ -26,6 +26,9 @@ Since `module unload ceuadmin/firefox` unsets the alias, it is useful to call `s
 
 ## ceuadmin/firefox
 
+<font color="red"><b>24/4/2026 Update</b></font>
+Module **ceuadmin/firefox/149.0** is available.
+
 <font color="red"><b>26/3/2026 Update</b></font>
 
 Module **ceuadmin/firefox/149.0** is available. The **ceuadmin/firefox/nightly** module points **ceuadmin/firefox/151.0a1**, which uses **ceuadmin/gcc/12.5.0** and the rest is unchanged from **ceuadmin/firefox/148.0a1**.
