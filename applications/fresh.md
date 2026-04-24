@@ -123,6 +123,7 @@ Simiarly, we make bash-language-server as well as markdown-language-server avail
     "args": ["start"],
     "filetypes": ["sh", "bash"]
   }
-}```
+}
+```
 
 giving ![](files/fresh-LSP-Bash.png)
