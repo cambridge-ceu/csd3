@@ -103,21 +103,26 @@ A LSP server for R is implemented as follows,
 
 giving ![](files/fresh-LSP-R.png)
 
-We also make bash-language-server available and ~/.config/settings.json as follows,
+Simiarly, we make bash-language-server as well as markdown-language-server available so ~/.config/settings.json becomes,
 
 ```
 {
+  "marksman": {
+    "command": "marksman",
+    "filetypes": ["md", "markdown"]
+  },
+
   "r": {
     "command": "R",
     "args": ["--slave", "-e", "languageserver::run()"],
     "filetypes": ["r", "R"]
   },
+
   "bash": {
     "command": "bash-language-server",
     "args": ["start"],
     "filetypes": ["sh", "bash"]
   }
-}
-```
+}```
 
 giving ![](files/fresh-LSP-Bash.png)
