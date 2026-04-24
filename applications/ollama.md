@@ -206,15 +206,15 @@ export OLLAMA_MODELS=/rds/usr/$USER/hpc-work/HuggingFace
 ln -sf ${OLLAMA_MODELS} $HOME/.ollama
 ```
 
-## Llama 4
+## DeepSeek-V4-Flash
 
-Web, <https://ollama.com/library/llama4>
-
-This requires a recent version of ollama, nevertheless can be more specific,
+This involves the latest NVIDIA Blackwell hardware (DeepSeek-V4-Pro is coming very soon):
 
 ```bash
-ollama run llama4:scout
-ollama run llama4:maverick
+ollama launch claude --model deepseek-v4-flash:cloud
+ollama launch openclaw --model deepseek-v4-flash:cloud
+ollama launch hermes --model deepseek-v4-flash:cloud
+ollama run deepseek-v4-flash:cloud
 ```
 
 ## kimi-k2.6:cloud
@@ -224,6 +224,17 @@ ollama launch claude --model kimi-k2.6:cloud
 ollama launch openclaw --model kimi-k2.6:cloud
 ollama launch hermes --model kimi-k2.6:cloud
 ollama run kimi-k2.6:cloud
+```
+
+## Llama 4
+
+Web, <https://ollama.com/library/llama4>
+
+This requires a recent version of ollama, nevertheless can be more specific,
+
+```bash
+ollama run llama4:scout
+ollama run llama4:maverick
 ```
 
 ## GGUF
