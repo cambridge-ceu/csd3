@@ -34,7 +34,7 @@ Our purpose is to compile a local copy of Firefox, so
 ```bash
 git pull
 ./mach clobber
-echo 2 | ./mach bootstrap
+./mach bootstrap # 2
 module load ceuadmin/gcc/12.5.0
 module load ceuadmin/gtk+/3.24.0
 module load ceuadmin/rust/nightly
