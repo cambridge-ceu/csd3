@@ -27,7 +27,7 @@ Since `module unload ceuadmin/firefox` unsets the alias, it is useful to call `s
 ## ceuadmin/firefox
 
 <font color="red"><b>27/4/2026 Update</b></font>
-Module **ceuadmin/firefox/150.0.1** is available along with 152.0a1.
+Module **ceuadmin/firefox/152.0a1** is available.
 
 Our purpose is to compile a local copy of Firefox, so
 
