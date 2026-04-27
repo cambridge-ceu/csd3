@@ -26,6 +26,14 @@ Since `module unload ceuadmin/firefox` unsets the alias, it is useful to call `s
 
 ## ceuadmin/firefox
 
+Our purpose is to compile a local copy of Firefox, so
+
+```bash
+./mach bootstrap --no-interactive
+```
+
+unless code contribution/patch is intended (`moz-phab install-certificate`).
+
 <font color="red"><b>24/4/2026 Update</b></font>
 Module **ceuadmin/firefox/150.0** is available.
 
