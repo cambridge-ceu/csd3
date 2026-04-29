@@ -167,6 +167,8 @@ A screenshot is given here, ![](files/VSCode.png)
 
 ## Zed
 
+Web, <https://zed.dev/>
+
 This is one of the competitors, noted for flatpak:
 
 ```bash
