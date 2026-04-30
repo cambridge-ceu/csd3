@@ -2395,5 +2395,5 @@ They are generated from script [setup.sh](setup.sh),
     module load ceuadmin/rust
     cargo build --release
     mkdir -p "$CEUADMIN/helix/25.07.1/bin/
-    cp target/release/hx "$CEUADMIN/helix/25.07.1/bin/"
+    install target/release/hx "$CEUADMIN/helix/25.07.1/bin/"
     ```
