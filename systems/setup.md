@@ -586,6 +586,7 @@ All entries are ordered chronologically.
 | 2026-04-24 | marksman/2026-02-08              | Generic[^marksman]    |
 | 2026-04-27 | firefox/152.0a1 (nightly)        | Generic[^firefox]     |
 | 2026-04-28 | clang/20.1.8                     | Generic               |
+| 2026-04-30 | helix/25.07.1                    | Generic[^helix]       |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2381,3 +2382,18 @@ They are generated from script [setup.sh](setup.sh),
     Release 150.0.1 is not working so 150.0 stays, and 152.0a1 is compiled.
 
     See <https://cambridge-ceu.github.io/csd3/applications/firefox.html>.
+
+[^helix]: **helix**
+
+    Web, <https://helix-editor.com/>
+
+    It is seamless to compile from a GitHub clone, but more involved with a released version.
+
+    ```bash
+    wget -qO- https://jinghuazhao@github.com/helix-editor/helix/archive/refs/tags/25.07.1.tar.gz | tar xfz -
+    cd helix-25.07.1/
+    module load ceuadmin/rust
+    cargo build --release
+    mkdir -p "$CEUADMIN/helix/25.07.1/bin/
+    cp target/release/hx "$CEUADMIN/helix/25.07.1/bin/"
+    ```
