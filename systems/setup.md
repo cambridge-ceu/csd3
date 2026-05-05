@@ -587,7 +587,7 @@ All entries are ordered chronologically.
 | 2026-04-27 | firefox/152.0a1 (nightly)        | Generic[^firefox]     |
 | 2026-04-28 | clang/20.1.8                     | Generic               |
 | 2026-04-30 | helix/25.07.1                    | Generic[^helix]       |
-| 2026-05-04 | ollama/0.23.0                    | Generic               |
+| 2026-05-05 | ollama/0.23.0                    | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
