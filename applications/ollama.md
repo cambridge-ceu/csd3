@@ -8,10 +8,9 @@ Web: <https://ollama.com/>, Discord: <https://discord.com/invite/ollama>.
 
 ## Highlights
 
-- 0.23. Support Claude Desktop’s built-in third party inference, `ollama launch claude-desktop` 
+- 0.23. Support Claude Desktop’s built-in third party inference, `ollama launch claude-desktop` but `ollama launch claude-desktop --restore` for the default Claude profile.
    - difficult coding and co-working tasks: kimi-k2.6, qwen3.5, minimax-m2.7, glm-5.1.
    - no subscription with Ollama's cloud: nemotron-3-super, gemma4:31b .
-but `ollama launch claude-desktop --restore` for the default Claude profile,.
 - 0.21. Support hermes, i.e., `ollama launch hermes`.
 - 0.20. Support Gemma 4, where e as in 2eB is effective for edge device deployments and `ollama run gemma4:e2b --think=false` leads to faster run with ability to handle images.
   - 2B, `ollama run gemma4:e2b`.
