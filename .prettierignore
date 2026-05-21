@@ -1,4 +1,8 @@
-node_modules
-_site
+applications/files/quarto/
+*.min.js
+*.min.css
+_site/
+vendor/
+node_modules/
 
 assets/**/*.min.*
