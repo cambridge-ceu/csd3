@@ -431,11 +431,11 @@
                   namespace: "reveal-notes",
                   type: "connected",
                 }),
-                "*"
+                "*",
               );
             } else if (
               /slidechanged|fragmentshown|fragmenthidden|paused|resumed/.test(
-                data.eventName
+                data.eventName,
               ) &&
               currentState !== JSON.stringify(data.state)
             ) {
@@ -451,7 +451,7 @@
         const dispatchStateToMainWindow = debounce((state) => {
           window.opener.postMessage(
             JSON.stringify({ method: "setState", args: [state] }),
-            "*"
+            "*",
           );
         }, 500);
 
@@ -469,7 +469,7 @@
               methodName: methodName,
               arguments: methodArguments,
             }),
-            "*"
+            "*",
           );
         }
 
@@ -513,15 +513,15 @@
           // Update the note slides
           currentSlide.contentWindow.postMessage(
             JSON.stringify({ method: "setState", args: [data.state] }),
-            "*"
+            "*",
           );
           upcomingSlide.contentWindow.postMessage(
             JSON.stringify({ method: "setState", args: [data.state] }),
-            "*"
+            "*",
           );
           upcomingSlide.contentWindow.postMessage(
             JSON.stringify({ method: "next" }),
-            "*"
+            "*",
           );
         }
 
@@ -547,7 +547,7 @@
             }
             currentSlide.contentWindow.postMessage(
               JSON.stringify({ method: "triggerKey", args: [event.keyCode] }),
-              "*"
+              "*",
             );
           });
         }
@@ -609,7 +609,7 @@
           setInterval(() => {
             window.opener.postMessage(
               JSON.stringify({ namespace: "reveal-notes", type: "heartbeat" }),
-              "*"
+              "*",
             );
           }, 1000);
         }
@@ -642,7 +642,7 @@
                         "' of slide " +
                         i +
                         "; using default of " +
-                        defaultTiming
+                        defaultTiming,
                     );
                     timing = defaultTiming;
                   }
@@ -664,7 +664,7 @@
                 }).length;
                 var timePerSlide = Math.round(
                   remainingTime / remainingSlides,
-                  0
+                  0,
                 );
                 // And now we replace every zero-value timing with that average
                 timings = timings.map(function (x) {
@@ -818,7 +818,7 @@
                   pacingHoursEl,
                   pacingMinutesEl,
                   pacingSecondsEl,
-                  timeLeftCurrentSlide
+                  timeLeftCurrentSlide,
                 );
               });
             });
@@ -846,7 +846,7 @@
             function (event) {
               setLayout(layoutDropdown.value);
             },
-            false
+            false,
           );
 
           // Restore any currently persisted layout
