@@ -164,7 +164,7 @@ var zoom = (function () {
     if (mouseY < rangeY) {
       window.scroll(
         scrollOffset.x,
-        scrollOffset.y - (1 - mouseY / rangeY) * (14 / level)
+        scrollOffset.y - (1 - mouseY / rangeY) * (14 / level),
       );
     }
     // Down
@@ -172,7 +172,7 @@ var zoom = (function () {
       window.scroll(
         scrollOffset.x,
         scrollOffset.y +
-          (1 - (window.innerHeight - mouseY) / rangeY) * (14 / level)
+          (1 - (window.innerHeight - mouseY) / rangeY) * (14 / level),
       );
     }
 
@@ -180,7 +180,7 @@ var zoom = (function () {
     if (mouseX < rangeX) {
       window.scroll(
         scrollOffset.x - (1 - mouseX / rangeX) * (14 / level),
-        scrollOffset.y
+        scrollOffset.y,
       );
     }
     // Right
@@ -188,7 +188,7 @@ var zoom = (function () {
       window.scroll(
         scrollOffset.x +
           (1 - (window.innerWidth - mouseX) / rangeX) * (14 / level),
-        scrollOffset.y
+        scrollOffset.y,
       );
     }
   }
@@ -237,9 +237,9 @@ var zoom = (function () {
           options.scale = Math.max(
             Math.min(
               window.innerWidth / options.width,
-              window.innerHeight / options.height
+              window.innerHeight / options.height,
             ),
-            1
+            1,
           );
         }
 
