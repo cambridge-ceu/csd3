@@ -5,14 +5,14 @@ var PdfExport = (function (_Reveal) {
 
   function getRevealJsPath() {
     var regex = /\b[^/]+\/reveal.css$/i;
-    var script = Array.from(document.querySelectorAll("link")).find(function (
-      e
-    ) {
-      return e.attributes.href && e.attributes.href.value.search(regex) >= 0;
-    });
+    var script = Array.from(document.querySelectorAll("link")).find(
+      function (e) {
+        return e.attributes.href && e.attributes.href.value.search(regex) >= 0;
+      },
+    );
     if (!script) {
       console.error(
-        "reveal.css could not be found in included <link> elements. Did you rename this file?"
+        "reveal.css could not be found in included <link> elements. Did you rename this file?",
       );
       return "";
     }
@@ -55,7 +55,7 @@ var PdfExport = (function (_Reveal) {
             return false;
           }
         },
-        true
+        true,
       );
     }
   }
@@ -92,7 +92,7 @@ var PdfExport = (function (_Reveal) {
         key: shortcut.toUpperCase(),
         description: "PDF export mode",
       },
-      togglePdfExport
+      togglePdfExport,
     );
     installAltKeyBindings();
   }
