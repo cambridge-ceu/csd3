@@ -24,7 +24,6 @@ import hljs from "highlight.js";
     for (
       a < o && ((i = o), (o = a), (a = i), (i = l), (l = s), (s = i));
       0 !== n.indexOf(l);
-
     )
       l = l.slice(1);
     for (; -1 === n.lastIndexOf(s); ) s = s.slice(0, -1);
@@ -100,7 +99,7 @@ import hljs from "highlight.js";
           for (var r = "", o = 0, a = t.length; o < a; o++)
             r += p(
               '<tr><td class="{0} {1}" {3}="{5}"><div class="{2}" {3}="{5}"></div></td><td class="{0} {4}" {3}="{5}">{6}</td></tr>',
-              [l, s, c, m, h, o + n.startFrom, 0 < t[o].length ? t[o] : " "]
+              [l, s, c, m, h, o + n.startFrom, 0 < t[o].length ? t[o] : " "],
             );
           return p('<table class="{0}">{1}</table>', [i, r]);
         }
@@ -128,7 +127,7 @@ import hljs from "highlight.js";
       return void 0 !== t[n] ? t[n] : e;
     });
   }
-  hljs
+  (hljs
     ? ((hljs.initLineNumbersOnLoad = function (e) {
         "interactive" === o.readyState || "complete" === o.readyState
           ? n(e)
@@ -140,12 +139,12 @@ import hljs from "highlight.js";
       (hljs.lineNumbersValue = function (e, n) {
         if ("string" != typeof e) return;
         var t = document.createElement("code");
-        return (t.innerHTML = e), f(t, n);
+        return ((t.innerHTML = e), f(t, n));
       }),
       ((e = o.createElement("style")).type = "text/css"),
       (e.innerHTML = p(
         ".{0}{border-collapse:collapse}.{0} td{padding:0}.{1}:before{content:attr({2})}",
-        [i, c, m]
+        [i, c, m],
       )),
       o.getElementsByTagName("head")[0].appendChild(e))
     : r.console.error("highlight.js not detected!"),
@@ -165,7 +164,7 @@ import hljs from "highlight.js";
             : t.toString()),
         e.clipboardData.setData("text/plain", n),
         e.preventDefault());
-    });
+    }));
 })(window, document);
 
 /*!
@@ -234,9 +233,9 @@ const Plugin = {
           function (event) {
             hljs.highlightElement(event.currentTarget);
           },
-          false
+          false,
         );
-      }
+      },
     );
 
     // Triggers a callback function before we trigger highlighting
@@ -247,7 +246,7 @@ const Plugin = {
     // Run initial highlighting for all code
     if (config.highlightOnLoad) {
       Array.from(
-        reveal.getRevealElement().querySelectorAll("pre code")
+        reveal.getRevealElement().querySelectorAll("pre code"),
       ).forEach((block) => {
         Plugin.highlightBlock(block);
       });
@@ -260,7 +259,7 @@ const Plugin = {
         .call(
           reveal
             .getRevealElement()
-            .querySelectorAll("pre code[data-line-numbers].current-fragment")
+            .querySelectorAll("pre code[data-line-numbers].current-fragment"),
         )
         .forEach(function (block) {
           Plugin.scrollHighlightedLineIntoView(block, {}, true);
@@ -290,14 +289,14 @@ const Plugin = {
       // If there is more than one highlight step, generate
       // fragments
       var highlightSteps = Plugin.deserializeHighlightSteps(
-        block.getAttribute("data-line-numbers")
+        block.getAttribute("data-line-numbers"),
       );
       if (highlightSteps.length > 1) {
         // If the original code block has a fragment-index,
         // each clone should follow in an incremental sequence
         var fragmentIndex = parseInt(
           block.getAttribute("data-fragment-index"),
-          10
+          10,
         );
 
         if (typeof fragmentIndex !== "number" || isNaN(fragmentIndex)) {
@@ -309,7 +308,7 @@ const Plugin = {
           var fragmentBlock = block.cloneNode(true);
           fragmentBlock.setAttribute(
             "data-line-numbers",
-            Plugin.serializeHighlightSteps([highlight])
+            Plugin.serializeHighlightSteps([highlight]),
           );
           fragmentBlock.classList.add("fragment");
           block.parentNode.appendChild(fragmentBlock);
@@ -328,23 +327,23 @@ const Plugin = {
             Plugin.scrollHighlightedLineIntoView.bind(
               Plugin,
               fragmentBlock,
-              scrollState
-            )
+              scrollState,
+            ),
           );
           fragmentBlock.addEventListener(
             "hidden",
             Plugin.scrollHighlightedLineIntoView.bind(
               Plugin,
               fragmentBlock.previousElementSibling,
-              scrollState
-            )
+              scrollState,
+            ),
           );
         });
 
         block.removeAttribute("data-fragment-index");
         block.setAttribute(
           "data-line-numbers",
-          Plugin.serializeHighlightSteps([highlightSteps[0]])
+          Plugin.serializeHighlightSteps([highlightSteps[0]]),
         );
       }
 
@@ -409,7 +408,7 @@ const Plugin = {
     // Make sure the scroll target is within bounds
     targetTop = Math.max(
       Math.min(targetTop, block.scrollHeight - viewportHeight),
-      0
+      0,
     );
 
     if (skipAnimation === true || startTop === targetTop) {
@@ -472,7 +471,7 @@ const Plugin = {
    */
   highlightLines: function (block, linesToHighlight) {
     var highlightSteps = Plugin.deserializeHighlightSteps(
-      linesToHighlight || block.getAttribute("data-line-numbers")
+      linesToHighlight || block.getAttribute("data-line-numbers"),
     );
 
     if (highlightSteps.length) {
@@ -487,16 +486,16 @@ const Plugin = {
                 highlight.start +
                 "):nth-child(-n+" +
                 highlight.end +
-                ")"
-            )
+                ")",
+            ),
           );
         }
         // Highlight a single line
         else if (typeof highlight.start === "number") {
           elementsToHighlight = [].slice.call(
             block.querySelectorAll(
-              "table tr:nth-child(" + highlight.start + ")"
-            )
+              "table tr:nth-child(" + highlight.start + ")",
+            ),
           );
         }
 
