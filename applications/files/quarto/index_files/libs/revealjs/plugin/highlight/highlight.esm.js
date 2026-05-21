@@ -30,9 +30,9 @@ function t(e) {
 }
 class a {
   constructor(e) {
-    void 0 === e.data && (e.data = {}),
+    (void 0 === e.data && (e.data = {}),
       (this.data = e.data),
-      (this.isMatchIgnored = !1);
+      (this.isMatchIgnored = !1));
   }
   ignoreMatch() {
     this.isMatchIgnored = !0;
@@ -59,7 +59,7 @@ function i(e, ...t) {
 const r = (e) => !!e.scope;
 class o {
   constructor(e, t) {
-    (this.buffer = ""), (this.classPrefix = t.classPrefix), e.walk(this);
+    ((this.buffer = ""), (this.classPrefix = t.classPrefix), e.walk(this));
   }
   addText(e) {
     this.buffer += n(e);
@@ -91,11 +91,11 @@ class o {
 }
 const s = (e = {}) => {
   const t = { children: [] };
-  return Object.assign(t, e), t;
+  return (Object.assign(t, e), t);
 };
 class l {
   constructor() {
-    (this.rootNode = s()), (this.stack = [this.rootNode]);
+    ((this.rootNode = s()), (this.stack = [this.rootNode]));
   }
   get top() {
     return this.stack[this.stack.length - 1];
@@ -108,7 +108,7 @@ class l {
   }
   openNode(e) {
     const t = s({ scope: e });
-    this.add(t), this.stack.push(t);
+    (this.add(t), this.stack.push(t));
   }
   closeNode() {
     if (this.stack.length > 1) return this.stack.pop();
@@ -145,7 +145,7 @@ class l {
 }
 class c extends l {
   constructor(e) {
-    super(), (this.options = e);
+    (super(), (this.options = e));
   }
   addText(e) {
     "" !== e && this.add(e);
@@ -158,13 +158,13 @@ class c extends l {
   }
   __addSublanguage(e, t) {
     const a = e.root;
-    t && (a.scope = `language:${t}`), this.add(a);
+    (t && (a.scope = `language:${t}`), this.add(a));
   }
   toHTML() {
     return new o(this, this.options).value();
   }
   finalize() {
-    return this.closeAllNodes(), !0;
+    return (this.closeAllNodes(), !0);
   }
 }
 function _(e) {
@@ -209,11 +209,11 @@ function b(e, { joinWith: t }) {
           i += n;
           break;
         }
-        (i += n.substring(0, e.index)),
+        ((i += n.substring(0, e.index)),
           (n = n.substring(e.index + e[0].length)),
           "\\" === e[0][0] && e[1]
             ? (i += "\\" + String(Number(e[1]) + t))
-            : ((i += e[0]), "(" === e[0] && a++);
+            : ((i += e[0]), "(" === e[0] && a++));
       }
       return i;
     })
@@ -251,7 +251,7 @@ const T = "[a-zA-Z]\\w*",
       "on",
       /[A-Za-z]+['](d|ve|re|ll|t|s|n)/,
       /[A-Za-z]+[-][a-z]+/,
-      /[A-Za-z][a-z]{2,}/
+      /[A-Za-z][a-z]{2,}/,
     );
     return (
       n.contains.push({
@@ -324,7 +324,7 @@ var F = Object.freeze({
             0 !== e.index && t.ignoreMatch();
           },
         },
-        e
+        e,
       )
     );
   },
@@ -355,7 +355,7 @@ function V(e, t) {
   if (e.match) {
     if (e.begin || e.end)
       throw new Error("begin & end are not supported with match");
-    (e.begin = e.match), delete e.match;
+    ((e.begin = e.match), delete e.match);
   }
 }
 function q(e, t) {
@@ -365,7 +365,7 @@ const z = (e, t) => {
     if (!e.beforeMatch) return;
     if (e.starts) throw new Error("beforeMatch cannot be used with starts");
     const a = Object.assign({}, e);
-    Object.keys(e).forEach((t) => {
+    (Object.keys(e).forEach((t) => {
       delete e[t];
     }),
       (e.keywords = a.keywords),
@@ -375,7 +375,7 @@ const z = (e, t) => {
         contains: [Object.assign(a, { endsParent: !0 })],
       }),
       (e.relevance = 0),
-      delete a.beforeMatch;
+      delete a.beforeMatch);
   },
   $ = [
     "of",
@@ -397,28 +397,28 @@ function Q(e, t, a = W) {
     "string" == typeof e
       ? i(a, e.split(" "))
       : Array.isArray(e)
-      ? i(a, e)
-      : Object.keys(e).forEach(function (a) {
-          Object.assign(n, Q(e[a], t, a));
-        }),
+        ? i(a, e)
+        : Object.keys(e).forEach(function (a) {
+            Object.assign(n, Q(e[a], t, a));
+          }),
     n
   );
   function i(e, a) {
-    t && (a = a.map((e) => e.toLowerCase())),
+    (t && (a = a.map((e) => e.toLowerCase())),
       a.forEach(function (t) {
         const a = t.split("|");
         n[a[0]] = [e, K(a[0], a[1])];
-      });
+      }));
   }
 }
 function K(e, t) {
   return t
     ? Number(t)
     : (function (e) {
-        return $.includes(e.toLowerCase());
-      })(e)
-    ? 0
-    : 1;
+          return $.includes(e.toLowerCase());
+        })(e)
+      ? 0
+      : 1;
 }
 const j = {},
   X = (e) => {
@@ -438,11 +438,11 @@ function te(e, t, { key: a }) {
     r = {},
     o = {};
   for (let e = 1; e <= t.length; e++)
-    (o[e + n] = i[e]), (r[e + n] = !0), (n += E(t[e - 1]));
-  (e[a] = o), (e[a]._emit = r), (e[a]._multi = !0);
+    ((o[e + n] = i[e]), (r[e + n] = !0), (n += E(t[e - 1])));
+  ((e[a] = o), (e[a]._emit = r), (e[a]._multi = !0));
 }
 function ae(e) {
-  !(function (e) {
+  (!(function (e) {
     e.scope &&
       "object" == typeof e.scope &&
       null !== e.scope &&
@@ -454,29 +454,30 @@ function ae(e) {
       if (Array.isArray(e.begin)) {
         if (e.skip || e.excludeBegin || e.returnBegin)
           throw (
-            (X(
-              "skip, excludeBegin, returnBegin not compatible with beginScope: {}"
+            X(
+              "skip, excludeBegin, returnBegin not compatible with beginScope: {}",
             ),
-            ee)
+            ee
           );
         if ("object" != typeof e.beginScope || null === e.beginScope)
           throw (X("beginScope must be object"), ee);
-        te(e, e.begin, { key: "beginScope" }),
-          (e.begin = b(e.begin, { joinWith: "" }));
+        (te(e, e.begin, { key: "beginScope" }),
+          (e.begin = b(e.begin, { joinWith: "" })));
       }
     })(e),
     (function (e) {
       if (Array.isArray(e.end)) {
         if (e.skip || e.excludeEnd || e.returnEnd)
           throw (
-            (X("skip, excludeEnd, returnEnd not compatible with endScope: {}"),
-            ee)
+            X("skip, excludeEnd, returnEnd not compatible with endScope: {}"),
+            ee
           );
         if ("object" != typeof e.endScope || null === e.endScope)
           throw (X("endScope must be object"), ee);
-        te(e, e.end, { key: "endScope" }), (e.end = b(e.end, { joinWith: "" }));
+        (te(e, e.end, { key: "endScope" }),
+          (e.end = b(e.end, { joinWith: "" })));
       }
-    })(e);
+    })(e));
 }
 function ne(e) {
   function t(t, a) {
@@ -485,26 +486,26 @@ function ne(e) {
       "m" +
         (e.case_insensitive ? "i" : "") +
         (e.unicodeRegex ? "u" : "") +
-        (a ? "g" : "")
+        (a ? "g" : ""),
     );
   }
   class a {
     constructor() {
-      (this.matchIndexes = {}),
+      ((this.matchIndexes = {}),
         (this.regexes = []),
         (this.matchAt = 1),
-        (this.position = 0);
+        (this.position = 0));
     }
     addRule(e, t) {
-      (t.position = this.position++),
+      ((t.position = this.position++),
         (this.matchIndexes[this.matchAt] = t),
         this.regexes.push([t, e]),
-        (this.matchAt += E(e) + 1);
+        (this.matchAt += E(e) + 1));
     }
     compile() {
       0 === this.regexes.length && (this.exec = () => null);
       const e = this.regexes.map((e) => e[1]);
-      (this.matcherRe = t(b(e, { joinWith: "|" }), !0)), (this.lastIndex = 0);
+      ((this.matcherRe = t(b(e, { joinWith: "|" }), !0)), (this.lastIndex = 0));
     }
     exec(e) {
       this.matcherRe.lastIndex = this.lastIndex;
@@ -512,16 +513,16 @@ function ne(e) {
       if (!t) return null;
       const a = t.findIndex((e, t) => t > 0 && void 0 !== e),
         n = this.matchIndexes[a];
-      return t.splice(0, a), Object.assign(t, n);
+      return (t.splice(0, a), Object.assign(t, n));
     }
   }
   class n {
     constructor() {
-      (this.rules = []),
+      ((this.rules = []),
         (this.multiRegexes = []),
         (this.count = 0),
         (this.lastIndex = 0),
-        (this.regexIndex = 0);
+        (this.regexIndex = 0));
     }
     getMatcher(e) {
       if (this.multiRegexes[e]) return this.multiRegexes[e];
@@ -540,7 +541,7 @@ function ne(e) {
       this.regexIndex = 0;
     }
     addRule(e, t) {
-      this.rules.push([e, t]), "begin" === t.type && this.count++;
+      (this.rules.push([e, t]), "begin" === t.type && this.count++);
     }
     exec(e) {
       const t = this.getMatcher(this.regexIndex);
@@ -550,7 +551,7 @@ function ne(e) {
         if (a && a.index === this.lastIndex);
         else {
           const t = this.getMatcher(0);
-          (t.lastIndex = this.lastIndex + 1), (a = t.exec(e));
+          ((t.lastIndex = this.lastIndex + 1), (a = t.exec(e)));
         }
       return (
         a &&
@@ -565,18 +566,18 @@ function ne(e) {
     e.contains && e.contains.includes("self"))
   )
     throw new Error(
-      "ERR: contains `self` is not supported at the top-level of a language.  See documentation."
+      "ERR: contains `self` is not supported at the top-level of a language.  See documentation.",
     );
   return (
     (e.classNameAliases = i(e.classNameAliases || {})),
     (function a(r, o) {
       const s = r;
       if (r.isCompiled) return s;
-      [G, V, ae, z].forEach((e) => e(r, o)),
+      ([G, V, ae, z].forEach((e) => e(r, o)),
         e.compilerExtensions.forEach((e) => e(r, o)),
         (r.__beforeBegin = null),
         [Y, H, q].forEach((e) => e(r, o)),
-        (r.isCompiled = !0);
+        (r.isCompiled = !0));
       let l = null;
       return (
         "object" == typeof r.keywords &&
@@ -611,7 +612,7 @@ function ne(e) {
               if (Object.isFrozen(e)) return i(e);
               return e;
             })("self" === e ? r : e);
-          })
+          }),
         )),
         r.contains.forEach(function (e) {
           a(e, s);
@@ -621,7 +622,7 @@ function ne(e) {
           const t = new n();
           return (
             e.contains.forEach((e) =>
-              t.addRule(e.begin, { rule: e, type: "begin" })
+              t.addRule(e.begin, { rule: e, type: "begin" }),
             ),
             e.terminatorEnd && t.addRule(e.terminatorEnd, { type: "end" }),
             e.illegal && t.addRule(e.illegal, { type: "illegal" }),
@@ -638,7 +639,7 @@ function ie(e) {
 }
 class re extends Error {
   constructor(e, t) {
-    super(e), (this.name = "HTMLInjectionError"), (this.html = t);
+    (super(e), (this.name = "HTMLInjectionError"), (this.html = t));
   }
 }
 const oe = n,
@@ -668,20 +669,20 @@ const oe = n,
     function S(e, t, a) {
       let n = "",
         i = "";
-      "object" == typeof t
+      ("object" == typeof t
         ? ((n = e), (a = t.ignoreIllegals), (i = t.language))
         : (J("10.7.0", "highlight(lang, code, ...args) has been deprecated."),
           J(
             "10.7.0",
-            "Please use highlight(code, options) instead.\nhttps://github.com/highlightjs/highlight.js/issues/2277"
+            "Please use highlight(code, options) instead.\nhttps://github.com/highlightjs/highlight.js/issues/2277",
           ),
           (i = e),
           (n = t)),
-        void 0 === a && (a = !0);
+        void 0 === a && (a = !0));
       const r = { code: n, language: i };
       v("before:highlight", r);
       const o = r.result ? r.result : b(r.language, r.code, a);
-      return (o.code = r.code), v("after:highlight", o), o;
+      return ((o.code = r.code), v("after:highlight", o), o);
     }
     function b(e, t, i, r) {
       const l = Object.create(null);
@@ -710,26 +711,27 @@ const oe = n,
               m(t[0], a);
             }
           } else a += t[0];
-          (e = v.keywordPatternRe.lastIndex), (t = v.keywordPatternRe.exec(y));
+          ((e = v.keywordPatternRe.lastIndex),
+            (t = v.keywordPatternRe.exec(y)));
         }
         var n;
-        (a += y.substring(e)), A.addText(a);
+        ((a += y.substring(e)), A.addText(a));
       }
       function d() {
-        null != v.subLanguage
+        (null != v.subLanguage
           ? (function () {
               if ("" === y) return;
               let e = null;
               if ("string" == typeof v.subLanguage) {
                 if (!n[v.subLanguage]) return void A.addText(y);
-                (e = b(v.subLanguage, y, !0, I[v.subLanguage])),
-                  (I[v.subLanguage] = e._top);
+                ((e = b(v.subLanguage, y, !0, I[v.subLanguage])),
+                  (I[v.subLanguage] = e._top));
               } else e = T(y, v.subLanguage.length ? v.subLanguage : null);
-              v.relevance > 0 && (D += e.relevance),
-                A.__addSublanguage(e._emitter, e.language);
+              (v.relevance > 0 && (D += e.relevance),
+                A.__addSublanguage(e._emitter, e.language));
             })()
           : c(),
-          (y = "");
+          (y = ""));
       }
       function m(e, t) {
         "" !== e && (A.startScope(t), A.addText(e), A.endScope());
@@ -744,7 +746,7 @@ const oe = n,
           }
           const n = R.classNameAliases[e[a]] || e[a],
             i = t[a];
-          n ? m(i, n) : ((y = i), c(), (y = "")), a++;
+          (n ? m(i, n) : ((y = i), c(), (y = "")), a++);
         }
       }
       function u(e, t) {
@@ -756,7 +758,7 @@ const oe = n,
             (e.beginScope._wrap
               ? (m(
                   y,
-                  R.classNameAliases[e.beginScope._wrap] || e.beginScope._wrap
+                  R.classNameAliases[e.beginScope._wrap] || e.beginScope._wrap,
                 ),
                 (y = ""))
               : e.beginScope._multi && (p(e.beginScope, t), (y = ""))),
@@ -772,7 +774,7 @@ const oe = n,
         if (i) {
           if (e["on:end"]) {
             const n = new a(e);
-            e["on:end"](t, n), n.isMatchIgnored && (i = !1);
+            (e["on:end"](t, n), n.isMatchIgnored && (i = !1));
           }
           if (i) {
             for (; e.endsParent && e.parent; ) e = e.parent;
@@ -793,23 +795,23 @@ const oe = n,
         v.endScope && v.endScope._wrap
           ? (d(), m(a, v.endScope._wrap))
           : v.endScope && v.endScope._multi
-          ? (d(), p(v.endScope, e))
-          : r.skip
-          ? (y += a)
-          : (r.returnEnd || r.excludeEnd || (y += a),
-            d(),
-            r.excludeEnd && (y = a));
+            ? (d(), p(v.endScope, e))
+            : r.skip
+              ? (y += a)
+              : (r.returnEnd || r.excludeEnd || (y += a),
+                d(),
+                r.excludeEnd && (y = a));
         do {
-          v.scope && A.closeNode(),
+          (v.scope && A.closeNode(),
             v.skip || v.subLanguage || (D += v.relevance),
-            (v = v.parent);
+            (v = v.parent));
         } while (v !== i.parent);
-        return i.starts && u(i.starts, e), r.returnEnd ? 0 : a.length;
+        return (i.starts && u(i.starts, e), r.returnEnd ? 0 : a.length);
       }
       let C = {};
       function f(n, r) {
         const s = r && r[0];
-        if (((y += n), null == s)) return d(), 0;
+        if (((y += n), null == s)) return (d(), 0);
         if (
           "begin" === C.type &&
           "end" === r.type &&
@@ -846,7 +848,7 @@ const oe = n,
               s +
               '" for mode "' +
               (v.scope || "<unnamed>") +
-              '"'
+              '"',
           );
           throw ((e.mode = v), e);
         }
@@ -857,15 +859,16 @@ const oe = n,
         if ("illegal" === r.type && "" === s) return 1;
         if (L > 1e5 && L > 3 * r.index) {
           throw new Error(
-            "potential infinite loop, way more iterations than matches"
+            "potential infinite loop, way more iterations than matches",
           );
         }
-        return (y += s), s.length;
+        return ((y += s), s.length);
       }
       const R = N(e);
       if (!R)
         throw (
-          (X(s.replace("{}", e)), new Error('Unknown language: "' + e + '"'))
+          X(s.replace("{}", e)),
+          new Error('Unknown language: "' + e + '"')
         );
       const O = ne(R);
       let h = "",
@@ -886,9 +889,9 @@ const oe = n,
         if (R.__emitTokens) R.__emitTokens(t, A);
         else {
           for (v.matcher.considerAll(); ; ) {
-            L++,
+            (L++,
               x ? (x = !1) : v.matcher.considerAll(),
-              (v.matcher.lastIndex = M);
+              (v.matcher.lastIndex = M));
             const e = v.matcher.exec(t);
             if (!e) break;
             const a = f(t.substring(M, e.index), e);
@@ -947,7 +950,7 @@ const oe = n,
             _top: l,
             _emitter: new _.__emitter(_),
           };
-          return t._emitter.addText(e), t;
+          return (t._emitter.addText(e), t);
         })(e),
         i = t
           .filter(N)
@@ -964,7 +967,7 @@ const oe = n,
         }),
         [o, s] = r,
         c = o;
-      return (c.secondBest = s), c;
+      return ((c.secondBest = s), c);
     }
     function C(e) {
       let t = null;
@@ -990,16 +993,16 @@ const oe = n,
       )
         return void console.log(
           "Element previously highlighted. To highlight again, first unset `dataset.highlighted`.",
-          e
+          e,
         );
       if (
         e.children.length > 0 &&
         (_.ignoreUnescapedHTML ||
           (console.warn(
-            "One of your code blocks includes unescaped HTML. This is a potentially serious security risk."
+            "One of your code blocks includes unescaped HTML. This is a potentially serious security risk.",
           ),
           console.warn(
-            "https://github.com/highlightjs/highlight.js/wiki/security"
+            "https://github.com/highlightjs/highlight.js/wiki/security",
           ),
           console.warn("The element with unescaped HTML:"),
           console.warn(e)),
@@ -1007,17 +1010,17 @@ const oe = n,
       ) {
         throw new re(
           "One of your code blocks includes unescaped HTML.",
-          e.innerHTML
+          e.innerHTML,
         );
       }
       t = e;
       const n = t.textContent,
         r = a ? S(n, { language: a, ignoreIllegals: !0 }) : T(n);
-      (e.innerHTML = r.value),
+      ((e.innerHTML = r.value),
         (e.dataset.highlighted = "yes"),
         (function (e, t, a) {
           const n = (t && i[t]) || a;
-          e.classList.add("hljs"), e.classList.add(`language-${n}`);
+          (e.classList.add("hljs"), e.classList.add(`language-${n}`));
         })(e, a, r.language),
         (e.result = {
           language: r.language,
@@ -1029,7 +1032,7 @@ const oe = n,
             language: r.secondBest.language,
             relevance: r.secondBest.relevance,
           }),
-        v("after:highlightElement", { el: e, result: r, text: n });
+        v("after:highlightElement", { el: e, result: r, text: n }));
     }
     let f = !1;
     function R() {
@@ -1037,13 +1040,13 @@ const oe = n,
       document.querySelectorAll(_.cssSelector).forEach(C);
     }
     function N(e) {
-      return (e = (e || "").toLowerCase()), n[e] || n[i[e]];
+      return ((e = (e || "").toLowerCase()), n[e] || n[i[e]]);
     }
     function O(e, { languageName: t }) {
-      "string" == typeof e && (e = [e]),
+      ("string" == typeof e && (e = [e]),
         e.forEach((e) => {
           i[e.toLowerCase()] = t;
-        });
+        }));
     }
     function h(e) {
       const t = N(e);
@@ -1055,14 +1058,14 @@ const oe = n,
         e[a] && e[a](t);
       });
     }
-    "undefined" != typeof window &&
+    ("undefined" != typeof window &&
       window.addEventListener &&
       window.addEventListener(
         "DOMContentLoaded",
         function () {
           f && R();
         },
-        !1
+        !1,
       ),
       Object.assign(e, {
         highlight: S,
@@ -1080,18 +1083,18 @@ const oe = n,
           _ = se(_, e);
         },
         initHighlighting: () => {
-          R(),
+          (R(),
             J(
               "10.6.0",
-              "initHighlighting() deprecated.  Use highlightAll() now."
-            );
+              "initHighlighting() deprecated.  Use highlightAll() now.",
+            ));
         },
         initHighlightingOnLoad: function () {
-          R(),
+          (R(),
             J(
               "10.6.0",
-              "initHighlightingOnLoad() deprecated.  Use highlightAll() now."
-            );
+              "initHighlightingOnLoad() deprecated.  Use highlightAll() now.",
+            ));
         },
         registerLanguage: function (t, a) {
           let i = null;
@@ -1102,18 +1105,18 @@ const oe = n,
               (X(
                 "Language definition for '{}' could not be registered.".replace(
                   "{}",
-                  t
-                )
+                  t,
+                ),
               ),
               !o)
             )
               throw e;
-            X(e), (i = l);
+            (X(e), (i = l));
           }
-          i.name || (i.name = t),
+          (i.name || (i.name = t),
             (n[t] = i),
             (i.rawDefinition = a.bind(null, e)),
-            i.aliases && O(i.aliases, { languageName: t });
+            i.aliases && O(i.aliases, { languageName: t }));
         },
         unregisterLanguage: function (e) {
           delete n[e];
@@ -1127,8 +1130,8 @@ const oe = n,
         autoDetection: h,
         inherit: se,
         addPlugin: function (e) {
-          !(function (e) {
-            e["before:highlightBlock"] &&
+          (!(function (e) {
+            (e["before:highlightBlock"] &&
               !e["before:highlightElement"] &&
               (e["before:highlightElement"] = (t) => {
                 e["before:highlightBlock"](Object.assign({ block: t.el }, t));
@@ -1137,9 +1140,9 @@ const oe = n,
                 !e["after:highlightElement"] &&
                 (e["after:highlightElement"] = (t) => {
                   e["after:highlightBlock"](Object.assign({ block: t.el }, t));
-                });
+                }));
           })(e),
-            r.push(e);
+            r.push(e));
         },
         removePlugin: function (e) {
           const t = r.indexOf(e);
@@ -1159,9 +1162,9 @@ const oe = n,
         either: g,
         optional: p,
         anyNumberOfTimes: m,
-      });
+      }));
     for (const e in F) "object" == typeof F[e] && t(F[e]);
-    return Object.assign(e, F), e;
+    return (Object.assign(e, F), e);
   },
   _e = ce({});
 _e.newInstance = () => ce({});
@@ -1550,9 +1553,9 @@ var de,
   Ss,
   bs,
   Ts = _e;
-(_e.HighlightJS = _e), (_e.default = _e);
+((_e.HighlightJS = _e), (_e.default = _e));
 var Cs = Ts;
-Cs.registerLanguage(
+(Cs.registerLanguage(
   "1c",
   (me ||
     ((me = 1),
@@ -1646,7 +1649,7 @@ Cs.registerLanguage(
         ],
       };
     })),
-  de)
+  de),
 ),
   Cs.registerLanguage(
     "abnf",
@@ -1695,7 +1698,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    pe)
+    pe),
   ),
   Cs.registerLanguage(
     "accesslog",
@@ -1762,7 +1765,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ge)
+    ge),
   ),
   Cs.registerLanguage(
     "actionscript",
@@ -1878,7 +1881,7 @@ Cs.registerLanguage(
           illegal: /#/,
         };
       })),
-    Se)
+    Se),
   ),
   Cs.registerLanguage(
     "ada",
@@ -2056,7 +2059,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Te)
+    Te),
   ),
   Cs.registerLanguage(
     "angelscript",
@@ -2184,7 +2187,7 @@ Cs.registerLanguage(
           }
         );
       })),
-    fe)
+    fe),
   ),
   Cs.registerLanguage(
     "apache",
@@ -2260,7 +2263,7 @@ Cs.registerLanguage(
           illegal: /\S/,
         };
       })),
-    Ne)
+    Ne),
   ),
   Cs.registerLanguage(
     "applescript",
@@ -2321,9 +2324,9 @@ Cs.registerLanguage(
                   /ASCII (character|number)/,
                   /localized string/,
                   /choose (application|color|file|file name|folder|from list|remote application|URL)/,
-                  /display (alert|dialog)/
+                  /display (alert|dialog)/,
                 ),
-                /\b/
+                /\b/,
               ),
             },
             { className: "built_in", begin: /^\s*return\b/ },
@@ -2350,9 +2353,9 @@ Cs.registerLanguage(
                   /a (ref|reference)/,
                   /POSIX (file|path)/,
                   /(date|time) string/,
-                  /quoted form/
+                  /quoted form/,
                 ),
-                /\b/
+                /\b/,
               ),
             },
             {
@@ -2365,7 +2368,7 @@ Cs.registerLanguage(
           illegal: /\/\/|->|=>|\[\[/,
         };
       })),
-    he)
+    he),
   ),
   Cs.registerLanguage(
     "arcade",
@@ -2711,7 +2714,7 @@ Cs.registerLanguage(
           illegal: /#(?!!)/,
         };
       })),
-    Ie)
+    Ie),
   ),
   Cs.registerLanguage(
     "arduino",
@@ -3434,7 +3437,7 @@ Cs.registerLanguage(
                   /(?!switch)/,
                   /(?!while)/,
                   e.IDENT_RE,
-                  t.lookahead(/(<[^<>]+>|)\s*\(/)
+                  t.lookahead(/(<[^<>]+>|)\s*\(/),
                 ),
               },
               u = [p, c, o, a, e.C_BLOCK_COMMENT_MODE, l, s],
@@ -3536,7 +3539,7 @@ Cs.registerLanguage(
           a
         );
       })),
-    ye)
+    ye),
   ),
   Cs.registerLanguage(
     "armasm",
@@ -3599,7 +3602,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Me)
+    Me),
   ),
   Cs.registerLanguage(
     "xml",
@@ -3610,7 +3613,7 @@ Cs.registerLanguage(
           a = t.concat(
             /[\p{L}_]/u,
             t.optional(/[\p{L}0-9_.-]*:/u),
-            /[\p{L}0-9_.-]*/u
+            /[\p{L}0-9_.-]*/u,
           ),
           n = {
             className: "symbol",
@@ -3733,7 +3736,7 @@ Cs.registerLanguage(
               className: "tag",
               begin: t.concat(
                 /</,
-                t.lookahead(t.concat(a, t.either(/\/>/, />/, /\s/)))
+                t.lookahead(t.concat(a, t.either(/\/>/, />/, /\s/))),
               ),
               end: /\/?>/,
               contains: [
@@ -3751,7 +3754,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    xe)
+    xe),
   ),
   Cs.registerLanguage(
     "asciidoc",
@@ -3767,7 +3770,7 @@ Cs.registerLanguage(
                 /\*\*/,
                 /((\*(?!\*)|\\[^\n]|[^*\n\\])+\n)+/,
                 /(\*(?!\*)|\\[^\n]|[^*\n\\])*/,
-                /\*\*/
+                /\*\*/,
               ),
               relevance: 0,
             },
@@ -3782,7 +3785,7 @@ Cs.registerLanguage(
                 /__/,
                 /((_(?!_)|\\[^\n]|[^_\n\\])+\n)+/,
                 /(_(?!_)|\\[^\n]|[^_\n\\])*/,
-                /__/
+                /__/,
               ),
               relevance: 0,
             },
@@ -3887,7 +3890,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Pe)
+    Pe),
   ),
   Cs.registerLanguage(
     "aspectj",
@@ -4088,7 +4091,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ue)
+    Ue),
   ),
   Cs.registerLanguage(
     "autohotkey",
@@ -4127,7 +4130,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Be)
+    Be),
   ),
   Cs.registerLanguage(
     "autoit",
@@ -4246,7 +4249,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ye)
+    Ye),
   ),
   Cs.registerLanguage(
     "avrasm",
@@ -4283,7 +4286,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ve)
+    Ve),
   ),
   Cs.registerLanguage(
     "awk",
@@ -4324,7 +4327,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ze)
+    ze),
   ),
   Cs.registerLanguage(
     "axapta",
@@ -4486,7 +4489,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    We)
+    We),
   ),
   Cs.registerLanguage(
     "bash",
@@ -4814,7 +4817,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ke)
+    Ke),
   ),
   Cs.registerLanguage(
     "basic",
@@ -5022,7 +5025,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Xe)
+    Xe),
   ),
   Cs.registerLanguage(
     "bnf",
@@ -5047,7 +5050,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Je)
+    Je),
   ),
   Cs.registerLanguage(
     "brainfuck",
@@ -5071,7 +5074,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    tt)
+    tt),
   ),
   Cs.registerLanguage(
     "c",
@@ -5303,7 +5306,7 @@ Cs.registerLanguage(
           exports: { preprocessor: c, strings: s, keywords: m },
         };
       })),
-    nt)
+    nt),
   ),
   Cs.registerLanguage(
     "cal",
@@ -5378,7 +5381,7 @@ Cs.registerLanguage(
                 "XMLport",
                 "MenuSuite",
                 "Page",
-                "Query"
+                "Query",
               ),
               /\s+/,
               /\d+/,
@@ -5410,7 +5413,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    rt)
+    rt),
   ),
   Cs.registerLanguage(
     "capnproto",
@@ -5479,7 +5482,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    st)
+    st),
   ),
   Cs.registerLanguage(
     "ceylon",
@@ -5583,7 +5586,7 @@ Cs.registerLanguage(
           }
         );
       })),
-    ct)
+    ct),
   ),
   Cs.registerLanguage(
     "clean",
@@ -5639,7 +5642,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    dt)
+    dt),
   ),
   Cs.registerLanguage(
     "clojure",
@@ -5733,7 +5736,7 @@ Cs.registerLanguage(
           }
         );
       })),
-    pt)
+    pt),
   ),
   Cs.registerLanguage(
     "clojure-repl",
@@ -5751,7 +5754,7 @@ Cs.registerLanguage(
               },
             ],
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "cmake",
@@ -5775,7 +5778,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    St)
+    St),
   ),
   Cs.registerLanguage(
     "coffeescript",
@@ -5893,7 +5896,7 @@ Cs.registerLanguage(
             "SyntaxError",
             "TypeError",
             "URIError",
-          ]
+          ],
         );
       return (
         (Tt = function (n) {
@@ -5914,7 +5917,7 @@ Cs.registerLanguage(
               ])
               .filter(
                 ((r = ["var", "const", "let", "function", "static"]),
-                (e) => !r.includes(e))
+                (e) => !r.includes(e)),
               ),
             literal: t.concat(["yes", "no", "on", "off"]),
             built_in: a.concat(["npm", "print"]),
@@ -6029,7 +6032,7 @@ Cs.registerLanguage(
         }),
         Tt
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "coq",
@@ -6467,7 +6470,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ft)
+    ft),
   ),
   Cs.registerLanguage(
     "cos",
@@ -6522,7 +6525,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Nt)
+    Nt),
   ),
   Cs.registerLanguage(
     "cpp",
@@ -6883,7 +6886,7 @@ Cs.registerLanguage(
               /(?!switch)/,
               /(?!while)/,
               e.IDENT_RE,
-              t.lookahead(/(<[^<>]+>|)\s*\(/)
+              t.lookahead(/(<[^<>]+>|)\s*\(/),
             ),
           },
           u = [p, c, o, a, e.C_BLOCK_COMMENT_MODE, l, s],
@@ -6973,7 +6976,7 @@ Cs.registerLanguage(
           ]),
         };
       })),
-    ht)
+    ht),
   ),
   Cs.registerLanguage(
     "crmsh",
@@ -7035,7 +7038,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    It)
+    It),
   ),
   Cs.registerLanguage(
     "crystal",
@@ -7067,7 +7070,7 @@ Cs.registerLanguage(
           };
         function l(e, t) {
           const a = [{ begin: e, end: t }];
-          return (a[0].contains = a), a;
+          return ((a[0].contains = a), a);
         }
         const c = {
             className: "string",
@@ -7218,7 +7221,7 @@ Cs.registerLanguage(
           { name: "Crystal", aliases: ["cr"], keywords: i, contains: m }
         );
       })),
-    yt)
+    yt),
   ),
   Cs.registerLanguage(
     "csharp",
@@ -7401,7 +7404,7 @@ Cs.registerLanguage(
               s,
             ],
           });
-        (o.contains = [
+        ((o.contains = [
           c,
           l,
           i,
@@ -7418,7 +7421,7 @@ Cs.registerLanguage(
             e.QUOTE_STRING_MODE,
             n,
             e.inherit(e.C_BLOCK_COMMENT_MODE, { illegal: /\n/ }),
-          ]);
+          ]));
         const d = {
             variants: [c, l, i, e.APOS_STRING_MODE, e.QUOTE_STRING_MODE],
           },
@@ -7556,7 +7559,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Mt)
+    Mt),
   ),
   Cs.registerLanguage(
     "csp",
@@ -7602,7 +7605,7 @@ Cs.registerLanguage(
               },
             ],
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "css",
@@ -8280,7 +8283,7 @@ Cs.registerLanguage(
         }),
         Pt
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "d",
@@ -8378,7 +8381,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ut)
+    Ut),
   ),
   Cs.registerLanguage(
     "markdown",
@@ -8403,7 +8406,7 @@ Cs.registerLanguage(
                 begin: e.regex.concat(
                   /\[.+?\]\(/,
                   /[A-Za-z][A-Za-z0-9+.-]*/,
-                  /:\/\/.*?\)/
+                  /:\/\/.*?\)/,
                 ),
                 relevance: 2,
               },
@@ -8457,7 +8460,7 @@ Cs.registerLanguage(
           },
           r = e.inherit(n, { contains: [] }),
           o = e.inherit(i, { contains: [] });
-        n.contains.push(o), i.contains.push(r);
+        (n.contains.push(o), i.contains.push(r));
         let s = [t, a];
         return (
           [n, i, r, o].forEach((e) => {
@@ -8531,7 +8534,7 @@ Cs.registerLanguage(
           }
         );
       })),
-    Bt)
+    Bt),
   ),
   Cs.registerLanguage(
     "dart",
@@ -8722,7 +8725,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Yt)
+    Yt),
   ),
   Cs.registerLanguage(
     "delphi",
@@ -8924,7 +8927,7 @@ Cs.registerLanguage(
           ].concat(a),
         };
       })),
-    Vt)
+    Vt),
   ),
   Cs.registerLanguage(
     "diff",
@@ -8942,7 +8945,7 @@ Cs.registerLanguage(
               match: t.either(
                 /^@@ +-\d+,\d+ +\+\d+,\d+ +@@/,
                 /^\*\*\* +\d+,\d+ +\*\*\*\*$/,
-                /^--- +\d+,\d+ +----$/
+                /^--- +\d+,\d+ +----$/,
               ),
             },
             {
@@ -8956,7 +8959,7 @@ Cs.registerLanguage(
                     /^-{3}/,
                     /^\*{3} /,
                     /^\+{3}/,
-                    /^diff --git/
+                    /^diff --git/,
                   ),
                   end: /$/,
                 },
@@ -8969,7 +8972,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    zt)
+    zt),
   ),
   Cs.registerLanguage(
     "django",
@@ -9020,7 +9023,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Wt)
+    Wt),
   ),
   Cs.registerLanguage(
     "dns",
@@ -9087,7 +9090,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Kt)
+    Kt),
   ),
   Cs.registerLanguage(
     "dockerfile",
@@ -9122,7 +9125,7 @@ Cs.registerLanguage(
           illegal: "</",
         };
       })),
-    Xt)
+    Xt),
   ),
   Cs.registerLanguage(
     "dos",
@@ -9265,7 +9268,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Jt)
+    Jt),
   ),
   Cs.registerLanguage(
     "dsconfig",
@@ -9314,7 +9317,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ta)
+    ta),
   ),
   Cs.registerLanguage(
     "dts",
@@ -9396,7 +9399,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    na)
+    na),
   ),
   Cs.registerLanguage(
     "dust",
@@ -9436,7 +9439,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ra)
+    ra),
   ),
   Cs.registerLanguage(
     "ebnf",
@@ -9472,7 +9475,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    sa)
+    sa),
   ),
   Cs.registerLanguage(
     "elixir",
@@ -9540,7 +9543,7 @@ Cs.registerLanguage(
             className: "string",
             begin: "~[a-z](?=" + o + ")",
             contains: s.map((t) =>
-              e.inherit(t, { contains: [l(t.end), r, i] })
+              e.inherit(t, { contains: [l(t.end), r, i] }),
             ),
           },
           _ = {
@@ -9557,7 +9560,7 @@ Cs.registerLanguage(
                   e.inherit(a, {
                     end: t.concat(a.end, /[uismxfU]{0,7}/),
                     contains: [l(a.end), r, i],
-                  })
+                  }),
                 ),
               },
               {
@@ -9566,7 +9569,7 @@ Cs.registerLanguage(
                   e.inherit(a, {
                     end: t.concat(a.end, /[uismxfU]{0,7}/),
                     contains: [l(a.end)],
-                  })
+                  }),
                 ),
               },
             ],
@@ -9636,7 +9639,7 @@ Cs.registerLanguage(
           { name: "Elixir", aliases: ["ex", "exs"], keywords: n, contains: g }
         );
       })),
-    ca)
+    ca),
   ),
   Cs.registerLanguage(
     "elm",
@@ -9731,7 +9734,7 @@ Cs.registerLanguage(
           illegal: /;/,
         };
       })),
-    da)
+    da),
   ),
   Cs.registerLanguage(
     "ruby",
@@ -9836,7 +9839,7 @@ Cs.registerLanguage(
               {
                 begin: t.concat(
                   /<<[-~]?'?/,
-                  t.lookahead(/(\w+)(?=\W)[^\n]*\n(?:[^\n]*\n)*?\s*\1\b/)
+                  t.lookahead(/(\w+)(?=\W)[^\n]*\n(?:[^\n]*\n)*?\s*\1\b/),
                 ),
                 contains: [
                   e.END_SAME_AS_BEGIN({
@@ -9954,7 +9957,7 @@ Cs.registerLanguage(
               relevance: 0,
             },
           ].concat(s, l);
-        (c.contains = u), (p.contains = u);
+        ((c.contains = u), (p.contains = u));
         const g = [
           { begin: /^\s*=>/, starts: { end: "$", contains: u } },
           {
@@ -9978,7 +9981,7 @@ Cs.registerLanguage(
           }
         );
       })),
-    pa)
+    pa),
   ),
   Cs.registerLanguage(
     "erb",
@@ -10000,7 +10003,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ga)
+    ga),
   ),
   Cs.registerLanguage(
     "erlang-repl",
@@ -10039,7 +10042,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Sa)
+    Sa),
   ),
   Cs.registerLanguage(
     "erlang",
@@ -10108,9 +10111,9 @@ Cs.registerLanguage(
           d,
         ];
         const p = [i, o, m, s, e.QUOTE_STRING_MODE, r, l, c, _, d];
-        (s.contains[1].contains = p),
+        ((s.contains[1].contains = p),
           (l.contains = p),
-          (d.contains[1].contains = p);
+          (d.contains[1].contains = p));
         const u = {
           className: "params",
           begin: "\\(",
@@ -10179,7 +10182,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ta)
+    Ta),
   ),
   Cs.registerLanguage(
     "excel",
@@ -10704,7 +10707,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    fa)
+    fa),
   ),
   Cs.registerLanguage(
     "fix",
@@ -10741,7 +10744,7 @@ Cs.registerLanguage(
             ],
             case_insensitive: !0,
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "flix",
@@ -10798,7 +10801,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ha)
+    ha),
   ),
   Cs.registerLanguage(
     "fortran",
@@ -11339,7 +11342,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ia)
+    Ia),
   ),
   Cs.registerLanguage(
     "fsharp",
@@ -11567,7 +11570,7 @@ Cs.registerLanguage(
               return {
                 begin: n(
                   e,
-                  a(n(/\s*/, i(/\w/, /'/, /\^/, /#/, /``/, /\(/, /{\|/)))
+                  a(n(/\s*/, i(/\w/, /'/, /\^/, /#/, /``/, /\(/, /{\|/))),
                 ),
                 beginScope: r,
                 end: a(i(/\n/, /=/)),
@@ -11613,8 +11616,8 @@ Cs.registerLanguage(
                     "load",
                     "time",
                     "help",
-                    "quit"
-                  )
+                    "quit",
+                  ),
                 ),
                 /\b/,
               ],
@@ -11672,9 +11675,9 @@ Cs.registerLanguage(
                 /'/,
                 i(
                   /[^\\']/,
-                  /\\(?:.|\d{3}|x[a-fA-F\d]{2}|u[a-fA-F\d]{4}|U[a-fA-F\d]{8})/
+                  /\\(?:.|\d{3}|x[a-fA-F\d]{2}|u[a-fA-F\d]{4}|U[a-fA-F\d]{8})/,
                 ),
-                /'/
+                /'/,
               ),
             };
           return (
@@ -11711,7 +11714,7 @@ Cs.registerLanguage(
         }),
         ya
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "gams",
@@ -11836,7 +11839,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ma)
+    Ma),
   ),
   Cs.registerLanguage(
     "gauss",
@@ -11915,7 +11918,7 @@ Cs.registerLanguage(
                 excludeEnd: !0,
                 contains: [].concat(r),
               },
-              i || {}
+              i || {},
             );
             return (
               s.contains.push(o),
@@ -12010,7 +12013,7 @@ Cs.registerLanguage(
           }
         );
       })),
-    xa)
+    xa),
   ),
   Cs.registerLanguage(
     "gcode",
@@ -12059,7 +12062,7 @@ Cs.registerLanguage(
           ].concat(n),
         };
       })),
-    Pa)
+    Pa),
   ),
   Cs.registerLanguage(
     "gherkin",
@@ -12086,7 +12089,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ua)
+    Ua),
   ),
   Cs.registerLanguage(
     "glsl",
@@ -12112,7 +12115,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ba)
+    Ba),
   ),
   Cs.registerLanguage(
     "gml",
@@ -14916,7 +14919,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ya)
+    Ya),
   ),
   Cs.registerLanguage(
     "go",
@@ -15036,7 +15039,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Va)
+    Va),
   ),
   Cs.registerLanguage(
     "golo",
@@ -15104,7 +15107,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    za)
+    za),
   ),
   Cs.registerLanguage(
     "gradle",
@@ -15288,7 +15291,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Wa)
+    Wa),
   ),
   Cs.registerLanguage(
     "graphql",
@@ -15346,14 +15349,14 @@ Cs.registerLanguage(
           illegal: [/[;<']/, /BEGIN/],
         };
       })),
-    Ka)
+    Ka),
   ),
   Cs.registerLanguage(
     "groovy",
     (function () {
       if (Za) return Xa;
       function e(e, t = {}) {
-        return (t.variants = e), t;
+        return ((t.variants = e), t);
       }
       return (
         (Za = 1),
@@ -15385,7 +15388,7 @@ Cs.registerLanguage(
                 t.APOS_STRING_MODE,
                 t.QUOTE_STRING_MODE,
               ],
-              { className: "string" }
+              { className: "string" },
             ),
             l = {
               match: [
@@ -15481,7 +15484,7 @@ Cs.registerLanguage(
         }),
         Xa
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "haml",
@@ -15563,7 +15566,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ja)
+    Ja),
   ),
   Cs.registerLanguage(
     "handlebars",
@@ -15611,7 +15614,7 @@ Cs.registerLanguage(
           o = t.concat(
             t.optional(/\.|\.\/|\//),
             r,
-            t.anyNumberOfTimes(t.concat(/(\.|\/)/, r))
+            t.anyNumberOfTimes(t.concat(/(\.|\/)/, r)),
           ),
           s = t.concat("(", n, "|", i, ")(?==)"),
           l = { begin: o },
@@ -15736,7 +15739,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    tn)
+    tn),
   ),
   Cs.registerLanguage(
     "haskell",
@@ -15858,7 +15861,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    nn)
+    nn),
   ),
   Cs.registerLanguage(
     "haxe",
@@ -15990,7 +15993,7 @@ Cs.registerLanguage(
           illegal: /<\//,
         };
       })),
-    on)
+    on),
   ),
   Cs.registerLanguage(
     "hsp",
@@ -16039,7 +16042,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ln)
+    ln),
   ),
   Cs.registerLanguage(
     "http",
@@ -16102,7 +16105,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    _n)
+    _n),
   ),
   Cs.registerLanguage(
     "hy",
@@ -16154,7 +16157,7 @@ Cs.registerLanguage(
           }
         );
       })),
-    mn)
+    mn),
   ),
   Cs.registerLanguage(
     "inform7",
@@ -16197,7 +16200,7 @@ Cs.registerLanguage(
               },
             ],
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "ini",
@@ -16257,7 +16260,7 @@ Cs.registerLanguage(
                 "(\\s*\\.\\s*",
                 l,
                 ")*",
-                t.lookahead(/\s*=\s*[^#\s]/)
+                t.lookahead(/\s*=\s*[^#\s]/),
               ),
               className: "attr",
               starts: { end: /$/, contains: [n, s, r, i, o, a] },
@@ -16265,7 +16268,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    En)
+    En),
   ),
   Cs.registerLanguage(
     "irpf90",
@@ -16319,7 +16322,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    bn)
+    bn),
   ),
   Cs.registerLanguage(
     "isbl",
@@ -16434,7 +16437,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Cn)
+    Cn),
   ),
   Cs.registerLanguage(
     "java",
@@ -16625,7 +16628,7 @@ Cs.registerLanguage(
         }),
         Rn
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "javascript",
@@ -16948,7 +16951,7 @@ Cs.registerLanguage(
                 /\bJSON/,
                 /\b[A-Z][a-z]+([A-Z][a-z]*|\d)*/,
                 /\b[A-Z]{2,}([A-Z][a-z]+|\d)+([A-Z][a-z]*)*/,
-                /\b[A-Z]{2,}[a-z]+([A-Z][a-z]+|\d)*([A-Z][a-z]*)*/
+                /\b[A-Z]{2,}[a-z]+([A-Z][a-z]+|\d)*([A-Z][a-z]*)*/,
               ),
               className: "title.class",
               keywords: { _: [...n, ...i] },
@@ -16969,7 +16972,7 @@ Cs.registerLanguage(
                 ((x = [...r, "super", "import"]),
                 c.concat("(?!", x.join("|"), ")")),
                 _,
-                c.lookahead(/\(/)
+                c.lookahead(/\(/),
               ),
               className: "title.function",
               relevance: 0,
@@ -16978,7 +16981,7 @@ Cs.registerLanguage(
           const w = {
               begin: c.concat(
                 /\./,
-                c.lookahead(c.concat(_, /(?![0-9A-Za-z$_(])/))
+                c.lookahead(c.concat(_, /(?![0-9A-Za-z$_(])/)),
               ),
               end: _,
               excludeBegin: !0,
@@ -17129,7 +17132,7 @@ Cs.registerLanguage(
         }),
         On
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "jboss-cli",
@@ -17169,7 +17172,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    vn)
+    vn),
   ),
   Cs.registerLanguage(
     "json",
@@ -17197,7 +17200,7 @@ Cs.registerLanguage(
           illegal: "\\S",
         };
       })),
-    An)
+    An),
   ),
   Cs.registerLanguage(
     "julia",
@@ -17521,7 +17524,7 @@ Cs.registerLanguage(
           n
         );
       })),
-    Dn)
+    Dn),
   ),
   Cs.registerLanguage(
     "julia-repl",
@@ -17541,7 +17544,7 @@ Cs.registerLanguage(
             ],
             aliases: ["jldoctest"],
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "kotlin",
@@ -17757,7 +17760,7 @@ Cs.registerLanguage(
         }),
         wn
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "lasso",
@@ -17866,7 +17869,7 @@ Cs.registerLanguage(
           ].concat(c),
         };
       })),
-    kn)
+    kn),
   ),
   Cs.registerLanguage(
     "latex",
@@ -17911,7 +17914,7 @@ Cs.registerLanguage(
                       "(?:[Ss]igma|varsigma|tau|[Uu]psilon|[Pp]hi|varphi|chi|[Pp]si|[Oo]mega)",
                       "(?:frac|sum|prod|lim|infty|times|sqrt|leq|geq|left|right|middle|[bB]igg?)",
                       "(?:[lr]angle|q?quad|[lcvdi]?dots|d?dot|hat|tilde|bar)",
-                    ].map((e) => e + "(?![a-zA-Z@:_])")
+                    ].map((e) => e + "(?![a-zA-Z@:_])"),
                   ),
                 },
                 {
@@ -17929,7 +17932,7 @@ Cs.registerLanguage(
                       "::[a-zA-Z:]",
                     ]
                       .map((e) => e + "(?![a-zA-Z:_])")
-                      .join("|")
+                      .join("|"),
                   ),
                 },
                 { endsParent: !0, variants: t },
@@ -17994,7 +17997,7 @@ Cs.registerLanguage(
                 keywords: { $pattern: /\\[a-zA-Z]+/, keyword: "\\begin" },
                 relevance: 0,
               },
-              c(s, a)
+              c(s, a),
             );
           },
           m = (t = "string") =>
@@ -18046,16 +18049,16 @@ Cs.registerLanguage(
                 d("verbatim" + e, p("verbatim" + e)),
                 d("filecontents" + e, c(s, p("filecontents" + e))),
                 ...["", "B", "L"].map((t) =>
-                  d(t + "Verbatim" + e, c(l, p(t + "Verbatim" + e)))
+                  d(t + "Verbatim" + e, c(l, p(t + "Verbatim" + e))),
                 ),
-              ])
+              ]),
             ),
             d("minted", c(l, c(s, p("minted")))),
             ...a,
           ],
         };
       })),
-    Fn)
+    Fn),
   ),
   Cs.registerLanguage(
     "ldif",
@@ -18072,7 +18075,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Gn)
+    Gn),
   ),
   Cs.registerLanguage(
     "leaf",
@@ -18120,7 +18123,7 @@ Cs.registerLanguage(
               ],
             }
           );
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "less",
@@ -18753,7 +18756,7 @@ Cs.registerLanguage(
             },
             s.IMPORTANT,
             { beginKeywords: "and not" },
-            s.FUNCTION_DISPATCH
+            s.FUNCTION_DISPATCH,
           );
           const S = m.concat({ begin: /\{/, end: /\}/, contains: d }),
             b = {
@@ -18855,7 +18858,7 @@ Cs.registerLanguage(
               T,
               R,
               b,
-              s.FUNCTION_DISPATCH
+              s.FUNCTION_DISPATCH,
             ),
             {
               name: "Less",
@@ -18867,7 +18870,7 @@ Cs.registerLanguage(
         }),
         qn
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "lisp",
@@ -18934,7 +18937,7 @@ Cs.registerLanguage(
           }
         );
       })),
-    $n)
+    $n),
   ),
   Cs.registerLanguage(
     "livecodeserver",
@@ -19028,7 +19031,7 @@ Cs.registerLanguage(
           illegal: ";$|^\\[|^=|&|\\{",
         };
       })),
-    Qn)
+    Qn),
   ),
   Cs.registerLanguage(
     "livescript",
@@ -19146,7 +19149,7 @@ Cs.registerLanguage(
             "SyntaxError",
             "TypeError",
             "URIError",
-          ]
+          ],
         );
       return (
         (jn = function (n) {
@@ -19319,7 +19322,7 @@ Cs.registerLanguage(
         }),
         jn
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "llvm",
@@ -19380,7 +19383,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Zn)
+    Zn),
   ),
   Cs.registerLanguage(
     "lsl",
@@ -19450,7 +19453,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ei)
+    ei),
   ),
   Cs.registerLanguage(
     "lua",
@@ -19504,7 +19507,7 @@ Cs.registerLanguage(
           ]),
         };
       })),
-    ai)
+    ai),
   ),
   Cs.registerLanguage(
     "makefile",
@@ -19568,7 +19571,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ii)
+    ii),
   ),
   Cs.registerLanguage(
     "mathematica",
@@ -26816,13 +26819,13 @@ Cs.registerLanguage(
             n = a.either(
               a.concat(
                 /([2-9]|[1-2]\d|[3][0-5])\^\^/,
-                /(\w*\.\w+|\w+\.\w*|\w+)/
+                /(\w*\.\w+|\w+\.\w*|\w+)/,
               ),
-              /(\d*\.\d+|\d+\.\d*|\d+)/
+              /(\d*\.\d+|\d+\.\d*|\d+)/,
             ),
             i = a.either(
               /``[+-]?(\d*\.\d+|\d+\.\d*|\d+)/,
-              /`([+-]?(\d*\.\d+|\d+\.\d*|\d+))?/
+              /`([+-]?(\d*\.\d+|\d+\.\d*|\d+))?/,
             ),
             r = {
               className: "number",
@@ -26891,7 +26894,7 @@ Cs.registerLanguage(
         }),
         oi
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "matlab",
@@ -26957,7 +26960,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    li)
+    li),
   ),
   Cs.registerLanguage(
     "maxima",
@@ -27005,7 +27008,7 @@ Cs.registerLanguage(
           illegal: /@/,
         };
       })),
-    _i)
+    _i),
   ),
   Cs.registerLanguage(
     "mel",
@@ -27033,7 +27036,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    mi)
+    mi),
   ),
   Cs.registerLanguage(
     "mercury",
@@ -27091,7 +27094,7 @@ Cs.registerLanguage(
           }
         );
       })),
-    ui)
+    ui),
   ),
   Cs.registerLanguage(
     "mipsasm",
@@ -27144,7 +27147,7 @@ Cs.registerLanguage(
           illegal: /\//,
         };
       })),
-    Ei)
+    Ei),
   ),
   Cs.registerLanguage(
     "mizar",
@@ -27158,7 +27161,7 @@ Cs.registerLanguage(
           contains: [e.COMMENT("::", "$")],
         };
       })),
-    bi)
+    bi),
   ),
   Cs.registerLanguage(
     "perl",
@@ -27410,7 +27413,7 @@ Cs.registerLanguage(
               {
                 begin: t.concat(
                   /[$%@](\^\w\b|#\w+(::\w+)*|\{\w+\}|\w+(::\w*)*)/,
-                  "(?![A-Za-z])(?![@$%])"
+                  "(?![A-Za-z])(?![@$%])",
                 ),
               },
               { begin: /[$%@][^\s\w{]/, relevance: 0 },
@@ -27427,7 +27430,7 @@ Cs.registerLanguage(
               r,
               /(?:\\.|[^\\\/])*?/,
               i,
-              a
+              a,
             );
           },
           _ = (e, n, i) =>
@@ -27514,7 +27517,7 @@ Cs.registerLanguage(
           { name: "Perl", aliases: ["pl", "pm"], keywords: n, contains: d }
         );
       })),
-    Ci)
+    Ci),
   ),
   Cs.registerLanguage(
     "mojolicious",
@@ -27537,7 +27540,7 @@ Cs.registerLanguage(
               },
             ],
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "monkey",
@@ -27684,7 +27687,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Oi)
+    Oi),
   ),
   Cs.registerLanguage(
     "moonscript",
@@ -27784,7 +27787,7 @@ Cs.registerLanguage(
           ]),
         };
       })),
-    vi)
+    vi),
   ),
   Cs.registerLanguage(
     "n1ql",
@@ -28132,7 +28135,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ai)
+    Ai),
   ),
   Cs.registerLanguage(
     "nestedtext",
@@ -28169,7 +28172,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Di)
+    Di),
   ),
   Cs.registerLanguage(
     "nginx",
@@ -28290,7 +28293,7 @@ Cs.registerLanguage(
           illegal: "[^\\s\\}\\{]",
         };
       })),
-    Li)
+    Li),
   ),
   Cs.registerLanguage(
     "nim",
@@ -28450,7 +28453,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    wi)
+    wi),
   ),
   Cs.registerLanguage(
     "nix",
@@ -28510,7 +28513,7 @@ Cs.registerLanguage(
           { name: "Nix", aliases: ["nixos"], keywords: t, contains: i }
         );
       })),
-    ki)
+    ki),
   ),
   Cs.registerLanguage(
     "node-repl",
@@ -28534,7 +28537,7 @@ Cs.registerLanguage(
               },
             ],
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "nsis",
@@ -28590,8 +28593,8 @@ Cs.registerLanguage(
                 "TEMP",
                 "TEMPLATES",
                 "VIDEOS",
-                "WINDIR"
-              )
+                "WINDIR",
+              ),
             ),
           },
           n = { className: "variable", begin: /\$+\{[\!\w.:-]+\}/ },
@@ -28654,7 +28657,7 @@ Cs.registerLanguage(
               "READONLY",
               "SHCTX",
               "SHELL_CONTEXT",
-              "SYSTEM|TEMPORARY"
+              "SYSTEM|TEMPORARY",
             ),
           },
           s = {
@@ -28695,8 +28698,8 @@ Cs.registerLanguage(
                 "undef",
                 "uninstfinalize",
                 "verbose",
-                "warning"
-              )
+                "warning",
+              ),
             ),
           },
           l = {
@@ -29018,7 +29021,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Gi)
+    Gi),
   ),
   Cs.registerLanguage(
     "objectivec",
@@ -29243,7 +29246,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Hi)
+    Hi),
   ),
   Cs.registerLanguage(
     "ocaml",
@@ -29288,7 +29291,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    qi)
+    qi),
   ),
   Cs.registerLanguage(
     "openscad",
@@ -29352,7 +29355,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    $i)
+    $i),
   ),
   Cs.registerLanguage(
     "oxygene",
@@ -29408,7 +29411,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Qi)
+    Qi),
   ),
   Cs.registerLanguage(
     "parser3",
@@ -29439,7 +29442,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ji)
+    ji),
   ),
   Cs.registerLanguage(
     "pf",
@@ -29469,7 +29472,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Zi)
+    Zi),
   ),
   Cs.registerLanguage(
     "pgsql",
@@ -29675,7 +29678,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    er)
+    er),
   ),
   Cs.registerLanguage(
     "php",
@@ -29687,7 +29690,7 @@ Cs.registerLanguage(
           n = t.concat(/[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*/, a),
           i = t.concat(
             /(\\?[A-Z][a-z0-9_\x7f-\xff]+|\\?[A-Z]+(?=[A-Z][a-z0-9_\x7f-\xff])){1,}/,
-            a
+            a,
           ),
           r = { scope: "variable", match: "\\$+" + n },
           o = {
@@ -29923,10 +29926,10 @@ Cs.registerLanguage(
               const t = [];
               return (
                 e.forEach((e) => {
-                  t.push(e),
+                  (t.push(e),
                     e.toLowerCase() === e
                       ? t.push(e.toUpperCase())
-                      : t.push(e.toLowerCase());
+                      : t.push(e.toLowerCase()));
                 }),
                 t
               );
@@ -29989,7 +29992,7 @@ Cs.registerLanguage(
                 g(m).join("\\b|"),
                 "|",
                 g(p).join("\\b|"),
-                "\\b)"
+                "\\b)",
               ),
               n,
               t.concat(l, "*"),
@@ -30112,7 +30115,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ar)
+    ar),
   ),
   Cs.registerLanguage(
     "php-template",
@@ -30148,7 +30151,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ir)
+    ir),
   ),
   Cs.registerLanguage(
     "plaintext",
@@ -30161,7 +30164,7 @@ Cs.registerLanguage(
             aliases: ["text", "txt"],
             disableAutodetect: !0,
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "pony",
@@ -30204,7 +30207,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    lr)
+    lr),
   ),
   Cs.registerLanguage(
     "powershell",
@@ -30273,7 +30276,7 @@ Cs.registerLanguage(
               {
                 begin: "(".concat(
                   "Add|Clear|Close|Copy|Enter|Exit|Find|Format|Get|Hide|Join|Lock|Move|New|Open|Optimize|Pop|Push|Redo|Remove|Rename|Reset|Resize|Search|Select|Set|Show|Skip|Split|Step|Switch|Undo|Unlock|Watch|Backup|Checkpoint|Compare|Compress|Convert|ConvertFrom|ConvertTo|Dismount|Edit|Expand|Export|Group|Import|Initialize|Limit|Merge|Mount|Out|Publish|Restore|Save|Sync|Unpublish|Update|Approve|Assert|Build|Complete|Confirm|Deny|Deploy|Disable|Enable|Install|Invoke|Register|Request|Restart|Resume|Start|Stop|Submit|Suspend|Uninstall|Unregister|Wait|Debug|Measure|Ping|Repair|Resolve|Test|Trace|Connect|Disconnect|Read|Receive|Send|Write|Block|Grant|Protect|Revoke|Unblock|Unprotect|Use|ForEach|Sort|Tee|Where",
-                  ")+(-)[\\w\\d]+"
+                  ")+(-)[\\w\\d]+",
                 ),
               },
             ],
@@ -30328,7 +30331,7 @@ Cs.registerLanguage(
                 className: "operator",
                 begin: "(".concat(
                   "-and|-as|-band|-bnot|-bor|-bxor|-casesensitive|-ccontains|-ceq|-cge|-cgt|-cle|-clike|-clt|-cmatch|-cne|-cnotcontains|-cnotlike|-cnotmatch|-contains|-creplace|-csplit|-eq|-exact|-f|-file|-ge|-gt|-icontains|-ieq|-ige|-igt|-ile|-ilike|-ilt|-imatch|-in|-ine|-inotcontains|-inotlike|-inotmatch|-ireplace|-is|-isnot|-isplit|-join|-le|-like|-lt|-match|-ne|-not|-notcontains|-notin|-notlike|-notmatch|-or|-regex|-replace|-shl|-shr|-split|-wildcard|-xor",
-                  ")\\b"
+                  ")\\b",
                 ),
               },
               { className: "literal", begin: /(-){1,2}[\w\d-]+/, relevance: 0 },
@@ -30345,7 +30348,7 @@ Cs.registerLanguage(
                 className: "keyword",
                 begin: "(".concat(
                   t.keyword.toString().replace(/\s/g, "|"),
-                  ")\\b"
+                  ")\\b",
                 ),
                 endsParent: !0,
                 relevance: 0,
@@ -30397,7 +30400,7 @@ Cs.registerLanguage(
                 className: "built_in",
                 relevance: 0,
               },
-              { className: "type", begin: /[\.\w\d]+/, relevance: 0 }
+              { className: "type", begin: /[\.\w\d]+/, relevance: 0 },
             ),
           };
         return (
@@ -30411,7 +30414,7 @@ Cs.registerLanguage(
           }
         );
       })),
-    _r)
+    _r),
   ),
   Cs.registerLanguage(
     "processing",
@@ -30809,7 +30812,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    mr)
+    mr),
   ),
   Cs.registerLanguage(
     "profile",
@@ -30850,7 +30853,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ur)
+    ur),
   ),
   Cs.registerLanguage(
     "prolog",
@@ -30899,7 +30902,7 @@ Cs.registerLanguage(
           { name: "Prolog", contains: r.concat([{ begin: /\.$/ }]) }
         );
       })),
-    Er)
+    Er),
   ),
   Cs.registerLanguage(
     "properties",
@@ -30937,7 +30940,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    br)
+    br),
   ),
   Cs.registerLanguage(
     "protobuf",
@@ -30998,7 +31001,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Cr)
+    Cr),
   ),
   Cs.registerLanguage(
     "puppet",
@@ -31079,7 +31082,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Rr)
+    Rr),
   ),
   Cs.registerLanguage(
     "purebasic",
@@ -31114,7 +31117,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Or)
+    Or),
   ),
   Cs.registerLanguage(
     "python",
@@ -31392,7 +31395,7 @@ Cs.registerLanguage(
           }
         );
       })),
-    vr)
+    vr),
   ),
   Cs.registerLanguage(
     "python-repl",
@@ -31416,7 +31419,7 @@ Cs.registerLanguage(
               },
             ],
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "q",
@@ -31441,7 +31444,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Dr)
+    Dr),
   ),
   Cs.registerLanguage(
     "qml",
@@ -31570,7 +31573,7 @@ Cs.registerLanguage(
           illegal: /#/,
         };
       })),
-    Lr)
+    Lr),
   ),
   Cs.registerLanguage(
     "r",
@@ -31582,7 +31585,7 @@ Cs.registerLanguage(
           n = t.either(
             /0[xX][0-9a-fA-F]+\.[0-9a-fA-F]*[pP][+-]?\d+i?/,
             /0[xX][0-9a-fA-F]+(?:[pP][+-]?\d+)?[Li]?/,
-            /(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?[Li]?/
+            /(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?[Li]?/,
           ),
           i =
             /[=!<>:]=|\|\||&&|:::?|<-|<<-|->>|->|\|>|[-+*\/?!$&|:<=>@^~]|\*\*/,
@@ -31605,7 +31608,7 @@ Cs.registerLanguage(
                   match: /@examples/,
                   starts: {
                     end: t.lookahead(
-                      t.either(/\n^#'\s*(?=@[a-zA-Z]+)/, /\n^(?!#')/)
+                      t.either(/\n^#'\s*(?=@[a-zA-Z]+)/, /\n^(?!#')/),
                     ),
                     endsParent: !0,
                   },
@@ -31664,7 +31667,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    wr)
+    wr),
   ),
   Cs.registerLanguage(
     "reasonml",
@@ -31785,7 +31788,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    kr)
+    kr),
   ),
   Cs.registerLanguage(
     "rib",
@@ -31805,7 +31808,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Fr)
+    Fr),
   ),
   Cs.registerLanguage(
     "roboconf",
@@ -31852,7 +31855,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Gr)
+    Gr),
   ),
   Cs.registerLanguage(
     "routeros",
@@ -31965,7 +31968,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Hr)
+    Hr),
   ),
   Cs.registerLanguage(
     "rsl",
@@ -32086,7 +32089,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    qr)
+    qr),
   ),
   Cs.registerLanguage(
     "ruleslanguage",
@@ -32117,7 +32120,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    $r)
+    $r),
   ),
   Cs.registerLanguage(
     "rust",
@@ -32132,7 +32135,7 @@ Cs.registerLanguage(
               /\b/,
               /(?!let|for|while|if|else|match\b)/,
               e.IDENT_RE,
-              t.lookahead(/\s*\(/)
+              t.lookahead(/\s*\(/),
             ),
           },
           n = "([ui](8|16|32|64|128|size)|f(32|64))?",
@@ -32351,7 +32354,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Qr)
+    Qr),
   ),
   Cs.registerLanguage(
     "sas",
@@ -32568,7 +32571,7 @@ Cs.registerLanguage(
                   "upcase",
                   "verify",
                   "while",
-                  "window"
+                  "window",
                 ),
             },
             { className: "title.function", begin: /%[a-zA-Z_][a-zA-Z_0-9]*/ },
@@ -32854,7 +32857,7 @@ Cs.registerLanguage(
                   "zipfips",
                   "zipname",
                   "zipnamel",
-                  "zipstate"
+                  "zipstate",
                 ) + "(?=\\()",
             },
             {
@@ -32866,7 +32869,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    jr)
+    jr),
   ),
   Cs.registerLanguage(
     "scala",
@@ -32991,7 +32994,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Zr)
+    Zr),
   ),
   Cs.registerLanguage(
     "scheme",
@@ -33067,7 +33070,7 @@ Cs.registerLanguage(
           }
         );
       })),
-    eo)
+    eo),
   ),
   Cs.registerLanguage(
     "scilab",
@@ -33111,7 +33114,7 @@ Cs.registerLanguage(
           ].concat(t),
         };
       })),
-    ao)
+    ao),
   ),
   Cs.registerLanguage(
     "scss",
@@ -33785,7 +33788,7 @@ Cs.registerLanguage(
         }),
         io
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "shell",
@@ -33804,7 +33807,7 @@ Cs.registerLanguage(
               },
             ],
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "smali",
@@ -33913,7 +33916,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    lo)
+    lo),
   ),
   Cs.registerLanguage(
     "smalltalk",
@@ -33950,7 +33953,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    _o)
+    _o),
   ),
   Cs.registerLanguage(
     "sml",
@@ -33991,7 +33994,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    po)
+    po),
   ),
   Cs.registerLanguage(
     "sqf",
@@ -36575,7 +36578,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    go)
+    go),
   ),
   Cs.registerLanguage(
     "sql",
@@ -37112,7 +37115,7 @@ Cs.registerLanguage(
               return (
                 (t = t || []),
                 e.map((e) =>
-                  e.match(/\|\d+$/) || t.includes(e) ? e : n(e) ? `${e}|0` : e
+                  e.match(/\|\d+$/) || t.includes(e) ? e : n(e) ? `${e}|0` : e,
                 )
               );
             })(l, { when: (e) => e.length < 3 }),
@@ -37153,7 +37156,7 @@ Cs.registerLanguage(
                 "double precision",
                 "large object",
                 "with timezone",
-                "without timezone"
+                "without timezone",
               ),
             },
             c,
@@ -37174,7 +37177,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    So)
+    So),
   ),
   Cs.registerLanguage(
     "stan",
@@ -37590,7 +37593,7 @@ Cs.registerLanguage(
               begin: t.concat(
                 /\w*/,
                 t.either(...a),
-                /(_lpdf|_lupdf|_lpmf|_cdf|_lcdf|_lccdf|_qf)(?=\s*[\(.*\)])/
+                /(_lpdf|_lupdf|_lpmf|_cdf|_lcdf|_lccdf|_qf)(?=\s*[\(.*\)])/,
               ),
             },
             {
@@ -37614,7 +37617,7 @@ Cs.registerLanguage(
               scope: "number",
               match: t.concat(
                 /(?:\b\d+(?:_\d+)*(?:\.(?:\d+(?:_\d+)*)?)?|\B\.\d+(?:_\d+)*)/,
-                /(?:[eE][+-]?\d+(?:_\d+)*)?i?(?!\w)/
+                /(?:[eE][+-]?\d+(?:_\d+)*)?i?(?!\w)/,
               ),
               relevance: 0,
             },
@@ -37622,7 +37625,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    To)
+    To),
   ),
   Cs.registerLanguage(
     "stata",
@@ -37661,7 +37664,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    fo)
+    fo),
   ),
   Cs.registerLanguage(
     "step21",
@@ -37693,7 +37696,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    No)
+    No),
   ),
   Cs.registerLanguage(
     "stylus",
@@ -38412,7 +38415,7 @@ Cs.registerLanguage(
         }),
         ho
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "subunit",
@@ -38445,7 +38448,7 @@ Cs.registerLanguage(
               },
             ],
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "swift",
@@ -38656,7 +38659,7 @@ Cs.registerLanguage(
           /[\u2E00-\u2E7F]/,
           /[\u3001-\u3003]/,
           /[\u3008-\u3020]/,
-          /[\u3030]/
+          /[\u3030]/,
         ),
         u = n(
           p,
@@ -38664,7 +38667,7 @@ Cs.registerLanguage(
           /[\u1DC0-\u1DFF]/,
           /[\u20D0-\u20FF]/,
           /[\uFE00-\uFE0F]/,
-          /[\uFE20-\uFE2F]/
+          /[\uFE20-\uFE2F]/,
         ),
         g = a(p, u, "*"),
         E = n(
@@ -38678,12 +38681,12 @@ Cs.registerLanguage(
           /[\u2C00-\u2DFF\u2E80-\u2FFF]/,
           /[\u3004-\u3007\u3021-\u302F\u3031-\u303F\u3040-\uD7FF]/,
           /[\uF900-\uFD3D\uFD40-\uFDCF\uFDF0-\uFE1F\uFE30-\uFE44]/,
-          /[\uFE47-\uFEFE\uFF00-\uFFFD]/
+          /[\uFE47-\uFEFE\uFF00-\uFFFD]/,
         ),
         S = n(
           E,
           /\d/,
-          /[\u0300-\u036F\u1DC0-\u1DFF\u20D0-\u20FF\uFE20-\uFE2F]/
+          /[\u0300-\u036F\u1DC0-\u1DFF\u20D0-\u20FF\uFE20-\uFE2F]/,
         ),
         b = a(E, S, "*"),
         T = a(/[A-Z]/, S, "*"),
@@ -38753,7 +38756,7 @@ Cs.registerLanguage(
                       .filter((e) => "string" != typeof e)
                       .concat(s)
                       .map(i),
-                    ...o
+                    ...o,
                   ),
                 },
               ],
@@ -38885,7 +38888,7 @@ Cs.registerLanguage(
                   match: a(
                     /(AV|CA|CF|CG|CI|CL|CM|CN|CT|MK|MP|MTK|MTL|NS|SCN|SK|UI|WK|XC)/,
                     S,
-                    "+"
+                    "+",
                   ),
                 },
                 { className: "type", match: T, relevance: 0 },
@@ -39028,7 +39031,7 @@ Cs.registerLanguage(
         }),
         yo
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "taggerscript",
@@ -39059,7 +39062,7 @@ Cs.registerLanguage(
               { className: "symbol", begin: /\\u[a-fA-F0-9]{4}/ },
             ],
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "yaml",
@@ -39166,7 +39169,7 @@ Cs.registerLanguage(
           { name: "YAML", case_insensitive: !0, aliases: ["yml"], contains: c }
         );
       })),
-    xo)
+    xo),
   ),
   Cs.registerLanguage(
     "tap",
@@ -39199,7 +39202,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Po)
+    Po),
   ),
   Cs.registerLanguage(
     "tcl",
@@ -39372,7 +39375,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Uo)
+    Uo),
   ),
   Cs.registerLanguage(
     "thrift",
@@ -39436,7 +39439,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Bo)
+    Bo),
   ),
   Cs.registerLanguage(
     "tp",
@@ -39567,7 +39570,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Yo)
+    Yo),
   ),
   Cs.registerLanguage(
     "twig",
@@ -39776,7 +39779,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Vo)
+    Vo),
   ),
   Cs.registerLanguage(
     "typescript",
@@ -40098,7 +40101,7 @@ Cs.registerLanguage(
               /\bJSON/,
               /\b[A-Z][a-z]+([A-Z][a-z]*|\d)*/,
               /\b[A-Z]{2,}([A-Z][a-z]+|\d)+([A-Z][a-z]*)*/,
-              /\b[A-Z]{2,}[a-z]+([A-Z][a-z]+|\d)*([A-Z][a-z]*)*/
+              /\b[A-Z]{2,}[a-z]+([A-Z][a-z]+|\d)*([A-Z][a-z]*)*/,
             ),
             className: "title.class",
             keywords: { _: [...n, ...i] },
@@ -40119,7 +40122,7 @@ Cs.registerLanguage(
             ((x = [...r, "super", "import"]),
             c.concat("(?!", x.join("|"), ")")),
             _,
-            c.lookahead(/\(/)
+            c.lookahead(/\(/),
           ),
           className: "title.function",
           relevance: 0,
@@ -40128,7 +40131,7 @@ Cs.registerLanguage(
         const w = {
             begin: c.concat(
               /\./,
-              c.lookahead(c.concat(_, /(?![0-9A-Za-z$_(])/))
+              c.lookahead(c.concat(_, /(?![0-9A-Za-z$_(])/)),
             ),
             end: _,
             excludeBegin: !0,
@@ -40351,7 +40354,7 @@ Cs.registerLanguage(
         }),
         zo
       );
-    })()
+    })(),
   ),
   Cs.registerLanguage(
     "vala",
@@ -40385,7 +40388,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Wo)
+    Wo),
   ),
   Cs.registerLanguage(
     "vbnet",
@@ -40409,7 +40412,7 @@ Cs.registerLanguage(
                   t.either(n, a),
                   / +/,
                   t.either(i, r),
-                  / *#/
+                  / *#/,
                 ),
               },
             ],
@@ -40475,7 +40478,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ko)
+    Ko),
   ),
   Cs.registerLanguage(
     "vbscript",
@@ -40669,7 +40672,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Xo)
+    Xo),
   ),
   Cs.registerLanguage(
     "vbscript-html",
@@ -40682,7 +40685,7 @@ Cs.registerLanguage(
             subLanguage: "xml",
             contains: [{ begin: "<%", end: "%>", subLanguage: "vbscript" }],
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "verilog",
@@ -41210,7 +41213,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ts)
+    ts),
   ),
   Cs.registerLanguage(
     "vhdl",
@@ -41413,7 +41416,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ns)
+    ns),
   ),
   Cs.registerLanguage(
     "vim",
@@ -41447,7 +41450,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    rs)
+    rs),
   ),
   Cs.registerLanguage(
     "wasm",
@@ -41544,7 +41547,7 @@ Cs.registerLanguage(
           }
         );
       })),
-    ss)
+    ss),
   ),
   Cs.registerLanguage(
     "wren",
@@ -41604,7 +41607,7 @@ Cs.registerLanguage(
             match: t.concat(
               /\b(?!(if|while|for|else|super)\b)/,
               a,
-              /(?=\s*[({])/
+              /(?=\s*[({])/,
             ),
             className: "title.function",
           },
@@ -41612,9 +41615,9 @@ Cs.registerLanguage(
             match: t.concat(
               t.either(
                 t.concat(/\b(?!(if|while|for|else|super)\b)/, a),
-                t.either(...o)
+                t.either(...o),
               ),
-              /(?=\s*\([^)]+\)\s*\{)/
+              /(?=\s*\([^)]+\)\s*\{)/,
             ),
             className: "title.function",
             starts: {
@@ -41705,7 +41708,7 @@ Cs.registerLanguage(
               "\\b(?!",
               T.join("|"),
               "\\b)",
-              /[a-zA-Z_]\w*(?:[?!]|\b)/
+              /[a-zA-Z_]\w*(?:[?!]|\b)/,
             ),
             className: "variable",
           };
@@ -41744,7 +41747,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    cs)
+    cs),
   ),
   Cs.registerLanguage(
     "x86asm",
@@ -41806,7 +41809,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ds)
+    ds),
   ),
   Cs.registerLanguage(
     "xl",
@@ -41976,7 +41979,7 @@ Cs.registerLanguage(
           ],
         };
       })),
-    ps)
+    ps),
   ),
   Cs.registerLanguage(
     "xquery",
@@ -42257,7 +42260,7 @@ Cs.registerLanguage(
               },
             ],
           };
-        }))
+        })),
   ),
   Cs.registerLanguage(
     "zephir",
@@ -42330,10 +42333,10 @@ Cs.registerLanguage(
           ],
         };
       })),
-    Ss)
+    Ss),
   ),
   (Cs.HighlightJS = Cs),
-  (Cs.default = Cs);
+  (Cs.default = Cs));
 var fs = e(Cs);
 !(function (e, t) {
   var a,
@@ -42402,7 +42405,7 @@ var fs = e(Cs);
           for (var c = "", _ = 0, d = a.length; _ < d; _++)
             c += g(
               '<tr><td class="{0} {1}" {3}="{5}"><div class="{2}" {3}="{5}"></div></td><td class="{0} {4}" {3}="{5}">{6}</td></tr>',
-              [i, o, s, l, r, _ + t.startFrom, 0 < a[_].length ? a[_] : " "]
+              [i, o, s, l, r, _ + t.startFrom, 0 < a[_].length ? a[_] : " "],
             );
           return g('<table class="{0}">{1}</table>', [n, c]);
         }
@@ -42429,7 +42432,7 @@ var fs = e(Cs);
       return void 0 !== t[a] ? t[a] : e;
     });
   }
-  fs
+  (fs
     ? ((fs.initLineNumbersOnLoad = function (a) {
         "interactive" === t.readyState || "complete" === t.readyState
           ? _(a)
@@ -42441,13 +42444,13 @@ var fs = e(Cs);
       (fs.lineNumbersValue = function (e, t) {
         if ("string" == typeof e) {
           var a = document.createElement("code");
-          return (a.innerHTML = e), m(a, t);
+          return ((a.innerHTML = e), m(a, t));
         }
       }),
       ((a = t.createElement("style")).type = "text/css"),
       (a.innerHTML = g(
         ".{0}{border-collapse:collapse}.{0} td{padding:0}.{1}:before{content:attr({2})}",
-        [n, s, l]
+        [n, s, l],
       )),
       t.getElementsByTagName("head")[0].appendChild(a))
     : e.console.error("highlight.js not detected!"),
@@ -42467,7 +42470,6 @@ var fs = e(Cs);
                 for (
                   var t = e.toString(), a = e.anchorNode;
                   "TD" !== a.nodeName;
-
                 )
                   a = a.parentNode;
                 for (var n = e.focusNode; "TD" !== n.nodeName; )
@@ -42482,7 +42484,6 @@ var fs = e(Cs);
                   o < i &&
                   ((s = i), (i = o), (o = s), (s = c), (c = _), (_ = s));
                   0 !== t.indexOf(c);
-
                 )
                   c = c.slice(1);
                 for (; -1 === t.lastIndexOf(_); ) _ = _.slice(0, -1);
@@ -42505,7 +42506,7 @@ var fs = e(Cs);
             : a.toString()),
         e.clipboardData.setData("text/plain", t),
         e.preventDefault());
-    });
+    }));
 })(window, document);
 /*!
  * reveal.js plugin that adds syntax highlight support.
@@ -42518,14 +42519,14 @@ const Rs = {
   hljs: fs,
   init: function (e) {
     let t = e.getConfig().highlight || {};
-    (t.highlightOnLoad =
+    ((t.highlightOnLoad =
       "boolean" != typeof t.highlightOnLoad || t.highlightOnLoad),
       (t.escapeHTML = "boolean" != typeof t.escapeHTML || t.escapeHTML),
       Array.from(e.getRevealElement().querySelectorAll("pre code")).forEach(
         (e) => {
           e.parentNode.classList.add("code-wrapper");
           let a = e.querySelector('script[type="text/template"]');
-          a && (e.textContent = a.innerHTML),
+          (a && (e.textContent = a.innerHTML),
             e.hasAttribute("data-trim") &&
               "function" == typeof e.innerHTML.trim &&
               (e.innerHTML = (function (e) {
@@ -42569,28 +42570,28 @@ const Rs = {
               function (e) {
                 fs.highlightElement(e.currentTarget);
               },
-              !1
-            );
-        }
+              !1,
+            ));
+        },
       ),
       "function" == typeof t.beforeHighlight && t.beforeHighlight(fs),
       t.highlightOnLoad &&
         Array.from(e.getRevealElement().querySelectorAll("pre code")).forEach(
           (e) => {
             Rs.highlightBlock(e);
-          }
+          },
         ),
       e.on("pdf-ready", function () {
         [].slice
           .call(
             e
               .getRevealElement()
-              .querySelectorAll("pre code[data-line-numbers].current-fragment")
+              .querySelectorAll("pre code[data-line-numbers].current-fragment"),
           )
           .forEach(function (e) {
             Rs.scrollHighlightedLineIntoView(e, {}, !0);
           });
-      });
+      }));
   },
   highlightBlock: function (e) {
     if (
@@ -42602,12 +42603,12 @@ const Rs = {
         a = Rs.deserializeHighlightSteps(e.getAttribute("data-line-numbers"));
       if (a.length > 1) {
         var n = parseInt(e.getAttribute("data-fragment-index"), 10);
-        ("number" != typeof n || isNaN(n)) && (n = null),
+        (("number" != typeof n || isNaN(n)) && (n = null),
           a.slice(1).forEach(function (a) {
             var i = e.cloneNode(!0);
-            i.setAttribute(
+            (i.setAttribute(
               "data-line-numbers",
-              Rs.serializeHighlightSteps([a])
+              Rs.serializeHighlightSteps([a]),
             ),
               i.classList.add("fragment"),
               e.parentNode.appendChild(i),
@@ -42617,22 +42618,22 @@ const Rs = {
                 : i.removeAttribute("data-fragment-index"),
               i.addEventListener(
                 "visible",
-                Rs.scrollHighlightedLineIntoView.bind(Rs, i, t)
+                Rs.scrollHighlightedLineIntoView.bind(Rs, i, t),
               ),
               i.addEventListener(
                 "hidden",
                 Rs.scrollHighlightedLineIntoView.bind(
                   Rs,
                   i.previousElementSibling,
-                  t
-                )
-              );
+                  t,
+                ),
+              ));
           }),
           e.removeAttribute("data-fragment-index"),
           e.setAttribute(
             "data-line-numbers",
-            Rs.serializeHighlightSteps([a[0]])
-          );
+            Rs.serializeHighlightSteps([a[0]]),
+          ));
       }
       var i =
         "function" == typeof e.closest
@@ -42640,8 +42641,8 @@ const Rs = {
           : null;
       if (i) {
         var r = function () {
-          Rs.scrollHighlightedLineIntoView(e, t, !0),
-            i.removeEventListener("visible", r);
+          (Rs.scrollHighlightedLineIntoView(e, t, !0),
+            i.removeEventListener("visible", r));
         };
         i.addEventListener("visible", r);
       }
@@ -42649,9 +42650,9 @@ const Rs = {
     }
   },
   scrollHighlightedLineIntoView: function (e, t, a) {
-    cancelAnimationFrame(t.animationFrameID),
+    (cancelAnimationFrame(t.animationFrameID),
       t.currentBlock && (e.scrollTop = t.currentBlock.scrollTop),
-      (t.currentBlock = e);
+      (t.currentBlock = e));
     var n = this.getHighlightedLineBounds(e),
       i = e.offsetHeight,
       r = getComputedStyle(e);
@@ -42669,9 +42670,9 @@ const Rs = {
       if (e.scrollHeight <= i) return;
       var c = 0,
         _ = function () {
-          (c = Math.min(c + 0.02, 1)),
+          ((c = Math.min(c + 0.02, 1)),
             (e.scrollTop = o + (s - o) * Rs.easeInOutQuart(c)),
-            c < 1 && (t.animationFrameID = requestAnimationFrame(_));
+            c < 1 && (t.animationFrameID = requestAnimationFrame(_)));
         };
       _();
     }
@@ -42688,35 +42689,35 @@ const Rs = {
   },
   highlightLines: function (e, t) {
     var a = Rs.deserializeHighlightSteps(
-      t || e.getAttribute("data-line-numbers")
+      t || e.getAttribute("data-line-numbers"),
     );
     a.length &&
       a[0].forEach(function (t) {
         var a = [];
-        "number" == typeof t.end
+        ("number" == typeof t.end
           ? (a = [].slice.call(
               e.querySelectorAll(
                 "table tr:nth-child(n+" +
                   t.start +
                   "):nth-child(-n+" +
                   t.end +
-                  ")"
-              )
+                  ")",
+              ),
             ))
           : "number" == typeof t.start &&
             (a = [].slice.call(
-              e.querySelectorAll("table tr:nth-child(" + t.start + ")")
+              e.querySelectorAll("table tr:nth-child(" + t.start + ")"),
             )),
           a.length &&
             (a.forEach(function (e) {
               e.classList.add("highlight-line");
             }),
-            e.classList.add("has-highlights"));
+            e.classList.add("has-highlights")));
       });
   },
   deserializeHighlightSteps: function (e) {
     return (e = (e = e.replace(/\s/g, "")).split(
-      Rs.HIGHLIGHT_STEP_DELIMITER
+      Rs.HIGHLIGHT_STEP_DELIMITER,
     )).map(function (e) {
       return e.split(Rs.HIGHLIGHT_LINE_DELIMITER).map(function (e) {
         if (/^[\d-]+$/.test(e)) {
@@ -42737,8 +42738,8 @@ const Rs = {
             return "number" == typeof e.end
               ? e.start + Rs.HIGHLIGHT_LINE_RANGE_DELIMITER + e.end
               : "number" == typeof e.start
-              ? e.start
-              : "";
+                ? e.start
+                : "";
           })
           .join(Rs.HIGHLIGHT_LINE_DELIMITER);
       })
