@@ -88,7 +88,7 @@ const initChalkboard = function (Reveal) {
         get: function () {
           passiveSupported = true;
         },
-      })
+      }),
     );
   } catch (err) {}
 
@@ -298,7 +298,7 @@ const initChalkboard = function (Reveal) {
     // wait for markdown to be parsed and code to be highlighted
     if (
       !document.querySelector(
-        "section[data-markdown]:not([data-markdown-parsed])"
+        "section[data-markdown]:not([data-markdown-parsed])",
       ) &&
       !document.querySelector("[data-load]:not([data-loaded])") &&
       !document.querySelector('code[data-line-numbers*="|"]')
@@ -306,7 +306,7 @@ const initChalkboard = function (Reveal) {
       callback();
     } else {
       console.log(
-        "Wait for external sources to be loaded and code to be highlighted"
+        "Wait for external sources to be loaded and code to be highlighted",
       );
       setTimeout(whenReady, 500, callback);
     }
@@ -581,7 +581,7 @@ const initChalkboard = function (Reveal) {
         ) {
           drawingCanvas[id].scale = Math.min(
             drawingCanvas[id].width / data[id].width,
-            drawingCanvas[id].height / data[id].height
+            drawingCanvas[id].height / data[id].height,
           );
           drawingCanvas[id].xOffset =
             (drawingCanvas[id].width -
@@ -624,7 +624,7 @@ const initChalkboard = function (Reveal) {
             ". ReadyState: " +
             xhr.readyState +
             ", Status: " +
-            xhr.status
+            xhr.status,
         );
         loaded = false;
       }
@@ -640,7 +640,7 @@ const initChalkboard = function (Reveal) {
         "Failed to get file " +
           filename +
           ". Make sure that the presentation and the file are served by a HTTP server and the file can be found there. " +
-          error
+          error,
       );
       loaded = false;
     }
@@ -746,7 +746,7 @@ const initChalkboard = function (Reveal) {
       }
     }
     var page = Number(
-      Reveal.getCurrentSlide().getAttribute("data-pdf-page-number")
+      Reveal.getCurrentSlide().getAttribute("data-pdf-page-number"),
     );
     //console.log( indices, Reveal.getCurrentSlide() );
     storage[id].data.push({
@@ -795,10 +795,10 @@ const initChalkboard = function (Reveal) {
       slides[i].setAttribute("data-pdf-page-number", page.toString());
       // add number of fragments without fragment indices
       var count = slides[i].querySelectorAll(
-        ".fragment:not([data-fragment-index])"
+        ".fragment:not([data-fragment-index])",
       ).length;
       var fragments = slides[i].querySelectorAll(
-        ".fragment[data-fragment-index]"
+        ".fragment[data-fragment-index]",
       );
       for (var j = 0; j < fragments.length; j++) {
         // increasenumber of fragments by highest fragment index (which start at 0)
@@ -829,7 +829,7 @@ const initChalkboard = function (Reveal) {
           "Create printout for slide " +
             storage[1].data[i].slide.h +
             "." +
-            storage[1].data[i].slide.v
+            storage[1].data[i].slide.v,
         );
         var slideData = getSlideData(storage[1].data[i].slide, 1);
         var drawings = createDrawings(slideData, patImg);
@@ -915,14 +915,14 @@ const initChalkboard = function (Reveal) {
             yOffset + slideData.events[j].y1 * scale,
             xOffset + slideData.events[j].x2 * scale,
             yOffset + slideData.events[j].y2 * scale,
-            yOffset + slideData.events[j].color
+            yOffset + slideData.events[j].color,
           );
           break;
         case "erase":
           eraseWithSponge(
             getCanvas(template, drawings, board).getContext("2d"),
             xOffset + slideData.events[j].x * scale,
-            yOffset + slideData.events[j].y * scale
+            yOffset + slideData.events[j].y * scale,
           );
           break;
         case "selectboard":
@@ -990,7 +990,7 @@ const initChalkboard = function (Reveal) {
     var opacity = 1.0;
     context.strokeStyle = context.strokeStyle.replace(
       /[\d\.]+\)$/g,
-      opacity + ")"
+      opacity + ")",
     );
     context.beginPath();
     context.moveTo(fromX, fromY);
@@ -999,7 +999,7 @@ const initChalkboard = function (Reveal) {
     // Chalk Effect
     var length = Math.round(
       Math.sqrt(Math.pow(toX - fromX, 2) + Math.pow(toY - fromY, 2)) /
-        (5 / brushDiameter)
+        (5 / brushDiameter),
     );
     var xUnit = (toX - fromX) / length;
     var yUnit = (toY - fromY) / length;
@@ -1013,7 +1013,7 @@ const initChalkboard = function (Reveal) {
           xRandom,
           yRandom,
           Math.random() * 2 + 2,
-          Math.random() + 1
+          Math.random() + 1,
         );
       }
     }
@@ -1028,14 +1028,14 @@ const initChalkboard = function (Reveal) {
       eraser.radius,
       0,
       2 * Math.PI,
-      false
+      false,
     );
     context.clip();
     context.clearRect(
       x - 1,
       y - 1,
       eraser.radius * 2 + 2,
-      eraser.radius * 2 + 2
+      eraser.radius * 2 + 2,
     );
     context.restore();
     if (mode == 1 && grid) {
@@ -1073,7 +1073,7 @@ const initChalkboard = function (Reveal) {
       0,
       0,
       drawingCanvas[id].width,
-      drawingCanvas[id].height
+      drawingCanvas[id].height,
     );
     if (id == 1 && grid) drawGrid();
   }
@@ -1086,7 +1086,7 @@ const initChalkboard = function (Reveal) {
 
     drawingCanvas[1].scale = Math.min(
       drawingCanvas[1].width / storage[1].width,
-      drawingCanvas[1].height / storage[1].height
+      drawingCanvas[1].height / storage[1].height,
     );
     drawingCanvas[1].xOffset =
       (drawingCanvas[1].width - storage[1].width * drawingCanvas[1].scale) / 2;
@@ -1137,7 +1137,7 @@ const initChalkboard = function (Reveal) {
 
     drawingCanvas[1].scale = Math.min(
       drawingCanvas[1].width / storage[1].width,
-      drawingCanvas[1].height / storage[1].height
+      drawingCanvas[1].height / storage[1].height,
     );
     drawingCanvas[1].xOffset =
       (drawingCanvas[1].width - storage[1].width * drawingCanvas[1].scale) / 2;
@@ -1170,11 +1170,13 @@ const initChalkboard = function (Reveal) {
       context.strokeStyle = grid.color;
       context.moveTo(
         x,
-        centerY - Math.sqrt(diameter * diameter - (centerX - x) * (centerX - x))
+        centerY -
+          Math.sqrt(diameter * diameter - (centerX - x) * (centerX - x)),
       );
       context.lineTo(
         x,
-        centerY + Math.sqrt(diameter * diameter - (centerX - x) * (centerX - x))
+        centerY +
+          Math.sqrt(diameter * diameter - (centerX - x) * (centerX - x)),
       );
       context.stroke();
     }
@@ -1198,12 +1200,12 @@ const initChalkboard = function (Reveal) {
       context.moveTo(
         centerX -
           Math.sqrt(diameter * diameter - (centerY - y) * (centerY - y)),
-        y
+        y,
       );
       context.lineTo(
         centerX +
           Math.sqrt(diameter * diameter - (centerY - y) * (centerY - y)),
-        y
+        y,
       );
       context.stroke();
     }
@@ -1324,7 +1326,7 @@ const initChalkboard = function (Reveal) {
           message.content.fromY,
           message.content.toX,
           message.content.toY,
-          message.content.color
+          message.content.color,
         );
         break;
       case "clear":
@@ -1341,7 +1343,7 @@ const initChalkboard = function (Reveal) {
         for (var id = 0; id < 2; id++) {
           drawingCanvas[id].scale = Math.min(
             drawingCanvas[id].width / storage[id].width,
-            drawingCanvas[id].height / storage[id].height
+            drawingCanvas[id].height / storage[id].height,
           );
           drawingCanvas[id].xOffset =
             (drawingCanvas[id].width -
@@ -1359,7 +1361,7 @@ const initChalkboard = function (Reveal) {
             startPlayback,
             transition,
             getSlideDuration(),
-            0
+            0,
           );
         }
         if (mode == 1 && message.content.mode == 0) {
@@ -1461,8 +1463,8 @@ const initChalkboard = function (Reveal) {
             slideData.events[index].time - (Date.now() - slideStart),
             id,
             slideData.events[index],
-            timestamp
-          )
+            timestamp,
+          ),
         );
         index++;
       }
@@ -1531,7 +1533,7 @@ const initChalkboard = function (Reveal) {
       yOffset + event.y1 * scale,
       xOffset + event.x2 * scale,
       yOffset + event.y2 * scale,
-      event.color
+      event.color,
     );
   }
 
@@ -1618,7 +1620,7 @@ const initChalkboard = function (Reveal) {
         fromY * scale + yOffset,
         toX * scale + xOffset,
         toY * scale + yOffset,
-        colorIdx
+        colorIdx,
       );
     }
   }
@@ -1649,12 +1651,12 @@ const initChalkboard = function (Reveal) {
           if (color[mode] < 0) {
             startErasing(
               (mouseX - xOffset) / scale,
-              (mouseY - yOffset) / scale
+              (mouseY - yOffset) / scale,
             );
           } else {
             startDrawing(
               (mouseX - xOffset) / scale,
-              (mouseY - yOffset) / scale
+              (mouseY - yOffset) / scale,
             );
           }
         }
@@ -1663,7 +1665,7 @@ const initChalkboard = function (Reveal) {
         ? {
             passive: false,
           }
-        : false
+        : false,
     );
 
     canvas.addEventListener(
@@ -1686,7 +1688,7 @@ const initChalkboard = function (Reveal) {
               (lastY - yOffset) / scale,
               (mouseX - xOffset) / scale,
               (mouseY - yOffset) / scale,
-              color[mode]
+              color[mode],
             );
             // broadcast
             var message = new CustomEvent(messageType);
@@ -1723,7 +1725,7 @@ const initChalkboard = function (Reveal) {
           }
         }
       },
-      false
+      false,
     );
 
     canvas.addEventListener(
@@ -1733,7 +1735,7 @@ const initChalkboard = function (Reveal) {
         stopDrawing();
         stopErasing();
       },
-      false
+      false,
     );
 
     canvas.addEventListener("mousedown", function (evt) {
@@ -1796,7 +1798,7 @@ const initChalkboard = function (Reveal) {
             (lastY - yOffset) / scale,
             (mouseX - xOffset) / scale,
             (mouseY - yOffset) / scale,
-            color[mode]
+            color[mode],
           );
           // broadcast
           var message = new CustomEvent(messageType);
@@ -1865,7 +1867,7 @@ const initChalkboard = function (Reveal) {
 
       drawingCanvas[id].scale = Math.min(
         drawingCanvas[id].width / storage[id].width,
-        drawingCanvas[id].height / storage[id].height
+        drawingCanvas[id].height / storage[id].height,
       );
       drawingCanvas[id].xOffset =
         (drawingCanvas[id].width -
@@ -1920,7 +1922,7 @@ const initChalkboard = function (Reveal) {
           startPlayback,
           transition,
           getSlideDuration(),
-          0
+          0,
         );
       }
       if (Reveal.isAutoSliding()) {
