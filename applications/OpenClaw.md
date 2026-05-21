@@ -168,7 +168,7 @@ Docs: docs.openclaw.ai/cli
 
 URL, <https://docs.ollama.com/integrations/openclaw>
 
-The official news on OpenClaw with ollama involves `ollama launch openclaw` where OpenClaw tries to install a systemd service, which 
+The official news on OpenClaw with ollama involves `ollama launch openclaw` where OpenClaw tries to install a systemd service, which
 is not allowed on HPC login nodes, so we start manually.
 
 ```bash
@@ -272,7 +272,7 @@ Note that additionally, we have
 # connect WhatsApp, Telegram, etc.
 openclaw configure --section channels
 # browse and install skills
-openclaw skills   
+openclaw skills
 # start a specific model
 ollama launch openclaw --model kimi-k2.5:cloud
 ollama launch openclaw --model gemma4:31b-cloud
