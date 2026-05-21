@@ -21,7 +21,7 @@ chmod +x installer.sh
 ./AnythingLLMDesktop.AppImage --appimage-extract
 ```
 
-which shows Ollama is already embedded. To start, 
+which shows Ollama is already embedded. To start,
 
 ```bash
 module load ceuadmin/node
