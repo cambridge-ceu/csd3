@@ -6,7 +6,7 @@
 
   // See if we're running in a viewer pane. If not, we're in a web browser.
   var viewerMode = (window.HTMLWidgets.viewerMode = /\bviewer_pane=1\b/.test(
-    window.location
+    window.location,
   ));
 
   // See if we're running in Shiny mode. If not, it's a static document.
@@ -122,7 +122,7 @@
       return el;
     } else {
       throw new Error(
-        "Wrong number of arguments for elementData: " + arguments.length
+        "Wrong number of arguments for elementData: " + arguments.length,
       );
     }
   }
@@ -230,7 +230,7 @@
   // defaultWidth, defaultHeight fields.
   function sizingPolicy(el) {
     var sizingEl = document.querySelector(
-      "script[data-for='" + el.id + "'][type='application/htmlwidget-sizing']"
+      "script[data-for='" + el.id + "'][type='application/htmlwidget-sizing']",
     );
     if (!sizingEl) return null;
     var sp = JSON.parse(sizingEl.textContent || sizingEl.text || "{}");
@@ -588,7 +588,7 @@
               el,
               width,
               height,
-              elementData(el, "init_result")
+              elementData(el, "init_result"),
             );
           }
         };
@@ -660,13 +660,13 @@
               .jQuery(document)
               .on(
                 "shown.htmlwidgets shown.bs.tab.htmlwidgets shown.bs.collapse.htmlwidgets",
-                resizeHandler
+                resizeHandler,
               );
             window
               .jQuery(document)
               .on(
                 "hidden.htmlwidgets hidden.bs.tab.htmlwidgets hidden.bs.collapse.htmlwidgets",
-                resizeHandler
+                resizeHandler,
               );
           }
 
@@ -686,7 +686,7 @@
         }
 
         var scriptData = document.querySelector(
-          "script[data-for='" + el.id + "'][type='application/json']"
+          "script[data-for='" + el.id + "'][type='application/json']",
         );
         if (scriptData) {
           var data = JSON.parse(scriptData.textContent || scriptData.text);
@@ -750,11 +750,11 @@
         document.removeEventListener(
           "DOMContentLoaded",
           arguments.callee,
-          false
+          false,
         );
         maybeStaticRenderLater();
       },
-      false
+      false,
     );
   } else if (document.attachEvent) {
     document.attachEvent("onreadystatechange", function () {
@@ -772,7 +772,7 @@
     var link = document.getElementById(depname + "-" + key + "-attachment");
     if (!link) {
       throw new Error(
-        "Attachment " + depname + "/" + key + " not found in document"
+        "Attachment " + depname + "/" + key + " not found in document",
       );
     }
     return link.getAttribute("href");
