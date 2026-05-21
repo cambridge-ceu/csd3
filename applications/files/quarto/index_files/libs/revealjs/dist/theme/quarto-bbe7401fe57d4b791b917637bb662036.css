@@ -18,8 +18,9 @@
   --r-heading2-size: 1.6em;
   --r-heading3-size: 1.3em;
   --r-heading4-size: 1em;
-  --r-code-font: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
-    Courier New, monospace;
+  --r-code-font:
+    SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New,
+    monospace;
   --r-link-color: #2a76dd;
   --r-link-color-dark: #1a53a1;
   --r-link-color-hover: #5692e4;
@@ -1026,8 +1027,9 @@ div.reveal div.slides section.quarto-title-block .subtitle {
   margin: 0;
   font-size: 0.55em;
   line-height: 1.3;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  font-family:
+    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
 }
 .reveal pre code {
   background-color: #fff;
@@ -1052,8 +1054,9 @@ div.reveal div.slides section.quarto-title-block .subtitle {
   font-size: 0.875em;
   background-color: rgba(0, 0, 0, 0);
   white-space: pre-wrap;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  font-family:
+    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
 }
 .reveal .column-output-location {
   display: flex;
@@ -1312,8 +1315,9 @@ div.cell-output-display div.pagedtable-wrapper table.table {
 }
 .reveal code.sourceCode button.code-annotation-anchor,
 .reveal code.sourceCode .code-annotation-anchor {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  font-family:
+    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
   color: var(--quarto-hl-co-color);
   border: solid var(--quarto-hl-co-color) 1px;
   border-radius: 50%;
@@ -1373,8 +1377,9 @@ div.cell-output-display div.pagedtable-wrapper table.table {
 }
 .reveal dl.code-annotation-container-grid dt {
   margin-top: 0.65rem;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  font-family:
+    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
   border: solid #222 1px;
   border-radius: 50%;
   height: 1.3em;
@@ -1393,8 +1398,9 @@ div.cell-output-display div.pagedtable-wrapper table.table {
   margin-left: 1em;
 }
 kbd {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  font-family:
+    SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
   font-size: 40px;
   color: #222;
   background-color: #f8f9fa;
@@ -1404,10 +1410,12 @@ kbd {
   padding: 0.4rem 0.4rem;
 }
 :root {
-  --r-inline-code-font: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
-    Courier New, monospace;
-  --r-block-code-font: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
-    Courier New, monospace;
+  --r-inline-code-font:
+    SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New,
+    monospace;
+  --r-block-code-font:
+    SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New,
+    monospace;
   --r-inline-code-font-size: 0.875em;
   --r-block-code-font-size: 0.55em;
 }
