@@ -94,7 +94,7 @@
           1,
           -this.options.origin[0],
           -1,
-          this.options.origin[1]
+          this.options.origin[1],
         );
       }
 
@@ -184,7 +184,7 @@
           crs = new L.Proj.CRS(geojson.crs.properties.name);
         } else if (geojson.crs && geojson.crs.type) {
           crs = new L.Proj.CRS(
-            geojson.crs.type + ":" + geojson.crs.properties.code
+            geojson.crs.type + ":" + geojson.crs.properties.code,
           );
         }
 
@@ -229,12 +229,12 @@
       var scale = this._map.getZoomScale(event.zoom);
       var northWest = L.point(
         this._projectedBounds.min.x,
-        this._projectedBounds.max.y
+        this._projectedBounds.max.y,
       );
       var offset = this._projectedToNewLayerPoint(
         northWest,
         event.zoom,
-        event.center
+        event.center,
       );
 
       L.DomUtil.setTransform(this._image, offset, scale);
@@ -245,7 +245,7 @@
       var pixelOrigin = this._map.getPixelOrigin();
       var bounds = L.bounds(
         this._transform(this._projectedBounds.min, zoom)._subtract(pixelOrigin),
-        this._transform(this._projectedBounds.max, zoom)._subtract(pixelOrigin)
+        this._transform(this._projectedBounds.max, zoom)._subtract(pixelOrigin),
       );
       var size = bounds.getSize();
 
