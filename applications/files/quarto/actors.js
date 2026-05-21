@@ -87,7 +87,7 @@ function transpose(df) {
   const keys = Object.keys(df);
   return df[keys[0]]
     .map((v, i) =>
-      Object.fromEntries(keys.map((key) => [key, df[key][i] || undefined]))
+      Object.fromEntries(keys.map((key) => [key, df[key][i] || undefined])),
     )
     .filter((v) => Object.values(v).every((e) => e !== undefined));
 }
