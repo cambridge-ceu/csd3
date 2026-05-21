@@ -29,14 +29,14 @@ const Plugin = () => {
       speakerWindow = window.open(
         "about:blank",
         "reveal.js - Notes",
-        "width=1100,height=700"
+        "width=1100,height=700",
       );
       speakerWindow.marked = marked;
       speakerWindow.document.write(speakerViewHTML);
 
       if (!speakerWindow) {
         alert(
-          "Speaker view popup failed to open. Please make sure popups are allowed and reopen the speaker view."
+          "Speaker view popup failed to open. Please make sure popups are allowed and reopen the speaker view.",
         );
         return;
       }
@@ -85,7 +85,7 @@ const Plugin = () => {
           state: deck.getState(),
           url,
         }),
-        "*"
+        "*",
       );
     }, 500);
 
@@ -105,7 +105,7 @@ const Plugin = () => {
         result,
         callId,
       }),
-      "*"
+      "*",
     );
   }
 
@@ -156,7 +156,7 @@ const Plugin = () => {
       // Ignore notes inside of fragments since those are shown
       // individually when stepping through fragments
       notesElements = Array.from(notesElements).filter(
-        (notesElement) => notesElement.closest(".fragment") === null
+        (notesElement) => notesElement.closest(".fragment") === null,
       );
 
       messageData.notes = notesElements
@@ -263,7 +263,7 @@ const Plugin = () => {
           { keyCode: 83, key: "S", description: "Speaker notes view" },
           function () {
             openSpeakerWindow();
-          }
+          },
         );
       }
     },
