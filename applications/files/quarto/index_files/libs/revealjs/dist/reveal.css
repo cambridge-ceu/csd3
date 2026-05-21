@@ -309,7 +309,10 @@ html.reveal-full-page {
   cursor: pointer;
   color: currentColor;
   transform: scale(0.9999);
-  transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
   z-index: 2;
   pointer-events: auto;
   font-size: inherit;
@@ -328,7 +331,9 @@ html.reveal-full-page {
   height: 0.5em;
   border-radius: 0.25em;
   background-color: currentColor;
-  transition: all 0.15s ease, background-color 0.8s ease;
+  transition:
+    all 0.15s ease,
+    background-color 0.8s ease;
   transform-origin: 0.2em 50%;
   will-change: transform;
 }
@@ -612,7 +617,8 @@ html.reveal-full-page {
   pointer-events: auto;
   z-index: 10;
   transform-style: flat;
-  transition: transform-origin 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985),
+  transition:
+    transform-origin 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985),
     transform 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985),
     visibility 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985),
     opacity 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
@@ -1837,7 +1843,9 @@ html.reveal-full-page {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(var(--r-overlay-element-bg-color), 1);
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
   opacity: 0.4;
 }
 .reveal-viewport.reveal-scroll
