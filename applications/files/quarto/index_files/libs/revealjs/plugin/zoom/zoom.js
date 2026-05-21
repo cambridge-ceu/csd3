@@ -2,10 +2,11 @@
   "object" == typeof exports && "undefined" != typeof module
     ? (module.exports = t())
     : "function" == typeof define && define.amd
-    ? define(t)
-    : ((e =
-        "undefined" != typeof globalThis ? globalThis : e || self).RevealZoom =
-        t());
+      ? define(t)
+      : ((e =
+          "undefined" != typeof globalThis
+            ? globalThis
+            : e || self).RevealZoom = t());
 })(this, function () {
   "use strict";
   /*!
@@ -47,8 +48,8 @@
         else {
           var i = n.x + "px " + n.y + "px",
             d = "translate(" + -t.x + "px," + -t.y + "px) scale(" + o + ")";
-          (document.body.style.transformOrigin = i),
-            (document.body.style.transform = d);
+          ((document.body.style.transformOrigin = i),
+            (document.body.style.transform = d));
         }
       else
         1 === o
@@ -64,30 +65,30 @@
             (document.body.style.width = 100 * o + "%"),
             (document.body.style.height = 100 * o + "%"),
             (document.body.style.zoom = o));
-      (e = o),
+      ((e = o),
         document.documentElement.classList &&
           (1 !== e
             ? document.documentElement.classList.add("zoomed")
-            : document.documentElement.classList.remove("zoomed"));
+            : document.documentElement.classList.remove("zoomed")));
     }
     function c() {
       var t = 0.12 * window.innerWidth,
         i = 0.12 * window.innerHeight,
         d = r();
-      n < i
+      (n < i
         ? window.scroll(d.x, d.y - (14 / e) * (1 - n / i))
         : n > window.innerHeight - i &&
           window.scroll(
             d.x,
-            d.y + (1 - (window.innerHeight - n) / i) * (14 / e)
+            d.y + (1 - (window.innerHeight - n) / i) * (14 / e),
           ),
         o < t
           ? window.scroll(d.x - (14 / e) * (1 - o / t), d.y)
           : o > window.innerWidth - t &&
             window.scroll(
               d.x + (1 - (window.innerWidth - o) / t) * (14 / e),
-              d.y
-            );
+              d.y,
+            ));
     }
     function r() {
       return {
@@ -109,19 +110,19 @@
           else {
             if (((o.x = o.x || 0), (o.y = o.y || 0), o.element)) {
               var n = o.element.getBoundingClientRect();
-              (o.x = n.left - 20),
+              ((o.x = n.left - 20),
                 (o.y = n.top - 20),
                 (o.width = n.width + 40),
-                (o.height = n.height + 40);
+                (o.height = n.height + 40));
             }
-            void 0 !== o.width &&
+            (void 0 !== o.width &&
               void 0 !== o.height &&
               (o.scale = Math.max(
                 Math.min(
                   window.innerWidth / o.width,
-                  window.innerHeight / o.height
+                  window.innerHeight / o.height,
                 ),
-                1
+                1,
               )),
               o.scale > 1 &&
                 ((o.x *= o.scale),
@@ -130,11 +131,11 @@
                 !1 !== o.pan &&
                   (i = setTimeout(function () {
                     d = setInterval(c, 1e3 / 60);
-                  }, 800)));
+                  }, 800))));
           }
         },
         out: function () {
-          clearTimeout(i), clearInterval(d), s({ x: 0, y: 0 }, 1), (e = 1);
+          (clearTimeout(i), clearInterval(d), s({ x: 0, y: 0 }, 1), (e = 1));
         },
         magnify: function (e) {
           this.to(e);
