@@ -1,7 +1,8 @@
 source "https://rubygems.org" # source "https://gems.ruby-china.com"
 
 gem 'jekyll-rtd-theme', '~> 2.0', '>= 2.0.10'
-
+gem 'bigdecimal'
+gem 'csv'
 gem "github-pages", group: :jekyll_plugins
 
 group :jekyll_plugins do
