@@ -36,3 +36,80 @@ R --> xlsx
 ```
 
 {% include list.liquid all=true %}
+
+Outside csd3 and under Fedora 43, which furnishes R development, the following is necessary
+
+```bash
+# install
+sudo dnf install parallel ruby ruby-devel rubygems nodejs npm
+sudo npm install -g prettier
+bundle install
+npm install
+npm audit fix --force
+
+# test
+parallel --version
+bundle exec jekyll --version
+node --version
+npm --version
+make build
+
+# ruby 3.2.9
+# curl -q -fL -o ruby-3.2.9.tar.gz https://cache.ruby-lang.org/pub/ruby/3.2/ruby-3.2.9.tar.gz
+# ./configure "--prefix=$HOME/.rbenv/versions/3.2.9" --enable-shared --with-ext=openssl,psych,+
+# make -j 1
+sudo dnf install rbenv ruby-build
+rbenv install 3.2.9
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init - bash)"' >> ~/.bashrc
+source ~/.bashrc
+rbenv global 3.2.9
+rbenv rehash
+rm -rf ~/.local/share/gem
+rm -rf ~/.bundle
+rm -rf vendor/bundle
+rm -rf node_modules
+rm -f Gemfile.lock package-lock.json
+gem install bundler
+bundle install
+npm install
+make build
+
+# ruby 2.7.8
+# install build deps
+sudo dnf groupinstall "Development Tools"
+sudo dnf install \
+  gcc gcc-c++ make patch readline readline-devel zlib zlib-devel \
+  libyaml-devel libffi-devel openssl-devel gdbm-devel ncurses-devel rust
+
+# install older compatible ruby
+rbenv install 2.7.8
+
+# use it for this project
+cd ~/cambridge-ceu/csd3
+rbenv local 2.7.8
+
+# refresh shims
+rbenv rehash
+
+# verify
+ruby -v
+# should show 2.7.8
+
+# clean broken gems from ruby 3.2 attempts
+rm -rf vendor/bundle
+rm -rf .bundle
+rm -f Gemfile.lock
+
+# install bundler compatible with old jekyll
+gem install bundler -v 2.4.22
+
+# install gems
+bundle _2.4.22_ install
+
+# install node deps
+npm install
+
+# build
+make build
+```
