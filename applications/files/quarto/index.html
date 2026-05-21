@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <script src="index_files/libs/clipboard/clipboard.min.js"></script>
@@ -2364,7 +2364,7 @@
     <script type="module">
       if (window.location.protocol === "file:") {
         alert(
-          "The OJS runtime does not work with file:// URLs. Please use a web server to view this document."
+          "The OJS runtime does not work with file:// URLs. Please use a web server to view this document.",
         );
       }
       window._ojs.paths.runtimeToDoc = "../../..";
@@ -2425,7 +2425,7 @@
         };
         const toggleBodyColorPrimary = () => {
           const bsSheetEl = window.document.querySelector(
-            "link#quarto-bootstrap"
+            "link#quarto-bootstrap",
           );
           if (bsSheetEl) {
             toggleBodyColorMode(bsSheetEl);
@@ -2491,7 +2491,7 @@
           ".code-copy-button:not([data-in-quarto-modal])",
           {
             text: getTextToCopy,
-          }
+          },
         );
         clipboard.on("success", onCopySuccess);
         if (
@@ -2502,14 +2502,14 @@
             {
               text: getTextToCopy,
               container: window.document.getElementById(
-                "quarto-embedded-source-code-modal"
+                "quarto-embedded-source-code-modal",
               ),
-            }
+            },
           );
           clipboardModal.on("success", onCopySuccess);
         }
         var localhostRegex = new RegExp(
-          /^(?:http|https):\/\/localhost\:?[0-9]*\//
+          /^(?:http|https):\/\/localhost\:?[0-9]*\//,
         );
         var mailtoRegex = new RegExp(/^mailto:/);
         var filterRegex = new RegExp("/" + window.location.host + "/");
@@ -2522,7 +2522,7 @@
         };
         // Inspect non-navigation links and adorn them if external
         var links = window.document.querySelectorAll(
-          "a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)"
+          "a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)",
         );
         for (var i = 0; i < links.length; i++) {
           const link = links[i];
@@ -2562,7 +2562,7 @@
           window.tippy(el, config);
         }
         const noterefs = window.document.querySelectorAll(
-          'a[role="doc-noteref"]'
+          'a[role="doc-noteref"]',
         );
         for (var i = 0; i < noterefs.length; i++) {
           const ref = noterefs[i];
@@ -2600,7 +2600,7 @@
           }
         };
         var bibliorefs = window.document.querySelectorAll(
-          'a[role="doc-biblioref"]'
+          'a[role="doc-biblioref"]',
         );
         for (var i = 0; i < bibliorefs.length; i++) {
           const ref = bibliorefs[i];
