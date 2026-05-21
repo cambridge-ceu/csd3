@@ -99,7 +99,7 @@ window.QuartoSupport = function () {
               return false;
             }
           },
-          false
+          false,
         );
       }
     });
@@ -139,10 +139,10 @@ window.QuartoSupport = function () {
       const slideNumberEl = revealParent.querySelector(".slide-number");
       const slideBackground = Reveal.getSlideBackground(ev.currentSlide);
       const onDarkBackground = slideBackground.classList.contains(
-        "has-dark-background"
+        "has-dark-background",
       );
       const onLightBackground = slideBackground.classList.contains(
-        "has-light-background"
+        "has-light-background",
       );
       toggleBackgroundTheme(slideNumberEl, onDarkBackground, onLightBackground);
     });
@@ -175,7 +175,7 @@ window.QuartoSupport = function () {
         toggleBackgroundTheme(
           defaultFooterDiv,
           onDarkBackground,
-          onLightBackground
+          onLightBackground,
         );
       }
     };
@@ -194,7 +194,7 @@ window.QuartoSupport = function () {
         deck.on("slidechanged", function (ev) {
           // Remove presentation footer defined by previous slide
           const prevSlideFooter = document.querySelector(
-            ".reveal > .footer:not(.footer-default)"
+            ".reveal > .footer:not(.footer-default)",
           );
           if (prevSlideFooter) {
             prevSlideFooter.remove();
@@ -253,7 +253,7 @@ window.QuartoSupport = function () {
         const config = deck.getConfig();
         let buttons = !!config.chalkboard.buttons;
         const slideButtons = ev.currentSlide.getAttribute(
-          "data-chalkboard-buttons"
+          "data-chalkboard-buttons",
         );
         if (slideButtons) {
           if (slideButtons === "true" || slideButtons === "1") {
@@ -397,7 +397,7 @@ window.QuartoSupport = function () {
       },
       () => {
         scrollViewToggler.toggleScrollViewWrapper();
-      }
+      },
     );
   }
 
