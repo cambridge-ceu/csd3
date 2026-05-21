@@ -6,8 +6,8 @@
   "object" == typeof exports && "undefined" != typeof module
     ? i(exports)
     : "function" == typeof define && define.amd
-    ? define(["exports"], i)
-    : i((t.L = {}));
+      ? define(["exports"], i)
+      : i((t.L = {}));
 })(this, function (t) {
   "use strict";
   function i(t) {
@@ -27,13 +27,13 @@
     };
   }
   function n(t) {
-    return (t._leaflet_id = t._leaflet_id || ++ti), t._leaflet_id;
+    return ((t._leaflet_id = t._leaflet_id || ++ti), t._leaflet_id);
   }
   function o(t, i, e) {
     var n, o, s, r;
     return (
       (r = function () {
-        (n = !1), o && (s.apply(e, o), (o = !1));
+        ((n = !1), o && (s.apply(e, o), (o = !1)));
       }),
       (s = function () {
         n
@@ -72,7 +72,7 @@
       n.push(
         encodeURIComponent(e ? o.toUpperCase() : o) +
           "=" +
-          encodeURIComponent(t[o])
+          encodeURIComponent(t[o]),
       );
     return (i && -1 !== i.indexOf("?") ? "&" : "?") + n.join("&");
   }
@@ -80,7 +80,7 @@
     return t.replace(ii, function (t, e) {
       var n = i[e];
       if (void 0 === n) throw new Error("No value provided for variable " + t);
-      return "function" == typeof n && (n = n(i)), n;
+      return ("function" == typeof n && (n = n(i)), n);
     });
   }
   function d(t, i) {
@@ -93,7 +93,7 @@
   function m(t) {
     var i = +new Date(),
       e = Math.max(0, 16 - (i - oi));
-    return (oi = i + e), window.setTimeout(t, e);
+    return ((oi = i + e), window.setTimeout(t, e));
   }
   function f(t, i, n) {
     if (!n || si !== m) return si.call(window, e(t, i));
@@ -110,23 +110,23 @@
         t[i] === L.Mixin.Events &&
           console.warn(
             "Deprecated include of L.Mixin.Events: this property will be removed in future releases, please inherit from L.Evented instead.",
-            new Error().stack
+            new Error().stack,
           );
     }
   }
   function x(t, i, e) {
-    (this.x = e ? Math.round(t) : t), (this.y = e ? Math.round(i) : i);
+    ((this.x = e ? Math.round(t) : t), (this.y = e ? Math.round(i) : i));
   }
   function w(t, i, e) {
     return t instanceof x
       ? t
       : ei(t)
-      ? new x(t[0], t[1])
-      : void 0 === t || null === t
-      ? t
-      : "object" == typeof t && "x" in t && "y" in t
-      ? new x(t.x, t.y)
-      : new x(t, i, e);
+        ? new x(t[0], t[1])
+        : void 0 === t || null === t
+          ? t
+          : "object" == typeof t && "x" in t && "y" in t
+            ? new x(t.x, t.y)
+            : new x(t, i, e);
   }
   function P(t, i) {
     if (t)
@@ -147,24 +147,24 @@
   function M(t, i, e) {
     if (isNaN(t) || isNaN(i))
       throw new Error("Invalid LatLng object: (" + t + ", " + i + ")");
-    (this.lat = +t), (this.lng = +i), void 0 !== e && (this.alt = +e);
+    ((this.lat = +t), (this.lng = +i), void 0 !== e && (this.alt = +e));
   }
   function C(t, i, e) {
     return t instanceof M
       ? t
       : ei(t) && "object" != typeof t[0]
-      ? 3 === t.length
-        ? new M(t[0], t[1], t[2])
-        : 2 === t.length
-        ? new M(t[0], t[1])
-        : null
-      : void 0 === t || null === t
-      ? t
-      : "object" == typeof t && "lat" in t
-      ? new M(t.lat, "lng" in t ? t.lng : t.lon, t.alt)
-      : void 0 === i
-      ? null
-      : new M(t, i, e);
+        ? 3 === t.length
+          ? new M(t[0], t[1], t[2])
+          : 2 === t.length
+            ? new M(t[0], t[1])
+            : null
+        : void 0 === t || null === t
+          ? t
+          : "object" == typeof t && "lat" in t
+            ? new M(t.lat, "lng" in t ? t.lng : t.lon, t.alt)
+            : void 0 === i
+              ? null
+              : new M(t, i, e);
   }
   function Z(t, i, e, n) {
     if (ei(t))
@@ -174,7 +174,7 @@
         (this._c = t[2]),
         void (this._d = t[3])
       );
-    (this._a = t), (this._b = i), (this._c = e), (this._d = n);
+    ((this._a = t), (this._b = i), (this._c = e), (this._d = n));
   }
   function S(t, i, e, n) {
     return new Z(t, i, e, n);
@@ -192,7 +192,7 @@
       h = "";
     for (e = 0, o = t.length; e < o; e++) {
       for (n = 0, s = (r = t[e]).length; n < s; n++)
-        (a = r[n]), (h += (n ? "L" : "M") + a.x + " " + a.y);
+        ((a = r[n]), (h += (n ? "L" : "M") + a.x + " " + a.y));
       h += i ? (Xi ? "z" : "x") : "";
     }
     return h || "M0 0";
@@ -205,8 +205,8 @@
       "touchstart" === i
         ? O(t, e, n)
         : "touchmove" === i
-        ? W(t, e, n)
-        : "touchend" === i && H(t, e, n),
+          ? W(t, e, n)
+          : "touchend" === i && H(t, e, n),
       this
     );
   }
@@ -216,9 +216,10 @@
       "touchstart" === i
         ? t.removeEventListener(Qi, n, !1)
         : "touchmove" === i
-        ? t.removeEventListener(te, n, !1)
-        : "touchend" === i &&
-          (t.removeEventListener(ie, n, !1), t.removeEventListener(ee, n, !1)),
+          ? t.removeEventListener(te, n, !1)
+          : "touchend" === i &&
+            (t.removeEventListener(ie, n, !1),
+            t.removeEventListener(ee, n, !1)),
       this
     );
   }
@@ -234,28 +235,28 @@
       }
       j(t, i);
     });
-    (t["_leaflet_touchstart" + n] = o),
+    ((t["_leaflet_touchstart" + n] = o),
       t.addEventListener(Qi, o, !1),
       se ||
         (document.documentElement.addEventListener(Qi, R, !0),
         document.documentElement.addEventListener(te, D, !0),
         document.documentElement.addEventListener(ie, N, !0),
         document.documentElement.addEventListener(ee, N, !0),
-        (se = !0));
+        (se = !0)));
   }
   function R(t) {
-    (oe[t.pointerId] = t), re++;
+    ((oe[t.pointerId] = t), re++);
   }
   function D(t) {
     oe[t.pointerId] && (oe[t.pointerId] = t);
   }
   function N(t) {
-    delete oe[t.pointerId], re--;
+    (delete oe[t.pointerId], re--);
   }
   function j(t, i) {
     t.touches = [];
     for (var e in oe) t.touches.push(oe[e]);
-    (t.changedTouches = [t]), i(t);
+    ((t.changedTouches = [t]), i(t));
   }
   function W(t, i, e) {
     var n = function (t) {
@@ -264,15 +265,15 @@
         0 !== t.buttons) &&
         j(t, i);
     };
-    (t["_leaflet_touchmove" + e] = n), t.addEventListener(te, n, !1);
+    ((t["_leaflet_touchmove" + e] = n), t.addEventListener(te, n, !1));
   }
   function H(t, i, e) {
     var n = function (t) {
       j(t, i);
     };
-    (t["_leaflet_touchend" + e] = n),
+    ((t["_leaflet_touchend" + e] = n),
       t.addEventListener(ie, n, !1),
-      t.addEventListener(ee, n, !1);
+      t.addEventListener(ee, n, !1));
   }
   function F(t, i, e) {
     function n(t) {
@@ -284,7 +285,7 @@
       if (!(i > 1)) {
         var e = Date.now(),
           n = e - (s || e);
-        (r = t.touches ? t.touches[0] : t), (a = n > 0 && n <= h), (s = e);
+        ((r = t.touches ? t.touches[0] : t), (a = n > 0 && n <= h), (s = e));
       }
     }
     function o(t) {
@@ -294,10 +295,10 @@
           var e,
             n,
             o = {};
-          for (n in r) (e = r[n]), (o[n] = e && e.bind ? e.bind(r) : e);
+          for (n in r) ((e = r[n]), (o[n] = e && e.bind ? e.bind(r) : e));
           r = o;
         }
-        (r.type = "dblclick"), i(r), (s = null);
+        ((r.type = "dblclick"), i(r), (s = null));
       }
     }
     var s,
@@ -347,81 +348,81 @@
         return e.call(o || t, i || window.event);
       },
       a = r;
-    Ui && 0 === i.indexOf("touch")
+    (Ui && 0 === i.indexOf("touch")
       ? I(t, i, r, s)
       : !Vi || "dblclick" !== i || !F || (Ui && Si)
-      ? "addEventListener" in t
-        ? "mousewheel" === i
-          ? t.addEventListener("onwheel" in t ? "wheel" : "mousewheel", r, !1)
-          : "mouseenter" === i || "mouseleave" === i
-          ? ((r = function (i) {
-              (i = i || window.event), ot(t, i) && a(i);
-            }),
-            t.addEventListener(
-              "mouseenter" === i ? "mouseover" : "mouseout",
-              r,
-              !1
-            ))
-          : ("click" === i &&
-              Ti &&
-              (r = function (t) {
-                st(t, a);
-              }),
-            t.addEventListener(i, r, !1))
-        : "attachEvent" in t && t.attachEvent("on" + i, r)
-      : F(t, r, s),
+        ? "addEventListener" in t
+          ? "mousewheel" === i
+            ? t.addEventListener("onwheel" in t ? "wheel" : "mousewheel", r, !1)
+            : "mouseenter" === i || "mouseleave" === i
+              ? ((r = function (i) {
+                  ((i = i || window.event), ot(t, i) && a(i));
+                }),
+                t.addEventListener(
+                  "mouseenter" === i ? "mouseover" : "mouseout",
+                  r,
+                  !1,
+                ))
+              : ("click" === i &&
+                  Ti &&
+                  (r = function (t) {
+                    st(t, a);
+                  }),
+                t.addEventListener(i, r, !1))
+          : "attachEvent" in t && t.attachEvent("on" + i, r)
+        : F(t, r, s),
       (t[le] = t[le] || {}),
-      (t[le][s] = r);
+      (t[le][s] = r));
   }
   function K(t, i, e, o) {
     var s = i + n(e) + (o ? "_" + n(o) : ""),
       r = t[le] && t[le][s];
     if (!r) return this;
-    Ui && 0 === i.indexOf("touch")
+    (Ui && 0 === i.indexOf("touch")
       ? B(t, i, s)
       : !Vi || "dblclick" !== i || !U || (Ui && Si)
-      ? "removeEventListener" in t
-        ? "mousewheel" === i
-          ? t.removeEventListener(
-              "onwheel" in t ? "wheel" : "mousewheel",
-              r,
-              !1
-            )
-          : t.removeEventListener(
-              "mouseenter" === i
-                ? "mouseover"
-                : "mouseleave" === i
-                ? "mouseout"
-                : i,
-              r,
-              !1
-            )
-        : "detachEvent" in t && t.detachEvent("on" + i, r)
-      : U(t, s),
-      (t[le][s] = null);
+        ? "removeEventListener" in t
+          ? "mousewheel" === i
+            ? t.removeEventListener(
+                "onwheel" in t ? "wheel" : "mousewheel",
+                r,
+                !1,
+              )
+            : t.removeEventListener(
+                "mouseenter" === i
+                  ? "mouseover"
+                  : "mouseleave" === i
+                    ? "mouseout"
+                    : i,
+                r,
+                !1,
+              )
+          : "detachEvent" in t && t.detachEvent("on" + i, r)
+        : U(t, s),
+      (t[le][s] = null));
   }
   function Y(t) {
     return (
       t.stopPropagation
         ? t.stopPropagation()
         : t.originalEvent
-        ? (t.originalEvent._stopped = !0)
-        : (t.cancelBubble = !0),
+          ? (t.originalEvent._stopped = !0)
+          : (t.cancelBubble = !0),
       nt(t),
       this
     );
   }
   function X(t) {
-    return G(t, "mousewheel", Y), this;
+    return (G(t, "mousewheel", Y), this);
   }
   function J(t) {
-    return V(t, "mousedown touchstart dblclick", Y), G(t, "click", et), this;
+    return (V(t, "mousedown touchstart dblclick", Y), G(t, "click", et), this);
   }
   function $(t) {
-    return t.preventDefault ? t.preventDefault() : (t.returnValue = !1), this;
+    return (t.preventDefault ? t.preventDefault() : (t.returnValue = !1), this);
   }
   function Q(t) {
-    return $(t), Y(t), this;
+    return ($(t), Y(t), this);
   }
   function tt(t, i) {
     if (!i) return new x(t.clientX, t.clientY);
@@ -430,34 +431,34 @@
       o = e.height / i.offsetHeight || 1;
     return new x(
       t.clientX / n - e.left - i.clientLeft,
-      t.clientY / o - e.top - i.clientTop
+      t.clientY / o - e.top - i.clientTop,
     );
   }
   function it(t) {
     return Pi
       ? t.wheelDeltaY / 2
       : t.deltaY && 0 === t.deltaMode
-      ? -t.deltaY / ce
-      : t.deltaY && 1 === t.deltaMode
-      ? 20 * -t.deltaY
-      : t.deltaY && 2 === t.deltaMode
-      ? 60 * -t.deltaY
-      : t.deltaX || t.deltaZ
-      ? 0
-      : t.wheelDelta
-      ? (t.wheelDeltaY || t.wheelDelta) / 2
-      : t.detail && Math.abs(t.detail) < 32765
-      ? 20 * -t.detail
-      : t.detail
-      ? (t.detail / -32765) * 60
-      : 0;
+        ? -t.deltaY / ce
+        : t.deltaY && 1 === t.deltaMode
+          ? 20 * -t.deltaY
+          : t.deltaY && 2 === t.deltaMode
+            ? 60 * -t.deltaY
+            : t.deltaX || t.deltaZ
+              ? 0
+              : t.wheelDelta
+                ? (t.wheelDeltaY || t.wheelDelta) / 2
+                : t.detail && Math.abs(t.detail) < 32765
+                  ? 20 * -t.detail
+                  : t.detail
+                    ? (t.detail / -32765) * 60
+                    : 0;
   }
   function et(t) {
     _e[t.type] = !0;
   }
   function nt(t) {
     var i = _e[t.type];
-    return (_e[t.type] = !1), i;
+    return ((_e[t.type] = !1), i);
   }
   function ot(t, i) {
     var e = i.relatedTarget;
@@ -489,7 +490,7 @@
   }
   function ht(t, i, e) {
     var n = document.createElement(t);
-    return (n.className = i || ""), e && e.appendChild(n), n;
+    return ((n.className = i || ""), e && e.appendChild(n), n);
   }
   function ut(t) {
     var i = t.parentNode;
@@ -545,10 +546,10 @@
     } catch (t) {
       if (1 === i) return;
     }
-    (i = Math.round(100 * i)),
+    ((i = Math.round(100 * i)),
       e
         ? ((e.Enabled = 100 !== i), (e.Opacity = i))
-        : (t.style.filter += " progid:" + n + "(opacity=" + i + ")");
+        : (t.style.filter += " progid:" + n + "(opacity=" + i + ")"));
   }
   function xt(t) {
     for (var i = document.documentElement.style, e = 0; e < t.length; e++)
@@ -564,8 +565,10 @@
       (e ? " scale(" + e + ")" : "");
   }
   function Lt(t, i) {
-    (t._leaflet_pos = i),
-      Ni ? wt(t, i) : ((t.style.left = i.x + "px"), (t.style.top = i.y + "px"));
+    ((t._leaflet_pos = i),
+      Ni
+        ? wt(t, i)
+        : ((t.style.left = i.x + "px"), (t.style.top = i.y + "px")));
   }
   function Pt(t) {
     return t._leaflet_pos || new x(0, 0);
@@ -595,7 +598,7 @@
   function Ct(t, i) {
     if (!i || !t.length) return t.slice();
     var e = i * i;
-    return (t = kt(t, e)), (t = St(t, e));
+    return ((t = kt(t, e)), (t = St(t, e)));
   }
   function Zt(t, i, e) {
     return Math.sqrt(Rt(t, i, e, !0));
@@ -603,7 +606,7 @@
   function St(t, i) {
     var e = t.length,
       n = new (typeof Uint8Array != void 0 + "" ? Uint8Array : Array)(e);
-    (n[0] = n[e - 1] = 1), Et(t, n, i, 0, e - 1);
+    ((n[0] = n[e - 1] = 1), Et(t, n, i, 0, e - 1));
     var o,
       s = [];
     for (o = 0; o < e; o++) n[o] && s.push(t[o]);
@@ -621,7 +624,7 @@
   function kt(t, i) {
     for (var e = [t[0]], n = 1, o = 0, s = t.length; n < s; n++)
       Ot(t[n], t[o]) > i && (e.push(t[n]), (o = n));
-    return o < s - 1 && e.push(t[s - 1]), e;
+    return (o < s - 1 && e.push(t[s - 1]), e);
   }
   function At(t, i, e, n, o) {
     var s,
@@ -632,8 +635,8 @@
     for (Se = u; ; ) {
       if (!(h | u)) return [t, i];
       if (h & u) return !1;
-      (a = Bt((r = It(t, i, (s = h || u), e, o)), e)),
-        s === h ? ((t = r), (h = a)) : ((i = r), (u = a));
+      ((a = Bt((r = It(t, i, (s = h || u), e, o)), e)),
+        s === h ? ((t = r), (h = a)) : ((i = r), (u = a)));
     }
   }
   function It(t, i, e, n, o) {
@@ -647,10 +650,10 @@
       8 & e
         ? ((s = t.x + (a * (l.y - t.y)) / h), (r = l.y))
         : 4 & e
-        ? ((s = t.x + (a * (u.y - t.y)) / h), (r = u.y))
-        : 2 & e
-        ? ((s = l.x), (r = t.y + (h * (l.x - t.x)) / a))
-        : 1 & e && ((s = u.x), (r = t.y + (h * (u.x - t.x)) / a)),
+          ? ((s = t.x + (a * (u.y - t.y)) / h), (r = u.y))
+          : 2 & e
+            ? ((s = l.x), (r = t.y + (h * (l.x - t.x)) / a))
+            : 1 & e && ((s = u.x), (r = t.y + (h * (u.x - t.x)) / a)),
       new x(s, r, o)
     );
   }
@@ -690,7 +693,7 @@
   function Nt(t) {
     return (
       console.warn(
-        "Deprecated use of _flat, please use L.LineUtil.isFlat instead."
+        "Deprecated use of _flat, please use L.LineUtil.isFlat instead.",
       ),
       Dt(t)
     );
@@ -709,14 +712,14 @@
     for (o = 0, u = t.length; o < u; o++) t[o]._code = Bt(t[o], i);
     for (r = 0; r < 4; r++) {
       for (l = _[r], n = [], o = 0, s = (u = t.length) - 1; o < u; s = o++)
-        (a = t[o]),
+        ((a = t[o]),
           (h = t[s]),
           a._code & l
             ? h._code & l ||
               (((c = It(h, a, l, i, e))._code = Bt(c, i)), n.push(c))
             : (h._code & l &&
                 (((c = It(h, a, l, i, e))._code = Bt(c, i)), n.push(c)),
-              n.push(a));
+              n.push(a)));
       t = n;
     }
     return t;
@@ -734,17 +737,17 @@
     if (!a && !r) return null;
     switch (r.type) {
       case "Point":
-        return (e = l(a)), u ? u(t, e) : new Xe(e);
+        return ((e = l(a)), u ? u(t, e) : new Xe(e));
       case "MultiPoint":
         for (o = 0, s = a.length; o < s; o++)
-          (e = l(a[o])), h.push(u ? u(t, e) : new Xe(e));
+          ((e = l(a[o])), h.push(u ? u(t, e) : new Xe(e)));
         return new qe(h);
       case "LineString":
       case "MultiLineString":
-        return (n = Ft(a, "LineString" === r.type ? 0 : 1, l)), new tn(n, i);
+        return ((n = Ft(a, "LineString" === r.type ? 0 : 1, l)), new tn(n, i));
       case "Polygon":
       case "MultiPolygon":
-        return (n = Ft(a, "Polygon" === r.type ? 1 : 2, l)), new en(n, i);
+        return ((n = Ft(a, "Polygon" === r.type ? 1 : 2, l)), new en(n, i));
       case "GeometryCollection":
         for (o = 0, s = r.geometries.length; o < s; o++) {
           var c = Wt(
@@ -753,7 +756,7 @@
               type: "Feature",
               properties: t.properties,
             },
-            i
+            i,
           );
           c && h.push(c);
         }
@@ -767,7 +770,7 @@
   }
   function Ft(t, i, e) {
     for (var n, o = [], s = 0, r = t.length; s < r; s++)
-      (n = i ? Ft(t[s], i - 1, e) : (e || Ht)(t[s])), o.push(n);
+      ((n = i ? Ft(t[s], i - 1, e) : (e || Ht)(t[s])), o.push(n));
     return o;
   }
   function Ut(t, i) {
@@ -781,7 +784,7 @@
   function Vt(t, i, e, n) {
     for (var o = [], s = 0, r = t.length; s < r; s++)
       o.push(i ? Vt(t[s], i - 1, e, n) : Ut(t[s], n));
-    return !i && e && o.push(o[0]), o;
+    return (!i && e && o.push(o[0]), o);
   }
   function qt(t, e) {
     return t.feature ? i({}, t.feature, { geometry: e }) : Gt(e);
@@ -812,7 +815,7 @@
       (function () {
         function t() {}
         return function (i) {
-          return (t.prototype = i), new t();
+          return ((t.prototype = i), new t());
         };
       })(),
     ti = 0,
@@ -856,14 +859,14 @@
       requestAnimFrame: f,
       cancelAnimFrame: g,
     });
-  (v.extend = function (t) {
+  ((v.extend = function (t) {
     var e = function () {
-        this.initialize && this.initialize.apply(this, arguments),
-          this.callInitHooks();
+        (this.initialize && this.initialize.apply(this, arguments),
+          this.callInitHooks());
       },
       n = (e.__super__ = this.prototype),
       o = Qt(n);
-    (o.constructor = e), (e.prototype = o);
+    ((o.constructor = e), (e.prototype = o));
     for (var s in this)
       this.hasOwnProperty(s) &&
         "prototype" !== s &&
@@ -880,8 +883,8 @@
       (o._initHooks = []),
       (o.callInitHooks = function () {
         if (!this._initHooksCalled) {
-          n.callInitHooks && n.callInitHooks.call(this),
-            (this._initHooksCalled = !0);
+          (n.callInitHooks && n.callInitHooks.call(this),
+            (this._initHooksCalled = !0));
           for (var t = 0, i = o._initHooks.length; t < i; t++)
             o._initHooks[t].call(this);
         }
@@ -890,10 +893,10 @@
     );
   }),
     (v.include = function (t) {
-      return i(this.prototype, t), this;
+      return (i(this.prototype, t), this);
     }),
     (v.mergeOptions = function (t) {
-      return i(this.prototype.options, t), this;
+      return (i(this.prototype.options, t), this);
     }),
     (v.addInitHook = function (t) {
       var i = Array.prototype.slice.call(arguments, 1),
@@ -908,7 +911,7 @@
         this.prototype._initHooks.push(e),
         this
       );
-    });
+    }));
   var hi = {
     on: function (t, i, e) {
       if ("object" == typeof t) for (var n in t) this._on(n, t[n], i);
@@ -928,7 +931,7 @@
     _on: function (t, i, e) {
       this._events = this._events || {};
       var n = this._events[t];
-      n || ((n = []), (this._events[t] = n)), e === this && (e = void 0);
+      (n || ((n = []), (this._events[t] = n)), e === this && (e = void 0));
       for (var o = { fn: i, ctx: e }, s = n, r = 0, a = s.length; r < a; r++)
         if (s[r].fn === i && s[r].ctx === e) return;
       s.push(o);
@@ -970,7 +973,7 @@
           this._firingCount--;
         }
       }
-      return n && this._propagateEvent(o), this;
+      return (n && this._propagateEvent(o), this);
     },
     listens: function (t, i) {
       var e = this._events && this._events[t];
@@ -998,29 +1001,29 @@
       );
     },
     removeEventParent: function (t) {
-      return this._eventParents && delete this._eventParents[n(t)], this;
+      return (this._eventParents && delete this._eventParents[n(t)], this);
     },
     _propagateEvent: function (t) {
       for (var e in this._eventParents)
         this._eventParents[e].fire(
           t.type,
           i({ layer: t.target, propagatedFrom: t.target }, t),
-          !0
+          !0,
         );
     },
   };
-  (hi.addEventListener = hi.on),
+  ((hi.addEventListener = hi.on),
     (hi.removeEventListener = hi.clearAllEventListeners = hi.off),
     (hi.addOneTimeEventListener = hi.once),
     (hi.fireEvent = hi.fire),
-    (hi.hasEventListeners = hi.listens);
+    (hi.hasEventListeners = hi.listens));
   var ui = v.extend(hi),
     li =
       Math.trunc ||
       function (t) {
         return t > 0 ? Math.floor(t) : Math.ceil(t);
       };
-  (x.prototype = {
+  ((x.prototype = {
     clone: function () {
       return new x(this.x, this.y);
     },
@@ -1028,25 +1031,25 @@
       return this.clone()._add(w(t));
     },
     _add: function (t) {
-      return (this.x += t.x), (this.y += t.y), this;
+      return ((this.x += t.x), (this.y += t.y), this);
     },
     subtract: function (t) {
       return this.clone()._subtract(w(t));
     },
     _subtract: function (t) {
-      return (this.x -= t.x), (this.y -= t.y), this;
+      return ((this.x -= t.x), (this.y -= t.y), this);
     },
     divideBy: function (t) {
       return this.clone()._divideBy(t);
     },
     _divideBy: function (t) {
-      return (this.x /= t), (this.y /= t), this;
+      return ((this.x /= t), (this.y /= t), this);
     },
     multiplyBy: function (t) {
       return this.clone()._multiplyBy(t);
     },
     _multiplyBy: function (t) {
-      return (this.x *= t), (this.y *= t), this;
+      return ((this.x *= t), (this.y *= t), this);
     },
     scaleBy: function (t) {
       return new x(this.x * t.x, this.y * t.y);
@@ -1058,25 +1061,33 @@
       return this.clone()._round();
     },
     _round: function () {
-      return (this.x = Math.round(this.x)), (this.y = Math.round(this.y)), this;
+      return (
+        (this.x = Math.round(this.x)),
+        (this.y = Math.round(this.y)),
+        this
+      );
     },
     floor: function () {
       return this.clone()._floor();
     },
     _floor: function () {
-      return (this.x = Math.floor(this.x)), (this.y = Math.floor(this.y)), this;
+      return (
+        (this.x = Math.floor(this.x)),
+        (this.y = Math.floor(this.y)),
+        this
+      );
     },
     ceil: function () {
       return this.clone()._ceil();
     },
     _ceil: function () {
-      return (this.x = Math.ceil(this.x)), (this.y = Math.ceil(this.y)), this;
+      return ((this.x = Math.ceil(this.x)), (this.y = Math.ceil(this.y)), this);
     },
     trunc: function () {
       return this.clone()._trunc();
     },
     _trunc: function () {
-      return (this.x = li(this.x)), (this.y = li(this.y)), this;
+      return ((this.x = li(this.x)), (this.y = li(this.y)), this);
     },
     distanceTo: function (t) {
       var i = (t = w(t)).x - this.x,
@@ -1113,7 +1124,7 @@
         return new x(
           (this.min.x + this.max.x) / 2,
           (this.min.y + this.max.y) / 2,
-          t
+          t,
         );
       },
       getBottomLeft: function () {
@@ -1175,7 +1186,7 @@
           e,
           n = this._southWest,
           o = this._northEast;
-        if (t instanceof M) (i = t), (e = t);
+        if (t instanceof M) ((i = t), (e = t));
         else {
           if (!(t instanceof T)) return t ? this.extend(C(t) || z(t)) : this;
           if (((i = t._southWest), (e = t._northEast), !i || !e)) return this;
@@ -1201,7 +1212,7 @@
       getCenter: function () {
         return new M(
           (this._southWest.lat + this._northEast.lat) / 2,
-          (this._southWest.lng + this._northEast.lng) / 2
+          (this._southWest.lng + this._northEast.lng) / 2,
         );
       },
       getSouthWest: function () {
@@ -1308,7 +1319,7 @@
       clone: function () {
         return new M(this.lat, this.lng, this.alt);
       },
-    });
+    }));
   var ci = {
       latLngToPoint: function (t, i) {
         var e = this.projection.project(t),
@@ -1338,7 +1349,7 @@
           e = this.scale(t);
         return new P(
           this.transformation.transform(i.min, e),
-          this.transformation.transform(i.max, e)
+          this.transformation.transform(i.max, e),
         );
       },
       infinite: !1,
@@ -1347,7 +1358,7 @@
         return new M(
           this.wrapLat ? s(t.lat, this.wrapLat, !0) : t.lat,
           i,
-          t.alt
+          t.alt,
         );
       },
       wrapLatLngBounds: function (t) {
@@ -1385,14 +1396,14 @@
           o = Math.sin(n * i);
         return new x(
           this.R * t.lng * i,
-          (this.R * Math.log((1 + o) / (1 - o))) / 2
+          (this.R * Math.log((1 + o) / (1 - o))) / 2,
         );
       },
       unproject: function (t) {
         var i = 180 / Math.PI;
         return new M(
           (2 * Math.atan(Math.exp(t.y / this.R)) - Math.PI / 2) * i,
-          (t.x * i) / this.R
+          (t.x * i) / this.R,
         );
       },
       bounds: (function () {
@@ -1569,12 +1580,12 @@
         ? me + "End"
         : "transitionend";
   if ("onselectstart" in document)
-    (mi = function () {
+    ((mi = function () {
       V(window, "selectstart", $);
     }),
       (fi = function () {
         q(window, "selectstart", $);
-      });
+      }));
   else {
     var ge = xt([
       "userSelect",
@@ -1583,15 +1594,15 @@
       "MozUserSelect",
       "msUserSelect",
     ]);
-    (mi = function () {
+    ((mi = function () {
       if (ge) {
         var t = document.documentElement.style;
-        (gi = t[ge]), (t[ge] = "none");
+        ((gi = t[ge]), (t[ge] = "none"));
       }
     }),
       (fi = function () {
         ge && ((document.documentElement.style[ge] = gi), (gi = void 0));
-      });
+      }));
   }
   var ve,
     ye,
@@ -1625,7 +1636,7 @@
     }),
     we = ui.extend({
       run: function (t, i, e, n) {
-        this.stop(),
+        (this.stop(),
           (this._el = t),
           (this._inProgress = !0),
           (this._duration = e || 0.25),
@@ -1634,13 +1645,13 @@
           (this._offset = i.subtract(this._startPos)),
           (this._startTime = +new Date()),
           this.fire("start"),
-          this._animate();
+          this._animate());
       },
       stop: function () {
         this._inProgress && (this._step(!0), this._complete());
       },
       _animate: function () {
-        (this._animId = f(this._animate, this)), this._step();
+        ((this._animId = f(this._animate, this)), this._step());
       },
       _step: function (t) {
         var i = +new Date() - this._startTime,
@@ -1651,10 +1662,10 @@
       },
       _runFrame: function (t, i) {
         var e = this._startPos.add(this._offset.multiplyBy(t));
-        i && e._round(), Lt(this._el, e), this.fire("step");
+        (i && e._round(), Lt(this._el, e), this.fire("step"));
       },
       _complete: function () {
-        g(this._animId), (this._inProgress = !1), this.fire("end");
+        (g(this._animId), (this._inProgress = !1), this.fire("end"));
       },
       _easeOut: function (t) {
         return 1 - Math.pow(1 - t, this._easeOutPower);
@@ -1680,7 +1691,7 @@
         trackResize: !0,
       },
       initialize: function (t, i) {
-        (i = l(this, i)),
+        ((i = l(this, i)),
           this._initContainer(t),
           this._initLayout(),
           (this._onResize = e(this._onResize, this)),
@@ -1699,7 +1710,7 @@
           this._zoomAnimated &&
             (this._createAnimProxy(),
             V(this._proxy, fe, this._catchTransitionEnd, this)),
-          this._addLayers(this.options.layers);
+          this._addLayers(this.options.layers));
       },
       setView: function (t, e, n) {
         return (
@@ -1747,7 +1758,7 @@
         return this.setView(r, i, { zoom: e });
       },
       _getBoundsCenterZoom: function (t, i) {
-        (i = i || {}), (t = t.getBounds ? t.getBounds() : z(t));
+        ((i = i || {}), (t = t.getBounds ? t.getBounds() : z(t)));
         var e = w(i.paddingTopLeft || i.padding || [0, 0]),
           n = w(i.paddingBottomRight || i.padding || [0, 0]),
           o = this.getBoundsZoom(t, !1, e.add(n));
@@ -1775,7 +1786,7 @@
             [-90, -180],
             [90, 180],
           ],
-          t
+          t,
         );
       },
       panTo: function (t, i) {
@@ -1788,7 +1799,7 @@
           return (
             this._resetView(
               this.unproject(this.project(this.getCenter()).add(t)),
-              this.getZoom()
+              this.getZoom(),
             ),
             this
           );
@@ -1800,7 +1811,7 @@
                 step: this._onPanTransitionStep,
                 end: this._onPanTransitionEnd,
               },
-              this
+              this,
             )),
           i.noMoveStart || this.fire("movestart"),
           !1 !== i.animate)
@@ -1811,9 +1822,9 @@
             this._mapPane,
             e,
             i.duration || 0.25,
-            i.easeLinearity
+            i.easeLinearity,
           );
-        } else this._rawPanBy(t), this.fire("move").fire("moveend");
+        } else (this._rawPanBy(t), this.fire("move").fire("moveend"));
         return this;
       },
       flyTo: function (t, i, e) {
@@ -1850,7 +1861,7 @@
               this._move(
                 this.unproject(c.add(_.subtract(c).multiplyBy(h(n) / v)), p),
                 this.getScaleZoom(m / a(n), p),
-                { flyTo: !0 }
+                { flyTo: !0 },
               ))
             : this._move(t, i)._moveEnd(!0);
         }
@@ -1860,7 +1871,7 @@
           _ = this.project(t),
           d = this.getSize(),
           p = this._zoom;
-        (t = C(t)), (i = void 0 === i ? p : i);
+        ((t = C(t)), (i = void 0 === i ? p : i));
         var m = Math.max(d.x, d.y),
           g = m * this.getZoomScale(p, i),
           v = _.distanceTo(c) || 1,
@@ -1870,7 +1881,7 @@
           L = Date.now(),
           P = (n(1) - w) / y,
           b = e.duration ? 1e3 * e.duration : 1e3 * P * 0.8;
-        return this._moveStart(!0, e.noMoveStart), l.call(this), this;
+        return (this._moveStart(!0, e.noMoveStart), l.call(this), this);
       },
       flyToBounds: function (t, i) {
         var e = this._getBoundsCenterZoom(t, i);
@@ -1913,14 +1924,16 @@
         var e = this.getCenter(),
           n = this._limitCenter(e, this._zoom, z(t));
         return (
-          e.equals(n) || this.panTo(n, i), (this._enforcingBounds = !1), this
+          e.equals(n) || this.panTo(n, i),
+          (this._enforcingBounds = !1),
+          this
         );
       },
       invalidateSize: function (t) {
         if (!this._loaded) return this;
         t = i({ animate: !1, pan: !0 }, !0 === t ? { animate: !0 } : t);
         var n = this.getSize();
-        (this._sizeChanged = !0), (this._lastCenter = null);
+        ((this._sizeChanged = !0), (this._lastCenter = null));
         var o = this.getSize(),
           s = n.divideBy(2).round(),
           r = o.divideBy(2).round(),
@@ -1934,7 +1947,7 @@
                   ? (clearTimeout(this._sizeTimer),
                     (this._sizeTimer = setTimeout(
                       e(this.fire, this, "moveend"),
-                      200
+                      200,
                     )))
                   : this.fire("moveend")),
             this.fire("resize", { oldSize: n, newSize: o }))
@@ -1966,7 +1979,7 @@
             ? (this._locationWatchId = navigator.geolocation.watchPosition(
                 n,
                 o,
-                t
+                t,
               ))
             : navigator.geolocation.getCurrentPosition(n, o, t),
           this
@@ -1988,13 +2001,13 @@
             (1 === i
               ? "permission denied"
               : 2 === i
-              ? "position unavailable"
-              : "timeout");
-        this._locateOptions.setView && !this._loaded && this.fitWorld(),
+                ? "position unavailable"
+                : "timeout");
+        (this._locateOptions.setView && !this._loaded && this.fitWorld(),
           this.fire("locationerror", {
             code: i,
             message: "Geolocation error: " + e + ".",
-          });
+          }));
       },
       _handleGeolocationResponse: function (t) {
         var i = new M(t.coords.latitude, t.coords.longitude),
@@ -2012,7 +2025,7 @@
       addHandler: function (t, i) {
         if (!i) return this;
         var e = (this[t] = new i(this));
-        return this._handlers.push(e), this.options[t] && e.enable(), this;
+        return (this._handlers.push(e), this.options[t] && e.enable(), this);
       },
       remove: function () {
         if (
@@ -2021,16 +2034,17 @@
         )
           throw new Error("Map container is being reused by another instance");
         try {
-          delete this._container._leaflet_id, delete this._containerId;
+          (delete this._container._leaflet_id, delete this._containerId);
         } catch (t) {
-          (this._container._leaflet_id = void 0), (this._containerId = void 0);
+          ((this._container._leaflet_id = void 0),
+            (this._containerId = void 0));
         }
-        void 0 !== this._locationWatchId && this.stopLocate(),
+        (void 0 !== this._locationWatchId && this.stopLocate(),
           this._stop(),
           ut(this._mapPane),
           this._clearControlPos && this._clearControlPos(),
           this._clearHandlers(),
-          this._loaded && this.fire("unload");
+          this._loaded && this.fire("unload"));
         var t;
         for (t in this._layers) this._layers[t].remove();
         for (t in this._panes) ut(this._panes[t]);
@@ -2047,9 +2061,9 @@
           "div",
           "leaflet-pane" +
             (t ? " leaflet-" + t.replace("Pane", "") + "-pane" : ""),
-          i || this._mapPane
+          i || this._mapPane,
         );
-        return t && (this._panes[t] = e), e;
+        return (t && (this._panes[t] = e), e);
       },
       getCenter: function () {
         return (
@@ -2066,7 +2080,7 @@
         var t = this.getPixelBounds();
         return new T(
           this.unproject(t.getBottomLeft()),
-          this.unproject(t.getTopRight())
+          this.unproject(t.getTopRight()),
         );
       },
       getMinZoom: function () {
@@ -2082,7 +2096,7 @@
           : this.options.maxZoom;
       },
       getBoundsZoom: function (t, i, e) {
-        (t = z(t)), (e = w(e || [0, 0]));
+        ((t = z(t)), (e = w(e || [0, 0])));
         var n = this.getZoom() || 0,
           o = this.getMinZoom(),
           s = this.getMaxZoom(),
@@ -2107,7 +2121,7 @@
           (this._size && !this._sizeChanged) ||
             ((this._size = new x(
               this._container.clientWidth || 0,
-              this._container.clientHeight || 0
+              this._container.clientHeight || 0,
             )),
             (this._sizeChanged = !1)),
           this._size.clone()
@@ -2118,11 +2132,11 @@
         return new P(e, e.add(this.getSize()));
       },
       getPixelOrigin: function () {
-        return this._checkIfLoaded(), this._pixelOrigin;
+        return (this._checkIfLoaded(), this._pixelOrigin);
       },
       getPixelWorldBounds: function (t) {
         return this.options.crs.getProjectedBounds(
-          void 0 === t ? this.getZoom() : t
+          void 0 === t ? this.getZoom() : t,
         );
       },
       getPane: function (t) {
@@ -2136,7 +2150,7 @@
       },
       getZoomScale: function (t, i) {
         var e = this.options.crs;
-        return (i = void 0 === i ? this._zoom : i), e.scale(t) / e.scale(i);
+        return ((i = void 0 === i ? this._zoom : i), e.scale(t) / e.scale(i));
       },
       getScaleZoom: function (t, i) {
         var e = this.options.crs;
@@ -2190,7 +2204,7 @@
       },
       mouseEventToLayerPoint: function (t) {
         return this.containerPointToLayerPoint(
-          this.mouseEventToContainerPoint(t)
+          this.mouseEventToContainerPoint(t),
         );
       },
       mouseEventToLatLng: function (t) {
@@ -2201,11 +2215,11 @@
         if (!i) throw new Error("Map container not found.");
         if (i._leaflet_id)
           throw new Error("Map container is already initialized.");
-        V(i, "scroll", this._onScroll, this), (this._containerId = n(i));
+        (V(i, "scroll", this._onScroll, this), (this._containerId = n(i)));
       },
       _initLayout: function () {
         var t = this._container;
-        (this._fadeAnimated = this.options.fadeAnimation && Ni),
+        ((this._fadeAnimated = this.options.fadeAnimation && Ni),
           pt(
             t,
             "leaflet-container" +
@@ -2213,19 +2227,19 @@
               (Ki ? " leaflet-retina" : "") +
               (Li ? " leaflet-oldie" : "") +
               (ki ? " leaflet-safari" : "") +
-              (this._fadeAnimated ? " leaflet-fade-anim" : "")
-          );
+              (this._fadeAnimated ? " leaflet-fade-anim" : ""),
+          ));
         var i = at(t, "position");
-        "absolute" !== i &&
+        ("absolute" !== i &&
           "relative" !== i &&
           "fixed" !== i &&
           (t.style.position = "relative"),
           this._initPanes(),
-          this._initControlPos && this._initControlPos();
+          this._initControlPos && this._initControlPos());
       },
       _initPanes: function () {
         var t = (this._panes = {});
-        (this._paneRenderers = {}),
+        ((this._paneRenderers = {}),
           (this._mapPane = this.createPane("mapPane", this._container)),
           Lt(this._mapPane, new x(0, 0)),
           this.createPane("tilePane"),
@@ -2236,21 +2250,21 @@
           this.createPane("popupPane"),
           this.options.markerZoomAnimation ||
             (pt(t.markerPane, "leaflet-zoom-hide"),
-            pt(t.shadowPane, "leaflet-zoom-hide"));
+            pt(t.shadowPane, "leaflet-zoom-hide")));
       },
       _resetView: function (t, i) {
         Lt(this._mapPane, new x(0, 0));
         var e = !this._loaded;
-        (this._loaded = !0),
+        ((this._loaded = !0),
           (i = this._limitZoom(i)),
-          this.fire("viewprereset");
+          this.fire("viewprereset"));
         var n = this._zoom !== i;
-        this._moveStart(n, !1)._move(t, i)._moveEnd(n),
+        (this._moveStart(n, !1)._move(t, i)._moveEnd(n),
           this.fire("viewreset"),
-          e && this.fire("load");
+          e && this.fire("load"));
       },
       _moveStart: function (t, i) {
-        return t && this.fire("zoomstart"), i || this.fire("movestart"), this;
+        return (t && this.fire("zoomstart"), i || this.fire("movestart"), this);
       },
       _move: function (t, i, e) {
         void 0 === i && (i = this._zoom);
@@ -2264,10 +2278,14 @@
         );
       },
       _moveEnd: function (t) {
-        return t && this.fire("zoomend"), this.fire("moveend");
+        return (t && this.fire("zoomend"), this.fire("moveend"));
       },
       _stop: function () {
-        return g(this._flyToFrame), this._panAnim && this._panAnim.stop(), this;
+        return (
+          g(this._flyToFrame),
+          this._panAnim && this._panAnim.stop(),
+          this
+        );
       },
       _rawPanBy: function (t) {
         Lt(this._mapPane, this._getMapPanePos().subtract(t));
@@ -2282,27 +2300,27 @@
         if (!this._loaded) throw new Error("Set map center and zoom first.");
       },
       _initEvents: function (t) {
-        (this._targets = {}), (this._targets[n(this._container)] = this);
+        ((this._targets = {}), (this._targets[n(this._container)] = this));
         var i = t ? q : V;
-        i(
+        (i(
           this._container,
           "click dblclick mousedown mouseup mouseover mouseout mousemove contextmenu keypress",
           this._handleDOMEvent,
-          this
+          this,
         ),
           this.options.trackResize && i(window, "resize", this._onResize, this),
           Ni &&
             this.options.transform3DLimit &&
-            (t ? this.off : this.on).call(this, "moveend", this._onMoveEnd);
+            (t ? this.off : this.on).call(this, "moveend", this._onMoveEnd));
       },
       _onResize: function () {
-        g(this._resizeRequest),
+        (g(this._resizeRequest),
           (this._resizeRequest = f(function () {
             this.invalidateSize({ debounceMoveend: !0 });
-          }, this));
+          }, this)));
       },
       _onScroll: function () {
-        (this._container.scrollTop = 0), (this._container.scrollLeft = 0);
+        ((this._container.scrollTop = 0), (this._container.scrollLeft = 0));
       },
       _onMoveEnd: function () {
         var t = this._getMapPanePos();
@@ -2318,7 +2336,6 @@
             r = t.target || t.srcElement,
             a = !1;
           r;
-
         ) {
           if (
             (e = this._targets[n(r)]) &&
@@ -2336,14 +2353,14 @@
           if (r === this._container) break;
           r = r.parentNode;
         }
-        return o.length || a || s || !ot(r, t) || (o = [this]), o;
+        return (o.length || a || s || !ot(r, t) || (o = [this]), o);
       },
       _handleDOMEvent: function (t) {
         if (this._loaded && !nt(t)) {
           var i = t.type;
-          ("mousedown" !== i && "keypress" !== i) ||
+          (("mousedown" !== i && "keypress" !== i) ||
             zt(t.target || t.srcElement),
-            this._fireDOMEvent(t, i);
+            this._fireDOMEvent(t, i));
         }
       },
       _mouseEvents: [
@@ -2356,7 +2373,7 @@
       _fireDOMEvent: function (t, e, n) {
         if ("click" === t.type) {
           var o = i({}, t);
-          (o.type = "preclick"), this._fireDOMEvent(o, o.type, n);
+          ((o.type = "preclick"), this._fireDOMEvent(o, o.type, n));
         }
         if (
           !t._stopped &&
@@ -2367,15 +2384,15 @@
           var r = { originalEvent: t };
           if ("keypress" !== t.type) {
             var a = s.getLatLng && (!s._radius || s._radius <= 10);
-            (r.containerPoint = a
+            ((r.containerPoint = a
               ? this.latLngToContainerPoint(s.getLatLng())
               : this.mouseEventToContainerPoint(t)),
               (r.layerPoint = this.containerPointToLayerPoint(
-                r.containerPoint
+                r.containerPoint,
               )),
               (r.latlng = a
                 ? s.getLatLng()
-                : this.layerPointToLatLng(r.layerPoint));
+                : this.layerPointToLatLng(r.layerPoint)));
           }
           for (var h = 0; h < n.length; h++)
             if (
@@ -2463,7 +2480,7 @@
       _getBoundsOffset: function (t, i, e) {
         var n = b(
             this.project(i.getNorthEast(), e),
-            this.project(i.getSouthWest(), e)
+            this.project(i.getSouthWest(), e),
           ),
           o = n.min.subtract(t.min),
           s = n.max.subtract(t.max);
@@ -2478,13 +2495,13 @@
         var i = this.getMinZoom(),
           e = this.getMaxZoom(),
           n = Ni ? this.options.zoomSnap : 1;
-        return n && (t = Math.round(t / n) * n), Math.max(i, Math.min(e, t));
+        return (n && (t = Math.round(t / n) * n), Math.max(i, Math.min(e, t)));
       },
       _onPanTransitionStep: function () {
         this.fire("move");
       },
       _onPanTransitionEnd: function () {
-        mt(this._mapPane, "leaflet-pan-anim"), this.fire("moveend");
+        (mt(this._mapPane, "leaflet-pan-anim"), this.fire("moveend"));
       },
       _tryAnimatedPan: function (t, i) {
         var e = this._getCenterOffset(t)._trunc();
@@ -2496,24 +2513,24 @@
       _createAnimProxy: function () {
         var t = (this._proxy = ht(
           "div",
-          "leaflet-proxy leaflet-zoom-animated"
+          "leaflet-proxy leaflet-zoom-animated",
         ));
-        this._panes.mapPane.appendChild(t),
+        (this._panes.mapPane.appendChild(t),
           this.on(
             "zoomanim",
             function (t) {
               var i = pe,
                 e = this._proxy.style[i];
-              wt(
+              (wt(
                 this._proxy,
                 this.project(t.center, t.zoom),
-                this.getZoomScale(t.zoom, 1)
+                this.getZoomScale(t.zoom, 1),
               ),
                 e === this._proxy.style[i] &&
                   this._animatingZoom &&
-                  this._onZoomTransitionEnd();
+                  this._onZoomTransitionEnd());
             },
-            this
+            this,
           ),
           this.on(
             "load moveend",
@@ -2522,12 +2539,12 @@
                 i = this.getZoom();
               wt(this._proxy, this.project(t, i), this.getZoomScale(i, 1));
             },
-            this
+            this,
           ),
-          this._on("unload", this._destroyAnimProxy, this);
+          this._on("unload", this._destroyAnimProxy, this));
       },
       _destroyAnimProxy: function () {
-        ut(this._proxy), delete this._proxy;
+        (ut(this._proxy), delete this._proxy);
       },
       _catchTransitionEnd: function (t) {
         this._animatingZoom &&
@@ -2599,7 +2616,7 @@
         return this._container;
       },
       addTo: function (t) {
-        this.remove(), (this._map = t);
+        (this.remove(), (this._map = t));
         var i = (this._container = this.onAdd(t)),
           e = this.getPosition(),
           n = t._controlCorners[e];
@@ -2632,10 +2649,10 @@
     };
   Le.include({
     addControl: function (t) {
-      return t.addTo(this), this;
+      return (t.addTo(this), this);
     },
     removeControl: function (t) {
-      return t.remove(), this;
+      return (t.remove(), this);
     },
     _initControlPos: function () {
       function t(t, o) {
@@ -2647,18 +2664,18 @@
         n = (this._controlContainer = ht(
           "div",
           e + "control-container",
-          this._container
+          this._container,
         ));
-      t("top", "left"),
+      (t("top", "left"),
         t("top", "right"),
         t("bottom", "left"),
-        t("bottom", "right");
+        t("bottom", "right"));
     },
     _clearControlPos: function () {
       for (var t in this._controlCorners) ut(this._controlCorners[t]);
-      ut(this._controlContainer),
+      (ut(this._controlContainer),
         delete this._controlCorners,
-        delete this._controlContainer;
+        delete this._controlContainer);
     },
   });
   var Te = Pe.extend({
@@ -2673,25 +2690,25 @@
         },
       },
       initialize: function (t, i, e) {
-        l(this, e),
+        (l(this, e),
           (this._layerControlInputs = []),
           (this._layers = []),
           (this._lastZIndex = 0),
-          (this._handlingClick = !1);
+          (this._handlingClick = !1));
         for (var n in t) this._addLayer(t[n], n);
         for (n in i) this._addLayer(i[n], n, !0);
       },
       onAdd: function (t) {
-        this._initLayout(),
+        (this._initLayout(),
           this._update(),
           (this._map = t),
-          t.on("zoomend", this._checkDisabledLayers, this);
+          t.on("zoomend", this._checkDisabledLayers, this));
         for (var i = 0; i < this._layers.length; i++)
           this._layers[i].layer.on("add remove", this._onLayerChange, this);
         return this._container;
       },
       addTo: function (t) {
-        return Pe.prototype.addTo.call(this, t), this._expandIfNotCollapsed();
+        return (Pe.prototype.addTo.call(this, t), this._expandIfNotCollapsed());
       },
       onRemove: function () {
         this._map.off("zoomend", this._checkDisabledLayers, this);
@@ -2699,10 +2716,10 @@
           this._layers[t].layer.off("add remove", this._onLayerChange, this);
       },
       addBaseLayer: function (t, i) {
-        return this._addLayer(t, i), this._map ? this._update() : this;
+        return (this._addLayer(t, i), this._map ? this._update() : this);
       },
       addOverlay: function (t, i) {
-        return this._addLayer(t, i, !0), this._map ? this._update() : this;
+        return (this._addLayer(t, i, !0), this._map ? this._update() : this);
       },
       removeLayer: function (t) {
         t.off("add remove", this._onLayerChange, this);
@@ -2713,8 +2730,8 @@
         );
       },
       expand: function () {
-        pt(this._container, "leaflet-control-layers-expanded"),
-          (this._form.style.height = null);
+        (pt(this._container, "leaflet-control-layers-expanded"),
+          (this._form.style.height = null));
         var t = this._map.getSize().y - (this._container.offsetTop + 50);
         return (
           t < this._form.clientHeight
@@ -2726,20 +2743,20 @@
         );
       },
       collapse: function () {
-        return mt(this._container, "leaflet-control-layers-expanded"), this;
+        return (mt(this._container, "leaflet-control-layers-expanded"), this);
       },
       _initLayout: function () {
         var t = "leaflet-control-layers",
           i = (this._container = ht("div", t)),
           e = this.options.collapsed;
-        i.setAttribute("aria-haspopup", !0), J(i), X(i);
+        (i.setAttribute("aria-haspopup", !0), J(i), X(i));
         var n = (this._form = ht("form", t + "-list"));
         e &&
           (this._map.on("click", this.collapse, this),
           Ti ||
             V(i, { mouseenter: this.expand, mouseleave: this.collapse }, this));
         var o = (this._layersLink = ht("a", t + "-toggle", i));
-        (o.href = "#"),
+        ((o.href = "#"),
           (o.title = "Layers"),
           Vi
             ? (V(o, "click", Q), V(o, "click", this.expand, this))
@@ -2748,7 +2765,7 @@
           (this._baseLayersList = ht("div", t + "-base", n)),
           (this._separator = ht("div", t + "-separator", n)),
           (this._overlaysList = ht("div", t + "-overlays", n)),
-          i.appendChild(n);
+          i.appendChild(n));
       },
       _getLayer: function (t) {
         for (var i = 0; i < this._layers.length; i++)
@@ -2756,7 +2773,7 @@
             return this._layers[i];
       },
       _addLayer: function (t, i, n) {
-        this._map && t.on("add remove", this._onLayerChange, this),
+        (this._map && t.on("add remove", this._onLayerChange, this),
           this._layers.push({ layer: t, name: i, overlay: n }),
           this.options.sortLayers &&
             this._layers.sort(
@@ -2765,31 +2782,31 @@
                   t.layer,
                   i.layer,
                   t.name,
-                  i.name
+                  i.name,
                 );
-              }, this)
+              }, this),
             ),
           this.options.autoZIndex &&
             t.setZIndex &&
             (this._lastZIndex++, t.setZIndex(this._lastZIndex)),
-          this._expandIfNotCollapsed();
+          this._expandIfNotCollapsed());
       },
       _update: function () {
         if (!this._container) return this;
-        lt(this._baseLayersList),
+        (lt(this._baseLayersList),
           lt(this._overlaysList),
-          (this._layerControlInputs = []);
+          (this._layerControlInputs = []));
         var t,
           i,
           e,
           n,
           o = 0;
         for (e = 0; e < this._layers.length; e++)
-          (n = this._layers[e]),
+          ((n = this._layers[e]),
             this._addItem(n),
             (i = i || n.overlay),
             (t = t || !n.overlay),
-            (o += n.overlay ? 0 : 1);
+            (o += n.overlay ? 0 : 1));
         return (
           this.options.hideSingleBase &&
             ((t = t && o > 1),
@@ -2806,8 +2823,8 @@
               ? "overlayadd"
               : "overlayremove"
             : "add" === t.type
-            ? "baselayerchange"
-            : null;
+              ? "baselayerchange"
+              : null;
         e && this._map.fire(e, i);
       },
       _createRadioElement: function (t, i) {
@@ -2818,20 +2835,20 @@
             (i ? ' checked="checked"' : "") +
             "/>",
           n = document.createElement("div");
-        return (n.innerHTML = e), n.firstChild;
+        return ((n.innerHTML = e), n.firstChild);
       },
       _addItem: function (t) {
         var i,
           e = document.createElement("label"),
           o = this._map.hasLayer(t.layer);
-        t.overlay
+        (t.overlay
           ? (((i = document.createElement("input")).type = "checkbox"),
             (i.className = "leaflet-control-layers-selector"),
             (i.defaultChecked = o))
           : (i = this._createRadioElement("leaflet-base-layers", o)),
           this._layerControlInputs.push(i),
           (i.layerId = n(t.layer)),
-          V(i, "click", this._onInputClick, this);
+          V(i, "click", this._onInputClick, this));
         var s = document.createElement("span");
         s.innerHTML = " " + t.name;
         var r = document.createElement("div");
@@ -2840,7 +2857,7 @@
           r.appendChild(i),
           r.appendChild(s),
           (t.overlay ? this._overlaysList : this._baseLayersList).appendChild(
-            e
+            e,
           ),
           this._checkDisabledLayers(),
           e
@@ -2854,14 +2871,14 @@
           o = [];
         this._handlingClick = !0;
         for (var s = e.length - 1; s >= 0; s--)
-          (t = e[s]),
+          ((t = e[s]),
             (i = this._getLayer(t.layerId).layer),
-            t.checked ? n.push(i) : t.checked || o.push(i);
+            t.checked ? n.push(i) : t.checked || o.push(i));
         for (s = 0; s < o.length; s++)
           this._map.hasLayer(o[s]) && this._map.removeLayer(o[s]);
         for (s = 0; s < n.length; s++)
           this._map.hasLayer(n[s]) || this._map.addLayer(n[s]);
-        (this._handlingClick = !1), this._refocusOnMap();
+        ((this._handlingClick = !1), this._refocusOnMap());
       },
       _checkDisabledLayers: function () {
         for (
@@ -2873,14 +2890,14 @@
           o >= 0;
           o--
         )
-          (t = e[o]),
+          ((t = e[o]),
             (i = this._getLayer(t.layerId).layer),
             (t.disabled =
               (void 0 !== i.options.minZoom && n < i.options.minZoom) ||
-              (void 0 !== i.options.maxZoom && n > i.options.maxZoom));
+              (void 0 !== i.options.maxZoom && n > i.options.maxZoom)));
       },
       _expandIfNotCollapsed: function () {
-        return this._map && !this.options.collapsed && this.expand(), this;
+        return (this._map && !this.options.collapsed && this.expand(), this);
       },
       _expand: function () {
         return this.expand();
@@ -2907,14 +2924,14 @@
             n.zoomInTitle,
             i + "-in",
             e,
-            this._zoomIn
+            this._zoomIn,
           )),
           (this._zoomOutButton = this._createButton(
             n.zoomOutText,
             n.zoomOutTitle,
             i + "-out",
             e,
-            this._zoomOut
+            this._zoomOut,
           )),
           this._updateDisabled(),
           t.on("zoomend zoomlevelschange", this._updateDisabled, this),
@@ -2925,10 +2942,10 @@
         t.off("zoomend zoomlevelschange", this._updateDisabled, this);
       },
       disable: function () {
-        return (this._disabled = !0), this._updateDisabled(), this;
+        return ((this._disabled = !0), this._updateDisabled(), this);
       },
       enable: function () {
-        return (this._disabled = !1), this._updateDisabled(), this;
+        return ((this._disabled = !1), this._updateDisabled(), this);
       },
       _zoomIn: function (t) {
         !this._disabled &&
@@ -2958,19 +2975,19 @@
       _updateDisabled: function () {
         var t = this._map,
           i = "leaflet-disabled";
-        mt(this._zoomInButton, i),
+        (mt(this._zoomInButton, i),
           mt(this._zoomOutButton, i),
           (this._disabled || t._zoom === t.getMinZoom()) &&
             pt(this._zoomOutButton, i),
           (this._disabled || t._zoom === t.getMaxZoom()) &&
-            pt(this._zoomInButton, i);
+            pt(this._zoomInButton, i));
       },
     });
-  Le.mergeOptions({ zoomControl: !0 }),
+  (Le.mergeOptions({ zoomControl: !0 }),
     Le.addInitHook(function () {
       this.options.zoomControl &&
         ((this.zoomControl = new ze()), this.addControl(this.zoomControl));
-    });
+    }));
   var Me = Pe.extend({
       options: {
         position: "bottomleft",
@@ -2992,25 +3009,25 @@
         t.off(
           this.options.updateWhenIdle ? "moveend" : "move",
           this._update,
-          this
+          this,
         );
       },
       _addScales: function (t, i, e) {
-        t.metric && (this._mScale = ht("div", i, e)),
-          t.imperial && (this._iScale = ht("div", i, e));
+        (t.metric && (this._mScale = ht("div", i, e)),
+          t.imperial && (this._iScale = ht("div", i, e)));
       },
       _update: function () {
         var t = this._map,
           i = t.getSize().y / 2,
           e = t.distance(
             t.containerPointToLatLng([0, i]),
-            t.containerPointToLatLng([this.options.maxWidth, i])
+            t.containerPointToLatLng([this.options.maxWidth, i]),
           );
         this._updateScales(e);
       },
       _updateScales: function (t) {
-        this.options.metric && t && this._updateMetric(t),
-          this.options.imperial && t && this._updateImperial(t);
+        (this.options.metric && t && this._updateMetric(t),
+          this.options.imperial && t && this._updateImperial(t));
       },
       _updateMetric: function (t) {
         var i = this._getRoundNum(t),
@@ -3030,14 +3047,15 @@
             this._updateScale(this._iScale, n + " ft", n / o));
       },
       _updateScale: function (t, i, e) {
-        (t.style.width = Math.round(this.options.maxWidth * e) + "px"),
-          (t.innerHTML = i);
+        ((t.style.width = Math.round(this.options.maxWidth * e) + "px"),
+          (t.innerHTML = i));
       },
       _getRoundNum: function (t) {
         var i = Math.pow(10, (Math.floor(t) + "").length - 1),
           e = t / i;
         return (
-          (e = e >= 10 ? 10 : e >= 5 ? 5 : e >= 3 ? 3 : e >= 2 ? 2 : 1), i * e
+          (e = e >= 10 ? 10 : e >= 5 ? 5 : e >= 3 ? 3 : e >= 2 ? 2 : 1),
+          i * e
         );
       },
     }),
@@ -3048,19 +3066,19 @@
           '<a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>',
       },
       initialize: function (t) {
-        l(this, t), (this._attributions = {});
+        (l(this, t), (this._attributions = {}));
       },
       onAdd: function (t) {
-        (t.attributionControl = this),
+        ((t.attributionControl = this),
           (this._container = ht("div", "leaflet-control-attribution")),
-          J(this._container);
+          J(this._container));
         for (var i in t._layers)
           t._layers[i].getAttribution &&
             this.addAttribution(t._layers[i].getAttribution());
-        return this._update(), this._container;
+        return (this._update(), this._container);
       },
       setPrefix: function (t) {
-        return (this.options.prefix = t), this._update(), this;
+        return ((this.options.prefix = t), this._update(), this);
       },
       addAttribution: function (t) {
         return t
@@ -3081,17 +3099,17 @@
           var t = [];
           for (var i in this._attributions) this._attributions[i] && t.push(i);
           var e = [];
-          this.options.prefix && e.push(this.options.prefix),
+          (this.options.prefix && e.push(this.options.prefix),
             t.length && e.push(t.join(", ")),
-            (this._container.innerHTML = e.join(" | "));
+            (this._container.innerHTML = e.join(" | ")));
         }
       },
     });
-  Le.mergeOptions({ attributionControl: !0 }),
+  (Le.mergeOptions({ attributionControl: !0 }),
     Le.addInitHook(function () {
       this.options.attributionControl && new Ce().addTo(this);
-    });
-  (Pe.Layers = Te),
+    }));
+  ((Pe.Layers = Te),
     (Pe.Zoom = ze),
     (Pe.Scale = Me),
     (Pe.Attribution = Ce),
@@ -3106,7 +3124,7 @@
     }),
     (be.attribution = function (t) {
       return new Ce(t);
-    });
+    }));
   var Ze = v.extend({
     initialize: function (t) {
       this._map = t;
@@ -3126,7 +3144,7 @@
     },
   });
   Ze.addTo = function (t, i) {
-    return t.addHandler(i, this), this;
+    return (t.addHandler(i, this), this);
   };
   var Se,
     Ee = { Events: hi },
@@ -3146,10 +3164,10 @@
     Be = ui.extend({
       options: { clickTolerance: 3 },
       initialize: function (t, i, e, n) {
-        l(this, n),
+        (l(this, n),
           (this._element = t),
           (this._dragStartTarget = i || t),
-          (this._preventOutline = e);
+          (this._preventOutline = e));
       },
       enable: function () {
         this._enabled ||
@@ -3182,9 +3200,9 @@
         ) {
           this.fire("down");
           var i = t.touches ? t.touches[0] : t;
-          (this._startPoint = new x(i.clientX, i.clientY)),
+          ((this._startPoint = new x(i.clientX, i.clientY)),
             V(document, Ie[t.type], this._onMove, this),
-            V(document, Ae[t.type], this._onUp, this);
+            V(document, Ae[t.type], this._onUp, this));
         }
       },
       _onMove: function (t) {
@@ -3216,22 +3234,22 @@
       },
       _updatePosition: function () {
         var t = { originalEvent: this._lastEvent };
-        this.fire("predrag", t),
+        (this.fire("predrag", t),
           Lt(this._element, this._newPos),
-          this.fire("drag", t);
+          this.fire("drag", t));
       },
       _onUp: function (t) {
         !t._simulated && this._enabled && this.finishDrag();
       },
       finishDrag: function () {
-        mt(document.body, "leaflet-dragging"),
+        (mt(document.body, "leaflet-dragging"),
           this._lastTarget &&
             (mt(this._lastTarget, "leaflet-drag-target"),
-            (this._lastTarget = null));
+            (this._lastTarget = null)));
         for (var t in Ie)
-          q(document, Ie[t], this._onMove, this),
-            q(document, Ae[t], this._onUp, this);
-        Tt(),
+          (q(document, Ie[t], this._onMove, this),
+            q(document, Ae[t], this._onUp, this));
+        (Tt(),
           fi(),
           this._moved &&
             this._moving &&
@@ -3240,7 +3258,7 @@
               distance: this._newPos.distanceTo(this._startPos),
             })),
           (this._moving = !1),
-          (Be._dragging = !1);
+          (Be._dragging = !1));
       },
     }),
     Oe = (Object.freeze || Object)({
@@ -3271,7 +3289,7 @@
       R_MINOR: 6356752.314245179,
       bounds: new P(
         [-20037508.34279, -15496570.73972],
-        [20037508.34279, 18764656.23138]
+        [20037508.34279, 18764656.23138],
       ),
       project: function (t) {
         var i = Math.PI / 180,
@@ -3282,7 +3300,10 @@
           r = s * Math.sin(n),
           a =
             Math.tan(Math.PI / 4 - n / 2) / Math.pow((1 - r) / (1 + r), s / 2);
-        return (n = -e * Math.log(Math.max(a, 1e-10))), new x(t.lng * i * e, n);
+        return (
+          (n = -e * Math.log(Math.max(a, 1e-10))),
+          new x(t.lng * i * e, n)
+        );
       },
       unproject: function (t) {
         for (
@@ -3298,9 +3319,9 @@
           h < 15 && Math.abs(u) > 1e-7;
           h++
         )
-          (i = s * Math.sin(a)),
+          ((i = s * Math.sin(a)),
             (i = Math.pow((1 - i) / (1 + i), s / 2)),
-            (a += u = Math.PI / 2 - 2 * Math.atan(r * i) - a);
+            (a += u = Math.PI / 2 - 2 * Math.atan(r * i) - a));
         return new M(a * e, (t.x * e) / n);
       },
     },
@@ -3338,12 +3359,12 @@
       },
       infinite: !0,
     });
-  (ci.Earth = _i),
+  ((ci.Earth = _i),
     (ci.EPSG3395 = We),
     (ci.EPSG3857 = vi),
     (ci.EPSG900913 = yi),
     (ci.EPSG4326 = He),
-    (ci.Simple = Fe);
+    (ci.Simple = Fe));
   var Ue = ui.extend({
     options: {
       pane: "overlayPane",
@@ -3351,22 +3372,22 @@
       bubblingMouseEvents: !0,
     },
     addTo: function (t) {
-      return t.addLayer(this), this;
+      return (t.addLayer(this), this);
     },
     remove: function () {
       return this.removeFrom(this._map || this._mapToAdd);
     },
     removeFrom: function (t) {
-      return t && t.removeLayer(this), this;
+      return (t && t.removeLayer(this), this);
     },
     getPane: function (t) {
       return this._map.getPane(t ? this.options[t] || t : this.options.pane);
     },
     addInteractiveTarget: function (t) {
-      return (this._map._targets[n(t)] = this), this;
+      return ((this._map._targets[n(t)] = this), this);
     },
     removeInteractiveTarget: function (t) {
-      return delete this._map._targets[n(t)], this;
+      return (delete this._map._targets[n(t)], this);
     },
     getAttribution: function () {
       return this.options.attribution;
@@ -3380,21 +3401,21 @@
           this.getEvents)
         ) {
           var e = this.getEvents();
-          i.on(e, this),
+          (i.on(e, this),
             this.once(
               "remove",
               function () {
                 i.off(e, this);
               },
-              this
-            );
+              this,
+            ));
         }
-        this.onAdd(i),
+        (this.onAdd(i),
           this.getAttribution &&
             i.attributionControl &&
             i.attributionControl.addAttribution(this.getAttribution()),
           this.fire("add"),
-          i.fire("layeradd", { layer: this });
+          i.fire("layeradd", { layer: this }));
       }
     },
   });
@@ -3450,10 +3471,10 @@
         e = this._getZoomSpan();
       for (var n in this._zoomBoundLayers) {
         var o = this._zoomBoundLayers[n].options;
-        (t = void 0 === o.minZoom ? t : Math.min(t, o.minZoom)),
-          (i = void 0 === o.maxZoom ? i : Math.max(i, o.maxZoom));
+        ((t = void 0 === o.minZoom ? t : Math.min(t, o.minZoom)),
+          (i = void 0 === o.maxZoom ? i : Math.max(i, o.maxZoom)));
       }
-      (this._layersMaxZoom = i === -1 / 0 ? void 0 : i),
+      ((this._layersMaxZoom = i === -1 / 0 ? void 0 : i),
         (this._layersMinZoom = t === 1 / 0 ? void 0 : t),
         e !== this._getZoomSpan() && this.fire("zoomlevelschange"),
         void 0 === this.options.maxZoom &&
@@ -3463,18 +3484,22 @@
         void 0 === this.options.minZoom &&
           this._layersMinZoom &&
           this.getZoom() < this._layersMinZoom &&
-          this.setZoom(this._layersMinZoom);
+          this.setZoom(this._layersMinZoom));
     },
   });
   var Ve = Ue.extend({
       initialize: function (t, i) {
-        l(this, i), (this._layers = {});
+        (l(this, i), (this._layers = {}));
         var e, n;
         if (t) for (e = 0, n = t.length; e < n; e++) this.addLayer(t[e]);
       },
       addLayer: function (t) {
         var i = this.getLayerId(t);
-        return (this._layers[i] = t), this._map && this._map.addLayer(t), this;
+        return (
+          (this._layers[i] = t),
+          this._map && this._map.addLayer(t),
+          this
+        );
       },
       removeLayer: function (t) {
         var i = t in this._layers ? t : this.getLayerId(t);
@@ -3514,7 +3539,7 @@
       },
       getLayers: function () {
         var t = [];
-        return this.eachLayer(t.push, t), t;
+        return (this.eachLayer(t.push, t), t);
       },
       setZIndex: function (t) {
         return this.invoke("setZIndex", t);
@@ -3576,7 +3601,7 @@
           return null;
         }
         var n = this._createImg(e, i && "IMG" === i.tagName ? i : null);
-        return this._setIconStyles(n, t), n;
+        return (this._setIconStyles(n, t), n);
       },
       _setIconStyles: function (t, i) {
         var e = this.options,
@@ -3586,16 +3611,16 @@
           s = w(
             ("shadow" === i && e.shadowAnchor) ||
               e.iconAnchor ||
-              (o && o.divideBy(2, !0))
+              (o && o.divideBy(2, !0)),
           );
-        (t.className = "leaflet-marker-" + i + " " + (e.className || "")),
+        ((t.className = "leaflet-marker-" + i + " " + (e.className || "")),
           s &&
             ((t.style.marginLeft = -s.x + "px"),
             (t.style.marginTop = -s.y + "px")),
-          o && ((t.style.width = o.x + "px"), (t.style.height = o.y + "px"));
+          o && ((t.style.width = o.x + "px"), (t.style.height = o.y + "px")));
       },
       _createImg: function (t, i) {
-        return (i = i || document.createElement("img")), (i.src = t), i;
+        return ((i = i || document.createElement("img")), (i.src = t), i);
       },
       _getIconUrl: function (t) {
         return (Ki && this.options[t + "RetinaUrl"]) || this.options[t + "Url"];
@@ -3639,7 +3664,7 @@
       },
       addHooks: function () {
         var t = this._marker._icon;
-        this._draggable || (this._draggable = new Be(t, t, !0)),
+        (this._draggable || (this._draggable = new Be(t, t, !0)),
           this._draggable
             .on(
               {
@@ -3648,13 +3673,13 @@
                 drag: this._onDrag,
                 dragend: this._onDragEnd,
               },
-              this
+              this,
             )
             .enable(),
-          pt(t, "leaflet-marker-draggable");
+          pt(t, "leaflet-marker-draggable"));
       },
       removeHooks: function () {
-        this._draggable
+        (this._draggable
           .off(
             {
               dragstart: this._onDragStart,
@@ -3662,11 +3687,11 @@
               drag: this._onDrag,
               dragend: this._onDragEnd,
             },
-            this
+            this,
           )
           .disable(),
           this._marker._icon &&
-            mt(this._marker._icon, "leaflet-marker-draggable");
+            mt(this._marker._icon, "leaflet-marker-draggable"));
       },
       moved: function () {
         return this._draggable && this._draggable._moved;
@@ -3685,19 +3710,19 @@
             (Math.max(h.max.x, s.x) - h.max.x) / (r.max.x - h.max.x) -
               (Math.min(h.min.x, s.x) - h.min.x) / (r.min.x - h.min.x),
             (Math.max(h.max.y, s.y) - h.max.y) / (r.max.y - h.max.y) -
-              (Math.min(h.min.y, s.y) - h.min.y) / (r.min.y - h.min.y)
+              (Math.min(h.min.y, s.y) - h.min.y) / (r.min.y - h.min.y),
           ).multiplyBy(n);
-          e.panBy(u, { animate: !1 }),
+          (e.panBy(u, { animate: !1 }),
             this._draggable._newPos._add(u),
             this._draggable._startPos._add(u),
             L.DomUtil.setPosition(i._icon, this._draggable._newPos),
             this._onDrag(t),
-            (this._panRequest = f(this._adjustPan.bind(this, t)));
+            (this._panRequest = f(this._adjustPan.bind(this, t))));
         }
       },
       _onDragStart: function () {
-        (this._oldLatLng = this._marker.getLatLng()),
-          this._marker.closePopup().fire("movestart").fire("dragstart");
+        ((this._oldLatLng = this._marker.getLatLng()),
+          this._marker.closePopup().fire("movestart").fire("dragstart"));
       },
       _onPreDrag: function (t) {
         this._marker.options.autoPan &&
@@ -3709,16 +3734,16 @@
           e = i._shadow,
           n = Pt(i._icon),
           o = i._map.layerPointToLatLng(n);
-        e && Lt(e, n),
+        (e && Lt(e, n),
           (i._latlng = o),
           (t.latlng = o),
           (t.oldLatLng = this._oldLatLng),
-          i.fire("move", t).fire("drag", t);
+          i.fire("move", t).fire("drag", t));
       },
       _onDragEnd: function (t) {
-        g(this._panRequest),
+        (g(this._panRequest),
           delete this._oldLatLng,
-          this._marker.fire("moveend").fire("dragend", t);
+          this._marker.fire("moveend").fire("dragend", t));
       },
     }),
     Xe = Ue.extend({
@@ -3740,23 +3765,23 @@
         bubblingMouseEvents: !1,
       },
       initialize: function (t, i) {
-        l(this, i), (this._latlng = C(t));
+        (l(this, i), (this._latlng = C(t)));
       },
       onAdd: function (t) {
-        (this._zoomAnimated =
+        ((this._zoomAnimated =
           this._zoomAnimated && t.options.markerZoomAnimation),
           this._zoomAnimated && t.on("zoomanim", this._animateZoom, this),
           this._initIcon(),
-          this.update();
+          this.update());
       },
       onRemove: function (t) {
-        this.dragging &&
+        (this.dragging &&
           this.dragging.enabled() &&
           ((this.options.draggable = !0), this.dragging.removeHooks()),
           delete this.dragging,
           this._zoomAnimated && t.off("zoomanim", this._animateZoom, this),
           this._removeIcon(),
-          this._removeShadow();
+          this._removeShadow());
       },
       getEvents: function () {
         return { zoom: this.update, viewreset: this.update };
@@ -3773,7 +3798,7 @@
         );
       },
       setZIndexOffset: function (t) {
-        return (this.options.zIndexOffset = t), this.update();
+        return ((this.options.zIndexOffset = t), this.update());
       },
       setIcon: function (t) {
         return (
@@ -3798,7 +3823,7 @@
           i = "leaflet-zoom-" + (this._zoomAnimated ? "animated" : "hide"),
           e = t.icon.createIcon(this._icon),
           n = !1;
-        e !== this._icon &&
+        (e !== this._icon &&
           (this._icon && this._removeIcon(),
           (n = !0),
           t.title && (e.title = t.title),
@@ -3810,35 +3835,35 @@
             this.on({
               mouseover: this._bringToFront,
               mouseout: this._resetZIndex,
-            });
+            }));
         var o = t.icon.createShadow(this._shadow),
           s = !1;
-        o !== this._shadow && (this._removeShadow(), (s = !0)),
+        (o !== this._shadow && (this._removeShadow(), (s = !0)),
           o && (pt(o, i), (o.alt = "")),
           (this._shadow = o),
           t.opacity < 1 && this._updateOpacity(),
           n && this.getPane().appendChild(this._icon),
           this._initInteraction(),
-          o && s && this.getPane("shadowPane").appendChild(this._shadow);
+          o && s && this.getPane("shadowPane").appendChild(this._shadow));
       },
       _removeIcon: function () {
-        this.options.riseOnHover &&
+        (this.options.riseOnHover &&
           this.off({
             mouseover: this._bringToFront,
             mouseout: this._resetZIndex,
           }),
           ut(this._icon),
           this.removeInteractiveTarget(this._icon),
-          (this._icon = null);
+          (this._icon = null));
       },
       _removeShadow: function () {
-        this._shadow && ut(this._shadow), (this._shadow = null);
+        (this._shadow && ut(this._shadow), (this._shadow = null));
       },
       _setPos: function (t) {
-        Lt(this._icon, t),
+        (Lt(this._icon, t),
           this._shadow && Lt(this._shadow, t),
           (this._zIndex = t.y + this.options.zIndexOffset),
-          this._resetZIndex();
+          this._resetZIndex());
       },
       _updateZIndex: function (t) {
         this._icon.style.zIndex = this._zIndex + t;
@@ -3857,20 +3882,22 @@
           Ye)
         ) {
           var t = this.options.draggable;
-          this.dragging &&
+          (this.dragging &&
             ((t = this.dragging.enabled()), this.dragging.disable()),
             (this.dragging = new Ye(this)),
-            t && this.dragging.enable();
+            t && this.dragging.enable());
         }
       },
       setOpacity: function (t) {
         return (
-          (this.options.opacity = t), this._map && this._updateOpacity(), this
+          (this.options.opacity = t),
+          this._map && this._updateOpacity(),
+          this
         );
       },
       _updateOpacity: function () {
         var t = this.options.opacity;
-        vt(this._icon, t), this._shadow && vt(this._shadow, t);
+        (vt(this._icon, t), this._shadow && vt(this._shadow, t));
       },
       _bringToFront: function () {
         this._updateZIndex(this.options.riseOffset);
@@ -3906,32 +3933,34 @@
         this._renderer = t.getRenderer(this);
       },
       onAdd: function () {
-        this._renderer._initPath(this),
+        (this._renderer._initPath(this),
           this._reset(),
-          this._renderer._addPath(this);
+          this._renderer._addPath(this));
       },
       onRemove: function () {
         this._renderer._removePath(this);
       },
       redraw: function () {
-        return this._map && this._renderer._updatePath(this), this;
+        return (this._map && this._renderer._updatePath(this), this);
       },
       setStyle: function (t) {
         return (
-          l(this, t), this._renderer && this._renderer._updateStyle(this), this
+          l(this, t),
+          this._renderer && this._renderer._updateStyle(this),
+          this
         );
       },
       bringToFront: function () {
-        return this._renderer && this._renderer._bringToFront(this), this;
+        return (this._renderer && this._renderer._bringToFront(this), this);
       },
       bringToBack: function () {
-        return this._renderer && this._renderer._bringToBack(this), this;
+        return (this._renderer && this._renderer._bringToBack(this), this);
       },
       getElement: function () {
         return this._path;
       },
       _reset: function () {
-        this._project(), this._update();
+        (this._project(), this._update());
       },
       _clickTolerance: function () {
         return (
@@ -3943,7 +3972,9 @@
     $e = Je.extend({
       options: { fill: !0, radius: 10 },
       initialize: function (t, i) {
-        l(this, i), (this._latlng = C(t)), (this._radius = this.options.radius);
+        (l(this, i),
+          (this._latlng = C(t)),
+          (this._radius = this.options.radius));
       },
       setLatLng: function (t) {
         return (
@@ -3956,18 +3987,18 @@
         return this._latlng;
       },
       setRadius: function (t) {
-        return (this.options.radius = this._radius = t), this.redraw();
+        return ((this.options.radius = this._radius = t), this.redraw());
       },
       getRadius: function () {
         return this._radius;
       },
       setStyle: function (t) {
         var i = (t && t.radius) || this._radius;
-        return Je.prototype.setStyle.call(this, t), this.setRadius(i), this;
+        return (Je.prototype.setStyle.call(this, t), this.setRadius(i), this);
       },
       _project: function () {
-        (this._point = this._map.latLngToLayerPoint(this._latlng)),
-          this._updateBounds();
+        ((this._point = this._map.latLngToLayerPoint(this._latlng)),
+          this._updateBounds());
       },
       _updateBounds: function () {
         var t = this._radius,
@@ -4005,7 +4036,7 @@
         this._mRadius = this.options.radius;
       },
       setRadius: function (t) {
-        return (this._mRadius = t), this.redraw();
+        return ((this._mRadius = t), this.redraw());
       },
       getRadius: function () {
         return this._mRadius;
@@ -4014,7 +4045,7 @@
         var t = [this._radius, this._radiusY || this._radius];
         return new T(
           this._map.layerPointToLatLng(this._point.subtract(t)),
-          this._map.layerPointToLatLng(this._point.add(t))
+          this._map.layerPointToLatLng(this._point.add(t)),
         );
       },
       setStyle: Je.prototype.setStyle,
@@ -4033,18 +4064,18 @@
             l =
               Math.acos(
                 (Math.cos(s * o) - Math.sin(i * o) * Math.sin(u * o)) /
-                  (Math.cos(i * o) * Math.cos(u * o))
+                  (Math.cos(i * o) * Math.cos(u * o)),
               ) / o;
-          (isNaN(l) || 0 === l) && (l = s / Math.cos((Math.PI / 180) * i)),
+          ((isNaN(l) || 0 === l) && (l = s / Math.cos((Math.PI / 180) * i)),
             (this._point = h.subtract(e.getPixelOrigin())),
             (this._radius = isNaN(l) ? 0 : h.x - e.project([u, t - l]).x),
-            (this._radiusY = h.y - r.y);
+            (this._radiusY = h.y - r.y));
         } else {
           var c = n.unproject(
-            n.project(this._latlng).subtract([this._mRadius, 0])
+            n.project(this._latlng).subtract([this._mRadius, 0]),
           );
-          (this._point = e.latLngToLayerPoint(this._latlng)),
-            (this._radius = this._point.x - e.latLngToLayerPoint(c).x);
+          ((this._point = e.latLngToLayerPoint(this._latlng)),
+            (this._radius = this._point.x - e.latLngToLayerPoint(c).x));
         }
         this._updateBounds();
       },
@@ -4052,13 +4083,13 @@
     tn = Je.extend({
       options: { smoothFactor: 1, noClip: !1 },
       initialize: function (t, i) {
-        l(this, i), this._setLatLngs(t);
+        (l(this, i), this._setLatLngs(t));
       },
       getLatLngs: function () {
         return this._latlngs;
       },
       setLatLngs: function (t) {
-        return this._setLatLngs(t), this.redraw();
+        return (this._setLatLngs(t), this.redraw());
       },
       isEmpty: function () {
         return !this._latlngs.length;
@@ -4073,7 +4104,7 @@
             var c = s(t, (i = h[u - 1]), (e = h[u]), !0);
             c < n && ((n = c), (o = s(t, i, e)));
           }
-        return o && (o.distance = Math.sqrt(n)), o;
+        return (o && (o.distance = Math.sqrt(n)), o);
       },
       getCenter: function () {
         if (!this._map)
@@ -4113,7 +4144,7 @@
         );
       },
       _setLatLngs: function (t) {
-        (this._bounds = new T()), (this._latlngs = this._convertLatLngs(t));
+        ((this._bounds = new T()), (this._latlngs = this._convertLatLngs(t)));
       },
       _defaultShape: function () {
         return Dt(this._latlngs) ? this._latlngs : this._latlngs[0];
@@ -4127,7 +4158,8 @@
       },
       _project: function () {
         var t = new P();
-        (this._rings = []), this._projectLatlngs(this._latlngs, this._rings, t);
+        ((this._rings = []),
+          this._projectLatlngs(this._latlngs, this._rings, t));
         var i = this._clickTolerance(),
           e = new x(i, i);
         this._bounds.isValid() &&
@@ -4141,7 +4173,7 @@
           r = t.length;
         if (s) {
           for (o = [], n = 0; n < r; n++)
-            (o[n] = this._map.latLngToLayerPoint(t[n])), e.extend(o[n]);
+            ((o[n] = this._map.latLngToLayerPoint(t[n])), e.extend(o[n]));
           i.push(o);
         } else for (n = 0; n < r; n++) this._projectLatlngs(t[n], i, e);
       },
@@ -4223,26 +4255,28 @@
           l = u.length;
         if (!l) return null;
         for (s = r = a = 0, t = 0, i = l - 1; t < l; i = t++)
-          (e = u[t]),
+          ((e = u[t]),
             (n = u[i]),
             (o = e.y * n.x - n.y * e.x),
             (r += (e.x + n.x) * o),
             (a += (e.y + n.y) * o),
-            (s += 3 * o);
+            (s += 3 * o));
         return (
-          (h = 0 === s ? u[0] : [r / s, a / s]), this._map.layerPointToLatLng(h)
+          (h = 0 === s ? u[0] : [r / s, a / s]),
+          this._map.layerPointToLatLng(h)
         );
       },
       _convertLatLngs: function (t) {
         var i = tn.prototype._convertLatLngs.call(this, t),
           e = i.length;
         return (
-          e >= 2 && i[0] instanceof M && i[0].equals(i[e - 1]) && i.pop(), i
+          e >= 2 && i[0] instanceof M && i[0].equals(i[e - 1]) && i.pop(),
+          i
         );
       },
       _setLatLngs: function (t) {
-        tn.prototype._setLatLngs.call(this, t),
-          Dt(this._latlngs) && (this._latlngs = [this._latlngs]);
+        (tn.prototype._setLatLngs.call(this, t),
+          Dt(this._latlngs) && (this._latlngs = [this._latlngs]));
       },
       _defaultShape: function () {
         return Dt(this._latlngs[0]) ? this._latlngs[0] : this._latlngs[0][0];
@@ -4277,17 +4311,17 @@
         if (!this._pxBounds.contains(t)) return !1;
         for (o = 0, a = this._parts.length; o < a; o++)
           for (s = 0, r = (h = (i = this._parts[o]).length) - 1; s < h; r = s++)
-            (e = i[s]),
+            ((e = i[s]),
               (n = i[r]),
               e.y > t.y != n.y > t.y &&
                 t.x < ((n.x - e.x) * (t.y - e.y)) / (n.y - e.y) + e.x &&
-                (u = !u);
+                (u = !u));
         return u || tn.prototype._containsPoint.call(this, t, !0);
       },
     }),
     nn = qe.extend({
       initialize: function (t, i) {
-        l(this, i), (this._layers = {}), t && this.addData(t);
+        (l(this, i), (this._layers = {}), t && this.addData(t));
       },
       addData: function (t) {
         var i,
@@ -4327,8 +4361,8 @@
         }, this);
       },
       _setLayerStyle: function (t, i) {
-        "function" == typeof i && (i = i(t.feature)),
-          t.setStyle && t.setStyle(i);
+        ("function" == typeof i && (i = i(t.feature)),
+          t.setStyle && t.setStyle(i));
       },
     }),
     on = {
@@ -4339,7 +4373,7 @@
         });
       },
     };
-  Xe.include(on),
+  (Xe.include(on),
     Qe.include(on),
     $e.include(on),
     tn.include({
@@ -4397,7 +4431,7 @@
             : { type: "FeatureCollection", features: n }
         );
       },
-    });
+    }));
   var sn = Kt,
     rn = Ue.extend({
       options: {
@@ -4410,48 +4444,51 @@
         className: "",
       },
       initialize: function (t, i, e) {
-        (this._url = t), (this._bounds = z(i)), l(this, e);
+        ((this._url = t), (this._bounds = z(i)), l(this, e));
       },
       onAdd: function () {
-        this._image ||
+        (this._image ||
           (this._initImage(),
           this.options.opacity < 1 && this._updateOpacity()),
           this.options.interactive &&
             (pt(this._image, "leaflet-interactive"),
             this.addInteractiveTarget(this._image)),
           this.getPane().appendChild(this._image),
-          this._reset();
+          this._reset());
       },
       onRemove: function () {
-        ut(this._image),
-          this.options.interactive && this.removeInteractiveTarget(this._image);
+        (ut(this._image),
+          this.options.interactive &&
+            this.removeInteractiveTarget(this._image));
       },
       setOpacity: function (t) {
         return (
-          (this.options.opacity = t), this._image && this._updateOpacity(), this
+          (this.options.opacity = t),
+          this._image && this._updateOpacity(),
+          this
         );
       },
       setStyle: function (t) {
-        return t.opacity && this.setOpacity(t.opacity), this;
+        return (t.opacity && this.setOpacity(t.opacity), this);
       },
       bringToFront: function () {
-        return this._map && ct(this._image), this;
+        return (this._map && ct(this._image), this);
       },
       bringToBack: function () {
-        return this._map && _t(this._image), this;
+        return (this._map && _t(this._image), this);
       },
       setUrl: function (t) {
-        return (this._url = t), this._image && (this._image.src = t), this;
+        return ((this._url = t), this._image && (this._image.src = t), this);
       },
       setBounds: function (t) {
-        return (this._bounds = z(t)), this._map && this._reset(), this;
+        return ((this._bounds = z(t)), this._map && this._reset(), this);
       },
       getEvents: function () {
         var t = { zoom: this._reset, viewreset: this._reset };
-        return this._zoomAnimated && (t.zoomanim = this._animateZoom), t;
+        return (this._zoomAnimated && (t.zoomanim = this._animateZoom), t);
       },
       setZIndex: function (t) {
-        return (this.options.zIndex = t), this._updateZIndex(), this;
+        return ((this.options.zIndex = t), this._updateZIndex(), this);
       },
       getBounds: function () {
         return this._bounds;
@@ -4462,7 +4499,7 @@
       _initImage: function () {
         var t = "IMG" === this._url.tagName,
           i = (this._image = t ? this._url : ht("img"));
-        pt(i, "leaflet-image-layer"),
+        (pt(i, "leaflet-image-layer"),
           this._zoomAnimated && pt(i, "leaflet-zoom-animated"),
           this.options.className && pt(i, this.options.className),
           (i.onselectstart = r),
@@ -4473,14 +4510,14 @@
           this.options.zIndex && this._updateZIndex(),
           t
             ? (this._url = i.src)
-            : ((i.src = this._url), (i.alt = this.options.alt));
+            : ((i.src = this._url), (i.alt = this.options.alt)));
       },
       _animateZoom: function (t) {
         var i = this._map.getZoomScale(t.zoom),
           e = this._map._latLngBoundsToNewLayerBounds(
             this._bounds,
             t.zoom,
-            t.center
+            t.center,
           ).min;
         wt(this._image, e, i);
       },
@@ -4488,12 +4525,12 @@
         var t = this._image,
           i = new P(
             this._map.latLngToLayerPoint(this._bounds.getNorthWest()),
-            this._map.latLngToLayerPoint(this._bounds.getSouthEast())
+            this._map.latLngToLayerPoint(this._bounds.getSouthEast()),
           ),
           e = i.getSize();
-        Lt(t, i.min),
+        (Lt(t, i.min),
           (t.style.width = e.x + "px"),
-          (t.style.height = e.y + "px");
+          (t.style.height = e.y + "px"));
       },
       _updateOpacity: function () {
         vt(this._image, this.options.opacity);
@@ -4531,12 +4568,12 @@
             o.push(n[s].src);
           this._url = n.length > 0 ? o : [i.src];
         } else {
-          ei(this._url) || (this._url = [this._url]),
+          (ei(this._url) || (this._url = [this._url]),
             (i.autoplay = !!this.options.autoplay),
-            (i.loop = !!this.options.loop);
+            (i.loop = !!this.options.loop));
           for (var a = 0; a < this._url.length; a++) {
             var h = ht("source");
-            (h.src = this._url[a]), i.appendChild(h);
+            ((h.src = this._url[a]), i.appendChild(h));
           }
         }
       },
@@ -4544,24 +4581,24 @@
     hn = Ue.extend({
       options: { offset: [0, 7], className: "", pane: "popupPane" },
       initialize: function (t, i) {
-        l(this, t), (this._source = i);
+        (l(this, t), (this._source = i));
       },
       onAdd: function (t) {
-        (this._zoomAnimated = t._zoomAnimated),
+        ((this._zoomAnimated = t._zoomAnimated),
           this._container || this._initLayout(),
           t._fadeAnimated && vt(this._container, 0),
           clearTimeout(this._removeTimeout),
           this.getPane().appendChild(this._container),
           this.update(),
           t._fadeAnimated && vt(this._container, 1),
-          this.bringToFront();
+          this.bringToFront());
       },
       onRemove: function (t) {
         t._fadeAnimated
           ? (vt(this._container, 0),
             (this._removeTimeout = setTimeout(
               e(ut, void 0, this._container),
-              200
+              200,
             )))
           : ut(this._container);
       },
@@ -4579,7 +4616,7 @@
         return this._content;
       },
       setContent: function (t) {
-        return (this._content = t), this.update(), this;
+        return ((this._content = t), this.update(), this);
       },
       getElement: function () {
         return this._container;
@@ -4595,16 +4632,16 @@
       },
       getEvents: function () {
         var t = { zoom: this._updatePosition, viewreset: this._updatePosition };
-        return this._zoomAnimated && (t.zoomanim = this._animateZoom), t;
+        return (this._zoomAnimated && (t.zoomanim = this._animateZoom), t);
       },
       isOpen: function () {
         return !!this._map && this._map.hasLayer(this);
       },
       bringToFront: function () {
-        return this._map && ct(this._container), this;
+        return (this._map && ct(this._container), this);
       },
       bringToBack: function () {
-        return this._map && _t(this._container), this;
+        return (this._map && _t(this._container), this);
       },
       _updateContent: function () {
         if (this._content) {
@@ -4632,8 +4669,8 @@
           var n = (this._containerBottom = -i.y),
             o = (this._containerLeft =
               -Math.round(this._containerWidth / 2) + i.x);
-          (this._container.style.bottom = n + "px"),
-            (this._container.style.left = o + "px");
+          ((this._container.style.bottom = n + "px"),
+            (this._container.style.left = o + "px"));
         }
       },
       _getAnchor: function () {
@@ -4656,21 +4693,21 @@
         className: "",
       },
       openOn: function (t) {
-        return t.openPopup(this), this;
+        return (t.openPopup(this), this);
       },
       onAdd: function (t) {
-        hn.prototype.onAdd.call(this, t),
+        (hn.prototype.onAdd.call(this, t),
           t.fire("popupopen", { popup: this }),
           this._source &&
             (this._source.fire("popupopen", { popup: this }, !0),
-            this._source instanceof Je || this._source.on("preclick", Y));
+            this._source instanceof Je || this._source.on("preclick", Y)));
       },
       onRemove: function (t) {
-        hn.prototype.onRemove.call(this, t),
+        (hn.prototype.onRemove.call(this, t),
           t.fire("popupclose", { popup: this }),
           this._source &&
             (this._source.fire("popupclose", { popup: this }, !0),
-            this._source instanceof Je || this._source.off("preclick", Y));
+            this._source instanceof Je || this._source.off("preclick", Y)));
       },
       getEvents: function () {
         var t = hn.prototype.getEvents.call(this);
@@ -4690,7 +4727,7 @@
         var t = "leaflet-popup",
           i = (this._container = ht(
             "div",
-            t + " " + (this.options.className || "") + " leaflet-zoom-animated"
+            t + " " + (this.options.className || "") + " leaflet-zoom-animated",
           )),
           e = (this._wrapper = ht("div", t + "-content-wrapper", i));
         if (
@@ -4703,33 +4740,33 @@
           this.options.closeButton)
         ) {
           var n = (this._closeButton = ht("a", t + "-close-button", i));
-          (n.href = "#close"),
+          ((n.href = "#close"),
             (n.innerHTML = "&#215;"),
-            V(n, "click", this._onCloseButtonClick, this);
+            V(n, "click", this._onCloseButtonClick, this));
         }
       },
       _updateLayout: function () {
         var t = this._contentNode,
           i = t.style;
-        (i.width = ""), (i.whiteSpace = "nowrap");
+        ((i.width = ""), (i.whiteSpace = "nowrap"));
         var e = t.offsetWidth;
-        (e = Math.min(e, this.options.maxWidth)),
+        ((e = Math.min(e, this.options.maxWidth)),
           (e = Math.max(e, this.options.minWidth)),
           (i.width = e + 1 + "px"),
           (i.whiteSpace = ""),
-          (i.height = "");
+          (i.height = ""));
         var n = t.offsetHeight,
           o = this.options.maxHeight;
-        o && n > o
+        (o && n > o
           ? ((i.height = o + "px"), pt(t, "leaflet-popup-scrolled"))
           : mt(t, "leaflet-popup-scrolled"),
-          (this._containerWidth = this._container.offsetWidth);
+          (this._containerWidth = this._container.offsetWidth));
       },
       _animateZoom: function (t) {
         var i = this._map._latLngToNewLayerPoint(
             this._latlng,
             t.zoom,
-            t.center
+            t.center,
           ),
           e = this._getAnchor();
         Lt(this._container, i.add(e));
@@ -4754,25 +4791,25 @@
             u = t.getSize(),
             l = 0,
             c = 0;
-          s.x + n + h.x > u.x && (l = s.x + n - u.x + h.x),
+          (s.x + n + h.x > u.x && (l = s.x + n - u.x + h.x),
             s.x - l - a.x < 0 && (l = s.x - a.x),
             s.y + e + h.y > u.y && (c = s.y + e - u.y + h.y),
             s.y - c - a.y < 0 && (c = s.y - a.y),
-            (l || c) && t.fire("autopanstart").panBy([l, c]);
+            (l || c) && t.fire("autopanstart").panBy([l, c]));
         }
       },
       _onCloseButtonClick: function (t) {
-        this._close(), Q(t);
+        (this._close(), Q(t));
       },
       _getAnchor: function () {
         return w(
           this._source && this._source._getPopupAnchor
             ? this._source._getPopupAnchor()
-            : [0, 0]
+            : [0, 0],
         );
       },
     });
-  Le.mergeOptions({ closePopupOnClick: !0 }),
+  (Le.mergeOptions({ closePopupOnClick: !0 }),
     Le.include({
       openPopup: function (t, i, e) {
         return (
@@ -4844,7 +4881,7 @@
         );
       },
       closePopup: function () {
-        return this._popup && this._popup._close(), this;
+        return (this._popup && this._popup._close(), this);
       },
       togglePopup: function (t) {
         return (
@@ -4857,7 +4894,7 @@
         return !!this._popup && this._popup.isOpen();
       },
       setPopupContent: function (t) {
-        return this._popup && this._popup.setContent(t), this;
+        return (this._popup && this._popup.setContent(t), this);
       },
       getPopup: function () {
         return this._popup;
@@ -4870,8 +4907,8 @@
           i instanceof Je
             ? this.openPopup(t.layer || t.target, t.latlng)
             : this._map.hasLayer(this._popup) && this._popup._source === i
-            ? this.closePopup()
-            : this.openPopup(i, t.latlng));
+              ? this.closePopup()
+              : this.openPopup(i, t.latlng));
       },
       _movePopup: function (t) {
         this._popup.setLatLng(t.latlng);
@@ -4879,7 +4916,7 @@
       _onKeyPress: function (t) {
         13 === t.originalEvent.keyCode && this._openPopup(t);
       },
-    });
+    }));
   var ln = hn.extend({
     options: {
       pane: "tooltipPane",
@@ -4891,20 +4928,21 @@
       opacity: 0.9,
     },
     onAdd: function (t) {
-      hn.prototype.onAdd.call(this, t),
+      (hn.prototype.onAdd.call(this, t),
         this.setOpacity(this.options.opacity),
         t.fire("tooltipopen", { tooltip: this }),
-        this._source && this._source.fire("tooltipopen", { tooltip: this }, !0);
+        this._source &&
+          this._source.fire("tooltipopen", { tooltip: this }, !0));
     },
     onRemove: function (t) {
-      hn.prototype.onRemove.call(this, t),
+      (hn.prototype.onRemove.call(this, t),
         t.fire("tooltipclose", { tooltip: this }),
         this._source &&
-          this._source.fire("tooltipclose", { tooltip: this }, !0);
+          this._source.fire("tooltipclose", { tooltip: this }, !0));
     },
     getEvents: function () {
       var t = hn.prototype.getEvents.call(this);
-      return Vi && !this.options.permanent && (t.preclick = this._close), t;
+      return (Vi && !this.options.permanent && (t.preclick = this._close), t);
     },
     _close: function () {
       this._map && this._map.closeTooltip(this);
@@ -4929,29 +4967,30 @@
         a = e.offsetHeight,
         h = w(this.options.offset),
         u = this._getAnchor();
-      "top" === s
+      ("top" === s
         ? (t = t.add(w(-r / 2 + h.x, -a + h.y + u.y, !0)))
         : "bottom" === s
-        ? (t = t.subtract(w(r / 2 - h.x, -h.y, !0)))
-        : "center" === s
-        ? (t = t.subtract(w(r / 2 + h.x, a / 2 - u.y + h.y, !0)))
-        : "right" === s || ("auto" === s && o.x < n.x)
-        ? ((s = "right"), (t = t.add(w(h.x + u.x, u.y - a / 2 + h.y, !0))))
-        : ((s = "left"),
-          (t = t.subtract(w(r + u.x - h.x, a / 2 - u.y - h.y, !0)))),
+          ? (t = t.subtract(w(r / 2 - h.x, -h.y, !0)))
+          : "center" === s
+            ? (t = t.subtract(w(r / 2 + h.x, a / 2 - u.y + h.y, !0)))
+            : "right" === s || ("auto" === s && o.x < n.x)
+              ? ((s = "right"),
+                (t = t.add(w(h.x + u.x, u.y - a / 2 + h.y, !0))))
+              : ((s = "left"),
+                (t = t.subtract(w(r + u.x - h.x, a / 2 - u.y - h.y, !0)))),
         mt(e, "leaflet-tooltip-right"),
         mt(e, "leaflet-tooltip-left"),
         mt(e, "leaflet-tooltip-top"),
         mt(e, "leaflet-tooltip-bottom"),
         pt(e, "leaflet-tooltip-" + s),
-        Lt(e, t);
+        Lt(e, t));
     },
     _updatePosition: function () {
       var t = this._map.latLngToLayerPoint(this._latlng);
       this._setPosition(t);
     },
     setOpacity: function (t) {
-      (this.options.opacity = t), this._container && vt(this._container, t);
+      ((this.options.opacity = t), this._container && vt(this._container, t));
     },
     _animateZoom: function (t) {
       var i = this._map._latLngToNewLayerPoint(this._latlng, t.zoom, t.center);
@@ -4961,11 +5000,11 @@
       return w(
         this._source && this._source._getTooltipAnchor && !this.options.sticky
           ? this._source._getTooltipAnchor()
-          : [0, 0]
+          : [0, 0],
       );
     },
   });
-  Le.include({
+  (Le.include({
     openTooltip: function (t, i, e) {
       return (
         t instanceof ln || (t = new ln(e).setContent(t)),
@@ -4974,7 +5013,7 @@
       );
     },
     closeTooltip: function (t) {
-      return t && this.removeLayer(t), this;
+      return (t && this.removeLayer(t), this);
     },
   }),
     Ue.include({
@@ -5005,14 +5044,14 @@
         if (t || !this._tooltipHandlersAdded) {
           var i = t ? "off" : "on",
             e = { remove: this.closeTooltip, move: this._moveTooltip };
-          this._tooltip.options.permanent
+          (this._tooltip.options.permanent
             ? (e.add = this._openTooltip)
             : ((e.mouseover = this._openTooltip),
               (e.mouseout = this.closeTooltip),
               this._tooltip.options.sticky && (e.mousemove = this._moveTooltip),
               Vi && (e.click = this._openTooltip)),
             this[i](e),
-            (this._tooltipHandlersAdded = !t);
+            (this._tooltipHandlersAdded = !t));
         }
       },
       openTooltip: function (t, i) {
@@ -5057,7 +5096,7 @@
         return this._tooltip.isOpen();
       },
       setTooltipContent: function (t) {
-        return this._tooltip && this._tooltip.setContent(t), this;
+        return (this._tooltip && this._tooltip.setContent(t), this);
       },
       getTooltip: function () {
         return this._tooltip;
@@ -5072,14 +5111,14 @@
         var i,
           e,
           n = t.latlng;
-        this._tooltip.options.sticky &&
+        (this._tooltip.options.sticky &&
           t.originalEvent &&
           ((i = this._map.mouseEventToContainerPoint(t.originalEvent)),
           (e = this._map.containerPointToLayerPoint(i)),
           (n = this._map.layerPointToLatLng(e))),
-          this._tooltip.setLatLng(n);
+          this._tooltip.setLatLng(n));
       },
-    });
+    }));
   var cn = Ge.extend({
     options: {
       iconSize: [12, 12],
@@ -5094,7 +5133,7 @@
         var n = w(e.bgPos);
         i.style.backgroundPosition = -n.x + "px " + -n.y + "px";
       }
-      return this._setIconStyles(i, "icon"), i;
+      return (this._setIconStyles(i, "icon"), i);
     },
     createShadow: function () {
       return null;
@@ -5123,21 +5162,21 @@
         l(this, t);
       },
       onAdd: function () {
-        this._initContainer(),
+        (this._initContainer(),
           (this._levels = {}),
           (this._tiles = {}),
           this._resetView(),
-          this._update();
+          this._update());
       },
       beforeAdd: function (t) {
         t._addZoomLimit(this);
       },
       onRemove: function (t) {
-        this._removeAllTiles(),
+        (this._removeAllTiles(),
           ut(this._container),
           t._removeZoomLimit(this),
           (this._container = null),
-          (this._tileZoom = void 0);
+          (this._tileZoom = void 0));
       },
       bringToFront: function () {
         return (
@@ -5155,16 +5194,16 @@
         return this._container;
       },
       setOpacity: function (t) {
-        return (this.options.opacity = t), this._updateOpacity(), this;
+        return ((this.options.opacity = t), this._updateOpacity(), this);
       },
       setZIndex: function (t) {
-        return (this.options.zIndex = t), this._updateZIndex(), this;
+        return ((this.options.zIndex = t), this._updateZIndex(), this);
       },
       isLoading: function () {
         return this._loading;
       },
       redraw: function () {
-        return this._map && (this._removeAllTiles(), this._update()), this;
+        return (this._map && (this._removeAllTiles(), this._update()), this);
       },
       getEvents: function () {
         var t = {
@@ -5179,7 +5218,7 @@
               (this._onMove = o(
                 this._onMoveEnd,
                 this.options.updateInterval,
-                this
+                this,
               )),
             (t.move = this._onMove)),
           this._zoomAnimated && (t.zoomanim = this._animateZoom),
@@ -5209,8 +5248,8 @@
           o < s;
           o++
         )
-          (i = e[o].style.zIndex),
-            e[o] !== this._container && i && (n = t(n, +i));
+          ((i = e[o].style.zIndex),
+            e[o] !== this._container && i && (n = t(n, +i)));
         isFinite(n) &&
           ((this.options.zIndex = n + t(-1, 1)), this._updateZIndex());
       },
@@ -5224,17 +5263,17 @@
             var o = this._tiles[n];
             if (o.current && o.loaded) {
               var s = Math.min(1, (t - o.loaded) / 200);
-              vt(o.el, s),
+              (vt(o.el, s),
                 s < 1
                   ? (i = !0)
                   : (o.active ? (e = !0) : this._onOpaqueTile(o),
-                    (o.active = !0));
+                    (o.active = !0)));
             }
           }
-          e && !this._noPrune && this._pruneTiles(),
+          (e && !this._noPrune && this._pruneTiles(),
             i &&
               (g(this._fadeFrame),
-              (this._fadeFrame = f(this._updateOpacity, this)));
+              (this._fadeFrame = f(this._updateOpacity, this))));
         }
       },
       _onOpaqueTile: r,
@@ -5242,7 +5281,7 @@
         this._container ||
           ((this._container = ht(
             "div",
-            "leaflet-layer " + (this.options.className || "")
+            "leaflet-layer " + (this.options.className || ""),
           )),
           this._updateZIndex(),
           this.options.opacity < 1 && this._updateOpacity(),
@@ -5267,7 +5306,7 @@
               (((n = this._levels[t] = {}).el = ht(
                 "div",
                 "leaflet-tile-container leaflet-zoom-animated",
-                this._container
+                this._container,
               )),
               (n.el.style.zIndex = i),
               (n.origin = o
@@ -5313,10 +5352,10 @@
       },
       _invalidateAll: function () {
         for (var t in this._levels)
-          ut(this._levels[t].el),
+          (ut(this._levels[t].el),
             this._onRemoveLevel(t),
-            delete this._levels[t];
-        this._removeAllTiles(), (this._tileZoom = void 0);
+            delete this._levels[t]);
+        (this._removeAllTiles(), (this._tileZoom = void 0));
       },
       _retainParent: function (t, i, e, n) {
         var o = Math.floor(t / 2),
@@ -5356,8 +5395,8 @@
         return void 0 !== i.minNativeZoom && t < i.minNativeZoom
           ? i.minNativeZoom
           : void 0 !== i.maxNativeZoom && i.maxNativeZoom < t
-          ? i.maxNativeZoom
-          : t;
+            ? i.maxNativeZoom
+            : t;
       },
       _setView: function (t, i, e, n) {
         var o = this._clampZoom(Math.round(i));
@@ -5365,7 +5404,7 @@
           (void 0 !== this.options.minZoom && o < this.options.minZoom)) &&
           (o = void 0);
         var s = this.options.updateWhenZooming && o !== this._tileZoom;
-        (n && !s) ||
+        ((n && !s) ||
           ((this._tileZoom = o),
           this._abortLoading && this._abortLoading(),
           this._updateLevels(),
@@ -5373,7 +5412,7 @@
           void 0 !== o && this._update(t),
           e || this._pruneTiles(),
           (this._noPrune = !!e)),
-          this._setZoomTransforms(t, i);
+          this._setZoomTransforms(t, i));
       },
       _setZoomTransforms: function (t, i) {
         for (var e in this._levels)
@@ -5393,7 +5432,7 @@
           e = (this._tileSize = this.getTileSize()),
           n = this._tileZoom,
           o = this._map.getPixelWorldBounds(this._tileZoom);
-        o && (this._globalTileRange = this._pxBoundsToTileRange(o)),
+        (o && (this._globalTileRange = this._pxBoundsToTileRange(o)),
           (this._wrapX = i.wrapLng &&
             !this.options.noWrap && [
               Math.floor(t.project([0, i.wrapLng[0]], n).x / e.x),
@@ -5403,7 +5442,7 @@
             !this.options.noWrap && [
               Math.floor(t.project([i.wrapLat[0], 0], n).y / e.x),
               Math.ceil(t.project([i.wrapLat[1], 0], n).y / e.y),
-            ]);
+            ]));
       },
       _onMoveEnd: function () {
         this._map && !this._map._animatingZoom && this._update();
@@ -5432,7 +5471,7 @@
               a = this.options.keepBuffer,
               h = new P(
                 o.getBottomLeft().subtract([a, -a]),
-                o.getTopRight().add([a, -a])
+                o.getTopRight().add([a, -a]),
               );
             if (
               !(
@@ -5500,7 +5539,7 @@
       _tileCoordsToBounds: function (t) {
         var i = this._tileCoordsToNwSe(t),
           e = new T(i[0], i[1]);
-        return this.options.noWrap || (e = this._map.wrapLatLngBounds(e)), e;
+        return (this.options.noWrap || (e = this._map.wrapLatLngBounds(e)), e);
       },
       _tileCoordsToKey: function (t) {
         return t.x + ":" + t.y + ":" + t.z;
@@ -5508,7 +5547,7 @@
       _keyToTileCoords: function (t) {
         var i = t.split(":"),
           e = new x(+i[0], +i[1]);
-        return (e.z = +i[2]), e;
+        return ((e.z = +i[2]), e);
       },
       _removeTile: function (t) {
         var i = this._tiles[t];
@@ -5524,23 +5563,23 @@
       _initTile: function (t) {
         pt(t, "leaflet-tile");
         var i = this.getTileSize();
-        (t.style.width = i.x + "px"),
+        ((t.style.width = i.x + "px"),
           (t.style.height = i.y + "px"),
           (t.onselectstart = r),
           (t.onmousemove = r),
           Li && this.options.opacity < 1 && vt(t, this.options.opacity),
-          Ti && !zi && (t.style.WebkitBackfaceVisibility = "hidden");
+          Ti && !zi && (t.style.WebkitBackfaceVisibility = "hidden"));
       },
       _addTile: function (t, i) {
         var n = this._getTilePos(t),
           o = this._tileCoordsToKey(t),
           s = this.createTile(this._wrapCoords(t), e(this._tileReady, this, t));
-        this._initTile(s),
+        (this._initTile(s),
           this.createTile.length < 2 && f(e(this._tileReady, this, t, null, s)),
           Lt(s, n),
           (this._tiles[o] = { el: s, coords: t, current: !0 }),
           i.appendChild(s),
-          this.fire("tileloadstart", { tile: s, coords: t });
+          this.fire("tileloadstart", { tile: s, coords: t }));
       },
       _tileReady: function (t, i, n) {
         if (this._map) {
@@ -5570,15 +5609,15 @@
       _wrapCoords: function (t) {
         var i = new x(
           this._wrapX ? s(t.x, this._wrapX) : t.x,
-          this._wrapY ? s(t.y, this._wrapY) : t.y
+          this._wrapY ? s(t.y, this._wrapY) : t.y,
         );
-        return (i.z = t.z), i;
+        return ((i.z = t.z), i);
       },
       _pxBoundsToTileRange: function (t) {
         var i = this.getTileSize();
         return new P(
           t.min.unscaleBy(i).floor(),
-          t.max.unscaleBy(i).ceil().subtract([1, 1])
+          t.max.unscaleBy(i).ceil().subtract([1, 1]),
         );
       },
       _noTilesToLoad: function () {
@@ -5599,7 +5638,7 @@
         crossOrigin: !1,
       },
       initialize: function (t, i) {
-        (this._url = t),
+        ((this._url = t),
           (i = l(this, i)).detectRetina &&
             Ki &&
             i.maxZoom > 0 &&
@@ -5610,10 +5649,10 @@
             (i.minZoom = Math.max(0, i.minZoom))),
           "string" == typeof i.subdomains &&
             (i.subdomains = i.subdomains.split("")),
-          Ti || this.on("tileunload", this._onTileRemove);
+          Ti || this.on("tileunload", this._onTileRemove));
       },
       setUrl: function (t, i) {
-        return (this._url = t), i || this.redraw(), this;
+        return ((this._url = t), i || this.redraw(), this);
       },
       createTile: function (t, i) {
         var n = document.createElement("img");
@@ -5637,7 +5676,7 @@
         };
         if (this._map && !this._map.options.crs.infinite) {
           var n = this._globalTileRange.max.y - t.y;
-          this.options.tms && (e.y = n), (e["-y"] = n);
+          (this.options.tms && (e.y = n), (e["-y"] = n));
         }
         return _(this._url, i(e, this.options));
       },
@@ -5646,7 +5685,7 @@
       },
       _tileOnError: function (t, i, e) {
         var n = this.options.errorTileUrl;
-        n && i.getAttribute("src") !== n && (i.src = n), t(e, i);
+        (n && i.getAttribute("src") !== n && (i.src = n), t(e, i));
       },
       _onTileRemove: function (t) {
         t.tile.onload = null;
@@ -5656,7 +5695,7 @@
           i = this.options.maxZoom,
           e = this.options.zoomReverse,
           n = this.options.zoomOffset;
-        return e && (t = i - t), t + n;
+        return (e && (t = i - t), t + n);
       },
       _getSubdomain: function (t) {
         var i = Math.abs(t.x + t.y) % this.options.subdomains.length;
@@ -5688,13 +5727,14 @@
         for (var o in e) o in this.options || (n[o] = e[o]);
         var s = (e = l(this, e)).detectRetina && Ki ? 2 : 1,
           r = this.getTileSize();
-        (n.width = r.x * s), (n.height = r.y * s), (this.wmsParams = n);
+        ((n.width = r.x * s), (n.height = r.y * s), (this.wmsParams = n));
       },
       onAdd: function (t) {
-        (this._crs = this.options.crs || t.options.crs),
-          (this._wmsVersion = parseFloat(this.wmsParams.version));
+        ((this._crs = this.options.crs || t.options.crs),
+          (this._wmsVersion = parseFloat(this.wmsParams.version)));
         var i = this._wmsVersion >= 1.3 ? "crs" : "srs";
-        (this.wmsParams[i] = this._crs.code), dn.prototype.onAdd.call(this, t);
+        ((this.wmsParams[i] = this._crs.code),
+          dn.prototype.onAdd.call(this, t));
       },
       getTileUrl: function (t) {
         var i = this._tileCoordsToNwSe(t),
@@ -5716,28 +5756,28 @@
         );
       },
       setParams: function (t, e) {
-        return i(this.wmsParams, t), e || this.redraw(), this;
+        return (i(this.wmsParams, t), e || this.redraw(), this);
       },
     });
-  (dn.WMS = pn),
+  ((dn.WMS = pn),
     (Yt.wms = function (t, i) {
       return new pn(t, i);
-    });
+    }));
   var mn = Ue.extend({
       options: { padding: 0.1, tolerance: 0 },
       initialize: function (t) {
-        l(this, t), n(this), (this._layers = this._layers || {});
+        (l(this, t), n(this), (this._layers = this._layers || {}));
       },
       onAdd: function () {
-        this._container ||
+        (this._container ||
           (this._initContainer(),
           this._zoomAnimated && pt(this._container, "leaflet-zoom-animated")),
           this.getPane().appendChild(this._container),
           this._update(),
-          this.on("update", this._updatePaths, this);
+          this.on("update", this._updatePaths, this));
       },
       onRemove: function () {
-        this.off("update", this._updatePaths, this), this._destroyContainer();
+        (this.off("update", this._updatePaths, this), this._destroyContainer());
       },
       getEvents: function () {
         var t = {
@@ -5746,7 +5786,7 @@
           moveend: this._update,
           zoomend: this._onZoomEnd,
         };
-        return this._zoomAnimated && (t.zoomanim = this._onAnimZoom), t;
+        return (this._zoomAnimated && (t.zoomanim = this._onAnimZoom), t);
       },
       _onAnimZoom: function (t) {
         this._updateTransform(t.center, t.zoom);
@@ -5764,7 +5804,7 @@
         Ni ? wt(this._container, a, e) : Lt(this._container, a);
       },
       _reset: function () {
-        this._update(), this._updateTransform(this._center, this._zoom);
+        (this._update(), this._updateTransform(this._center, this._zoom));
         for (var t in this._layers) this._layers[t]._reset();
       },
       _onZoomEnd: function () {
@@ -5777,39 +5817,39 @@
         var t = this.options.padding,
           i = this._map.getSize(),
           e = this._map.containerPointToLayerPoint(i.multiplyBy(-t)).round();
-        (this._bounds = new P(e, e.add(i.multiplyBy(1 + 2 * t)).round())),
+        ((this._bounds = new P(e, e.add(i.multiplyBy(1 + 2 * t)).round())),
           (this._center = this._map.getCenter()),
-          (this._zoom = this._map.getZoom());
+          (this._zoom = this._map.getZoom()));
       },
     }),
     fn = mn.extend({
       getEvents: function () {
         var t = mn.prototype.getEvents.call(this);
-        return (t.viewprereset = this._onViewPreReset), t;
+        return ((t.viewprereset = this._onViewPreReset), t);
       },
       _onViewPreReset: function () {
         this._postponeUpdatePaths = !0;
       },
       onAdd: function () {
-        mn.prototype.onAdd.call(this), this._draw();
+        (mn.prototype.onAdd.call(this), this._draw());
       },
       _initContainer: function () {
         var t = (this._container = document.createElement("canvas"));
-        V(t, "mousemove", o(this._onMouseMove, 32, this), this),
+        (V(t, "mousemove", o(this._onMouseMove, 32, this), this),
           V(
             t,
             "click dblclick mousedown mouseup contextmenu",
             this._onClick,
-            this
+            this,
           ),
           V(t, "mouseout", this._handleMouseOut, this),
-          (this._ctx = t.getContext("2d"));
+          (this._ctx = t.getContext("2d")));
       },
       _destroyContainer: function () {
-        delete this._ctx,
+        (delete this._ctx,
           ut(this._container),
           q(this._container),
-          delete this._container;
+          delete this._container);
       },
       _updatePaths: function () {
         if (!this._postponeUpdatePaths) {
@@ -5820,32 +5860,32 @@
       },
       _update: function () {
         if (!this._map._animatingZoom || !this._bounds) {
-          (this._drawnLayers = {}), mn.prototype._update.call(this);
+          ((this._drawnLayers = {}), mn.prototype._update.call(this));
           var t = this._bounds,
             i = this._container,
             e = t.getSize(),
             n = Ki ? 2 : 1;
-          Lt(i, t.min),
+          (Lt(i, t.min),
             (i.width = n * e.x),
             (i.height = n * e.y),
             (i.style.width = e.x + "px"),
             (i.style.height = e.y + "px"),
             Ki && this._ctx.scale(2, 2),
             this._ctx.translate(-t.min.x, -t.min.y),
-            this.fire("update");
+            this.fire("update"));
         }
       },
       _reset: function () {
-        mn.prototype._reset.call(this),
+        (mn.prototype._reset.call(this),
           this._postponeUpdatePaths &&
-            ((this._postponeUpdatePaths = !1), this._updatePaths());
+            ((this._postponeUpdatePaths = !1), this._updatePaths()));
       },
       _initPath: function (t) {
-        this._updateDashArray(t), (this._layers[n(t)] = t);
+        (this._updateDashArray(t), (this._layers[n(t)] = t));
         var i = (t._order = { layer: t, prev: this._drawLast, next: null });
-        this._drawLast && (this._drawLast.next = i),
+        (this._drawLast && (this._drawLast.next = i),
           (this._drawLast = i),
-          (this._drawFirst = this._drawFirst || this._drawLast);
+          (this._drawFirst = this._drawFirst || this._drawLast));
       },
       _addPath: function (t) {
         this._requestRedraw(t);
@@ -5854,20 +5894,20 @@
         var i = t._order,
           e = i.next,
           n = i.prev;
-        e ? (e.prev = n) : (this._drawLast = n),
+        (e ? (e.prev = n) : (this._drawLast = n),
           n ? (n.next = e) : (this._drawFirst = e),
           delete t._order,
           delete this._layers[L.stamp(t)],
-          this._requestRedraw(t);
+          this._requestRedraw(t));
       },
       _updatePath: function (t) {
-        this._extendRedrawBounds(t),
+        (this._extendRedrawBounds(t),
           t._project(),
           t._update(),
-          this._requestRedraw(t);
+          this._requestRedraw(t));
       },
       _updateStyle: function (t) {
-        this._updateDashArray(t), this._requestRedraw(t);
+        (this._updateDashArray(t), this._requestRedraw(t));
       },
       _updateDashArray: function (t) {
         if (t.options.dashArray) {
@@ -5886,18 +5926,18 @@
       _extendRedrawBounds: function (t) {
         if (t._pxBounds) {
           var i = (t.options.weight || 0) + 1;
-          (this._redrawBounds = this._redrawBounds || new P()),
+          ((this._redrawBounds = this._redrawBounds || new P()),
             this._redrawBounds.extend(t._pxBounds.min.subtract([i, i])),
-            this._redrawBounds.extend(t._pxBounds.max.add([i, i]));
+            this._redrawBounds.extend(t._pxBounds.max.add([i, i])));
         }
       },
       _redraw: function () {
-        (this._redrawRequest = null),
+        ((this._redrawRequest = null),
           this._redrawBounds &&
             (this._redrawBounds.min._floor(), this._redrawBounds.max._ceil()),
           this._clear(),
           this._draw(),
-          (this._redrawBounds = null);
+          (this._redrawBounds = null));
       },
       _clear: function () {
         var t = this._redrawBounds;
@@ -5909,7 +5949,7 @@
             0,
             0,
             this._container.width,
-            this._container.height
+            this._container.height,
           );
       },
       _draw: function () {
@@ -5917,16 +5957,16 @@
           i = this._redrawBounds;
         if ((this._ctx.save(), i)) {
           var e = i.getSize();
-          this._ctx.beginPath(),
+          (this._ctx.beginPath(),
             this._ctx.rect(i.min.x, i.min.y, e.x, e.y),
-            this._ctx.clip();
+            this._ctx.clip());
         }
         this._drawing = !0;
         for (var n = this._drawFirst; n; n = n.next)
-          (t = n.layer),
+          ((t = n.layer),
             (!i || (t._pxBounds && t._pxBounds.intersects(i))) &&
-              t._updatePath();
-        (this._drawing = !1), this._ctx.restore();
+              t._updatePath());
+        ((this._drawing = !1), this._ctx.restore());
       },
       _updatePoly: function (t, i) {
         if (this._drawing) {
@@ -5944,7 +5984,7 @@
               e++
             ) {
               for (n = 0, o = r[e].length; n < o; n++)
-                (s = r[e][n]), h[n ? "lineTo" : "moveTo"](s.x, s.y);
+                ((s = r[e][n]), h[n ? "lineTo" : "moveTo"](s.x, s.y));
               i && h.closePath();
             }
             this._fillStroke(h, t);
@@ -5957,17 +5997,17 @@
             e = this._ctx,
             n = Math.max(Math.round(t._radius), 1),
             o = (Math.max(Math.round(t._radiusY), 1) || n) / n;
-          (this._drawnLayers[t._leaflet_id] = t),
+          ((this._drawnLayers[t._leaflet_id] = t),
             1 !== o && (e.save(), e.scale(1, o)),
             e.beginPath(),
             e.arc(i.x, i.y / o, n, 0, 2 * Math.PI, !1),
             1 !== o && e.restore(),
-            this._fillStroke(e, t);
+            this._fillStroke(e, t));
         }
       },
       _fillStroke: function (t, i) {
         var e = i.options;
-        e.fill &&
+        (e.fill &&
           ((t.globalAlpha = e.fillOpacity),
           (t.fillStyle = e.fillColor || e.color),
           t.fill(e.fillRule || "evenodd")),
@@ -5980,7 +6020,7 @@
             (t.strokeStyle = e.color),
             (t.lineCap = e.lineCap),
             (t.lineJoin = e.lineJoin),
-            t.stroke());
+            t.stroke()));
       },
       _onClick: function (t) {
         for (
@@ -6017,13 +6057,13 @@
       _handleMouseHover: function (t, i) {
         for (var e, n, o = this._drawFirst; o; o = o.next)
           (e = o.layer).options.interactive && e._containsPoint(i) && (n = e);
-        n !== this._hoveredLayer &&
+        (n !== this._hoveredLayer &&
           (this._handleMouseOut(t),
           n &&
             (pt(this._container, "leaflet-interactive"),
             this._fireEvent([n], t, "mouseover"),
             (this._hoveredLayer = n))),
-          this._hoveredLayer && this._fireEvent([this._hoveredLayer], t);
+          this._hoveredLayer && this._fireEvent([this._hoveredLayer], t));
       },
       _fireEvent: function (t, i, e) {
         this._map._fireDOMEvent(i, e || i.type, t);
@@ -6066,7 +6106,7 @@
       } catch (t) {
         return function (t) {
           return document.createElement(
-            "<" + t + ' xmlns="urn:schemas-microsoft.com:vml" class="lvml">'
+            "<" + t + ' xmlns="urn:schemas-microsoft.com:vml" class="lvml">',
           );
         };
       }
@@ -6081,28 +6121,28 @@
       },
       _initPath: function (t) {
         var i = (t._container = gn("shape"));
-        pt(i, "leaflet-vml-shape " + (this.options.className || "")),
+        (pt(i, "leaflet-vml-shape " + (this.options.className || "")),
           (i.coordsize = "1 1"),
           (t._path = gn("path")),
           i.appendChild(t._path),
           this._updateStyle(t),
-          (this._layers[n(t)] = t);
+          (this._layers[n(t)] = t));
       },
       _addPath: function (t) {
         var i = t._container;
-        this._container.appendChild(i),
-          t.options.interactive && t.addInteractiveTarget(i);
+        (this._container.appendChild(i),
+          t.options.interactive && t.addInteractiveTarget(i));
       },
       _removePath: function (t) {
         var i = t._container;
-        ut(i), t.removeInteractiveTarget(i), delete this._layers[n(t)];
+        (ut(i), t.removeInteractiveTarget(i), delete this._layers[n(t)]);
       },
       _updateStyle: function (t) {
         var i = t._stroke,
           e = t._fill,
           n = t.options,
           o = t._container;
-        (o.stroked = !!n.stroke),
+        ((o.stroked = !!n.stroke),
           (o.filled = !!n.fill),
           n.stroke
             ? (i || (i = t._stroke = gn("stroke")),
@@ -6123,7 +6163,7 @@
               o.appendChild(e),
               (e.color = n.fillColor || n.color),
               (e.opacity = n.fillOpacity))
-            : e && (o.removeChild(e), (t._fill = null));
+            : e && (o.removeChild(e), (t._fill = null)));
       },
       _updateCircle: function (t) {
         var i = t._point.round(),
@@ -6133,7 +6173,7 @@
           t,
           t._empty()
             ? "M0 0"
-            : "AL " + i.x + "," + i.y + " " + e + "," + n + " 0,23592600"
+            : "AL " + i.x + "," + i.y + " " + e + "," + n + " 0,23592600",
         );
       },
       _setPath: function (t, i) {
@@ -6150,20 +6190,20 @@
     xn = mn.extend({
       getEvents: function () {
         var t = mn.prototype.getEvents.call(this);
-        return (t.zoomstart = this._onZoomStart), t;
+        return ((t.zoomstart = this._onZoomStart), t);
       },
       _initContainer: function () {
-        (this._container = yn("svg")),
+        ((this._container = yn("svg")),
           this._container.setAttribute("pointer-events", "none"),
           (this._rootGroup = yn("g")),
-          this._container.appendChild(this._rootGroup);
+          this._container.appendChild(this._rootGroup));
       },
       _destroyContainer: function () {
-        ut(this._container),
+        (ut(this._container),
           q(this._container),
           delete this._container,
           delete this._rootGroup,
-          delete this._svgSize;
+          delete this._svgSize);
       },
       _onZoomStart: function () {
         this._update();
@@ -6174,34 +6214,34 @@
           var t = this._bounds,
             i = t.getSize(),
             e = this._container;
-          (this._svgSize && this._svgSize.equals(i)) ||
+          ((this._svgSize && this._svgSize.equals(i)) ||
             ((this._svgSize = i),
             e.setAttribute("width", i.x),
             e.setAttribute("height", i.y)),
             Lt(e, t.min),
             e.setAttribute("viewBox", [t.min.x, t.min.y, i.x, i.y].join(" ")),
-            this.fire("update");
+            this.fire("update"));
         }
       },
       _initPath: function (t) {
         var i = (t._path = yn("path"));
-        t.options.className && pt(i, t.options.className),
+        (t.options.className && pt(i, t.options.className),
           t.options.interactive && pt(i, "leaflet-interactive"),
           this._updateStyle(t),
-          (this._layers[n(t)] = t);
+          (this._layers[n(t)] = t));
       },
       _addPath: function (t) {
-        this._rootGroup || this._initContainer(),
+        (this._rootGroup || this._initContainer(),
           this._rootGroup.appendChild(t._path),
-          t.addInteractiveTarget(t._path);
+          t.addInteractiveTarget(t._path));
       },
       _removePath: function (t) {
-        ut(t._path),
+        (ut(t._path),
           t.removeInteractiveTarget(t._path),
-          delete this._layers[n(t)];
+          delete this._layers[n(t)]);
       },
       _updatePath: function (t) {
-        t._project(), t._update();
+        (t._project(), t._update());
       },
       _updateStyle: function (t) {
         var i = t._path,
@@ -6262,7 +6302,7 @@
         _t(t._path);
       },
     });
-  Ji && xn.include(vn),
+  (Ji && xn.include(vn),
     Le.include({
       getRenderer: function (t) {
         var i =
@@ -6287,7 +6327,7 @@
           i
         );
       },
-    });
+    }));
   var wn = en.extend({
     initialize: function (t, i) {
       en.prototype.initialize.call(this, this._boundsToLatLngs(t), i);
@@ -6302,7 +6342,7 @@
       );
     },
   });
-  (xn.create = yn),
+  ((xn.create = yn),
     (xn.pointsToPath = k),
     (nn.geometryToLayer = Wt),
     (nn.coordsToLatLng = Ht),
@@ -6311,14 +6351,14 @@
     (nn.latLngsToCoords = Vt),
     (nn.getFeature = qt),
     (nn.asFeature = Gt),
-    Le.mergeOptions({ boxZoom: !0 });
+    Le.mergeOptions({ boxZoom: !0 }));
   var Ln = Ze.extend({
     initialize: function (t) {
-      (this._map = t),
+      ((this._map = t),
         (this._container = t._container),
         (this._pane = t._panes.overlayPane),
         (this._resetStateTimeout = 0),
-        t.on("unload", this._destroy, this);
+        t.on("unload", this._destroy, this));
     },
     addHooks: function () {
       V(this._container, "mousedown", this._onMouseDown, this);
@@ -6330,10 +6370,10 @@
       return this._moved;
     },
     _destroy: function () {
-      ut(this._pane), delete this._pane;
+      (ut(this._pane), delete this._pane);
     },
     _resetState: function () {
-      (this._resetStateTimeout = 0), (this._moved = !1);
+      ((this._resetStateTimeout = 0), (this._moved = !1));
     },
     _clearDeferredResetState: function () {
       0 !== this._resetStateTimeout &&
@@ -6341,7 +6381,7 @@
     },
     _onMouseDown: function (t) {
       if (!t.shiftKey || (1 !== t.which && 1 !== t.button)) return !1;
-      this._clearDeferredResetState(),
+      (this._clearDeferredResetState(),
         this._resetState(),
         mi(),
         bt(),
@@ -6354,24 +6394,24 @@
             mouseup: this._onMouseUp,
             keydown: this._onKeyDown,
           },
-          this
-        );
+          this,
+        ));
     },
     _onMouseMove: function (t) {
-      this._moved ||
+      (this._moved ||
         ((this._moved = !0),
         (this._box = ht("div", "leaflet-zoom-box", this._container)),
         pt(this._container, "leaflet-crosshair"),
         this._map.fire("boxzoomstart")),
-        (this._point = this._map.mouseEventToContainerPoint(t));
+        (this._point = this._map.mouseEventToContainerPoint(t)));
       var i = new P(this._point, this._startPoint),
         e = i.getSize();
-      Lt(this._box, i.min),
+      (Lt(this._box, i.min),
         (this._box.style.width = e.x + "px"),
-        (this._box.style.height = e.y + "px");
+        (this._box.style.height = e.y + "px"));
     },
     _finish: function () {
-      this._moved && (ut(this._box), mt(this._container, "leaflet-crosshair")),
+      (this._moved && (ut(this._box), mt(this._container, "leaflet-crosshair")),
         fi(),
         Tt(),
         q(
@@ -6382,16 +6422,16 @@
             mouseup: this._onMouseUp,
             keydown: this._onKeyDown,
           },
-          this
-        );
+          this,
+        ));
     },
     _onMouseUp: function (t) {
       if ((1 === t.which || 1 === t.button) && (this._finish(), this._moved)) {
-        this._clearDeferredResetState(),
-          (this._resetStateTimeout = setTimeout(e(this._resetState, this), 0));
+        (this._clearDeferredResetState(),
+          (this._resetStateTimeout = setTimeout(e(this._resetState, this), 0)));
         var i = new T(
           this._map.containerPointToLatLng(this._startPoint),
-          this._map.containerPointToLatLng(this._point)
+          this._map.containerPointToLatLng(this._point),
         );
         this._map.fitBounds(i).fire("boxzoomend", { boxZoomBounds: i });
       }
@@ -6400,8 +6440,8 @@
       27 === t.keyCode && this._finish();
     },
   });
-  Le.addInitHook("addHandler", "boxZoom", Ln),
-    Le.mergeOptions({ doubleClickZoom: !0 });
+  (Le.addInitHook("addHandler", "boxZoom", Ln),
+    Le.mergeOptions({ doubleClickZoom: !0 }));
   var Pn = Ze.extend({
     addHooks: function () {
       this._map.on("dblclick", this._onDoubleClick, this);
@@ -6419,7 +6459,7 @@
         : i.setZoomAround(t.containerPoint, o);
     },
   });
-  Le.addInitHook("addHandler", "doubleClickZoom", Pn),
+  (Le.addInitHook("addHandler", "doubleClickZoom", Pn),
     Le.mergeOptions({
       dragging: !0,
       inertia: !zi,
@@ -6428,35 +6468,35 @@
       easeLinearity: 0.2,
       worldCopyJump: !1,
       maxBoundsViscosity: 0,
-    });
+    }));
   var bn = Ze.extend({
     addHooks: function () {
       if (!this._draggable) {
         var t = this._map;
-        (this._draggable = new Be(t._mapPane, t._container)),
+        ((this._draggable = new Be(t._mapPane, t._container)),
           this._draggable.on(
             {
               dragstart: this._onDragStart,
               drag: this._onDrag,
               dragend: this._onDragEnd,
             },
-            this
+            this,
           ),
           this._draggable.on("predrag", this._onPreDragLimit, this),
           t.options.worldCopyJump &&
             (this._draggable.on("predrag", this._onPreDragWrap, this),
             t.on("zoomend", this._onZoomEnd, this),
-            t.whenReady(this._onZoomEnd, this));
+            t.whenReady(this._onZoomEnd, this)));
       }
-      pt(this._map._container, "leaflet-grab leaflet-touch-drag"),
+      (pt(this._map._container, "leaflet-grab leaflet-touch-drag"),
         this._draggable.enable(),
         (this._positions = []),
-        (this._times = []);
+        (this._times = []));
     },
     removeHooks: function () {
-      mt(this._map._container, "leaflet-grab"),
+      (mt(this._map._container, "leaflet-grab"),
         mt(this._map._container, "leaflet-touch-drag"),
-        this._draggable.disable();
+        this._draggable.disable());
     },
     moved: function () {
       return this._draggable && this._draggable._moved;
@@ -6471,39 +6511,39 @@
         this._map.options.maxBounds && this._map.options.maxBoundsViscosity)
       ) {
         var i = z(this._map.options.maxBounds);
-        (this._offsetLimit = b(
+        ((this._offsetLimit = b(
           this._map.latLngToContainerPoint(i.getNorthWest()).multiplyBy(-1),
           this._map
             .latLngToContainerPoint(i.getSouthEast())
             .multiplyBy(-1)
-            .add(this._map.getSize())
+            .add(this._map.getSize()),
         )),
           (this._viscosity = Math.min(
             1,
-            Math.max(0, this._map.options.maxBoundsViscosity)
-          ));
+            Math.max(0, this._map.options.maxBoundsViscosity),
+          )));
       } else this._offsetLimit = null;
-      t.fire("movestart").fire("dragstart"),
-        t.options.inertia && ((this._positions = []), (this._times = []));
+      (t.fire("movestart").fire("dragstart"),
+        t.options.inertia && ((this._positions = []), (this._times = [])));
     },
     _onDrag: function (t) {
       if (this._map.options.inertia) {
         var i = (this._lastTime = +new Date()),
           e = (this._lastPos =
             this._draggable._absPos || this._draggable._newPos);
-        this._positions.push(e), this._times.push(i), this._prunePositions(i);
+        (this._positions.push(e), this._times.push(i), this._prunePositions(i));
       }
       this._map.fire("move", t).fire("drag", t);
     },
     _prunePositions: function (t) {
       for (; this._positions.length > 1 && t - this._times[0] > 50; )
-        this._positions.shift(), this._times.shift();
+        (this._positions.shift(), this._times.shift());
     },
     _onZoomEnd: function () {
       var t = this._map.getSize().divideBy(2),
         i = this._map.latLngToLayerPoint([0, 0]);
-      (this._initialWorldOffset = i.subtract(t).x),
-        (this._worldWidth = this._map.getPixelWorldBounds().getSize().x);
+      ((this._initialWorldOffset = i.subtract(t).x),
+        (this._worldWidth = this._map.getPixelWorldBounds().getSize().x));
     },
     _viscousLimit: function (t, i) {
       return t - (t - i) * this._viscosity;
@@ -6512,11 +6552,11 @@
       if (this._viscosity && this._offsetLimit) {
         var t = this._draggable._newPos.subtract(this._draggable._startPos),
           i = this._offsetLimit;
-        t.x < i.min.x && (t.x = this._viscousLimit(t.x, i.min.x)),
+        (t.x < i.min.x && (t.x = this._viscousLimit(t.x, i.min.x)),
           t.y < i.min.y && (t.y = this._viscousLimit(t.y, i.min.y)),
           t.x > i.max.x && (t.x = this._viscousLimit(t.x, i.max.x)),
           t.y > i.max.y && (t.y = this._viscousLimit(t.y, i.max.y)),
-          (this._draggable._newPos = this._draggable._startPos.add(t));
+          (this._draggable._newPos = this._draggable._startPos.add(t)));
       }
     },
     _onPreDragWrap: function () {
@@ -6527,8 +6567,8 @@
         o = ((n - i + e) % t) + i - e,
         s = ((n + i + e) % t) - i - e,
         r = Math.abs(o + e) < Math.abs(s + e) ? o : s;
-      (this._draggable._absPos = this._draggable._newPos.clone()),
-        (this._draggable._newPos.x = r);
+      ((this._draggable._absPos = this._draggable._newPos.clone()),
+        (this._draggable._newPos.x = r));
     },
     _onDragEnd: function (t) {
       var i = this._map,
@@ -6560,8 +6600,8 @@
       }
     },
   });
-  Le.addInitHook("addHandler", "dragging", bn),
-    Le.mergeOptions({ keyboard: !0, keyboardPanDelta: 80 });
+  (Le.addInitHook("addHandler", "dragging", bn),
+    Le.mergeOptions({ keyboard: !0, keyboardPanDelta: 80 }));
   var Tn = Ze.extend({
     keyCodes: {
       left: [37],
@@ -6572,13 +6612,13 @@
       zoomOut: [189, 109, 54, 173],
     },
     initialize: function (t) {
-      (this._map = t),
+      ((this._map = t),
         this._setPanDelta(t.options.keyboardPanDelta),
-        this._setZoomDelta(t.options.zoomDelta);
+        this._setZoomDelta(t.options.zoomDelta));
     },
     addHooks: function () {
       var t = this._map._container;
-      t.tabIndex <= 0 && (t.tabIndex = "0"),
+      (t.tabIndex <= 0 && (t.tabIndex = "0"),
         V(
           t,
           {
@@ -6586,12 +6626,12 @@
             blur: this._onBlur,
             mousedown: this._onMouseDown,
           },
-          this
+          this,
         ),
-        this._map.on({ focus: this._addHooks, blur: this._removeHooks }, this);
+        this._map.on({ focus: this._addHooks, blur: this._removeHooks }, this));
     },
     removeHooks: function () {
-      this._removeHooks(),
+      (this._removeHooks(),
         q(
           this._map._container,
           {
@@ -6599,9 +6639,12 @@
             blur: this._onBlur,
             mousedown: this._onMouseDown,
           },
-          this
+          this,
         ),
-        this._map.off({ focus: this._addHooks, blur: this._removeHooks }, this);
+        this._map.off(
+          { focus: this._addHooks, blur: this._removeHooks },
+          this,
+        ));
     },
     _onMouseDown: function () {
       if (!this._focused) {
@@ -6609,14 +6652,14 @@
           i = document.documentElement,
           e = t.scrollTop || i.scrollTop,
           n = t.scrollLeft || i.scrollLeft;
-        this._map._container.focus(), window.scrollTo(n, e);
+        (this._map._container.focus(), window.scrollTo(n, e));
       }
     },
     _onFocus: function () {
-      (this._focused = !0), this._map.fire("focus");
+      ((this._focused = !0), this._map.fire("focus"));
     },
     _onBlur: function () {
-      (this._focused = !1), this._map.fire("blur");
+      ((this._focused = !1), this._map.fire("blur"));
     },
     _setPanDelta: function (t) {
       var i,
@@ -6649,10 +6692,10 @@
           n = this._map;
         if (e in this._panKeys) {
           if (n._panAnim && n._panAnim._inProgress) return;
-          (i = this._panKeys[e]),
+          ((i = this._panKeys[e]),
             t.shiftKey && (i = w(i).multiplyBy(3)),
             n.panBy(i),
-            n.options.maxBounds && n.panInsideBounds(n.options.maxBounds);
+            n.options.maxBounds && n.panInsideBounds(n.options.maxBounds));
         } else if (e in this._zoomKeys)
           n.setZoom(n.getZoom() + (t.shiftKey ? 3 : 1) * this._zoomKeys[e]);
         else {
@@ -6664,16 +6707,16 @@
       }
     },
   });
-  Le.addInitHook("addHandler", "keyboard", Tn),
+  (Le.addInitHook("addHandler", "keyboard", Tn),
     Le.mergeOptions({
       scrollWheelZoom: !0,
       wheelDebounceTime: 40,
       wheelPxPerZoomLevel: 60,
-    });
+    }));
   var zn = Ze.extend({
     addHooks: function () {
-      V(this._map._container, "mousewheel", this._onWheelScroll, this),
-        (this._delta = 0);
+      (V(this._map._container, "mousewheel", this._onWheelScroll, this),
+        (this._delta = 0));
     },
     removeHooks: function () {
       q(this._map._container, "mousewheel", this._onWheelScroll, this);
@@ -6681,13 +6724,13 @@
     _onWheelScroll: function (t) {
       var i = it(t),
         n = this._map.options.wheelDebounceTime;
-      (this._delta += i),
+      ((this._delta += i),
         (this._lastMousePos = this._map.mouseEventToContainerPoint(t)),
-        this._startTime || (this._startTime = +new Date());
+        this._startTime || (this._startTime = +new Date()));
       var o = Math.max(n - (+new Date() - this._startTime), 0);
-      clearTimeout(this._timer),
+      (clearTimeout(this._timer),
         (this._timer = setTimeout(e(this._performZoom, this), o)),
-        Q(t);
+        Q(t));
     },
     _performZoom: function () {
       var t = this._map,
@@ -6698,16 +6741,16 @@
         o = (4 * Math.log(2 / (1 + Math.exp(-Math.abs(n))))) / Math.LN2,
         s = e ? Math.ceil(o / e) * e : o,
         r = t._limitZoom(i + (this._delta > 0 ? s : -s)) - i;
-      (this._delta = 0),
+      ((this._delta = 0),
         (this._startTime = null),
         r &&
           ("center" === t.options.scrollWheelZoom
             ? t.setZoom(i + r)
-            : t.setZoomAround(this._lastMousePos, i + r));
+            : t.setZoomAround(this._lastMousePos, i + r)));
     },
   });
-  Le.addInitHook("addHandler", "scrollWheelZoom", zn),
-    Le.mergeOptions({ tap: !0, tapTolerance: 15 });
+  (Le.addInitHook("addHandler", "scrollWheelZoom", zn),
+    Le.mergeOptions({ tap: !0, tapTolerance: 15 }));
   var Mn = Ze.extend({
     addHooks: function () {
       V(this._map._container, "touchstart", this._onDown, this);
@@ -6718,10 +6761,10 @@
     _onDown: function (t) {
       if (t.touches) {
         if (($(t), (this._fireClick = !0), t.touches.length > 1))
-          return (this._fireClick = !1), void clearTimeout(this._holdTimeout);
+          return ((this._fireClick = !1), void clearTimeout(this._holdTimeout));
         var i = t.touches[0],
           n = i.target;
-        (this._startPos = this._newPos = new x(i.clientX, i.clientY)),
+        ((this._startPos = this._newPos = new x(i.clientX, i.clientY)),
           n.tagName &&
             "a" === n.tagName.toLowerCase() &&
             pt(n, "leaflet-active"),
@@ -6732,10 +6775,10 @@
                 this._onUp(),
                 this._simulateEvent("contextmenu", i));
             }, this),
-            1e3
+            1e3,
           )),
           this._simulateEvent("mousedown", i),
-          V(document, { touchmove: this._onMove, touchend: this._onUp }, this);
+          V(document, { touchmove: this._onMove, touchend: this._onUp }, this));
       }
     },
     _onUp: function (t) {
@@ -6746,12 +6789,12 @@
       ) {
         var i = t.changedTouches[0],
           e = i.target;
-        e &&
+        (e &&
           e.tagName &&
           "a" === e.tagName.toLowerCase() &&
           mt(e, "leaflet-active"),
           this._simulateEvent("mouseup", i),
-          this._isTapValid() && this._simulateEvent("click", i);
+          this._isTapValid() && this._simulateEvent("click", i));
       }
     },
     _isTapValid: function () {
@@ -6762,12 +6805,12 @@
     },
     _onMove: function (t) {
       var i = t.touches[0];
-      (this._newPos = new x(i.clientX, i.clientY)),
-        this._simulateEvent("mousemove", i);
+      ((this._newPos = new x(i.clientX, i.clientY)),
+        this._simulateEvent("mousemove", i));
     },
     _simulateEvent: function (t, i) {
       var e = document.createEvent("MouseEvents");
-      (e._simulated = !0),
+      ((e._simulated = !0),
         (i.target._simulatedClick = !0),
         e.initMouseEvent(
           t,
@@ -6784,21 +6827,21 @@
           !1,
           !1,
           0,
-          null
+          null,
         ),
-        i.target.dispatchEvent(e);
+        i.target.dispatchEvent(e));
     },
   });
-  Vi && !Ui && Le.addInitHook("addHandler", "tap", Mn),
-    Le.mergeOptions({ touchZoom: Vi && !zi, bounceAtZoomLimits: !0 });
+  (Vi && !Ui && Le.addInitHook("addHandler", "tap", Mn),
+    Le.mergeOptions({ touchZoom: Vi && !zi, bounceAtZoomLimits: !0 }));
   var Cn = Ze.extend({
     addHooks: function () {
-      pt(this._map._container, "leaflet-touch-zoom"),
-        V(this._map._container, "touchstart", this._onTouchStart, this);
+      (pt(this._map._container, "leaflet-touch-zoom"),
+        V(this._map._container, "touchstart", this._onTouchStart, this));
     },
     removeHooks: function () {
-      mt(this._map._container, "leaflet-touch-zoom"),
-        q(this._map._container, "touchstart", this._onTouchStart, this);
+      (mt(this._map._container, "leaflet-touch-zoom"),
+        q(this._map._container, "touchstart", this._onTouchStart, this));
     },
     _onTouchStart: function (t) {
       var i = this._map;
@@ -6810,11 +6853,11 @@
       ) {
         var e = i.mouseEventToContainerPoint(t.touches[0]),
           n = i.mouseEventToContainerPoint(t.touches[1]);
-        (this._centerPoint = i.getSize()._divideBy(2)),
+        ((this._centerPoint = i.getSize()._divideBy(2)),
           (this._startLatLng = i.containerPointToLatLng(this._centerPoint)),
           "center" !== i.options.touchZoom &&
             (this._pinchStartLatLng = i.containerPointToLatLng(
-              e.add(n)._divideBy(2)
+              e.add(n)._divideBy(2),
             )),
           (this._startDist = e.distanceTo(n)),
           (this._startZoom = i.getZoom()),
@@ -6823,7 +6866,7 @@
           i._stop(),
           V(document, "touchmove", this._onTouchMove, this),
           V(document, "touchend", this._onTouchEnd, this),
-          $(t);
+          $(t));
       }
     },
     _onTouchMove: function (t) {
@@ -6846,16 +6889,16 @@
           if (1 === s && 0 === r.x && 0 === r.y) return;
           this._center = i.unproject(
             i.project(this._pinchStartLatLng, this._zoom).subtract(r),
-            this._zoom
+            this._zoom,
           );
         }
-        this._moved || (i._moveStart(!0, !1), (this._moved = !0)),
-          g(this._animRequest);
+        (this._moved || (i._moveStart(!0, !1), (this._moved = !0)),
+          g(this._animRequest));
         var a = e(i._move, i, this._center, this._zoom, {
           pinch: !0,
           round: !1,
         });
-        (this._animRequest = f(a, this, !0)), $(t);
+        ((this._animRequest = f(a, this, !0)), $(t));
       }
     },
     _onTouchEnd: function () {
@@ -6869,29 +6912,29 @@
                 this._center,
                 this._map._limitZoom(this._zoom),
                 !0,
-                this._map.options.zoomSnap
+                this._map.options.zoomSnap,
               )
             : this._map._resetView(
                 this._center,
-                this._map._limitZoom(this._zoom)
+                this._map._limitZoom(this._zoom),
               ))
         : (this._zooming = !1);
     },
   });
-  Le.addInitHook("addHandler", "touchZoom", Cn),
+  (Le.addInitHook("addHandler", "touchZoom", Cn),
     (Le.BoxZoom = Ln),
     (Le.DoubleClickZoom = Pn),
     (Le.Drag = bn),
     (Le.Keyboard = Tn),
     (Le.ScrollWheelZoom = zn),
     (Le.Tap = Mn),
-    (Le.TouchZoom = Cn);
+    (Le.TouchZoom = Cn));
   var Zn = window.L;
-  (window.L = t),
+  ((window.L = t),
     (Object.freeze = $t),
     (t.version = "1.3.1+HEAD.ba6f97f"),
     (t.noConflict = function () {
-      return (window.L = Zn), this;
+      return ((window.L = Zn), this);
     }),
     (t.Control = Pe),
     (t.control = be),
@@ -6999,5 +7042,5 @@
     (t.Map = Le),
     (t.map = function (t, i) {
       return new Le(t, i);
-    });
+    }));
 });
