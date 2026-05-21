@@ -326,7 +326,10 @@
   height: 0;
   background-color: #000;
   opacity: 0;
-  transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+  transition:
+    opacity 0.3s,
+    width 0s 0.3s,
+    height 0s 0.3s;
 }
 
 .slide-menu-wrapper .slide-menu-overlay.active {
