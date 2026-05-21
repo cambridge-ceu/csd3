@@ -61,7 +61,7 @@ const Plugin = () => {
             searchboxDirty = true;
         }
       },
-      false
+      false,
     );
 
     closeSearch();
@@ -116,7 +116,7 @@ const Plugin = () => {
       if (matchedSlides.length > currentMatchedIndex) {
         deck.slide(
           matchedSlides[currentMatchedIndex].h,
-          matchedSlides[currentMatchedIndex].v
+          matchedSlides[currentMatchedIndex].v,
         );
         currentMatchedIndex++;
       }
@@ -236,7 +236,7 @@ const Plugin = () => {
             toggleSearch();
           }
         },
-        false
+        false,
       );
     },
 
