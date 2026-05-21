@@ -44,7 +44,7 @@ codex --profile ollama-launch
 codex --profile ollama-cloud
 ```
 
-The [article](https://medium.com/google-cloud/i-ran-gemma-4-as-a-local-model-in-codex-cli-7fda754dc0d4) recommeneds use of Ollama 0.20.5, 
+The [article](https://medium.com/google-cloud/i-ran-gemma-4-as-a-local-model-in-codex-cli-7fda754dc0d4) recommeneds use of Ollama 0.20.5,
 
 ```bash
 ollama launch codex --config
@@ -64,4 +64,4 @@ llama-server \
 ```
 
 > The -np 1 limits to a single slot, because multiple slots multiply KV cache memory. The -ctk q8_0 -ctv q8_0 quantises the KV cache, reducing it from 940 MB to 499 MB. The --jinja flag is required for Gemma 4's tool-calling template. And -m with a direct path avoids the -hf flag, which silently downloads a 1.1 GB vision projector that causes an out-of-memory crash.
-> The Codex CLI config also needs web_search = "disabled", because Codex CLI sends a web_search_preview tool type that llama.cpp rejects. 
+> The Codex CLI config also needs web_search = "disabled", because Codex CLI sends a web_search_preview tool type that llama.cpp rejects.
