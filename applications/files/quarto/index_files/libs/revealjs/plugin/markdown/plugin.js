@@ -54,14 +54,14 @@ const Plugin = () => {
         new RegExp("\\n?\\t{" + leadingTabs + "}(.*)", "g"),
         function (m, p1) {
           return "\n" + p1;
-        }
+        },
       );
     } else if (leadingWs > 1) {
       text = text.replace(
         new RegExp("\\n? {" + leadingWs + "}(.*)", "g"),
         function (m, p1) {
           return "\n" + p1;
-        }
+        },
       );
     }
 
@@ -151,7 +151,7 @@ const Plugin = () => {
     const separatorRegex = new RegExp(
         options.separator +
           (options.verticalSeparator ? "|" + options.verticalSeparator : ""),
-        "mg"
+        "mg",
       ),
       horizontalSeparatorRegex = new RegExp(options.separator);
 
@@ -191,7 +191,7 @@ const Plugin = () => {
 
     // add the remaining slide
     (wasHorizontal ? sectionStack : sectionStack[sectionStack.length - 1]).push(
-      markdown.substring(lastIndex)
+      markdown.substring(lastIndex),
     );
 
     let markdownSections = "";
@@ -235,8 +235,8 @@ const Plugin = () => {
       [].slice
         .call(
           scope.querySelectorAll(
-            "section[data-markdown]:not([data-markdown-parsed])"
-          )
+            "section[data-markdown]:not([data-markdown-parsed])",
+          ),
         )
         .forEach(function (section, i) {
           if (section.getAttribute("data-markdown").length) {
@@ -247,10 +247,10 @@ const Plugin = () => {
                   section.outerHTML = slidify(xhr.responseText, {
                     separator: section.getAttribute("data-separator"),
                     verticalSeparator: section.getAttribute(
-                      "data-separator-vertical"
+                      "data-separator-vertical",
                     ),
                     notesSeparator: section.getAttribute(
-                      "data-separator-notes"
+                      "data-separator-notes",
                     ),
                     attributes: getForwardedAttributes(section),
                   });
@@ -268,14 +268,14 @@ const Plugin = () => {
                     "Check your browser's JavaScript console for more details." +
                     "<p>Remember that you need to serve the presentation HTML from a HTTP server.</p>" +
                     "</section>";
-                }
-              )
+                },
+              ),
             );
           } else {
             section.outerHTML = slidify(getMarkdownFromSlide(section), {
               separator: section.getAttribute("data-separator"),
               verticalSeparator: section.getAttribute(
-                "data-separator-vertical"
+                "data-separator-vertical",
               ),
               notesSeparator: section.getAttribute("data-separator-notes"),
               attributes: getForwardedAttributes(section),
@@ -319,7 +319,7 @@ const Plugin = () => {
           "Failed to get the Markdown file " +
             url +
             ". Make sure that the presentation and the file are served by a HTTP server and the file can be found there. " +
-            e
+            e,
         );
         resolve(xhr, url);
       }
@@ -339,7 +339,7 @@ const Plugin = () => {
     const markdownClassesInElementsRegex = new RegExp(separator, "mg");
     const markdownClassRegex = new RegExp(
       '([^"= ]+?)="([^"]+?)"|(data-[^"= ]+?)(?=[" ])',
-      "mg"
+      "mg",
     );
     let nodeValue = node.nodeValue;
     let matches, matchesClass;
@@ -370,7 +370,7 @@ const Plugin = () => {
     element,
     previousElement,
     separatorElementAttributes,
-    separatorSectionAttributes
+    separatorSectionAttributes,
   ) {
     if (
       element !== null &&
@@ -408,7 +408,7 @@ const Plugin = () => {
             childElement,
             previousParentElement,
             separatorElementAttributes,
-            separatorSectionAttributes
+            separatorSectionAttributes,
           );
         }
       }
@@ -419,7 +419,7 @@ const Plugin = () => {
         addAttributeInElement(
           element,
           previousElement,
-          separatorElementAttributes
+          separatorElementAttributes,
         ) === false
       ) {
         addAttributeInElement(element, section, separatorSectionAttributes);
@@ -452,7 +452,7 @@ const Plugin = () => {
           DEFAULT_ELEMENT_ATTRIBUTES_SEPARATOR,
         section.getAttribute("data-attributes") ||
           section.parentNode.getAttribute("data-attributes") ||
-          DEFAULT_SLIDE_ATTRIBUTES_SEPARATOR
+          DEFAULT_SLIDE_ATTRIBUTES_SEPARATOR,
       );
 
       // If there were notes, we need to re-add them after
@@ -499,7 +499,7 @@ const Plugin = () => {
           //                             highlights lines 1 (numbered as 25) and 4-8 (numbered as 28-32)
           if (CODE_LINE_NUMBER_REGEX.test(language)) {
             let lineNumberOffsetMatch = language.match(
-              CODE_LINE_NUMBER_REGEX
+              CODE_LINE_NUMBER_REGEX,
             )[2];
             if (lineNumberOffsetMatch) {
               lineNumberOffset = `data-ln-start-from="${lineNumberOffsetMatch.trim()}"`;
