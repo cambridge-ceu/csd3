@@ -21,7 +21,7 @@
           r,
           e,
           n,
-          t
+          t,
         );
       }
       return n[i].exports;
@@ -282,7 +282,7 @@
             case "L.Proj.CRS":
               if (crsOptions.options && crsOptions.options.bounds) {
                 crsOptions.options.bounds = _leaflet2["default"].bounds(
-                  crsOptions.options.bounds
+                  crsOptions.options.bounds,
                 );
               }
 
@@ -293,21 +293,21 @@
                   crsOptions.options.transformation[0],
                   crsOptions.options.transformation[1],
                   crsOptions.options.transformation[2],
-                  crsOptions.options.transformation[3]
+                  crsOptions.options.transformation[3],
                 );
               }
 
               crs = new _proj4leaflet2["default"].CRS(
                 crsOptions.code,
                 crsOptions.proj4def,
-                crsOptions.options
+                crsOptions.options,
               );
               break;
 
             case "L.Proj.CRS.TMS":
               if (crsOptions.options && crsOptions.options.bounds) {
                 crsOptions.options.bounds = _leaflet2["default"].bounds(
-                  crsOptions.options.bounds
+                  crsOptions.options.bounds,
                 );
               }
 
@@ -318,7 +318,7 @@
                   crsOptions.options.transformation[0],
                   crsOptions.options.transformation[1],
                   crsOptions.options.transformation[2],
-                  crsOptions.options.transformation[3]
+                  crsOptions.options.transformation[3],
                 );
               } // L.Proj.CRS.TMS is deprecated as of Leaflet 1.x, fall back to L.Proj.CRS
               //crs = new Proj4Leaflet.CRS.TMS(crsOptions.code, crsOptions.proj4def, crsOptions.projectedBounds, crsOptions.options);
@@ -326,7 +326,7 @@
               crs = new _proj4leaflet2["default"].CRS(
                 crsOptions.code,
                 crsOptions.proj4def,
-                crsOptions.options
+                crsOptions.options,
               );
               break;
           }
@@ -391,7 +391,7 @@
                 this.columns.forEach(function (column, i) {
                   _this.effectiveLength = Math.max(
                     _this.effectiveLength,
-                    column.length
+                    column.length,
                   );
                   _this.colindices[_this.colnames[i]] = i;
                 });
@@ -418,7 +418,7 @@
                   else
                     return (0, _util.recycle)(
                       this.columns[index],
-                      this.effectiveLength
+                      this.effectiveLength,
                     );
                 }
 
@@ -458,7 +458,7 @@
                     "Row argument was out of bounds: " +
                       row +
                       " > " +
-                      this.effectiveLength
+                      this.effectiveLength,
                   );
                 var colIndex = -1;
 
@@ -551,7 +551,7 @@
           if (this.options.textOnly) {
             _leaflet2["default"].DomUtil.addClass(
               this._container,
-              "leaflet-tooltip-text-only"
+              "leaflet-tooltip-text-only",
             );
           }
 
@@ -595,7 +595,7 @@
 
         _leaflet2["default"].TileLayer.prototype.initialize = function (
           urlTemplate,
-          options
+          options,
         ) {
           urlTemplate = upgrade_protocol(urlTemplate);
           originalLTileLayerInitialize.call(this, urlTemplate, options);
@@ -606,7 +606,7 @@
 
         _leaflet2["default"].TileLayer.WMS.prototype.initialize = function (
           urlTemplate,
-          options
+          options,
         ) {
           urlTemplate = upgrade_protocol(urlTemplate);
           originalLTileLayerWMSInitialize.call(this, urlTemplate, options);
@@ -630,10 +630,10 @@
           typeof global !== "undefined"
             ? global
             : typeof self !== "undefined"
-            ? self
-            : typeof window !== "undefined"
-            ? window
-            : {}
+              ? self
+              : typeof window !== "undefined"
+                ? window
+                : {},
         );
       },
       {},
@@ -654,10 +654,10 @@
           typeof global !== "undefined"
             ? global
             : typeof self !== "undefined"
-            ? self
-            : typeof window !== "undefined"
-            ? window
-            : {}
+              ? self
+              : typeof window !== "undefined"
+                ? window
+                : {},
         );
       },
       {},
@@ -678,10 +678,10 @@
           typeof global !== "undefined"
             ? global
             : typeof self !== "undefined"
-            ? self
-            : typeof window !== "undefined"
-            ? window
-            : {}
+              ? self
+              : typeof window !== "undefined"
+                ? window
+                : {},
         );
       },
       {},
@@ -702,10 +702,10 @@
           typeof global !== "undefined"
             ? global
             : typeof self !== "undefined"
-            ? self
-            : typeof window !== "undefined"
-            ? window
-            : {}
+              ? self
+              : typeof window !== "undefined"
+                ? window
+                : {},
         );
       },
       {},
@@ -726,10 +726,10 @@
           typeof global !== "undefined"
             ? global
             : typeof self !== "undefined"
-            ? self
-            : typeof window !== "undefined"
-            ? window
-            : {}
+              ? self
+              : typeof window !== "undefined"
+                ? window
+                : {},
         );
       },
       {},
@@ -847,7 +847,7 @@
                 x: e.originalEvent.screenX,
                 y: e.originalEvent.screenY,
               };
-            }
+            },
           );
           (0, _jquery2["default"])(document).on("mousemove", "*", function (e) {
             // Did the mouse really move?
@@ -877,7 +877,7 @@
                   y: null,
                 };
               }
-            }
+            },
           );
         }
 
@@ -960,7 +960,7 @@
 
                           _shiny2["default"].onInputChange(
                             map.id + "_groups",
-                            map.layerManager.getVisibleGroups()
+                            map.layerManager.getVisibleGroups(),
                           );
                         }, 100);
                       }
@@ -987,7 +987,7 @@
                   {
                     zoomToLimits: "always",
                   },
-                  data.options
+                  data.options,
                 );
 
                 if (!map.layerManager) {
@@ -1138,7 +1138,7 @@
                 if (methods[call.method]) methods[call.method].apply(map, args);
                 else (0, _util.log)("Unknown method " + call.method);
               }
-            }
+            },
           );
         }
       },
@@ -1245,7 +1245,7 @@
                     layerId,
                     group,
                     ctGroup,
-                    ctKey
+                    ctKey,
                   ) {
                     var _this = this;
 
@@ -1345,7 +1345,7 @@
 
                               _this._setVisibility(
                                 _layerInfo2,
-                                selectedKeys[_groupKeys[_i2]]
+                                selectedKeys[_groupKeys[_i2]],
                               );
                             }
                           }
@@ -1379,7 +1379,7 @@
 
                               _this._setOpacity(
                                 _layerInfo4,
-                                selectedKeys[_groupKeys2[_i4]] ? 1.0 : 0.2
+                                selectedKeys[_groupKeys2[_i4]] ? 1.0 : 0.2,
                               );
                             }
                           }
@@ -1412,45 +1412,47 @@
 
                     /* eslint-disable no-console */
                     // For each Crosstalk group...
-                    Object.keys(this._byCrosstalkGroup).forEach(function (
-                      ctGroupName
-                    ) {
-                      var ctg = _this2._byCrosstalkGroup[ctGroupName];
-                      var selection = []; // ...iterate over each Crosstalk key (each of which may have multiple
-                      // layers)...
+                    Object.keys(this._byCrosstalkGroup).forEach(
+                      function (ctGroupName) {
+                        var ctg = _this2._byCrosstalkGroup[ctGroupName];
+                        var selection = []; // ...iterate over each Crosstalk key (each of which may have multiple
+                        // layers)...
 
-                      Object.keys(ctg).forEach(function (ctKey) {
-                        // ...and for each layer...
-                        ctg[ctKey].forEach(function (stamp) {
-                          var layerInfo = _this2._byStamp[stamp]; // ...if it's something with a point...
+                        Object.keys(ctg).forEach(function (ctKey) {
+                          // ...and for each layer...
+                          ctg[ctKey].forEach(function (stamp) {
+                            var layerInfo = _this2._byStamp[stamp]; // ...if it's something with a point...
 
-                          if (layerInfo.layer.getLatLng) {
-                            // ... and it's inside the selection bounds...
-                            // TODO: Use pixel containment, not lat/lng containment
-                            if (bounds.contains(layerInfo.layer.getLatLng())) {
-                              // ...add the key to the selection.
-                              selection.push(ctKey);
+                            if (layerInfo.layer.getLatLng) {
+                              // ... and it's inside the selection bounds...
+                              // TODO: Use pixel containment, not lat/lng containment
+                              if (
+                                bounds.contains(layerInfo.layer.getLatLng())
+                              ) {
+                                // ...add the key to the selection.
+                                selection.push(ctKey);
+                              }
                             }
-                          }
+                          });
                         });
-                      });
-                      new global.crosstalk.SelectionHandle(ctGroupName).set(
-                        selection,
-                        extraInfo
-                      );
-                    });
+                        new global.crosstalk.SelectionHandle(ctGroupName).set(
+                          selection,
+                          extraInfo,
+                        );
+                      },
+                    );
                   },
                 },
                 {
                   key: "unbrush",
                   value: function unbrush(extraInfo) {
-                    Object.keys(this._byCrosstalkGroup).forEach(function (
-                      ctGroupName
-                    ) {
-                      new global.crosstalk.SelectionHandle(ctGroupName).clear(
-                        extraInfo
-                      );
-                    });
+                    Object.keys(this._byCrosstalkGroup).forEach(
+                      function (ctGroupName) {
+                        new global.crosstalk.SelectionHandle(ctGroupName).clear(
+                          extraInfo,
+                        );
+                      },
+                    );
                   },
                 },
                 {
@@ -1504,7 +1506,7 @@
                         if (layer) {
                           _this3._removeLayer(layer);
                         }
-                      }
+                      },
                     );
                   },
                 },
@@ -1567,7 +1569,7 @@
                         if (_this5._map.hasLayer(v)) {
                           result.push(k);
                         }
-                      }
+                      },
                     );
 
                     return result;
@@ -1582,7 +1584,7 @@
                       this._groupContainers,
                       function (k, v) {
                         result.push(k);
-                      }
+                      },
                     );
 
                     return result;
@@ -1627,14 +1629,14 @@
 
                     _jquery2["default"].each(
                       this._categoryContainers,
-                      clearLayerGroup
+                      clearLayerGroup,
                     );
 
                     this._categoryContainers = {};
 
                     _jquery2["default"].each(
                       this._groupContainers,
-                      clearLayerGroup
+                      clearLayerGroup,
                     );
 
                     this._groupContainers = {};
@@ -1705,10 +1707,10 @@
           typeof global !== "undefined"
             ? global
             : typeof self !== "undefined"
-            ? self
-            : typeof window !== "undefined"
-            ? window
-            : {}
+              ? self
+              : typeof window !== "undefined"
+                ? window
+                : {},
         );
       },
       { "./global/jquery": 9, "./global/leaflet": 10, "./util": 17 },
@@ -1793,12 +1795,12 @@
                       }
                     : null,
                   latLng,
-                  extraInfo
+                  extraInfo,
                 );
 
                 _shiny2["default"].onInputChange(
                   mapId + "_" + eventName,
-                  eventInfo
+                  eventInfo,
                 );
               };
             }
@@ -1812,7 +1814,7 @@
                 (0, _util.asArray)(group),
                 function (i, v) {
                   _this.layerManager.clearGroup(v);
-                }
+                },
               );
             };
 
@@ -1826,7 +1828,7 @@
                   [lat1, lng1],
                   [lat2, lng2],
                 ],
-                options
+                options,
               );
             };
 
@@ -1840,7 +1842,7 @@
                   [lat1, lng1],
                   [lat2, lng2],
                 ],
-                options
+                options,
               );
             };
 
@@ -1857,7 +1859,7 @@
               popup,
               layerId,
               group,
-              options
+              options,
             ) {
               var _this2 = this;
 
@@ -1886,7 +1888,7 @@
                       popup,
                       "popup",
                       thisId,
-                      thisGroup
+                      thisGroup,
                     );
                   }).call(_this2);
                 }
@@ -1910,7 +1912,7 @@
                 _leaflet2["default"].tileLayer(urlTemplate, options),
                 "tile",
                 layerId,
-                group
+                group,
               );
             };
 
@@ -1931,7 +1933,7 @@
                 _leaflet2["default"].tileLayer.wms(baseUrl, options),
                 "tile",
                 layerId,
-                group
+                group,
               );
             }; // Given:
             //   {data: ["a", "b", "c"], index: [0, 1, 0, 2]}
@@ -1960,21 +1962,21 @@
               group,
               clusterOptions,
               clusterId,
-              markerFunc
+              markerFunc,
             ) {
               (function () {
                 var _this3 = this;
 
                 var clusterGroup = this.layerManager.getLayer(
                     "cluster",
-                    clusterId
+                    clusterId,
                   ),
                   cluster = clusterOptions !== null;
 
                 if (cluster && !clusterGroup) {
                   clusterGroup =
                     _leaflet2["default"].markerClusterGroup.layerSupport(
-                      clusterOptions
+                      clusterOptions,
                     );
 
                   if (clusterOptions.freezeAtZoom) {
@@ -2013,7 +2015,7 @@
                           thisId,
                           thisGroup,
                           df.get(i, "ctGroup", true),
-                          df.get(i, "ctKey", true)
+                          df.get(i, "ctKey", true),
                         );
                       }
 
@@ -2052,9 +2054,9 @@
                           thisId,
                           thisGroup,
                           "marker_click",
-                          extraInfo
+                          extraInfo,
                         ),
-                        this
+                        this,
                       );
                       marker.on(
                         "mouseover",
@@ -2063,9 +2065,9 @@
                           thisId,
                           thisGroup,
                           "marker_mouseover",
-                          extraInfo
+                          extraInfo,
                         ),
-                        this
+                        this,
                       );
                       marker.on(
                         "mouseout",
@@ -2074,9 +2076,9 @@
                           thisId,
                           thisGroup,
                           "marker_mouseout",
-                          extraInfo
+                          extraInfo,
                         ),
-                        this
+                        this,
                       );
                       marker.on(
                         "dragend",
@@ -2085,9 +2087,9 @@
                           thisId,
                           thisGroup,
                           "marker_dragend",
-                          extraInfo
+                          extraInfo,
                         ),
-                        this
+                        this,
                       );
                     }).call(_this3);
                   }
@@ -2102,7 +2104,7 @@
                     clusterGroup,
                     "cluster",
                     clusterId,
-                    group
+                    group,
                   );
                 }
               }).call(map);
@@ -2123,7 +2125,7 @@
               clusterId,
               label,
               labelOptions,
-              crosstalkOptions
+              crosstalkOptions,
             ) {
               var icondf;
               var getIcon;
@@ -2205,9 +2207,9 @@
                     if (icon) options.icon = getIcon(i);
                     return _leaflet2["default"].marker(
                       [df.get(i, "lat"), df.get(i, "lng")],
-                      options
+                      options,
                     );
-                  }
+                  },
                 );
               }
             };
@@ -2225,7 +2227,7 @@
               clusterId,
               label,
               labelOptions,
-              crosstalkOptions
+              crosstalkOptions,
             ) {
               var icondf;
               var getIcon;
@@ -2281,9 +2283,9 @@
                     if (icon) options.icon = getIcon(i);
                     return _leaflet2["default"].marker(
                       [df.get(i, "lat"), df.get(i, "lng")],
-                      options
+                      options,
                     );
-                  }
+                  },
                 );
               }
             };
@@ -2302,7 +2304,7 @@
                       thisId,
                       thisGroup,
                       df.get(i, "ctGroup", true),
-                      df.get(i, "ctKey", true)
+                      df.get(i, "ctKey", true),
                     );
 
                     if (layer.bindPopup) {
@@ -2337,9 +2339,9 @@
                         this.id,
                         thisId,
                         thisGroup,
-                        category + "_click"
+                        category + "_click",
                       ),
-                      this
+                      this,
                     );
                     layer.on(
                       "mouseover",
@@ -2347,9 +2349,9 @@
                         this.id,
                         thisId,
                         thisGroup,
-                        category + "_mouseover"
+                        category + "_mouseover",
                       ),
-                      this
+                      this,
                     );
                     layer.on(
                       "mouseout",
@@ -2357,9 +2359,9 @@
                         this.id,
                         thisId,
                         thisGroup,
-                        category + "_mouseout"
+                        category + "_mouseout",
                       ),
-                      this
+                      this,
                     );
                     var highlightStyle = df.get(i, "highlightOptions");
 
@@ -2412,7 +2414,7 @@
               label,
               labelOptions,
               highlightOptions,
-              crosstalkOptions
+              crosstalkOptions,
             ) {
               if (
                 !(
@@ -2444,7 +2446,7 @@
                     return _leaflet2["default"].circle(
                       [df.get(i, "lat"), df.get(i, "lng")],
                       df.get(i, "radius"),
-                      df.get(i)
+                      df.get(i),
                     );
                   } else {
                     return null;
@@ -2466,7 +2468,7 @@
               popupOptions,
               label,
               labelOptions,
-              crosstalkOptions
+              crosstalkOptions,
             ) {
               if (
                 !(
@@ -2497,9 +2499,9 @@
                   function (df, i) {
                     return _leaflet2["default"].circleMarker(
                       [df.get(i, "lat"), df.get(i, "lng")],
-                      df.get(i)
+                      df.get(i),
                     );
-                  }
+                  },
                 );
               }
             };
@@ -2517,7 +2519,7 @@
               popupOptions,
               label,
               labelOptions,
-              highlightOptions
+              highlightOptions,
             ) {
               if (polygons.length > 0) {
                 var df = new _dataframe2["default"]()
@@ -2587,7 +2589,7 @@
               popupOptions,
               label,
               labelOptions,
-              highlightOptions
+              highlightOptions,
             ) {
               var df = new _dataframe2["default"]()
                 .col("lat1", lat1)
@@ -2614,7 +2616,7 @@
                       [df.get(i, "lat1"), df.get(i, "lng1")],
                       [df.get(i, "lat2"), df.get(i, "lng2")],
                     ],
-                    df.get(i)
+                    df.get(i),
                   );
                 } else {
                   return null;
@@ -2635,7 +2637,7 @@
               popupOptions,
               label,
               labelOptions,
-              highlightOptions
+              highlightOptions,
             ) {
               if (polygons.length > 0) {
                 var df = new _dataframe2["default"]()
@@ -2658,7 +2660,7 @@
                     .get(i, "shapes")
                     .map(function (polygon) {
                       return polygon.map(
-                        _htmlwidgets2["default"].dataframeToD3
+                        _htmlwidgets2["default"].dataframeToD3,
                       );
                     })
                     .reduce(function (acc, val) {
@@ -2681,7 +2683,7 @@
               var globalStyle = _jquery2["default"].extend(
                 {},
                 style,
-                data.style || {}
+                data.style || {},
               );
 
               var gjlayer = _leaflet2["default"].geoJson(data, {
@@ -2691,7 +2693,7 @@
                       {},
                       globalStyle,
                       feature.style,
-                      feature.properties.style
+                      feature.properties.style,
                     );
                   } else {
                     return globalStyle;
@@ -2714,9 +2716,9 @@
                       layerId,
                       group,
                       "geojson_click",
-                      extraInfo
+                      extraInfo,
                     ),
-                    this
+                    this,
                   );
                   layer.on(
                     "mouseover",
@@ -2725,9 +2727,9 @@
                       layerId,
                       group,
                       "geojson_mouseover",
-                      extraInfo
+                      extraInfo,
                     ),
-                    this
+                    this,
                   );
                   layer.on(
                     "mouseout",
@@ -2736,9 +2738,9 @@
                       layerId,
                       group,
                       "geojson_mouseout",
-                      extraInfo
+                      extraInfo,
                     ),
-                    this
+                    this,
                   );
                 },
               });
@@ -2766,7 +2768,7 @@
               var globalStyle = _jquery2["default"].extend(
                 {},
                 style,
-                data.style || {}
+                data.style || {},
               );
 
               var gjlayer = _leaflet2["default"].geoJson(null, {
@@ -2776,7 +2778,7 @@
                       {},
                       globalStyle,
                       feature.style,
-                      feature.properties.style
+                      feature.properties.style,
                     );
                   } else {
                     return globalStyle;
@@ -2797,9 +2799,9 @@
                       layerId,
                       group,
                       "topojson_click",
-                      extraInfo
+                      extraInfo,
                     ),
-                    this
+                    this,
                   );
                   layer.on(
                     "mouseover",
@@ -2808,9 +2810,9 @@
                       layerId,
                       group,
                       "topojson_mouseover",
-                      extraInfo
+                      extraInfo,
                     ),
-                    this
+                    this,
                   );
                   layer.on(
                     "mouseout",
@@ -2819,9 +2821,9 @@
                       layerId,
                       group,
                       "topojson_mouseout",
-                      extraInfo
+                      extraInfo,
                     ),
-                    this
+                    this,
                   );
                 },
               });
@@ -2908,7 +2910,7 @@
               legend.onAdd = function (map) {
                 var div = _leaflet2["default"].DomUtil.create(
                     "div",
-                    options.className
+                    options.className,
                   ),
                   colors = options.colors,
                   labels = options.labels,
@@ -2950,11 +2952,11 @@
                   });
                   var leftDiv = (0, _jquery2["default"])("<div/>").css(
                       "float",
-                      "left"
+                      "left",
                     ),
                     rightDiv = (0, _jquery2["default"])("<div/>").css(
                       "float",
-                      "left"
+                      "left",
                     );
                   leftDiv.append(gradSpan);
                   (0, _jquery2["default"])(div)
@@ -2970,7 +2972,7 @@
                   var g = document.createElementNS(ns, "g");
                   (0, _jquery2["default"])(g).attr(
                     "transform",
-                    "translate(0, " + vMargin + ")"
+                    "translate(0, " + vMargin + ")",
                   );
                   svg.appendChild(g); // max label width needed to set width of svg, and right-justify text
 
@@ -2987,7 +2989,7 @@
                     g.appendChild(thisLabel);
                     maxLblWidth = Math.max(
                       maxLblWidth,
-                      thisLabel.getComputedTextLength()
+                      thisLabel.getComputedTextLength(),
                     );
                     var thisTick = document.createElementNS(ns, "line");
                     (0, _jquery2["default"])(thisTick)
@@ -3024,7 +3026,7 @@
                         "px" +
                         ';"></i>' +
                         options.na_label +
-                        "</div>"
+                        "</div>",
                     );
                   }
                 } else {
@@ -3054,7 +3056,7 @@
                   (0, _jquery2["default"])(div).prepend(
                     '<div style="margin-bottom:3px"><strong>' +
                       options.title +
-                      "</strong></div>"
+                      "</strong></div>",
                   );
                 return div;
               };
@@ -3094,7 +3096,7 @@
             methods.addLayersControl = function (
               baseGroups,
               overlayGroups,
-              options
+              options,
             ) {
               var _this4 = this;
 
@@ -3119,7 +3121,7 @@
                       }
                     }
                   }
-                }
+                },
               );
 
               var overlay = {};
@@ -3132,13 +3134,13 @@
                   if (layer) {
                     overlay[g] = layer;
                   }
-                }
+                },
               );
 
               this.currentLayersControl = _leaflet2["default"].control.layers(
                 base,
                 overlay,
-                options
+                options,
               );
               this.addControl(this.currentLayersControl);
             };
@@ -3179,7 +3181,7 @@
                   if (layer) {
                     _this5.removeLayer(layer);
                   }
-                }
+                },
               );
             };
 
@@ -3194,7 +3196,7 @@
                   if (layer) {
                     _this6.addLayer(layer);
                   }
-                }
+                },
               );
             };
 
@@ -3234,7 +3236,7 @@
                       layer,
                       layer.zoomLevels === true ||
                         layer.zoomLevels.indexOf(zoom) >= 0,
-                      group
+                      group,
                     );
                   }
                 });
@@ -3258,7 +3260,7 @@
                   ) {
                     layer.zoomLevels = (0, _util.asArray)(options.zoomLevels);
                   }
-                }
+                },
               );
 
               setupShowHideGroupsOnZoom(this);
@@ -3270,7 +3272,7 @@
               bounds,
               layerId,
               group,
-              options
+              options,
             ) {
               // uri is a data URI containing an image. We want to paint this image as a
               // layer at (top-left) bounds[0] to (bottom-right) bounds[1].
@@ -3312,7 +3314,7 @@
                 to,
                 x,
                 /* optional */
-                x1
+                x1,
               ) {
                 if (arguments.length == 3) x1 = x;
                 return x < to && x1 >= from;
@@ -3407,7 +3409,7 @@
                 Object.assign({}, options, {
                   detectRetina: true,
                   async: true,
-                })
+                }),
               ); // NOTE: The done() function MUST NOT be invoked until after the current
               // tick; done() looks in Leaflet's tile cache for the current tile, and
               // since it's still being constructed, it won't be found.
@@ -3433,7 +3435,7 @@
                     var bottomRight = degree2tile(
                       bounds[1][0],
                       bounds[1][1],
-                      zoom
+                      zoom,
                     ); // The size of the image in x/y tile coordinates.
 
                     var extent = {
@@ -3446,7 +3448,7 @@
                         tilePoint.x,
                         tilePoint.x + 1,
                         topLeft.x,
-                        bottomRight.x
+                        bottomRight.x,
                       )
                     )
                       return;
@@ -3455,7 +3457,7 @@
                         tilePoint.y,
                         tilePoint.y + 1,
                         topLeft.y,
-                        bottomRight.y
+                        bottomRight.y,
                       )
                     )
                       return; // The linear resolution of the tile we're drawing is always 256px per tile unit.
@@ -3509,9 +3511,9 @@
                             (topLeft.y - tilePoint.y) * 256, // Always draw the whole thing and let canvas clip; so we can just
                             // convert from size in tile coords straight to pixels
                             extent.x * 256,
-                            extent.y * 256
+                            extent.y * 256,
                           );
-                        }
+                        },
                       );
                     } else {
                       // Use manual nearest-neighbor interpolation
@@ -3522,21 +3524,21 @@
                       var sourceStart = {
                         x: Math.max(
                           0,
-                          Math.floor((tilePoint.x - topLeft.x) * imgRes.x)
+                          Math.floor((tilePoint.x - topLeft.x) * imgRes.x),
                         ),
                         y: Math.max(
                           0,
-                          Math.floor((tilePoint.y - topLeft.y) * imgRes.y)
+                          Math.floor((tilePoint.y - topLeft.y) * imgRes.y),
                         ),
                       };
                       var sourceEnd = {
                         x: Math.min(
                           w,
-                          Math.ceil((tilePoint.x + 1 - topLeft.x) * imgRes.x)
+                          Math.ceil((tilePoint.x + 1 - topLeft.x) * imgRes.x),
                         ),
                         y: Math.min(
                           h,
-                          Math.ceil((tilePoint.y + 1 - topLeft.y) * imgRes.y)
+                          Math.ceil((tilePoint.y + 1 - topLeft.y) * imgRes.y),
                         ),
                       }; // The size, in dest pixels, that each source pixel should occupy.
                       // This might be greater or less than 1 (e.g. if x and y resolution
@@ -3579,7 +3581,7 @@
                             Math.round(pixelPos.x + pixelSize.x) -
                               Math.round(pixelPos.x),
                             Math.round(pixelPos.y + pixelSize.y) -
-                              Math.round(pixelPos.y)
+                              Math.round(pixelPos.y),
                           );
                         }
                       }
@@ -3654,7 +3656,7 @@
                             _this8._locationFilter.getBounds(),
                             {
                               sender: selectionHandle,
-                            }
+                            },
                           );
                         };
 
@@ -3710,10 +3712,10 @@
           typeof global !== "undefined"
             ? global
             : typeof self !== "undefined"
-            ? self
-            : typeof window !== "undefined"
-            ? window
-            : {}
+              ? self
+              : typeof window !== "undefined"
+                ? window
+                : {},
         );
       },
       {
@@ -3852,7 +3854,7 @@
                     0,
                     0,
                     img.width / 2,
-                    img.height / 2
+                    img.height / 2,
                   );
                   callback(imgDataCanvas);
                 } finally {
@@ -3892,7 +3894,7 @@
           if (!(values instanceof Array)) {
             if (inPlace) {
               throw new Error(
-                "Can't do in-place recycling of a non-Array value"
+                "Can't do in-place recycling of a non-Array value",
               );
             }
 
@@ -3923,5 +3925,5 @@
     ],
   },
   {},
-  [13]
+  [13],
 );
