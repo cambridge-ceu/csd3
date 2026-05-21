@@ -2,20 +2,20 @@
   "object" == typeof exports && "undefined" != typeof module
     ? (module.exports = t())
     : "function" == typeof define && define.amd
-    ? define(t)
-    : ((e = e || self).RevealMenu = t());
+      ? define(t)
+      : ((e = e || self).RevealMenu = t());
 })(this, function () {
   "use strict";
   var e =
     "undefined" != typeof globalThis
       ? globalThis
       : "undefined" != typeof window
-      ? window
-      : "undefined" != typeof global
-      ? global
-      : "undefined" != typeof self
-      ? self
-      : {};
+        ? window
+        : "undefined" != typeof global
+          ? global
+          : "undefined" != typeof self
+            ? self
+            : {};
   function t(e, t, n) {
     return (
       e(
@@ -25,12 +25,12 @@
           require: function (e, t) {
             return (function () {
               throw new Error(
-                "Dynamic requires are not currently supported by @rollup/plugin-commonjs"
+                "Dynamic requires are not currently supported by @rollup/plugin-commonjs",
               );
             })(null == t && n.path);
           },
         }),
-        n.exports
+        n.exports,
       ),
       n.exports
     );
@@ -130,7 +130,7 @@
               get: function () {
                 return 7;
               },
-            }
+            },
           ).a
         );
         var e;
@@ -162,7 +162,7 @@
               } catch (e) {}
             if ("get" in n || "set" in n)
               throw TypeError("Accessors not supported");
-            return "value" in n && (e[t] = n.value), e;
+            return ("value" in n && (e[t] = n.value), e);
           },
     },
     A = a
@@ -170,7 +170,7 @@
           return O.f(e, t, c(1, n));
         }
       : function (e, t, n) {
-          return (e[t] = n), e;
+          return ((e[t] = n), e);
         },
     k = function (e, t) {
       try {
@@ -220,27 +220,27 @@
       K = V.get,
       z = V.has,
       X = V.set;
-    (M = function (e, t) {
-      return X.call(V, e, t), t;
+    ((M = function (e, t) {
+      return (X.call(V, e, t), t);
     }),
       (R = function (e) {
         return K.call(V, e) || {};
       }),
       (j = function (e) {
         return z.call(V, e);
-      });
+      }));
   } else {
     var Y = q[(N = "state")] || (q[N] = D(N));
-    (B[Y] = !0),
+    ((B[Y] = !0),
       (M = function (e, t) {
-        return A(e, Y, t), t;
+        return (A(e, Y, t), t);
       }),
       (R = function (e) {
         return b(e, Y) ? e[Y] : {};
       }),
       (j = function (e) {
         return b(e, Y);
-      });
+      }));
   }
   var J = {
       set: M,
@@ -266,15 +266,15 @@
         var s = !!o && !!o.unsafe,
           l = !!o && !!o.enumerable,
           c = !!o && !!o.noTargetGet;
-        "function" == typeof a &&
+        ("function" == typeof a &&
           ("string" != typeof t || b(a, "name") || A(a, "name", t),
           (n(a).source = i.join("string" == typeof t ? t : ""))),
           e !== r
             ? (s ? !c && e[t] && (l = !0) : delete e[t],
               l ? (e[t] = a) : A(e, t, a))
             : l
-            ? (e[t] = a)
-            : k(t, a);
+              ? (e[t] = a)
+              : k(t, a));
       })(Function.prototype, "toString", function () {
         return ("function" == typeof this && t(this).source) || _(this);
       });
@@ -390,7 +390,7 @@
             if (typeof o == typeof a) continue;
             ge(o, a);
           }
-          (e.sham || (a && a.sham)) && A(o, "sham", !0), Z(n, i, o, e);
+          ((e.sham || (a && a.sham)) && A(o, "sham", !0), Z(n, i, o, e));
         }
     },
     Oe = function (e) {
@@ -516,7 +516,7 @@
               function () {
                 throw 1;
               },
-            1
+            1,
           );
         })
       );
@@ -538,8 +538,8 @@
         !i(function () {
           if (r && !a) return !0;
           var e = { length: -1 };
-          r ? De(e, 1, { enumerable: !0, get: Be }) : (e[1] = 1),
-            n.call(e, o, s);
+          (r ? De(e, 1, { enumerable: !0, get: Be }) : (e[1] = 1),
+            n.call(e, o, s));
         }));
     },
     Ve = Ue.every,
@@ -551,7 +551,7 @@
       every: function (e) {
         return Ve(this, e, arguments.length > 1 ? arguments[1] : void 0);
       },
-    }
+    },
   );
   var Xe,
     Ye,
@@ -590,7 +590,7 @@
       filter: function (e) {
         return it(this, e, arguments.length > 1 ? arguments[1] : void 0);
       },
-    }
+    },
   );
   var st = Ue.forEach,
     lt = $e("forEach"),
@@ -607,7 +607,7 @@
     pt = !!dt && 1 / [1].indexOf(1, -0) < 0,
     ht = $e("indexOf"),
     mt = Ge("indexOf", { ACCESSORS: !0, 1: 0 });
-  Ce(
+  (Ce(
     { target: "Array", proto: !0, forced: pt || !ht || !mt },
     {
       indexOf: function (e) {
@@ -615,9 +615,9 @@
           ? dt.apply(this, arguments) || 0
           : ft(this, e, arguments.length > 1 ? arguments[1] : void 0);
       },
-    }
+    },
   ),
-    Ce({ target: "Array", stat: !0 }, { isArray: ke });
+    Ce({ target: "Array", stat: !0 }, { isArray: ke }));
   var vt = [].join,
     gt = p != Object,
     yt = $e("join", ",");
@@ -627,7 +627,7 @@
       join: function (e) {
         return vt.call(m(this), void 0 === e ? "," : e);
       },
-    }
+    },
   );
   var bt = Math.min,
     St = [].lastIndexOf,
@@ -653,7 +653,7 @@
         : St;
   Ce(
     { target: "Array", proto: !0, forced: Lt !== [].lastIndexOf },
-    { lastIndexOf: Lt }
+    { lastIndexOf: Lt },
   );
   var Tt = Ue.map,
     Ct = rt("map"),
@@ -664,7 +664,7 @@
       map: function (e) {
         return Tt(this, e, arguments.length > 1 ? arguments[1] : void 0);
       },
-    }
+    },
   );
   var At = function (e, t, n) {
       var r = g(t);
@@ -701,9 +701,9 @@
           s++, i++
         )
           s in a && At(r, i, a[s]);
-        return (r.length = i), r;
+        return ((r.length = i), r);
       },
-    }
+    },
   );
   var jt = O.f,
     Nt = Function.prototype,
@@ -746,7 +746,7 @@
         return !Object.getOwnPropertyNames(1);
       }),
     },
-    { getOwnPropertyNames: $t }
+    { getOwnPropertyNames: $t },
   );
   var Dt = "\t\n\v\f\r                　\u2028\u2029\ufeff",
     qt = "[" + Dt + "]",
@@ -756,7 +756,9 @@
       return function (t) {
         var n = String(h(t));
         return (
-          1 & e && (n = n.replace(Bt, "")), 2 & e && (n = n.replace(Gt, "")), n
+          1 & e && (n = n.replace(Bt, "")),
+          2 & e && (n = n.replace(Gt, "")),
+          n
         );
       };
     },
@@ -804,11 +806,11 @@
     on = {
       UNSUPPORTED_Y: i(function () {
         var e = nn("a", "y");
-        return (e.lastIndex = 2), null != e.exec("abcd");
+        return ((e.lastIndex = 2), null != e.exec("abcd"));
       }),
       BROKEN_CARET: i(function () {
         var e = nn("^r", "gy");
-        return (e.lastIndex = 2), null != e.exec("str");
+        return ((e.lastIndex = 2), null != e.exec("str"));
       }),
     },
     sn = RegExp.prototype.exec,
@@ -883,7 +885,7 @@
         "/./"[e](t);
       } catch (n) {
         try {
-          return (t[yn] = !1), "/./"[e](t);
+          return ((t[yn] = !1), "/./"[e](t));
         } catch (e) {}
       }
       return !1;
@@ -911,7 +913,7 @@
           a = String(e);
         return En ? En.call(t, a, i) : t.slice(i - a.length, i) === a;
       },
-    }
+    },
   );
   var Ln = Ne("species"),
     Tn = !i(function () {
@@ -919,7 +921,7 @@
       return (
         (e.exec = function () {
           var e = [];
-          return (e.groups = { a: "7" }), e;
+          return ((e.groups = { a: "7" }), e);
         }),
         "7" !== "".replace(e, "$<a>")
       );
@@ -961,7 +963,7 @@
                 (n.flags = ""),
                 (n[a] = /./[a])),
               (n.exec = function () {
-                return (t = !0), null;
+                return ((t = !0), null);
               }),
               n[a](""),
               !t
@@ -987,11 +989,11 @@
             {
               REPLACE_KEEPS_$0: Cn,
               REGEXP_REPLACE_SUBSTITUTES_UNDEFINED_CAPTURE: An,
-            }
+            },
           ),
           u = c[0],
           f = c[1];
-        Z(String.prototype, e, u),
+        (Z(String.prototype, e, u),
           Z(
             RegExp.prototype,
             a,
@@ -1001,8 +1003,8 @@
                 }
               : function (e) {
                   return f.call(e, this);
-                }
-          );
+                },
+          ));
       }
       r && A(RegExp.prototype[a], "sham", !0);
     },
@@ -1018,16 +1020,16 @@
             ? ""
             : void 0
           : (r = a.charCodeAt(o)) < 55296 ||
-            r > 56319 ||
-            o + 1 === s ||
-            (i = a.charCodeAt(o + 1)) < 56320 ||
-            i > 57343
-          ? e
-            ? a.charAt(o)
-            : r
-          : e
-          ? a.slice(o, o + 2)
-          : i - 56320 + ((r - 55296) << 10) + 65536;
+              r > 56319 ||
+              o + 1 === s ||
+              (i = a.charCodeAt(o + 1)) < 56320 ||
+              i > 57343
+            ? e
+              ? a.charAt(o)
+              : r
+            : e
+              ? a.slice(o, o + 2)
+              : i - 56320 + ((r - 55296) << 10) + 65536;
       };
     },
     Mn = { codeAt: Pn(!1), charAt: Pn(!0) }.charAt,
@@ -1040,7 +1042,7 @@
         var r = n.call(e, t);
         if ("object" != typeof r)
           throw TypeError(
-            "RegExp exec method returned something other than an Object or null"
+            "RegExp exec method returned something other than an Object or null",
           );
         return r;
       }
@@ -1133,10 +1135,10 @@
                 return 0 === f
                   ? t
                   : f <= l
-                  ? void 0 === i[f - 1]
-                    ? o.charAt(1)
-                    : i[f - 1] + o.charAt(1)
-                  : t;
+                    ? void 0 === i[f - 1]
+                      ? o.charAt(1)
+                      : i[f - 1] + o.charAt(1)
+                    : t;
               }
               c = i[u - 1];
           }
@@ -1166,7 +1168,8 @@
         Un(o, 0) || (i.lastIndex = 0);
         var s = jn(i, a);
         return (
-          Un(i.lastIndex, o) || (i.lastIndex = o), null === s ? -1 : s.index
+          Un(i.lastIndex, o) || (i.lastIndex = o),
+          null === s ? -1 : s.index
         );
       },
     ];
@@ -1219,7 +1222,6 @@
                     (u = o),
                     l.length >= i)
                   );
-
                 )
                   f.lastIndex === a.index && f.lastIndex++;
                 return (
@@ -1230,10 +1232,10 @@
                 );
               }
             : "0".split(void 0, 0).length
-            ? function (e, n) {
-                return void 0 === e && 0 === n ? [] : t.call(this, e, n);
-              }
-            : t),
+              ? function (e, n) {
+                  return void 0 === e && 0 === n ? [] : t.call(this, e, n);
+                }
+              : t),
         [
           function (t, n) {
             var i = h(this),
@@ -1276,12 +1278,12 @@
                 h = p = v;
               }
             }
-            return m.push(s.slice(p)), m;
+            return (m.push(s.slice(p)), m);
           },
         ]
       );
     },
-    !Bn
+    !Bn,
   );
   var Gn = L.f,
     Vn = "".startsWith,
@@ -1308,7 +1310,7 @@
           r = String(e);
         return Vn ? Vn.call(t, r, n) : t.slice(n, n + r.length) === r;
       },
-    }
+    },
   );
   var Xn,
     Yn = Kt.trim;
@@ -1326,7 +1328,7 @@
       trim: function () {
         return Yn(this);
       },
-    }
+    },
   );
   for (var Jn in {
     CSSRuleList: 0,
@@ -1381,13 +1383,13 @@
                 ("function" == typeof t ? t : Function(t)).apply(this, i);
               }
             : t,
-          n
+          n,
         );
       };
     };
   Ce(
     { global: !0, bind: !0, forced: /MSIE .\./.test(Je) },
-    { setTimeout: tr(r.setTimeout), setInterval: tr(r.setInterval) }
+    { setTimeout: tr(r.setTimeout), setInterval: tr(r.setInterval) },
   );
   return (
     String.prototype.startsWith ||
@@ -1408,13 +1410,13 @@
         r,
         i =
           (e = /(msie) ([\w.]+)/.exec(
-            window.navigator.userAgent.toLowerCase()
+            window.navigator.userAgent.toLowerCase(),
           )) && "msie" === e[1]
             ? parseFloat(e[2])
             : null,
         a = !1;
       function o(e) {
-        ((r = e.menu || {}).path =
+        (((r = e.menu || {}).path =
           r.path ||
           (function () {
             var e;
@@ -1433,7 +1435,7 @@
                   ? new (require("url").URL)("file:" + __filename).href
                   : (document.currentScript && document.currentScript.src) ||
                     new URL("menu.js", document.baseURI).href
-                ).lastIndexOf("/") + 1
+                ).lastIndexOf("/") + 1,
               );
             return e;
           })() ||
@@ -1481,7 +1483,7 @@
                   return "string" == typeof e;
                 })) ||
               (console.error(
-                "reveal.js-menu error: transitions config value must be 'true' or an array of strings, eg ['None', 'Fade', 'Slide')"
+                "reveal.js-menu error: transitions config value must be 'true' or an array of strings, eg ['None', 'Fade', 'Slide')",
               ),
               (r.transitions = !1)),
           i && i <= 9 && (r.transitions = !1),
@@ -1491,7 +1493,7 @@
           void 0 === r.sticky && (r.sticky = !1),
           void 0 === r.autoOpen && (r.autoOpen = !0),
           void 0 === r.delayInit && (r.delayInit = !1),
-          void 0 === r.openOnInit && (r.openOnInit = !1);
+          void 0 === r.openOnInit && (r.openOnInit = !1));
       }
       var s = !0;
       function l() {
@@ -1499,7 +1501,7 @@
       }
       function c() {
         O("nav.slide-menu").addEventListener("mousemove", function e(t) {
-          O("nav.slide-menu").removeEventListener("mousemove", e), (s = !0);
+          (O("nav.slide-menu").removeEventListener("mousemove", e), (s = !0));
         });
       }
       function u(e) {
@@ -1508,11 +1510,10 @@
             for (
               var t = 0, n = 0;
               e && !isNaN(e.offsetLeft) && !isNaN(e.offsetTop);
-
             )
-              (t += e.offsetLeft - e.scrollLeft),
+              ((t += e.offsetLeft - e.scrollLeft),
                 (n += e.offsetTop - e.scrollTop),
-                (e = e.offsetParent);
+                (e = e.offsetParent));
             return { top: n, left: t };
           })(e).top - e.offsetParent.offsetTop;
         if (t < 0) return -t;
@@ -1526,16 +1527,16 @@
         t && (l(), e.scrollIntoView(t > 0), c());
       }
       function d(e) {
-        l(), (e.offsetParent.scrollTop = e.offsetTop), c();
+        (l(), (e.offsetParent.scrollTop = e.offsetTop), c());
       }
       function p(e) {
-        l(),
+        (l(),
           (e.offsetParent.scrollTop =
             e.offsetTop - e.offsetParent.offsetHeight + e.offsetHeight),
-          c();
+          c());
       }
       function h(e) {
-        e.classList.add("selected"), f(e), r.sticky && r.autoOpen && E(e);
+        (e.classList.add("selected"), f(e), r.sticky && r.autoOpen && E(e));
       }
       function m(e) {
         if (b())
@@ -1545,31 +1546,31 @@
               !(function () {
                 var e =
                   parseInt(
-                    O(".active-toolbar-button").getAttribute("data-button")
+                    O(".active-toolbar-button").getAttribute("data-button"),
                   ) - 1;
                 e < 0 && (e = T - 1);
                 S(
                   null,
                   O(
-                    '.toolbar-panel-button[data-button="' + e + '"]'
-                  ).getAttribute("data-panel")
+                    '.toolbar-panel-button[data-button="' + e + '"]',
+                  ).getAttribute("data-panel"),
                 );
               })();
               break;
             case 76:
             case 39:
-              (l =
+              ((l =
                 (parseInt(
-                  O(".active-toolbar-button").getAttribute("data-button")
+                  O(".active-toolbar-button").getAttribute("data-button"),
                 ) +
                   1) %
                 T),
                 S(
                   null,
                   O(
-                    '.toolbar-panel-button[data-button="' + l + '"]'
-                  ).getAttribute("data-panel")
-                );
+                    '.toolbar-panel-button[data-button="' + l + '"]',
+                  ).getAttribute("data-panel"),
+                ));
               break;
             case 75:
             case 38:
@@ -1578,21 +1579,21 @@
                   O(".active-menu-panel .slide-menu-items li.selected") ||
                   O(".active-menu-panel .slide-menu-items li.active"))
               )
-                A(".active-menu-panel .slide-menu-items li").forEach(function (
-                  e
-                ) {
-                  e.classList.remove("selected");
-                }),
+                (A(".active-menu-panel .slide-menu-items li").forEach(
+                  function (e) {
+                    e.classList.remove("selected");
+                  },
+                ),
                   h(
                     O(
                       '.active-menu-panel .slide-menu-items li[data-item="' +
                         (parseInt(s.getAttribute("data-item")) - 1) +
-                        '"]'
-                    ) || s
-                  );
+                        '"]',
+                    ) || s,
+                  ));
               else
                 (o = O(
-                  ".active-menu-panel .slide-menu-items li.slide-menu-item"
+                  ".active-menu-panel .slide-menu-items li.slide-menu-item",
                 )) && h(o);
               break;
             case 74:
@@ -1602,21 +1603,21 @@
                   O(".active-menu-panel .slide-menu-items li.selected") ||
                   O(".active-menu-panel .slide-menu-items li.active"))
               )
-                A(".active-menu-panel .slide-menu-items li").forEach(function (
-                  e
-                ) {
-                  e.classList.remove("selected");
-                }),
+                (A(".active-menu-panel .slide-menu-items li").forEach(
+                  function (e) {
+                    e.classList.remove("selected");
+                  },
+                ),
                   h(
                     O(
                       '.active-menu-panel .slide-menu-items li[data-item="' +
                         (parseInt(s.getAttribute("data-item")) + 1) +
-                        '"]'
-                    ) || s
-                  );
+                        '"]',
+                    ) || s,
+                  ));
               else
                 (o = O(
-                  ".active-menu-panel .slide-menu-items li.slide-menu-item"
+                  ".active-menu-panel .slide-menu-items li.slide-menu-item",
                 )) && h(o);
               break;
             case 33:
@@ -1624,12 +1625,12 @@
               var t = A(".active-menu-panel .slide-menu-items li").filter(
                   function (e) {
                     return u(e) > 0;
-                  }
+                  },
                 ),
                 n = A(".active-menu-panel .slide-menu-items li").filter(
                   function (e) {
                     return 0 == u(e);
-                  }
+                  },
                 ),
                 r =
                   t.length > 0 &&
@@ -1644,29 +1645,29 @@
                     (n = A(".active-menu-panel .slide-menu-items li").filter(
                       function (e) {
                         return 0 == u(e);
-                      }
+                      },
                     ))[0] == r
                       ? t[t.length - 1]
                       : n[0])),
-                A(".active-menu-panel .slide-menu-items li").forEach(function (
-                  e
-                ) {
-                  e.classList.remove("selected");
-                }),
+                A(".active-menu-panel .slide-menu-items li").forEach(
+                  function (e) {
+                    e.classList.remove("selected");
+                  },
+                ),
                 h(r),
                 d(r));
               break;
             case 34:
             case 68:
-              n = A(".active-menu-panel .slide-menu-items li").filter(function (
-                e
-              ) {
-                return 0 == u(e);
-              });
+              n = A(".active-menu-panel .slide-menu-items li").filter(
+                function (e) {
+                  return 0 == u(e);
+                },
+              );
               var i = A(".active-menu-panel .slide-menu-items li").filter(
                   function (e) {
                     return u(e) < 0;
-                  }
+                  },
                 ),
                 a =
                   i.length > 0 && Math.abs(u(i[0])) < i[0].clientHeight
@@ -1680,38 +1681,38 @@
                     (n = A(".active-menu-panel .slide-menu-items li").filter(
                       function (e) {
                         return 0 == u(e);
-                      }
+                      },
                     ))[n.length - 1] == a
                       ? i[0]
                       : n[n.length - 1])),
-                A(".active-menu-panel .slide-menu-items li").forEach(function (
-                  e
-                ) {
-                  e.classList.remove("selected");
-                }),
+                A(".active-menu-panel .slide-menu-items li").forEach(
+                  function (e) {
+                    e.classList.remove("selected");
+                  },
+                ),
                 h(a),
                 p(a));
               break;
             case 36:
-              A(".active-menu-panel .slide-menu-items li").forEach(function (
-                e
-              ) {
-                e.classList.remove("selected");
-              }),
+              (A(".active-menu-panel .slide-menu-items li").forEach(
+                function (e) {
+                  e.classList.remove("selected");
+                },
+              ),
                 (o = O(
-                  ".active-menu-panel .slide-menu-items li:first-of-type"
-                )) && (o.classList.add("selected"), f(o));
+                  ".active-menu-panel .slide-menu-items li:first-of-type",
+                )) && (o.classList.add("selected"), f(o)));
               break;
             case 35:
               var o;
-              A(".active-menu-panel .slide-menu-items li").forEach(function (
-                e
-              ) {
-                e.classList.remove("selected");
-              }),
+              (A(".active-menu-panel .slide-menu-items li").forEach(
+                function (e) {
+                  e.classList.remove("selected");
+                },
+              ),
                 (o = O(
-                  ".active-menu-panel .slide-menu-items:last-of-type li:last-of-type"
-                )) && (o.classList.add("selected"), f(o));
+                  ".active-menu-panel .slide-menu-items:last-of-type li:last-of-type",
+                )) && (o.classList.add("selected"), f(o)));
               break;
             case 32:
             case 13:
@@ -1735,7 +1736,7 @@
               e.classList.remove("active");
             }),
             A(
-              'li[data-theme="' + O("link#theme").getAttribute("href") + '"]'
+              'li[data-theme="' + O("link#theme").getAttribute("href") + '"]',
             ).forEach(function (e) {
               e.classList.add("active");
             })),
@@ -1743,17 +1744,17 @@
             (A('div[data-panel="Transitions"] li').forEach(function (e) {
               e.classList.remove("active");
             }),
-            A('li[data-transition="' + n.transition + '"]').forEach(function (
-              e
-            ) {
-              e.classList.add("active");
-            })),
+            A('li[data-transition="' + n.transition + '"]').forEach(
+              function (e) {
+                e.classList.add("active");
+              },
+            )),
           A(".slide-menu-panel li.active").forEach(function (e) {
-            e.classList.add("selected"), f(e);
+            (e.classList.add("selected"), f(e));
           }));
       }
       function g(e, t) {
-        e && e.preventDefault(),
+        (e && e.preventDefault(),
           (r.sticky && !t) ||
             (O("body").classList.remove("slide-menu-active"),
             O(".reveal").classList.remove("has-" + r.effect + "-" + r.side),
@@ -1761,7 +1762,7 @@
             O(".slide-menu-overlay").classList.remove("active"),
             A(".slide-menu-panel li.selected").forEach(function (e) {
               e.classList.remove("selected");
-            }));
+            })));
       }
       function y(e) {
         b() ? g(e, !0) : v(e);
@@ -1772,18 +1773,18 @@
       function S(e, t) {
         v(e);
         var n = t;
-        "string" != typeof t &&
+        ("string" != typeof t &&
           (n = e.currentTarget.getAttribute("data-panel")),
           O(".slide-menu-toolbar > li.active-toolbar-button").classList.remove(
-            "active-toolbar-button"
+            "active-toolbar-button",
           ),
           O('li[data-panel="' + n + '"]').classList.add(
-            "active-toolbar-button"
+            "active-toolbar-button",
           ),
           O(".slide-menu-panel.active-menu-panel").classList.remove(
-            "active-menu-panel"
+            "active-menu-panel",
           ),
-          O('div[data-panel="' + n + '"]').classList.add("active-menu-panel");
+          O('div[data-panel="' + n + '"]').classList.add("active-menu-panel"));
       }
       function E(e, n) {
         var i = parseInt(e.getAttribute("data-slide-h")),
@@ -1791,40 +1792,40 @@
           o = e.getAttribute("data-theme"),
           s = e.getAttribute("data-highlight-theme"),
           l = e.getAttribute("data-transition");
-        isNaN(i) || isNaN(a) || t.slide(i, a),
+        (isNaN(i) || isNaN(a) || t.slide(i, a),
           o && I("theme", o),
           s && I("highlight-theme", s),
-          l && t.configure({ transition: l });
+          l && t.configure({ transition: l }));
         var c = O("a", e);
-        c &&
+        (c &&
           (n ||
             !r.sticky ||
             (r.autoOpen && c.href.startsWith("#")) ||
             c.href.startsWith(
-              window.location.origin + window.location.pathname + "#"
+              window.location.origin + window.location.pathname + "#",
             )) &&
           c.click(),
-          g();
+          g());
       }
       function x(e) {
-        "A" !== e.target.nodeName && e.preventDefault(), E(e.currentTarget);
+        ("A" !== e.target.nodeName && e.preventDefault(), E(e.currentTarget));
       }
       function w() {
         var e = t.getState();
-        A("li.slide-menu-item, li.slide-menu-item-vertical").forEach(function (
-          t
-        ) {
-          t.classList.remove("past"),
-            t.classList.remove("active"),
-            t.classList.remove("future");
-          var n = parseInt(t.getAttribute("data-slide-h")),
-            r = parseInt(t.getAttribute("data-slide-v"));
-          n < e.indexh || (n === e.indexh && r < e.indexv)
-            ? t.classList.add("past")
-            : n === e.indexh && r === e.indexv
-            ? t.classList.add("active")
-            : t.classList.add("future");
-        });
+        A("li.slide-menu-item, li.slide-menu-item-vertical").forEach(
+          function (t) {
+            (t.classList.remove("past"),
+              t.classList.remove("active"),
+              t.classList.remove("future"));
+            var n = parseInt(t.getAttribute("data-slide-h")),
+              r = parseInt(t.getAttribute("data-slide-v"));
+            n < e.indexh || (n === e.indexh && r < e.indexv)
+              ? t.classList.add("past")
+              : n === e.indexh && r === e.indexv
+                ? t.classList.add("active")
+                : t.classList.add("future");
+          },
+        );
       }
       function L() {
         var e = window.getComputedStyle(O(".reveal"));
@@ -1848,7 +1849,7 @@
                 s.appendChild(k("br"), O("i", s)),
                 s.appendChild(
                   k("span", { class: "slide-menu-toolbar-label" }, e),
-                  O("i", s)
+                  O("i", s),
                 ),
                 (s.onclick = i),
                 d.appendChild(s),
@@ -1886,7 +1887,7 @@
                 !c)
               ) {
                 if (r.hideMissingTitles) return "";
-                (e += " no-title"), (c = "Slide " + (a + 1));
+                ((e += " no-title"), (c = "Slide " + (a + 1)));
               }
               var u = k("li", {
                 class: e,
@@ -1897,15 +1898,15 @@
               if (
                 (r.markers &&
                   (u.appendChild(
-                    k("i", { class: "fas fa-check-circle fa-fw past" })
+                    k("i", { class: "fas fa-check-circle fa-fw past" }),
                   ),
                   u.appendChild(
                     k("i", {
                       class: "fas fa-arrow-alt-circle-right fa-fw active",
-                    })
+                    }),
                   ),
                   u.appendChild(
-                    k("i", { class: "far fa-circle fa-fw future" })
+                    k("i", { class: "far fa-circle fa-fw future" }),
                   )),
                 r.numbers)
               ) {
@@ -1924,19 +1925,19 @@
                     f.push(a + 1, "/", t.getTotalSlides());
                     break;
                   case "h/v":
-                    f.push(o + 1),
-                      "number" != typeof s || isNaN(s) || f.push("/", s + 1);
+                    (f.push(o + 1),
+                      "number" != typeof s || isNaN(s) || f.push("/", s + 1));
                     break;
                   default:
-                    f.push(o + 1),
-                      "number" != typeof s || isNaN(s) || f.push(".", s + 1);
+                    (f.push(o + 1),
+                      "number" != typeof s || isNaN(s) || f.push(".", s + 1));
                 }
                 u.appendChild(
                   k(
                     "span",
                     { class: "slide-menu-item-number" },
-                    f.join("") + ". "
-                  )
+                    f.join("") + ". ",
+                  ),
                 );
               }
               return (
@@ -1949,7 +1950,7 @@
                 (A(".active-menu-panel .slide-menu-items li.selected").forEach(
                   function (e) {
                     e.classList.remove("selected");
-                  }
+                  },
                 ),
                 e.currentTarget.classList.add("selected"));
             },
@@ -1957,20 +1958,20 @@
             c = k("div", { class: "slide-menu-wrapper" });
           l.appendChild(c);
           var u = k("nav", { class: "slide-menu slide-menu--" + r.side });
-          "string" == typeof r.width &&
+          ("string" == typeof r.width &&
             (-1 != ["normal", "wide", "third", "half", "full"].indexOf(r.width)
               ? u.classList.add("slide-menu--" + r.width)
               : (u.classList.add("slide-menu--custom"),
                 (u.style.width = r.width))),
             c.appendChild(u),
-            L();
+            L());
           var f = k("div", { class: "slide-menu-overlay" });
-          c.appendChild(f),
+          (c.appendChild(f),
             (f.onclick = function () {
               g(null, !0);
-            });
+            }));
           var d = k("ol", { class: "slide-menu-toolbar" });
-          O(".slide-menu").appendChild(d),
+          (O(".slide-menu").appendChild(d),
             e("Slides", "Slides", "fa-images", "fas", S, !0),
             r.custom &&
               r.custom.forEach(function (t, n, r) {
@@ -1978,13 +1979,13 @@
               }),
             r.themes && e("Themes", "Themes", "fa-adjust", "fas", S),
             r.transitions &&
-              e("Transitions", "Transitions", "fa-sticky-note", "fas", S);
+              e("Transitions", "Transitions", "fa-sticky-note", "fas", S));
           var p = k("li", { id: "close", class: "toolbar-panel-button" });
           if (
             (p.appendChild(k("i", { class: "fas fa-times" })),
             p.appendChild(k("br")),
             p.appendChild(
-              k("span", { class: "slide-menu-toolbar-label" }, "Close")
+              k("span", { class: "slide-menu-toolbar-label" }, "Close"),
             ),
             (p.onclick = function () {
               g(null, !0);
@@ -1993,7 +1994,7 @@
             (function e() {
               if (
                 document.querySelector(
-                  "section[data-markdown]:not([data-markdown-parsed])"
+                  "section[data-markdown]:not([data-markdown-parsed])",
                 )
               )
                 setTimeout(e, 100);
@@ -2002,13 +2003,13 @@
                   "data-panel": "Slides",
                   class: "slide-menu-panel active-menu-panel",
                 });
-                t.appendChild(k("ul", { class: "slide-menu-items" })),
-                  u.appendChild(t);
+                (t.appendChild(k("ul", { class: "slide-menu-items" })),
+                  u.appendChild(t));
                 var n = O(
-                    '.slide-menu-panel[data-panel="Slides"] > .slide-menu-items'
+                    '.slide-menu-panel[data-panel="Slides"] > .slide-menu-items',
                   ),
                   r = 0;
-                A(".slides > section").forEach(function (e, t) {
+                (A(".slides > section").forEach(function (e, t) {
                   var a = A("section", e);
                   if (a.length > 0)
                     a.forEach(function (e, a) {
@@ -2019,21 +2020,21 @@
                         e,
                         r,
                         t,
-                        a
+                        a,
                       );
-                      o && n.appendChild(o), r++;
+                      (o && n.appendChild(o), r++);
                     });
                   else {
                     var o = i("slide-menu-item", e, r, t);
-                    o && n.appendChild(o), r++;
+                    (o && n.appendChild(o), r++);
                   }
                 }),
                   A(".slide-menu-item, .slide-menu-item-vertical").forEach(
                     function (e) {
                       e.onclick = x;
-                    }
+                    },
                   ),
-                  w();
+                  w());
               }
             })(),
             t.addEventListener("slidechanged", w),
@@ -2050,10 +2051,10 @@
               C = function (e) {
                 A("ul.slide-menu-items li.slide-menu-item", e).forEach(
                   function (e, t) {
-                    e.setAttribute("data-item", t + 1),
+                    (e.setAttribute("data-item", t + 1),
                       (e.onclick = x),
-                      e.addEventListener("mouseenter", o);
-                  }
+                      e.addEventListener("mouseenter", o));
+                  },
                 );
               },
               I = function (e) {
@@ -2072,19 +2073,19 @@
                 "data-panel": "Custom" + t,
                 class: "slide-menu-panel slide-menu-custom-panel",
               });
-              e.content
+              (e.content
                 ? ((r.innerHTML = e.content), C(r))
                 : e.src &&
                   (function (e, t) {
                     var n = new XMLHttpRequest();
-                    (n.panel = e),
+                    ((n.panel = e),
                       (n.arguments = Array.prototype.slice.call(arguments, 2)),
                       (n.onload = h),
                       (n.onerror = E),
                       n.open("get", t, !0),
-                      n.send(null);
+                      n.send(null));
                   })(r, e.src),
-                u.appendChild(r);
+                u.appendChild(r));
             });
           }
           if (r.themes) {
@@ -2094,15 +2095,15 @@
             });
             u.appendChild(P);
             var M = k("ul", { class: "slide-menu-items" });
-            P.appendChild(M),
+            (P.appendChild(M),
               r.themes.forEach(function (e, t) {
                 var n = { class: "slide-menu-item", "data-item": "" + (t + 1) };
-                e.theme && (n["data-theme"] = e.theme),
+                (e.theme && (n["data-theme"] = e.theme),
                   e.highlightTheme &&
-                    (n["data-highlight-theme"] = e.highlightTheme);
+                    (n["data-highlight-theme"] = e.highlightTheme));
                 var r = k("li", n, e.name);
-                M.appendChild(r), (r.onclick = x);
-              });
+                (M.appendChild(r), (r.onclick = x));
+              }));
           }
           if (r.transitions) {
             P = k("div", {
@@ -2111,7 +2112,7 @@
             });
             u.appendChild(P);
             M = k("ul", { class: "slide-menu-items" });
-            P.appendChild(M),
+            (P.appendChild(M),
               r.transitions.forEach(function (e, t) {
                 var n = k(
                   "li",
@@ -2120,18 +2121,18 @@
                     "data-transition": e.toLowerCase(),
                     "data-item": "" + (t + 1),
                   },
-                  e
+                  e,
                 );
-                M.appendChild(n), (n.onclick = x);
-              });
+                (M.appendChild(n), (n.onclick = x));
+              }));
           }
           if (r.openButton) {
             var R = k("div", { class: "slide-menu-button" }),
               j = k("a", { href: "#" });
-            j.appendChild(k("i", { class: "fas fa-bars" })),
+            (j.appendChild(k("i", { class: "fas fa-bars" })),
               R.appendChild(j),
               O(".reveal").appendChild(R),
-              (R.onclick = v);
+              (R.onclick = v));
           }
           if (r.openSlideNumber) O("div.slide-number").onclick = v;
           A(".slide-menu-panel .slide-menu-items li").forEach(function (e) {
@@ -2165,17 +2166,18 @@
             };
           t.addKeyBinding(
             { keyCode: 77, key: "M", description: "Toggle menu" },
-            y
+            y,
           );
         }
-        r.openOnInit && v(), (a = !0);
+        (r.openOnInit && v(), (a = !0));
       }
       function O(e, t) {
-        return t || (t = document), t.querySelector(e);
+        return (t || (t = document), t.querySelector(e));
       }
       function A(e, t) {
         return (
-          t || (t = document), Array.prototype.slice.call(t.querySelectorAll(e))
+          t || (t = document),
+          Array.prototype.slice.call(t.querySelectorAll(e))
         );
       }
       function k(e, t, n) {
@@ -2195,11 +2197,11 @@
           i = n.nextElementSibling;
         n.remove();
         var a = n.cloneNode();
-        a.setAttribute("href", t),
+        (a.setAttribute("href", t),
           (a.onload = function () {
             L();
           }),
-          r.insertBefore(a, i);
+          r.insertBefore(a, i));
       }
       function P(e, t, n) {
         n.call();
@@ -2209,7 +2211,7 @@
           a,
           o,
           s = !i || i >= 9;
-        t.isSpeakerNotes() &&
+        (t.isSpeakerNotes() &&
           window.location.search.endsWith("controls=false") &&
           (s = !1),
           s &&
@@ -2228,18 +2230,18 @@
                   eventName: e,
                   state: t.getState(),
                 }),
-                "*"
-              ));
+                "*",
+              )));
       }
       return {
         id: "menu",
         init: function (e) {
-          o((n = (t = e).getConfig())),
+          (o((n = (t = e).getConfig())),
             P(r.path + "menu.css", "stylesheet", function () {
               void 0 === r.loadIcons || r.loadIcons
                 ? P(r.path + "font-awesome/css/all.css", "stylesheet", M)
                 : M();
-            });
+            }));
         },
         toggle: y,
         openMenu: v,
