@@ -8,9 +8,10 @@ Web: <https://ollama.com/>, Discord: <https://discord.com/invite/ollama>.
 
 ## Highlights
 
+- 0.24. Support the Codex App, `ollama launch codex-app`, `ollama launch codex-app --restore`.
 - 0.23. Support Claude Desktop’s built-in third party inference, `ollama launch claude-desktop` but `ollama launch claude-desktop --restore` for the default Claude profile.
-   - difficult coding and co-working tasks: kimi-k2.6, qwen3.5, minimax-m2.7, glm-5.1.
-   - no subscription with Ollama's cloud: nemotron-3-super, gemma4:31b .
+  - difficult coding and co-working tasks: kimi-k2.6, qwen3.5, minimax-m2.7, glm-5.1.
+  - no subscription with Ollama's cloud: nemotron-3-super, gemma4:31b .
 - 0.21. Support hermes, i.e., `ollama launch hermes`.
 - 0.20. Support Gemma 4, where e as in 2eB is effective for edge device deployments and `ollama run gemma4:e2b --think=false` leads to faster run with ability to handle images.
   - 2B, `ollama run gemma4:e2b`.
@@ -24,7 +25,7 @@ Web: <https://ollama.com/>, Discord: <https://discord.com/invite/ollama>.
   - ollama run qwen3.5:35b-a3b-coding-nvfp4
 - 0.18. Ollama is official provider for OpenClaw, i.e., `openclaw onboard --auth-choice ollama`.
 - 0.17. Support OpenClaw, e.g., `ollama launch openclaw`.
-- 0.16.   `ollama` command for different models and for use with apps out-of-the-box, e.g., `ollama launch --model minimax-m2.5:cloud`.
+- 0.16. `ollama` command for different models and for use with apps out-of-the-box, e.g., `ollama launch --model minimax-m2.5:cloud`.
 - 0.13.0. DeepSeek-OCR, <https://github.com/deepseek-ai/DeepSeek-OCR>.
 - 0.12.5. Claude Code API.
 
