@@ -90,6 +90,7 @@ There are numerous features, such as mouse cursor to set position, Ctrl-E to ope
 A LSP server for R is implemented as follows,
 
 - Create ~/.config/fresh/settings.json
+
 ```
 "r": {
   "command": "R",
@@ -97,6 +98,7 @@ A LSP server for R is implemented as follows,
   "filetypes": ["r", "R"]
 }
 ```
+
 - module load ceuadmin/R ceuadmin/fresh
 - fresh test.r
 - `LSP` --> `Restart Server` --> `Show Completions` and put cursor on a key word (`Show Hover Info`).
