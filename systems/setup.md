@@ -589,6 +589,9 @@ All entries are ordered chronologically.
 | 2026-04-30 | helix/25.07.1                     | Generic[^helix]       |
 | 2026-05-05 | ollama/0.23.0                     | Generic               |
 | ""         | R/4.6.0[-icelake\|-gcc11\|-gcc12] | Generic               |
+| 2026-05-22 | ollama/0.24.0                     | Generic               |
+| ""         | VSCode/1.121.0                    | Generic               |
+| ""         | firefox/151.0.1                   | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
