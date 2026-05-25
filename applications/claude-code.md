@@ -363,3 +363,7 @@ Checking MCP server health...
 
 playwright: npx @playwright/mcp@latest - ✓ Connected
 ```
+
+## User-contributed document
+
+[Claude Code 终极使用指南（超详细版｜截至 2026 年 5 月 23 日）](files/Claude_Code_Ultimate_Guide_2026_Improved.md)
