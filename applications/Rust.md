@@ -11,9 +11,13 @@ Web: <https://www.rust-lang.org/>
 ```bash
 module load ceuadmin/rust
 rustc --version
+cargo --version
 ```
-
-which gives `rustc 1.74.1 (a28077b28 2023-12-04)`.
+giving,
+```
+rustc 1.95.0 (59807616e 2026-04-14)
+cargo 1.95.0 (f2d3ce0bd 2026-03-21)
+```
 
 ## Installation
 
