@@ -13,7 +13,10 @@ GitHub: <https://github.com/mozilla-firefox/firefox>
 alias firefox='MOZ_DISABLE_CONTENT_SANDBOX=1 /usr/bin/firefox > /dev/null 2>&1'
 ```
 
-Since `module unload ceuadmin/firefox` unsets the alias, it is useful to call `source ~/.bashrc` to restore this. Moreover, note that
+Since `module unload ceuadmin/firefox` unsets the alias, it is useful to call `source ~/.bashrc` to restore this. It is also possible that
+Firefox refuses to start due to a previously crashed session, when `killall firefox` may help.
+
+Moreover, note that
 
 1. With its handling of sandbox, it looks better to use the nightly builds below.
 2. Applications may call /usr/bin/firefox as default browser (e.g., postman), so it may be appropriate to start it BEFORE the application.
@@ -23,6 +26,7 @@ Since `module unload ceuadmin/firefox` unsets the alias, it is useful to call `s
    - Rocky Foreums, <https://forums.rockylinux.org/>
    - Rocky Mattermost, <https://chat.rockylinux.org/login>
 4. Many features are customisable via `about:config` from the address bar.
+5. To shorten this document, installation of official release is not mentioned from now on.
 
 ## ceuadmin/firefox
 
