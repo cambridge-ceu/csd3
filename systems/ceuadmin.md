@@ -104,11 +104,12 @@ The current list is as follows,
 [345] "texinfo"                "ThermoRawFileParser"    "ThermoRawFileParserGUI" "thunderbird"
 [349] "tidy"                   "tiff"                   "trinculo"               "trousers"
 [353] "truvari"                "Typora"                 "unbound"                "uv"
-[357] "vala"                   "VarScan"                "vcftools"               "vdo"
-[361] "VEGAS2"                 "verifyBamID"            "VirtualBox"             "VSCode"
-[365] "VSCodium"               "vte"                    "wasi-sdk"               "Windsurf"
-[369] "wine"                   "wrk"                    "xpdf"                   "yaml-cpp"
-[373] "Zettlr"                 "Zotero"                 "zstd"
+[357] "vala"                   "VarScan"                "vce"                    "vcftools"
+[361] "vdo"                    "VEGAS2"                 "verifyBamID"            "VirtualBox"
+[365] "VSCode"                 "VSCodium"               "vte"                    "wasi-sdk"
+[369] "Windsurf"               "wine"                   "wombat"                 "wrk"
+[373] "xpdf"                   "yaml-cpp"               "Zettlr"                 "Zotero"
+[377] "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -480,6 +481,8 @@ Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceu
     | 2025-09-11 | mity/2.0.1                   | Genetics    |
     | 2025-10-23 | ccphylo/0.8.5                | Genetics    |
     | 2026-04-01 | gcta/1.95.1                  | Genetics    |
+    | 2026-06-08 | wombat/26-05-2025            | Genetics    |
+    | ""         | vce/6                        | Genetics    |
 
     \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
