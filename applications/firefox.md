@@ -14,7 +14,7 @@ alias firefox='MOZ_DISABLE_CONTENT_SANDBOX=1 /usr/bin/firefox > /dev/null 2>&1'
 ```
 
 Since `module unload ceuadmin/firefox` unsets the alias, it is useful to call `source ~/.bashrc` to restore this. It is also possible that
-Firefox refuses to start due to a previously crashed session, when `killall firefox` may help.
+Firefox refuses to start due to a previously crashed session, when `killall firefox` from the crashed host (e.g., login-q-x) may help.
 
 Moreover, note that
 
