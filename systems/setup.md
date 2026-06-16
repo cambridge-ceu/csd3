@@ -595,6 +595,7 @@ All entries are ordered chronologically.
 | 2026-06-08 | wombat/26-05-2025                 | Genetics              |
 | ""         | vce/6                             | Genetics              |
 | ""         | blupf90/2.75                      | Genetics              |
+| 2026-06-16 | firefox/152.0                     | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
