@@ -465,3 +465,25 @@ ollama run gemma3 "Why the sky is blue?" >> $output
 ```
 
 where 1 minute is granted to establish the server, followed by a call with our prompt as a command-line argument.
+
+## VS Code integration
+
+This is possible via the Continue extension, amending its configuration file at `~/.continue/config.yaml`:
+
+```yaml
+name: Local Assistant
+version: 1.0.0
+models:
+  - name: Qwen3 8B (local)
+    provider: ollama
+    model: qwen3:8b
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: Qwen3 8B Autocomplete
+    provider: ollama
+    model: qwen3:8b
+    roles:
+      - autocomplete
+```
