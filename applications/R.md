@@ -6,6 +6,10 @@ sort: 77
 
 There is a dedicated section here, <https://cambridge-ceu.github.io/csd3/systems/languages.html#r>.
 
+<font color="red"><b>14/7/2026 Update</b></font>
+
+The latest is R 4.6.1.
+
 <font color="red"><b>15/3/2026 Update</b></font>
 
 The latest is R 4.5.3.
