@@ -167,8 +167,6 @@ appear for 4.6.1-gcc11. For Rserve 1.8-15, openssl/3.3.0-dev appears working. Th
 
 ```r
 failed_packages <- c(
-  "devEMF",
-  "pleio",
   "arrow",
   "SNPassoc",
   "terra",
