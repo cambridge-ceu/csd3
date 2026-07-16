@@ -2,7 +2,7 @@
 sort: 14
 ---
 
-# Scikit-LLM & OpenAI API
+# Scikit-LLM, Ollama & OpenAI API
 
 ## CSD3 Module
 
@@ -181,6 +181,32 @@ input data 'X'.
 # It fits the model to the data and generates the summaries, which are
 assigned to the variable 'summaries'
 summaries = s.fit_transform(X)
+```
+
+### Scikit-Ollama
+
+```bash
+pip install scikit-ollama
+```
+
+```python
+from skllm.datasets import get_classification_dataset
+# Loading a demo sentiment analysis dataset containing movie reviews
+# The expected labels are: "positive", "negative", "neutral"
+X, y = get_classification_dataset()
+
+print(f"Sample text: {X[0]} \nLabel: {y[0]}")
+
+from skollama.models.ollama.classification.zero_shot import ZeroShotOllamaClassifier
+# Initializing the classifier with our local Ollama model: llama3:latest
+clf = ZeroShotOllamaClassifier(model="llama3:latest")
+# "Fitting" the model boils down to just providing the list of candidate labels
+clf.fit(None, ["positive", "negative", "neutral"])
+# Generating and showing predictions on our dataset
+predictions = clf.predict(X)
+for text, prediction in zip(X[:3], predictions[:3]):
+    print(f"Text: '{text}'")
+    print(f"Predicted Sentiment: {prediction}\n")
 ```
 
 ### OpenAI API
