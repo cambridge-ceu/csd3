@@ -598,6 +598,7 @@ All entries are ordered chronologically.
 | 2026-06-16 | firefox/152.0                     | Generic               |
 | 2026-06-20 | firefox/154.0a1                   | Generic               |
 | 2026-07-14 | R/4.6.1[-icelake\|-gcc11\|-gcc12] | Generic               |
+| 2026-07-19 | gdal/3.10.3                       | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
