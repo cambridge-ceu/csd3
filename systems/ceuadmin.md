@@ -159,12 +159,11 @@ made).
 
 ### R
 
-A large collection of R packages (1,844 as of 16/7/2026, esp. with availability of major machine learning packages) is linked with the 
+A large collection of R packages (1,843 as of 20/7/2026, esp. with availability of major machine learning packages) is linked with the 
 latest R distribution, 4.6.1; there are also packages (CRAN: DescTools, Rfast, Rfast2, SKAT, rcompanion, rms -- which requires stringi 
 herein, riskRegression -- which requires rms; Bioconductor: BiocSingular, DropletUtils, DSS, beachmat, bsseq, scater, scuttle, xcms, 
 xgboost) under 4.6.1-gcc11. Earlier versions such as sf, terra, riskRegression, rms, scater, scuttle, SKAT were removed when they 
-appear for 4.6.1-gcc11. For Rserve 1.8-15, openssl/3.3.0-dev appears working. This failed packages are terra 1.9-34 and paws.analytics 
-0.10.0.
+appear for 4.6.1-gcc11. For Rserve 1.8-15, openssl/3.3.0-dev appears working. This failed package is paws.analytics 0.10.0.
 
 It is possible to use packages built under gcc11, e.g., rms as in
 
