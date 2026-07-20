@@ -6,7 +6,7 @@ sort: 34
 
 ## 3.10.3
 
-This is built under CentOS 8 (icelake).
+This is required by R/terra 1.9-34 and built under CentOS 8 (icelake).
 
 ```bash
 wget -qO- https://download.osgeo.org/gdal/3.10.3/gdal-3.10.3.tar.gz | \
