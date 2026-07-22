@@ -174,7 +174,16 @@ module load gcc/11.3.0/gcc/4zpip55j
 R CMD build --compact-vignettes=both --md5 --resave-data --log gaawr2
 ```
 
-Lately, 4.6.1-gcc12 is also created based on ceuadmin/gcc/12.5.0 and ceuadmin/gcc-toolset/12.
+Lately, 4.6.1-gcc12 is also created based on ceuadmin/gcc/12.5.0 and ceuadmin/gcc-toolset/12. The highest version of GLIBCXX is found from
+
+```bash
+strings /usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru/lib64/libstdc++.so.6 \
+grep '^GLIBCXX_' \
+sort -V \
+tail -1
+strings /usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/lib64/libstdc++.so.6 | grep ^GLIBCXX_ | sort -V | tail -1
+```
+GLIBCXX_3.4.29 and GLIBCXX_3.4.30, respectively.
 
 Additionally,
 
