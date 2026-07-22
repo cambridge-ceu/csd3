@@ -183,7 +183,7 @@ sort -V \
 tail -1
 strings /usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/lib64/libstdc++.so.6 | grep ^GLIBCXX_ | sort -V | tail -1
 ```
-GLIBCXX_3.4.29 and GLIBCXX_3.4.30, respectively.
+giving GLIBCXX_3.4.29 and GLIBCXX_3.4.30, respectively.
 
 Additionally,
 
