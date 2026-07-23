@@ -51,7 +51,7 @@ export DBUS_CFLAGS="$(pkg-config --cflags dbus-1)"
 export CFLAGS="$DBUS_CFLAGS $CFLAGS"
 export CXXFLAGS="$DBUS_CFLAGS $CXXFLAGS"
 export BINDGEN_EXTRA_CLANG_ARGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
-env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/155.0a1 \
+env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/$(<browser/config/version.txt) \
                --without-wasm-sandboxed-libraries
 ./mach build -j5
 module purge
