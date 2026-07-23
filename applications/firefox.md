@@ -30,6 +30,9 @@ Moreover, note that
 
 ## ceuadmin/firefox
 
+<font color="red"><b>23/7/2026 Update</b></font>
+Module **ceuadmin/firefox/153.0esr** is available.
+
 <font color="red"><b>20/6/2026 Update</b></font>
 Module **ceuadmin/firefox/154.0a1** is available.
 
