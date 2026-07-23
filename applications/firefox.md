@@ -65,8 +65,6 @@ module load gettext/0.21/gcc/lhdl4tbr
 ./mach install
 ```
 
-unless code contribution/patch is intended (`moz-phab install-certificate`), and we skip setup for AI agentic coding / GitHub.
-
 <font color="red"><b>20/6/2026 Update</b></font>
 Module **ceuadmin/firefox/154.0a1** is available.
 
