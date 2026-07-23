@@ -34,7 +34,7 @@ Moreover, note that
 Module **ceuadmin/firefox/153.0esr** is available.
 
 <font color="red"><b>20/6/2026 Update</b></font>
-Module **ceuadmin/firefox/154.0a1** is available.
+Module **ceuadmin/firefox/155.0a1** is available.
 
 Our purpose is to compile a local copy of Firefox, so
 
@@ -45,7 +45,7 @@ git pull
 module load ceuadmin/gcc/12.5.0
 module load ceuadmin/gtk+/3.24.0
 module load ceuadmin/rust/nightly
-module load ceuadmin/clang/19.1.7
+module load ceuadmin/clang/20.1.8
 export CC=clang
 export CXX=clang++
 export CFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include $CFLAGS"
@@ -54,7 +54,7 @@ export DBUS_CFLAGS="$(pkg-config --cflags dbus-1)"
 export CFLAGS="$DBUS_CFLAGS $CFLAGS"
 export CXXFLAGS="$DBUS_CFLAGS $CXXFLAGS"
 export BINDGEN_EXTRA_CLANG_ARGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
-env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/154.0a1 \
+env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/155.0a1 \
                --without-wasm-sandboxed-libraries
 ./mach build -j5
 module purge
@@ -66,6 +66,9 @@ module load gettext/0.21/gcc/lhdl4tbr
 ```
 
 unless code contribution/patch is intended (`moz-phab install-certificate`), and we skip setup for AI agentic coding / GitHub.
+
+<font color="red"><b>20/6/2026 Update</b></font>
+Module **ceuadmin/firefox/154.0a1** is available.
 
 <font color="red"><b>27/4/2026 Update</b></font>
 Module **ceuadmin/firefox/152.0a1** is available.
