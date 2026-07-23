@@ -31,10 +31,7 @@ Moreover, note that
 ## ceuadmin/firefox
 
 <font color="red"><b>23/7/2026 Update</b></font>
-Module **ceuadmin/firefox/153.0esr** is available.
-
-<font color="red"><b>20/6/2026 Update</b></font>
-Module **ceuadmin/firefox/155.0a1** is available.
+Modules **ceuadmin/firefox/153.0esr** and **ceuadmin/firefox/155.0a1** are available.
 
 Our purpose is to compile a local copy of Firefox, so
 
