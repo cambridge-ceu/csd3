@@ -601,6 +601,7 @@ All entries are ordered chronologically.
 | 2026-07-19 | gdal/3.10.3                       | Generic               |
 | 2026-07-23 | firefox/153.0esr                  | Generic               |
 | ""         | firefox/155.0a1                   | Genetics              |
+| 2026-07-27 | libarrow/25.0,0                   | Generic[^libarrow]    |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2317,6 +2318,41 @@ They are generated from script [setup.sh](setup.sh),
       -DARROW_PARQUET=ON \
       -DARROW_BUILD_SHARED=ON \
       -DCMAKE_CXX_STANDARD=20
+    ```
+
+    It is more involved with R/arrow 25.0.0, which is proceeded as follows
+
+    ```bash
+    module load ceuadmin/gcc/12.5.0
+    wget -qO- https://dlcdn.apache.org/arrow/arrow-25.0.0/apache-arrow-25.0.0.tar.gz | tar xfz -
+    cd apache-arrow-25.0.0/cpp
+    mkdir build
+    cd build
+    cmake .. \
+      -DCMAKE_C_COMPILER=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/bin/gcc \
+      -DCMAKE_CXX_COMPILER=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/bin/g++ \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=/usr/local/Cluster-Apps/ceuadmin/libarrow/25.0.0 \
+      -DARROW_COMPUTE=ON \
+      -DARROW_CSV=ON \
+      -DARROW_DATASET=ON \
+      -DARROW_FILESYSTEM=ON \
+      -DARROW_IPC=ON \
+      -DARROW_JSON=ON \
+      -DARROW_PARQUET=ON \
+      -DARROW_WITH_ZLIB=ON \
+      -DARROW_WITH_ZSTD=ON \
+      -DARROW_WITH_SNAPPY=ON \
+      -DARROW_BUILD_SHARED=ON
+
+    equivalently,
+
+    export CC=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/bin/gcc
+    export CXX=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/bin/g++
+
+    export ARROW_USE_PKG_CONFIG=true
+    export LIBARROW_BINARY=false
+    R CMD INSTALL arrow_25.0.0.tar.gz
     ```
 
 [^claude]: **claude code**
