@@ -164,7 +164,7 @@ latest R distribution, 4.6.1; there are also packages (CRAN: DescTools, Rfast, R
 herein, riskRegression -- which requires rms; Bioconductor: BiocSingular, DropletUtils, DSS, beachmat, bsseq, scater, scuttle, xcms, 
 xgboost) under 4.6.1-gcc11. Earlier versions such as sf, caTools, lme4, lwgeom, terra, riskRegression, rms, scater, scuttle, SKAT, TMB 
 were removed when they appear for 4.6.1-gcc11. For Rserve 1.8-15, openssl/3.3.0-dev appears working. The package paws.analytics 0.10.0 
-is furnished with SLURM[^paws_analytics]. The package arrow 25.0.0 is built using ceuadmin/libarrow/25.0.0 based on ceuadmin/gcc/12.5.0.
+is furnished with SLURM[^paws_analytics].
 
 It is possible to use packages built under gcc11, e.g., rms as in
 
@@ -191,8 +191,7 @@ Additionally,
 - with recent work on gdal/3.0.4, sf 1.0-21 has been compiled enabling raster 3.6-32, stars 0.6-8, terra 1.8-50 (not 1.8-54 but
   it appears working with module gdal/3.7.0-icl), maptiles 0.10.0 / tmap 4.1. Moreover, rgdal has been replaced with sf and withdrawn
   from CRAN according to information there.
-- arrow/22.0.0.1 is available for gcc/8.5 but not arrow/23.0.0 (C++20 compiler OK with gcc/12.1.0 but GLIBC2.28 under CentOS 8 is too old);
-  see <https://arrow.apache.org/docs/r/articles/install.html>.
+- arrow/22.0.0.1 is available for gcc/8.5 while arrow/25.0.0 is built using ceuadmin/libarrow/25.0.0 based on ceuadmin/gcc/12.5.0.
 
 It is easy to point to them, e.g.,
 
