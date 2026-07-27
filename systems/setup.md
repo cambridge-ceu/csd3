@@ -2320,7 +2320,7 @@ They are generated from script [setup.sh](setup.sh),
       -DCMAKE_CXX_STANDARD=20
     ```
 
-    It is more involved with R/arrow 25.0.0, which is proceeded as follows
+    It is more involved with R/arrow 25.0.0 and R-gcc12/arrow 25.0.0, which is proceeded as follows
 
     ```bash
     module load ceuadmin/gcc/12.5.0
@@ -2345,14 +2345,16 @@ They are generated from script [setup.sh](setup.sh),
       -DARROW_WITH_SNAPPY=ON \
       -DARROW_BUILD_SHARED=ON
 
-    equivalently,
-
-    export CC=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/bin/gcc
-    export CXX=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/bin/g++
-
     export ARROW_USE_PKG_CONFIG=true
     export LIBARROW_BINARY=false
     R CMD INSTALL arrow_25.0.0.tar.gz
+    ```
+
+    CMAKE_C/CXX_COMPILER options can be set equivalently with,
+
+    ```bash
+    export CC=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/bin/gcc
+    export CXX=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/bin/g++
     ```
 
 [^claude]: **claude code**
