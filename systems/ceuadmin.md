@@ -191,7 +191,7 @@ Additionally,
 - with recent work on gdal/3.0.4, sf 1.0-21 has been compiled enabling raster 3.6-32, stars 0.6-8, terra 1.8-50 (not 1.8-54 but
   it appears working with module gdal/3.7.0-icl), maptiles 0.10.0 / tmap 4.1. Moreover, rgdal has been replaced with sf and withdrawn
   from CRAN according to information there.
-- R/arrow/22.0.0.1 is available for gcc/8.5 while R/arrow/R 25.0.0 is based on ceuadmin/libarrow/25.0.0 compiled under ceuadmin/gcc/12.5.0.
+- R/arrow/22.0.0.1 is available for gcc/8.5 while R-gcc12/arrow 25.0.0 is based on ceuadmin/libarrow/25.0.0.
 
 It is easy to point to them, e.g.,
 
