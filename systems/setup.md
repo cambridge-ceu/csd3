@@ -2344,13 +2344,16 @@ They are generated from script [setup.sh](setup.sh),
       -DARROW_WITH_ZSTD=ON \
       -DARROW_WITH_SNAPPY=ON \
       -DARROW_BUILD_SHARED=ON
-
+    make
+    make install
     export ARROW_USE_PKG_CONFIG=true
     export LIBARROW_BINARY=false
+    module load ceuadmin/libarrow/25.0.0
+    module load ceuadmin/R/4.6.1-gcc12
     R CMD INSTALL arrow_25.0.0.tar.gz
     ```
 
-    CMAKE_C/CXX_COMPILER options can be set equivalently with,
+    The CMAKE_C/CXX_COMPILER options can be set equivalently with
 
     ```bash
     export CC=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/bin/gcc
