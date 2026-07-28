@@ -192,14 +192,14 @@ Additionally,
   it appears working with module gdal/3.7.0-icl), maptiles 0.10.0 / tmap 4.1. Moreover, rgdal has been replaced with sf and withdrawn
   from CRAN according to information there.
 - R/arrow 22.0.0.1 is available for gcc/8.5 while R/arrow 24.0.0 additionally requires ceuadmin/gcc/12.5.0, and R-gcc12/arrow 25.0.0 is 
-  based on ceuadmin/libarrow/25.0.0.
+  based on ceuadmin/libarrow/25.0.0. Following this, packages which requires higher versions of gcc/g++ will be installed under R-gcc12.
 
 It is easy to point to them, e.g.,
 
 ```bash
 export HPC_WORK=/rds/user/$USER/hpc-work/
 export RDS=/rds/project/jmmh2/rds-jmmh2-public_databases/software
-export R_LIBS=${RDS}/R:${RDS}/R-gcc11
+export R_LIBS=${RDS}/R:${RDS}/R-gcc11:${RDS}/R-gcc12
 ```
 
 or possible to have your own installations based on these, e.g., through creation of a modified `Makefile` with altered prefix followed
