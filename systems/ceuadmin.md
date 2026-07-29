@@ -309,8 +309,6 @@ The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin
 
 ## Footnotes
 
-Further information is avaiiable from **/usr/local/Cluster-Apps/ceuadmin/doc/ceuadmin.md, ceuadmin.html**.
-
 ---
 
 [^original]:
