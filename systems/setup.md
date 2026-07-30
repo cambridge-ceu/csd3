@@ -602,6 +602,7 @@ All entries are ordered chronologically.
 | 2026-07-23 | firefox/153.0esr                  | Generic               |
 | ""         | firefox/155.0a1                   | Genetics              |
 | 2026-07-27 | libarrow/25.0,0                   | Generic[^libarrow]    |
+| 2026-07-29 | fastqc/0.12.1                     | Genetics[^fastqc]     |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2452,3 +2453,7 @@ They are generated from script [setup.sh](setup.sh),
     mkdir -p "$CEUADMIN/helix/25.07.1/bin/
     install target/release/hx "$CEUADMIN/helix/25.07.1/bin/"
     ```
+
+[^fastqc]: **fastqc**
+
+    See <https://cambridge-ceu.github.io/csd3/applications/fastqc.html>.
