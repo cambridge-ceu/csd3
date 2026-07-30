@@ -6,7 +6,7 @@ sort: 27
 
 Web: <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>
 
-The current (29/7/2026) version is 0.12.1.
+The current (30/7/2026) version is 0.12.1.
 
 ## Binaries
 
