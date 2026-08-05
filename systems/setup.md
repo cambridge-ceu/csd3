@@ -604,6 +604,7 @@ All entries are ordered chronologically.
 | 2026-07-27 | libarrow/25.0,0                   | Generic[^libarrow]    |
 | 2026-07-30 | fastqc/0.12.1                     | Genetics[^fastqc]     |
 | 2026-08-05 | ffmpeg/7.0.2                      | Generic[^ffmpeg]      |
+| ""         | fresh/0.4.6                       | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
