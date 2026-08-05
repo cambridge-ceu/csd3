@@ -2461,6 +2461,6 @@ They are generated from script [setup.sh](setup.sh),
 
 [^ffmpeg]: **ffmpeg**
 
-    The link to the stable release is < https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz> while the most up-to-date version is
+    The link to the stable release is <https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz> while the most up-to-date version is
     <https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz>.
 
