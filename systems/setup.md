@@ -603,7 +603,7 @@ All entries are ordered chronologically.
 | ""         | firefox/155.0a1                   | Genetics              |
 | 2026-07-27 | libarrow/25.0,0                   | Generic[^libarrow]    |
 | 2026-07-30 | fastqc/0.12.1                     | Genetics[^fastqc]     |
-| 2026-08-04 | ffmpeg/7.0.2                      | Generic               |
+| 2026-08-04 | ffmpeg/7.0.2                      | Generic[^ffmpeg]      |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2458,3 +2458,9 @@ They are generated from script [setup.sh](setup.sh),
 [^fastqc]: **fastqc**
 
     See <https://cambridge-ceu.github.io/csd3/applications/fastqc.html>.
+
+[^ffmpeg]: **ffmpeg**
+
+    The link to the most up-to-date version is
+    <https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz>
+
