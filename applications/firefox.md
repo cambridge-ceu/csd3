@@ -7,7 +7,8 @@ sort: 29
 Mercurial (hg): <https://hg.mozilla.org/mozilla-unified> ([releases](https://archive.mozilla.org/pub/firefox/releases/))\
 GitHub: <https://github.com/mozilla-firefox/firefox>
 
-/usr/bin/firefox (140.3.0esr, Extended Support Release) actually works by setting in .bashrc (see also about:support from the browser).
+Since `cat /proc/sys/user/max_net_namespaces` gives 0, network namespaces aren't available, it is necessary to get
+/usr/bin/firefox (140.3.0esr, Extended Support Release) working by setting in .bashrc (see also about:support from the browser).
 
 ```bash
 alias firefox='MOZ_DISABLE_CONTENT_SANDBOX=1 /usr/bin/firefox > /dev/null 2>&1'
