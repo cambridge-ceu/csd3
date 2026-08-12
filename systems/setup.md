@@ -605,6 +605,7 @@ All entries are ordered chronologically.
 | 2026-07-30 | fastqc/0.12.1                     | Genetics[^fastqc]     |
 | 2026-08-05 | ffmpeg/7.0.2                      | Generic[^ffmpeg]      |
 | ""         | fresh/0.4.6                       | Generic               |
+| 2026-08-12 | regenie/4.1                       | Genetics              |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
