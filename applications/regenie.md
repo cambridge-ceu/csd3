@@ -24,7 +24,7 @@ cmake .. \
   -DCMAKE_C_COMPILER=$(which gcc) \
   -DCMAKE_CXX_COMPILER=$(which g++) \
   -DCMAKE_Fortran_COMPILER=$(which gfortran)
-make
+make FC=$(which gfortran)
 regenie --help
 ```
 
