@@ -495,6 +495,7 @@ The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin
     | ""         | vce/6                        | Genetics    |
     | ""         | blupf90/2.75                 | Genetics    |
     | 2026-07-30 | fastqc/0.12.1                | Genetics    |
+    | 2026-08-12 | regenie/4.1                  | Genetics    |
 
     \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
