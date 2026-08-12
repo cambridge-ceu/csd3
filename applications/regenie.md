@@ -19,12 +19,11 @@ module load zlib/1.2.11
 export ZLIB_LIBRARY=/usr/local/Cluster-Apps/zlib/1.2.11
 module load ceuadmin/gcc/12.5.0
 module load intel/mkl/mic/2018.4
-export FC=$(which gfortran)
 mkdir build && cd build
 cmake .. \
   -DCMAKE_C_COMPILER=$(which gcc) \
   -DCMAKE_CXX_COMPILER=$(which g++)
-make
+make FC=$(which gfortran)
 regenie --help
 ```
 
