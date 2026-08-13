@@ -19,7 +19,7 @@ Firefox refuses to start due to a previously crashed session, when `killall fire
 
 Moreover, note that
 
-1. With its handling of sandbox, it looks better to use the nightly builds below.
+1. It looks better to use the nightly builds below without explicit specificaiton of sandbox.
 2. Applications may call /usr/bin/firefox as default browser (e.g., postman), so it may be appropriate to start it IN ADVANCE.
 3. Four bookmarks are available:
    - Rocky Linux, <https://forums.rockylinux.org/>
