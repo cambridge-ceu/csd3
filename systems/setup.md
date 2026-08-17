@@ -607,6 +607,7 @@ All entries are ordered chronologically.
 | ""         | fresh/0.4.6                       | Generic               |
 | 2026-08-12 | regenie/4.1                       | Genetics              |
 | 2026-08-15 | ollama/0.32.13                    | Generic               |
+| 2026-08-17 | firefox/154.0                     | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
