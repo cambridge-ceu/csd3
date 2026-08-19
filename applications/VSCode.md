@@ -6,6 +6,10 @@ sort: 93
 
 Web: <https://code.visualstudio.com/>.
 
+<font color="red"><b>19/8/2026 Update</b></font>
+
+Module `ceuadmin/VSCode/1.133.0` is available.
+
 <font color="red"><b>23/5/2026 Update</b></font>
 
 Module `ceuadmin/VSCode/1.121.0` is available.
