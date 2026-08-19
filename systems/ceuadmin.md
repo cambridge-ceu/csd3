@@ -159,7 +159,7 @@ made).
 
 ### R
 
-A large collection of R packages (1,838 as of 22/7/2026, esp. with availability of major machine learning packages) is linked with the 
+A large collection of R packages (1,840 as of 19/8/2026, esp. with availability of major machine learning packages) is linked with the 
 latest R distribution, 4.6.1; there are also packages (CRAN: DescTools, Rfast, Rfast2, SKAT, rcompanion, rms -- which requires stringi 
 herein, riskRegression -- which requires rms; Bioconductor: BiocSingular, DropletUtils, DSS, beachmat, bsseq, scater, scuttle, xcms, 
 xgboost) under 4.6.1-gcc11. Earlier versions such as sf, caTools, lme4, lwgeom, terra, riskRegression, rms, scater, scuttle, SKAT, TMB 
@@ -194,6 +194,7 @@ Additionally,
 - R/arrow 22.0.0.1 is available for gcc/8.5 while R/arrow 24.0.0 additionally requires ceuadmin/gcc/12.5.0, and R-gcc12/arrow 25.0.0
   is based on ceuadmin/libarrow/25.0.0. Following this, packages which requires higher versions of gcc/g++ will increasingly be
   installed under R-gcc12.
+- Addition of packages from R is furnished with `pkgs <- c("epiR", "gamm4", "inti", "mets", "nanoarrow", "RcppParallel", "rncl", "roxygen2", "stringi", "stringmagic", "tm", "quanteda", "stringfish");install.packages(pkgs)`.
 
 It is easy to point to them, e.g.,
 
