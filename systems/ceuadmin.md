@@ -194,7 +194,7 @@ Additionally,
 - R/arrow 22.0.0.1 is available for gcc/8.5 while R/arrow 24.0.0 additionally requires ceuadmin/gcc/12.5.0, and R-gcc12/arrow 25.0.0
   is based on ceuadmin/libarrow/25.0.0. Following this, packages which requires higher versions of gcc/g++ will increasingly be
   installed under R-gcc12.
-- Addition of packages from R is furnished with `pkgs <- c("epiR", "gamm4", "inti", "mets", "nanoarrow", "RcppParallel", "rncl", "roxygen2", "stringi", "stringmagic", "tm", "quanteda", "stringfish");install.packages(pkgs)`.
+- Addition of packages to R-gcc12 is furnished with `pkgs <- c("epiR", "gamm4", "inti", "mets", "nanoarrow", "RcppParallel", "rncl", "roxygen2", "stringi", "stringmagic", "tm", "quanteda", "stringfish");install.packages(pkgs)`.
 
 It is easy to point to them, e.g.,
 
