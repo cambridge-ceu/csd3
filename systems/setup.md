@@ -1791,7 +1791,7 @@ They are generated from script [setup.sh](setup.sh),
 
     Web, <https://docs.astral.sh/uv/>
 
-   ```bash
+    ```bash
     curl -LsSf https://astral.sh/uv/install.sh | sh
     ```
 
@@ -1799,7 +1799,7 @@ They are generated from script [setup.sh](setup.sh),
 
     To implement `pip cache purge`, use `uv cache clean`.
 
-    A somewhat simpler ways is to run
+    One can also run
 
     ```bash
     curl -LsSf https://astral.sh/uv/install.sh | \
