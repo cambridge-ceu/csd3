@@ -4,7 +4,7 @@ sort: 13
 
 # scGPT
 
-GitHub: <https://github.com/bowang-lab/scGPT>
+GitHub: <https://github.com/bowang-lab/scGPT>, <https://scgpt.readthedocs.io/en/latest/>
 
 The procedures are posted on scGPT site, <https://github.com/bowang-lab/scGPT/issues/306>.
 
