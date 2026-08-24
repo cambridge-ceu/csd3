@@ -609,6 +609,7 @@ All entries are ordered chronologically.
 | 2026-08-15 | ollama/0.32.13                    | Generic               |
 | 2026-08-17 | firefox/154.0                     | Generic               |
 | 2025-08-19 | VSCode/1.133.0                    | Generic               |
+| 2025-08-24 | hermes-agent/2026.8.19 (0.20.5)   | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
