@@ -6,6 +6,27 @@ sort: 43
 
 GitHub, <https://github.com/NousResearch/hermes-agent>
 
+## 2026.8.19 (0.20.5)
+
+This uses a more recent uv explicitly.
+
+``bash
+VERSION=2026.8.19
+PREFIX="$CEUADMIN/hermes-agent/$VERSION"
+mkdir -p "$PREFIX"
+cd "$PREFIX"
+wget -qO- "https://github.com/NousResearch/hermes-agent/archive/refs/tags/v${VERSION}.tar.gz" \
+    | tar -xz --strip-components=1
+mkdir -p "$PREFIX/bin"
+curl -LsSf https://astral.sh/uv/install.sh | \
+    env UV_INSTALL_DIR="$PREFIX/bin" sh
+"$PREFIX/bin/uv" --version
+"$PREFIX/bin/uv" venv --python 3.11 "$PREFIX/venv"
+"$PREFIX/bin/uv" pip install -e ".[all]"
+```
+
+henceforth with `module load ceuadmin/hermes-agent/2026.8.19` we have hermes, uv and uvx on the path.
+
 ## 2026.4.13 (0.9.0)
 
 ```bash
