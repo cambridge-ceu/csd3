@@ -10,7 +10,7 @@ GitHub, <https://github.com/NousResearch/hermes-agent>
 
 This uses a more recent uv explicitly.
 
-``bash
+```bash
 VERSION=2026.8.19
 PREFIX="$CEUADMIN/hermes-agent/$VERSION"
 mkdir -p "$PREFIX"
