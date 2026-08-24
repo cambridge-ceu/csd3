@@ -610,6 +610,7 @@ All entries are ordered chronologically.
 | 2026-08-17 | firefox/154.0                     | Generic               |
 | 2025-08-19 | VSCode/1.133.0                    | Generic               |
 | 2025-08-24 | hermes-agent/2026.8.19 (0.20.5)   | Generic               |
+| ""         | uv/0.12.5                         | Generic[^uv]          |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -1790,13 +1791,20 @@ They are generated from script [setup.sh](setup.sh),
 
     Web, <https://docs.astral.sh/uv/>
 
-    ```bash
+   ```bash
     curl -LsSf https://astral.sh/uv/install.sh | sh
     ```
 
     extracts `uv`/`uvx` to `$HOME/.local/bin` and adds `. "$HOME/.local/bin/env"` to `$HOME/.bashrc` but we might as well customise.
 
     To implement `pip cache purge`, use `uv cache clean`.
+
+    A somewhat simpler ways is to run
+
+    ```bash
+    curl -LsSf https://astral.sh/uv/install.sh | \
+        env UV_INSTALL_DIR="." sh
+    ```
 
 [^bitnet]: **BitNet**
 
