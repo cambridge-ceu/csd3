@@ -17,15 +17,13 @@ mkdir -p "$PREFIX"
 cd "$PREFIX"
 wget -qO- "https://github.com/NousResearch/hermes-agent/archive/refs/tags/v${VERSION}.tar.gz" \
     | tar -xz --strip-components=1
-mkdir -p "$PREFIX/bin"
-curl -LsSf https://astral.sh/uv/install.sh | \
-    env UV_INSTALL_DIR="$PREFIX/bin" sh
-"$PREFIX/bin/uv" --version
-"$PREFIX/bin/uv" venv --python 3.11 "$PREFIX/venv"
-"$PREFIX/bin/uv" pip install -e ".[all]"
+module load ceuadmin/uv/0.12.5
+uv --version
+uv venv --python 3.11 "$PREFIX/venv"
+uv pip install -e ".[all]"
 ```
 
-henceforth with `module load ceuadmin/hermes-agent/2026.8.19` we have hermes, uv and uvx on the path.
+henceforth with `module load ceuadmin/hermes-agent/2026.8.19`.
 
 ## 2026.4.13 (0.9.0)
 
