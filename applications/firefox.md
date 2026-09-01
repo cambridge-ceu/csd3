@@ -32,7 +32,7 @@ Moreover, note that
 ## ceuadmin/firefox
 
 <font color="red"><b>1/9/2026 Update</b></font>
-Modules **ceuadmin/firefox/155.0** is available.
+Modules **ceuadmin/firefox/155.0** and **ceuadmin/firefox/157.0a1** are available.
 
 <font color="red"><b>17/8/2026 Update</b></font>
 Modules **ceuadmin/firefox/154.0** is available.
@@ -60,6 +60,8 @@ export CXXFLAGS="$DBUS_CFLAGS $CXXFLAGS"
 export BINDGEN_EXTRA_CLANG_ARGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
 env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/$(<browser/config/version.txt) \
                --without-wasm-sandboxed-libraries
+export C_INCLUDE_PATH="$SYSROOT/usr/lib/x86_64-linux-gnu/glib-2.0/include:$C_INCLUDE_PATH"
+export CPLUS_INCLUDE_PATH="$SYSROOT/usr/lib/x86_64-linux-gnu/glib-2.0/include:$CPLUS_INCLUDE_PATH"
 ./mach build -j5
 module purge
 module load rhel8/default-icl
