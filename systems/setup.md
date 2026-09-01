@@ -611,7 +611,7 @@ All entries are ordered chronologically.
 | 2025-08-19 | VSCode/1.133.0                    | Generic               |
 | 2025-08-24 | hermes-agent/2026.8.19 (0.20.5)   | Generic               |
 | ""         | uv/0.12.5                         | Generic[^uv]          |
-| 2026-09-01 | firefox/155.0                     | Generic               |
+| 2026-09-01 | firefox/[155.0\|157.0a1]          | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
