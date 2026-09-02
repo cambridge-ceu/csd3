@@ -613,6 +613,9 @@ All entries are ordered chronologically.
 | ""         | uv/0.12.5                         | Generic[^uv]          |
 | 2026-09-01 | firefox/[155.0\|157.0a1]          | Generic               |
 | ""         | clang/22.1.8                      | Generic               |
+| ""         | nasm/3.01                         | Generic               |
+| ""         | dump_syms/2.3.8                   | Generic               |
+| ""         | pkg-config/2.5.1                  | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
