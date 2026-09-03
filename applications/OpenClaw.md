@@ -6,6 +6,21 @@ sort: 57
 
 Web: <https://openclaw.ai/>
 
+## 2026.8.2
+
+```bash
+module load ceuadmin/node/24.15.0
+export version=2026.8.2
+export BASE="$CEUADMIN/OpenClaw/$version"
+npm view openclaw versions
+npm install -g "openclaw@$version" --prefix "$BASE"
+# Extensions
+module load ceuadmin/OpenClaw/$version
+export OPENCLAW_STATE_DIR="$BASE/state"
+export OPENCLAW_CONFIG_PATH="$BASE/config.json"
+openclaw plugins install ollama
+```
+
 ## 2026.4.15
 
 ```bash
