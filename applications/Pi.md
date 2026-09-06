@@ -6,6 +6,39 @@ sort: 63
 
 Web, <https://pi.dev/>
 
+The old @mariozechner/pi-coding-agent package stopped at 0.73.1.
+
+## 0.85.1
+
+```bash
+module load ceuadmin/node/24.15.0
+npm view @mariozechner/pi-coding-agent version
+export version="0.85.1"
+export BASE="$CEUADMIN/Pi/${version}"
+npm install -g @earendil-works/pi-coding-agent@${version} --prefix "$BASE"
+npm install -g pi-subagents @ollama/pi-web-search --prefix "$BASE"
+export PATH="$BASE/bin:$PATH"
+which pi
+pi --version
+ln -sfn "$BASE" ~/.pi
+pi install "$BASE/lib/node_modules/pi-subagents"
+pi install "$BASE/lib/node_modules/@ollama/pi-web-search"
+pi install https://github.com/davebcn87/pi-autoresearch
+pi list
+```
+
+and GPT-7 Astra is supported. Again it shows,
+
+```
+User packages:
+  ../../../../usr/local/Cluster-Apps/ceuadmin/Pi/0.85.1/lib/node_modules/pi-subagents
+    /usr/local/Cluster-Apps/ceuadmin/Pi/0.85.1/lib/node_modules/pi-subagents
+  ../../../../usr/local/Cluster-Apps/ceuadmin/Pi/0.85.1/lib/node_modules/@ollama/pi-web-search
+    /usr/local/Cluster-Apps/ceuadmin/Pi/0.85.1/lib/node_modules/@ollama/pi-web-search
+  https://github.com/davebcn87/pi-autoresearch
+    /home/jhz22/.pi/agent/git/github.com/davebcn87/pi-autoresearch
+```
+
 ## 0.67.68
 
 ```bash
