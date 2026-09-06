@@ -618,6 +618,7 @@ All entries are ordered chronologically.
 | ""         | dump_syms/2.3.8                   | Generic               |
 | ""         | pkg-config/2.5.1                  | Generic               |
 | 2026-09-03 | OpenClaw/2026.8.2                 | Generic               |
+| 2026-09-06 | Pi/0.85.1                         | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
