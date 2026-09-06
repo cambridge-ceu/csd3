@@ -6,8 +6,6 @@ sort: 63
 
 Web, <https://pi.dev/>
 
-The old @mariozechner/pi-coding-agent package stopped at 0.73.1.
-
 ## 0.85.1
 
 ```bash
@@ -27,7 +25,7 @@ pi install https://github.com/davebcn87/pi-autoresearch
 pi list
 ```
 
-and GPT-7 Astra is supported. Again it shows,
+The old @mariozechner/pi-coding-agent package stopped at 0.73.1 and GPT-7 Astra is supported. Again we have,
 
 ```
 User packages:
