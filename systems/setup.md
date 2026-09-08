@@ -621,6 +621,7 @@ All entries are ordered chronologically.
 | 2026-09-06 | Pi/0.85.1                         | Generic               |
 | 2026-09-08 | claude-code/2.1.263               | Generic               |
 | ""         | codex-cli/0.153.4                 | Generic               |
+| ""         | copilot-cli/1.0.83                | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
