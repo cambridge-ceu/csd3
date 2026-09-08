@@ -6,6 +6,16 @@ sort: 16
 
 Official page: <https://claude.com/product/claude-code>
 
+## 2.1.263
+
+```bash
+https://github.com/anthropics/claude-code/releases/download/v2.1.263/claude-linux-x64.tar.gz | \
+tar xvfz -
+./code --version
+```
+
+as from 2.1.113, Claude Code has been distributed as a native standalone binary.
+
 ## 2.1.89
 
 Web, <https://www.npmjs.com/package/@anthropic-ai/claude-code>
