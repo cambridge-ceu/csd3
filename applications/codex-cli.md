@@ -10,26 +10,35 @@ Official page: <https://openai.com/codex/>
 
 It provides support for GPT-6 Astra.
 
-```bash
-# standalone version
-wget -qO- https://github.com/openai/codex/releases/download/rust-v0.153.4/codex-x86_64-unknown-linux-musl.tar.gz | \
-tar xfz -
-ln -s codex-x86_64-unknown-linux-musl codex
-```
-
-Note that from 0.132.0 there is also a standalone distribution as above, which proceeds similarly to claude-code/2.1.263.
-Nevertheless, the old node.js counterpart still works as before.
+The node.js counterpart works as before.
 
 ```
 module load ceuadmin/node/22.16.0
 npm i -g @openai/codex@0.153.4 --prefix=$CEUADMIN/codex-cli/0.153.4
+```
+
+Note that from 0.132.0 there is also a standalone distribution as above, which proceeds similarly to claude-code/2.1.263.
+
+```bash
+# standalone version
 cd "$CEUADMIN/codex-cli/0.153.4"
+wget -qO- https://github.com/openai/codex/releases/download/rust-v0.153.4/codex-x86_64-unknown-linux-musl.tar.gz | \
+tar xfz -
+ln -s codex-x86_64-unknown-linux-musl codex
 ln -sf \
   lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex-code-mode-host \
   codex-code-mode-host
+sha256sum \
+   /usr/local/Cluster-Apps/ceuadmin/codex-cli/0.153.4/codex-x86_64-unknown-linux-musl \
+   /usr/local/Cluster-Apps/ceuadmin/codex-cli/0.153.4/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex
 ```
 
-the latter provides `codex-code-mode-host` as required by agentic programming.
+note `codex-code-mode-host` is required by agentic programming. We see that the two versions are exactly the same so the standalone version is unnecessary.
+
+```
+56ef98ab4032d317ab26e9b5e5a175650717351edb16ed9cde0cb6d1734d62da  /usr/local/Cluster-Apps/ceuadmin/codex-cli/0.153.4/codex-x86_64-unknown-linux-musl
+56ef98ab4032d317ab26e9b5e5a175650717351edb16ed9cde0cb6d1734d62da  /usr/local/Cluster-Apps/ceuadmin/codex-cli/0.153.4/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex
+```
 
 We are also interested in a local model, e.g., in our trusted folder named `codex`:
 
