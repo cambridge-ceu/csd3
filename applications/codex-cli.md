@@ -15,12 +15,15 @@ It provides support for GPT-6 Astra.
 wget -qO- https://github.com/openai/codex/releases/download/rust-v0.153.4/codex-x86_64-unknown-linux-musl.tar.gz | \
 tar xfz -
 ln -s codex-x86_64-unknown-linux-musl codex
-# the old node.js counterpart still works
-module load ceuadmin/node/22.16.0
-npm i -g @openai/codex@0.153.4 --prefix=$CEUADMIN/codex-cli/0.153.4
 ```
 
 Note that from 0.132.0 there is also a standalone distribution as above, which proceeds similarly to claude-code/2.1.263.
+Nevertheless, the old node.js counterpart still works as before.
+
+```
+module load ceuadmin/node/22.16.0
+npm i -g @openai/codex@0.153.4 --prefix=$CEUADMIN/codex-cli/0.153.4
+```
 
 ## 0.120.0
 
