@@ -17,10 +17,9 @@ module load ceuadmin/node/22.16.0
 npm i -g @openai/codex@0.153.4 --prefix=$CEUADMIN/codex-cli/0.153.4
 ```
 
-Note that from 0.132.0 there is also a standalone distribution as above, which proceeds similarly to claude-code/2.1.263.
+Note that from 0.132.0 there is also a standalone distribution as with claude-code/2.1.263.
 
 ```bash
-# standalone version
 cd "$CEUADMIN/codex-cli/0.153.4"
 wget -qO- https://github.com/openai/codex/releases/download/rust-v0.153.4/codex-x86_64-unknown-linux-musl.tar.gz | \
 tar xfz -
@@ -33,7 +32,7 @@ sha256sum \
    /usr/local/Cluster-Apps/ceuadmin/codex-cli/0.153.4/lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex
 ```
 
-note `codex-code-mode-host` is required by agentic programming. We see that the two versions are exactly the same so the standalone version is unnecessary.
+as `codex-code-mode-host` is required by agentic programming. The two versions are seen exactly the same so the standalone version is unnecessary.
 
 ```
 56ef98ab4032d317ab26e9b5e5a175650717351edb16ed9cde0cb6d1734d62da  /usr/local/Cluster-Apps/ceuadmin/codex-cli/0.153.4/codex-x86_64-unknown-linux-musl
@@ -58,14 +57,14 @@ codex exec \
   "Inspect AGENTS.md and tell me which R files are the primary implementations. Do not modify anything." 2>/dev/null
 ```
 
-Based on the AGENTS.md instructions, the primary R implementation files are:
+> Based on the AGENTS.md instructions, the primary R implementation files are:
 
-- **`ccsize.R`**
-- **`ccsize07.R`**
+> - **`ccsize.R`**
+> - **`ccsize07.R`**
 
-These contain the main implementations for:
-- `ccsize()` — Cai & Zeng (2004), rare events
-- `ccsize07()` — Cai & Zeng (2007), non-rare events
+> These contain the main implementations for:
+> - `ccsize()` — Cai & Zeng (2004), rare events
+> - `ccsize07()` — Cai & Zeng (2007), non-rare events
 
 ## 0.120.0
 
