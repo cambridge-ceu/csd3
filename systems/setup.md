@@ -620,6 +620,7 @@ All entries are ordered chronologically.
 | 2026-09-03 | OpenClaw/2026.8.2                 | Generic               |
 | 2026-09-06 | Pi/0.85.1                         | Generic               |
 | 2026-09-08 | claude-code/2.1.263               | Generic               |
+| ""         | codex-cli/0.153.4                 | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
