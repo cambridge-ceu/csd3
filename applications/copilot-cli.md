@@ -12,13 +12,15 @@ Official page: <https://www.npmjs.com/package/@github/copilot>, GitHub: <https:/
 module load ceuadmin/node
 npm view @github/copilot versions --json
 export version=1.0.83
-npm install -g @github/copilot@$version --prefix $CEUADMIN/copilot-cli/$version
-# package/
-wget -qO- https://github.com/github/copilot-cli/releases/download/v1.0.83/github-copilot-1.0.83-linux-x64.tgz | \
-tar tvfz -
-# standalone exexutable
-wget -qO-   https://github.com/github/copilot-cli/releases/download/v1.0.83/copilot-linux-x64.tar.gz | \
-tar tvfz -
+export root="$CEUADMIN/copilot-cli/$version"
+# npm package
+npm install -g "@github/copilot@$version" --prefix "$root"
+# package/ payload
+wget -qO- "https://github.com/github/copilot-cli/releases/download/v${version}/github-copilot-${version}-linux-x64.tgz" | \
+    tar xzf - -C "$root"
+# standalone executable
+wget -qO- "https://github.com/github/copilot-cli/releases/download/v${version}/copilot-linux-x64.tar.gz" | \
+    tar xzf - -C "$root"
 ```
 
 Note that
