@@ -31,6 +31,33 @@ ln -sf \
 
 the latter provides `codex-code-mode-host` as required by agentic programming.
 
+We are also interested in a local model, e.g., in our trusted folder named `codex`:
+
+```bash
+module load ceuadmin/ollama/0.32.13
+ollama serve > /dev/null 2>&1 &
+while ! curl -s http://localhost:11434/api/tags >/dev/null; do
+  sleep 1
+done
+ollama list | (read header; echo "$header"; sort -f -k1,1)
+cd codex
+codex exec \
+  --oss \
+  --local-provider ollama \
+  --model qwen3.5:27b \
+  --skip-git-repo-check \
+  "Inspect AGENTS.md and tell me which R files are the primary implementations. Do not modify anything." 2>/dev/null
+```
+
+Based on the AGENTS.md instructions, the primary R implementation files are:
+
+- **`ccsize.R`**
+- **`ccsize07.R`**
+
+These contain the main implementations for:
+- `ccsize()` — Cai & Zeng (2004), rare events
+- `ccsize07()` — Cai & Zeng (2007), non-rare events
+
 ## 0.120.0
 
 Web, <https://www.npmjs.com/package/@openai/codex>
