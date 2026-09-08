@@ -4,7 +4,10 @@ sort: 21
 
 # copilot-cli
 
-Official page: <https://www.npmjs.com/package/@github/copilot>, GitHub: <https://github.com/github/copilot-cli>
+Web: 
+
+- GitHub: <https://github.com/github/copilot-cli>
+- npm, <https://www.npmjs.com/package/@github/copilot>
 
 ## 1.0.83
 
