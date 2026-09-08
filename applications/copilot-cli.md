@@ -6,7 +6,30 @@ sort: 21
 
 Official page: <https://www.npmjs.com/package/@github/copilot>, GitHub: <https://github.com/github/copilot-cli>
 
-## Installation
+## 1.0.83
+
+```bash
+module load ceuadmin/node
+npm view @github/copilot versions --json
+export version=1.0.83
+npm install -g @github/copilot@$version --prefix $CEUADMIN/copilot-cli/$version
+# package/
+wget -qO- https://github.com/github/copilot-cli/releases/download/v1.0.83/github-copilot-1.0.83-linux-x64.tgz | \
+tar tvfz -
+# standalone exexutable
+wget -qO-   https://github.com/github/copilot-cli/releases/download/v1.0.83/copilot-linux-x64.tar.gz | \
+tar tvfz -
+```
+
+Note that
+
+| Copy                     | Purpose                                                                      |
+| ------------------------ | ---------------------------------------------------------------------------- |
+| **Standalone `copilot`** | Truly self-contained executable; easiest fallback                            |
+| **`package/` archive**   | Best for inspecting/reusing skills, agents, schemas, SDK, runtime components |
+| **npm installation**     | Clean, versioned, supported installation and easiest to run/update           |
+
+## 1.0.32
 
 ```bash
 module load ceuadmin/node
