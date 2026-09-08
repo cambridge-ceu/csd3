@@ -23,7 +23,13 @@ Nevertheless, the old node.js counterpart still works as before.
 ```
 module load ceuadmin/node/22.16.0
 npm i -g @openai/codex@0.153.4 --prefix=$CEUADMIN/codex-cli/0.153.4
+cd "$CEUADMIN/codex-cli/0.153.4"
+ln -sf \
+  lib/node_modules/@openai/codex/node_modules/@openai/codex-linux-x64/vendor/x86_64-unknown-linux-musl/bin/codex-code-mode-host \
+  codex-code-mode-host
 ```
+
+the latter provides `codex-code-mode-host` as required by agentic programming.
 
 ## 0.120.0
 
