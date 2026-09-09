@@ -16,6 +16,13 @@ tar xvfz -
 
 as from 2.1.113, Claude Code has been distributed as a native standalone binary.
 
+On our case-cohort agentic benchmark, it appears working better than codex-cli/0.153.4:
+
+- no need for other executables (`codex-code-mode-host`)
+- comfortable with sandbox (`bwrap`)
+
+and leading to satifactory results.
+
 ## 2.1.89
 
 Web, <https://www.npmjs.com/package/@anthropic-ai/claude-code>
