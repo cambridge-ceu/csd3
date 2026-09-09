@@ -57,6 +57,8 @@ codex exec \
   "Inspect AGENTS.md and tell me which R files are the primary implementations. Do not modify anything." 2>/dev/null
 ```
 
+where a simple task is furnished on our case-cohort agenetic benchmark, giving
+
 > Based on the AGENTS.md instructions, the primary R implementation files are:
 
 > - **`ccsize.R`**
