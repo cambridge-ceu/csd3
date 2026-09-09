@@ -34,7 +34,7 @@ We have
 | **`package/` archive**   | Best for inspecting/reusing skills, agents, schemas, SDK, runtime components |
 | **npm installation**     | Clean, versioned, supported installation and easiest to run/update           |
 
-but the standalone counterpart appears to the same as in node_modules/@github/copilot-linux-x64/ so is removed.
+but the standalone counterpart appears to be the same as one in node_modules/@github/copilot-linux-x64/ thus removed.
 
 ## 1.0.32
 
