@@ -160,7 +160,8 @@ When there is an error `'abrt-cli status' timed out`, one should remove ${HOME}/
 It is useful to note that it is preferable to put an alias
 
 ```
-alias ssh='ssh -q -X $@'
+alias ssh='ssh -q -X'
+alias ssh='ssh -X -o LogLevel=ERROR'
 ```
 
 into `${HOME}/.bashrc` in case a remote login is necessary (e.g., faster login to CSD3 or there is poor local network connection).
