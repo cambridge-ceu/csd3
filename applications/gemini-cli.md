@@ -14,6 +14,47 @@ npm i -g @google/gemini-cli@0.59.0 --prefix=$CEUADMIN/gemini-cli/0.59.0
 $CEUADMIN/gemini-cli/0.59.0/bin/gemini --version
 ```
 
+## 0.34.0
+
+This showcases a more formal setup analogous to the OpenClaw module, say,
+
+```bash
+module load ceuadmin/node/22.16.0
+npm install -g gemini-cli@0.34.0 --prefix $CEUADMIN/gemini-cli/0.34.0
+```
+
+so that
+
+```bash
+export GEMINI_API_KEY=$(cat $HOME/doc/gemini-cli)
+module load ceuadmin/gemini-cli/0.34.0
+gemini "why the sky is blue; make a simple poem in Chinese"
+```
+
+gives
+
+```
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+✦ The sky is blue due to Rayleigh scattering. As sunlight enters Earth's atmosphere, it collides with gas molecules and scatters in all
+  directions. Blue light travels in shorter, smaller waves and is scattered more strongly than other colors, making the sky appear blue to our
+  eyes.
+
+  Here is a simple poem in Chinese about the blue sky:
+
+  蓝天 (Lántiān) — Blue Sky
+
+  晴空万里深， (Qíngkōng wànlǐ shēn,)
+  碧色照人心。 (Bìsè zhào rénxīn.)
+  悠悠白云过， (Yōuyōu báiyún guò,)
+  此景最怡神。 (Cǐ jǐng zuì yíshén.)
+
+  Translation:
+  The clear sky stretches for ten thousand miles, deep and vast,
+  Its emerald-blue color shines upon the heart.
+  Leisurely, the white clouds pass by,
+  This view is the most refreshing of all.
+```
+
 ## Setup
 
 This takes advanatage of ceuadmin/node modules.
@@ -148,45 +189,4 @@ with prompt, `why the sky is blue`
   Long waves (reds/yellows) pass through without a trace,
   Only the blue remains to paint the azure waves.
 
-```
-
-## 0.34.0
-
-This showcases a more formal setup analogous to the OpenClaw module, say,
-
-```bash
-module load ceuadmin/node/22.16.0
-npm install -g gemini-cli@0.34.0 --prefix $CEUADMIN/gemini-cli/0.34.0
-```
-
-so that
-
-```bash
-export GEMINI_API_KEY=$(cat $HOME/doc/gemini-cli)
-module load ceuadmin/gemini-cli/0.34.0
-gemini "why the sky is blue; make a simple poem in Chinese"
-```
-
-gives
-
-```
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-✦ The sky is blue due to Rayleigh scattering. As sunlight enters Earth's atmosphere, it collides with gas molecules and scatters in all
-  directions. Blue light travels in shorter, smaller waves and is scattered more strongly than other colors, making the sky appear blue to our
-  eyes.
-
-  Here is a simple poem in Chinese about the blue sky:
-
-  蓝天 (Lántiān) — Blue Sky
-
-  晴空万里深， (Qíngkōng wànlǐ shēn,)
-  碧色照人心。 (Bìsè zhào rénxīn.)
-  悠悠白云过， (Yōuyōu báiyún guò,)
-  此景最怡神。 (Cǐ jǐng zuì yíshén.)
-
-  Translation:
-  The clear sky stretches for ten thousand miles, deep and vast,
-  Its emerald-blue color shines upon the heart.
-  Leisurely, the white clouds pass by,
-  This view is the most refreshing of all.
 ```
