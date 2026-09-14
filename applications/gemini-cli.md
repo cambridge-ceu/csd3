@@ -14,6 +14,79 @@ npm i -g @google/gemini-cli@0.59.0 --prefix=$CEUADMIN/gemini-cli/0.59.0
 $CEUADMIN/gemini-cli/0.59.0/bin/gemini --version
 ```
 
+and again
+
+```bash
+export GEMINI_API_KEY=$(cat $HOME/doc/gemini-cli)
+module load ceuadmin/gemini-cli/0.59.0
+gemini "why the sky is blue; make a simple poem in Chinese"
+```
+
+to get
+
+```
+
+ ▝▜▄     Gemini CLI v0.59.0
+   ▝▜▄
+  ▗▟▀    Authenticated with gemini-api-key /auth
+ ▝▀
+
+
+ℹ Positional arguments now default to interactive mode. To run in non-interactive mode, use the --prompt (-p) flag.
+
+ > why the sky is blue; make a simple poem in Chinese
+
+✦ Why the Sky is Blue
+  The sky is blue because of a phenomenon called Rayleigh scattering. Sunlight contains all the colors of the rainbow, but when it passes
+  through the Earth's atmosphere, the gases and particles scatter the light in all directions. Since blue light travels in shorter, smaller
+  waves than other colors, it is scattered much more than the other colors, making the sky appear blue to our eyes.
+
+  ---
+
+  Chinese Poem (关于蓝天的诗)
+
+  《晴空》
+
+  抬头望晴空，
+  万里湛蓝同。
+  白云如白浪，
+  悠悠入画中。
+
+  (Translation: Looking up at the clear sky, ten thousand miles of deep blue. White clouds are like white waves, leisurely drifting into the
+  painting.)
+
+ > /quit
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                            │
+│  Agent powering down. Goodbye!                                                                                                             │
+│                                                                                                                                            │
+│  Interaction Summary                                                                                                                       │
+│  Session ID:                 03df147d-eb90-4b36-bc33-c0a315974297                                                                          │
+│  Tool Calls:                 0 ( ✓ 0 x 0 )                                                                                                 │
+│  Success Rate:               0.0%                                                                                                          │
+│                                                                                                                                            │
+│  Performance                                                                                                                               │
+│  Wall Time:                  58.2s                                                                                                         │
+│  Agent Active:               12.0s                                                                                                         │
+│    » API Time:               12.0s (100.0%)                                                                                                │
+│    » Tool Time:              0s (0.0%)                                                                                                     │
+│                                                                                                                                            │
+│                                                                                                                                            │
+│  Model Usage                                                                                                                               │
+│  Use /model to view model quota information                                                                                                │
+│                                                                                                                                            │
+│  Model                           Reqs  Input Tokens   Cache Reads Output Tokens                                                            │
+│  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  │
+│  gemini-3.1-flash-lite              2         2,682             0            43                                                            │
+│    ↳ utility_router                 1         2,413             0            39                                                            │
+│    ↳ utility_summarizer             1           269             0             4                                                            │
+│  gemini-3.5-flash                   1        12,157             0           161                                                            │
+│    ↳ main                           1        12,157             0           161                                                            │
+│  To resume this session: gemini --resume 03df147d-eb90-4b36-bc33-c0a315974297                                                              │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+```
+
 ## 0.34.0
 
 This showcases a more formal setup analogous to the OpenClaw module, say,
