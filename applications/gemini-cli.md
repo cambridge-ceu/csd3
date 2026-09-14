@@ -85,7 +85,47 @@ to get
 │    ↳ main                           1        12,157             0           161                                                            │
 │  To resume this session: gemini --resume 03df147d-eb90-4b36-bc33-c0a315974297                                                              │
 ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
 ```
+
+> ✦ Between version 0.34.0 and the current version 0.59.0, Gemini CLI has transitioned from a straightforward helper CLI into an advanced,
+>   context-aware, and sandboxed autonomous agent platform.
+
+>   Here are the key enhancements, structured by area:
+
+>   1. New Autonomous & Intelligence Features
+>    * Auto Memory & Background Skill Extraction (experimental.autoMemory): Periodically analyzes idle local session history to extract
+>      recurring workflows, team conventions, and user preferences. It proposes updates (patches and .md files) in an interactive inbox via the
+>      new /memory inbox command.
+>    * Real-Time Voice Mode (experimental.voiceMode): Enables hands-free interactions with voice dictation, featuring dual backends: a
+>      cloud-based gemini-live option and a local offline option powered by whisper.
+>    * Agent-to-Agent (A2A) Protocols: Deeply integrates with caretaker automated runners (such as PR automation, caretaker issue triage, and
+>      evals reporting against issue suites).
+>    * Unified Auto Mode: Streamlined all automated running styles into a cohesive, single autonomous mode.
+
+>   2. Sandbox, Safety & Redaction Upgrades
+>    * Context-Aware Security Checker (Conseca): On-the-fly prompt inspection that dynamically crafts and enforces strict security policies for
+>      tools before execution.
+>    * Tool-Level Sandboxing: Granular isolation on a per-tool level (using OS-native mechanisms like Linux Bubblewrap/seccomp and macOS
+>      Seatbelt profiles) instead of process-wide sandboxing.
+>    * Credential Redaction & Approval Policies: Automated best-effort redaction of API keys, passwords, and tokens during tool runtimes,
+>      alongside the ability to set persistent, context-aware "Always Allow" tool approvals.
+
+>   3. Core Tooling & UX Enhancements
+>   * Surgical Editing: Optimization of model behaviors to strictly prefer targeted, partial edits (via tools like replace) over complete file
+>     rewrites, resulting in faster execution and significantly lower token usage.
+>   * Chapters Narrative Flow: Grouped agent executions and actions into thematic "Chapters" that represent distinct logical phases (Research,
+>     Strategy, Execution, Validation), enhancing flow readability.
+>   * Flicker-Free Terminal Buffer & Mouse Support: Introduced a custom rendering layer to resolve flicker, alongside mouse-click focus and
+>     custom/extended Kitty keyboard protocols.
+>   * Advanced Vim Mode: Expanded modal bindings to fully support missing motions (like X, ~, r, f/F/t/T) and unnamed register actions.
+
+>  4. CLI Arguments & Configuration
+>   * Unified Approval: New --approval-mode <mode> command-line flag (default, auto_edit, yolo, plan).
+>   * Multi-Directory Ingestion: Allows specifying up to 5 custom directories using --include-directories.
+>   * Headless Streaming: Support for --output-format stream-json to emit structured JSONL events programmatically.
+>   * Schema Restructuring: Standardized settings in settings.json into clean categories like ui, billing, model, tools, mcp, security, and
+>     experimental.
 
 ## 0.34.0
 
