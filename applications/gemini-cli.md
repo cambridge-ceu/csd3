@@ -6,6 +6,14 @@ sort: 37
 
 Web: <https://geminicli.com/> ([GitHub](https://github.com/google-gemini/gemini-cli))
 
+## 0.59.0
+
+```bash
+module load ceuadmin/node/24.15.0
+npm i -g @google/gemini-cli@0.59.0 --prefix=$CEUADMIN/gemini-cli/0.59.0
+$CEUADMIN/gemini-cli/0.59.0/bin/gemini --version
+```
+
 ## Setup
 
 This takes advanatage of ceuadmin/node modules.
