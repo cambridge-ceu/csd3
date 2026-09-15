@@ -623,6 +623,7 @@ All entries are ordered chronologically.
 | ""         | codex-cli/0.153.4                 | Generic               |
 | ""         | copilot-cli/1.0.83                | Generic               |
 | 2026-09-14 | gemini-cli/0.59.0                 | Generic               |
+| 2026-09-15 | firefoxi/156.0                    | Generic               |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
