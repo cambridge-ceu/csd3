@@ -26,6 +26,7 @@ pip install scgpt==0.2.4
 pip install "flash-attn==1.0.4" --no-build-isolation
 pip install wandb faiss-cpu nbformat ipykernel
 pip install gseapy
+pip install torch-geometric
 python -m pip check
 python -m ipykernel install --user \
   --name scGPT-models \
@@ -34,6 +35,7 @@ python -c "import sys; print(sys.version)"
 python -c "import torch, numpy, scanpy, anndata, scvi, scgpt; print('torch:', torch.__version__); print('cuda:', torch.version.cuda);
 print('numpy:', numpy.__version__); print('scanpy:', scanpy.__version__); print('anndata:', anndata.__version__); print('scvi:',
 scvi.__version__); print('scgpt:', scgpt.__version__); print('CUDA available:', torch.cuda.is_available())"
+python -c "from torch_geometric.nn import SGConv; print('torch-geometric OK')"
 pip list | awk '/gseapy|scanpy|scib|scvi|scgpt|flash-attn|torch|wandb/'
 ```
 
@@ -50,6 +52,7 @@ anndata: 0.9.2
 scvi: 0.20.3
 scgpt: 0.2.4
 CUDA available: True
+torch-geometric OK
 flash-attn                1.0.4
 gseapy                    1.3.1
 pytorch-lightning         1.9.5
