@@ -25,6 +25,7 @@ pip install scvi-tools==0.20.3 anndata==0.9.2 scanpy==1.9.3
 pip install scgpt==0.2.4
 pip install "flash-attn==1.0.4" --no-build-isolation
 pip install wandb faiss-cpu nbformat ipykernel
+pip install gseapy
 python -m pip check
 python -m ipykernel install --user \
   --name scGPT-models \
@@ -33,13 +34,24 @@ python -c "import sys; print(sys.version)"
 python -c "import torch, numpy, scanpy, anndata, scvi, scgpt; print('torch:', torch.__version__); print('cuda:', torch.version.cuda);
 print('numpy:', numpy.__version__); print('scanpy:', scanpy.__version__); print('anndata:', anndata.__version__); print('scvi:',
 scvi.__version__); print('scgpt:', scgpt.__version__); print('CUDA available:', torch.cuda.is_available())"
-pip list | awk '/scanpy|scib|scvi|scgpt|flash-attn|torch|wandb/'
+pip list | awk '/gseapy|scanpy|scib|scvi|scgpt|flash-attn|torch|wandb/'
 ```
 
 giving
 
 ```
+No broken requirements found.
+3.9.12 (main, Jul 20 2022, 11:04:08)
+torch: 2.0.1+cu117
+cuda: 11.7
+numpy: 1.26.4
+scanpy: 1.9.3
+anndata: 0.9.2
+scvi: 0.20.3
+scgpt: 0.2.4
+CUDA available: True
 flash-attn                1.0.4
+gseapy                    1.3.1
 pytorch-lightning         1.9.5
 scanpy                    1.9.3
 scgpt                     0.2.4
