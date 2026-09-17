@@ -52,9 +52,9 @@ git pull
 module load ceuadmin/gcc/12.5.0
 module load ceuadmin/gtk+/3.24.0
 module load ceuadmin/rust/nightly
-module load ceuadmin/clang/20.1.8
-export CC=clang
-export CXX=clang++
+module load ceuadmin/clang/22.1.8
+export CC="clang --gcc-toolchain=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0"
+export CXX="clang++ --gcc-toolchain=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0"
 export CFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include $CFLAGS"
 export CXXFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include $CXXFLAGS"
 export DBUS_CFLAGS="$(pkg-config --cflags dbus-1)"
