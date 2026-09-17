@@ -8,31 +8,53 @@ GitHub: <https://github.com/bowang-lab/scGPT>, <https://scgpt.readthedocs.io/en/
 
 The procedures are posted on scGPT site, <https://github.com/bowang-lab/scGPT/issues/306>.
 
-## Python/3.11
+## Python/3.9.12
 
 ```bash
-module load python/3.11.0-icl
+module load python/3.9.12/gcc/pdcqf4o5
 python -m venv scGPT-models
 source scGPT-models/bin/activate
-python -m pip install --upgrade pip setuptools wheel
+python -m pip install --upgrade pip
+pip install "setuptools<70" wheel
+pip install numpy==1.26.4
+pip install matplotlib==3.7.5
 pip install torch==2.0.1+cu117 torchvision==0.15.2+cu117 torchaudio==2.0.2+cu117 \
-  --index-url https://download.pytorch.org/whl/cu117
-pip install packaging ninja
-pip install "flash-attn==1.0.4" --no-build-isolation
-pip install scgpt
-pip install "numpy>2,<3"
+  torchtext==0.15.2 torchdata==0.6.1 \
+  --extra-index-url https://download.pytorch.org/whl/cu117
 pip install scvi-tools==0.20.3 anndata==0.9.2 scanpy==1.9.3
+pip install scgpt==0.2.4
+pip install "flash-attn==1.0.4" --no-build-isolation
 pip install wandb faiss-cpu nbformat ipykernel
+python -m pip check
 python -m ipykernel install --user \
   --name scGPT-models \
   --display-name "Python (scGPT-models)"
-python -m pip check
-python -c "import torch, numpy, scanpy, anndata, scvi; print('torch:', torch.__version__); print('cuda:', torch.version.cuda);
+python -c "import sys; print(sys.version)"
+python -c "import torch, numpy, scanpy, anndata, scvi, scgpt; print('torch:', torch.__version__); print('cuda:', torch.version.cuda);
 print('numpy:', numpy.__version__); print('scanpy:', scanpy.__version__); print('anndata:', anndata.__version__); print('scvi:',
-scvi.__version__); print('CUDA available:', torch.cuda.is_available())"
+scvi.__version__); print('scgpt:', scgpt.__version__); print('CUDA available:', torch.cuda.is_available())"
+pip list | awk '/scanpy|scib|scvi|scgpt|flash-attn|torch|wandb/'
 ```
 
-## Release with Python/3.9.12
+giving
+
+```
+flash-attn                1.0.4
+pytorch-lightning         1.9.5
+scanpy                    1.9.3
+scgpt                     0.2.4
+scib                      1.1.7        1
+scvi-tools                0.20.3
+torch                     2.0.1+cu117
+torchaudio                2.0.2+cu117
+torchdata                 0.6.1
+torchmetrics              1.8.2
+torchtext                 0.15.2+cpu
+torchvision               0.15.2+cu117
+wandb                     0.26.1
+```
+
+## Release
 
 A separate attempt to use a released version is made but appears to have issues with `anndata` and `mudata`, which is resolved by mirroring modules (`mudata`==0.2.3 and `anndata`==0.9.2) and the trick for `torch`, etc. as above.
 
