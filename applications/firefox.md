@@ -37,15 +37,6 @@ Modules **ceuadmin/firefox/158.0a1** is available.
 <font color="red"><b>15/9/2026 Update</b></font>
 Modules **ceuadmin/firefox/156.0** is available.
 
-<font color="red"><b>1/9/2026 Update</b></font>
-Modules **ceuadmin/firefox/155.0** and **ceuadmin/firefox/157.0a1** are available.
-
-<font color="red"><b>17/8/2026 Update</b></font>
-Modules **ceuadmin/firefox/154.0** is available.
-
-<font color="red"><b>23/7/2026 Update</b></font>
-Modules **ceuadmin/firefox/153.0esr** and **ceuadmin/firefox/155.0a1** are available.
-
 Our purpose is to compile a local copy of Firefox, so
 
 ```bash
@@ -82,11 +73,20 @@ module load gcc/11.2.0/gcc/rjvgspag
 module load gettext/0.21/gcc/lhdl4tbr
 ./mach run --version
 ./mach install
+# Up to 157.0a1
 #export BINDGEN_EXTRA_CLANG_ARGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
-#export BINDGEN_EXTRA_CLANG_ARGS="--sysroot=$SYSROOT -I$SYSROOT/usr/include/glib-2.0 -I$SYSROOT/usr/lib/x86_64-linux-gnu/glib-2.0/include"
 #export C_INCLUDE_PATH="$SYSROOT/usr/lib/x86_64-linux-gnu/glib-2.0/include:$C_INCLUDE_PATH"
 #export CPLUS_INCLUDE_PATH="$SYSROOT/usr/lib/x86_64-linux-gnu/glib-2.0/include:$CPLUS_INCLUDE_PATH"
 ```
+
+<font color="red"><b>1/9/2026 Update</b></font>
+Modules **ceuadmin/firefox/155.0** and **ceuadmin/firefox/157.0a1** are available.
+
+<font color="red"><b>17/8/2026 Update</b></font>
+Modules **ceuadmin/firefox/154.0** is available.
+
+<font color="red"><b>23/7/2026 Update</b></font>
+Modules **ceuadmin/firefox/153.0esr** and **ceuadmin/firefox/155.0a1** are available.
 
 <font color="red"><b>20/6/2026 Update</b></font>
 Module **ceuadmin/firefox/154.0a1** is available.
