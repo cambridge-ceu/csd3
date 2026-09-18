@@ -31,6 +31,9 @@ Moreover, note that
 
 ## ceuadmin/firefox
 
+<font color="red"><b>18/9/2026 Update</b></font>
+Modules **ceuadmin/firefox/158.0a1** is available.
+
 <font color="red"><b>15/9/2026 Update</b></font>
 Modules **ceuadmin/firefox/156.0** is available.
 
@@ -47,25 +50,31 @@ Our purpose is to compile a local copy of Firefox, so
 
 ```bash
 git pull
-./mach clobber
-./mach bootstrap # 2
+module load ceuadmin/python/3.12.10
+unset PYTHONPATH
 module load ceuadmin/gcc/12.5.0
 module load ceuadmin/gtk+/3.24.0
 module load ceuadmin/rust/nightly
 module load ceuadmin/clang/22.1.8
-export CC="clang --gcc-toolchain=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0"
-export CXX="clang++ --gcc-toolchain=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0"
+export SYSROOT="$HOME/.mozbuild/sysroot-x86_64-linux-gnu"
+export HOST_SYSROOT="$SYSROOT"
+unset BINDGEN_EXTRA_CLANG_ARGS
+unset C_INCLUDE_PATH
+unset CPLUS_INCLUDE_PATH
+unset CPATH
+./mach clobber
+./mach bootstrap # 2
+export CC=clang
+export CXX=clang++
 export CFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include $CFLAGS"
 export CXXFLAGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include $CXXFLAGS"
 export DBUS_CFLAGS="$(pkg-config --cflags dbus-1)"
 export CFLAGS="$DBUS_CFLAGS $CFLAGS"
 export CXXFLAGS="$DBUS_CFLAGS $CXXFLAGS"
-export BINDGEN_EXTRA_CLANG_ARGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
+mkdir -p "$SYSROOT/usr/lib64/glib-2.0"
+ln -s "$SYSROOT/usr/lib/x86_64-linux-gnu/glib-2.0/include" "$SYSROOT/usr/lib64/glib-2.0/include"
 env PKG_CONFIG=~/fakebin/pkg-config ./mach configure --prefix=$CEUADMIN/firefox/$(<browser/config/version.txt) \
                --without-wasm-sandboxed-libraries
-export SYSROOT="$HOME/.mozbuild/sysroot-x86_64-linux-gnu"
-export C_INCLUDE_PATH="$SYSROOT/usr/lib/x86_64-linux-gnu/glib-2.0/include:$C_INCLUDE_PATH"
-export CPLUS_INCLUDE_PATH="$SYSROOT/usr/lib/x86_64-linux-gnu/glib-2.0/include:$CPLUS_INCLUDE_PATH"
 ./mach build -j5
 module purge
 module load rhel8/default-icl
@@ -73,6 +82,10 @@ module load gcc/11.2.0/gcc/rjvgspag
 module load gettext/0.21/gcc/lhdl4tbr
 ./mach run --version
 ./mach install
+#export BINDGEN_EXTRA_CLANG_ARGS="-I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include"
+#export BINDGEN_EXTRA_CLANG_ARGS="--sysroot=$SYSROOT -I$SYSROOT/usr/include/glib-2.0 -I$SYSROOT/usr/lib/x86_64-linux-gnu/glib-2.0/include"
+#export C_INCLUDE_PATH="$SYSROOT/usr/lib/x86_64-linux-gnu/glib-2.0/include:$C_INCLUDE_PATH"
+#export CPLUS_INCLUDE_PATH="$SYSROOT/usr/lib/x86_64-linux-gnu/glib-2.0/include:$CPLUS_INCLUDE_PATH"
 ```
 
 <font color="red"><b>20/6/2026 Update</b></font>
