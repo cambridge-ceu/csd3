@@ -8,40 +8,9 @@ GitHub: <https://github.com/bowang-lab/scGPT>, <https://scgpt.readthedocs.io/en/
 
 The procedures are posted on scGPT site, <https://github.com/bowang-lab/scGPT/issues/306>.
 
-Our installation shows that,
+## scGPT/0.2.4
 
-```
-$ pip show scgpt
-Name: scgpt
-Version: 0.2.4
-Summary: Large-scale generative pretrain of single cell using transformer.
-Home-page: https://github.com/bowang-lab/scGPT
-Author: Haotian
-Author-email: subercui@gmail.com
-License: MIT
-Location: /rds/project/rds-4o5vpvAowP0/software/scGPT-models/lib/python3.9/site-packages
-Requires: cell-gears, datasets, leidenalg, numba, orbax, pandas, scanpy, scib, scikit-misc, scvi-tools, torch, torchtext, typing-extensions, umap-learn
-Required-by:
-
-$ pip index versions scgpt
-scgpt (0.2.4)
-Available versions: 0.2.4, 0.2.2, 0.2.1, 0.2.0, 0.1.9, 0.1.8, 0.1.7, 0.1.6, 0.1.5, 0.1.3, 0.1.2.post1, 0.1.2, 0.1.1, 0.1.0
-  INSTALLED: 0.2.4
-  LATEST:    0.2.4
-```
-
-and is tested as follows,
-
-```bash
-module load ceuadmin/VSCode
-module load ceuadmin/scGPT/0.2.4
-cd ~/rds/software/scGPT-tests
-code tutorials/ &
-```
-
-so we could open `Tutorial_GRN.ipynb` and `Run All`, say.
-
-## PyPI and Python/3.9.12
+This is based on PyPI and Python/3.9.12.
 
 ```bash
 module load python/3.9.12/gcc/pdcqf4o5
@@ -104,9 +73,42 @@ wandb                     0.26.1
 
 One hiccup regards scib 1.1.7 which requires pandas > 2 and for now we use `pip install pandas==1.5.3` to run through `Tutorial_GRN.ipynb`.
 
-## scGPT 0.2.4-Release
+Our installation shows that,
 
-A separate attempt to use a released version is made but appears to have issues with `anndata` and `mudata`, which is resolved by mirroring modules (`mudata`==0.2.3 and `anndata`==0.9.2) and the trick for `torch`, etc. as above.
+```
+$ pip show scgpt
+Name: scgpt
+Version: 0.2.4
+Summary: Large-scale generative pretrain of single cell using transformer.
+Home-page: https://github.com/bowang-lab/scGPT
+Author: Haotian
+Author-email: subercui@gmail.com
+License: MIT
+Location: /rds/project/rds-4o5vpvAowP0/software/scGPT-models/lib/python3.9/site-packages
+Requires: cell-gears, datasets, leidenalg, numba, orbax, pandas, scanpy, scib, scikit-misc, scvi-tools, torch, torchtext, typing-extensions, umap-learn
+Required-by:
+
+$ pip index versions scgpt
+scgpt (0.2.4)
+Available versions: 0.2.4, 0.2.2, 0.2.1, 0.2.0, 0.1.9, 0.1.8, 0.1.7, 0.1.6, 0.1.5, 0.1.3, 0.1.2.post1, 0.1.2, 0.1.1, 0.1.0
+  INSTALLED: 0.2.4
+  LATEST:    0.2.4
+```
+
+and is tested as follows,
+
+```bash
+module load ceuadmin/VSCode
+module load ceuadmin/scGPT/0.2.4
+cd ~/rds/software/scGPT-tests
+code tutorials/ &
+```
+
+so we could open `Tutorial_GRN.ipynb` and `Run All`, say.
+
+## scGPT/0.2.4-Release
+
+This uses the released version is made but appears to have issues with `anndata` and `mudata`, which is resolved by mirroring modules (`mudata`==0.2.3 and `anndata`==0.9.2) and the trick for `torch`, etc. as above.
 
 ```bash
 module load python/3.9.12/gcc/pdcqf4o5
@@ -128,12 +130,14 @@ pip install numpy==1.25.2
 pip install wandb
 pip install iprogress
 pip install nbformat
+pip check
 pip list | awk '/scanpy|scib|scvi|scgpt|flash-attn|torch|wandb/'
 ```
 
 giving
 
 ```
+No broken requirements found
 flash-attn               1.0.4
 pytorch-lightning        1.9.5
 scanpy                   1.10.3
