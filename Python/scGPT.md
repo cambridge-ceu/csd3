@@ -104,7 +104,11 @@ cd ~/rds/software/scGPT-tests
 code tutorials/ &
 ```
 
-so we could open `Tutorial_GRN.ipynb` and `Run All`, say.
+so we could open `Tutorial_GRN.ipynb` and `Run All`, say. For `Tutorial_Attention_GRN.ipynb`, several changes are necessary,
+
+- Remove line `total_embs = model.bn(total_embs.permute(0, 2, 1)).permute(0, 2, 1)`, as .bn is only available with `domain_spec_batchnorm="batchnorm"`.
+- Change `./` to `../` in `df = pd.read_csv('./reference/BHLHE40.10.tsv', delimiter='\\t')`.
+- Change "Human" to "human" in `enr_Reactome = gp.enrichr(...)`.
 
 ## scGPT/0.2.4-Release
 
