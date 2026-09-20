@@ -106,7 +106,7 @@ code tutorials/ &
 
 so we could open `Tutorial_GRN.ipynb` and `Run All`, say. For `Tutorial_Attention_GRN.ipynb`, several changes are necessary,
 
-- Add `domain_spec_batchnorm="batchnorm"` to model construction, for
+- First, it is necessary to address the known issue of `model.bn`. As we see
 
     ```
     state = torch.load(model_file, map_location="cpu")
@@ -116,6 +116,25 @@ so we could open `Tutorial_GRN.ipynb` and `Run All`, say. For `Tutorial_Attentio
     gives
 
     `['bn.weight', 'bn.bias', 'bn.running_mean', 'bn.running_var', 'bn.num_batches_tracked']`
+
+    The model statement is revised such that (now len(df_atten)=28 instead of 6),
+
+    ```python
+    model = TransformerModel(
+        ntokens,
+        embsize,
+        nhead,
+        d_hid,
+        nlayers,
+        vocab=vocab,
+        pad_value=pad_value,
+        n_input_bins=n_input_bins,
+        use_fast_transformer=True,
+        fast_transformer_backend="flash",
+        domain_spec_batchnorm="batchnorm",
+        pre_norm=False,
+    )
+    ```
 
 - Change `./` to `../` in `df = pd.read_csv('./reference/BHLHE40.10.tsv', delimiter='\\t')`.
 - Change "Human" to "human" in `enr_Reactome = gp.enrichr(...)`.
