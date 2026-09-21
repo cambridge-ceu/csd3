@@ -143,6 +143,7 @@ code tutorials/
 
 - Change `./` to `../` in `df = pd.read_csv('./reference/BHLHE40.10.tsv', delimiter='\\t')`.
 - Change "Human" to "human" in `enr_Reactome = gp.enrichr(...)`.
+
 3. `Tutorial_Integration.ipynb` involves scvi 0.20.3, which requires numpy<1.26.4 and we set to replace calls from np.<function> to <function>, e.g.,
 `scGPT/0.24/lib/python3.9 $ pico site-packages/scvi/data/_built_in_data/_pbmc.py` with 
 `barcodes_metadata = pbmc_metadata["barcodes"].index.values.ravel().astype(np.str)` ==>
