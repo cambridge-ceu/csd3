@@ -105,7 +105,7 @@ We proceed with
 module load ceuadmin/VSCode/1.133.0
 module load ceuadmin/scGPT/0.2.4
 cd ~/rds/software/scGPT-tests
-code tutorials/
+code tutorials/ &
 ```
 
 The following changes are required to run the scGPT 0.2.4 tutorials with the current environment.
