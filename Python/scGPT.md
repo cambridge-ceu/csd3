@@ -10,7 +10,7 @@ The procedures are posted on scGPT site, <https://github.com/bowang-lab/scGPT/is
 
 ## scGPT/0.2.4
 
-This is based on PyPI and Python/3.9.12.
+The module folder is a symbolic link to scGPT-models/ below, based on PyPI and Python/3.9.12.
 
 ```bash
 module load python/3.9.12/gcc/pdcqf4o5
