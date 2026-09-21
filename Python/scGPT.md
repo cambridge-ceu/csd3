@@ -95,16 +95,21 @@ Available versions: 0.2.4, 0.2.2, 0.2.1, 0.2.0, 0.1.9, 0.1.8, 0.1.7, 0.1.6, 0.1.
   LATEST:    0.2.4
 ```
 
-and is tested as follows,
+## tutorials/
+
+The directory contains several tutorials covering cell annotation, GRN, multiomics.
+
+We proceed with
 
 ```bash
-module load ceuadmin/VSCode
+module load ceuadmin/VSCode/1.133.0
 module load ceuadmin/scGPT/0.2.4
 cd ~/rds/software/scGPT-tests
-code tutorials/ &
+code tutorials/
 ```
 
-so we could open `Tutorial_GRN.ipynb` and `Run All`, say. For `Tutorial_Attention_GRN.ipynb`, several changes are necessary,
+1. `Tutorial_GRN.ipynb` runs through from `Run All`.
+2. `Tutorial_Attention_GRN.ipynb` requires several changes,
 
 - First, it is necessary to address the known issue of `model.bn`. As we see
 
@@ -138,6 +143,32 @@ so we could open `Tutorial_GRN.ipynb` and `Run All`, say. For `Tutorial_Attentio
 
 - Change `./` to `../` in `df = pd.read_csv('./reference/BHLHE40.10.tsv', delimiter='\\t')`.
 - Change "Human" to "human" in `enr_Reactome = gp.enrichr(...)`.
+3. `Tutorial_Integration.ipynb` involves scvi 0.20.3, which requires numpy<1.26.4 and we set to replace calls from np.<function> to <function>, e.g.,
+`scGPT/0.24/lib/python3.9 $ pico site-packages/scvi/data/_built_in_data/_pbmc.py` with 
+`barcodes_metadata = pbmc_metadata["barcodes"].index.values.ravel().astype(np.str)` ==>
+`barcodes_metadata = pbmc_metadata["barcodes"].index.values.ravel().astype(str)`. More generally, list from 
+`grep -RInE 'np\.(bool|int|float|str|object|complex)' scGPT/0.2.4/lib/python3.9/site-packages/scvi`:
+
+```bash
+grep -nE 'np\.(bool|int|float|str|object|complex)' \
+/rds/project/rds-4o5vpvAowP0/software/scGPT-models/lib/python3.9/site-packages/scvi/data/_built_in_data/_pbmc.py
+
+SCVI_DIR=/rds/project/rds-4o5vpvAowP0/software/scGPT-models/lib/python3.9/site-packages/scvi
+
+cp -r "$SCVI_DIR" "${SCVI_DIR}.backup"
+
+grep -RIlE 'np\.(bool|int|float|str|object|complex)' "$SCVI_DIR" |
+while read f; do
+    sed -i \
+        -e 's/np\.bool\b/bool/g' \
+        -e 's/np\.int\b/int/g' \
+        -e 's/np\.float\b/float/g' \
+        -e 's/np\.str\b/str/g' \
+        -e 's/np\.object\b/object/g' \
+        -e 's/np\.complex\b/complex/g' \
+        "$f"
+done
+```
 
 ## scGPT/0.2.4-Release
 
