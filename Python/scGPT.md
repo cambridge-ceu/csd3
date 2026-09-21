@@ -293,6 +293,10 @@ print(adata)
 
 The important point is that **NumPy 1.26.4 is retained** rather than downgraded, allowing the GRN tutorial and integration tutorial to coexist in the same environment.
 
+### 4. `Tutorial_Multiomics.ipynb`
+
+Change `adata = sc.read('data/BMMC_processed.h5ad')' to `adata = sc.read('../data/BMMC_processed.h5ad')'.
+
 ## scGPT/0.2.4-Release
 
 This uses the released version is made but appears to have issues with `anndata` and `mudata`, which is resolved by mirroring modules (`mudata`==0.2.3 and `anndata`==0.9.2) and the trick for `torch`, etc. as above.
