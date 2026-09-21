@@ -297,6 +297,10 @@ The important point is that **NumPy 1.26.4 is retained** rather than downgraded,
 
 Change `adata = sc.read('data/BMMC_processed.h5ad')' to `adata = sc.read('../data/BMMC_processed.h5ad')`.
 
+### 5. `Tutorial_Reference_Mapping.ipynb`
+
+Replace "path_to_faiss_index_folder" as in `index_dir="path_to_faiss_index_folder"` with "../data/CellXGene_faiss_index/".
+
 ## scGPT/0.2.4-Release
 
 This uses the released version is made but appears to have issues with `anndata` and `mudata`, which is resolved by mirroring modules (`mudata`==0.2.3 and `anndata`==0.9.2) and the trick for `torch`, etc. as above.
