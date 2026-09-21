@@ -112,7 +112,7 @@ The following changes are required to run the scGPT 0.2.4 tutorials with the cur
 
 ### 1. `Tutorial_GRN.ipynb`
 
-`Tutorial_GRN.ipynb` runs successfully from **Run All** without additional modifications.
+It runs successfully from **Run All** without additional modifications.
 
 ### 2. `Tutorial_Attention_GRN.ipynb`
 
@@ -130,11 +130,7 @@ print([k for k in state.keys() if "bn" in k.lower()])
 which returns:
 
 ```text
-['bn.weight',
- 'bn.bias',
- 'bn.running_mean',
- 'bn.running_var',
- 'bn.num_batches_tracked']
+['bn.weight', 'bn.bias', 'bn.running_mean', 'bn.running_var', 'bn.num_batches_tracked']
 ```
 
 Therefore, the model needs to be instantiated with:
@@ -180,70 +176,26 @@ Change:
 enr_Reactome = gp.enrichr(...)
 ```
 
-so that the organism argument uses:
-
-```python
-organism="human"
-```
-
-rather than:
-
-```python
-organism="Human"
-```
-
----
+so that the organism argument uses: `organism="human"`
+rather than: `organism="Human"`.
 
 ### 3. `Tutorial_Integration.ipynb`
 
-The integration tutorial uses:
-
-```text
-scvi-tools == 0.20.3
-```
-
-which contains deprecated NumPy aliases such as:
-
-```python
-np.str
-np.bool
-```
-
-These aliases were removed from NumPy, so they produce errors when using:
-
-```text
-numpy == 1.26.4
-```
+The integration tutorial uses: `scvi-tools == 0.20.3` 
+which contains deprecated NumPy aliases such as `np.str` and `np.bool` 
+that were removed from NumPy, so they produce errors when using:
+`numpy == 1.26.4`.
 
 For example:
 
 ```text
 AttributeError: module 'numpy' has no attribute 'str'
-```
-
-and subsequently:
-
-```text
 AttributeError: module 'numpy' has no attribute 'bool'
 ```
 
-### Recommended solution
+We keep `numpy == 1.26.4` because the GRN tutorial requires a newer NumPy version, and patch the obsolete aliases in the installed `scvi-tools` code.
 
-Keep:
-
-```text
-numpy == 1.26.4
-```
-
-because the GRN tutorial requires a newer NumPy version, and patch the obsolete aliases in the installed `scvi-tools` code.
-
-For example, in:
-
-```text
-scvi/data/_built_in_data/_pbmc.py
-```
-
-change:
+For example, in: `scvi/data/_built_in_data/_pbmc.py` change:
 
 ```python
 barcodes_metadata = pbmc_metadata["barcodes"].index.values.ravel().astype(np.str)
@@ -255,17 +207,7 @@ to:
 barcodes_metadata = pbmc_metadata["barcodes"].index.values.ravel().astype(str)
 ```
 
-Similarly, change:
-
-```python
-dtype=np.bool
-```
-
-to:
-
-```python
-dtype=bool
-```
+Similarly, change: `dtype=np.bool` to: `dtype=bool`
 
 ### Check for additional deprecated aliases
 
@@ -273,7 +215,6 @@ Use:
 
 ```bash
 SCVI_DIR=/rds/project/rds-4o5vpvAowP0/software/scGPT-models/lib/python3.9/site-packages/scvi
-
 grep -RInE 'np\.(bool|int|float|str|object|complex)\b' "$SCVI_DIR"
 ```
 
@@ -314,8 +255,6 @@ bool
 ```
 
 respectively.
-
-### Backup before modifying scvi-tools
 
 Before making the changes:
 
