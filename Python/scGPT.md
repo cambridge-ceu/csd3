@@ -108,19 +108,17 @@ cd ~/rds/software/scGPT-tests
 code tutorials/
 ```
 
-# Compatibility Fixes
-
 The following changes are required to run the scGPT 0.2.4 tutorials with the current environment.
 
-## 1. `Tutorial_GRN.ipynb`
+### 1. `Tutorial_GRN.ipynb`
 
 `Tutorial_GRN.ipynb` runs successfully from **Run All** without additional modifications.
 
-## 2. `Tutorial_Attention_GRN.ipynb`
+### 2. `Tutorial_Attention_GRN.ipynb`
 
 Several changes are required.
 
-### 2.1 Fix `model.bn`
+#### 2.1 Fix `model.bn`
 
 The pretrained model contains BatchNorm parameters:
 
@@ -160,7 +158,7 @@ model = TransformerModel(
 
 With this change, `len(df_atten)` is 28 rather than 6.
 
-### 2.2 Fix the reference-file path
+#### 2.2 Fix the reference-file path
 
 Change:
 
@@ -174,7 +172,7 @@ to:
 df = pd.read_csv('../reference/BHLHE40.10.tsv', delimiter='\t')
 ```
 
-### 2.3 Fix the Reactome organism name
+#### 2.3 Fix the Reactome organism name
 
 Change:
 
@@ -196,7 +194,7 @@ organism="Human"
 
 ---
 
-## 3. `Tutorial_Integration.ipynb`
+### 3. `Tutorial_Integration.ipynb`
 
 The integration tutorial uses:
 
