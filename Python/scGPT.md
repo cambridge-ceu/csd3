@@ -209,9 +209,7 @@ barcodes_metadata = pbmc_metadata["barcodes"].index.values.ravel().astype(str)
 
 Similarly, change: `dtype=np.bool` to: `dtype=bool`
 
-### Check for additional deprecated aliases
-
-Use:
+To Check for additional deprecated aliases, use:
 
 ```bash
 SCVI_DIR=/rds/project/rds-4o5vpvAowP0/software/scGPT-models/lib/python3.9/site-packages/scvi
