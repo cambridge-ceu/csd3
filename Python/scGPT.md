@@ -295,7 +295,7 @@ The important point is that **NumPy 1.26.4 is retained** rather than downgraded,
 
 ### 4. `Tutorial_Multiomics.ipynb`
 
-Change `adata = sc.read('data/BMMC_processed.h5ad')' to `adata = sc.read('../data/BMMC_processed.h5ad')'.
+Change `adata = sc.read('data/BMMC_processed.h5ad')' to `adata = sc.read('../data/BMMC_processed.h5ad')`.
 
 ## scGPT/0.2.4-Release
 
