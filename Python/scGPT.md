@@ -108,68 +108,239 @@ cd ~/rds/software/scGPT-tests
 code tutorials/
 ```
 
-1. `Tutorial_GRN.ipynb` runs through from `Run All`.
-2. `Tutorial_Attention_GRN.ipynb` requires several changes,
+# Compatibility Fixes
 
-- First, it is necessary to address the known issue of `model.bn`. As we see
+The following changes are required to run the scGPT 0.2.4 tutorials with the current environment.
 
-    ```
-    state = torch.load(model_file, map_location="cpu")
-    print([k for k in state.keys() if "bn" in k.lower()])
-    ```
+## 1. `Tutorial_GRN.ipynb`
 
-    gives
+`Tutorial_GRN.ipynb` runs successfully from **Run All** without additional modifications.
 
-    `['bn.weight', 'bn.bias', 'bn.running_mean', 'bn.running_var', 'bn.num_batches_tracked']`
+## 2. `Tutorial_Attention_GRN.ipynb`
 
-    The model statement is revised such that (now len(df_atten)=28 instead of 6),
+Several changes are required.
 
-    ```python
-    model = TransformerModel(
-        ntokens,
-        embsize,
-        nhead,
-        d_hid,
-        nlayers,
-        vocab=vocab,
-        pad_value=pad_value,
-        n_input_bins=n_input_bins,
-        use_fast_transformer=True,
-        fast_transformer_backend="flash",
-        domain_spec_batchnorm="batchnorm",
-        pre_norm=False,
-    )
-    ```
+### 2.1 Fix `model.bn`
 
-- Change `./` to `../` in `df = pd.read_csv('./reference/BHLHE40.10.tsv', delimiter='\\t')`.
-- Change "Human" to "human" in `enr_Reactome = gp.enrichr(...)`.
+The pretrained model contains BatchNorm parameters:
 
-3. `Tutorial_Integration.ipynb` involves scvi 0.20.3, which requires numpy<1.26.4 and we set to replace calls from np.<function> to <function>, e.g.,
-`scGPT/0.24/lib/python3.9 $ pico site-packages/scvi/data/_built_in_data/_pbmc.py` with 
-`barcodes_metadata = pbmc_metadata["barcodes"].index.values.ravel().astype(np.str)` ==>
-`barcodes_metadata = pbmc_metadata["barcodes"].index.values.ravel().astype(str)`. More generally, list from 
-`grep -RInE 'np\.(bool|int|float|str|object|complex)' scGPT/0.2.4/lib/python3.9/site-packages/scvi`:
+```python
+state = torch.load(model_file, map_location="cpu")
+print([k for k in state.keys() if "bn" in k.lower()])
+```
+
+which returns:
+
+```text
+['bn.weight',
+ 'bn.bias',
+ 'bn.running_mean',
+ 'bn.running_var',
+ 'bn.num_batches_tracked']
+```
+
+Therefore, the model needs to be instantiated with:
+
+```python
+model = TransformerModel(
+    ntokens,
+    embsize,
+    nhead,
+    d_hid,
+    nlayers,
+    vocab=vocab,
+    pad_value=pad_value,
+    n_input_bins=n_input_bins,
+    use_fast_transformer=True,
+    fast_transformer_backend="flash",
+    domain_spec_batchnorm="batchnorm",
+    pre_norm=False,
+)
+```
+
+With this change, `len(df_atten)` is 28 rather than 6.
+
+### 2.2 Fix the reference-file path
+
+Change:
+
+```python
+df = pd.read_csv('./reference/BHLHE40.10.tsv', delimiter='\t')
+```
+
+to:
+
+```python
+df = pd.read_csv('../reference/BHLHE40.10.tsv', delimiter='\t')
+```
+
+### 2.3 Fix the Reactome organism name
+
+Change:
+
+```python
+enr_Reactome = gp.enrichr(...)
+```
+
+so that the organism argument uses:
+
+```python
+organism="human"
+```
+
+rather than:
+
+```python
+organism="Human"
+```
+
+---
+
+## 3. `Tutorial_Integration.ipynb`
+
+The integration tutorial uses:
+
+```text
+scvi-tools == 0.20.3
+```
+
+which contains deprecated NumPy aliases such as:
+
+```python
+np.str
+np.bool
+```
+
+These aliases were removed from NumPy, so they produce errors when using:
+
+```text
+numpy == 1.26.4
+```
+
+For example:
+
+```text
+AttributeError: module 'numpy' has no attribute 'str'
+```
+
+and subsequently:
+
+```text
+AttributeError: module 'numpy' has no attribute 'bool'
+```
+
+### Recommended solution
+
+Keep:
+
+```text
+numpy == 1.26.4
+```
+
+because the GRN tutorial requires a newer NumPy version, and patch the obsolete aliases in the installed `scvi-tools` code.
+
+For example, in:
+
+```text
+scvi/data/_built_in_data/_pbmc.py
+```
+
+change:
+
+```python
+barcodes_metadata = pbmc_metadata["barcodes"].index.values.ravel().astype(np.str)
+```
+
+to:
+
+```python
+barcodes_metadata = pbmc_metadata["barcodes"].index.values.ravel().astype(str)
+```
+
+Similarly, change:
+
+```python
+dtype=np.bool
+```
+
+to:
+
+```python
+dtype=bool
+```
+
+### Check for additional deprecated aliases
+
+Use:
 
 ```bash
-grep -nE 'np\.(bool|int|float|str|object|complex)' \
-/rds/project/rds-4o5vpvAowP0/software/scGPT-models/lib/python3.9/site-packages/scvi/data/_built_in_data/_pbmc.py
+SCVI_DIR=/rds/project/rds-4o5vpvAowP0/software/scGPT-models/lib/python3.9/site-packages/scvi
 
+grep -RInE 'np\.(bool|int|float|str|object|complex)\b' "$SCVI_DIR"
+```
+
+When interpreting the output, note that valid types such as:
+
+```text
+np.float32
+np.float64
+np.int32
+np.int64
+```
+
+are **not deprecated aliases** and must not be replaced.
+
+The aliases that need attention are specifically:
+
+```text
+np.bool
+np.int
+np.float
+np.str
+np.object
+np.complex
+```
+
+For this environment, the actual problematic aliases encountered in the PBMC loader are:
+
+```python
+np.str
+np.bool
+```
+
+which should be replaced by:
+
+```python
+str
+bool
+```
+
+respectively.
+
+### Backup before modifying scvi-tools
+
+Before making the changes:
+
+```bash
 SCVI_DIR=/rds/project/rds-4o5vpvAowP0/software/scGPT-models/lib/python3.9/site-packages/scvi
 
 cp -r "$SCVI_DIR" "${SCVI_DIR}.backup"
-
-grep -RIlE 'np\.(bool|int|float|str|object|complex)' "$SCVI_DIR" |
-while read f; do
-    sed -i \
-        -e 's/np\.bool\b/bool/g' \
-        -e 's/np\.int\b/int/g' \
-        -e 's/np\.float\b/float/g' \
-        -e 's/np\.str\b/str/g' \
-        -e 's/np\.object\b/object/g' \
-        -e 's/np\.complex\b/complex/g' \
-        "$f"
-done
 ```
+
+After patching, restart the Jupyter kernel and test:
+
+```python
+import numpy as np
+import scvi
+
+print("NumPy:", np.__version__)
+print("scvi:", scvi.__version__)
+
+adata = scvi.data.pbmc_dataset()
+print(adata)
+```
+
+The important point is that **NumPy 1.26.4 is retained** rather than downgraded, allowing the GRN tutorial and integration tutorial to coexist in the same environment.
 
 ## scGPT/0.2.4-Release
 
