@@ -79,6 +79,65 @@ module load gettext/0.21/gcc/lhdl4tbr
 #export CPLUS_INCLUDE_PATH="$SYSROOT/usr/lib/x86_64-linux-gnu/glib-2.0/include:$CPLUS_INCLUDE_PATH"
 ```
 
+Here is the screen output,
+
+```
+$ module load ceuadmin/python/3.12.10
+$ unset PYTHONPATH
+$ module load ceuadmin/gcc/12.5.0
+$ module load ceuadmin/gtk+/3.24.0
+$ module load ceuadmin/rust/nightly
+$ module load ceuadmin/clang/22.1.8
+$ ./mach clobber
+$ ./mach bootstrap # 2
+Creating the 'common' site at /home/jhz22/.mozbuild/srcdirs/firefox-0ed6c051e254/_virtualenvs/common
+Failed to run 'hg config'. hg configuration checks will be skipped.
+
+Note on Artifact Mode:
+
+Artifact builds download prebuilt C++ components rather than building
+them locally. Artifact builds are faster!
+
+Artifact builds are recommended for people working on Firefox or
+Firefox for Android frontends, or the GeckoView Java API. They are unsuitable
+for those working on C++ code. For more information see:
+https://firefox-source-docs.mozilla.org/contributing/build/artifact_builds.html.
+
+Please choose the version of Firefox you want to build (see note above):
+  1. Firefox for Desktop Artifact Mode [default]
+  2. Firefox for Desktop
+  3. GeckoView/Firefox for Android Artifact Mode
+  4. GeckoView/Firefox for Android
+  5. SpiderMonkey JavaScript engine
+Your choice: 2
+Your version of Rust (1.95.0) is new enough.
+Rust supports x86_64-unknown-linux-gnu targets.
+Installing cargo tools: searchfox-cli, socorro-cli, stmo-cli, treeherder-cli, webspec-index...
+
+Would you like to run a few configuration steps to ensure Git is
+optimally configured? (Yn): y
+Configuring git...
+Set git config: "core.untrackedCache = true"
+Unset git config: `core.fsmonitor`
+watchman is not installed. Please install `watchman` and re-run `./mach vcs-setup` to enable faster git commands.
+
+sccache allows speeding up subsequent builds by caching compilation
+results. Note that the initial build will be slower, and local changes
+that invalidate the cache will not benefit from it.
+
+Would you like to enable sccache? (Yn): y
+
+Paste the lines between the chevrons (>>> and <<<) into
+/rds/project/rds-4o5vpvAowP0/software/firefox/mozconfig:
+
+>>>
+ac_add_options --with-ccache=sccache
+
+<<<
+
+Your system should be ready to build Firefox for Desktop!
+```
+
 <font color="red"><b>1/9/2026 Update</b></font>
 Modules **ceuadmin/firefox/155.0** and **ceuadmin/firefox/157.0a1** are available.
 
