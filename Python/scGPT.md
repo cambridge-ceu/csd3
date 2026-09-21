@@ -264,6 +264,22 @@ SCVI_DIR=/rds/project/rds-4o5vpvAowP0/software/scGPT-models/lib/python3.9/site-p
 cp -r "$SCVI_DIR" "${SCVI_DIR}.backup"
 ```
 
+A quick automatied patch is possible but with the possibility of affecting comments/docstrings,
+
+```bash
+grep -RIlE 'np\.(bool|int|float|str|object|complex)' "$SCVI_DIR" |
+while read f; do
+    sed -i \
+        -e 's/np\.bool\b/bool/g' \
+        -e 's/np\.int\b/int/g' \
+        -e 's/np\.float\b/float/g' \
+        -e 's/np\.str\b/str/g' \
+        -e 's/np\.object\b/object/g' \
+        -e 's/np\.complex\b/complex/g' \
+        "$f"
+done
+```
+
 After patching, restart the Jupyter kernel and test:
 
 ```python
