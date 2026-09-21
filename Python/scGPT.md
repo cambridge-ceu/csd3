@@ -73,7 +73,7 @@ wandb                     0.26.1
 
 One hiccup regards scib 1.1.7 which requires pandas > 2 and for now we use `pip install pandas==1.5.3` to run through `Tutorial_GRN.ipynb`.
 
-Our installation shows that,
+It is shown that,
 
 ```
 $ pip show scgpt
