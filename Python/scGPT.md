@@ -297,7 +297,21 @@ The important point is that **NumPy 1.26.4 is retained** rather than downgraded,
 
 Change `adata = sc.read('data/BMMC_processed.h5ad')' to `adata = sc.read('../data/BMMC_processed.h5ad')`.
 
-### 5. `Tutorial_Reference_Mapping.ipynb`
+### 5. `Tutorial_Perturbation.ipynb`
+
+As before, replace `np.float` with `float` in the following code chunk,
+
+```python
+results["pred"] = pred.detach().cpu().numpy().astype(np.float)
+    results["truth"] = truth.detach().cpu().numpy().astype(np.float)
+
+    pred_de = torch.stack(pred_de)
+    truth_de = torch.stack(truth_de)
+    results["pred_de"] = pred_de.detach().cpu().numpy().astype(np.float)
+    results["truth_de"] = truth_de.detach().cpu().numpy().astype(np.float)
+```
+
+### 6. `Tutorial_Reference_Mapping.ipynb`
 
 Replace "path_to_faiss_index_folder" as in `index_dir="path_to_faiss_index_folder"` with "../data/CellXGene_faiss_index/".
 
