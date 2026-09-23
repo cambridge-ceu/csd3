@@ -115,7 +115,7 @@ python -m pip install nbconvert
 jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=7200 tutorials/Tutorial_Perturbation.ipynb
 ```
 
-so it caps to 2hr.
+so it caps to 2hr for a cell.
 
 The following changes are required to run the scGPT 0.2.4 tutorials with the current environment.
 
