@@ -14,8 +14,10 @@ python -m venv PhySO
 source PhySO/bin/activate
 pip index versions physo
 pip install physo
-# to run .pynb / noninteractive
+# to run .pynb
 pip install ipykernel
+# noninteractively:
+# jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=7200 physo.ipynb
 pip install nbconvert
 # to run .py, e.g., paste into a Python session
 pip install psutil
