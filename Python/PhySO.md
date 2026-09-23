@@ -14,13 +14,14 @@ python -m venv PhySO
 source PhySO/bin/activate
 pip index versions physo
 pip install physo
+# to run .pynb / noninteractive
 pip install ipykernel
+pip install nbconvert
+# to run .py, e.g., paste into a Python session
 pip install psutil
 ```
 
-where `ipykernel` and `psutil` are required to run .py and .ipynb, respectively. For instance, we could
-proceed with `source PhySO/bin/activaly;python` and paste scripts below into the Python session, or run
-inside `module load ceuadmin/VSCode/1.133.0; code physo.ipynb &`.
+showing that
 
 ```
 physo (1.1.11)
