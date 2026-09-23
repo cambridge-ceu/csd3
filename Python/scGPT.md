@@ -108,7 +108,7 @@ cd ~/rds/software/scGPT-tests
 code tutorials/ &
 ```
 
-We can opt to run noninteractively, e.g.,
+Advantages can be taken of the GPU nodes. We can opt to run noninteractively, e.g.,
 
 ```bash
 python -m pip install nbconvert
@@ -119,9 +119,9 @@ so it caps to 2hr.
 
 The following changes are required to run the scGPT 0.2.4 tutorials with the current environment.
 
-### 1. `Tutorial_GRN.ipynb`
+### 1. `Tutorial_Annotation.ipynb` & `Tutorial_GRN.ipynb`
 
-It runs successfully from **Run All** without additional modifications.
+They run successfully from **Run All** without additional modifications.
 
 ### 2. `Tutorial_Attention_GRN.ipynb`
 
