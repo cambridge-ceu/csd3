@@ -175,7 +175,7 @@ All entries are ordered chronologically.
 | 2023-03-31 | PWCoCo/2023-03-31                 | Genetics[^pwcoco]     |
 | 2023-04-02 | regenie/3.2.5.3                   | Genetics              |
 | 2023-04-04 | PWCoCo/1.0                        | Genetics              |
-| 2023-04-05 | PhySO/1.0-dev0                    | Generic               |
+| 2023-04-05 | PhySO/1.0-dev0                    | Generic[^physo]       |
 | 2023-04-21 | ImageJ/1.53t                      | Generic               |
 | 2023-04-25 | busybox/1.35.0                    | Generic               |
 | 2023-06-02 | regenie/3.2.7                     | Genetics[^regenie]    |
@@ -625,6 +625,7 @@ All entries are ordered chronologically.
 | 2026-09-14 | gemini-cli/0.59.0                 | Generic               |
 | 2026-09-15 | firefoxi/156.0                    | Generic               |
 | 2026-09-18 | firefoxi/158.0a1                  | Generic               |
+| 2026-09-23 | PhySO/1.1.11                      | Generic[^physo]       |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -854,6 +855,10 @@ They are generated from script [setup.sh](setup.sh),
 [^pwcoco]: **pwcoco**
 
     It compiles under gcc/9. Upon release of 1.1, this snapshot is removed.
+
+[^physo]: **PhySO**
+
+    See <https://cambridge-ceu.github.io/csd3/Python/PhySO.html>.
 
 [^regenie]: **regenie**
 
