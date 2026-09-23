@@ -4,7 +4,8 @@ sort: 12
 
 # PhySO
 
-Web: <https://github.com/WassimTenachi/PhySO>.
+Web: <https://physo.readthedocs.io/en/latest/>\
+GitHub: <https://github.com/WassimTenachi/PhySO>
 
 ## ceuadmin/PhySO/1.1.11
 
@@ -28,6 +29,39 @@ showing that
 ```
 physo (1.1.11)
 Available versions: 1.1.11, 1.1.10, 1.1.9, 1.1.8, 1.0
+```
+
+For the physo.ipynb shown earlier, revise code to access fitted free constants via prog.free_consts.class_values, replacing the
+obsolete prog.free_const_values attribute. The Pareto-front output can also be made robust to expressions that raise ZeroDivisionError
+during SymPy simplification, falling back to unsimplified expression output so that processing can continue. In more details,
+
+```python
+# Changes:
+# - PhySO 1.1.11 uses free_consts.class_values instead of free_const_values.
+# - Handle ZeroDivisionError when simplifying some Pareto-front expressions.
+
+free_consts = expression.free_consts.class_values.detach().cpu().numpy().flatten()
+for j in range(len(free_consts)):
+    print("%s = %f" % (expression.library.free_const_names[j], free_consts[j]))
+
+pareto_front_complexities, pareto_front_expressions, pareto_front_r, pareto_front_rmse = logs.get_pareto_front()
+
+for i, prog in enumerate(pareto_front_expressions):
+
+    # Showing expression
+    try:
+        print(prog.get_infix_pretty(do_simplify=True))
+    except ZeroDivisionError:
+        print(prog.get_infix_pretty(do_simplify=False))
+
+    # Showing free constants
+    free_consts = prog.free_consts.class_values.detach().cpu().numpy().flatten()
+    for j in range(len(free_consts)):
+        print("%s = %f" % (prog.library.free_const_names[j], free_consts[j]))
+
+    # Showing RMSE
+    print("RMSE = {:e}".format(pareto_front_rmse[i]))
+    print("-------------")
 ```
 
 ## ceuadmin/PhySO/1.0-dev0
