@@ -14,8 +14,13 @@ python -m venv PhySO
 source PhySO/bin/activate
 pip index versions physo
 pip install physo
+pip install ipykernel
 pip install psutil
 ```
+
+where `ipykernel` and `psutil` are required to run .py and .ipynb, respectively. For instance, we could
+proceed with `source PhySO/bin/activaly;python` and paste scripts below into the Python session, or run
+inside `module load ceuadmin/VSCode/1.133.0; code physo.ipynb &`.
 
 ```
 physo (1.1.11)
