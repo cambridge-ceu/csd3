@@ -108,6 +108,15 @@ cd ~/rds/software/scGPT-tests
 code tutorials/ &
 ```
 
+We can opt to run noninteractively, e.g.,
+
+```bash
+python -m pip install nbconvert
+jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=7200 tutorials/Tutorial_Perturbation.ipynb
+```
+
+so it caps to 2hr.
+
 The following changes are required to run the scGPT 0.2.4 tutorials with the current environment.
 
 ### 1. `Tutorial_GRN.ipynb`
