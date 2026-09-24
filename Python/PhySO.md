@@ -31,7 +31,7 @@ physo (1.1.11)
 Available versions: 1.1.11, 1.1.10, 1.1.9, 1.1.8, 1.0
 ```
 
-For the physo.ipynb shown earlier, revise code to access fitted free constants via prog.free_consts.class_values, replacing the
+For the full test shown earlier, revise code to access fitted free constants via prog.free_consts.class_values, replacing the
 obsolete prog.free_const_values attribute. The Pareto-front output can also be made robust to expressions that raise ZeroDivisionError
 during SymPy simplification, falling back to unsimplified expression output so that processing can continue. In more details,
 
