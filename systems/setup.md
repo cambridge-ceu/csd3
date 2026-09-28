@@ -626,7 +626,7 @@ All entries are ordered chronologically.
 | 2026-09-15 | firefoxi/156.0                    | Generic               |
 | 2026-09-18 | firefoxi/158.0a1                  | Generic               |
 | 2026-09-23 | PhySO/1.1.11                      | Generic[^physo]       |
-| 2026-09-28 | firefox/157.0                     | Generic[^firefox]     |
+| 2026-09-28 | firefox/157.0\|159.0a1            | Generic[^firefox]     |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2470,7 +2470,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^firefox]: **firefox**
 
-    Release 150.0.1 is not working so 150.0 stays, and 152.0a1 is compiled.
+    Release 150.0.1 is not working so 150.0 stays, and 152.0a1 is compiled. The dynamics is kept ever since.
 
     See <https://cambridge-ceu.github.io/csd3/applications/firefox.html>.
 
