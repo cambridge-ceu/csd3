@@ -32,7 +32,7 @@ Moreover, note that
 ## ceuadmin/firefox
 
 <font color="red"><b>28/9/2026 Update</b></font>
-Modules **ceuadmin/firefox/157.0** is available.
+Modules **ceuadmin/firefox/157.0** and **ceuadmin/firefox/159.0a1** are available.
 
 Our purpose is to compile a local copy of Firefox, so
 
