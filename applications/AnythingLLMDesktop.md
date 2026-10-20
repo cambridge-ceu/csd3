@@ -18,7 +18,11 @@ mkdir -p "$CEUADMIN/AnythingLLMDesktop/$VERSION" && cd "$CEUADMIN/AnythingLLMDes
 curl -fsSL https://cdn.anythingllm.com/latest/AnythingLLMDesktop.AppImage -o AnythingLLMDesktop.AppImage && chmod +x AnythingLLMDesktop.AppImage && ./AnythingLLMDesktop.AppImage --appimage-extract
 cat << 'EOF' > AnythingLLMDesktop
 #!/bin/bash
-exec "$ANYTHINGLLM_ROOT/squashfs-root/AppRun" --no-sandbox "$@"
+set -e
+ROOT="$(cd -- "$(dirname -- "$(readlink -f -- "$0")")" && pwd)"
+export ANYTHINGLLM_ROOT="$ROOT"
+export APPDIR="$ROOT/squashfs-root"
+exec "$APPDIR/AppRun" --no-sandbox "$@"
 EOF
 chmod +x AnythingLLMDesktop
 ```
