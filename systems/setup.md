@@ -2502,4 +2502,4 @@ They are generated from script [setup.sh](setup.sh),
 
 [^AnythingLLM]: **AnythingLLMDesktop**
 
-   See <https://cambridge-ceu.github.io/csd3/applications/AnythingLLMDesktop.html>.
+    See <https://cambridge-ceu.github.io/csd3/applications/AnythingLLMDesktop.html>.
