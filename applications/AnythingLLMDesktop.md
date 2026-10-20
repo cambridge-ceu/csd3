@@ -10,6 +10,15 @@ The environment suppresses the usual screen outputs, keeps query histories and a
 
 ## Installation
 
+### 1.18.0
+
+```bash
+export VERSION=$(curl -s https://api.github.com/repos/Mintplex-Labs/anything-llm/releases/latest | grep -oP '(?<="tag_name": "v?)[^"]+')
+mkdir -p "$CEUADMIN/AnythingLLMDesktop/$VERSION" && cd "$CEUADMIN/AnythingLLMDesktop/$VERSION"
+curl -fsSL https://cdn.anythingllm.com/latest/AnythingLLMDesktop.AppImage -o AnythingLLMDesktop.AppImage && chmod +x AnythingLLMDesktop.AppImage && ./AnythingLLMDesktop.AppImage --appimage-extract
+"$CEUADMIN/AnythingLLMDesktop/$VERSION/squashfs-root/AppRun" --no-sandbox"$CEUADMIN/AnythingLLMDesktop/$VERSION/squashfs-root/AppRun" --no-sandbox
+```
+
 ### 1.10.0
 
 ```bash
