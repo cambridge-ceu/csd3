@@ -628,6 +628,7 @@ All entries are ordered chronologically.
 | 2026-09-23 | PhySO/1.1.11                      | Generic[^physo]       |
 | 2026-09-28 | firefox/157.0\|159.0a1            | Generic[^firefox]     |
 | 2026-10-12 | firefox/158.0                     | Generic[^firefox]     |
+| 2026-10-20 | AnythingLLMDesktop/1.18.0         | Generic[^AnythingLLM] |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2499,3 +2500,6 @@ They are generated from script [setup.sh](setup.sh),
     The link to the stable release is <https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz> while the nightly version
     <https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz>.
 
+[^AnythingLLM]: **AnythingLLMDesktop**
+
+   See <https://cambridge-ceu.github.io/csd3/applications/AnythingLLMDesktop.html>.
