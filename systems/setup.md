@@ -629,6 +629,7 @@ All entries are ordered chronologically.
 | 2026-09-28 | firefox/157.0\|159.0a1            | Generic[^firefox]     |
 | 2026-10-12 | firefox/158.0                     | Generic[^firefox]     |
 | 2026-10-20 | AnythingLLMDesktop/1.18.0         | Generic[^AnythingLLM] |
+| 2026-10-22 | firefoxi/161.0a1                  | Generic[^firefox]     |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
