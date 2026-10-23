@@ -6,7 +6,7 @@ sort: 43
 
 GitHub, <https://github.com/NousResearch/hermes-agent>
 
-## v0.22.5
+## 0.22.5
 
 ```bash
 module load ceuadmin/uv/0.12.5
