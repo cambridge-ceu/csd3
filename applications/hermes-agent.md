@@ -6,6 +6,34 @@ sort: 43
 
 GitHub, <https://github.com/NousResearch/hermes-agent>
 
+## v0.22.5
+
+```bash
+module load ceuadmin/uv/0.12.5
+export VERSION=0.22.5
+export PREFIX="$CEUADMIN/hermes-agent/$VERSION"
+mkdir -p "$PREFIX"
+cd "$PREFIX"
+wget -qO- "https://github.com/NousResearch/hermes-agent/archive/refs/tags/v${VERSION}.tar.gz" \
+    | tar -xz --strip-components=1
+uv venv --python 3.11 "$PREFIX/venv"
+export PYTHON=$PREFIX/venv/bin/python
+uv pip install --python "$PYTHON" -e ".[all]"
+uv pip install --python "$PYTHON" "ruamel.yaml"
+uv pip install --python "$PYTHON" python-dotenv
+uv pip install --python "$PYTHON" rich
+uv pip check --python "$PYTHON"
+"$PYTHON" -c "
+from ruamel.yaml import YAML
+import dotenv
+from rich.console import Console
+print('All three imports OK')
+"
+"$PYTHON" --version
+uv pip list --python "$PYTHON"
+"$PREFIX/venv/bin/hermes" --help
+```
+
 ## 2026.8.19 (0.20.5)
 
 This uses a more recent uv explicitly.
