@@ -20,7 +20,9 @@ mkdir build && cd build
 cmake .. \
   -DLLAMA_OPENSSL=ON \
   -DCMAKE_PREFIX_PATH=/usr/local/Cluster-Apps/openssl/3.2.1 \
-  -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/${version}
+  -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/${version} \
+  -DCMAKE_C_FLAGS="-pthread" \
+  -DCMAKE_CXX_FLAGS="-pthread"
 make -j$(nproc) && make install
 ```
 
