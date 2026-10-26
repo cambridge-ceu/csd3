@@ -8,6 +8,24 @@ GitHub: <https://github.com/ggml-org/llama.cpp>
 
 ## Installation[^macOS]
 
+### 0.7.0
+
+```bash
+export version=0.7.0
+wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/v${version}.tar.gz | tar xfz -
+cd llama.cpp-${version}
+module load gcc/11.3.0/gcc/4zpip55j
+module load openssl/3.3.0-dev
+mkdir build && cd build
+cmake .. \
+  -DLLAMA_OPENSSL=ON \
+  -DCMAKE_PREFIX_PATH=/usr/local/Cluster-Apps/openssl/3.2.1 \
+  -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/${version}
+make -j$(nproc) && make install
+```
+
+### b8676
+
 Version b5558 or later requires gcc/9 and above.
 
 ```bash
