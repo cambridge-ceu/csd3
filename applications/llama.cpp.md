@@ -112,6 +112,23 @@ do
     -DCMAKE_INSTALL_PREFIX="$LLAMA_PREFIX" \
     -P "build-cuda-121/tools/$tool/cmake_install.cmake" || break
 done
+cmake --build build-cuda-121 --target llama -j5
+cmake --build build-cuda-121 \
+  --target \
+    llama-batched-bench \
+    llama-completion \
+    llama-cvector-generator \
+    llama-export-lora \
+    llama-fit-params \
+    llama-gemma3-cli \
+    llama-llava-cli \
+    llama-minicpmv-cli \
+    llama-qwen2vl-cli \
+    llama-mtmd-cli \
+  -j5
+find build-cuda-121/bin -maxdepth 1 \
+  -type f -executable -name 'llama*' \
+  -exec cp -v -t "$LLAMA_PREFIX/bin" {} +
 ```
 
 #### 4. Verify the installation
