@@ -146,6 +146,30 @@ do
 done
 ```
 
+Now, from
+
+```bash
+module load ceuadmin/llama.cpp/0.7.0-cuda
+llama-cli --version
+llama-cli --list-devices
+```
+
+we have
+
+```
+$ which llama-cli
+/usr/local/Cluster-Apps/ceuadmin/llama.cpp/0.7.0-cuda/bin/llama-cli
+$ llama-cli --version
+version: 0.7.0-dev (build 0, commit unknown)
+built with GNU 11.3.0 for Linux x86_64
+$ llama-cli --list-devices
+Available devices:
+  CUDA0: NVIDIA L40 (48513 MiB, 47935 MiB free)
+  CUDA1: NVIDIA L40 (48513 MiB, 47935 MiB free)
+  CUDA2: NVIDIA L40 (48513 MiB, 47935 MiB free)
+  CUDA3: NVIDIA L40 (48513 MiB, 47935 MiB free)
+```
+
 ### b8676
 
 Version b5558 or later requires gcc/9 and above.
