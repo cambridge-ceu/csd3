@@ -194,6 +194,8 @@ llama-gguf-split --merge \
   DeepSeek-V4.1-Flash-Q4_K_M.gguf
 ```
 
+showing `gguf_merge: DeepSeek-V4.1-Flash-Q4_K_M.gguf merged from 11 split with 1046 tensors.`.
+
 ## llama-server
 
 ### Gemma 4
