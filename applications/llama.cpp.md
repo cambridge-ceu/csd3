@@ -26,6 +26,109 @@ cmake .. \
 make -j$(nproc) && make install
 ```
 
+### 0.7.0-cuda
+
+This is the first attempt.
+
+#### 1. Configure and build
+
+```bash
+cd ~/rds/software/llama.cpp-0.7.0
+
+module load cuda/12.1
+module load gcc/11.3.0/gcc/4zpip55j
+module load openssl/3.3.0-dev
+
+export CUDA_HOME=/usr/local/software/cuda/12.1
+export PATH="$CUDA_HOME/bin:$PATH"
+
+# Remove CUDA 11.4 include paths from CPATH
+export CPATH="$(printf '%s' "$CPATH" |
+  tr ':' '\n' |
+  grep -v '/cuda/11\.4/' |
+  paste -sd: -)"
+
+export LLAMA_PREFIX="$CEUADMIN/llama.cpp/0.7.0-cuda"
+
+cmake -S . -B build-cuda-121 \
+  -DCMAKE_C_COMPILER="$CC" \
+  -DCMAKE_CXX_COMPILER="$CXX" \
+  -DGGML_CUDA=ON \
+  -DGGML_NATIVE=OFF \
+  -DCMAKE_CUDA_COMPILER="$CUDA_HOME/bin/nvcc" \
+  -DCUDAToolkit_ROOT="$CUDA_HOME" \
+  -DLLAMA_OPENSSL=ON \
+  -DCMAKE_PREFIX_PATH=/usr/local/Cluster-Apps/openssl/3.2.1 \
+  -DCMAKE_INSTALL_PREFIX="$LLAMA_PREFIX" \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_C_FLAGS="-pthread" \
+  -DCMAKE_CXX_FLAGS="-pthread" \
+  -DGGML_BUILD_TESTS=OFF \
+  -DBUILD_TESTING=OFF \
+  -DLLAMA_BUILD_TESTS=OFF \
+  -DLLAMA_BUILD_EXAMPLES=OFF
+
+cmake --build build-cuda-121 --target llama-cli -j5
+```
+
+#### 2. Install the core libraries and CLI
+
+```bash
+cmake -DCMAKE_INSTALL_LOCAL_ONLY=ON \
+  -P build-cuda-121/cmake_install.cmake
+
+cmake -DCMAKE_INSTALL_PREFIX="$LLAMA_PREFIX" \
+  -P build-cuda-121/tools/cli/cmake_install.cmake
+
+cmake -DCMAKE_INSTALL_PREFIX="$LLAMA_PREFIX" \
+  -P build-cuda-121/tools/server/cmake_install.cmake
+
+cmake -DCMAKE_INSTALL_PREFIX="$LLAMA_PREFIX" \
+  -P build-cuda-121/tools/mtmd/cmake_install.cmake
+
+export LD_LIBRARY_PATH="$LLAMA_PREFIX/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+```
+
+#### 3. Build and install the other utilities
+
+```bash
+cmake --build build-cuda-121 \
+  --target \
+    llama-server \
+    llama-bench \
+    llama-quantize \
+    llama-perplexity \
+    llama-imatrix \
+    llama-gguf-split \
+    llama-tokenize \
+    llama-tts \
+  -j5
+for tool in \
+  server llama-bench quantize perplexity imatrix \
+  gguf-split tokenize tts
+do
+  echo "===== Installing $tool ====="
+  cmake \
+    -DCMAKE_INSTALL_PREFIX="$LLAMA_PREFIX" \
+    -P "build-cuda-121/tools/$tool/cmake_install.cmake" || break
+done
+```
+
+#### 4. Verify the installation
+
+```bash
+"$LLAMA_PREFIX/bin/llama-cli" --version
+"$LLAMA_PREFIX/bin/llama-cli" --list-devices
+for tool in \
+  llama-cli llama-server llama-bench llama-quantize \
+  llama-perplexity llama-imatrix llama-gguf-split \
+  llama-tokenize llama-tts
+do
+  printf '\n===== %s =====\n' "$tool"
+  ldd "$LLAMA_PREFIX/bin/$tool" | grep 'not found' || true
+done
+```
+
 ### b8676
 
 Version b5558 or later requires gcc/9 and above.
@@ -65,7 +168,7 @@ ln -sf /rds/user/$USER/hpc-work/cache ~/.cache
 ln -sf /rds/user/$USER/hpc-work/HuggingFace/cache/llama.cpp ~/.cache/llama.cpp
 ```
 
-An example with `/DeepSeek-V3-0324`,
+### DeepSeek-V3-0324
 
 ```bash
 wget https://huggingface.co/unsloth/DeepSeek-V3-0324-GGUF/resolve/main/UD-IQ2_XXS/DeepSeek-V3-0324-UD-IQ2_XXS-00001-of-00005.gguf
@@ -75,6 +178,20 @@ wget https://huggingface.co/unsloth/DeepSeek-V3-0324-GGUF/resolve/main/UD-IQ2_XX
 wget https://huggingface.co/unsloth/DeepSeek-V3-0324-GGUF/resolve/main/UD-IQ2_XXS/DeepSeek-V3-0324-UD-IQ2_XXS-00005-of-00005.gguf
 module load ceuadmin/llama.cpp
 llama-gguf-split --merge DeepSeek-V3-0324-UD-IQ2_XXS-00001-of-00005.gguf DeepSeek-V3-0324-UD-IQ2_XXS.gguf
+```
+
+### DeepSeek 4.1 Flash
+
+```bash
+source ~/rds/software/py3.11/bin/activate
+hf auth login
+hf download vcruz305/DeepSeek-V4.1-Flash-GGUF \
+  --include "*Q4_K_M*.gguf" \
+  --local-dir .
+module load ceuadmin/llama.cpp/0.7.0-cuda
+llama-gguf-split --merge \
+  DeepSeek-V4.1-Flash-Q4_K_M-00001-of-00011.gguf \
+  DeepSeek-V4.1-Flash-Q4_K_M.gguf
 ```
 
 ## llama-server
