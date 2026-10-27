@@ -147,7 +147,7 @@ from huggingface_hub import list_repo_files
 for f in list_repo_files("Qwen/Qwen3-4B-GGUF"):
     print(f)
 PY
-hg auth login
+hf auth login
 hf download Qwen/Qwen3-4B-GGUF Qwen3-4B-Q4_K_M.gguf --local-dir .
 module load ceuadmin/llama.cpp
 llama-cli -m Qwen3-4B-Q4_K_M.gguf --color on --ctx-size 2048 --threads 8
