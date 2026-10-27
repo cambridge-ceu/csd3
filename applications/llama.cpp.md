@@ -180,7 +180,7 @@ module load ceuadmin/llama.cpp
 llama-gguf-split --merge DeepSeek-V3-0324-UD-IQ2_XXS-00001-of-00005.gguf DeepSeek-V3-0324-UD-IQ2_XXS.gguf
 ```
 
-### DeepSeek 4.1 Flash
+### DeepSeek-V4.1-Flash-Q4_K_M
 
 ```bash
 source ~/rds/software/py3.11/bin/activate
