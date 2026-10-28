@@ -245,6 +245,43 @@ llama-gguf-split --merge \
 
 showing `gguf_merge: DeepSeek-V4.1-Flash-Q4_K_M.gguf merged from 11 split with 1046 tensors.`.
 
+
+### DrugAssist-7B.Q8_0
+
+```
+llama cli -m DrugAssist-7B.Q8_0.gguf -p "Aspirin"
+
+
+Loading model...
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b0-unknown
+model      : DrugAssist-7B.Q8_0.gguf
+ftype      : Q8_0
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+
+> Aspirin
+ Aspirin is a non-steroidal anti-inflammatory drug (NSAID) that is commonly used to relieve mild-to-moderate pain, reduce fever, and alleviate inflammation. The most common side effects of aspirin are gastrointestinal disturbances such as stomach irritation, nausea, and vomiting. It can also cause changes in heart rate and blood pressure, and might lead to allergic reactions in some individuals. It is important to consult a doctor before taking aspirin, as it can interact with other medications and can cause serious health problems in certain conditions.
+
+[ Prompt: 410.0 t/s | Generation: 101.6 t/s ]
+```
+
 ## llama-server
 
 ### Gemma 4
