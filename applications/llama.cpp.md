@@ -354,7 +354,7 @@ This is from `llama-run deepseek-r1`, [precision-medicine-deepseek-r1.md](files/
     CUDA 11.4 may be seen from this
 
     ```
-    printf '%s\n' "$CPATH" | tr ':' '\n' |
-    >   grep -E '/cuda/11\.4(/|$)'
-    /usr/local/software/cuda/11.4/include
+    printf '%s\n' "$CPATH" | tr ':' '\n' | grep -E '/cuda/11\.4(/|$)'
     ```   
+
+    showing `/usr/local/software/cuda/11.4/include`.
