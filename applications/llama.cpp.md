@@ -293,6 +293,75 @@ available commands:
 
 ```
 
+### txgemma-9b-chat-Q8_0
+
+```
+$ llama cli -m llama.cpp/txgemma-9b-chat-Q8_0-GGUF -p "aspirin"
+
+
+Loading model...
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b0-unknown
+model      : llama.cpp/txgemma-9b-chat-Q8_0-GGUF
+ftype      : Q8_0
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+> aspirin
+## Aspirin: What You Need to Know
+```
+
+Aspirin is a well-known over-the-counter medication used to:
+
+* **Relieve pain:** such as headaches, toothaches, muscle aches, and menstrual cramps.
+* **Reduce fever:** It's effective for lowering body temperature.
+* **Prevent inflammation:** Helps with conditions like arthritis and other inflammatory issues.
+
+**Active Ingredient:**
+The active ingredient in aspirin is acetylsalicylic acid.
+
+**Important Information:**
+
+* **Dosage:** Always follow the recommended dosage on the label or as advised by your doctor.
+* **Side Effects:** Potential side effects include stomach upset, heartburn, nausea, and allergic reactions.
+* **Interactions:** Aspirin can interact with other medications, so consult your doctor or pharmacist before use if you are taking any other medications.
+* **Children:** Aspirin should **never** be given to children under 16 years old due to the risk of Reye's syndrome, a rare but serious condition.
+* **Pregnancy and Breastfeeding:** Always consult with your doctor before taking aspirin during pregnancy or breastfeeding.
+
+**When to See a Doctor:**
+
+* If you have any concerns about taking aspirin, especially regarding your medical history or other medications.
+* If you experience severe or persistent side effects.
+* If your pain or fever does not improve after taking aspirin as directed.
+
+**Alternatives:**
+
+There are other pain relievers and fever reducers available, such as:
+
+* Acetaminophen (Tylenol)
+* Ibuprofen (Advil, Motrin)
+* Naproxen (Aleve)
+
+**Disclaimer:** This information is for general knowledge purposes only and does not constitute medical advice. Always consult with a qualified healthcare professional for any health concerns or before making any decisions related to your health or treatment.
+
+[ Prompt: 196.1 t/s | Generation: 69.9 t/s ]
+
+
 ## llama-server
 
 ### Gemma 4
