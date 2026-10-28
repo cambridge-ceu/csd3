@@ -293,10 +293,10 @@ available commands:
 
 ```
 
-### txgemma-9b-chat-Q8_0
+### TxGemma 9B Chat -  Q8_0
 
 ```
-$ llama cli -m llama.cpp/txgemma-9b-chat-Q8_0-GGUF -p "aspirin"
+$ llama cli   -m txgemma-9b-chat-Q8_0-GGUF   -p "Aspirin"   -c 8192   -ngl 99
 
 
 Loading model...
@@ -310,7 +310,7 @@ Loading model...
                                     ▀▀    ▀▀
 
 build      : b0-unknown
-model      : llama.cpp/txgemma-9b-chat-Q8_0-GGUF
+model      : txgemma-9b-chat-Q8_0-GGUF
 ftype      : Q8_0
 modalities : text
 
@@ -322,44 +322,62 @@ available commands:
   /glob <pattern>     add text files using globbing pattern
 
 
-> aspirin
-## Aspirin: What You Need to Know
+> Aspirin
+## Aspirin: An Overview
 ```
 
-Aspirin is a well-known over-the-counter medication used to:
+Aspirin, also known by its chemical name acetylsalicylic acid, is a **nonsteroidal anti-inflammatory drug (NSAID)** widely used for its pain-relieving, fever-reducing, and anti-inflammatory properties.
 
-* **Relieve pain:** such as headaches, toothaches, muscle aches, and menstrual cramps.
-* **Reduce fever:** It's effective for lowering body temperature.
-* **Prevent inflammation:** Helps with conditions like arthritis and other inflammatory issues.
+**Uses:**
 
-**Active Ingredient:**
-The active ingredient in aspirin is acetylsalicylic acid.
+* **Pain relief:**  Headaches, muscle aches, toothaches, menstrual cramps, arthritis pain
+* **Fever reduction:** Flu, colds, other infections
+* **Inflammation reduction:** Arthritis, other inflammatory conditions
+* **Prevention:** Heart attacks, strokes, certain types of cancer
 
-**Important Information:**
+**How it works:**
 
-* **Dosage:** Always follow the recommended dosage on the label or as advised by your doctor.
-* **Side Effects:** Potential side effects include stomach upset, heartburn, nausea, and allergic reactions.
-* **Interactions:** Aspirin can interact with other medications, so consult your doctor or pharmacist before use if you are taking any other medications.
-* **Children:** Aspirin should **never** be given to children under 16 years old due to the risk of Reye's syndrome, a rare but serious condition.
-* **Pregnancy and Breastfeeding:** Always consult with your doctor before taking aspirin during pregnancy or breastfeeding.
+Aspirin works by blocking the production of prostaglandins, chemicals that contribute to pain, fever, and inflammation.
 
-**When to See a Doctor:**
+**Forms:**
 
-* If you have any concerns about taking aspirin, especially regarding your medical history or other medications.
-* If you experience severe or persistent side effects.
-* If your pain or fever does not improve after taking aspirin as directed.
+* **Tablets:** Available in various strengths (e.g., 81mg, 325mg, 500mg, 650mg)
+* **Capsules:**  Often enteric-coated to protect the stomach lining
+* **Liquid suspensions:** For children and those who have difficulty swallowing pills
+* **Chewable tablets:** For faster absorption
 
-**Alternatives:**
+**Dosage:**
 
-There are other pain relievers and fever reducers available, such as:
+* **Always follow your doctor's instructions.**
+* **Read the label carefully.**
+* **Do not exceed the recommended dosage.**
 
-* Acetaminophen (Tylenol)
-* Ibuprofen (Advil, Motrin)
-* Naproxen (Aleve)
+**Side effects:**
 
-**Disclaimer:** This information is for general knowledge purposes only and does not constitute medical advice. Always consult with a qualified healthcare professional for any health concerns or before making any decisions related to your health or treatment.
+* **Common:** Stomach upset, heartburn, nausea, ringing in the ears, drowsiness
+* **Serious (rare):** Stomach bleeding, internal bleeding, allergic reaction, Reye's syndrome (in children and teenagers recovering from chickenpox or flu-like symptoms)
 
-[ Prompt: 196.1 t/s | Generation: 69.9 t/s ]
+**Interactions:**
+
+Aspirin can interact with other medications, including:
+
+* **Blood thinners**
+* **Antibiotics**
+* **Blood pressure medications**
+* **Other NSAIDs**
+
+**Important considerations:**
+
+* **Children and teenagers:** Reye's syndrome is a rare but serious condition that can occur in children and teenagers taking aspirin. Aspirin should not be given to children or teenagers recovering from chickenpox or flu-like symptoms unless specifically directed by a doctor.
+* **Stomach problems:** Aspirin can irritate the stomach lining. Taking it with food can help reduce the risk of stomach upset.
+* **Bleeding risk:** Aspirin can increase the risk of bleeding. Talk to your doctor before taking aspirin if you have a bleeding disorder or are taking blood thinners.
+* **Allergic reaction:** Some people are allergic to aspirin. If you experience any signs of an allergic reaction (e.g., hives, swelling, difficulty breathing), seek medical attention immediately.
+
+**Disclaimer:**
+
+This information is for general knowledge purposes only and should not be considered medical advice. Always consult with a qualified healthcare professional for any health concerns or before making any decisions related to your health or treatment.
+
+[ Prompt: 220.1 t/s | Generation: 69.7 t/s ]
 
 
 ## llama-server
