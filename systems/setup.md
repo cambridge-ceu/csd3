@@ -632,6 +632,7 @@ All entries are ordered chronologically.
 | 2026-10-22 | firefoxi/161.0a1                  | Generic[^firefox]     |
 | 2026-10-23 | hermes-agent/0.22.5               | Generic[^hermes]      |
 | 2025-10-26 | llama.cpp/0.7.0                   | Generic[^llama_cpp]   |
+| 2025-10-27 | llama.cpp/0.7.0-cuda              | Generic[^llama_cpp]   |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
