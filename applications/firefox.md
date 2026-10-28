@@ -31,11 +31,17 @@ Moreover, note that
 
 ## ceuadmin/firefox
 
+<font color="red"><b>28/10/2026 Update</b></font>
+Modules **ceuadmin/firefox/159.0** is available.
+
+A oneliner for the release version is as follows,
+
+```bash
+v=159.0; d="$CEUADMIN/firefox/$v"; mkdir -p "$d" && set -o pipefail && curl -fL "https://archive.mozilla.org/pub/firefox/releases/$v/linux-x86_64/en-GB/firefox-$v.tar.xz" | tar -xJ -C "$d" --strip-components=1
+```
+
 <font color="red"><b>22/10/2026 Update</b></font>
 Modules **ceuadmin/firefox/161.0a1** is available.
-
-<font color="red"><b>12/10/2026 Update</b></font>
-Modules **ceuadmin/firefox/158.0** is available.
 
 Our purpose is to compile a local copy of Firefox, so
 
@@ -137,6 +143,9 @@ ac_add_options --with-ccache=sccache
 
 Your system should be ready to build Firefox for Desktop!
 ```
+
+<font color="red"><b>12/10/2026 Update</b></font>
+Modules **ceuadmin/firefox/158.0** is available.
 
 <font color="red"><b>28/9/2026 Update</b></font>
 Modules **ceuadmin/firefox/157.0** and **ceuadmin/firefox/159.0a1** are available.
