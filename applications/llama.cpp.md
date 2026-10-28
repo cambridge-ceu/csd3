@@ -280,6 +280,17 @@ available commands:
  Aspirin is a non-steroidal anti-inflammatory drug (NSAID) that is commonly used to relieve mild-to-moderate pain, reduce fever, and alleviate inflammation. The most common side effects of aspirin are gastrointestinal disturbances such as stomach irritation, nausea, and vomiting. It can also cause changes in heart rate and blood pressure, and might lead to allergic reactions in some individuals. It is important to consult a doctor before taking aspirin, as it can interact with other medications and can cause serious health problems in certain conditions.
 
 [ Prompt: 410.0 t/s | Generation: 101.6 t/s ]
+
+> pQTLs
+ PQTLs (pharmacogenetic links) are genetic variations that can affect the response of an individual to drugs. They can identify people who are more likely to respond to a certain drug or have a higher risk of experiencing side effects. By understanding the PQTLs, doctors can better assess the potential benefits and risks of a certain medication.
+
+[ Prompt: 981.2 t/s | Generation: 101.9 t/s ]
+
+> pQTL-associated with aspirin
+ The pQTLs associated with aspirin are genetic variations in the genes that code for cyclooxygenase (COX) enzymes. These enzymes are responsible for breaking down aspirin, and people with certain genetic variations can metabolize aspirin more or less efficiently. This can affect the effectiveness of aspirin in preventing heart attacks and strokes, as well as the risk of side effects. By identifying these pQTLs, doctors can better assess the appropriate dosage and long-term effectiveness of aspirin therapy.
+
+[ Prompt: 896.5 t/s | Generation: 99.9 t/s ]
+
 ```
 
 ## llama-server
