@@ -26,7 +26,7 @@ cmake .. \
 make -j$(nproc) && make install
 ```
 
-### 0.7.0-cuda
+### 0.7.0-cuda[^CPATH]
 
 This is the first attempt.
 
@@ -340,3 +340,23 @@ This is from `llama-run deepseek-r1`, [precision-medicine-deepseek-r1.md](files/
 [^macOS]: **macOS**
 
     `brew install llama.cpp`.
+
+[^CPATH]: **CPATH**
+
+    CUDA 11.4 may be seen from this
+
+    ```
+    printf '%s\n' "$CPATH" | tr ':' '\n' |
+    >   grep -E '/cuda/11\.4(/|$)'
+    /usr/local/software/cuda/11.4/include
+    ```
+
+    which can be removed when neccesary,
+
+    ```bash
+    export CPATH="$(printf '%s' "$CPATH" |
+      tr ':' '\n' |
+      grep -vE '/cuda/11\.4(/|$)' |
+      paste -sd: -)"
+    ```
+   
