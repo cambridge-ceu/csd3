@@ -112,7 +112,7 @@ do
     -DCMAKE_INSTALL_PREFIX="$LLAMA_PREFIX" \
     -P "build-cuda-121/tools/$tool/cmake_install.cmake" || break
 done
-cmake --build build-cuda-121 --target llama -j5
+cmake --build build-cuda-121 --target llama-app -j5
 cmake --build build-cuda-121 \
   --target \
     llama-batched-bench \
@@ -150,19 +150,27 @@ Now, from
 
 ```bash
 module load ceuadmin/llama.cpp/0.7.0-cuda
-llama-cli --version
-llama-cli --list-devices
+llama --help
+llama cli --list-devices
 ```
 
 we have
 
 ```
-$ which llama-cli
-/usr/local/Cluster-Apps/ceuadmin/llama.cpp/0.7.0-cuda/bin/llama-cli
-$ llama-cli --version
-version: 0.7.0-dev (build 0, commit unknown)
-built with GNU 11.3.0 for Linux x86_64
-$ llama-cli --list-devices
+$ llama --help
+Usage: llama <command> [options]
+
+Available commands:
+  serve           HTTP API server
+  cli             Command-line interactive interface
+  download        Download a model
+  version         Show version
+  licenses        Show third-party licenses
+  help            Show available commands
+
+Run 'llama help all' to show additional commands.
+Run 'llama <command> --help' for command-specific usage.
+$ llama cli --list-devices
 Available devices:
   CUDA0: NVIDIA L40 (48513 MiB, 47935 MiB free)
   CUDA1: NVIDIA L40 (48513 MiB, 47935 MiB free)
@@ -349,14 +357,4 @@ This is from `llama-run deepseek-r1`, [precision-medicine-deepseek-r1.md](files/
     printf '%s\n' "$CPATH" | tr ':' '\n' |
     >   grep -E '/cuda/11\.4(/|$)'
     /usr/local/software/cuda/11.4/include
-    ```
-
-    which can be removed when neccesary,
-
-    ```bash
-    export CPATH="$(printf '%s' "$CPATH" |
-      tr ':' '\n' |
-      grep -vE '/cuda/11\.4(/|$)' |
-      paste -sd: -)"
-    ```
-   
+    ```   
