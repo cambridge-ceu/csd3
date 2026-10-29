@@ -382,10 +382,10 @@ available commands:
   /clear              clear the chat history
   /read <file>        add a text file
   /glob <pattern>     add text files using globbing pattern
-```
 
 
 > aspirin
+```
 
 [Start thinking]
 
