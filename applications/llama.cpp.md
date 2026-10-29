@@ -358,6 +358,80 @@ llama cli -m DeepSeek-V4.1-Flash-Q4_K_M.gguf -p "aspirin"
 
 with the following screenshot
 
+```
+llama cli -m DeepSeek-V4.1-Flash-Q4_K_M.gguf -p "aspirin"                                            
+
+Loading model...
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b10905-5210c7c5e
+model      : DeepSeek-V4.1-Flash-Q4_K_M.gguf
+ftype      : Q4_K - Medium
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+```
+
+
+> aspirin
+
+[Start thinking]
+
+We need answer. User just "aspirin". Need likely provide info. We need respond. Could ask what they want? But likely wants info about aspirin. Need maybe concise. We can give overview: what it is, uses, dosage, safety, side effects, contraindications. Need be careful medical advice. Since query just aspirin, maybe define. We can say aspirin is acetylsalicylic acid, NSAID, analgesic/antipyretic/anti-inflammatory, antiplatelet. Uses: pain, fever, inflammation, cardiovascular prevention. Risks: GI bleeding, ulcers, bleeding, Reye's syndrome in children/teens with viral illness, asthma exacerbation, kidney issues. Interactions: warfarin, other NSAIDs, steroids, alcohol, methotrexate, etc. Dosage varies. Not medical advice. Ask if you want specific.
+
+Need maybe mention low-dose 75-100 mg for cardiovascular. Pain/fever 325-650 mg every 4-6 hours, max 4g? But that's medical advice. We can include general info with caveat. Since user just says aspirin, maybe answer "Aspirin (acetylsalicylic acid) is..." Could be enough.
+
+Need decide final length. Desired oververbosity 5. We can structure. We must not provide diagnosis. We can mention emergency: suspected overdose, allergic reaction, signs of bleeding. Also Reye's syndrome. Also not for children under 16/18 unless doctor. Actually UK: not for under 16. US: avoid in children/teens with viral illness due to Reye's. We can state.
+
+Maybe user might be asking for "aspirin" as a drug. We can answer in general. We can ask clarifying if they want dosage for a specific condition. But final should satisfy. Maybe include "If you're asking about a specific use, tell me your age, condition, other meds, and whether pregnant."
+
+Need maybe mention enteric-coated, chewable, suppository. Aspirin is also used after heart attack/stroke. Antiplatelet effect lasts 7-10 days due to platelet lifespan. That's important before surgery.
+
+Let's craft final:
+
+Aspirin = acetylsalicylic acid (ASA). Class: NSAID, salicylate. Effects: pain relief, fever reduction, anti-inflammatory, antiplatelet (irreversible COX inhibition). Uses:
+- Pain/fever/inflammation: headaches, muscle aches, arthritis, etc.
+- Cardiovascular: low-dose for secondary prevention after MI/stroke, sometimes primary prevention in selected high-risk patients.
+- Acute MI: chewed 162-325 mg if instructed/emergency.
+Dosing: varies. OTC adult pain/fever: 325-650 mg every 4-6h, max 4g/day. Low-dose CV: 75-100 mg daily. But follow label/doctor.
+Side effects: stomach upset, heartburn, nausea, GI bleeding/ulcers, easy bruising/bleeding, tinnitus (overdose), kidney issues, allergic reactions/asthma.
+Do not use: children/teens with viral illness (Reye's), active bleeding/ulcer, aspirin allergy, severe kidney/liver disease, pregnancy third trimester, before surgery unless told, with blood thinners unless supervised.
+Interactions: warfarin, DOACs, other NSAIDs, corticosteroids, alcohol, methotrexate, some antidepressants.
+Emergency: overdose, ringing in ears, rapid breathing, confusion, severe bleeding, allergic reaction -> seek help.
+Not medical advice.
+
+Maybe mention "If you meant something else, clarify." That is good.
+
+Need maybe answer "aspirin" as just word. Could also mention "Aspirin is also known as Bayer." But no.
+
+We need final only. Ensure no mention of policy. Good.
+
+Maybe we can add "What do you want to know? Uses, dosage, safety, history?" But final can include. The user may just want definition. We can start with definition.
+
+Need maybe include "Aspirin is not recommended for routine primary prevention in most people due to bleeding risk." That's good.
+
+Let's compose final with headings and bullet list. Keep concise. Desired oververbosity 5. We'll produce maybe 300-400 words. That's okay.
+
+Check for accuracy: Max OTC dose 4g/day. Some labels 3g? In US max 4g. Low-dose 81 mg. UK 75 mg. Acute MI 162-325 mg chewed. Reye's syndrome in children and teens during viral illness. Pregnancy: avoid in third trimester; low-dose may be prescribed for preeclampsia. Antiplatelet effect 7-10 days. Tinnitus is salicylism. Good.
+
+Need maybe mention "aspirin can cause bronchospasm in aspirin-exacerbated respiratory disease." Fine.
+
+Final.
+
+[End thinking]
+
 **Aspirin** (acetylsalicylic acid, ASA) is a common medication in the **NSAID** family. It works by blocking COX enzymes, which reduces pain, fever, and inflammation. At low doses, it also **thins the blood** by irreversibly inhibiting platelets.
 
 **Common uses**
