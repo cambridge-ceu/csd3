@@ -349,7 +349,49 @@ llama cli -m DeepSeek-V4.1-Flash-Q4_K_M.gguf \
   -p "Aspirin" -c 8192 -ngl 99
 ```
 
-showing `gguf_merge: DeepSeek-V4.1-Flash-Q4_K_M.gguf merged from 11 split with 1046 tensors.` and also note that 0.8.0 still has difficulty with this model.
+showing `gguf_merge: DeepSeek-V4.1-Flash-Q4_K_M.gguf merged from 11 split with 1046 tensors.` and also note that 0.8.0 still has difficulty with this model. We resort to
+
+```bash
+module load ceuadmin/llama.cpp/deepseek41-cuda
+llama cli -m DeepSeek-V4.1-Flash-Q4_K_M.gguf -p "aspirin" 
+```
+
+with the following screenshot
+
+**Aspirin** (acetylsalicylic acid, ASA) is a common medication in the **NSAID** family. It works by blocking COX enzymes, which reduces pain, fever, and inflammation. At low doses, it also **thins the blood** by irreversibly inhibiting platelets.
+
+**Common uses**
+- Pain, headache, fever, and inflammation
+- Arthritis and other inflammatory conditions
+- **Low-dose cardiovascular prevention**: after heart attack, stroke, or stent placement; sometimes in selected high-risk people
+- **Acute heart attack**: chewed aspirin may be used in an emergency, if instructed by emergency services
+
+**Typical dosing**
+- Adult pain/fever: often **325–650 mg every 4–6 hours**, max about **4 g/day**
+- Cardiovascular prevention: often **75–100 mg daily**
+- Dosing depends on age, condition, and other medicines. Follow the label or a clinician’s instructions.
+
+**Important risks/side effects**
+- Stomach upset, heartburn, nausea
+- **GI bleeding and ulcers**
+- Increased bleeding/bruising
+- Allergic reactions, asthma worsening in some people
+- Kidney problems
+- Ringing in the ears (tinnitus) can be a sign of too much aspirin
+- **Reye’s syndrome**: avoid in children/teenagers with viral illness unless a doctor says otherwise
+
+**Do not use without medical advice if you have**
+- Active bleeding, ulcer, or bleeding disorder
+- Aspirin/NSAID allergy
+- Severe kidney or liver disease
+- Pregnancy, especially the third trimester
+- Surgery planned soon
+- Are taking blood thinners, steroids, other NSAIDs, or some antidepressants
+
+**Emergency signs**: severe bleeding, allergic reaction, confusion, rapid breathing, or suspected overdose — seek immediate medical help.
+
+This is general information, not medical advice. If you want details for a specific situation, tell me your age, symptoms, other medicines, and whether you’re pregnant.
+
 
 ### DrugAssist-7B.Q8_0
 
