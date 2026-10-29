@@ -634,6 +634,7 @@ All entries are ordered chronologically.
 | 2025-10-26 | llama.cpp/0.7.0                   | Generic[^llama_cpp]   |
 | 2025-10-27 | llama.cpp/0.7.0-cuda              | Generic[^llama_cpp]   |
 | 2026-10-28 | firefoxi/159.0                    | Generic[^firefox]     |
+| 2025-10-29 | llama.cpp/[0.8.0\|0.8.0-cuda]     | Generic[^llama_cpp]   |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
