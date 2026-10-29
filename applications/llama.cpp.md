@@ -384,7 +384,7 @@ available commands:
   /glob <pattern>     add text files using globbing pattern
 
 
-> aspirin
+ > aspirin
 ```
 
 [Start thinking]
@@ -498,6 +498,8 @@ available commands:
 
 
 > Aspirin
+```
+
  Aspirin is a non-steroidal anti-inflammatory drug (NSAID) that is commonly used to relieve mild-to-moderate pain, reduce fever, and alleviate inflammation. The most common side effects of aspirin are gastrointestinal disturbances such as stomach irritation, nausea, and vomiting. It can also cause changes in heart rate and blood pressure, and might lead to allergic reactions in some individuals. It is important to consult a doctor before taking aspirin, as it can interact with other medications and can cause serious health problems in certain conditions.
 
 [ Prompt: 410.0 t/s | Generation: 101.6 t/s ]
@@ -511,8 +513,6 @@ available commands:
  The pQTLs associated with aspirin are genetic variations in the genes that code for cyclooxygenase (COX) enzymes. These enzymes are responsible for breaking down aspirin, and people with certain genetic variations can metabolize aspirin more or less efficiently. This can affect the effectiveness of aspirin in preventing heart attacks and strokes, as well as the risk of side effects. By identifying these pQTLs, doctors can better assess the appropriate dosage and long-term effectiveness of aspirin therapy.
 
 [ Prompt: 896.5 t/s | Generation: 99.9 t/s ]
-
-```
 
 ### TxGemma 9B Chat -  Q8_0
 
@@ -544,8 +544,9 @@ available commands:
 
 
 > Aspirin
-## Aspirin: An Overview
 ```
+
+## Aspirin: An Overview
 
 Aspirin, also known by its chemical name acetylsalicylic acid, is a **nonsteroidal anti-inflammatory drug (NSAID)** widely used for its pain-relieving, fever-reducing, and anti-inflammatory properties.
 
