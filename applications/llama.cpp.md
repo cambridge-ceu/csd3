@@ -68,6 +68,50 @@ cmake --install build-cuda-121
 "$LLAMA_PREFIX/bin/llama" cli --list-devices
 ```
 
+### deepseek41-cuda
+
+Although it is stated that 0.8.0 supports DeepSeek-V4.1-Flash, it does not!
+
+```bash
+git clone --branch runtime/deepseek41 --single-branch \
+  https://github.com/vcruz305/llama.cpp.git llama.cpp-deepseek41
+cd llama.cpp-deepseek41
+git status --short
+git log -1 --oneline
+
+module load cuda/12.1
+module load gcc/11.3.0/gcc/4zpip55j
+module load openssl/3.3.0-dev
+
+export CUDA_HOME=/usr/local/software/cuda/12.1
+export PATH="$CUDA_HOME/bin:$PATH"
+
+# Remove CUDA 11.4 include paths, as in the earlier CSD3 build
+export CPATH="$(printf '%s' "$CPATH" |
+  tr ':' '\n' |
+  grep -v '/cuda/11\.4/' |
+  paste -sd: -)"
+
+cmake -S . -B build-cuda-121 \
+  -DCMAKE_C_COMPILER="$CC" \
+  -DCMAKE_CXX_COMPILER="$CXX" \
+  -DGGML_CUDA=ON \
+  -DGGML_NATIVE=OFF \
+  -DCMAKE_CUDA_COMPILER="$CUDA_HOME/bin/nvcc" \
+  -DCUDAToolkit_ROOT="$CUDA_HOME" \
+  -DCMAKE_CUDA_ARCHITECTURES=89 \
+  -DLLAMA_OPENSSL=ON \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX="$CEUADMIN/llama.cpp/deepseek41-cuda" \
+  -DGGML_BUILD_TESTS=OFF \
+  -DBUILD_TESTING=OFF \
+  -DLLAMA_BUILD_TESTS=OFF \
+  -DLLAMA_BUILD_EXAMPLES=OFF
+
+cmake --build build-cuda-121 -j5
+cmake --install build-cuda-121
+```
+
 ### 0.7.0
 
 ```bash
@@ -306,7 +350,6 @@ llama cli -m DeepSeek-V4.1-Flash-Q4_K_M.gguf \
 ```
 
 showing `gguf_merge: DeepSeek-V4.1-Flash-Q4_K_M.gguf merged from 11 split with 1046 tensors.` and also note that 0.8.0 still has difficulty with this model.
-
 
 ### DrugAssist-7B.Q8_0
 
