@@ -70,7 +70,7 @@ cmake --install build-cuda-121
 
 ### deepseek41-cuda
 
-Although it is stated that 0.8.0 supports DeepSeek-V4.1-Flash, it does not!
+This module is created since 0.8.0 fails the promised support for DeepSeek-V4.1-Flash.
 
 ```bash
 git clone --branch runtime/deepseek41 --single-branch \
