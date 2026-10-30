@@ -6,13 +6,16 @@ sort: 79
 
 There is a dedicated section here, <https://cambridge-ceu.github.io/csd3/systems/languages.html#r>.
 
-<font color="red"><b>14/7/2026 Update</b></font>
-
-The latest is R 4.6.1.
-
-<font color="red"><b>15/3/2026 Update</b></font>
-
-The latest is R 4.5.3.
+Date | Version
+-----|-----------
+30/10/2026 | R 4.6.2
+14/7/2026 | 4.6.1
+15/3/2026 | 4.5.3
+31/10/2025 | 4.5.2
+11/4/2025 | 4.5.0
+28/2/2025 | 4.4.3
+9/9/2024 | 4.4.1
+29/2/2024 | 4.3.3
 
 Note that packages in R/, R-gcc11/, R-gcc12/ directories now automatically find their locations, e.g.,
 
@@ -72,14 +75,6 @@ R
 
 and firefox starts pointing to `http://127.0.0.1:19107/doc/html/index.html`.
 
-<font color="red"><b>31/10/2025 Update</b></font>
-
-The latest is now 4.5.2, also `ceuadmin/R/latest`.
-
-<font color="red"><b>11/4/2025 Update</b></font>
-
-The latest is now 4.5.0, available from module `ceuadmin/R/4.5.0-icelake` which is also `ceuadmin/R/latest`. The R packages are simplified in R/ and R-gcc11/ subdirectories.
-
 With `.libPaths()` inside R, we see that
 
 ```
@@ -89,14 +84,6 @@ With `.libPaths()` inside R, we see that
 ```
 
 as before to save space only the recommended packages in the second entry is systemwide.
-
-<font color="red"><b>28/2/2025 Update</b></font>
-
-The latest is R 4.4.3.
-
-<font color="red"><b>9/9/2024 Update</b></font>
-
-By default, R is the latest, 4.4.1.
 
 <font color="red"><b>9/5/2024 Update</b></font>
 
@@ -113,10 +100,6 @@ There are three ceuadmin modules with the latest R 4.4.0.
 The packages are at `/rds/project/jmmh2/rds-jmmh2-public_databases/software`
 
 The latest versions on cclake and icelake are 4.2.2 and 4.3.3, respectively; they work with `rstudio/1.1.383` and `ceuadmin/rstudio/1.3.1093` on cclake and `ceuadmin/rstudio/2023.09.2-508-icelake` on icelake; to accommodate the available packages the `R_LIBS` environment variables are set in the module definition.
-
-<font color="red"><b>29/2/2024 Update</b></font>
-
-R 4.3.3 has become default on icelake.
 
 ## icelake
 
