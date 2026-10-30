@@ -359,8 +359,6 @@ llama cli -m DeepSeek-V4.1-Flash-Q4_K_M.gguf -p "aspirin"
 with the following screenshot
 
 ```
-llama cli -m DeepSeek-V4.1-Flash-Q4_K_M.gguf -p "aspirin"                                            
-
 Loading model...
 
 ▄▄ ▄▄
@@ -469,10 +467,9 @@ This is general information, not medical advice. If you want details for a speci
 
 ### DrugAssist-7B.Q8_0
 
+We see from `llama cli -m DrugAssist-7B.Q8_0.gguf -p "Aspirin"`.
+
 ```
-llama cli -m DrugAssist-7B.Q8_0.gguf -p "Aspirin"
-
-
 Loading model...
 
 ▄▄ ▄▄
@@ -516,10 +513,9 @@ available commands:
 
 ### TxGemma 9B Chat -  Q8_0
 
+We see from `llama cli   -m txgemma-9b-chat-Q8_0-GGUF -p "Aspirin" -c 8192 -ngl 99`.
+
 ```
-$ llama cli   -m txgemma-9b-chat-Q8_0-GGUF   -p "Aspirin"   -c 8192   -ngl 99
-
-
 Loading model...
 
 ▄▄ ▄▄
