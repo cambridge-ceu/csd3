@@ -33,9 +33,10 @@ install.packages(c(
   "tigris",
   "tidycensus"
 ))
-remove.packages("arrow")
 Sys.setenv(
   LIBARROW_BINARY = "FALSE",
+  ARROW_USE_PKG_CONFIG = "FALSE",
+  LIBARROW_MINIMAL = "TRUE",
   ARROW_R_DEV = "TRUE"
 )
 install.packages("arrow", type = "source")
