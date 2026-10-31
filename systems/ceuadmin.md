@@ -159,11 +159,11 @@ made).
 
 ### R
 
-A large collection of R packages (1,840 as of 19/8/2026, esp. with availability of major machine learning packages) is linked with the 
-latest R distribution, 4.6.1; there are also packages (CRAN: DescTools, Rfast, Rfast2, SKAT, rcompanion, rms -- which requires stringi 
+A large collection of R packages (1,843 as of 31/10/2026, esp. with availability of major machine learning packages) is linked with the 
+latest R distribution, 4.6.2; there are also packages (CRAN: DescTools, Rfast, Rfast2, SKAT, rcompanion, rms -- which requires stringi 
 herein, riskRegression -- which requires rms; Bioconductor: BiocSingular, DropletUtils, DSS, beachmat, bsseq, scater, scuttle, xcms, 
-xgboost) under 4.6.1-gcc11. Earlier versions such as sf, caTools, lme4, lwgeom, terra, riskRegression, rms, scater, scuttle, SKAT, TMB 
-were removed when they appear for 4.6.1-gcc11. For Rserve 1.8-15, openssl/3.3.0-dev appears working. The package paws.analytics 0.10.0 
+xgboost) under 4.6.2-gcc11. Earlier versions such as sf, caTools, lme4, lwgeom, terra, riskRegression, rms, scater, scuttle, SKAT, TMB 
+were removed when they appear for 4.6.2-gcc11. For Rserve 1.8-15, openssl/3.3.0-dev appears working. The package paws.analytics 0.10.0 
 is furnished with SLURM[^paws_analytics].
 
 It is possible to use packages built under gcc11, e.g., rms as in
@@ -174,7 +174,7 @@ module load gcc/11.3.0/gcc/4zpip55j
 R CMD build --compact-vignettes=both --md5 --resave-data --log gaawr2
 ```
 
-Lately, 4.6.1-gcc12 is also created based on ceuadmin/gcc/12.5.0 and ceuadmin/gcc-toolset/12. The highest version of GLIBCXX is found from
+Now 4.6.2-gcc12 is also created based on ceuadmin/gcc/12.5.0 and ceuadmin/gcc-toolset/12. The highest version of GLIBCXX is found from
 
 ```bash
 strings /usr/local/software/spack/spack-views/rocky8-icelake-20220710/gcc-11.3.0/gcc-11.3.0/4zpip55j2rww33vhy62jl4eliwynqfru/lib64/libstdc++.so.6 \
