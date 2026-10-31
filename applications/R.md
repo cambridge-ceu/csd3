@@ -17,7 +17,31 @@ Date | Version
 9/9/2024 | 4.4.1
 29/2/2024 | 4.3.3
 
-Note that packages in R/, R-gcc11/, R-gcc12/ directories now automatically find their locations, e.g.,
+Note that packages in R/, R-gcc11/, R-gcc12/ directories now automatically find their locations.
+
+```R
+remove.packages("stringi")
+install.packages(
+  "stringi",
+  configure.args = "--disable-pkg-config",
+  type = "source"
+)
+library(stringi)
+stringi::stri_info()
+install.packages(c(
+  "dplR",
+  "tigris",
+  "tidycensus"
+))
+remove.packages("arrow")
+Sys.setenv(
+  LIBARROW_BINARY = "FALSE",
+  ARROW_R_DEV = "TRUE"
+)
+install.packages("arrow", type = "source")
+```
+
+and also
 
 ```
 module load ceuadmin/R/4.5.3-gcc12
