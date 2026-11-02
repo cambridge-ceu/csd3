@@ -209,7 +209,7 @@ EOL
 echo "✅ Zed installed in $FLATPAK_USER_DIR and desktop launcher created."
 ```
 
-## GPT-OSS-120B in VS Code on the HPC
+## GPT-OSS-120B in VS Code
 
 This guide connects VS Code (using Remote SSH to `login-q-4`) to GPT-OSS-120B running through `llama.cpp` on `gpu-r-1`.
 
