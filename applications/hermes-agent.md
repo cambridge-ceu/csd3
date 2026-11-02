@@ -67,7 +67,7 @@ curl http://127.0.0.1:8080/v1/chat/completions \
   -d '{
     "model": "gpt-oss-120b",
     "messages": [
-      {"role": "user", "content": "Say hello in one sentence."}
+      {"role": "user", "content": "Say hello in a simple sentence."}
     ],
     "max_tokens": 256
   }'
@@ -77,15 +77,10 @@ and some manipulations with herms,
 
 ```bash
 module load ceuadmin/hermes-agent/0.22.5
-hermes setup telemetry
-hermes model
-hermes doctor
-hermes pm repair
-hermes gateway status
-module load ceuadmin/sqlite/3.49.2
-export API_SERVER_KEY=$(openssl rand -hex 32)
-"$PREFIX/venv/bin/hermes" gateway run
 cat ~/.hermes/config.yaml
+export API_SERVER_KEY=$(openssl rand -hex 32)
+hermes gateway run &
+hermes gateway status
 ```
 
 The model specification shows,
@@ -97,6 +92,15 @@ model:
   base_url: http://127.0.0.1:8080/v1
   api_key: hpc-local
   ollama_num_ctx: 65536
+```
+
+Other include commands include
+
+```bash
+hermes setup telemetry
+hermes model
+hermes doctor
+hermes pm repair
 ```
 
 A call is exemplified as follows, where all four tools are available so the initial warning is safely ignored,
