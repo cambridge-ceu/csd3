@@ -353,12 +353,6 @@ showing `gguf_merge: DeepSeek-V4.1-Flash-Q4_K_M.gguf merged from 11 split with 1
 
 ```bash
 module load ceuadmin/llama.cpp/deepseek41-cuda
-llama cli \
-  -m DeepSeek-V4.1-Flash-00001-of-00011.gguf \
-  -ngl 99 \
-  -sm layer \
-  --device CUDA1,CUDA2,CUDA3 \
-  -c 8192
 llama cli -m DeepSeek-V4.1-Flash-Q4_K_M.gguf -p "aspirin" 
 ```
 
@@ -470,6 +464,16 @@ Final.
 
 This is general information, not medical advice. If you want details for a specific situation, tell me your age, symptoms, other medicines, and whether you’re pregnant.
 
+One could also start with the first shard,
+
+```bash
+llama cli \
+  -m DeepSeek-V4.1-Flash-00001-of-00011.gguf \
+  -ngl 99 \
+  -sm layer \
+  --device CUDA1,CUDA2,CUDA3 \
+  -c 8192
+```
 
 ### DrugAssist-7B.Q8_0
 
