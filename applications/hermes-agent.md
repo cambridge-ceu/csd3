@@ -41,6 +41,8 @@ uv pip list --python "$PYTHON"
 "$PREFIX/venv/bin/hermes" --help
 ```
 
+Note that `nemo-relay` requires Python>=3.14 but the setup is largely satisfactory.
+
 ## OpenAI-GPT-OSS-120B
 
 As described elsewhere, our model is started as follows,
