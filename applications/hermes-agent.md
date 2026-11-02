@@ -254,7 +254,6 @@ Prefer the smallest change that resolves the demonstrated problem.
 EOF
 hermes skills --help
 hermes skills list
-hermes /r-hpc-development
 ```
 
 ## 2026.8.19 (0.20.5)
