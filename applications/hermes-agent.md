@@ -10,6 +10,9 @@ GitHub, <https://github.com/NousResearch/hermes-agent>
 
 ```bash
 module load ceuadmin/uv/0.12.5
+module load ceuadmin/sqlite/3.49.2
+module load ceuadmin/ffmpeg/7.0.2
+module load ceuadmin/ripgrep/15.2.0
 export VERSION=0.22.5
 export PREFIX="$CEUADMIN/hermes-agent/$VERSION"
 mkdir -p "$PREFIX"
@@ -22,6 +25,10 @@ uv pip install --python "$PYTHON" -e ".[all]"
 uv pip install --python "$PYTHON" "ruamel.yaml"
 uv pip install --python "$PYTHON" python-dotenv
 uv pip install --python "$PYTHON" rich
+uv pip install --python "$PYTHON" psutil httpx
+uv pip install --python "$PYTHON" openai prompt-toolkit
+uv pip install --python "$PYTHON" snowballstemmer
+uv pip install --python "$PYTHON" websockets
 uv pip check --python "$PYTHON"
 "$PYTHON" -c "
 from ruamel.yaml import YAML
@@ -32,6 +39,64 @@ print('All three imports OK')
 "$PYTHON" --version
 uv pip list --python "$PYTHON"
 "$PREFIX/venv/bin/hermes" --help
+```
+
+## OpenAI-GPT-OSS-120B
+
+As described elsewhere, our model is started as follows,
+
+```bash
+module load ceuadmin/llama.cpp/0.8.0-cuda
+llama serve \
+  -m ~/rds/software/models/openai_gpt-oss-120b-Q4_K_M/openai_gpt-oss-120b-Q4_K_M-00001-of-00002.gguf \
+  --alias gpt-oss-120b \
+  --host 127.0.0.1 \
+  --port 8080 \
+  -ngl 99 \
+  -c 65536 \
+  --device CUDA0,CUDA1,CUDA2,CUDA3 \
+  --split-mode layer \
+  --api-key hpc-local \
+  > llama-gpt-oss-120b.log 2>&1 &
+nvidia-smi
+curl http://127.0.0.1:8080/v1/models \
+  -H "Authorization: Bearer hpc-local"
+curl http://127.0.0.1:8080/v1/chat/completions \
+  -H "Authorization: Bearer hpc-local" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "gpt-oss-120b",
+    "messages": [
+      {"role": "user", "content": "Say hello in one sentence."}
+    ],
+    "max_tokens": 256
+  }'
+```
+
+and some manipulations with herms,
+
+```bash
+module load ceuadmin/hermes-agent/0.22.5
+hermes setup telemetry
+hermes model
+hermes doctor
+hermes pm repair
+hermes gateway status
+module load ceuadmin/sqlite/3.49.2
+export API_SERVER_KEY=$(openssl rand -hex 32)
+"$PREFIX/venv/bin/hermes" gateway run
+cat ~/.hermes/config.yaml
+```
+
+The model specification shows,
+
+```
+model:
+  default: gpt-oss-120b
+  provider: custom
+  base_url: http://127.0.0.1:8080/v1
+  api_key: hpc-local
+  ollama_num_ctx: 65536
 ```
 
 ## 2026.8.19 (0.20.5)
