@@ -166,6 +166,97 @@ Hello! (◕‿◕)
  ☤ gpt-oss-120b · 10.6K/65.5K · [██░░░░░░░░] 16% · ◎ 100.0% · ◷ 1.4s · ↑ 95 t/s · 18s · ⏲ 1s · ✓ 0s             / commands · @ files · ! shell
 ```
 
+An attempt is made by creating a SKILL.md and check for its availability.
+
+```bash
+mkdir -p ~/.hermes/skills/r-hpc-development
+cat > ~/.hermes/skills/r-hpc-development/SKILL.md <<'EOF'
+---
+name: r-hpc-development
+description: R package development and debugging on Cambridge HPC
+version: 1.0.0
+---
+
+# R package development on Cambridge HPC
+
+## When to use
+
+Use this skill for R package development, installation, testing,
+debugging compilation errors, documentation and CRAN preparation
+on the user's Cambridge HPC environment.
+
+## Environment
+
+- Account: jhz22
+- Software installations: /usr/local/Cluster-Apps/ceuadmin
+- User modulefiles: ~/CEU/modules
+- The cluster uses a CentOS/RHEL 8 environment with GLIBC 2.28.
+- Software is normally installed without root privileges.
+- Environment modules are used to select compilers, libraries and tools.
+
+## Initial checks
+
+Before making changes:
+
+1. Inspect the current host and working directory.
+2. Check loaded modules with `module list`.
+3. Check the active R executable using `which R` and `R --version`.
+4. Inspect `.libPaths()` and the active compiler.
+5. Check available modules with `module avail` when a dependency is missing.
+
+Do not assume that the login and GPU nodes have identical environments.
+
+## Package development workflow
+
+For a package under development:
+
+1. Inspect DESCRIPTION, NAMESPACE, R/, tests/, vignettes/ and NEWS.
+2. Identify the specific change or failure before editing files.
+3. Run focused tests with `devtools::test()`.
+4. Run relevant examples and vignette builds when appropriate.
+5. Run `R CMD check` or `devtools::check()` before recommending release.
+6. Report warnings, notes and errors separately.
+
+For CRAN preparation, check package metadata, dependencies,
+documentation, examples, tests and portability.
+
+## Dependency and compilation troubleshooting
+
+When an R package fails to install:
+
+1. Capture the complete compiler or linker error.
+2. Identify the missing header, library, symbol or compiler feature.
+3. Check the active compiler and module environment.
+4. Inspect `pkg-config`, library search paths and `ldd` where relevant.
+5. Distinguish missing dependencies from ABI or GLIBC incompatibilities.
+6. Check whether a compatible CEU-admin installation already exists.
+
+Do not recommend rebuilding an entire toolchain for a single missing
+library without first checking available modules.
+
+## Important constraints
+
+- Do not use sudo or assume root access.
+- Do not modify system-wide files.
+- Do not overwrite existing modulefiles unnecessarily.
+- Do not update all R packages as a first troubleshooting step.
+- Do not change package source code without identifying the cause.
+- Preserve existing working installations.
+- Ask before deleting files, replacing installations or making
+  potentially disruptive changes.
+
+## Reporting
+
+Give concise, reproducible commands.
+Explain why a command is needed and what its output establishes.
+Distinguish confirmed findings from hypotheses.
+Prefer the smallest change that resolves the demonstrated problem.
+EOF
+hermes skills --help
+hermes skills list
+hermes /r-hpc-development
+```
+
 ## 2026.8.19 (0.20.5)
 
 This uses a more recent uv explicitly.
