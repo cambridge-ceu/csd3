@@ -636,6 +636,7 @@ All entries are ordered chronologically.
 | 2026-10-28 | firefoxi/159.0                    | Generic[^firefox]     |
 | 2025-10-29 | llama.cpp/[0.8.0\|0.8.0-cuda]     | Generic[^llama_cpp]   |
 | 2025-10-30 | R/4.6.2[-icelake\|-gcc11\|-gcc12] | Generic               |
+! 2026-11-02 | ripgrep/15.2.0                    | Generic[^ripgrep]     |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2510,3 +2511,9 @@ They are generated from script [setup.sh](setup.sh),
 [^AnythingLLM]: **AnythingLLMDesktop**
 
     See <https://cambridge-ceu.github.io/csd3/applications/AnythingLLMDesktop.html>.
+
+[^ripgrep]: **ripgrep**
+
+    ```bash
+    wget -qO- https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz | tar xvfz -
+    ```
