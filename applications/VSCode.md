@@ -6,13 +6,13 @@ sort: 93
 
 Web: <https://code.visualstudio.com/>.
 
-| Date | Update |
+| Date | Module |
 |---|---|
-| 3/11/2026 | Module `ceuadmin/VSCode/1.144.1`  |
-| 19/8/2026 | Module `ceuadmin/VSCode/1.133.0`  |
-| 23/5/2026 | Module `ceuadmin/VSCode/1.121.0`  |
-| 13/9/2025 | Module `ceuadmin/VSCode/1.104.0`  |
-| 18/5/2025 | Module `ceuadmin/VSCode/1.100.2`  |
+| 3/11/2026 | `ceuadmin/VSCode/1.144.1`  |
+| 19/8/2026 | `ceuadmin/VSCode/1.133.0`  |
+| 23/5/2026 | `ceuadmin/VSCode/1.121.0`  |
+| 13/9/2025 | `ceuadmin/VSCode/1.104.0`  |
+| 18/5/2025 | `ceuadmin/VSCode/1.100.2`  |
 
 ## Installation
 
