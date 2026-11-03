@@ -638,6 +638,7 @@ All entries are ordered chronologically.
 | 2025-10-30 | R/4.6.2[-icelake\|-gcc11\|-gcc12] | Generic               |
 | 2026-11-02 | ripgrep/15.2.0                    | Generic[^ripgrep]     |
 | 2026-11-03 | VSCode/1.144.1                    | Genetic[^vscode]      |
+| ""         | python/3.14.10                    | Generic[^python]      |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2518,3 +2519,7 @@ They are generated from script [setup.sh](setup.sh),
     ```bash
     wget -qO- https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-unknown-linux-musl.tar.gz | tar xvfz -
     ```
+
+[^python]: **python**
+
+    See See <https://cambridge-ceu.github.io/csd3/applications/python.html>.
