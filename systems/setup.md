@@ -2522,4 +2522,4 @@ They are generated from script [setup.sh](setup.sh),
 
 [^python]: **python**
 
-    See See <https://cambridge-ceu.github.io/csd3/applications/python.html>.
+    See <https://cambridge-ceu.github.io/csd3/applications/python.html>.
