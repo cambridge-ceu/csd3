@@ -75,7 +75,7 @@ curl http://127.0.0.1:8080/v1/chat/completions \
   }'
 ```
 
-and some manipulations with herms,
+and also,
 
 ```bash
 module load ceuadmin/hermes-agent/0.22.5
@@ -96,7 +96,7 @@ model:
   ollama_num_ctx: 65536
 ```
 
-Other include commands include
+Other relevant commands include
 
 ```bash
 hermes setup telemetry
