@@ -14,8 +14,6 @@ set -euo pipefail
 
 V=3.14.10
 PREFIX="$CEUADMIN/python/$V"
-BUILD="$HOME/build/python-$V"
-
 OPENSSL=/usr/local/Cluster-Apps/openssl/3.2.1
 SQLITE=/usr/local/Cluster-Apps/ceuadmin/sqlite/3.49.2
 LIBFFI=/usr/local/software/spack/spack-views/rocky8-icelake-20220710/libffi-3.4.2/gcc-11.3.0/alfpockhsgmv5vzwjg474kaaestxs7fa
@@ -42,9 +40,7 @@ export LDFLAGS="-L$OPENSSL/lib64 -L$SQLITE/lib -L$LIBFFI/lib64 \
 [[ "$(pkg-config --modversion openssl)" == 3.3.0-dev ]]
 [[ "$(pkg-config --modversion sqlite3)" == 3.49.2 ]]
 
-mkdir -p "$BUILD" "$PREFIX"
-cd "$BUILD"
-
+mkdir -p "$PREFIX"
 curl -fLO "https://www.python.org/ftp/python/$V/Python-$V.tar.xz"
 echo "de414a57119abef52784d8993e341d53aed635fc2b05c2607d9f98a2c5b72032  Python-$V.tar.xz" \
     | sha256sum -c -
