@@ -8,7 +8,7 @@ There is a dedicated section here, <https://cambridge-ceu.github.io/csd3/systems
 
 Date | Version
 -----|-----------
-30/10/2026 | R 4.6.2
+30/10/2026 | 4.6.2
 14/7/2026 | 4.6.1
 15/3/2026 | 4.5.3
 31/10/2025 | 4.5.2
