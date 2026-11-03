@@ -144,21 +144,21 @@ ac_add_options --with-ccache=sccache
 Your system should be ready to build Firefox for Desktop!
 ```
 
-| Date | Update |
+| Date | Module |
 |---|---|
-| 12/10/2026 | Module `ceuadmin/firefox/158.0`  |
-| 28/9/2026 | Modules `ceuadmin/firefox/157.0` and `ceuadmin/firefox/159.0a1` |
-| 18/9/2026 | Module `ceuadmin/firefox/158.0a1` |
-| 15/9/2026 | Module `ceuadmin/firefox/156.0`   |
-| 1/9/2026 | Modules `ceuadmin/firefox/155.0` and `ceuadmin/firefox/157.0a1`  |
-| 17/8/2026 | Module `ceuadmin/firefox/154.0`   |
-| 23/7/2026 | Modules `ceuadmin/firefox/153.0esr` and `ceuadmin/firefox/155.0a1` |
-| 20/6/2026 | Module `ceuadmin/firefox/154.0a1` |
-| 27/4/2026 | Module `ceuadmin/firefox/152.0a1` |
-| 24/4/2026 | Module `ceuadmin/firefox/150.0`   |
-| 26/3/2026 | Module `ceuadmin/firefox/149.0`   |
-| 20/1/2026 | Module `ceuadmin/147.0.1`         |
-| 19/12/2025 | The `ceuadmin/firefox/148.0a1`   |
+| 12/10/2026 | `ceuadmin/firefox/158.0`  |
+| 28/9/2026 |  `ceuadmin/firefox/157.0` and `ceuadmin/firefox/159.0a1` |
+| 18/9/2026 |  `ceuadmin/firefox/158.0a1` |
+| 15/9/2026 |  `ceuadmin/firefox/156.0`   |
+| 1/9/2026 |  `ceuadmin/firefox/155.0` and `ceuadmin/firefox/157.0a1`  |
+| 17/8/2026 | `ceuadmin/firefox/154.0`   |
+| 23/7/2026 | `ceuadmin/firefox/153.0esr` and `ceuadmin/firefox/155.0a1` |
+| 20/6/2026 | `ceuadmin/firefox/154.0a1` |
+| 27/4/2026 | `ceuadmin/firefox/152.0a1` |
+| 24/4/2026 | `ceuadmin/firefox/150.0`   |
+| 26/3/2026 | `ceuadmin/firefox/149.0`   |
+| 20/1/2026 | `ceuadmin/147.0.1`         |
+| 19/12/2025 | `ceuadmin/firefox/148.0a1`   |
 
 ```bash
 git pull
