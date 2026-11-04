@@ -8,9 +8,11 @@ GitHub: <https://github.com/ggml-org/llama.cpp>
 
 ## Installation[^macOS]
 
+Note that -cuda modules can be compiled under CPU.
+
 ### 0.9.0/0.9.0-cuda
 
-This follows 0.8.0/0.8.0-cuda, and ceuadmin/deepseekv41-cuda remains necessary to load DeepSeek-V4.1-Flash.
+This follows 0.8.0/0.8.0-cuda, and ceuadmin/deepseek41-cuda remains necessary to load DeepSeek-V4.1-Flash.
 
 ### 0.8.0
 
