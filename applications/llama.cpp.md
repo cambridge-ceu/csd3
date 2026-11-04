@@ -8,11 +8,21 @@ GitHub: <https://github.com/ggml-org/llama.cpp>
 
 ## Installation[^macOS]
 
+### 0.9.0/0.9.0-cuda
+
+This follows 0.8.0/0.8.0-cuda, and ceuadmin/deepseekv41-cuda remains necessary to load DeepSeek-V4.1-Flash.
+
 ### 0.8.0
 
 ```bash
 export version=0.8.0
 wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/v${version}.tar.gz | tar xfz -
+cd llama.cpp-0.8.0
+```
+
+then
+
+```bash
 cd llama.cpp-${version}
 module load gcc/11.3.0/gcc/4zpip55j
 module load openssl/3.3.0-dev
@@ -29,10 +39,6 @@ make -j$(nproc) && make install
 and also for 0.8.0-cuda,
 
 ```bash
-export version=0.8.0
-wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/v${version}.tar.gz | tar xfz -
-cd llama.cpp-0.8.0
-
 module load cuda/12.1
 module load gcc/11.3.0/gcc/4zpip55j
 module load openssl/3.3.0-dev
