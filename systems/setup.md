@@ -639,6 +639,7 @@ All entries are ordered chronologically.
 | 2026-11-02 | ripgrep/15.2.0                    | Generic[^ripgrep]     |
 | 2026-11-03 | VSCode/1.144.1                    | Genetic[^vscode]      |
 | ""         | python/3.14.10                    | Generic[^python]      |
+| 2026-11-04 | sqlite/3.54.1                     | Generic[^sqlite]      |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -1945,6 +1946,8 @@ They are generated from script [setup.sh](setup.sh),
     ./configure --enable-all --prefix=$CEUADMIN/sqlite/3.49.2  TCLLIBDIR=$CEUADMIN/sqlite/3.49.2/tcl8.6
     make && make install
     ```
+
+    3.54.1 follows suite but use `make -j5`. A comprehensive test is possible, e.g., [sqlite.sh](files/sqlite.sh)
 
 [^zettlr]: **Zettlr**
 
