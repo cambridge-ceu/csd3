@@ -640,6 +640,7 @@ All entries are ordered chronologically.
 | 2026-11-03 | VSCode/1.144.1                    | Genetic[^vscode]      |
 | ""         | python/3.14.10                    | Generic[^python]      |
 | 2026-11-04 | sqlite/3.54.1                     | Generic[^sqlite]      |
+| ""         | ffmpeg/9.0.2-47                   | Generic[^ffmpeg]      |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2512,6 +2513,8 @@ They are generated from script [setup.sh](setup.sh),
 
     The link to the stable release is <https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz> while the nightly version
     <https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz>.
+
+    9.0.2-47 is from < https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n9.0-latest-linux64-gpl-9.0.tar.xz>.
 
 [^AnythingLLM]: **AnythingLLMDesktop**
 
