@@ -98,6 +98,31 @@ A `Markdown All in One` extension is also an option.
 
 Again this is possible with extensions.
 
+### Bash IDE
+
+The named extension requires both ShellCheck and bash-language-server to be enabled.
+
+To integrate with VS Code, we have "Preference: Open Settings (JSON)" (Ctrl +, ) as follows,
+
+```
+{
+    "jupyter.askForKernelRestart": false,
+    "git.openRepositoryInParentFolders": "never",
+    "notebook.lineNumbers": "on",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editorAssociations": {
+        "*.md": "vscode.markdown.preview.editor"
+    },
+
+    "bashIde.enableSourceErrorDiagnostics": true,
+    "bashIde.shellcheckPath": "/usr/local/Cluster-Apps/ceuadmin/shellcheck/0.11.0/shellcheck",
+    "bashIde.shellcheckArguments": ["-x"]
+}
+```
+
+A screenshot is given here, ![](files/VSCode.png)
+
 ### CodeGPT
 
 From Visual Studio Code, install CodeGPT.
@@ -135,31 +160,6 @@ manhattan(gwas_results, chr=chr_col, p=pval_col)
 ```
 
 Replace `"my_gwas_results.txt"` with the actual name of your GWAS results file. Also, make sure to specify the correct column names for chromosome and p-value in `chr_col` and `pval_col`, respectively.
-
-## Bash IDE
-
-The named extension requires both ShellCheck and bash-language-server to be enabled.
-
-To integrate with VS Code, we have "Preference: Open Settings (JSON)" (Ctrl +, ) as follows,
-
-```
-{
-    "jupyter.askForKernelRestart": false,
-    "git.openRepositoryInParentFolders": "never",
-    "notebook.lineNumbers": "on",
-    "python.terminal.activateEnvInCurrentTerminal": true,
-    "security.workspace.trust.untrustedFiles": "open",
-    "workbench.editorAssociations": {
-        "*.md": "vscode.markdown.preview.editor"
-    },
-
-    "bashIde.enableSourceErrorDiagnostics": true,
-    "bashIde.shellcheckPath": "/usr/local/Cluster-Apps/ceuadmin/shellcheck/0.11.0/shellcheck",
-    "bashIde.shellcheckArguments": ["-x"]
-}
-```
-
-A screenshot is given here, ![](files/VSCode.png)
 
 ## GPT-OSS-120B in VS Code
 
