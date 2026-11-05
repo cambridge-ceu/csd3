@@ -642,6 +642,7 @@ All entries are ordered chronologically.
 | 2026-11-04 | sqlite/3.54.1                     | Generic[^sqlite]      |
 | ""         | ffmpeg/9.0.2-47                   | Generic[^ffmpeg]      |
 | ""         | llama.cpp/[0.9.0\|0.9.0-cuda]     | Generic[^llama_cpp]   |
+| 2026-11-05 | zed/1.27.0                        | Generic[^zed]         |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
