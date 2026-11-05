@@ -161,46 +161,6 @@ To integrate with VS Code, we have "Preference: Open Settings (JSON)" (Ctrl +, )
 
 A screenshot is given here, ![](files/VSCode.png)
 
-## Zed
-
-Web, <https://zed.dev/>
-
-This is one of the competitors, noted for flatpak:
-
-```bash
-#!/bin/bash
-# Custom Flatpak Zed installer for CentOS 8 / RHEL 8 without root
-
-# 1️⃣ Set custom install directory
-export FLATPAK_USER_DIR="$CEUADMIN/zed/0.215.3"
-export FLATPAK_USER_DIR="/rds/project/rds-4o5vpvAowP0/software/zed/0.215.3"
-mkdir -p "$FLATPAK_USER_DIR"
-export XDG_DATA_HOME="$FLATPAK_USER_DIR"
-
-# 2️⃣ Add Flathub remote if missing
-flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-# 3️⃣ Install Zed
-flatpak install --user -y flathub dev.zed.Zed
-
-# 4️⃣ Run Zed to verify
-flatpak run --user dev.zed.Zed
-
-# 5️⃣ Optional: create a desktop launcher
-mkdir -p "$HOME/.local/share/applications"
-cat > "$HOME/.local/share/applications/zed.desktop" <<EOL
-[Desktop Entry]
-Name=Zed Editor
-Exec=flatpak run --user dev.zed.Zed
-Terminal=false
-Type=Application
-Icon=zed
-Categories=Development;IDE;
-EOL
-
-echo "✅ Zed installed in $FLATPAK_USER_DIR and desktop launcher created."
-```
-
 ## GPT-OSS-120B in VS Code
 
 This guide connects VS Code (using Remote SSH to `login-q-4`) to GPT-OSS-120B running through `llama.cpp` on `gpu-r-1`.
