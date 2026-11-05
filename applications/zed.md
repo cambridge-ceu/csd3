@@ -9,73 +9,47 @@ Web, <https://zed.dev/>
 ## 1.27.0
 
 ```bash
-#!/bin/bash
-set -euo pipefail
-
-# ------------------------------------------------------------
-# Zed 1.27.0: CentOS 8 / x86_64 GNU/Linux
-# ------------------------------------------------------------
-
 V=1.27.0
 SRC="$HOME/rds/software/zed-$V"
 CEUADMIN=/usr/local/Cluster-Apps/ceuadmin
 PREFIX="$CEUADMIN/zed/$V"
-
 GCCROOT="$CEUADMIN/gcc/12.5.0"
 GCCLIB="$GCCROOT/lib64"
 LOCAL_LIB="$HOME/.local/lib"
 
-# 1. Toolchains
 module load ceuadmin/clang/22.1.8
 module load ceuadmin/gcc/12.5.0
 module load ceuadmin/rust
 
 export CC="$(command -v clang)"
 export CXX="$(command -v clang++)"
-
-# Use GCC 12.5 runtime and C++ standard library
 export CXXFLAGS="${CXXFLAGS:+$CXXFLAGS }--gcc-toolchain=$GCCROOT -stdlib=libstdc++"
-
 export LIBRARY_PATH="$GCCLIB:$LOCAL_LIB${LIBRARY_PATH:+:$LIBRARY_PATH}"
 export LD_LIBRARY_PATH="$GCCLIB:$LOCAL_LIB${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 
-# 2. Obtain source
 mkdir -p "$HOME/rds/software"
-
 if [[ ! -d "$SRC/.git" ]]; then
     git clone --depth 1 --branch "v$V" \
         https://github.com/zed-industries/zed.git "$SRC"
 fi
-
 cd "$SRC"
-
-echo "Zed source:"
 git describe --tags
 git rev-parse --short HEAD
 
-# 3. Rust target for the remote server
 export REMOTE_SERVER_TARGET=x86_64-unknown-linux-gnu
 rustup target add "$REMOTE_SERVER_TARGET"
-
-# 4. Verify Clang uses GCC 12.5
 "$CXX" --gcc-toolchain="$GCCROOT" -stdlib=libstdc++ \
     -std=c++20 -v -E -x c++ /dev/null 2>&1 |
     grep -E 'Selected GCC|include/c\+\+' || true
-
-# 5. xkbcommon-x11 linker compatibility
 XKB_LIB=/usr/lib64/libxkbcommon-x11.so.0
-
 if [[ ! -e "$XKB_LIB" ]]; then
     echo "ERROR: Missing $XKB_LIB" >&2
     exit 1
 fi
-
 mkdir -p "$LOCAL_LIB"
 ln -sfn "$XKB_LIB" "$LOCAL_LIB/libxkbcommon-x11.so"
 
-# 6. Source compatibility patch
 PATCH_FILE=crates/agent/src/tools/terminal_tool.rs
-
 if grep -qF 'subpath.is_empty()' "$PATCH_FILE"; then
     sed -i 's/subpath\.is_empty()/subpath.as_os_str().is_empty()/' \
         "$PATCH_FILE"
@@ -83,35 +57,24 @@ elif ! grep -qF 'subpath.as_os_str().is_empty()' "$PATCH_FILE"; then
     echo "ERROR: Expected source expression not found in $PATCH_FILE" >&2
     exit 1
 fi
-
-# 7. Build and bundle
 echo "Building Zed $V ..."
 script/install-linux
-
-# 8. Strip debug information
 BINARY=target/release/zed
 
 if [[ ! -f "$BINARY" ]]; then
     echo "ERROR: Zed executable not found: $BINARY" >&2
     exit 1
 fi
-
 strip --strip-debug "$BINARY"
-
 echo "Final executable:"
 ls -lh "$BINARY"
-
-# 9. Check maximum GLIBC requirement
 echo "Maximum GLIBC requirement:"
 readelf --version-info "$BINARY" |
     grep -o 'GLIBC_[0-9.]*' |
     sort -Vu |
     tail -1
-
-# 10. Install
 mkdir -p "$PREFIX/bin"
 install -m 755 "$BINARY" "$PREFIX/bin/zed"
-
 echo "Zed $V installed:"
 ls -lh "$PREFIX/bin/zed"
 ```
