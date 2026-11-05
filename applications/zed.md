@@ -9,6 +9,8 @@ GitHub, <https://github.com/zed-industries/zed>
 
 ## 1.27.0
 
+The following script builds module ceuadmin/zed/1.27.0.
+
 ```bash
 V=1.27.0
 SRC="$HOME/rds/software/zed-$V"
