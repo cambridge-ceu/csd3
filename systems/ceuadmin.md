@@ -109,7 +109,8 @@ The current list is as follows,
 [365] "VEGAS2"                 "verifyBamID"            "VirtualBox"             "VSCode"
 [369] "VSCodium"               "vte"                    "wasi-sdk"               "Windsurf"
 [373] "wine"                   "wombat"                 "wrk"                    "xpdf"
-[377] "yaml-cpp"               "Zettlr"                 "Zotero"                 "zstd"
+[377] "yaml-cpp"               "zed"                    "Zettlr"                 "Zotero"
+[381] "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
