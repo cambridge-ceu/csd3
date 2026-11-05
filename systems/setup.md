@@ -2531,3 +2531,7 @@ They are generated from script [setup.sh](setup.sh),
 [^python]: **python**
 
     See <https://cambridge-ceu.github.io/csd3/applications/python.html>.
+
+[^zed]: **zed**
+
+    See <https://cambridge-ceu.github.io/csd3/applications/zed.html>.
