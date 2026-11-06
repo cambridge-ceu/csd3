@@ -6,6 +6,35 @@ sort: 43
 
 GitHub, <https://github.com/NousResearch/hermes-agent>
 
+## 0.23.0
+
+It is now coupled with Python 3.14.10 and proceeds smoothly.
+
+```bash
+module load ceuadmin/uv/0.12.5
+module load ceuadmin/sqlite/3.54.1
+module load ceuadmin/ffmpeg/7.0.2
+module load ceuadmin/ripgrep/15.2.0
+module load ceuadmin/python/3.14.10
+export VERSION=0.23.0
+export PREFIX="$CEUADMIN/hermes-agent/$VERSION"
+wget -qO- "https://github.com/NousResearch/hermes-agent/archive/refs/tags/v${VERSION}.tar.gz" \
+    | tar xfz -
+cd hermes-agent-${version}
+uv venv --python 3.14 "$PREFIX"
+export PYTHON=$PREFIX/bin/python
+uv pip install --python "$PYTHON" -e ".[all]"
+"$PYTHON" -c "
+from ruamel.yaml import YAML
+import dotenv
+from rich.console import Console
+print('All three imports OK')
+"
+"$PYTHON" --version
+uv pip list --python "$PYTHON"
+"$PREFIX/venv/bin/hermes" --help
+```
+
 ## 0.22.5
 
 ```bash
@@ -38,7 +67,7 @@ print('All three imports OK')
 "
 "$PYTHON" --version
 uv pip list --python "$PYTHON"
-"$PREFIX/venv/bin/hermes" --help
+"$PREFIX/bin/hermes" --help
 ```
 
 Note that `nemo-relay` requires Python>=3.14 but the setup is largely satisfactory.
