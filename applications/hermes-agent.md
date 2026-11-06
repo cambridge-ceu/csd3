@@ -13,26 +13,59 @@ It is now coupled with Python 3.14.10 and proceeds smoothly.
 ```bash
 module load ceuadmin/uv/0.12.5
 module load ceuadmin/sqlite/3.54.1
-module load ceuadmin/ffmpeg/7.0.2
-module load ceuadmin/ripgrep/15.2.0
 module load ceuadmin/python/3.14.10
 export VERSION=0.23.0
 export PREFIX="$CEUADMIN/hermes-agent/$VERSION"
 wget -qO- "https://github.com/NousResearch/hermes-agent/archive/refs/tags/v${VERSION}.tar.gz" \
     | tar xfz -
-cd hermes-agent-${version}
+cd hermes-agent-${VERSION}
 uv venv --python 3.14 "$PREFIX"
 export PYTHON=$PREFIX/bin/python
 uv pip install --python "$PYTHON" -e ".[all]"
+"$PYTHON" --version
+uv pip list --python "$PYTHON"
 "$PYTHON" -c "
 from ruamel.yaml import YAML
 import dotenv
 from rich.console import Console
 print('All three imports OK')
 "
-"$PYTHON" --version
-uv pip list --python "$PYTHON"
-"$PREFIX/venv/bin/hermes" --help
+"$PREFIX/bin/hermes" --help
+export HERMES_RUNTIME_DIR="$CEUADMIN/hermes-agent/0.23.0/tools"
+mkdir -p "$HERMES_RUNTIME_DIR"
+export SSL_CERT_FILE=/etc/pki/tls/certs/ca-bundle.crt
+export SSL_CERT_DIR=/etc/pki/tls/certs
+"$PREFIX/bin/hermes" pm install --tools-only
+"$PREFIX/bin/hermes" pm status
+"$PREFIX/bin/hermes" pm doctor
+```
+
+The module file $CEUMODULES/hermes-agent/0.23.0 contains,
+
+```
+#%Module -*- tcl -*-
+##
+## hermes-agent/0.23.0 modulefile
+##
+
+proc ModulesHelp { } {
+
+  puts stderr "\thermes-agent: NousResearch CLI agent\n"
+  puts stderr "\tInstalled under: /usr/local/Cluster-Apps/ceuadmin/hermes-agent/0.23.0\n"
+  puts stderr "\tHomepage: https://github.com/NousResearch/hermes-agent"
+}
+
+module-whatis "NousResearch Hermes Agent CLI tool."
+
+module load ceuadmin/sqlite/3.54.1
+module load ceuadmin/python/3.14.10
+
+set               root                 /usr/local/Cluster-Apps/ceuadmin/hermes-agent/0.23.0
+setenv            VIRTUAL_ENV          $root
+prepend-path      PATH                 $root/bin
+setenv            HERMES_RUNTIME_DIR   $root/tools
+setenv            SSL_CERT_FILE        /etc/pki/tls/certs/ca-bundle.crt
+setenv            SSL_CERT_DIR         /etc/pki/tls/certs
 ```
 
 ## 0.22.5
