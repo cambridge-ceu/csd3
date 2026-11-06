@@ -1,0 +1,66 @@
+0.00.435.957 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.446.799 I srv    load_model: loading model '/home/jhz22/rds/software/models/openai_gpt-oss-120b-Q4_K_M/openai_gpt-oss-120b-Q4_K_M-00001-of-00002.gguf'
+0.02.650.319 W load: setting token '<|message|>' (200008) attribute to USER_DEFINED (16), old attributes: 8
+0.02.650.322 W load: setting token '<|start|>' (200006) attribute to USER_DEFINED (16), old attributes: 8
+0.02.650.323 W load: setting token '<|constrain|>' (200003) attribute to USER_DEFINED (16), old attributes: 8
+0.02.651.294 W load: setting token '<|channel|>' (200005) attribute to USER_DEFINED (16), old attributes: 8
+0.02.655.998 W load: special_eog_ids contains both '<|return|>' and '<|call|>', or '<|calls|>' and '<|flush|>' tokens, removing '<|end|>' token from EOG list
+0.24.354.565 I cmn          init: llama threadpool init, n_threads = 64
+0.27.213.234 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 65536, kv_unified = 'true'
+0.27.225.789 I srv  llama_server: model loaded
+0.27.225.795 I srv  llama_server: listening on http://127.0.0.1:8080
+0.27.225.795 W srv  llama_server: NOTICE: server default port will be changed to :9931 in a future release
+0.27.225.795 W srv  llama_server:         ref: https://github.com/ggml-org/llama.cpp/pull/26508
+0.29.138.721 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.29.139.571 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.32.721.083 I slot print_timing: id  3 | task 0 | prompt eval time =    2898.84 ms /    74 tokens (   39.17 ms per token,    25.53 tokens per second)
+0.32.721.087 I slot print_timing: id  3 | task 0 |        eval time =     682.53 ms /    88 tokens (    7.85 ms per token,   127.47 tokens per second)
+0.32.721.087 I slot print_timing: id  3 | task 0 |       total time =    3581.37 ms /   162 tokens
+0.32.721.091 I slot print_timing: id  3 | task 0 |    graphs reused =         87
+0.32.721.124 I slot      release: id  3 | task 0 | stop processing: n_tokens = 161, truncated = 0
+135.24.780.643 W srv    operator(): unauthorized: Invalid API Key
+135.24.787.772 W srv    operator(): unauthorized: Invalid API Key
+160.38.124.440 W srv    operator(): unauthorized: Invalid API Key
+160.38.125.961 W srv    operator(): unauthorized: Invalid API Key
+160.38.127.090 W srv    operator(): unauthorized: Invalid API Key
+160.38.127.667 W srv    operator(): unauthorized: Invalid API Key
+160.38.128.753 W srv    operator(): unauthorized: Invalid API Key
+160.38.129.299 W srv    operator(): unauthorized: Invalid API Key
+160.38.130.585 W srv    operator(): unauthorized: Invalid API Key
+160.38.736.216 W srv    operator(): unauthorized: Invalid API Key
+160.38.736.919 W srv    operator(): unauthorized: Invalid API Key
+160.38.737.522 W srv    operator(): unauthorized: Invalid API Key
+160.38.738.125 W srv    operator(): unauthorized: Invalid API Key
+160.38.738.708 W srv    operator(): unauthorized: Invalid API Key
+160.38.867.478 W srv    operator(): unauthorized: Invalid API Key
+160.38.984.810 W srv    operator(): unauthorized: Invalid API Key
+160.38.985.818 W srv    operator(): unauthorized: Invalid API Key
+160.38.987.138 W srv    operator(): unauthorized: Invalid API Key
+160.38.988.754 W srv    operator(): unauthorized: Invalid API Key
+160.38.989.929 W srv    operator(): unauthorized: Invalid API Key
+160.38.991.874 W srv    operator(): unauthorized: Invalid API Key
+160.39.302.315 W srv    operator(): unauthorized: Invalid API Key
+160.39.303.267 W srv    operator(): unauthorized: Invalid API Key
+160.40.160.232 W srv    operator(): unauthorized: Invalid API Key
+160.40.161.167 W srv    operator(): unauthorized: Invalid API Key
+160.40.161.940 W srv    operator(): unauthorized: Invalid API Key
+160.40.163.068 W srv    operator(): unauthorized: Invalid API Key
+160.40.163.678 W srv    operator(): unauthorized: Invalid API Key
+160.40.166.476 W srv    operator(): unauthorized: Invalid API Key
+160.40.347.499 W srv    operator(): unauthorized: Invalid API Key
+160.40.348.608 W srv    operator(): unauthorized: Invalid API Key
+160.53.656.421 W srv    operator(): unauthorized: Invalid API Key
+160.53.657.175 W srv    operator(): unauthorized: Invalid API Key
+161.07.253.631 W srv    operator(): unauthorized: Invalid API Key
+161.07.254.660 W srv    operator(): unauthorized: Invalid API Key
+175.12.752.250 W srv    operator(): unauthorized: Invalid API Key
+175.12.755.849 W srv    operator(): unauthorized: Invalid API Key
+175.12.756.973 W srv    operator(): unauthorized: Invalid API Key
+175.12.758.196 W srv    operator(): unauthorized: Invalid API Key
+175.12.758.699 W srv    operator(): unauthorized: Invalid API Key
+175.12.759.441 W srv    operator(): unauthorized: Invalid API Key
+175.12.762.597 W srv    operator(): unauthorized: Invalid API Key
+175.12.954.998 W srv    operator(): unauthorized: Invalid API Key
+175.12.955.868 W srv    operator(): unauthorized: Invalid API Key
+175.30.076.361 W srv    operator(): unauthorized: Invalid API Key
+175.30.077.473 W srv    operator(): unauthorized: Invalid API Key
