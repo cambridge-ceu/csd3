@@ -8,7 +8,7 @@ GitHub, <https://github.com/NousResearch/hermes-agent>
 
 ## 0.23.0
 
-It is now coupled with Python 3.14.10 and proceeds smoothly.
+It proceeds smoothly with Python 3.14.10.
 
 ```bash
 module load ceuadmin/uv/0.12.5
@@ -30,17 +30,17 @@ import dotenv
 from rich.console import Console
 print('All three imports OK')
 "
-"$PREFIX/bin/hermes" --help
-export HERMES_RUNTIME_DIR="$CEUADMIN/hermes-agent/0.23.0/tools"
+export HERMES_RUNTIME_DIR="$PREFIX/tools"
 mkdir -p "$HERMES_RUNTIME_DIR"
 export SSL_CERT_FILE=/etc/pki/tls/certs/ca-bundle.crt
 export SSL_CERT_DIR=/etc/pki/tls/certs
+"$PREFIX/bin/hermes" --help
 "$PREFIX/bin/hermes" pm install --tools-only
 "$PREFIX/bin/hermes" pm status
 "$PREFIX/bin/hermes" pm doctor
 ```
 
-The module file $CEUMODULES/hermes-agent/0.23.0 contains,
+with the module file $CEUMODULES/hermes-agent/0.23.0,
 
 ```
 #%Module -*- tcl -*-
@@ -70,7 +70,7 @@ setenv            SSL_CERT_DIR         /etc/pki/tls/certs
 
 ## webapp
 
-First we need to add the following section to ~/.hermes/config.yaml:
+First, ensure following section is within ~/.hermes/config.yaml:
 
 ```
 webapp:
@@ -81,22 +81,21 @@ and then
 
 ```bash
 hermes webapp
-hermes gateway restart
-# In another session
+hermes gateway restart &
 hermes webapp --status
 hermes webapp --no-open
 firefox http://127.0.0.1:9120 &
 hermes webapp
 ```
 
-we see
+as follows,
 
 ```
 $ hermes webapp
   ✓ Building the Webapp renderer
 ✓ Hermes Webapp renderer built: /rds/project/rds-4o5vpvAowP0/software/hermes-agent-0.23.0/apps/desktop/dist-webapp
 The gateway started before the Webapp was turned on. Restart it to serve the Webapp: hermes gateway restart
-18:08 jhz22@gpu-r-2 ~ $ hermes gateway restart
+$ hermes gateway restart
 ✓ Stopped gateway for this profile
 Starting gateway...
 ┌─────────────────────────────────────────────────────────┐
@@ -105,11 +104,6 @@ Starting gateway...
 │  Messaging platforms + cron scheduler                   │
 │  Press Ctrl+C to stop                                   │
 └─────────────────────────────────────────────────────────┘
-```
-
-and
-
-```
 $ hermes webapp --status
 Serving at http://127.0.0.1:9120
 $ hermes webapp --no-open
@@ -124,9 +118,6 @@ Open the Webapp with this one-use link (valid for 60 seconds):
 
 ```bash
 module load ceuadmin/uv/0.12.5
-module load ceuadmin/sqlite/3.49.2
-module load ceuadmin/ffmpeg/7.0.2
-module load ceuadmin/ripgrep/15.2.0
 export VERSION=0.22.5
 export PREFIX="$CEUADMIN/hermes-agent/$VERSION"
 mkdir -p "$PREFIX"
