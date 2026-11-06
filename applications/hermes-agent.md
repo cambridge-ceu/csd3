@@ -68,6 +68,58 @@ setenv            SSL_CERT_FILE        /etc/pki/tls/certs/ca-bundle.crt
 setenv            SSL_CERT_DIR         /etc/pki/tls/certs
 ```
 
+## webapp
+
+First we need to add the following section to ~/.hermes/config.yaml:
+
+```
+webapp:
+  enabled: true
+```
+
+and then
+
+```bash
+hermes webapp
+hermes gateway restart
+# In another session
+hermes webapp --status
+hermes webapp --no-open
+firefox http://127.0.0.1:9120 &
+hermes webapp
+```
+
+we see
+
+```
+$ hermes webapp
+  ✓ Building the Webapp renderer
+✓ Hermes Webapp renderer built: /rds/project/rds-4o5vpvAowP0/software/hermes-agent-0.23.0/apps/desktop/dist-webapp
+The gateway started before the Webapp was turned on. Restart it to serve the Webapp: hermes gateway restart
+18:08 jhz22@gpu-r-2 ~ $ hermes gateway restart
+✓ Stopped gateway for this profile
+Starting gateway...
+┌─────────────────────────────────────────────────────────┐
+│           ☤ Hermes Gateway Starting...                  │
+├─────────────────────────────────────────────────────────┤
+│  Messaging platforms + cron scheduler                   │
+│  Press Ctrl+C to stop                                   │
+└─────────────────────────────────────────────────────────┘
+```
+
+and
+
+```
+$ hermes webapp --status
+Serving at http://127.0.0.1:9120
+$ hermes webapp --no-open
+✓ Hermes Webapp renderer is up to date: /rds/project/rds-4o5vpvAowP0/software/hermes-agent-0.23.0/apps/desktop/dist-webapp
+Open the Webapp with this one-use link (valid for 60 seconds):
+  http://127.0.0.1:9120/webapp/launch#ticket=PX50qBhlOZSmH0aVsKW9PTDu66WmnkS5QYK50roaGoI
+```
+
+![](files/hermes-agent-webapp.png)
+
 ## 0.22.5
 
 ```bash
@@ -143,7 +195,7 @@ and also,
 module load ceuadmin/hermes-agent/0.22.5
 cat ~/.hermes/config.yaml
 export API_SERVER_KEY=$(openssl rand -hex 32)
-hermes gateway run &
+hermes gateway run
 hermes gateway status
 ```
 
