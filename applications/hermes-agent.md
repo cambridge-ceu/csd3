@@ -56,7 +56,7 @@ proc ModulesHelp { } {
 }
 
 module-whatis "NousResearch Hermes Agent CLI tool."
-
+module use /usr/local/software/spack/spack-modules/icelake-20220710/linux-rocky8-icelake
 module load ceuadmin/sqlite/3.54.1
 module load ceuadmin/python/3.14.10
 
