@@ -9,7 +9,14 @@ GitHub, <https://github.com/zed-industries/zed>
 
 ## 1.27.0
 
-module ceuadmin/zed/1.27.0 
+The module is called as follows,
+
+```bash
+module load ceuadmin/zed/1.27.0
+which zed
+zed --version
+ldd "$CEUADMIN/zed/1.27.0/libexec/zed-editor" | grep 'not found'
+```
 
 ### app
 
