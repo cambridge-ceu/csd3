@@ -643,6 +643,7 @@ All entries are ordered chronologically.
 | ""         | ffmpeg/9.0.2-47                   | Generic[^ffmpeg]      |
 | ""         | llama.cpp/[0.9.0\|0.9.0-cuda]     | Generic[^llama_cpp]   |
 | 2026-11-05 | zed/1.27.0                        | Generic[^zed]         |
+| 2026-11-06 | hermes-agent/0.23                 | Generic[^hermes]      |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
