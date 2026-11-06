@@ -128,7 +128,7 @@ ldd "$DEST/bin/zed"
 "$DEST/bin/zed" --version
 ``` 
 
-### zed execitable
+### zed
 
 The following script largely works with minor changes.
 
