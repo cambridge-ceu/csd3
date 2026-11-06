@@ -114,6 +114,8 @@ Open the Webapp with this one-use link (valid for 60 seconds):
 
 ![](files/hermes-agent-webapp.png)
 
+Note the dialog box at bottom of firefox.
+
 ## 0.22.5
 
 ```bash
@@ -186,7 +188,7 @@ and also,
 module load ceuadmin/hermes-agent/0.22.5
 cat ~/.hermes/config.yaml
 export API_SERVER_KEY=$(openssl rand -hex 32)
-hermes gateway run
+hermes gateway run &
 hermes gateway status
 ```
 
