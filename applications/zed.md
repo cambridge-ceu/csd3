@@ -130,7 +130,8 @@ ldd "$DEST/bin/zed"
 
 ### zed
 
-The following script largely works with minor changes.
+A command `script/install-linux` instead of `script/bundle-linux` in the script above generate `target/x86_64-unknown-linux-gnu/release/zed` and
+an earlier script largely below also works with minor changes.
 
 ```bash
 V=1.27.0
