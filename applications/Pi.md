@@ -6,6 +6,27 @@ sort: 63
 
 Web, <https://pi.dev/>
 
+## 1.5.0
+
+This largely follows work on 0.85.1.
+
+```bash
+module load ceuadmin/node/24.15.0
+VERSION=1.5.0
+PREFIX="$CEUADMIN/Pi/$VERSION"
+PACKAGE="@earendil-works/pi-coding-agent"
+mkdir -p "$PREFIX"
+npm install -g --prefix "$PREFIX" \
+    "$PACKAGE@$VERSION" \
+    pi-subagents \
+    @ollama/pi-web-search
+mkdir -p "$PREFIX/agent"
+export PATH="$PREFIX/bin:$PATH"
+pi --version
+npm ls -g --prefix "$PREFIX" --depth=0
+echo "Pi $VERSION installed successfully under $PREFIX"
+```
+
 ## 0.85.1
 
 ```bash
