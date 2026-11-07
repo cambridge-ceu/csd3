@@ -27,6 +27,40 @@ npm ls -g --prefix "$PREFIX" --depth=0
 echo "Pi $VERSION installed successfully under $PREFIX"
 ```
 
+User side is handled via module file,
+
+```
+#%Module -*- tcl -*-
+##
+## Pi/1.5.0 module file
+##
+proc ModulesHelp { } {
+
+  puts stderr "\tPi: a minimal coding harness for workflows and coding agents\n"
+  puts stderr "\tVersion: 1.5.0"
+  puts stderr "\tInstalled under: /usr/local/Cluster-Apps/ceuadmin/Pi/1.5.0"
+  puts stderr "\tHomepage: https://pi.dev"
+}
+
+module-whatis "Pi 1.5.0 - AI coding agent"
+
+module load ceuadmin/node/24.15.0
+
+set               root                 /usr/local/Cluster-Apps/ceuadmin/Pi/1.5.0
+prepend-path      PATH                 $root/bin
+setenv            PI_ROOT              $root
+
+# Initialise user-specific Pi directory
+if { [info exists ::env(HOME)] } {
+  set pi_dir "$::env(HOME)/.pi"
+
+  if { [file type $pi_dir] eq "link" && ![file exists $pi_dir] } {
+    file delete $pi_dir
+  }
+
+  file mkdir "$pi_dir/agent"
+}
+```
 ## 0.85.1
 
 ```bash
