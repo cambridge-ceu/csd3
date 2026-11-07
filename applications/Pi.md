@@ -54,11 +54,16 @@ setenv            PI_ROOT              $root
 if { [info exists ::env(HOME)] } {
   set pi_dir "$::env(HOME)/.pi"
 
-  if { [file type $pi_dir] eq "link" && ![file exists $pi_dir] } {
+  if { [catch {file type $pi_dir} pi_type] == 0 && $pi_type eq "link" } {
     file delete $pi_dir
+    file mkdir "$pi_dir/agent"
+  } elseif { [file isdirectory $pi_dir] } {
+    file mkdir "$pi_dir/agent"
+  } elseif { ![file exists $pi_dir] } {
+    file mkdir "$pi_dir/agent"
+  } else {
+    puts stderr "ERROR: $pi_dir exists but is not a directory"
   }
-
-  file mkdir "$pi_dir/agent"
 }
 ```
 ## 0.85.1
