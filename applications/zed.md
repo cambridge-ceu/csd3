@@ -18,7 +18,7 @@ zed --version
 ldd "$CEUADMIN/zed/1.27.0/libexec/zed-editor" | grep 'not found'
 ```
 
-A script below build the app.
+The following script builds the app.
 
 ```bash
 #!/bin/bash
@@ -78,7 +78,6 @@ script/bundle-linux --skip-sentry
 
 For zed only, replace `script/bundle-linux` with `script/install-linux`. Now the installation is manual simply to avoid modification of 
 bundle-linux.
-
 
 ```bash
 DEST="$CEUADMIN/zed/$V"
