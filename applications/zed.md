@@ -18,7 +18,7 @@ zed --version
 ldd "$CEUADMIN/zed/1.27.0/libexec/zed-editor" | grep 'not found'
 ```
 
-### app
+A script below build the app.
 
 ```bash
 #!/bin/bash
@@ -74,63 +74,47 @@ sed -i 's/subpath\.is_empty()/subpath.as_os_str().is_empty()/' \
 
 # Build and package
 script/bundle-linux --skip-sentry
+```
 
-# Install
+For zed only, replace `script/bundle-linux` with `script/install-linux`. Now the installation is manual simply to avoid modification of 
+bundle-linux.
+
+
+```bash
 DEST="$CEUADMIN/zed/$V"
 mkdir -p "$DEST"/{bin,lib,libexec}
 mkdir -p "$DEST/share/icons/hicolor/"{512,1024}x1024/apps
 mkdir -p "$DEST/share/applications"
-
-# Copy required shared libraries
 ldd target/x86_64-unknown-linux-gnu/release/zed |
     awk '/=> \// {print $3} /^\// {print $1}' |
     grep -Ev '/(libc\.so|libgcc_s\.so|libm\.so|libpthread\.so|libdl\.so|libasound\.so|libglib-2\.0\.so|libgobject-2\.0\.so|libgio-2\.0\.so|libgmodule-2\.0\.so|libpcre\.so|libpcre2-8\.so|libmount\.so|libblkid\.so|libselinux\.so|libffi\.so|libresolv\.so|libz\.so|ld-linux[^/]*\.so)' |
     while read -r lib; do
         cp -L "$lib" "$DEST/lib/"
     done
-
-# Use the GCC 12.5 C++ runtime
 cp -L "$GCC12/lib64/libstdc++.so.6" "$DEST/lib/"
-
-# Install executables
 cp target/x86_64-unknown-linux-gnu/release/zed \
    "$DEST/libexec/zed-editor"
 cp target/x86_64-unknown-linux-gnu/release/cli \
    "$DEST/bin/zed"
-
-# Strip installed copies only
 llvm-objcopy --strip-unneeded "$DEST/libexec/zed-editor"
 llvm-objcopy --strip-debug --discard-all "$DEST/bin/zed"
-
-# Icons
 cp crates/zed/resources/app-icon.png \
    "$DEST/share/icons/hicolor/512x512/apps/zed.png"
 cp crates/zed/resources/app-icon@2x.png \
    "$DEST/share/icons/hicolor/1024x1024/apps/zed.png"
-
-# Desktop entry
 export DO_STARTUP_NOTIFY=true
 export APP_CLI=zed
 export APP_ICON=zed
 export APP_ARGS='%U'
 export APP_NAME=Zed
-
 envsubst < crates/zed/resources/zed.desktop.in \
     > "$DEST/share/applications/dev.zed.Zed.desktop"
 chmod +x "$DEST/share/applications/dev.zed.Zed.desktop"
-
-# Licences
 cp assets/licenses.md "$DEST/licenses.md"
-
-# Verify
 ldd "$DEST/libexec/zed-editor"
 ldd "$DEST/bin/zed"
 "$DEST/bin/zed" --version
 ``` 
-
-### zed
-
-Replace `script/bundle-linux` with `script/install-linux`.
 
 ## flatpak:
 
