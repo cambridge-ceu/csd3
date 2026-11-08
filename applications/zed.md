@@ -76,8 +76,21 @@ sed -i 's/subpath\.is_empty()/subpath.as_os_str().is_empty()/' \
 script/bundle-linux --skip-sentry
 ```
 
-For zed only, replace `script/bundle-linux` with `script/install-linux`. Now the installation is manual simply to avoid modification of 
-bundle-linux.
+Note the installation is manual simply to avoid modification of bundle-linux.
+One can also use `script/install-linux`, as is [zed.sh](files/zed.sh) which generates `target/release/zed-linux-x86_64.tar.gz`. It requires the following patch to .cargo/config.toml,
+
+```toml
+[target.'cfg(all())']
+# v0 mangling scheme provides more detailed backtraces around closures
+rustflags = [
+    "-C", "symbol-mangling-version=v0",
+    "--cfg", "tokio_unstable",
+
+    # HPC: GCC 12.5 C++ runtime
+    "-L", "native=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/lib64",
+    "-C", "link-arg=-Wl,-rpath,/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/lib64",
+]
+```
 
 ```bash
 DEST="$CEUADMIN/zed/$V"
