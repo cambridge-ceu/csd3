@@ -76,21 +76,7 @@ sed -i 's/subpath\.is_empty()/subpath.as_os_str().is_empty()/' \
 script/bundle-linux --skip-sentry
 ```
 
-Note the installation is manual simply to avoid modification of bundle-linux.
-One can also use `script/install-linux`, as is [zed.sh](files/zed.sh) which generates `target/release/zed-linux-x86_64.tar.gz`. It requires the following patch to .cargo/config.toml (as in [config.toml](files/config.toml)),
-
-```toml
-[target.'cfg(all())']
-# v0 mangling scheme provides more detailed backtraces around closures
-rustflags = [
-    "-C", "symbol-mangling-version=v0",
-    "--cfg", "tokio_unstable",
-
-    # HPC: GCC 12.5 C++ runtime
-    "-L", "native=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/lib64",
-    "-C", "link-arg=-Wl,-rpath,/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/lib64",
-]
-```
+The installation script below is manual simply to avoid modification of `script/bundle-linux`.
 
 ```bash
 DEST="$CEUADMIN/zed/$V"
@@ -127,6 +113,21 @@ ldd "$DEST/libexec/zed-editor"
 ldd "$DEST/bin/zed"
 "$DEST/bin/zed" --version
 ``` 
+
+One can also use `script/install-linux`, as is [zed.sh](files/zed.sh) which generates `target/release/zed-linux-x86_64.tar.gz`. It requires the following patch to .cargo/config.toml (as shown in [config.toml](files/config.toml)),
+
+```toml
+[target.'cfg(all())']
+# v0 mangling scheme provides more detailed backtraces around closures
+rustflags = [
+    "-C", "symbol-mangling-version=v0",
+    "--cfg", "tokio_unstable",
+
+    # HPC: GCC 12.5 C++ runtime
+    "-L", "native=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/lib64",
+    "-C", "link-arg=-Wl,-rpath,/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/lib64",
+]
+```
 
 ## flatpak:
 
