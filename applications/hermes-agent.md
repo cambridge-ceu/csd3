@@ -152,7 +152,7 @@ Note the dialog box at bottom of firefox.
 This is similar to webapp above.
 
 ```
-$ hermes dashboard
+$ hermes dashboard &
 → Building web UI...
   ✓ Preparing Node dependencies
   ✓ Building the web UI
