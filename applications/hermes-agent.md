@@ -116,6 +116,16 @@ Open the Webapp with this one-use link (valid for 60 seconds):
 
 Note the dialog box at bottom of firefox.
 
+It might well be that gateway is being run on a node elsewhere, this helps to find out,
+
+```bash
+for host in login-q-1 login-q-2 login-q-3 login-q-4 gpu-r-2; do
+    echo "===== $host ====="
+    ssh -o BatchMode=yes -o ConnectTimeout=3 "$host" \
+        "pgrep -af 'hermes.*gateway|gateway.*hermes' || true"
+done
+```
+
 ## 0.22.5
 
 ```bash
