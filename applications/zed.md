@@ -118,6 +118,12 @@ ldd "$DEST/bin/zed"
 
 One can also use `script/install-linux`, as is [zed.sh](files/zed.sh) which generates `target/release/zed-linux-x86_64.tar.gz`.
 
+{% highlight bash %}
+{% include_relative files/zed.sh %}
+{% endhighlight %}
+
+It includes the following patch to .cargo/config.toml (as shown in [config.toml](files/config.toml)),
+
 ```toml
 [target.'cfg(all())']
 # v0 mangling scheme provides more detailed backtraces around closures
@@ -130,12 +136,6 @@ rustflags = [
     "-C", "link-arg=-Wl,-rpath,/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/lib64",
 ]
 ```
-
-{% highlight bash %}
-{% include_relative files/zed.sh %}
-{% endhighlight %}
-
-It includes the following patch to .cargo/config.toml (as shown in [config.toml](files/config.toml)),
 
 {% highlight toml %}
 {% include_relative files/config.toml %}
