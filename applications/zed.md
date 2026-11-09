@@ -2,6 +2,18 @@
 sort: 95
 ---
 
+[View or download zed.sh](files/zed.sh)
+
+{% highlight bash %}
+{% include_relative files/zed.sh %}
+{% endhighlight %}
+
+[View or download config.toml](files/config.toml)
+
+{% highlight toml %}
+{% include_relative files/config.toml %}
+{% endhighlight %}
+
 # Zed
 
 Web, <https://zed.dev/>\
