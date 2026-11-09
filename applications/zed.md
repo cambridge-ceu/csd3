@@ -114,7 +114,7 @@ ldd "$DEST/bin/zed"
 "$DEST/bin/zed" --version
 ``` 
 
-One can also use `script/install-linux`, as is [zed.sh](files/zed.sh) which generates `target/release/zed-linux-x86_64.tar.gz`. It requires the following patch to .cargo/config.toml (as shown in [config.toml](files/config.toml)),
+One can also use `script/install-linux`, as is [zed.sh](files/zed.sh) which generates `target/release/zed-linux-x86_64.tar.gz`. It includes the following patch to .cargo/config.toml (as shown in [config.toml](files/config.toml)),
 
 ```toml
 [target.'cfg(all())']
