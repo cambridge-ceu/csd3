@@ -147,6 +147,20 @@ Open the Webapp with this one-use link (valid for 60 seconds):
 
 Note the dialog box at bottom of firefox.
 
+## dashboard
+
+This is similar to webapp above.
+
+```
+$ hermes dashboard
+→ Building web UI...
+  ✓ Preparing Node dependencies
+  ✓ Building the web UI
+  ✓ Web UI built
+HERMES_DASHBOARD_READY port=9119
+  Hermes Web UI → http://127.0.0.1:9119
+```
+
 ## 0.22.5
 
 ```bash
