@@ -85,10 +85,10 @@ llama serve \
   > llama-qwen3.8-27b.log 2>&1 &
 ```
 
-To check if gateway is being run on an alernative node,
+To check if gateway is being run on any node,
 
 ```bash
-for host in login-q-1 login-q-2 login-q-3 login-q-4 gpu-r-2; do
+for host in login-q-1 login-q-2 login-q-3 login-q-4; do
     echo "===== $host ====="
     ssh -o BatchMode=yes -o ConnectTimeout=3 "$host" \
         "pgrep -af 'hermes.*gateway|gateway.*hermes' || true"
@@ -107,6 +107,7 @@ webapp:
 and then
 
 ```bash
+module load ceuadmin/hermes-agent/0.23.0
 hermes webapp
 hermes gateway restart &
 hermes webapp --status
