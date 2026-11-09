@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Zed
 sort: 95
 ---
