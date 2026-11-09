@@ -1,10 +1,11 @@
 ---
-title: Zed
 sort: 95
 ---
 
 Web, <https://zed.dev/>\
 GitHub, <https://github.com/zed-industries/zed>
+
+# Zed
 
 ## 1.27.0
 
