@@ -17,6 +17,7 @@ which zed
 zed --version
 ldd "$CEUADMIN/zed/1.27.0/libexec/zed-editor" | grep 'not found'
 ```
+### script/bundle-linux
 
 The following script builds the app.
 
@@ -114,9 +115,9 @@ ldd "$DEST/bin/zed"
 "$DEST/bin/zed" --version
 ``` 
 
-### Installation scripts and configuration
+### script/install-linux
 
-One can also use `script/install-linux`, as is [zed.sh](files/zed.sh) which generates `target/release/zed-linux-x86_64.tar.gz`.
+It generates `target/release/zed-linux-x86_64.tar.gz` as an archive of zed.app/. The script is [zed.sh](files/zed.sh)
 
 {% highlight bash %}
 {% include_relative files/zed.sh %}
