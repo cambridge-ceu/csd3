@@ -1,20 +1,8 @@
 ---
+layout: page
+title: Zed
 sort: 95
 ---
-
-[View or download zed.sh](files/zed.sh)
-
-{% highlight bash %}
-{% include_relative files/zed.sh %}
-{% endhighlight %}
-
-[View or download config.toml](files/config.toml)
-
-{% highlight toml %}
-{% include_relative files/config.toml %}
-{% endhighlight %}
-
-# Zed
 
 Web, <https://zed.dev/>\
 GitHub, <https://github.com/zed-industries/zed>
@@ -126,7 +114,9 @@ ldd "$DEST/bin/zed"
 "$DEST/bin/zed" --version
 ``` 
 
-One can also use `script/install-linux`, as is [zed.sh](files/zed.sh) which generates `target/release/zed-linux-x86_64.tar.gz`. It includes the following patch to .cargo/config.toml (as shown in [config.toml](files/config.toml)),
+### Installation scripts and configuration
+
+One can also use `script/install-linux`, as is [zed.sh](files/zed.sh) which generates `target/release/zed-linux-x86_64.tar.gz`.
 
 ```toml
 [target.'cfg(all())']
@@ -140,6 +130,16 @@ rustflags = [
     "-C", "link-arg=-Wl,-rpath,/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0/lib64",
 ]
 ```
+
+{% highlight bash %}
+{% include_relative files/zed.sh %}
+{% endhighlight %}
+
+It includes the following patch to .cargo/config.toml (as shown in [config.toml](files/config.toml)),
+
+{% highlight toml %}
+{% include_relative files/config.toml %}
+{% endhighlight %}
 
 ## flatpak:
 
