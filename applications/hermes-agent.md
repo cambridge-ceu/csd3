@@ -68,6 +68,33 @@ setenv            SSL_CERT_FILE        /etc/pki/tls/certs/ca-bundle.crt
 setenv            SSL_CERT_DIR         /etc/pki/tls/certs
 ```
 
+## Qwen3.8-27B-Q8_0
+
+```bash
+module load ceuadmin/llama.cpp/0.9.0-cuda
+llama serve \
+  -m ~/rds/software/models/Qwen3.8-27B-Q8_0.gguf \
+  --alias qwen3.8-27b \
+  --host 127.0.0.1 \
+  --port 8080 \
+  -ngl 99 \
+  -c 65536 \
+  --device CUDA0,CUDA1,CUDA2,CUDA3 \
+  --split-mode layer \
+  --api-key hpc-local \
+  > llama-qwen3.8-27b.log 2>&1 &
+```
+
+To check if gateway is being run on an alernative node,
+
+```bash
+for host in login-q-1 login-q-2 login-q-3 login-q-4 gpu-r-2; do
+    echo "===== $host ====="
+    ssh -o BatchMode=yes -o ConnectTimeout=3 "$host" \
+        "pgrep -af 'hermes.*gateway|gateway.*hermes' || true"
+done
+```
+
 ## webapp
 
 First, ensure following section is within ~/.hermes/config.yaml:
@@ -115,16 +142,6 @@ Open the Webapp with this one-use link (valid for 60 seconds):
 ![](files/hermes-agent-webapp.png)
 
 Note the dialog box at bottom of firefox.
-
-It might well be that gateway is being run on a node elsewhere, this helps to find out,
-
-```bash
-for host in login-q-1 login-q-2 login-q-3 login-q-4 gpu-r-2; do
-    echo "===== $host ====="
-    ssh -o BatchMode=yes -o ConnectTimeout=3 "$host" \
-        "pgrep -af 'hermes.*gateway|gateway.*hermes' || true"
-done
-```
 
 ## 0.22.5
 
