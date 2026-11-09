@@ -70,7 +70,10 @@ setenv            SSL_CERT_DIR         /etc/pki/tls/certs
 
 ## Qwen3.8-27B-Q8_0
 
+We start by load the hermes and llama.cpp modules.
+
 ```bash
+module load ceuadmin/hermes-agent/0.23.0
 module load ceuadmin/llama.cpp/0.9.0-cuda
 llama serve \
   -m ~/rds/software/models/Qwen3.8-27B-Q8_0.gguf \
@@ -85,7 +88,7 @@ llama serve \
   > llama-qwen3.8-27b.log 2>&1 &
 ```
 
-To check if gateway is being run on any node,
+and stop any gateway run on known node, e.g.,
 
 ```bash
 for host in login-q-1 login-q-2 login-q-3 login-q-4; do
@@ -95,9 +98,11 @@ for host in login-q-1 login-q-2 login-q-3 login-q-4; do
 done
 ```
 
+We issue `hermes config edit` to specify our model, `qwen3.8-27b`.
+
 ## webapp
 
-First, ensure following section is within ~/.hermes/config.yaml:
+Esure following section is within ~/.hermes/config.yaml:
 
 ```
 webapp:
@@ -107,9 +112,8 @@ webapp:
 and then
 
 ```bash
-module load ceuadmin/hermes-agent/0.23.0
-hermes webapp
 hermes gateway restart &
+hermes webapp
 hermes webapp --status
 hermes webapp --no-open
 firefox http://127.0.0.1:9120 &
@@ -119,10 +123,6 @@ hermes webapp
 as follows,
 
 ```
-$ hermes webapp
-  ✓ Building the Webapp renderer
-✓ Hermes Webapp renderer built: /rds/project/rds-4o5vpvAowP0/software/hermes-agent-0.23.0/apps/desktop/dist-webapp
-The gateway started before the Webapp was turned on. Restart it to serve the Webapp: hermes gateway restart
 $ hermes gateway restart
 ✓ Stopped gateway for this profile
 Starting gateway...
@@ -132,6 +132,9 @@ Starting gateway...
 │  Messaging platforms + cron scheduler                   │
 │  Press Ctrl+C to stop                                   │
 └─────────────────────────────────────────────────────────┘
+$ hermes webapp
+  ✓ Building the Webapp renderer
+✓ Hermes Webapp renderer built: /rds/project/rds-4o5vpvAowP0/software/hermes-agent-0.23.0/apps/desktop/dist-webapp
 $ hermes webapp --status
 Serving at http://127.0.0.1:9120
 $ hermes webapp --no-open
