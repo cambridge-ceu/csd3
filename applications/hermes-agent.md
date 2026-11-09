@@ -212,12 +212,7 @@ hermes doctor
 hermes pm repair
 ```
 
-A call is exemplified as follows, where all four tools are available so the initial warning is safely ignored,
-
-* FFmpeg 7.0.2
-* Node.js 24.15.0
-* npm 11.12.1
-* ripgrep 15.2.0
+A call is exemplified as follows, 
 
 ```
 hermes
