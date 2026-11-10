@@ -21,6 +21,166 @@ export OPENCLAW_STATE_DIR="$BASE/state"
 export OPENCLAW_CONFIG_PATH="$BASE/config.json"
 mkdir -p "$OPENCLAW_STATE_DIR"
 $BASE/bin/openclaw --version
+unset OPENCLAW_CONFIG_PATH
+unset OPENCLAW_STATE_DIR
+```
+
+Per user, one can unset the configuration and state folders as above.
+
+### llama.cpp
+
+```bash
+module load ceuadmin/llama.cpp/0.9.0-cuda
+llama serve \
+  -m ~/rds/software/models/Qwen3.8-27B-Q8_0.gguf \
+  --alias qwen3.8-27b \
+  --host 127.0.0.1 \
+  --port 8080 \
+  -ngl 99 \
+  -c 65536 \
+  --device CUDA0,CUDA1,CUDA2,CUDA3 \
+  --split-mode layer \
+  --api-key hpc-local \
+  > llama-qwen3.8-27b.log 2>&1 &
+module load ceuadmin/OpenClaw/2026.11.2
+export LLAMA_SERVER_API_KEY=hpc-local
+export OLLAMA_API_KEY=ollama-local
+openclaw plugins install @openclaw/llama-cpp-provider
+openclaw plugins list | grep llama-cpp
+openclaw gateway stop
+openclaw config set gateway.mode local
+openclaw config get gateway.mode
+openclaw onboard
+openclaw gateway > openclaw-gateway.log 2>&1 &
+openclaw gateway status
+openclaw models list --provider llama-cpp --refresh
+openclaw models list --provider ollama --refresh
+openclaw models status &
+openclaw status &
+```
+
+```
+$ openclaw plugins install @openclaw/llama-cpp-provider
+│
+◇
+
+OpenClaw 2026.11.2 (b556fdf) — MEMORY.md: where I keep the receipts on every "temporary workaround."
+
+Resolving clawhub:@openclaw/llama-cpp-provider@2026.11.2…
+  Package   @openclaw/llama-cpp-provider@2026.11.2
+  Type      plugin
+  Requires  pluginApi >=2026.11.2 · minGateway >=2026.6.2
+  ClawHub   view plugin
+Downloading plugin @openclaw/llama-cpp-provider@2026.11.2 from ClawHub…
+Extracting /tmp/openclaw/openclaw-clawhub-clawpack-J3pFqo/openclaw-llama-cpp-provider-2026.11.2.tgz…
+Plugin manifest id "llama-cpp" differs from npm package name "@openclaw/llama-cpp-provider"; using manifest id as the config key.
+Installing to /usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.11.2/state/extensions/llama-cpp…
+Installing plugin dependencies…
+Linked peerDependency "openclaw" -> /usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.11.2/lib/node_modules/openclaw
+Installed plugin: llama-cpp
+Saved for the next Gateway start.
+$ openclaw plugins list | grep llama-cpp
+│ llama.cpp Provider            │ llama-cpp         │ openclaw │ enabled  │ global:llama-cpp/dist/index.js │ 2026.11.2 │
+$ openclaw config set gateway.mode local
+│
+◇
+
+OpenClaw 2026.11.2 (b556fdf) — I have a SOUL.md and I'm not afraid to use it.
+
+Updated gateway.mode. Restart the gateway to apply.
+$ openclaw config get gateway.mode
+local
+$ openclaw gateway &
+ •●●:.        .:●●•
+:●●●●:        :●●●●:
+.●●●●:.:•●●•:.:●●●●.
+ .●●●: •●●●●• :●●●.    █▀▀▀█ █▀▀▀█ █▀▀▀▀ █▄  █ █▀▀▀▀ █     █▀▀▀█ █   █
+ ..:••●●●●●●●●••:..    █   █ █▀▀▀▀ █▀▀▀  █ ▀▄█ █     █     █▀▀▀█ █▄▀▄█
+.::••••●●●●●●••••::.   ▀▀▀▀▀ ▀     ▀▀▀▀▀ ▀   ▀ ▀▀▀▀▀ ▀▀▀▀▀ ▀   ▀ ▀   ▀
+ . .:  •●●●●•  :. .
+    .  :●●●●:  .
+      .●●●●●●.
+       :••••:
+
+20:45:13 [gateway] loading configuration…
+20:45:13 [gateway] resolving authentication…
+20:45:13 [gateway] starting...
+$ openclaw gateway status
+Listening: 127.0.0.1:18789
+Troubles: run openclaw status
+Troubleshooting: https://docs.openclaw.ai/troubleshooting
+$ openclaw status &
+
+OpenClaw 2026.11.2 (b556fdf) — Your .zshrc wishes it could do what I do.
+
+│
+◇
+OpenClaw status
+
+Overview
+┌──────────────────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ Item                 │ Value                                                                                                               │
+├──────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ OS                   │ linux 4.18.0-553.182.1.el8_10.x86_64 (x64) · node 24.22.2                                                           │
+│ Dashboard            │ http://127.0.0.1:18789/                                                                                             │
+│ Tailscale exposure   │ off                                                                                                                 │
+│ Channel              │ stable (default)                                                                                                    │
+│ Update               │ npm                                                                                                                 │
+│ Gateway              │ local · ws://127.0.0.1:18789 (local loopback) · reachable 773ms · auth none · gpu-r-2 (10.43.79.2) app 2026.11.2    │
+│                      │ linux 4.18.0-553.182.1.el8_10.x86_64                                                                                │
+│ Gateway self         │ gpu-r-2 (10.43.79.2) app 2026.11.2 linux 4.18.0-553.182.1.el8_10.x86_64                                             │
+│ Gateway service      │ systemd installed · unknown (inspection failed: ServiceInspectionError: The systemd user session bus is             │
+│                      │ unavailable. Check XDG_RUNTIME_DIR for the service account. Log in once or enable the user manager with sudo        │
+│                      │ loginctl enable-linger <user>, then verify systemctl --user status. On Debian/Ubuntu, install dbus-user-session     │
+│                      │ and run systemctl --user start dbus.socket if the runtime bus is missing. Verify busctl --user list with DBUS_      │
+│                      │ SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/bus, then retry. If an external supervisor owns this Gateway, have   │
+│                      │ its owner stop it, then run Doctor as the state-owning account with OPENCLAW_SERVICE_REPAIR_POLICY=external. This   │
+│                      │ skips native maintenance inspection and service mutations, keeps Gateway/state coordinators and agent-database      │
+│                      │ lease checks, and leaves shutdown/restart with the owner. See https://docs.openclaw.ai/gateway#existing-system-     │
+│                      │ launchdaemons.) · unknown                                                                                           │
+│ Node service         │ systemd disabled (inspection failed: The systemd user session bus is unavailable. Check XDG_RUNTIME_DIR for the     │
+│                      │ service account. Log in once or enable the user manager with sudo loginctl enable-linger <user>, then verify        │
+│                      │ systemctl --user status. On Debian/Ubuntu, install dbus-user-session and run systemctl --user start dbus.socket if  │
+│                      │ the runtime bus is missing. Verify busctl --user list with DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/     │
+│                      │ bus, then retry. If an external supervisor owns this Gateway, have its owner stop it, then run Doctor as the state- │
+│                      │ owning account with OPENCLAW_SERVICE_REPAIR_POLICY=external. This skips native maintenance inspection and service   │
+│                      │ mutations, keeps Gateway/state coordinators and agent-database lease checks, and leaves shutdown/restart with the   │
+│                      │ owner. See https://docs.openclaw.ai/gateway#existing-system-launchdaemons.; retry with openclaw status --deep) ·    │
+│                      │ unknown                                                                                                             │
+│ Agents               │ 1 · no workspaces bootstrapping · sessions 0 · default main active unknown                                          │
+│ Update run           │ Update run status unavailable: SQLite read-only worker snapshot cleanup failed: ~/.cache/openclaw/openclaw-sqlite-  │
+│                      │ readonly-v2-1Np9d0 | Worker resource cleanup failed | EBUSY: resource busy or locked, unlink '~/.cache/openclaw/    │
+│                      │ openclaw-sqlite-readonly-v2-1Np9d0/.nfs00000005c28f48db00003b37' | EBUSY                                            │
+│ Telemetry            │ disabled · update checks only                                                                                       │
+│ Memory               │ enabled (plugin memory-core) · not checked                                                                          │
+│ Host desktop         │ disabled                                                                                                            │
+│ Plugin compatibility │ none                                                                                                                │
+│ Checks               │ skipped (use --deep)                                                                                                │
+│ Events               │ none                                                                                                                │
+│ Backups              │ none recorded                                                                                                       │
+│ Heartbeat            │ 30m (main; waiting for delivery route — set commands.ownerAllowFrom=["telegram:123456789"] or channel allowFrom;    │
+│                      │ explicit delivery: heartbeat.target="telegram" with heartbeat.to="123456789")                                       │
+│ Sessions             │ 0 stored · default gpt-6-astra (272k ctx) · /usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.11.2/state/agents/main/  │
+│                      │ agent/openclaw-agent.sqlite                                                                                         │
+└──────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Security audit
+Skipped in fast status. Full report: openclaw security audit
+Deep check: openclaw status --deep
+
+Channels
+No channels configured
+
+Sessions
+No sessions
+
+FAQ: https://docs.openclaw.ai/faq
+Troubleshooting: https://docs.openclaw.ai/troubleshooting
+Next steps:
+  Need to share?      openclaw status --all
+  Need to debug live? openclaw logs --follow
+  Need to test channels? openclaw status --deep
+CLI cleanup failed: shared-state: OpenClaw state resource drainage failed | SQLite read-only worker snapshot cleanup failed: /home/jhz22/.cache/openclaw/openclaw-sqlite-readonly-v2-ADQ3zh | SQLite read-only worker snapshot cleanup failed: /home/jhz22/.cache/openclaw/openclaw-sqlite-readonly-v2-1Np9d0 | Worker resource cleanup failed | EBUSY: resource busy or locked, unlink '/home/jhz22/.cache/openclaw/openclaw-sqlite-readonly-v2-ADQ3zh/.nfs00000005bc4284dc00003b32' | EBUSY | EBUSY: resource busy or locked, unlink '/home/jhz22/.cache/openclaw/openclaw-sqlite-readonly-v2-1Np9d0/.nfs00000005c28f48db00003b37'
 ```
 
 ## 2026.8.2
