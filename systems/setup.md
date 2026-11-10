@@ -647,6 +647,8 @@ All entries are ordered chronologically.
 | 2026-11-07 | Pi/1.5.0                          | Generic[^pi]          |
 | 2026-11-10 | firefox/160.0\|162.0a1            | Generic[^firefox]     |
 | ""         | codex-cli/0.167.0                 | Generic[^codex]       |
+| ""         | node/24.22.2                      | Generic[^node]        |
+| ""         | OpenClaw/2026.11.2                | Generic[^openclaw]    |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
