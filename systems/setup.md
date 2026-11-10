@@ -629,7 +629,7 @@ All entries are ordered chronologically.
 | 2026-09-28 | firefox/157.0\|159.0a1            | Generic[^firefox]     |
 | 2026-10-12 | firefox/158.0                     | Generic[^firefox]     |
 | 2026-10-20 | AnythingLLMDesktop/1.18.0         | Generic[^AnythingLLM] |
-| 2026-10-22 | firefoxi/161.0a1                  | Generic[^firefox]     |
+| 2026-10-22 | firefox/161.0a1                   | Generic[^firefox]     |
 | 2026-10-23 | hermes-agent/0.22.5               | Generic[^hermes]      |
 | 2025-10-26 | llama.cpp/0.7.0                   | Generic[^llama_cpp]   |
 | 2025-10-27 | llama.cpp/0.7.0-cuda              | Generic[^llama_cpp]   |
@@ -645,6 +645,8 @@ All entries are ordered chronologically.
 | 2026-11-05 | zed/1.27.0                        | Generic[^zed]         |
 | 2026-11-06 | hermes-agent/0.23                 | Generic[^hermes]      |
 | 2026-11-07 | Pi/1.5.0                          | Generic[^pi]          |
+| 2026-11-10 | firefox/160.0\|162.0a1            | Generic[^firefox]     |
+| ""         | codex-cli/0.167.0                 | Generic[^codex]       |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -2449,7 +2451,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^codex]: **Codex**
 
-    This slowly builds up at <https://cambridge-ceu.github.io/csd3/applications/codex-cli.html>
+    See <https://cambridge-ceu.github.io/csd3/applications/codex-cli.html>
 
 [^shellcheck]: **ShellCheck**
 
