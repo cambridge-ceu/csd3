@@ -45,8 +45,8 @@ llama serve \
 module load ceuadmin/OpenClaw/2026.11.2
 export LLAMA_SERVER_API_KEY=hpc-local
 export OLLAMA_API_KEY=ollama-local
-openclaw plugins install @openclaw/llama-cpp-provider
-openclaw plugins list | grep llama-cpp
+openclaw plugins list | grep llama-cpp \
+  || openclaw plugins install @openclaw/llama-cpp-provider
 openclaw gateway stop
 openclaw config set gateway.mode local
 openclaw config get gateway.mode
@@ -55,8 +55,8 @@ openclaw gateway > openclaw-gateway.log 2>&1 &
 openclaw gateway status
 openclaw models list --provider llama-cpp --refresh
 openclaw models list --provider ollama --refresh
-openclaw models status &
-openclaw status &
+openclaw models status
+openclaw status
 ```
 
 ```
@@ -90,7 +90,7 @@ OpenClaw 2026.11.2 (b556fdf) — I have a SOUL.md and I'm not afraid to use it.
 Updated gateway.mode. Restart the gateway to apply.
 $ openclaw config get gateway.mode
 local
-$ openclaw gateway &
+$ openclaw gateway
  •●●:.        .:●●•
 :●●●●:        :●●●●:
 .●●●●:.:•●●•:.:●●●●.
@@ -109,7 +109,7 @@ $ openclaw gateway status
 Listening: 127.0.0.1:18789
 Troubles: run openclaw status
 Troubleshooting: https://docs.openclaw.ai/troubleshooting
-$ openclaw status &
+$ openclaw status
 
 OpenClaw 2026.11.2 (b556fdf) — Your .zshrc wishes it could do what I do.
 
