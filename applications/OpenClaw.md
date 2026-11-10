@@ -4,7 +4,24 @@ sort: 57
 
 # OpenClaw
 
-Web: <https://openclaw.ai/>
+Web: <https://openclaw.ai/>\
+GitHub: <https://github.com/openclaw/openclaw/releases>
+
+## 2026.11.2
+
+```bash
+module load ceuadmin/node/24.16.0
+export version=2026.11.2
+export BASE="$CEUADMIN/OpenClaw/$version"
+node --version
+npm view "openclaw@$version" version engines --json
+npm install -g "openclaw@$version" --prefix "$BASE"
+module load "ceuadmin/OpenClaw/$version"
+export OPENCLAW_STATE_DIR="$BASE/state"
+export OPENCLAW_CONFIG_PATH="$BASE/config.json"
+mkdir -p "$OPENCLAW_STATE_DIR"
+$BASE/bin/openclaw --version
+```
 
 ## 2026.8.2
 
