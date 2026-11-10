@@ -80,7 +80,7 @@ sed -i 's/subpath\.is_empty()/subpath.as_os_str().is_empty()/' \
 script/bundle-linux --skip-sentry
 ```
 
-A couple of changes a necessary to `script/bundle-linux`.
+Three changes are necessary to `script/bundle-linux`.
 
 ```bash
 # change: find_libs():
