@@ -10,7 +10,7 @@ GitHub: <https://github.com/openclaw/openclaw/releases>
 ## 2026.11.2
 
 ```bash
-module load ceuadmin/node/24.16.0
+module load ceuadmin/node/24.22.2
 export version=2026.11.2
 export BASE="$CEUADMIN/OpenClaw/$version"
 node --version
