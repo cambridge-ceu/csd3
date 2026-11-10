@@ -31,8 +31,8 @@ Moreover, note that
 
 ## ceuadmin/firefox
 
-<font color="red"><b>28/10/2026 Update</b></font>
-Modules **ceuadmin/firefox/159.0** is available.
+<font color="red"><b>10/11/2026 Update</b></font>
+Modules **ceuadmin/firefox/160.0** is available.
 
 A oneliner for the release version is as follows,
 
@@ -146,6 +146,7 @@ Your system should be ready to build Firefox for Desktop!
 
 | Date | Module |
 |---|---|
+| 28/10/2026 | `ceuadmin/firefox/160.0`  |
 | 12/10/2026 | `ceuadmin/firefox/158.0`  |
 | 28/9/2026 |  `ceuadmin/firefox/157.0` and `ceuadmin/firefox/159.0a1` |
 | 18/9/2026 |  `ceuadmin/firefox/158.0a1` |
