@@ -17,6 +17,9 @@ which zed
 zed --version
 ldd "$CEUADMIN/zed/1.27.0/libexec/zed-editor" | grep 'not found'
 ```
+
+Two scripts are available to generate `target/release/zed-linux-x86_64.tar.gz` as an archive of zed.app/.
+
 ### script/bundle-linux
 
 The following script builds the app.
@@ -77,47 +80,31 @@ sed -i 's/subpath\.is_empty()/subpath.as_os_str().is_empty()/' \
 script/bundle-linux --skip-sentry
 ```
 
-The installation script below is manual simply to avoid modification of `script/bundle-linux`.
+A couple of changes a necessary to `script/bundle-linux`.
 
 ```bash
-DEST="$CEUADMIN/zed/$V"
-mkdir -p "$DEST"/{bin,lib,libexec}
-mkdir -p "$DEST/share/icons/hicolor/"{512,1024}x1024/apps
-mkdir -p "$DEST/share/applications"
-ldd target/x86_64-unknown-linux-gnu/release/zed |
-    awk '/=> \// {print $3} /^\// {print $1}' |
-    grep -Ev '/(libc\.so|libgcc_s\.so|libm\.so|libpthread\.so|libdl\.so|libasound\.so|libglib-2\.0\.so|libgobject-2\.0\.so|libgio-2\.0\.so|libgmodule-2\.0\.so|libpcre\.so|libpcre2-8\.so|libmount\.so|libblkid\.so|libselinux\.so|libffi\.so|libresolv\.so|libz\.so|ld-linux[^/]*\.so)' |
-    while read -r lib; do
-        cp -L "$lib" "$DEST/lib/"
-    done
-cp -L "$GCC12/lib64/libstdc++.so.6" "$DEST/lib/"
-cp target/x86_64-unknown-linux-gnu/release/zed \
-   "$DEST/libexec/zed-editor"
-cp target/x86_64-unknown-linux-gnu/release/cli \
-   "$DEST/bin/zed"
-llvm-objcopy --strip-unneeded "$DEST/libexec/zed-editor"
-llvm-objcopy --strip-debug --discard-all "$DEST/bin/zed"
-cp crates/zed/resources/app-icon.png \
-   "$DEST/share/icons/hicolor/512x512/apps/zed.png"
-cp crates/zed/resources/app-icon@2x.png \
-   "$DEST/share/icons/hicolor/1024x1024/apps/zed.png"
-export DO_STARTUP_NOTIFY=true
-export APP_CLI=zed
-export APP_ICON=zed
-export APP_ARGS='%U'
-export APP_NAME=Zed
-envsubst < crates/zed/resources/zed.desktop.in \
-    > "$DEST/share/applications/dev.zed.Zed.desktop"
-chmod +x "$DEST/share/applications/dev.zed.Zed.desktop"
-cp assets/licenses.md "$DEST/licenses.md"
-ldd "$DEST/libexec/zed-editor"
-ldd "$DEST/bin/zed"
-"$DEST/bin/zed" --version
-``` 
+# change: find_libs():
+find_libs() {
+    ldd "${target_dir}/${target_triple}/release/zed" |
+        awk '
+            $2 == "=>" && $3 ~ /^\// {print $3}
+            $1 ~ /^\// {print $1}
+        ' |
+        grep -v '\<\(libc.so\|libgcc_s.so\|libm.so\|libpthread.so\|libdl.so\|libasound.so\)' |
+        grep -v '\<\(libglib-2.0.so\|libgobject-2.0.so\|libgio-2.0.so\|libgmodule-2.0.so\|libpcre.so\|libpcre2-8.so\|libmount.so\|libblkid.so\|libselinux.so\|libffi.so\|libresolv.so\|libz.so\)'
+}
+# change: cp $(find_libs) "${zed_dir}/lib"
+mapfile -t libs < <(find_libs)
+if ((${#libs[@]})); then
+    cp -L -- "${libs[@]}" "${zed_dir}/lib/"
+fi
+# change: envsubst
+/usr/bin/envsubst
+```
 
 ### script/install-linux
 
-It generates `target/release/zed-linux-x86_64.tar.gz` as an archive of zed.app/. The script is [zed.sh](files/zed.sh)
+The script is [zed.sh](files/zed.sh)
 
 {% highlight bash %}
 {% include_relative files/zed.sh %}
