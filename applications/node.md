@@ -2,9 +2,28 @@
 sort: 55
 ---
 
-# node
+# Node.js
 
-GitHub, <https://github.com/nodejs/node>
+GitHub, <https://github.com/nodejs/node>\
+Official downloads: <https://nodejs.org/en/download/archive/>
+
+## 24.22.2 (LTS)
+
+```bash
+export version=24.22.2
+export PREFIX="$CEUADMIN/node/$version"
+module load ceuadmin/gcc/12.5.0
+wget -q "https://nodejs.org/dist/v$version/node-v$version.tar.xz"
+wget -q "https://nodejs.org/dist/v$version/SHASUMS256.txt"
+grep "node-v$version.tar.xz" "SHASUMS256.txt" | sha256sum -c -
+tar -xf "node-v$version.tar.xz"
+cd "node-v$version"
+./configure --prefix="$PREFIX"
+make -j"${SLURM_CPUS_PER_TASK:-4}"
+make install
+"$PREFIX/bin/node" --version
+"$PREFIX/bin/npm" --version
+```
 
 ## 24.15.0
 
