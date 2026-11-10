@@ -4,7 +4,17 @@ sort: 19
 
 # codex-cli
 
-Official page: <https://openai.com/codex/>
+Official page: <https://openai.com/codex/>\
+GitHub: <https://github.com/openai/codex/releases>
+
+## 167.0
+
+```bash
+module load ceuadmin/node/22.16.0
+version=0.167.0
+npm i -g @openai/codex@$version --prefix=$CEUADMIN/codex-cli/$version
+$CEUADMIN/codex-cli/$version/bin/codex --version
+```
 
 ## 0.153.4
 
@@ -12,7 +22,7 @@ It provides support for GPT-6 Astra.
 
 The node.js counterpart works as before.
 
-```
+```bash
 module load ceuadmin/node/22.16.0
 npm i -g @openai/codex@0.153.4 --prefix=$CEUADMIN/codex-cli/0.153.4
 ```
