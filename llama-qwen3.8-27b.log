@@ -1,0 +1,33 @@
+0.00.330.645 I srv  llama_server: initializing ...
+0.00.330.661 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.334.445 I srv    load_model: loading model '/home/jhz22/rds/software/models/Qwen3.8-27B-Q8_0.gguf'
+0.01.388.410 W model has unused tensor blk.64.attn_norm.weight (size = 20480 bytes) -- ignoring
+0.01.388.417 W model has unused tensor blk.64.post_attention_norm.weight (size = 20480 bytes) -- ignoring
+0.01.388.426 W model has unused tensor blk.64.attn_q.weight (size = 66846720 bytes) -- ignoring
+0.01.388.429 W model has unused tensor blk.64.attn_k.weight (size = 5570560 bytes) -- ignoring
+0.01.388.432 W model has unused tensor blk.64.attn_v.weight (size = 5570560 bytes) -- ignoring
+0.01.388.443 W model has unused tensor blk.64.attn_output.weight (size = 33423360 bytes) -- ignoring
+0.01.388.446 W model has unused tensor blk.64.attn_q_norm.weight (size = 1024 bytes) -- ignoring
+0.01.388.449 W model has unused tensor blk.64.attn_k_norm.weight (size = 1024 bytes) -- ignoring
+0.01.388.453 W model has unused tensor blk.64.ffn_gate.weight (size = 94699520 bytes) -- ignoring
+0.01.388.456 W model has unused tensor blk.64.ffn_down.weight (size = 94699520 bytes) -- ignoring
+0.01.388.459 W model has unused tensor blk.64.ffn_up.weight (size = 94699520 bytes) -- ignoring
+0.01.388.463 W model has unused tensor blk.64.nextn.eh_proj.weight (size = 55705600 bytes) -- ignoring
+0.01.388.467 W model has unused tensor blk.64.nextn.enorm.weight (size = 20480 bytes) -- ignoring
+0.01.388.471 W model has unused tensor blk.64.nextn.hnorm.weight (size = 20480 bytes) -- ignoring
+0.01.388.481 W model has unused tensor blk.64.nextn.shared_head_norm.weight (size = 20480 bytes) -- ignoring
+0.07.582.486 I cmn          init: llama threadpool init, n_threads = 64
+0.07.754.935 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 65536, kv_unified = 'true'
+0.07.760.347 W srv          init: chat template supports preserving reasoning, it is enabled by default (may use more tokens, disable via --no-reasoning-preserve)
+0.07.760.404 I srv  server_run_i: model loaded
+0.07.760.411 I srv  server_on_li: listening on http://127.0.0.1:8080
+0.15.013.835 W srv    operator(): unauthorized: Invalid API Key
+4.15.397.477 W srv    operator(): unauthorized: Invalid API Key
+4.50.168.410 W srv    operator(): unauthorized: Invalid API Key
+13.28.501.236 W srv    operator(): unauthorized: Invalid API Key
+14.18.127.194 W srv    operator(): unauthorized: Invalid API Key
+17.41.665.627 W srv    operator(): unauthorized: Invalid API Key
+18.11.818.468 W srv    operator(): unauthorized: Invalid API Key
+18.42.336.617 W srv    operator(): unauthorized: Invalid API Key
+19.12.152.859 W srv    operator(): unauthorized: Invalid API Key
+21.12.520.525 W srv    operator(): unauthorized: Invalid API Key
