@@ -75,6 +75,36 @@ $ gemini --version
 
  workspace (/directory)                                 branch                               sandbox                                   /model
  ~/jinghuazhao.github.io                                master                               no sandbox                                  Auto
+ > /quit
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                            │
+│  Agent powering down. Goodbye!                                                                                                             │
+│                                                                                                                                            │
+│  Interaction Summary                                                                                                                       │
+│  Session ID:                 a6e77ebe-9f83-4474-8477-acaa4b63f981                                                                          │
+│  Tool Calls:                 0 ( ✓ 0 x 0 )                                                                                                 │
+│  Success Rate:               0.0%                                                                                                          │
+│                                                                                                                                            │
+│  Performance                                                                                                                               │
+│  Wall Time:                  8m 51s                                                                                                        │
+│  Agent Active:               4m 3s                                                                                                         │
+│    » API Time:               4m 3s (100.0%)                                                                                                │
+│    » Tool Time:              0s (0.0%)                                                                                                     │
+│                                                                                                                                            │
+│                                                                                                                                            │
+│  Model Usage                                                                                                                               │
+│  Use /model to view model quota information                                                                                                │
+│                                                                                                                                            │
+│  Model                           Reqs  Input Tokens   Cache Reads Output Tokens                                                            │
+│  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  │
+│  gemini-3.5-flash-lite              1         3,233             0            35                                                            │
+│    ↳ utility_router                 1         3,233             0            35                                                            │
+│  gemini-3.8-flash                   4        13,454             0           278                                                            │
+│    ↳ main                           4        13,454             0           278                                                            │
+│  To resume this session: gemini --resume a6e77ebe-9f83-4474-8477-acaa4b63f981                                                              │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
 ```
 
 ## 0.59.0
