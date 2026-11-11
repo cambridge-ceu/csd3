@@ -4,10 +4,21 @@ sort: 21
 
 # GitHub Copilot CLI
 
-Web: 
+GitHub: <https://github.com/github/copilot-cli>\
+npm, <https://www.npmjs.com/package/@github/copilot>
 
-- GitHub: <https://github.com/github/copilot-cli>
-- npm, <https://www.npmjs.com/package/@github/copilot>
+## 1.0.109
+
+```bash
+module load ceuadmin/node/24.22.2
+export latest=$(npm view @github/copilot version)
+export version=$latest
+export BASE="$CEUADMIN/copilot-cli/$version"
+echo "Installing GitHub Copilot CLI $version"
+mkdir -p "$BASE"
+npm install -g "@github/copilot@$version" --prefix "$BASE"
+"$BASE/bin/copilot" --version
+```
 
 ## 1.0.83
 
