@@ -649,6 +649,8 @@ All entries are ordered chronologically.
 | ""         | codex-cli/0.167.0                 | Generic[^codex]       |
 | ""         | node/24.22.2                      | Generic[^node]        |
 | ""         | OpenClaw/2026.11.2                | Generic[^openclaw]    |
+| 2026-11-11 | claude-code/2.1.311               | Generic[^claude]      |
+| ""         | gemini-cli/0.68.0                 | Generic[^gemini]      |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
