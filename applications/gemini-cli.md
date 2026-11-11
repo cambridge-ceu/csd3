@@ -20,6 +20,63 @@ npm install -g "@google/gemini-cli@$version" --prefix "$BASE"
 "$BASE/bin/gemini" --version
 ```
 
+Our benchmark is as follows,
+
+```
+module load ceuadmin/gemini-cli/0.68.0
+export GEMINI_API_KEY=$(cat $HOME/doc/gemini-cli)
+$ gemini --version
+0.68.0
+~/jinghuazhao.github.io $ gemini "why the sky is blue; make a simple poem in Chinese"
+
+ ▝▜▄     Gemini CLI v0.68.0
+   ▝▜▄
+  ▗▟▀    Authenticated with gemini-api-key /auth
+ ▝▀
+
+
+ℹ Positional arguments now default to interactive mode. To run in non-interactive mode, use the --prompt (-p) flag.
+
+ > why the sky is blue; make a simple poem in Chinese
+
+✦ Why the Sky Is Blue
+
+  The sky appears blue due to a physical phenomenon called Rayleigh scattering:
+
+   1. Sunlight Composition: Sunlight looks white, but it is actually a blend of all the colors of the rainbow, each traveling as waves of
+      different lengths (reds have longer wavelengths, blues and violets have shorter wavelengths).
+   2. Atmospheric Scattering: When sunlight enters Earth’s atmosphere, it collides with gases (mostly nitrogen and oxygen). Because shorter
+      wavelengths scatter much more easily than longer wavelengths (scattering ∝ (1)/(λ^4)), blue and violet light are scattered in every
+      direction across the sky.
+   3. Human Eye Sensitivity: Although violet light is scattered even more than blue, the sun emits significantly more blue light, and human
+      eyes are much more sensitive to blue light than to violet light. Thus, we perceive the daytime sky as blue.
+
+  ---
+
+  诗一首 · 《晴空》
+
+  > 白日洒清晖，
+  > 长风卷雾微。
+  > 蓝光先散落，
+  > 碧色满天飞。
+
+  (Rough translation: The sun casts clear light, the gentle wind sweeps away the mist; the blue light scatters first, painting the entire sky
+  in azure.)
+
+⚠  Warning: 256-color support not detected. Using a terminal with at least 256-color support is recommended for a better visual experience.
+
+
+
+                                                                                                                              ? for shortcuts
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ Shift+Tab to accept edits
+
+ >   Type your message or @path/to/file
+
+ workspace (/directory)                                 branch                               sandbox                                   /model
+ ~/jinghuazhao.github.io                                master                               no sandbox                                  Auto
+```
+
 ## 0.59.0
 
 ```bash
