@@ -2,7 +2,7 @@
 sort: 21
 ---
 
-# copilot-cli
+# GitHub Copilot CLI
 
 Web: 
 
