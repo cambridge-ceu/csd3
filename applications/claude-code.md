@@ -2,7 +2,7 @@
 sort: 16
 ---
 
-# claude-code
+# Claude Code
 
 Official page: <https://claude.com/product/claude-code>
 
