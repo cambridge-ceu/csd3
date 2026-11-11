@@ -6,12 +6,35 @@ sort: 16
 
 Official page: <https://claude.com/product/claude-code>
 
+## 2.1.311
+
+```bash
+module load ceuadmin/node/24.22.2
+export latest=$(npm view @anthropic-ai/claude-code dist-tags.latest)
+export version=$(npm view @anthropic-ai/claude-code dist-tags.stable)
+echo "Latest: $latest"
+echo "Stable: $version"
+export BASE="$CEUADMIN/claude-code/$version"
+mkdir -p "$BASE"
+npm install -g "@anthropic-ai/claude-code@$version" --prefix "$BASE"
+"$BASE/bin/claude" --version
+```
+
+showing
+
+```
+$ echo "Latest: $latest"
+Latest: 2.1.322
+$ echo "Stable: $version"
+Stable: 2.1.311
+```
+
 ## 2.1.263
 
 ```bash
-https://github.com/anthropics/claude-code/releases/download/v2.1.263/claude-linux-x64.tar.gz | \
+wget -qO- https://github.com/anthropics/claude-code/releases/download/v2.1.263/claude-linux-x64.tar.gz | \
 tar xvfz -
-./code --version
+./claude --version
 ```
 
 as from 2.1.113, Claude Code has been distributed as a native standalone binary.
