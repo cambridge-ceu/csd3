@@ -2,9 +2,23 @@
 sort: 37
 ---
 
-# gemini-cli
+# Gemini CLI
 
-Web: <https://geminicli.com/> ([GitHub](https://github.com/google-gemini/gemini-cli))
+Web: <https://geminicli.com/>\
+GitHub: <https://github.com/google-gemini/gemini-cli>
+
+## 0.68.0
+
+```bash
+module load ceuadmin/node/24.15.0
+export latest=$(npm view @google/gemini-cli dist-tags.latest)
+export version=$latest
+echo "Gemini CLI: $version"
+export BASE="$CEUADMIN/gemini-cli/$version"
+mkdir -p "$BASE"
+npm install -g "@google/gemini-cli@$version" --prefix "$BASE"
+"$BASE/bin/gemini" --version
+```
 
 ## 0.59.0
 
