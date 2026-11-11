@@ -2,7 +2,7 @@
 sort: 19
 ---
 
-# codex-cli
+# Codex
 
 Official page: <https://openai.com/codex/>\
 GitHub: <https://github.com/openai/codex/releases>
