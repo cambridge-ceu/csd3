@@ -14,6 +14,67 @@ Note that -cuda modules can be compiled under CPU.
 
 This follows 0.8.0/0.8.0-cuda, and ceuadmin/deepseek41-cuda remains necessary to load DeepSeek-V4.1-Flash.
 
+### Qwen3.8-27B
+
+The following script check for compatibility of the model, then load the module and start a multimodal server.
+
+```bash
+module load ceuadmin/llama.cpp/0.9.0-cuda
+cd ~/rds/software/models
+llama-cli --version
+llama-cli \
+  -m Qwen3.8-27B-Q8_0.gguf \
+  --mmproj mmproj-Qwen3.8-27B-bf16.gguf \
+  -p "Hello" \
+  -n 20
+llama server \
+  -m ~/rds/software/models/Qwen3.8-27B-Q8_0.gguf \
+  --mmproj ~/rds/software/models/mmproj-Qwen3.8-27B-bf16.gguf \
+  --alias qwen3.8-27b \
+  --host 127.0.0.1 --port 8080 \
+  -ngl 99 -c 65536 \
+  --device CUDA0,CUDA1,CUDA2,CUDA3 \
+  --split-mode layer \
+  --api-key hpc-local \
+  > ~/llama-qwen3.8-27b.log 2>&1 &
+curl http://127.0.0.1:8080/v1/models \
+  -H "Authorization: Bearer hpc-local"
+```
+
+and it shows
+
+```
+Loading model...
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b0-unknown
+model      : Qwen3.8-27B-Q8_0.gguf
+ftype      : Q8_0
+modalities : text, vision, video
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+  /image <file>       add an image file
+  /video <file>       add a video file
+
+
+
+>
+```
+
+and the interactive commands /image and /video are available.
+
 ### 0.8.0
 
 ```bash
