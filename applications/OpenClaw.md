@@ -21,11 +21,7 @@ export OPENCLAW_STATE_DIR="$BASE/state"
 export OPENCLAW_CONFIG_PATH="$BASE/config.json"
 mkdir -p "$OPENCLAW_STATE_DIR"
 $BASE/bin/openclaw --version
-unset OPENCLAW_CONFIG_PATH
-unset OPENCLAW_STATE_DIR
 ```
-
-Per user, one can unset the configuration and state folders as above.
 
 ### llama.cpp
 
@@ -45,6 +41,8 @@ llama serve \
 module load ceuadmin/OpenClaw/2026.11.2
 export LLAMA_SERVER_API_KEY=hpc-local
 export OLLAMA_API_KEY=ollama-local
+unset OPENCLAW_CONFIG_PATH
+unset OPENCLAW_STATE_DIR
 openclaw plugins list | grep llama-cpp \
   || openclaw plugins install @openclaw/llama-cpp-provider
 openclaw gateway stop
@@ -58,6 +56,8 @@ openclaw models list --provider ollama --refresh
 openclaw models status
 openclaw status
 ```
+
+Per user, one can unset the configuration and state folders as above.
 
 ```
 $ openclaw plugins install @openclaw/llama-cpp-provider
