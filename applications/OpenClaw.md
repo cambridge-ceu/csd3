@@ -20,41 +20,32 @@ module load "ceuadmin/OpenClaw/$version"
 export OPENCLAW_STATE_DIR="$BASE/state"
 export OPENCLAW_CONFIG_PATH="$BASE/config.json"
 mkdir -p "$OPENCLAW_STATE_DIR"
+openclaw plugins install @openclaw/llama-cpp-provider
 $BASE/bin/openclaw --version
 ```
 
 ### llama.cpp
 
 ```bash
-#!/usr/bin/env bash
-set -e
 module load ceuadmin/llama.cpp/0.9.0-cuda
 module load ceuadmin/OpenClaw/2026.11.2
 export LLAMA_SERVER_API_KEY=hpc-local
 unset OPENCLAW_CONFIG_PATH OPENCLAW_STATE_DIR
-# Start llama.cpp if not already responding
-if ! curl -fsS http://127.0.0.1:8080/v1/models \
-  -H "Authorization: Bearer hpc-local" >/dev/null; then
-  llama serve \
-    -m ~/rds/software/models/Qwen3.8-27B-Q8_0.gguf \
-    --alias qwen3.8-27b \
-    --host 127.0.0.1 --port 8080 \
-    -ngl 99 -c 65536 \
-    --device CUDA0,CUDA1,CUDA2,CUDA3 \
-    --split-mode layer \
-    --api-key hpc-local \
-    > ~/llama-qwen3.8-27b.log 2>&1 &
-  for i in {1..60}; do
-    curl -fsS http://127.0.0.1:8080/v1/models \
-      -H "Authorization: Bearer hpc-local" >/dev/null && break
-    sleep 1
-  done
-fi
-curl -fsS http://127.0.0.1:8080/v1/models \
+llama serve \
+  -m ~/rds/software/models/Qwen3.8-27B-Q8_0.gguf \
+  --alias qwen3.8-27b \
+  --host 127.0.0.1 --port 8080 \
+  -ngl 99 -c 65536 \
+  --device CUDA0,CUDA1,CUDA2,CUDA3 \
+  --split-mode layer \
+  --api-key hpc-local \
+  > ~/llama-qwen3.8-27b.log 2>&1 &
+LLAMA_PID=$!
+echo "llama.cpp PID: $LLAMA_PID"
+curl -fsS --max-time 5 http://127.0.0.1:8080/v1/models \
   -H "Authorization: Bearer hpc-local" >/dev/null \
-  || { echo "ERROR: llama.cpp is not responding"; exit 1; }
-openclaw plugins list | grep -q llama-cpp \
-  || openclaw plugins install @openclaw/llama-cpp-provider
+  || { echo "ERROR: llama.cpp not ready"; exit 1; }
+openclaw onboard --tui
 openclaw config validate
 exec openclaw gateway run --port 18789
 openclaw gateway auth-token --show
