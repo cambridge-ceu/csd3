@@ -57,6 +57,7 @@ openclaw plugins list | grep -q llama-cpp \
   || openclaw plugins install @openclaw/llama-cpp-provider
 openclaw config validate
 exec openclaw gateway run --port 18789
+openclaw gateway auth-token --show
 ```
 
 Per user, one can unset the configuration and state folders as above.
