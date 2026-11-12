@@ -51,10 +51,8 @@ openclaw config set gateway.auth.mode token
 TOKEN=$(openssl rand -hex 32)
 openclaw config set gateway.auth.token "$TOKEN"
 openclaw gateway auth-token --show
-openclaw config set agents.entries.main.workspace \
-  "$OPENCLAW_STATE_DIR/workspace"
-openclaw config set agents.entries.main.agentDir \
-  "$OPENCLAW_STATE_DIR/agents/main/agent"
+openclaw config set agents.entries.main.workspace "$OPENCLAW_STATE_DIR/workspace"
+openclaw config set agents.entries.main.agentDir  "$OPENCLAW_STATE_DIR/agents/main/agent"
 openclaw config get agents.entries
 exec openclaw gateway run --port 18789 &
 ```
