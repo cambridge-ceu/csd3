@@ -46,11 +46,15 @@ curl -fsS --max-time 5 http://127.0.0.1:8080/v1/models \
   || { echo "ERROR: llama.cpp not ready"; exit 1; }
 openclaw onboard --tui
 openclaw config validate
-exec openclaw gateway run --port 18789
+openclaw config set gateway.auth.mode token
+TOKEN=$(openssl rand -hex 32)
+openclaw config set gateway.auth.token "$TOKEN"
 openclaw gateway auth-token --show
+exec openclaw gateway run --port 18789 &
 ```
 
-Per user, one can unset environmenta variables for the configuration and state folders.
+Note the configuration file is `/usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.11.2/config.json`.
+As a user, one can unset environmenta variables for the configuration and state folders.
 
 ## 2026.8.2
 
