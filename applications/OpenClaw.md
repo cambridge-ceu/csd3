@@ -20,7 +20,9 @@ module load "ceuadmin/OpenClaw/$version"
 export OPENCLAW_STATE_DIR="$BASE/state"
 export OPENCLAW_CONFIG_PATH="$BASE/config.json"
 mkdir -p "$OPENCLAW_STATE_DIR"
-openclaw plugins install @openclaw/llama-cpp-provider
+$BASE/bin/openclaw plugins install @openclaw/llama-cpp-provider
+$BASE/bin/openclaw models list --provider llama-cpp --refresh
+$BASE/bin/openclaw models list --provider ollama --refresh
 $BASE/bin/openclaw --version
 ```
 
@@ -31,6 +33,7 @@ module load ceuadmin/sqlite/3.54.1
 module load ceuadmin/llama.cpp/0.9.0-cuda
 module load ceuadmin/OpenClaw/2026.11.2
 export LLAMA_SERVER_API_KEY=hpc-local
+export OLLAMA_API_KEY=ollama-local
 llama serve \
   -m ~/rds/software/models/Qwen3.8-27B-Q8_0.gguf \
   --alias qwen3.8-27b \
@@ -46,15 +49,16 @@ curl -fsS --max-time 5 http://127.0.0.1:8080/v1/models \
   -H "Authorization: Bearer hpc-local" >/dev/null \
   || { echo "ERROR: llama.cpp not ready"; exit 1; }
 openclaw onboard --tui
-openclaw config validate
-openclaw config set gateway.auth.mode token
+openclaw config set gateway.mode local
+openclaw config get gateway.mode
 TOKEN=$(openssl rand -hex 32)
 openclaw config set gateway.auth.token "$TOKEN"
 openclaw gateway auth-token --show
 openclaw config set agents.entries.main.workspace "$OPENCLAW_STATE_DIR/workspace"
 openclaw config set agents.entries.main.agentDir  "$OPENCLAW_STATE_DIR/agents/main/agent"
 openclaw config get agents.entries
-exec openclaw gateway run --port 18789 &
+openclaw config validate
+exec openclaw gateway run --port 18789 > openclaw-gateway.log 2>&1 &
 ```
 
 Note the configuration file is `/usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.11.2/config.json`.
