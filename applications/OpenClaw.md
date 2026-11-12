@@ -50,7 +50,7 @@ exec openclaw gateway run --port 18789
 openclaw gateway auth-token --show
 ```
 
-Per user, one can unset the configuration and state folders as above.
+Per user, one can unset environmenta variables for the configuration and state folders.
 
 ## 2026.8.2
 
