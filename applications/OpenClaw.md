@@ -30,7 +30,6 @@ $BASE/bin/openclaw --version
 module load ceuadmin/llama.cpp/0.9.0-cuda
 module load ceuadmin/OpenClaw/2026.11.2
 export LLAMA_SERVER_API_KEY=hpc-local
-unset OPENCLAW_CONFIG_PATH OPENCLAW_STATE_DIR
 llama serve \
   -m ~/rds/software/models/Qwen3.8-27B-Q8_0.gguf \
   --alias qwen3.8-27b \
