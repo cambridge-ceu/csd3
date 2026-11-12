@@ -27,6 +27,7 @@ $BASE/bin/openclaw --version
 ### llama.cpp
 
 ```bash
+module load ceuadmin/sqlite/3.54.1
 module load ceuadmin/llama.cpp/0.9.0-cuda
 module load ceuadmin/OpenClaw/2026.11.2
 export LLAMA_SERVER_API_KEY=hpc-local
