@@ -64,7 +64,7 @@ exec openclaw gateway run --port 18789 > openclaw-gateway.log 2>&1 &
 Note the configuration file is `/usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.11.2/config.json`. As a user, one can unset 
 `$OPENCLAW_STATE_DIR` and `$OPENCLAW_CONFIG_PATH`. From `firefox 127.0.01:18798 &`, we have the following screenshot.
 
-![](files/openclaw.png)
+![](files/OpenClaw-llama.cpp.png)
 
 ## 2026.8.2
 
@@ -356,7 +356,7 @@ ollama launch openclaw --model glm-5.1:cloud
 
 The web UI `http://localhost:18789/#token=ollama` (or `http://localhost:18789/chat?session=main`) actually provides a gateway dashboard shown below, which is more desirable.
 
-![](files/OpenClaw.png)
+![](files/OpenClaw-ollama.png)
 
 ### MiniMax-M2.7
 
