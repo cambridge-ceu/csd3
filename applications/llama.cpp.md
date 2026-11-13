@@ -12,7 +12,7 @@ Note that -cuda modules can be compiled under CPU.
 
 ### 0.9.0/0.9.0-cuda
 
-This follows 0.8.0/0.8.0-cuda, and ceuadmin/deepseek41-cuda remains necessary to load DeepSeek-V4.1-Flash.
+Similar to 0.8.0/0.8.0-cuda, and ceuadmin/deepseek41-cuda remains necessary to load DeepSeek-V4.1-Flash.
 
 ### Qwen3.8-27B
 
@@ -20,11 +20,9 @@ The following script check for compatibility of the model, then load the module 
 
 ```bash
 module load ceuadmin/llama.cpp/0.9.0-cuda
-cd ~/rds/software/models
-llama-cli --version
 llama-cli \
-  -m Qwen3.8-27B-Q8_0.gguf \
-  --mmproj mmproj-Qwen3.8-27B-bf16.gguf \
+  -m ~/rds/software/models/Qwen3.8-27B-Q8_0.gguf \
+  --mmproj ~/rds/software/models/mmproj-Qwen3.8-27B-bf16.gguf \
   -p "Hello" \
   -n 20
 llama server \
@@ -37,8 +35,13 @@ llama server \
   --split-mode layer \
   --api-key hpc-local \
   > ~/llama-qwen3.8-27b.log 2>&1 &
-curl http://127.0.0.1:8080/v1/models \
-  -H "Authorization: Bearer hpc-local"
+LLAMA_PID=$!
+echo "llama.cpp PID: $LLAMA_PID"
+curl -fsS --max-time 5 http://127.0.0.1:8080/v1/models \
+  -H "Authorization: Bearer hpc-local" >/dev/null \
+  || { echo "ERROR: llama.cpp not ready"; exit 1; }
+export LLAMA_SERVER_API_KEY=hpc-local
+export OLLAMA_API_KEY=ollama-local
 ```
 
 and it shows
