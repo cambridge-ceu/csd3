@@ -28,26 +28,10 @@ $BASE/bin/openclaw --version
 
 ### llama.cpp
 
+This follows after llama.cpp server is started, <https://cambridge-ceu.github.io/csd3/applications/llama.cpp.html>.
+
 ```bash
-module load ceuadmin/sqlite/3.54.1
-module load ceuadmin/llama.cpp/0.9.0-cuda
 module load ceuadmin/OpenClaw/2026.11.2
-export LLAMA_SERVER_API_KEY=hpc-local
-export OLLAMA_API_KEY=ollama-local
-llama serve \
-  -m ~/rds/software/models/Qwen3.8-27B-Q8_0.gguf \
-  --alias qwen3.8-27b \
-  --host 127.0.0.1 --port 8080 \
-  -ngl 99 -c 65536 \
-  --device CUDA0,CUDA1,CUDA2,CUDA3 \
-  --split-mode layer \
-  --api-key hpc-local \
-  > ~/llama-qwen3.8-27b.log 2>&1 &
-LLAMA_PID=$!
-echo "llama.cpp PID: $LLAMA_PID"
-curl -fsS --max-time 5 http://127.0.0.1:8080/v1/models \
-  -H "Authorization: Bearer hpc-local" >/dev/null \
-  || { echo "ERROR: llama.cpp not ready"; exit 1; }
 openclaw onboard --tui
 openclaw config set gateway.mode local
 openclaw config get gateway.mode
