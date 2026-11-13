@@ -43,6 +43,7 @@ openclaw config set agents.entries.main.agentDir  "$OPENCLAW_STATE_DIR/agents/ma
 openclaw config get agents.entries
 openclaw config validate
 exec openclaw gateway run --port 18789 > openclaw-gateway.log 2>&1 &
+firefox 127.0.0.1:18789 &
 ```
 
 Note the configuration file is `/usr/local/Cluster-Apps/ceuadmin/OpenClaw/2026.11.2/config.json`. As a user, one can unset 
