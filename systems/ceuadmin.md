@@ -129,10 +129,11 @@ and the module is loaded and graphical user interface (GUI)[^gui] started with
 
 ```bash
 module load ceuadmin/pspp
+module show ceuadmin/pspp
 psppire
 ```
 
-for version 2.0.1. Once the job is done, one can restore the previous environment with
+for version 2.1.1. Once the job is done, one can restore the previous environment with
 
 ```bash
 module unload ceuadmin/pspp
@@ -151,6 +152,15 @@ java -jar ${PICARD_HOME}/picard.jar --help
 A full list of module subcommands is available with `module help` as detailed here for
 [3.2.9](https://linux.die.net/man/4/modulefile) -- cclake uses version 3.2.10 (2012-12-21) while icelake uses 4.5.2 (2020-07-30). In particular, `module whatis ceuadmin/ensembl-vep` indicates usage regarding build37/build38 setup for the `loftee` plugin used in loss of function (LoF)
 annotation.
+
+Additional locations can be added esp. cross nodes, e.g.,
+
+```bash
+module avail
+module use /usr/local/software/spack/spack-modules/icelake-20220710/linux-rocky8-icelake
+module avail
+module unuse /usr/local/software/spack/spack-modules/icelake-20220710/linux-rocky8-icelake
+```
 
 ## CEU users
 
