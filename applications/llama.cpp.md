@@ -10,6 +10,53 @@ GitHub: <https://github.com/ggml-org/llama.cpp>
 
 Note that -cuda modules can be compiled under CPU.
 
+### 1.0.0
+
+```bash
+export version=1.0.0
+wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/v${version}.tar.gz | tar xfz -
+cd llama.cpp-${version}
+module load ceuadmin/gcc/12.5.0
+module load openssl/3.3.0-dev
+mkdir build && cd build
+cmake .. \
+  -DLLAMA_OPENSSL=ON \
+  -DCMAKE_PREFIX_PATH=/usr/local/Cluster-Apps/openssl/3.2.1 \
+  -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/${version} \
+  -DCMAKE_C_FLAGS="-pthread" \
+  -DCMAKE_CXX_FLAGS="-pthread"
+make -j$(nproc) && make install
+module load cuda/12.1
+module load openssl/3.3.0-dev
+export CUDA_HOME=/usr/local/software/cuda/12.1
+export PATH="$CUDA_HOME/bin:$PATH"
+export LLAMA_PREFIX="$CEUADMIN/llama.cpp/$version-cuda"
+export CPATH="$(printf '%s' "${CPATH:-}" | tr ':' '\n' | grep -v '/cuda/11\.4/' | paste -sd: -)"
+cmake -S . -B build-cuda-121 \
+  -DCMAKE_C_COMPILER="$CC" \
+  -DCMAKE_CXX_COMPILER="$CXX" \
+  -DGGML_CUDA=ON \
+  -DGGML_NATIVE=OFF \
+  -DCMAKE_CUDA_COMPILER="$CUDA_HOME/bin/nvcc" \
+  -DCUDAToolkit_ROOT="$CUDA_HOME" \
+  -DLLAMA_OPENSSL=ON \
+  -DCMAKE_PREFIX_PATH=/usr/local/Cluster-Apps/openssl/3.2.1 \
+  -DCMAKE_INSTALL_PREFIX="$LLAMA_PREFIX" \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_C_FLAGS="-pthread" \
+  -DCMAKE_CXX_FLAGS="-pthread" \
+  -DGGML_BUILD_TESTS=OFF \
+  -DBUILD_TESTING=OFF \
+  -DLLAMA_BUILD_TESTS=OFF \
+  -DLLAMA_BUILD_EXAMPLES=OFF
+cmake --build build-cuda-121 -j5
+cmake --install build-cuda-121
+"$LLAMA_PREFIX/bin/llama" --help
+"$LLAMA_PREFIX/bin/llama" cli --list-devices
+```
+
+Note that `gcc/12.5.0` is used to comply with module ceuadmin/OpenClaw/2026.11.2.
+
 ### 0.9.0/0.9.0-cuda
 
 Similar to 0.8.0/0.8.0-cuda, and ceuadmin/deepseek41-cuda remains necessary to load DeepSeek-V4.1-Flash.
