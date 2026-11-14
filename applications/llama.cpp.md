@@ -58,6 +58,7 @@ cmake -S . -B build-cuda-121 \
   -DLLAMA_BUILD_EXAMPLES=OFF
 cmake --build build-cuda-121 -j5
 cmake --install build-cuda-121
+export LD_LIBRARY_PATH="$LLAMA_PREFIX/lib64:$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
 "$LLAMA_PREFIX/bin/llama" --help
 "$LLAMA_PREFIX/bin/llama" cli --list-devices
 ```
