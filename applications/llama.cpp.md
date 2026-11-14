@@ -10,35 +10,42 @@ GitHub: <https://github.com/ggml-org/llama.cpp>
 
 Note that -cuda modules can be compiled under CPU.
 
-### 1.0.0
+### 1.0.0/1.0.0-cuda
 
 ```bash
 export version=1.0.0
 wget -qO- https://github.com/ggml-org/llama.cpp/archive/refs/tags/v${version}.tar.gz | tar xfz -
 cd llama.cpp-${version}
-module load ceuadmin/gcc/12.5.0
+cd ~/rds/software/llama.cpp-1.0.0
+sed -i '/#include <exception>/a #include <iomanip>' tools/server/server-context.cpp
+module load gcc/11
 module load openssl/3.3.0-dev
-mkdir build && cd build
-cmake .. \
+cmake -S . -B build-gcc11 \
+  -DCMAKE_C_COMPILER="$(which gcc)" \
+  -DCMAKE_CXX_COMPILER="$(which g++)" \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DGGML_CUDA=OFF \
   -DLLAMA_OPENSSL=ON \
   -DCMAKE_PREFIX_PATH=/usr/local/Cluster-Apps/openssl/3.2.1 \
-  -DCMAKE_INSTALL_PREFIX=$CEUADMIN/llama.cpp/${version} \
+  -DCMAKE_INSTALL_PREFIX="$CEUADMIN/llama.cpp/${version}" \
   -DCMAKE_C_FLAGS="-pthread" \
   -DCMAKE_CXX_FLAGS="-pthread"
-make -j$(nproc) && make install
+cmake --build build-gcc11 -j5
+cmake --install build-gcc11
 module load cuda/12.1
-module load openssl/3.3.0-dev
 export CUDA_HOME=/usr/local/software/cuda/12.1
 export PATH="$CUDA_HOME/bin:$PATH"
 export LLAMA_PREFIX="$CEUADMIN/llama.cpp/$version-cuda"
 export CPATH="$(printf '%s' "${CPATH:-}" | tr ':' '\n' | grep -v '/cuda/11\.4/' | paste -sd: -)"
+export CC="$(which gcc)"
+export CXX="$(which g++)"
 cmake -S . -B build-cuda-121 \
   -DCMAKE_C_COMPILER="$CC" \
   -DCMAKE_CXX_COMPILER="$CXX" \
-  -DGGML_CUDA=ON \
-  -DGGML_NATIVE=OFF \
   -DCMAKE_CUDA_COMPILER="$CUDA_HOME/bin/nvcc" \
   -DCUDAToolkit_ROOT="$CUDA_HOME" \
+  -DGGML_CUDA=ON \
+  -DGGML_NATIVE=OFF \
   -DLLAMA_OPENSSL=ON \
   -DCMAKE_PREFIX_PATH=/usr/local/Cluster-Apps/openssl/3.2.1 \
   -DCMAKE_INSTALL_PREFIX="$LLAMA_PREFIX" \
@@ -54,8 +61,6 @@ cmake --install build-cuda-121
 "$LLAMA_PREFIX/bin/llama" --help
 "$LLAMA_PREFIX/bin/llama" cli --list-devices
 ```
-
-Note that `gcc/12.5.0` is used to comply with module ceuadmin/OpenClaw/2026.11.2.
 
 ### 0.9.0/0.9.0-cuda
 
