@@ -161,6 +161,10 @@ HERMES_DASHBOARD_READY port=9119
   Hermes Web UI → http://127.0.0.1:9119
 ```
 
+## User-supplied skills
+
+See note [skills-2026-11-14.md](files/skills-2026-11-14.md).
+
 ## 0.22.5
 
 ```bash
