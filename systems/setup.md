@@ -652,6 +652,7 @@ All entries are ordered chronologically.
 | 2026-11-11 | claude-code/2.1.311               | Generic[^claude]      |
 | ""         | gemini-cli/0.68.0                 | Generic[^gemini]      |
 | ""         | copilot-cli/1.0.109               | Generic[^copilot]     |
+| 2026-11-15 | cli/2.104.0                       | Generic[^cli]         |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
