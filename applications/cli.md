@@ -6,6 +6,31 @@ sort: 17
 
 Web: <https://cli.github.com/>
 
+## 2.104.0
+
+### GitHub executable
+
+```bash
+version=2.104.0
+mkdir -p "$version"
+wget -qO- "https://github.com/cli/cli/releases/download/v${version}/gh_${version}_linux_amd64.tar.gz" |
+  tar xz --strip-components=1 -C "$version" -f -
+$version/bin/gh --version
+```
+
+### Build from source
+
+```bash
+export version=2.104.0
+wget -qO- https://github.com/cli/cli/archive/refs/tags/v${version}.tar.gz | tar xfz -
+cd cli-${version}/
+module load ceuadmin/go/1.25.6
+make
+make install prefix=$CEUADMIN/cli/${version}
+```
+
+which actually compiles under go1.27.4 (linux/amd64).
+
 ## 2.85.0
 
 ```bash
