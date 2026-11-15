@@ -42,6 +42,8 @@ make
 make install prefix=$CEUADMIN/cli/${version}
 ```
 
+Module ceuadmin/cli/2.85.0 also has a copilot-cli embedded.
+
 ## 2.76.2
 
 This is done as follows,
