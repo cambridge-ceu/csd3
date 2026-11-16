@@ -655,6 +655,7 @@ All entries are ordered chronologically.
 | 2026-11-15 | cli/2.104.0                       | Generic[^cli]         |
 | 2026-11-16 | shapeit/4.2.2                     | Generic[^shapit]      |
 | ""         | zed/1.28.1                        | Generic[^zed]         |
+| ""         | rust/1.98.1                       | Generic[^rust]        |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
