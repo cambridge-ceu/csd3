@@ -7,6 +7,52 @@ sort: 95
 Web, <https://zed.dev/>\
 GitHub, <https://github.com/zed-industries/zed>
 
+## 1.28.1
+
+This essentially follows 1.27.0, including changes to script/bundle-linx except also a change on `path_component.rs`,
+
+```bash
+#!/bin/bash
+set -euo pipefail
+
+module purge
+module load ceuadmin/clang/22.1.8
+module load ceuadmin/rust/nightly
+V=1.28.1
+GCC12=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0
+LLVM=/usr/local/Cluster-Apps/ceuadmin/clang/22.1.8
+LOCAL_LIB="$HOME/hpc-work/lib"
+export CC="$LLVM/bin/clang"
+export CXX="$LLVM/bin/clang++"
+export LLD="$LLVM/bin/ld.lld"
+export CXXFLAGS="--gcc-toolchain=$GCC12"
+export LD_LIBRARY_PATH="$GCC12/lib64:$LLVM/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+XKB_LIB=/usr/lib64/libxkbcommon-x11.so.0
+if [[ ! -e "$XKB_LIB" ]]; then
+    echo "ERROR: Missing $XKB_LIB" >&2
+    exit 1
+fi
+mkdir -p "$LOCAL_LIB"
+ln -sfn "$XKB_LIB" "$LOCAL_LIB/libxkbcommon-x11.so"
+export LIBRARY_PATH="$LOCAL_LIB:$GCC12/lib64${LIBRARY_PATH:+:$LIBRARY_PATH}"
+export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_RUSTFLAGS="-C link-arg=-L$GCC12/lib64"
+export REMOTE_SERVER_TARGET=x86_64-unknown-linux-gnu
+rustup target add "$REMOTE_SERVER_TARGET"
+ldd "$GCC12/lib64/libstdc++.so.6"
+cd ~/rds/software
+if [[ ! -d "zed-$V/.git" ]]; then
+    git clone --depth 1 --branch "v$V" \
+        https://github.com/zed-industries/zed.git "zed-$V"
+fi
+cd "zed-$V"
+sed -i 's/subpath\.is_empty()/subpath.as_os_str().is_empty()/' \
+    crates/agent/src/tools/terminal_tool.rs
+sed -i \
+  's/!path\.is_empty()/!path.as_os_str().is_empty()/' \
+  crates/path/src/path_component.rs
+script/bundle-linux --skip-sentry
+```
+
 ## 1.27.0
 
 The module is called as follows,
@@ -75,6 +121,9 @@ cd "zed-$V"
 # Compatibility adjustment for the Rust source
 sed -i 's/subpath\.is_empty()/subpath.as_os_str().is_empty()/' \
     crates/agent/src/tools/terminal_tool.rs
+sed -i \
+  's/path\.is_empty()/path.as_os_str().is_empty()/g' \
+  crates/path/src/path_component.rs
 
 # Build and package
 script/bundle-linux --skip-sentry
