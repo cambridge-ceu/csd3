@@ -6,7 +6,7 @@ sort: 85
 
 ## Current
 
-Web: <https://odelaneau.github.io/shapeit/>
+Web: <https://odelaneau.github.io/shapeit/>\
 GitHub: <https://github.com/odelaneau/shapeit>.
 
 ## Legacy
