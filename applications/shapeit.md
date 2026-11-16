@@ -4,17 +4,22 @@ sort: 85
 
 # shapeit
 
+Web: <https://jmarchini.org/shapeit3/>\
+GitHub: <https://odelaneau.github.io/shapeit4/>.
+
 ## shapeit5
 
 Module ceuadmin/shapeit5/5.1.1 is available. See <https://odelaneau.github.io/shapeit5/>.
 
 ## shapeit4
 
-See <https://odelaneau.github.io/shapeit4/>.
+The makefile can be adapted as [Makefile-shapite4-4.2.2](files/Makefile-shapeit4-4.2.2)
+
+{% highlight bash %}
+{% include_relative files/Makefile-shapeit4-4.2.2 %}
+{% endhighlight %}
 
 ## shapeit3
-
-Web: <https://jmarchini.org/shapeit3/>.
 
 Module ceuadmin/shapeit/3 is available. It could be directly used with download from Dropbox; one executable requires boost 1.60.
 
