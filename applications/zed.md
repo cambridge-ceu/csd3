@@ -17,7 +17,7 @@ set -euo pipefail
 
 module purge
 module load ceuadmin/clang/22.1.8
-module load ceuadmin/rust/nightly
+module load ceuadmin/rust/1.95.0
 V=1.28.1
 GCC12=/usr/local/Cluster-Apps/ceuadmin/gcc/12.5.0
 LLVM=/usr/local/Cluster-Apps/ceuadmin/clang/22.1.8
