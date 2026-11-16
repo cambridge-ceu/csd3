@@ -94,23 +94,22 @@ The current list is as follows,
 [305] "rst2pdf"                "rstudio"                "rtg-tools"              "rtmpdump"
 [309] "ruby"                   "rust"                   "sage"                   "samtools"
 [313] "Scala"                  "scGPT"                  "scl-utils"              "selscan"
-[317] "seqkit"                 "SEQPower"               "shapeit"                "shapeit4"
-[321] "shapeit5"               "shellcheck"             "simNGS"                 "singularity"
-[325] "SMR"                    "snakemake"              "sniffles"               "SNP2HLA"
-[329] "snptest"                "spread-sheet-widget"    "spyder"                 "sqlite"
-[333] "sra-tools"              "sshpass"                "ssw"                    "STAR"
-[337] "stata"                  "SurvivalAnalysis"       "SurvivalKit"            "SuSiEx"
-[341] "SVanalyzer"             "Swift"                  "SYMPHONY"               "Synapse"
-[345] "tabix"                  "tandem"                 "tatami"                 "tesseract"
-[349] "texinfo"                "ThermoRawFileParser"    "ThermoRawFileParserGUI" "thunderbird"
-[353] "tidy"                   "tiff"                   "trinculo"               "trousers"
-[357] "truvari"                "Typora"                 "unbound"                "uv"
-[361] "vala"                   "VarScan"                "vce"                    "vcftools"
-[365] "vdo"                    "VEGAS2"                 "verifyBamID"            "VirtualBox"
-[369] "VSCode"                 "VSCodium"               "vte"                    "wasi-sdk"
-[373] "Windsurf"               "wine"                   "wombat"                 "wrk"
-[377] "xpdf"                   "yaml-cpp"               "zed"                    "Zettlr"
-[381] "Zotero"                 "zstd"
+[317] "seqkit"                 "SEQPower"               "shapeit"                "shellcheck"
+[321] "simNGS"                 "singularity"            "SMR"                    "snakemake"
+[325] "sniffles"               "SNP2HLA"                "snptest"                "spread-sheet-widget"
+[329] "spyder"                 "sqlite"                 "sra-tools"              "sshpass"
+[333] "ssw"                    "STAR"                   "stata"                  "SurvivalAnalysis"
+[337] "SurvivalKit"            "SuSiEx"                 "SVanalyzer"             "Swift"
+[341] "SYMPHONY"               "Synapse"                "tabix"                  "tandem"
+[345] "tatami"                 "tesseract"              "texinfo"                "ThermoRawFileParser"
+[349] "ThermoRawFileParserGUI" "thunderbird"            "tidy"                   "tiff"
+[353] "trinculo"               "trousers"               "truvari"                "Typora"
+[357] "unbound"                "uv"                     "vala"                   "VarScan"
+[361] "vce"                    "vcftools"               "vdo"                    "VEGAS2"
+[365] "verifyBamID"            "VirtualBox"             "VSCode"                 "VSCodium"
+[369] "vte"                    "wasi-sdk"               "Windsurf"               "wine"
+[373] "wombat"                 "wrk"                    "xpdf"                   "yaml-cpp"
+[377] "zed"                    "Zettlr"                 "Zotero"                 "zstd"
 ```
 
 These are wrapped up as :star::star::star: **[modules](https://modules.readthedocs.io/en/latest/index.html)** :star::star::star:.
@@ -492,7 +491,7 @@ The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin
     | ""         | NUMTFinder/0.5.5             | Genetics    |
     | ""         | simNGS/1.7                   | Genetics    |
     | 2025-08-18 | impute5/1.2.0                | Genetics    |
-    | ""         | shapeit5/5.1.1               | Genetics    |
+    | ""         | shapeit/5.1.1                | Genetics    |
     | 2025-09-01 | selscan/2.1                  | Genetics    |
     | ""         | angsd/0.940                  | Genetics    |
     | 2025-09-03 | hapstat/3.0                  | Genetics    |
@@ -508,7 +507,7 @@ The module files are defined at **/usr/local/Cluster-Config/modulefiles/ceuadmin
     | ""         | blupf90/2.75                 | Genetics    |
     | 2026-07-30 | fastqc/0.12.1                | Genetics    |
     | 2026-08-12 | regenie/4.1                  | Genetics    |
-    | 2026-11-16 | shapite4/4.2.2               | Genetics    |
+    | 2026-11-16 | shapite/4.2.2                | Genetics    |
 
     \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
