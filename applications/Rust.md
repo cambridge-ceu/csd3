@@ -48,7 +48,7 @@ echo
 echo "Rust ${VERSION} installed successfully under ${ROOT}"
 ```
 
-## 1.95.1
+## 1.95.0
 
 ```bash
 module load ceuadmin/rust
