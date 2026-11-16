@@ -20,7 +20,7 @@ All entries are ordered chronologically.
 | ""         | gcta/1.94.1                       | Genetics              |
 | ""         | KING/2.1.6                        | Genetics              |
 | ""         | LDstore/2.0                       | Genetics              |
-| ""         | shapeit/3                         | Genetics              |
+| ""         | shapeit/3                         | Genetics[^shapeit]    |
 | ""         | vcftools/0.1.16                   | Genetics              |
 | ""         | finemap/1.4                       | Genetics              |
 | 2022-10-23 | quicktest/1.1                     | Genetics              |
@@ -653,6 +653,7 @@ All entries are ordered chronologically.
 | ""         | gemini-cli/0.68.0                 | Generic[^gemini]      |
 | ""         | copilot-cli/1.0.109               | Generic[^copilot]     |
 | 2026-11-15 | cli/2.104.0                       | Generic[^cli]         |
+| 2026-11-16 | shapeit4/4.2.2                    | Generic[^cli]         |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
@@ -669,6 +670,10 @@ They are generated from script [setup.sh](setup.sh),
 ## Footnotes
 
 ---
+
+[^shapeit]: **shapeit**
+
+    See <https://cambridge-ceu.github.io/csd3/applications/shapeit.html>.
 
 [^metal]: **metal**
 
