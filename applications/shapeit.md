@@ -15,13 +15,22 @@ Web: <https://jmarchini.org/shapeit3/>\
 Web: <https://odelaneau.github.io/shapeit4/>\
 GitHub: <https://github.com/odelaneau/shapeit4>.
 
+On 16/11/2026, ceuadmin/{shapeit4, shapeit5} are merged into shapeit in view of changes at GitHub.
+
 ## shapeit5
 
-Module ceuadmin/shapeit5/5.1.1 is available.
+Module ceuadmin/shapeit/5.1.1 is available.
 
 ## shapeit4
 
-The makefile can be adapted as [Makefile-shapite4-4.2.2](files/Makefile-shapeit4-4.2.2)
+Two modules are loaded
+
+```bash
+module load ceuadmin/htslib/1.20
+module load ceuadmin/boost/1.76.0
+```
+
+so as to adapt makefile [Makefile-shapite4-4.2.2](files/Makefile-shapeit4-4.2.2)
 
 {% highlight bash %}
 {% include_relative files/Makefile-shapeit4-4.2.2 %}
