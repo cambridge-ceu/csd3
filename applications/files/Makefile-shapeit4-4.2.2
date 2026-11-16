@@ -1,0 +1,44 @@
+# SHAPEIT4 4.2.2
+# Compiler: GCC / C++11
+
+CXX      = g++
+CXXFLAGS = -O3 -mavx2 -mfma -std=c++11
+LDFLAGS  = -O3
+
+# HTSlib
+HTSLIB_ROOT ?= /usr/local/Cluster-Apps/ceuadmin/htslib/1.20
+HTSLIB_INC   = $(HTSLIB_ROOT)/include
+HTSLIB_LIB   = $(HTSLIB_ROOT)/lib
+
+# Boost
+BOOST_ROOT   ?= /usr/local/Cluster-Apps/ceuadmin/boost/1.76.0
+BOOST_INC     = $(BOOST_ROOT)/include
+BOOST_LIB     = $(BOOST_ROOT)/lib
+
+# Libraries
+LIBS = -L$(HTSLIB_LIB) -lhts \
+       -L$(BOOST_LIB) -lboost_iostreams -lboost_program_options \
+       -lz -lbz2 -lm -lpthread -llzma -lcurl -lssl -lcrypto
+
+# Source files and build targets
+BFILE = bin/shapeit4.2
+SOURCES = $(shell find src -type f -name '*.cpp')
+HEADERS = $(shell find src -type f -name '*.h')
+OBJECTS = $(patsubst src/%.cpp,obj/%.o,$(SOURCES))
+
+# Build
+.PHONY: all clean
+
+all: $(BFILE)
+
+$(BFILE): $(OBJECTS)
+	mkdir -p bin
+	$(CXX) $(LDFLAGS) $^ -o $@ $(LIBS)
+
+obj/%.o: src/%.cpp $(HEADERS)
+	mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -c $< -o $@ \
+		-Isrc -I$(HTSLIB_INC) -I$(BOOST_INC)
+
+clean:
+	rm -rf obj bin/shapeit4.2
