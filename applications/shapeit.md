@@ -5,11 +5,12 @@ sort: 85
 # shapeit
 
 Web: <https://jmarchini.org/shapeit3/>\
-GitHub: <https://odelaneau.github.io/shapeit4/>.
+GitHub: <https://odelaneau.github.io/shapeit4/>\
+GitHub: <https://odelaneau.github.io/shapeit5/>.
 
 ## shapeit5
 
-Module ceuadmin/shapeit5/5.1.1 is available. See <https://odelaneau.github.io/shapeit5/>.
+Module ceuadmin/shapeit5/5.1.1 is available. The GitHub repository, however, has been disabled.
 
 ## shapeit4
 
