@@ -222,7 +222,7 @@ All entries are ordered chronologically.
 | 2023-11-23 | SciKit-LLM & OpenAI API           | Genetic               |
 | 2023-11-24 | ldsc/1.0.1                        | Genetics              |
 | 2023-11-30 | gdc/1.6.1-1.0.0                   | Genetics[^gdc]        |
-| 2023-12-13 | rust/1.74.1                       | Generic               |
+| 2023-12-13 | rust/1.74.1                       | Generic[^rust]        |
 | 2023-12-20 | verifyBamID/1.1.3                 | Genetics              |
 | 2023-12-21 | verifyBamID/2.0.1                 | Genetics[^VB2]        |
 | 2023-12-27 | regtools/1.0.0                    | Genetics[^regtools]   |
@@ -1656,26 +1656,7 @@ They are generated from script [setup.sh](setup.sh),
 
 [^rust]: **Rust**
 
-    This is upgraded from 1.74.1 with `rustup default stable` at suggestion of gmake when compiling firefox/nightly.
-    To avoid duplication, a symbolic link is generated on `/usr/local/Cluster-Apps/ceuadmin/rust/1.74.1/cargo` as `${HOME}/.cargo`.
-    Naturally, both cargo and rustc use the directory above.
-
-    The following steps are sketched for `ceuadmin/nightly`,
-
-    ```bash
-    export CARGO_HOME="$CEUADMIN/rust/nightly/cargo"
-    export RUSTUP_HOME="$CEUADMIN/rust/nightly/rustup"
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    export PATH="$CARGO_HOME/bin:$PATH"
-    rustup toolchain install nightly
-    rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
-    rustup default nightly
-    rustc --version
-    ```
-
-    As noted in [rust.md](files/rust.md) on 22/5/2025, we have `rustc 1.89.0-nightly (bf64d66bd 2025-05-21)`.
-
-    To compile Firefox/nightly (145.0a1), cbindgen is required which can be installed with `cargo install cbindgen --root $CEUADMIN/rust/nightly/cargo`.
+    See <https://cambridge-ceu.github.io/csd3/applications/Rust.html>.
 
 [^git2481]: **git/2.48.1**
 
