@@ -464,7 +464,7 @@ All entries are ordered chronologically.
 | ""         | simNGS/1.7                        | Genetics[^simngs]     |
 | 2025-08-18 | Anaconda2/2.5.0                   | Generic               |
 | ""         | impute5/1.2.0                     | Genetics              |
-| ""         | shapeit5/5.1.1                    | Genetics              |
+| ""         | shapeit/5.1.1                     | Genetics[^shapeit]    |
 | 2025-08-20 | snakemake/9.9.0                   | Generic               |
 | 2025-08-21 | miniforge3/25.3.1-0               | Generic[^miniforge3]  |
 | ""         | snakemake/9.9.0-miniforge3        | Generic               |
@@ -653,7 +653,7 @@ All entries are ordered chronologically.
 | ""         | gemini-cli/0.68.0                 | Generic[^gemini]      |
 | ""         | copilot-cli/1.0.109               | Generic[^copilot]     |
 | 2026-11-15 | cli/2.104.0                       | Generic[^cli]         |
-| 2026-11-16 | shapeit4/4.2.2                    | Generic[^cli]         |
+| 2026-11-16 | shapeit/4.2.2                     | Generic[^shapit]      |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
