@@ -4,6 +4,7 @@ sort: 48
 
 # llama.cpp
 
+Web: <https://llama.app/>\
 GitHub: <https://github.com/ggml-org/llama.cpp>
 
 ## Installation[^macOS]
