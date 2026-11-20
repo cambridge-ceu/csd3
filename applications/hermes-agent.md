@@ -80,7 +80,7 @@ llama server \
   --host 127.0.0.1 \
   --port 8080 \
   -ngl 99 \
-  -c 32768 \
+  -c 16384 \
   -np 1 \
   --device CUDA0,CUDA1,CUDA2,CUDA3 \
   --split-mode layer \
