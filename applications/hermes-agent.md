@@ -96,18 +96,20 @@ We start by load the hermes and llama.cpp modules.
 
 ```bash
 module load ceuadmin/hermes-agent/0.23.0
-module load ceuadmin/llama.cpp/0.9.0-cuda
-llama serve \
+module load ceuadmin/llama.cpp/1.0.0-cuda
+llama server \
   -m ~/rds/software/models/Qwen3.8-27B-Q8_0.gguf \
+  --mmproj ~/rds/software/models/mmproj-Qwen3.8-27B-bf16.gguf \
   --alias qwen3.8-27b \
   --host 127.0.0.1 \
   --port 8080 \
   -ngl 99 \
   -c 65536 \
+  -np 1 \
   --device CUDA0,CUDA1,CUDA2,CUDA3 \
   --split-mode layer \
   --api-key hpc-local \
-  > llama-qwen3.8-27b.log 2>&1 &
+  > ~/llama-qwen3.8-27b.log 2>&1 &
 ```
 
 and stop any gateway run on known node, e.g.,
