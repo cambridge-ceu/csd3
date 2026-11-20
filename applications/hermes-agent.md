@@ -74,11 +74,14 @@ setenv            SSL_CERT_DIR         /etc/pki/tls/certs
 module load ceuadmin/hermes-agent/0.23.0
 module load ceuadmin/llama.cpp/1.0.0-cuda
 llama server \
-  -m ~/rds/software/models/google_medgemma-27b-it-Q8_0.gguf \
-  --mmproj ~/rds/software/models/mmproj-google_medgemma-27b-it-bf16.gguf \
+  -m /home/jhz22/rds/software/models/google_medgemma-27b-it-Q8_0.gguf \
+  --mmproj /home/jhz22/rds/software/models/mmproj-google_medgemma-27b-it-bf16.gguf \
   --alias medgemma-27b \
-  --host 127.0.0.1 --port 8080 \
-  -ngl 99 -c 65536 \
+  --host 127.0.0.1 \
+  --port 8080 \
+  -ngl 99 \
+  -c 32768 \
+  -np 1 \
   --device CUDA0,CUDA1,CUDA2,CUDA3 \
   --split-mode layer \
   --api-key hpc-local \
