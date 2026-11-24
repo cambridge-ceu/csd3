@@ -140,7 +140,7 @@ Your system should be ready to build Firefox for Desktop!
 
 | Date | Module |
 |---|---|
-| 24/11/2026 | `ceuadmin/firefox/163.0a1` |
+| 24/11/2026 | `ceuadmin/firefox/161.0` and `ceuadmin/firefox/163.0a1` |
 | 10/11/2026 | `ceuadmin/firefox/160.0` and `ceuadmin/firefox/162.0a1` |
 | 28/10/2026 | `ceuadmin/firefox/160.0`  |
 | 22/10/2026 | `ceuadmin/firefox/161.0a1`  |
