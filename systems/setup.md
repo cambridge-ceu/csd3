@@ -656,6 +656,7 @@ All entries are ordered chronologically.
 | 2026-11-16 | shapeit/4.2.2                     | Generic[^shapit]      |
 | ""         | zed/1.28.1                        | Generic[^zed]         |
 | ""         | rust/1.98.1                       | Generic[^rust]        |
+| 2026-11-24 | firefox/161.0\|163.0a1            | Generic[^firefox]     |
 
 \* CEU or approved users only -- when not indicated can be found out from the folder associated with a module.
 
